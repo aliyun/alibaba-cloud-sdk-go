@@ -65,8 +65,8 @@ return result
 
 type RpcPOSTAllowedApiRequest struct {
 *requests.RpcRequest
-            StringValue  string `position:"Query" name:"StringValue"`
             IntValue  string `position:"Query" name:"IntValue"`
+            StringValue  string `position:"Query" name:"StringValue"`
 }
 
 

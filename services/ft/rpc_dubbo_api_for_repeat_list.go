@@ -65,37 +65,29 @@ return result
 
 type RpcDubboApiForRepeatListRequest struct {
 *requests.RpcRequest
-            SwitchValue  string `position:"Query" name:"SwitchValue"`
-            MixedRepeatListDisk  *[]RpcDubboApiForRepeatListMixedRepeatListDisk `position:"Query" name:"MixedRepeatListDisk"  type:"Repeated"`
-            StringValue  string `position:"Query" name:"StringValue"`
-            EnumValue  string `position:"Query" name:"EnumValue"`
-            StandardRepeatListDisk  *[]RpcDubboApiForRepeatListStandardRepeatListDisk `position:"Query" name:"StandardRepeatListDisk"  type:"Repeated"`
-            OtherParam  string `position:"Query" name:"OtherParam"`
-            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
-            Code  string `position:"Query" name:"Code"`
-            IntValue  string `position:"Query" name:"IntValue"`
-            NumberRange  string `position:"Query" name:"NumberRange"`
-            JsonObject  string `position:"Query" name:"JsonObject"`
-            JsonRepeatList  *[]RpcDubboApiForRepeatListJsonRepeatList `position:"Query" name:"JsonRepeatList"  type:"Repeated"`
-            Message  string `position:"Query" name:"Message"`
-            HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
-            RegionId  string `position:"Query" name:"RegionId"`
-            ListDisk  *[]string `position:"Query" name:"ListDisk"  type:"Repeated"`
-            NestedRepeatListDisk  *[]RpcDubboApiForRepeatListNestedRepeatListDisk `position:"Query" name:"NestedRepeatListDisk"  type:"Repeated"`
-            Success  string `position:"Query" name:"Success"`
-            DefaultValue  string `position:"Query" name:"DefaultValue"`
-            SimpleRepeatListDisk  *[]string `position:"Query" name:"SimpleRepeatListDisk"  type:"Repeated"`
             RequiredValue  string `position:"Query" name:"RequiredValue"`
+            Code  string `position:"Query" name:"Code"`
+            JsonRepeatList  *[]RpcDubboApiForRepeatListJsonRepeatList `position:"Query" name:"JsonRepeatList"  type:"Repeated"`
+            IntValue  string `position:"Query" name:"IntValue"`
+            ListDisk  *[]string `position:"Query" name:"ListDisk"  type:"Repeated"`
+            DefaultValue  string `position:"Query" name:"DefaultValue"`
+            NumberRange  string `position:"Query" name:"NumberRange"`
+            Message  string `position:"Query" name:"Message"`
+            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            NestedRepeatListDisk  *[]RpcDubboApiForRepeatListNestedRepeatListDisk `position:"Query" name:"NestedRepeatListDisk"  type:"Repeated"`
+            MixedRepeatListDisk  *[]RpcDubboApiForRepeatListMixedRepeatListDisk `position:"Query" name:"MixedRepeatListDisk"  type:"Repeated"`
+            SimpleRepeatListDisk  *[]string `position:"Query" name:"SimpleRepeatListDisk"  type:"Repeated"`
+            JsonObject  string `position:"Query" name:"JsonObject"`
+            HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
+            StringValue  string `position:"Query" name:"StringValue"`
+            RegionId  string `position:"Query" name:"RegionId"`
+            EnumValue  string `position:"Query" name:"EnumValue"`
+            Success  string `position:"Query" name:"Success"`
+            OtherParam  string `position:"Query" name:"OtherParam"`
+            SwitchValue  string `position:"Query" name:"SwitchValue"`
+            StandardRepeatListDisk  *[]RpcDubboApiForRepeatListStandardRepeatListDisk `position:"Query" name:"StandardRepeatListDisk"  type:"Repeated"`
 }
 
-type RpcDubboApiForRepeatListMixedRepeatListDisk struct{
-        Size string `name:"Size"`
-        Type *[]string `name:"Type" type:"Repeated"`
-}
-type RpcDubboApiForRepeatListStandardRepeatListDisk struct{
-        Size string `name:"Size"`
-        Type string `name:"Type"`
-}
 type RpcDubboApiForRepeatListJsonRepeatList struct{
         Size string `name:"Size"`
         Type string `name:"Type"`
@@ -103,6 +95,14 @@ type RpcDubboApiForRepeatListJsonRepeatList struct{
 type RpcDubboApiForRepeatListNestedRepeatListDisk struct{
         Size *[]string `name:"Size" type:"Repeated"`
         Type *[]string `name:"Type" type:"Repeated"`
+}
+type RpcDubboApiForRepeatListMixedRepeatListDisk struct{
+        Size string `name:"Size"`
+        Type *[]string `name:"Type" type:"Repeated"`
+}
+type RpcDubboApiForRepeatListStandardRepeatListDisk struct{
+        Size string `name:"Size"`
+        Type string `name:"Type"`
 }
 
 type RpcDubboApiForRepeatListResponse struct {

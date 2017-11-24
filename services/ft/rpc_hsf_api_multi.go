@@ -65,25 +65,25 @@ return result
 
 type RpcHsfApiMultiRequest struct {
 *requests.RpcRequest
-            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
-            NumberRange  string `position:"Query" name:"NumberRange"`
-            JsonObjectList  string `position:"Query" name:"JsonObjectList"`
-            ProxyOriginalSourceIp  string `position:"Query" name:"proxy_original_source_ip"`
-            DefaultValue  string `position:"Query" name:"DefaultValue"`
-            SwitchValue  string `position:"Query" name:"SwitchValue"`
-            EnumValue  string `position:"Query" name:"EnumValue"`
-            StringValue  string `position:"Query" name:"StringValue"`
-            OtherParam  string `position:"Query" name:"OtherParam"`
+            RequiredValue  string `position:"Query" name:"RequiredValue"`
             Code  string `position:"Query" name:"Code"`
             IntValue  string `position:"Query" name:"IntValue"`
-            Sleep  string `position:"Query" name:"Sleep"`
+            ProxyOriginalSecurityTransport  string `position:"Query" name:"proxy_original_security_transport"`
+            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            ProxyOriginalSourceIp  string `position:"Query" name:"proxy_original_source_ip"`
             JsonObject  string `position:"Query" name:"JsonObject"`
+            Sleep  string `position:"Query" name:"Sleep"`
+            RegionId  string `position:"Query" name:"RegionId"`
+            SwitchValue  string `position:"Query" name:"SwitchValue"`
+            JsonObjectList  string `position:"Query" name:"JsonObjectList"`
+            DefaultValue  string `position:"Query" name:"DefaultValue"`
+            NumberRange  string `position:"Query" name:"NumberRange"`
             Message  string `position:"Query" name:"Message"`
             HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
-            RegionId  string `position:"Query" name:"RegionId"`
-            ProxyOriginalSecurityTransport  string `position:"Query" name:"proxy_original_security_transport"`
+            StringValue  string `position:"Query" name:"StringValue"`
+            EnumValue  string `position:"Query" name:"EnumValue"`
             Success  string `position:"Query" name:"Success"`
-            RequiredValue  string `position:"Query" name:"RequiredValue"`
+            OtherParam  string `position:"Query" name:"OtherParam"`
 }
 
 

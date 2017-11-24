@@ -65,8 +65,8 @@ return result
 
 type RpcHttpApi2Request struct {
 *requests.RpcRequest
-            P1  string `position:"Query" name:"P1"`
             Sleep  string `position:"Query" name:"Sleep"`
+            P1  string `position:"Query" name:"P1"`
 }
 
 
