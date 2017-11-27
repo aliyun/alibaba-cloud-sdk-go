@@ -10,7 +10,7 @@
 使用`go get`下载安装SDK
 
 ```
-go get -u github.com/aliyun/alibaba-cloud-sdk-go
+go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
 如果您使用了glide管理依赖，您也可以使用glide来安装阿里云GO SDK
