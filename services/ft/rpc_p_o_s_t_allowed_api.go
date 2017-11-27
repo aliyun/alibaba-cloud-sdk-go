@@ -1,4 +1,3 @@
-
 package ft
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,76 +16,74 @@ package ft
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RpcPOSTAllowedApi(request *RpcPOSTAllowedApiRequest) (response *RpcPOSTAllowedApiResponse, err error) {
-response = CreateRpcPOSTAllowedApiResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRpcPOSTAllowedApiResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RpcPOSTAllowedApiWithChan(request *RpcPOSTAllowedApiRequest) (<-chan *RpcPOSTAllowedApiResponse, <-chan error) {
-responseChan := make(chan *RpcPOSTAllowedApiResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RpcPOSTAllowedApi(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RpcPOSTAllowedApiResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RpcPOSTAllowedApi(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RpcPOSTAllowedApiWithCallback(request *RpcPOSTAllowedApiRequest, callback func(response *RpcPOSTAllowedApiResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RpcPOSTAllowedApiResponse
-var err error
-defer close(result)
-response, err = client.RpcPOSTAllowedApi(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RpcPOSTAllowedApiWithCallback(request *RpcPOSTAllowedApiRequest, callback func(response *RpcPOSTAllowedApiResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RpcPOSTAllowedApiResponse
+		var err error
+		defer close(result)
+		response, err = client.RpcPOSTAllowedApi(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RpcPOSTAllowedApiRequest struct {
-*requests.RpcRequest
-            IntValue  string `position:"Query" name:"IntValue"`
-            StringValue  string `position:"Query" name:"StringValue"`
+	*requests.RpcRequest
+	IntValue    string `position:"Query" name:"IntValue"`
+	StringValue string `position:"Query" name:"StringValue"`
 }
 
-
 type RpcPOSTAllowedApiResponse struct {
-*responses.BaseResponse
-            Data     string `json:"Data"`
+	*responses.BaseResponse
+	Data string `json:"Data"`
 }
 
 func CreateRpcPOSTAllowedApiRequest() (request *RpcPOSTAllowedApiRequest) {
-request = &RpcPOSTAllowedApiRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ft", "2015-01-01", "RpcPOSTAllowedApi", "", "")
-return
+	request = &RpcPOSTAllowedApiRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ft", "2015-01-01", "RpcPOSTAllowedApi", "", "")
+	return
 }
 
 func CreateRpcPOSTAllowedApiResponse() (response *RpcPOSTAllowedApiResponse) {
-response = &RpcPOSTAllowedApiResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RpcPOSTAllowedApiResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

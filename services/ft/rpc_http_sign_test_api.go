@@ -1,4 +1,3 @@
-
 package ft
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ft
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RpcHttpSignTestApi(request *RpcHttpSignTestApiRequest) (response *RpcHttpSignTestApiResponse, err error) {
-response = CreateRpcHttpSignTestApiResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRpcHttpSignTestApiResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RpcHttpSignTestApiWithChan(request *RpcHttpSignTestApiRequest) (<-chan *RpcHttpSignTestApiResponse, <-chan error) {
-responseChan := make(chan *RpcHttpSignTestApiResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RpcHttpSignTestApi(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RpcHttpSignTestApiResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RpcHttpSignTestApi(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RpcHttpSignTestApiWithCallback(request *RpcHttpSignTestApiRequest, callback func(response *RpcHttpSignTestApiResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RpcHttpSignTestApiResponse
-var err error
-defer close(result)
-response, err = client.RpcHttpSignTestApi(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RpcHttpSignTestApiWithCallback(request *RpcHttpSignTestApiRequest, callback func(response *RpcHttpSignTestApiResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RpcHttpSignTestApiResponse
+		var err error
+		defer close(result)
+		response, err = client.RpcHttpSignTestApi(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RpcHttpSignTestApiRequest struct {
-*requests.RpcRequest
-            P1  string `position:"Query" name:"P1"`
-            P2  string `position:"Query" name:"P2"`
-            IspSignature  string `position:"Query" name:"IspSignature"`
+	*requests.RpcRequest
+	P1           string `position:"Query" name:"P1"`
+	P2           string `position:"Query" name:"P2"`
+	IspSignature string `position:"Query" name:"IspSignature"`
 }
 
-
 type RpcHttpSignTestApiResponse struct {
-*responses.BaseResponse
-            Signature     string `json:"Signature"`
-            ServiceRpcSign     string `json:"ServiceRpcSign"`
+	*responses.BaseResponse
+	Signature      string `json:"Signature"`
+	ServiceRpcSign string `json:"ServiceRpcSign"`
 }
 
 func CreateRpcHttpSignTestApiRequest() (request *RpcHttpSignTestApiRequest) {
-request = &RpcHttpSignTestApiRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ft", "2015-01-01", "RpcHttpSignTestApi", "", "")
-return
+	request = &RpcHttpSignTestApiRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ft", "2015-01-01", "RpcHttpSignTestApi", "", "")
+	return
 }
 
 func CreateRpcHttpSignTestApiResponse() (response *RpcHttpSignTestApiResponse) {
-response = &RpcHttpSignTestApiResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RpcHttpSignTestApiResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

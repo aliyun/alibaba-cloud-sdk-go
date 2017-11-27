@@ -1,4 +1,3 @@
-
 package ft
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ft
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) HiddenJsonItemNameFtApi(request *HiddenJsonItemNameFtApiRequest) (response *HiddenJsonItemNameFtApiResponse, err error) {
-response = CreateHiddenJsonItemNameFtApiResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateHiddenJsonItemNameFtApiResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) HiddenJsonItemNameFtApiWithChan(request *HiddenJsonItemNameFtApiRequest) (<-chan *HiddenJsonItemNameFtApiResponse, <-chan error) {
-responseChan := make(chan *HiddenJsonItemNameFtApiResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.HiddenJsonItemNameFtApi(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *HiddenJsonItemNameFtApiResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.HiddenJsonItemNameFtApi(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) HiddenJsonItemNameFtApiWithCallback(request *HiddenJsonItemNameFtApiRequest, callback func(response *HiddenJsonItemNameFtApiResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *HiddenJsonItemNameFtApiResponse
-var err error
-defer close(result)
-response, err = client.HiddenJsonItemNameFtApi(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) HiddenJsonItemNameFtApiWithCallback(request *HiddenJsonItemNameFtApiRequest, callback func(response *HiddenJsonItemNameFtApiResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *HiddenJsonItemNameFtApiResponse
+		var err error
+		defer close(result)
+		response, err = client.HiddenJsonItemNameFtApi(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type HiddenJsonItemNameFtApiRequest struct {
-*requests.RpcRequest
-            StringList  string `position:"Query" name:"StringList"`
+	*requests.RpcRequest
+	StringList string `position:"Query" name:"StringList"`
 }
 
-
 type HiddenJsonItemNameFtApiResponse struct {
-*responses.BaseResponse
-            StringList   []    string  `json:"StringList"`
-            ArrayValue  []struct {
-            ArrayChildValue     string `json:"ArrayChildValue"`
-            }  `json:"ArrayValue"`
+	*responses.BaseResponse
+	StringList []string `json:"StringList"`
+	ArrayValue []struct {
+		ArrayChildValue string `json:"ArrayChildValue"`
+	} `json:"ArrayValue"`
 }
 
 func CreateHiddenJsonItemNameFtApiRequest() (request *HiddenJsonItemNameFtApiRequest) {
-request = &HiddenJsonItemNameFtApiRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ft", "2015-01-01", "HiddenJsonItemNameFtApi", "", "")
-return
+	request = &HiddenJsonItemNameFtApiRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ft", "2015-01-01", "HiddenJsonItemNameFtApi", "", "")
+	return
 }
 
 func CreateHiddenJsonItemNameFtApiResponse() (response *HiddenJsonItemNameFtApiResponse) {
-response = &HiddenJsonItemNameFtApiResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &HiddenJsonItemNameFtApiResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

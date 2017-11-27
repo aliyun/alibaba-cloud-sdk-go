@@ -1,4 +1,3 @@
-
 package ft
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,76 +16,74 @@ package ft
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RpcNoIspApi(request *RpcNoIspApiRequest) (response *RpcNoIspApiResponse, err error) {
-response = CreateRpcNoIspApiResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRpcNoIspApiResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RpcNoIspApiWithChan(request *RpcNoIspApiRequest) (<-chan *RpcNoIspApiResponse, <-chan error) {
-responseChan := make(chan *RpcNoIspApiResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RpcNoIspApi(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RpcNoIspApiResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RpcNoIspApi(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RpcNoIspApiWithCallback(request *RpcNoIspApiRequest, callback func(response *RpcNoIspApiResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RpcNoIspApiResponse
-var err error
-defer close(result)
-response, err = client.RpcNoIspApi(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RpcNoIspApiWithCallback(request *RpcNoIspApiRequest, callback func(response *RpcNoIspApiResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RpcNoIspApiResponse
+		var err error
+		defer close(result)
+		response, err = client.RpcNoIspApi(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RpcNoIspApiRequest struct {
-*requests.RpcRequest
-            IntValue  string `position:"Query" name:"IntValue"`
-            NumberRange  string `position:"Query" name:"NumberRange"`
+	*requests.RpcRequest
+	IntValue    string `position:"Query" name:"IntValue"`
+	NumberRange string `position:"Query" name:"NumberRange"`
 }
 
-
 type RpcNoIspApiResponse struct {
-*responses.BaseResponse
-            IntValue     string `json:"IntValue"`
+	*responses.BaseResponse
+	IntValue string `json:"IntValue"`
 }
 
 func CreateRpcNoIspApiRequest() (request *RpcNoIspApiRequest) {
-request = &RpcNoIspApiRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ft", "2015-01-01", "RpcNoIspApi", "", "")
-return
+	request = &RpcNoIspApiRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ft", "2015-01-01", "RpcNoIspApi", "", "")
+	return
 }
 
 func CreateRpcNoIspApiResponse() (response *RpcNoIspApiResponse) {
-response = &RpcNoIspApiResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RpcNoIspApiResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
