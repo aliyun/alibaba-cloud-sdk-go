@@ -18,11 +18,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"encoding/xml"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
-	"fmt"
 )
 
 type AcsResponse interface {

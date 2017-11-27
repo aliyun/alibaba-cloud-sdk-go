@@ -1,9 +1,9 @@
 package requests
 
 import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io"
 	"strings"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
 
 type CommonRequest struct {

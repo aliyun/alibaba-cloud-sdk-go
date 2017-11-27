@@ -16,12 +16,12 @@ package sdk
 
 import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"net/http"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
@@ -68,7 +68,7 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 
 func (client *Client) EnableAsync(routinePoolSize, maxTaskQueueSize int) {
 	client.asyncTaskQueue = make(chan func(), maxTaskQueueSize)
-	for i := 0; i < routinePoolSize; i ++ {
+	for i := 0; i < routinePoolSize; i++ {
 		go func() {
 			for client.isRunning {
 				select {

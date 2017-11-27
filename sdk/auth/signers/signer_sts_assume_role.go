@@ -15,15 +15,15 @@
 package signers
 
 import (
+	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"time"
-	"strconv"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
-	"net/http"
-	"encoding/json"
 	"github.com/jmespath/go-jmespath"
+	"net/http"
+	"strconv"
+	"time"
 )
 
 const (

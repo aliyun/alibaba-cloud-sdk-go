@@ -38,12 +38,12 @@ func NewConfig() (config *Config) {
 	return
 }
 
-func (c *Config) WithTimeout(timeout time.Duration) (*Config) {
+func (c *Config) WithTimeout(timeout time.Duration) *Config {
 	c.Timeout = timeout
 	return c
 }
 
-func (c *Config) WithDebug(isDebug bool) (*Config) {
+func (c *Config) WithDebug(isDebug bool) *Config {
 	c.Debug = isDebug
 	return c
 }

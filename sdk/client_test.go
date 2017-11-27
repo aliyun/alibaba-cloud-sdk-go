@@ -198,7 +198,7 @@ func getFtTestRoaRequest() (request *requests.RoaRequest) {
 
 func getFtTestRpcRequest() (request *requests.RpcRequest) {
 	request = &requests.RpcRequest{}
-	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi","", "")
+	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "", "")
 	request.Domain = "ft.aliyuncs.com"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
 	return
@@ -206,13 +206,13 @@ func getFtTestRpcRequest() (request *requests.RpcRequest) {
 
 func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
 	request = &requests.RpcRequest{}
-	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi","ft", "openAPI")
+	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "ft", "openAPI")
 	request.RegionId = "cn-hangzhou"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
 	return
 }
 
-func TestCommonRpcRequest(t *testing.T){
+func TestCommonRpcRequest(t *testing.T) {
 	rpcRequest := requests.NewCommonRequest()
 	rpcRequest.Product = "Ft"
 	rpcRequest.Version = "2016-01-01"
@@ -223,7 +223,7 @@ func TestCommonRpcRequest(t *testing.T){
 	rpcRequest.QueryParams["QueryParam"] = "QueryParamValue"
 	rpcRequest.FormParams["BodyParam"] = "BodyParamValue"
 
-	response,err := client.ProcessCommonRequest(rpcRequest)
+	response, err := client.ProcessCommonRequest(rpcRequest)
 
 	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
@@ -236,7 +236,7 @@ func TestCommonRpcRequest(t *testing.T){
 	assert.Equal(t, "BodyParamValue", responseBean.Params["BodyParam"])
 }
 
-func TestCommonRoaRequest(t *testing.T){
+func TestCommonRoaRequest(t *testing.T) {
 	roaRequest := requests.NewCommonRequest()
 	roaRequest.Product = "Ft"
 	roaRequest.Version = "2016-01-02"
@@ -248,7 +248,7 @@ func TestCommonRoaRequest(t *testing.T){
 	roaRequest.QueryParams["QueryParam"] = "QueryParamValue"
 	roaRequest.FormParams["BodyParam"] = "BodyParamValue"
 
-	response,err := client.ProcessCommonRequest(roaRequest)
+	response, err := client.ProcessCommonRequest(roaRequest)
 
 	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())

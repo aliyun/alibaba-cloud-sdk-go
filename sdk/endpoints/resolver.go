@@ -15,12 +15,12 @@
 package endpoints
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
-	"sync"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"encoding/json"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"sync"
 )
 
 const (

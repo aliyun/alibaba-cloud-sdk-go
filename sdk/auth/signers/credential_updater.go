@@ -27,7 +27,7 @@ type credentialUpdater struct {
 	lastUpdateTimestamp  int64
 	inAdvanceScale       float64
 	buildRequestMethod   func() (*requests.CommonRequest, error)
-	responseCallBack     func(response *responses.CommonResponse) (error)
+	responseCallBack     func(response *responses.CommonResponse) error
 	commonApi            func(request *requests.CommonRequest) (response *responses.CommonResponse, err error)
 }
 

@@ -23,4 +23,3 @@ func (resolver *SimpleHostResolver) TryResolve(param *ResolveParam) (endpoint st
 	}
 	return
 }
-

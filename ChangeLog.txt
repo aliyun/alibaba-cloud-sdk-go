@@ -1,3 +1,6 @@
+2017-11-27 Version: 0.1.2
+1, format code with gofmt
+
 2017-11-27 Version: 0.1.1
 1, add glide files
 

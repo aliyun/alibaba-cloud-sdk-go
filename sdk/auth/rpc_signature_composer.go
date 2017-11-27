@@ -15,11 +15,11 @@
 package auth
 
 import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"net/url"
 	"sort"
 	"strings"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 func signRpcRequest(request *requests.RpcRequest, signer Signer, regionId string) {
