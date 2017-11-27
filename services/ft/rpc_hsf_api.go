@@ -65,25 +65,25 @@ return result
 
 type RpcHsfApiRequest struct {
 *requests.RpcRequest
-            RequiredValue  string `position:"Query" name:"RequiredValue"`
-            Code  string `position:"Query" name:"Code"`
-            IntValue  string `position:"Query" name:"IntValue"`
-            DefaultValue  string `position:"Query" name:"DefaultValue"`
-            ProxyOriginalSecurityTransport  string `position:"Query" name:"proxy_original_security_transport"`
-            NumberRange  string `position:"Query" name:"NumberRange"`
-            Message  string `position:"Query" name:"Message"`
-            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
-            ProxyOriginalSourceIp  string `position:"Query" name:"proxy_original_source_ip"`
-            JsonObject  string `position:"Query" name:"JsonObject"`
-            Sleep  string `position:"Query" name:"Sleep"`
-            HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
-            StringValue  string `position:"Query" name:"StringValue"`
-            RegionId  string `position:"Query" name:"RegionId"`
-            EnumValue  string `position:"Query" name:"EnumValue"`
-            Success  string `position:"Query" name:"Success"`
-            OtherParam  string `position:"Query" name:"OtherParam"`
             SwitchValue  string `position:"Query" name:"SwitchValue"`
+            StringValue  string `position:"Query" name:"StringValue"`
+            EnumValue  string `position:"Query" name:"EnumValue"`
+            OtherParam  string `position:"Query" name:"OtherParam"`
+            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            IntValue  string `position:"Query" name:"IntValue"`
+            Code  string `position:"Query" name:"Code"`
+            Sleep  string `position:"Query" name:"Sleep"`
+            NumberRange  string `position:"Query" name:"NumberRange"`
             JsonObjectList  string `position:"Query" name:"JsonObjectList"`
+            JsonObject  string `position:"Query" name:"JsonObject"`
+            Message  string `position:"Query" name:"Message"`
+            HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
+            RegionId  string `position:"Query" name:"RegionId"`
+            ProxyOriginalSecurityTransport  string `position:"Query" name:"proxy_original_security_transport"`
+            ProxyOriginalSourceIp  string `position:"Query" name:"proxy_original_source_ip"`
+            DefaultValue  string `position:"Query" name:"DefaultValue"`
+            Success  string `position:"Query" name:"Success"`
+            RequiredValue  string `position:"Query" name:"RequiredValue"`
 }
 
 

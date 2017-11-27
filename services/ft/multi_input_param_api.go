@@ -65,10 +65,10 @@ return result
 
 type MultiInputParamApiRequest struct {
 *requests.RpcRequest
-            RequiredValue  string `position:"Query" name:"RequiredValue"`
-            JsonRepeatList  *[]MultiInputParamApiJsonRepeatList `position:"Query" name:"JsonRepeatList"  type:"Repeated"`
-            RequestId  string `position:"Query" name:"RequestId"`
             SwitchValue  string `position:"Query" name:"SwitchValue"`
+            RequestId  string `position:"Query" name:"RequestId"`
+            JsonRepeatList  *[]MultiInputParamApiJsonRepeatList `position:"Query" name:"JsonRepeatList"  type:"Repeated"`
+            RequiredValue  string `position:"Query" name:"RequiredValue"`
 }
 
 type MultiInputParamApiJsonRepeatList struct{

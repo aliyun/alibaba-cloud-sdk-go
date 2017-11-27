@@ -65,19 +65,19 @@ return result
 
 type RpcDubboErrorApiRequest struct {
 *requests.RpcRequest
-            RequiredValue  string `position:"Query" name:"RequiredValue"`
-            Code  string `position:"Query" name:"Code"`
-            IntValue  string `position:"Query" name:"IntValue"`
-            DefaultValue  string `position:"Query" name:"DefaultValue"`
-            NumberRange  string `position:"Query" name:"NumberRange"`
             Message  string `position:"Query" name:"Message"`
-            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            SwitchValue  string `position:"Query" name:"SwitchValue"`
             HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
+            EnumValue  string `position:"Query" name:"EnumValue"`
             StringValue  string `position:"Query" name:"StringValue"`
             RegionId  string `position:"Query" name:"RegionId"`
-            EnumValue  string `position:"Query" name:"EnumValue"`
+            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            Code  string `position:"Query" name:"Code"`
+            IntValue  string `position:"Query" name:"IntValue"`
             Success  string `position:"Query" name:"Success"`
-            SwitchValue  string `position:"Query" name:"SwitchValue"`
+            DefaultValue  string `position:"Query" name:"DefaultValue"`
+            NumberRange  string `position:"Query" name:"NumberRange"`
+            RequiredValue  string `position:"Query" name:"RequiredValue"`
 }
 
 

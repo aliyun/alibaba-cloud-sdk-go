@@ -65,18 +65,18 @@ return result
 
 type RpcFlowControlApiRefuseApiRequest struct {
 *requests.RpcRequest
-            RequiredValue  string `position:"Query" name:"RequiredValue"`
+            Message  string `position:"Query" name:"Message"`
+            SwitchValue  string `position:"Query" name:"SwitchValue"`
             HttpStatusCode  string `position:"Query" name:"HttpStatusCode"`
+            EnumValue  string `position:"Query" name:"EnumValue"`
+            StringValue  string `position:"Query" name:"StringValue"`
+            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
             Code  string `position:"Query" name:"Code"`
             IntValue  string `position:"Query" name:"IntValue"`
-            StringValue  string `position:"Query" name:"StringValue"`
-            EnumValue  string `position:"Query" name:"EnumValue"`
             Success  string `position:"Query" name:"Success"`
             DefaultValue  string `position:"Query" name:"DefaultValue"`
             NumberRange  string `position:"Query" name:"NumberRange"`
-            SwitchValue  string `position:"Query" name:"SwitchValue"`
-            Message  string `position:"Query" name:"Message"`
-            ResultSwitchValue  string `position:"Query" name:"ResultSwitchValue"`
+            RequiredValue  string `position:"Query" name:"RequiredValue"`
 }
 
 

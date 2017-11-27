@@ -65,8 +65,8 @@ return result
 
 type RpcHttpSignTestApiRequest struct {
 *requests.RpcRequest
-            P1  string `position:"Query" name:"P1"`
             P2  string `position:"Query" name:"P2"`
+            P1  string `position:"Query" name:"P1"`
             IspSignature  string `position:"Query" name:"IspSignature"`
 }
 
