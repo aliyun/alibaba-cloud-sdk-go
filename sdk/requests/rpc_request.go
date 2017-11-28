@@ -50,7 +50,8 @@ func (request *RpcRequest) GetQueries() string {
 }
 
 func (request *RpcRequest) GetUrl() string {
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
+	//return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
+	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.GetQueries()
 }
 
 func (request *RpcRequest) GetVersion() string {

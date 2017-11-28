@@ -28,7 +28,7 @@ type credentialUpdater struct {
 	inAdvanceScale       float64
 	buildRequestMethod   func() (*requests.CommonRequest, error)
 	responseCallBack     func(response *responses.CommonResponse) error
-	commonApi            func(request *requests.CommonRequest) (response *responses.CommonResponse, err error)
+	refreshApi           func(request *requests.CommonRequest) (response *responses.CommonResponse, err error)
 }
 
 func (updater *credentialUpdater) needUpdateCredential() (result bool) {
@@ -40,13 +40,14 @@ func (updater *credentialUpdater) needUpdateCredential() (result bool) {
 
 func (updater *credentialUpdater) updateCredential() (err error) {
 	request, err := updater.buildRequestMethod()
-	if err == nil {
+	if err != nil {
 		return
 	}
-	response, err := updater.commonApi(request)
-	if err == nil {
+	response, err := updater.refreshApi(request)
+	if err != nil {
 		return
 	}
+	updater.lastUpdateTimestamp = time.Now().Unix()
 	err = updater.responseCallBack(response)
 	return
 }

@@ -15,6 +15,7 @@
 package sdk
 
 import (
+	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
@@ -46,7 +47,6 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 	client.isRunning = true
 	client.regionId = regionId
 	client.config = config
-	client.signer, err = auth.NewSignerWithCredential(credential, client.ProcessCommonRequest)
 	if err != nil {
 		return
 	}
@@ -63,6 +63,9 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 	if config.EnableAsync {
 		client.EnableAsync(config.GoRoutinePoolSize, config.MaxTaskQueueSize)
 	}
+
+	client.signer, err = auth.NewSignerWithCredential(credential, client.ProcessCommonRequestWithSigner)
+
 	return
 }
 
@@ -81,7 +84,7 @@ func (client *Client) EnableAsync(routinePoolSize, maxTaskQueueSize int) {
 }
 
 func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret string) (err error) {
-	config := NewConfig()
+	config := client.InitClientConfig()
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     accessKeyId,
 		AccessKeySecret: accessKeySecret,
@@ -89,7 +92,49 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
+func (client *Client) InitWithRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.StsAssumeRoleCredential{
+		AccessKeyId:     accessKeyId,
+		AccessKeySecret: accessKeySecret,
+		RoleArn:         roleArn,
+		RoleSessionName: roleSessionName,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
+func (client *Client) InitWithKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.KeyPairCredential{
+		PrivateKey:        privateKey,
+		PublicKeyId:       publicKeyId,
+		SessionExpiration: sessionExpiration,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
+func (client *Client) InitWithEcsInstance(regionId, roleName string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.EcsInstanceCredential{
+		RoleName: roleName,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
+func (client *Client) InitClientConfig() (config *Config) {
+	config = NewConfig()
+	if client.config != nil {
+		config = client.config
+	}
+
+	return
+}
+
 func (client *Client) DoAction(request requests.AcsRequest, response responses.AcsResponse) (err error) {
+	return client.DoActionWithSigner(request, response, nil)
+}
+
+func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
 
 	// add clientVersion
 	request.GetHeaders()["x-sdk-core-version"] = Version
@@ -121,7 +166,12 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 	}
 
 	// signature
-	err = auth.Sign(request, client.signer, regionId)
+	if signer != nil {
+		err = auth.Sign(request, signer, regionId)
+	} else {
+		err = auth.Sign(request, client.signer, regionId)
+	}
+
 	if err != nil {
 		return
 	}
@@ -138,6 +188,7 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 	}
 	httpResponse, err := client.httpClient.Do(httpRequest)
 	if err != nil {
+		fmt.Println(err)
 		return
 	}
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
@@ -176,6 +227,17 @@ func (client *Client) ProcessCommonRequest(request *requests.CommonRequest) (res
 	response = responses.NewCommonResponse()
 	err = client.DoAction(request, response)
 	return
+}
+
+func (client *Client) ProcessCommonRequestWithSigner(request *requests.CommonRequest, signerInterface interface{}) (response *responses.CommonResponse, err error) {
+	if signer, isSigner := signerInterface.(auth.Signer); isSigner {
+		request.TransToAcsRequest()
+		response = responses.NewCommonResponse()
+		err = client.DoActionWithSigner(request, response, signer)
+		return
+	} else {
+		panic("should not be here")
+	}
 }
 
 func (client *Client) Shutdown() {

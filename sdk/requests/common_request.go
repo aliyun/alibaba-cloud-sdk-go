@@ -56,7 +56,11 @@ func (request *CommonRequest) TransToAcsRequest() {
 }
 
 func (request *CommonRequest) GetUrl() string {
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
+	if len(request.Port) > 0 {
+		return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
+	}
+
+	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.GetQueries()
 }
 
 func (request *CommonRequest) GetBodyReader() io.Reader {

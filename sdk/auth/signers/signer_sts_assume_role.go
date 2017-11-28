@@ -16,6 +16,7 @@ package signers
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
@@ -35,6 +36,7 @@ type SignerStsAssumeRole struct {
 	roleSessionName   string
 	sessionCredential *sessionCredential
 	credential        *credentials.StsAssumeRoleCredential
+	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
 type sessionCredential struct {
@@ -43,16 +45,19 @@ type sessionCredential struct {
 	securityToken   string
 }
 
-func NewSignerStsAssumeRole(credential *credentials.StsAssumeRoleCredential, commonApi func(request *requests.CommonRequest) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
+func NewSignerStsAssumeRole(credential *credentials.StsAssumeRoleCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
 	signer = &SignerStsAssumeRole{
-		credentialUpdater: &credentialUpdater{
-			credentialExpiration: credential.RoleSessionExpiration,
-			buildRequestMethod:   signer.buildCommonRequest,
-			responseCallBack:     signer.refreshCredential,
-			commonApi:            commonApi,
-		},
 		credential: credential,
+		commonApi:  commonApi,
 	}
+
+	signer.credentialUpdater = &credentialUpdater{
+		credentialExpiration: credential.RoleSessionExpiration,
+		buildRequestMethod:   signer.buildCommonRequest,
+		responseCallBack:     signer.refreshCredential,
+		refreshApi:           signer.refreshApi,
+	}
+
 	if len(credential.RoleSessionName) > 0 {
 		signer.roleSessionName = credential.RoleSessionName
 	} else {
@@ -83,18 +88,27 @@ func (*SignerStsAssumeRole) GetVersion() string {
 }
 
 func (signer *SignerStsAssumeRole) GetAccessKeyId() string {
-	return signer.credential.AccessKeyId
-}
-
-func (signer *SignerStsAssumeRole) GetExtraParam() map[string]string {
-	return map[string]string{"SecurityToken": signer.credential.RoleArn}
-}
-
-func (signer *SignerStsAssumeRole) Sign(stringToSign, secretSuffix string) string {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		signer.updateCredential()
 	}
-	secret := signer.credential.AccessKeySecret + secretSuffix
+	if signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0 {
+		return ""
+	}
+	return signer.sessionCredential.accessKeyId
+}
+
+func (signer *SignerStsAssumeRole) GetExtraParam() map[string]string {
+	if signer.sessionCredential == nil || signer.needUpdateCredential() {
+		signer.updateCredential()
+	}
+	if signer.sessionCredential == nil || len(signer.sessionCredential.securityToken) <= 0 {
+		return make(map[string]string)
+	}
+	return map[string]string{"SecurityToken": signer.sessionCredential.securityToken}
+}
+
+func (signer *SignerStsAssumeRole) Sign(stringToSign, secretSuffix string) string {
+	secret := signer.sessionCredential.accessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
@@ -103,34 +117,56 @@ func (signer *SignerStsAssumeRole) buildCommonRequest() (request *requests.Commo
 	request.Product = "Sts"
 	request.Version = "2015-04-01"
 	request.ApiName = "AssumeRole"
+	request.Scheme = requests.HTTPS
 	request.QueryParams["RoleArn"] = signer.credential.RoleArn
 	request.QueryParams["RoleSessionName"] = signer.credential.RoleSessionName
 	request.QueryParams["DurationSeconds"] = strconv.Itoa(signer.credentialExpiration)
 	return
 }
 
+func (signerStsAssumeRole *SignerStsAssumeRole) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
+	credential := &credentials.BaseCredential{
+		AccessKeyId:     signerStsAssumeRole.credential.AccessKeyId,
+		AccessKeySecret: signerStsAssumeRole.credential.AccessKeySecret,
+	}
+	signerV1, err := NewSignerV1(credential)
+	return signerStsAssumeRole.commonApi(request, signerV1)
+}
+
 func (signer *SignerStsAssumeRole) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
 		message := "refresh session token failed, message = " + response.GetHttpContentString()
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, message)
+		if signer.sessionCredential == nil {
+			panic(err)
+		}
 		return
 	}
 	var data interface{}
-	err = json.Unmarshal(response.GetHttpContentBytes(), data)
+	err = json.Unmarshal(response.GetHttpContentBytes(), &data)
 	if err != nil {
+		fmt.Println("refresh RoleArn sts token err, json.Unmarshal fail", err)
 		return
 	}
-	accessKeyId, err := jmespath.Search("AssumeRoleResponse.Credentials.AccessKeyId", data)
+	accessKeyId, err := jmespath.Search("Credentials.AccessKeyId", data)
 	if err != nil {
+		fmt.Println("refresh RoleArn sts token err, fail to get AccessKeyId", err)
 		return
 	}
-	accessKeySecret, err := jmespath.Search("AssumeRoleResponse.Credentials.AccessKeySecret", data)
+	accessKeySecret, err := jmespath.Search("Credentials.AccessKeySecret", data)
 	if err != nil {
+		fmt.Println("refresh RoleArn sts token err, fail to get AccessKeySecret", err)
 		return
 	}
-	securityToken, err := jmespath.Search("AssumeRoleResponse.Credentials.SecurityToken", data)
+	securityToken, err := jmespath.Search("Credentials.SecurityToken", data)
 	if err != nil {
+		fmt.Println("refresh RoleArn sts token err, fail to get SecurityToken", err)
 		return
+	}
+	if accessKeyId == nil || accessKeySecret == nil || securityToken == nil {
+		if signer.sessionCredential == nil {
+			panic("refresh session token failed, accessKeyId, accessKeySecret or securityToken is null")
+		}
 	}
 	signer.sessionCredential = &sessionCredential{
 		accessKeyId:     accessKeyId.(string),

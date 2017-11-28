@@ -169,7 +169,6 @@ func (request *baseRequest) GetContentType() (contentType string, contains bool)
 func defaultBaseRequest() (request *baseRequest) {
 	request = &baseRequest{
 		Scheme:       HTTP,
-		Port:         DefaultHttpPort,
 		acceptFormat: "JSON",
 		Method:       GET,
 		QueryParams:  make(map[string]string),

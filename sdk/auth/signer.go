@@ -34,7 +34,7 @@ type Signer interface {
 	Shutdown()
 }
 
-func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
+func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
 	switch instance := credential.(type) {
 	case *credentials.BaseCredential:
 		{
@@ -47,6 +47,14 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 	case *credentials.StsAssumeRoleCredential:
 		{
 			signer, err = signers.NewSignerStsAssumeRole(instance, commonApi)
+		}
+	case *credentials.KeyPairCredential:
+		{
+			signer, err = signers.NewSignerKeyPair(instance, commonApi)
+		}
+	case *credentials.EcsInstanceCredential:
+		{
+			signer, err = signers.NewSignereEcsInstance(instance, commonApi)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnsupportedCredentialMessage, reflect.TypeOf(credential))

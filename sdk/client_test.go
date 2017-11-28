@@ -15,6 +15,7 @@
 package sdk
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
@@ -26,11 +27,16 @@ import (
 	"testing"
 )
 
-var client *Client
+var client, clientKeyPair, clientEcs, clientRoleArn *Client
 
 type TestConfig struct {
 	AccessKeyId     string
 	AccessKeySecret string
+	PublicKeyId     string
+	PrivateKey      string
+	RoleArn         string
+	ChildAK         string
+	ChildSecret     string
 }
 
 type MockResponse struct {
@@ -62,8 +68,29 @@ func testSetup() {
 	}
 	var config TestConfig
 	json.Unmarshal(data, &config)
-	client = &Client{}
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client = &Client{
+		config: &Config{
+			HttpTransport: tr,
+		},
+	}
+	clientEcs = &Client{}
+	clientRoleArn = &Client{
+		config: &Config{
+			HttpTransport: tr,
+		},
+	}
+	clientKeyPair = &Client{
+		config: &Config{
+			HttpTransport: tr,
+		},
+	}
 	err = client.InitWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
+	err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
+	err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
+	err = clientRoleArn.InitWithRoleArn("cn-hangzhou", config.ChildAK, config.ChildSecret, config.RoleArn, "clientTest")
 }
 
 func testTearDown() {
@@ -166,6 +193,40 @@ func TestRpcGet(t *testing.T) {
 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
 
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+func TestRpcGetForHttps(t *testing.T) {
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+	request.Scheme = requests.HTTPS
+
+	response := &responses.BaseResponse{}
+	err := client.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+func TestRoaGetForHttps(t *testing.T) {
+	request := getFtTestRoaRequest()
+	request.Scheme = requests.HTTPS
+
+	response := &responses.BaseResponse{}
+	err := client.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+	assert.Equal(t, "HeaderParamValue", responseBean.Headers["Header-Param"])
 }
 
 func TestRpcPost(t *testing.T) {
@@ -312,6 +373,74 @@ func TestRpcGetForLocationCache(t *testing.T) {
 	request2 := getFtTestRpcRequestForEndpointLocation()
 	request2.Method = requests.GET
 	err = client.DoAction(request2, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+func TestRpcGetForKeyPair(t *testing.T) {
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientKeyPair.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+/*func TestRpcGetForEcs(t *testing.T) {
+	//测试接口，想测试的时候，要替换掉singer_ecs_instance中对应的变量，并且还要提供一个mock服务
+	//requestUrl := "http://localhost:3500/latest/meta-data/ram/security-credentials/roleNameTest.json"
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientEcs.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+
+	err = clientEcs.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}*/
+
+func TestRpcGetForRoleArn(t *testing.T) {
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientRoleArn.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+
+	err = clientRoleArn.DoAction(request, response)
 	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
 	assert.NotNil(t, response.GetHttpContentString())
