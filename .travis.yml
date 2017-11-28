@@ -1,0 +1,23 @@
+language: go
+
+sudo: false
+
+go:
+  - 1.7.x
+  - 1.8.x
+  - 1.9.x
+
+install:
+  - go get -u github.com/Masterminds/glide
+  - glide install
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+script:
+  - go vet ./sdk
+  - go vet ./services/...
+  - go build ./sdk
+  - go build ./services/...
