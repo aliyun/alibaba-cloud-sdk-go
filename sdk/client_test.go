@@ -88,9 +88,21 @@ func testSetup() {
 		},
 	}
 	err = client.InitWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
+	if err != nil {
+		panic(err)
+	}
 	err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
+	if err != nil {
+		panic(err)
+	}
 	err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
+	if err != nil {
+		panic(err)
+	}
 	err = clientRoleArn.InitWithRoleArn("cn-hangzhou", config.ChildAK, config.ChildSecret, config.RoleArn, "clientTest")
+	if err != nil {
+		panic(err)
+	}
 }
 
 func testTearDown() {
