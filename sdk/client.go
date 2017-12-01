@@ -184,7 +184,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		return
 	}
 	for key, value := range request.GetHeaders() {
-		httpRequest.Header.Set(key, value)
+		httpRequest.Header[key] = []string{value}
 	}
 	httpResponse, err := client.httpClient.Do(httpRequest)
 	if err != nil {

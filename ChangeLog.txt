@@ -1,3 +1,6 @@
+2017-12-01 Version: 0.2.1
+1, Fix capitalizes the first letter in each word of header
+
 2017-11-28 Version: 0.2.0
 1, AK2.0 & StsToken
 
