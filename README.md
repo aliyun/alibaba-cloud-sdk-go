@@ -1,4 +1,7 @@
 # 阿里云Go SDK
+[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
+
 欢迎使用阿里云开发者工具套件（SDK）。阿里云Go SDK让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云Go SDK并开始调用。
 
 ## 环境准备
@@ -118,9 +121,54 @@ client.EnableAsync(poolSize, maxTaskQueueSize)
     ```
     
 ## 泛化调用接口(CommonApi)
-阿里云Go SDK提供了一个特殊的"泛化调用接口"，该接口具有以下特点：
 
-* 轻量、简便：只需核心包(github.com/aliyun/alibaba-cloud-sdk-go/sdk)即可发起调用
-* 灵活：无需更新，即可调用全阿里云的任意API，即使是最新发布的
+##### 什么是CommonAPI
+CommonAPI是阿里云SDK推出的，泛用型的API调用方式。CommonAPI具有以下几个特点：
+1. 轻量：只需Core包即可发起调用，无需下载安装各产品线SDK。
+2. 简便：无需更新SDK即可调用最新发布的API。
+3. 快速迭代
 
-具体的使用方法，请参考官方文档
+##### 开始使用
+
+CommonAPI，需要配合相应的API文档使用，以查询API的相关信息。
+
+您可以在 [文档中心](https://help.aliyun.com/?spm=5176.8142029.388261.173.23896dfaav2hEF) 查询到所有产品的API文档。
+
+发起一次CommonAPI请求，需要您查询到以下几个参数：
+* 域名(domain)：即该产品的通用访问域名，一版可以在"调用方式"页查看到
+* API版本(version)：即该API的版本号，以’YYYY-MM-DD’的形式表现，一般可以在"公共参数"页面查到
+* 接口名称(apiName)：即该API的名称
+
+我们以Ecs产品的[DescribeInstanceStatus API](https://help.aliyun.com/document_detail/25505.html?spm=5176.doc25506.6.820.VbHnW6)为例
+```go
+package main
+
+import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"fmt"
+)
+
+func main() {
+
+	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", "{your_access_key_id}", "{your_access_key_id}")
+	if err != nil {
+		panic(err)
+	}
+
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
+
+	response, err := client.ProcessCommonRequest(request)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Print(response.GetHttpContentString())
+}
+```
