@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyTemplate(request *ModifyTemplateRequest) (response *ModifyTemplateResponse, err error) {
-	response = CreateModifyTemplateResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyTemplateResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyTemplateWithChan(request *ModifyTemplateRequest) (<-chan *ModifyTemplateResponse, <-chan error) {
-	responseChan := make(chan *ModifyTemplateResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyTemplate(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyTemplateResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyTemplate(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest, callback func(response *ModifyTemplateResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyTemplateResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyTemplate(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest, callback func(response *ModifyTemplateResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyTemplateResponse
+var err error
+defer close(result)
+response, err = client.ModifyTemplate(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyTemplateRequest struct {
-	*requests.RpcRequest
-	TemplateNickName     string `position:"Query" name:"TemplateNickName"`
-	SmsContent           string `position:"Query" name:"SmsContent"`
-	TemplateName         string `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Remark               string `position:"Query" name:"Remark"`
-	SmsType              string `position:"Query" name:"SmsType"`
-	TemplateSubject      string `position:"Query" name:"TemplateSubject"`
-	TemplateId           string `position:"Query" name:"TemplateId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TemplateText         string `position:"Query" name:"TemplateText"`
-	FromType             string `position:"Query" name:"FromType"`
+*requests.RpcRequest
+                TemplateNickName  string `position:"Query" name:"TemplateNickName"`
+                SmsContent  string `position:"Query" name:"SmsContent"`
+                TemplateName  string `position:"Query" name:"TemplateName"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Remark  string `position:"Query" name:"Remark"`
+                SmsType  string `position:"Query" name:"SmsType"`
+                TemplateSubject  string `position:"Query" name:"TemplateSubject"`
+                TemplateId  string `position:"Query" name:"TemplateId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                TemplateText  string `position:"Query" name:"TemplateText"`
+                FromType  string `position:"Query" name:"FromType"`
 }
 
+
 type ModifyTemplateResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyTemplateRequest() (request *ModifyTemplateRequest) {
-	request = &ModifyTemplateRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2017-06-22", "ModifyTemplate", "", "")
-	return
+request = &ModifyTemplateRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTemplate", "", "")
+return
 }
 
 func CreateModifyTemplateResponse() (response *ModifyTemplateResponse) {
-	response = &ModifyTemplateResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyTemplateResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

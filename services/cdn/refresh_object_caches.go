@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (response *RefreshObjectCachesResponse, err error) {
-	response = CreateRefreshObjectCachesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRefreshObjectCachesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRequest) (<-chan *RefreshObjectCachesResponse, <-chan error) {
-	responseChan := make(chan *RefreshObjectCachesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RefreshObjectCaches(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RefreshObjectCachesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RefreshObjectCaches(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCachesRequest, callback func(response *RefreshObjectCachesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RefreshObjectCachesResponse
-		var err error
-		defer close(result)
-		response, err = client.RefreshObjectCaches(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCachesRequest, callback func(response *RefreshObjectCachesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RefreshObjectCachesResponse
+var err error
+defer close(result)
+response, err = client.RefreshObjectCaches(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RefreshObjectCachesRequest struct {
-	*requests.RpcRequest
-	ObjectPath    string `position:"Query" name:"ObjectPath"`
-	ObjectType    string `position:"Query" name:"ObjectType"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                ObjectPath  string `position:"Query" name:"ObjectPath"`
+                ObjectType  string `position:"Query" name:"ObjectType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type RefreshObjectCachesResponse struct {
-	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            RefreshTaskId     string `json:"RefreshTaskId" xml:"RefreshTaskId"`
 }
 
 func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
-	request = &RefreshObjectCachesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "RefreshObjectCaches", "", "")
-	return
+request = &RefreshObjectCachesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "RefreshObjectCaches", "", "")
+return
 }
 
 func CreateRefreshObjectCachesResponse() (response *RefreshObjectCachesResponse) {
-	response = &RefreshObjectCachesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RefreshObjectCachesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

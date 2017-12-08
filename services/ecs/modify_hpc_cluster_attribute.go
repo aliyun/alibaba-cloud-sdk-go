@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyHpcClusterAttribute(request *ModifyHpcClusterAttributeRequest) (response *ModifyHpcClusterAttributeResponse, err error) {
-	response = CreateModifyHpcClusterAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyHpcClusterAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyHpcClusterAttributeWithChan(request *ModifyHpcClusterAttributeRequest) (<-chan *ModifyHpcClusterAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyHpcClusterAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyHpcClusterAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyHpcClusterAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyHpcClusterAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyHpcClusterAttributeWithCallback(request *ModifyHpcClusterAttributeRequest, callback func(response *ModifyHpcClusterAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyHpcClusterAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyHpcClusterAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyHpcClusterAttributeWithCallback(request *ModifyHpcClusterAttributeRequest, callback func(response *ModifyHpcClusterAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyHpcClusterAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyHpcClusterAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyHpcClusterAttributeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	HpcClusterId         string `position:"Query" name:"HpcClusterId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                Name  string `position:"Query" name:"Name"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                HpcClusterId  string `position:"Query" name:"HpcClusterId"`
 }
 
+
 type ModifyHpcClusterAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyHpcClusterAttributeRequest() (request *ModifyHpcClusterAttributeRequest) {
-	request = &ModifyHpcClusterAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "", "")
-	return
+request = &ModifyHpcClusterAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "", "")
+return
 }
 
 func CreateModifyHpcClusterAttributeResponse() (response *ModifyHpcClusterAttributeResponse) {
-	response = &ModifyHpcClusterAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyHpcClusterAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

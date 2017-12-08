@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,90 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (response *DescribeKeyPairsResponse, err error) {
-	response = CreateDescribeKeyPairsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeKeyPairsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest) (<-chan *DescribeKeyPairsResponse, <-chan error) {
-	responseChan := make(chan *DescribeKeyPairsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeKeyPairs(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeKeyPairsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeKeyPairs(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequest, callback func(response *DescribeKeyPairsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeKeyPairsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeKeyPairs(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequest, callback func(response *DescribeKeyPairsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeKeyPairsResponse
+var err error
+defer close(result)
+response, err = client.DescribeKeyPairs(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeKeyPairsRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	KeyPairFingerPrint   string `position:"Query" name:"KeyPairFingerPrint"`
-	KeyPairName          string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                KeyPairFingerPrint  string `position:"Query" name:"KeyPairFingerPrint"`
+                KeyPairName  string `position:"Query" name:"KeyPairName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeKeyPairsResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	KeyPairs   []struct {
-		KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
-		KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
-	} `json:"KeyPairs" xml:"KeyPairs"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                KeyPairs struct {
+                    KeyPair []struct {
+            KeyPairName     string `json:"KeyPairName" xml:"KeyPairName"`
+            KeyPairFingerPrint     string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+                    }   `json:"KeyPair" xml:"KeyPair"`
+                } `json:"KeyPairs" xml:"KeyPairs"`
 }
 
 func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
-	request = &DescribeKeyPairsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "", "")
-	return
+request = &DescribeKeyPairsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "", "")
+return
 }
 
 func CreateDescribeKeyPairsResponse() (response *DescribeKeyPairsResponse) {
-	response = &DescribeKeyPairsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeKeyPairsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

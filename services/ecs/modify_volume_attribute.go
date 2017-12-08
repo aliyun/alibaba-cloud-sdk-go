@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyVolumeAttribute(request *ModifyVolumeAttributeRequest) (response *ModifyVolumeAttributeResponse, err error) {
-	response = CreateModifyVolumeAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyVolumeAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyVolumeAttributeWithChan(request *ModifyVolumeAttributeRequest) (<-chan *ModifyVolumeAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyVolumeAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyVolumeAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyVolumeAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyVolumeAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyVolumeAttributeWithCallback(request *ModifyVolumeAttributeRequest, callback func(response *ModifyVolumeAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyVolumeAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyVolumeAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyVolumeAttributeWithCallback(request *ModifyVolumeAttributeRequest, callback func(response *ModifyVolumeAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyVolumeAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyVolumeAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyVolumeAttributeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VolumeName           string `position:"Query" name:"VolumeName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                VolumeId  string `position:"Query" name:"VolumeId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                VolumeName  string `position:"Query" name:"VolumeName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyVolumeAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyVolumeAttributeRequest() (request *ModifyVolumeAttributeRequest) {
-	request = &ModifyVolumeAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute", "", "")
-	return
+request = &ModifyVolumeAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVolumeAttribute", "", "")
+return
 }
 
 func CreateModifyVolumeAttributeResponse() (response *ModifyVolumeAttributeResponse) {
-	response = &ModifyVolumeAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyVolumeAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

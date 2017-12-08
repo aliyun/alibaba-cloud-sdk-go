@@ -1,3 +1,4 @@
+
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,84 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeAccountAttributes(request *DescribeAccountAttributesRequest) (response *DescribeAccountAttributesResponse, err error) {
-	response = CreateDescribeAccountAttributesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeAccountAttributesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccountAttributesRequest) (<-chan *DescribeAccountAttributesResponse, <-chan error) {
-	responseChan := make(chan *DescribeAccountAttributesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeAccountAttributes(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeAccountAttributesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeAccountAttributes(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAccountAttributesRequest, callback func(response *DescribeAccountAttributesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeAccountAttributesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeAccountAttributes(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAccountAttributesRequest, callback func(response *DescribeAccountAttributesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeAccountAttributesResponse
+var err error
+defer close(result)
+response, err = client.DescribeAccountAttributes(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeAccountAttributesRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeAccountAttributesResponse struct {
-	*responses.BaseResponse
-	MaxNumberOfScalingGroups         int `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
-	MaxNumberOfScalingConfigurations int `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
-	MaxNumberOfScalingRules          int `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
-	MaxNumberOfScheduledTasks        int `json:"MaxNumberOfScheduledTasks" xml:"MaxNumberOfScheduledTasks"`
-	MaxNumberOfScalingInstances      int `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
-	MaxNumberOfDBInstances           int `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
-	MaxNumberOfLoadBalancers         int `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
-	MaxNumberOfMinSize               int `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
-	MaxNumberOfMaxSize               int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
+*responses.BaseResponse
+            MaxNumberOfScalingGroups     int `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
+            MaxNumberOfScalingConfigurations     int `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
+            MaxNumberOfScalingRules     int `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
+            MaxNumberOfScheduledTasks     int `json:"MaxNumberOfScheduledTasks" xml:"MaxNumberOfScheduledTasks"`
+            MaxNumberOfScalingInstances     int `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
+            MaxNumberOfDBInstances     int `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
+            MaxNumberOfLoadBalancers     int `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
+            MaxNumberOfMinSize     int `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
+            MaxNumberOfMaxSize     int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 }
 
 func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttributesRequest) {
-	request = &DescribeAccountAttributesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ess", "2016-07-22", "DescribeAccountAttributes", "", "")
-	return
+request = &DescribeAccountAttributesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "", "")
+return
 }
 
 func CreateDescribeAccountAttributesResponse() (response *DescribeAccountAttributesResponse) {
-	response = &DescribeAccountAttributesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeAccountAttributesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

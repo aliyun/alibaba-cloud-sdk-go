@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,107 +17,115 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRouteTables(request *DescribeRouteTablesRequest) (response *DescribeRouteTablesResponse, err error) {
-	response = CreateDescribeRouteTablesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeRouteTablesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRequest) (<-chan *DescribeRouteTablesResponse, <-chan error) {
-	responseChan := make(chan *DescribeRouteTablesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeRouteTables(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeRouteTablesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeRouteTables(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTablesRequest, callback func(response *DescribeRouteTablesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeRouteTablesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeRouteTables(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTablesRequest, callback func(response *DescribeRouteTablesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeRouteTablesResponse
+var err error
+defer close(result)
+response, err = client.DescribeRouteTables(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeRouteTablesRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	RouteTableId         string `position:"Query" name:"RouteTableId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Type                 string `position:"Query" name:"Type"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VRouterId            string `position:"Query" name:"VRouterId"`
-	RouterId             string `position:"Query" name:"RouterId"`
-	RouterType           string `position:"Query" name:"RouterType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string `position:"Query" name:"RouteTableName"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                RouteTableId  string `position:"Query" name:"RouteTableId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Type  string `position:"Query" name:"Type"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                VRouterId  string `position:"Query" name:"VRouterId"`
+                RouterId  string `position:"Query" name:"RouterId"`
+                RouterType  string `position:"Query" name:"RouterType"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                RouteTableName  string `position:"Query" name:"RouteTableName"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type DescribeRouteTablesResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	RouteTables []struct {
-		VRouterId      string `json:"VRouterId" xml:"VRouterId"`
-		RouteTableId   string `json:"RouteTableId" xml:"RouteTableId"`
-		RouteTableType string `json:"RouteTableType" xml:"RouteTableType"`
-		CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-		RouteEntrys    []struct {
-			RouteTableId         string `json:"RouteTableId" xml:"RouteTableId"`
-			DestinationCidrBlock string `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-			Type                 string `json:"Type" xml:"Type"`
-			Status               string `json:"Status" xml:"Status"`
-			InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-			NextHopType          string `json:"NextHopType" xml:"NextHopType"`
-			NextHops             []struct {
-				NextHopType string `json:"NextHopType" xml:"NextHopType"`
-				NextHopId   string `json:"NextHopId" xml:"NextHopId"`
-				Enabled     int    `json:"Enabled" xml:"Enabled"`
-				Weight      int    `json:"Weight" xml:"Weight"`
-			} `json:"NextHops" xml:"NextHops"`
-		} `json:"RouteEntrys" xml:"RouteEntrys"`
-	} `json:"RouteTables" xml:"RouteTables"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                RouteTables struct {
+                    RouteTable []struct {
+            VRouterId     string `json:"VRouterId" xml:"VRouterId"`
+            RouteTableId     string `json:"RouteTableId" xml:"RouteTableId"`
+            RouteTableType     string `json:"RouteTableType" xml:"RouteTableType"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+                RouteEntrys struct {
+                    RouteEntry []struct {
+            RouteTableId     string `json:"RouteTableId" xml:"RouteTableId"`
+            DestinationCidrBlock     string `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
+            Type     string `json:"Type" xml:"Type"`
+            Status     string `json:"Status" xml:"Status"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            NextHopType     string `json:"NextHopType" xml:"NextHopType"`
+                NextHops struct {
+                    NextHop []struct {
+            NextHopType     string `json:"NextHopType" xml:"NextHopType"`
+            NextHopId     string `json:"NextHopId" xml:"NextHopId"`
+            Enabled     int `json:"Enabled" xml:"Enabled"`
+            Weight     int `json:"Weight" xml:"Weight"`
+                    }   `json:"NextHop" xml:"NextHop"`
+                } `json:"NextHops" xml:"NextHops"`
+                    }   `json:"RouteEntry" xml:"RouteEntry"`
+                } `json:"RouteEntrys" xml:"RouteEntrys"`
+                    }   `json:"RouteTable" xml:"RouteTable"`
+                } `json:"RouteTables" xml:"RouteTables"`
 }
 
 func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
-	request = &DescribeRouteTablesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTables", "", "")
-	return
+request = &DescribeRouteTablesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTables", "", "")
+return
 }
 
 func CreateDescribeRouteTablesResponse() (response *DescribeRouteTablesResponse) {
-	response = &DescribeRouteTablesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeRouteTablesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

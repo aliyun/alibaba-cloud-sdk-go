@@ -1,3 +1,4 @@
+
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,116 +17,118 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryPushDetail(request *QueryPushDetailRequest) (response *QueryPushDetailResponse, err error) {
-	response = CreateQueryPushDetailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryPushDetailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (<-chan *QueryPushDetailResponse, <-chan error) {
-	responseChan := make(chan *QueryPushDetailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryPushDetail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryPushDetailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryPushDetail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailRequest, callback func(response *QueryPushDetailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryPushDetailResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryPushDetail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailRequest, callback func(response *QueryPushDetailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryPushDetailResponse
+var err error
+defer close(result)
+response, err = client.QueryPushDetail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryPushDetailRequest struct {
-	*requests.RpcRequest
-	AppKey    string `position:"Query" name:"AppKey"`
-	MessageId string `position:"Query" name:"MessageId"`
+*requests.RpcRequest
+                AppKey  string `position:"Query" name:"AppKey"`
+                MessageId  string `position:"Query" name:"MessageId"`
 }
 
+
 type QueryPushDetailResponse struct {
-	*responses.BaseResponse
-	RequestId                      string `json:"RequestId" xml:"RequestId"`
-	AppKey                         int64  `json:"AppKey" xml:"AppKey"`
-	Target                         string `json:"Target" xml:"Target"`
-	TargetValue                    string `json:"TargetValue" xml:"TargetValue"`
-	PushType                       string `json:"PushType" xml:"PushType"`
-	DeviceType                     string `json:"DeviceType" xml:"DeviceType"`
-	Title                          string `json:"Title" xml:"Title"`
-	Body                           string `json:"Body" xml:"Body"`
-	PushTime                       string `json:"PushTime" xml:"PushTime"`
-	ExpireTime                     string `json:"ExpireTime" xml:"ExpireTime"`
-	AntiHarassStartTime            int    `json:"AntiHarassStartTime" xml:"AntiHarassStartTime"`
-	AntiHarassDuration             int    `json:"AntiHarassDuration" xml:"AntiHarassDuration"`
-	StoreOffline                   bool   `json:"StoreOffline" xml:"StoreOffline"`
-	BatchNumber                    string `json:"BatchNumber" xml:"BatchNumber"`
-	ProvinceId                     string `json:"ProvinceId" xml:"ProvinceId"`
-	IOSApnsEnv                     string `json:"iOSApnsEnv" xml:"iOSApnsEnv"`
-	IOSRemind                      bool   `json:"iOSRemind" xml:"iOSRemind"`
-	IOSRemindBody                  string `json:"iOSRemindBody" xml:"iOSRemindBody"`
-	IOSBadge                       int    `json:"iOSBadge" xml:"iOSBadge"`
-	IOSMusic                       string `json:"iOSMusic" xml:"iOSMusic"`
-	IOSSubtitle                    string `json:"iOSSubtitle" xml:"iOSSubtitle"`
-	IOSNotificationCategory        string `json:"iOSNotificationCategory" xml:"iOSNotificationCategory"`
-	IOSMutableContent              bool   `json:"iOSMutableContent" xml:"iOSMutableContent"`
-	IOSExtParameters               string `json:"iOSExtParameters" xml:"iOSExtParameters"`
-	AndroidNotifyType              string `json:"AndroidNotifyType" xml:"AndroidNotifyType"`
-	AndroidOpenType                string `json:"AndroidOpenType" xml:"AndroidOpenType"`
-	AndroidActivity                string `json:"AndroidActivity" xml:"AndroidActivity"`
-	AndroidMusic                   string `json:"AndroidMusic" xml:"AndroidMusic"`
-	AndroidOpenUrl                 string `json:"AndroidOpenUrl" xml:"AndroidOpenUrl"`
-	AndroidXiaoMiActivity          string `json:"AndroidXiaoMiActivity" xml:"AndroidXiaoMiActivity"`
-	AndroidXiaoMiNotifyTitle       string `json:"AndroidXiaoMiNotifyTitle" xml:"AndroidXiaoMiNotifyTitle"`
-	AndroidXiaoMiNotifyBody        string `json:"AndroidXiaoMiNotifyBody" xml:"AndroidXiaoMiNotifyBody"`
-	AndroidPopupActivity           string `json:"AndroidPopupActivity" xml:"AndroidPopupActivity"`
-	AndroidPopupTitle              string `json:"AndroidPopupTitle" xml:"AndroidPopupTitle"`
-	AndroidPopupBody               string `json:"AndroidPopupBody" xml:"AndroidPopupBody"`
-	AndroidNotificationBarType     int    `json:"AndroidNotificationBarType" xml:"AndroidNotificationBarType"`
-	AndroidNotificationBarPriority int    `json:"AndroidNotificationBarPriority" xml:"AndroidNotificationBarPriority"`
-	AndroidExtParameters           string `json:"AndroidExtParameters" xml:"AndroidExtParameters"`
-	SmsTemplateName                string `json:"SmsTemplateName" xml:"SmsTemplateName"`
-	SmsSignName                    string `json:"SmsSignName" xml:"SmsSignName"`
-	SmsParams                      string `json:"SmsParams" xml:"SmsParams"`
-	SmsDelaySecs                   int    `json:"SmsDelaySecs" xml:"SmsDelaySecs"`
-	SmsSendPolicy                  int    `json:"SmsSendPolicy" xml:"SmsSendPolicy"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            AppKey     int64 `json:"AppKey" xml:"AppKey"`
+            Target     string `json:"Target" xml:"Target"`
+            TargetValue     string `json:"TargetValue" xml:"TargetValue"`
+            PushType     string `json:"PushType" xml:"PushType"`
+            DeviceType     string `json:"DeviceType" xml:"DeviceType"`
+            Title     string `json:"Title" xml:"Title"`
+            Body     string `json:"Body" xml:"Body"`
+            PushTime     string `json:"PushTime" xml:"PushTime"`
+            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
+            AntiHarassStartTime     int `json:"AntiHarassStartTime" xml:"AntiHarassStartTime"`
+            AntiHarassDuration     int `json:"AntiHarassDuration" xml:"AntiHarassDuration"`
+            StoreOffline     bool `json:"StoreOffline" xml:"StoreOffline"`
+            BatchNumber     string `json:"BatchNumber" xml:"BatchNumber"`
+            ProvinceId     string `json:"ProvinceId" xml:"ProvinceId"`
+            IOSApnsEnv     string `json:"iOSApnsEnv" xml:"iOSApnsEnv"`
+            IOSRemind     bool `json:"iOSRemind" xml:"iOSRemind"`
+            IOSRemindBody     string `json:"iOSRemindBody" xml:"iOSRemindBody"`
+            IOSBadge     int `json:"iOSBadge" xml:"iOSBadge"`
+            IOSMusic     string `json:"iOSMusic" xml:"iOSMusic"`
+            IOSSubtitle     string `json:"iOSSubtitle" xml:"iOSSubtitle"`
+            IOSNotificationCategory     string `json:"iOSNotificationCategory" xml:"iOSNotificationCategory"`
+            IOSMutableContent     bool `json:"iOSMutableContent" xml:"iOSMutableContent"`
+            IOSExtParameters     string `json:"iOSExtParameters" xml:"iOSExtParameters"`
+            AndroidNotifyType     string `json:"AndroidNotifyType" xml:"AndroidNotifyType"`
+            AndroidOpenType     string `json:"AndroidOpenType" xml:"AndroidOpenType"`
+            AndroidActivity     string `json:"AndroidActivity" xml:"AndroidActivity"`
+            AndroidMusic     string `json:"AndroidMusic" xml:"AndroidMusic"`
+            AndroidOpenUrl     string `json:"AndroidOpenUrl" xml:"AndroidOpenUrl"`
+            AndroidXiaoMiActivity     string `json:"AndroidXiaoMiActivity" xml:"AndroidXiaoMiActivity"`
+            AndroidXiaoMiNotifyTitle     string `json:"AndroidXiaoMiNotifyTitle" xml:"AndroidXiaoMiNotifyTitle"`
+            AndroidXiaoMiNotifyBody     string `json:"AndroidXiaoMiNotifyBody" xml:"AndroidXiaoMiNotifyBody"`
+            AndroidPopupActivity     string `json:"AndroidPopupActivity" xml:"AndroidPopupActivity"`
+            AndroidPopupTitle     string `json:"AndroidPopupTitle" xml:"AndroidPopupTitle"`
+            AndroidPopupBody     string `json:"AndroidPopupBody" xml:"AndroidPopupBody"`
+            AndroidNotificationBarType     int `json:"AndroidNotificationBarType" xml:"AndroidNotificationBarType"`
+            AndroidNotificationBarPriority     int `json:"AndroidNotificationBarPriority" xml:"AndroidNotificationBarPriority"`
+            AndroidExtParameters     string `json:"AndroidExtParameters" xml:"AndroidExtParameters"`
+            SmsTemplateName     string `json:"SmsTemplateName" xml:"SmsTemplateName"`
+            SmsSignName     string `json:"SmsSignName" xml:"SmsSignName"`
+            SmsParams     string `json:"SmsParams" xml:"SmsParams"`
+            SmsDelaySecs     int `json:"SmsDelaySecs" xml:"SmsDelaySecs"`
+            SmsSendPolicy     int `json:"SmsSendPolicy" xml:"SmsSendPolicy"`
 }
 
 func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
-	request = &QueryPushDetailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushDetail", "", "")
-	return
+request = &QueryPushDetailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Push", "2016-08-01", "QueryPushDetail", "", "")
+return
 }
 
 func CreateQueryPushDetailResponse() (response *QueryPushDetailResponse) {
-	response = &QueryPushDetailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryPushDetailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

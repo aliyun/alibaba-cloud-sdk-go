@@ -1,3 +1,4 @@
+
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,84 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryUniqueDeviceStat(request *QueryUniqueDeviceStatRequest) (response *QueryUniqueDeviceStatResponse, err error) {
-	response = CreateQueryUniqueDeviceStatResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryUniqueDeviceStatResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceStatRequest) (<-chan *QueryUniqueDeviceStatResponse, <-chan error) {
-	responseChan := make(chan *QueryUniqueDeviceStatResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryUniqueDeviceStat(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryUniqueDeviceStatResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryUniqueDeviceStat(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDeviceStatRequest, callback func(response *QueryUniqueDeviceStatResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryUniqueDeviceStatResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryUniqueDeviceStat(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDeviceStatRequest, callback func(response *QueryUniqueDeviceStatResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryUniqueDeviceStatResponse
+var err error
+defer close(result)
+response, err = client.QueryUniqueDeviceStat(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryUniqueDeviceStatRequest struct {
-	*requests.RpcRequest
-	EndTime     string `position:"Query" name:"EndTime"`
-	StartTime   string `position:"Query" name:"StartTime"`
-	Granularity string `position:"Query" name:"Granularity"`
-	AppKey      string `position:"Query" name:"AppKey"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                Granularity  string `position:"Query" name:"Granularity"`
+                AppKey  string `position:"Query" name:"AppKey"`
 }
 
+
 type QueryUniqueDeviceStatResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	AppDeviceStats []struct {
-		Time  string `json:"Time" xml:"Time"`
-		Count int64  `json:"Count" xml:"Count"`
-	} `json:"AppDeviceStats" xml:"AppDeviceStats"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                AppDeviceStats struct {
+                    AppDeviceStat []struct {
+            Time     string `json:"Time" xml:"Time"`
+            Count     int64 `json:"Count" xml:"Count"`
+                    }   `json:"AppDeviceStat" xml:"AppDeviceStat"`
+                } `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
 func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest) {
-	request = &QueryUniqueDeviceStatRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryUniqueDeviceStat", "", "")
-	return
+request = &QueryUniqueDeviceStatRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Push", "2016-08-01", "QueryUniqueDeviceStat", "", "")
+return
 }
 
 func CreateQueryUniqueDeviceStatResponse() (response *QueryUniqueDeviceStatResponse) {
-	response = &QueryUniqueDeviceStatResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryUniqueDeviceStatResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

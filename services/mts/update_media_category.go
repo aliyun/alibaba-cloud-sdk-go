@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (response *UpdateMediaCategoryResponse, err error) {
-	response = CreateUpdateMediaCategoryResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUpdateMediaCategoryResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRequest) (<-chan *UpdateMediaCategoryResponse, <-chan error) {
-	responseChan := make(chan *UpdateMediaCategoryResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UpdateMediaCategory(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UpdateMediaCategoryResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UpdateMediaCategory(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCategoryRequest, callback func(response *UpdateMediaCategoryResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UpdateMediaCategoryResponse
-		var err error
-		defer close(result)
-		response, err = client.UpdateMediaCategory(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCategoryRequest, callback func(response *UpdateMediaCategoryResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UpdateMediaCategoryResponse
+var err error
+defer close(result)
+response, err = client.UpdateMediaCategory(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UpdateMediaCategoryRequest struct {
-	*requests.RpcRequest
-	CateId               string `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	MediaId              string `position:"Query" name:"MediaId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                CateId  string `position:"Query" name:"CateId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                MediaId  string `position:"Query" name:"MediaId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type UpdateMediaCategoryResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
-	request = &UpdateMediaCategoryRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "", "")
-	return
+request = &UpdateMediaCategoryRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "", "")
+return
 }
 
 func CreateUpdateMediaCategoryResponse() (response *UpdateMediaCategoryResponse) {
-	response = &UpdateMediaCategoryResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UpdateMediaCategoryResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

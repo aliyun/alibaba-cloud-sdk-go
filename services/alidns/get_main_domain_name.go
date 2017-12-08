@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetMainDomainName(request *GetMainDomainNameRequest) (response *GetMainDomainNameResponse, err error) {
-	response = CreateGetMainDomainNameResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetMainDomainNameResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameRequest) (<-chan *GetMainDomainNameResponse, <-chan error) {
-	responseChan := make(chan *GetMainDomainNameResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetMainDomainName(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetMainDomainNameResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetMainDomainName(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRequest, callback func(response *GetMainDomainNameResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetMainDomainNameResponse
-		var err error
-		defer close(result)
-		response, err = client.GetMainDomainName(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRequest, callback func(response *GetMainDomainNameResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetMainDomainNameResponse
+var err error
+defer close(result)
+response, err = client.GetMainDomainName(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetMainDomainNameRequest struct {
-	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	InputString  string `position:"Query" name:"InputString"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                InputString  string `position:"Query" name:"InputString"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type GetMainDomainNameResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DomainName  string `json:"DomainName" xml:"DomainName"`
-	RR          string `json:"RR" xml:"RR"`
-	DomainLevel int64  `json:"DomainLevel" xml:"DomainLevel"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            RR     string `json:"RR" xml:"RR"`
+            DomainLevel     int64 `json:"DomainLevel" xml:"DomainLevel"`
 }
 
 func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
-	request = &GetMainDomainNameRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "", "")
-	return
+request = &GetMainDomainNameRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "", "")
+return
 }
 
 func CreateGetMainDomainNameResponse() (response *GetMainDomainNameResponse) {
-	response = &GetMainDomainNameResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetMainDomainNameResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,94 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryPornPipelineList(request *QueryPornPipelineListRequest) (response *QueryPornPipelineListResponse, err error) {
-	response = CreateQueryPornPipelineListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryPornPipelineListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryPornPipelineListWithChan(request *QueryPornPipelineListRequest) (<-chan *QueryPornPipelineListResponse, <-chan error) {
-	responseChan := make(chan *QueryPornPipelineListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryPornPipelineList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryPornPipelineListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryPornPipelineList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryPornPipelineListWithCallback(request *QueryPornPipelineListRequest, callback func(response *QueryPornPipelineListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryPornPipelineListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryPornPipelineList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryPornPipelineListWithCallback(request *QueryPornPipelineListRequest, callback func(response *QueryPornPipelineListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryPornPipelineListResponse
+var err error
+defer close(result)
+response, err = client.QueryPornPipelineList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryPornPipelineListRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string `position:"Query" name:"PipelineIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PipelineIds  string `position:"Query" name:"PipelineIds"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryPornPipelineListResponse struct {
-	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	NonExistIds  []string `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList []struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		State        string `json:"State" xml:"State"`
-		Priority     string `json:"Priority" xml:"Priority"`
-		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"PipelineList" xml:"PipelineList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NonExistIds struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"NonExistIds" xml:"NonExistIds"`
+                PipelineList struct {
+                    Pipeline []struct {
+            Id     string `json:"Id" xml:"Id"`
+            Name     string `json:"Name" xml:"Name"`
+            State     string `json:"State" xml:"State"`
+            Priority     string `json:"Priority" xml:"Priority"`
+            NotifyConfig struct {
+            Topic     string `json:"Topic" xml:"Topic"`
+            Queue     string `json:"Queue" xml:"Queue"`
+            }  `json:"NotifyConfig" xml:"NotifyConfig"`
+                    }   `json:"Pipeline" xml:"Pipeline"`
+                } `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest) {
-	request = &QueryPornPipelineListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornPipelineList", "", "")
-	return
+request = &QueryPornPipelineListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornPipelineList", "", "")
+return
 }
 
 func CreateQueryPornPipelineListResponse() (response *QueryPornPipelineListResponse) {
-	response = &QueryPornPipelineListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryPornPipelineListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

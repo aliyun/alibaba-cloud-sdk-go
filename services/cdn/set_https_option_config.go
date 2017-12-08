@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetHttpsOptionConfig(request *SetHttpsOptionConfigRequest) (response *SetHttpsOptionConfigResponse, err error) {
-	response = CreateSetHttpsOptionConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetHttpsOptionConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfigRequest) (<-chan *SetHttpsOptionConfigResponse, <-chan error) {
-	responseChan := make(chan *SetHttpsOptionConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetHttpsOptionConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetHttpsOptionConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetHttpsOptionConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionConfigRequest, callback func(response *SetHttpsOptionConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetHttpsOptionConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetHttpsOptionConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionConfigRequest, callback func(response *SetHttpsOptionConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetHttpsOptionConfigResponse
+var err error
+defer close(result)
+response, err = client.SetHttpsOptionConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetHttpsOptionConfigRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	Http2         string `position:"Query" name:"Http2"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                Http2  string `position:"Query" name:"Http2"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetHttpsOptionConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) {
-	request = &SetHttpsOptionConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpsOptionConfig", "", "")
-	return
+request = &SetHttpsOptionConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpsOptionConfig", "", "")
+return
 }
 
 func CreateSetHttpsOptionConfigResponse() (response *SetHttpsOptionConfigResponse) {
-	response = &SetHttpsOptionConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetHttpsOptionConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

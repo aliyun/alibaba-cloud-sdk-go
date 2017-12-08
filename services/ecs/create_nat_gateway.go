@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,90 +17,95 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateNatGateway(request *CreateNatGatewayRequest) (response *CreateNatGatewayResponse, err error) {
-	response = CreateCreateNatGatewayResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateNatGatewayResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest) (<-chan *CreateNatGatewayResponse, <-chan error) {
-	responseChan := make(chan *CreateNatGatewayResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateNatGateway(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateNatGatewayResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateNatGateway(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequest, callback func(response *CreateNatGatewayResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateNatGatewayResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateNatGateway(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequest, callback func(response *CreateNatGatewayResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateNatGatewayResponse
+var err error
+defer close(result)
+response, err = client.CreateNatGateway(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateNatGatewayRequest struct {
-	*requests.RpcRequest
-	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
-	ClientToken          string                              `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string                              `position:"Query" name:"Description"`
-	Name                 string                              `position:"Query" name:"Name"`
-	ResourceOwnerId      string                              `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string                              `position:"Query" name:"VpcId"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
-	OwnerId              string                              `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                BandwidthPackage  *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                Name  string `position:"Query" name:"Name"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                VpcId  string `position:"Query" name:"VpcId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
-type CreateNatGatewayBandwidthPackage struct {
-	IpCount   string `name:"IpCount"`
-	Bandwidth string `name:"Bandwidth"`
-	Zone      string `name:"Zone"`
+type CreateNatGatewayBandwidthPackage struct{
+        IpCount string `name:"IpCount"`
+        Bandwidth string `name:"Bandwidth"`
+        Zone string `name:"Zone"`
 }
 
 type CreateNatGatewayResponse struct {
-	*responses.BaseResponse
-	RequestId           string   `json:"RequestId" xml:"RequestId"`
-	NatGatewayId        string   `json:"NatGatewayId" xml:"NatGatewayId"`
-	ForwardTableIds     []string `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	BandwidthPackageIds []string `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
+                ForwardTableIds struct {
+                ForwardTableId []    string `json:"ForwardTableId" xml:"ForwardTableId"`
+                } `json:"ForwardTableIds" xml:"ForwardTableIds"`
+                BandwidthPackageIds struct {
+                BandwidthPackageId []    string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+                } `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }
 
 func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
-	request = &CreateNatGatewayRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "", "")
-	return
+request = &CreateNatGatewayRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "", "")
+return
 }
 
 func CreateCreateNatGatewayResponse() (response *CreateNatGatewayResponse) {
-	response = &CreateNatGatewayResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateNatGatewayResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

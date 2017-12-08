@@ -1,3 +1,4 @@
+
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,73 +17,76 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUserResponse, err error) {
-	response = CreateVerifyUserResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateVerifyUserResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *VerifyUserResponse, <-chan error) {
-	responseChan := make(chan *VerifyUserResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.VerifyUser(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *VerifyUserResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.VerifyUser(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callback func(response *VerifyUserResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *VerifyUserResponse
-		var err error
-		defer close(result)
-		response, err = client.VerifyUser(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callback func(response *VerifyUserResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *VerifyUserResponse
+var err error
+defer close(result)
+response, err = client.VerifyUser(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type VerifyUserRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type VerifyUserResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateVerifyUserRequest() (request *VerifyUserRequest) {
-	request = &VerifyUserRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ess", "2016-07-22", "VerifyUser", "", "")
-	return
+request = &VerifyUserRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "", "")
+return
 }
 
 func CreateVerifyUserResponse() (response *VerifyUserResponse) {
-	response = &VerifyUserResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &VerifyUserResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

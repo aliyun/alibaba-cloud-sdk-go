@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,85 +17,89 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QuerySmsStatistics(request *QuerySmsStatisticsRequest) (response *QuerySmsStatisticsResponse, err error) {
-	response = CreateQuerySmsStatisticsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQuerySmsStatisticsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequest) (<-chan *QuerySmsStatisticsResponse, <-chan error) {
-	responseChan := make(chan *QuerySmsStatisticsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QuerySmsStatistics(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QuerySmsStatisticsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QuerySmsStatistics(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatisticsRequest, callback func(response *QuerySmsStatisticsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QuerySmsStatisticsResponse
-		var err error
-		defer close(result)
-		response, err = client.QuerySmsStatistics(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatisticsRequest, callback func(response *QuerySmsStatisticsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QuerySmsStatisticsResponse
+var err error
+defer close(result)
+response, err = client.QuerySmsStatistics(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QuerySmsStatisticsRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                FromType  string `position:"Query" name:"FromType"`
 }
 
+
 type QuerySmsStatisticsResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       []struct {
-		CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-		RequestCount string `json:"requestCount" xml:"requestCount"`
-		SuccessCount string `json:"successCount" xml:"successCount"`
-		FaildCount   string `json:"faildCount" xml:"faildCount"`
-	} `json:"data" xml:"data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+                Data struct {
+                    Stat []struct {
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            RequestCount     string `json:"requestCount" xml:"requestCount"`
+            SuccessCount     string `json:"successCount" xml:"successCount"`
+            FaildCount     string `json:"faildCount" xml:"faildCount"`
+                    }   `json:"stat" xml:"stat"`
+                } `json:"data" xml:"data"`
 }
 
 func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
-	request = &QuerySmsStatisticsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2017-06-22", "QuerySmsStatistics", "", "")
-	return
+request = &QuerySmsStatisticsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "QuerySmsStatistics", "", "")
+return
 }
 
 func CreateQuerySmsStatisticsResponse() (response *QuerySmsStatisticsResponse) {
-	response = &QuerySmsStatisticsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QuerySmsStatisticsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

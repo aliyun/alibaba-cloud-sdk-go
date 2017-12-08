@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,82 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListGroupsForUser(request *ListGroupsForUserRequest) (response *ListGroupsForUserResponse, err error) {
-	response = CreateListGroupsForUserResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListGroupsForUserResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListGroupsForUserWithChan(request *ListGroupsForUserRequest) (<-chan *ListGroupsForUserResponse, <-chan error) {
-	responseChan := make(chan *ListGroupsForUserResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListGroupsForUser(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListGroupsForUserResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListGroupsForUser(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListGroupsForUserWithCallback(request *ListGroupsForUserRequest, callback func(response *ListGroupsForUserResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListGroupsForUserResponse
-		var err error
-		defer close(result)
-		response, err = client.ListGroupsForUser(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListGroupsForUserWithCallback(request *ListGroupsForUserRequest, callback func(response *ListGroupsForUserResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListGroupsForUserResponse
+var err error
+defer close(result)
+response, err = client.ListGroupsForUser(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListGroupsForUserRequest struct {
-	*requests.RpcRequest
-	UserName string `position:"Query" name:"UserName"`
+*requests.RpcRequest
+                UserName  string `position:"Query" name:"UserName"`
 }
 
+
 type ListGroupsForUserResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Groups    []struct {
-		GroupName string `json:"GroupName" xml:"GroupName"`
-		Comments  string `json:"Comments" xml:"Comments"`
-		JoinDate  string `json:"JoinDate" xml:"JoinDate"`
-	} `json:"Groups" xml:"Groups"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                Groups struct {
+                    Group []struct {
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+            Comments     string `json:"Comments" xml:"Comments"`
+            JoinDate     string `json:"JoinDate" xml:"JoinDate"`
+                    }   `json:"Group" xml:"Group"`
+                } `json:"Groups" xml:"Groups"`
 }
 
 func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {
-	request = &ListGroupsForUserRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListGroupsForUser", "", "")
-	return
+request = &ListGroupsForUserRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "ListGroupsForUser", "", "")
+return
 }
 
 func CreateListGroupsForUserResponse() (response *ListGroupsForUserResponse) {
-	response = &ListGroupsForUserResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListGroupsForUserResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

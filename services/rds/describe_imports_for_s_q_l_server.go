@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeImportsForSQLServer(request *DescribeImportsForSQLServerRequest) (response *DescribeImportsForSQLServerResponse, err error) {
-	response = CreateDescribeImportsForSQLServerResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeImportsForSQLServerResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImportsForSQLServerRequest) (<-chan *DescribeImportsForSQLServerResponse, <-chan error) {
-	responseChan := make(chan *DescribeImportsForSQLServerResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeImportsForSQLServer(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeImportsForSQLServerResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeImportsForSQLServer(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeImportsForSQLServerRequest, callback func(response *DescribeImportsForSQLServerResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeImportsForSQLServerResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeImportsForSQLServer(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeImportsForSQLServerRequest, callback func(response *DescribeImportsForSQLServerResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeImportsForSQLServerResponse
+var err error
+defer close(result)
+response, err = client.DescribeImportsForSQLServer(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeImportsForSQLServerRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ImportId             string `position:"Query" name:"ImportId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ImportId  string `position:"Query" name:"ImportId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeImportsForSQLServerResponse struct {
-	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCounts int    `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    int    `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
-	Items             []struct {
-		ImportId     int    `json:"ImportId" xml:"ImportId"`
-		FileName     string `json:"FileName" xml:"FileName"`
-		DBName       string `json:"DBName" xml:"DBName"`
-		ImportStatus string `json:"ImportStatus" xml:"ImportStatus"`
-		StartTime    string `json:"StartTime" xml:"StartTime"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalRecordCounts     int `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            SQLItemsCounts     int `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
+                Items struct {
+                    SQLServerImport []struct {
+            ImportId     int `json:"ImportId" xml:"ImportId"`
+            FileName     string `json:"FileName" xml:"FileName"`
+            DBName     string `json:"DBName" xml:"DBName"`
+            ImportStatus     string `json:"ImportStatus" xml:"ImportStatus"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+                    }   `json:"SQLServerImport" xml:"SQLServerImport"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {
-	request = &DescribeImportsForSQLServerRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "", "")
-	return
+request = &DescribeImportsForSQLServerRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "", "")
+return
 }
 
 func CreateDescribeImportsForSQLServerResponse() (response *DescribeImportsForSQLServerResponse) {
-	response = &DescribeImportsForSQLServerResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeImportsForSQLServerResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

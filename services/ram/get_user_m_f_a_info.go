@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *GetUserMFAInfoResponse, err error) {
-	response = CreateGetUserMFAInfoResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetUserMFAInfoResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-chan *GetUserMFAInfoResponse, <-chan error) {
-	responseChan := make(chan *GetUserMFAInfoResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetUserMFAInfo(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetUserMFAInfoResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetUserMFAInfo(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest, callback func(response *GetUserMFAInfoResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetUserMFAInfoResponse
-		var err error
-		defer close(result)
-		response, err = client.GetUserMFAInfo(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest, callback func(response *GetUserMFAInfoResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetUserMFAInfoResponse
+var err error
+defer close(result)
+response, err = client.GetUserMFAInfo(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetUserMFAInfoRequest struct {
-	*requests.RpcRequest
-	UserName string `position:"Query" name:"UserName"`
+*requests.RpcRequest
+                UserName  string `position:"Query" name:"UserName"`
 }
 
+
 type GetUserMFAInfoResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	MFADevice struct {
-		SerialNumber string `json:"SerialNumber" xml:"SerialNumber"`
-	} `json:"MFADevice" xml:"MFADevice"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            MFADevice struct {
+            SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
+            }  `json:"MFADevice" xml:"MFADevice"`
 }
 
 func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
-	request = &GetUserMFAInfoRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "GetUserMFAInfo", "", "")
-	return
+request = &GetUserMFAInfoRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "GetUserMFAInfo", "", "")
+return
 }
 
 func CreateGetUserMFAInfoResponse() (response *GetUserMFAInfoResponse) {
-	response = &GetUserMFAInfoResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetUserMFAInfoResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

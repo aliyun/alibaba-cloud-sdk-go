@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,130 +17,140 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeVolumes(request *DescribeVolumesRequest) (response *DescribeVolumesResponse, err error) {
-	response = CreateDescribeVolumesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeVolumesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeVolumesWithChan(request *DescribeVolumesRequest) (<-chan *DescribeVolumesResponse, <-chan error) {
-	responseChan := make(chan *DescribeVolumesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeVolumes(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeVolumesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeVolumes(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeVolumesWithCallback(request *DescribeVolumesRequest, callback func(response *DescribeVolumesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeVolumesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeVolumes(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeVolumesWithCallback(request *DescribeVolumesRequest, callback func(response *DescribeVolumesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeVolumesResponse
+var err error
+defer close(result)
+response, err = client.DescribeVolumes(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeVolumesRequest struct {
-	*requests.RpcRequest
-	EnableAutomatedSnapshotPolicy string `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
-	PageSize                      string `position:"Query" name:"PageSize"`
-	ZoneId                        string `position:"Query" name:"ZoneId"`
-	Tag5Value                     string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key                       string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount          string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId                    string `position:"Query" name:"SnapshotId"`
-	Tag1Key                       string `position:"Query" name:"Tag.1.Key"`
-	Tag1Value                     string `position:"Query" name:"Tag.1.Value"`
-	VolumeIds                     string `position:"Query" name:"VolumeIds"`
-	ResourceOwnerId               string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value                     string `position:"Query" name:"Tag.4.Value"`
-	OwnerAccount                  string `position:"Query" name:"OwnerAccount"`
-	Status                        string `position:"Query" name:"Status"`
-	PageNumber                    string `position:"Query" name:"PageNumber"`
-	OwnerId                       string `position:"Query" name:"OwnerId"`
-	Tag5Key                       string `position:"Query" name:"Tag.5.Key"`
-	LockReason                    string `position:"Query" name:"LockReason"`
-	Category                      string `position:"Query" name:"Category"`
-	Tag2Key                       string `position:"Query" name:"Tag.2.Key"`
-	AutoSnapshotPolicyId          string `position:"Query" name:"AutoSnapshotPolicyId"`
-	Tag3Value                     string `position:"Query" name:"Tag.3.Value"`
-	InstanceId                    string `position:"Query" name:"InstanceId"`
-	Tag4Key                       string `position:"Query" name:"Tag.4.Key"`
-	Tag2Value                     string `position:"Query" name:"Tag.2.Value"`
+*requests.RpcRequest
+                EnableAutomatedSnapshotPolicy  string `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
+                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SnapshotId  string `position:"Query" name:"SnapshotId"`
+                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
+                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
+                VolumeIds  string `position:"Query" name:"VolumeIds"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Status  string `position:"Query" name:"Status"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
+                LockReason  string `position:"Query" name:"LockReason"`
+                Category  string `position:"Query" name:"Category"`
+                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
+                AutoSnapshotPolicyId  string `position:"Query" name:"AutoSnapshotPolicyId"`
+                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
+                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
+                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
 }
 
+
 type DescribeVolumesResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Volumes    []struct {
-		VolumeId                      string `json:"VolumeId" xml:"VolumeId"`
-		RegionId                      string `json:"RegionId" xml:"RegionId"`
-		ZoneId                        string `json:"ZoneId" xml:"ZoneId"`
-		VolumeName                    string `json:"VolumeName" xml:"VolumeName"`
-		Description                   string `json:"Description" xml:"Description"`
-		Category                      string `json:"Category" xml:"Category"`
-		Size                          int    `json:"Size" xml:"Size"`
-		SourceSnapshotId              string `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
-		AutoSnapshotPolicyId          string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-		SnapshotLinkId                string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-		Status                        string `json:"Status" xml:"Status"`
-		EnableAutomatedSnapshotPolicy bool   `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
-		CreationTime                  string `json:"CreationTime" xml:"CreationTime"`
-		VolumeChargeType              string `json:"VolumeChargeType" xml:"VolumeChargeType"`
-		MountInstanceNum              int    `json:"MountInstanceNum" xml:"MountInstanceNum"`
-		Encrypted                     bool   `json:"Encrypted" xml:"Encrypted"`
-		OperationLocks                []struct {
-			LockReason string `json:"LockReason" xml:"LockReason"`
-		} `json:"OperationLocks" xml:"OperationLocks"`
-		MountInstances []struct {
-			InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-			Device       string `json:"Device" xml:"Device"`
-			AttachedTime string `json:"AttachedTime" xml:"AttachedTime"`
-		} `json:"MountInstances" xml:"MountInstances"`
-		Tags []struct {
-			TagKey   string `json:"TagKey" xml:"TagKey"`
-			TagValue string `json:"TagValue" xml:"TagValue"`
-		} `json:"Tags" xml:"Tags"`
-	} `json:"Volumes" xml:"Volumes"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                Volumes struct {
+                    Volume []struct {
+            VolumeId     string `json:"VolumeId" xml:"VolumeId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+            VolumeName     string `json:"VolumeName" xml:"VolumeName"`
+            Description     string `json:"Description" xml:"Description"`
+            Category     string `json:"Category" xml:"Category"`
+            Size     int `json:"Size" xml:"Size"`
+            SourceSnapshotId     string `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
+            AutoSnapshotPolicyId     string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+            SnapshotLinkId     string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
+            Status     string `json:"Status" xml:"Status"`
+            EnableAutomatedSnapshotPolicy     bool `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            VolumeChargeType     string `json:"VolumeChargeType" xml:"VolumeChargeType"`
+            MountInstanceNum     int `json:"MountInstanceNum" xml:"MountInstanceNum"`
+            Encrypted     bool `json:"Encrypted" xml:"Encrypted"`
+                OperationLocks struct {
+                    OperationLock []struct {
+            LockReason     string `json:"LockReason" xml:"LockReason"`
+                    }   `json:"OperationLock" xml:"OperationLock"`
+                } `json:"OperationLocks" xml:"OperationLocks"`
+                MountInstances struct {
+                    MountInstance []struct {
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            Device     string `json:"Device" xml:"Device"`
+            AttachedTime     string `json:"AttachedTime" xml:"AttachedTime"`
+                    }   `json:"MountInstance" xml:"MountInstance"`
+                } `json:"MountInstances" xml:"MountInstances"`
+                Tags struct {
+                    Tag []struct {
+            TagKey     string `json:"TagKey" xml:"TagKey"`
+            TagValue     string `json:"TagValue" xml:"TagValue"`
+                    }   `json:"Tag" xml:"Tag"`
+                } `json:"Tags" xml:"Tags"`
+                    }   `json:"Volume" xml:"Volume"`
+                } `json:"Volumes" xml:"Volumes"`
 }
 
 func CreateDescribeVolumesRequest() (request *DescribeVolumesRequest) {
-	request = &DescribeVolumesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "", "")
-	return
+request = &DescribeVolumesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVolumes", "", "")
+return
 }
 
 func CreateDescribeVolumesResponse() (response *DescribeVolumesResponse) {
-	response = &DescribeVolumesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeVolumesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

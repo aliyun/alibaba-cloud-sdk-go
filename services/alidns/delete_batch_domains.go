@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteBatchDomains(request *DeleteBatchDomainsRequest) (response *DeleteBatchDomainsResponse, err error) {
-	response = CreateDeleteBatchDomainsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteBatchDomainsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequest) (<-chan *DeleteBatchDomainsResponse, <-chan error) {
-	responseChan := make(chan *DeleteBatchDomainsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteBatchDomains(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteBatchDomainsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteBatchDomains(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomainsRequest, callback func(response *DeleteBatchDomainsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteBatchDomainsResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteBatchDomains(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomainsRequest, callback func(response *DeleteBatchDomainsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteBatchDomainsResponse
+var err error
+defer close(result)
+response, err = client.DeleteBatchDomains(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteBatchDomainsRequest struct {
-	*requests.RpcRequest
-	Domains      string `position:"Query" name:"Domains"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                Domains  string `position:"Query" name:"Domains"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DeleteBatchDomainsResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TraceId   string `json:"TraceId" xml:"TraceId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TraceId     string `json:"TraceId" xml:"TraceId"`
 }
 
 func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
-	request = &DeleteBatchDomainsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteBatchDomains", "", "")
-	return
+request = &DeleteBatchDomainsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteBatchDomains", "", "")
+return
 }
 
 func CreateDeleteBatchDomainsResponse() (response *DeleteBatchDomainsResponse) {
-	response = &DeleteBatchDomainsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteBatchDomainsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

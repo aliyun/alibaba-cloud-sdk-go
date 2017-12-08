@@ -1,3 +1,4 @@
+
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CancelPush(request *CancelPushRequest) (response *CancelPushResponse, err error) {
-	response = CreateCancelPushResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCancelPushResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *CancelPushResponse, <-chan error) {
-	responseChan := make(chan *CancelPushResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CancelPush(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CancelPushResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CancelPush(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callback func(response *CancelPushResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CancelPushResponse
-		var err error
-		defer close(result)
-		response, err = client.CancelPush(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callback func(response *CancelPushResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CancelPushResponse
+var err error
+defer close(result)
+response, err = client.CancelPush(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CancelPushRequest struct {
-	*requests.RpcRequest
-	AppKey    string `position:"Query" name:"AppKey"`
-	MessageId string `position:"Query" name:"MessageId"`
+*requests.RpcRequest
+                AppKey  string `position:"Query" name:"AppKey"`
+                MessageId  string `position:"Query" name:"MessageId"`
 }
 
+
 type CancelPushResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCancelPushRequest() (request *CancelPushRequest) {
-	request = &CancelPushRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Push", "2016-08-01", "CancelPush", "", "")
-	return
+request = &CancelPushRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Push", "2016-08-01", "CancelPush", "", "")
+return
 }
 
 func CreateCancelPushResponse() (response *CancelPushResponse) {
-	response = &CancelPushResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CancelPushResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

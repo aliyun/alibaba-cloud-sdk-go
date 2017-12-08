@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,87 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreamsOnlineListRequest) (response *DescribeLiveStreamsOnlineListResponse, err error) {
-	response = CreateDescribeLiveStreamsOnlineListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamsOnlineListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiveStreamsOnlineListRequest) (<-chan *DescribeLiveStreamsOnlineListResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamsOnlineListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamsOnlineList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamsOnlineListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamsOnlineList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *DescribeLiveStreamsOnlineListRequest, callback func(response *DescribeLiveStreamsOnlineListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamsOnlineListResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamsOnlineList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *DescribeLiveStreamsOnlineListRequest, callback func(response *DescribeLiveStreamsOnlineListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamsOnlineListResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamsOnlineList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamsOnlineListRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamsOnlineListResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	OnlineInfo []struct {
-		DomainName  string `json:"DomainName" xml:"DomainName"`
-		AppName     string `json:"AppName" xml:"AppName"`
-		StreamName  string `json:"StreamName" xml:"StreamName"`
-		PublishTime string `json:"PublishTime" xml:"PublishTime"`
-		PublishUrl  string `json:"PublishUrl" xml:"PublishUrl"`
-	} `json:"OnlineInfo" xml:"OnlineInfo"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                OnlineInfo struct {
+                    LiveStreamOnlineInfo []struct {
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            AppName     string `json:"AppName" xml:"AppName"`
+            StreamName     string `json:"StreamName" xml:"StreamName"`
+            PublishTime     string `json:"PublishTime" xml:"PublishTime"`
+            PublishUrl     string `json:"PublishUrl" xml:"PublishUrl"`
+                    }   `json:"LiveStreamOnlineInfo" xml:"LiveStreamOnlineInfo"`
+                } `json:"OnlineInfo" xml:"OnlineInfo"`
 }
 
 func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {
-	request = &DescribeLiveStreamsOnlineListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList", "", "")
-	return
+request = &DescribeLiveStreamsOnlineListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList", "", "")
+return
 }
 
 func CreateDescribeLiveStreamsOnlineListResponse() (response *DescribeLiveStreamsOnlineListResponse) {
-	response = &DescribeLiveStreamsOnlineListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamsOnlineListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

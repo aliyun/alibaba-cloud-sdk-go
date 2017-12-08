@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,109 +17,113 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response *DescribeBackupsResponse, err error) {
-	response = CreateDescribeBackupsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeBackupsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (<-chan *DescribeBackupsResponse, <-chan error) {
-	responseChan := make(chan *DescribeBackupsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeBackups(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeBackupsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeBackups(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsRequest, callback func(response *DescribeBackupsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeBackupsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeBackups(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsRequest, callback func(response *DescribeBackupsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeBackupsResponse
+var err error
+defer close(result)
+response, err = client.DescribeBackups(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeBackupsRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	BackupStatus         string `position:"Query" name:"BackupStatus"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BackupLocation       string `position:"Query" name:"BackupLocation"`
-	BackupId             string `position:"Query" name:"BackupId"`
-	BackupMode           string `position:"Query" name:"BackupMode"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                BackupStatus  string `position:"Query" name:"BackupStatus"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                BackupLocation  string `position:"Query" name:"BackupLocation"`
+                BackupId  string `position:"Query" name:"BackupId"`
+                BackupMode  string `position:"Query" name:"BackupMode"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type DescribeBackupsResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount string `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  string `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int64  `json:"TotalBackupSize" xml:"TotalBackupSize"`
-	Items            []struct {
-		BackupId                  string `json:"BackupId" xml:"BackupId"`
-		DBInstanceId              string `json:"DBInstanceId" xml:"DBInstanceId"`
-		BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
-		BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
-		BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
-		BackupType                string `json:"BackupType" xml:"BackupType"`
-		BackupMode                string `json:"BackupMode" xml:"BackupMode"`
-		BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
-		BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-		BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
-		BackupLocation            string `json:"BackupLocation" xml:"BackupLocation"`
-		BackupExtractionStatus    string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
-		BackupScale               string `json:"BackupScale" xml:"BackupScale"`
-		BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
-		TotalBackupSize           int64  `json:"TotalBackupSize" xml:"TotalBackupSize"`
-		BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
-		HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
-		StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalRecordCount     string `json:"TotalRecordCount" xml:"TotalRecordCount"`
+            PageNumber     string `json:"PageNumber" xml:"PageNumber"`
+            PageRecordCount     string `json:"PageRecordCount" xml:"PageRecordCount"`
+            TotalBackupSize     int64 `json:"TotalBackupSize" xml:"TotalBackupSize"`
+                Items struct {
+                    Backup []struct {
+            BackupId     string `json:"BackupId" xml:"BackupId"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            BackupStatus     string `json:"BackupStatus" xml:"BackupStatus"`
+            BackupStartTime     string `json:"BackupStartTime" xml:"BackupStartTime"`
+            BackupEndTime     string `json:"BackupEndTime" xml:"BackupEndTime"`
+            BackupType     string `json:"BackupType" xml:"BackupType"`
+            BackupMode     string `json:"BackupMode" xml:"BackupMode"`
+            BackupMethod     string `json:"BackupMethod" xml:"BackupMethod"`
+            BackupDownloadURL     string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+            BackupIntranetDownloadURL     string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+            BackupLocation     string `json:"BackupLocation" xml:"BackupLocation"`
+            BackupExtractionStatus     string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
+            BackupScale     string `json:"BackupScale" xml:"BackupScale"`
+            BackupDBNames     string `json:"BackupDBNames" xml:"BackupDBNames"`
+            TotalBackupSize     int64 `json:"TotalBackupSize" xml:"TotalBackupSize"`
+            BackupSize     int64 `json:"BackupSize" xml:"BackupSize"`
+            HostInstanceID     string `json:"HostInstanceID" xml:"HostInstanceID"`
+            StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
+                    }   `json:"Backup" xml:"Backup"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
-	request = &DescribeBackupsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "", "")
-	return
+request = &DescribeBackupsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "", "")
+return
 }
 
 func CreateDescribeBackupsResponse() (response *DescribeBackupsResponse) {
-	response = &DescribeBackupsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeBackupsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,97 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateVolume(request *CreateVolumeRequest) (response *CreateVolumeResponse, err error) {
-	response = CreateCreateVolumeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateVolumeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateVolumeWithChan(request *CreateVolumeRequest) (<-chan *CreateVolumeResponse, <-chan error) {
-	responseChan := make(chan *CreateVolumeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateVolume(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateVolumeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateVolume(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateVolumeWithCallback(request *CreateVolumeRequest, callback func(response *CreateVolumeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateVolumeResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateVolume(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateVolumeWithCallback(request *CreateVolumeRequest, callback func(response *CreateVolumeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateVolumeResponse
+var err error
+defer close(result)
+response, err = client.CreateVolume(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateVolumeRequest struct {
-	*requests.RpcRequest
-	VolumeCategory       string `position:"Query" name:"VolumeCategory"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	VolumeName           string `position:"Query" name:"VolumeName"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	Size                 string `position:"Query" name:"Size"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	VolumeEncrypted      string `position:"Query" name:"VolumeEncrypted"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string `position:"Query" name:"SnapshotId"`
-	Description          string `position:"Query" name:"Description"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+*requests.RpcRequest
+                VolumeCategory  string `position:"Query" name:"VolumeCategory"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                VolumeName  string `position:"Query" name:"VolumeName"`
+                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
+                Size  string `position:"Query" name:"Size"`
+                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
+                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
+                VolumeEncrypted  string `position:"Query" name:"VolumeEncrypted"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SnapshotId  string `position:"Query" name:"SnapshotId"`
+                Description  string `position:"Query" name:"Description"`
+                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
+                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
+                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
+                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
+                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
 }
 
+
 type CreateVolumeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	VolumeId  string `json:"VolumeId" xml:"VolumeId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            VolumeId     string `json:"VolumeId" xml:"VolumeId"`
 }
 
 func CreateCreateVolumeRequest() (request *CreateVolumeRequest) {
-	request = &CreateVolumeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVolume", "", "")
-	return
+request = &CreateVolumeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVolume", "", "")
+return
 }
 
 func CreateCreateVolumeResponse() (response *CreateVolumeResponse) {
-	response = &CreateVolumeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateVolumeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

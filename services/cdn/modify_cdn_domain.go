@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyCdnDomain(request *ModifyCdnDomainRequest) (response *ModifyCdnDomainResponse, err error) {
-	response = CreateModifyCdnDomainResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyCdnDomainResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyCdnDomainWithChan(request *ModifyCdnDomainRequest) (<-chan *ModifyCdnDomainResponse, <-chan error) {
-	responseChan := make(chan *ModifyCdnDomainResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyCdnDomain(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyCdnDomainResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyCdnDomain(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainRequest, callback func(response *ModifyCdnDomainResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyCdnDomainResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyCdnDomain(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainRequest, callback func(response *ModifyCdnDomainResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyCdnDomainResponse
+var err error
+defer close(result)
+response, err = client.ModifyCdnDomain(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyCdnDomainRequest struct {
-	*requests.RpcRequest
-	Priorities      string `position:"Query" name:"Priorities"`
-	TopLevelDomain  string `position:"Query" name:"TopLevelDomain"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	SourceType      string `position:"Query" name:"SourceType"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	Sources         string `position:"Query" name:"Sources"`
-	SourcePort      string `position:"Query" name:"SourcePort"`
+*requests.RpcRequest
+                Priorities  string `position:"Query" name:"Priorities"`
+                TopLevelDomain  string `position:"Query" name:"TopLevelDomain"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+                SourceType  string `position:"Query" name:"SourceType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
+                Sources  string `position:"Query" name:"Sources"`
+                SourcePort  string `position:"Query" name:"SourcePort"`
 }
 
+
 type ModifyCdnDomainResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyCdnDomainRequest() (request *ModifyCdnDomainRequest) {
-	request = &ModifyCdnDomainRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyCdnDomain", "", "")
-	return
+request = &ModifyCdnDomainRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyCdnDomain", "", "")
+return
 }
 
 func CreateModifyCdnDomainResponse() (response *ModifyCdnDomainResponse) {
-	response = &ModifyCdnDomainResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyCdnDomainResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

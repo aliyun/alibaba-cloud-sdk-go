@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachClassicLinkVpc(request *AttachClassicLinkVpcRequest) (response *AttachClassicLinkVpcResponse, err error) {
-	response = CreateAttachClassicLinkVpcResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAttachClassicLinkVpcResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AttachClassicLinkVpcWithChan(request *AttachClassicLinkVpcRequest) (<-chan *AttachClassicLinkVpcResponse, <-chan error) {
-	responseChan := make(chan *AttachClassicLinkVpcResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AttachClassicLinkVpc(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AttachClassicLinkVpcResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AttachClassicLinkVpc(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLinkVpcRequest, callback func(response *AttachClassicLinkVpcResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AttachClassicLinkVpcResponse
-		var err error
-		defer close(result)
-		response, err = client.AttachClassicLinkVpc(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLinkVpcRequest, callback func(response *AttachClassicLinkVpcResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AttachClassicLinkVpcResponse
+var err error
+defer close(result)
+response, err = client.AttachClassicLinkVpc(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AttachClassicLinkVpcRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                VpcId  string `position:"Query" name:"VpcId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type AttachClassicLinkVpcResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) {
-	request = &AttachClassicLinkVpcRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachClassicLinkVpc", "", "")
-	return
+request = &AttachClassicLinkVpcRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "AttachClassicLinkVpc", "", "")
+return
 }
 
 func CreateAttachClassicLinkVpcResponse() (response *AttachClassicLinkVpcResponse) {
-	response = &AttachClassicLinkVpcResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AttachClassicLinkVpcResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

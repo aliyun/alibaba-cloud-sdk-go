@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SubmitCensorJob(request *SubmitCensorJobRequest) (response *SubmitCensorJobResponse, err error) {
-	response = CreateSubmitCensorJobResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSubmitCensorJobResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (<-chan *SubmitCensorJobResponse, <-chan error) {
-	responseChan := make(chan *SubmitCensorJobResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SubmitCensorJob(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SubmitCensorJobResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SubmitCensorJob(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobRequest, callback func(response *SubmitCensorJobResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SubmitCensorJobResponse
-		var err error
-		defer close(result)
-		response, err = client.SubmitCensorJob(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobRequest, callback func(response *SubmitCensorJobResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SubmitCensorJobResponse
+var err error
+defer close(result)
+response, err = client.SubmitCensorJob(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SubmitCensorJobRequest struct {
-	*requests.RpcRequest
-	UserData             string `position:"Query" name:"UserData"`
-	Input                string `position:"Query" name:"Input"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	CensorConfig         string `position:"Query" name:"CensorConfig"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                UserData  string `position:"Query" name:"UserData"`
+                Input  string `position:"Query" name:"Input"`
+                PipelineId  string `position:"Query" name:"PipelineId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                CensorConfig  string `position:"Query" name:"CensorConfig"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type SubmitCensorJobResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
-	request = &SubmitCensorJobRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCensorJob", "", "")
-	return
+request = &SubmitCensorJobRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCensorJob", "", "")
+return
 }
 
 func CreateSubmitCensorJobResponse() (response *SubmitCensorJobResponse) {
-	response = &SubmitCensorJobResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SubmitCensorJobResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

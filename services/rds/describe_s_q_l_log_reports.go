@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,96 +17,104 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSQLLogReports(request *DescribeSQLLogReportsRequest) (response *DescribeSQLLogReportsResponse, err error) {
-	response = CreateDescribeSQLLogReportsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeSQLLogReportsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeSQLLogReportsWithChan(request *DescribeSQLLogReportsRequest) (<-chan *DescribeSQLLogReportsResponse, <-chan error) {
-	responseChan := make(chan *DescribeSQLLogReportsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeSQLLogReports(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeSQLLogReportsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeSQLLogReports(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeSQLLogReportsWithCallback(request *DescribeSQLLogReportsRequest, callback func(response *DescribeSQLLogReportsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeSQLLogReportsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeSQLLogReports(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeSQLLogReportsWithCallback(request *DescribeSQLLogReportsRequest, callback func(response *DescribeSQLLogReportsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeSQLLogReportsResponse
+var err error
+defer close(result)
+response, err = client.DescribeSQLLogReports(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeSQLLogReportsRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeSQLLogReportsResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            []struct {
-		ReportTime       string `json:"ReportTime" xml:"ReportTime"`
-		LatencyTopNItems []struct {
-			SQLText         string `json:"SQLText" xml:"SQLText"`
-			AvgLatency      int64  `json:"AvgLatency" xml:"AvgLatency"`
-			SQLExecuteTimes int64  `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
-		} `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
-		QPSTopNItems []struct {
-			SQLText         string `json:"SQLText" xml:"SQLText"`
-			SQLExecuteTimes int64  `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
-		} `json:"QPSTopNItems" xml:"QPSTopNItems"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalRecordCount     int `json:"TotalRecordCount" xml:"TotalRecordCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
+                Items struct {
+                    Item []struct {
+            ReportTime     string `json:"ReportTime" xml:"ReportTime"`
+                LatencyTopNItems struct {
+                    LatencyTopNItem []struct {
+            SQLText     string `json:"SQLText" xml:"SQLText"`
+            AvgLatency     int64 `json:"AvgLatency" xml:"AvgLatency"`
+            SQLExecuteTimes     int64 `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
+                    }   `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
+                } `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+                QPSTopNItems struct {
+                    QPSTopNItem []struct {
+            SQLText     string `json:"SQLText" xml:"SQLText"`
+            SQLExecuteTimes     int64 `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
+                    }   `json:"QPSTopNItem" xml:"QPSTopNItem"`
+                } `json:"QPSTopNItems" xml:"QPSTopNItems"`
+                    }   `json:"Item" xml:"Item"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLLogReportsRequest() (request *DescribeSQLLogReportsRequest) {
-	request = &DescribeSQLLogReportsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogReports", "", "")
-	return
+request = &DescribeSQLLogReportsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogReports", "", "")
+return
 }
 
 func CreateDescribeSQLLogReportsResponse() (response *DescribeSQLLogReportsResponse) {
-	response = &DescribeSQLLogReportsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeSQLLogReportsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

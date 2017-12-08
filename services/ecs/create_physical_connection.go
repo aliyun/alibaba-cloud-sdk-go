@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,89 +17,91 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreatePhysicalConnection(request *CreatePhysicalConnectionRequest) (response *CreatePhysicalConnectionResponse, err error) {
-	response = CreateCreatePhysicalConnectionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreatePhysicalConnectionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreatePhysicalConnectionWithChan(request *CreatePhysicalConnectionRequest) (<-chan *CreatePhysicalConnectionResponse, <-chan error) {
-	responseChan := make(chan *CreatePhysicalConnectionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreatePhysicalConnection(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreatePhysicalConnectionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreatePhysicalConnection(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreatePhysicalConnectionWithCallback(request *CreatePhysicalConnectionRequest, callback func(response *CreatePhysicalConnectionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreatePhysicalConnectionResponse
-		var err error
-		defer close(result)
-		response, err = client.CreatePhysicalConnection(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreatePhysicalConnectionWithCallback(request *CreatePhysicalConnectionRequest, callback func(response *CreatePhysicalConnectionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreatePhysicalConnectionResponse
+var err error
+defer close(result)
+response, err = client.CreatePhysicalConnection(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreatePhysicalConnectionRequest struct {
-	*requests.RpcRequest
-	PeerLocation                  string `position:"Query" name:"PeerLocation"`
-	ClientToken                   string `position:"Query" name:"ClientToken"`
-	UserCidr                      string `position:"Query" name:"UserCidr"`
-	AccessPointId                 string `position:"Query" name:"AccessPointId"`
-	RedundantPhysicalConnectionId string `position:"Query" name:"RedundantPhysicalConnectionId"`
-	OwnerId                       string `position:"Query" name:"OwnerId"`
-	Type                          string `position:"Query" name:"Type"`
-	Bandwidth                     string `position:"Query" name:"bandwidth"`
-	LineOperator                  string `position:"Query" name:"LineOperator"`
-	CircuitCode                   string `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string `position:"Query" name:"ResourceOwnerAccount"`
-	Description                   string `position:"Query" name:"Description"`
-	PortType                      string `position:"Query" name:"PortType"`
-	Name                          string `position:"Query" name:"Name"`
-	ResourceOwnerId               string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                  string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                PeerLocation  string `position:"Query" name:"PeerLocation"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                UserCidr  string `position:"Query" name:"UserCidr"`
+                AccessPointId  string `position:"Query" name:"AccessPointId"`
+                RedundantPhysicalConnectionId  string `position:"Query" name:"RedundantPhysicalConnectionId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Type  string `position:"Query" name:"Type"`
+                Bandwidth  string `position:"Query" name:"bandwidth"`
+                LineOperator  string `position:"Query" name:"LineOperator"`
+                CircuitCode  string `position:"Query" name:"CircuitCode"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                PortType  string `position:"Query" name:"PortType"`
+                Name  string `position:"Query" name:"Name"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type CreatePhysicalConnectionResponse struct {
-	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	PhysicalConnectionId string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PhysicalConnectionId     string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
 }
 
 func CreateCreatePhysicalConnectionRequest() (request *CreatePhysicalConnectionRequest) {
-	request = &CreatePhysicalConnectionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreatePhysicalConnection", "", "")
-	return
+request = &CreatePhysicalConnectionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreatePhysicalConnection", "", "")
+return
 }
 
 func CreateCreatePhysicalConnectionResponse() (response *CreatePhysicalConnectionResponse) {
-	response = &CreatePhysicalConnectionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreatePhysicalConnectionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

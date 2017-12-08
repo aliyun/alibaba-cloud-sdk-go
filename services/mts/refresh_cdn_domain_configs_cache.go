@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,85 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConfigsCacheRequest) (response *RefreshCdnDomainConfigsCacheResponse, err error) {
-	response = CreateRefreshCdnDomainConfigsCacheResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRefreshCdnDomainConfigsCacheResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDomainConfigsCacheRequest) (<-chan *RefreshCdnDomainConfigsCacheResponse, <-chan error) {
-	responseChan := make(chan *RefreshCdnDomainConfigsCacheResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RefreshCdnDomainConfigsCache(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RefreshCdnDomainConfigsCacheResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RefreshCdnDomainConfigsCache(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshCdnDomainConfigsCacheRequest, callback func(response *RefreshCdnDomainConfigsCacheResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RefreshCdnDomainConfigsCacheResponse
-		var err error
-		defer close(result)
-		response, err = client.RefreshCdnDomainConfigsCache(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshCdnDomainConfigsCacheRequest, callback func(response *RefreshCdnDomainConfigsCacheResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RefreshCdnDomainConfigsCacheResponse
+var err error
+defer close(result)
+response, err = client.RefreshCdnDomainConfigsCache(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RefreshCdnDomainConfigsCacheRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Domains              string `position:"Query" name:"Domains"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Domains  string `position:"Query" name:"Domains"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type RefreshCdnDomainConfigsCacheResponse struct {
-	*responses.BaseResponse
-	RequestId     string   `json:"RequestId" xml:"RequestId"`
-	SucessDomains []string `json:"SucessDomains" xml:"SucessDomains"`
-	FailedDomains []string `json:"FailedDomains" xml:"FailedDomains"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                SucessDomains struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"SucessDomains" xml:"SucessDomains"`
+                FailedDomains struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"FailedDomains" xml:"FailedDomains"`
 }
 
 func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfigsCacheRequest) {
-	request = &RefreshCdnDomainConfigsCacheRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "", "")
-	return
+request = &RefreshCdnDomainConfigsCacheRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "", "")
+return
 }
 
 func CreateRefreshCdnDomainConfigsCacheResponse() (response *RefreshCdnDomainConfigsCacheResponse) {
-	response = &RefreshCdnDomainConfigsCacheResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RefreshCdnDomainConfigsCacheResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (response *UploadCACertificateResponse, err error) {
-	response = CreateUploadCACertificateResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUploadCACertificateResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRequest) (<-chan *UploadCACertificateResponse, <-chan error) {
-	responseChan := make(chan *UploadCACertificateResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UploadCACertificate(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UploadCACertificateResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UploadCACertificate(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UploadCACertificateWithCallback(request *UploadCACertificateRequest, callback func(response *UploadCACertificateResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UploadCACertificateResponse
-		var err error
-		defer close(result)
-		response, err = client.UploadCACertificate(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UploadCACertificateWithCallback(request *UploadCACertificateRequest, callback func(response *UploadCACertificateResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UploadCACertificateResponse
+var err error
+defer close(result)
+response, err = client.UploadCACertificate(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UploadCACertificateRequest struct {
-	*requests.RpcRequest
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	CACertificateName    string `position:"Query" name:"CACertificateName"`
-	CACertificate        string `position:"Query" name:"CACertificate"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                CACertificateName  string `position:"Query" name:"CACertificateName"`
+                CACertificate  string `position:"Query" name:"CACertificate"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type UploadCACertificateResponse struct {
-	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
-	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
-	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp   int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            CACertificateId     string `json:"CACertificateId" xml:"CACertificateId"`
+            CACertificateName     string `json:"CACertificateName" xml:"CACertificateName"`
+            Fingerprint     string `json:"Fingerprint" xml:"Fingerprint"`
+            ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            CreateTimeStamp     int64 `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
 func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
-	request = &UploadCACertificateRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "", "")
-	return
+request = &UploadCACertificateRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "", "")
+return
 }
 
 func CreateUploadCACertificateResponse() (response *UploadCACertificateResponse) {
-	response = &UploadCACertificateResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UploadCACertificateResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,101 +17,107 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBandwidthPackagesRequest) (response *DescribeCommonBandwidthPackagesResponse, err error) {
-	response = CreateDescribeCommonBandwidthPackagesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeCommonBandwidthPackagesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeCommonBandwidthPackagesRequest) (<-chan *DescribeCommonBandwidthPackagesResponse, <-chan error) {
-	responseChan := make(chan *DescribeCommonBandwidthPackagesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeCommonBandwidthPackages(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeCommonBandwidthPackagesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeCommonBandwidthPackages(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *DescribeCommonBandwidthPackagesRequest, callback func(response *DescribeCommonBandwidthPackagesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeCommonBandwidthPackagesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeCommonBandwidthPackages(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *DescribeCommonBandwidthPackagesRequest, callback func(response *DescribeCommonBandwidthPackagesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeCommonBandwidthPackagesResponse
+var err error
+defer close(result)
+response, err = client.DescribeCommonBandwidthPackages(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeCommonBandwidthPackagesRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                Name  string `position:"Query" name:"Name"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                BandwidthPackageId  string `position:"Query" name:"BandwidthPackageId"`
 }
 
+
 type DescribeCommonBandwidthPackagesResponse struct {
-	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	TotalCount              int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber              int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize                int    `json:"PageSize" xml:"PageSize"`
-	CommonBandwidthPackages []struct {
-		BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-		RegionId           string `json:"RegionId" xml:"RegionId"`
-		Name               string `json:"Name" xml:"Name"`
-		Description        string `json:"Description" xml:"Description"`
-		Bandwidth          string `json:"Bandwidth" xml:"Bandwidth"`
-		InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-		InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-		BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
-		CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-		ExpiredTime        string `json:"ExpiredTime" xml:"ExpiredTime"`
-		Status             string `json:"Status" xml:"Status"`
-		Ratio              int    `json:"Ratio" xml:"Ratio"`
-		PublicIpAddresses  []struct {
-			AllocationId string `json:"AllocationId" xml:"AllocationId"`
-			IpAddress    string `json:"IpAddress" xml:"IpAddress"`
-		} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
-	} `json:"CommonBandwidthPackages" xml:"CommonBandwidthPackages"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                CommonBandwidthPackages struct {
+                    CommonBandwidthPackage []struct {
+            BandwidthPackageId     string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            Name     string `json:"Name" xml:"Name"`
+            Description     string `json:"Description" xml:"Description"`
+            Bandwidth     string `json:"Bandwidth" xml:"Bandwidth"`
+            InstanceChargeType     string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+            InternetChargeType     string `json:"InternetChargeType" xml:"InternetChargeType"`
+            BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
+            Status     string `json:"Status" xml:"Status"`
+            Ratio     int `json:"Ratio" xml:"Ratio"`
+                PublicIpAddresses struct {
+                    PublicIpAddresse []struct {
+            AllocationId     string `json:"AllocationId" xml:"AllocationId"`
+            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
+                    }   `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
+                } `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+                    }   `json:"CommonBandwidthPackage" xml:"CommonBandwidthPackage"`
+                } `json:"CommonBandwidthPackages" xml:"CommonBandwidthPackages"`
 }
 
 func CreateDescribeCommonBandwidthPackagesRequest() (request *DescribeCommonBandwidthPackagesRequest) {
-	request = &DescribeCommonBandwidthPackagesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "", "")
-	return
+request = &DescribeCommonBandwidthPackagesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "", "")
+return
 }
 
 func CreateDescribeCommonBandwidthPackagesResponse() (response *DescribeCommonBandwidthPackagesResponse) {
-	response = &DescribeCommonBandwidthPackagesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeCommonBandwidthPackagesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

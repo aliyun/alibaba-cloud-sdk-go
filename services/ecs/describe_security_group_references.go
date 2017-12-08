@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,90 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSecurityGroupReferences(request *DescribeSecurityGroupReferencesRequest) (response *DescribeSecurityGroupReferencesResponse, err error) {
-	response = CreateDescribeSecurityGroupReferencesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeSecurityGroupReferencesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeSecurityGroupReferencesWithChan(request *DescribeSecurityGroupReferencesRequest) (<-chan *DescribeSecurityGroupReferencesResponse, <-chan error) {
-	responseChan := make(chan *DescribeSecurityGroupReferencesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeSecurityGroupReferences(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeSecurityGroupReferencesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeSecurityGroupReferences(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *DescribeSecurityGroupReferencesRequest, callback func(response *DescribeSecurityGroupReferencesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeSecurityGroupReferencesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeSecurityGroupReferences(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *DescribeSecurityGroupReferencesRequest, callback func(response *DescribeSecurityGroupReferencesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeSecurityGroupReferencesResponse
+var err error
+defer close(result)
+response, err = client.DescribeSecurityGroupReferences(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeSecurityGroupReferencesRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      *[]string `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SecurityGroupId  *[]string `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type DescribeSecurityGroupReferencesResponse struct {
-	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	SecurityGroupReferences []struct {
-		SecurityGroupId           string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-		ReferencingSecurityGroups []struct {
-			AliUid          string `json:"AliUid" xml:"AliUid"`
-			SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-		} `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
-	} `json:"SecurityGroupReferences" xml:"SecurityGroupReferences"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                SecurityGroupReferences struct {
+                    SecurityGroupReference []struct {
+            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+                ReferencingSecurityGroups struct {
+                    ReferencingSecurityGroup []struct {
+            AliUid     string `json:"AliUid" xml:"AliUid"`
+            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+                    }   `json:"ReferencingSecurityGroup" xml:"ReferencingSecurityGroup"`
+                } `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
+                    }   `json:"SecurityGroupReference" xml:"SecurityGroupReference"`
+                } `json:"SecurityGroupReferences" xml:"SecurityGroupReferences"`
 }
 
 func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGroupReferencesRequest) {
-	request = &DescribeSecurityGroupReferencesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "", "")
-	return
+request = &DescribeSecurityGroupReferencesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "", "")
+return
 }
 
 func CreateDescribeSecurityGroupReferencesResponse() (response *DescribeSecurityGroupReferencesResponse) {
-	response = &DescribeSecurityGroupReferencesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeSecurityGroupReferencesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

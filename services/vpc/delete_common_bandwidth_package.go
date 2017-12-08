@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidthPackageRequest) (response *DeleteCommonBandwidthPackageResponse, err error) {
-	response = CreateDeleteCommonBandwidthPackageResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteCommonBandwidthPackageResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommonBandwidthPackageRequest) (<-chan *DeleteCommonBandwidthPackageResponse, <-chan error) {
-	responseChan := make(chan *DeleteCommonBandwidthPackageResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteCommonBandwidthPackage(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteCommonBandwidthPackageResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteCommonBandwidthPackage(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCommonBandwidthPackageRequest, callback func(response *DeleteCommonBandwidthPackageResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteCommonBandwidthPackageResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteCommonBandwidthPackage(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCommonBandwidthPackageRequest, callback func(response *DeleteCommonBandwidthPackageResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteCommonBandwidthPackageResponse
+var err error
+defer close(result)
+response, err = client.DeleteCommonBandwidthPackage(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteCommonBandwidthPackageRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string `position:"Query" name:"Force"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Force  string `position:"Query" name:"Force"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                BandwidthPackageId  string `position:"Query" name:"BandwidthPackageId"`
 }
 
+
 type DeleteCommonBandwidthPackageResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidthPackageRequest) {
-	request = &DeleteCommonBandwidthPackageRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteCommonBandwidthPackage", "", "")
-	return
+request = &DeleteCommonBandwidthPackageRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteCommonBandwidthPackage", "", "")
+return
 }
 
 func CreateDeleteCommonBandwidthPackageResponse() (response *DeleteCommonBandwidthPackageResponse) {
-	response = &DeleteCommonBandwidthPackageResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteCommonBandwidthPackageResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

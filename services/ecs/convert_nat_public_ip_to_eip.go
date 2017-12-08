@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ConvertNatPublicIpToEip(request *ConvertNatPublicIpToEipRequest) (response *ConvertNatPublicIpToEipResponse, err error) {
-	response = CreateConvertNatPublicIpToEipResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateConvertNatPublicIpToEipResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ConvertNatPublicIpToEipWithChan(request *ConvertNatPublicIpToEipRequest) (<-chan *ConvertNatPublicIpToEipResponse, <-chan error) {
-	responseChan := make(chan *ConvertNatPublicIpToEipResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ConvertNatPublicIpToEip(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ConvertNatPublicIpToEipResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ConvertNatPublicIpToEip(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPublicIpToEipRequest, callback func(response *ConvertNatPublicIpToEipResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ConvertNatPublicIpToEipResponse
-		var err error
-		defer close(result)
-		response, err = client.ConvertNatPublicIpToEip(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPublicIpToEipRequest, callback func(response *ConvertNatPublicIpToEipResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ConvertNatPublicIpToEipResponse
+var err error
+defer close(result)
+response, err = client.ConvertNatPublicIpToEip(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ConvertNatPublicIpToEipRequest struct {
-	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type ConvertNatPublicIpToEipResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipRequest) {
-	request = &ConvertNatPublicIpToEipRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "", "")
-	return
+request = &ConvertNatPublicIpToEipRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "", "")
+return
 }
 
 func CreateConvertNatPublicIpToEipResponse() (response *ConvertNatPublicIpToEipResponse) {
-	response = &ConvertNatPublicIpToEipResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ConvertNatPublicIpToEipResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

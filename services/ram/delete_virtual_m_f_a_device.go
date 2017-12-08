@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,73 +17,75 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequest) (response *DeleteVirtualMFADeviceResponse, err error) {
-	response = CreateDeleteVirtualMFADeviceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteVirtualMFADeviceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADeviceRequest) (<-chan *DeleteVirtualMFADeviceResponse, <-chan error) {
-	responseChan := make(chan *DeleteVirtualMFADeviceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteVirtualMFADevice(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteVirtualMFADeviceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteVirtualMFADevice(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualMFADeviceRequest, callback func(response *DeleteVirtualMFADeviceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteVirtualMFADeviceResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteVirtualMFADevice(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualMFADeviceRequest, callback func(response *DeleteVirtualMFADeviceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteVirtualMFADeviceResponse
+var err error
+defer close(result)
+response, err = client.DeleteVirtualMFADevice(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteVirtualMFADeviceRequest struct {
-	*requests.RpcRequest
-	SerialNumber string `position:"Query" name:"SerialNumber"`
+*requests.RpcRequest
+                SerialNumber  string `position:"Query" name:"SerialNumber"`
 }
 
+
 type DeleteVirtualMFADeviceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceRequest) {
-	request = &DeleteVirtualMFADeviceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteVirtualMFADevice", "", "")
-	return
+request = &DeleteVirtualMFADeviceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "DeleteVirtualMFADevice", "", "")
+return
 }
 
 func CreateDeleteVirtualMFADeviceResponse() (response *DeleteVirtualMFADeviceResponse) {
-	response = &DeleteVirtualMFADeviceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteVirtualMFADeviceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

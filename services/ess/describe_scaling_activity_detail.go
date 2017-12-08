@@ -1,3 +1,4 @@
+
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeScalingActivityDetail(request *DescribeScalingActivityDetailRequest) (response *DescribeScalingActivityDetailResponse, err error) {
-	response = CreateDescribeScalingActivityDetailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeScalingActivityDetailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeScalingActivityDetailWithChan(request *DescribeScalingActivityDetailRequest) (<-chan *DescribeScalingActivityDetailResponse, <-chan error) {
-	responseChan := make(chan *DescribeScalingActivityDetailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeScalingActivityDetail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeScalingActivityDetailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeScalingActivityDetail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeScalingActivityDetailWithCallback(request *DescribeScalingActivityDetailRequest, callback func(response *DescribeScalingActivityDetailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeScalingActivityDetailResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeScalingActivityDetail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeScalingActivityDetailWithCallback(request *DescribeScalingActivityDetailRequest, callback func(response *DescribeScalingActivityDetailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeScalingActivityDetailResponse
+var err error
+defer close(result)
+response, err = client.DescribeScalingActivityDetail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeScalingActivityDetailRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingActivityId    string `position:"Query" name:"ScalingActivityId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ScalingActivityId  string `position:"Query" name:"ScalingActivityId"`
 }
 
+
 type DescribeScalingActivityDetailResponse struct {
-	*responses.BaseResponse
-	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
-	Detail            string `json:"Detail" xml:"Detail"`
+*responses.BaseResponse
+            ScalingActivityId     string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+            Detail     string `json:"Detail" xml:"Detail"`
 }
 
 func CreateDescribeScalingActivityDetailRequest() (request *DescribeScalingActivityDetailRequest) {
-	request = &DescribeScalingActivityDetailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ess", "2016-07-22", "DescribeScalingActivityDetail", "", "")
-	return
+request = &DescribeScalingActivityDetailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivityDetail", "", "")
+return
 }
 
 func CreateDescribeScalingActivityDetailResponse() (response *DescribeScalingActivityDetailResponse) {
-	response = &DescribeScalingActivityDetailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeScalingActivityDetailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRequest) (response *AllocatePublicIpAddressResponse, err error) {
-	response = CreateAllocatePublicIpAddressResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAllocatePublicIpAddressResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpAddressRequest) (<-chan *AllocatePublicIpAddressResponse, <-chan error) {
-	responseChan := make(chan *AllocatePublicIpAddressResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AllocatePublicIpAddress(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AllocatePublicIpAddressResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AllocatePublicIpAddress(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePublicIpAddressRequest, callback func(response *AllocatePublicIpAddressResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AllocatePublicIpAddressResponse
-		var err error
-		defer close(result)
-		response, err = client.AllocatePublicIpAddress(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePublicIpAddressRequest, callback func(response *AllocatePublicIpAddressResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AllocatePublicIpAddressResponse
+var err error
+defer close(result)
+response, err = client.AllocatePublicIpAddress(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AllocatePublicIpAddressRequest struct {
-	*requests.RpcRequest
-	VlanId               string `position:"Query" name:"VlanId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	IpAddress            string `position:"Query" name:"IpAddress"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                VlanId  string `position:"Query" name:"VlanId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                IpAddress  string `position:"Query" name:"IpAddress"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type AllocatePublicIpAddressResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	IpAddress string `json:"IpAddress" xml:"IpAddress"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
 }
 
 func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressRequest) {
-	request = &AllocatePublicIpAddressRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "", "")
-	return
+request = &AllocatePublicIpAddressRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "", "")
+return
 }
 
 func CreateAllocatePublicIpAddressResponse() (response *AllocatePublicIpAddressResponse) {
-	response = &AllocatePublicIpAddressResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AllocatePublicIpAddressResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

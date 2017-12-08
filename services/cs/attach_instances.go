@@ -1,3 +1,4 @@
+
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,72 +17,74 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachInstances(request *AttachInstancesRequest) (response *AttachInstancesResponse, err error) {
-	response = CreateAttachInstancesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAttachInstancesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (<-chan *AttachInstancesResponse, <-chan error) {
-	responseChan := make(chan *AttachInstancesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AttachInstances(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AttachInstancesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AttachInstances(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AttachInstancesWithCallback(request *AttachInstancesRequest, callback func(response *AttachInstancesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AttachInstancesResponse
-		var err error
-		defer close(result)
-		response, err = client.AttachInstances(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AttachInstancesWithCallback(request *AttachInstancesRequest, callback func(response *AttachInstancesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AttachInstancesResponse
+var err error
+defer close(result)
+response, err = client.AttachInstances(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AttachInstancesRequest struct {
-	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+*requests.RoaRequest
+                ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
+
 type AttachInstancesResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
-	request = &AttachInstancesRequest{
-		RoaRequest: &requests.RoaRequest{},
-	}
-	request.InitWithApiInfo("CS", "2015-12-15", "AttachInstances", "/clusters/[ClusterId]/attach", "", "")
-	return
+request = &AttachInstancesRequest{
+RoaRequest: &requests.RoaRequest{},
+}
+request.InitWithApiInfo("CS", "2015-12-15", "AttachInstances", "/clusters/[ClusterId]/attach", "", "")
+return
 }
 
 func CreateAttachInstancesResponse() (response *AttachInstancesResponse) {
-	response = &AttachInstancesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AttachInstancesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamPushErrors(request *DescribeLiveStreamPushErrorsRequest) (response *DescribeLiveStreamPushErrorsResponse, err error) {
-	response = CreateDescribeLiveStreamPushErrorsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamPushErrorsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamPushErrorsWithChan(request *DescribeLiveStreamPushErrorsRequest) (<-chan *DescribeLiveStreamPushErrorsResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamPushErrorsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamPushErrors(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamPushErrorsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamPushErrors(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamPushErrorsWithCallback(request *DescribeLiveStreamPushErrorsRequest, callback func(response *DescribeLiveStreamPushErrorsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamPushErrorsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamPushErrors(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamPushErrorsWithCallback(request *DescribeLiveStreamPushErrorsRequest, callback func(response *DescribeLiveStreamPushErrorsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamPushErrorsResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamPushErrors(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamPushErrorsRequest struct {
-	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamPushErrorsResponse struct {
-	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	PushErrorsModelList []struct {
-		ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	} `json:"PushErrorsModelList" xml:"PushErrorsModelList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                PushErrorsModelList struct {
+                    PushErrorsModel []struct {
+            ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
+                    }   `json:"PushErrorsModel" xml:"PushErrorsModel"`
+                } `json:"PushErrorsModelList" xml:"PushErrorsModelList"`
 }
 
 func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPushErrorsRequest) {
-	request = &DescribeLiveStreamPushErrorsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors", "", "")
-	return
+request = &DescribeLiveStreamPushErrorsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors", "", "")
+return
 }
 
 func CreateDescribeLiveStreamPushErrorsResponse() (response *DescribeLiveStreamPushErrorsResponse) {
-	response = &DescribeLiveStreamPushErrorsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamPushErrorsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

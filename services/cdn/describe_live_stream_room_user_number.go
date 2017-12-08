@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,90 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamRoomUserNumber(request *DescribeLiveStreamRoomUserNumberRequest) (response *DescribeLiveStreamRoomUserNumberResponse, err error) {
-	response = CreateDescribeLiveStreamRoomUserNumberResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamRoomUserNumberResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamRoomUserNumberWithChan(request *DescribeLiveStreamRoomUserNumberRequest) (<-chan *DescribeLiveStreamRoomUserNumberResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamRoomUserNumberResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamRoomUserNumber(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamRoomUserNumberResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamRoomUserNumber(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamRoomUserNumberWithCallback(request *DescribeLiveStreamRoomUserNumberRequest, callback func(response *DescribeLiveStreamRoomUserNumberResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamRoomUserNumberResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamRoomUserNumber(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamRoomUserNumberWithCallback(request *DescribeLiveStreamRoomUserNumberRequest, callback func(response *DescribeLiveStreamRoomUserNumberResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamRoomUserNumberResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamRoomUserNumber(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamRoomUserNumberRequest struct {
-	*requests.RpcRequest
-	HlsSwitch     string `position:"Query" name:"HlsSwitch"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                HlsSwitch  string `position:"Query" name:"HlsSwitch"`
+                EndTime  string `position:"Query" name:"EndTime"`
+                StreamName  string `position:"Query" name:"StreamName"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamRoomUserNumberResponse struct {
-	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int64  `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  []struct {
-		StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
-		UserNumber int64  `json:"UserNumber" xml:"UserNumber"`
-		Time       string `json:"Time" xml:"Time"`
-	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalUserNumber     int64 `json:"TotalUserNumber" xml:"TotalUserNumber"`
+                OnlineUserInfo struct {
+                    LiveStreamOnlineUserNumInfo []struct {
+            StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
+            UserNumber     int64 `json:"UserNumber" xml:"UserNumber"`
+            Time     string `json:"Time" xml:"Time"`
+                    }   `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
+                } `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamRoomUserNumberRequest() (request *DescribeLiveStreamRoomUserNumberRequest) {
-	request = &DescribeLiveStreamRoomUserNumberRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomUserNumber", "", "")
-	return
+request = &DescribeLiveStreamRoomUserNumberRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomUserNumber", "", "")
+return
 }
 
 func CreateDescribeLiveStreamRoomUserNumberResponse() (response *DescribeLiveStreamRoomUserNumberResponse) {
-	response = &DescribeLiveStreamRoomUserNumberResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamRoomUserNumberResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

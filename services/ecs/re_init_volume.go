@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ReInitVolume(request *ReInitVolumeRequest) (response *ReInitVolumeResponse, err error) {
-	response = CreateReInitVolumeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateReInitVolumeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ReInitVolumeWithChan(request *ReInitVolumeRequest) (<-chan *ReInitVolumeResponse, <-chan error) {
-	responseChan := make(chan *ReInitVolumeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ReInitVolume(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ReInitVolumeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ReInitVolume(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ReInitVolumeWithCallback(request *ReInitVolumeRequest, callback func(response *ReInitVolumeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ReInitVolumeResponse
-		var err error
-		defer close(result)
-		response, err = client.ReInitVolume(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ReInitVolumeWithCallback(request *ReInitVolumeRequest, callback func(response *ReInitVolumeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ReInitVolumeResponse
+var err error
+defer close(result)
+response, err = client.ReInitVolume(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ReInitVolumeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Password             string `position:"Query" name:"Password"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                VolumeId  string `position:"Query" name:"VolumeId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Password  string `position:"Query" name:"Password"`
 }
 
+
 type ReInitVolumeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateReInitVolumeRequest() (request *ReInitVolumeRequest) {
-	request = &ReInitVolumeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume", "", "")
-	return
+request = &ReInitVolumeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume", "", "")
+return
 }
 
 func CreateReInitVolumeResponse() (response *ReInitVolumeResponse) {
-	response = &ReInitVolumeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ReInitVolumeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

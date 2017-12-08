@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,90 +17,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeParameters(request *DescribeParametersRequest) (response *DescribeParametersResponse, err error) {
-	response = CreateDescribeParametersResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeParametersResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequest) (<-chan *DescribeParametersResponse, <-chan error) {
-	responseChan := make(chan *DescribeParametersResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeParameters(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeParametersResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeParameters(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeParametersResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeParameters(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeParametersResponse
+var err error
+defer close(result)
+response, err = client.DescribeParameters(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeParametersRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeParametersResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
-	ConfigParameters []struct {
-		ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-		ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-		ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-	} `json:"ConfigParameters" xml:"ConfigParameters"`
-	RunningParameters []struct {
-		ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-		ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-		ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-	} `json:"RunningParameters" xml:"RunningParameters"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Engine     string `json:"Engine" xml:"Engine"`
+            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
+                ConfigParameters struct {
+                    DBInstanceParameter []struct {
+            ParameterName     string `json:"ParameterName" xml:"ParameterName"`
+            ParameterValue     string `json:"ParameterValue" xml:"ParameterValue"`
+            ParameterDescription     string `json:"ParameterDescription" xml:"ParameterDescription"`
+                    }   `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
+                } `json:"ConfigParameters" xml:"ConfigParameters"`
+                RunningParameters struct {
+                    DBInstanceParameter []struct {
+            ParameterName     string `json:"ParameterName" xml:"ParameterName"`
+            ParameterValue     string `json:"ParameterValue" xml:"ParameterValue"`
+            ParameterDescription     string `json:"ParameterDescription" xml:"ParameterDescription"`
+                    }   `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
+                } `json:"RunningParameters" xml:"RunningParameters"`
 }
 
 func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
-	request = &DescribeParametersRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "", "")
-	return
+request = &DescribeParametersRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "", "")
+return
 }
 
 func CreateDescribeParametersResponse() (response *DescribeParametersResponse) {
-	response = &DescribeParametersResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeParametersResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

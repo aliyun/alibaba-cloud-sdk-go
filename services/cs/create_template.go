@@ -1,3 +1,4 @@
+
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,71 +17,73 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateTemplate(request *CreateTemplateRequest) (response *CreateTemplateResponse, err error) {
-	response = CreateCreateTemplateResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateTemplateResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-chan *CreateTemplateResponse, <-chan error) {
-	responseChan := make(chan *CreateTemplateResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateTemplate(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateTemplateResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateTemplate(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest, callback func(response *CreateTemplateResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateTemplateResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateTemplate(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest, callback func(response *CreateTemplateResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateTemplateResponse
+var err error
+defer close(result)
+response, err = client.CreateTemplate(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateTemplateRequest struct {
-	*requests.RoaRequest
+*requests.RoaRequest
 }
 
+
 type CreateTemplateResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
-	request = &CreateTemplateRequest{
-		RoaRequest: &requests.RoaRequest{},
-	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateTemplate", "/templates", "", "")
-	return
+request = &CreateTemplateRequest{
+RoaRequest: &requests.RoaRequest{},
+}
+request.InitWithApiInfo("CS", "2015-12-15", "CreateTemplate", "/templates", "", "")
+return
 }
 
 func CreateCreateTemplateResponse() (response *CreateTemplateResponse) {
-	response = &CreateTemplateResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateTemplateResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

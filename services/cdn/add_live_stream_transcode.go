@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequest) (response *AddLiveStreamTranscodeResponse, err error) {
-	response = CreateAddLiveStreamTranscodeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddLiveStreamTranscodeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTranscodeRequest) (<-chan *AddLiveStreamTranscodeResponse, <-chan error) {
-	responseChan := make(chan *AddLiveStreamTranscodeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddLiveStreamTranscode(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddLiveStreamTranscodeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddLiveStreamTranscode(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddLiveStreamTranscodeResponse
-		var err error
-		defer close(result)
-		response, err = client.AddLiveStreamTranscode(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddLiveStreamTranscodeResponse
+var err error
+defer close(result)
+response, err = client.AddLiveStreamTranscode(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddLiveStreamTranscodeRequest struct {
-	*requests.RpcRequest
-	Template      string `position:"Query" name:"Template"`
-	App           string `position:"Query" name:"App"`
-	Record        string `position:"Query" name:"Record"`
-	Snapshot      string `position:"Query" name:"Snapshot"`
-	Domain        string `position:"Query" name:"Domain"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                Template  string `position:"Query" name:"Template"`
+                App  string `position:"Query" name:"App"`
+                Record  string `position:"Query" name:"Record"`
+                Snapshot  string `position:"Query" name:"Snapshot"`
+                Domain  string `position:"Query" name:"Domain"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type AddLiveStreamTranscodeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeRequest) {
-	request = &AddLiveStreamTranscodeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "AddLiveStreamTranscode", "", "")
-	return
+request = &AddLiveStreamTranscodeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "AddLiveStreamTranscode", "", "")
+return
 }
 
 func CreateAddLiveStreamTranscodeResponse() (response *AddLiveStreamTranscodeResponse) {
-	response = &AddLiveStreamTranscodeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddLiveStreamTranscodeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

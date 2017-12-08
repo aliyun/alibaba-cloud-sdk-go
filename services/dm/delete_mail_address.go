@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteMailAddress(request *DeleteMailAddressRequest) (response *DeleteMailAddressResponse, err error) {
-	response = CreateDeleteMailAddressResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteMailAddressResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressRequest) (<-chan *DeleteMailAddressResponse, <-chan error) {
-	responseChan := make(chan *DeleteMailAddressResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteMailAddress(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteMailAddressResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteMailAddress(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRequest, callback func(response *DeleteMailAddressResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteMailAddressResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteMailAddress(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRequest, callback func(response *DeleteMailAddressResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteMailAddressResponse
+var err error
+defer close(result)
+response, err = client.DeleteMailAddress(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteMailAddressRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	MailAddressId        string `position:"Query" name:"MailAddressId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                MailAddressId  string `position:"Query" name:"MailAddressId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DeleteMailAddressResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
-	request = &DeleteMailAddressRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2017-06-22", "DeleteMailAddress", "", "")
-	return
+request = &DeleteMailAddressRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "DeleteMailAddress", "", "")
+return
 }
 
 func CreateDeleteMailAddressResponse() (response *DeleteMailAddressResponse) {
-	response = &DeleteMailAddressResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteMailAddressResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

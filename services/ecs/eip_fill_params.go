@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) EipFillParams(request *EipFillParamsRequest) (response *EipFillParamsResponse, err error) {
-	response = CreateEipFillParamsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateEipFillParamsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-chan *EipFillParamsResponse, <-chan error) {
-	responseChan := make(chan *EipFillParamsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.EipFillParams(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *EipFillParamsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.EipFillParams(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, callback func(response *EipFillParamsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *EipFillParamsResponse
-		var err error
-		defer close(result)
-		response, err = client.EipFillParams(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, callback func(response *EipFillParamsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *EipFillParamsResponse
+var err error
+defer close(result)
+response, err = client.EipFillParams(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type EipFillParamsRequest struct {
-	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Data                 string `position:"Query" name:"data"`
-	UserCidr             string `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Data  string `position:"Query" name:"data"`
+                UserCidr  string `position:"Query" name:"UserCidr"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type EipFillParamsResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Data      string `json:"data" xml:"data"`
-	Code      string `json:"code" xml:"code"`
-	Success   bool   `json:"success" xml:"success"`
-	Message   string `json:"message" xml:"message"`
+*responses.BaseResponse
+            RequestId     string `json:"requestId" xml:"requestId"`
+            Data     string `json:"data" xml:"data"`
+            Code     string `json:"code" xml:"code"`
+            Success     bool `json:"success" xml:"success"`
+            Message     string `json:"message" xml:"message"`
 }
 
 func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
-	request = &EipFillParamsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillParams", "", "")
-	return
+request = &EipFillParamsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillParams", "", "")
+return
 }
 
 func CreateEipFillParamsResponse() (response *EipFillParamsResponse) {
-	response = &EipFillParamsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &EipFillParamsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SingleSendMail(request *SingleSendMailRequest) (response *SingleSendMailResponse, err error) {
-	response = CreateSingleSendMailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSingleSendMailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-chan *SingleSendMailResponse, <-chan error) {
-	responseChan := make(chan *SingleSendMailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SingleSendMail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SingleSendMailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SingleSendMail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest, callback func(response *SingleSendMailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SingleSendMailResponse
-		var err error
-		defer close(result)
-		response, err = client.SingleSendMail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest, callback func(response *SingleSendMailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SingleSendMailResponse
+var err error
+defer close(result)
+response, err = client.SingleSendMail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SingleSendMailRequest struct {
-	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	TextBody             string `position:"Query" name:"TextBody"`
-	ReplyToAddress       string `position:"Query" name:"ReplyToAddress"`
-	ReplyAddressAlias    string `position:"Query" name:"ReplyAddressAlias"`
-	Subject              string `position:"Query" name:"Subject"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromAlias            string `position:"Query" name:"FromAlias"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ToAddress            string `position:"Query" name:"ToAddress"`
-	ClickTrace           string `position:"Query" name:"ClickTrace"`
-	HtmlBody             string `position:"Query" name:"HtmlBody"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+*requests.RpcRequest
+                AddressType  string `position:"Query" name:"AddressType"`
+                AccountName  string `position:"Query" name:"AccountName"`
+                TextBody  string `position:"Query" name:"TextBody"`
+                ReplyToAddress  string `position:"Query" name:"ReplyToAddress"`
+                ReplyAddressAlias  string `position:"Query" name:"ReplyAddressAlias"`
+                Subject  string `position:"Query" name:"Subject"`
+                ReplyAddress  string `position:"Query" name:"ReplyAddress"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                FromAlias  string `position:"Query" name:"FromAlias"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ToAddress  string `position:"Query" name:"ToAddress"`
+                ClickTrace  string `position:"Query" name:"ClickTrace"`
+                HtmlBody  string `position:"Query" name:"HtmlBody"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                TagName  string `position:"Query" name:"TagName"`
 }
 
+
 type SingleSendMailResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	EnvId     string `json:"EnvId" xml:"EnvId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
 func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
-	request = &SingleSendMailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2017-06-22", "SingleSendMail", "", "")
-	return
+request = &SingleSendMailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "SingleSendMail", "", "")
+return
 }
 
 func CreateSingleSendMailResponse() (response *SingleSendMailResponse) {
-	response = &SingleSendMailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SingleSendMailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

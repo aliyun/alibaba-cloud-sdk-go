@@ -1,3 +1,4 @@
+
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyScalingRule(request *ModifyScalingRuleRequest) (response *ModifyScalingRuleResponse, err error) {
-	response = CreateModifyScalingRuleResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyScalingRuleResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyScalingRuleWithChan(request *ModifyScalingRuleRequest) (<-chan *ModifyScalingRuleResponse, <-chan error) {
-	responseChan := make(chan *ModifyScalingRuleResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyScalingRule(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyScalingRuleResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyScalingRule(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRequest, callback func(response *ModifyScalingRuleResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyScalingRuleResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyScalingRule(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRequest, callback func(response *ModifyScalingRuleResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyScalingRuleResponse
+var err error
+defer close(result)
+response, err = client.ModifyScalingRule(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyScalingRuleRequest struct {
-	*requests.RpcRequest
-	ScalingRuleName      string `position:"Query" name:"ScalingRuleName"`
-	ScalingRuleId        string `position:"Query" name:"ScalingRuleId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType       string `position:"Query" name:"AdjustmentType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Cooldown             string `position:"Query" name:"Cooldown"`
-	AdjustmentValue      string `position:"Query" name:"AdjustmentValue"`
+*requests.RpcRequest
+                ScalingRuleName  string `position:"Query" name:"ScalingRuleName"`
+                ScalingRuleId  string `position:"Query" name:"ScalingRuleId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AdjustmentType  string `position:"Query" name:"AdjustmentType"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Cooldown  string `position:"Query" name:"Cooldown"`
+                AdjustmentValue  string `position:"Query" name:"AdjustmentValue"`
 }
 
+
 type ModifyScalingRuleResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
-	request = &ModifyScalingRuleRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ess", "2016-07-22", "ModifyScalingRule", "", "")
-	return
+request = &ModifyScalingRuleRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "", "")
+return
 }
 
 func CreateModifyScalingRuleResponse() (response *ModifyScalingRuleResponse) {
-	response = &ModifyScalingRuleResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyScalingRuleResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

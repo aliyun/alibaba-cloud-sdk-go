@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,90 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeHealthStatus(request *DescribeHealthStatusRequest) (response *DescribeHealthStatusResponse, err error) {
-	response = CreateDescribeHealthStatusResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeHealthStatusResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatusRequest) (<-chan *DescribeHealthStatusResponse, <-chan error) {
-	responseChan := make(chan *DescribeHealthStatusResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeHealthStatus(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeHealthStatusResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeHealthStatus(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthStatusRequest, callback func(response *DescribeHealthStatusResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeHealthStatusResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeHealthStatus(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthStatusRequest, callback func(response *DescribeHealthStatusResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeHealthStatusResponse
+var err error
+defer close(result)
+response, err = client.DescribeHealthStatus(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeHealthStatusRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                ListenerPort  string `position:"Query" name:"ListenerPort"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeHealthStatusResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	BackendServers []struct {
-		ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
-		ServerId           string `json:"ServerId" xml:"ServerId"`
-		Port               int    `json:"Port" xml:"Port"`
-		ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
-	} `json:"BackendServers" xml:"BackendServers"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                BackendServers struct {
+                    BackendServer []struct {
+            ListenerPort     int `json:"ListenerPort" xml:"ListenerPort"`
+            ServerId     string `json:"ServerId" xml:"ServerId"`
+            Port     int `json:"Port" xml:"Port"`
+            ServerHealthStatus     string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
+                    }   `json:"BackendServer" xml:"BackendServer"`
+                } `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {
-	request = &DescribeHealthStatusRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "", "")
-	return
+request = &DescribeHealthStatusRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "", "")
+return
 }
 
 func CreateDescribeHealthStatusResponse() (response *DescribeHealthStatusResponse) {
-	response = &DescribeHealthStatusResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeHealthStatusResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

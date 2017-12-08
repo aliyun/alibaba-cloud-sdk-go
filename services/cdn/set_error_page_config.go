@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetErrorPageConfig(request *SetErrorPageConfigRequest) (response *SetErrorPageConfigResponse, err error) {
-	response = CreateSetErrorPageConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetErrorPageConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetErrorPageConfigWithChan(request *SetErrorPageConfigRequest) (<-chan *SetErrorPageConfigResponse, <-chan error) {
-	responseChan := make(chan *SetErrorPageConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetErrorPageConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetErrorPageConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetErrorPageConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfigRequest, callback func(response *SetErrorPageConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetErrorPageConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetErrorPageConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfigRequest, callback func(response *SetErrorPageConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetErrorPageConfigResponse
+var err error
+defer close(result)
+response, err = client.SetErrorPageConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetErrorPageConfigRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	PageType      string `position:"Query" name:"PageType"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	CustomPageUrl string `position:"Query" name:"CustomPageUrl"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                PageType  string `position:"Query" name:"PageType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                CustomPageUrl  string `position:"Query" name:"CustomPageUrl"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetErrorPageConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetErrorPageConfigRequest() (request *SetErrorPageConfigRequest) {
-	request = &SetErrorPageConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetErrorPageConfig", "", "")
-	return
+request = &SetErrorPageConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetErrorPageConfig", "", "")
+return
 }
 
 func CreateSetErrorPageConfigResponse() (response *SetErrorPageConfigResponse) {
-	response = &SetErrorPageConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetErrorPageConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

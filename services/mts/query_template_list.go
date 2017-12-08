@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,141 +17,147 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (response *QueryTemplateListResponse, err error) {
-	response = CreateQueryTemplateListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryTemplateListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListRequest) (<-chan *QueryTemplateListResponse, <-chan error) {
-	responseChan := make(chan *QueryTemplateListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryTemplateList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryTemplateListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryTemplateList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRequest, callback func(response *QueryTemplateListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryTemplateListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryTemplateList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRequest, callback func(response *QueryTemplateListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryTemplateListResponse
+var err error
+defer close(result)
+response, err = client.QueryTemplateList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryTemplateListRequest struct {
-	*requests.RpcRequest
-	TemplateIds          string `position:"Query" name:"TemplateIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                TemplateIds  string `position:"Query" name:"TemplateIds"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryTemplateListResponse struct {
-	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	NonExistTids []string `json:"NonExistTids" xml:"NonExistTids"`
-	TemplateList []struct {
-		Id        string `json:"Id" xml:"Id"`
-		Name      string `json:"Name" xml:"Name"`
-		State     string `json:"State" xml:"State"`
-		Container struct {
-			Format string `json:"Format" xml:"Format"`
-		} `json:"Container" xml:"Container"`
-		Video struct {
-			Codec      string `json:"Codec" xml:"Codec"`
-			Profile    string `json:"Profile" xml:"Profile"`
-			Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-			Crf        string `json:"Crf" xml:"Crf"`
-			Width      string `json:"Width" xml:"Width"`
-			Height     string `json:"Height" xml:"Height"`
-			Fps        string `json:"Fps" xml:"Fps"`
-			Gop        string `json:"Gop" xml:"Gop"`
-			Preset     string `json:"Preset" xml:"Preset"`
-			ScanMode   string `json:"ScanMode" xml:"ScanMode"`
-			Bufsize    string `json:"Bufsize" xml:"Bufsize"`
-			Maxrate    string `json:"Maxrate" xml:"Maxrate"`
-			PixFmt     string `json:"PixFmt" xml:"PixFmt"`
-			Degrain    string `json:"Degrain" xml:"Degrain"`
-			Qscale     string `json:"Qscale" xml:"Qscale"`
-			Remove     string `json:"Remove" xml:"Remove"`
-			Crop       string `json:"Crop" xml:"Crop"`
-			Pad        string `json:"Pad" xml:"Pad"`
-			MaxFps     string `json:"MaxFps" xml:"MaxFps"`
-			BitrateBnd struct {
-				Max string `json:"Max" xml:"Max"`
-				Min string `json:"Min" xml:"Min"`
-			} `json:"BitrateBnd" xml:"BitrateBnd"`
-		} `json:"Video" xml:"Video"`
-		Audio struct {
-			Codec      string `json:"Codec" xml:"Codec"`
-			Profile    string `json:"Profile" xml:"Profile"`
-			Samplerate string `json:"Samplerate" xml:"Samplerate"`
-			Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-			Channels   string `json:"Channels" xml:"Channels"`
-			Qscale     string `json:"Qscale" xml:"Qscale"`
-			Remove     string `json:"Remove" xml:"Remove"`
-		} `json:"Audio" xml:"Audio"`
-		TransConfig struct {
-			TransMode               string `json:"TransMode" xml:"TransMode"`
-			IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
-			IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
-			IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
-			IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
-			AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
-			IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
-			IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
-		} `json:"TransConfig" xml:"TransConfig"`
-		MuxConfig struct {
-			Segment struct {
-				Duration string `json:"Duration" xml:"Duration"`
-			} `json:"Segment" xml:"Segment"`
-			Gif struct {
-				Loop            string `json:"Loop" xml:"Loop"`
-				FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
-				IsCustomPalette string `json:"IsCustomPalette" xml:"IsCustomPalette"`
-				DitherMode      string `json:"DitherMode" xml:"DitherMode"`
-			} `json:"Gif" xml:"Gif"`
-		} `json:"MuxConfig" xml:"MuxConfig"`
-	} `json:"TemplateList" xml:"TemplateList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NonExistTids struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"NonExistTids" xml:"NonExistTids"`
+                TemplateList struct {
+                    Template []struct {
+            Id     string `json:"Id" xml:"Id"`
+            Name     string `json:"Name" xml:"Name"`
+            State     string `json:"State" xml:"State"`
+            Container struct {
+            Format     string `json:"Format" xml:"Format"`
+            }  `json:"Container" xml:"Container"`
+            Video struct {
+            Codec     string `json:"Codec" xml:"Codec"`
+            Profile     string `json:"Profile" xml:"Profile"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            Crf     string `json:"Crf" xml:"Crf"`
+            Width     string `json:"Width" xml:"Width"`
+            Height     string `json:"Height" xml:"Height"`
+            Fps     string `json:"Fps" xml:"Fps"`
+            Gop     string `json:"Gop" xml:"Gop"`
+            Preset     string `json:"Preset" xml:"Preset"`
+            ScanMode     string `json:"ScanMode" xml:"ScanMode"`
+            Bufsize     string `json:"Bufsize" xml:"Bufsize"`
+            Maxrate     string `json:"Maxrate" xml:"Maxrate"`
+            PixFmt     string `json:"PixFmt" xml:"PixFmt"`
+            Degrain     string `json:"Degrain" xml:"Degrain"`
+            Qscale     string `json:"Qscale" xml:"Qscale"`
+            Remove     string `json:"Remove" xml:"Remove"`
+            Crop     string `json:"Crop" xml:"Crop"`
+            Pad     string `json:"Pad" xml:"Pad"`
+            MaxFps     string `json:"MaxFps" xml:"MaxFps"`
+            BitrateBnd struct {
+            Max     string `json:"Max" xml:"Max"`
+            Min     string `json:"Min" xml:"Min"`
+            }  `json:"BitrateBnd" xml:"BitrateBnd"`
+            }  `json:"Video" xml:"Video"`
+            Audio struct {
+            Codec     string `json:"Codec" xml:"Codec"`
+            Profile     string `json:"Profile" xml:"Profile"`
+            Samplerate     string `json:"Samplerate" xml:"Samplerate"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            Channels     string `json:"Channels" xml:"Channels"`
+            Qscale     string `json:"Qscale" xml:"Qscale"`
+            Remove     string `json:"Remove" xml:"Remove"`
+            }  `json:"Audio" xml:"Audio"`
+            TransConfig struct {
+            TransMode     string `json:"TransMode" xml:"TransMode"`
+            IsCheckReso     string `json:"IsCheckReso" xml:"IsCheckReso"`
+            IsCheckResoFail     string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
+            IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
+            IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
+            AdjDarMethod     string `json:"AdjDarMethod" xml:"AdjDarMethod"`
+            IsCheckVideoBitrateFail     string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
+            IsCheckAudioBitrateFail     string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
+            }  `json:"TransConfig" xml:"TransConfig"`
+            MuxConfig struct {
+            Segment struct {
+            Duration     string `json:"Duration" xml:"Duration"`
+            }  `json:"Segment" xml:"Segment"`
+            Gif struct {
+            Loop     string `json:"Loop" xml:"Loop"`
+            FinalDelay     string `json:"FinalDelay" xml:"FinalDelay"`
+            IsCustomPalette     string `json:"IsCustomPalette" xml:"IsCustomPalette"`
+            DitherMode     string `json:"DitherMode" xml:"DitherMode"`
+            }  `json:"Gif" xml:"Gif"`
+            }  `json:"MuxConfig" xml:"MuxConfig"`
+                    }   `json:"Template" xml:"Template"`
+                } `json:"TemplateList" xml:"TemplateList"`
 }
 
 func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
-	request = &QueryTemplateListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTemplateList", "", "")
-	return
+request = &QueryTemplateListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "QueryTemplateList", "", "")
+return
 }
 
 func CreateQueryTemplateListResponse() (response *QueryTemplateListResponse) {
-	response = &QueryTemplateListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryTemplateListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

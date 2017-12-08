@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,100 +17,102 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateDBInstanceReplica(request *CreateDBInstanceReplicaRequest) (response *CreateDBInstanceReplicaResponse, err error) {
-	response = CreateCreateDBInstanceReplicaResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateDBInstanceReplicaResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateDBInstanceReplicaWithChan(request *CreateDBInstanceReplicaRequest) (<-chan *CreateDBInstanceReplicaResponse, <-chan error) {
-	responseChan := make(chan *CreateDBInstanceReplicaResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateDBInstanceReplica(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateDBInstanceReplicaResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateDBInstanceReplica(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateDBInstanceReplicaWithCallback(request *CreateDBInstanceReplicaRequest, callback func(response *CreateDBInstanceReplicaResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateDBInstanceReplicaResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateDBInstanceReplica(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateDBInstanceReplicaWithCallback(request *CreateDBInstanceReplicaRequest, callback func(response *CreateDBInstanceReplicaResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateDBInstanceReplicaResponse
+var err error
+defer close(result)
+response, err = client.CreateDBInstanceReplica(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateDBInstanceReplicaRequest struct {
-	*requests.RpcRequest
-	UsedTime              string `position:"Query" name:"UsedTime"`
-	ZoneId                string `position:"Query" name:"ZoneId"`
-	DBInstanceClass       string `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage     string `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string `position:"Query" name:"PayType"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	VSwitchId             string `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string `position:"Query" name:"PrivateIpAddress"`
-	ClientToken           string `position:"Query" name:"ClientToken"`
-	Engine                string `position:"Query" name:"Engine"`
-	DBInstanceNetType     string `position:"Query" name:"DBInstanceNetType"`
-	Period                string `position:"Query" name:"Period"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	SecurityIPList        string `position:"Query" name:"SecurityIPList"`
-	SystemDBCharset       string `position:"Query" name:"SystemDBCharset"`
-	SourceDBInstanceId    string `position:"Query" name:"SourceDBInstanceId"`
-	ReplicaDescription    string `position:"Query" name:"ReplicaDescription"`
-	ConnectionMode        string `position:"Query" name:"ConnectionMode"`
-	VPCId                 string `position:"Query" name:"VPCId"`
-	EngineVersion         string `position:"Query" name:"EngineVersion"`
-	InstanceNetworkType   string `position:"Query" name:"InstanceNetworkType"`
+*requests.RpcRequest
+                UsedTime  string `position:"Query" name:"UsedTime"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                DBInstanceClass  string `position:"Query" name:"DBInstanceClass"`
+                DBInstanceStorage  string `position:"Query" name:"DBInstanceStorage"`
+                DBInstanceDescription  string `position:"Query" name:"DBInstanceDescription"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PayType  string `position:"Query" name:"PayType"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                VSwitchId  string `position:"Query" name:"VSwitchId"`
+                PrivateIpAddress  string `position:"Query" name:"PrivateIpAddress"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                Engine  string `position:"Query" name:"Engine"`
+                DBInstanceNetType  string `position:"Query" name:"DBInstanceNetType"`
+                Period  string `position:"Query" name:"Period"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityIPList  string `position:"Query" name:"SecurityIPList"`
+                SystemDBCharset  string `position:"Query" name:"SystemDBCharset"`
+                SourceDBInstanceId  string `position:"Query" name:"SourceDBInstanceId"`
+                ReplicaDescription  string `position:"Query" name:"ReplicaDescription"`
+                ConnectionMode  string `position:"Query" name:"ConnectionMode"`
+                VPCId  string `position:"Query" name:"VPCId"`
+                EngineVersion  string `position:"Query" name:"EngineVersion"`
+                InstanceNetworkType  string `position:"Query" name:"InstanceNetworkType"`
 }
 
+
 type CreateDBInstanceReplicaResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId      int64  `json:"OrderId" xml:"OrderId"`
-	ReplicaId    string `json:"ReplicaId" xml:"ReplicaId"`
-	WorkflowId   string `json:"WorkflowId" xml:"WorkflowId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            OrderId     int64 `json:"OrderId" xml:"OrderId"`
+            ReplicaId     string `json:"ReplicaId" xml:"ReplicaId"`
+            WorkflowId     string `json:"WorkflowId" xml:"WorkflowId"`
 }
 
 func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaRequest) {
-	request = &CreateDBInstanceReplicaRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "", "")
-	return
+request = &CreateDBInstanceReplicaRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "", "")
+return
 }
 
 func CreateCreateDBInstanceReplicaResponse() (response *CreateDBInstanceReplicaResponse) {
-	response = &CreateDBInstanceReplicaResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateDBInstanceReplicaResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

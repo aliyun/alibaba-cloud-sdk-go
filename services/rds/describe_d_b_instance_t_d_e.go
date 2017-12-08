@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,86 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDERequest) (response *DescribeDBInstanceTDEResponse, err error) {
-	response = CreateDescribeDBInstanceTDEResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDBInstanceTDEResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceTDERequest) (<-chan *DescribeDBInstanceTDEResponse, <-chan error) {
-	responseChan := make(chan *DescribeDBInstanceTDEResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDBInstanceTDE(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDBInstanceTDEResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDBInstanceTDE(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInstanceTDERequest, callback func(response *DescribeDBInstanceTDEResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDBInstanceTDEResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDBInstanceTDE(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInstanceTDERequest, callback func(response *DescribeDBInstanceTDEResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDBInstanceTDEResponse
+var err error
+defer close(result)
+response, err = client.DescribeDBInstanceTDE(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDBInstanceTDERequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeDBInstanceTDEResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
-	Databases []struct {
-		DBName    string `json:"DBName" xml:"DBName"`
-		TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
-	} `json:"Databases" xml:"Databases"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TDEStatus     string `json:"TDEStatus" xml:"TDEStatus"`
+                Databases struct {
+                    Database []struct {
+            DBName     string `json:"DBName" xml:"DBName"`
+            TDEStatus     string `json:"TDEStatus" xml:"TDEStatus"`
+                    }   `json:"Database" xml:"Database"`
+                } `json:"Databases" xml:"Databases"`
 }
 
 func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {
-	request = &DescribeDBInstanceTDERequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "", "")
-	return
+request = &DescribeDBInstanceTDERequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "", "")
+return
 }
 
 func CreateDescribeDBInstanceTDEResponse() (response *DescribeDBInstanceTDEResponse) {
-	response = &DescribeDBInstanceTDEResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDBInstanceTDEResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

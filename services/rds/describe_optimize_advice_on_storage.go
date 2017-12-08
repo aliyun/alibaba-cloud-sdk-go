@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,89 +17,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeOptimizeAdviceOnStorage(request *DescribeOptimizeAdviceOnStorageRequest) (response *DescribeOptimizeAdviceOnStorageResponse, err error) {
-	response = CreateDescribeOptimizeAdviceOnStorageResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeOptimizeAdviceOnStorageResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeOptimizeAdviceOnStorageRequest) (<-chan *DescribeOptimizeAdviceOnStorageResponse, <-chan error) {
-	responseChan := make(chan *DescribeOptimizeAdviceOnStorageResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeOptimizeAdviceOnStorage(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeOptimizeAdviceOnStorageResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeOptimizeAdviceOnStorage(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *DescribeOptimizeAdviceOnStorageRequest, callback func(response *DescribeOptimizeAdviceOnStorageResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeOptimizeAdviceOnStorageResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeOptimizeAdviceOnStorage(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *DescribeOptimizeAdviceOnStorageRequest, callback func(response *DescribeOptimizeAdviceOnStorageResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeOptimizeAdviceOnStorageResponse
+var err error
+defer close(result)
+response, err = client.DescribeOptimizeAdviceOnStorage(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeOptimizeAdviceOnStorageRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeOptimizeAdviceOnStorageResponse struct {
-	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             []struct {
-		DBName        string `json:"DBName" xml:"DBName"`
-		TableName     string `json:"TableName" xml:"TableName"`
-		CurrentEngine string `json:"CurrentEngine" xml:"CurrentEngine"`
-		AdviseEngine  string `json:"AdviseEngine" xml:"AdviseEngine"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            TotalRecordsCount     int `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
+                Items struct {
+                    AdviceOnStorage []struct {
+            DBName     string `json:"DBName" xml:"DBName"`
+            TableName     string `json:"TableName" xml:"TableName"`
+            CurrentEngine     string `json:"CurrentEngine" xml:"CurrentEngine"`
+            AdviseEngine     string `json:"AdviseEngine" xml:"AdviseEngine"`
+                    }   `json:"AdviceOnStorage" xml:"AdviceOnStorage"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {
-	request = &DescribeOptimizeAdviceOnStorageRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "", "")
-	return
+request = &DescribeOptimizeAdviceOnStorageRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "", "")
+return
 }
 
 func CreateDescribeOptimizeAdviceOnStorageResponse() (response *DescribeOptimizeAdviceOnStorageResponse) {
-	response = &DescribeOptimizeAdviceOnStorageResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeOptimizeAdviceOnStorageResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
