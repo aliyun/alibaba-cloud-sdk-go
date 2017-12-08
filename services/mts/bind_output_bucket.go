@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (response *BindOutputBucketResponse, err error) {
-response = CreateBindOutputBucketResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateBindOutputBucketResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest) (<-chan *BindOutputBucketResponse, <-chan error) {
-responseChan := make(chan *BindOutputBucketResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.BindOutputBucket(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *BindOutputBucketResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.BindOutputBucket(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequest, callback func(response *BindOutputBucketResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *BindOutputBucketResponse
-var err error
-defer close(result)
-response, err = client.BindOutputBucket(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequest, callback func(response *BindOutputBucketResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *BindOutputBucketResponse
+		var err error
+		defer close(result)
+		response, err = client.BindOutputBucket(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type BindOutputBucketRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Bucket  string `position:"Query" name:"Bucket"`
-                RoleArn  string `position:"Query" name:"RoleArn"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Bucket               string `position:"Query" name:"Bucket"`
+	RoleArn              string `position:"Query" name:"RoleArn"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type BindOutputBucketResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
-request = &BindOutputBucketRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "", "")
-return
+	request = &BindOutputBucketRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "", "")
+	return
 }
 
 func CreateBindOutputBucketResponse() (response *BindOutputBucketResponse) {
-response = &BindOutputBucketResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &BindOutputBucketResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

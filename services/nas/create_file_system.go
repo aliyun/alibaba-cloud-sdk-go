@@ -1,4 +1,3 @@
-
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateFileSystem(request *CreateFileSystemRequest) (response *CreateFileSystemResponse, err error) {
-response = CreateCreateFileSystemResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateFileSystemResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest) (<-chan *CreateFileSystemResponse, <-chan error) {
-responseChan := make(chan *CreateFileSystemResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateFileSystem(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateFileSystemResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateFileSystem(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequest, callback func(response *CreateFileSystemResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateFileSystemResponse
-var err error
-defer close(result)
-response, err = client.CreateFileSystem(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequest, callback func(response *CreateFileSystemResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateFileSystemResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateFileSystem(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateFileSystemRequest struct {
-*requests.RpcRequest
-                ProtocolType  string `position:"Query" name:"ProtocolType"`
-                StorageType  string `position:"Query" name:"StorageType"`
-                Description  string `position:"Query" name:"Description"`
+	*requests.RpcRequest
+	ProtocolType string `position:"Query" name:"ProtocolType"`
+	StorageType  string `position:"Query" name:"StorageType"`
+	Description  string `position:"Query" name:"Description"`
 }
 
-
 type CreateFileSystemResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            FileSystemId     string `json:"FileSystemId" xml:"FileSystemId"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	FileSystemId string `json:"FileSystemId" xml:"FileSystemId"`
 }
 
 func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
-request = &CreateFileSystemRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("NAS", "2017-06-26", "CreateFileSystem", "", "")
-return
+	request = &CreateFileSystemRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateFileSystem", "", "")
+	return
 }
 
 func CreateCreateFileSystemResponse() (response *CreateFileSystemResponse) {
-response = &CreateFileSystemResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateFileSystemResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

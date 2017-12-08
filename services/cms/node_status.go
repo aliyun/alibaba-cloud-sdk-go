@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeStatus(request *NodeStatusRequest) (response *NodeStatusResponse, err error) {
-response = CreateNodeStatusResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateNodeStatusResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) NodeStatusWithChan(request *NodeStatusRequest) (<-chan *NodeStatusResponse, <-chan error) {
-responseChan := make(chan *NodeStatusResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.NodeStatus(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *NodeStatusResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.NodeStatus(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) NodeStatusWithCallback(request *NodeStatusRequest, callback func(response *NodeStatusResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *NodeStatusResponse
-var err error
-defer close(result)
-response, err = client.NodeStatus(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) NodeStatusWithCallback(request *NodeStatusRequest, callback func(response *NodeStatusResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *NodeStatusResponse
+		var err error
+		defer close(result)
+		response, err = client.NodeStatus(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type NodeStatusRequest struct {
-*requests.RpcRequest
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-
 type NodeStatusResponse struct {
-*responses.BaseResponse
-            ErrorCode     int `json:"ErrorCode" xml:"ErrorCode"`
-            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
-            Success     bool `json:"Success" xml:"Success"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            AutoInstall     bool `json:"AutoInstall" xml:"AutoInstall"`
-            Status     string `json:"Status" xml:"Status"`
+	*responses.BaseResponse
+	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	AutoInstall  bool   `json:"AutoInstall" xml:"AutoInstall"`
+	Status       string `json:"Status" xml:"Status"`
 }
 
 func CreateNodeStatusRequest() (request *NodeStatusRequest) {
-request = &NodeStatusRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "NodeStatus", "", "")
-return
+	request = &NodeStatusRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeStatus", "", "")
+	return
 }
 
 func CreateNodeStatusResponse() (response *NodeStatusResponse) {
-response = &NodeStatusResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &NodeStatusResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryReceiverDetail(request *QueryReceiverDetailRequest) (response *QueryReceiverDetailResponse, err error) {
-response = CreateQueryReceiverDetailResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryReceiverDetailResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryReceiverDetailWithChan(request *QueryReceiverDetailRequest) (<-chan *QueryReceiverDetailResponse, <-chan error) {
-responseChan := make(chan *QueryReceiverDetailResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryReceiverDetail(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryReceiverDetailResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryReceiverDetail(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDetailRequest, callback func(response *QueryReceiverDetailResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryReceiverDetailResponse
-var err error
-defer close(result)
-response, err = client.QueryReceiverDetail(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDetailRequest, callback func(response *QueryReceiverDetailResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryReceiverDetailResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryReceiverDetail(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryReceiverDetailRequest struct {
-*requests.RpcRequest
-                NextStart  string `position:"Query" name:"NextStart"`
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                KeyWord  string `position:"Query" name:"KeyWord"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ReceiverId  string `position:"Query" name:"ReceiverId"`
+	*requests.RpcRequest
+	NextStart            string `position:"Query" name:"NextStart"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ReceiverId           string `position:"Query" name:"ReceiverId"`
 }
 
-
 type QueryReceiverDetailResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            NextStart     string `json:"NextStart" xml:"NextStart"`
-            DataSchema     string `json:"DataSchema" xml:"DataSchema"`
-                Data struct {
-                    Detail []struct {
-            Email     string `json:"Email" xml:"Email"`
-            Data     string `json:"Data" xml:"Data"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            UtcCreateTime     int64 `json:"UtcCreateTime" xml:"UtcCreateTime"`
-                    }   `json:"detail" xml:"detail"`
-                } `json:"data" xml:"data"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string `json:"NextStart" xml:"NextStart"`
+	DataSchema string `json:"DataSchema" xml:"DataSchema"`
+	Data       struct {
+		Detail []struct {
+			Email         string `json:"Email" xml:"Email"`
+			Data          string `json:"Data" xml:"Data"`
+			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
+		} `json:"detail" xml:"detail"`
+	} `json:"data" xml:"data"`
 }
 
 func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
-request = &QueryReceiverDetailRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "QueryReceiverDetail", "", "")
-return
+	request = &QueryReceiverDetailRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryReceiverDetail", "", "")
+	return
 }
 
 func CreateQueryReceiverDetailResponse() (response *QueryReceiverDetailResponse) {
-response = &QueryReceiverDetailResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryReceiverDetailResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

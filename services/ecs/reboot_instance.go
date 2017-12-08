@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RebootInstance(request *RebootInstanceRequest) (response *RebootInstanceResponse, err error) {
-response = CreateRebootInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRebootInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RebootInstanceWithChan(request *RebootInstanceRequest) (<-chan *RebootInstanceResponse, <-chan error) {
-responseChan := make(chan *RebootInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RebootInstance(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RebootInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RebootInstance(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest, callback func(response *RebootInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RebootInstanceResponse
-var err error
-defer close(result)
-response, err = client.RebootInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest, callback func(response *RebootInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RebootInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.RebootInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RebootInstanceRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ForceStop  string `position:"Query" name:"ForceStop"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ForceStop            string `position:"Query" name:"ForceStop"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
-
 type RebootInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRebootInstanceRequest() (request *RebootInstanceRequest) {
-request = &RebootInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance", "", "")
-return
+	request = &RebootInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance", "", "")
+	return
 }
 
 func CreateRebootInstanceResponse() (response *RebootInstanceResponse) {
-response = &RebootInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RebootInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

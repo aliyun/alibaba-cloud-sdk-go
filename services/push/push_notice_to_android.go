@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PushNoticeToAndroid(request *PushNoticeToAndroidRequest) (response *PushNoticeToAndroidResponse, err error) {
-response = CreatePushNoticeToAndroidResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePushNoticeToAndroidResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRequest) (<-chan *PushNoticeToAndroidResponse, <-chan error) {
-responseChan := make(chan *PushNoticeToAndroidResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PushNoticeToAndroid(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PushNoticeToAndroidResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PushNoticeToAndroid(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndroidRequest, callback func(response *PushNoticeToAndroidResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PushNoticeToAndroidResponse
-var err error
-defer close(result)
-response, err = client.PushNoticeToAndroid(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndroidRequest, callback func(response *PushNoticeToAndroidResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PushNoticeToAndroidResponse
+		var err error
+		defer close(result)
+		response, err = client.PushNoticeToAndroid(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type PushNoticeToAndroidRequest struct {
-*requests.RpcRequest
-                Body  string `position:"Query" name:"Body"`
-                Title  string `position:"Query" name:"Title"`
-                ExtParameters  string `position:"Query" name:"ExtParameters"`
-                TargetValue  string `position:"Query" name:"TargetValue"`
-                JobKey  string `position:"Query" name:"JobKey"`
-                Target  string `position:"Query" name:"Target"`
-                AppKey  string `position:"Query" name:"AppKey"`
+	*requests.RpcRequest
+	Body          string `position:"Query" name:"Body"`
+	Title         string `position:"Query" name:"Title"`
+	ExtParameters string `position:"Query" name:"ExtParameters"`
+	TargetValue   string `position:"Query" name:"TargetValue"`
+	JobKey        string `position:"Query" name:"JobKey"`
+	Target        string `position:"Query" name:"Target"`
+	AppKey        string `position:"Query" name:"AppKey"`
 }
 
-
 type PushNoticeToAndroidResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            MessageId     string `json:"MessageId" xml:"MessageId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
 func CreatePushNoticeToAndroidRequest() (request *PushNoticeToAndroidRequest) {
-request = &PushNoticeToAndroidRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToAndroid", "", "")
-return
+	request = &PushNoticeToAndroidRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToAndroid", "", "")
+	return
 }
 
 func CreatePushNoticeToAndroidResponse() (response *PushNoticeToAndroidResponse) {
-response = &PushNoticeToAndroidResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PushNoticeToAndroidResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

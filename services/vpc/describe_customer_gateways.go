@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,91 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCustomerGateways(request *DescribeCustomerGatewaysRequest) (response *DescribeCustomerGatewaysResponse, err error) {
-response = CreateDescribeCustomerGatewaysResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCustomerGatewaysResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomerGatewaysRequest) (<-chan *DescribeCustomerGatewaysResponse, <-chan error) {
-responseChan := make(chan *DescribeCustomerGatewaysResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCustomerGateways(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCustomerGatewaysResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCustomerGateways(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCustomerGatewaysRequest, callback func(response *DescribeCustomerGatewaysResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCustomerGatewaysResponse
-var err error
-defer close(result)
-response, err = client.DescribeCustomerGateways(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCustomerGatewaysRequest, callback func(response *DescribeCustomerGatewaysResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCustomerGatewaysResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCustomerGateways(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeCustomerGatewaysRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                CustomerGatewayId  string `position:"Query" name:"CustomerGatewayId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type DescribeCustomerGatewaysResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                CustomerGateways struct {
-                    CustomerGateway []struct {
-            CustomerGatewayId     string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-            Name     string `json:"Name" xml:"Name"`
-            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
-            Description     string `json:"Description" xml:"Description"`
-            CreateTime     int64 `json:"CreateTime" xml:"CreateTime"`
-                    }   `json:"CustomerGateway" xml:"CustomerGateway"`
-                } `json:"CustomerGateways" xml:"CustomerGateways"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int    `json:"PageSize" xml:"PageSize"`
+	CustomerGateways struct {
+		CustomerGateway []struct {
+			CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+			Name              string `json:"Name" xml:"Name"`
+			IpAddress         string `json:"IpAddress" xml:"IpAddress"`
+			Description       string `json:"Description" xml:"Description"`
+			CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+		} `json:"CustomerGateway" xml:"CustomerGateway"`
+	} `json:"CustomerGateways" xml:"CustomerGateways"`
 }
 
 func CreateDescribeCustomerGatewaysRequest() (request *DescribeCustomerGatewaysRequest) {
-request = &DescribeCustomerGatewaysRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateways", "", "")
-return
+	request = &DescribeCustomerGatewaysRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateways", "", "")
+	return
 }
 
 func CreateDescribeCustomerGatewaysResponse() (response *DescribeCustomerGatewaysResponse) {
-response = &DescribeCustomerGatewaysResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCustomerGatewaysResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

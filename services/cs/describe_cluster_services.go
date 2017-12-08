@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,74 +16,72 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeClusterServices(request *DescribeClusterServicesRequest) (response *DescribeClusterServicesResponse, err error) {
-response = CreateDescribeClusterServicesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeClusterServicesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterServicesRequest) (<-chan *DescribeClusterServicesResponse, <-chan error) {
-responseChan := make(chan *DescribeClusterServicesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeClusterServices(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeClusterServicesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeClusterServices(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeClusterServicesWithCallback(request *DescribeClusterServicesRequest, callback func(response *DescribeClusterServicesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeClusterServicesResponse
-var err error
-defer close(result)
-response, err = client.DescribeClusterServices(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeClusterServicesWithCallback(request *DescribeClusterServicesRequest, callback func(response *DescribeClusterServicesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeClusterServicesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeClusterServices(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeClusterServicesRequest struct {
-*requests.RoaRequest
-                ClusterId  string `position:"Path" name:"ClusterId"`
+	*requests.RoaRequest
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
-
 type DescribeClusterServicesResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateDescribeClusterServicesRequest() (request *DescribeClusterServicesRequest) {
-request = &DescribeClusterServicesRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterServices", "/clusters/[ClusterId]/services", "", "")
-return
+	request = &DescribeClusterServicesRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterServices", "/clusters/[ClusterId]/services", "", "")
+	return
 }
 
 func CreateDescribeClusterServicesResponse() (response *DescribeClusterServicesResponse) {
-response = &DescribeClusterServicesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeClusterServicesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

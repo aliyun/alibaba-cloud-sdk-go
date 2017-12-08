@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetFileTypeForceTtlCodeConfig(request *SetFileTypeForceTtlCodeConfigRequest) (response *SetFileTypeForceTtlCodeConfigResponse, err error) {
-response = CreateSetFileTypeForceTtlCodeConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetFileTypeForceTtlCodeConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetFileTypeForceTtlCodeConfigWithChan(request *SetFileTypeForceTtlCodeConfigRequest) (<-chan *SetFileTypeForceTtlCodeConfigResponse, <-chan error) {
-responseChan := make(chan *SetFileTypeForceTtlCodeConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetFileTypeForceTtlCodeConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetFileTypeForceTtlCodeConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetFileTypeForceTtlCodeConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFileTypeForceTtlCodeConfigRequest, callback func(response *SetFileTypeForceTtlCodeConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetFileTypeForceTtlCodeConfigResponse
-var err error
-defer close(result)
-response, err = client.SetFileTypeForceTtlCodeConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFileTypeForceTtlCodeConfigRequest, callback func(response *SetFileTypeForceTtlCodeConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetFileTypeForceTtlCodeConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.SetFileTypeForceTtlCodeConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetFileTypeForceTtlCodeConfigRequest struct {
-*requests.RpcRequest
-                CodeString  string `position:"Query" name:"CodeString"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Version  string `position:"Query" name:"Version"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                FileType  string `position:"Query" name:"FileType"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	CodeString    string `position:"Query" name:"CodeString"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Version       string `position:"Query" name:"Version"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	FileType      string `position:"Query" name:"FileType"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type SetFileTypeForceTtlCodeConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlCodeConfigRequest) {
-request = &SetFileTypeForceTtlCodeConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "SetFileTypeForceTtlCodeConfig", "", "")
-return
+	request = &SetFileTypeForceTtlCodeConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetFileTypeForceTtlCodeConfig", "", "")
+	return
 }
 
 func CreateSetFileTypeForceTtlCodeConfigResponse() (response *SetFileTypeForceTtlCodeConfigResponse) {
-response = &SetFileTypeForceTtlCodeConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetFileTypeForceTtlCodeConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

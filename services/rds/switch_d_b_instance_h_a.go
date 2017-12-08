@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SwitchDBInstanceHA(request *SwitchDBInstanceHARequest) (response *SwitchDBInstanceHAResponse, err error) {
-response = CreateSwitchDBInstanceHAResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSwitchDBInstanceHAResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SwitchDBInstanceHAWithChan(request *SwitchDBInstanceHARequest) (<-chan *SwitchDBInstanceHAResponse, <-chan error) {
-responseChan := make(chan *SwitchDBInstanceHAResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SwitchDBInstanceHA(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SwitchDBInstanceHAResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SwitchDBInstanceHA(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHARequest, callback func(response *SwitchDBInstanceHAResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SwitchDBInstanceHAResponse
-var err error
-defer close(result)
-response, err = client.SwitchDBInstanceHA(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHARequest, callback func(response *SwitchDBInstanceHAResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SwitchDBInstanceHAResponse
+		var err error
+		defer close(result)
+		response, err = client.SwitchDBInstanceHA(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SwitchDBInstanceHARequest struct {
-*requests.RpcRequest
-                EffectiveTime  string `position:"Query" name:"EffectiveTime"`
-                Operation  string `position:"Query" name:"Operation"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Force  string `position:"Query" name:"Force"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                NodeId  string `position:"Query" name:"NodeId"`
+	*requests.RpcRequest
+	EffectiveTime        string `position:"Query" name:"EffectiveTime"`
+	Operation            string `position:"Query" name:"Operation"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Force                string `position:"Query" name:"Force"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	NodeId               string `position:"Query" name:"NodeId"`
 }
 
-
 type SwitchDBInstanceHAResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
-request = &SwitchDBInstanceHARequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceHA", "", "")
-return
+	request = &SwitchDBInstanceHARequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceHA", "", "")
+	return
 }
 
 func CreateSwitchDBInstanceHAResponse() (response *SwitchDBInstanceHAResponse) {
-response = &SwitchDBInstanceHAResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SwitchDBInstanceHAResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

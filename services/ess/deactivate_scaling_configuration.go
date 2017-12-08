@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingConfigurationRequest) (response *DeactivateScalingConfigurationResponse, err error) {
-response = CreateDeactivateScalingConfigurationResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeactivateScalingConfigurationResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeactivateScalingConfigurationWithChan(request *DeactivateScalingConfigurationRequest) (<-chan *DeactivateScalingConfigurationResponse, <-chan error) {
-responseChan := make(chan *DeactivateScalingConfigurationResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeactivateScalingConfiguration(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeactivateScalingConfigurationResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeactivateScalingConfiguration(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeactivateScalingConfigurationWithCallback(request *DeactivateScalingConfigurationRequest, callback func(response *DeactivateScalingConfigurationResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeactivateScalingConfigurationResponse
-var err error
-defer close(result)
-response, err = client.DeactivateScalingConfiguration(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeactivateScalingConfigurationWithCallback(request *DeactivateScalingConfigurationRequest, callback func(response *DeactivateScalingConfigurationResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeactivateScalingConfigurationResponse
+		var err error
+		defer close(result)
+		response, err = client.DeactivateScalingConfiguration(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeactivateScalingConfigurationRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ScalingConfigurationId  string `position:"Query" name:"ScalingConfigurationId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingConfigurationId string `position:"Query" name:"ScalingConfigurationId"`
+	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeactivateScalingConfigurationResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingConfigurationRequest) {
-request = &DeactivateScalingConfigurationRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "DeactivateScalingConfiguration", "", "")
-return
+	request = &DeactivateScalingConfigurationRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeactivateScalingConfiguration", "", "")
+	return
 }
 
 func CreateDeactivateScalingConfigurationResponse() (response *DeactivateScalingConfigurationResponse) {
-response = &DeactivateScalingConfigurationResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeactivateScalingConfigurationResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

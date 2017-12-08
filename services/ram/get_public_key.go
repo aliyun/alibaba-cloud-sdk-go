@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetPublicKey(request *GetPublicKeyRequest) (response *GetPublicKeyResponse, err error) {
-response = CreateGetPublicKeyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetPublicKeyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetPublicKeyWithChan(request *GetPublicKeyRequest) (<-chan *GetPublicKeyResponse, <-chan error) {
-responseChan := make(chan *GetPublicKeyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetPublicKey(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetPublicKeyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetPublicKey(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetPublicKeyWithCallback(request *GetPublicKeyRequest, callback func(response *GetPublicKeyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetPublicKeyResponse
-var err error
-defer close(result)
-response, err = client.GetPublicKey(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetPublicKeyWithCallback(request *GetPublicKeyRequest, callback func(response *GetPublicKeyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetPublicKeyResponse
+		var err error
+		defer close(result)
+		response, err = client.GetPublicKey(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetPublicKeyRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                UserPublicKeyId  string `position:"Query" name:"UserPublicKeyId"`
+	*requests.RpcRequest
+	UserName        string `position:"Query" name:"UserName"`
+	UserPublicKeyId string `position:"Query" name:"UserPublicKeyId"`
 }
 
-
 type GetPublicKeyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PublicKey struct {
-            PublicKeyId     string `json:"PublicKeyId" xml:"PublicKeyId"`
-            PublicKeySpec     string `json:"PublicKeySpec" xml:"PublicKeySpec"`
-            Status     string `json:"Status" xml:"Status"`
-            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
-            }  `json:"PublicKey" xml:"PublicKey"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PublicKey struct {
+		PublicKeyId   string `json:"PublicKeyId" xml:"PublicKeyId"`
+		PublicKeySpec string `json:"PublicKeySpec" xml:"PublicKeySpec"`
+		Status        string `json:"Status" xml:"Status"`
+		CreateDate    string `json:"CreateDate" xml:"CreateDate"`
+	} `json:"PublicKey" xml:"PublicKey"`
 }
 
 func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
-request = &GetPublicKeyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "GetPublicKey", "", "")
-return
+	request = &GetPublicKeyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetPublicKey", "", "")
+	return
 }
 
 func CreateGetPublicKeyResponse() (response *GetPublicKeyResponse) {
-response = &GetPublicKeyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetPublicKeyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

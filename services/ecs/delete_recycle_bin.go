@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteRecycleBin(request *DeleteRecycleBinRequest) (response *DeleteRecycleBinResponse, err error) {
-response = CreateDeleteRecycleBinResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteRecycleBinResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest) (<-chan *DeleteRecycleBinResponse, <-chan error) {
-responseChan := make(chan *DeleteRecycleBinResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteRecycleBin(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteRecycleBinResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteRecycleBin(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequest, callback func(response *DeleteRecycleBinResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteRecycleBinResponse
-var err error
-defer close(result)
-response, err = client.DeleteRecycleBin(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequest, callback func(response *DeleteRecycleBinResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteRecycleBinResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteRecycleBin(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteRecycleBinRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ResourceIds  string `position:"Query" name:"resourceIds"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceIds          string `position:"Query" name:"resourceIds"`
 }
 
-
 type DeleteRecycleBinResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
-request = &DeleteRecycleBinRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "", "")
-return
+	request = &DeleteRecycleBinRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "", "")
+	return
 }
 
 func CreateDeleteRecycleBinResponse() (response *DeleteRecycleBinResponse) {
-response = &DeleteRecycleBinResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteRecycleBinResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

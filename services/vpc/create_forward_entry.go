@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateForwardEntry(request *CreateForwardEntryRequest) (response *CreateForwardEntryResponse, err error) {
-response = CreateCreateForwardEntryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateForwardEntryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateForwardEntryWithChan(request *CreateForwardEntryRequest) (<-chan *CreateForwardEntryResponse, <-chan error) {
-responseChan := make(chan *CreateForwardEntryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateForwardEntry(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateForwardEntryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateForwardEntry(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntryRequest, callback func(response *CreateForwardEntryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateForwardEntryResponse
-var err error
-defer close(result)
-response, err = client.CreateForwardEntry(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntryRequest, callback func(response *CreateForwardEntryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateForwardEntryResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateForwardEntry(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateForwardEntryRequest struct {
-*requests.RpcRequest
-                IpProtocol  string `position:"Query" name:"IpProtocol"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                InternalIp  string `position:"Query" name:"InternalIp"`
-                ExternalIp  string `position:"Query" name:"ExternalIp"`
-                ForwardTableId  string `position:"Query" name:"ForwardTableId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                ExternalPort  string `position:"Query" name:"ExternalPort"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InternalPort  string `position:"Query" name:"InternalPort"`
+	*requests.RpcRequest
+	IpProtocol           string `position:"Query" name:"IpProtocol"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	InternalIp           string `position:"Query" name:"InternalIp"`
+	ExternalIp           string `position:"Query" name:"ExternalIp"`
+	ForwardTableId       string `position:"Query" name:"ForwardTableId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ExternalPort         string `position:"Query" name:"ExternalPort"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InternalPort         string `position:"Query" name:"InternalPort"`
 }
 
-
 type CreateForwardEntryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            ForwardEntryId     string `json:"ForwardEntryId" xml:"ForwardEntryId"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
 }
 
 func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
-request = &CreateForwardEntryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "", "")
-return
+	request = &CreateForwardEntryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "", "")
+	return
 }
 
 func CreateCreateForwardEntryResponse() (response *CreateForwardEntryResponse) {
-response = &CreateForwardEntryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateForwardEntryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

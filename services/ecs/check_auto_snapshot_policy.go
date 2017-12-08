@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CheckAutoSnapshotPolicy(request *CheckAutoSnapshotPolicyRequest) (response *CheckAutoSnapshotPolicyResponse, err error) {
-response = CreateCheckAutoSnapshotPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCheckAutoSnapshotPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CheckAutoSnapshotPolicyWithChan(request *CheckAutoSnapshotPolicyRequest) (<-chan *CheckAutoSnapshotPolicyResponse, <-chan error) {
-responseChan := make(chan *CheckAutoSnapshotPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CheckAutoSnapshotPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CheckAutoSnapshotPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CheckAutoSnapshotPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnapshotPolicyRequest, callback func(response *CheckAutoSnapshotPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CheckAutoSnapshotPolicyResponse
-var err error
-defer close(result)
-response, err = client.CheckAutoSnapshotPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnapshotPolicyRequest, callback func(response *CheckAutoSnapshotPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CheckAutoSnapshotPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.CheckAutoSnapshotPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CheckAutoSnapshotPolicyRequest struct {
-*requests.RpcRequest
-                DataDiskPolicyRetentionLastWeek  string `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
-                DataDiskPolicyRetentionDays  string `position:"Query" name:"DataDiskPolicyRetentionDays"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                DataDiskPolicyTimePeriod  string `position:"Query" name:"DataDiskPolicyTimePeriod"`
-                SystemDiskPolicyRetentionLastWeek  string `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
-                SystemDiskPolicyEnabled  string `position:"Query" name:"SystemDiskPolicyEnabled"`
-                SystemDiskPolicyTimePeriod  string `position:"Query" name:"SystemDiskPolicyTimePeriod"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                DataDiskPolicyEnabled  string `position:"Query" name:"DataDiskPolicyEnabled"`
-                SystemDiskPolicyRetentionDays  string `position:"Query" name:"SystemDiskPolicyRetentionDays"`
+	*requests.RpcRequest
+	DataDiskPolicyRetentionLastWeek   string `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
+	DataDiskPolicyRetentionDays       string `position:"Query" name:"DataDiskPolicyRetentionDays"`
+	ResourceOwnerAccount              string `position:"Query" name:"ResourceOwnerAccount"`
+	DataDiskPolicyTimePeriod          string `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	SystemDiskPolicyRetentionLastWeek string `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
+	SystemDiskPolicyEnabled           string `position:"Query" name:"SystemDiskPolicyEnabled"`
+	SystemDiskPolicyTimePeriod        string `position:"Query" name:"SystemDiskPolicyTimePeriod"`
+	ResourceOwnerId                   string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                      string `position:"Query" name:"OwnerAccount"`
+	OwnerId                           string `position:"Query" name:"OwnerId"`
+	DataDiskPolicyEnabled             string `position:"Query" name:"DataDiskPolicyEnabled"`
+	SystemDiskPolicyRetentionDays     string `position:"Query" name:"SystemDiskPolicyRetentionDays"`
 }
 
-
 type CheckAutoSnapshotPolicyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            AutoSnapshotOccupation     int `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-            IsPermittedModify     string `json:"IsPermittedModify" xml:"IsPermittedModify"`
+	*responses.BaseResponse
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	IsPermittedModify      string `json:"IsPermittedModify" xml:"IsPermittedModify"`
 }
 
 func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyRequest) {
-request = &CheckAutoSnapshotPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CheckAutoSnapshotPolicy", "", "")
-return
+	request = &CheckAutoSnapshotPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CheckAutoSnapshotPolicy", "", "")
+	return
 }
 
 func CreateCheckAutoSnapshotPolicyResponse() (response *CheckAutoSnapshotPolicyResponse) {
-response = &CheckAutoSnapshotPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CheckAutoSnapshotPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RequestServiceOfCloudDBA(request *RequestServiceOfCloudDBARequest) (response *RequestServiceOfCloudDBAResponse, err error) {
-response = CreateRequestServiceOfCloudDBAResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRequestServiceOfCloudDBAResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOfCloudDBARequest) (<-chan *RequestServiceOfCloudDBAResponse, <-chan error) {
-responseChan := make(chan *RequestServiceOfCloudDBAResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RequestServiceOfCloudDBA(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RequestServiceOfCloudDBAResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RequestServiceOfCloudDBA(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServiceOfCloudDBARequest, callback func(response *RequestServiceOfCloudDBAResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RequestServiceOfCloudDBAResponse
-var err error
-defer close(result)
-response, err = client.RequestServiceOfCloudDBA(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServiceOfCloudDBARequest, callback func(response *RequestServiceOfCloudDBAResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RequestServiceOfCloudDBAResponse
+		var err error
+		defer close(result)
+		response, err = client.RequestServiceOfCloudDBA(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RequestServiceOfCloudDBARequest struct {
-*requests.RpcRequest
-                ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ServiceRequestParam  string `position:"Query" name:"ServiceRequestParam"`
+	*requests.RpcRequest
+	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
+	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
+	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
-
 type RequestServiceOfCloudDBAResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            ListData     string `json:"ListData" xml:"ListData"`
-            AttrData     string `json:"AttrData" xml:"AttrData"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ListData  string `json:"ListData" xml:"ListData"`
+	AttrData  string `json:"AttrData" xml:"AttrData"`
 }
 
 func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBARequest) {
-request = &RequestServiceOfCloudDBARequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBA", "", "")
-return
+	request = &RequestServiceOfCloudDBARequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBA", "", "")
+	return
 }
 
 func CreateRequestServiceOfCloudDBAResponse() (response *RequestServiceOfCloudDBAResponse) {
-response = &RequestServiceOfCloudDBAResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RequestServiceOfCloudDBAResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

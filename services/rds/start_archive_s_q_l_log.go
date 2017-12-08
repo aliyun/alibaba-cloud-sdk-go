@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,84 +16,82 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) StartArchiveSQLLog(request *StartArchiveSQLLogRequest) (response *StartArchiveSQLLogResponse, err error) {
-response = CreateStartArchiveSQLLogResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateStartArchiveSQLLogResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequest) (<-chan *StartArchiveSQLLogResponse, <-chan error) {
-responseChan := make(chan *StartArchiveSQLLogResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.StartArchiveSQLLog(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *StartArchiveSQLLogResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.StartArchiveSQLLog(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLogRequest, callback func(response *StartArchiveSQLLogResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *StartArchiveSQLLogResponse
-var err error
-defer close(result)
-response, err = client.StartArchiveSQLLog(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLogRequest, callback func(response *StartArchiveSQLLogResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *StartArchiveSQLLogResponse
+		var err error
+		defer close(result)
+		response, err = client.StartArchiveSQLLog(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type StartArchiveSQLLogRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                QueryKeywords  string `position:"Query" name:"QueryKeywords"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                User  string `position:"Query" name:"User"`
-                Database  string `position:"Query" name:"Database"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	QueryKeywords        string `position:"Query" name:"QueryKeywords"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	User                 string `position:"Query" name:"User"`
+	Database             string `position:"Query" name:"Database"`
 }
 
-
 type StartArchiveSQLLogResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
-request = &StartArchiveSQLLogRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "StartArchiveSQLLog", "", "")
-return
+	request = &StartArchiveSQLLogRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "StartArchiveSQLLog", "", "")
+	return
 }
 
 func CreateStartArchiveSQLLogResponse() (response *StartArchiveSQLLogResponse) {
-response = &StartArchiveSQLLogResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &StartArchiveSQLLogResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

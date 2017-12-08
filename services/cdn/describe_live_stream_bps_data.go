@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,87 +16,85 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamBpsData(request *DescribeLiveStreamBpsDataRequest) (response *DescribeLiveStreamBpsDataResponse, err error) {
-response = CreateDescribeLiveStreamBpsDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamBpsDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamBpsDataWithChan(request *DescribeLiveStreamBpsDataRequest) (<-chan *DescribeLiveStreamBpsDataResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamBpsDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamBpsData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamBpsDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamBpsData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamBpsDataWithCallback(request *DescribeLiveStreamBpsDataRequest, callback func(response *DescribeLiveStreamBpsDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamBpsDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamBpsData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamBpsDataWithCallback(request *DescribeLiveStreamBpsDataRequest, callback func(response *DescribeLiveStreamBpsDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamBpsDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamBpsData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamBpsDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StreamName  string `position:"Query" name:"StreamName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamBpsDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                BpsDatas struct {
-                    DomainBpsModel []struct {
-            Time     string `json:"Time" xml:"Time"`
-            Bps     float64 `json:"Bps" xml:"Bps"`
-                    }   `json:"DomainBpsModel" xml:"DomainBpsModel"`
-                } `json:"BpsDatas" xml:"BpsDatas"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	BpsDatas  struct {
+		DomainBpsModel []struct {
+			Time string  `json:"Time" xml:"Time"`
+			Bps  float64 `json:"Bps" xml:"Bps"`
+		} `json:"DomainBpsModel" xml:"DomainBpsModel"`
+	} `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDataRequest) {
-request = &DescribeLiveStreamBpsDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamBpsData", "", "")
-return
+	request = &DescribeLiveStreamBpsDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamBpsData", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamBpsDataResponse() (response *DescribeLiveStreamBpsDataResponse) {
-response = &DescribeLiveStreamBpsDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamBpsDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

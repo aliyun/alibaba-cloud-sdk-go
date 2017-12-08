@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,87 +16,85 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeMasterSlaveServerGroups(request *DescribeMasterSlaveServerGroupsRequest) (response *DescribeMasterSlaveServerGroupsResponse, err error) {
-response = CreateDescribeMasterSlaveServerGroupsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeMasterSlaveServerGroupsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeMasterSlaveServerGroupsWithChan(request *DescribeMasterSlaveServerGroupsRequest) (<-chan *DescribeMasterSlaveServerGroupsResponse, <-chan error) {
-responseChan := make(chan *DescribeMasterSlaveServerGroupsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeMasterSlaveServerGroups(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeMasterSlaveServerGroupsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeMasterSlaveServerGroups(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeMasterSlaveServerGroupsWithCallback(request *DescribeMasterSlaveServerGroupsRequest, callback func(response *DescribeMasterSlaveServerGroupsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeMasterSlaveServerGroupsResponse
-var err error
-defer close(result)
-response, err = client.DescribeMasterSlaveServerGroups(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeMasterSlaveServerGroupsWithCallback(request *DescribeMasterSlaveServerGroupsRequest, callback func(response *DescribeMasterSlaveServerGroupsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeMasterSlaveServerGroupsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeMasterSlaveServerGroups(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeMasterSlaveServerGroupsRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeMasterSlaveServerGroupsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                MasterSlaveServerGroups struct {
-                    MasterSlaveServerGroup []struct {
-            MasterSlaveServerGroupId     string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-            MasterSlaveServerGroupName     string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
-                    }   `json:"MasterSlaveServerGroup" xml:"MasterSlaveServerGroup"`
-                } `json:"MasterSlaveServerGroups" xml:"MasterSlaveServerGroups"`
+	*responses.BaseResponse
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	MasterSlaveServerGroups struct {
+		MasterSlaveServerGroup []struct {
+			MasterSlaveServerGroupId   string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+			MasterSlaveServerGroupName string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
+		} `json:"MasterSlaveServerGroup" xml:"MasterSlaveServerGroup"`
+	} `json:"MasterSlaveServerGroups" xml:"MasterSlaveServerGroups"`
 }
 
 func CreateDescribeMasterSlaveServerGroupsRequest() (request *DescribeMasterSlaveServerGroupsRequest) {
-request = &DescribeMasterSlaveServerGroupsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "", "")
-return
+	request = &DescribeMasterSlaveServerGroupsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "", "")
+	return
 }
 
 func CreateDescribeMasterSlaveServerGroupsResponse() (response *DescribeMasterSlaveServerGroupsResponse) {
-response = &DescribeMasterSlaveServerGroupsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeMasterSlaveServerGroupsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

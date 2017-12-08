@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,93 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainsBySource(request *DescribeDomainsBySourceRequest) (response *DescribeDomainsBySourceResponse, err error) {
-response = CreateDescribeDomainsBySourceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDomainsBySourceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDomainsBySourceWithChan(request *DescribeDomainsBySourceRequest) (<-chan *DescribeDomainsBySourceResponse, <-chan error) {
-responseChan := make(chan *DescribeDomainsBySourceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDomainsBySource(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDomainsBySourceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDomainsBySource(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomainsBySourceRequest, callback func(response *DescribeDomainsBySourceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDomainsBySourceResponse
-var err error
-defer close(result)
-response, err = client.DescribeDomainsBySource(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomainsBySourceRequest, callback func(response *DescribeDomainsBySourceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDomainsBySourceResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDomainsBySource(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDomainsBySourceRequest struct {
-*requests.RpcRequest
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
-                Sources  string `position:"Query" name:"Sources"`
+	*requests.RpcRequest
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Sources       string `position:"Query" name:"Sources"`
 }
 
-
 type DescribeDomainsBySourceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Sources     string `json:"Sources" xml:"Sources"`
-                DomainsList struct {
-                    DomainsData []struct {
-            Source     string `json:"Source" xml:"Source"`
-                Domains struct {
-                DomainNames []    string `json:"domainNames" xml:"domainNames"`
-                } `json:"Domains" xml:"Domains"`
-                DomainInfos struct {
-                    DomainInfo []struct {
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            DomainCname     string `json:"DomainCname" xml:"DomainCname"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            UpdateTime     string `json:"UpdateTime" xml:"UpdateTime"`
-            Status     string `json:"Status" xml:"Status"`
-                    }   `json:"domainInfo" xml:"domainInfo"`
-                } `json:"DomainInfos" xml:"DomainInfos"`
-                    }   `json:"DomainsData" xml:"DomainsData"`
-                } `json:"DomainsList" xml:"DomainsList"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Sources     string `json:"Sources" xml:"Sources"`
+	DomainsList struct {
+		DomainsData []struct {
+			Source  string `json:"Source" xml:"Source"`
+			Domains struct {
+				DomainNames []string `json:"domainNames" xml:"domainNames"`
+			} `json:"Domains" xml:"Domains"`
+			DomainInfos struct {
+				DomainInfo []struct {
+					DomainName  string `json:"DomainName" xml:"DomainName"`
+					DomainCname string `json:"DomainCname" xml:"DomainCname"`
+					CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+					UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
+					Status      string `json:"Status" xml:"Status"`
+				} `json:"domainInfo" xml:"domainInfo"`
+			} `json:"DomainInfos" xml:"DomainInfos"`
+		} `json:"DomainsData" xml:"DomainsData"`
+	} `json:"DomainsList" xml:"DomainsList"`
 }
 
 func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {
-request = &DescribeDomainsBySourceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainsBySource", "", "")
-return
+	request = &DescribeDomainsBySourceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainsBySource", "", "")
+	return
 }
 
 func CreateDescribeDomainsBySourceResponse() (response *DescribeDomainsBySourceResponse) {
-response = &DescribeDomainsBySourceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDomainsBySourceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

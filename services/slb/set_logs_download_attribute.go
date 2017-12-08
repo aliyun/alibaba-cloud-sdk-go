@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetLogsDownloadAttribute(request *SetLogsDownloadAttributeRequest) (response *SetLogsDownloadAttributeResponse, err error) {
-response = CreateSetLogsDownloadAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetLogsDownloadAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetLogsDownloadAttributeWithChan(request *SetLogsDownloadAttributeRequest) (<-chan *SetLogsDownloadAttributeResponse, <-chan error) {
-responseChan := make(chan *SetLogsDownloadAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetLogsDownloadAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetLogsDownloadAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetLogsDownloadAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetLogsDownloadAttributeWithCallback(request *SetLogsDownloadAttributeRequest, callback func(response *SetLogsDownloadAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetLogsDownloadAttributeResponse
-var err error
-defer close(result)
-response, err = client.SetLogsDownloadAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetLogsDownloadAttributeWithCallback(request *SetLogsDownloadAttributeRequest, callback func(response *SetLogsDownloadAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetLogsDownloadAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.SetLogsDownloadAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetLogsDownloadAttributeRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                RoleName  string `position:"Query" name:"RoleName"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                LogType  string `position:"Query" name:"LogType"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                OSSBucketName  string `position:"Query" name:"OSSBucketName"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	RoleName             string `position:"Query" name:"RoleName"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	LogType              string `position:"Query" name:"LogType"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	OSSBucketName        string `position:"Query" name:"OSSBucketName"`
 }
 
-
 type SetLogsDownloadAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetLogsDownloadAttributeRequest() (request *SetLogsDownloadAttributeRequest) {
-request = &SetLogsDownloadAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "SetLogsDownloadAttribute", "", "")
-return
+	request = &SetLogsDownloadAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLogsDownloadAttribute", "", "")
+	return
 }
 
 func CreateSetLogsDownloadAttributeResponse() (response *SetLogsDownloadAttributeResponse) {
-response = &SetLogsDownloadAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetLogsDownloadAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

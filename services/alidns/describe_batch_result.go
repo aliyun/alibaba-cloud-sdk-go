@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,87 +16,85 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeBatchResult(request *DescribeBatchResultRequest) (response *DescribeBatchResultResponse, err error) {
-response = CreateDescribeBatchResultResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeBatchResultResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRequest) (<-chan *DescribeBatchResultResponse, <-chan error) {
-responseChan := make(chan *DescribeBatchResultResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeBatchResult(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeBatchResultResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeBatchResult(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResultRequest, callback func(response *DescribeBatchResultResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeBatchResultResponse
-var err error
-defer close(result)
-response, err = client.DescribeBatchResult(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResultRequest, callback func(response *DescribeBatchResultResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeBatchResultResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeBatchResult(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeBatchResultRequest struct {
-*requests.RpcRequest
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
-                TraceId  string `position:"Query" name:"TraceId"`
+	*requests.RpcRequest
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
+	TraceId      string `position:"Query" name:"TraceId"`
 }
 
-
 type DescribeBatchResultResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TraceId     string `json:"TraceId" xml:"TraceId"`
-            Status     int64 `json:"Status" xml:"Status"`
-            BatchCount     int64 `json:"BatchCount" xml:"BatchCount"`
-            SuccessNumber     int64 `json:"SuccessNumber" xml:"SuccessNumber"`
-                FailResults struct {
-                    FailResult []struct {
-            BatchIndex     string `json:"BatchIndex" xml:"BatchIndex"`
-            ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
-                    }   `json:"FailResult" xml:"FailResult"`
-                } `json:"FailResults" xml:"FailResults"`
+	*responses.BaseResponse
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TraceId       string `json:"TraceId" xml:"TraceId"`
+	Status        int64  `json:"Status" xml:"Status"`
+	BatchCount    int64  `json:"BatchCount" xml:"BatchCount"`
+	SuccessNumber int64  `json:"SuccessNumber" xml:"SuccessNumber"`
+	FailResults   struct {
+		FailResult []struct {
+			BatchIndex string `json:"BatchIndex" xml:"BatchIndex"`
+			ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
+		} `json:"FailResult" xml:"FailResult"`
+	} `json:"FailResults" xml:"FailResults"`
 }
 
 func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
-request = &DescribeBatchResultRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResult", "", "")
-return
+	request = &DescribeBatchResultRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResult", "", "")
+	return
 }
 
 func CreateDescribeBatchResultResponse() (response *DescribeBatchResultResponse) {
-response = &DescribeBatchResultResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeBatchResultResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

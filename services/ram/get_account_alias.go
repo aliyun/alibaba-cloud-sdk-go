@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,75 +16,73 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetAccountAlias(request *GetAccountAliasRequest) (response *GetAccountAliasResponse, err error) {
-response = CreateGetAccountAliasResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetAccountAliasResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetAccountAliasWithChan(request *GetAccountAliasRequest) (<-chan *GetAccountAliasResponse, <-chan error) {
-responseChan := make(chan *GetAccountAliasResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetAccountAlias(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetAccountAliasResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetAccountAlias(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetAccountAliasWithCallback(request *GetAccountAliasRequest, callback func(response *GetAccountAliasResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetAccountAliasResponse
-var err error
-defer close(result)
-response, err = client.GetAccountAlias(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetAccountAliasWithCallback(request *GetAccountAliasRequest, callback func(response *GetAccountAliasResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetAccountAliasResponse
+		var err error
+		defer close(result)
+		response, err = client.GetAccountAlias(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetAccountAliasRequest struct {
-*requests.RpcRequest
+	*requests.RpcRequest
 }
 
-
 type GetAccountAliasResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            AccountAlias     string `json:"AccountAlias" xml:"AccountAlias"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	AccountAlias string `json:"AccountAlias" xml:"AccountAlias"`
 }
 
 func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
-request = &GetAccountAliasRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "GetAccountAlias", "", "")
-return
+	request = &GetAccountAliasRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetAccountAlias", "", "")
+	return
 }
 
 func CreateGetAccountAliasResponse() (response *GetAccountAliasResponse) {
-response = &GetAccountAliasResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetAccountAliasResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

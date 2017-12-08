@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachPolicyToUser(request *AttachPolicyToUserRequest) (response *AttachPolicyToUserResponse, err error) {
-response = CreateAttachPolicyToUserResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAttachPolicyToUserResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequest) (<-chan *AttachPolicyToUserResponse, <-chan error) {
-responseChan := make(chan *AttachPolicyToUserResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AttachPolicyToUser(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AttachPolicyToUserResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AttachPolicyToUser(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUserRequest, callback func(response *AttachPolicyToUserResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AttachPolicyToUserResponse
-var err error
-defer close(result)
-response, err = client.AttachPolicyToUser(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUserRequest, callback func(response *AttachPolicyToUserResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AttachPolicyToUserResponse
+		var err error
+		defer close(result)
+		response, err = client.AttachPolicyToUser(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AttachPolicyToUserRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                PolicyType  string `position:"Query" name:"PolicyType"`
-                PolicyName  string `position:"Query" name:"PolicyName"`
+	*requests.RpcRequest
+	UserName   string `position:"Query" name:"UserName"`
+	PolicyType string `position:"Query" name:"PolicyType"`
+	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
-
 type AttachPolicyToUserResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAttachPolicyToUserRequest() (request *AttachPolicyToUserRequest) {
-request = &AttachPolicyToUserRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToUser", "", "")
-return
+	request = &AttachPolicyToUserRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToUser", "", "")
+	return
 }
 
 func CreateAttachPolicyToUserResponse() (response *AttachPolicyToUserResponse) {
-response = &AttachPolicyToUserResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AttachPolicyToUserResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

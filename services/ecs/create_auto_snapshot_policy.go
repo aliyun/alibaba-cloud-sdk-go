@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateAutoSnapshotPolicy(request *CreateAutoSnapshotPolicyRequest) (response *CreateAutoSnapshotPolicyResponse, err error) {
-response = CreateCreateAutoSnapshotPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateAutoSnapshotPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateAutoSnapshotPolicyWithChan(request *CreateAutoSnapshotPolicyRequest) (<-chan *CreateAutoSnapshotPolicyResponse, <-chan error) {
-responseChan := make(chan *CreateAutoSnapshotPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateAutoSnapshotPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateAutoSnapshotPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateAutoSnapshotPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSnapshotPolicyRequest, callback func(response *CreateAutoSnapshotPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateAutoSnapshotPolicyResponse
-var err error
-defer close(result)
-response, err = client.CreateAutoSnapshotPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSnapshotPolicyRequest, callback func(response *CreateAutoSnapshotPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateAutoSnapshotPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateAutoSnapshotPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateAutoSnapshotPolicyRequest struct {
-*requests.RpcRequest
-                RepeatWeekdays  string `position:"Query" name:"repeatWeekdays"`
-                AutoSnapshotPolicyName  string `position:"Query" name:"autoSnapshotPolicyName"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                TimePoints  string `position:"Query" name:"timePoints"`
-                RetentionDays  string `position:"Query" name:"retentionDays"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	RepeatWeekdays         string `position:"Query" name:"repeatWeekdays"`
+	AutoSnapshotPolicyName string `position:"Query" name:"autoSnapshotPolicyName"`
+	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
+	TimePoints             string `position:"Query" name:"timePoints"`
+	RetentionDays          string `position:"Query" name:"retentionDays"`
+	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
 }
 
-
 type CreateAutoSnapshotPolicyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            AutoSnapshotPolicyId     string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	*responses.BaseResponse
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotPolicyId string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
 }
 
 func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyRequest) {
-request = &CreateAutoSnapshotPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "", "")
-return
+	request = &CreateAutoSnapshotPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "", "")
+	return
 }
 
 func CreateCreateAutoSnapshotPolicyResponse() (response *CreateAutoSnapshotPolicyResponse) {
-response = &CreateAutoSnapshotPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateAutoSnapshotPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

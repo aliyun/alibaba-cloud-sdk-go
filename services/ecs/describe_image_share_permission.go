@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,94 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeImageSharePermission(request *DescribeImageSharePermissionRequest) (response *DescribeImageSharePermissionResponse, err error) {
-response = CreateDescribeImageSharePermissionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeImageSharePermissionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeImageSharePermissionWithChan(request *DescribeImageSharePermissionRequest) (<-chan *DescribeImageSharePermissionResponse, <-chan error) {
-responseChan := make(chan *DescribeImageSharePermissionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeImageSharePermission(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeImageSharePermissionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeImageSharePermission(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeImageSharePermissionWithCallback(request *DescribeImageSharePermissionRequest, callback func(response *DescribeImageSharePermissionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeImageSharePermissionResponse
-var err error
-defer close(result)
-response, err = client.DescribeImageSharePermission(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeImageSharePermissionWithCallback(request *DescribeImageSharePermissionRequest, callback func(response *DescribeImageSharePermissionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeImageSharePermissionResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeImageSharePermission(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeImageSharePermissionRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ImageId  string `position:"Query" name:"ImageId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ImageId              string `position:"Query" name:"ImageId"`
 }
 
-
 type DescribeImageSharePermissionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-            ImageId     string `json:"ImageId" xml:"ImageId"`
-                ShareGroups struct {
-                    ShareGroup []struct {
-            Group     string `json:"Group" xml:"Group"`
-                    }   `json:"ShareGroup" xml:"ShareGroup"`
-                } `json:"ShareGroups" xml:"ShareGroups"`
-                Accounts struct {
-                    Account []struct {
-            AliyunId     string `json:"AliyunId" xml:"AliyunId"`
-                    }   `json:"Account" xml:"Account"`
-                } `json:"Accounts" xml:"Accounts"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
+	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	ImageId     string `json:"ImageId" xml:"ImageId"`
+	ShareGroups struct {
+		ShareGroup []struct {
+			Group string `json:"Group" xml:"Group"`
+		} `json:"ShareGroup" xml:"ShareGroup"`
+	} `json:"ShareGroups" xml:"ShareGroups"`
+	Accounts struct {
+		Account []struct {
+			AliyunId string `json:"AliyunId" xml:"AliyunId"`
+		} `json:"Account" xml:"Account"`
+	} `json:"Accounts" xml:"Accounts"`
 }
 
 func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePermissionRequest) {
-request = &DescribeImageSharePermissionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "", "")
-return
+	request = &DescribeImageSharePermissionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "", "")
+	return
 }
 
 func CreateDescribeImageSharePermissionResponse() (response *DescribeImageSharePermissionResponse) {
-response = &DescribeImageSharePermissionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeImageSharePermissionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamBitRateData(request *DescribeLiveStreamBitRateDataRequest) (response *DescribeLiveStreamBitRateDataResponse, err error) {
-response = CreateDescribeLiveStreamBitRateDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamBitRateDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiveStreamBitRateDataRequest) (<-chan *DescribeLiveStreamBitRateDataResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamBitRateDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamBitRateData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamBitRateDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamBitRateData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *DescribeLiveStreamBitRateDataRequest, callback func(response *DescribeLiveStreamBitRateDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamBitRateDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamBitRateData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *DescribeLiveStreamBitRateDataRequest, callback func(response *DescribeLiveStreamBitRateDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamBitRateDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamBitRateData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamBitRateDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StreamName  string `position:"Query" name:"StreamName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamBitRateDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                FrameRateAndBitRateInfos struct {
-                    FrameRateAndBitRateInfo []struct {
-            StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
-            VideoFrameRate     float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
-            AudioFrameRate     float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
-            BitRate     float64 `json:"BitRate" xml:"BitRate"`
-            Time     string `json:"Time" xml:"Time"`
-                    }   `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
-                } `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	*responses.BaseResponse
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	FrameRateAndBitRateInfos struct {
+		FrameRateAndBitRateInfo []struct {
+			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+			VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
+			AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
+			BitRate        float64 `json:"BitRate" xml:"BitRate"`
+			Time           string  `json:"Time" xml:"Time"`
+		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
+	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBitRateDataRequest) {
-request = &DescribeLiveStreamBitRateDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamBitRateData", "", "")
-return
+	request = &DescribeLiveStreamBitRateDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamBitRateData", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamBitRateDataResponse() (response *DescribeLiveStreamBitRateDataResponse) {
-response = &DescribeLiveStreamBitRateDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamBitRateDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

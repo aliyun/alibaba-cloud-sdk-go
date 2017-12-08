@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *UnbindAliasResponse, err error) {
-response = CreateUnbindAliasResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUnbindAliasResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *UnbindAliasResponse, <-chan error) {
-responseChan := make(chan *UnbindAliasResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UnbindAlias(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UnbindAliasResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UnbindAlias(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callback func(response *UnbindAliasResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UnbindAliasResponse
-var err error
-defer close(result)
-response, err = client.UnbindAlias(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callback func(response *UnbindAliasResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UnbindAliasResponse
+		var err error
+		defer close(result)
+		response, err = client.UnbindAlias(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UnbindAliasRequest struct {
-*requests.RpcRequest
-                UnbindAll  string `position:"Query" name:"UnbindAll"`
-                AliasName  string `position:"Query" name:"AliasName"`
-                AppKey  string `position:"Query" name:"AppKey"`
-                DeviceId  string `position:"Query" name:"DeviceId"`
+	*requests.RpcRequest
+	UnbindAll string `position:"Query" name:"UnbindAll"`
+	AliasName string `position:"Query" name:"AliasName"`
+	AppKey    string `position:"Query" name:"AppKey"`
+	DeviceId  string `position:"Query" name:"DeviceId"`
 }
 
-
 type UnbindAliasResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
-request = &UnbindAliasRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "UnbindAlias", "", "")
-return
+	request = &UnbindAliasRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "UnbindAlias", "", "")
+	return
 }
 
 func CreateUnbindAliasResponse() (response *UnbindAliasResponse) {
-response = &UnbindAliasResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UnbindAliasResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

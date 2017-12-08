@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RevokeSecurityGroup(request *RevokeSecurityGroupRequest) (response *RevokeSecurityGroupResponse, err error) {
-response = CreateRevokeSecurityGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRevokeSecurityGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RevokeSecurityGroupWithChan(request *RevokeSecurityGroupRequest) (<-chan *RevokeSecurityGroupResponse, <-chan error) {
-responseChan := make(chan *RevokeSecurityGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RevokeSecurityGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RevokeSecurityGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RevokeSecurityGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGroupRequest, callback func(response *RevokeSecurityGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RevokeSecurityGroupResponse
-var err error
-defer close(result)
-response, err = client.RevokeSecurityGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGroupRequest, callback func(response *RevokeSecurityGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RevokeSecurityGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.RevokeSecurityGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RevokeSecurityGroupRequest struct {
-*requests.RpcRequest
-                SourceGroupOwnerAccount  string `position:"Query" name:"SourceGroupOwnerAccount"`
-                PortRange  string `position:"Query" name:"PortRange"`
-                DestCidrIp  string `position:"Query" name:"DestCidrIp"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                Priority  string `position:"Query" name:"Priority"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                SourceGroupOwnerId  string `position:"Query" name:"SourceGroupOwnerId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
-                SourcePortRange  string `position:"Query" name:"SourcePortRange"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                IpProtocol  string `position:"Query" name:"IpProtocol"`
-                SourceGroupId  string `position:"Query" name:"SourceGroupId"`
-                NicType  string `position:"Query" name:"NicType"`
-                Policy  string `position:"Query" name:"Policy"`
-                SourceCidrIp  string `position:"Query" name:"SourceCidrIp"`
+	*requests.RpcRequest
+	SourceGroupOwnerAccount string `position:"Query" name:"SourceGroupOwnerAccount"`
+	PortRange               string `position:"Query" name:"PortRange"`
+	DestCidrIp              string `position:"Query" name:"DestCidrIp"`
+	ResourceOwnerAccount    string `position:"Query" name:"ResourceOwnerAccount"`
+	Description             string `position:"Query" name:"Description"`
+	Priority                string `position:"Query" name:"Priority"`
+	ResourceOwnerId         string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount            string `position:"Query" name:"OwnerAccount"`
+	SourceGroupOwnerId      string `position:"Query" name:"SourceGroupOwnerId"`
+	ClientToken             string `position:"Query" name:"ClientToken"`
+	SecurityGroupId         string `position:"Query" name:"SecurityGroupId"`
+	SourcePortRange         string `position:"Query" name:"SourcePortRange"`
+	OwnerId                 string `position:"Query" name:"OwnerId"`
+	IpProtocol              string `position:"Query" name:"IpProtocol"`
+	SourceGroupId           string `position:"Query" name:"SourceGroupId"`
+	NicType                 string `position:"Query" name:"NicType"`
+	Policy                  string `position:"Query" name:"Policy"`
+	SourceCidrIp            string `position:"Query" name:"SourceCidrIp"`
 }
 
-
 type RevokeSecurityGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
-request = &RevokeSecurityGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroup", "", "")
-return
+	request = &RevokeSecurityGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroup", "", "")
+	return
 }
 
 func CreateRevokeSecurityGroupResponse() (response *RevokeSecurityGroupResponse) {
-response = &RevokeSecurityGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RevokeSecurityGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

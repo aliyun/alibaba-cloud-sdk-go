@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetDNSSLBStatus(request *SetDNSSLBStatusRequest) (response *SetDNSSLBStatusResponse, err error) {
-response = CreateSetDNSSLBStatusResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetDNSSLBStatusResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (<-chan *SetDNSSLBStatusResponse, <-chan error) {
-responseChan := make(chan *SetDNSSLBStatusResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetDNSSLBStatus(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetDNSSLBStatusResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetDNSSLBStatus(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusRequest, callback func(response *SetDNSSLBStatusResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetDNSSLBStatusResponse
-var err error
-defer close(result)
-response, err = client.SetDNSSLBStatus(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusRequest, callback func(response *SetDNSSLBStatusResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetDNSSLBStatusResponse
+		var err error
+		defer close(result)
+		response, err = client.SetDNSSLBStatus(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetDNSSLBStatusRequest struct {
-*requests.RpcRequest
-                Open  string `position:"Query" name:"Open"`
-                SubDomain  string `position:"Query" name:"SubDomain"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	Open         string `position:"Query" name:"Open"`
+	SubDomain    string `position:"Query" name:"SubDomain"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
-
 type SetDNSSLBStatusResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RecordCount     int64 `json:"RecordCount" xml:"RecordCount"`
-            Open     bool `json:"Open" xml:"Open"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	RecordCount int64  `json:"RecordCount" xml:"RecordCount"`
+	Open        bool   `json:"Open" xml:"Open"`
 }
 
 func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
-request = &SetDNSSLBStatusRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "SetDNSSLBStatus", "", "")
-return
+	request = &SetDNSSLBStatusRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDNSSLBStatus", "", "")
+	return
 }
 
 func CreateSetDNSSLBStatusResponse() (response *SetDNSSLBStatusResponse) {
-response = &SetDNSSLBStatusResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetDNSSLBStatusResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

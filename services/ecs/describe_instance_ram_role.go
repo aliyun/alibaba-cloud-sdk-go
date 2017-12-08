@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeInstanceRamRole(request *DescribeInstanceRamRoleRequest) (response *DescribeInstanceRamRoleResponse, err error) {
-response = CreateDescribeInstanceRamRoleResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeInstanceRamRoleResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceRamRoleRequest) (<-chan *DescribeInstanceRamRoleResponse, <-chan error) {
-responseChan := make(chan *DescribeInstanceRamRoleResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeInstanceRamRole(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeInstanceRamRoleResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeInstanceRamRole(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInstanceRamRoleRequest, callback func(response *DescribeInstanceRamRoleResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeInstanceRamRoleResponse
-var err error
-defer close(result)
-response, err = client.DescribeInstanceRamRole(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInstanceRamRoleRequest, callback func(response *DescribeInstanceRamRoleResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeInstanceRamRoleResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeInstanceRamRole(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeInstanceRamRoleRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                InstanceIds  string `position:"Query" name:"InstanceIds"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string `position:"Query" name:"InstanceIds"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeInstanceRamRoleResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-                InstanceRamRoleSets struct {
-                    InstanceRamRoleSet []struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            RamRoleName     string `json:"RamRoleName" xml:"RamRoleName"`
-                    }   `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
-                } `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
+	*responses.BaseResponse
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
+	InstanceRamRoleSets struct {
+		InstanceRamRoleSet []struct {
+			InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+			RamRoleName string `json:"RamRoleName" xml:"RamRoleName"`
+		} `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
+	} `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 
 func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {
-request = &DescribeInstanceRamRoleRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "", "")
-return
+	request = &DescribeInstanceRamRoleRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "", "")
+	return
 }
 
 func CreateDescribeInstanceRamRoleResponse() (response *DescribeInstanceRamRoleResponse) {
-response = &DescribeInstanceRamRoleResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeInstanceRamRoleResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

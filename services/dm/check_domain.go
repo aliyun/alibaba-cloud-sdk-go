@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckDomainResponse, err error) {
-response = CreateCheckDomainResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCheckDomainResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *CheckDomainResponse, <-chan error) {
-responseChan := make(chan *CheckDomainResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CheckDomain(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CheckDomainResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CheckDomain(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callback func(response *CheckDomainResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CheckDomainResponse
-var err error
-defer close(result)
-response, err = client.CheckDomain(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callback func(response *CheckDomainResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CheckDomainResponse
+		var err error
+		defer close(result)
+		response, err = client.CheckDomain(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CheckDomainRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                DomainId  string `position:"Query" name:"DomainId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	DomainId             string `position:"Query" name:"DomainId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type CheckDomainResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCheckDomainRequest() (request *CheckDomainRequest) {
-request = &CheckDomainRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "CheckDomain", "", "")
-return
+	request = &CheckDomainRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "CheckDomain", "", "")
+	return
 }
 
 func CreateCheckDomainResponse() (response *CheckDomainResponse) {
-response = &CheckDomainResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CheckDomainResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeletePipeline(request *DeletePipelineRequest) (response *DeletePipelineResponse, err error) {
-response = CreateDeletePipelineResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeletePipelineResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-chan *DeletePipelineResponse, <-chan error) {
-responseChan := make(chan *DeletePipelineResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeletePipeline(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeletePipelineResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeletePipeline(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest, callback func(response *DeletePipelineResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeletePipelineResponse
-var err error
-defer close(result)
-response, err = client.DeletePipeline(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest, callback func(response *DeletePipelineResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeletePipelineResponse
+		var err error
+		defer close(result)
+		response, err = client.DeletePipeline(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeletePipelineRequest struct {
-*requests.RpcRequest
-                PipelineId  string `position:"Query" name:"PipelineId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PipelineId           string `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeletePipelineResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PipelineId string `json:"PipelineId" xml:"PipelineId"`
 }
 
 func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
-request = &DeletePipelineRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "", "")
-return
+	request = &DeletePipelineRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "", "")
+	return
 }
 
 func CreateDeletePipelineResponse() (response *DeletePipelineResponse) {
-response = &DeletePipelineResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeletePipelineResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

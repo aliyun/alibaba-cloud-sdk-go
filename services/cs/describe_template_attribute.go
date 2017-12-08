@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,74 +16,72 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeTemplateAttribute(request *DescribeTemplateAttributeRequest) (response *DescribeTemplateAttributeResponse, err error) {
-response = CreateDescribeTemplateAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeTemplateAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeTemplateAttributeWithChan(request *DescribeTemplateAttributeRequest) (<-chan *DescribeTemplateAttributeResponse, <-chan error) {
-responseChan := make(chan *DescribeTemplateAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeTemplateAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeTemplateAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeTemplateAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeTemplateAttributeWithCallback(request *DescribeTemplateAttributeRequest, callback func(response *DescribeTemplateAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeTemplateAttributeResponse
-var err error
-defer close(result)
-response, err = client.DescribeTemplateAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeTemplateAttributeWithCallback(request *DescribeTemplateAttributeRequest, callback func(response *DescribeTemplateAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeTemplateAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeTemplateAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeTemplateAttributeRequest struct {
-*requests.RoaRequest
-                TemplateId  string `position:"Path" name:"TemplateId"`
+	*requests.RoaRequest
+	TemplateId string `position:"Path" name:"TemplateId"`
 }
 
-
 type DescribeTemplateAttributeResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttributeRequest) {
-request = &DescribeTemplateAttributeRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplateAttribute", "/templates/[TemplateId]", "", "")
-return
+	request = &DescribeTemplateAttributeRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplateAttribute", "/templates/[TemplateId]", "", "")
+	return
 }
 
 func CreateDescribeTemplateAttributeResponse() (response *DescribeTemplateAttributeResponse) {
-response = &DescribeTemplateAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeTemplateAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

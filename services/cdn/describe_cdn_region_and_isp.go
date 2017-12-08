@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRequest) (response *DescribeCdnRegionAndIspResponse, err error) {
-response = CreateDescribeCdnRegionAndIspResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCdnRegionAndIspResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegionAndIspRequest) (<-chan *DescribeCdnRegionAndIspResponse, <-chan error) {
-responseChan := make(chan *DescribeCdnRegionAndIspResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCdnRegionAndIsp(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCdnRegionAndIspResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCdnRegionAndIsp(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRegionAndIspRequest, callback func(response *DescribeCdnRegionAndIspResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCdnRegionAndIspResponse
-var err error
-defer close(result)
-response, err = client.DescribeCdnRegionAndIsp(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRegionAndIspRequest, callback func(response *DescribeCdnRegionAndIspResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCdnRegionAndIspResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCdnRegionAndIsp(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeCdnRegionAndIspRequest struct {
-*requests.RpcRequest
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeCdnRegionAndIspResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                Regions struct {
-                    Region []struct {
-            NameZh     string `json:"NameZh" xml:"NameZh"`
-            NameEn     string `json:"NameEn" xml:"NameEn"`
-                    }   `json:"Region" xml:"Region"`
-                } `json:"Regions" xml:"Regions"`
-                Isps struct {
-                    Isp []struct {
-            NameZh     string `json:"NameZh" xml:"NameZh"`
-            NameEn     string `json:"NameEn" xml:"NameEn"`
-                    }   `json:"Isp" xml:"Isp"`
-                } `json:"Isps" xml:"Isps"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Regions   struct {
+		Region []struct {
+			NameZh string `json:"NameZh" xml:"NameZh"`
+			NameEn string `json:"NameEn" xml:"NameEn"`
+		} `json:"Region" xml:"Region"`
+	} `json:"Regions" xml:"Regions"`
+	Isps struct {
+		Isp []struct {
+			NameZh string `json:"NameZh" xml:"NameZh"`
+			NameEn string `json:"NameEn" xml:"NameEn"`
+		} `json:"Isp" xml:"Isp"`
+	} `json:"Isps" xml:"Isps"`
 }
 
 func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {
-request = &DescribeCdnRegionAndIspRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnRegionAndIsp", "", "")
-return
+	request = &DescribeCdnRegionAndIspRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnRegionAndIsp", "", "")
+	return
 }
 
 func CreateDescribeCdnRegionAndIspResponse() (response *DescribeCdnRegionAndIspResponse) {
-response = &DescribeCdnRegionAndIspResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCdnRegionAndIspResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

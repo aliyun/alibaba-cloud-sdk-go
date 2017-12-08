@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,94 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (response *QueryPipelineListResponse, err error) {
-response = CreateQueryPipelineListResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryPipelineListResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListRequest) (<-chan *QueryPipelineListResponse, <-chan error) {
-responseChan := make(chan *QueryPipelineListResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryPipelineList(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryPipelineListResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryPipelineList(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRequest, callback func(response *QueryPipelineListResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryPipelineListResponse
-var err error
-defer close(result)
-response, err = client.QueryPipelineList(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRequest, callback func(response *QueryPipelineListResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryPipelineListResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryPipelineList(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryPipelineListRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PipelineIds  string `position:"Query" name:"PipelineIds"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PipelineIds          string `position:"Query" name:"PipelineIds"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type QueryPipelineListResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                NonExistPids struct {
-                String []    string `json:"String" xml:"String"`
-                } `json:"NonExistPids" xml:"NonExistPids"`
-                PipelineList struct {
-                    Pipeline []struct {
-            Id     string `json:"Id" xml:"Id"`
-            Name     string `json:"Name" xml:"Name"`
-            State     string `json:"State" xml:"State"`
-            Speed     string `json:"Speed" xml:"Speed"`
-            SpeedLevel     int64 `json:"SpeedLevel" xml:"SpeedLevel"`
-            Role     string `json:"Role" xml:"Role"`
-            NotifyConfig struct {
-            Topic     string `json:"Topic" xml:"Topic"`
-            QueueName     string `json:"QueueName" xml:"QueueName"`
-            }  `json:"NotifyConfig" xml:"NotifyConfig"`
-                    }   `json:"Pipeline" xml:"Pipeline"`
-                } `json:"PipelineList" xml:"PipelineList"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	NonExistPids struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistPids" xml:"NonExistPids"`
+	PipelineList struct {
+		Pipeline []struct {
+			Id           string `json:"Id" xml:"Id"`
+			Name         string `json:"Name" xml:"Name"`
+			State        string `json:"State" xml:"State"`
+			Speed        string `json:"Speed" xml:"Speed"`
+			SpeedLevel   int64  `json:"SpeedLevel" xml:"SpeedLevel"`
+			Role         string `json:"Role" xml:"Role"`
+			NotifyConfig struct {
+				Topic     string `json:"Topic" xml:"Topic"`
+				QueueName string `json:"QueueName" xml:"QueueName"`
+			} `json:"NotifyConfig" xml:"NotifyConfig"`
+		} `json:"Pipeline" xml:"Pipeline"`
+	} `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
-request = &QueryPipelineListRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "", "")
-return
+	request = &QueryPipelineListRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "", "")
+	return
 }
 
 func CreateQueryPipelineListResponse() (response *QueryPipelineListResponse) {
-response = &QueryPipelineListResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryPipelineListResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

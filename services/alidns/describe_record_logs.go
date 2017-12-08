@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,92 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRecordLogs(request *DescribeRecordLogsRequest) (response *DescribeRecordLogsResponse, err error) {
-response = CreateDescribeRecordLogsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeRecordLogsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeRecordLogsWithChan(request *DescribeRecordLogsRequest) (<-chan *DescribeRecordLogsResponse, <-chan error) {
-responseChan := make(chan *DescribeRecordLogsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeRecordLogs(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeRecordLogsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeRecordLogs(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeRecordLogsWithCallback(request *DescribeRecordLogsRequest, callback func(response *DescribeRecordLogsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeRecordLogsResponse
-var err error
-defer close(result)
-response, err = client.DescribeRecordLogs(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeRecordLogsWithCallback(request *DescribeRecordLogsRequest, callback func(response *DescribeRecordLogsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeRecordLogsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeRecordLogs(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeRecordLogsRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                StartDate  string `position:"Query" name:"StartDate"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                KeyWord  string `position:"Query" name:"KeyWord"`
-                EndDate  string `position:"Query" name:"endDate"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	PageSize     string `position:"Query" name:"PageSize"`
+	StartDate    string `position:"Query" name:"StartDate"`
+	DomainName   string `position:"Query" name:"DomainName"`
+	PageNumber   string `position:"Query" name:"PageNumber"`
+	KeyWord      string `position:"Query" name:"KeyWord"`
+	EndDate      string `position:"Query" name:"endDate"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
-
 type DescribeRecordLogsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int64 `json:"PageSize" xml:"PageSize"`
-                RecordLogs struct {
-                    RecordLog []struct {
-            ActionTime     string `json:"ActionTime" xml:"ActionTime"`
-            ActionTimestamp     int64 `json:"ActionTimestamp" xml:"ActionTimestamp"`
-            Action     string `json:"Action" xml:"Action"`
-            Message     string `json:"Message" xml:"Message"`
-            ClientIp     string `json:"ClientIp" xml:"ClientIp"`
-                    }   `json:"RecordLog" xml:"RecordLog"`
-                } `json:"RecordLogs" xml:"RecordLogs"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	RecordLogs struct {
+		RecordLog []struct {
+			ActionTime      string `json:"ActionTime" xml:"ActionTime"`
+			ActionTimestamp int64  `json:"ActionTimestamp" xml:"ActionTimestamp"`
+			Action          string `json:"Action" xml:"Action"`
+			Message         string `json:"Message" xml:"Message"`
+			ClientIp        string `json:"ClientIp" xml:"ClientIp"`
+		} `json:"RecordLog" xml:"RecordLog"`
+	} `json:"RecordLogs" xml:"RecordLogs"`
 }
 
 func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {
-request = &DescribeRecordLogsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordLogs", "", "")
-return
+	request = &DescribeRecordLogsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordLogs", "", "")
+	return
 }
 
 func CreateDescribeRecordLogsResponse() (response *DescribeRecordLogsResponse) {
-response = &DescribeRecordLogsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeRecordLogsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

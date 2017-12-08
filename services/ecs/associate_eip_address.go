@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AssociateEipAddress(request *AssociateEipAddressRequest) (response *AssociateEipAddressResponse, err error) {
-response = CreateAssociateEipAddressResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAssociateEipAddressResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRequest) (<-chan *AssociateEipAddressResponse, <-chan error) {
-responseChan := make(chan *AssociateEipAddressResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AssociateEipAddress(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AssociateEipAddressResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AssociateEipAddress(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddressRequest, callback func(response *AssociateEipAddressResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AssociateEipAddressResponse
-var err error
-defer close(result)
-response, err = client.AssociateEipAddress(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddressRequest, callback func(response *AssociateEipAddressResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AssociateEipAddressResponse
+		var err error
+		defer close(result)
+		response, err = client.AssociateEipAddress(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AssociateEipAddressRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                AllocationId  string `position:"Query" name:"AllocationId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
-                InstanceType  string `position:"Query" name:"InstanceType"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AllocationId         string `position:"Query" name:"AllocationId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
+	InstanceType         string `position:"Query" name:"InstanceType"`
 }
 
-
 type AssociateEipAddressResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
-request = &AssociateEipAddressRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateEipAddress", "", "")
-return
+	request = &AssociateEipAddressRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateEipAddress", "", "")
+	return
 }
 
 func CreateAssociateEipAddressResponse() (response *AssociateEipAddressResponse) {
-response = &AssociateEipAddressResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AssociateEipAddressResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

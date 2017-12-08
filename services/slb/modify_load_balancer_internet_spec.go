@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyLoadBalancerInternetSpec(request *ModifyLoadBalancerInternetSpecRequest) (response *ModifyLoadBalancerInternetSpecResponse, err error) {
-response = CreateModifyLoadBalancerInternetSpecResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyLoadBalancerInternetSpecResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyLoadBalancerInternetSpecWithChan(request *ModifyLoadBalancerInternetSpecRequest) (<-chan *ModifyLoadBalancerInternetSpecResponse, <-chan error) {
-responseChan := make(chan *ModifyLoadBalancerInternetSpecResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyLoadBalancerInternetSpec(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyLoadBalancerInternetSpecResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyLoadBalancerInternetSpec(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyLoadBalancerInternetSpecWithCallback(request *ModifyLoadBalancerInternetSpecRequest, callback func(response *ModifyLoadBalancerInternetSpecResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyLoadBalancerInternetSpecResponse
-var err error
-defer close(result)
-response, err = client.ModifyLoadBalancerInternetSpec(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyLoadBalancerInternetSpecWithCallback(request *ModifyLoadBalancerInternetSpecRequest, callback func(response *ModifyLoadBalancerInternetSpecResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyLoadBalancerInternetSpecResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyLoadBalancerInternetSpec(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyLoadBalancerInternetSpecRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Bandwidth  string `position:"Query" name:"Bandwidth"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AutoPay  string `position:"Query" name:"AutoPay"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Bandwidth            string `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              string `position:"Query" name:"AutoPay"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type ModifyLoadBalancerInternetSpecResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            OrderId     int64 `json:"OrderId" xml:"OrderId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   int64  `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerInternetSpecRequest) {
-request = &ModifyLoadBalancerInternetSpecRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "", "")
-return
+	request = &ModifyLoadBalancerInternetSpecRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "", "")
+	return
 }
 
 func CreateModifyLoadBalancerInternetSpecResponse() (response *ModifyLoadBalancerInternetSpecResponse) {
-response = &ModifyLoadBalancerInternetSpecResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyLoadBalancerInternetSpecResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

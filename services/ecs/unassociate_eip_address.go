@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressRequest) (response *UnassociateEipAddressResponse, err error) {
-response = CreateUnassociateEipAddressResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUnassociateEipAddressResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddressRequest) (<-chan *UnassociateEipAddressResponse, <-chan error) {
-responseChan := make(chan *UnassociateEipAddressResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UnassociateEipAddress(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UnassociateEipAddressResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UnassociateEipAddress(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipAddressRequest, callback func(response *UnassociateEipAddressResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UnassociateEipAddressResponse
-var err error
-defer close(result)
-response, err = client.UnassociateEipAddress(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipAddressRequest, callback func(response *UnassociateEipAddressResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UnassociateEipAddressResponse
+		var err error
+		defer close(result)
+		response, err = client.UnassociateEipAddress(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UnassociateEipAddressRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                AllocationId  string `position:"Query" name:"AllocationId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
-                InstanceType  string `position:"Query" name:"InstanceType"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AllocationId         string `position:"Query" name:"AllocationId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
+	InstanceType         string `position:"Query" name:"InstanceType"`
 }
 
-
 type UnassociateEipAddressResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest) {
-request = &UnassociateEipAddressRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateEipAddress", "", "")
-return
+	request = &UnassociateEipAddressRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateEipAddress", "", "")
+	return
 }
 
 func CreateUnassociateEipAddressResponse() (response *UnassociateEipAddressResponse) {
-response = &UnassociateEipAddressResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UnassociateEipAddressResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

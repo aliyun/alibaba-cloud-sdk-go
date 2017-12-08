@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,106 +16,104 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PlayInfo(request *PlayInfoRequest) (response *PlayInfoResponse, err error) {
-response = CreatePlayInfoResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePlayInfoResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) PlayInfoWithChan(request *PlayInfoRequest) (<-chan *PlayInfoResponse, <-chan error) {
-responseChan := make(chan *PlayInfoResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PlayInfo(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PlayInfoResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PlayInfo(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback func(response *PlayInfoResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PlayInfoResponse
-var err error
-defer close(result)
-response, err = client.PlayInfo(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback func(response *PlayInfoResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PlayInfoResponse
+		var err error
+		defer close(result)
+		response, err = client.PlayInfo(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type PlayInfoRequest struct {
-*requests.RpcRequest
-                AuthInfo  string `position:"Query" name:"AuthInfo"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                HlsUriToken  string `position:"Query" name:"HlsUriToken"`
-                MediaId  string `position:"Query" name:"MediaId"`
-                PlayDomain  string `position:"Query" name:"PlayDomain"`
-                Rand  string `position:"Query" name:"Rand"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                AuthTimeout  string `position:"Query" name:"AuthTimeout"`
-                Formats  string `position:"Query" name:"Formats"`
+	*requests.RpcRequest
+	AuthInfo             string `position:"Query" name:"AuthInfo"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	HlsUriToken          string `position:"Query" name:"HlsUriToken"`
+	MediaId              string `position:"Query" name:"MediaId"`
+	PlayDomain           string `position:"Query" name:"PlayDomain"`
+	Rand                 string `position:"Query" name:"Rand"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AuthTimeout          string `position:"Query" name:"AuthTimeout"`
+	Formats              string `position:"Query" name:"Formats"`
 }
 
-
 type PlayInfoResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                NotFoundCDNDomain struct {
-                String []    string `json:"String" xml:"String"`
-                } `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
-                PlayInfoList struct {
-                    PlayInfo []struct {
-            Url     string `json:"Url" xml:"Url"`
-            Duration     string `json:"duration" xml:"duration"`
-            Size     string `json:"size" xml:"size"`
-            Width     string `json:"width" xml:"width"`
-            Height     string `json:"height" xml:"height"`
-            Bitrate     string `json:"bitrate" xml:"bitrate"`
-            Fps     string `json:"fps" xml:"fps"`
-            Format     string `json:"format" xml:"format"`
-            Definition     string `json:"definition" xml:"definition"`
-            Encryption     string `json:"encryption" xml:"encryption"`
-            Rand     string `json:"rand" xml:"rand"`
-            Plaintext     string `json:"plaintext" xml:"plaintext"`
-            Complexity     string `json:"complexity" xml:"complexity"`
-            ActivityName     string `json:"activityName" xml:"activityName"`
-                    }   `json:"PlayInfo" xml:"PlayInfo"`
-                } `json:"PlayInfoList" xml:"PlayInfoList"`
+	*responses.BaseResponse
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	NotFoundCDNDomain struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
+	PlayInfoList struct {
+		PlayInfo []struct {
+			Url          string `json:"Url" xml:"Url"`
+			Duration     string `json:"duration" xml:"duration"`
+			Size         string `json:"size" xml:"size"`
+			Width        string `json:"width" xml:"width"`
+			Height       string `json:"height" xml:"height"`
+			Bitrate      string `json:"bitrate" xml:"bitrate"`
+			Fps          string `json:"fps" xml:"fps"`
+			Format       string `json:"format" xml:"format"`
+			Definition   string `json:"definition" xml:"definition"`
+			Encryption   string `json:"encryption" xml:"encryption"`
+			Rand         string `json:"rand" xml:"rand"`
+			Plaintext    string `json:"plaintext" xml:"plaintext"`
+			Complexity   string `json:"complexity" xml:"complexity"`
+			ActivityName string `json:"activityName" xml:"activityName"`
+		} `json:"PlayInfo" xml:"PlayInfo"`
+	} `json:"PlayInfoList" xml:"PlayInfoList"`
 }
 
 func CreatePlayInfoRequest() (request *PlayInfoRequest) {
-request = &PlayInfoRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "", "")
-return
+	request = &PlayInfoRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "", "")
+	return
 }
 
 func CreatePlayInfoResponse() (response *PlayInfoResponse) {
-response = &PlayInfoResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PlayInfoResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

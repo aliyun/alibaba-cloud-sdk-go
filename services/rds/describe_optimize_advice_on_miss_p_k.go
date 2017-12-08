@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeOptimizeAdviceOnMissPK(request *DescribeOptimizeAdviceOnMissPKRequest) (response *DescribeOptimizeAdviceOnMissPKResponse, err error) {
-response = CreateDescribeOptimizeAdviceOnMissPKResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeOptimizeAdviceOnMissPKResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOptimizeAdviceOnMissPKRequest) (<-chan *DescribeOptimizeAdviceOnMissPKResponse, <-chan error) {
-responseChan := make(chan *DescribeOptimizeAdviceOnMissPKResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeOptimizeAdviceOnMissPK(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeOptimizeAdviceOnMissPKResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeOptimizeAdviceOnMissPK(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeOptimizeAdviceOnMissPKResponse
-var err error
-defer close(result)
-response, err = client.DescribeOptimizeAdviceOnMissPK(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeOptimizeAdviceOnMissPKResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeOptimizeAdviceOnMissPK(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeOptimizeAdviceOnMissPKRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeOptimizeAdviceOnMissPKResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalRecordsCount     int `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
-                Items struct {
-                    AdviceOnMissPK []struct {
-            DBName     string `json:"DBName" xml:"DBName"`
-            TableName     string `json:"TableName" xml:"TableName"`
-                    }   `json:"AdviceOnMissPK" xml:"AdviceOnMissPK"`
-                } `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             struct {
+		AdviceOnMissPK []struct {
+			DBName    string `json:"DBName" xml:"DBName"`
+			TableName string `json:"TableName" xml:"TableName"`
+		} `json:"AdviceOnMissPK" xml:"AdviceOnMissPK"`
+	} `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdviceOnMissPKRequest) {
-request = &DescribeOptimizeAdviceOnMissPKRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "", "")
-return
+	request = &DescribeOptimizeAdviceOnMissPKRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "", "")
+	return
 }
 
 func CreateDescribeOptimizeAdviceOnMissPKResponse() (response *DescribeOptimizeAdviceOnMissPKResponse) {
-response = &DescribeOptimizeAdviceOnMissPKResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeOptimizeAdviceOnMissPKResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

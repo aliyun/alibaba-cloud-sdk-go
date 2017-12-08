@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,100 +16,98 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRefreshTasks(request *DescribeRefreshTasksRequest) (response *DescribeRefreshTasksResponse, err error) {
-response = CreateDescribeRefreshTasksResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeRefreshTasksResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeRefreshTasksWithChan(request *DescribeRefreshTasksRequest) (<-chan *DescribeRefreshTasksResponse, <-chan error) {
-responseChan := make(chan *DescribeRefreshTasksResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeRefreshTasks(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeRefreshTasksResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeRefreshTasks(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshTasksRequest, callback func(response *DescribeRefreshTasksResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeRefreshTasksResponse
-var err error
-defer close(result)
-response, err = client.DescribeRefreshTasks(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshTasksRequest, callback func(response *DescribeRefreshTasksResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeRefreshTasksResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeRefreshTasks(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeRefreshTasksRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                PageSize  string `position:"Query" name:"PageSize"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-                ObjectPath  string `position:"Query" name:"ObjectPath"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                Status  string `position:"Query" name:"Status"`
-                TaskId  string `position:"Query" name:"TaskId"`
-                ObjectType  string `position:"Query" name:"ObjectType"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime         string `position:"Query" name:"EndTime"`
+	PageSize        string `position:"Query" name:"PageSize"`
+	StartTime       string `position:"Query" name:"StartTime"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	ObjectPath      string `position:"Query" name:"ObjectPath"`
+	PageNumber      string `position:"Query" name:"PageNumber"`
+	Status          string `position:"Query" name:"Status"`
+	TaskId          string `position:"Query" name:"TaskId"`
+	ObjectType      string `position:"Query" name:"ObjectType"`
+	OwnerId         string `position:"Query" name:"OwnerId"`
+	DomainName      string `position:"Query" name:"DomainName"`
+	SecurityToken   string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeRefreshTasksResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int64 `json:"PageSize" xml:"PageSize"`
-            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
-                Tasks struct {
-                    CDNTask []struct {
-            TaskId     string `json:"TaskId" xml:"TaskId"`
-            ObjectPath     string `json:"ObjectPath" xml:"ObjectPath"`
-            Process     string `json:"Process" xml:"Process"`
-            Status     string `json:"Status" xml:"Status"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Description     string `json:"Description" xml:"Description"`
-            ObjectType     string `json:"ObjectType" xml:"ObjectType"`
-                    }   `json:"CDNTask" xml:"CDNTask"`
-                } `json:"Tasks" xml:"Tasks"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
+	Tasks      struct {
+		CDNTask []struct {
+			TaskId       string `json:"TaskId" xml:"TaskId"`
+			ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
+			Process      string `json:"Process" xml:"Process"`
+			Status       string `json:"Status" xml:"Status"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Description  string `json:"Description" xml:"Description"`
+			ObjectType   string `json:"ObjectType" xml:"ObjectType"`
+		} `json:"CDNTask" xml:"CDNTask"`
+	} `json:"Tasks" xml:"Tasks"`
 }
 
 func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {
-request = &DescribeRefreshTasksRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshTasks", "", "")
-return
+	request = &DescribeRefreshTasksRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshTasks", "", "")
+	return
 }
 
 func CreateDescribeRefreshTasksResponse() (response *DescribeRefreshTasksResponse) {
-response = &DescribeRefreshTasksResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeRefreshTasksResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

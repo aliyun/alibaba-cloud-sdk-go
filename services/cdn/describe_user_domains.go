@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,108 +16,106 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeUserDomains(request *DescribeUserDomainsRequest) (response *DescribeUserDomainsResponse, err error) {
-response = CreateDescribeUserDomainsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeUserDomainsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeUserDomainsWithChan(request *DescribeUserDomainsRequest) (<-chan *DescribeUserDomainsResponse, <-chan error) {
-responseChan := make(chan *DescribeUserDomainsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeUserDomains(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeUserDomainsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeUserDomains(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomainsRequest, callback func(response *DescribeUserDomainsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeUserDomainsResponse
-var err error
-defer close(result)
-response, err = client.DescribeUserDomains(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomainsRequest, callback func(response *DescribeUserDomainsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeUserDomainsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeUserDomains(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeUserDomainsRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                CheckDomainShow  string `position:"Query" name:"CheckDomainShow"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                DomainSearchType  string `position:"Query" name:"DomainSearchType"`
-                CdnType  string `position:"Query" name:"CdnType"`
-                FuncId  string `position:"Query" name:"FuncId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
-                Sources  string `position:"Query" name:"Sources"`
-                DomainStatus  string `position:"Query" name:"DomainStatus"`
-                FuncFilter  string `position:"Query" name:"FuncFilter"`
+	*requests.RpcRequest
+	PageSize         string `position:"Query" name:"PageSize"`
+	CheckDomainShow  string `position:"Query" name:"CheckDomainShow"`
+	DomainName       string `position:"Query" name:"DomainName"`
+	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+	PageNumber       string `position:"Query" name:"PageNumber"`
+	DomainSearchType string `position:"Query" name:"DomainSearchType"`
+	CdnType          string `position:"Query" name:"CdnType"`
+	FuncId           string `position:"Query" name:"FuncId"`
+	OwnerId          string `position:"Query" name:"OwnerId"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
+	Sources          string `position:"Query" name:"Sources"`
+	DomainStatus     string `position:"Query" name:"DomainStatus"`
+	FuncFilter       string `position:"Query" name:"FuncFilter"`
 }
 
-
 type DescribeUserDomainsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int64 `json:"PageSize" xml:"PageSize"`
-            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
-                Domains struct {
-                    PageData []struct {
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            Cname     string `json:"Cname" xml:"Cname"`
-            CdnType     string `json:"CdnType" xml:"CdnType"`
-            DomainStatus     string `json:"DomainStatus" xml:"DomainStatus"`
-            GmtCreated     string `json:"GmtCreated" xml:"GmtCreated"`
-            GmtModified     string `json:"GmtModified" xml:"GmtModified"`
-            Description     string `json:"Description" xml:"Description"`
-            SourceType     string `json:"SourceType" xml:"SourceType"`
-            SslProtocol     string `json:"SslProtocol" xml:"SslProtocol"`
-            ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-            Sandbox     string `json:"Sandbox" xml:"Sandbox"`
-                Sources struct {
-                Source []    string `json:"Source" xml:"Source"`
-                } `json:"Sources" xml:"Sources"`
-                    }   `json:"PageData" xml:"PageData"`
-                } `json:"Domains" xml:"Domains"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
+	Domains    struct {
+		PageData []struct {
+			DomainName      string `json:"DomainName" xml:"DomainName"`
+			Cname           string `json:"Cname" xml:"Cname"`
+			CdnType         string `json:"CdnType" xml:"CdnType"`
+			DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
+			GmtCreated      string `json:"GmtCreated" xml:"GmtCreated"`
+			GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+			Description     string `json:"Description" xml:"Description"`
+			SourceType      string `json:"SourceType" xml:"SourceType"`
+			SslProtocol     string `json:"SslProtocol" xml:"SslProtocol"`
+			ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			Sandbox         string `json:"Sandbox" xml:"Sandbox"`
+			Sources         struct {
+				Source []string `json:"Source" xml:"Source"`
+			} `json:"Sources" xml:"Sources"`
+		} `json:"PageData" xml:"PageData"`
+	} `json:"Domains" xml:"Domains"`
 }
 
 func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
-request = &DescribeUserDomainsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserDomains", "", "")
-return
+	request = &DescribeUserDomainsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserDomains", "", "")
+	return
 }
 
 func CreateDescribeUserDomainsResponse() (response *DescribeUserDomainsResponse) {
-response = &DescribeUserDomainsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeUserDomainsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

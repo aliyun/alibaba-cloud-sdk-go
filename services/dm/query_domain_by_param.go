@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,97 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryDomainByParam(request *QueryDomainByParamRequest) (response *QueryDomainByParamResponse, err error) {
-response = CreateQueryDomainByParamResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryDomainByParamResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequest) (<-chan *QueryDomainByParamResponse, <-chan error) {
-responseChan := make(chan *QueryDomainByParamResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryDomainByParam(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryDomainByParamResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryDomainByParam(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParamRequest, callback func(response *QueryDomainByParamResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryDomainByParamResponse
-var err error
-defer close(result)
-response, err = client.QueryDomainByParam(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParamRequest, callback func(response *QueryDomainByParamResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryDomainByParamResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryDomainByParam(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryDomainByParamRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Status  string `position:"Query" name:"Status"`
-                KeyWord  string `position:"Query" name:"KeyWord"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                PageNo  string `position:"Query" name:"PageNo"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Status               string `position:"Query" name:"Status"`
+	KeyWord              string `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	PageNo               string `position:"Query" name:"PageNo"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type QueryDomainByParamResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                Data struct {
-                    Domain []struct {
-            DomainId     string `json:"DomainId" xml:"DomainId"`
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            DomainStatus     string `json:"DomainStatus" xml:"DomainStatus"`
-            DomainRecord     string `json:"DomainRecord" xml:"DomainRecord"`
-            ConfirmStatus     string `json:"ConfirmStatus" xml:"ConfirmStatus"`
-            SpfAuthStatus     string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
-            MxAuthStatus     string `json:"MxAuthStatus" xml:"MxAuthStatus"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            UtcCreateTime     int64 `json:"UtcCreateTime" xml:"UtcCreateTime"`
-            CnameAuthStatus     string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
-            IcpStatus     string `json:"IcpStatus" xml:"IcpStatus"`
-                    }   `json:"domain" xml:"domain"`
-                } `json:"data" xml:"data"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	Data       struct {
+		Domain []struct {
+			DomainId        string `json:"DomainId" xml:"DomainId"`
+			DomainName      string `json:"DomainName" xml:"DomainName"`
+			DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
+			DomainRecord    string `json:"DomainRecord" xml:"DomainRecord"`
+			ConfirmStatus   string `json:"ConfirmStatus" xml:"ConfirmStatus"`
+			SpfAuthStatus   string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
+			MxAuthStatus    string `json:"MxAuthStatus" xml:"MxAuthStatus"`
+			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime   int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			CnameAuthStatus string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
+			IcpStatus       string `json:"IcpStatus" xml:"IcpStatus"`
+		} `json:"domain" xml:"domain"`
+	} `json:"data" xml:"data"`
 }
 
 func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
-request = &QueryDomainByParamRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "QueryDomainByParam", "", "")
-return
+	request = &QueryDomainByParamRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryDomainByParam", "", "")
+	return
 }
 
 func CreateQueryDomainByParamResponse() (response *QueryDomainByParamResponse) {
-response = &QueryDomainByParamResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryDomainByParamResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

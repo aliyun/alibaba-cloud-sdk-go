@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RemoveVServerGroupBackendServers(request *RemoveVServerGroupBackendServersRequest) (response *RemoveVServerGroupBackendServersResponse, err error) {
-response = CreateRemoveVServerGroupBackendServersResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRemoveVServerGroupBackendServersResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RemoveVServerGroupBackendServersWithChan(request *RemoveVServerGroupBackendServersRequest) (<-chan *RemoveVServerGroupBackendServersResponse, <-chan error) {
-responseChan := make(chan *RemoveVServerGroupBackendServersResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RemoveVServerGroupBackendServers(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RemoveVServerGroupBackendServersResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RemoveVServerGroupBackendServers(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RemoveVServerGroupBackendServersWithCallback(request *RemoveVServerGroupBackendServersRequest, callback func(response *RemoveVServerGroupBackendServersResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RemoveVServerGroupBackendServersResponse
-var err error
-defer close(result)
-response, err = client.RemoveVServerGroupBackendServers(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RemoveVServerGroupBackendServersWithCallback(request *RemoveVServerGroupBackendServersRequest, callback func(response *RemoveVServerGroupBackendServersResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RemoveVServerGroupBackendServersResponse
+		var err error
+		defer close(result)
+		response, err = client.RemoveVServerGroupBackendServers(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RemoveVServerGroupBackendServersRequest struct {
-*requests.RpcRequest
-                VServerGroupId  string `position:"Query" name:"VServerGroupId"`
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                BackendServers  string `position:"Query" name:"BackendServers"`
+	*requests.RpcRequest
+	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
+	Tags                 string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	BackendServers       string `position:"Query" name:"BackendServers"`
 }
 
-
 type RemoveVServerGroupBackendServersResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
-                BackendServers struct {
-                    BackendServer []struct {
-            ServerId     string `json:"ServerId" xml:"ServerId"`
-            Port     int `json:"Port" xml:"Port"`
-            Weight     int `json:"Weight" xml:"Weight"`
-                    }   `json:"BackendServer" xml:"BackendServer"`
-                } `json:"BackendServers" xml:"BackendServers"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
+	BackendServers struct {
+		BackendServer []struct {
+			ServerId string `json:"ServerId" xml:"ServerId"`
+			Port     int    `json:"Port" xml:"Port"`
+			Weight   int    `json:"Weight" xml:"Weight"`
+		} `json:"BackendServer" xml:"BackendServer"`
+	} `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGroupBackendServersRequest) {
-request = &RemoveVServerGroupBackendServersRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "", "")
-return
+	request = &RemoveVServerGroupBackendServersRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "", "")
+	return
 }
 
 func CreateRemoveVServerGroupBackendServersResponse() (response *RemoveVServerGroupBackendServersResponse) {
-response = &RemoveVServerGroupBackendServersResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RemoveVServerGroupBackendServersResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

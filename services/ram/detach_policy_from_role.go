@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest) (response *DetachPolicyFromRoleResponse, err error) {
-response = CreateDetachPolicyFromRoleResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDetachPolicyFromRoleResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRoleRequest) (<-chan *DetachPolicyFromRoleResponse, <-chan error) {
-responseChan := make(chan *DetachPolicyFromRoleResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DetachPolicyFromRole(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DetachPolicyFromRoleResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DetachPolicyFromRole(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFromRoleRequest, callback func(response *DetachPolicyFromRoleResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DetachPolicyFromRoleResponse
-var err error
-defer close(result)
-response, err = client.DetachPolicyFromRole(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFromRoleRequest, callback func(response *DetachPolicyFromRoleResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DetachPolicyFromRoleResponse
+		var err error
+		defer close(result)
+		response, err = client.DetachPolicyFromRole(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DetachPolicyFromRoleRequest struct {
-*requests.RpcRequest
-                RoleName  string `position:"Query" name:"RoleName"`
-                PolicyType  string `position:"Query" name:"PolicyType"`
-                PolicyName  string `position:"Query" name:"PolicyName"`
+	*requests.RpcRequest
+	RoleName   string `position:"Query" name:"RoleName"`
+	PolicyType string `position:"Query" name:"PolicyType"`
+	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
-
 type DetachPolicyFromRoleResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) {
-request = &DetachPolicyFromRoleRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromRole", "", "")
-return
+	request = &DetachPolicyFromRoleRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromRole", "", "")
+	return
 }
 
 func CreateDetachPolicyFromRoleResponse() (response *DetachPolicyFromRoleResponse) {
-response = &DetachPolicyFromRoleResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DetachPolicyFromRoleResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

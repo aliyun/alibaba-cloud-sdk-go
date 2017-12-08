@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpgradeDBInstanceEngineVersion(request *UpgradeDBInstanceEngineVersionRequest) (response *UpgradeDBInstanceEngineVersionResponse, err error) {
-response = CreateUpgradeDBInstanceEngineVersionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpgradeDBInstanceEngineVersionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBInstanceEngineVersionRequest) (<-chan *UpgradeDBInstanceEngineVersionResponse, <-chan error) {
-responseChan := make(chan *UpgradeDBInstanceEngineVersionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpgradeDBInstanceEngineVersion(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpgradeDBInstanceEngineVersionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpgradeDBInstanceEngineVersion(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *UpgradeDBInstanceEngineVersionRequest, callback func(response *UpgradeDBInstanceEngineVersionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpgradeDBInstanceEngineVersionResponse
-var err error
-defer close(result)
-response, err = client.UpgradeDBInstanceEngineVersion(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *UpgradeDBInstanceEngineVersionRequest, callback func(response *UpgradeDBInstanceEngineVersionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpgradeDBInstanceEngineVersionResponse
+		var err error
+		defer close(result)
+		response, err = client.UpgradeDBInstanceEngineVersion(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UpgradeDBInstanceEngineVersionRequest struct {
-*requests.RpcRequest
-                EffectiveTime  string `position:"Query" name:"EffectiveTime"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                EngineVersion  string `position:"Query" name:"EngineVersion"`
+	*requests.RpcRequest
+	EffectiveTime        string `position:"Query" name:"EffectiveTime"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	EngineVersion        string `position:"Query" name:"EngineVersion"`
 }
 
-
 type UpgradeDBInstanceEngineVersionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TaskId     string `json:"TaskId" xml:"TaskId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 func CreateUpgradeDBInstanceEngineVersionRequest() (request *UpgradeDBInstanceEngineVersionRequest) {
-request = &UpgradeDBInstanceEngineVersionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "", "")
-return
+	request = &UpgradeDBInstanceEngineVersionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "", "")
+	return
 }
 
 func CreateUpgradeDBInstanceEngineVersionResponse() (response *UpgradeDBInstanceEngineVersionResponse) {
-response = &UpgradeDBInstanceEngineVersionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpgradeDBInstanceEngineVersionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

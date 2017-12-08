@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetOssLogConfig(request *SetOssLogConfigRequest) (response *SetOssLogConfigResponse, err error) {
-response = CreateSetOssLogConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetOssLogConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (<-chan *SetOssLogConfigResponse, <-chan error) {
-responseChan := make(chan *SetOssLogConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetOssLogConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetOssLogConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetOssLogConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigRequest, callback func(response *SetOssLogConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetOssLogConfigResponse
-var err error
-defer close(result)
-response, err = client.SetOssLogConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigRequest, callback func(response *SetOssLogConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetOssLogConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.SetOssLogConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetOssLogConfigRequest struct {
-*requests.RpcRequest
-                Prefix  string `position:"Query" name:"Prefix"`
-                Bucket  string `position:"Query" name:"Bucket"`
-                Enable  string `position:"Query" name:"Enable"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	Prefix        string `position:"Query" name:"Prefix"`
+	Bucket        string `position:"Query" name:"Bucket"`
+	Enable        string `position:"Query" name:"Enable"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type SetOssLogConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
-request = &SetOssLogConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "SetOssLogConfig", "", "")
-return
+	request = &SetOssLogConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetOssLogConfig", "", "")
+	return
 }
 
 func CreateSetOssLogConfigResponse() (response *SetOssLogConfigResponse) {
-response = &SetOssLogConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetOssLogConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

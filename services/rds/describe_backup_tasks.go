@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,91 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (response *DescribeBackupTasksResponse, err error) {
-response = CreateDescribeBackupTasksResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeBackupTasksResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRequest) (<-chan *DescribeBackupTasksResponse, <-chan error) {
-responseChan := make(chan *DescribeBackupTasksResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeBackupTasks(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeBackupTasksResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeBackupTasks(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeBackupTasksResponse
-var err error
-defer close(result)
-response, err = client.DescribeBackupTasks(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeBackupTasksResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeBackupTasks(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeBackupTasksRequest struct {
-*requests.RpcRequest
-                BackupMode  string `position:"Query" name:"BackupMode"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                Flag  string `position:"Query" name:"Flag"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                BackupJobStatus  string `position:"Query" name:"BackupJobStatus"`
-                BackupJobId  string `position:"Query" name:"BackupJobId"`
+	*requests.RpcRequest
+	BackupMode           string `position:"Query" name:"BackupMode"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	Flag                 string `position:"Query" name:"Flag"`
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	BackupJobStatus      string `position:"Query" name:"BackupJobStatus"`
+	BackupJobId          string `position:"Query" name:"BackupJobId"`
 }
 
-
 type DescribeBackupTasksResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                Items struct {
-                    BackupJob []struct {
-            BackupProgressStatus     string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
-            JobMode     string `json:"JobMode" xml:"JobMode"`
-            Process     string `json:"Process" xml:"Process"`
-            TaskAction     string `json:"TaskAction" xml:"TaskAction"`
-            BackupjobId     string `json:"BackupjobId" xml:"BackupjobId"`
-                    }   `json:"BackupJob" xml:"BackupJob"`
-                } `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Items     struct {
+		BackupJob []struct {
+			BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
+			JobMode              string `json:"JobMode" xml:"JobMode"`
+			Process              string `json:"Process" xml:"Process"`
+			TaskAction           string `json:"TaskAction" xml:"TaskAction"`
+			BackupjobId          string `json:"BackupjobId" xml:"BackupjobId"`
+		} `json:"BackupJob" xml:"BackupJob"`
+	} `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
-request = &DescribeBackupTasksRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupTasks", "", "")
-return
+	request = &DescribeBackupTasksRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupTasks", "", "")
+	return
 }
 
 func CreateDescribeBackupTasksResponse() (response *DescribeBackupTasksResponse) {
-response = &DescribeBackupTasksResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeBackupTasksResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

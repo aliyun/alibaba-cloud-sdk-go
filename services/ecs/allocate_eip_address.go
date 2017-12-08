@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AllocateEipAddress(request *AllocateEipAddressRequest) (response *AllocateEipAddressResponse, err error) {
-response = CreateAllocateEipAddressResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAllocateEipAddressResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequest) (<-chan *AllocateEipAddressResponse, <-chan error) {
-responseChan := make(chan *AllocateEipAddressResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AllocateEipAddress(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AllocateEipAddressResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AllocateEipAddress(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddressRequest, callback func(response *AllocateEipAddressResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AllocateEipAddressResponse
-var err error
-defer close(result)
-response, err = client.AllocateEipAddress(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddressRequest, callback func(response *AllocateEipAddressResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AllocateEipAddressResponse
+		var err error
+		defer close(result)
+		response, err = client.AllocateEipAddress(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AllocateEipAddressRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Bandwidth  string `position:"Query" name:"Bandwidth"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Bandwidth            string `position:"Query" name:"Bandwidth"`
 }
 
-
 type AllocateEipAddressResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            AllocationId     string `json:"AllocationId" xml:"AllocationId"`
-            EipAddress     string `json:"EipAddress" xml:"EipAddress"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	AllocationId string `json:"AllocationId" xml:"AllocationId"`
+	EipAddress   string `json:"EipAddress" xml:"EipAddress"`
 }
 
 func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
-request = &AllocateEipAddressRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "", "")
-return
+	request = &AllocateEipAddressRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "", "")
+	return
 }
 
 func CreateAllocateEipAddressResponse() (response *AllocateEipAddressResponse) {
-response = &AllocateEipAddressResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AllocateEipAddressResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

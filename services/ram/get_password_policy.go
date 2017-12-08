@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetPasswordPolicy(request *GetPasswordPolicyRequest) (response *GetPasswordPolicyResponse, err error) {
-response = CreateGetPasswordPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetPasswordPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetPasswordPolicyWithChan(request *GetPasswordPolicyRequest) (<-chan *GetPasswordPolicyResponse, <-chan error) {
-responseChan := make(chan *GetPasswordPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetPasswordPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetPasswordPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetPasswordPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetPasswordPolicyWithCallback(request *GetPasswordPolicyRequest, callback func(response *GetPasswordPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetPasswordPolicyResponse
-var err error
-defer close(result)
-response, err = client.GetPasswordPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetPasswordPolicyWithCallback(request *GetPasswordPolicyRequest, callback func(response *GetPasswordPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetPasswordPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.GetPasswordPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetPasswordPolicyRequest struct {
-*requests.RpcRequest
+	*requests.RpcRequest
 }
 
-
 type GetPasswordPolicyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PasswordPolicy struct {
-            MinimumPasswordLength     int `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
-            RequireLowercaseCharacters     bool `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
-            RequireUppercaseCharacters     bool `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
-            RequireNumbers     bool `json:"RequireNumbers" xml:"RequireNumbers"`
-            RequireSymbols     bool `json:"RequireSymbols" xml:"RequireSymbols"`
-            HardExpiry     bool `json:"HardExpiry" xml:"HardExpiry"`
-            MaxPasswordAge     int `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
-            PasswordReusePrevention     int `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
-            MaxLoginAttemps     int `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
-            }  `json:"PasswordPolicy" xml:"PasswordPolicy"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	PasswordPolicy struct {
+		MinimumPasswordLength      int  `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
+		RequireLowercaseCharacters bool `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
+		RequireUppercaseCharacters bool `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
+		RequireNumbers             bool `json:"RequireNumbers" xml:"RequireNumbers"`
+		RequireSymbols             bool `json:"RequireSymbols" xml:"RequireSymbols"`
+		HardExpiry                 bool `json:"HardExpiry" xml:"HardExpiry"`
+		MaxPasswordAge             int  `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
+		PasswordReusePrevention    int  `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
+		MaxLoginAttemps            int  `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
+	} `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
 func CreateGetPasswordPolicyRequest() (request *GetPasswordPolicyRequest) {
-request = &GetPasswordPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "GetPasswordPolicy", "", "")
-return
+	request = &GetPasswordPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetPasswordPolicy", "", "")
+	return
 }
 
 func CreateGetPasswordPolicyResponse() (response *GetPasswordPolicyResponse) {
-response = &GetPasswordPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetPasswordPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

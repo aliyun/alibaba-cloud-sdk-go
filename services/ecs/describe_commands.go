@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,98 +16,96 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCommands(request *DescribeCommandsRequest) (response *DescribeCommandsResponse, err error) {
-response = CreateDescribeCommandsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeCommandsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeCommandsWithChan(request *DescribeCommandsRequest) (<-chan *DescribeCommandsResponse, <-chan error) {
-responseChan := make(chan *DescribeCommandsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeCommands(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeCommandsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeCommands(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequest, callback func(response *DescribeCommandsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeCommandsResponse
-var err error
-defer close(result)
-response, err = client.DescribeCommands(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequest, callback func(response *DescribeCommandsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeCommandsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeCommands(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeCommandsRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                Type  string `position:"Query" name:"Type"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                Name  string `position:"Query" name:"Name"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                CommandId  string `position:"Query" name:"CommandId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	Type                 string `position:"Query" name:"Type"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	Name                 string `position:"Query" name:"Name"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	CommandId            string `position:"Query" name:"CommandId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeCommandsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int64 `json:"PageSize" xml:"PageSize"`
-                CommandList struct {
-                    Command []struct {
-            CommandId     string `json:"CommandId" xml:"CommandId"`
-            Name     string `json:"Name" xml:"Name"`
-            Type     string `json:"Type" xml:"Type"`
-            Description     string `json:"Description" xml:"Description"`
-            CommandContent     string `json:"CommandContent" xml:"CommandContent"`
-            WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
-            Timeout     int64 `json:"Timeout" xml:"Timeout"`
-                    }   `json:"Command" xml:"Command"`
-                } `json:"CommandList" xml:"CommandList"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	TotalCount  int64  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int64  `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int64  `json:"PageSize" xml:"PageSize"`
+	CommandList struct {
+		Command []struct {
+			CommandId      string `json:"CommandId" xml:"CommandId"`
+			Name           string `json:"Name" xml:"Name"`
+			Type           string `json:"Type" xml:"Type"`
+			Description    string `json:"Description" xml:"Description"`
+			CommandContent string `json:"CommandContent" xml:"CommandContent"`
+			WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
+			Timeout        int64  `json:"Timeout" xml:"Timeout"`
+		} `json:"Command" xml:"Command"`
+	} `json:"CommandList" xml:"CommandList"`
 }
 
 func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
-request = &DescribeCommandsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "", "")
-return
+	request = &DescribeCommandsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "", "")
+	return
 }
 
 func CreateDescribeCommandsResponse() (response *DescribeCommandsResponse) {
-response = &DescribeCommandsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeCommandsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

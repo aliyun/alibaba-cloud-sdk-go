@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamOnlineUserNum(request *DescribeLiveStreamOnlineUserNumRequest) (response *DescribeLiveStreamOnlineUserNumResponse, err error) {
-response = CreateDescribeLiveStreamOnlineUserNumResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamOnlineUserNumResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamOnlineUserNumWithChan(request *DescribeLiveStreamOnlineUserNumRequest) (<-chan *DescribeLiveStreamOnlineUserNumResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamOnlineUserNumResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamOnlineUserNum(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamOnlineUserNumResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamOnlineUserNum(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *DescribeLiveStreamOnlineUserNumRequest, callback func(response *DescribeLiveStreamOnlineUserNumResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamOnlineUserNumResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamOnlineUserNum(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *DescribeLiveStreamOnlineUserNumRequest, callback func(response *DescribeLiveStreamOnlineUserNumResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamOnlineUserNumResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamOnlineUserNum(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamOnlineUserNumRequest struct {
-*requests.RpcRequest
-                HlsSwitch  string `position:"Query" name:"HlsSwitch"`
-                EndTime  string `position:"Query" name:"EndTime"`
-                StreamName  string `position:"Query" name:"StreamName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	HlsSwitch     string `position:"Query" name:"HlsSwitch"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamOnlineUserNumResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalUserNumber     int64 `json:"TotalUserNumber" xml:"TotalUserNumber"`
-                OnlineUserInfo struct {
-                    LiveStreamOnlineUserNumInfo []struct {
-            StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
-            UserNumber     int64 `json:"UserNumber" xml:"UserNumber"`
-            Time     string `json:"Time" xml:"Time"`
-                    }   `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
-                } `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	*responses.BaseResponse
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int64  `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	OnlineUserInfo  struct {
+		LiveStreamOnlineUserNumInfo []struct {
+			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
+			UserNumber int64  `json:"UserNumber" xml:"UserNumber"`
+			Time       string `json:"Time" xml:"Time"`
+		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
+	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStreamOnlineUserNumRequest) {
-request = &DescribeLiveStreamOnlineUserNumRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum", "", "")
-return
+	request = &DescribeLiveStreamOnlineUserNumRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamOnlineUserNumResponse() (response *DescribeLiveStreamOnlineUserNumResponse) {
-response = &DescribeLiveStreamOnlineUserNumResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamOnlineUserNumResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

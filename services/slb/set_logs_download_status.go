@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetLogsDownloadStatus(request *SetLogsDownloadStatusRequest) (response *SetLogsDownloadStatusResponse, err error) {
-response = CreateSetLogsDownloadStatusResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetLogsDownloadStatusResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetLogsDownloadStatusWithChan(request *SetLogsDownloadStatusRequest) (<-chan *SetLogsDownloadStatusResponse, <-chan error) {
-responseChan := make(chan *SetLogsDownloadStatusResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetLogsDownloadStatus(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetLogsDownloadStatusResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetLogsDownloadStatus(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetLogsDownloadStatusWithCallback(request *SetLogsDownloadStatusRequest, callback func(response *SetLogsDownloadStatusResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetLogsDownloadStatusResponse
-var err error
-defer close(result)
-response, err = client.SetLogsDownloadStatus(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetLogsDownloadStatusWithCallback(request *SetLogsDownloadStatusRequest, callback func(response *SetLogsDownloadStatusResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetLogsDownloadStatusResponse
+		var err error
+		defer close(result)
+		response, err = client.SetLogsDownloadStatus(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetLogsDownloadStatusRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                RoleName  string `position:"Query" name:"RoleName"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                LogsDownloadStatus  string `position:"Query" name:"LogsDownloadStatus"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	RoleName             string `position:"Query" name:"RoleName"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	LogsDownloadStatus   string `position:"Query" name:"LogsDownloadStatus"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type SetLogsDownloadStatusResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetLogsDownloadStatusRequest() (request *SetLogsDownloadStatusRequest) {
-request = &SetLogsDownloadStatusRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "SetLogsDownloadStatus", "", "")
-return
+	request = &SetLogsDownloadStatusRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLogsDownloadStatus", "", "")
+	return
 }
 
 func CreateSetLogsDownloadStatusResponse() (response *SetLogsDownloadStatusResponse) {
-response = &SetLogsDownloadStatusResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetLogsDownloadStatusResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

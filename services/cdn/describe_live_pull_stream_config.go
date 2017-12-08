@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStreamConfigRequest) (response *DescribeLivePullStreamConfigResponse, err error) {
-response = CreateDescribeLivePullStreamConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLivePullStreamConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLivePullStreamConfigRequest) (<-chan *DescribeLivePullStreamConfigResponse, <-chan error) {
-responseChan := make(chan *DescribeLivePullStreamConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLivePullStreamConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLivePullStreamConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLivePullStreamConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLivePullStreamConfigWithCallback(request *DescribeLivePullStreamConfigRequest, callback func(response *DescribeLivePullStreamConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLivePullStreamConfigResponse
-var err error
-defer close(result)
-response, err = client.DescribeLivePullStreamConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLivePullStreamConfigWithCallback(request *DescribeLivePullStreamConfigRequest, callback func(response *DescribeLivePullStreamConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLivePullStreamConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLivePullStreamConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLivePullStreamConfigRequest struct {
-*requests.RpcRequest
-                DomainName  string `position:"Query" name:"DomainName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	DomainName    string `position:"Query" name:"DomainName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLivePullStreamConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                LiveAppRecordList struct {
-                    LiveAppRecord []struct {
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            StreamName     string `json:"StreamName" xml:"StreamName"`
-            SourceUrl     string `json:"SourceUrl" xml:"SourceUrl"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-                    }   `json:"LiveAppRecord" xml:"LiveAppRecord"`
-                } `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	*responses.BaseResponse
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList struct {
+		LiveAppRecord []struct {
+			DomainName string `json:"DomainName" xml:"DomainName"`
+			StreamName string `json:"StreamName" xml:"StreamName"`
+			SourceUrl  string `json:"SourceUrl" xml:"SourceUrl"`
+			StartTime  string `json:"StartTime" xml:"StartTime"`
+			EndTime    string `json:"EndTime" xml:"EndTime"`
+		} `json:"LiveAppRecord" xml:"LiveAppRecord"`
+	} `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {
-request = &DescribeLivePullStreamConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "", "")
-return
+	request = &DescribeLivePullStreamConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "", "")
+	return
 }
 
 func CreateDescribeLivePullStreamConfigResponse() (response *DescribeLivePullStreamConfigResponse) {
-response = &DescribeLivePullStreamConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLivePullStreamConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

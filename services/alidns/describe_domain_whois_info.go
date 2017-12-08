@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,89 +16,87 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainWhoisInfo(request *DescribeDomainWhoisInfoRequest) (response *DescribeDomainWhoisInfoResponse, err error) {
-response = CreateDescribeDomainWhoisInfoResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDomainWhoisInfoResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWhoisInfoRequest) (<-chan *DescribeDomainWhoisInfoResponse, <-chan error) {
-responseChan := make(chan *DescribeDomainWhoisInfoResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDomainWhoisInfo(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDomainWhoisInfoResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDomainWhoisInfo(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomainWhoisInfoRequest, callback func(response *DescribeDomainWhoisInfoResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDomainWhoisInfoResponse
-var err error
-defer close(result)
-response, err = client.DescribeDomainWhoisInfo(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomainWhoisInfoRequest, callback func(response *DescribeDomainWhoisInfoResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDomainWhoisInfoResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDomainWhoisInfo(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDomainWhoisInfoRequest struct {
-*requests.RpcRequest
-                DomainName  string `position:"Query" name:"DomainName"`
-                GroupId  string `position:"Query" name:"GroupId"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	DomainName   string `position:"Query" name:"DomainName"`
+	GroupId      string `position:"Query" name:"GroupId"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
-
 type DescribeDomainWhoisInfoResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RegistrantName     string `json:"RegistrantName" xml:"RegistrantName"`
-            RegistrantEmail     string `json:"RegistrantEmail" xml:"RegistrantEmail"`
-            Registrar     string `json:"Registrar" xml:"Registrar"`
-            RegistrationDate     string `json:"RegistrationDate" xml:"RegistrationDate"`
-            ExpirationDate     string `json:"ExpirationDate" xml:"ExpirationDate"`
-                StatusList struct {
-                Status []    string `json:"Status" xml:"Status"`
-                } `json:"StatusList" xml:"StatusList"`
-                DnsServers struct {
-                DnsServer []    string `json:"DnsServer" xml:"DnsServer"`
-                } `json:"DnsServers" xml:"DnsServers"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	RegistrantName   string `json:"RegistrantName" xml:"RegistrantName"`
+	RegistrantEmail  string `json:"RegistrantEmail" xml:"RegistrantEmail"`
+	Registrar        string `json:"Registrar" xml:"Registrar"`
+	RegistrationDate string `json:"RegistrationDate" xml:"RegistrationDate"`
+	ExpirationDate   string `json:"ExpirationDate" xml:"ExpirationDate"`
+	StatusList       struct {
+		Status []string `json:"Status" xml:"Status"`
+	} `json:"StatusList" xml:"StatusList"`
+	DnsServers struct {
+		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
+	} `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {
-request = &DescribeDomainWhoisInfoRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainWhoisInfo", "", "")
-return
+	request = &DescribeDomainWhoisInfoRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainWhoisInfo", "", "")
+	return
 }
 
 func CreateDescribeDomainWhoisInfoResponse() (response *DescribeDomainWhoisInfoResponse) {
-response = &DescribeDomainWhoisInfoResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDomainWhoisInfoResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
