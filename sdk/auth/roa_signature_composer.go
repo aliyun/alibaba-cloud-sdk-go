@@ -22,16 +22,16 @@ import (
 	"strings"
 )
 
-func signRoaRequest(request *requests.RoaRequest, signer Signer, regionId string) {
+func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string) {
 	completeROASignParams(request, signer, regionId)
 	stringToSign := buildRoaStringToSign(request)
 	signature := signer.Sign(stringToSign, "")
-	request.Headers["Authorization"] = "acs " + signer.GetAccessKeyId() + ":" + signature
+	request.GetHeaders()["Authorization"] = "acs " + signer.GetAccessKeyId() + ":" + signature
 }
 
-func completeROASignParams(request *requests.RoaRequest, signer Signer, regionId string) {
+func completeROASignParams(request requests.AcsRequest, signer Signer, regionId string) {
 	// complete query params
-	queryParams := request.QueryParams
+	queryParams := request.GetQueryParams()
 	if _, ok := queryParams["RegionId"]; !ok {
 		queryParams["RegionId"] = regionId
 	}
@@ -42,16 +42,16 @@ func completeROASignParams(request *requests.RoaRequest, signer Signer, regionId
 	}
 
 	// complete header params
-	headerParams := request.Headers
+	headerParams := request.GetHeaders()
 	headerParams["Date"] = utils.GetTimeInFormatRFC2616()
 	headerParams["x-acs-signature-method"] = signer.GetName()
 	headerParams["x-acs-signature-version"] = signer.GetVersion()
-	if request.FormParams != nil && len(request.FormParams) > 0 {
-		formString := utils.GetUrlFormedMap(request.FormParams)
-		request.Content = []byte(formString)
+	if request.GetFormParams() != nil && len(request.GetFormParams()) > 0 {
+		formString := utils.GetUrlFormedMap(request.GetFormParams())
+		request.SetContent([]byte(formString))
 		headerParams["Content-Type"] = requests.Form
 	}
-	contentMD5 := utils.GetMD5Base64(request.Content)
+	contentMD5 := utils.GetMD5Base64(request.GetContent())
 	headerParams["Content-MD5"] = contentMD5
 	if _, contains := headerParams["Content-Type"]; !contains {
 		headerParams["Content-Type"] = requests.Raw
@@ -66,12 +66,12 @@ func completeROASignParams(request *requests.RoaRequest, signer Signer, regionId
 	}
 }
 
-func buildRoaStringToSign(request *requests.RoaRequest) (stringToSign string) {
+func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {
 
-	headers := request.Headers
+	headers := request.GetHeaders()
 
 	stringToSignBuilder := bytes.Buffer{}
-	stringToSignBuilder.WriteString(request.Method)
+	stringToSignBuilder.WriteString(request.GetMethod())
 	stringToSignBuilder.WriteString(requests.HeaderSeparator)
 
 	// append header keys for sign

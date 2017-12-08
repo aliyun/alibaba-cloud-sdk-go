@@ -60,14 +60,20 @@ type AcsRequest interface {
 	GetRegionId() string
 	GetUrl() string
 	GetHeaders() map[string]string
+	GetQueryParams() map[string]string
+	GetFormParams() map[string]string
+	GetContent() []byte
 	GetBodyReader() io.Reader
 	GetStyle() string
 	GetProduct() string
+	GetVersion() string
+	GetActionName() string
 	GetAcceptFormat() string
 	GetLocationServiceCode() string
 	GetLocationEndpointType() string
 
 	SetDomain(domain string)
+	SetContent(content []byte)
 
 	GetQueries() string
 	addHeaderParam(key, value string)
@@ -99,6 +105,30 @@ type baseRequest struct {
 	locationEndpointType string
 
 	queries string
+}
+
+func (request *baseRequest) GetQueryParams() map[string]string {
+	return request.QueryParams
+}
+
+func (request *baseRequest) GetFormParams() map[string]string {
+	return request.FormParams
+}
+
+func (request *baseRequest) GetContent() []byte {
+	return request.Content
+}
+
+func (request *baseRequest) GetVersion() string {
+	return request.version
+}
+
+func (request *baseRequest) GetActionName() string {
+	return request.actionName
+}
+
+func (request *baseRequest) SetContent(content []byte) {
+	request.Content = content
 }
 
 func (request *baseRequest) addHeaderParam(key, value string) {

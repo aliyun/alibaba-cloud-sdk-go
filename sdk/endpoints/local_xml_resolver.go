@@ -19,6 +19,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
+	"path/filepath"
+	"runtime"
+	"strings"
 	"sync"
 )
 
@@ -30,25 +34,17 @@ type LocalXmlResolver struct {
 
 func (resolver *LocalXmlResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	readXmlOnce.Do(func() {
-		dir, _ := os.Getwd()
+		_, file, _, _ := runtime.Caller(0)
+		filename := filepath.Join(file, "../endpoints.xml")
 
-		file, err := os.Open(dir + "/endpoints/endpoints.xml")
+		data, err := ioutil.ReadFile(filename)
 		if err != nil {
-			fmt.Printf("error: %v", err)
-			support = false
-			return
-		}
-		defer file.Close()
-		data, err := ioutil.ReadAll(file)
-		if err != nil {
-			fmt.Printf("error: %v", err)
 			support = false
 			return
 		}
 
 		err = xml.Unmarshal(data, &v)
 		if err != nil {
-			fmt.Printf("error: %v", err)
 			support = false
 			return
 		}
@@ -70,6 +66,18 @@ func (resolver *LocalXmlResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	support = false
 	return
+}
+
+func GetCurrentPath() string {
+	s, err := exec.LookPath(os.Args[0])
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	s = strings.Replace(s, "\\", "/", -1)
+	s = strings.Replace(s, "\\\\", "/", -1)
+	i := strings.LastIndex(s, "/")
+	path := string(s[0 : i+1])
+	return path
 }
 
 type Endpoints struct {

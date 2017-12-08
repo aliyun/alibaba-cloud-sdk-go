@@ -64,18 +64,14 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 }
 
 func Sign(request requests.AcsRequest, signer Signer, regionId string) (err error) {
-	switch instance := request.(type) {
-	case *requests.RoaRequest:
+	switch request.GetStyle() {
+	case requests.ROA:
 		{
-			signRoaRequest(instance, signer, regionId)
+			signRoaRequest(request, signer, regionId)
 		}
-	case *requests.RpcRequest:
+	case requests.RPC:
 		{
-			signRpcRequest(instance, signer, regionId)
-		}
-	case *requests.CommonRequest:
-		{
-			err = Sign(instance.Ontology, signer, regionId)
+			signRpcRequest(request, signer, regionId)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnknownRequestTypeMessage, reflect.TypeOf(request))

@@ -285,6 +285,14 @@ func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
 	return
 }
 
+func getFtTestRpcRequestForEndpointXml() (request *requests.RpcRequest) {
+	request = &requests.RpcRequest{}
+	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "", "")
+	request.RegionId = "cn-hangzhou"
+	request.QueryParams["QueryParam"] = "QueryParamValue"
+	return
+}
+
 func TestCommonRpcRequest(t *testing.T) {
 	rpcRequest := requests.NewCommonRequest()
 	rpcRequest.Product = "Ft"
@@ -335,7 +343,7 @@ func TestCommonRoaRequest(t *testing.T) {
 }
 
 func TestRpcGetForEndpointXml(t *testing.T) {
-	request := getFtTestRpcRequestForEndpointLocation()
+	request := getFtTestRpcRequestForEndpointXml()
 	request.Method = requests.GET
 	request.RegionId = "cn-shanghai"
 

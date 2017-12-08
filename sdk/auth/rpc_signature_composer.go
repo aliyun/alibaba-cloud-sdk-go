@@ -22,15 +22,15 @@ import (
 	"strings"
 )
 
-func signRpcRequest(request *requests.RpcRequest, signer Signer, regionId string) {
+func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string) {
 	completeRpcSignParams(request, signer, regionId)
 	stringToSign := buildRpcStringToSign(request)
 	signature := signer.Sign(stringToSign, "&")
-	request.QueryParams["Signature"] = signature
+	request.GetQueryParams()["Signature"] = signature
 }
 
-func completeRpcSignParams(request *requests.RpcRequest, signer Signer, regionId string) {
-	queryParams := request.QueryParams
+func completeRpcSignParams(request requests.AcsRequest, signer Signer, regionId string) {
+	queryParams := request.GetQueryParams()
 	queryParams["Version"] = request.GetVersion()
 	queryParams["Action"] = request.GetActionName()
 	queryParams["Format"] = request.GetAcceptFormat()
@@ -50,17 +50,17 @@ func completeRpcSignParams(request *requests.RpcRequest, signer Signer, regionId
 		}
 	}
 
-	request.Headers["Content-Type"] = requests.Form
-	formString := utils.GetUrlFormedMap(request.FormParams)
-	request.Content = []byte(formString)
+	request.GetHeaders()["Content-Type"] = requests.Form
+	formString := utils.GetUrlFormedMap(request.GetFormParams())
+	request.SetContent([]byte(formString))
 }
 
-func buildRpcStringToSign(request *requests.RpcRequest) (stringToSign string) {
+func buildRpcStringToSign(request requests.AcsRequest) (stringToSign string) {
 	signParams := make(map[string]string)
-	for key, value := range request.QueryParams {
+	for key, value := range request.GetQueryParams() {
 		signParams[key] = value
 	}
-	for key, value := range request.FormParams {
+	for key, value := range request.GetFormParams() {
 		signParams[key] = value
 	}
 
@@ -75,6 +75,6 @@ func buildRpcStringToSign(request *requests.RpcRequest) (stringToSign string) {
 	stringToSign = strings.Replace(stringToSign, "*", "%2A", -1)
 	stringToSign = strings.Replace(stringToSign, "%7E", "~", -1)
 	stringToSign = url.QueryEscape(stringToSign)
-	stringToSign = request.Method + "&%2F&" + stringToSign
+	stringToSign = request.GetMethod() + "&%2F&" + stringToSign
 	return
 }

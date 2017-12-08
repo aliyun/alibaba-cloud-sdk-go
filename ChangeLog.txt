@@ -1,3 +1,6 @@
+2017-12-08 Version: 0.4.0
+1, support endpoint.xml resolver
+
 2017-12-08 Version: 0.3.1
 1, Add ARMSQueryDataSet, WhereInDimQuery interface.
 
