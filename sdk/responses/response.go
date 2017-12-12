@@ -18,7 +18,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"encoding/xml"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strconv"
@@ -36,7 +35,6 @@ type AcsResponse interface {
 
 func Unmarshal(response AcsResponse, httpResponse *http.Response, format string) (err error) {
 	err = response.parseFromHttpResponse(httpResponse)
-	fmt.Println(response.GetHttpContentString())
 	if err != nil {
 		return
 	}

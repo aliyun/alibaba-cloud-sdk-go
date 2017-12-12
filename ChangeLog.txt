@@ -1,3 +1,6 @@
+2017-12-12 Version: 0.5.1
+1, remove unused fmt.print
+
 2017-12-08 Version: 0.5.0
 1, Add ARMSQueryDataSet, WhereInDimQuery interface.
 

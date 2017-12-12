@@ -15,7 +15,6 @@
 package sdk
 
 import (
-	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
@@ -188,7 +187,6 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 	httpResponse, err := client.httpClient.Do(httpRequest)
 	if err != nil {
-		fmt.Println(err)
 		return
 	}
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
