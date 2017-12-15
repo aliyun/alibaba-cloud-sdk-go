@@ -1,3 +1,7 @@
+2017-12-15 Version: 0.5.6
+1, Update SetReqAuthConfig.
+2, Add Scdn API.
+
 2017-12-15 Version: 0.5.5
 1, fix test cases
 
