@@ -1,3 +1,6 @@
+2017-12-15 Version: 0.5.5
+1, fix test cases
+
 2017-12-15 Version: 0.5.4
 1, Add scdn API.
 2, Update SetReqAuthConfig.

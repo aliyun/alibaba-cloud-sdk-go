@@ -56,7 +56,7 @@ func TestMain(m *testing.M) {
 	os.Exit(result)
 }
 
-func testSetup() {
+func getConfigFromFile() *TestConfig {
 	usr, err := user.Current()
 	if err != nil {
 		panic(err)
@@ -68,6 +68,31 @@ func testSetup() {
 	}
 	var config TestConfig
 	json.Unmarshal(data, &config)
+	return &config
+}
+
+func getConfigFromEnv() *TestConfig {
+	config := &TestConfig{
+		AccessKeyId:     os.Getenv("ACCESS_KEY_ID"),
+		AccessKeySecret: os.Getenv("ACCESS_KEY_SECRET"),
+		PublicKeyId:     os.Getenv("PUBLIC_KEY_ID"),
+		PrivateKey:      os.Getenv("PRIVATE_KEY"),
+		RoleArn:         os.Getenv("ROLE_ARN"),
+		ChildAK:         os.Getenv("CHILD_AK"),
+		ChildSecret:     os.Getenv("CHILD_SECRET"),
+	}
+	if config.AccessKeyId == "" {
+		return nil
+	} else {
+		return config
+	}
+}
+
+func testSetup() {
+	config := getConfigFromEnv()
+	if config == nil {
+		config = getConfigFromFile()
+	}
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
@@ -87,14 +112,14 @@ func testSetup() {
 			HttpTransport: tr,
 		},
 	}
-	err = client.InitWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
+	err := client.InitWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
 	if err != nil {
 		panic(err)
 	}
-	err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
-	if err != nil {
-		panic(err)
-	}
+	//err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
+	//if err != nil {
+	//	panic(err)
+	//}
 	err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
 	if err != nil {
 		panic(err)
@@ -321,7 +346,6 @@ func TestCommonRoaRequest(t *testing.T) {
 	roaRequest := requests.NewCommonRequest()
 	roaRequest.Product = "Ft"
 	roaRequest.Version = "2016-01-02"
-	roaRequest.ApiName = "TestRoaApi"
 	roaRequest.PathPattern = "/web/cloudapi"
 	roaRequest.Domain = "ft.aliyuncs.com"
 	roaRequest.Method = "POST"

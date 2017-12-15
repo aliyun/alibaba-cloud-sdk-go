@@ -37,7 +37,7 @@ func (request *CommonRequest) TransToAcsRequest() {
 		errors.NewClientError(errors.MissingParamCode, "At least one of [ApiName] and [PathPattern] should has a value", nil)
 	}
 	if len(request.Domain) == 0 && len(request.Product) == 0 {
-		errors.NewClientError(errors.MissingParamCode, "At least one of [Host] and [Product] should has a value", nil)
+		errors.NewClientError(errors.MissingParamCode, "At least one of [Domain] and [Product] should has a value", nil)
 	}
 
 	if len(request.PathPattern) > 0 {
