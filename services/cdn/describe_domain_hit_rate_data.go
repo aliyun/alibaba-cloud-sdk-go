@@ -64,30 +64,30 @@ func (client *Client) DescribeDomainHitRateDataWithCallback(request *DescribeDom
 
 type DescribeDomainHitRateDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string `position:"Query" name:"EndTime"`
-	StartTime      string `position:"Query" name:"StartTime"`
-	DomainName     string `position:"Query" name:"DomainName"`
-	Interval       string `position:"Query" name:"Interval"`
-	IspNameEn      string `position:"Query" name:"IspNameEn"`
-	LocationNameEn string `position:"Query" name:"LocationNameEn"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
 	SecurityToken  string `position:"Query" name:"SecurityToken"`
 	TimeMerge      string `position:"Query" name:"TimeMerge"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	Action         string `position:"Query" name:"Action"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	Interval       string `position:"Query" name:"Interval"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
+	OwnerId        string `position:"Query" name:"OwnerId"`
+	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainHitRateDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	DomainName      string `json:"DomainName" xml:"DomainName"`
-	DataInterval    string `json:"DataInterval" xml:"DataInterval"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	HitRateInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"HitRateInterval" xml:"HitRateInterval"`
+	RequestId       string `json:"RequestId"`
+	DomainName      string `json:"DomainName"`
+	DataInterval    string `json:"DataInterval"`
+	StartTime       string `json:"StartTime"`
+	EndTime         string `json:"EndTime"`
+	HitRateInterval []struct {
+		TimeStamp string `json:"TimeStamp"`
+		Value     string `json:"Value"`
+	} `json:"HitRateInterval"`
 }
 
 func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDataRequest) {

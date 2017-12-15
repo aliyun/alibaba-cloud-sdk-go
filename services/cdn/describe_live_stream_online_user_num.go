@@ -64,27 +64,27 @@ func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *Descr
 
 type DescribeLiveStreamOnlineUserNumRequest struct {
 	*requests.RpcRequest
-	HlsSwitch     string `position:"Query" name:"HlsSwitch"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	HlsSwitch     string `position:"Query" name:"HlsSwitch"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int64  `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  struct {
-		LiveStreamOnlineUserNumInfo []struct {
-			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
-			UserNumber int64  `json:"UserNumber" xml:"UserNumber"`
-			Time       string `json:"Time" xml:"Time"`
-		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
-	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string `json:"RequestId"`
+	TotalUserNumber int64  `json:"TotalUserNumber"`
+	OnlineUserInfo  []struct {
+		StreamUrl  string `json:"StreamUrl"`
+		UserNumber int64  `json:"UserNumber"`
+		Time       string `json:"Time"`
+	} `json:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStreamOnlineUserNumRequest) {

@@ -64,15 +64,17 @@ func (client *Client) DeleteHttpHeaderConfigWithCallback(request *DeleteHttpHead
 
 type DeleteHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	ConfigID      string `position:"Query" name:"ConfigID"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	ConfigID      string `position:"Query" name:"ConfigID"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteHttpHeaderConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigRequest) {

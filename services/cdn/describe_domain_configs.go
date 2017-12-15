@@ -64,193 +64,183 @@ func (client *Client) DescribeDomainConfigsWithCallback(request *DescribeDomainC
 
 type DescribeDomainConfigsRequest struct {
 	*requests.RpcRequest
-	ConfigList    string `position:"Query" name:"ConfigList"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	ConfigList    string `position:"Query" name:"ConfigList"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId"`
 	DomainConfigs struct {
 		CcConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			AllowIps string `json:"AllowIps" xml:"AllowIps"`
-			BlockIps string `json:"BlockIps" xml:"BlockIps"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"CcConfig" xml:"CcConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			AllowIps string `json:"AllowIps"`
+			BlockIps string `json:"BlockIps"`
+			Status   string `json:"Status"`
+		} `json:"CcConfig"`
 		ErrorPageConfig struct {
-			ConfigId      string `json:"ConfigId" xml:"ConfigId"`
-			ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
-			PageType      string `json:"PageType" xml:"PageType"`
-			CustomPageUrl string `json:"CustomPageUrl" xml:"CustomPageUrl"`
-			Status        string `json:"Status" xml:"Status"`
-		} `json:"ErrorPageConfig" xml:"ErrorPageConfig"`
+			ConfigId      string `json:"ConfigId"`
+			ErrorCode     string `json:"ErrorCode"`
+			PageType      string `json:"PageType"`
+			CustomPageUrl string `json:"CustomPageUrl"`
+			Status        string `json:"Status"`
+		} `json:"ErrorPageConfig"`
 		OptimizeConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"OptimizeConfig" xml:"OptimizeConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			Status   string `json:"Status"`
+		} `json:"OptimizeConfig"`
 		PageCompressConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"PageCompressConfig" xml:"PageCompressConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			Status   string `json:"Status"`
+		} `json:"PageCompressConfig"`
 		IgnoreQueryStringConfig struct {
-			ConfigId    string `json:"ConfigId" xml:"ConfigId"`
-			HashKeyArgs string `json:"HashKeyArgs" xml:"HashKeyArgs"`
-			Enable      string `json:"Enable" xml:"Enable"`
-			Status      string `json:"Status" xml:"Status"`
-		} `json:"IgnoreQueryStringConfig" xml:"IgnoreQueryStringConfig"`
+			ConfigId    string `json:"ConfigId"`
+			HashKeyArgs string `json:"HashKeyArgs"`
+			Enable      string `json:"Enable"`
+			Status      string `json:"Status"`
+		} `json:"IgnoreQueryStringConfig"`
 		RangeConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"RangeConfig" xml:"RangeConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			Status   string `json:"Status"`
+		} `json:"RangeConfig"`
 		RefererConfig struct {
-			ConfigId   string `json:"ConfigId" xml:"ConfigId"`
-			ReferType  string `json:"ReferType" xml:"ReferType"`
-			ReferList  string `json:"ReferList" xml:"ReferList"`
-			AllowEmpty string `json:"AllowEmpty" xml:"AllowEmpty"`
-			DisableAst string `json:"DisableAst" xml:"DisableAst"`
-			Status     string `json:"Status" xml:"Status"`
-		} `json:"RefererConfig" xml:"RefererConfig"`
+			ConfigId   string `json:"ConfigId"`
+			ReferType  string `json:"ReferType"`
+			ReferList  string `json:"ReferList"`
+			AllowEmpty string `json:"AllowEmpty"`
+			DisableAst string `json:"DisableAst"`
+			Status     string `json:"Status"`
+		} `json:"RefererConfig"`
 		ReqAuthConfig struct {
-			ConfigId         string `json:"ConfigId" xml:"ConfigId"`
-			AuthType         string `json:"AuthType" xml:"AuthType"`
-			Key1             string `json:"Key1" xml:"Key1"`
-			Key2             string `json:"Key2" xml:"Key2"`
-			Status           string `json:"Status" xml:"Status"`
-			AliAuthWhiteList string `json:"AliAuthWhiteList" xml:"AliAuthWhiteList"`
-			AuthM3u8         string `json:"AuthM3u8" xml:"AuthM3u8"`
-			AuthAddr         string `json:"AuthAddr" xml:"AuthAddr"`
-			AuthRemoteDesc   string `json:"AuthRemoteDesc" xml:"AuthRemoteDesc"`
-			TimeOut          string `json:"TimeOut" xml:"TimeOut"`
-		} `json:"ReqAuthConfig" xml:"ReqAuthConfig"`
+			ConfigId         string `json:"ConfigId"`
+			AuthType         string `json:"AuthType"`
+			Key1             string `json:"Key1"`
+			Key2             string `json:"Key2"`
+			Status           string `json:"Status"`
+			AliAuthWhiteList string `json:"AliAuthWhiteList"`
+			AuthM3u8         string `json:"AuthM3u8"`
+			AuthAddr         string `json:"AuthAddr"`
+			AuthRemoteDesc   string `json:"AuthRemoteDesc"`
+			TimeOut          string `json:"TimeOut"`
+		} `json:"ReqAuthConfig"`
 		SrcHostConfig struct {
-			ConfigId   string `json:"ConfigId" xml:"ConfigId"`
-			DomainName string `json:"DomainName" xml:"DomainName"`
-			Status     string `json:"Status" xml:"Status"`
-		} `json:"SrcHostConfig" xml:"SrcHostConfig"`
+			ConfigId   string `json:"ConfigId"`
+			DomainName string `json:"DomainName"`
+			Status     string `json:"Status"`
+		} `json:"SrcHostConfig"`
 		VideoSeekConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"VideoSeekConfig" xml:"VideoSeekConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			Status   string `json:"Status"`
+		} `json:"VideoSeekConfig"`
 		WafConfig struct {
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Enable   string `json:"Enable" xml:"Enable"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"WafConfig" xml:"WafConfig"`
+			ConfigId string `json:"ConfigId"`
+			Enable   string `json:"Enable"`
+			Status   string `json:"Status"`
+		} `json:"WafConfig"`
 		NotifyUrlConfig struct {
-			Enable    string `json:"Enable" xml:"Enable"`
-			NotifyUrl string `json:"NotifyUrl" xml:"NotifyUrl"`
-		} `json:"NotifyUrlConfig" xml:"NotifyUrlConfig"`
+			Enable    string `json:"Enable"`
+			NotifyUrl string `json:"NotifyUrl"`
+		} `json:"NotifyUrlConfig"`
 		RedirectTypeConfig struct {
-			RedirectType string `json:"RedirectType" xml:"RedirectType"`
-		} `json:"RedirectTypeConfig" xml:"RedirectTypeConfig"`
+			RedirectType string `json:"RedirectType"`
+		} `json:"RedirectTypeConfig"`
 		ForwardSchemeConfig struct {
-			ConfigId         string `json:"ConfigId" xml:"ConfigId"`
-			Enable           string `json:"Enable" xml:"Enable"`
-			SchemeOrigin     string `json:"SchemeOrigin" xml:"SchemeOrigin"`
-			SchemeOriginPort string `json:"SchemeOriginPort" xml:"SchemeOriginPort"`
-			Status           string `json:"Status" xml:"Status"`
-		} `json:"ForwardSchemeConfig" xml:"ForwardSchemeConfig"`
+			ConfigId         string `json:"ConfigId"`
+			Enable           string `json:"Enable"`
+			SchemeOrigin     string `json:"SchemeOrigin"`
+			SchemeOriginPort string `json:"SchemeOriginPort"`
+			Status           string `json:"Status"`
+		} `json:"ForwardSchemeConfig"`
 		RemoveQueryStringConfig struct {
-			AliRemoveArgs string `json:"AliRemoveArgs" xml:"AliRemoveArgs"`
-			ConfigId      string `json:"ConfigId" xml:"ConfigId"`
-			Status        string `json:"Status" xml:"Status"`
-		} `json:"RemoveQueryStringConfig" xml:"RemoveQueryStringConfig"`
+			AliRemoveArgs string `json:"AliRemoveArgs"`
+			ConfigId      string `json:"ConfigId"`
+			Status        string `json:"Status"`
+		} `json:"RemoveQueryStringConfig"`
 		L2OssKeyConfig struct {
-			PrivateOssAuth string `json:"PrivateOssAuth" xml:"PrivateOssAuth"`
-			ConfigId       string `json:"ConfigId" xml:"ConfigId"`
-			Status         string `json:"Status" xml:"Status"`
-		} `json:"L2OssKeyConfig" xml:"L2OssKeyConfig"`
+			PrivateOssAuth string `json:"PrivateOssAuth"`
+			ConfigId       string `json:"ConfigId"`
+			Status         string `json:"Status"`
+		} `json:"L2OssKeyConfig"`
 		MacServiceConfig struct {
-			AppList       string `json:"AppList" xml:"AppList"`
-			Enabled       string `json:"Enabled" xml:"Enabled"`
-			ProcessResult string `json:"ProcessResult" xml:"ProcessResult"`
-			ConfigId      string `json:"ConfigId" xml:"ConfigId"`
-			Status        string `json:"Status" xml:"Status"`
-		} `json:"MacServiceConfig" xml:"MacServiceConfig"`
+			AppList       string `json:"AppList"`
+			Enabled       string `json:"Enabled"`
+			ProcessResult string `json:"ProcessResult"`
+			ConfigId      string `json:"ConfigId"`
+			Status        string `json:"Status"`
+		} `json:"MacServiceConfig"`
 		GreenManagerConfig struct {
-			Enabled  string `json:"Enabled" xml:"Enabled"`
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
+			Enabled  string `json:"Enabled"`
+			ConfigId string `json:"ConfigId"`
+			Status   string `json:"Status"`
+		} `json:"GreenManagerConfig"`
 		HttpsOptionConfig struct {
-			Http2    string `json:"Http2" xml:"Http2"`
-			ConfigId string `json:"ConfigId" xml:"ConfigId"`
-			Status   string `json:"Status" xml:"Status"`
-		} `json:"HttpsOptionConfig" xml:"HttpsOptionConfig"`
+			Http2    string `json:"Http2"`
+			ConfigId string `json:"ConfigId"`
+			Status   string `json:"Status"`
+		} `json:"HttpsOptionConfig"`
 		AliBusinessConfig struct {
-			AliBusinessTable string `json:"AliBusinessTable" xml:"AliBusinessTable"`
-			AliBusinessType  string `json:"AliBusinessType" xml:"AliBusinessType"`
-			ConfigId         string `json:"ConfigId" xml:"ConfigId"`
-			Status           string `json:"Status" xml:"Status"`
-		} `json:"AliBusinessConfig" xml:"AliBusinessConfig"`
+			AliBusinessTable string `json:"AliBusinessTable"`
+			AliBusinessType  string `json:"AliBusinessType"`
+			ConfigId         string `json:"ConfigId"`
+			Status           string `json:"Status"`
+		} `json:"AliBusinessConfig"`
 		IpAllowListConfig struct {
-			ConfigId  string `json:"ConfigId" xml:"ConfigId"`
-			IpList    string `json:"IpList" xml:"IpList"`
-			IpAclXfwd string `json:"IpAclXfwd" xml:"IpAclXfwd"`
-			Status    string `json:"Status" xml:"Status"`
-		} `json:"IpAllowListConfig" xml:"IpAllowListConfig"`
-		CacheExpiredConfigs struct {
-			CacheExpiredConfig []struct {
-				ConfigId     string `json:"ConfigId" xml:"ConfigId"`
-				CacheType    string `json:"CacheType" xml:"CacheType"`
-				CacheContent string `json:"CacheContent" xml:"CacheContent"`
-				TTL          string `json:"TTL" xml:"TTL"`
-				Weight       string `json:"Weight" xml:"Weight"`
-				Status       string `json:"Status" xml:"Status"`
-			} `json:"CacheExpiredConfig" xml:"CacheExpiredConfig"`
-		} `json:"CacheExpiredConfigs" xml:"CacheExpiredConfigs"`
-		HttpErrorPageConfigs struct {
-			HttpErrorPageConfig []struct {
-				ConfigId  string `json:"ConfigId" xml:"ConfigId"`
-				ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-				PageUrl   string `json:"PageUrl" xml:"PageUrl"`
-				Status    string `json:"Status" xml:"Status"`
-			} `json:"HttpErrorPageConfig" xml:"HttpErrorPageConfig"`
-		} `json:"HttpErrorPageConfigs" xml:"HttpErrorPageConfigs"`
-		HttpHeaderConfigs struct {
-			HttpHeaderConfig []struct {
-				ConfigId    string `json:"ConfigId" xml:"ConfigId"`
-				HeaderKey   string `json:"HeaderKey" xml:"HeaderKey"`
-				HeaderValue string `json:"HeaderValue" xml:"HeaderValue"`
-				Status      string `json:"Status" xml:"Status"`
-			} `json:"HttpHeaderConfig" xml:"HttpHeaderConfig"`
-		} `json:"HttpHeaderConfigs" xml:"HttpHeaderConfigs"`
-		DynamicConfigs struct {
-			DynamicConfig []struct {
-				ConfigId            string `json:"ConfigId" xml:"ConfigId"`
-				DynamicOrigin       string `json:"DynamicOrigin" xml:"DynamicOrigin"`
-				StaticType          string `json:"StaticType" xml:"StaticType"`
-				StaticUri           string `json:"StaticUri" xml:"StaticUri"`
-				StaticPath          string `json:"StaticPath" xml:"StaticPath"`
-				DynamicCacheControl string `json:"DynamicCacheControl" xml:"DynamicCacheControl"`
-				Status              string `json:"Status" xml:"Status"`
-			} `json:"DynamicConfig" xml:"DynamicConfig"`
-		} `json:"DynamicConfigs" xml:"DynamicConfigs"`
-		ReqHeaderConfigs struct {
-			ReqHeaderConfig []struct {
-				ConfigId string `json:"ConfigId" xml:"ConfigId"`
-				Key      string `json:"Key" xml:"Key"`
-				Value    string `json:"Value" xml:"Value"`
-				Status   string `json:"Status" xml:"Status"`
-			} `json:"ReqHeaderConfig" xml:"ReqHeaderConfig"`
-		} `json:"ReqHeaderConfigs" xml:"ReqHeaderConfigs"`
-		SetVarsConfigs struct {
-			SetVarsConfig []struct {
-				ConfigId string `json:"ConfigId" xml:"ConfigId"`
-				VarName  string `json:"VarName" xml:"VarName"`
-				VarValue string `json:"VarValue" xml:"VarValue"`
-				Status   string `json:"Status" xml:"Status"`
-			} `json:"SetVarsConfig" xml:"SetVarsConfig"`
-		} `json:"SetVarsConfigs" xml:"SetVarsConfigs"`
-	} `json:"DomainConfigs" xml:"DomainConfigs"`
+			ConfigId  string `json:"ConfigId"`
+			IpList    string `json:"IpList"`
+			IpAclXfwd string `json:"IpAclXfwd"`
+			Status    string `json:"Status"`
+		} `json:"IpAllowListConfig"`
+		CacheExpiredConfigs []struct {
+			ConfigId     string `json:"ConfigId"`
+			CacheType    string `json:"CacheType"`
+			CacheContent string `json:"CacheContent"`
+			TTL          string `json:"TTL"`
+			Weight       string `json:"Weight"`
+			Status       string `json:"Status"`
+		} `json:"CacheExpiredConfigs"`
+		HttpErrorPageConfigs []struct {
+			ConfigId  string `json:"ConfigId"`
+			ErrorCode string `json:"ErrorCode"`
+			PageUrl   string `json:"PageUrl"`
+			Status    string `json:"Status"`
+		} `json:"HttpErrorPageConfigs"`
+		HttpHeaderConfigs []struct {
+			ConfigId    string `json:"ConfigId"`
+			HeaderKey   string `json:"HeaderKey"`
+			HeaderValue string `json:"HeaderValue"`
+			Status      string `json:"Status"`
+		} `json:"HttpHeaderConfigs"`
+		DynamicConfigs []struct {
+			ConfigId            string `json:"ConfigId"`
+			DynamicOrigin       string `json:"DynamicOrigin"`
+			StaticType          string `json:"StaticType"`
+			StaticUri           string `json:"StaticUri"`
+			StaticPath          string `json:"StaticPath"`
+			DynamicCacheControl string `json:"DynamicCacheControl"`
+			Status              string `json:"Status"`
+		} `json:"DynamicConfigs"`
+		ReqHeaderConfigs []struct {
+			ConfigId string `json:"ConfigId"`
+			Key      string `json:"Key"`
+			Value    string `json:"Value"`
+			Status   string `json:"Status"`
+		} `json:"ReqHeaderConfigs"`
+		SetVarsConfigs []struct {
+			ConfigId string `json:"ConfigId"`
+			VarName  string `json:"VarName"`
+			VarValue string `json:"VarValue"`
+			Status   string `json:"Status"`
+		} `json:"SetVarsConfigs"`
+	} `json:"DomainConfigs"`
 }
 
 func CreateDescribeDomainConfigsRequest() (request *DescribeDomainConfigsRequest) {

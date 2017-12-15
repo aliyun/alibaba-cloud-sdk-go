@@ -64,22 +64,22 @@ func (client *Client) DescribeDomainUpstreamBpsOfEdgeWithCallback(request *Descr
 
 type DescribeDomainUpstreamBpsOfEdgeRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainUpstreamBpsOfEdgeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	BpsDatas  struct {
-		DomainBpsModel []struct {
-			Time string  `json:"Time" xml:"Time"`
-			Bps  float64 `json:"Bps" xml:"Bps"`
-		} `json:"DomainBpsModel" xml:"DomainBpsModel"`
-	} `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string `json:"RequestId"`
+	BpsDatas  []struct {
+		Time string  `json:"Time"`
+		Bps  float64 `json:"Bps"`
+	} `json:"BpsDatas"`
 }
 
 func CreateDescribeDomainUpstreamBpsOfEdgeRequest() (request *DescribeDomainUpstreamBpsOfEdgeRequest) {

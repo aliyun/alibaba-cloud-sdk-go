@@ -65,14 +65,16 @@ func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUs
 type DescribeUserCustomerLabelsRequest struct {
 	*requests.RpcRequest
 	Uid           string `position:"Query" name:"Uid"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeUserCustomerLabelsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsInnerUser bool   `json:"IsInnerUser" xml:"IsInnerUser"`
+	RequestId   string `json:"RequestId"`
+	IsInnerUser bool   `json:"IsInnerUser"`
 }
 
 func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLabelsRequest) {

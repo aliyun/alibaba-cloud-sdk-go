@@ -64,29 +64,29 @@ func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescr
 
 type BatchDescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Version       string `position:"Query" name:"Version"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	StartTime     string `position:"Query" name:"StartTime"`
 	PageNumber    string `position:"Query" name:"PageNumber"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	PageSize      string `position:"Query" name:"PageSize"`
+	Action        string `position:"Query" name:"Action"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Version       string `position:"Query" name:"Version"`
 }
 
 type BatchDescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	BpsDatas   struct {
-		DataModule []struct {
-			Timestamp  string  `json:"Timestamp" xml:"Timestamp"`
-			L1Bps      float64 `json:"L1Bps" xml:"L1Bps"`
-			DomainName string  `json:"DomainName" xml:"DomainName"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId  string `json:"RequestId"`
+	PageNumber int    `json:"PageNumber"`
+	PageSize   int    `json:"PageSize"`
+	TotalCount int    `json:"TotalCount"`
+	BpsDatas   []struct {
+		Timestamp  string  `json:"Timestamp"`
+		L1Bps      float64 `json:"L1Bps"`
+		DomainName string  `json:"DomainName"`
+	} `json:"BpsDatas"`
 }
 
 func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {

@@ -64,28 +64,28 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *Descri
 
 type DescribeLiveStreamSnapshotInfoRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	Limit         string `position:"Query" name:"Limit"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Limit         string `position:"Query" name:"Limit"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamSnapshotInfoResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
-	NextStartTime              string `json:"NextStartTime" xml:"NextStartTime"`
-	LiveStreamSnapshotInfoList struct {
-		LiveStreamSnapshotInfo []struct {
-			OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
-			OssBucket   string `json:"OssBucket" xml:"OssBucket"`
-			OssObject   string `json:"OssObject" xml:"OssObject"`
-			CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"LiveStreamSnapshotInfo" xml:"LiveStreamSnapshotInfo"`
-	} `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
+	RequestId                  string `json:"RequestId"`
+	NextStartTime              string `json:"NextStartTime"`
+	LiveStreamSnapshotInfoList []struct {
+		OssEndpoint string `json:"OssEndpoint"`
+		OssBucket   string `json:"OssBucket"`
+		OssObject   string `json:"OssObject"`
+		CreateTime  string `json:"CreateTime"`
+	} `json:"LiveStreamSnapshotInfoList"`
 }
 
 func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamSnapshotInfoRequest) {

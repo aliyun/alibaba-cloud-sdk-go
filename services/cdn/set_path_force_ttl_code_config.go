@@ -64,17 +64,19 @@ func (client *Client) SetPathForceTtlCodeConfigWithCallback(request *SetPathForc
 
 type SetPathForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
-	CodeString    string `position:"Query" name:"CodeString"`
+	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
 	Version       string `position:"Query" name:"Version"`
-	DomainName    string `position:"Query" name:"DomainName"`
+	CodeString    string `position:"Query" name:"CodeString"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 	Path          string `position:"Query" name:"Path"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Action        string `position:"Query" name:"Action"`
 }
 
 type SetPathForceTtlCodeConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfigRequest) {

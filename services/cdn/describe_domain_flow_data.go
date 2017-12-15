@@ -64,40 +64,40 @@ func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomain
 
 type DescribeDomainFlowDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string `position:"Query" name:"EndTime"`
-	StartTime      string `position:"Query" name:"StartTime"`
-	Interval       string `position:"Query" name:"Interval"`
 	FixTimeGap     string `position:"Query" name:"FixTimeGap"`
+	TimeMerge      string `position:"Query" name:"TimeMerge"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
 	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
 	IspNameEn      string `position:"Query" name:"IspNameEn"`
 	OwnerId        string `position:"Query" name:"OwnerId"`
+	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
 	DomainType     string `position:"Query" name:"DomainType"`
-	DomainName     string `position:"Query" name:"DomainName"`
 	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	TimeMerge      string `position:"Query" name:"TimeMerge"`
+	Action         string `position:"Query" name:"Action"`
+	Interval       string `position:"Query" name:"Interval"`
 }
 
 type DescribeDomainFlowDataResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DomainName          string `json:"DomainName" xml:"DomainName"`
-	DataInterval        string `json:"DataInterval" xml:"DataInterval"`
-	StartTime           string `json:"StartTime" xml:"StartTime"`
-	EndTime             string `json:"EndTime" xml:"EndTime"`
-	FlowDataPerInterval struct {
-		DataModule []struct {
-			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-			Value                string `json:"Value" xml:"Value"`
-			DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
-			OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
-			DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
-			DynamicDomesticValue string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-			DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-			StaticValue          string `json:"StaticValue" xml:"StaticValue"`
-			StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
-			StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"FlowDataPerInterval" xml:"FlowDataPerInterval"`
+	RequestId           string `json:"RequestId"`
+	DomainName          string `json:"DomainName"`
+	DataInterval        string `json:"DataInterval"`
+	StartTime           string `json:"StartTime"`
+	EndTime             string `json:"EndTime"`
+	FlowDataPerInterval []struct {
+		TimeStamp            string `json:"TimeStamp"`
+		Value                string `json:"Value"`
+		DomesticValue        string `json:"DomesticValue"`
+		OverseasValue        string `json:"OverseasValue"`
+		DynamicValue         string `json:"DynamicValue"`
+		DynamicDomesticValue string `json:"DynamicDomesticValue"`
+		DynamicOverseasValue string `json:"DynamicOverseasValue"`
+		StaticValue          string `json:"StaticValue"`
+		StaticDomesticValue  string `json:"StaticDomesticValue"`
+		StaticOverseasValue  string `json:"StaticOverseasValue"`
+	} `json:"FlowDataPerInterval"`
 }
 
 func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataRequest) {

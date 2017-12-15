@@ -64,38 +64,38 @@ func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDoma
 
 type DescribeDomainRegionDataRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainRegionDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Value        struct {
-		RegionProportionData []struct {
-			Region          string `json:"Region" xml:"Region"`
-			Proportion      string `json:"Proportion" xml:"Proportion"`
-			RegionEname     string `json:"RegionEname" xml:"RegionEname"`
-			AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-			AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-			Bps             string `json:"Bps" xml:"Bps"`
-			ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
-			Qps             string `json:"Qps" xml:"Qps"`
-			ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-			ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
-			AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-			TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-			BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
-			TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
-		} `json:"RegionProportionData" xml:"RegionProportionData"`
-	} `json:"Value" xml:"Value"`
+	RequestId    string `json:"RequestId"`
+	DomainName   string `json:"DomainName"`
+	DataInterval string `json:"DataInterval"`
+	StartTime    string `json:"StartTime"`
+	EndTime      string `json:"EndTime"`
+	Value        []struct {
+		Region          string `json:"Region"`
+		Proportion      string `json:"Proportion"`
+		RegionEname     string `json:"RegionEname"`
+		AvgObjectSize   string `json:"AvgObjectSize"`
+		AvgResponseTime string `json:"AvgResponseTime"`
+		Bps             string `json:"Bps"`
+		ByteHitRate     string `json:"ByteHitRate"`
+		Qps             string `json:"Qps"`
+		ReqErrRate      string `json:"ReqErrRate"`
+		ReqHitRate      string `json:"ReqHitRate"`
+		AvgResponseRate string `json:"AvgResponseRate"`
+		TotalBytes      string `json:"TotalBytes"`
+		BytesProportion string `json:"BytesProportion"`
+		TotalQuery      string `json:"TotalQuery"`
+	} `json:"Value"`
 }
 
 func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataRequest) {

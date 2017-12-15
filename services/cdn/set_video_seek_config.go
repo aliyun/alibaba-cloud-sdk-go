@@ -64,15 +64,17 @@ func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfig
 
 type SetVideoSeekConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	Enable        string `position:"Query" name:"Enable"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Enable        string `position:"Query" name:"Enable"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetVideoSeekConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {

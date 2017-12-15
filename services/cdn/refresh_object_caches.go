@@ -64,16 +64,18 @@ func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCach
 
 type RefreshObjectCachesRequest struct {
 	*requests.RpcRequest
-	ObjectPath    string `position:"Query" name:"ObjectPath"`
-	ObjectType    string `position:"Query" name:"ObjectType"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	ObjectPath    string `position:"Query" name:"ObjectPath"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	ObjectType    string `position:"Query" name:"ObjectType"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type RefreshObjectCachesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
+	RequestId     string `json:"RequestId"`
+	RefreshTaskId string `json:"RefreshTaskId"`
 }
 
 func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {

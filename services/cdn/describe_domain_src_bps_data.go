@@ -64,29 +64,29 @@ func (client *Client) DescribeDomainSrcBpsDataWithCallback(request *DescribeDoma
 
 type DescribeDomainSrcBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Interval      string `position:"Query" name:"Interval"`
 	FixTimeGap    string `position:"Query" name:"FixTimeGap"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
 	TimeMerge     string `position:"Query" name:"TimeMerge"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	Interval      string `position:"Query" name:"Interval"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainSrcBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DomainName            string `json:"DomainName" xml:"DomainName"`
-	DataInterval          string `json:"DataInterval" xml:"DataInterval"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
-	SrcBpsDataPerInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"SrcBpsDataPerInterval" xml:"SrcBpsDataPerInterval"`
+	RequestId             string `json:"RequestId"`
+	DomainName            string `json:"DomainName"`
+	DataInterval          string `json:"DataInterval"`
+	StartTime             string `json:"StartTime"`
+	EndTime               string `json:"EndTime"`
+	SrcBpsDataPerInterval []struct {
+		TimeStamp string `json:"TimeStamp"`
+		Value     string `json:"Value"`
+	} `json:"SrcBpsDataPerInterval"`
 }
 
 func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataRequest) {

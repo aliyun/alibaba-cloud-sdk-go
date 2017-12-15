@@ -64,25 +64,25 @@ func (client *Client) DescribeLiveStreamFrameLossRatioWithCallback(request *Desc
 
 type DescribeLiveStreamFrameLossRatioRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamFrameLossRatioResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	FrameLossRatioInfos struct {
-		FrameLossRatioInfo []struct {
-			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
-			FrameLossRatio float64 `json:"FrameLossRatio" xml:"FrameLossRatio"`
-			Time           string  `json:"Time" xml:"Time"`
-		} `json:"FrameLossRatioInfo" xml:"FrameLossRatioInfo"`
-	} `json:"FrameLossRatioInfos" xml:"FrameLossRatioInfos"`
+	RequestId           string `json:"RequestId"`
+	FrameLossRatioInfos []struct {
+		StreamUrl      string  `json:"StreamUrl"`
+		FrameLossRatio float64 `json:"FrameLossRatio"`
+		Time           string  `json:"Time"`
+	} `json:"FrameLossRatioInfos"`
 }
 
 func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStreamFrameLossRatioRequest) {

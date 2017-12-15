@@ -64,27 +64,27 @@ func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeD
 
 type DescribeDomainTopReferVisitRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	SortBy        string `position:"Query" name:"SortBy"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainTopReferVisitResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	TopReferList struct {
-		ReferList []struct {
-			ReferDetail     string  `json:"ReferDetail" xml:"ReferDetail"`
-			VisitData       string  `json:"VisitData" xml:"VisitData"`
-			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string  `json:"Flow" xml:"Flow"`
-			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
-		} `json:"ReferList" xml:"ReferList"`
-	} `json:"TopReferList" xml:"TopReferList"`
+	RequestId    string `json:"RequestId"`
+	DomainName   string `json:"DomainName"`
+	StartTime    string `json:"StartTime"`
+	TopReferList []struct {
+		ReferDetail     string  `json:"ReferDetail"`
+		VisitData       string  `json:"VisitData"`
+		VisitProportion float64 `json:"VisitProportion"`
+		Flow            string  `json:"Flow"`
+		FlowProportion  float64 `json:"FlowProportion"`
+	} `json:"TopReferList"`
 }
 
 func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopReferVisitRequest) {

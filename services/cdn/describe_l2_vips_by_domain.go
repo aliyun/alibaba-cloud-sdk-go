@@ -64,18 +64,18 @@ func (client *Client) DescribeL2VipsByDomainWithCallback(request *DescribeL2Vips
 
 type DescribeL2VipsByDomainRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeL2VipsByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	Vips       struct {
-		Vip []string `json:"Vip" xml:"Vip"`
-	} `json:"Vips" xml:"Vips"`
+	RequestId  string   `json:"RequestId"`
+	DomainName string   `json:"DomainName"`
+	Vips       []string `json:"Vips"`
 }
 
 func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainRequest) {

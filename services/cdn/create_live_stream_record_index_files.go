@@ -64,29 +64,31 @@ func (client *Client) CreateLiveStreamRecordIndexFilesWithCallback(request *Crea
 
 type CreateLiveStreamRecordIndexFilesRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
 	OssBucket     string `position:"Query" name:"OssBucket"`
+	AppName       string `position:"Query" name:"AppName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	DomainName    string `position:"Query" name:"DomainName"`
 	OssEndpoint   string `position:"Query" name:"OssEndpoint"`
-	AppName       string `position:"Query" name:"AppName"`
-	OssObject     string `position:"Query" name:"OssObject"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	OssObject     string `position:"Query" name:"OssObject"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type CreateLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
+	RequestId  string `json:"RequestId"`
 	RecordInfo struct {
-		RecordId   string  `json:"RecordId" xml:"RecordId"`
-		RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
-		Duration   float64 `json:"Duration" xml:"Duration"`
-		Height     int     `json:"Height" xml:"Height"`
-		Width      int     `json:"Width" xml:"Width"`
-		CreateTime string  `json:"CreateTime" xml:"CreateTime"`
-	} `json:"RecordInfo" xml:"RecordInfo"`
+		RecordId   string  `json:"RecordId"`
+		RecordUrl  string  `json:"RecordUrl"`
+		Duration   float64 `json:"Duration"`
+		Height     int     `json:"Height"`
+		Width      int     `json:"Width"`
+		CreateTime string  `json:"CreateTime"`
+	} `json:"RecordInfo"`
 }
 
 func CreateCreateLiveStreamRecordIndexFilesRequest() (request *CreateLiveStreamRecordIndexFilesRequest) {

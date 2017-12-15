@@ -64,26 +64,26 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithCallback(request *De
 
 type DescribeLiveStreamRelayPushBitRateRequest struct {
 	*requests.RpcRequest
-	StreamName    string `position:"Query" name:"StreamName"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamRelayPushBitRateResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
-	RelayPushBitRateModelList struct {
-		RelayPushBitRateModel []struct {
-			Time          string `json:"Time" xml:"Time"`
-			VedioFrame    string `json:"VedioFrame" xml:"VedioFrame"`
-			VedioTimstamp string `json:"VedioTimstamp" xml:"VedioTimstamp"`
-			AudioFrame    string `json:"AudioFrame" xml:"AudioFrame"`
-			AudioTimstamp string `json:"AudioTimstamp" xml:"AudioTimstamp"`
-			RelayDomain   string `json:"RelayDomain" xml:"RelayDomain"`
-		} `json:"RelayPushBitRateModel" xml:"RelayPushBitRateModel"`
-	} `json:"RelayPushBitRateModelList" xml:"RelayPushBitRateModelList"`
+	RequestId                 string `json:"RequestId"`
+	RelayPushBitRateModelList []struct {
+		Time          string `json:"Time"`
+		VedioFrame    string `json:"VedioFrame"`
+		VedioTimstamp string `json:"VedioTimstamp"`
+		AudioFrame    string `json:"AudioFrame"`
+		AudioTimstamp string `json:"AudioTimstamp"`
+		RelayDomain   string `json:"RelayDomain"`
+	} `json:"RelayPushBitRateModelList"`
 }
 
 func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStreamRelayPushBitRateRequest) {

@@ -64,22 +64,22 @@ func (client *Client) DescribeDomainOnlineUserNumberWithCallback(request *Descri
 
 type DescribeDomainOnlineUserNumberRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainOnlineUserNumberResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	LiveStreamOnlineUserNumInfos struct {
-		LiveStreamOnlineUserNumInfo []struct {
-			Time       string `json:"Time" xml:"Time"`
-			UserNumber int64  `json:"UserNumber" xml:"UserNumber"`
-		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
-	} `json:"LiveStreamOnlineUserNumInfos" xml:"LiveStreamOnlineUserNumInfos"`
+	RequestId                    string `json:"RequestId"`
+	LiveStreamOnlineUserNumInfos []struct {
+		Time       string `json:"Time"`
+		UserNumber int64  `json:"UserNumber"`
+	} `json:"LiveStreamOnlineUserNumInfos"`
 }
 
 func CreateDescribeDomainOnlineUserNumberRequest() (request *DescribeDomainOnlineUserNumberRequest) {

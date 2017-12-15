@@ -64,31 +64,31 @@ func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopD
 
 type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	Limit         string `position:"Query" name:"Limit"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	StartTime         string `json:"StartTime" xml:"StartTime"`
-	EndTime           string `json:"EndTime" xml:"EndTime"`
-	DomainCount       int64  `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount int64  `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
-	TopDomains        struct {
-		TopDomain []struct {
-			DomainName     string `json:"DomainName" xml:"DomainName"`
-			Rank           int64  `json:"Rank" xml:"Rank"`
-			TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
-			TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
-			MaxBps         int64  `json:"MaxBps" xml:"MaxBps"`
-			MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
-			TotalAccess    int64  `json:"TotalAccess" xml:"TotalAccess"`
-		} `json:"TopDomain" xml:"TopDomain"`
-	} `json:"TopDomains" xml:"TopDomains"`
+	RequestId         string `json:"RequestId"`
+	StartTime         string `json:"StartTime"`
+	EndTime           string `json:"EndTime"`
+	DomainCount       int64  `json:"DomainCount"`
+	DomainOnlineCount int64  `json:"DomainOnlineCount"`
+	TopDomains        []struct {
+		DomainName     string `json:"DomainName"`
+		Rank           int64  `json:"Rank"`
+		TotalTraffic   string `json:"TotalTraffic"`
+		TrafficPercent string `json:"TrafficPercent"`
+		MaxBps         int64  `json:"MaxBps"`
+		MaxBpsTime     string `json:"MaxBpsTime"`
+		TotalAccess    int64  `json:"TotalAccess"`
+	} `json:"TopDomains"`
 }
 
 func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowRequest) {

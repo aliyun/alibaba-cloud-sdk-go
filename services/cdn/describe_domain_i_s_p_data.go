@@ -64,38 +64,38 @@ func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainI
 
 type DescribeDomainISPDataRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainISPDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Value        struct {
-		ISPProportionData []struct {
-			ISP             string `json:"ISP" xml:"ISP"`
-			Proportion      string `json:"Proportion" xml:"Proportion"`
-			IspEname        string `json:"IspEname" xml:"IspEname"`
-			AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-			AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-			Bps             string `json:"Bps" xml:"Bps"`
-			ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
-			Qps             string `json:"Qps" xml:"Qps"`
-			ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-			ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
-			AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-			TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-			BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
-			TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
-		} `json:"ISPProportionData" xml:"ISPProportionData"`
-	} `json:"Value" xml:"Value"`
+	RequestId    string `json:"RequestId"`
+	DomainName   string `json:"DomainName"`
+	DataInterval string `json:"DataInterval"`
+	StartTime    string `json:"StartTime"`
+	EndTime      string `json:"EndTime"`
+	Value        []struct {
+		ISP             string `json:"ISP"`
+		Proportion      string `json:"Proportion"`
+		IspEname        string `json:"IspEname"`
+		AvgObjectSize   string `json:"AvgObjectSize"`
+		AvgResponseTime string `json:"AvgResponseTime"`
+		Bps             string `json:"Bps"`
+		ByteHitRate     string `json:"ByteHitRate"`
+		Qps             string `json:"Qps"`
+		ReqErrRate      string `json:"ReqErrRate"`
+		ReqHitRate      string `json:"ReqHitRate"`
+		AvgResponseRate string `json:"AvgResponseRate"`
+		TotalBytes      string `json:"TotalBytes"`
+		BytesProportion string `json:"BytesProportion"`
+		TotalQuery      string `json:"TotalQuery"`
+	} `json:"Value"`
 }
 
 func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest) {

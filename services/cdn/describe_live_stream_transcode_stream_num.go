@@ -65,17 +65,19 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithCallback(request *
 type DescribeLiveStreamTranscodeStreamNumRequest struct {
 	*requests.RpcRequest
 	PullDomain    string `position:"Query" name:"PullDomain"`
-	PushDomain    string `position:"Query" name:"PushDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	PushDomain    string `position:"Query" name:"PushDomain"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Total             int64  `json:"Total" xml:"Total"`
-	TranscodedNumber  int64  `json:"TranscodedNumber" xml:"TranscodedNumber"`
-	UntranscodeNumber int64  `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
+	RequestId         string `json:"RequestId"`
+	Total             int64  `json:"Total"`
+	TranscodedNumber  int64  `json:"TranscodedNumber"`
+	UntranscodeNumber int64  `json:"UntranscodeNumber"`
 }
 
 func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveStreamTranscodeStreamNumRequest) {

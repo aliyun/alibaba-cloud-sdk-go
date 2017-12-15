@@ -64,32 +64,28 @@ func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomai
 
 type DescribeDomainsBySourceRequest struct {
 	*requests.RpcRequest
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	Sources       string `position:"Query" name:"Sources"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainsBySourceResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Sources     string `json:"Sources" xml:"Sources"`
-	DomainsList struct {
-		DomainsData []struct {
-			Source  string `json:"Source" xml:"Source"`
-			Domains struct {
-				DomainNames []string `json:"domainNames" xml:"domainNames"`
-			} `json:"Domains" xml:"Domains"`
-			DomainInfos struct {
-				DomainInfo []struct {
-					DomainName  string `json:"DomainName" xml:"DomainName"`
-					DomainCname string `json:"DomainCname" xml:"DomainCname"`
-					CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-					UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
-					Status      string `json:"Status" xml:"Status"`
-				} `json:"domainInfo" xml:"domainInfo"`
-			} `json:"DomainInfos" xml:"DomainInfos"`
-		} `json:"DomainsData" xml:"DomainsData"`
-	} `json:"DomainsList" xml:"DomainsList"`
+	RequestId   string `json:"RequestId"`
+	Sources     string `json:"Sources"`
+	DomainsList []struct {
+		Source      string   `json:"Source"`
+		Domains     []string `json:"Domains"`
+		DomainInfos []struct {
+			DomainName  string `json:"DomainName"`
+			DomainCname string `json:"DomainCname"`
+			CreateTime  string `json:"CreateTime"`
+			UpdateTime  string `json:"UpdateTime"`
+			Status      string `json:"Status"`
+		} `json:"DomainInfos"`
+	} `json:"DomainsList"`
 }
 
 func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {

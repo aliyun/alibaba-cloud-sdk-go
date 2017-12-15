@@ -64,16 +64,18 @@ func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callb
 
 type SetCcConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
 	AllowIps      string `position:"Query" name:"AllowIps"`
-	BlockIps      string `position:"Query" name:"BlockIps"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	BlockIps      string `position:"Query" name:"BlockIps"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetCcConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {

@@ -64,15 +64,17 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithCallback(request *DeleteLiv
 
 type DeleteLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteLiveAppSnapshotConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotConfigRequest) {

@@ -64,23 +64,25 @@ func (client *Client) DescribeLiveAppRecordConfigWithCallback(request *DescribeL
 
 type DescribeLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveAppRecordConfigResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId"`
 	LiveAppRecord struct {
-		DomainName      string `json:"DomainName" xml:"DomainName"`
-		AppName         string `json:"AppName" xml:"AppName"`
-		OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
-		OssBucket       string `json:"OssBucket" xml:"OssBucket"`
-		OssObjectPrefix string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-		CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	} `json:"LiveAppRecord" xml:"LiveAppRecord"`
+		DomainName      string `json:"DomainName"`
+		AppName         string `json:"AppName"`
+		OssEndpoint     string `json:"OssEndpoint"`
+		OssBucket       string `json:"OssBucket"`
+		OssObjectPrefix string `json:"OssObjectPrefix"`
+		CreateTime      string `json:"CreateTime"`
+	} `json:"LiveAppRecord"`
 }
 
 func CreateDescribeLiveAppRecordConfigRequest() (request *DescribeLiveAppRecordConfigRequest) {

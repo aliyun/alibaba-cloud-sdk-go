@@ -65,14 +65,16 @@ func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequ
 type SetUserBlackListRequest struct {
 	*requests.RpcRequest
 	ConfigUrl     string `position:"Query" name:"ConfigUrl"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetUserBlackListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {

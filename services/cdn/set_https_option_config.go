@@ -64,15 +64,17 @@ func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionCo
 
 type SetHttpsOptionConfigRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	Http2         string `position:"Query" name:"Http2"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetHttpsOptionConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) {

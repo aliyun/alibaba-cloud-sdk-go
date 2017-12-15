@@ -64,26 +64,28 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
-	Region          string `position:"Query" name:"Region"`
-	CheckUrl        string `position:"Query" name:"CheckUrl"`
 	TopLevelDomain  string `position:"Query" name:"TopLevelDomain"`
-	Scope           string `position:"Query" name:"Scope"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
 	Sources         string `position:"Query" name:"Sources"`
-	SourcePort      string `position:"Query" name:"SourcePort"`
-	Priorities      string `position:"Query" name:"Priorities"`
+	OwnerAccount    string `position:"Query" name:"OwnerAccount"`
 	DomainName      string `position:"Query" name:"DomainName"`
 	LiveType        string `position:"Query" name:"LiveType"`
-	CdnType         string `position:"Query" name:"CdnType"`
-	OwnerAccount    string `position:"Query" name:"OwnerAccount"`
-	SourceType      string `position:"Query" name:"SourceType"`
+	OwnerId         string `position:"Query" name:"OwnerId"`
+	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourcePort      string `position:"Query" name:"SourcePort"`
+	Priorities      string `position:"Query" name:"Priorities"`
 	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	CdnType         string `position:"Query" name:"CdnType"`
+	Scope           string `position:"Query" name:"Scope"`
+	Action          string `position:"Query" name:"Action"`
+	SourceType      string `position:"Query" name:"SourceType"`
+	CheckUrl        string `position:"Query" name:"CheckUrl"`
+	Region          string `position:"Query" name:"Region"`
 }
 
 type AddCdnDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {

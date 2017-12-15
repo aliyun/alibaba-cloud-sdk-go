@@ -64,28 +64,28 @@ func (client *Client) DescribeCdnDomainBaseDetailWithCallback(request *DescribeC
 
 type DescribeCdnDomainBaseDetailRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeCdnDomainBaseDetailResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
+	RequestId             string `json:"RequestId"`
 	DomainBaseDetailModel struct {
-		Cname        string `json:"Cname" xml:"Cname"`
-		CdnType      string `json:"CdnType" xml:"CdnType"`
-		DomainStatus string `json:"DomainStatus" xml:"DomainStatus"`
-		SourceType   string `json:"SourceType" xml:"SourceType"`
-		Region       string `json:"Region" xml:"Region"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		Remark       string `json:"Remark" xml:"Remark"`
-		GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-		GmtCreated   string `json:"GmtCreated" xml:"GmtCreated"`
-		Sources      struct {
-			Source []string `json:"Source" xml:"Source"`
-		} `json:"Sources" xml:"Sources"`
-	} `json:"DomainBaseDetailModel" xml:"DomainBaseDetailModel"`
+		Cname        string   `json:"Cname"`
+		CdnType      string   `json:"CdnType"`
+		DomainStatus string   `json:"DomainStatus"`
+		SourceType   string   `json:"SourceType"`
+		Region       string   `json:"Region"`
+		DomainName   string   `json:"DomainName"`
+		Remark       string   `json:"Remark"`
+		GmtModified  string   `json:"GmtModified"`
+		GmtCreated   string   `json:"GmtCreated"`
+		Sources      []string `json:"Sources"`
+	} `json:"DomainBaseDetailModel"`
 }
 
 func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseDetailRequest) {

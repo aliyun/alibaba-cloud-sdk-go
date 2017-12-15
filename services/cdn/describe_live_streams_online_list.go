@@ -64,24 +64,24 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamsOnlineListResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	OnlineInfo struct {
-		LiveStreamOnlineInfo []struct {
-			DomainName  string `json:"DomainName" xml:"DomainName"`
-			AppName     string `json:"AppName" xml:"AppName"`
-			StreamName  string `json:"StreamName" xml:"StreamName"`
-			PublishTime string `json:"PublishTime" xml:"PublishTime"`
-			PublishUrl  string `json:"PublishUrl" xml:"PublishUrl"`
-		} `json:"LiveStreamOnlineInfo" xml:"LiveStreamOnlineInfo"`
-	} `json:"OnlineInfo" xml:"OnlineInfo"`
+	RequestId  string `json:"RequestId"`
+	OnlineInfo []struct {
+		DomainName  string `json:"DomainName"`
+		AppName     string `json:"AppName"`
+		StreamName  string `json:"StreamName"`
+		PublishTime string `json:"PublishTime"`
+		PublishUrl  string `json:"PublishUrl"`
+	} `json:"OnlineInfo"`
 }
 
 func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {

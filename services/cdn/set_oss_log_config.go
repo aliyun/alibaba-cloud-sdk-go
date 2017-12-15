@@ -64,16 +64,18 @@ func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigReques
 
 type SetOssLogConfigRequest struct {
 	*requests.RpcRequest
-	Prefix        string `position:"Query" name:"Prefix"`
 	Bucket        string `position:"Query" name:"Bucket"`
-	Enable        string `position:"Query" name:"Enable"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Enable        string `position:"Query" name:"Enable"`
+	Prefix        string `position:"Query" name:"Prefix"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetOssLogConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {

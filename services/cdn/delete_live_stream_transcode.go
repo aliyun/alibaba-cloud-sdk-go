@@ -66,15 +66,17 @@ type DeleteLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
 	Template      string `position:"Query" name:"Template"`
 	App           string `position:"Query" name:"App"`
-	Domain        string `position:"Query" name:"Domain"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	Domain        string `position:"Query" name:"Domain"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteLiveStreamTranscodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscodeRequest) {

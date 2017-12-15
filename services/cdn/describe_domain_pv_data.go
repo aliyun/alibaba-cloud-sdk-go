@@ -64,26 +64,26 @@ func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPv
 
 type DescribeDomainPvDataRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainPvDataResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	DataInterval   string `json:"DataInterval" xml:"DataInterval"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
-	PvDataInterval struct {
-		UsageData []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"UsageData" xml:"UsageData"`
-	} `json:"PvDataInterval" xml:"PvDataInterval"`
+	RequestId      string `json:"RequestId"`
+	DomainName     string `json:"DomainName"`
+	DataInterval   string `json:"DataInterval"`
+	StartTime      string `json:"StartTime"`
+	EndTime        string `json:"EndTime"`
+	PvDataInterval []struct {
+		TimeStamp string `json:"TimeStamp"`
+		Value     string `json:"Value"`
+	} `json:"PvDataInterval"`
 }
 
 func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) {

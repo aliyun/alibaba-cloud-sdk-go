@@ -64,25 +64,27 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
-	Config        string `position:"Query" name:"Config"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Config        string `position:"Query" name:"Config"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeUserConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 	Configs   struct {
 		OssLogConfig struct {
-			Enable string `json:"Enable" xml:"Enable"`
-			Bucket string `json:"Bucket" xml:"Bucket"`
-			Prefix string `json:"Prefix" xml:"Prefix"`
-		} `json:"OssLogConfig" xml:"OssLogConfig"`
+			Enable string `json:"Enable"`
+			Bucket string `json:"Bucket"`
+			Prefix string `json:"Prefix"`
+		} `json:"OssLogConfig"`
 		GreenManagerConfig struct {
-			Quota string `json:"Quota" xml:"Quota"`
-			Ratio string `json:"Ratio" xml:"Ratio"`
-		} `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
-	} `json:"Configs" xml:"Configs"`
+			Quota string `json:"Quota"`
+			Ratio string `json:"Ratio"`
+		} `json:"GreenManagerConfig"`
+	} `json:"Configs"`
 }
 
 func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {

@@ -64,19 +64,21 @@ func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest,
 
 type DescribeIpInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
 	IP            string `position:"Query" name:"IP"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeIpInfoResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	CdnIp       string `json:"CdnIp" xml:"CdnIp"`
-	ISP         string `json:"ISP" xml:"ISP"`
-	IspEname    string `json:"IspEname" xml:"IspEname"`
-	Region      string `json:"Region" xml:"Region"`
-	RegionEname string `json:"RegionEname" xml:"RegionEname"`
+	RequestId   string `json:"RequestId"`
+	CdnIp       string `json:"CdnIp"`
+	ISP         string `json:"ISP"`
+	IspEname    string `json:"IspEname"`
+	Region      string `json:"Region"`
+	RegionEname string `json:"RegionEname"`
 }
 
 func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {

@@ -65,25 +65,25 @@ func (client *Client) DescribeDomainBpsDataByTimeStampWithCallback(request *Desc
 type DescribeDomainBpsDataByTimeStampRequest struct {
 	*requests.RpcRequest
 	IspNames      string `position:"Query" name:"IspNames"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	LocationNames string `position:"Query" name:"LocationNames"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	LocationNames string `position:"Query" name:"LocationNames"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 	TimePoint     string `position:"Query" name:"TimePoint"`
 }
 
 type DescribeDomainBpsDataByTimeStampResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DomainName  string `json:"DomainName" xml:"DomainName"`
-	TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
-	BpsDataList struct {
-		BpsDataModel []struct {
-			LocationName string `json:"LocationName" xml:"LocationName"`
-			IspName      string `json:"IspName" xml:"IspName"`
-			Bps          int64  `json:"Bps" xml:"Bps"`
-		} `json:"BpsDataModel" xml:"BpsDataModel"`
-	} `json:"BpsDataList" xml:"BpsDataList"`
+	RequestId   string `json:"RequestId"`
+	DomainName  string `json:"DomainName"`
+	TimeStamp   string `json:"TimeStamp"`
+	BpsDataList []struct {
+		LocationName string `json:"LocationName"`
+		IspName      string `json:"IspName"`
+		Bps          int64  `json:"Bps"`
+	} `json:"BpsDataList"`
 }
 
 func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBpsDataByTimeStampRequest) {

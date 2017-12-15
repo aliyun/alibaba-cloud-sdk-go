@@ -64,27 +64,27 @@ func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLi
 
 type DescribeLiveStreamPushDataRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamPushDataResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	PushStreamModelList struct {
-		PushStreamModel []struct {
-			Time          string  `json:"Time" xml:"Time"`
-			Stream        string  `json:"Stream" xml:"Stream"`
-			FrameRate     float64 `json:"FrameRate" xml:"FrameRate"`
-			BitRate       float64 `json:"BitRate" xml:"BitRate"`
-			FrameLossRate float64 `json:"FrameLossRate" xml:"FrameLossRate"`
-			ServerAddr    string  `json:"ServerAddr" xml:"ServerAddr"`
-			ClientAddr    string  `json:"ClientAddr" xml:"ClientAddr"`
-		} `json:"PushStreamModel" xml:"PushStreamModel"`
-	} `json:"PushStreamModelList" xml:"PushStreamModelList"`
+	RequestId           string `json:"RequestId"`
+	PushStreamModelList []struct {
+		Time          string  `json:"Time"`
+		Stream        string  `json:"Stream"`
+		FrameRate     float64 `json:"FrameRate"`
+		BitRate       float64 `json:"BitRate"`
+		FrameLossRate float64 `json:"FrameLossRate"`
+		ServerAddr    string  `json:"ServerAddr"`
+		ClientAddr    string  `json:"ClientAddr"`
+	} `json:"PushStreamModelList"`
 }
 
 func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushDataRequest) {

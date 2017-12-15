@@ -64,20 +64,22 @@ func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainReques
 
 type ModifyCdnDomainRequest struct {
 	*requests.RpcRequest
-	Priorities      string `position:"Query" name:"Priorities"`
 	TopLevelDomain  string `position:"Query" name:"TopLevelDomain"`
-	DomainName      string `position:"Query" name:"DomainName"`
+	SourcePort      string `position:"Query" name:"SourcePort"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Priorities      string `position:"Query" name:"Priorities"`
+	Sources         string `position:"Query" name:"Sources"`
+	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	DomainName      string `position:"Query" name:"DomainName"`
+	Action          string `position:"Query" name:"Action"`
 	SourceType      string `position:"Query" name:"SourceType"`
 	OwnerId         string `position:"Query" name:"OwnerId"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	Sources         string `position:"Query" name:"Sources"`
-	SourcePort      string `position:"Query" name:"SourcePort"`
+	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
 }
 
 type ModifyCdnDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateModifyCdnDomainRequest() (request *ModifyCdnDomainRequest) {

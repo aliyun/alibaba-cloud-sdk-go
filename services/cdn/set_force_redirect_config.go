@@ -64,15 +64,17 @@ func (client *Client) SetForceRedirectConfigWithCallback(request *SetForceRedire
 
 type SetForceRedirectConfigRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	RedirectType  string `position:"Query" name:"RedirectType"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetForceRedirectConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigRequest) {

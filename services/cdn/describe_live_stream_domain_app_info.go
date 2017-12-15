@@ -64,26 +64,26 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *Descr
 
 type DescribeLiveStreamDomainAppInfoRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Action        string `position:"Query" name:"Action"`
 	AppDomain     string `position:"Query" name:"AppDomain"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamDomainAppInfoResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	DomainAppList struct {
-		DomainAppInfo []struct {
-			AppDomain    string `json:"AppDomain" xml:"AppDomain"`
-			AppId        string `json:"AppId" xml:"AppId"`
-			AppKey       string `json:"AppKey" xml:"AppKey"`
-			AppOssBucket string `json:"AppOssBucket" xml:"AppOssBucket"`
-			AppOssHost   string `json:"AppOssHost" xml:"AppOssHost"`
-			AppOwnerId   string `json:"AppOwnerId" xml:"AppOwnerId"`
-			AppSecret    string `json:"AppSecret" xml:"AppSecret"`
-			UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-		} `json:"DomainAppInfo" xml:"DomainAppInfo"`
-	} `json:"DomainAppList" xml:"DomainAppList"`
+	RequestId     string `json:"RequestId"`
+	DomainAppList []struct {
+		AppDomain    string `json:"AppDomain"`
+		AppId        string `json:"AppId"`
+		AppKey       string `json:"AppKey"`
+		AppOssBucket string `json:"AppOssBucket"`
+		AppOssHost   string `json:"AppOssHost"`
+		AppOwnerId   string `json:"AppOwnerId"`
+		AppSecret    string `json:"AppSecret"`
+		UpdateTime   string `json:"UpdateTime"`
+	} `json:"DomainAppList"`
 }
 
 func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStreamDomainAppInfoRequest) {

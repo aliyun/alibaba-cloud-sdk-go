@@ -64,31 +64,33 @@ func (client *Client) DescribeLiveStreamRecordIndexFileWithCallback(request *Des
 
 type DescribeLiveStreamRecordIndexFileRequest struct {
 	*requests.RpcRequest
-	StreamName    string `position:"Query" name:"StreamName"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	RecordId      string `position:"Query" name:"RecordId"`
+	AppName       string `position:"Query" name:"AppName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamRecordIndexFileResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
+	RequestId       string `json:"RequestId"`
 	RecordIndexInfo struct {
-		RecordId   string  `json:"RecordId" xml:"RecordId"`
-		RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
-		DomainName string  `json:"DomainName" xml:"DomainName"`
-		AppName    string  `json:"AppName" xml:"AppName"`
-		StreamName string  `json:"StreamName" xml:"StreamName"`
-		OssObject  string  `json:"OssObject" xml:"OssObject"`
-		StartTime  string  `json:"StartTime" xml:"StartTime"`
-		EndTime    string  `json:"EndTime" xml:"EndTime"`
-		Duration   float64 `json:"Duration" xml:"Duration"`
-		Height     int     `json:"Height" xml:"Height"`
-		Width      int     `json:"Width" xml:"Width"`
-		CreateTime string  `json:"CreateTime" xml:"CreateTime"`
-	} `json:"RecordIndexInfo" xml:"RecordIndexInfo"`
+		RecordId   string  `json:"RecordId"`
+		RecordUrl  string  `json:"RecordUrl"`
+		DomainName string  `json:"DomainName"`
+		AppName    string  `json:"AppName"`
+		StreamName string  `json:"StreamName"`
+		OssObject  string  `json:"OssObject"`
+		StartTime  string  `json:"StartTime"`
+		EndTime    string  `json:"EndTime"`
+		Duration   float64 `json:"Duration"`
+		Height     int     `json:"Height"`
+		Width      int     `json:"Width"`
+		CreateTime string  `json:"CreateTime"`
+	} `json:"RecordIndexInfo"`
 }
 
 func CreateDescribeLiveStreamRecordIndexFileRequest() (request *DescribeLiveStreamRecordIndexFileRequest) {

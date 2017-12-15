@@ -64,20 +64,20 @@ func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequ
 
 type DescribeCdnTypesRequest struct {
 	*requests.RpcRequest
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeCdnTypesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	CdnTypes  struct {
-		CdnType []struct {
-			Type string `json:"Type" xml:"Type"`
-			Desc string `json:"Desc" xml:"Desc"`
-		} `json:"CdnType" xml:"CdnType"`
-	} `json:"CdnTypes" xml:"CdnTypes"`
+	RequestId string `json:"RequestId"`
+	CdnTypes  []struct {
+		Type string `json:"Type"`
+		Desc string `json:"Desc"`
+	} `json:"CdnTypes"`
 }
 
 func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {

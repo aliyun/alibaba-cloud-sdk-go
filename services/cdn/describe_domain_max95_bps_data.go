@@ -64,22 +64,24 @@ func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDo
 
 type DescribeDomainMax95BpsDataRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeDomainMax95BpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	Max95Bps         string `json:"Max95Bps" xml:"Max95Bps"`
-	DomesticMax95Bps string `json:"DomesticMax95Bps" xml:"DomesticMax95Bps"`
-	OverseasMax95Bps string `json:"OverseasMax95Bps" xml:"OverseasMax95Bps"`
+	RequestId        string `json:"RequestId"`
+	DomainName       string `json:"DomainName"`
+	StartTime        string `json:"StartTime"`
+	EndTime          string `json:"EndTime"`
+	Max95Bps         string `json:"Max95Bps"`
+	DomesticMax95Bps string `json:"DomesticMax95Bps"`
+	OverseasMax95Bps string `json:"OverseasMax95Bps"`
 }
 
 func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsDataRequest) {

@@ -64,24 +64,24 @@ func (client *Client) DescribeLiveStreamBpsDataWithCallback(request *DescribeLiv
 
 type DescribeLiveStreamBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
 	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Action        string `position:"Query" name:"Action"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type DescribeLiveStreamBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	BpsDatas  struct {
-		DomainBpsModel []struct {
-			Time string  `json:"Time" xml:"Time"`
-			Bps  float64 `json:"Bps" xml:"Bps"`
-		} `json:"DomainBpsModel" xml:"DomainBpsModel"`
-	} `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string `json:"RequestId"`
+	BpsDatas  []struct {
+		Time string  `json:"Time"`
+		Bps  float64 `json:"Bps"`
+	} `json:"BpsDatas"`
 }
 
 func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDataRequest) {

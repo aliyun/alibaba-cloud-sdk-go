@@ -1,3 +1,7 @@
+2017-12-15 Version: 0.5.4
+1, Add scdn API.
+2, Update SetReqAuthConfig.
+
 2017-12-12 Version: 0.5.1
 1, remove unused fmt.print
 

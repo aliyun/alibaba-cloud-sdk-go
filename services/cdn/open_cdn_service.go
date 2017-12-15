@@ -64,14 +64,16 @@ func (client *Client) OpenCdnServiceWithCallback(request *OpenCdnServiceRequest,
 
 type OpenCdnServiceRequest struct {
 	*requests.RpcRequest
-	InternetChargeType string `position:"Query" name:"InternetChargeType"`
-	OwnerId            string `position:"Query" name:"OwnerId"`
 	SecurityToken      string `position:"Query" name:"SecurityToken"`
+	InternetChargeType string `position:"Query" name:"InternetChargeType"`
+	Action             string `position:"Query" name:"Action"`
+	OwnerId            string `position:"Query" name:"OwnerId"`
+	AccessKeyId        string `position:"Query" name:"AccessKeyId"`
 }
 
 type OpenCdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {

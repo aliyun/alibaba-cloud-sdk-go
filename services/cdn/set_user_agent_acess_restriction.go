@@ -64,16 +64,18 @@ func (client *Client) SetUserAgentAcessRestrictionWithCallback(request *SetUserA
 
 type SetUserAgentAcessRestrictionRequest struct {
 	*requests.RpcRequest
-	UserAgent     string `position:"Query" name:"UserAgent"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Type          string `position:"Query" name:"Type"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	UserAgent     string `position:"Query" name:"UserAgent"`
+	Action        string `position:"Query" name:"Action"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Type          string `position:"Query" name:"Type"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetUserAgentAcessRestrictionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRestrictionRequest) {

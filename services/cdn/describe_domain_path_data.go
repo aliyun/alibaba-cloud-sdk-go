@@ -64,34 +64,34 @@ func (client *Client) DescribeDomainPathDataWithCallback(request *DescribeDomain
 
 type DescribeDomainPathDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Version       string `position:"Query" name:"Version"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Path          string `position:"Query" name:"Path"`
 	StartTime     string `position:"Query" name:"StartTime"`
 	PageNumber    string `position:"Query" name:"PageNumber"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
+	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	Path          string `position:"Query" name:"Path"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	PageSize      string `position:"Query" name:"PageSize"`
+	Action        string `position:"Query" name:"Action"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Version       string `position:"Query" name:"Version"`
 }
 
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
-	DomainName          string `json:"DomainName" xml:"DomainName"`
-	StartTime           string `json:"StartTime" xml:"StartTime"`
-	EndTime             string `json:"EndTime" xml:"EndTime"`
-	PageSize            int    `json:"PageSize" xml:"PageSize"`
-	PageNumber          int    `json:"PageNumber" xml:"PageNumber"`
-	DataInterval        string `json:"DataInterval" xml:"DataInterval"`
-	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
-	PathDataPerInterval struct {
-		UsageData []struct {
-			Traffic int    `json:"Traffic" xml:"Traffic"`
-			Acc     int    `json:"Acc" xml:"Acc"`
-			Path    string `json:"Path" xml:"Path"`
-			Time    string `json:"Time" xml:"Time"`
-		} `json:"UsageData" xml:"UsageData"`
-	} `json:"PathDataPerInterval" xml:"PathDataPerInterval"`
+	DomainName          string `json:"DomainName"`
+	StartTime           string `json:"StartTime"`
+	EndTime             string `json:"EndTime"`
+	PageSize            int    `json:"PageSize"`
+	PageNumber          int    `json:"PageNumber"`
+	DataInterval        string `json:"DataInterval"`
+	TotalCount          int    `json:"TotalCount"`
+	PathDataPerInterval []struct {
+		Traffic int    `json:"Traffic"`
+		Acc     int    `json:"Acc"`
+		Path    string `json:"Path"`
+		Time    string `json:"Time"`
+	} `json:"PathDataPerInterval"`
 }
 
 func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataRequest) {
