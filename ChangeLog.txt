@@ -1,3 +1,8 @@
+2017-12-19 Version: 0.6.1
+1, InactivatePhotos support customer inactiveTime
+2, support customer tags
+3, ListPhotoTags、ListTags add param lang
+
 2017-12-18 Version: 0.6.0
 1, Add Scdn API.
 
