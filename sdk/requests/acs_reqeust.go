@@ -20,6 +20,7 @@ import (
 	"io"
 	"reflect"
 	"strconv"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
 const (
@@ -247,8 +248,7 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 			if !containsTypeTag {
 				// simple param
 				key := prefix + name
-				value := dataValue.Field(i).String()
-				err = addParam(request, fieldPosition, key, value)
+				err = addParamByReflectValue(request, fieldPosition, key, dataValue.Field(i))
 				if err != nil {
 					return
 				}
@@ -264,8 +264,7 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 						elementValue := repeatedFieldValue.Index(m)
 						key := prefix + name + "." + strconv.Itoa(m+1)
 						if elementValue.Type().String() == "string" {
-							value := elementValue.String()
-							err = addParam(request, fieldPosition, key, value)
+							err = addParamByReflectValue(request, fieldPosition, key, elementValue)
 							if err != nil {
 								return
 							}
@@ -281,6 +280,17 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 		}
 	}
 	return
+}
+
+func addParamByReflectValue(request AcsRequest, position, name string, rv reflect.Value) (err error) {
+	if utils.IsEmptyValue(rv) {
+		return nil
+	}
+	strValue, errForConvert := utils.ConvertToString(rv.Interface())
+	if errForConvert != nil {
+		return err
+	}
+	return addParam(request, position, name, strValue)
 }
 
 func addParam(request AcsRequest, position, name, value string) (err error) {
