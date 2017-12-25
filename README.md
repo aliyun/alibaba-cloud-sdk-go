@@ -4,6 +4,8 @@
 
 欢迎使用阿里云开发者工具套件（SDK）。阿里云Go SDK让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云Go SDK并开始调用。
 
+如果您在使用SDK的过程中遇上任何问题，欢迎加入 **钉钉群: 11771185(阿里云官方SDK客户服务群)** 咨询
+
 ## 环境准备
 1. 要使用阿里云Go SDK，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的Access Key，或者联系您的系统管理员
 2. 要使用阿里云SDK访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
