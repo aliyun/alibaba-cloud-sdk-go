@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGroupsResponse, err error) {
-	response = CreateListGroupsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListGroupsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *ListGroupsResponse, <-chan error) {
-	responseChan := make(chan *ListGroupsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListGroups(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListGroupsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListGroups(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListGroupsResponse
-		var err error
-		defer close(result)
-		response, err = client.ListGroups(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListGroupsResponse
+var err error
+defer close(result)
+response, err = client.ListGroups(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListGroupsRequest struct {
-	*requests.RpcRequest
-	Marker   string `position:"Query" name:"Marker"`
-	MaxItems string `position:"Query" name:"MaxItems"`
+*requests.RpcRequest
+                Marker  string `position:"Query" name:"Marker"`
+                MaxItems  string `position:"Query" name:"MaxItems"`
 }
 
+
 type ListGroupsResponse struct {
-	*responses.BaseResponse
-	RequestId   string          `json:"RequestId" xml:"RequestId"`
-	IsTruncated request.Boolean `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string          `json:"Marker" xml:"Marker"`
-	Groups      struct {
-		Group []struct {
-			GroupName  string `json:"GroupName" xml:"GroupName"`
-			Comments   string `json:"Comments" xml:"Comments"`
-			CreateDate string `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate string `json:"UpdateDate" xml:"UpdateDate"`
-		} `json:"Group" xml:"Group"`
-	} `json:"Groups" xml:"Groups"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            IsTruncated     requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
+            Marker     string `json:"Marker" xml:"Marker"`
+                Groups struct {
+                    Group []struct {
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+            Comments     string `json:"Comments" xml:"Comments"`
+            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
+            UpdateDate     string `json:"UpdateDate" xml:"UpdateDate"`
+                    }   `json:"Group" xml:"Group"`
+                } `json:"Groups" xml:"Groups"`
 }
 
 func CreateListGroupsRequest() (request *ListGroupsRequest) {
-	request = &ListGroupsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListGroups", "", "")
-	return
+request = &ListGroupsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "ListGroups", "", "")
+return
 }
 
 func CreateListGroupsResponse() (response *ListGroupsResponse) {
-	response = &ListGroupsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListGroupsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

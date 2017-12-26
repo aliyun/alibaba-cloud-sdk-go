@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RegisterTag(request *RegisterTagRequest) (response *RegisterTagResponse, err error) {
-	response = CreateRegisterTagResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRegisterTagResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RegisterTagWithChan(request *RegisterTagRequest) (<-chan *RegisterTagResponse, <-chan error) {
-	responseChan := make(chan *RegisterTagResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RegisterTag(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RegisterTagResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RegisterTag(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callback func(response *RegisterTagResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RegisterTagResponse
-		var err error
-		defer close(result)
-		response, err = client.RegisterTag(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callback func(response *RegisterTagResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RegisterTagResponse
+var err error
+defer close(result)
+response, err = client.RegisterTag(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RegisterTagRequest struct {
-	*requests.RpcRequest
-	Text      string `position:"Query" name:"Text"`
-	TagKey    string `position:"Query" name:"TagKey"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Lang      string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                Text  string `position:"Query" name:"Text"`
+                TagKey  string `position:"Query" name:"TagKey"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type RegisterTagResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateRegisterTagRequest() (request *RegisterTagRequest) {
-	request = &RegisterTagRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "", "")
-	return
+request = &RegisterTagRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "", "")
+return
 }
 
 func CreateRegisterTagResponse() (response *RegisterTagResponse) {
-	response = &RegisterTagResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RegisterTagResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamPushData(request *DescribeLiveStreamPushDataRequest) (response *DescribeLiveStreamPushDataResponse, err error) {
-	response = CreateDescribeLiveStreamPushDataResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamPushDataResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveStreamPushDataRequest) (<-chan *DescribeLiveStreamPushDataResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamPushDataResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamPushData(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamPushDataResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamPushData(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLiveStreamPushDataRequest, callback func(response *DescribeLiveStreamPushDataResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamPushDataResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamPushData(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLiveStreamPushDataRequest, callback func(response *DescribeLiveStreamPushDataResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamPushDataResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamPushData(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamPushDataRequest struct {
-	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamPushDataResponse struct {
-	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	PushStreamModelList struct {
-		PushStreamModel []struct {
-			Time          string        `json:"Time" xml:"Time"`
-			Stream        string        `json:"Stream" xml:"Stream"`
-			FrameRate     request.Float `json:"FrameRate" xml:"FrameRate"`
-			BitRate       request.Float `json:"BitRate" xml:"BitRate"`
-			FrameLossRate request.Float `json:"FrameLossRate" xml:"FrameLossRate"`
-			ServerAddr    string        `json:"ServerAddr" xml:"ServerAddr"`
-			ClientAddr    string        `json:"ClientAddr" xml:"ClientAddr"`
-		} `json:"PushStreamModel" xml:"PushStreamModel"`
-	} `json:"PushStreamModelList" xml:"PushStreamModelList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                PushStreamModelList struct {
+                    PushStreamModel []struct {
+            Time     string `json:"Time" xml:"Time"`
+            Stream     string `json:"Stream" xml:"Stream"`
+            FrameRate     requests.Float `json:"FrameRate" xml:"FrameRate"`
+            BitRate     requests.Float `json:"BitRate" xml:"BitRate"`
+            FrameLossRate     requests.Float `json:"FrameLossRate" xml:"FrameLossRate"`
+            ServerAddr     string `json:"ServerAddr" xml:"ServerAddr"`
+            ClientAddr     string `json:"ClientAddr" xml:"ClientAddr"`
+                    }   `json:"PushStreamModel" xml:"PushStreamModel"`
+                } `json:"PushStreamModelList" xml:"PushStreamModelList"`
 }
 
 func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushDataRequest) {
-	request = &DescribeLiveStreamPushDataRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushData", "", "")
-	return
+request = &DescribeLiveStreamPushDataRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushData", "", "")
+return
 }
 
 func CreateDescribeLiveStreamPushDataResponse() (response *DescribeLiveStreamPushDataResponse) {
-	response = &DescribeLiveStreamPushDataResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamPushDataResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopReferVisitRequest) (response *DescribeDomainTopReferVisitResponse, err error) {
-	response = CreateDescribeDomainTopReferVisitResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainTopReferVisitResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomainTopReferVisitRequest) (<-chan *DescribeDomainTopReferVisitResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainTopReferVisitResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomainTopReferVisit(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainTopReferVisitResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomainTopReferVisit(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeDomainTopReferVisitRequest, callback func(response *DescribeDomainTopReferVisitResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainTopReferVisitResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomainTopReferVisit(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeDomainTopReferVisitRequest, callback func(response *DescribeDomainTopReferVisitResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainTopReferVisitResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomainTopReferVisit(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainTopReferVisitRequest struct {
-	*requests.RpcRequest
-	SortBy        string `position:"Query" name:"SortBy"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                SortBy  string `position:"Query" name:"SortBy"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeDomainTopReferVisitResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	TopReferList struct {
-		ReferList []struct {
-			ReferDetail     string        `json:"ReferDetail" xml:"ReferDetail"`
-			VisitData       string        `json:"VisitData" xml:"VisitData"`
-			VisitProportion request.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string        `json:"Flow" xml:"Flow"`
-			FlowProportion  request.Float `json:"FlowProportion" xml:"FlowProportion"`
-		} `json:"ReferList" xml:"ReferList"`
-	} `json:"TopReferList" xml:"TopReferList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+                TopReferList struct {
+                    ReferList []struct {
+            ReferDetail     string `json:"ReferDetail" xml:"ReferDetail"`
+            VisitData     string `json:"VisitData" xml:"VisitData"`
+            VisitProportion     requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+            Flow     string `json:"Flow" xml:"Flow"`
+            FlowProportion     requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+                    }   `json:"ReferList" xml:"ReferList"`
+                } `json:"TopReferList" xml:"TopReferList"`
 }
 
 func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopReferVisitRequest) {
-	request = &DescribeDomainTopReferVisitRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainTopReferVisit", "", "")
-	return
+request = &DescribeDomainTopReferVisitRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainTopReferVisit", "", "")
+return
 }
 
 func CreateDescribeDomainTopReferVisitResponse() (response *DescribeDomainTopReferVisitResponse) {
-	response = &DescribeDomainTopReferVisitResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainTopReferVisitResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

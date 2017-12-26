@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AccessKeyGet(request *AccessKeyGetRequest) (response *AccessKeyGetResponse, err error) {
-	response = CreateAccessKeyGetResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAccessKeyGetResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AccessKeyGetWithChan(request *AccessKeyGetRequest) (<-chan *AccessKeyGetResponse, <-chan error) {
-	responseChan := make(chan *AccessKeyGetResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AccessKeyGet(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AccessKeyGetResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AccessKeyGet(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, callback func(response *AccessKeyGetResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AccessKeyGetResponse
-		var err error
-		defer close(result)
-		response, err = client.AccessKeyGet(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, callback func(response *AccessKeyGetResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AccessKeyGetResponse
+var err error
+defer close(result)
+response, err = client.AccessKeyGet(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AccessKeyGetRequest struct {
-	*requests.RpcRequest
-	UserId string `position:"Query" name:"UserId"`
+*requests.RpcRequest
+                UserId  string `position:"Query" name:"UserId"`
 }
 
+
 type AccessKeyGetResponse struct {
-	*responses.BaseResponse
-	ErrorCode    request.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      request.Boolean `json:"Success" xml:"Success"`
-	RequestId    string          `json:"RequestId" xml:"RequestId"`
-	UserId       request.Integer `json:"UserId" xml:"UserId"`
-	AccessKey    string          `json:"AccessKey" xml:"AccessKey"`
-	SecretKey    string          `json:"SecretKey" xml:"SecretKey"`
+*responses.BaseResponse
+            ErrorCode     requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            Success     requests.Boolean `json:"Success" xml:"Success"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            UserId     requests.Integer `json:"UserId" xml:"UserId"`
+            AccessKey     string `json:"AccessKey" xml:"AccessKey"`
+            SecretKey     string `json:"SecretKey" xml:"SecretKey"`
 }
 
 func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
-	request = &AccessKeyGetRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "AccessKeyGet", "", "")
-	return
+request = &AccessKeyGetRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "AccessKeyGet", "", "")
+return
 }
 
 func CreateAccessKeyGetResponse() (response *AccessKeyGetResponse) {
-	response = &AccessKeyGetResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AccessKeyGetResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

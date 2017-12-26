@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GrantInstanceToCbn(request *GrantInstanceToCbnRequest) (response *GrantInstanceToCbnResponse, err error) {
-	response = CreateGrantInstanceToCbnResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGrantInstanceToCbnResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GrantInstanceToCbnWithChan(request *GrantInstanceToCbnRequest) (<-chan *GrantInstanceToCbnResponse, <-chan error) {
-	responseChan := make(chan *GrantInstanceToCbnResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GrantInstanceToCbn(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GrantInstanceToCbnResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GrantInstanceToCbn(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbnRequest, callback func(response *GrantInstanceToCbnResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GrantInstanceToCbnResponse
-		var err error
-		defer close(result)
-		response, err = client.GrantInstanceToCbn(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbnRequest, callback func(response *GrantInstanceToCbnResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GrantInstanceToCbnResponse
+var err error
+defer close(result)
+response, err = client.GrantInstanceToCbn(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GrantInstanceToCbnRequest struct {
-	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	CbnUid               string `position:"Query" name:"CbnUid"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
-	CbnInstanceId        string `position:"Query" name:"CbnInstanceId"`
-	InstanceType         string `position:"Query" name:"InstanceType"`
+*requests.RpcRequest
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                CbnUid  string `position:"Query" name:"CbnUid"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
+                CbnInstanceId  string `position:"Query" name:"CbnInstanceId"`
+                InstanceType  string `position:"Query" name:"InstanceType"`
 }
 
+
 type GrantInstanceToCbnResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateGrantInstanceToCbnRequest() (request *GrantInstanceToCbnRequest) {
-	request = &GrantInstanceToCbnRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCbn", "", "")
-	return
+request = &GrantInstanceToCbnRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCbn", "", "")
+return
 }
 
 func CreateGrantInstanceToCbnResponse() (response *GrantInstanceToCbnResponse) {
-	response = &GrantInstanceToCbnResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GrantInstanceToCbnResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRangeDataByLocateAndIspService(request *DescribeRangeDataByLocateAndIspServiceRequest) (response *DescribeRangeDataByLocateAndIspServiceResponse, err error) {
-	response = CreateDescribeRangeDataByLocateAndIspServiceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeRangeDataByLocateAndIspServiceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *DescribeRangeDataByLocateAndIspServiceRequest) (<-chan *DescribeRangeDataByLocateAndIspServiceResponse, <-chan error) {
-	responseChan := make(chan *DescribeRangeDataByLocateAndIspServiceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeRangeDataByLocateAndIspService(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeRangeDataByLocateAndIspServiceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeRangeDataByLocateAndIspService(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request *DescribeRangeDataByLocateAndIspServiceRequest, callback func(response *DescribeRangeDataByLocateAndIspServiceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeRangeDataByLocateAndIspServiceResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeRangeDataByLocateAndIspService(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request *DescribeRangeDataByLocateAndIspServiceRequest, callback func(response *DescribeRangeDataByLocateAndIspServiceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeRangeDataByLocateAndIspServiceResponse
+var err error
+defer close(result)
+response, err = client.DescribeRangeDataByLocateAndIspService(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeRangeDataByLocateAndIspServiceRequest struct {
-	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	IspNames      string `position:"Query" name:"IspNames"`
-	StartTime     string `position:"Query" name:"startTime"`
-	LocationNames string `position:"Query" name:"LocationNames"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainNames   string `position:"Query" name:"DomainNames"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                IspNames  string `position:"Query" name:"IspNames"`
+                StartTime  string `position:"Query" name:"startTime"`
+                LocationNames  string `position:"Query" name:"LocationNames"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
+                DomainNames  string `position:"Query" name:"DomainNames"`
 }
 
+
 type DescribeRangeDataByLocateAndIspServiceResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	JsonResult string `json:"JsonResult" xml:"JsonResult"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JsonResult     string `json:"JsonResult" xml:"JsonResult"`
 }
 
 func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRangeDataByLocateAndIspServiceRequest) {
-	request = &DescribeRangeDataByLocateAndIspServiceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService", "", "")
-	return
+request = &DescribeRangeDataByLocateAndIspServiceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService", "", "")
+return
 }
 
 func CreateDescribeRangeDataByLocateAndIspServiceResponse() (response *DescribeRangeDataByLocateAndIspServiceResponse) {
-	response = &DescribeRangeDataByLocateAndIspServiceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeRangeDataByLocateAndIspServiceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

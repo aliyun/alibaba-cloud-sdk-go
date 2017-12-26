@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstanceUser(request *DescribeDBInstanceUserRequest) (response *DescribeDBInstanceUserResponse, err error) {
-	response = CreateDescribeDBInstanceUserResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDBInstanceUserResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDBInstanceUserWithChan(request *DescribeDBInstanceUserRequest) (<-chan *DescribeDBInstanceUserResponse, <-chan error) {
-	responseChan := make(chan *DescribeDBInstanceUserResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDBInstanceUser(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDBInstanceUserResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDBInstanceUser(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstanceUserWithCallback(request *DescribeDBInstanceUserRequest, callback func(response *DescribeDBInstanceUserResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDBInstanceUserResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDBInstanceUser(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDBInstanceUserWithCallback(request *DescribeDBInstanceUserRequest, callback func(response *DescribeDBInstanceUserResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDBInstanceUserResponse
+var err error
+defer close(result)
+response, err = client.DescribeDBInstanceUser(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDBInstanceUserRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ConnectionString     string `position:"Query" name:"ConnectionString"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ConnectionString  string `position:"Query" name:"ConnectionString"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeDBInstanceUserResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	InternalDBFlag string `json:"InternalDBFlag" xml:"InternalDBFlag"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
+            InternalDBFlag     string `json:"InternalDBFlag" xml:"InternalDBFlag"`
 }
 
 func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserRequest) {
-	request = &DescribeDBInstanceUserRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "", "")
-	return
+request = &DescribeDBInstanceUserRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "", "")
+return
 }
 
 func CreateDescribeDBInstanceUserResponse() (response *DescribeDBInstanceUserResponse) {
-	response = &DescribeDBInstanceUserResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDBInstanceUserResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

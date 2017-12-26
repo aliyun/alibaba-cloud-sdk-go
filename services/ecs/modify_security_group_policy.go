@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifySecurityGroupPolicy(request *ModifySecurityGroupPolicyRequest) (response *ModifySecurityGroupPolicyResponse, err error) {
-	response = CreateModifySecurityGroupPolicyResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifySecurityGroupPolicyResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityGroupPolicyRequest) (<-chan *ModifySecurityGroupPolicyResponse, <-chan error) {
-	responseChan := make(chan *ModifySecurityGroupPolicyResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifySecurityGroupPolicy(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifySecurityGroupPolicyResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifySecurityGroupPolicy(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecurityGroupPolicyRequest, callback func(response *ModifySecurityGroupPolicyResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifySecurityGroupPolicyResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifySecurityGroupPolicy(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecurityGroupPolicyRequest, callback func(response *ModifySecurityGroupPolicyResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifySecurityGroupPolicyResponse
+var err error
+defer close(result)
+response, err = client.ModifySecurityGroupPolicy(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifySecurityGroupPolicyRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	InnerAccessPolicy    string `position:"Query" name:"InnerAccessPolicy"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                InnerAccessPolicy  string `position:"Query" name:"InnerAccessPolicy"`
 }
 
+
 type ModifySecurityGroupPolicyResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolicyRequest) {
-	request = &ModifySecurityGroupPolicyRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "", "")
-	return
+request = &ModifySecurityGroupPolicyRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "", "")
+return
 }
 
 func CreateModifySecurityGroupPolicyResponse() (response *ModifySecurityGroupPolicyResponse) {
-	response = &ModifySecurityGroupPolicyResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifySecurityGroupPolicyResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

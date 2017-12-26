@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetReqAuthConfig(request *SetReqAuthConfigRequest) (response *SetReqAuthConfigResponse, err error) {
-	response = CreateSetReqAuthConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetReqAuthConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetReqAuthConfigWithChan(request *SetReqAuthConfigRequest) (<-chan *SetReqAuthConfigResponse, <-chan error) {
-	responseChan := make(chan *SetReqAuthConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetReqAuthConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetReqAuthConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetReqAuthConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetReqAuthConfigWithCallback(request *SetReqAuthConfigRequest, callback func(response *SetReqAuthConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetReqAuthConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetReqAuthConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetReqAuthConfigWithCallback(request *SetReqAuthConfigRequest, callback func(response *SetReqAuthConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetReqAuthConfigResponse
+var err error
+defer close(result)
+response, err = client.SetReqAuthConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetReqAuthConfigRequest struct {
-	*requests.RpcRequest
-	AuthType      string `position:"Query" name:"AuthType"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Key2          string `position:"Query" name:"Key2"`
-	Key1          string `position:"Query" name:"Key1"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	TimeOut       string `position:"Query" name:"TimeOut"`
+*requests.RpcRequest
+                AuthType  string `position:"Query" name:"AuthType"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                Key2  string `position:"Query" name:"Key2"`
+                Key1  string `position:"Query" name:"Key1"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
+                TimeOut  string `position:"Query" name:"TimeOut"`
 }
 
+
 type SetReqAuthConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
-	request = &SetReqAuthConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetReqAuthConfig", "", "")
-	return
+request = &SetReqAuthConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetReqAuthConfig", "", "")
+return
 }
 
 func CreateSetReqAuthConfigResponse() (response *SetReqAuthConfigResponse) {
-	response = &SetReqAuthConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetReqAuthConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainResponse, err error) {
-	response = CreateAddDomainResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddDomainResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddDomainResponse, <-chan error) {
-	responseChan := make(chan *AddDomainResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddDomain(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddDomainResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddDomain(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback func(response *AddDomainResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddDomainResponse
-		var err error
-		defer close(result)
-		response, err = client.AddDomain(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback func(response *AddDomainResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddDomainResponse
+var err error
+defer close(result)
+response, err = client.AddDomain(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddDomainRequest struct {
-	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                GroupId  string `position:"Query" name:"GroupId"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type AddDomainResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainId   string `json:"DomainId" xml:"DomainId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	PunyCode   string `json:"PunyCode" xml:"PunyCode"`
-	GroupId    string `json:"GroupId" xml:"GroupId"`
-	GroupName  string `json:"GroupName" xml:"GroupName"`
-	DnsServers struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainId     string `json:"DomainId" xml:"DomainId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            PunyCode     string `json:"PunyCode" xml:"PunyCode"`
+            GroupId     string `json:"GroupId" xml:"GroupId"`
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+                DnsServers struct {
+                DnsServer []    string `json:"DnsServer" xml:"DnsServer"`
+                } `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateAddDomainRequest() (request *AddDomainRequest) {
-	request = &AddDomainRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "AddDomain", "", "")
-	return
+request = &AddDomainRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "AddDomain", "", "")
+return
 }
 
 func CreateAddDomainResponse() (response *AddDomainResponse) {
-	response = &AddDomainResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddDomainResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

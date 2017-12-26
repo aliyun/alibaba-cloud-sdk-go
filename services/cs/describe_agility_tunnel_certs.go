@@ -1,3 +1,4 @@
+
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,72 +17,74 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeAgilityTunnelCerts(request *DescribeAgilityTunnelCertsRequest) (response *DescribeAgilityTunnelCertsResponse, err error) {
-	response = CreateDescribeAgilityTunnelCertsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeAgilityTunnelCertsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeAgilityTunnelCertsWithChan(request *DescribeAgilityTunnelCertsRequest) (<-chan *DescribeAgilityTunnelCertsResponse, <-chan error) {
-	responseChan := make(chan *DescribeAgilityTunnelCertsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeAgilityTunnelCerts(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeAgilityTunnelCertsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeAgilityTunnelCerts(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeAgilityTunnelCertsWithCallback(request *DescribeAgilityTunnelCertsRequest, callback func(response *DescribeAgilityTunnelCertsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeAgilityTunnelCertsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeAgilityTunnelCerts(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeAgilityTunnelCertsWithCallback(request *DescribeAgilityTunnelCertsRequest, callback func(response *DescribeAgilityTunnelCertsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeAgilityTunnelCertsResponse
+var err error
+defer close(result)
+response, err = client.DescribeAgilityTunnelCerts(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeAgilityTunnelCertsRequest struct {
-	*requests.RoaRequest
-	Token string `position:"Path" name:"Token"`
+*requests.RoaRequest
+                Token  string `position:"Path" name:"Token"`
 }
 
+
 type DescribeAgilityTunnelCertsResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCertsRequest) {
-	request = &DescribeAgilityTunnelCertsRequest{
-		RoaRequest: &requests.RoaRequest{},
-	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeAgilityTunnelCerts", "/agility/[Token]/agent_certs", "", "")
-	return
+request = &DescribeAgilityTunnelCertsRequest{
+RoaRequest: &requests.RoaRequest{},
+}
+request.InitWithApiInfo("CS", "2015-12-15", "DescribeAgilityTunnelCerts", "/agility/[Token]/agent_certs", "", "")
+return
 }
 
 func CreateDescribeAgilityTunnelCertsResponse() (response *DescribeAgilityTunnelCertsResponse) {
-	response = &DescribeAgilityTunnelCertsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeAgilityTunnelCertsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

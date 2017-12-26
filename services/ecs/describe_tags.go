@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,106 +17,108 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeTags(request *DescribeTagsRequest) (response *DescribeTagsResponse, err error) {
-	response = CreateDescribeTagsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeTagsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan *DescribeTagsResponse, <-chan error) {
-	responseChan := make(chan *DescribeTagsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeTags(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeTagsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeTags(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeTagsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeTags(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeTagsResponse
+var err error
+defer close(result)
+response, err = client.DescribeTags(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeTagsRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	ResourceId           string `position:"Query" name:"ResourceId"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                ResourceType  string `position:"Query" name:"ResourceType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
+                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
+                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
+                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
+                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
+                ResourceId  string `position:"Query" name:"ResourceId"`
+                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
+                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
+                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
 }
 
+
 type DescribeTagsResponse struct {
-	*responses.BaseResponse
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	PageSize   request.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber request.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalCount request.Integer `json:"TotalCount" xml:"TotalCount"`
-	Tags       struct {
-		Tag []struct {
-			TagKey            string `json:"TagKey" xml:"TagKey"`
-			TagValue          string `json:"TagValue" xml:"TagValue"`
-			ResourceTypeCount struct {
-				Instance      request.Integer `json:"Instance" xml:"Instance"`
-				Disk          request.Integer `json:"Disk" xml:"Disk"`
-				Volume        request.Integer `json:"Volume" xml:"Volume"`
-				Image         request.Integer `json:"Image" xml:"Image"`
-				Snapshot      request.Integer `json:"Snapshot" xml:"Snapshot"`
-				Securitygroup request.Integer `json:"Securitygroup" xml:"Securitygroup"`
-			} `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
-		} `json:"Tag" xml:"Tag"`
-	} `json:"Tags" xml:"Tags"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+                Tags struct {
+                    Tag []struct {
+            TagKey     string `json:"TagKey" xml:"TagKey"`
+            TagValue     string `json:"TagValue" xml:"TagValue"`
+            ResourceTypeCount struct {
+            Instance     requests.Integer `json:"Instance" xml:"Instance"`
+            Disk     requests.Integer `json:"Disk" xml:"Disk"`
+            Volume     requests.Integer `json:"Volume" xml:"Volume"`
+            Image     requests.Integer `json:"Image" xml:"Image"`
+            Snapshot     requests.Integer `json:"Snapshot" xml:"Snapshot"`
+            Securitygroup     requests.Integer `json:"Securitygroup" xml:"Securitygroup"`
+            }  `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
+                    }   `json:"Tag" xml:"Tag"`
+                } `json:"Tags" xml:"Tags"`
 }
 
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
-	request = &DescribeTagsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "", "")
-	return
+request = &DescribeTagsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTags", "", "")
+return
 }
 
 func CreateDescribeTagsResponse() (response *DescribeTagsResponse) {
-	response = &DescribeTagsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeTagsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,89 +17,91 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeTags(request *DescribeTagsRequest) (response *DescribeTagsResponse, err error) {
-	response = CreateDescribeTagsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeTagsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan *DescribeTagsResponse, <-chan error) {
-	responseChan := make(chan *DescribeTagsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeTags(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeTagsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeTags(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeTagsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeTags(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeTagsResponse
+var err error
+defer close(result)
+response, err = client.DescribeTags(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeTagsRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ProxyId  string `position:"Query" name:"proxyId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeTagsResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		TagInfos []struct {
-			TagKey        string `json:"TagKey" xml:"TagKey"`
-			TagValue      string `json:"TagValue" xml:"TagValue"`
-			DBInstanceIds struct {
-				DBInstanceIds []string `json:"DBInstanceIds" xml:"DBInstanceIds"`
-			} `json:"DBInstanceIds" xml:"DBInstanceIds"`
-		} `json:"TagInfos" xml:"TagInfos"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                Items struct {
+                    TagInfos []struct {
+            TagKey     string `json:"TagKey" xml:"TagKey"`
+            TagValue     string `json:"TagValue" xml:"TagValue"`
+                DBInstanceIds struct {
+                DBInstanceIds []    string `json:"DBInstanceIds" xml:"DBInstanceIds"`
+                } `json:"DBInstanceIds" xml:"DBInstanceIds"`
+                    }   `json:"TagInfos" xml:"TagInfos"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
-	request = &DescribeTagsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "", "")
-	return
+request = &DescribeTagsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "", "")
+return
 }
 
 func CreateDescribeTagsResponse() (response *DescribeTagsResponse) {
-	response = &DescribeTagsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeTagsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

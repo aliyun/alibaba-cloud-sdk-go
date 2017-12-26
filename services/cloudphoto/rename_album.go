@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RenameAlbum(request *RenameAlbumRequest) (response *RenameAlbumResponse, err error) {
-	response = CreateRenameAlbumResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRenameAlbumResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RenameAlbumWithChan(request *RenameAlbumRequest) (<-chan *RenameAlbumResponse, <-chan error) {
-	responseChan := make(chan *RenameAlbumResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RenameAlbum(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RenameAlbumResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RenameAlbum(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callback func(response *RenameAlbumResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RenameAlbumResponse
-		var err error
-		defer close(result)
-		response, err = client.RenameAlbum(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callback func(response *RenameAlbumResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RenameAlbumResponse
+var err error
+defer close(result)
+response, err = client.RenameAlbum(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RenameAlbumRequest struct {
-	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	AlbumName string `position:"Query" name:"AlbumName"`
-	AlbumId   string `position:"Query" name:"AlbumId"`
+*requests.RpcRequest
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                AlbumName  string `position:"Query" name:"AlbumName"`
+                AlbumId  string `position:"Query" name:"AlbumId"`
 }
 
+
 type RenameAlbumResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
-	request = &RenameAlbumRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "", "")
-	return
+request = &RenameAlbumRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "", "")
+return
 }
 
 func CreateRenameAlbumResponse() (response *RenameAlbumResponse) {
-	response = &RenameAlbumResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RenameAlbumResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

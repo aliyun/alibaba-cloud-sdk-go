@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveSpecificDomainMapping(request *DescribeLiveSpecificDomainMappingRequest) (response *DescribeLiveSpecificDomainMappingResponse, err error) {
-	response = CreateDescribeLiveSpecificDomainMappingResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveSpecificDomainMappingResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveSpecificDomainMappingWithChan(request *DescribeLiveSpecificDomainMappingRequest) (<-chan *DescribeLiveSpecificDomainMappingResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveSpecificDomainMappingResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveSpecificDomainMapping(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveSpecificDomainMappingResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveSpecificDomainMapping(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveSpecificDomainMappingWithCallback(request *DescribeLiveSpecificDomainMappingRequest, callback func(response *DescribeLiveSpecificDomainMappingResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveSpecificDomainMappingResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveSpecificDomainMapping(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveSpecificDomainMappingWithCallback(request *DescribeLiveSpecificDomainMappingRequest, callback func(response *DescribeLiveSpecificDomainMappingResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveSpecificDomainMappingResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveSpecificDomainMapping(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveSpecificDomainMappingRequest struct {
-	*requests.RpcRequest
-	PullDomain    string `position:"Query" name:"PullDomain"`
-	PushDomain    string `position:"Query" name:"PushDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                PullDomain  string `position:"Query" name:"PullDomain"`
+                PushDomain  string `position:"Query" name:"PushDomain"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveSpecificDomainMappingResponse struct {
-	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DomainMappingModels struct {
-		DomainMappingModel []struct {
-			PushDomain string `json:"PushDomain" xml:"PushDomain"`
-			PullDomain string `json:"PullDomain" xml:"PullDomain"`
-		} `json:"DomainMappingModel" xml:"DomainMappingModel"`
-	} `json:"DomainMappingModels" xml:"DomainMappingModels"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                DomainMappingModels struct {
+                    DomainMappingModel []struct {
+            PushDomain     string `json:"PushDomain" xml:"PushDomain"`
+            PullDomain     string `json:"PullDomain" xml:"PullDomain"`
+                    }   `json:"DomainMappingModel" xml:"DomainMappingModel"`
+                } `json:"DomainMappingModels" xml:"DomainMappingModels"`
 }
 
 func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpecificDomainMappingRequest) {
-	request = &DescribeLiveSpecificDomainMappingRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping", "", "")
-	return
+request = &DescribeLiveSpecificDomainMappingRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping", "", "")
+return
 }
 
 func CreateDescribeLiveSpecificDomainMappingResponse() (response *DescribeLiveSpecificDomainMappingResponse) {
-	response = &DescribeLiveSpecificDomainMappingResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveSpecificDomainMappingResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

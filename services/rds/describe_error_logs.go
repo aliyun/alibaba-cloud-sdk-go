@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,90 +17,92 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeErrorLogs(request *DescribeErrorLogsRequest) (response *DescribeErrorLogsResponse, err error) {
-	response = CreateDescribeErrorLogsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeErrorLogsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeErrorLogsWithChan(request *DescribeErrorLogsRequest) (<-chan *DescribeErrorLogsResponse, <-chan error) {
-	responseChan := make(chan *DescribeErrorLogsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeErrorLogs(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeErrorLogsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeErrorLogs(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeErrorLogsWithCallback(request *DescribeErrorLogsRequest, callback func(response *DescribeErrorLogsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeErrorLogsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeErrorLogs(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeErrorLogsWithCallback(request *DescribeErrorLogsRequest, callback func(response *DescribeErrorLogsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeErrorLogsResponse
+var err error
+defer close(result)
+response, err = client.DescribeErrorLogs(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeErrorLogsRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeErrorLogsResponse struct {
-	*responses.BaseResponse
-	RequestId        string          `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount request.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       request.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  request.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		ErrorLog []struct {
-			ErrorInfo  string `json:"ErrorInfo" xml:"ErrorInfo"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"ErrorLog" xml:"ErrorLog"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalRecordCount     requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            PageRecordCount     requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+                Items struct {
+                    ErrorLog []struct {
+            ErrorInfo     string `json:"ErrorInfo" xml:"ErrorInfo"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+                    }   `json:"ErrorLog" xml:"ErrorLog"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
-	request = &DescribeErrorLogsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "", "")
-	return
+request = &DescribeErrorLogsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "", "")
+return
 }
 
 func CreateDescribeErrorLogsResponse() (response *DescribeErrorLogsResponse) {
-	response = &DescribeErrorLogsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeErrorLogsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

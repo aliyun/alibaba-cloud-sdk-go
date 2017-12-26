@@ -1,3 +1,4 @@
+
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,72 +17,74 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ScaleInCluster(request *ScaleInClusterRequest) (response *ScaleInClusterResponse, err error) {
-	response = CreateScaleInClusterResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateScaleInClusterResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ScaleInClusterWithChan(request *ScaleInClusterRequest) (<-chan *ScaleInClusterResponse, <-chan error) {
-	responseChan := make(chan *ScaleInClusterResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ScaleInCluster(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ScaleInClusterResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ScaleInCluster(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ScaleInClusterWithCallback(request *ScaleInClusterRequest, callback func(response *ScaleInClusterResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ScaleInClusterResponse
-		var err error
-		defer close(result)
-		response, err = client.ScaleInCluster(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ScaleInClusterWithCallback(request *ScaleInClusterRequest, callback func(response *ScaleInClusterResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ScaleInClusterResponse
+var err error
+defer close(result)
+response, err = client.ScaleInCluster(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ScaleInClusterRequest struct {
-	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+*requests.RoaRequest
+                ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
+
 type ScaleInClusterResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateScaleInClusterRequest() (request *ScaleInClusterRequest) {
-	request = &ScaleInClusterRequest{
-		RoaRequest: &requests.RoaRequest{},
-	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ScaleInCluster", "/clusters/[ClusterId]/scalein", "", "")
-	return
+request = &ScaleInClusterRequest{
+RoaRequest: &requests.RoaRequest{},
+}
+request.InitWithApiInfo("CS", "2015-12-15", "ScaleInCluster", "/clusters/[ClusterId]/scalein", "", "")
+return
 }
 
 func CreateScaleInClusterResponse() (response *ScaleInClusterResponse) {
-	response = &ScaleInClusterResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ScaleInClusterResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

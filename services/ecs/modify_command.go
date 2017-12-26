@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyCommand(request *ModifyCommandRequest) (response *ModifyCommandResponse, err error) {
-	response = CreateModifyCommandResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyCommandResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyCommandWithChan(request *ModifyCommandRequest) (<-chan *ModifyCommandResponse, <-chan error) {
-	responseChan := make(chan *ModifyCommandResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyCommand(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyCommandResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyCommand(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, callback func(response *ModifyCommandResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyCommandResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyCommand(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, callback func(response *ModifyCommandResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyCommandResponse
+var err error
+defer close(result)
+response, err = client.ModifyCommand(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyCommandRequest struct {
-	*requests.RpcRequest
-	WorkingDir           string `position:"Query" name:"WorkingDir"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	CommandId            string `position:"Query" name:"CommandId"`
-	CommandContent       string `position:"Query" name:"CommandContent"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Timeout              string `position:"Query" name:"Timeout"`
+*requests.RpcRequest
+                WorkingDir  string `position:"Query" name:"WorkingDir"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                Name  string `position:"Query" name:"Name"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                CommandId  string `position:"Query" name:"CommandId"`
+                CommandContent  string `position:"Query" name:"CommandContent"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Timeout  string `position:"Query" name:"Timeout"`
 }
 
+
 type ModifyCommandResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
-	request = &ModifyCommandRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "", "")
-	return
+request = &ModifyCommandRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "", "")
+return
 }
 
 func CreateModifyCommandResponse() (response *ModifyCommandResponse) {
-	response = &ModifyCommandResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyCommandResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

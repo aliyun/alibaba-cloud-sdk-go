@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,104 +17,106 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeList(request *NodeListRequest) (response *NodeListResponse, err error) {
-	response = CreateNodeListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateNodeListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeListResponse, <-chan error) {
-	responseChan := make(chan *NodeListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.NodeList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *NodeListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.NodeList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) NodeListWithCallback(request *NodeListRequest, callback func(response *NodeListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *NodeListResponse
-		var err error
-		defer close(result)
-		response, err = client.NodeList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) NodeListWithCallback(request *NodeListRequest, callback func(response *NodeListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *NodeListResponse
+var err error
+defer close(result)
+response, err = client.NodeList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type NodeListRequest struct {
-	*requests.RpcRequest
-	PageSize      string `position:"Query" name:"PageSize"`
-	Status        string `position:"Query" name:"Status"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	InstanceIds   string `position:"Query" name:"InstanceIds"`
-	KeyWord       string `position:"Query" name:"KeyWord"`
-	SerialNumbers string `position:"Query" name:"SerialNumbers"`
-	UserId        string `position:"Query" name:"UserId"`
-	HostName      string `position:"Query" name:"HostName"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                Status  string `position:"Query" name:"Status"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                InstanceIds  string `position:"Query" name:"InstanceIds"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                SerialNumbers  string `position:"Query" name:"SerialNumbers"`
+                UserId  string `position:"Query" name:"UserId"`
+                HostName  string `position:"Query" name:"HostName"`
 }
 
+
 type NodeListResponse struct {
-	*responses.BaseResponse
-	ErrorCode    request.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      request.Boolean `json:"Success" xml:"Success"`
-	RequestId    string          `json:"RequestId" xml:"RequestId"`
-	PageNumber   request.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     request.Integer `json:"PageSize" xml:"PageSize"`
-	PageTotal    request.Integer `json:"PageTotal" xml:"PageTotal"`
-	Total        request.Integer `json:"Total" xml:"Total"`
-	Nodes        struct {
-		Node []struct {
-			InstanceId       string          `json:"InstanceId" xml:"InstanceId"`
-			SerialNumber     string          `json:"SerialNumber" xml:"SerialNumber"`
-			HostName         string          `json:"HostName" xml:"HostName"`
-			AliUid           request.Integer `json:"AliUid" xml:"AliUid"`
-			OperatingSystem  string          `json:"OperatingSystem" xml:"OperatingSystem"`
-			IpGroup          string          `json:"IpGroup" xml:"IpGroup"`
-			Region           string          `json:"Region" xml:"Region"`
-			TianjimonVersion string          `json:"TianjimonVersion" xml:"TianjimonVersion"`
-			EipAddress       string          `json:"EipAddress" xml:"EipAddress"`
-			EipId            string          `json:"EipId" xml:"EipId"`
-			AliyunHost       request.Boolean `json:"AliyunHost" xml:"AliyunHost"`
-			NatIp            string          `json:"NatIp" xml:"NatIp"`
-			NetworkType      string          `json:"NetworkType" xml:"NetworkType"`
-		} `json:"Node" xml:"Node"`
-	} `json:"Nodes" xml:"Nodes"`
+*responses.BaseResponse
+            ErrorCode     requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            Success     requests.Boolean `json:"Success" xml:"Success"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+            PageTotal     requests.Integer `json:"PageTotal" xml:"PageTotal"`
+            Total     requests.Integer `json:"Total" xml:"Total"`
+                Nodes struct {
+                    Node []struct {
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
+            HostName     string `json:"HostName" xml:"HostName"`
+            AliUid     requests.Integer `json:"AliUid" xml:"AliUid"`
+            OperatingSystem     string `json:"OperatingSystem" xml:"OperatingSystem"`
+            IpGroup     string `json:"IpGroup" xml:"IpGroup"`
+            Region     string `json:"Region" xml:"Region"`
+            TianjimonVersion     string `json:"TianjimonVersion" xml:"TianjimonVersion"`
+            EipAddress     string `json:"EipAddress" xml:"EipAddress"`
+            EipId     string `json:"EipId" xml:"EipId"`
+            AliyunHost     requests.Boolean `json:"AliyunHost" xml:"AliyunHost"`
+            NatIp     string `json:"NatIp" xml:"NatIp"`
+            NetworkType     string `json:"NetworkType" xml:"NetworkType"`
+                    }   `json:"Node" xml:"Node"`
+                } `json:"Nodes" xml:"Nodes"`
 }
 
 func CreateNodeListRequest() (request *NodeListRequest) {
-	request = &NodeListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "", "")
-	return
+request = &NodeListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "", "")
+return
 }
 
 func CreateNodeListResponse() (response *NodeListResponse) {
-	response = &NodeListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &NodeListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

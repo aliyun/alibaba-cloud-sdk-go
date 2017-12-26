@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeVpcZoneNos(request *DescribeVpcZoneNosRequest) (response *DescribeVpcZoneNosResponse, err error) {
-	response = CreateDescribeVpcZoneNosResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeVpcZoneNosResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeVpcZoneNosWithChan(request *DescribeVpcZoneNosRequest) (<-chan *DescribeVpcZoneNosResponse, <-chan error) {
-	responseChan := make(chan *DescribeVpcZoneNosResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeVpcZoneNos(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeVpcZoneNosResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeVpcZoneNos(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNosRequest, callback func(response *DescribeVpcZoneNosResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeVpcZoneNosResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeVpcZoneNos(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNosRequest, callback func(response *DescribeVpcZoneNosResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeVpcZoneNosResponse
+var err error
+defer close(result)
+response, err = client.DescribeVpcZoneNos(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeVpcZoneNosRequest struct {
-	*requests.RpcRequest
-	Region               string `position:"Query" name:"Region"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Region  string `position:"Query" name:"Region"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeVpcZoneNosResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		VpcZoneId []struct {
-			ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-			Region    string `json:"Region" xml:"Region"`
-			SubDomain string `json:"SubDomain" xml:"SubDomain"`
-		} `json:"VpcZoneId" xml:"VpcZoneId"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                Items struct {
+                    VpcZoneId []struct {
+            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
+            Region     string `json:"Region" xml:"Region"`
+            SubDomain     string `json:"SubDomain" xml:"SubDomain"`
+                    }   `json:"VpcZoneId" xml:"VpcZoneId"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
-	request = &DescribeVpcZoneNosRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "", "")
-	return
+request = &DescribeVpcZoneNosRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "", "")
+return
 }
 
 func CreateDescribeVpcZoneNosResponse() (response *DescribeVpcZoneNosResponse) {
-	response = &DescribeVpcZoneNosResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeVpcZoneNosResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

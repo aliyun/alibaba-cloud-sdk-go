@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,75 +17,77 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachPolicyToRole(request *AttachPolicyToRoleRequest) (response *AttachPolicyToRoleResponse, err error) {
-	response = CreateAttachPolicyToRoleResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAttachPolicyToRoleResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequest) (<-chan *AttachPolicyToRoleResponse, <-chan error) {
-	responseChan := make(chan *AttachPolicyToRoleResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AttachPolicyToRole(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AttachPolicyToRoleResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AttachPolicyToRole(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AttachPolicyToRoleWithCallback(request *AttachPolicyToRoleRequest, callback func(response *AttachPolicyToRoleResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AttachPolicyToRoleResponse
-		var err error
-		defer close(result)
-		response, err = client.AttachPolicyToRole(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AttachPolicyToRoleWithCallback(request *AttachPolicyToRoleRequest, callback func(response *AttachPolicyToRoleResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AttachPolicyToRoleResponse
+var err error
+defer close(result)
+response, err = client.AttachPolicyToRole(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AttachPolicyToRoleRequest struct {
-	*requests.RpcRequest
-	RoleName   string `position:"Query" name:"RoleName"`
-	PolicyType string `position:"Query" name:"PolicyType"`
-	PolicyName string `position:"Query" name:"PolicyName"`
+*requests.RpcRequest
+                RoleName  string `position:"Query" name:"RoleName"`
+                PolicyType  string `position:"Query" name:"PolicyType"`
+                PolicyName  string `position:"Query" name:"PolicyName"`
 }
 
+
 type AttachPolicyToRoleResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
-	request = &AttachPolicyToRoleRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToRole", "", "")
-	return
+request = &AttachPolicyToRoleRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToRole", "", "")
+return
 }
 
 func CreateAttachPolicyToRoleResponse() (response *AttachPolicyToRoleResponse) {
-	response = &AttachPolicyToRoleResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AttachPolicyToRoleResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

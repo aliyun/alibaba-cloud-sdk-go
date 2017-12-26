@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateDeploymentSet(request *CreateDeploymentSetRequest) (response *CreateDeploymentSetResponse, err error) {
-	response = CreateCreateDeploymentSetResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateDeploymentSetResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateDeploymentSetWithChan(request *CreateDeploymentSetRequest) (<-chan *CreateDeploymentSetResponse, <-chan error) {
-	responseChan := make(chan *CreateDeploymentSetResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateDeploymentSet(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateDeploymentSetResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateDeploymentSet(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentSetRequest, callback func(response *CreateDeploymentSetResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateDeploymentSetResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateDeploymentSet(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentSetRequest, callback func(response *CreateDeploymentSetResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateDeploymentSetResponse
+var err error
+defer close(result)
+response, err = client.CreateDeploymentSet(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateDeploymentSetRequest struct {
-	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                Strategy  string `position:"Query" name:"Strategy"`
+                DeploymentSetName  string `position:"Query" name:"DeploymentSetName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                Granularity  string `position:"Query" name:"Granularity"`
+                Domain  string `position:"Query" name:"Domain"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type CreateDeploymentSetResponse struct {
-	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	DeploymentSetId string `json:"DeploymentSetId" xml:"DeploymentSetId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DeploymentSetId     string `json:"DeploymentSetId" xml:"DeploymentSetId"`
 }
 
 func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
-	request = &CreateDeploymentSetRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "", "")
-	return
+request = &CreateDeploymentSetRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "", "")
+return
 }
 
 func CreateCreateDeploymentSetResponse() (response *CreateDeploymentSetResponse) {
-	response = &CreateDeploymentSetResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateDeploymentSetResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

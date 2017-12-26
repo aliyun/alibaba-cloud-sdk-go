@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetRangeConfig(request *SetRangeConfigRequest) (response *SetRangeConfigResponse, err error) {
-	response = CreateSetRangeConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetRangeConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-chan *SetRangeConfigResponse, <-chan error) {
-	responseChan := make(chan *SetRangeConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetRangeConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetRangeConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetRangeConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest, callback func(response *SetRangeConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetRangeConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetRangeConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest, callback func(response *SetRangeConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetRangeConfigResponse
+var err error
+defer close(result)
+response, err = client.SetRangeConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetRangeConfigRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	Enable        string `position:"Query" name:"Enable"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                Enable  string `position:"Query" name:"Enable"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetRangeConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
-	request = &SetRangeConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRangeConfig", "", "")
-	return
+request = &SetRangeConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetRangeConfig", "", "")
+return
 }
 
 func CreateSetRangeConfigResponse() (response *SetRangeConfigResponse) {
-	response = &SetRangeConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetRangeConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) StartLoadBalancerListener(request *StartLoadBalancerListenerRequest) (response *StartLoadBalancerListenerResponse, err error) {
-	response = CreateStartLoadBalancerListenerResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateStartLoadBalancerListenerResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) StartLoadBalancerListenerWithChan(request *StartLoadBalancerListenerRequest) (<-chan *StartLoadBalancerListenerResponse, <-chan error) {
-	responseChan := make(chan *StartLoadBalancerListenerResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.StartLoadBalancerListener(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *StartLoadBalancerListenerResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.StartLoadBalancerListener(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBalancerListenerRequest, callback func(response *StartLoadBalancerListenerResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *StartLoadBalancerListenerResponse
-		var err error
-		defer close(result)
-		response, err = client.StartLoadBalancerListener(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBalancerListenerRequest, callback func(response *StartLoadBalancerListenerResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *StartLoadBalancerListenerResponse
+var err error
+defer close(result)
+response, err = client.StartLoadBalancerListener(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type StartLoadBalancerListenerRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                ListenerPort  string `position:"Query" name:"ListenerPort"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type StartLoadBalancerListenerResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListenerRequest) {
-	request = &StartLoadBalancerListenerRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "StartLoadBalancerListener", "", "")
-	return
+request = &StartLoadBalancerListenerRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "StartLoadBalancerListener", "", "")
+return
 }
 
 func CreateStartLoadBalancerListenerResponse() (response *StartLoadBalancerListenerResponse) {
-	response = &StartLoadBalancerListenerResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &StartLoadBalancerListenerResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

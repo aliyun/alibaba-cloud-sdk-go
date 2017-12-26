@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDeploymentSetAttribute(request *ModifyDeploymentSetAttributeRequest) (response *ModifyDeploymentSetAttributeResponse, err error) {
-	response = CreateModifyDeploymentSetAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyDeploymentSetAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyDeploymentSetAttributeWithChan(request *ModifyDeploymentSetAttributeRequest) (<-chan *ModifyDeploymentSetAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyDeploymentSetAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyDeploymentSetAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyDeploymentSetAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyDeploymentSetAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDeploymentSetAttributeRequest, callback func(response *ModifyDeploymentSetAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyDeploymentSetAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyDeploymentSetAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDeploymentSetAttributeRequest, callback func(response *ModifyDeploymentSetAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyDeploymentSetAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyDeploymentSetAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyDeploymentSetAttributeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	DeploymentSetId      string `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                DeploymentSetName  string `position:"Query" name:"DeploymentSetName"`
+                DeploymentSetId  string `position:"Query" name:"DeploymentSetId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyDeploymentSetAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAttributeRequest) {
-	request = &ModifyDeploymentSetAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "", "")
-	return
+request = &ModifyDeploymentSetAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "", "")
+return
 }
 
 func CreateModifyDeploymentSetAttributeResponse() (response *ModifyDeploymentSetAttributeResponse) {
-	response = &ModifyDeploymentSetAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyDeploymentSetAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,97 +17,99 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSnapshotLinks(request *DescribeSnapshotLinksRequest) (response *DescribeSnapshotLinksResponse, err error) {
-	response = CreateDescribeSnapshotLinksResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeSnapshotLinksResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeSnapshotLinksWithChan(request *DescribeSnapshotLinksRequest) (<-chan *DescribeSnapshotLinksResponse, <-chan error) {
-	responseChan := make(chan *DescribeSnapshotLinksResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeSnapshotLinks(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeSnapshotLinksResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeSnapshotLinks(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapshotLinksRequest, callback func(response *DescribeSnapshotLinksResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeSnapshotLinksResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeSnapshotLinks(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapshotLinksRequest, callback func(response *DescribeSnapshotLinksResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeSnapshotLinksResponse
+var err error
+defer close(result)
+response, err = client.DescribeSnapshotLinks(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeSnapshotLinksRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DiskIds              string `position:"Query" name:"DiskIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	SnapshotLinkIds      string `position:"Query" name:"SnapshotLinkIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                DiskIds  string `position:"Query" name:"DiskIds"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                SnapshotLinkIds  string `position:"Query" name:"SnapshotLinkIds"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type DescribeSnapshotLinksResponse struct {
-	*responses.BaseResponse
-	RequestId     string          `json:"RequestId" xml:"RequestId"`
-	TotalCount    request.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    request.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize      request.Integer `json:"PageSize" xml:"PageSize"`
-	SnapshotLinks struct {
-		SnapshotLink []struct {
-			SnapshotLinkId string          `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-			RegionId       string          `json:"RegionId" xml:"RegionId"`
-			InstanceId     string          `json:"InstanceId" xml:"InstanceId"`
-			InstanceName   string          `json:"InstanceName" xml:"InstanceName"`
-			SourceDiskId   string          `json:"SourceDiskId" xml:"SourceDiskId"`
-			SourceDiskSize request.Integer `json:"SourceDiskSize" xml:"SourceDiskSize"`
-			SourceDiskType string          `json:"SourceDiskType" xml:"SourceDiskType"`
-			TotalSize      request.Integer `json:"TotalSize" xml:"TotalSize"`
-			TotalCount     request.Integer `json:"TotalCount" xml:"TotalCount"`
-		} `json:"SnapshotLink" xml:"SnapshotLink"`
-	} `json:"SnapshotLinks" xml:"SnapshotLinks"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+                SnapshotLinks struct {
+                    SnapshotLink []struct {
+            SnapshotLinkId     string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            InstanceName     string `json:"InstanceName" xml:"InstanceName"`
+            SourceDiskId     string `json:"SourceDiskId" xml:"SourceDiskId"`
+            SourceDiskSize     requests.Integer `json:"SourceDiskSize" xml:"SourceDiskSize"`
+            SourceDiskType     string `json:"SourceDiskType" xml:"SourceDiskType"`
+            TotalSize     requests.Integer `json:"TotalSize" xml:"TotalSize"`
+            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+                    }   `json:"SnapshotLink" xml:"SnapshotLink"`
+                } `json:"SnapshotLinks" xml:"SnapshotLinks"`
 }
 
 func CreateDescribeSnapshotLinksRequest() (request *DescribeSnapshotLinksRequest) {
-	request = &DescribeSnapshotLinksRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "", "")
-	return
+request = &DescribeSnapshotLinksRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "", "")
+return
 }
 
 func CreateDescribeSnapshotLinksResponse() (response *DescribeSnapshotLinksResponse) {
-	response = &DescribeSnapshotLinksResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeSnapshotLinksResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

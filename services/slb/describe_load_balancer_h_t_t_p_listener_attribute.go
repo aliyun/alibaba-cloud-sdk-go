@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,106 +17,108 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLoadBalancerHTTPListenerAttribute(request *DescribeLoadBalancerHTTPListenerAttributeRequest) (response *DescribeLoadBalancerHTTPListenerAttributeResponse, err error) {
-	response = CreateDescribeLoadBalancerHTTPListenerAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLoadBalancerHTTPListenerAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithChan(request *DescribeLoadBalancerHTTPListenerAttributeRequest) (<-chan *DescribeLoadBalancerHTTPListenerAttributeResponse, <-chan error) {
-	responseChan := make(chan *DescribeLoadBalancerHTTPListenerAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLoadBalancerHTTPListenerAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLoadBalancerHTTPListenerAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLoadBalancerHTTPListenerAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithCallback(request *DescribeLoadBalancerHTTPListenerAttributeRequest, callback func(response *DescribeLoadBalancerHTTPListenerAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLoadBalancerHTTPListenerAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLoadBalancerHTTPListenerAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithCallback(request *DescribeLoadBalancerHTTPListenerAttributeRequest, callback func(response *DescribeLoadBalancerHTTPListenerAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLoadBalancerHTTPListenerAttributeResponse
+var err error
+defer close(result)
+response, err = client.DescribeLoadBalancerHTTPListenerAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLoadBalancerHTTPListenerAttributeRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                ListenerPort  string `position:"Query" name:"ListenerPort"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId              string          `json:"RequestId" xml:"RequestId"`
-	ListenerPort           request.Integer `json:"ListenerPort" xml:"ListenerPort"`
-	BackendServerPort      request.Integer `json:"BackendServerPort" xml:"BackendServerPort"`
-	Bandwidth              request.Integer `json:"Bandwidth" xml:"Bandwidth"`
-	Status                 string          `json:"Status" xml:"Status"`
-	SecurityStatus         string          `json:"SecurityStatus" xml:"SecurityStatus"`
-	XForwardedFor          string          `json:"XForwardedFor" xml:"XForwardedFor"`
-	Scheduler              string          `json:"Scheduler" xml:"Scheduler"`
-	StickySession          string          `json:"StickySession" xml:"StickySession"`
-	StickySessionType      string          `json:"StickySessionType" xml:"StickySessionType"`
-	CookieTimeout          request.Integer `json:"CookieTimeout" xml:"CookieTimeout"`
-	Cookie                 string          `json:"Cookie" xml:"Cookie"`
-	HealthCheck            string          `json:"HealthCheck" xml:"HealthCheck"`
-	HealthCheckDomain      string          `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
-	HealthCheckURI         string          `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	HealthyThreshold       request.Integer `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	UnhealthyThreshold     request.Integer `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	HealthCheckTimeout     request.Integer `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
-	HealthCheckInterval    request.Integer `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckConnectPort request.Integer `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckHttpCode    string          `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
-	MaxConnection          request.Integer `json:"MaxConnection" xml:"MaxConnection"`
-	VServerGroupId         string          `json:"VServerGroupId" xml:"VServerGroupId"`
-	Gzip                   string          `json:"Gzip" xml:"Gzip"`
-	XForwardedForSLBIP     string          `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
-	XForwardedForSLBID     string          `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	XForwardedForProto     string          `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            ListenerPort     requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
+            BackendServerPort     requests.Integer `json:"BackendServerPort" xml:"BackendServerPort"`
+            Bandwidth     requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
+            Status     string `json:"Status" xml:"Status"`
+            SecurityStatus     string `json:"SecurityStatus" xml:"SecurityStatus"`
+            XForwardedFor     string `json:"XForwardedFor" xml:"XForwardedFor"`
+            Scheduler     string `json:"Scheduler" xml:"Scheduler"`
+            StickySession     string `json:"StickySession" xml:"StickySession"`
+            StickySessionType     string `json:"StickySessionType" xml:"StickySessionType"`
+            CookieTimeout     requests.Integer `json:"CookieTimeout" xml:"CookieTimeout"`
+            Cookie     string `json:"Cookie" xml:"Cookie"`
+            HealthCheck     string `json:"HealthCheck" xml:"HealthCheck"`
+            HealthCheckDomain     string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+            HealthCheckURI     string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+            HealthyThreshold     requests.Integer `json:"HealthyThreshold" xml:"HealthyThreshold"`
+            UnhealthyThreshold     requests.Integer `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+            HealthCheckTimeout     requests.Integer `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+            HealthCheckInterval     requests.Integer `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+            HealthCheckConnectPort     requests.Integer `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+            HealthCheckHttpCode     string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+            MaxConnection     requests.Integer `json:"MaxConnection" xml:"MaxConnection"`
+            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
+            Gzip     string `json:"Gzip" xml:"Gzip"`
+            XForwardedForSLBIP     string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+            XForwardedForSLBID     string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
+            XForwardedForProto     string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
 }
 
 func CreateDescribeLoadBalancerHTTPListenerAttributeRequest() (request *DescribeLoadBalancerHTTPListenerAttributeRequest) {
-	request = &DescribeLoadBalancerHTTPListenerAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute", "", "")
-	return
+request = &DescribeLoadBalancerHTTPListenerAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute", "", "")
+return
 }
 
 func CreateDescribeLoadBalancerHTTPListenerAttributeResponse() (response *DescribeLoadBalancerHTTPListenerAttributeResponse) {
-	response = &DescribeLoadBalancerHTTPListenerAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLoadBalancerHTTPListenerAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

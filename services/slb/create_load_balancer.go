@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,102 +17,104 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateLoadBalancer(request *CreateLoadBalancerRequest) (response *CreateLoadBalancerResponse, err error) {
-	response = CreateCreateLoadBalancerResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateLoadBalancerResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequest) (<-chan *CreateLoadBalancerResponse, <-chan error) {
-	responseChan := make(chan *CreateLoadBalancerResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateLoadBalancer(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateLoadBalancerResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateLoadBalancer(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancerRequest, callback func(response *CreateLoadBalancerResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateLoadBalancerResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateLoadBalancer(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancerRequest, callback func(response *CreateLoadBalancerResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateLoadBalancerResponse
+var err error
+defer close(result)
+response, err = client.CreateLoadBalancer(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateLoadBalancerRequest struct {
-	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	LoadBalancerSpec     string `position:"Query" name:"LoadBalancerSpec"`
-	EnableVpcVipFlow     string `position:"Query" name:"EnableVpcVipFlow"`
-	MasterZoneId         string `position:"Query" name:"MasterZoneId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	SlaveZoneId          string `position:"Query" name:"SlaveZoneId"`
-	LoadBalancerName     string `position:"Query" name:"LoadBalancerName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string `position:"Query" name:"PayType"`
-	PricingCycle         string `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tags                 string `position:"Query" name:"Tags"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Duration             string `position:"Query" name:"Duration"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	VpcId                string `position:"Query" name:"VpcId"`
+*requests.RpcRequest
+                AddressType  string `position:"Query" name:"AddressType"`
+                LoadBalancerSpec  string `position:"Query" name:"LoadBalancerSpec"`
+                EnableVpcVipFlow  string `position:"Query" name:"EnableVpcVipFlow"`
+                MasterZoneId  string `position:"Query" name:"MasterZoneId"`
+                Bandwidth  string `position:"Query" name:"Bandwidth"`
+                SlaveZoneId  string `position:"Query" name:"SlaveZoneId"`
+                LoadBalancerName  string `position:"Query" name:"LoadBalancerName"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PayType  string `position:"Query" name:"PayType"`
+                PricingCycle  string `position:"Query" name:"PricingCycle"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Tags  string `position:"Query" name:"Tags"`
+                VSwitchId  string `position:"Query" name:"VSwitchId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
+                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Duration  string `position:"Query" name:"Duration"`
+                AutoPay  string `position:"Query" name:"AutoPay"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                VpcId  string `position:"Query" name:"VpcId"`
 }
 
+
 type CreateLoadBalancerResponse struct {
-	*responses.BaseResponse
-	RequestId        string          `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId   string          `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId  string          `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Address          string          `json:"Address" xml:"Address"`
-	LoadBalancerName string          `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	VpcId            string          `json:"VpcId" xml:"VpcId"`
-	VSwitchId        string          `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType      string          `json:"NetworkType" xml:"NetworkType"`
-	OrderId          request.Integer `json:"OrderId" xml:"OrderId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+            ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+            Address     string `json:"Address" xml:"Address"`
+            LoadBalancerName     string `json:"LoadBalancerName" xml:"LoadBalancerName"`
+            VpcId     string `json:"VpcId" xml:"VpcId"`
+            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
+            NetworkType     string `json:"NetworkType" xml:"NetworkType"`
+            OrderId     requests.Integer `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
-	request = &CreateLoadBalancerRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "", "")
-	return
+request = &CreateLoadBalancerRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "", "")
+return
 }
 
 func CreateCreateLoadBalancerResponse() (response *CreateLoadBalancerResponse) {
-	response = &CreateLoadBalancerResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateLoadBalancerResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

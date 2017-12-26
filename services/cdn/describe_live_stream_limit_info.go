@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamLimitInfo(request *DescribeLiveStreamLimitInfoRequest) (response *DescribeLiveStreamLimitInfoResponse, err error) {
-	response = CreateDescribeLiveStreamLimitInfoResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamLimitInfoResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveStreamLimitInfoRequest) (<-chan *DescribeLiveStreamLimitInfoResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamLimitInfoResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamLimitInfo(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamLimitInfoResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamLimitInfo(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeLiveStreamLimitInfoRequest, callback func(response *DescribeLiveStreamLimitInfoResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamLimitInfoResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamLimitInfo(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeLiveStreamLimitInfoRequest, callback func(response *DescribeLiveStreamLimitInfoResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamLimitInfoResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamLimitInfo(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamLimitInfoRequest struct {
-	*requests.RpcRequest
-	LimitDomain   string `position:"Query" name:"LimitDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                LimitDomain  string `position:"Query" name:"LimitDomain"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamLimitInfoResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	UserLimitLists struct {
-		UserLimitMode []struct {
-			LimitDomain       string `json:"LimitDomain" xml:"LimitDomain"`
-			LimitNum          string `json:"LimitNum" xml:"LimitNum"`
-			LimitTranscodeNum string `json:"LimitTranscodeNum" xml:"LimitTranscodeNum"`
-		} `json:"UserLimitMode" xml:"UserLimitMode"`
-	} `json:"UserLimitLists" xml:"UserLimitLists"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                UserLimitLists struct {
+                    UserLimitMode []struct {
+            LimitDomain     string `json:"LimitDomain" xml:"LimitDomain"`
+            LimitNum     string `json:"LimitNum" xml:"LimitNum"`
+            LimitTranscodeNum     string `json:"LimitTranscodeNum" xml:"LimitTranscodeNum"`
+                    }   `json:"UserLimitMode" xml:"UserLimitMode"`
+                } `json:"UserLimitLists" xml:"UserLimitLists"`
 }
 
 func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimitInfoRequest) {
-	request = &DescribeLiveStreamLimitInfoRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo", "", "")
-	return
+request = &DescribeLiveStreamLimitInfoRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo", "", "")
+return
 }
 
 func CreateDescribeLiveStreamLimitInfoResponse() (response *DescribeLiveStreamLimitInfoResponse) {
-	response = &DescribeLiveStreamLimitInfoResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamLimitInfoResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

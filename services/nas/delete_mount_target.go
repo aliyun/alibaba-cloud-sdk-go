@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteMountTarget(request *DeleteMountTargetRequest) (response *DeleteMountTargetResponse, err error) {
-	response = CreateDeleteMountTargetResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteMountTargetResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetRequest) (<-chan *DeleteMountTargetResponse, <-chan error) {
-	responseChan := make(chan *DeleteMountTargetResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteMountTarget(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteMountTargetResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteMountTarget(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRequest, callback func(response *DeleteMountTargetResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteMountTargetResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteMountTarget(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRequest, callback func(response *DeleteMountTargetResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteMountTargetResponse
+var err error
+defer close(result)
+response, err = client.DeleteMountTarget(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteMountTargetRequest struct {
-	*requests.RpcRequest
-	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
-	FileSystemId      string `position:"Query" name:"FileSystemId"`
+*requests.RpcRequest
+                MountTargetDomain  string `position:"Query" name:"MountTargetDomain"`
+                FileSystemId  string `position:"Query" name:"FileSystemId"`
 }
 
+
 type DeleteMountTargetResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
-	request = &DeleteMountTargetRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "", "")
-	return
+request = &DeleteMountTargetRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "", "")
+return
 }
 
 func CreateDeleteMountTargetResponse() (response *DeleteMountTargetResponse) {
-	response = &DeleteMountTargetResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteMountTargetResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

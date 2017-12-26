@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyFileSystem(request *ModifyFileSystemRequest) (response *ModifyFileSystemResponse, err error) {
-	response = CreateModifyFileSystemResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyFileSystemResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyFileSystemWithChan(request *ModifyFileSystemRequest) (<-chan *ModifyFileSystemResponse, <-chan error) {
-	responseChan := make(chan *ModifyFileSystemResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyFileSystem(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyFileSystemResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyFileSystem(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequest, callback func(response *ModifyFileSystemResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyFileSystemResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyFileSystem(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequest, callback func(response *ModifyFileSystemResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyFileSystemResponse
+var err error
+defer close(result)
+response, err = client.ModifyFileSystem(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyFileSystemRequest struct {
-	*requests.RpcRequest
-	Description  string `position:"Query" name:"Description"`
-	FileSystemId string `position:"Query" name:"FileSystemId"`
+*requests.RpcRequest
+                Description  string `position:"Query" name:"Description"`
+                FileSystemId  string `position:"Query" name:"FileSystemId"`
 }
 
+
 type ModifyFileSystemResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
-	request = &ModifyFileSystemRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "", "")
-	return
+request = &ModifyFileSystemRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "", "")
+return
 }
 
 func CreateModifyFileSystemResponse() (response *ModifyFileSystemResponse) {
-	response = &ModifyFileSystemResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyFileSystemResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

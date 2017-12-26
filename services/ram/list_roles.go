@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesResponse, err error) {
-	response = CreateListRolesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListRolesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *ListRolesResponse, <-chan error) {
-	responseChan := make(chan *ListRolesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListRoles(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListRolesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListRoles(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListRolesResponse
-		var err error
-		defer close(result)
-		response, err = client.ListRoles(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListRolesResponse
+var err error
+defer close(result)
+response, err = client.ListRoles(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListRolesRequest struct {
-	*requests.RpcRequest
-	Marker   string `position:"Query" name:"Marker"`
-	MaxItems string `position:"Query" name:"MaxItems"`
+*requests.RpcRequest
+                Marker  string `position:"Query" name:"Marker"`
+                MaxItems  string `position:"Query" name:"MaxItems"`
 }
 
+
 type ListRolesResponse struct {
-	*responses.BaseResponse
-	RequestId   string          `json:"RequestId" xml:"RequestId"`
-	IsTruncated request.Boolean `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string          `json:"Marker" xml:"Marker"`
-	Roles       struct {
-		Role []struct {
-			RoleId      string `json:"RoleId" xml:"RoleId"`
-			RoleName    string `json:"RoleName" xml:"RoleName"`
-			Arn         string `json:"Arn" xml:"Arn"`
-			Description string `json:"Description" xml:"Description"`
-			CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate  string `json:"UpdateDate" xml:"UpdateDate"`
-		} `json:"Role" xml:"Role"`
-	} `json:"Roles" xml:"Roles"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            IsTruncated     requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
+            Marker     string `json:"Marker" xml:"Marker"`
+                Roles struct {
+                    Role []struct {
+            RoleId     string `json:"RoleId" xml:"RoleId"`
+            RoleName     string `json:"RoleName" xml:"RoleName"`
+            Arn     string `json:"Arn" xml:"Arn"`
+            Description     string `json:"Description" xml:"Description"`
+            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
+            UpdateDate     string `json:"UpdateDate" xml:"UpdateDate"`
+                    }   `json:"Role" xml:"Role"`
+                } `json:"Roles" xml:"Roles"`
 }
 
 func CreateListRolesRequest() (request *ListRolesRequest) {
-	request = &ListRolesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListRoles", "", "")
-	return
+request = &ListRolesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "ListRoles", "", "")
+return
 }
 
 func CreateListRolesResponse() (response *ListRolesResponse) {
-	response = &ListRolesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListRolesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

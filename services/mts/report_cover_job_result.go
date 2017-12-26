@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest) (response *ReportCoverJobResultResponse, err error) {
-	response = CreateReportCoverJobResultResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateReportCoverJobResultResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResultRequest) (<-chan *ReportCoverJobResultResponse, <-chan error) {
-	responseChan := make(chan *ReportCoverJobResultResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ReportCoverJobResult(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ReportCoverJobResultResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ReportCoverJobResult(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobResultRequest, callback func(response *ReportCoverJobResultResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ReportCoverJobResultResponse
-		var err error
-		defer close(result)
-		response, err = client.ReportCoverJobResult(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobResultRequest, callback func(response *ReportCoverJobResultResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ReportCoverJobResultResponse
+var err error
+defer close(result)
+response, err = client.ReportCoverJobResult(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ReportCoverJobResultRequest struct {
-	*requests.RpcRequest
-	Result               string `position:"Query" name:"Result"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	JobId                string `position:"Query" name:"JobId"`
+*requests.RpcRequest
+                Result  string `position:"Query" name:"Result"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                JobId  string `position:"Query" name:"JobId"`
 }
 
+
 type ReportCoverJobResultResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) {
-	request = &ReportCoverJobResultRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "", "")
-	return
+request = &ReportCoverJobResultRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "", "")
+return
 }
 
 func CreateReportCoverJobResultResponse() (response *ReportCoverJobResultResponse) {
-	response = &ReportCoverJobResultResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ReportCoverJobResultResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

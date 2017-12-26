@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CheckDiskEnableAutoSnapshotValidation(request *CheckDiskEnableAutoSnapshotValidationRequest) (response *CheckDiskEnableAutoSnapshotValidationResponse, err error) {
-	response = CreateCheckDiskEnableAutoSnapshotValidationResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCheckDiskEnableAutoSnapshotValidationResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CheckDiskEnableAutoSnapshotValidationWithChan(request *CheckDiskEnableAutoSnapshotValidationRequest) (<-chan *CheckDiskEnableAutoSnapshotValidationResponse, <-chan error) {
-	responseChan := make(chan *CheckDiskEnableAutoSnapshotValidationResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CheckDiskEnableAutoSnapshotValidation(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CheckDiskEnableAutoSnapshotValidationResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CheckDiskEnableAutoSnapshotValidation(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request *CheckDiskEnableAutoSnapshotValidationRequest, callback func(response *CheckDiskEnableAutoSnapshotValidationResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CheckDiskEnableAutoSnapshotValidationResponse
-		var err error
-		defer close(result)
-		response, err = client.CheckDiskEnableAutoSnapshotValidation(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request *CheckDiskEnableAutoSnapshotValidationRequest, callback func(response *CheckDiskEnableAutoSnapshotValidationResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CheckDiskEnableAutoSnapshotValidationResponse
+var err error
+defer close(result)
+response, err = client.CheckDiskEnableAutoSnapshotValidation(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CheckDiskEnableAutoSnapshotValidationRequest struct {
-	*requests.RpcRequest
-	DiskIds              string `position:"Query" name:"DiskIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DiskIds  string `position:"Query" name:"DiskIds"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type CheckDiskEnableAutoSnapshotValidationResponse struct {
-	*responses.BaseResponse
-	RequestId              string          `json:"RequestId" xml:"RequestId"`
-	IsPermitted            string          `json:"IsPermitted" xml:"IsPermitted"`
-	AutoSnapshotOccupation request.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            IsPermitted     string `json:"IsPermitted" xml:"IsPermitted"`
+            AutoSnapshotOccupation     requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
 }
 
 func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEnableAutoSnapshotValidationRequest) {
-	request = &CheckDiskEnableAutoSnapshotValidationRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "", "")
-	return
+request = &CheckDiskEnableAutoSnapshotValidationRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "", "")
+return
 }
 
 func CreateCheckDiskEnableAutoSnapshotValidationResponse() (response *CheckDiskEnableAutoSnapshotValidationResponse) {
-	response = &CheckDiskEnableAutoSnapshotValidationResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CheckDiskEnableAutoSnapshotValidationResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

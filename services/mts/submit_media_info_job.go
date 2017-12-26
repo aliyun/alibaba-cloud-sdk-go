@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,177 +17,179 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SubmitMediaInfoJob(request *SubmitMediaInfoJobRequest) (response *SubmitMediaInfoJobResponse, err error) {
-	response = CreateSubmitMediaInfoJobResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSubmitMediaInfoJobResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SubmitMediaInfoJobWithChan(request *SubmitMediaInfoJobRequest) (<-chan *SubmitMediaInfoJobResponse, <-chan error) {
-	responseChan := make(chan *SubmitMediaInfoJobResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SubmitMediaInfoJob(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SubmitMediaInfoJobResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SubmitMediaInfoJob(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SubmitMediaInfoJobWithCallback(request *SubmitMediaInfoJobRequest, callback func(response *SubmitMediaInfoJobResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SubmitMediaInfoJobResponse
-		var err error
-		defer close(result)
-		response, err = client.SubmitMediaInfoJob(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SubmitMediaInfoJobWithCallback(request *SubmitMediaInfoJobRequest, callback func(response *SubmitMediaInfoJobResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SubmitMediaInfoJobResponse
+var err error
+defer close(result)
+response, err = client.SubmitMediaInfoJob(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SubmitMediaInfoJobRequest struct {
-	*requests.RpcRequest
-	UserData             string `position:"Query" name:"UserData"`
-	Input                string `position:"Query" name:"Input"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                UserData  string `position:"Query" name:"UserData"`
+                Input  string `position:"Query" name:"Input"`
+                PipelineId  string `position:"Query" name:"PipelineId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type SubmitMediaInfoJobResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	MediaInfoJob struct {
-		JobId        string `json:"JobId" xml:"JobId"`
-		UserData     string `json:"UserData" xml:"UserData"`
-		PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-		State        string `json:"State" xml:"State"`
-		Code         string `json:"Code" xml:"Code"`
-		Message      string `json:"Message" xml:"Message"`
-		CreationTime string `json:"CreationTime" xml:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket" xml:"Bucket"`
-			Location string `json:"Location" xml:"Location"`
-			Object   string `json:"Object" xml:"Object"`
-		} `json:"Input" xml:"Input"`
-		Properties struct {
-			Width      string `json:"Width" xml:"Width"`
-			Height     string `json:"Height" xml:"Height"`
-			Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-			Duration   string `json:"Duration" xml:"Duration"`
-			Fps        string `json:"Fps" xml:"Fps"`
-			FileSize   string `json:"FileSize" xml:"FileSize"`
-			FileFormat string `json:"FileFormat" xml:"FileFormat"`
-			Streams    struct {
-				VideoStreamList struct {
-					VideoStream []struct {
-						Index          string `json:"Index" xml:"Index"`
-						CodecName      string `json:"CodecName" xml:"CodecName"`
-						CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-						Profile        string `json:"Profile" xml:"Profile"`
-						CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-						CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-						CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-						Width          string `json:"Width" xml:"Width"`
-						Height         string `json:"Height" xml:"Height"`
-						HasBFrames     string `json:"HasBFrames" xml:"HasBFrames"`
-						Sar            string `json:"Sar" xml:"Sar"`
-						Dar            string `json:"Dar" xml:"Dar"`
-						PixFmt         string `json:"PixFmt" xml:"PixFmt"`
-						Level          string `json:"Level" xml:"Level"`
-						Fps            string `json:"Fps" xml:"Fps"`
-						AvgFPS         string `json:"AvgFPS" xml:"AvgFPS"`
-						Timebase       string `json:"Timebase" xml:"Timebase"`
-						StartTime      string `json:"StartTime" xml:"StartTime"`
-						Duration       string `json:"Duration" xml:"Duration"`
-						Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-						NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-						Lang           string `json:"Lang" xml:"Lang"`
-						Rotate         string `json:"Rotate" xml:"Rotate"`
-						NetworkCost    struct {
-							PreloadTime   string `json:"PreloadTime" xml:"PreloadTime"`
-							CostBandwidth string `json:"CostBandwidth" xml:"CostBandwidth"`
-							AvgBitrate    string `json:"AvgBitrate" xml:"AvgBitrate"`
-						} `json:"NetworkCost" xml:"NetworkCost"`
-					} `json:"VideoStream" xml:"VideoStream"`
-				} `json:"VideoStreamList" xml:"VideoStreamList"`
-				AudioStreamList struct {
-					AudioStream []struct {
-						Index          string `json:"Index" xml:"Index"`
-						CodecName      string `json:"CodecName" xml:"CodecName"`
-						CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-						CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-						CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-						CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-						SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
-						Samplerate     string `json:"Samplerate" xml:"Samplerate"`
-						Channels       string `json:"Channels" xml:"Channels"`
-						ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-						Timebase       string `json:"Timebase" xml:"Timebase"`
-						StartTime      string `json:"StartTime" xml:"StartTime"`
-						Duration       string `json:"Duration" xml:"Duration"`
-						Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-						NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-						Lang           string `json:"Lang" xml:"Lang"`
-					} `json:"AudioStream" xml:"AudioStream"`
-				} `json:"AudioStreamList" xml:"AudioStreamList"`
-				SubtitleStreamList struct {
-					SubtitleStream []struct {
-						Index string `json:"Index" xml:"Index"`
-						Lang  string `json:"Lang" xml:"Lang"`
-					} `json:"SubtitleStream" xml:"SubtitleStream"`
-				} `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
-			} `json:"Streams" xml:"Streams"`
-			Format struct {
-				NumStreams     string `json:"NumStreams" xml:"NumStreams"`
-				NumPrograms    string `json:"NumPrograms" xml:"NumPrograms"`
-				FormatName     string `json:"FormatName" xml:"FormatName"`
-				FormatLongName string `json:"FormatLongName" xml:"FormatLongName"`
-				StartTime      string `json:"StartTime" xml:"StartTime"`
-				Duration       string `json:"Duration" xml:"Duration"`
-				Size           string `json:"Size" xml:"Size"`
-				Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-			} `json:"Format" xml:"Format"`
-		} `json:"Properties" xml:"Properties"`
-		MNSMessageResult struct {
-			MessageId    string `json:"MessageId" xml:"MessageId"`
-			ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-			ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-		} `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	} `json:"MediaInfoJob" xml:"MediaInfoJob"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            MediaInfoJob struct {
+            JobId     string `json:"JobId" xml:"JobId"`
+            UserData     string `json:"UserData" xml:"UserData"`
+            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
+            State     string `json:"State" xml:"State"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            Input struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"Input" xml:"Input"`
+            Properties struct {
+            Width     string `json:"Width" xml:"Width"`
+            Height     string `json:"Height" xml:"Height"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            Duration     string `json:"Duration" xml:"Duration"`
+            Fps     string `json:"Fps" xml:"Fps"`
+            FileSize     string `json:"FileSize" xml:"FileSize"`
+            FileFormat     string `json:"FileFormat" xml:"FileFormat"`
+            Streams struct {
+                VideoStreamList struct {
+                    VideoStream []struct {
+            Index     string `json:"Index" xml:"Index"`
+            CodecName     string `json:"CodecName" xml:"CodecName"`
+            CodecLongName     string `json:"CodecLongName" xml:"CodecLongName"`
+            Profile     string `json:"Profile" xml:"Profile"`
+            CodecTimeBase     string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+            CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
+            CodecTag     string `json:"CodecTag" xml:"CodecTag"`
+            Width     string `json:"Width" xml:"Width"`
+            Height     string `json:"Height" xml:"Height"`
+            HasBFrames     string `json:"HasBFrames" xml:"HasBFrames"`
+            Sar     string `json:"Sar" xml:"Sar"`
+            Dar     string `json:"Dar" xml:"Dar"`
+            PixFmt     string `json:"PixFmt" xml:"PixFmt"`
+            Level     string `json:"Level" xml:"Level"`
+            Fps     string `json:"Fps" xml:"Fps"`
+            AvgFPS     string `json:"AvgFPS" xml:"AvgFPS"`
+            Timebase     string `json:"Timebase" xml:"Timebase"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            Duration     string `json:"Duration" xml:"Duration"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            NumFrames     string `json:"NumFrames" xml:"NumFrames"`
+            Lang     string `json:"Lang" xml:"Lang"`
+            Rotate     string `json:"Rotate" xml:"Rotate"`
+            NetworkCost struct {
+            PreloadTime     string `json:"PreloadTime" xml:"PreloadTime"`
+            CostBandwidth     string `json:"CostBandwidth" xml:"CostBandwidth"`
+            AvgBitrate     string `json:"AvgBitrate" xml:"AvgBitrate"`
+            }  `json:"NetworkCost" xml:"NetworkCost"`
+                    }   `json:"VideoStream" xml:"VideoStream"`
+                } `json:"VideoStreamList" xml:"VideoStreamList"`
+                AudioStreamList struct {
+                    AudioStream []struct {
+            Index     string `json:"Index" xml:"Index"`
+            CodecName     string `json:"CodecName" xml:"CodecName"`
+            CodecTimeBase     string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+            CodecLongName     string `json:"CodecLongName" xml:"CodecLongName"`
+            CodecTagString     string `json:"CodecTagString" xml:"CodecTagString"`
+            CodecTag     string `json:"CodecTag" xml:"CodecTag"`
+            SampleFmt     string `json:"SampleFmt" xml:"SampleFmt"`
+            Samplerate     string `json:"Samplerate" xml:"Samplerate"`
+            Channels     string `json:"Channels" xml:"Channels"`
+            ChannelLayout     string `json:"ChannelLayout" xml:"ChannelLayout"`
+            Timebase     string `json:"Timebase" xml:"Timebase"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            Duration     string `json:"Duration" xml:"Duration"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            NumFrames     string `json:"NumFrames" xml:"NumFrames"`
+            Lang     string `json:"Lang" xml:"Lang"`
+                    }   `json:"AudioStream" xml:"AudioStream"`
+                } `json:"AudioStreamList" xml:"AudioStreamList"`
+                SubtitleStreamList struct {
+                    SubtitleStream []struct {
+            Index     string `json:"Index" xml:"Index"`
+            Lang     string `json:"Lang" xml:"Lang"`
+                    }   `json:"SubtitleStream" xml:"SubtitleStream"`
+                } `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
+            }  `json:"Streams" xml:"Streams"`
+            Format struct {
+            NumStreams     string `json:"NumStreams" xml:"NumStreams"`
+            NumPrograms     string `json:"NumPrograms" xml:"NumPrograms"`
+            FormatName     string `json:"FormatName" xml:"FormatName"`
+            FormatLongName     string `json:"FormatLongName" xml:"FormatLongName"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            Duration     string `json:"Duration" xml:"Duration"`
+            Size     string `json:"Size" xml:"Size"`
+            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
+            }  `json:"Format" xml:"Format"`
+            }  `json:"Properties" xml:"Properties"`
+            MNSMessageResult struct {
+            MessageId     string `json:"MessageId" xml:"MessageId"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
+            }  `json:"MNSMessageResult" xml:"MNSMessageResult"`
+            }  `json:"MediaInfoJob" xml:"MediaInfoJob"`
 }
 
 func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
-	request = &SubmitMediaInfoJobRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "", "")
-	return
+request = &SubmitMediaInfoJobRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "", "")
+return
 }
 
 func CreateSubmitMediaInfoJobResponse() (response *SubmitMediaInfoJobResponse) {
-	response = &SubmitMediaInfoJobResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SubmitMediaInfoJobResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

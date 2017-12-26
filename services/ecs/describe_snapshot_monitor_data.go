@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,85 +17,87 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonitorDataRequest) (response *DescribeSnapshotMonitorDataResponse, err error) {
-	response = CreateDescribeSnapshotMonitorDataResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeSnapshotMonitorDataResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnapshotMonitorDataRequest) (<-chan *DescribeSnapshotMonitorDataResponse, <-chan error) {
-	responseChan := make(chan *DescribeSnapshotMonitorDataResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeSnapshotMonitorData(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeSnapshotMonitorDataResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeSnapshotMonitorData(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeSnapshotMonitorDataRequest, callback func(response *DescribeSnapshotMonitorDataResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeSnapshotMonitorDataResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeSnapshotMonitorData(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeSnapshotMonitorDataRequest, callback func(response *DescribeSnapshotMonitorDataResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeSnapshotMonitorDataResponse
+var err error
+defer close(result)
+response, err = client.DescribeSnapshotMonitorData(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeSnapshotMonitorDataRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Period  string `position:"Query" name:"Period"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeSnapshotMonitorDataResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	MonitorData struct {
-		DataPoint []struct {
-			TimeStamp string          `json:"TimeStamp" xml:"TimeStamp"`
-			Size      request.Integer `json:"Size" xml:"Size"`
-		} `json:"DataPoint" xml:"DataPoint"`
-	} `json:"MonitorData" xml:"MonitorData"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                MonitorData struct {
+                    DataPoint []struct {
+            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+            Size     requests.Integer `json:"Size" xml:"Size"`
+                    }   `json:"DataPoint" xml:"DataPoint"`
+                } `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {
-	request = &DescribeSnapshotMonitorDataRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "", "")
-	return
+request = &DescribeSnapshotMonitorDataRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "", "")
+return
 }
 
 func CreateDescribeSnapshotMonitorDataResponse() (response *DescribeSnapshotMonitorDataResponse) {
-	response = &DescribeSnapshotMonitorDataResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeSnapshotMonitorDataResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

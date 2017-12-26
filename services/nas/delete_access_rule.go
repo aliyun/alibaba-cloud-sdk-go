@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteAccessRule(request *DeleteAccessRuleRequest) (response *DeleteAccessRuleResponse, err error) {
-	response = CreateDeleteAccessRuleResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteAccessRuleResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest) (<-chan *DeleteAccessRuleResponse, <-chan error) {
-	responseChan := make(chan *DeleteAccessRuleResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteAccessRule(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteAccessRuleResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteAccessRule(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteAccessRuleWithCallback(request *DeleteAccessRuleRequest, callback func(response *DeleteAccessRuleResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteAccessRuleResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteAccessRule(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteAccessRuleWithCallback(request *DeleteAccessRuleRequest, callback func(response *DeleteAccessRuleResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteAccessRuleResponse
+var err error
+defer close(result)
+response, err = client.DeleteAccessRule(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteAccessRuleRequest struct {
-	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	AccessRuleId    string `position:"Query" name:"AccessRuleId"`
+*requests.RpcRequest
+                AccessGroupName  string `position:"Query" name:"AccessGroupName"`
+                AccessRuleId  string `position:"Query" name:"AccessRuleId"`
 }
 
+
 type DeleteAccessRuleResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
-	request = &DeleteAccessRuleRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessRule", "", "")
-	return
+request = &DeleteAccessRuleRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessRule", "", "")
+return
 }
 
 func CreateDeleteAccessRuleResponse() (response *DeleteAccessRuleResponse) {
-	response = &DeleteAccessRuleResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteAccessRuleResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

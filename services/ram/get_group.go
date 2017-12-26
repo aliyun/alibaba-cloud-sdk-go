@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetGroup(request *GetGroupRequest) (response *GetGroupResponse, err error) {
-	response = CreateGetGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGroupResponse, <-chan error) {
-	responseChan := make(chan *GetGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetGroupWithCallback(request *GetGroupRequest, callback func(response *GetGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.GetGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetGroupWithCallback(request *GetGroupRequest, callback func(response *GetGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetGroupResponse
+var err error
+defer close(result)
+response, err = client.GetGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetGroupRequest struct {
-	*requests.RpcRequest
-	GroupName string `position:"Query" name:"GroupName"`
+*requests.RpcRequest
+                GroupName  string `position:"Query" name:"GroupName"`
 }
 
+
 type GetGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Group     struct {
-		GroupName  string `json:"GroupName" xml:"GroupName"`
-		Comments   string `json:"Comments" xml:"Comments"`
-		CreateDate string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate string `json:"UpdateDate" xml:"UpdateDate"`
-	} `json:"Group" xml:"Group"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Group struct {
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+            Comments     string `json:"Comments" xml:"Comments"`
+            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
+            UpdateDate     string `json:"UpdateDate" xml:"UpdateDate"`
+            }  `json:"Group" xml:"Group"`
 }
 
 func CreateGetGroupRequest() (request *GetGroupRequest) {
-	request = &GetGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "GetGroup", "", "")
-	return
+request = &GetGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "GetGroup", "", "")
+return
 }
 
 func CreateGetGroupResponse() (response *GetGroupResponse) {
-	response = &GetGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

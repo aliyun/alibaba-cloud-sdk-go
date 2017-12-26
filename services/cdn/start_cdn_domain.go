@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,75 +17,77 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) StartCdnDomain(request *StartCdnDomainRequest) (response *StartCdnDomainResponse, err error) {
-	response = CreateStartCdnDomainResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateStartCdnDomainResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-chan *StartCdnDomainResponse, <-chan error) {
-	responseChan := make(chan *StartCdnDomainResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.StartCdnDomain(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *StartCdnDomainResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.StartCdnDomain(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest, callback func(response *StartCdnDomainResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *StartCdnDomainResponse
-		var err error
-		defer close(result)
-		response, err = client.StartCdnDomain(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest, callback func(response *StartCdnDomainResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *StartCdnDomainResponse
+var err error
+defer close(result)
+response, err = client.StartCdnDomain(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type StartCdnDomainRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type StartCdnDomainResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateStartCdnDomainRequest() (request *StartCdnDomainRequest) {
-	request = &StartCdnDomainRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "StartCdnDomain", "", "")
-	return
+request = &StartCdnDomainRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "StartCdnDomain", "", "")
+return
 }
 
 func CreateStartCdnDomainResponse() (response *StartCdnDomainResponse) {
-	response = &StartCdnDomainResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &StartCdnDomainResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

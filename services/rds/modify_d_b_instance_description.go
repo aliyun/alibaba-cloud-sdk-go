@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDBInstanceDescription(request *ModifyDBInstanceDescriptionRequest) (response *ModifyDBInstanceDescriptionResponse, err error) {
-	response = CreateModifyDBInstanceDescriptionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyDBInstanceDescriptionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyDBInstanceDescriptionWithChan(request *ModifyDBInstanceDescriptionRequest) (<-chan *ModifyDBInstanceDescriptionResponse, <-chan error) {
-	responseChan := make(chan *ModifyDBInstanceDescriptionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyDBInstanceDescription(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyDBInstanceDescriptionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyDBInstanceDescription(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBInstanceDescriptionRequest, callback func(response *ModifyDBInstanceDescriptionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyDBInstanceDescriptionResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyDBInstanceDescription(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBInstanceDescriptionRequest, callback func(response *ModifyDBInstanceDescriptionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyDBInstanceDescriptionResponse
+var err error
+defer close(result)
+response, err = client.ModifyDBInstanceDescription(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyDBInstanceDescriptionRequest struct {
-	*requests.RpcRequest
-	DBInstanceId          string `position:"Query" name:"DBInstanceId"`
-	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
-	ClientToken           string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                DBInstanceDescription  string `position:"Query" name:"DBInstanceDescription"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyDBInstanceDescriptionResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescriptionRequest) {
-	request = &ModifyDBInstanceDescriptionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDescription", "", "")
-	return
+request = &ModifyDBInstanceDescriptionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDescription", "", "")
+return
 }
 
 func CreateModifyDBInstanceDescriptionResponse() (response *ModifyDBInstanceDescriptionResponse) {
-	response = &ModifyDBInstanceDescriptionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyDBInstanceDescriptionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

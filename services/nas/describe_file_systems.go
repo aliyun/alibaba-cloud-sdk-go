@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,99 +17,101 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeFileSystems(request *DescribeFileSystemsRequest) (response *DescribeFileSystemsResponse, err error) {
-	response = CreateDescribeFileSystemsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeFileSystemsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeFileSystemsWithChan(request *DescribeFileSystemsRequest) (<-chan *DescribeFileSystemsResponse, <-chan error) {
-	responseChan := make(chan *DescribeFileSystemsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeFileSystems(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeFileSystemsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeFileSystems(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSystemsRequest, callback func(response *DescribeFileSystemsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeFileSystemsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeFileSystems(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSystemsRequest, callback func(response *DescribeFileSystemsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeFileSystemsResponse
+var err error
+defer close(result)
+response, err = client.DescribeFileSystems(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeFileSystemsRequest struct {
-	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	FileSystemId string `position:"Query" name:"FileSystemId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                FileSystemId  string `position:"Query" name:"FileSystemId"`
 }
 
+
 type DescribeFileSystemsResponse struct {
-	*responses.BaseResponse
-	RequestId   string          `json:"RequestId" xml:"RequestId"`
-	TotalCount  request.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageSize    request.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber  request.Integer `json:"PageNumber" xml:"PageNumber"`
-	FileSystems struct {
-		FileSystem []struct {
-			FileSystemId string          `json:"FileSystemId" xml:"FileSystemId"`
-			Destription  string          `json:"Destription" xml:"Destription"`
-			CreateTime   string          `json:"CreateTime" xml:"CreateTime"`
-			RegionId     string          `json:"RegionId" xml:"RegionId"`
-			ProtocolType string          `json:"ProtocolType" xml:"ProtocolType"`
-			StorageType  string          `json:"StorageType" xml:"StorageType"`
-			MeteredSize  request.Integer `json:"MeteredSize" xml:"MeteredSize"`
-			MountTargets struct {
-				MountTarget []struct {
-					MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-				} `json:"MountTarget" xml:"MountTarget"`
-			} `json:"MountTargets" xml:"MountTargets"`
-			Packages struct {
-				Package []struct {
-					PackageId string `json:"PackageId" xml:"PackageId"`
-				} `json:"Package" xml:"Package"`
-			} `json:"Packages" xml:"Packages"`
-		} `json:"FileSystem" xml:"FileSystem"`
-	} `json:"FileSystems" xml:"FileSystems"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+                FileSystems struct {
+                    FileSystem []struct {
+            FileSystemId     string `json:"FileSystemId" xml:"FileSystemId"`
+            Destription     string `json:"Destription" xml:"Destription"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            ProtocolType     string `json:"ProtocolType" xml:"ProtocolType"`
+            StorageType     string `json:"StorageType" xml:"StorageType"`
+            MeteredSize     requests.Integer `json:"MeteredSize" xml:"MeteredSize"`
+                MountTargets struct {
+                    MountTarget []struct {
+            MountTargetDomain     string `json:"MountTargetDomain" xml:"MountTargetDomain"`
+                    }   `json:"MountTarget" xml:"MountTarget"`
+                } `json:"MountTargets" xml:"MountTargets"`
+                Packages struct {
+                    Package []struct {
+            PackageId     string `json:"PackageId" xml:"PackageId"`
+                    }   `json:"Package" xml:"Package"`
+                } `json:"Packages" xml:"Packages"`
+                    }   `json:"FileSystem" xml:"FileSystem"`
+                } `json:"FileSystems" xml:"FileSystems"`
 }
 
 func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
-	request = &DescribeFileSystemsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "", "")
-	return
+request = &DescribeFileSystemsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "", "")
+return
 }
 
 func CreateDescribeFileSystemsResponse() (response *DescribeFileSystemsResponse) {
-	response = &DescribeFileSystemsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeFileSystemsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

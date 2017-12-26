@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetPageCompressConfig(request *SetPageCompressConfigRequest) (response *SetPageCompressConfigResponse, err error) {
-	response = CreateSetPageCompressConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetPageCompressConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConfigRequest) (<-chan *SetPageCompressConfigResponse, <-chan error) {
-	responseChan := make(chan *SetPageCompressConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetPageCompressConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetPageCompressConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetPageCompressConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompressConfigRequest, callback func(response *SetPageCompressConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetPageCompressConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetPageCompressConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompressConfigRequest, callback func(response *SetPageCompressConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetPageCompressConfigResponse
+var err error
+defer close(result)
+response, err = client.SetPageCompressConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetPageCompressConfigRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	Enable        string `position:"Query" name:"Enable"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                Enable  string `position:"Query" name:"Enable"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetPageCompressConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetPageCompressConfigRequest() (request *SetPageCompressConfigRequest) {
-	request = &SetPageCompressConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetPageCompressConfig", "", "")
-	return
+request = &SetPageCompressConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetPageCompressConfig", "", "")
+return
 }
 
 func CreateSetPageCompressConfigResponse() (response *SetPageCompressConfigResponse) {
-	response = &SetPageCompressConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetPageCompressConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,75 +17,77 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PutEvent(request *PutEventRequest) (response *PutEventResponse, err error) {
-	response = CreatePutEventResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreatePutEventResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) PutEventWithChan(request *PutEventRequest) (<-chan *PutEventResponse, <-chan error) {
-	responseChan := make(chan *PutEventResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.PutEvent(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *PutEventResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.PutEvent(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) PutEventWithCallback(request *PutEventRequest, callback func(response *PutEventResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *PutEventResponse
-		var err error
-		defer close(result)
-		response, err = client.PutEvent(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) PutEventWithCallback(request *PutEventRequest, callback func(response *PutEventResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *PutEventResponse
+var err error
+defer close(result)
+response, err = client.PutEvent(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type PutEventRequest struct {
-	*requests.RpcRequest
-	EventInfo string `position:"Query" name:"EventInfo"`
+*requests.RpcRequest
+                EventInfo  string `position:"Query" name:"EventInfo"`
 }
 
+
 type PutEventResponse struct {
-	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Data     string `json:"Data" xml:"Data"`
 }
 
 func CreatePutEventRequest() (request *PutEventRequest) {
-	request = &PutEventRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "PutEvent", "", "")
-	return
+request = &PutEventRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "PutEvent", "", "")
+return
 }
 
 func CreatePutEventResponse() (response *PutEventResponse) {
-	response = &PutEventResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &PutEventResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyRouteTableAttributes(request *ModifyRouteTableAttributesRequest) (response *ModifyRouteTableAttributesResponse, err error) {
-	response = CreateModifyRouteTableAttributesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyRouteTableAttributesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyRouteTableAttributesWithChan(request *ModifyRouteTableAttributesRequest) (<-chan *ModifyRouteTableAttributesResponse, <-chan error) {
-	responseChan := make(chan *ModifyRouteTableAttributesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyRouteTableAttributes(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyRouteTableAttributesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyRouteTableAttributes(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRouteTableAttributesRequest, callback func(response *ModifyRouteTableAttributesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyRouteTableAttributesResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyRouteTableAttributes(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRouteTableAttributesRequest, callback func(response *ModifyRouteTableAttributesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyRouteTableAttributesResponse
+var err error
+defer close(result)
+response, err = client.ModifyRouteTableAttributes(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyRouteTableAttributesRequest struct {
-	*requests.RpcRequest
-	ResourceUid          string `position:"Query" name:"ResourceUid"`
-	KbpsBandwidth        string `position:"Query" name:"KbpsBandwidth"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceBid          string `position:"Query" name:"ResourceBid"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string `position:"Query" name:"RouteTableName"`
-	RouteTableId         string `position:"Query" name:"RouteTableId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
+*requests.RpcRequest
+                ResourceUid  string `position:"Query" name:"ResourceUid"`
+                KbpsBandwidth  string `position:"Query" name:"KbpsBandwidth"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceBid  string `position:"Query" name:"ResourceBid"`
+                Description  string `position:"Query" name:"Description"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                RouteTableName  string `position:"Query" name:"RouteTableName"`
+                RouteTableId  string `position:"Query" name:"RouteTableId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Bandwidth  string `position:"Query" name:"Bandwidth"`
 }
 
+
 type ModifyRouteTableAttributesResponse struct {
-	*responses.BaseResponse
-	RequestId string          `json:"RequestId" xml:"RequestId"`
-	Code      string          `json:"Code" xml:"Code"`
-	Message   string          `json:"Message" xml:"Message"`
-	Success   request.Boolean `json:"Success" xml:"Success"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            Success     requests.Boolean `json:"Success" xml:"Success"`
 }
 
 func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttributesRequest) {
-	request = &ModifyRouteTableAttributesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "", "")
-	return
+request = &ModifyRouteTableAttributesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "", "")
+return
 }
 
 func CreateModifyRouteTableAttributesResponse() (response *ModifyRouteTableAttributesResponse) {
-	response = &ModifyRouteTableAttributesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyRouteTableAttributesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

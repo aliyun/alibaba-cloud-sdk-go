@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeStatusList(request *NodeStatusListRequest) (response *NodeStatusListResponse, err error) {
-	response = CreateNodeStatusListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateNodeStatusListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) NodeStatusListWithChan(request *NodeStatusListRequest) (<-chan *NodeStatusListResponse, <-chan error) {
-	responseChan := make(chan *NodeStatusListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.NodeStatusList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *NodeStatusListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.NodeStatusList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) NodeStatusListWithCallback(request *NodeStatusListRequest, callback func(response *NodeStatusListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *NodeStatusListResponse
-		var err error
-		defer close(result)
-		response, err = client.NodeStatusList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) NodeStatusListWithCallback(request *NodeStatusListRequest, callback func(response *NodeStatusListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *NodeStatusListResponse
+var err error
+defer close(result)
+response, err = client.NodeStatusList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type NodeStatusListRequest struct {
-	*requests.RpcRequest
-	InstanceIds string `position:"Query" name:"InstanceIds"`
+*requests.RpcRequest
+                InstanceIds  string `position:"Query" name:"InstanceIds"`
 }
 
+
 type NodeStatusListResponse struct {
-	*responses.BaseResponse
-	ErrorCode      request.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success        request.Boolean `json:"Success" xml:"Success"`
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	NodeStatusList struct {
-		NodeStatus []struct {
-			InstanceId  string          `json:"InstanceId" xml:"InstanceId"`
-			AutoInstall request.Boolean `json:"AutoInstall" xml:"AutoInstall"`
-			Status      string          `json:"Status" xml:"Status"`
-		} `json:"NodeStatus" xml:"NodeStatus"`
-	} `json:"NodeStatusList" xml:"NodeStatusList"`
+*responses.BaseResponse
+            ErrorCode     requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            Success     requests.Boolean `json:"Success" xml:"Success"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NodeStatusList struct {
+                    NodeStatus []struct {
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            AutoInstall     requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
+            Status     string `json:"Status" xml:"Status"`
+                    }   `json:"NodeStatus" xml:"NodeStatus"`
+                } `json:"NodeStatusList" xml:"NodeStatusList"`
 }
 
 func CreateNodeStatusListRequest() (request *NodeStatusListRequest) {
-	request = &NodeStatusListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeStatusList", "", "")
-	return
+request = &NodeStatusListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "NodeStatusList", "", "")
+return
 }
 
 func CreateNodeStatusListResponse() (response *NodeStatusListResponse) {
-	response = &NodeStatusListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &NodeStatusListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

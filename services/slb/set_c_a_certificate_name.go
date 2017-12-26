@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetCACertificateName(request *SetCACertificateNameRequest) (response *SetCACertificateNameResponse, err error) {
-	response = CreateSetCACertificateNameResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetCACertificateNameResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateNameRequest) (<-chan *SetCACertificateNameResponse, <-chan error) {
-	responseChan := make(chan *SetCACertificateNameResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetCACertificateName(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetCACertificateNameResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetCACertificateName(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificateNameRequest, callback func(response *SetCACertificateNameResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetCACertificateNameResponse
-		var err error
-		defer close(result)
-		response, err = client.SetCACertificateName(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificateNameRequest, callback func(response *SetCACertificateNameResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetCACertificateNameResponse
+var err error
+defer close(result)
+response, err = client.SetCACertificateName(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetCACertificateNameRequest struct {
-	*requests.RpcRequest
-	CACertificateId      string `position:"Query" name:"CACertificateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	CACertificateName    string `position:"Query" name:"CACertificateName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                CACertificateId  string `position:"Query" name:"CACertificateId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                CACertificateName  string `position:"Query" name:"CACertificateName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type SetCACertificateNameResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) {
-	request = &SetCACertificateNameRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetCACertificateName", "", "")
-	return
+request = &SetCACertificateNameRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "SetCACertificateName", "", "")
+return
 }
 
 func CreateSetCACertificateNameResponse() (response *SetCACertificateNameResponse) {
-	response = &SetCACertificateNameResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetCACertificateNameResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

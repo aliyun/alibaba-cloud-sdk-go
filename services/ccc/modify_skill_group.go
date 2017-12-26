@@ -1,3 +1,4 @@
+
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifySkillGroup(request *ModifySkillGroupRequest) (response *ModifySkillGroupResponse, err error) {
-	response = CreateModifySkillGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifySkillGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest) (<-chan *ModifySkillGroupResponse, <-chan error) {
-	responseChan := make(chan *ModifySkillGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifySkillGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifySkillGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifySkillGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequest, callback func(response *ModifySkillGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifySkillGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifySkillGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequest, callback func(response *ModifySkillGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifySkillGroupResponse
+var err error
+defer close(result)
+response, err = client.ModifySkillGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifySkillGroupRequest struct {
-	*requests.RpcRequest
-	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	Description           string    `position:"Query" name:"Description"`
-	SkillGroupId          string    `position:"Query" name:"SkillGroupId"`
-	Name                  string    `position:"Query" name:"Name"`
-	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
-	InstanceId            string    `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                SkillLevel  *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
+                Description  string `position:"Query" name:"Description"`
+                SkillGroupId  string `position:"Query" name:"SkillGroupId"`
+                Name  string `position:"Query" name:"Name"`
+                UserId  *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+                OutboundPhoneNumberId  *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type ModifySkillGroupResponse struct {
-	*responses.BaseResponse
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Success        request.Boolean `json:"Success" xml:"Success"`
-	Code           string          `json:"Code" xml:"Code"`
-	Message        string          `json:"Message" xml:"Message"`
-	HttpStatusCode request.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     requests.Boolean `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            HttpStatusCode     requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
-	request = &ModifySkillGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ModifySkillGroup", "", "")
-	return
+request = &ModifySkillGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CCC", "2017-07-05", "ModifySkillGroup", "", "")
+return
 }
 
 func CreateModifySkillGroupResponse() (response *ModifySkillGroupResponse) {
-	response = &ModifySkillGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifySkillGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

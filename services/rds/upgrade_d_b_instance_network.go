@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpgradeDBInstanceNetwork(request *UpgradeDBInstanceNetworkRequest) (response *UpgradeDBInstanceNetworkResponse, err error) {
-	response = CreateUpgradeDBInstanceNetworkResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUpgradeDBInstanceNetworkResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UpgradeDBInstanceNetworkWithChan(request *UpgradeDBInstanceNetworkRequest) (<-chan *UpgradeDBInstanceNetworkResponse, <-chan error) {
-	responseChan := make(chan *UpgradeDBInstanceNetworkResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UpgradeDBInstanceNetwork(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UpgradeDBInstanceNetworkResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UpgradeDBInstanceNetwork(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UpgradeDBInstanceNetworkWithCallback(request *UpgradeDBInstanceNetworkRequest, callback func(response *UpgradeDBInstanceNetworkResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UpgradeDBInstanceNetworkResponse
-		var err error
-		defer close(result)
-		response, err = client.UpgradeDBInstanceNetwork(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UpgradeDBInstanceNetworkWithCallback(request *UpgradeDBInstanceNetworkRequest, callback func(response *UpgradeDBInstanceNetworkResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UpgradeDBInstanceNetworkResponse
+var err error
+defer close(result)
+response, err = client.UpgradeDBInstanceNetwork(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UpgradeDBInstanceNetworkRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ConnectionString     string `position:"Query" name:"ConnectionString"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ConnectionString  string `position:"Query" name:"ConnectionString"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type UpgradeDBInstanceNetworkResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
 }
 
 func CreateUpgradeDBInstanceNetworkRequest() (request *UpgradeDBInstanceNetworkRequest) {
-	request = &UpgradeDBInstanceNetworkRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetwork", "", "")
-	return
+request = &UpgradeDBInstanceNetworkRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetwork", "", "")
+return
 }
 
 func CreateUpgradeDBInstanceNetworkResponse() (response *UpgradeDBInstanceNetworkResponse) {
-	response = &UpgradeDBInstanceNetworkResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UpgradeDBInstanceNetworkResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

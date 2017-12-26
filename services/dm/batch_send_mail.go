@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) BatchSendMail(request *BatchSendMailRequest) (response *BatchSendMailResponse, err error) {
-	response = CreateBatchSendMailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateBatchSendMailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-chan *BatchSendMailResponse, <-chan error) {
-	responseChan := make(chan *BatchSendMailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.BatchSendMail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *BatchSendMailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.BatchSendMail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, callback func(response *BatchSendMailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *BatchSendMailResponse
-		var err error
-		defer close(result)
-		response, err = client.BatchSendMail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, callback func(response *BatchSendMailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *BatchSendMailResponse
+var err error
+defer close(result)
+response, err = client.BatchSendMail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type BatchSendMailRequest struct {
-	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	TemplateName         string `position:"Query" name:"TemplateName"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReplyAddressAlias    string `position:"Query" name:"ReplyAddressAlias"`
-	ClickTrace           string `position:"Query" name:"ClickTrace"`
-	ReceiversName        string `position:"Query" name:"ReceiversName"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+*requests.RpcRequest
+                AddressType  string `position:"Query" name:"AddressType"`
+                TemplateName  string `position:"Query" name:"TemplateName"`
+                AccountName  string `position:"Query" name:"AccountName"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ReplyAddressAlias  string `position:"Query" name:"ReplyAddressAlias"`
+                ClickTrace  string `position:"Query" name:"ClickTrace"`
+                ReceiversName  string `position:"Query" name:"ReceiversName"`
+                ReplyAddress  string `position:"Query" name:"ReplyAddress"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                TagName  string `position:"Query" name:"TagName"`
 }
 
+
 type BatchSendMailResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	EnvId     string `json:"EnvId" xml:"EnvId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
 func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
-	request = &BatchSendMailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "BatchSendMail", "", "")
-	return
+request = &BatchSendMailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "BatchSendMail", "", "")
+return
 }
 
 func CreateBatchSendMailResponse() (response *BatchSendMailResponse) {
-	response = &BatchSendMailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &BatchSendMailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

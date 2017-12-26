@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetFaceCover(request *SetFaceCoverRequest) (response *SetFaceCoverResponse, err error) {
-	response = CreateSetFaceCoverResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetFaceCoverResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan *SetFaceCoverResponse, <-chan error) {
-	responseChan := make(chan *SetFaceCoverResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetFaceCover(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetFaceCoverResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetFaceCover(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, callback func(response *SetFaceCoverResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetFaceCoverResponse
-		var err error
-		defer close(result)
-		response, err = client.SetFaceCover(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, callback func(response *SetFaceCoverResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetFaceCoverResponse
+var err error
+defer close(result)
+response, err = client.SetFaceCover(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetFaceCoverRequest struct {
-	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	FaceId    string `position:"Query" name:"FaceId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
+*requests.RpcRequest
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                FaceId  string `position:"Query" name:"FaceId"`
+                PhotoId  string `position:"Query" name:"PhotoId"`
 }
 
+
 type SetFaceCoverResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
-	request = &SetFaceCoverRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "", "")
-	return
+request = &SetFaceCoverRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "", "")
+return
 }
 
 func CreateSetFaceCoverResponse() (response *SetFaceCoverResponse) {
-	response = &SetFaceCoverResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetFaceCoverResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

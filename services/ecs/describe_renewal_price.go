@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,96 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRenewalPrice(request *DescribeRenewalPriceRequest) (response *DescribeRenewalPriceResponse, err error) {
-	response = CreateDescribeRenewalPriceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeRenewalPriceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeRenewalPriceWithChan(request *DescribeRenewalPriceRequest) (<-chan *DescribeRenewalPriceResponse, <-chan error) {
-	responseChan := make(chan *DescribeRenewalPriceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeRenewalPrice(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeRenewalPriceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeRenewalPrice(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalPriceRequest, callback func(response *DescribeRenewalPriceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeRenewalPriceResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeRenewalPrice(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalPriceRequest, callback func(response *DescribeRenewalPriceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeRenewalPriceResponse
+var err error
+defer close(result)
+response, err = client.DescribeRenewalPrice(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeRenewalPriceRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	PriceUnit            string `position:"Query" name:"PriceUnit"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Period               string `position:"Query" name:"Period"`
-	ResourceId           string `position:"Query" name:"ResourceId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceType  string `position:"Query" name:"ResourceType"`
+                PriceUnit  string `position:"Query" name:"PriceUnit"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                Period  string `position:"Query" name:"Period"`
+                ResourceId  string `position:"Query" name:"ResourceId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeRenewalPriceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Price struct {
-			OriginalPrice request.Float `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice request.Float `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    request.Float `json:"TradePrice" xml:"TradePrice"`
-			Currency      string        `json:"Currency" xml:"Currency"`
-		} `json:"Price" xml:"Price"`
-		Rules struct {
-			Rule []struct {
-				RuleId      request.Integer `json:"RuleId" xml:"RuleId"`
-				Description string          `json:"Description" xml:"Description"`
-			} `json:"Rule" xml:"Rule"`
-		} `json:"Rules" xml:"Rules"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PriceInfo struct {
+            Price struct {
+            OriginalPrice     requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
+            DiscountPrice     requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
+            TradePrice     requests.Float `json:"TradePrice" xml:"TradePrice"`
+            Currency     string `json:"Currency" xml:"Currency"`
+            }  `json:"Price" xml:"Price"`
+                Rules struct {
+                    Rule []struct {
+            RuleId     requests.Integer `json:"RuleId" xml:"RuleId"`
+            Description     string `json:"Description" xml:"Description"`
+                    }   `json:"Rule" xml:"Rule"`
+                } `json:"Rules" xml:"Rules"`
+            }  `json:"PriceInfo" xml:"PriceInfo"`
 }
 
 func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {
-	request = &DescribeRenewalPriceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "", "")
-	return
+request = &DescribeRenewalPriceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "", "")
+return
 }
 
 func CreateDescribeRenewalPriceResponse() (response *DescribeRenewalPriceResponse) {
-	response = &DescribeRenewalPriceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeRenewalPriceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

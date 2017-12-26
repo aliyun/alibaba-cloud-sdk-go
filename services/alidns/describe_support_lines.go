@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSupportLines(request *DescribeSupportLinesRequest) (response *DescribeSupportLinesResponse, err error) {
-	response = CreateDescribeSupportLinesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeSupportLinesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLinesRequest) (<-chan *DescribeSupportLinesResponse, <-chan error) {
-	responseChan := make(chan *DescribeSupportLinesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeSupportLines(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeSupportLinesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeSupportLines(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportLinesRequest, callback func(response *DescribeSupportLinesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeSupportLinesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeSupportLines(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportLinesRequest, callback func(response *DescribeSupportLinesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeSupportLinesResponse
+var err error
+defer close(result)
+response, err = client.DescribeSupportLines(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeSupportLinesRequest struct {
-	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DescribeSupportLinesResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RecordLines struct {
-		RecordLine []struct {
-			LineCode        string `json:"LineCode" xml:"LineCode"`
-			FatherCode      string `json:"FatherCode" xml:"FatherCode"`
-			LineName        string `json:"LineName" xml:"LineName"`
-			LineDisplayName string `json:"LineDisplayName" xml:"LineDisplayName"`
-		} `json:"RecordLine" xml:"RecordLine"`
-	} `json:"RecordLines" xml:"RecordLines"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                RecordLines struct {
+                    RecordLine []struct {
+            LineCode     string `json:"LineCode" xml:"LineCode"`
+            FatherCode     string `json:"FatherCode" xml:"FatherCode"`
+            LineName     string `json:"LineName" xml:"LineName"`
+            LineDisplayName     string `json:"LineDisplayName" xml:"LineDisplayName"`
+                    }   `json:"RecordLine" xml:"RecordLine"`
+                } `json:"RecordLines" xml:"RecordLines"`
 }
 
 func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {
-	request = &DescribeSupportLinesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSupportLines", "", "")
-	return
+request = &DescribeSupportLinesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSupportLines", "", "")
+return
 }
 
 func CreateDescribeSupportLinesResponse() (response *DescribeSupportLinesResponse) {
-	response = &DescribeSupportLinesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeSupportLinesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

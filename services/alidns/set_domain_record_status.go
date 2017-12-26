@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetDomainRecordStatus(request *SetDomainRecordStatusRequest) (response *SetDomainRecordStatusResponse, err error) {
-	response = CreateSetDomainRecordStatusResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetDomainRecordStatusResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetDomainRecordStatusWithChan(request *SetDomainRecordStatusRequest) (<-chan *SetDomainRecordStatusResponse, <-chan error) {
-	responseChan := make(chan *SetDomainRecordStatusResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetDomainRecordStatus(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetDomainRecordStatusResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetDomainRecordStatus(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetDomainRecordStatusWithCallback(request *SetDomainRecordStatusRequest, callback func(response *SetDomainRecordStatusResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetDomainRecordStatusResponse
-		var err error
-		defer close(result)
-		response, err = client.SetDomainRecordStatus(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetDomainRecordStatusWithCallback(request *SetDomainRecordStatusRequest, callback func(response *SetDomainRecordStatusResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetDomainRecordStatusResponse
+var err error
+defer close(result)
+response, err = client.SetDomainRecordStatus(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetDomainRecordStatusRequest struct {
-	*requests.RpcRequest
-	Status       string `position:"Query" name:"Status"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	RecordId     string `position:"Query" name:"RecordId"`
+*requests.RpcRequest
+                Status  string `position:"Query" name:"Status"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
+                RecordId  string `position:"Query" name:"RecordId"`
 }
 
+
 type SetDomainRecordStatusResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	RecordId  string `json:"RecordId" xml:"RecordId"`
-	Status    string `json:"Status" xml:"Status"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            RecordId     string `json:"RecordId" xml:"RecordId"`
+            Status     string `json:"Status" xml:"Status"`
 }
 
 func CreateSetDomainRecordStatusRequest() (request *SetDomainRecordStatusRequest) {
-	request = &SetDomainRecordStatusRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDomainRecordStatus", "", "")
-	return
+request = &SetDomainRecordStatusRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "SetDomainRecordStatus", "", "")
+return
 }
 
 func CreateSetDomainRecordStatusResponse() (response *SetDomainRecordStatusResponse) {
-	response = &SetDomainRecordStatusResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetDomainRecordStatusResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

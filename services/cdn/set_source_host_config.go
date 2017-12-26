@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetSourceHostConfig(request *SetSourceHostConfigRequest) (response *SetSourceHostConfigResponse, err error) {
-	response = CreateSetSourceHostConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetSourceHostConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRequest) (<-chan *SetSourceHostConfigResponse, <-chan error) {
-	responseChan := make(chan *SetSourceHostConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetSourceHostConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetSourceHostConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetSourceHostConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConfigRequest, callback func(response *SetSourceHostConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetSourceHostConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetSourceHostConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConfigRequest, callback func(response *SetSourceHostConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetSourceHostConfigResponse
+var err error
+defer close(result)
+response, err = client.SetSourceHostConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetSourceHostConfigRequest struct {
-	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	BackSrcDomain string `position:"Query" name:"BackSrcDomain"`
-	Enable        string `position:"Query" name:"Enable"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                BackSrcDomain  string `position:"Query" name:"BackSrcDomain"`
+                Enable  string `position:"Query" name:"Enable"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetSourceHostConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
-	request = &SetSourceHostConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetSourceHostConfig", "", "")
-	return
+request = &SetSourceHostConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetSourceHostConfig", "", "")
+return
 }
 
 func CreateSetSourceHostConfigResponse() (response *SetSourceHostConfigResponse) {
-	response = &SetSourceHostConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetSourceHostConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

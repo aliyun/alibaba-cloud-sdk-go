@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTaskResponse, err error) {
-	response = CreateCancelTaskResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCancelTaskResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *CancelTaskResponse, <-chan error) {
-	responseChan := make(chan *CancelTaskResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CancelTask(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CancelTaskResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CancelTask(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CancelTaskResponse
-		var err error
-		defer close(result)
-		response, err = client.CancelTask(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CancelTaskResponse
+var err error
+defer close(result)
+response, err = client.CancelTask(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CancelTaskRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	TaskId               string `position:"Query" name:"TaskId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                TaskId  string `position:"Query" name:"TaskId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type CancelTaskResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCancelTaskRequest() (request *CancelTaskRequest) {
-	request = &CancelTaskRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "", "")
-	return
+request = &CancelTaskRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "", "")
+return
 }
 
 func CreateCancelTaskResponse() (response *CancelTaskResponse) {
-	response = &CancelTaskResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CancelTaskResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

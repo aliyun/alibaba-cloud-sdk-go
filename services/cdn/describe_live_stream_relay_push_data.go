@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamRelayPushData(request *DescribeLiveStreamRelayPushDataRequest) (response *DescribeLiveStreamRelayPushDataResponse, err error) {
-	response = CreateDescribeLiveStreamRelayPushDataResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamRelayPushDataResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeLiveStreamRelayPushDataRequest) (<-chan *DescribeLiveStreamRelayPushDataResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamRelayPushDataResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamRelayPushData(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamRelayPushDataResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamRelayPushData(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *DescribeLiveStreamRelayPushDataRequest, callback func(response *DescribeLiveStreamRelayPushDataResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamRelayPushDataResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamRelayPushData(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *DescribeLiveStreamRelayPushDataRequest, callback func(response *DescribeLiveStreamRelayPushDataResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamRelayPushDataResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamRelayPushData(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamRelayPushDataRequest struct {
-	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	RelayDomain   string `position:"Query" name:"RelayDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                RelayDomain  string `position:"Query" name:"RelayDomain"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamRelayPushDataResponse struct {
-	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	RelayPushDetailModelList struct {
-		RelayPushDetailModel []struct {
-			Time          string        `json:"Time" xml:"Time"`
-			Stream        string        `json:"Stream" xml:"Stream"`
-			FrameRate     request.Float `json:"FrameRate" xml:"FrameRate"`
-			BitRate       request.Float `json:"BitRate" xml:"BitRate"`
-			FrameLossRate request.Float `json:"FrameLossRate" xml:"FrameLossRate"`
-			ServerAddr    string        `json:"ServerAddr" xml:"ServerAddr"`
-			ClientAddr    string        `json:"ClientAddr" xml:"ClientAddr"`
-		} `json:"RelayPushDetailModel" xml:"RelayPushDetailModel"`
-	} `json:"RelayPushDetailModelList" xml:"RelayPushDetailModelList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                RelayPushDetailModelList struct {
+                    RelayPushDetailModel []struct {
+            Time     string `json:"Time" xml:"Time"`
+            Stream     string `json:"Stream" xml:"Stream"`
+            FrameRate     requests.Float `json:"FrameRate" xml:"FrameRate"`
+            BitRate     requests.Float `json:"BitRate" xml:"BitRate"`
+            FrameLossRate     requests.Float `json:"FrameLossRate" xml:"FrameLossRate"`
+            ServerAddr     string `json:"ServerAddr" xml:"ServerAddr"`
+            ClientAddr     string `json:"ClientAddr" xml:"ClientAddr"`
+                    }   `json:"RelayPushDetailModel" xml:"RelayPushDetailModel"`
+                } `json:"RelayPushDetailModelList" xml:"RelayPushDetailModelList"`
 }
 
 func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStreamRelayPushDataRequest) {
-	request = &DescribeLiveStreamRelayPushDataRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData", "", "")
-	return
+request = &DescribeLiveStreamRelayPushDataRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData", "", "")
+return
 }
 
 func CreateDescribeLiveStreamRelayPushDataResponse() (response *DescribeLiveStreamRelayPushDataResponse) {
-	response = &DescribeLiveStreamRelayPushDataResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamRelayPushDataResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

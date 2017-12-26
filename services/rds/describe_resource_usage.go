@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageRequest) (response *DescribeResourceUsageResponse, err error) {
-	response = CreateDescribeResourceUsageResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeResourceUsageResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsageRequest) (<-chan *DescribeResourceUsageResponse, <-chan error) {
-	responseChan := make(chan *DescribeResourceUsageResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeResourceUsage(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeResourceUsageResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeResourceUsage(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourceUsageRequest, callback func(response *DescribeResourceUsageResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeResourceUsageResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeResourceUsage(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourceUsageRequest, callback func(response *DescribeResourceUsageResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeResourceUsageResponse
+var err error
+defer close(result)
+response, err = client.DescribeResourceUsage(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeResourceUsageRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeResourceUsageResponse struct {
-	*responses.BaseResponse
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string          `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine         string          `json:"Engine" xml:"Engine"`
-	DiskUsed       request.Integer `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize       request.Integer `json:"DataSize" xml:"DataSize"`
-	LogSize        request.Integer `json:"LogSize" xml:"LogSize"`
-	BackupSize     request.Integer `json:"BackupSize" xml:"BackupSize"`
-	SQLSize        request.Integer `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize request.Integer `json:"ColdBackupSize" xml:"ColdBackupSize"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            Engine     string `json:"Engine" xml:"Engine"`
+            DiskUsed     requests.Integer `json:"DiskUsed" xml:"DiskUsed"`
+            DataSize     requests.Integer `json:"DataSize" xml:"DataSize"`
+            LogSize     requests.Integer `json:"LogSize" xml:"LogSize"`
+            BackupSize     requests.Integer `json:"BackupSize" xml:"BackupSize"`
+            SQLSize     requests.Integer `json:"SQLSize" xml:"SQLSize"`
+            ColdBackupSize     requests.Integer `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
 func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {
-	request = &DescribeResourceUsageRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "", "")
-	return
+request = &DescribeResourceUsageRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "", "")
+return
 }
 
 func CreateDescribeResourceUsageResponse() (response *DescribeResourceUsageResponse) {
-	response = &DescribeResourceUsageResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeResourceUsageResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

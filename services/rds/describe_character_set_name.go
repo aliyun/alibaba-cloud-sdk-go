@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetNameRequest) (response *DescribeCharacterSetNameResponse, err error) {
-	response = CreateDescribeCharacterSetNameResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeCharacterSetNameResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacterSetNameRequest) (<-chan *DescribeCharacterSetNameResponse, <-chan error) {
-	responseChan := make(chan *DescribeCharacterSetNameResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeCharacterSetName(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeCharacterSetNameResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeCharacterSetName(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeCharacterSetNameRequest, callback func(response *DescribeCharacterSetNameResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeCharacterSetNameResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeCharacterSetName(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeCharacterSetNameRequest, callback func(response *DescribeCharacterSetNameResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeCharacterSetNameResponse
+var err error
+defer close(result)
+response, err = client.DescribeCharacterSetName(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeCharacterSetNameRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Engine               string `position:"Query" name:"Engine"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Engine  string `position:"Query" name:"Engine"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeCharacterSetNameResponse struct {
-	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	Engine                string `json:"Engine" xml:"Engine"`
-	CharacterSetNameItems struct {
-		CharacterSetName []string `json:"CharacterSetName" xml:"CharacterSetName"`
-	} `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Engine     string `json:"Engine" xml:"Engine"`
+                CharacterSetNameItems struct {
+                CharacterSetName []    string `json:"CharacterSetName" xml:"CharacterSetName"`
+                } `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
 }
 
 func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameRequest) {
-	request = &DescribeCharacterSetNameRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "", "")
-	return
+request = &DescribeCharacterSetNameRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "", "")
+return
 }
 
 func CreateDescribeCharacterSetNameResponse() (response *DescribeCharacterSetNameResponse) {
-	response = &DescribeCharacterSetNameResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeCharacterSetNameResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

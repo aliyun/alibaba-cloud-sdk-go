@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,114 +17,116 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeAbnormalDBInstances(request *DescribeAbnormalDBInstancesRequest) (response *DescribeAbnormalDBInstancesResponse, err error) {
-	response = CreateDescribeAbnormalDBInstancesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeAbnormalDBInstancesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeAbnormalDBInstancesWithChan(request *DescribeAbnormalDBInstancesRequest) (<-chan *DescribeAbnormalDBInstancesResponse, <-chan error) {
-	responseChan := make(chan *DescribeAbnormalDBInstancesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeAbnormalDBInstances(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeAbnormalDBInstancesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeAbnormalDBInstances(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeAbnormalDBInstancesWithCallback(request *DescribeAbnormalDBInstancesRequest, callback func(response *DescribeAbnormalDBInstancesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeAbnormalDBInstancesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeAbnormalDBInstances(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeAbnormalDBInstancesWithCallback(request *DescribeAbnormalDBInstancesRequest, callback func(response *DescribeAbnormalDBInstancesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeAbnormalDBInstancesResponse
+var err error
+defer close(result)
+response, err = client.DescribeAbnormalDBInstances(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeAbnormalDBInstancesRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag2Key              string `position:"Query" name:"Tag.2.key"`
-	Tag1Key              string `position:"Query" name:"Tag.1.key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string `position:"Query" name:"Tag.4.value"`
-	Tag3Value            string `position:"Query" name:"Tag.3.value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.key"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ProxyId  string `position:"Query" name:"proxyId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Tag5Key  string `position:"Query" name:"Tag.5.key"`
+                Tag5Value  string `position:"Query" name:"Tag.5.value"`
+                Tag3Key  string `position:"Query" name:"Tag.3.key"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Tag2Key  string `position:"Query" name:"Tag.2.key"`
+                Tag1Key  string `position:"Query" name:"Tag.1.key"`
+                Tag1Value  string `position:"Query" name:"Tag.1.value"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Tag4Value  string `position:"Query" name:"Tag.4.value"`
+                Tag3Value  string `position:"Query" name:"Tag.3.value"`
+                Tag2Value  string `position:"Query" name:"Tag.2.value"`
+                Tag4Key  string `position:"Query" name:"Tag.4.key"`
 }
 
+
 type DescribeAbnormalDBInstancesResponse struct {
-	*responses.BaseResponse
-	RequestId        string          `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount request.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       request.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  request.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		InstanceResult []struct {
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			AbnormalItems         struct {
-				AbnormalItem []struct {
-					CheckTime      string `json:"CheckTime" xml:"CheckTime"`
-					CheckItem      string `json:"CheckItem" xml:"CheckItem"`
-					AbnormalReason string `json:"AbnormalReason" xml:"AbnormalReason"`
-					AbnormalValue  string `json:"AbnormalValue" xml:"AbnormalValue"`
-					AbnormalDetail string `json:"AbnormalDetail" xml:"AbnormalDetail"`
-					AdviceKey      string `json:"AdviceKey" xml:"AdviceKey"`
-					AdviseValue    struct {
-						String []string `json:"String" xml:"String"`
-					} `json:"AdviseValue" xml:"AdviseValue"`
-				} `json:"AbnormalItem" xml:"AbnormalItem"`
-			} `json:"AbnormalItems" xml:"AbnormalItems"`
-		} `json:"InstanceResult" xml:"InstanceResult"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalRecordCount     requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            PageRecordCount     requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+                Items struct {
+                    InstanceResult []struct {
+            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+                AbnormalItems struct {
+                    AbnormalItem []struct {
+            CheckTime     string `json:"CheckTime" xml:"CheckTime"`
+            CheckItem     string `json:"CheckItem" xml:"CheckItem"`
+            AbnormalReason     string `json:"AbnormalReason" xml:"AbnormalReason"`
+            AbnormalValue     string `json:"AbnormalValue" xml:"AbnormalValue"`
+            AbnormalDetail     string `json:"AbnormalDetail" xml:"AbnormalDetail"`
+            AdviceKey     string `json:"AdviceKey" xml:"AdviceKey"`
+                AdviseValue struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"AdviseValue" xml:"AdviseValue"`
+                    }   `json:"AbnormalItem" xml:"AbnormalItem"`
+                } `json:"AbnormalItems" xml:"AbnormalItems"`
+                    }   `json:"InstanceResult" xml:"InstanceResult"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeAbnormalDBInstancesRequest() (request *DescribeAbnormalDBInstancesRequest) {
-	request = &DescribeAbnormalDBInstancesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "", "")
-	return
+request = &DescribeAbnormalDBInstancesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "", "")
+return
 }
 
 func CreateDescribeAbnormalDBInstancesResponse() (response *DescribeAbnormalDBInstancesResponse) {
-	response = &DescribeAbnormalDBInstancesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeAbnormalDBInstancesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

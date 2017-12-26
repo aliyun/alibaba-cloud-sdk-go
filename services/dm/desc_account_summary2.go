@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescAccountSummary2(request *DescAccountSummary2Request) (response *DescAccountSummary2Response, err error) {
-	response = CreateDescAccountSummary2Response()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescAccountSummary2Response()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescAccountSummary2WithChan(request *DescAccountSummary2Request) (<-chan *DescAccountSummary2Response, <-chan error) {
-	responseChan := make(chan *DescAccountSummary2Response, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescAccountSummary2(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescAccountSummary2Response, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescAccountSummary2(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescAccountSummary2WithCallback(request *DescAccountSummary2Request, callback func(response *DescAccountSummary2Response, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescAccountSummary2Response
-		var err error
-		defer close(result)
-		response, err = client.DescAccountSummary2(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescAccountSummary2WithCallback(request *DescAccountSummary2Request, callback func(response *DescAccountSummary2Response, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescAccountSummary2Response
+var err error
+defer close(result)
+response, err = client.DescAccountSummary2(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescAccountSummary2Request struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                FromType  string `position:"Query" name:"FromType"`
 }
 
+
 type DescAccountSummary2Response struct {
-	*responses.BaseResponse
-	RequestId         string          `json:"RequestId" xml:"RequestId"`
-	MnsMigrating      request.Integer `json:"MnsMigrating" xml:"MnsMigrating"`
-	MnsForceMigrating request.Integer `json:"MnsForceMigrating" xml:"MnsForceMigrating"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            MnsMigrating     requests.Integer `json:"MnsMigrating" xml:"MnsMigrating"`
+            MnsForceMigrating     requests.Integer `json:"MnsForceMigrating" xml:"MnsForceMigrating"`
 }
 
 func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {
-	request = &DescAccountSummary2Request{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary2", "", "")
-	return
+request = &DescAccountSummary2Request{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary2", "", "")
+return
 }
 
 func CreateDescAccountSummary2Response() (response *DescAccountSummary2Response) {
-	response = &DescAccountSummary2Response{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescAccountSummary2Response{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

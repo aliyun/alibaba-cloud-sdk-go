@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ToggleFeatures(request *ToggleFeaturesRequest) (response *ToggleFeaturesResponse, err error) {
-	response = CreateToggleFeaturesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateToggleFeaturesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-chan *ToggleFeaturesResponse, <-chan error) {
-	responseChan := make(chan *ToggleFeaturesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ToggleFeatures(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ToggleFeaturesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ToggleFeatures(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest, callback func(response *ToggleFeaturesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ToggleFeaturesResponse
-		var err error
-		defer close(result)
-		response, err = client.ToggleFeatures(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest, callback func(response *ToggleFeaturesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ToggleFeaturesResponse
+var err error
+defer close(result)
+response, err = client.ToggleFeatures(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ToggleFeaturesRequest struct {
-	*requests.RpcRequest
-	EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
-	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
-	StoreName        string    `position:"Query" name:"StoreName"`
+*requests.RpcRequest
+                EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
+                DisabledFeatures  *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
+                StoreName  string `position:"Query" name:"StoreName"`
 }
 
+
 type ToggleFeaturesResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
-	request = &ToggleFeaturesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ToggleFeatures", "", "")
-	return
+request = &ToggleFeaturesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ToggleFeatures", "", "")
+return
 }
 
 func CreateToggleFeaturesResponse() (response *ToggleFeaturesResponse) {
-	response = &ToggleFeaturesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ToggleFeaturesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

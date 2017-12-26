@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,96 +17,98 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateDisk(request *CreateDiskRequest) (response *CreateDiskResponse, err error) {
-	response = CreateCreateDiskResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateDiskResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *CreateDiskResponse, <-chan error) {
-	responseChan := make(chan *CreateDiskResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateDisk(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateDiskResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateDisk(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callback func(response *CreateDiskResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateDiskResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateDisk(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callback func(response *CreateDiskResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateDiskResponse
+var err error
+defer close(result)
+response, err = client.CreateDisk(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateDiskRequest struct {
-	*requests.RpcRequest
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string `position:"Query" name:"SnapshotId"`
-	Description          string `position:"Query" name:"Description"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	DiskName             string `position:"Query" name:"DiskName"`
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	DiskCategory         string `position:"Query" name:"DiskCategory"`
-	Size                 string `position:"Query" name:"Size"`
-	Encrypted            string `position:"Query" name:"Encrypted"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
+*requests.RpcRequest
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
+                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SnapshotId  string `position:"Query" name:"SnapshotId"`
+                Description  string `position:"Query" name:"Description"`
+                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
+                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
+                DiskName  string `position:"Query" name:"DiskName"`
+                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
+                DiskCategory  string `position:"Query" name:"DiskCategory"`
+                Size  string `position:"Query" name:"Size"`
+                Encrypted  string `position:"Query" name:"Encrypted"`
+                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
+                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
+                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
+                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
 }
 
+
 type CreateDiskResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	DiskId    string `json:"DiskId" xml:"DiskId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DiskId     string `json:"DiskId" xml:"DiskId"`
 }
 
 func CreateCreateDiskRequest() (request *CreateDiskRequest) {
-	request = &CreateDiskRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "", "")
-	return
+request = &CreateDiskRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "", "")
+return
 }
 
 func CreateCreateDiskResponse() (response *CreateDiskResponse) {
-	response = &CreateDiskResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateDiskResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

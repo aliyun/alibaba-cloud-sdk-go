@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainNs(request *DescribeDomainNsRequest) (response *DescribeDomainNsResponse, err error) {
-	response = CreateDescribeDomainNsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainNsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainNsWithChan(request *DescribeDomainNsRequest) (<-chan *DescribeDomainNsResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainNsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomainNs(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainNsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomainNs(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequest, callback func(response *DescribeDomainNsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainNsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomainNs(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequest, callback func(response *DescribeDomainNsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainNsResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomainNs(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainNsRequest struct {
-	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DescribeDomainNsResponse struct {
-	*responses.BaseResponse
-	RequestId     string          `json:"RequestId" xml:"RequestId"`
-	AllAliDns     request.Boolean `json:"AllAliDns" xml:"AllAliDns"`
-	IncludeAliDns request.Boolean `json:"IncludeAliDns" xml:"IncludeAliDns"`
-	DnsServers    struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
-	ExpectDnsServers struct {
-		ExpectDnsServer []string `json:"ExpectDnsServer" xml:"ExpectDnsServer"`
-	} `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            AllAliDns     requests.Boolean `json:"AllAliDns" xml:"AllAliDns"`
+            IncludeAliDns     requests.Boolean `json:"IncludeAliDns" xml:"IncludeAliDns"`
+                DnsServers struct {
+                DnsServer []    string `json:"DnsServer" xml:"DnsServer"`
+                } `json:"DnsServers" xml:"DnsServers"`
+                ExpectDnsServers struct {
+                ExpectDnsServer []    string `json:"ExpectDnsServer" xml:"ExpectDnsServer"`
+                } `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
 }
 
 func CreateDescribeDomainNsRequest() (request *DescribeDomainNsRequest) {
-	request = &DescribeDomainNsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainNs", "", "")
-	return
+request = &DescribeDomainNsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainNs", "", "")
+return
 }
 
 func CreateDescribeDomainNsResponse() (response *DescribeDomainNsResponse) {
-	response = &DescribeDomainNsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainNsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

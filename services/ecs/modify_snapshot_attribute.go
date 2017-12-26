@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifySnapshotAttribute(request *ModifySnapshotAttributeRequest) (response *ModifySnapshotAttributeResponse, err error) {
-	response = CreateModifySnapshotAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifySnapshotAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAttributeRequest) (<-chan *ModifySnapshotAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifySnapshotAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifySnapshotAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifySnapshotAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifySnapshotAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapshotAttributeRequest, callback func(response *ModifySnapshotAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifySnapshotAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifySnapshotAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapshotAttributeRequest, callback func(response *ModifySnapshotAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifySnapshotAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifySnapshotAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifySnapshotAttributeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string `position:"Query" name:"SnapshotId"`
-	Description          string `position:"Query" name:"Description"`
-	SnapshotName         string `position:"Query" name:"SnapshotName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SnapshotId  string `position:"Query" name:"SnapshotId"`
+                Description  string `position:"Query" name:"Description"`
+                SnapshotName  string `position:"Query" name:"SnapshotName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifySnapshotAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeRequest) {
-	request = &ModifySnapshotAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "", "")
-	return
+request = &ModifySnapshotAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "", "")
+return
 }
 
 func CreateModifySnapshotAttributeResponse() (response *ModifySnapshotAttributeResponse) {
-	response = &ModifySnapshotAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifySnapshotAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

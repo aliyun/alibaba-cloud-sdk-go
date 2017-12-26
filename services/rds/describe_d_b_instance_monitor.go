@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstanceMonitor(request *DescribeDBInstanceMonitorRequest) (response *DescribeDBInstanceMonitorResponse, err error) {
-	response = CreateDescribeDBInstanceMonitorResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDBInstanceMonitorResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDBInstanceMonitorWithChan(request *DescribeDBInstanceMonitorRequest) (<-chan *DescribeDBInstanceMonitorResponse, <-chan error) {
-	responseChan := make(chan *DescribeDBInstanceMonitorResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDBInstanceMonitor(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDBInstanceMonitorResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDBInstanceMonitor(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstanceMonitorWithCallback(request *DescribeDBInstanceMonitorRequest, callback func(response *DescribeDBInstanceMonitorResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDBInstanceMonitorResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDBInstanceMonitor(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDBInstanceMonitorWithCallback(request *DescribeDBInstanceMonitorRequest, callback func(response *DescribeDBInstanceMonitorResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDBInstanceMonitorResponse
+var err error
+defer close(result)
+response, err = client.DescribeDBInstanceMonitor(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDBInstanceMonitorRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeDBInstanceMonitorResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Period    string `json:"Period" xml:"Period"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Period     string `json:"Period" xml:"Period"`
 }
 
 func CreateDescribeDBInstanceMonitorRequest() (request *DescribeDBInstanceMonitorRequest) {
-	request = &DescribeDBInstanceMonitorRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "", "")
-	return
+request = &DescribeDBInstanceMonitorRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "", "")
+return
 }
 
 func CreateDescribeDBInstanceMonitorResponse() (response *DescribeDBInstanceMonitorResponse) {
-	response = &DescribeDBInstanceMonitorResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDBInstanceMonitorResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyAccessGroup(request *ModifyAccessGroupRequest) (response *ModifyAccessGroupResponse, err error) {
-	response = CreateModifyAccessGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyAccessGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyAccessGroupWithChan(request *ModifyAccessGroupRequest) (<-chan *ModifyAccessGroupResponse, <-chan error) {
-	responseChan := make(chan *ModifyAccessGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyAccessGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyAccessGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyAccessGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyAccessGroupWithCallback(request *ModifyAccessGroupRequest, callback func(response *ModifyAccessGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyAccessGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyAccessGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyAccessGroupWithCallback(request *ModifyAccessGroupRequest, callback func(response *ModifyAccessGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyAccessGroupResponse
+var err error
+defer close(result)
+response, err = client.ModifyAccessGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyAccessGroupRequest struct {
-	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	Description     string `position:"Query" name:"Description"`
+*requests.RpcRequest
+                AccessGroupName  string `position:"Query" name:"AccessGroupName"`
+                Description  string `position:"Query" name:"Description"`
 }
 
+
 type ModifyAccessGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
-	request = &ModifyAccessGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessGroup", "", "")
-	return
+request = &ModifyAccessGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessGroup", "", "")
+return
 }
 
 func CreateModifyAccessGroupResponse() (response *ModifyAccessGroupResponse) {
-	response = &ModifyAccessGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyAccessGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

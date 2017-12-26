@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,95 +17,97 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryTaskByParam(request *QueryTaskByParamRequest) (response *QueryTaskByParamResponse, err error) {
-	response = CreateQueryTaskByParamResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryTaskByParamResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest) (<-chan *QueryTaskByParamResponse, <-chan error) {
-	responseChan := make(chan *QueryTaskByParamResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryTaskByParam(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryTaskByParamResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryTaskByParam(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequest, callback func(response *QueryTaskByParamResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryTaskByParamResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryTaskByParam(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequest, callback func(response *QueryTaskByParamResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryTaskByParamResponse
+var err error
+defer close(result)
+response, err = client.QueryTaskByParam(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryTaskByParamRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Status  string `position:"Query" name:"Status"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                PageNo  string `position:"Query" name:"PageNo"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryTaskByParamResponse struct {
-	*responses.BaseResponse
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	TotalCount request.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber request.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   request.Integer `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Task []struct {
-			TaskId        string          `json:"TaskId" xml:"TaskId"`
-			ReceiversName string          `json:"ReceiversName" xml:"ReceiversName"`
-			TemplateName  string          `json:"TemplateName" xml:"TemplateName"`
-			TaskStatus    string          `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime    string          `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime request.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			AddressType   string          `json:"AddressType" xml:"AddressType"`
-			TagName       string          `json:"TagName" xml:"TagName"`
-			RequestCount  string          `json:"RequestCount" xml:"RequestCount"`
-		} `json:"task" xml:"task"`
-	} `json:"data" xml:"data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+                Data struct {
+                    Task []struct {
+            TaskId     string `json:"TaskId" xml:"TaskId"`
+            ReceiversName     string `json:"ReceiversName" xml:"ReceiversName"`
+            TemplateName     string `json:"TemplateName" xml:"TemplateName"`
+            TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            UtcCreateTime     requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
+            AddressType     string `json:"AddressType" xml:"AddressType"`
+            TagName     string `json:"TagName" xml:"TagName"`
+            RequestCount     string `json:"RequestCount" xml:"RequestCount"`
+                    }   `json:"task" xml:"task"`
+                } `json:"data" xml:"data"`
 }
 
 func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
-	request = &QueryTaskByParamRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTaskByParam", "", "")
-	return
+request = &QueryTaskByParamRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "QueryTaskByParam", "", "")
+return
 }
 
 func CreateQueryTaskByParamResponse() (response *QueryTaskByParamResponse) {
-	response = &QueryTaskByParamResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryTaskByParamResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

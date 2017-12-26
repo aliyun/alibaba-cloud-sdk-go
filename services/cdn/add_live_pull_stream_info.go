@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddLivePullStreamInfo(request *AddLivePullStreamInfoRequest) (response *AddLivePullStreamInfoResponse, err error) {
-	response = CreateAddLivePullStreamInfoResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddLivePullStreamInfoResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamInfoRequest) (<-chan *AddLivePullStreamInfoResponse, <-chan error) {
-	responseChan := make(chan *AddLivePullStreamInfoResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddLivePullStreamInfo(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddLivePullStreamInfoResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddLivePullStreamInfo(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddLivePullStreamInfoWithCallback(request *AddLivePullStreamInfoRequest, callback func(response *AddLivePullStreamInfoResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddLivePullStreamInfoResponse
-		var err error
-		defer close(result)
-		response, err = client.AddLivePullStreamInfo(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddLivePullStreamInfoWithCallback(request *AddLivePullStreamInfoRequest, callback func(response *AddLivePullStreamInfoResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddLivePullStreamInfoResponse
+var err error
+defer close(result)
+response, err = client.AddLivePullStreamInfo(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddLivePullStreamInfoRequest struct {
-	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	SourceUrl     string `position:"Query" name:"SourceUrl"`
-	AppName       string `position:"Query" name:"AppName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StreamName  string `position:"Query" name:"StreamName"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                SourceUrl  string `position:"Query" name:"SourceUrl"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type AddLivePullStreamInfoResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest) {
-	request = &AddLivePullStreamInfoRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "AddLivePullStreamInfo", "", "")
-	return
+request = &AddLivePullStreamInfoRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "AddLivePullStreamInfo", "", "")
+return
 }
 
 func CreateAddLivePullStreamInfoResponse() (response *AddLivePullStreamInfoResponse) {
-	response = &AddLivePullStreamInfoResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddLivePullStreamInfoResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

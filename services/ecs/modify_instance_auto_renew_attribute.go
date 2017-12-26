@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyInstanceAutoRenewAttribute(request *ModifyInstanceAutoRenewAttributeRequest) (response *ModifyInstanceAutoRenewAttributeResponse, err error) {
-	response = CreateModifyInstanceAutoRenewAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyInstanceAutoRenewAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyInstanceAutoRenewAttributeRequest) (<-chan *ModifyInstanceAutoRenewAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyInstanceAutoRenewAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyInstanceAutoRenewAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyInstanceAutoRenewAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyInstanceAutoRenewAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *ModifyInstanceAutoRenewAttributeRequest, callback func(response *ModifyInstanceAutoRenewAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyInstanceAutoRenewAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyInstanceAutoRenewAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *ModifyInstanceAutoRenewAttributeRequest, callback func(response *ModifyInstanceAutoRenewAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyInstanceAutoRenewAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyInstanceAutoRenewAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyInstanceAutoRenewAttributeRequest struct {
-	*requests.RpcRequest
-	Duration             string `position:"Query" name:"Duration"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	RenewalStatus        string `position:"Query" name:"RenewalStatus"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	AutoRenew            string `position:"Query" name:"AutoRenew"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                Duration  string `position:"Query" name:"Duration"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                RenewalStatus  string `position:"Query" name:"RenewalStatus"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                AutoRenew  string `position:"Query" name:"AutoRenew"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type ModifyInstanceAutoRenewAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyInstanceAutoRenewAttributeRequest() (request *ModifyInstanceAutoRenewAttributeRequest) {
-	request = &ModifyInstanceAutoRenewAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "", "")
-	return
+request = &ModifyInstanceAutoRenewAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "", "")
+return
 }
 
 func CreateModifyInstanceAutoRenewAttributeResponse() (response *ModifyInstanceAutoRenewAttributeResponse) {
-	response = &ModifyInstanceAutoRenewAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyInstanceAutoRenewAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

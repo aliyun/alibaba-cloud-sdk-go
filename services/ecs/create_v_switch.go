@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *CreateVSwitchResponse, err error) {
-	response = CreateCreateVSwitchResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateVSwitchResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-chan *CreateVSwitchResponse, <-chan error) {
-	responseChan := make(chan *CreateVSwitchResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateVSwitch(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateVSwitchResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateVSwitch(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, callback func(response *CreateVSwitchResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateVSwitchResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateVSwitch(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, callback func(response *CreateVSwitchResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateVSwitchResponse
+var err error
+defer close(result)
+response, err = client.CreateVSwitch(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateVSwitchRequest struct {
-	*requests.RpcRequest
-	VSwitchName          string `position:"Query" name:"VSwitchName"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	CidrBlock            string `position:"Query" name:"CidrBlock"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                VSwitchName  string `position:"Query" name:"VSwitchName"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ZoneId  string `position:"Query" name:"ZoneId"`
+                Description  string `position:"Query" name:"Description"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                VpcId  string `position:"Query" name:"VpcId"`
+                CidrBlock  string `position:"Query" name:"CidrBlock"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type CreateVSwitchResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	VSwitchId string `json:"VSwitchId" xml:"VSwitchId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
 }
 
 func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
-	request = &CreateVSwitchRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "", "")
-	return
+request = &CreateVSwitchRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVSwitch", "", "")
+return
 }
 
 func CreateCreateVSwitchResponse() (response *CreateVSwitchResponse) {
-	response = &CreateVSwitchResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateVSwitchResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

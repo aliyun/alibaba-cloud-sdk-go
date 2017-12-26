@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,105 +17,107 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RegisterMediaDetailPerson(request *RegisterMediaDetailPersonRequest) (response *RegisterMediaDetailPersonResponse, err error) {
-	response = CreateRegisterMediaDetailPersonResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRegisterMediaDetailPersonResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDetailPersonRequest) (<-chan *RegisterMediaDetailPersonResponse, <-chan error) {
-	responseChan := make(chan *RegisterMediaDetailPersonResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RegisterMediaDetailPerson(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RegisterMediaDetailPersonResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RegisterMediaDetailPerson(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMediaDetailPersonRequest, callback func(response *RegisterMediaDetailPersonResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RegisterMediaDetailPersonResponse
-		var err error
-		defer close(result)
-		response, err = client.RegisterMediaDetailPerson(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMediaDetailPersonRequest, callback func(response *RegisterMediaDetailPersonResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RegisterMediaDetailPersonResponse
+var err error
+defer close(result)
+response, err = client.RegisterMediaDetailPerson(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RegisterMediaDetailPersonRequest struct {
-	*requests.RpcRequest
-	Category             string `position:"Query" name:"Category"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Images               string `position:"Query" name:"Images"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PersonName           string `position:"Query" name:"PersonName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Category  string `position:"Query" name:"Category"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Images  string `position:"Query" name:"Images"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                PersonName  string `position:"Query" name:"PersonName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type RegisterMediaDetailPersonResponse struct {
-	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	RegisteredPersonages struct {
-		RegisteredPersonage []struct {
-			PersonName string `json:"PersonName" xml:"PersonName"`
-			FaceId     string `json:"FaceId" xml:"FaceId"`
-			Target     string `json:"Target" xml:"Target"`
-			Quality    string `json:"Quality" xml:"Quality"`
-			Gender     string `json:"Gender" xml:"Gender"`
-			ImageId    string `json:"ImageId" xml:"ImageId"`
-			ImageFile  struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"ImageFile" xml:"ImageFile"`
-		} `json:"RegisteredPersonage" xml:"RegisteredPersonage"`
-	} `json:"RegisteredPersonages" xml:"RegisteredPersonages"`
-	FailedImages struct {
-		FailedImage []struct {
-			Code       string `json:"Code" xml:"Code"`
-			Success    string `json:"Success" xml:"Success"`
-			ImageFile1 struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"ImageFile" xml:"ImageFile"`
-		} `json:"FailedImage" xml:"FailedImage"`
-	} `json:"FailedImages" xml:"FailedImages"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                RegisteredPersonages struct {
+                    RegisteredPersonage []struct {
+            PersonName     string `json:"PersonName" xml:"PersonName"`
+            FaceId     string `json:"FaceId" xml:"FaceId"`
+            Target     string `json:"Target" xml:"Target"`
+            Quality     string `json:"Quality" xml:"Quality"`
+            Gender     string `json:"Gender" xml:"Gender"`
+            ImageId     string `json:"ImageId" xml:"ImageId"`
+            ImageFile struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"ImageFile" xml:"ImageFile"`
+                    }   `json:"RegisteredPersonage" xml:"RegisteredPersonage"`
+                } `json:"RegisteredPersonages" xml:"RegisteredPersonages"`
+                FailedImages struct {
+                    FailedImage []struct {
+            Code     string `json:"Code" xml:"Code"`
+            Success     string `json:"Success" xml:"Success"`
+            ImageFile1 struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"ImageFile" xml:"ImageFile"`
+                    }   `json:"FailedImage" xml:"FailedImage"`
+                } `json:"FailedImages" xml:"FailedImages"`
 }
 
 func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPersonRequest) {
-	request = &RegisterMediaDetailPersonRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailPerson", "", "")
-	return
+request = &RegisterMediaDetailPersonRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailPerson", "", "")
+return
 }
 
 func CreateRegisterMediaDetailPersonResponse() (response *RegisterMediaDetailPersonResponse) {
-	response = &RegisterMediaDetailPersonResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RegisterMediaDetailPersonResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

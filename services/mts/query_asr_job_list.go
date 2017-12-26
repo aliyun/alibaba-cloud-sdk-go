@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,111 +17,113 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response *QueryAsrJobListResponse, err error) {
-	response = CreateQueryAsrJobListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryAsrJobListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (<-chan *QueryAsrJobListResponse, <-chan error) {
-	responseChan := make(chan *QueryAsrJobListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryAsrJobList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryAsrJobListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryAsrJobList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListRequest, callback func(response *QueryAsrJobListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryAsrJobListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryAsrJobList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListRequest, callback func(response *QueryAsrJobListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryAsrJobListResponse
+var err error
+defer close(result)
+response, err = client.QueryAsrJobList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryAsrJobListRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                JobIds  string `position:"Query" name:"JobIds"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryAsrJobListResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			AsrConfig struct {
-				Scene string `json:"Scene" xml:"Scene"`
-			} `json:"AsrConfig" xml:"AsrConfig"`
-			AsrResult struct {
-				Duration    string `json:"Duration" xml:"Duration"`
-				AsrTextList struct {
-					AsrText []struct {
-						StartTime  request.Integer `json:"StartTime" xml:"StartTime"`
-						EndTime    string          `json:"EndTime" xml:"EndTime"`
-						ChannelId  string          `json:"ChannelId" xml:"ChannelId"`
-						SpeechRate string          `json:"SpeechRate" xml:"SpeechRate"`
-						Text       string          `json:"Text" xml:"Text"`
-					} `json:"AsrText" xml:"AsrText"`
-				} `json:"AsrTextList" xml:"AsrTextList"`
-			} `json:"AsrResult" xml:"AsrResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NonExistIds struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"NonExistIds" xml:"NonExistIds"`
+                JobList struct {
+                    Job []struct {
+            Id     string `json:"Id" xml:"Id"`
+            UserData     string `json:"UserData" xml:"UserData"`
+            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
+            State     string `json:"State" xml:"State"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            Input struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"Input" xml:"Input"`
+            AsrConfig struct {
+            Scene     string `json:"Scene" xml:"Scene"`
+            }  `json:"AsrConfig" xml:"AsrConfig"`
+            AsrResult struct {
+            Duration     string `json:"Duration" xml:"Duration"`
+                AsrTextList struct {
+                    AsrText []struct {
+            StartTime     requests.Integer `json:"StartTime" xml:"StartTime"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+            ChannelId     string `json:"ChannelId" xml:"ChannelId"`
+            SpeechRate     string `json:"SpeechRate" xml:"SpeechRate"`
+            Text     string `json:"Text" xml:"Text"`
+                    }   `json:"AsrText" xml:"AsrText"`
+                } `json:"AsrTextList" xml:"AsrTextList"`
+            }  `json:"AsrResult" xml:"AsrResult"`
+                    }   `json:"Job" xml:"Job"`
+                } `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
-	request = &QueryAsrJobListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "", "")
-	return
+request = &QueryAsrJobListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "", "")
+return
 }
 
 func CreateQueryAsrJobListResponse() (response *QueryAsrJobListResponse) {
-	response = &QueryAsrJobListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryAsrJobListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
