@@ -1,3 +1,6 @@
+2017-12-26 Version: 0.6.5
+1, Add video AI service interface.
+
 2017-12-26 Version: 0.6.4
 1, Add video AI service interface.
 
