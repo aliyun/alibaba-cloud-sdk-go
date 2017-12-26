@@ -64,16 +64,18 @@ func (client *Client) DeleteCategoryWithCallback(request *DeleteCategoryRequest,
 
 type DeleteCategoryRequest struct {
 	*requests.RpcRequest
-	CateId               string `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	CateId               string `position:"Query" name:"CateId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {

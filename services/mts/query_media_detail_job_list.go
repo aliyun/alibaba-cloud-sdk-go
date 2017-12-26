@@ -64,78 +64,72 @@ func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDet
 
 type QueryMediaDetailJobListRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string `position:"Query" name:"JobIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryMediaDetailJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			MediaDetailConfig struct {
-				Scenario   string `json:"Scenario" xml:"Scenario"`
-				DetailType string `json:"DetailType" xml:"DetailType"`
-				OutputFile struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-				} `json:"OutputFile" xml:"OutputFile"`
-			} `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
-			MediaDetailResult struct {
-				Status string `json:"Status" xml:"Status"`
-				Tags   struct {
-					String []string `json:"String" xml:"String"`
-				} `json:"Tags" xml:"Tags"`
-				MediaDetailRecgResults struct {
-					MediaDetailRecgResult []struct {
-						ImageUrl    string `json:"ImageUrl" xml:"ImageUrl"`
-						Time        string `json:"Time" xml:"Time"`
-						OcrText     string `json:"OcrText" xml:"OcrText"`
-						Celebrities struct {
-							Celebrity []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Celebrity" xml:"Celebrity"`
-						} `json:"Celebrities" xml:"Celebrities"`
-						Sensitives struct {
-							Sensitive []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Sensitive" xml:"Sensitive"`
-						} `json:"Sensitives" xml:"Sensitives"`
-						Politicians struct {
-							Politician []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Politician" xml:"Politician"`
-						} `json:"Politicians" xml:"Politicians"`
-					} `json:"MediaDetailRecgResult" xml:"MediaDetailRecgResult"`
-				} `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
-			} `json:"MediaDetailResult" xml:"MediaDetailResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string   `json:"RequestId"`
+	NonExistIds []string `json:"NonExistIds"`
+	JobList     []struct {
+		Id           string `json:"Id"`
+		UserData     string `json:"UserData"`
+		PipelineId   string `json:"PipelineId"`
+		State        string `json:"State"`
+		Code         string `json:"Code"`
+		Message      string `json:"Message"`
+		CreationTime string `json:"CreationTime"`
+		Input        struct {
+			Bucket   string `json:"Bucket"`
+			Location string `json:"Location"`
+			Object   string `json:"Object"`
+		} `json:"Input"`
+		MediaDetailConfig struct {
+			Scenario   string `json:"Scenario"`
+			DetailType string `json:"DetailType"`
+			OutputFile struct {
+				Bucket   string `json:"Bucket"`
+				Location string `json:"Location"`
+				Object   string `json:"Object"`
+			} `json:"OutputFile"`
+		} `json:"MediaDetailConfig"`
+		MediaDetailResult struct {
+			Status                 string   `json:"Status"`
+			Tags                   []string `json:"Tags"`
+			MediaDetailRecgResults []struct {
+				ImageUrl    string   `json:"ImageUrl"`
+				Time        string   `json:"Time"`
+				OcrText     string   `json:"OcrText"`
+				FrameTags   []string `json:"FrameTags"`
+				Celebrities []struct {
+					Name   string `json:"Name"`
+					Score  string `json:"Score"`
+					Target string `json:"Target"`
+				} `json:"Celebrities"`
+				Sensitives []struct {
+					Name   string `json:"Name"`
+					Score  string `json:"Score"`
+					Target string `json:"Target"`
+				} `json:"Sensitives"`
+				Politicians []struct {
+					Name   string `json:"Name"`
+					Score  string `json:"Score"`
+					Target string `json:"Target"`
+				} `json:"Politicians"`
+				FrameTagInfos []struct {
+					Tag      string `json:"Tag"`
+					Score    string `json:"Score"`
+					Category string `json:"Category"`
+				} `json:"FrameTagInfos"`
+			} `json:"MediaDetailRecgResults"`
+		} `json:"MediaDetailResult"`
+	} `json:"JobList"`
 }
 
 func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {

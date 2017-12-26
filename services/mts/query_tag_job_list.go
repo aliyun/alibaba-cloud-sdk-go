@@ -64,56 +64,48 @@ func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListReques
 
 type QueryTagJobListRequest struct {
 	*requests.RpcRequest
-	TagJobIds            string `position:"Query" name:"TagJobIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	TagJobIds            string `position:"Query" name:"TagJobIds"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryTagJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	TagJobList struct {
-		TagJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoTagResult struct {
-				Details      string `json:"Details" xml:"Details"`
-				TagAnResults struct {
-					TagAnResult []struct {
-						Label string `json:"Label" xml:"Label"`
-						Score string `json:"Score" xml:"Score"`
-					} `json:"TagAnResult" xml:"TagAnResult"`
-				} `json:"TagAnResults" xml:"TagAnResults"`
-				TagFrResults struct {
-					TagFrResult []struct {
-						Time     string `json:"Time" xml:"Time"`
-						TagFaces struct {
-							TagFace []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"TagFace" xml:"TagFace"`
-						} `json:"TagFaces" xml:"TagFaces"`
-					} `json:"TagFrResult" xml:"TagFrResult"`
-				} `json:"TagFrResults" xml:"TagFrResults"`
-			} `json:"VideoTagResult" xml:"VideoTagResult"`
-		} `json:"TagJob" xml:"TagJob"`
-	} `json:"TagJobList" xml:"TagJobList"`
+	RequestId   string   `json:"RequestId"`
+	NonExistIds []string `json:"NonExistIds"`
+	TagJobList  []struct {
+		Id           string `json:"Id"`
+		UserData     string `json:"UserData"`
+		PipelineId   string `json:"PipelineId"`
+		State        string `json:"State"`
+		Code         string `json:"Code"`
+		Message      string `json:"Message"`
+		CreationTime string `json:"CreationTime"`
+		Input        struct {
+			Bucket   string `json:"Bucket"`
+			Location string `json:"Location"`
+			Object   string `json:"Object"`
+		} `json:"Input"`
+		VideoTagResult struct {
+			Details      string `json:"Details"`
+			TagAnResults []struct {
+				Label string `json:"Label"`
+				Score string `json:"Score"`
+			} `json:"TagAnResults"`
+			TagFrResults []struct {
+				Time     string `json:"Time"`
+				TagFaces []struct {
+					Name   string `json:"Name"`
+					Score  string `json:"Score"`
+					Target string `json:"Target"`
+				} `json:"TagFaces"`
+			} `json:"TagFrResults"`
+		} `json:"VideoTagResult"`
+	} `json:"TagJobList"`
 }
 
 func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {

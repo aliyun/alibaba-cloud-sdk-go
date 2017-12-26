@@ -64,20 +64,22 @@ func (client *Client) SubmitAnnotationJobWithCallback(request *SubmitAnnotationJ
 
 type SubmitAnnotationJobRequest struct {
 	*requests.RpcRequest
-	AnnotationConfig     string `position:"Query" name:"AnnotationConfig"`
-	UserData             string `position:"Query" name:"UserData"`
 	Input                string `position:"Query" name:"Input"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	UserData             string `position:"Query" name:"UserData"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
+	AnnotationConfig     string `position:"Query" name:"AnnotationConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PipelineId           string `position:"Query" name:"PipelineId"`
 }
 
 type SubmitAnnotationJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
+	RequestId string `json:"RequestId"`
+	JobId     string `json:"JobId"`
 }
 
 func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {

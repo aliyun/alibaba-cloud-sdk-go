@@ -64,16 +64,18 @@ func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, cal
 
 type CategoryTreeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type CategoryTreeResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	CategoryTree string `json:"CategoryTree" xml:"CategoryTree"`
+	RequestId    string `json:"RequestId"`
+	CategoryTree string `json:"CategoryTree"`
 }
 
 func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {

@@ -64,42 +64,40 @@ func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWater
 
 type QueryWaterMarkTemplateListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 	WaterMarkTemplateIds string `position:"Query" name:"WaterMarkTemplateIds"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryWaterMarkTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	NonExistWids struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistWids" xml:"NonExistWids"`
-	WaterMarkTemplateList struct {
-		WaterMarkTemplate []struct {
-			Id       string `json:"Id" xml:"Id"`
-			Name     string `json:"Name" xml:"Name"`
-			Width    string `json:"Width" xml:"Width"`
-			Height   string `json:"Height" xml:"Height"`
-			Dx       string `json:"Dx" xml:"Dx"`
-			Dy       string `json:"Dy" xml:"Dy"`
-			ReferPos string `json:"ReferPos" xml:"ReferPos"`
-			Type     string `json:"Type" xml:"Type"`
-			State    string `json:"State" xml:"State"`
-			Timeline struct {
-				Start    string `json:"Start" xml:"Start"`
-				Duration string `json:"Duration" xml:"Duration"`
-			} `json:"Timeline" xml:"Timeline"`
-			RatioRefer struct {
-				Dx     string `json:"Dx" xml:"Dx"`
-				Dy     string `json:"Dy" xml:"Dy"`
-				Width  string `json:"Width" xml:"Width"`
-				Height string `json:"Height" xml:"Height"`
-			} `json:"RatioRefer" xml:"RatioRefer"`
-		} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
-	} `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	RequestId             string   `json:"RequestId"`
+	NonExistWids          []string `json:"NonExistWids"`
+	WaterMarkTemplateList []struct {
+		Id       string `json:"Id"`
+		Name     string `json:"Name"`
+		Width    string `json:"Width"`
+		Height   string `json:"Height"`
+		Dx       string `json:"Dx"`
+		Dy       string `json:"Dy"`
+		ReferPos string `json:"ReferPos"`
+		Type     string `json:"Type"`
+		State    string `json:"State"`
+		Timeline struct {
+			Start    string `json:"Start"`
+			Duration string `json:"Duration"`
+		} `json:"Timeline"`
+		RatioRefer struct {
+			Dx     string `json:"Dx"`
+			Dy     string `json:"Dy"`
+			Width  string `json:"Width"`
+			Height string `json:"Height"`
+		} `json:"RatioRefer"`
+	} `json:"WaterMarkTemplateList"`
 }
 
 func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {

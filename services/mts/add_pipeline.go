@@ -64,32 +64,34 @@ func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callb
 
 type AddPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Speed                string `position:"Query" name:"Speed"`
-	Name                 string `position:"Query" name:"Name"`
-	Role                 string `position:"Query" name:"Role"`
-	SpeedLevel           string `position:"Query" name:"SpeedLevel"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Role                 string `position:"Query" name:"Role"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	Action               string `position:"Query" name:"Action"`
+	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	SpeedLevel           string `position:"Query" name:"SpeedLevel"`
+	Speed                string `position:"Query" name:"Speed"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		State        string `json:"State" xml:"State"`
-		Speed        string `json:"Speed" xml:"Speed"`
-		SpeedLevel   int64  `json:"SpeedLevel" xml:"SpeedLevel"`
-		Role         string `json:"Role" xml:"Role"`
+		Id           string `json:"Id"`
+		Name         string `json:"Name"`
+		State        string `json:"State"`
+		Speed        string `json:"Speed"`
+		SpeedLevel   int64  `json:"SpeedLevel"`
+		Role         string `json:"Role"`
 		NotifyConfig struct {
-			Topic     string `json:"Topic" xml:"Topic"`
-			QueueName string `json:"QueueName" xml:"QueueName"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+			Topic     string `json:"Topic"`
+			QueueName string `json:"QueueName"`
+		} `json:"NotifyConfig"`
+	} `json:"Pipeline"`
 }
 
 func CreateAddPipelineRequest() (request *AddPipelineRequest) {

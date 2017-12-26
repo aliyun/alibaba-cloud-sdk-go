@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) AddVideoSummaryPipeline(request *AddVideoSummaryPipelineRequest) (response *AddVideoSummaryPipelineResponse, err error) {
-	response = CreateAddVideoSummaryPipelineResponse()
+func (client *Client) ReportVideoSplitJobResult(request *ReportVideoSplitJobResultRequest) (response *ReportVideoSplitJobResultResponse, err error) {
+	response = CreateReportVideoSplitJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) AddVideoSummaryPipelineWithChan(request *AddVideoSummaryPipelineRequest) (<-chan *AddVideoSummaryPipelineResponse, <-chan error) {
-	responseChan := make(chan *AddVideoSummaryPipelineResponse, 1)
+func (client *Client) ReportVideoSplitJobResultWithChan(request *ReportVideoSplitJobResultRequest) (<-chan *ReportVideoSplitJobResultResponse, <-chan error) {
+	responseChan := make(chan *ReportVideoSplitJobResultResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddVideoSummaryPipeline(request)
+		response, err := client.ReportVideoSplitJobResult(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) AddVideoSummaryPipelineWithChan(request *AddVideoSummaryPi
 	return responseChan, errChan
 }
 
-func (client *Client) AddVideoSummaryPipelineWithCallback(request *AddVideoSummaryPipelineRequest, callback func(response *AddVideoSummaryPipelineResponse, err error)) <-chan int {
+func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideoSplitJobResultRequest, callback func(response *ReportVideoSplitJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddVideoSummaryPipelineResponse
+		var response *ReportVideoSplitJobResultResponse
 		var err error
 		defer close(result)
-		response, err = client.AddVideoSummaryPipeline(request)
+		response, err = client.ReportVideoSplitJobResult(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,44 +62,35 @@ func (client *Client) AddVideoSummaryPipelineWithCallback(request *AddVideoSumma
 	return result
 }
 
-type AddVideoSummaryPipelineRequest struct {
+type ReportVideoSplitJobResultRequest struct {
 	*requests.RpcRequest
+	Result               string `position:"Query" name:"Result"`
+	JobId                string `position:"Query" name:"JobId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
 	Action               string `position:"Query" name:"Action"`
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
+	Details              string `position:"Query" name:"Details"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	Priority             string `position:"Query" name:"Priority"`
 	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
-type AddVideoSummaryPipelineResponse struct {
+type ReportVideoSplitJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		Priority     int    `json:"Priority"`
-		State        string `json:"State"`
-		NotifyConfig struct {
-			Topic string `json:"Topic"`
-			Queue string `json:"Queue"`
-		} `json:"NotifyConfig"`
-	} `json:"Pipeline"`
+	JobId     string `json:"JobId"`
 }
 
-func CreateAddVideoSummaryPipelineRequest() (request *AddVideoSummaryPipelineRequest) {
-	request = &AddVideoSummaryPipelineRequest{
+func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResultRequest) {
+	request = &ReportVideoSplitJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddVideoSummaryPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportVideoSplitJobResult", "", "")
 	return
 }
 
-func CreateAddVideoSummaryPipelineResponse() (response *AddVideoSummaryPipelineResponse) {
-	response = &AddVideoSummaryPipelineResponse{
+func CreateReportVideoSplitJobResultResponse() (response *ReportVideoSplitJobResultResponse) {
+	response = &ReportVideoSplitJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

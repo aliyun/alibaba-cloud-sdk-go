@@ -64,84 +64,82 @@ func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRe
 
 type QueryTemplateListRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	TemplateIds          string `position:"Query" name:"TemplateIds"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	NonExistTids struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistTids" xml:"NonExistTids"`
-	TemplateList struct {
-		Template []struct {
-			Id        string `json:"Id" xml:"Id"`
-			Name      string `json:"Name" xml:"Name"`
-			State     string `json:"State" xml:"State"`
-			Container struct {
-				Format string `json:"Format" xml:"Format"`
-			} `json:"Container" xml:"Container"`
-			Video struct {
-				Codec      string `json:"Codec" xml:"Codec"`
-				Profile    string `json:"Profile" xml:"Profile"`
-				Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-				Crf        string `json:"Crf" xml:"Crf"`
-				Width      string `json:"Width" xml:"Width"`
-				Height     string `json:"Height" xml:"Height"`
-				Fps        string `json:"Fps" xml:"Fps"`
-				Gop        string `json:"Gop" xml:"Gop"`
-				Preset     string `json:"Preset" xml:"Preset"`
-				ScanMode   string `json:"ScanMode" xml:"ScanMode"`
-				Bufsize    string `json:"Bufsize" xml:"Bufsize"`
-				Maxrate    string `json:"Maxrate" xml:"Maxrate"`
-				PixFmt     string `json:"PixFmt" xml:"PixFmt"`
-				Degrain    string `json:"Degrain" xml:"Degrain"`
-				Qscale     string `json:"Qscale" xml:"Qscale"`
-				Remove     string `json:"Remove" xml:"Remove"`
-				Crop       string `json:"Crop" xml:"Crop"`
-				Pad        string `json:"Pad" xml:"Pad"`
-				MaxFps     string `json:"MaxFps" xml:"MaxFps"`
-				BitrateBnd struct {
-					Max string `json:"Max" xml:"Max"`
-					Min string `json:"Min" xml:"Min"`
-				} `json:"BitrateBnd" xml:"BitrateBnd"`
-			} `json:"Video" xml:"Video"`
-			Audio struct {
-				Codec      string `json:"Codec" xml:"Codec"`
-				Profile    string `json:"Profile" xml:"Profile"`
-				Samplerate string `json:"Samplerate" xml:"Samplerate"`
-				Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-				Channels   string `json:"Channels" xml:"Channels"`
-				Qscale     string `json:"Qscale" xml:"Qscale"`
-				Remove     string `json:"Remove" xml:"Remove"`
-			} `json:"Audio" xml:"Audio"`
-			TransConfig struct {
-				TransMode               string `json:"TransMode" xml:"TransMode"`
-				IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
-				IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
-				IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
-				IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
-				AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
-				IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
-				IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
-			} `json:"TransConfig" xml:"TransConfig"`
-			MuxConfig struct {
-				Segment struct {
-					Duration string `json:"Duration" xml:"Duration"`
-				} `json:"Segment" xml:"Segment"`
-				Gif struct {
-					Loop            string `json:"Loop" xml:"Loop"`
-					FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
-					IsCustomPalette string `json:"IsCustomPalette" xml:"IsCustomPalette"`
-					DitherMode      string `json:"DitherMode" xml:"DitherMode"`
-				} `json:"Gif" xml:"Gif"`
-			} `json:"MuxConfig" xml:"MuxConfig"`
-		} `json:"Template" xml:"Template"`
-	} `json:"TemplateList" xml:"TemplateList"`
+	RequestId    string   `json:"RequestId"`
+	NonExistTids []string `json:"NonExistTids"`
+	TemplateList []struct {
+		Id        string `json:"Id"`
+		Name      string `json:"Name"`
+		State     string `json:"State"`
+		Container struct {
+			Format string `json:"Format"`
+		} `json:"Container"`
+		Video struct {
+			Codec      string `json:"Codec"`
+			Profile    string `json:"Profile"`
+			Bitrate    string `json:"Bitrate"`
+			Crf        string `json:"Crf"`
+			Width      string `json:"Width"`
+			Height     string `json:"Height"`
+			Fps        string `json:"Fps"`
+			Gop        string `json:"Gop"`
+			Preset     string `json:"Preset"`
+			ScanMode   string `json:"ScanMode"`
+			Bufsize    string `json:"Bufsize"`
+			Maxrate    string `json:"Maxrate"`
+			PixFmt     string `json:"PixFmt"`
+			Degrain    string `json:"Degrain"`
+			Qscale     string `json:"Qscale"`
+			Remove     string `json:"Remove"`
+			Crop       string `json:"Crop"`
+			Pad        string `json:"Pad"`
+			MaxFps     string `json:"MaxFps"`
+			BitrateBnd struct {
+				Max string `json:"Max"`
+				Min string `json:"Min"`
+			} `json:"BitrateBnd"`
+		} `json:"Video"`
+		Audio struct {
+			Codec      string `json:"Codec"`
+			Profile    string `json:"Profile"`
+			Samplerate string `json:"Samplerate"`
+			Bitrate    string `json:"Bitrate"`
+			Channels   string `json:"Channels"`
+			Qscale     string `json:"Qscale"`
+			Remove     string `json:"Remove"`
+		} `json:"Audio"`
+		TransConfig struct {
+			TransMode               string `json:"TransMode"`
+			IsCheckReso             string `json:"IsCheckReso"`
+			IsCheckResoFail         string `json:"IsCheckResoFail"`
+			IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate"`
+			IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate"`
+			AdjDarMethod            string `json:"AdjDarMethod"`
+			IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail"`
+			IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail"`
+		} `json:"TransConfig"`
+		MuxConfig struct {
+			Segment struct {
+				Duration string `json:"Duration"`
+			} `json:"Segment"`
+			Gif struct {
+				Loop            string `json:"Loop"`
+				FinalDelay      string `json:"FinalDelay"`
+				IsCustomPalette string `json:"IsCustomPalette"`
+				DitherMode      string `json:"DitherMode"`
+			} `json:"Gif"`
+		} `json:"MuxConfig"`
+	} `json:"TemplateList"`
 }
 
 func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {

@@ -64,50 +64,46 @@ func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListReques
 
 type QueryAsrJobListRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string `position:"Query" name:"JobIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryAsrJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			AsrConfig struct {
-				Scene string `json:"Scene" xml:"Scene"`
-			} `json:"AsrConfig" xml:"AsrConfig"`
-			AsrResult struct {
-				Duration    string `json:"Duration" xml:"Duration"`
-				AsrTextList struct {
-					AsrText []struct {
-						StartTime  int    `json:"StartTime" xml:"StartTime"`
-						EndTime    string `json:"EndTime" xml:"EndTime"`
-						ChannelId  string `json:"ChannelId" xml:"ChannelId"`
-						SpeechRate string `json:"SpeechRate" xml:"SpeechRate"`
-						Text       string `json:"Text" xml:"Text"`
-					} `json:"AsrText" xml:"AsrText"`
-				} `json:"AsrTextList" xml:"AsrTextList"`
-			} `json:"AsrResult" xml:"AsrResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string   `json:"RequestId"`
+	NonExistIds []string `json:"NonExistIds"`
+	JobList     []struct {
+		Id           string `json:"Id"`
+		UserData     string `json:"UserData"`
+		PipelineId   string `json:"PipelineId"`
+		State        string `json:"State"`
+		Code         string `json:"Code"`
+		Message      string `json:"Message"`
+		CreationTime string `json:"CreationTime"`
+		Input        struct {
+			Bucket   string `json:"Bucket"`
+			Location string `json:"Location"`
+			Object   string `json:"Object"`
+		} `json:"Input"`
+		AsrConfig struct {
+			Scene string `json:"Scene"`
+		} `json:"AsrConfig"`
+		AsrResult struct {
+			Duration    string `json:"Duration"`
+			AsrTextList []struct {
+				StartTime  int    `json:"StartTime"`
+				EndTime    string `json:"EndTime"`
+				ChannelId  string `json:"ChannelId"`
+				SpeechRate string `json:"SpeechRate"`
+				Text       string `json:"Text"`
+			} `json:"AsrTextList"`
+		} `json:"AsrResult"`
+	} `json:"JobList"`
 }
 
 func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {

@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListRequest) (response *QueryFacerecogJobListResponse, err error) {
-	response = CreateQueryFacerecogJobListResponse()
+func (client *Client) QueryFpShotJobList(request *QueryFpShotJobListRequest) (response *QueryFpShotJobListResponse, err error) {
+	response = CreateQueryFpShotJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobListRequest) (<-chan *QueryFacerecogJobListResponse, <-chan error) {
-	responseChan := make(chan *QueryFacerecogJobListResponse, 1)
+func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequest) (<-chan *QueryFpShotJobListResponse, <-chan error) {
+	responseChan := make(chan *QueryFpShotJobListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryFacerecogJobList(request)
+		response, err := client.QueryFpShotJobList(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobLi
 	return responseChan, errChan
 }
 
-func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJobListRequest, callback func(response *QueryFacerecogJobListResponse, err error)) <-chan int {
+func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobListRequest, callback func(response *QueryFpShotJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryFacerecogJobListResponse
+		var response *QueryFpShotJobListResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryFacerecogJobList(request)
+		response, err = client.QueryFpShotJobList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,22 +62,22 @@ func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJ
 	return result
 }
 
-type QueryFacerecogJobListRequest struct {
+type QueryFpShotJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	JobIds               string `position:"Query" name:"JobIds"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	Action               string `position:"Query" name:"Action"`
-	FacerecogJobIds      string `position:"Query" name:"FacerecogJobIds"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
-type QueryFacerecogJobListResponse struct {
+type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
-	RequestId        string   `json:"RequestId"`
-	NonExistIds      []string `json:"NonExistIds"`
-	FacerecogJobList []struct {
+	RequestId     string   `json:"RequestId"`
+	NonExistIds   []string `json:"NonExistIds"`
+	FpShotJobList []struct {
 		Id           string `json:"Id"`
 		UserData     string `json:"UserData"`
 		PipelineId   string `json:"PipelineId"`
@@ -85,34 +85,40 @@ type QueryFacerecogJobListResponse struct {
 		Code         string `json:"Code"`
 		Message      string `json:"Message"`
 		CreationTime string `json:"CreationTime"`
-		Input        struct {
+		InputFile    struct {
 			Bucket   string `json:"Bucket"`
 			Location string `json:"Location"`
 			Object   string `json:"Object"`
-		} `json:"Input"`
-		VideoFacerecogResult struct {
-			Facerecogs []struct {
-				Time  string `json:"Time"`
-				Faces []struct {
-					Name   string `json:"Name"`
-					Score  string `json:"Score"`
-					Target string `json:"Target"`
-				} `json:"Faces"`
-			} `json:"Facerecogs"`
-		} `json:"VideoFacerecogResult"`
-	} `json:"FacerecogJobList"`
+		} `json:"InputFile"`
+		FpShotResult struct {
+			FpShots []struct {
+				PrimaryKey   string `json:"PrimaryKey"`
+				Similarity   string `json:"Similarity"`
+				FpShotSlices []struct {
+					Input struct {
+						Start    string `json:"Start"`
+						Duration string `json:"Duration"`
+					} `json:"Input"`
+					Duplication struct {
+						Start    string `json:"Start"`
+						Duration string `json:"Duration"`
+					} `json:"Duplication"`
+				} `json:"FpShotSlices"`
+			} `json:"FpShots"`
+		} `json:"FpShotResult"`
+	} `json:"FpShotJobList"`
 }
 
-func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {
-	request = &QueryFacerecogJobListRequest{
+func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
+	request = &QueryFpShotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpShotJobList", "", "")
 	return
 }
 
-func CreateQueryFacerecogJobListResponse() (response *QueryFacerecogJobListResponse) {
-	response = &QueryFacerecogJobListResponse{
+func CreateQueryFpShotJobListResponse() (response *QueryFpShotJobListResponse) {
+	response = &QueryFpShotJobListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

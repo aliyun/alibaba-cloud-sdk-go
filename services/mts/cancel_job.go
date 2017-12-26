@@ -64,17 +64,19 @@ func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback 
 
 type CancelJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	JobId                string `position:"Query" name:"JobId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type CancelJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
+	RequestId string `json:"RequestId"`
+	JobId     string `json:"JobId"`
 }
 
 func CreateCancelJobRequest() (request *CancelJobRequest) {

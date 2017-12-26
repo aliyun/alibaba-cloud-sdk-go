@@ -64,30 +64,32 @@ func (client *Client) AddCoverPipelineWithCallback(request *AddCoverPipelineRequ
 
 type AddCoverPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string `position:"Query" name:"Priority"`
-	Name                 string `position:"Query" name:"Name"`
-	Role                 string `position:"Query" name:"Role"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Role                 string `position:"Query" name:"Role"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	Action               string `position:"Query" name:"Action"`
+	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	Priority             string `position:"Query" name:"Priority"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		Priority     string `json:"Priority" xml:"Priority"`
-		State        string `json:"State" xml:"State"`
-		Role         string `json:"Role" xml:"Role"`
+		Id           string `json:"Id"`
+		Name         string `json:"Name"`
+		Priority     string `json:"Priority"`
+		State        string `json:"State"`
+		Role         string `json:"Role"`
 		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+			Topic string `json:"Topic"`
+			Queue string `json:"Queue"`
+		} `json:"NotifyConfig"`
+	} `json:"Pipeline"`
 }
 
 func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {

@@ -64,31 +64,29 @@ func (client *Client) QueryVideoSummaryPipelineListWithCallback(request *QueryVi
 
 type QueryVideoSummaryPipelineListRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	PipelineIds          string `position:"Query" name:"PipelineIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryVideoSummaryPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList struct {
-		Pipeline []struct {
-			Id           string `json:"Id" xml:"Id"`
-			Name         string `json:"Name" xml:"Name"`
-			State        string `json:"State" xml:"State"`
-			Priority     string `json:"Priority" xml:"Priority"`
-			NotifyConfig struct {
-				Topic     string `json:"Topic" xml:"Topic"`
-				QueueName string `json:"QueueName" xml:"QueueName"`
-			} `json:"NotifyConfig" xml:"NotifyConfig"`
-		} `json:"Pipeline" xml:"Pipeline"`
-	} `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string   `json:"RequestId"`
+	NonExistIds  []string `json:"NonExistIds"`
+	PipelineList []struct {
+		Id           string `json:"Id"`
+		Name         string `json:"Name"`
+		State        string `json:"State"`
+		Priority     string `json:"Priority"`
+		NotifyConfig struct {
+			Topic     string `json:"Topic"`
+			QueueName string `json:"QueueName"`
+		} `json:"NotifyConfig"`
+	} `json:"PipelineList"`
 }
 
 func CreateQueryVideoSummaryPipelineListRequest() (request *QueryVideoSummaryPipelineListRequest) {

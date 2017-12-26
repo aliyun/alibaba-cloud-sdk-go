@@ -64,17 +64,19 @@ func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCatego
 
 type UpdateMediaCategoryRequest struct {
 	*requests.RpcRequest
-	CateId               string `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	MediaId              string `position:"Query" name:"MediaId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	CateId               string `position:"Query" name:"CateId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	MediaId              string `position:"Query" name:"MediaId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type UpdateMediaCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {

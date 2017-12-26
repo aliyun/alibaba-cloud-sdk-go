@@ -64,19 +64,21 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Key2                 string `position:"Query" name:"Key2"`
 	Key1                 string `position:"Query" name:"Key1"`
+	Key2                 string `position:"Query" name:"Key2"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type SetAuthConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Key1      string `json:"Key1" xml:"Key1"`
-	Key2      string `json:"Key2" xml:"Key2"`
+	RequestId string `json:"RequestId"`
+	Key1      string `json:"Key1"`
+	Key2      string `json:"Key2"`
 }
 
 func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {

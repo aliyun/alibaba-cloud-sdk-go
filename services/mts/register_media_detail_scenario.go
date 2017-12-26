@@ -64,19 +64,21 @@ func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterM
 
 type RegisterMediaDetailScenarioRequest struct {
 	*requests.RpcRequest
-	Scenario             string `position:"Query" name:"Scenario"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	JobId                string `position:"Query" name:"JobId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Scenario             string `position:"Query" name:"Scenario"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
+	Description          string `position:"Query" name:"Description"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type RegisterMediaDetailScenarioResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	ScenarioId string `json:"ScenarioId" xml:"ScenarioId"`
+	RequestId  string `json:"RequestId"`
+	ScenarioId string `json:"ScenarioId"`
 }
 
 func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailScenarioRequest) {

@@ -64,35 +64,35 @@ func (client *Client) ListCoverPipelineWithCallback(request *ListCoverPipelineRe
 
 type ListCoverPipelineRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	State                string `position:"Query" name:"State"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	Action               string `position:"Query" name:"Action"`
+	State                string `position:"Query" name:"State"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type ListCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int64  `json:"PageSize" xml:"PageSize"`
-	PipelineList struct {
-		Pipeline []struct {
-			UserId       int64  `json:"UserId" xml:"UserId"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			Name         string `json:"Name" xml:"Name"`
-			State        string `json:"State" xml:"State"`
-			Priority     string `json:"Priority" xml:"Priority"`
-			QuotaNum     int    `json:"quotaNum" xml:"quotaNum"`
-			QuotaUsed    int    `json:"quotaUsed" xml:"quotaUsed"`
-			NotifyConfig string `json:"NotifyConfig" xml:"NotifyConfig"`
-			Role         string `json:"Role" xml:"Role"`
-			ExtendConfig string `json:"ExtendConfig" xml:"ExtendConfig"`
-		} `json:"Pipeline" xml:"Pipeline"`
-	} `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string `json:"RequestId"`
+	TotalCount   int64  `json:"TotalCount"`
+	PageNumber   int64  `json:"PageNumber"`
+	PageSize     int64  `json:"PageSize"`
+	PipelineList []struct {
+		UserId       int64  `json:"UserId"`
+		PipelineId   string `json:"PipelineId"`
+		Name         string `json:"Name"`
+		State        string `json:"State"`
+		Priority     string `json:"Priority"`
+		QuotaNum     int    `json:"quotaNum"`
+		QuotaUsed    int    `json:"quotaUsed"`
+		NotifyConfig string `json:"NotifyConfig"`
+		Role         string `json:"Role"`
+		ExtendConfig string `json:"ExtendConfig"`
+	} `json:"PipelineList"`
 }
 
 func CreateListCoverPipelineRequest() (request *ListCoverPipelineRequest) {

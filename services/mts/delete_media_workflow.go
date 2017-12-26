@@ -64,23 +64,25 @@ func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkfl
 
 type DeleteMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Action               string `position:"Query" name:"Action"`
 	MediaWorkflowId      string `position:"Query" name:"MediaWorkflowId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId"`
 	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-		Name            string `json:"Name" xml:"Name"`
-		Topology        string `json:"Topology" xml:"Topology"`
-		State           string `json:"State" xml:"State"`
-		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+		MediaWorkflowId string `json:"MediaWorkflowId"`
+		Name            string `json:"Name"`
+		Topology        string `json:"Topology"`
+		State           string `json:"State"`
+		CreationTime    string `json:"CreationTime"`
+	} `json:"MediaWorkflow"`
 }
 
 func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {

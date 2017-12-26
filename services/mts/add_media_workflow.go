@@ -64,24 +64,26 @@ func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequ
 
 type AddMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	Topology             string `position:"Query" name:"Topology"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Topology             string `position:"Query" name:"Topology"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId"`
 	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-		Name            string `json:"Name" xml:"Name"`
-		Topology        string `json:"Topology" xml:"Topology"`
-		State           string `json:"State" xml:"State"`
-		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+		MediaWorkflowId string `json:"MediaWorkflowId"`
+		Name            string `json:"Name"`
+		Topology        string `json:"Topology"`
+		State           string `json:"State"`
+		CreationTime    string `json:"CreationTime"`
+	} `json:"MediaWorkflow"`
 }
 
 func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {

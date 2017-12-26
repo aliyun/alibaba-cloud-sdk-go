@@ -64,28 +64,30 @@ func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineReques
 
 type AddPornPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string `position:"Query" name:"Priority"`
-	Name                 string `position:"Query" name:"Name"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	Action               string `position:"Query" name:"Action"`
+	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	Priority             string `position:"Query" name:"Priority"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddPornPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		Priority     int    `json:"Priority" xml:"Priority"`
-		State        string `json:"State" xml:"State"`
+		Id           string `json:"Id"`
+		Name         string `json:"Name"`
+		Priority     int    `json:"Priority"`
+		State        string `json:"State"`
 		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+			Topic string `json:"Topic"`
+			Queue string `json:"Queue"`
+		} `json:"NotifyConfig"`
+	} `json:"Pipeline"`
 }
 
 func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {

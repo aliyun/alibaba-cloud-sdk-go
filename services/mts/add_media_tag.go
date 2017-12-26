@@ -64,17 +64,19 @@ func (client *Client) AddMediaTagWithCallback(request *AddMediaTagRequest, callb
 
 type AddMediaTagRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag                  string `position:"Query" name:"Tag"`
-	MediaId              string `position:"Query" name:"MediaId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
+	Tag                  string `position:"Query" name:"Tag"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	MediaId              string `position:"Query" name:"MediaId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddMediaTagResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {

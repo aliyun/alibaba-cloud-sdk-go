@@ -64,16 +64,18 @@ func (client *Client) UnbindOutputBucketWithCallback(request *UnbindOutputBucket
 
 type UnbindOutputBucketRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	Bucket               string `position:"Query" name:"Bucket"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type UnbindOutputBucketResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateUnbindOutputBucketRequest() (request *UnbindOutputBucketRequest) {

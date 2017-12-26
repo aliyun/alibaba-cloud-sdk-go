@@ -64,16 +64,18 @@ func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callb
 
 type DeleteMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Action               string `position:"Query" name:"Action"`
 	MediaIds             string `position:"Query" name:"MediaIds"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type DeleteMediaResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 }
 
 func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {

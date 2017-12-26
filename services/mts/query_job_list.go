@@ -64,285 +64,263 @@ func (client *Client) QueryJobListWithCallback(request *QueryJobListRequest, cal
 
 type QueryJobListRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string `position:"Query" name:"JobIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type QueryJobListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	NonExistJobIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistJobIds" xml:"NonExistJobIds"`
-	JobList struct {
-		Job []struct {
-			JobId        string `json:"JobId" xml:"JobId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			Percent      int64  `json:"Percent" xml:"Percent"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			FinishTime   string `json:"FinishTime" xml:"FinishTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			Output struct {
-				TemplateId         string `json:"TemplateId" xml:"TemplateId"`
-				UserData           string `json:"UserData" xml:"UserData"`
-				Rotate             string `json:"Rotate" xml:"Rotate"`
-				VideoStreamMap     string `json:"VideoStreamMap" xml:"VideoStreamMap"`
-				AudioStreamMap     string `json:"AudioStreamMap" xml:"AudioStreamMap"`
-				DeWatermark        string `json:"DeWatermark" xml:"DeWatermark"`
-				Priority           string `json:"Priority" xml:"Priority"`
-				WaterMarkConfigUrl string `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-				MergeConfigUrl     string `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
-				OutputFile         struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-					RoleArn  string `json:"RoleArn" xml:"RoleArn"`
-				} `json:"OutputFile" xml:"OutputFile"`
-				M3U8NonStandardSupport struct {
-					TS struct {
-						Md5Support  bool `json:"Md5Support" xml:"Md5Support"`
-						SizeSupport bool `json:"SizeSupport" xml:"SizeSupport"`
-					} `json:"TS" xml:"TS"`
-				} `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
-				Properties struct {
-					Width      string `json:"Width" xml:"Width"`
-					Height     string `json:"Height" xml:"Height"`
-					Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-					Duration   string `json:"Duration" xml:"Duration"`
-					Fps        string `json:"Fps" xml:"Fps"`
-					FileSize   string `json:"FileSize" xml:"FileSize"`
-					FileFormat string `json:"FileFormat" xml:"FileFormat"`
-					Streams    struct {
-						VideoStreamList struct {
-							VideoStream []struct {
-								Index          string `json:"Index" xml:"Index"`
-								CodecName      string `json:"CodecName" xml:"CodecName"`
-								CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-								Profile        string `json:"Profile" xml:"Profile"`
-								CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-								CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-								CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-								Width          string `json:"Width" xml:"Width"`
-								Height         string `json:"Height" xml:"Height"`
-								HasBFrames     string `json:"HasBFrames" xml:"HasBFrames"`
-								Sar            string `json:"Sar" xml:"Sar"`
-								Dar            string `json:"Dar" xml:"Dar"`
-								PixFmt         string `json:"PixFmt" xml:"PixFmt"`
-								Level          string `json:"Level" xml:"Level"`
-								Fps            string `json:"Fps" xml:"Fps"`
-								AvgFPS         string `json:"AvgFPS" xml:"AvgFPS"`
-								Timebase       string `json:"Timebase" xml:"Timebase"`
-								StartTime      string `json:"StartTime" xml:"StartTime"`
-								Duration       string `json:"Duration" xml:"Duration"`
-								Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-								NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-								Lang           string `json:"Lang" xml:"Lang"`
-								NetworkCost    struct {
-									PreloadTime   string `json:"PreloadTime" xml:"PreloadTime"`
-									CostBandwidth string `json:"CostBandwidth" xml:"CostBandwidth"`
-									AvgBitrate    string `json:"AvgBitrate" xml:"AvgBitrate"`
-								} `json:"NetworkCost" xml:"NetworkCost"`
-							} `json:"VideoStream" xml:"VideoStream"`
-						} `json:"VideoStreamList" xml:"VideoStreamList"`
-						AudioStreamList struct {
-							AudioStream []struct {
-								Index          string `json:"Index" xml:"Index"`
-								CodecName      string `json:"CodecName" xml:"CodecName"`
-								CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-								CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-								CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-								CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-								SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
-								Samplerate     string `json:"Samplerate" xml:"Samplerate"`
-								Channels       string `json:"Channels" xml:"Channels"`
-								ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-								Timebase       string `json:"Timebase" xml:"Timebase"`
-								StartTime      string `json:"StartTime" xml:"StartTime"`
-								Duration       string `json:"Duration" xml:"Duration"`
-								Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-								NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-								Lang           string `json:"Lang" xml:"Lang"`
-							} `json:"AudioStream" xml:"AudioStream"`
-						} `json:"AudioStreamList" xml:"AudioStreamList"`
-						SubtitleStreamList struct {
-							SubtitleStream []struct {
-								Index string `json:"Index" xml:"Index"`
-								Lang  string `json:"Lang" xml:"Lang"`
-							} `json:"SubtitleStream" xml:"SubtitleStream"`
-						} `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
-					} `json:"Streams" xml:"Streams"`
-					Format struct {
-						NumStreams     string `json:"NumStreams" xml:"NumStreams"`
-						NumPrograms    string `json:"NumPrograms" xml:"NumPrograms"`
-						FormatName     string `json:"FormatName" xml:"FormatName"`
-						FormatLongName string `json:"FormatLongName" xml:"FormatLongName"`
-						StartTime      string `json:"StartTime" xml:"StartTime"`
-						Duration       string `json:"Duration" xml:"Duration"`
-						Size           string `json:"Size" xml:"Size"`
-						Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-					} `json:"Format" xml:"Format"`
-					SourceLogos struct {
-						SourceLogo []struct {
-							Source string `json:"Source" xml:"Source"`
-						} `json:"SourceLogo" xml:"SourceLogo"`
-					} `json:"SourceLogos" xml:"SourceLogos"`
-				} `json:"Properties" xml:"Properties"`
-				Clip struct {
-					TimeSpan struct {
-						Seek     string `json:"Seek" xml:"Seek"`
-						Duration string `json:"Duration" xml:"Duration"`
-					} `json:"TimeSpan" xml:"TimeSpan"`
-				} `json:"Clip" xml:"Clip"`
-				SuperReso struct {
-					IsHalfSample string `json:"IsHalfSample" xml:"IsHalfSample"`
-				} `json:"SuperReso" xml:"SuperReso"`
-				SubtitleConfig struct {
-					SubtitleList struct {
-						Subtitle []struct {
-							Map string `json:"Map" xml:"Map"`
-						} `json:"Subtitle" xml:"Subtitle"`
-					} `json:"SubtitleList" xml:"SubtitleList"`
-					ExtSubtitleList struct {
-						ExtSubtitle []struct {
-							FontName string `json:"FontName" xml:"FontName"`
-							CharEnc  string `json:"CharEnc" xml:"CharEnc"`
-							Input1   struct {
-								Bucket   string `json:"Bucket" xml:"Bucket"`
-								Location string `json:"Location" xml:"Location"`
-								Object   string `json:"Object" xml:"Object"`
-							} `json:"Input" xml:"Input"`
-						} `json:"ExtSubtitle" xml:"ExtSubtitle"`
-					} `json:"ExtSubtitleList" xml:"ExtSubtitleList"`
-				} `json:"SubtitleConfig" xml:"SubtitleConfig"`
-				TransConfig struct {
-					TransMode               string `json:"TransMode" xml:"TransMode"`
-					IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
-					IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
-					IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
-					IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
-					AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
-					IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
-					IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
-				} `json:"TransConfig" xml:"TransConfig"`
-				MuxConfig struct {
-					Segment struct {
-						Duration string `json:"Duration" xml:"Duration"`
-					} `json:"Segment" xml:"Segment"`
-					Gif struct {
-						Loop            string `json:"Loop" xml:"Loop"`
-						FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
-						IsCustomPalette string `json:"IsCustomPalette" xml:"IsCustomPalette"`
-						DitherMode      string `json:"DitherMode" xml:"DitherMode"`
-					} `json:"Gif" xml:"Gif"`
-				} `json:"MuxConfig" xml:"MuxConfig"`
-				Audio struct {
-					Codec      string `json:"Codec" xml:"Codec"`
-					Profile    string `json:"Profile" xml:"Profile"`
-					Samplerate string `json:"Samplerate" xml:"Samplerate"`
-					Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-					Channels   string `json:"Channels" xml:"Channels"`
-					Qscale     string `json:"Qscale" xml:"Qscale"`
-					Volume     struct {
-						Level  string `json:"Level" xml:"Level"`
-						Method string `json:"Method" xml:"Method"`
-					} `json:"Volume" xml:"Volume"`
-				} `json:"Audio" xml:"Audio"`
-				Video struct {
-					Codec      string `json:"Codec" xml:"Codec"`
-					Profile    string `json:"Profile" xml:"Profile"`
-					Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-					Crf        string `json:"Crf" xml:"Crf"`
-					Width      string `json:"Width" xml:"Width"`
-					Height     string `json:"Height" xml:"Height"`
-					Fps        string `json:"Fps" xml:"Fps"`
-					Gop        string `json:"Gop" xml:"Gop"`
-					Preset     string `json:"Preset" xml:"Preset"`
-					ScanMode   string `json:"ScanMode" xml:"ScanMode"`
-					Bufsize    string `json:"Bufsize" xml:"Bufsize"`
-					Maxrate    string `json:"Maxrate" xml:"Maxrate"`
-					PixFmt     string `json:"PixFmt" xml:"PixFmt"`
-					Degrain    string `json:"Degrain" xml:"Degrain"`
-					Qscale     string `json:"Qscale" xml:"Qscale"`
-					Crop       string `json:"Crop" xml:"Crop"`
-					Pad        string `json:"Pad" xml:"Pad"`
-					MaxFps     string `json:"MaxFps" xml:"MaxFps"`
-					BitrateBnd struct {
-						Max string `json:"Max" xml:"Max"`
-						Min string `json:"Min" xml:"Min"`
-					} `json:"BitrateBnd" xml:"BitrateBnd"`
-				} `json:"Video" xml:"Video"`
-				Container struct {
-					Format string `json:"Format" xml:"Format"`
-				} `json:"Container" xml:"Container"`
-				Encryption struct {
-					Type    string `json:"Type" xml:"Type"`
-					Id      string `json:"Id" xml:"Id"`
-					Key     string `json:"Key" xml:"Key"`
-					KeyUri  string `json:"KeyUri" xml:"KeyUri"`
-					KeyType string `json:"KeyType" xml:"KeyType"`
-					SkipCnt string `json:"SkipCnt" xml:"SkipCnt"`
-				} `json:"Encryption" xml:"Encryption"`
-				WaterMarkList struct {
-					WaterMark []struct {
-						WaterMarkTemplateId string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
-						Width               string `json:"Width" xml:"Width"`
-						Height              string `json:"Height" xml:"Height"`
-						Dx                  string `json:"Dx" xml:"Dx"`
-						Dy                  string `json:"Dy" xml:"Dy"`
-						ReferPos            string `json:"ReferPos" xml:"ReferPos"`
-						Type                string `json:"Type" xml:"Type"`
-						InputFile           struct {
-							Bucket   string `json:"Bucket" xml:"Bucket"`
-							Location string `json:"Location" xml:"Location"`
-							Object   string `json:"Object" xml:"Object"`
-						} `json:"InputFile" xml:"InputFile"`
-					} `json:"WaterMark" xml:"WaterMark"`
-				} `json:"WaterMarkList" xml:"WaterMarkList"`
-				MergeList struct {
-					Merge []struct {
-						MergeURL string `json:"MergeURL" xml:"MergeURL"`
-						Start    string `json:"Start" xml:"Start"`
-						Duration string `json:"Duration" xml:"Duration"`
-						RoleArn  string `json:"RoleArn" xml:"RoleArn"`
-					} `json:"Merge" xml:"Merge"`
-				} `json:"MergeList" xml:"MergeList"`
-				OpeningList struct {
-					Opening []struct {
-						OpenUrl string `json:"openUrl" xml:"openUrl"`
-						Start   string `json:"Start" xml:"Start"`
-						Width   string `json:"Width" xml:"Width"`
-						Height  string `json:"Height" xml:"Height"`
-					} `json:"Opening" xml:"Opening"`
-				} `json:"OpeningList" xml:"OpeningList"`
-				TailSlateList struct {
-					TailSlate []struct {
-						TailUrl       string `json:"TailUrl" xml:"TailUrl"`
-						Start         string `json:"Start" xml:"Start"`
-						BlendDuration string `json:"BlendDuration" xml:"BlendDuration"`
-						Width         string `json:"Width" xml:"Width"`
-						Height        string `json:"Height" xml:"Height"`
-						IsMergeAudio  bool   `json:"IsMergeAudio" xml:"IsMergeAudio"`
-						BgColor       string `json:"BgColor" xml:"BgColor"`
-					} `json:"TailSlate" xml:"TailSlate"`
-				} `json:"TailSlateList" xml:"TailSlateList"`
-			} `json:"Output" xml:"Output"`
-			MNSMessageResult struct {
-				MessageId    string `json:"MessageId" xml:"MessageId"`
-				ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-				ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-			} `json:"MNSMessageResult" xml:"MNSMessageResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId      string   `json:"RequestId"`
+	NonExistJobIds []string `json:"NonExistJobIds"`
+	JobList        []struct {
+		JobId        string `json:"JobId"`
+		State        string `json:"State"`
+		Code         string `json:"Code"`
+		Message      string `json:"Message"`
+		Percent      int64  `json:"Percent"`
+		PipelineId   string `json:"PipelineId"`
+		CreationTime string `json:"CreationTime"`
+		FinishTime   string `json:"FinishTime"`
+		Input        struct {
+			Bucket   string `json:"Bucket"`
+			Location string `json:"Location"`
+			Object   string `json:"Object"`
+		} `json:"Input"`
+		Output struct {
+			TemplateId         string `json:"TemplateId"`
+			UserData           string `json:"UserData"`
+			Rotate             string `json:"Rotate"`
+			VideoStreamMap     string `json:"VideoStreamMap"`
+			AudioStreamMap     string `json:"AudioStreamMap"`
+			DeWatermark        string `json:"DeWatermark"`
+			Priority           string `json:"Priority"`
+			WaterMarkConfigUrl string `json:"WaterMarkConfigUrl"`
+			MergeConfigUrl     string `json:"MergeConfigUrl"`
+			OutputFile         struct {
+				Bucket   string `json:"Bucket"`
+				Location string `json:"Location"`
+				Object   string `json:"Object"`
+				RoleArn  string `json:"RoleArn"`
+			} `json:"OutputFile"`
+			M3U8NonStandardSupport struct {
+				TS struct {
+					Md5Support  bool `json:"Md5Support"`
+					SizeSupport bool `json:"SizeSupport"`
+				} `json:"TS"`
+			} `json:"M3U8NonStandardSupport"`
+			Properties struct {
+				Width      string `json:"Width"`
+				Height     string `json:"Height"`
+				Bitrate    string `json:"Bitrate"`
+				Duration   string `json:"Duration"`
+				Fps        string `json:"Fps"`
+				FileSize   string `json:"FileSize"`
+				FileFormat string `json:"FileFormat"`
+				Streams    struct {
+					VideoStreamList []struct {
+						Index          string `json:"Index"`
+						CodecName      string `json:"CodecName"`
+						CodecLongName  string `json:"CodecLongName"`
+						Profile        string `json:"Profile"`
+						CodecTimeBase  string `json:"CodecTimeBase"`
+						CodecTagString string `json:"CodecTagString"`
+						CodecTag       string `json:"CodecTag"`
+						Width          string `json:"Width"`
+						Height         string `json:"Height"`
+						HasBFrames     string `json:"HasBFrames"`
+						Sar            string `json:"Sar"`
+						Dar            string `json:"Dar"`
+						PixFmt         string `json:"PixFmt"`
+						Level          string `json:"Level"`
+						Fps            string `json:"Fps"`
+						AvgFPS         string `json:"AvgFPS"`
+						Timebase       string `json:"Timebase"`
+						StartTime      string `json:"StartTime"`
+						Duration       string `json:"Duration"`
+						Bitrate        string `json:"Bitrate"`
+						NumFrames      string `json:"NumFrames"`
+						Lang           string `json:"Lang"`
+						NetworkCost    struct {
+							PreloadTime   string `json:"PreloadTime"`
+							CostBandwidth string `json:"CostBandwidth"`
+							AvgBitrate    string `json:"AvgBitrate"`
+						} `json:"NetworkCost"`
+					} `json:"VideoStreamList"`
+					AudioStreamList []struct {
+						Index          string `json:"Index"`
+						CodecName      string `json:"CodecName"`
+						CodecTimeBase  string `json:"CodecTimeBase"`
+						CodecLongName  string `json:"CodecLongName"`
+						CodecTagString string `json:"CodecTagString"`
+						CodecTag       string `json:"CodecTag"`
+						SampleFmt      string `json:"SampleFmt"`
+						Samplerate     string `json:"Samplerate"`
+						Channels       string `json:"Channels"`
+						ChannelLayout  string `json:"ChannelLayout"`
+						Timebase       string `json:"Timebase"`
+						StartTime      string `json:"StartTime"`
+						Duration       string `json:"Duration"`
+						Bitrate        string `json:"Bitrate"`
+						NumFrames      string `json:"NumFrames"`
+						Lang           string `json:"Lang"`
+					} `json:"AudioStreamList"`
+					SubtitleStreamList []struct {
+						Index string `json:"Index"`
+						Lang  string `json:"Lang"`
+					} `json:"SubtitleStreamList"`
+				} `json:"Streams"`
+				Format struct {
+					NumStreams     string `json:"NumStreams"`
+					NumPrograms    string `json:"NumPrograms"`
+					FormatName     string `json:"FormatName"`
+					FormatLongName string `json:"FormatLongName"`
+					StartTime      string `json:"StartTime"`
+					Duration       string `json:"Duration"`
+					Size           string `json:"Size"`
+					Bitrate        string `json:"Bitrate"`
+				} `json:"Format"`
+				SourceLogos []struct {
+					Source string `json:"Source"`
+				} `json:"SourceLogos"`
+			} `json:"Properties"`
+			Clip struct {
+				TimeSpan struct {
+					Seek     string `json:"Seek"`
+					Duration string `json:"Duration"`
+				} `json:"TimeSpan"`
+			} `json:"Clip"`
+			SuperReso struct {
+				IsHalfSample string `json:"IsHalfSample"`
+			} `json:"SuperReso"`
+			SubtitleConfig struct {
+				SubtitleList []struct {
+					Map string `json:"Map"`
+				} `json:"SubtitleList"`
+				ExtSubtitleList []struct {
+					FontName string `json:"FontName"`
+					CharEnc  string `json:"CharEnc"`
+					Input1   struct {
+						Bucket   string `json:"Bucket"`
+						Location string `json:"Location"`
+						Object   string `json:"Object"`
+					} `json:"Input"`
+				} `json:"ExtSubtitleList"`
+			} `json:"SubtitleConfig"`
+			TransConfig struct {
+				TransMode               string `json:"TransMode"`
+				IsCheckReso             string `json:"IsCheckReso"`
+				IsCheckResoFail         string `json:"IsCheckResoFail"`
+				IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate"`
+				IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate"`
+				AdjDarMethod            string `json:"AdjDarMethod"`
+				IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail"`
+				IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail"`
+			} `json:"TransConfig"`
+			MuxConfig struct {
+				Segment struct {
+					Duration string `json:"Duration"`
+				} `json:"Segment"`
+				Gif struct {
+					Loop            string `json:"Loop"`
+					FinalDelay      string `json:"FinalDelay"`
+					IsCustomPalette string `json:"IsCustomPalette"`
+					DitherMode      string `json:"DitherMode"`
+				} `json:"Gif"`
+			} `json:"MuxConfig"`
+			Audio struct {
+				Codec      string `json:"Codec"`
+				Profile    string `json:"Profile"`
+				Samplerate string `json:"Samplerate"`
+				Bitrate    string `json:"Bitrate"`
+				Channels   string `json:"Channels"`
+				Qscale     string `json:"Qscale"`
+				Volume     struct {
+					Level  string `json:"Level"`
+					Method string `json:"Method"`
+				} `json:"Volume"`
+			} `json:"Audio"`
+			Video struct {
+				Codec      string `json:"Codec"`
+				Profile    string `json:"Profile"`
+				Bitrate    string `json:"Bitrate"`
+				Crf        string `json:"Crf"`
+				Width      string `json:"Width"`
+				Height     string `json:"Height"`
+				Fps        string `json:"Fps"`
+				Gop        string `json:"Gop"`
+				Preset     string `json:"Preset"`
+				ScanMode   string `json:"ScanMode"`
+				Bufsize    string `json:"Bufsize"`
+				Maxrate    string `json:"Maxrate"`
+				PixFmt     string `json:"PixFmt"`
+				Degrain    string `json:"Degrain"`
+				Qscale     string `json:"Qscale"`
+				Crop       string `json:"Crop"`
+				Pad        string `json:"Pad"`
+				MaxFps     string `json:"MaxFps"`
+				BitrateBnd struct {
+					Max string `json:"Max"`
+					Min string `json:"Min"`
+				} `json:"BitrateBnd"`
+			} `json:"Video"`
+			Container struct {
+				Format string `json:"Format"`
+			} `json:"Container"`
+			Encryption struct {
+				Type    string `json:"Type"`
+				Id      string `json:"Id"`
+				Key     string `json:"Key"`
+				KeyUri  string `json:"KeyUri"`
+				KeyType string `json:"KeyType"`
+				SkipCnt string `json:"SkipCnt"`
+			} `json:"Encryption"`
+			WaterMarkList []struct {
+				WaterMarkTemplateId string `json:"WaterMarkTemplateId"`
+				Width               string `json:"Width"`
+				Height              string `json:"Height"`
+				Dx                  string `json:"Dx"`
+				Dy                  string `json:"Dy"`
+				ReferPos            string `json:"ReferPos"`
+				Type                string `json:"Type"`
+				InputFile           struct {
+					Bucket   string `json:"Bucket"`
+					Location string `json:"Location"`
+					Object   string `json:"Object"`
+				} `json:"InputFile"`
+			} `json:"WaterMarkList"`
+			MergeList []struct {
+				MergeURL string `json:"MergeURL"`
+				Start    string `json:"Start"`
+				Duration string `json:"Duration"`
+				RoleArn  string `json:"RoleArn"`
+			} `json:"MergeList"`
+			OpeningList []struct {
+				OpenUrl string `json:"openUrl"`
+				Start   string `json:"Start"`
+				Width   string `json:"Width"`
+				Height  string `json:"Height"`
+			} `json:"OpeningList"`
+			TailSlateList []struct {
+				TailUrl       string `json:"TailUrl"`
+				Start         string `json:"Start"`
+				BlendDuration string `json:"BlendDuration"`
+				Width         string `json:"Width"`
+				Height        string `json:"Height"`
+				IsMergeAudio  bool   `json:"IsMergeAudio"`
+				BgColor       string `json:"BgColor"`
+			} `json:"TailSlateList"`
+		} `json:"Output"`
+		MNSMessageResult struct {
+			MessageId    string `json:"MessageId"`
+			ErrorMessage string `json:"ErrorMessage"`
+			ErrorCode    string `json:"ErrorCode"`
+		} `json:"MNSMessageResult"`
+	} `json:"JobList"`
 }
 
 func CreateQueryJobListRequest() (request *QueryJobListRequest) {

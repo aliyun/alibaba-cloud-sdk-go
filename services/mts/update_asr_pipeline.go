@@ -64,30 +64,32 @@ func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRe
 
 type UpdateAsrPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string `position:"Query" name:"Priority"`
-	Name                 string `position:"Query" name:"Name"`
-	State                string `position:"Query" name:"State"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	Action               string `position:"Query" name:"Action"`
+	State                string `position:"Query" name:"State"`
+	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	Priority             string `position:"Query" name:"Priority"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PipelineId           string `position:"Query" name:"PipelineId"`
 }
 
 type UpdateAsrPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string `json:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		State        string `json:"State" xml:"State"`
-		Priority     int    `json:"Priority" xml:"Priority"`
+		Id           string `json:"Id"`
+		Name         string `json:"Name"`
+		State        string `json:"State"`
+		Priority     int    `json:"Priority"`
 		NotifyConfig struct {
-			Topic     string `json:"Topic" xml:"Topic"`
-			QueueName string `json:"QueueName" xml:"QueueName"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+			Topic     string `json:"Topic"`
+			QueueName string `json:"QueueName"`
+		} `json:"NotifyConfig"`
+	} `json:"Pipeline"`
 }
 
 func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {

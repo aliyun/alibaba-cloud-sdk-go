@@ -64,17 +64,19 @@ func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest,
 
 type DeletePipelineRequest struct {
 	*requests.RpcRequest
-	PipelineId           string `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PipelineId           string `position:"Query" name:"PipelineId"`
 }
 
 type DeletePipelineResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PipelineId string `json:"PipelineId" xml:"PipelineId"`
+	RequestId  string `json:"RequestId"`
+	PipelineId string `json:"PipelineId"`
 }
 
 func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {

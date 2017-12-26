@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) AddVideoSummaryPipeline(request *AddVideoSummaryPipelineRequest) (response *AddVideoSummaryPipelineResponse, err error) {
-	response = CreateAddVideoSummaryPipelineResponse()
+func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response *SubmitFpShotJobResponse, err error) {
+	response = CreateSubmitFpShotJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) AddVideoSummaryPipelineWithChan(request *AddVideoSummaryPipelineRequest) (<-chan *AddVideoSummaryPipelineResponse, <-chan error) {
-	responseChan := make(chan *AddVideoSummaryPipelineResponse, 1)
+func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (<-chan *SubmitFpShotJobResponse, <-chan error) {
+	responseChan := make(chan *SubmitFpShotJobResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddVideoSummaryPipeline(request)
+		response, err := client.SubmitFpShotJob(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) AddVideoSummaryPipelineWithChan(request *AddVideoSummaryPi
 	return responseChan, errChan
 }
 
-func (client *Client) AddVideoSummaryPipelineWithCallback(request *AddVideoSummaryPipelineRequest, callback func(response *AddVideoSummaryPipelineResponse, err error)) <-chan int {
+func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobRequest, callback func(response *SubmitFpShotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddVideoSummaryPipelineResponse
+		var response *SubmitFpShotJobResponse
 		var err error
 		defer close(result)
-		response, err = client.AddVideoSummaryPipeline(request)
+		response, err = client.SubmitFpShotJob(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,44 +62,36 @@ func (client *Client) AddVideoSummaryPipelineWithCallback(request *AddVideoSumma
 	return result
 }
 
-type AddVideoSummaryPipelineRequest struct {
+type SubmitFpShotJobRequest struct {
 	*requests.RpcRequest
+	Input                string `position:"Query" name:"Input"`
+	UserData             string `position:"Query" name:"UserData"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	FpShotConfig         string `position:"Query" name:"FpShotConfig"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
 	Action               string `position:"Query" name:"Action"`
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	Priority             string `position:"Query" name:"Priority"`
 	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PipelineId           string `position:"Query" name:"PipelineId"`
 }
 
-type AddVideoSummaryPipelineResponse struct {
+type SubmitFpShotJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		Priority     int    `json:"Priority"`
-		State        string `json:"State"`
-		NotifyConfig struct {
-			Topic string `json:"Topic"`
-			Queue string `json:"Queue"`
-		} `json:"NotifyConfig"`
-	} `json:"Pipeline"`
+	JobId     string `json:"JobId"`
 }
 
-func CreateAddVideoSummaryPipelineRequest() (request *AddVideoSummaryPipelineRequest) {
-	request = &AddVideoSummaryPipelineRequest{
+func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
+	request = &SubmitFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddVideoSummaryPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpShotJob", "", "")
 	return
 }
 
-func CreateAddVideoSummaryPipelineResponse() (response *AddVideoSummaryPipelineResponse) {
-	response = &AddVideoSummaryPipelineResponse{
+func CreateSubmitFpShotJobResponse() (response *SubmitFpShotJobResponse) {
+	response = &SubmitFpShotJobResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

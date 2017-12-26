@@ -64,30 +64,30 @@ func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkfl
 
 type SearchMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	StateList            string `position:"Query" name:"StateList"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	Action               string `position:"Query" name:"Action"`
+	StateList            string `position:"Query" name:"StateList"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type SearchMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalCount        int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int64  `json:"PageSize" xml:"PageSize"`
-	MediaWorkflowList struct {
-		MediaWorkflow []struct {
-			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-			Name            string `json:"Name" xml:"Name"`
-			Topology        string `json:"Topology" xml:"Topology"`
-			State           string `json:"State" xml:"State"`
-			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-		} `json:"MediaWorkflow" xml:"MediaWorkflow"`
-	} `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
+	RequestId         string `json:"RequestId"`
+	TotalCount        int64  `json:"TotalCount"`
+	PageNumber        int64  `json:"PageNumber"`
+	PageSize          int64  `json:"PageSize"`
+	MediaWorkflowList []struct {
+		MediaWorkflowId string `json:"MediaWorkflowId"`
+		Name            string `json:"Name"`
+		Topology        string `json:"Topology"`
+		State           string `json:"State"`
+		CreationTime    string `json:"CreationTime"`
+	} `json:"MediaWorkflowList"`
 }
 
 func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
