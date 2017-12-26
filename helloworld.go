@@ -1,1 +1,0 @@
-package alibaba_cloud_sdk_go
