@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,82 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (response *SetDynamicConfigResponse, err error) {
-	response = CreateSetDynamicConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetDynamicConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest) (<-chan *SetDynamicConfigResponse, <-chan error) {
-	responseChan := make(chan *SetDynamicConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetDynamicConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetDynamicConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetDynamicConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequest, callback func(response *SetDynamicConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetDynamicConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetDynamicConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequest, callback func(response *SetDynamicConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetDynamicConfigResponse
+var err error
+defer close(result)
+response, err = client.SetDynamicConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetDynamicConfigRequest struct {
-	*requests.RpcRequest
-	DynamicOrigin       string `position:"Query" name:"DynamicOrigin"`
-	StaticType          string `position:"Query" name:"StaticType"`
-	SecurityToken       string `position:"Query" name:"SecurityToken"`
-	StaticUri           string `position:"Query" name:"StaticUri"`
-	DomainName          string `position:"Query" name:"DomainName"`
-	Action              string `position:"Query" name:"Action"`
-	StaticPath          string `position:"Query" name:"StaticPath"`
-	DynamicCacheControl string `position:"Query" name:"DynamicCacheControl"`
-	OwnerId             string `position:"Query" name:"OwnerId"`
-	AccessKeyId         string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                StaticUri  string `position:"Query" name:"StaticUri"`
+                DynamicOrigin  string `position:"Query" name:"DynamicOrigin"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                StaticType  string `position:"Query" name:"StaticType"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
+                StaticPath  string `position:"Query" name:"StaticPath"`
+                DynamicCacheControl  string `position:"Query" name:"DynamicCacheControl"`
 }
 
+
 type SetDynamicConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
-	request = &SetDynamicConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetDynamicConfig", "", "")
-	return
+request = &SetDynamicConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetDynamicConfig", "", "")
+return
 }
 
 func CreateSetDynamicConfigResponse() (response *SetDynamicConfigResponse) {
-	response = &SetDynamicConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetDynamicConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

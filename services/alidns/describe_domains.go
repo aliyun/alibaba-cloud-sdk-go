@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,102 +17,104 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response *DescribeDomainsResponse, err error) {
-	response = CreateDescribeDomainsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (<-chan *DescribeDomainsResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomains(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomains(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsRequest, callback func(response *DescribeDomainsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomains(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsRequest, callback func(response *DescribeDomainsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainsResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomains(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainsRequest struct {
-	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                GroupId  string `position:"Query" name:"GroupId"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DescribeDomainsResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64  `json:"PageSize" xml:"PageSize"`
-	Domains    struct {
-		Domain []struct {
-			DomainId        string `json:"DomainId" xml:"DomainId"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			PunyCode        string `json:"PunyCode" xml:"PunyCode"`
-			AliDomain       bool   `json:"AliDomain" xml:"AliDomain"`
-			RecordCount     int64  `json:"RecordCount" xml:"RecordCount"`
-			RegistrantEmail string `json:"RegistrantEmail" xml:"RegistrantEmail"`
-			Remark          string `json:"Remark" xml:"Remark"`
-			GroupId         string `json:"GroupId" xml:"GroupId"`
-			GroupName       string `json:"GroupName" xml:"GroupName"`
-			InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-			VersionCode     string `json:"VersionCode" xml:"VersionCode"`
-			VersionName     string `json:"VersionName" xml:"VersionName"`
-			InstanceEndTime string `json:"InstanceEndTime" xml:"InstanceEndTime"`
-			InstanceExpired bool   `json:"InstanceExpired" xml:"InstanceExpired"`
-			DnsServers      struct {
-				DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-			} `json:"DnsServers" xml:"DnsServers"`
-		} `json:"Domain" xml:"Domain"`
-	} `json:"Domains" xml:"Domains"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int64 `json:"PageSize" xml:"PageSize"`
+                Domains struct {
+                    Domain []struct {
+            DomainId     string `json:"DomainId" xml:"DomainId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            PunyCode     string `json:"PunyCode" xml:"PunyCode"`
+            AliDomain     bool `json:"AliDomain" xml:"AliDomain"`
+            RecordCount     int64 `json:"RecordCount" xml:"RecordCount"`
+            RegistrantEmail     string `json:"RegistrantEmail" xml:"RegistrantEmail"`
+            Remark     string `json:"Remark" xml:"Remark"`
+            GroupId     string `json:"GroupId" xml:"GroupId"`
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            VersionCode     string `json:"VersionCode" xml:"VersionCode"`
+            VersionName     string `json:"VersionName" xml:"VersionName"`
+            InstanceEndTime     string `json:"InstanceEndTime" xml:"InstanceEndTime"`
+            InstanceExpired     bool `json:"InstanceExpired" xml:"InstanceExpired"`
+                DnsServers struct {
+                DnsServer []    string `json:"DnsServer" xml:"DnsServer"`
+                } `json:"DnsServers" xml:"DnsServers"`
+                    }   `json:"Domain" xml:"Domain"`
+                } `json:"Domains" xml:"Domains"`
 }
 
 func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
-	request = &DescribeDomainsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomains", "", "")
-	return
+request = &DescribeDomainsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomains", "", "")
+return
 }
 
 func CreateDescribeDomainsResponse() (response *DescribeDomainsResponse) {
-	response = &DescribeDomainsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,87 +17,89 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) StopMixStreamsService(request *StopMixStreamsServiceRequest) (response *StopMixStreamsServiceResponse, err error) {
-	response = CreateStopMixStreamsServiceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateStopMixStreamsServiceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) StopMixStreamsServiceWithChan(request *StopMixStreamsServiceRequest) (<-chan *StopMixStreamsServiceResponse, <-chan error) {
-	responseChan := make(chan *StopMixStreamsServiceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.StopMixStreamsService(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *StopMixStreamsServiceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.StopMixStreamsService(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsServiceRequest, callback func(response *StopMixStreamsServiceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *StopMixStreamsServiceResponse
-		var err error
-		defer close(result)
-		response, err = client.StopMixStreamsService(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsServiceRequest, callback func(response *StopMixStreamsServiceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *StopMixStreamsServiceResponse
+var err error
+defer close(result)
+response, err = client.StopMixStreamsService(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type StopMixStreamsServiceRequest struct {
-	*requests.RpcRequest
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	MainDomainName string `position:"Query" name:"MainDomainName"`
-	MixStreamName  string `position:"Query" name:"MixStreamName"`
-	Action         string `position:"Query" name:"Action"`
-	MixDomainName  string `position:"Query" name:"MixDomainName"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	MainAppName    string `position:"Query" name:"MainAppName"`
-	MixAppName     string `position:"Query" name:"MixAppName"`
-	MainStreamName string `position:"Query" name:"MainStreamName"`
-	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                MixStreamName  string `position:"Query" name:"MixStreamName"`
+                MainDomainName  string `position:"Query" name:"MainDomainName"`
+                MixAppName  string `position:"Query" name:"MixAppName"`
+                MainStreamName  string `position:"Query" name:"MainStreamName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
+                MixDomainName  string `position:"Query" name:"MixDomainName"`
+                MainAppName  string `position:"Query" name:"MainAppName"`
 }
 
+
 type StopMixStreamsServiceResponse struct {
-	*responses.BaseResponse
-	RequestId          string `json:"RequestId"`
-	MixStreamsInfoList []struct {
-		DomainName string `json:"DomainName"`
-		AppName    string `json:"AppName"`
-		StreamName string `json:"StreamName"`
-	} `json:"MixStreamsInfoList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                MixStreamsInfoList struct {
+                    MixStreamsInfo []struct {
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            AppName     string `json:"AppName" xml:"AppName"`
+            StreamName     string `json:"StreamName" xml:"StreamName"`
+                    }   `json:"MixStreamsInfo" xml:"MixStreamsInfo"`
+                } `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
 func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {
-	request = &StopMixStreamsServiceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "StopMixStreamsService", "", "")
-	return
+request = &StopMixStreamsServiceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "StopMixStreamsService", "", "")
+return
 }
 
 func CreateStopMixStreamsServiceResponse() (response *StopMixStreamsServiceResponse) {
-	response = &StopMixStreamsServiceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &StopMixStreamsServiceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteDeploymentSet(request *DeleteDeploymentSetRequest) (response *DeleteDeploymentSetResponse, err error) {
-	response = CreateDeleteDeploymentSetResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteDeploymentSetResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteDeploymentSetWithChan(request *DeleteDeploymentSetRequest) (<-chan *DeleteDeploymentSetResponse, <-chan error) {
-	responseChan := make(chan *DeleteDeploymentSetResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteDeploymentSet(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteDeploymentSetResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteDeploymentSet(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentSetRequest, callback func(response *DeleteDeploymentSetResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteDeploymentSetResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteDeploymentSet(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentSetRequest, callback func(response *DeleteDeploymentSetResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteDeploymentSetResponse
+var err error
+defer close(result)
+response, err = client.DeleteDeploymentSet(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteDeploymentSetRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DeploymentSetId      string `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                DeploymentSetId  string `position:"Query" name:"DeploymentSetId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DeleteDeploymentSetResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
-	request = &DeleteDeploymentSetRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "", "")
-	return
+request = &DeleteDeploymentSetRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "", "")
+return
 }
 
 func CreateDeleteDeploymentSetResponse() (response *DeleteDeploymentSetResponse) {
-	response = &DeleteDeploymentSetResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteDeploymentSetResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

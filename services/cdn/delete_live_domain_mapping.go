@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRequest) (response *DeleteLiveDomainMappingResponse, err error) {
-	response = CreateDeleteLiveDomainMappingResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteLiveDomainMappingResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainMappingRequest) (<-chan *DeleteLiveDomainMappingResponse, <-chan error) {
-	responseChan := make(chan *DeleteLiveDomainMappingResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteLiveDomainMapping(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteLiveDomainMappingResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteLiveDomainMapping(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDomainMappingRequest, callback func(response *DeleteLiveDomainMappingResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteLiveDomainMappingResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteLiveDomainMapping(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDomainMappingRequest, callback func(response *DeleteLiveDomainMappingResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteLiveDomainMappingResponse
+var err error
+defer close(result)
+response, err = client.DeleteLiveDomainMapping(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteLiveDomainMappingRequest struct {
-	*requests.RpcRequest
-	PullDomain    string `position:"Query" name:"PullDomain"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	PushDomain    string `position:"Query" name:"PushDomain"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                PullDomain  string `position:"Query" name:"PullDomain"`
+                PushDomain  string `position:"Query" name:"PushDomain"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DeleteLiveDomainMappingResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingRequest) {
-	request = &DeleteLiveDomainMappingRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "", "")
-	return
+request = &DeleteLiveDomainMappingRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "", "")
+return
 }
 
 func CreateDeleteLiveDomainMappingResponse() (response *DeleteLiveDomainMappingResponse) {
-	response = &DeleteLiveDomainMappingResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteLiveDomainMappingResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

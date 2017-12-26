@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,85 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListContactGroup(request *ListContactGroupRequest) (response *ListContactGroupResponse, err error) {
-	response = CreateListContactGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListContactGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest) (<-chan *ListContactGroupResponse, <-chan error) {
-	responseChan := make(chan *ListContactGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListContactGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListContactGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListContactGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequest, callback func(response *ListContactGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListContactGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.ListContactGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequest, callback func(response *ListContactGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListContactGroupResponse
+var err error
+defer close(result)
+response, err = client.ListContactGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListContactGroupRequest struct {
-	*requests.RpcRequest
-	PageSize       string `position:"Query" name:"PageSize"`
-	PageNumber     string `position:"Query" name:"PageNumber"`
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                CallbyCmsOwner  string `position:"Query" name:"callby_cms_owner"`
 }
 
+
 type ListContactGroupResponse struct {
-	*responses.BaseResponse
-	Success       bool   `json:"Success" xml:"Success"`
-	Code          string `json:"Code" xml:"Code"`
-	Message       string `json:"Message" xml:"Message"`
-	NextToken     int    `json:"NextToken" xml:"NextToken"`
-	Total         int    `json:"Total" xml:"Total"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	ContactGroups struct {
-		ContactGroup []string `json:"ContactGroup" xml:"ContactGroup"`
-	} `json:"ContactGroups" xml:"ContactGroups"`
+*responses.BaseResponse
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            NextToken     int `json:"NextToken" xml:"NextToken"`
+            Total     int `json:"Total" xml:"Total"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                ContactGroups struct {
+                ContactGroup []    string `json:"ContactGroup" xml:"ContactGroup"`
+                } `json:"ContactGroups" xml:"ContactGroups"`
 }
 
 func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
-	request = &ListContactGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "", "")
-	return
+request = &ListContactGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "", "")
+return
 }
 
 func CreateListContactGroupResponse() (response *ListContactGroupResponse) {
-	response = &ListContactGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListContactGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

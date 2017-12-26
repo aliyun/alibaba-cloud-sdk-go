@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,88 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (response *DescribeUserConfigsResponse, err error) {
-	response = CreateDescribeUserConfigsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeUserConfigsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRequest) (<-chan *DescribeUserConfigsResponse, <-chan error) {
-	responseChan := make(chan *DescribeUserConfigsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeUserConfigs(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeUserConfigsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeUserConfigs(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfigsRequest, callback func(response *DescribeUserConfigsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeUserConfigsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeUserConfigs(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfigsRequest, callback func(response *DescribeUserConfigsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeUserConfigsResponse
+var err error
+defer close(result)
+response, err = client.DescribeUserConfigs(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeUserConfigsRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	Config        string `position:"Query" name:"Config"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                Config  string `position:"Query" name:"Config"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeUserConfigsResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	Configs   struct {
-		OssLogConfig struct {
-			Enable string `json:"Enable"`
-			Bucket string `json:"Bucket"`
-			Prefix string `json:"Prefix"`
-		} `json:"OssLogConfig"`
-		GreenManagerConfig struct {
-			Quota string `json:"Quota"`
-			Ratio string `json:"Ratio"`
-		} `json:"GreenManagerConfig"`
-	} `json:"Configs"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Configs struct {
+            OssLogConfig struct {
+            Enable     string `json:"Enable" xml:"Enable"`
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Prefix     string `json:"Prefix" xml:"Prefix"`
+            }  `json:"OssLogConfig" xml:"OssLogConfig"`
+            GreenManagerConfig struct {
+            Quota     string `json:"Quota" xml:"Quota"`
+            Ratio     string `json:"Ratio" xml:"Ratio"`
+            }  `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
+            }  `json:"Configs" xml:"Configs"`
 }
 
 func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
-	request = &DescribeUserConfigsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserConfigs", "", "")
-	return
+request = &DescribeUserConfigsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserConfigs", "", "")
+return
 }
 
 func CreateDescribeUserConfigsResponse() (response *DescribeUserConfigsResponse) {
-	response = &DescribeUserConfigsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeUserConfigsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

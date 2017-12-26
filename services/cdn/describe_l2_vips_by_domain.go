@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeL2VipsByDomain(request *DescribeL2VipsByDomainRequest) (response *DescribeL2VipsByDomainResponse, err error) {
-	response = CreateDescribeL2VipsByDomainResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeL2VipsByDomainResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeL2VipsByDomainWithChan(request *DescribeL2VipsByDomainRequest) (<-chan *DescribeL2VipsByDomainResponse, <-chan error) {
-	responseChan := make(chan *DescribeL2VipsByDomainResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeL2VipsByDomain(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeL2VipsByDomainResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeL2VipsByDomain(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeL2VipsByDomainWithCallback(request *DescribeL2VipsByDomainRequest, callback func(response *DescribeL2VipsByDomainResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeL2VipsByDomainResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeL2VipsByDomain(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeL2VipsByDomainWithCallback(request *DescribeL2VipsByDomainRequest, callback func(response *DescribeL2VipsByDomainResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeL2VipsByDomainResponse
+var err error
+defer close(result)
+response, err = client.DescribeL2VipsByDomain(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeL2VipsByDomainRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeL2VipsByDomainResponse struct {
-	*responses.BaseResponse
-	RequestId  string   `json:"RequestId"`
-	DomainName string   `json:"DomainName"`
-	Vips       []string `json:"Vips"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+                Vips struct {
+                Vip []    string `json:"Vip" xml:"Vip"`
+                } `json:"Vips" xml:"Vips"`
 }
 
 func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainRequest) {
-	request = &DescribeL2VipsByDomainRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeL2VipsByDomain", "", "")
-	return
+request = &DescribeL2VipsByDomainRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeL2VipsByDomain", "", "")
+return
 }
 
 func CreateDescribeL2VipsByDomainResponse() (response *DescribeL2VipsByDomainResponse) {
-	response = &DescribeL2VipsByDomainResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeL2VipsByDomainResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

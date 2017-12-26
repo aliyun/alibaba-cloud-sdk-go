@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDiskAttribute(request *ModifyDiskAttributeRequest) (response *ModifyDiskAttributeResponse, err error) {
-	response = CreateModifyDiskAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyDiskAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyDiskAttributeWithChan(request *ModifyDiskAttributeRequest) (<-chan *ModifyDiskAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyDiskAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyDiskAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyDiskAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyDiskAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttributeRequest, callback func(response *ModifyDiskAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyDiskAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyDiskAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttributeRequest, callback func(response *ModifyDiskAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyDiskAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyDiskAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyDiskAttributeRequest struct {
-	*requests.RpcRequest
-	DiskName             string `position:"Query" name:"DiskName"`
-	EnableAutoSnapshot   string `position:"Query" name:"EnableAutoSnapshot"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	DiskId               string `position:"Query" name:"DiskId"`
-	DeleteWithInstance   string `position:"Query" name:"DeleteWithInstance"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	DeleteAutoSnapshot   string `position:"Query" name:"DeleteAutoSnapshot"`
+*requests.RpcRequest
+                DiskName  string `position:"Query" name:"DiskName"`
+                EnableAutoSnapshot  string `position:"Query" name:"EnableAutoSnapshot"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                DiskId  string `position:"Query" name:"DiskId"`
+                DeleteWithInstance  string `position:"Query" name:"DeleteWithInstance"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                DeleteAutoSnapshot  string `position:"Query" name:"DeleteAutoSnapshot"`
 }
 
+
 type ModifyDiskAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
-	request = &ModifyDiskAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "", "")
-	return
+request = &ModifyDiskAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskAttribute", "", "")
+return
 }
 
 func CreateModifyDiskAttributeResponse() (response *ModifyDiskAttributeResponse) {
-	response = &ModifyDiskAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyDiskAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

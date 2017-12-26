@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,90 +17,92 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetRegionList(request *GetRegionListRequest) (response *GetRegionListResponse, err error) {
-	response = CreateGetRegionListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetRegionListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-chan *GetRegionListResponse, <-chan error) {
-	responseChan := make(chan *GetRegionListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetRegionList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetRegionListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetRegionList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, callback func(response *GetRegionListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetRegionListResponse
-		var err error
-		defer close(result)
-		response, err = client.GetRegionList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, callback func(response *GetRegionListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetRegionListResponse
+var err error
+defer close(result)
+response, err = client.GetRegionList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetRegionListRequest struct {
-	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OffsetCreateTime     string `position:"Query" name:"OffsetCreateTime"`
+*requests.RpcRequest
+                Total  string `position:"Query" name:"Total"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                OffsetCreateTimeDesc  string `position:"Query" name:"OffsetCreateTimeDesc"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                Offset  string `position:"Query" name:"Offset"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                OffsetCreateTime  string `position:"Query" name:"OffsetCreateTime"`
 }
 
+
 type GetRegionListResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Total     int    `json:"Total" xml:"Total"`
-	PageNo    int    `json:"PageNo" xml:"PageNo"`
-	PageSize  int    `json:"PageSize" xml:"PageSize"`
-	Data      struct {
-		RegionList []struct {
-			Region     string `json:"Region" xml:"Region"`
-			RegionDesc string `json:"RegionDesc" xml:"RegionDesc"`
-		} `json:"regionList" xml:"regionList"`
-	} `json:"data" xml:"data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Total     int `json:"Total" xml:"Total"`
+            PageNo     int `json:"PageNo" xml:"PageNo"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                Data struct {
+                    RegionList []struct {
+            Region     string `json:"Region" xml:"Region"`
+            RegionDesc     string `json:"RegionDesc" xml:"RegionDesc"`
+                    }   `json:"regionList" xml:"regionList"`
+                } `json:"data" xml:"data"`
 }
 
 func CreateGetRegionListRequest() (request *GetRegionListRequest) {
-	request = &GetRegionListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "GetRegionList", "", "")
-	return
+request = &GetRegionListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "GetRegionList", "", "")
+return
 }
 
 func CreateGetRegionListResponse() (response *GetRegionListResponse) {
-	response = &GetRegionListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetRegionListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

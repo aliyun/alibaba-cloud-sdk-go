@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,96 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstancesByExpireTime(request *DescribeDBInstancesByExpireTimeRequest) (response *DescribeDBInstancesByExpireTimeResponse, err error) {
-	response = CreateDescribeDBInstancesByExpireTimeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDBInstancesByExpireTimeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDBInstancesByExpireTimeWithChan(request *DescribeDBInstancesByExpireTimeRequest) (<-chan *DescribeDBInstancesByExpireTimeResponse, <-chan error) {
-	responseChan := make(chan *DescribeDBInstancesByExpireTimeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDBInstancesByExpireTime(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDBInstancesByExpireTimeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDBInstancesByExpireTime(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *DescribeDBInstancesByExpireTimeRequest, callback func(response *DescribeDBInstancesByExpireTimeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDBInstancesByExpireTimeResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDBInstancesByExpireTime(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *DescribeDBInstancesByExpireTimeRequest, callback func(response *DescribeDBInstancesByExpireTimeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDBInstancesByExpireTimeResponse
+var err error
+defer close(result)
+response, err = client.DescribeDBInstancesByExpireTime(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDBInstancesByExpireTimeRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	Expired              string `position:"Query" name:"Expired"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ExpirePeriod         string `position:"Query" name:"ExpirePeriod"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                PageSize  string `position:"Query" name:"PageSize"`
+                ProxyId  string `position:"Query" name:"proxyId"`
+                Expired  string `position:"Query" name:"Expired"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ExpirePeriod  string `position:"Query" name:"ExpirePeriod"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type DescribeDBInstancesByExpireTimeResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		DBInstanceExpireTime []struct {
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
-			DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			LockMode              string `json:"LockMode" xml:"LockMode"`
-		} `json:"DBInstanceExpireTime" xml:"DBInstanceExpireTime"`
-	} `json:"Items" xml:"Items"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            TotalRecordCount     int `json:"TotalRecordCount" xml:"TotalRecordCount"`
+            PageRecordCount     int `json:"PageRecordCount" xml:"PageRecordCount"`
+                Items struct {
+                    DBInstanceExpireTime []struct {
+            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
+            DBInstanceStatus     string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+            LockMode     string `json:"LockMode" xml:"LockMode"`
+                    }   `json:"DBInstanceExpireTime" xml:"DBInstanceExpireTime"`
+                } `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstancesByExpireTimeRequest) {
-	request = &DescribeDBInstancesByExpireTimeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "", "")
-	return
+request = &DescribeDBInstancesByExpireTimeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "", "")
+return
 }
 
 func CreateDescribeDBInstancesByExpireTimeResponse() (response *DescribeDBInstancesByExpireTimeResponse) {
-	response = &DescribeDBInstancesByExpireTimeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDBInstancesByExpireTimeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

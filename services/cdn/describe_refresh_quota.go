@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRefreshQuota(request *DescribeRefreshQuotaRequest) (response *DescribeRefreshQuotaResponse, err error) {
-	response = CreateDescribeRefreshQuotaResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeRefreshQuotaResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuotaRequest) (<-chan *DescribeRefreshQuotaResponse, <-chan error) {
-	responseChan := make(chan *DescribeRefreshQuotaResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeRefreshQuota(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeRefreshQuotaResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeRefreshQuota(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQuotaRequest, callback func(response *DescribeRefreshQuotaResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeRefreshQuotaResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeRefreshQuota(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQuotaRequest, callback func(response *DescribeRefreshQuotaResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeRefreshQuotaResponse
+var err error
+defer close(result)
+response, err = client.DescribeRefreshQuota(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeRefreshQuotaRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeRefreshQuotaResponse struct {
-	*responses.BaseResponse
-	RequestId     string `json:"RequestId"`
-	UrlQuota      string `json:"UrlQuota"`
-	DirQuota      string `json:"DirQuota"`
-	UrlRemain     string `json:"UrlRemain"`
-	DirRemain     string `json:"DirRemain"`
-	PreloadQuota  string `json:"PreloadQuota"`
-	BlockQuota    string `json:"BlockQuota"`
-	PreloadRemain string `json:"PreloadRemain"`
-	BlockRemain   string `json:"blockRemain"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            UrlQuota     string `json:"UrlQuota" xml:"UrlQuota"`
+            DirQuota     string `json:"DirQuota" xml:"DirQuota"`
+            UrlRemain     string `json:"UrlRemain" xml:"UrlRemain"`
+            DirRemain     string `json:"DirRemain" xml:"DirRemain"`
+            PreloadQuota     string `json:"PreloadQuota" xml:"PreloadQuota"`
+            BlockQuota     string `json:"BlockQuota" xml:"BlockQuota"`
+            PreloadRemain     string `json:"PreloadRemain" xml:"PreloadRemain"`
+            BlockRemain     string `json:"blockRemain" xml:"blockRemain"`
 }
 
 func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) {
-	request = &DescribeRefreshQuotaRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshQuota", "", "")
-	return
+request = &DescribeRefreshQuotaRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshQuota", "", "")
+return
 }
 
 func CreateDescribeRefreshQuotaResponse() (response *DescribeRefreshQuotaResponse) {
-	response = &DescribeRefreshQuotaResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeRefreshQuotaResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

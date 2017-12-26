@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeProcessDelete(request *NodeProcessDeleteRequest) (response *NodeProcessDeleteResponse, err error) {
-	response = CreateNodeProcessDeleteResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateNodeProcessDeleteResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteRequest) (<-chan *NodeProcessDeleteResponse, <-chan error) {
-	responseChan := make(chan *NodeProcessDeleteResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.NodeProcessDelete(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *NodeProcessDeleteResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.NodeProcessDelete(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRequest, callback func(response *NodeProcessDeleteResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *NodeProcessDeleteResponse
-		var err error
-		defer close(result)
-		response, err = client.NodeProcessDelete(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRequest, callback func(response *NodeProcessDeleteResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *NodeProcessDeleteResponse
+var err error
+defer close(result)
+response, err = client.NodeProcessDelete(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type NodeProcessDeleteRequest struct {
-	*requests.RpcRequest
-	Id         string `position:"Query" name:"Id"`
-	Name       string `position:"Query" name:"Name"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                Id  string `position:"Query" name:"Id"`
+                Name  string `position:"Query" name:"Name"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type NodeProcessDeleteResponse struct {
-	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            ErrorCode     int `json:"ErrorCode" xml:"ErrorCode"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            Success     bool `json:"Success" xml:"Success"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
-	request = &NodeProcessDeleteRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessDelete", "", "")
-	return
+request = &NodeProcessDeleteRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessDelete", "", "")
+return
 }
 
 func CreateNodeProcessDeleteResponse() (response *NodeProcessDeleteResponse) {
-	response = &NodeProcessDeleteResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &NodeProcessDeleteResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

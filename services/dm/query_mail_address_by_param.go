@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,98 +17,100 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryMailAddressByParam(request *QueryMailAddressByParamRequest) (response *QueryMailAddressByParamResponse, err error) {
-	response = CreateQueryMailAddressByParamResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryMailAddressByParamResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressByParamRequest) (<-chan *QueryMailAddressByParamResponse, <-chan error) {
-	responseChan := make(chan *QueryMailAddressByParamResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryMailAddressByParam(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryMailAddressByParamResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryMailAddressByParam(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddressByParamRequest, callback func(response *QueryMailAddressByParamResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryMailAddressByParamResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryMailAddressByParam(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddressByParamRequest, callback func(response *QueryMailAddressByParamResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryMailAddressByParamResponse
+var err error
+defer close(result)
+response, err = client.QueryMailAddressByParam(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryMailAddressByParamRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Sendtype             string `position:"Query" name:"Sendtype"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                PageNo  string `position:"Query" name:"PageNo"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Sendtype  string `position:"Query" name:"Sendtype"`
 }
 
+
 type QueryMailAddressByParamResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		MailAddress []struct {
-			MailAddressId string `json:"MailAddressId" xml:"MailAddressId"`
-			AccountName   string `json:"AccountName" xml:"AccountName"`
-			ReplyAddress  string `json:"ReplyAddress" xml:"ReplyAddress"`
-			Sendtype      string `json:"Sendtype" xml:"Sendtype"`
-			AccountStatus string `json:"AccountStatus" xml:"AccountStatus"`
-			ReplyStatus   string `json:"ReplyStatus" xml:"ReplyStatus"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			DailyCount    string `json:"DailyCount" xml:"DailyCount"`
-			MonthCount    string `json:"MonthCount" xml:"MonthCount"`
-			DailyReqCount string `json:"DailyReqCount" xml:"DailyReqCount"`
-			MonthReqCount string `json:"MonthReqCount" xml:"MonthReqCount"`
-			DomainStatus  string `json:"DomainStatus" xml:"DomainStatus"`
-		} `json:"mailAddress" xml:"mailAddress"`
-	} `json:"data" xml:"data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                Data struct {
+                    MailAddress []struct {
+            MailAddressId     string `json:"MailAddressId" xml:"MailAddressId"`
+            AccountName     string `json:"AccountName" xml:"AccountName"`
+            ReplyAddress     string `json:"ReplyAddress" xml:"ReplyAddress"`
+            Sendtype     string `json:"Sendtype" xml:"Sendtype"`
+            AccountStatus     string `json:"AccountStatus" xml:"AccountStatus"`
+            ReplyStatus     string `json:"ReplyStatus" xml:"ReplyStatus"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+            DailyCount     string `json:"DailyCount" xml:"DailyCount"`
+            MonthCount     string `json:"MonthCount" xml:"MonthCount"`
+            DailyReqCount     string `json:"DailyReqCount" xml:"DailyReqCount"`
+            MonthReqCount     string `json:"MonthReqCount" xml:"MonthReqCount"`
+            DomainStatus     string `json:"DomainStatus" xml:"DomainStatus"`
+                    }   `json:"mailAddress" xml:"mailAddress"`
+                } `json:"data" xml:"data"`
 }
 
 func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamRequest) {
-	request = &QueryMailAddressByParamRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryMailAddressByParam", "", "")
-	return
+request = &QueryMailAddressByParamRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "QueryMailAddressByParam", "", "")
+return
 }
 
 func CreateQueryMailAddressByParamResponse() (response *QueryMailAddressByParamResponse) {
-	response = &QueryMailAddressByParamResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryMailAddressByParamResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

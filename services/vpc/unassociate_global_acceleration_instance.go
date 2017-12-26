@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UnassociateGlobalAccelerationInstance(request *UnassociateGlobalAccelerationInstanceRequest) (response *UnassociateGlobalAccelerationInstanceResponse, err error) {
-	response = CreateUnassociateGlobalAccelerationInstanceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUnassociateGlobalAccelerationInstanceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UnassociateGlobalAccelerationInstanceWithChan(request *UnassociateGlobalAccelerationInstanceRequest) (<-chan *UnassociateGlobalAccelerationInstanceResponse, <-chan error) {
-	responseChan := make(chan *UnassociateGlobalAccelerationInstanceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UnassociateGlobalAccelerationInstance(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UnassociateGlobalAccelerationInstanceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UnassociateGlobalAccelerationInstance(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UnassociateGlobalAccelerationInstanceWithCallback(request *UnassociateGlobalAccelerationInstanceRequest, callback func(response *UnassociateGlobalAccelerationInstanceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UnassociateGlobalAccelerationInstanceResponse
-		var err error
-		defer close(result)
-		response, err = client.UnassociateGlobalAccelerationInstance(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UnassociateGlobalAccelerationInstanceWithCallback(request *UnassociateGlobalAccelerationInstanceRequest, callback func(response *UnassociateGlobalAccelerationInstanceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UnassociateGlobalAccelerationInstanceResponse
+var err error
+defer close(result)
+response, err = client.UnassociateGlobalAccelerationInstance(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UnassociateGlobalAccelerationInstanceRequest struct {
-	*requests.RpcRequest
-	GlobalAccelerationInstanceId string `position:"Query" name:"GlobalAccelerationInstanceId"`
-	ResourceOwnerAccount         string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId              string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                 string `position:"Query" name:"OwnerAccount"`
-	OwnerId                      string `position:"Query" name:"OwnerId"`
-	InstanceType                 string `position:"Query" name:"InstanceType"`
+*requests.RpcRequest
+                GlobalAccelerationInstanceId  string `position:"Query" name:"GlobalAccelerationInstanceId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceType  string `position:"Query" name:"InstanceType"`
 }
 
+
 type UnassociateGlobalAccelerationInstanceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUnassociateGlobalAccelerationInstanceRequest() (request *UnassociateGlobalAccelerationInstanceRequest) {
-	request = &UnassociateGlobalAccelerationInstanceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "", "")
-	return
+request = &UnassociateGlobalAccelerationInstanceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "", "")
+return
 }
 
 func CreateUnassociateGlobalAccelerationInstanceResponse() (response *UnassociateGlobalAccelerationInstanceResponse) {
-	response = &UnassociateGlobalAccelerationInstanceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UnassociateGlobalAccelerationInstanceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

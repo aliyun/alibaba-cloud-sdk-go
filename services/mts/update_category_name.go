@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,80 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (response *UpdateCategoryNameResponse, err error) {
-	response = CreateUpdateCategoryNameResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUpdateCategoryNameResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequest) (<-chan *UpdateCategoryNameResponse, <-chan error) {
-	responseChan := make(chan *UpdateCategoryNameResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UpdateCategoryName(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UpdateCategoryNameResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UpdateCategoryName(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryNameRequest, callback func(response *UpdateCategoryNameResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UpdateCategoryNameResponse
-		var err error
-		defer close(result)
-		response, err = client.UpdateCategoryName(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryNameRequest, callback func(response *UpdateCategoryNameResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UpdateCategoryNameResponse
+var err error
+defer close(result)
+response, err = client.UpdateCategoryName(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UpdateCategoryNameRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	CateId               string `position:"Query" name:"CateId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	CateName             string `position:"Query" name:"CateName"`
+*requests.RpcRequest
+                CateId  string `position:"Query" name:"CateId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                CateName  string `position:"Query" name:"CateName"`
 }
 
+
 type UpdateCategoryNameResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
-	request = &UpdateCategoryNameRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "", "")
-	return
+request = &UpdateCategoryNameRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "", "")
+return
 }
 
 func CreateUpdateCategoryNameResponse() (response *UpdateCategoryNameResponse) {
-	response = &UpdateCategoryNameResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UpdateCategoryNameResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

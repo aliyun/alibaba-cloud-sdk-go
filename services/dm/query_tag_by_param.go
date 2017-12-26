@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,87 +17,89 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryTagByParam(request *QueryTagByParamRequest) (response *QueryTagByParamResponse, err error) {
-	response = CreateQueryTagByParamResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryTagByParamResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (<-chan *QueryTagByParamResponse, <-chan error) {
-	responseChan := make(chan *QueryTagByParamResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryTagByParam(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryTagByParamResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryTagByParam(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamRequest, callback func(response *QueryTagByParamResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryTagByParamResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryTagByParam(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamRequest, callback func(response *QueryTagByParamResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryTagByParamResponse
+var err error
+defer close(result)
+response, err = client.QueryTagByParam(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryTagByParamRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                PageNo  string `position:"Query" name:"PageNo"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryTagByParamResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Tag []struct {
-			TagId   string `json:"TagId" xml:"TagId"`
-			TagName string `json:"TagName" xml:"TagName"`
-		} `json:"tag" xml:"tag"`
-	} `json:"data" xml:"data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                Data struct {
+                    Tag []struct {
+            TagId     string `json:"TagId" xml:"TagId"`
+            TagName     string `json:"TagName" xml:"TagName"`
+                    }   `json:"tag" xml:"tag"`
+                } `json:"data" xml:"data"`
 }
 
 func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
-	request = &QueryTagByParamRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTagByParam", "", "")
-	return
+request = &QueryTagByParamRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "QueryTagByParam", "", "")
+return
 }
 
 func CreateQueryTagByParamResponse() (response *QueryTagByParamResponse) {
-	response = &QueryTagByParamResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryTagByParamResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDampPolicyByPolicyName(request *DescribeDampPolicyByPolicyNameRequest) (response *DescribeDampPolicyByPolicyNameResponse, err error) {
-	response = CreateDescribeDampPolicyByPolicyNameResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDampPolicyByPolicyNameResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDampPolicyByPolicyNameWithChan(request *DescribeDampPolicyByPolicyNameRequest) (<-chan *DescribeDampPolicyByPolicyNameResponse, <-chan error) {
-	responseChan := make(chan *DescribeDampPolicyByPolicyNameResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDampPolicyByPolicyName(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDampPolicyByPolicyNameResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDampPolicyByPolicyName(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDampPolicyByPolicyNameWithCallback(request *DescribeDampPolicyByPolicyNameRequest, callback func(response *DescribeDampPolicyByPolicyNameResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDampPolicyByPolicyNameResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDampPolicyByPolicyName(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDampPolicyByPolicyNameWithCallback(request *DescribeDampPolicyByPolicyNameRequest, callback func(response *DescribeDampPolicyByPolicyNameResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDampPolicyByPolicyNameResponse
+var err error
+defer close(result)
+response, err = client.DescribeDampPolicyByPolicyName(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDampPolicyByPolicyNameRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PolicyName           string `position:"Query" name:"PolicyName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PolicyName  string `position:"Query" name:"PolicyName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeDampPolicyByPolicyNameResponse struct {
-	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Policy      string `json:"Policy" xml:"Policy"`
-	TimeRules   string `json:"TimeRules" xml:"TimeRules"`
-	ActionRules string `json:"ActionRules" xml:"ActionRules"`
-	SourceRules string `json:"SourceRules" xml:"SourceRules"`
-	Handler     string `json:"Handler" xml:"Handler"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Policy     string `json:"Policy" xml:"Policy"`
+            TimeRules     string `json:"TimeRules" xml:"TimeRules"`
+            ActionRules     string `json:"ActionRules" xml:"ActionRules"`
+            SourceRules     string `json:"SourceRules" xml:"SourceRules"`
+            Handler     string `json:"Handler" xml:"Handler"`
 }
 
 func CreateDescribeDampPolicyByPolicyNameRequest() (request *DescribeDampPolicyByPolicyNameRequest) {
-	request = &DescribeDampPolicyByPolicyNameRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "", "")
-	return
+request = &DescribeDampPolicyByPolicyNameRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "", "")
+return
 }
 
 func CreateDescribeDampPolicyByPolicyNameResponse() (response *DescribeDampPolicyByPolicyNameResponse) {
-	response = &DescribeDampPolicyByPolicyNameResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDampPolicyByPolicyNameResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

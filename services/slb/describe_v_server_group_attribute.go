@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeVServerGroupAttribute(request *DescribeVServerGroupAttributeRequest) (response *DescribeVServerGroupAttributeResponse, err error) {
-	response = CreateDescribeVServerGroupAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeVServerGroupAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeVServerGroupAttributeWithChan(request *DescribeVServerGroupAttributeRequest) (<-chan *DescribeVServerGroupAttributeResponse, <-chan error) {
-	responseChan := make(chan *DescribeVServerGroupAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeVServerGroupAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeVServerGroupAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeVServerGroupAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeVServerGroupAttributeWithCallback(request *DescribeVServerGroupAttributeRequest, callback func(response *DescribeVServerGroupAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeVServerGroupAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeVServerGroupAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeVServerGroupAttributeWithCallback(request *DescribeVServerGroupAttributeRequest, callback func(response *DescribeVServerGroupAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeVServerGroupAttributeResponse
+var err error
+defer close(result)
+response, err = client.DescribeVServerGroupAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeVServerGroupAttributeRequest struct {
-	*requests.RpcRequest
-	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                VServerGroupId  string `position:"Query" name:"VServerGroupId"`
+                Tags  string `position:"Query" name:"Tags"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeVServerGroupAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	VServerGroupId   string `json:"VServerGroupId" xml:"VServerGroupId"`
-	VServerGroupName string `json:"VServerGroupName" xml:"VServerGroupName"`
-	BackendServers   struct {
-		BackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Port     int    `json:"Port" xml:"Port"`
-			Weight   int    `json:"Weight" xml:"Weight"`
-		} `json:"BackendServer" xml:"BackendServer"`
-	} `json:"BackendServers" xml:"BackendServers"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
+            VServerGroupName     string `json:"VServerGroupName" xml:"VServerGroupName"`
+                BackendServers struct {
+                    BackendServer []struct {
+            ServerId     string `json:"ServerId" xml:"ServerId"`
+            Port     int `json:"Port" xml:"Port"`
+            Weight     int `json:"Weight" xml:"Weight"`
+                    }   `json:"BackendServer" xml:"BackendServer"`
+                } `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroupAttributeRequest) {
-	request = &DescribeVServerGroupAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "", "")
-	return
+request = &DescribeVServerGroupAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "", "")
+return
 }
 
 func CreateDescribeVServerGroupAttributeResponse() (response *DescribeVServerGroupAttributeResponse) {
-	response = &DescribeVServerGroupAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeVServerGroupAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

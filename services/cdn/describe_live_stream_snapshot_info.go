@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,89 +17,91 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamSnapshotInfo(request *DescribeLiveStreamSnapshotInfoRequest) (response *DescribeLiveStreamSnapshotInfoResponse, err error) {
-	response = CreateDescribeLiveStreamSnapshotInfoResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamSnapshotInfoResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLiveStreamSnapshotInfoRequest) (<-chan *DescribeLiveStreamSnapshotInfoResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamSnapshotInfoResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamSnapshotInfo(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamSnapshotInfoResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamSnapshotInfo(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *DescribeLiveStreamSnapshotInfoRequest, callback func(response *DescribeLiveStreamSnapshotInfoResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamSnapshotInfoResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamSnapshotInfo(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *DescribeLiveStreamSnapshotInfoRequest, callback func(response *DescribeLiveStreamSnapshotInfoResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamSnapshotInfoResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamSnapshotInfo(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamSnapshotInfoRequest struct {
-	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Limit         string `position:"Query" name:"Limit"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                Limit  string `position:"Query" name:"Limit"`
+                StreamName  string `position:"Query" name:"StreamName"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamSnapshotInfoResponse struct {
-	*responses.BaseResponse
-	RequestId                  string `json:"RequestId"`
-	NextStartTime              string `json:"NextStartTime"`
-	LiveStreamSnapshotInfoList []struct {
-		OssEndpoint string `json:"OssEndpoint"`
-		OssBucket   string `json:"OssBucket"`
-		OssObject   string `json:"OssObject"`
-		CreateTime  string `json:"CreateTime"`
-	} `json:"LiveStreamSnapshotInfoList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            NextStartTime     string `json:"NextStartTime" xml:"NextStartTime"`
+                LiveStreamSnapshotInfoList struct {
+                    LiveStreamSnapshotInfo []struct {
+            OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
+            OssBucket     string `json:"OssBucket" xml:"OssBucket"`
+            OssObject     string `json:"OssObject" xml:"OssObject"`
+            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+                    }   `json:"LiveStreamSnapshotInfo" xml:"LiveStreamSnapshotInfo"`
+                } `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
 }
 
 func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamSnapshotInfoRequest) {
-	request = &DescribeLiveStreamSnapshotInfoRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamSnapshotInfo", "", "")
-	return
+request = &DescribeLiveStreamSnapshotInfoRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamSnapshotInfo", "", "")
+return
 }
 
 func CreateDescribeLiveStreamSnapshotInfoResponse() (response *DescribeLiveStreamSnapshotInfoResponse) {
-	response = &DescribeLiveStreamSnapshotInfoResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamSnapshotInfoResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

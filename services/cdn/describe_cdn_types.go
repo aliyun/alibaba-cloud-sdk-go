@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,83 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCdnTypes(request *DescribeCdnTypesRequest) (response *DescribeCdnTypesResponse, err error) {
-	response = CreateDescribeCdnTypesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeCdnTypesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeCdnTypesWithChan(request *DescribeCdnTypesRequest) (<-chan *DescribeCdnTypesResponse, <-chan error) {
-	responseChan := make(chan *DescribeCdnTypesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeCdnTypes(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeCdnTypesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeCdnTypes(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequest, callback func(response *DescribeCdnTypesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeCdnTypesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeCdnTypes(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequest, callback func(response *DescribeCdnTypesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeCdnTypesResponse
+var err error
+defer close(result)
+response, err = client.DescribeCdnTypes(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeCdnTypesRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeCdnTypesResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	CdnTypes  []struct {
-		Type string `json:"Type"`
-		Desc string `json:"Desc"`
-	} `json:"CdnTypes"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                CdnTypes struct {
+                    CdnType []struct {
+            Type     string `json:"Type" xml:"Type"`
+            Desc     string `json:"Desc" xml:"Desc"`
+                    }   `json:"CdnType" xml:"CdnType"`
+                } `json:"CdnTypes" xml:"CdnTypes"`
 }
 
 func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
-	request = &DescribeCdnTypesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "")
-	return
+request = &DescribeCdnTypesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "")
+return
 }
 
 func CreateDescribeCdnTypesResponse() (response *DescribeCdnTypesResponse) {
-	response = &DescribeCdnTypesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeCdnTypesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ChangeDomainOfDnsProduct(request *ChangeDomainOfDnsProductRequest) (response *ChangeDomainOfDnsProductResponse, err error) {
-	response = CreateChangeDomainOfDnsProductResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateChangeDomainOfDnsProductResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDnsProductRequest) (<-chan *ChangeDomainOfDnsProductResponse, <-chan error) {
-	responseChan := make(chan *ChangeDomainOfDnsProductResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ChangeDomainOfDnsProduct(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ChangeDomainOfDnsProductResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ChangeDomainOfDnsProduct(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomainOfDnsProductRequest, callback func(response *ChangeDomainOfDnsProductResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ChangeDomainOfDnsProductResponse
-		var err error
-		defer close(result)
-		response, err = client.ChangeDomainOfDnsProduct(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomainOfDnsProductRequest, callback func(response *ChangeDomainOfDnsProductResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ChangeDomainOfDnsProductResponse
+var err error
+defer close(result)
+response, err = client.ChangeDomainOfDnsProduct(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ChangeDomainOfDnsProductRequest struct {
-	*requests.RpcRequest
-	NewDomain    string `position:"Query" name:"NewDomain"`
-	Force        string `position:"Query" name:"Force"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                NewDomain  string `position:"Query" name:"NewDomain"`
+                Force  string `position:"Query" name:"Force"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type ChangeDomainOfDnsProductResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	OriginalDomain string `json:"OriginalDomain" xml:"OriginalDomain"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            OriginalDomain     string `json:"OriginalDomain" xml:"OriginalDomain"`
 }
 
 func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductRequest) {
-	request = &ChangeDomainOfDnsProductRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "", "")
-	return
+request = &ChangeDomainOfDnsProductRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "", "")
+return
 }
 
 func CreateChangeDomainOfDnsProductResponse() (response *ChangeDomainOfDnsProductResponse) {
-	response = &ChangeDomainOfDnsProductResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ChangeDomainOfDnsProductResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetDefaultPolicyVersion(request *SetDefaultPolicyVersionRequest) (response *SetDefaultPolicyVersionResponse, err error) {
-	response = CreateSetDefaultPolicyVersionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetDefaultPolicyVersionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetDefaultPolicyVersionWithChan(request *SetDefaultPolicyVersionRequest) (<-chan *SetDefaultPolicyVersionResponse, <-chan error) {
-	responseChan := make(chan *SetDefaultPolicyVersionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetDefaultPolicyVersion(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetDefaultPolicyVersionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetDefaultPolicyVersion(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetDefaultPolicyVersionWithCallback(request *SetDefaultPolicyVersionRequest, callback func(response *SetDefaultPolicyVersionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetDefaultPolicyVersionResponse
-		var err error
-		defer close(result)
-		response, err = client.SetDefaultPolicyVersion(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetDefaultPolicyVersionWithCallback(request *SetDefaultPolicyVersionRequest, callback func(response *SetDefaultPolicyVersionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetDefaultPolicyVersionResponse
+var err error
+defer close(result)
+response, err = client.SetDefaultPolicyVersion(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetDefaultPolicyVersionRequest struct {
-	*requests.RpcRequest
-	VersionId  string `position:"Query" name:"VersionId"`
-	PolicyName string `position:"Query" name:"PolicyName"`
+*requests.RpcRequest
+                VersionId  string `position:"Query" name:"VersionId"`
+                PolicyName  string `position:"Query" name:"PolicyName"`
 }
 
+
 type SetDefaultPolicyVersionResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetDefaultPolicyVersionRequest() (request *SetDefaultPolicyVersionRequest) {
-	request = &SetDefaultPolicyVersionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "SetDefaultPolicyVersion", "", "")
-	return
+request = &SetDefaultPolicyVersionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "SetDefaultPolicyVersion", "", "")
+return
 }
 
 func CreateSetDefaultPolicyVersionResponse() (response *SetDefaultPolicyVersionResponse) {
-	response = &SetDefaultPolicyVersionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetDefaultPolicyVersionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

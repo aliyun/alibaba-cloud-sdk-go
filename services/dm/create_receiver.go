@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateReceiver(request *CreateReceiverRequest) (response *CreateReceiverResponse, err error) {
-	response = CreateCreateReceiverResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateReceiverResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateReceiverWithChan(request *CreateReceiverRequest) (<-chan *CreateReceiverResponse, <-chan error) {
-	responseChan := make(chan *CreateReceiverResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateReceiver(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateReceiverResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateReceiver(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateReceiverWithCallback(request *CreateReceiverRequest, callback func(response *CreateReceiverResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateReceiverResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateReceiver(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateReceiverWithCallback(request *CreateReceiverRequest, callback func(response *CreateReceiverResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateReceiverResponse
+var err error
+defer close(result)
+response, err = client.CreateReceiver(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateReceiverRequest struct {
-	*requests.RpcRequest
-	Desc                 string `position:"Query" name:"Desc"`
-	ReceiversAlias       string `position:"Query" name:"ReceiversAlias"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReceiversName        string `position:"Query" name:"ReceiversName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Desc  string `position:"Query" name:"Desc"`
+                ReceiversAlias  string `position:"Query" name:"ReceiversAlias"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ReceiversName  string `position:"Query" name:"ReceiversName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type CreateReceiverResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCreateReceiverRequest() (request *CreateReceiverRequest) {
-	request = &CreateReceiverRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateReceiver", "", "")
-	return
+request = &CreateReceiverRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "CreateReceiver", "", "")
+return
 }
 
 func CreateCreateReceiverResponse() (response *CreateReceiverResponse) {
-	response = &CreateReceiverResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateReceiverResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

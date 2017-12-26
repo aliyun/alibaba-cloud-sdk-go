@@ -1,3 +1,4 @@
+
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,71 +17,73 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (response *DescribeTemplatesResponse, err error) {
-	response = CreateDescribeTemplatesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeTemplatesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesRequest) (<-chan *DescribeTemplatesResponse, <-chan error) {
-	responseChan := make(chan *DescribeTemplatesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeTemplates(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeTemplatesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeTemplates(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRequest, callback func(response *DescribeTemplatesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeTemplatesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeTemplates(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRequest, callback func(response *DescribeTemplatesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeTemplatesResponse
+var err error
+defer close(result)
+response, err = client.DescribeTemplates(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeTemplatesRequest struct {
-	*requests.RoaRequest
+*requests.RoaRequest
 }
 
+
 type DescribeTemplatesResponse struct {
-	*responses.BaseResponse
+*responses.BaseResponse
 }
 
 func CreateDescribeTemplatesRequest() (request *DescribeTemplatesRequest) {
-	request = &DescribeTemplatesRequest{
-		RoaRequest: &requests.RoaRequest{},
-	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplates", "/templates", "", "")
-	return
+request = &DescribeTemplatesRequest{
+RoaRequest: &requests.RoaRequest{},
+}
+request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplates", "/templates", "", "")
+return
 }
 
 func CreateDescribeTemplatesResponse() (response *DescribeTemplatesResponse) {
-	response = &DescribeTemplatesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeTemplatesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

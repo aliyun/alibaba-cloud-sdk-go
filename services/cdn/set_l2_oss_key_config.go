@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetL2OssKeyConfig(request *SetL2OssKeyConfigRequest) (response *SetL2OssKeyConfigResponse, err error) {
-	response = CreateSetL2OssKeyConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetL2OssKeyConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigRequest) (<-chan *SetL2OssKeyConfigResponse, <-chan error) {
-	responseChan := make(chan *SetL2OssKeyConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetL2OssKeyConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetL2OssKeyConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetL2OssKeyConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRequest, callback func(response *SetL2OssKeyConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetL2OssKeyConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetL2OssKeyConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRequest, callback func(response *SetL2OssKeyConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetL2OssKeyConfigResponse
+var err error
+defer close(result)
+response, err = client.SetL2OssKeyConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetL2OssKeyConfigRequest struct {
-	*requests.RpcRequest
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	DomainName     string `position:"Query" name:"DomainName"`
-	Action         string `position:"Query" name:"Action"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	PrivateOssAuth string `position:"Query" name:"PrivateOssAuth"`
-	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                PrivateOssAuth  string `position:"Query" name:"PrivateOssAuth"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetL2OssKeyConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
-	request = &SetL2OssKeyConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "")
-	return
+request = &SetL2OssKeyConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "")
+return
 }
 
 func CreateSetL2OssKeyConfigResponse() (response *SetL2OssKeyConfigResponse) {
-	response = &SetL2OssKeyConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetL2OssKeyConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

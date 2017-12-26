@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeactivateRouterInterface(request *DeactivateRouterInterfaceRequest) (response *DeactivateRouterInterfaceResponse, err error) {
-	response = CreateDeactivateRouterInterfaceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeactivateRouterInterfaceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRouterInterfaceRequest) (<-chan *DeactivateRouterInterfaceResponse, <-chan error) {
-	responseChan := make(chan *DeactivateRouterInterfaceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeactivateRouterInterface(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeactivateRouterInterfaceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeactivateRouterInterface(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateRouterInterfaceRequest, callback func(response *DeactivateRouterInterfaceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeactivateRouterInterfaceResponse
-		var err error
-		defer close(result)
-		response, err = client.DeactivateRouterInterface(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateRouterInterfaceRequest, callback func(response *DeactivateRouterInterfaceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeactivateRouterInterfaceResponse
+var err error
+defer close(result)
+response, err = client.DeactivateRouterInterface(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeactivateRouterInterfaceRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	RouterInterfaceId    string `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                RouterInterfaceId  string `position:"Query" name:"RouterInterfaceId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DeactivateRouterInterfaceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfaceRequest) {
-	request = &DeactivateRouterInterfaceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "", "")
-	return
+request = &DeactivateRouterInterfaceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "", "")
+return
 }
 
 func CreateDeactivateRouterInterfaceResponse() (response *DeactivateRouterInterfaceResponse) {
-	response = &DeactivateRouterInterfaceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeactivateRouterInterfaceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

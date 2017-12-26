@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDatabaseLockDiagnosis(request *DescribeDatabaseLockDiagnosisRequest) (response *DescribeDatabaseLockDiagnosisResponse, err error) {
-	response = CreateDescribeDatabaseLockDiagnosisResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDatabaseLockDiagnosisResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDatabaseLockDiagnosisWithChan(request *DescribeDatabaseLockDiagnosisRequest) (<-chan *DescribeDatabaseLockDiagnosisResponse, <-chan error) {
-	responseChan := make(chan *DescribeDatabaseLockDiagnosisResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDatabaseLockDiagnosis(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDatabaseLockDiagnosisResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDatabaseLockDiagnosis(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDatabaseLockDiagnosisWithCallback(request *DescribeDatabaseLockDiagnosisRequest, callback func(response *DescribeDatabaseLockDiagnosisResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDatabaseLockDiagnosisResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDatabaseLockDiagnosis(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDatabaseLockDiagnosisWithCallback(request *DescribeDatabaseLockDiagnosisRequest, callback func(response *DescribeDatabaseLockDiagnosisResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDatabaseLockDiagnosisResponse
+var err error
+defer close(result)
+response, err = client.DescribeDatabaseLockDiagnosis(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDatabaseLockDiagnosisRequest struct {
-	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
-	StartTime    string `position:"Query" name:"StartTime"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                StartTime  string `position:"Query" name:"StartTime"`
 }
 
+
 type DescribeDatabaseLockDiagnosisResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DeadLockList struct {
-		DeadLock []string `json:"DeadLock" xml:"DeadLock"`
-	} `json:"DeadLockList" xml:"DeadLockList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                DeadLockList struct {
+                DeadLock []    string `json:"DeadLock" xml:"DeadLock"`
+                } `json:"DeadLockList" xml:"DeadLockList"`
 }
 
 func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLockDiagnosisRequest) {
-	request = &DescribeDatabaseLockDiagnosisRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "", "")
-	return
+request = &DescribeDatabaseLockDiagnosisRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "", "")
+return
 }
 
 func CreateDescribeDatabaseLockDiagnosisResponse() (response *DescribeDatabaseLockDiagnosisResponse) {
-	response = &DescribeDatabaseLockDiagnosisResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDatabaseLockDiagnosisResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetUserBlackList(request *SetUserBlackListRequest) (response *SetUserBlackListResponse, err error) {
-	response = CreateSetUserBlackListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetUserBlackListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetUserBlackListWithChan(request *SetUserBlackListRequest) (<-chan *SetUserBlackListResponse, <-chan error) {
-	responseChan := make(chan *SetUserBlackListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetUserBlackList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetUserBlackListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetUserBlackList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequest, callback func(response *SetUserBlackListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetUserBlackListResponse
-		var err error
-		defer close(result)
-		response, err = client.SetUserBlackList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequest, callback func(response *SetUserBlackListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetUserBlackListResponse
+var err error
+defer close(result)
+response, err = client.SetUserBlackList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetUserBlackListRequest struct {
-	*requests.RpcRequest
-	ConfigUrl     string `position:"Query" name:"ConfigUrl"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ConfigUrl  string `position:"Query" name:"ConfigUrl"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetUserBlackListResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {
-	request = &SetUserBlackListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserBlackList", "", "")
-	return
+request = &SetUserBlackListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserBlackList", "", "")
+return
 }
 
 func CreateSetUserBlackListResponse() (response *SetUserBlackListResponse) {
-	response = &SetUserBlackListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetUserBlackListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

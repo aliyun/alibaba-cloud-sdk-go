@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,93 +17,95 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateTransaction(request *CreateTransactionRequest) (response *CreateTransactionResponse, err error) {
-	response = CreateCreateTransactionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateTransactionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateTransactionWithChan(request *CreateTransactionRequest) (<-chan *CreateTransactionResponse, <-chan error) {
-	responseChan := make(chan *CreateTransactionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateTransaction(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateTransactionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateTransaction(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRequest, callback func(response *CreateTransactionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateTransactionResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateTransaction(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRequest, callback func(response *CreateTransactionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateTransactionResponse
+var err error
+defer close(result)
+response, err = client.CreateTransaction(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateTransactionRequest struct {
-	*requests.RpcRequest
-	Ext       string `position:"Query" name:"Ext"`
-	Size      string `position:"Query" name:"Size"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Force     string `position:"Query" name:"Force"`
-	Md5       string `position:"Query" name:"Md5"`
+*requests.RpcRequest
+                Md5  string `position:"Query" name:"Md5"`
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                Force  string `position:"Query" name:"Force"`
+                Ext  string `position:"Query" name:"Ext"`
+                Size  string `position:"Query" name:"Size"`
 }
 
+
 type CreateTransactionResponse struct {
-	*responses.BaseResponse
-	Code        string `json:"Code"`
-	Message     string `json:"Message"`
-	RequestId   string `json:"RequestId"`
-	Action      string `json:"Action"`
-	Transaction struct {
-		Upload struct {
-			Bucket          string `json:"Bucket"`
-			FileId          string `json:"FileId"`
-			OssEndpoint     string `json:"OssEndpoint"`
-			ObjectKey       string `json:"ObjectKey"`
-			SessionId       string `json:"SessionId"`
-			AccessKeyId     string `json:"AccessKeyId"`
-			AccessKeySecret string `json:"AccessKeySecret"`
-			StsToken        string `json:"StsToken"`
-		} `json:"Upload"`
-	} `json:"Transaction"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
+            Transaction struct {
+            Upload struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            FileId     string `json:"FileId" xml:"FileId"`
+            OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
+            ObjectKey     string `json:"ObjectKey" xml:"ObjectKey"`
+            SessionId     string `json:"SessionId" xml:"SessionId"`
+            AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
+            AccessKeySecret     string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+            StsToken     string `json:"StsToken" xml:"StsToken"`
+            }  `json:"Upload" xml:"Upload"`
+            }  `json:"Transaction" xml:"Transaction"`
 }
 
 func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
-	request = &CreateTransactionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "", "")
-	return
+request = &CreateTransactionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "", "")
+return
 }
 
 func CreateCreateTransactionResponse() (response *CreateTransactionResponse) {
-	response = &CreateTransactionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateTransactionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

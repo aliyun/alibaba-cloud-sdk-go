@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,79 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *CategoryTreeResponse, err error) {
-	response = CreateCategoryTreeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCategoryTreeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan *CategoryTreeResponse, <-chan error) {
-	responseChan := make(chan *CategoryTreeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CategoryTree(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CategoryTreeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CategoryTree(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, callback func(response *CategoryTreeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CategoryTreeResponse
-		var err error
-		defer close(result)
-		response, err = client.CategoryTree(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, callback func(response *CategoryTreeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CategoryTreeResponse
+var err error
+defer close(result)
+response, err = client.CategoryTree(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CategoryTreeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type CategoryTreeResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	CategoryTree string `json:"CategoryTree"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            CategoryTree     string `json:"CategoryTree" xml:"CategoryTree"`
 }
 
 func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
-	request = &CategoryTreeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "", "")
-	return
+request = &CategoryTreeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "", "")
+return
 }
 
 func CreateCategoryTreeResponse() (response *CategoryTreeResponse) {
-	response = &CategoryTreeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CategoryTreeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

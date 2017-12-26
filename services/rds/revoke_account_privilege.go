@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RevokeAccountPrivilege(request *RevokeAccountPrivilegeRequest) (response *RevokeAccountPrivilegeResponse, err error) {
-	response = CreateRevokeAccountPrivilegeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRevokeAccountPrivilegeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RevokeAccountPrivilegeWithChan(request *RevokeAccountPrivilegeRequest) (<-chan *RevokeAccountPrivilegeResponse, <-chan error) {
-	responseChan := make(chan *RevokeAccountPrivilegeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RevokeAccountPrivilege(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RevokeAccountPrivilegeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RevokeAccountPrivilege(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RevokeAccountPrivilegeWithCallback(request *RevokeAccountPrivilegeRequest, callback func(response *RevokeAccountPrivilegeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RevokeAccountPrivilegeResponse
-		var err error
-		defer close(result)
-		response, err = client.RevokeAccountPrivilege(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RevokeAccountPrivilegeWithCallback(request *RevokeAccountPrivilegeRequest, callback func(response *RevokeAccountPrivilegeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RevokeAccountPrivilegeResponse
+var err error
+defer close(result)
+response, err = client.RevokeAccountPrivilege(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RevokeAccountPrivilegeRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                AccountName  string `position:"Query" name:"AccountName"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                DBName  string `position:"Query" name:"DBName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type RevokeAccountPrivilegeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeRequest) {
-	request = &RevokeAccountPrivilegeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeAccountPrivilege", "", "")
-	return
+request = &RevokeAccountPrivilegeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "RevokeAccountPrivilege", "", "")
+return
 }
 
 func CreateRevokeAccountPrivilegeResponse() (response *RevokeAccountPrivilegeResponse) {
-	response = &RevokeAccountPrivilegeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RevokeAccountPrivilegeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

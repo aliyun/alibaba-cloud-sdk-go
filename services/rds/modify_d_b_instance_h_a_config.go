@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDBInstanceHAConfig(request *ModifyDBInstanceHAConfigRequest) (response *ModifyDBInstanceHAConfigResponse, err error) {
-	response = CreateModifyDBInstanceHAConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyDBInstanceHAConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstanceHAConfigRequest) (<-chan *ModifyDBInstanceHAConfigResponse, <-chan error) {
-	responseChan := make(chan *ModifyDBInstanceHAConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyDBInstanceHAConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyDBInstanceHAConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyDBInstanceHAConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInstanceHAConfigRequest, callback func(response *ModifyDBInstanceHAConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyDBInstanceHAConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyDBInstanceHAConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInstanceHAConfigRequest, callback func(response *ModifyDBInstanceHAConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyDBInstanceHAConfigResponse
+var err error
+defer close(result)
+response, err = client.ModifyDBInstanceHAConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyDBInstanceHAConfigRequest struct {
-	*requests.RpcRequest
-	DbInstanceId         string `position:"Query" name:"DbInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	HAMode               string `position:"Query" name:"HAMode"`
-	SyncMode             string `position:"Query" name:"SyncMode"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DbInstanceId  string `position:"Query" name:"DbInstanceId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                HAMode  string `position:"Query" name:"HAMode"`
+                SyncMode  string `position:"Query" name:"SyncMode"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyDBInstanceHAConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigRequest) {
-	request = &ModifyDBInstanceHAConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "", "")
-	return
+request = &ModifyDBInstanceHAConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "", "")
+return
 }
 
 func CreateModifyDBInstanceHAConfigResponse() (response *ModifyDBInstanceHAConfigResponse) {
-	response = &ModifyDBInstanceHAConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyDBInstanceHAConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsResponse, err error) {
-	response = CreateQueryTagsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryTagsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *QueryTagsResponse, <-chan error) {
-	responseChan := make(chan *QueryTagsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryTags(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryTagsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryTags(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback func(response *QueryTagsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryTagsResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryTags(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback func(response *QueryTagsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryTagsResponse
+var err error
+defer close(result)
+response, err = client.QueryTags(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryTagsRequest struct {
-	*requests.RpcRequest
-	KeyType   string `position:"Query" name:"KeyType"`
-	AppKey    string `position:"Query" name:"AppKey"`
-	ClientKey string `position:"Query" name:"ClientKey"`
+*requests.RpcRequest
+                KeyType  string `position:"Query" name:"KeyType"`
+                AppKey  string `position:"Query" name:"AppKey"`
+                ClientKey  string `position:"Query" name:"ClientKey"`
 }
 
+
 type QueryTagsResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TagInfos  struct {
-		TagInfo []struct {
-			TagName string `json:"TagName" xml:"TagName"`
-		} `json:"TagInfo" xml:"TagInfo"`
-	} `json:"TagInfos" xml:"TagInfos"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                TagInfos struct {
+                    TagInfo []struct {
+            TagName     string `json:"TagName" xml:"TagName"`
+                    }   `json:"TagInfo" xml:"TagInfo"`
+                } `json:"TagInfos" xml:"TagInfos"`
 }
 
 func CreateQueryTagsRequest() (request *QueryTagsRequest) {
-	request = &QueryTagsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "", "")
-	return
+request = &QueryTagsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "", "")
+return
 }
 
 func CreateQueryTagsResponse() (response *QueryTagsResponse) {
-	response = &QueryTagsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryTagsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

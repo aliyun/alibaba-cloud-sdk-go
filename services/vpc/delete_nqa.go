@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteNqa(request *DeleteNqaRequest) (response *DeleteNqaResponse, err error) {
-	response = CreateDeleteNqaResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteNqaResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *DeleteNqaResponse, <-chan error) {
-	responseChan := make(chan *DeleteNqaResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteNqa(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteNqaResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteNqa(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback func(response *DeleteNqaResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteNqaResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteNqa(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback func(response *DeleteNqaResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteNqaResponse
+var err error
+defer close(result)
+response, err = client.DeleteNqa(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteNqaRequest struct {
-	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	NqaId                string `position:"Query" name:"NqaId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                NqaId  string `position:"Query" name:"NqaId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DeleteNqaResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
-	request = &DeleteNqaRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteNqa", "", "")
-	return
+request = &DeleteNqaRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteNqa", "", "")
+return
 }
 
 func CreateDeleteNqaResponse() (response *DeleteNqaResponse) {
-	response = &DeleteNqaResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteNqaResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

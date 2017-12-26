@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeInstall(request *NodeInstallRequest) (response *NodeInstallResponse, err error) {
-	response = CreateNodeInstallResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateNodeInstallResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *NodeInstallResponse, <-chan error) {
-	responseChan := make(chan *NodeInstallResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.NodeInstall(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *NodeInstallResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.NodeInstall(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callback func(response *NodeInstallResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *NodeInstallResponse
-		var err error
-		defer close(result)
-		response, err = client.NodeInstall(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callback func(response *NodeInstallResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *NodeInstallResponse
+var err error
+defer close(result)
+response, err = client.NodeInstall(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type NodeInstallRequest struct {
-	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	Force      string `position:"Query" name:"Force"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                UserId  string `position:"Query" name:"UserId"`
+                Force  string `position:"Query" name:"Force"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type NodeInstallResponse struct {
-	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            ErrorCode     int `json:"ErrorCode" xml:"ErrorCode"`
+            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+            Success     bool `json:"Success" xml:"Success"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateNodeInstallRequest() (request *NodeInstallRequest) {
-	request = &NodeInstallRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeInstall", "", "")
-	return
+request = &NodeInstallRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "NodeInstall", "", "")
+return
 }
 
 func CreateNodeInstallResponse() (response *NodeInstallResponse) {
-	response = &NodeInstallResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &NodeInstallResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

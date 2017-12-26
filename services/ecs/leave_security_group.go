@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,80 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) LeaveSecurityGroup(request *LeaveSecurityGroupRequest) (response *LeaveSecurityGroupResponse, err error) {
-	response = CreateLeaveSecurityGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateLeaveSecurityGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequest) (<-chan *LeaveSecurityGroupResponse, <-chan error) {
-	responseChan := make(chan *LeaveSecurityGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.LeaveSecurityGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *LeaveSecurityGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.LeaveSecurityGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *LeaveSecurityGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.LeaveSecurityGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *LeaveSecurityGroupResponse
+var err error
+defer close(result)
+response, err = client.LeaveSecurityGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type LeaveSecurityGroupRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type LeaveSecurityGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
-	request = &LeaveSecurityGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "", "")
-	return
+request = &LeaveSecurityGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "", "")
+return
 }
 
 func CreateLeaveSecurityGroupResponse() (response *LeaveSecurityGroupResponse) {
-	response = &LeaveSecurityGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &LeaveSecurityGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

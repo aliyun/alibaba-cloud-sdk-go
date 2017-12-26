@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,133 +17,151 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryMediaDetailJobList(request *QueryMediaDetailJobListRequest) (response *QueryMediaDetailJobListResponse, err error) {
-	response = CreateQueryMediaDetailJobListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryMediaDetailJobListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryMediaDetailJobListWithChan(request *QueryMediaDetailJobListRequest) (<-chan *QueryMediaDetailJobListResponse, <-chan error) {
-	responseChan := make(chan *QueryMediaDetailJobListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryMediaDetailJobList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryMediaDetailJobListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryMediaDetailJobList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDetailJobListRequest, callback func(response *QueryMediaDetailJobListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryMediaDetailJobListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryMediaDetailJobList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDetailJobListRequest, callback func(response *QueryMediaDetailJobListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryMediaDetailJobListResponse
+var err error
+defer close(result)
+response, err = client.QueryMediaDetailJobList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryMediaDetailJobListRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                JobIds  string `position:"Query" name:"JobIds"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type QueryMediaDetailJobListResponse struct {
-	*responses.BaseResponse
-	RequestId   string   `json:"RequestId"`
-	NonExistIds []string `json:"NonExistIds"`
-	JobList     []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"Input"`
-		MediaDetailConfig struct {
-			Scenario   string `json:"Scenario"`
-			DetailType string `json:"DetailType"`
-			OutputFile struct {
-				Bucket   string `json:"Bucket"`
-				Location string `json:"Location"`
-				Object   string `json:"Object"`
-			} `json:"OutputFile"`
-		} `json:"MediaDetailConfig"`
-		MediaDetailResult struct {
-			Status                 string   `json:"Status"`
-			Tags                   []string `json:"Tags"`
-			MediaDetailRecgResults []struct {
-				ImageUrl    string   `json:"ImageUrl"`
-				Time        string   `json:"Time"`
-				OcrText     string   `json:"OcrText"`
-				FrameTags   []string `json:"FrameTags"`
-				Celebrities []struct {
-					Name   string `json:"Name"`
-					Score  string `json:"Score"`
-					Target string `json:"Target"`
-				} `json:"Celebrities"`
-				Sensitives []struct {
-					Name   string `json:"Name"`
-					Score  string `json:"Score"`
-					Target string `json:"Target"`
-				} `json:"Sensitives"`
-				Politicians []struct {
-					Name   string `json:"Name"`
-					Score  string `json:"Score"`
-					Target string `json:"Target"`
-				} `json:"Politicians"`
-				FrameTagInfos []struct {
-					Tag      string `json:"Tag"`
-					Score    string `json:"Score"`
-					Category string `json:"Category"`
-				} `json:"FrameTagInfos"`
-			} `json:"MediaDetailRecgResults"`
-		} `json:"MediaDetailResult"`
-	} `json:"JobList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NonExistIds struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"NonExistIds" xml:"NonExistIds"`
+                JobList struct {
+                    Job []struct {
+            Id     string `json:"Id" xml:"Id"`
+            UserData     string `json:"UserData" xml:"UserData"`
+            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
+            State     string `json:"State" xml:"State"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            Input struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"Input" xml:"Input"`
+            MediaDetailConfig struct {
+            Scenario     string `json:"Scenario" xml:"Scenario"`
+            DetailType     string `json:"DetailType" xml:"DetailType"`
+            OutputFile struct {
+            Bucket     string `json:"Bucket" xml:"Bucket"`
+            Location     string `json:"Location" xml:"Location"`
+            Object     string `json:"Object" xml:"Object"`
+            }  `json:"OutputFile" xml:"OutputFile"`
+            }  `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
+            MediaDetailResult struct {
+            Status     string `json:"Status" xml:"Status"`
+                Tags struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"Tags" xml:"Tags"`
+                MediaDetailRecgResults struct {
+                    MediaDetailRecgResult []struct {
+            ImageUrl     string `json:"ImageUrl" xml:"ImageUrl"`
+            Time     string `json:"Time" xml:"Time"`
+            OcrText     string `json:"OcrText" xml:"OcrText"`
+                FrameTags struct {
+                String []    string `json:"String" xml:"String"`
+                } `json:"FrameTags" xml:"FrameTags"`
+                Celebrities struct {
+                    Celebrity []struct {
+            Name     string `json:"Name" xml:"Name"`
+            Score     string `json:"Score" xml:"Score"`
+            Target     string `json:"Target" xml:"Target"`
+                    }   `json:"Celebrity" xml:"Celebrity"`
+                } `json:"Celebrities" xml:"Celebrities"`
+                Sensitives struct {
+                    Sensitive []struct {
+            Name     string `json:"Name" xml:"Name"`
+            Score     string `json:"Score" xml:"Score"`
+            Target     string `json:"Target" xml:"Target"`
+                    }   `json:"Sensitive" xml:"Sensitive"`
+                } `json:"Sensitives" xml:"Sensitives"`
+                Politicians struct {
+                    Politician []struct {
+            Name     string `json:"Name" xml:"Name"`
+            Score     string `json:"Score" xml:"Score"`
+            Target     string `json:"Target" xml:"Target"`
+                    }   `json:"Politician" xml:"Politician"`
+                } `json:"Politicians" xml:"Politicians"`
+                FrameTagInfos struct {
+                    FrameTagInfo []struct {
+            Tag     string `json:"Tag" xml:"Tag"`
+            Score     string `json:"Score" xml:"Score"`
+            Category     string `json:"Category" xml:"Category"`
+                    }   `json:"FrameTagInfo" xml:"FrameTagInfo"`
+                } `json:"FrameTagInfos" xml:"FrameTagInfos"`
+                    }   `json:"MediaDetailRecgResult" xml:"MediaDetailRecgResult"`
+                } `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
+            }  `json:"MediaDetailResult" xml:"MediaDetailResult"`
+                    }   `json:"Job" xml:"Job"`
+                } `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {
-	request = &QueryMediaDetailJobListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaDetailJobList", "", "")
-	return
+request = &QueryMediaDetailJobListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaDetailJobList", "", "")
+return
 }
 
 func CreateQueryMediaDetailJobListResponse() (response *QueryMediaDetailJobListResponse) {
-	response = &QueryMediaDetailJobListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryMediaDetailJobListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

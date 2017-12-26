@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,92 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainMonthBillingBpsData(request *DescribeDomainMonthBillingBpsDataRequest) (response *DescribeDomainMonthBillingBpsDataResponse, err error) {
-	response = CreateDescribeDomainMonthBillingBpsDataResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainMonthBillingBpsDataResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainMonthBillingBpsDataWithChan(request *DescribeDomainMonthBillingBpsDataRequest) (<-chan *DescribeDomainMonthBillingBpsDataResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainMonthBillingBpsDataResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomainMonthBillingBpsData(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainMonthBillingBpsDataResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomainMonthBillingBpsData(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainMonthBillingBpsDataWithCallback(request *DescribeDomainMonthBillingBpsDataRequest, callback func(response *DescribeDomainMonthBillingBpsDataResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainMonthBillingBpsDataResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomainMonthBillingBpsData(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainMonthBillingBpsDataWithCallback(request *DescribeDomainMonthBillingBpsDataRequest, callback func(response *DescribeDomainMonthBillingBpsDataResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainMonthBillingBpsDataResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomainMonthBillingBpsData(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainMonthBillingBpsDataRequest struct {
-	*requests.RpcRequest
-	SecurityToken      string `position:"Query" name:"SecurityToken"`
-	InternetChargeType string `position:"Query" name:"InternetChargeType"`
-	DomainName         string `position:"Query" name:"DomainName"`
-	Action             string `position:"Query" name:"Action"`
-	EndTime            string `position:"Query" name:"EndTime"`
-	StartTime          string `position:"Query" name:"StartTime"`
-	OwnerId            string `position:"Query" name:"OwnerId"`
-	AccessKeyId        string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeDomainMonthBillingBpsDataResponse struct {
-	*responses.BaseResponse
-	RequestId              string  `json:"RequestId"`
-	DomainName             string  `json:"DomainName"`
-	StartTime              string  `json:"StartTime"`
-	EndTime                string  `json:"EndTime"`
-	Bandwidth95Bps         float64 `json:"Bandwidth95Bps"`
-	DomesticBandwidth95Bps float64 `json:"DomesticBandwidth95Bps"`
-	OverseasBandwidth95Bps float64 `json:"OverseasBandwidth95Bps"`
-	MonthavgBps            float64 `json:"MonthavgBps"`
-	DomesticMonthavgBps    float64 `json:"DomesticMonthavgBps"`
-	OverseasMonthavgBps    float64 `json:"OverseasMonthavgBps"`
-	Month4thBps            float64 `json:"Month4thBps"`
-	DomesticMonth4thBps    float64 `json:"DomesticMonth4thBps"`
-	OverseasMonth4thBps    float64 `json:"OverseasMonth4thBps"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+            Bandwidth95Bps     float64 `json:"Bandwidth95Bps" xml:"Bandwidth95Bps"`
+            DomesticBandwidth95Bps     float64 `json:"DomesticBandwidth95Bps" xml:"DomesticBandwidth95Bps"`
+            OverseasBandwidth95Bps     float64 `json:"OverseasBandwidth95Bps" xml:"OverseasBandwidth95Bps"`
+            MonthavgBps     float64 `json:"MonthavgBps" xml:"MonthavgBps"`
+            DomesticMonthavgBps     float64 `json:"DomesticMonthavgBps" xml:"DomesticMonthavgBps"`
+            OverseasMonthavgBps     float64 `json:"OverseasMonthavgBps" xml:"OverseasMonthavgBps"`
+            Month4thBps     float64 `json:"Month4thBps" xml:"Month4thBps"`
+            DomesticMonth4thBps     float64 `json:"DomesticMonth4thBps" xml:"DomesticMonth4thBps"`
+            OverseasMonth4thBps     float64 `json:"OverseasMonth4thBps" xml:"OverseasMonth4thBps"`
 }
 
 func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMonthBillingBpsDataRequest) {
-	request = &DescribeDomainMonthBillingBpsDataRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainMonthBillingBpsData", "", "")
-	return
+request = &DescribeDomainMonthBillingBpsDataRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainMonthBillingBpsData", "", "")
+return
 }
 
 func CreateDescribeDomainMonthBillingBpsDataResponse() (response *DescribeDomainMonthBillingBpsDataResponse) {
-	response = &DescribeDomainMonthBillingBpsDataResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainMonthBillingBpsDataResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

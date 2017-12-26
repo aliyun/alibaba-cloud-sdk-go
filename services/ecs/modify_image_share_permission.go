@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,97 +17,99 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyImageSharePermission(request *ModifyImageSharePermissionRequest) (response *ModifyImageSharePermissionResponse, err error) {
-	response = CreateModifyImageSharePermissionResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyImageSharePermissionResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyImageSharePermissionWithChan(request *ModifyImageSharePermissionRequest) (<-chan *ModifyImageSharePermissionResponse, <-chan error) {
-	responseChan := make(chan *ModifyImageSharePermissionResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyImageSharePermission(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyImageSharePermissionResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyImageSharePermission(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImageSharePermissionRequest, callback func(response *ModifyImageSharePermissionResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyImageSharePermissionResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyImageSharePermission(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImageSharePermissionRequest, callback func(response *ModifyImageSharePermissionResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyImageSharePermissionResponse
+var err error
+defer close(result)
+response, err = client.ModifyImageSharePermission(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyImageSharePermissionRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	AddAccount1          string `position:"Query" name:"AddAccount.1"`
-	RemoveAccount1       string `position:"Query" name:"RemoveAccount.1"`
-	RemoveAccount2       string `position:"Query" name:"RemoveAccount.2"`
-	RemoveAccount3       string `position:"Query" name:"RemoveAccount.3"`
-	RemoveAccount4       string `position:"Query" name:"RemoveAccount.4"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ImageId              string `position:"Query" name:"ImageId"`
-	RemoveAccount9       string `position:"Query" name:"RemoveAccount.9"`
-	RemoveAccount10      string `position:"Query" name:"RemoveAccount.10"`
-	RemoveAccount6       string `position:"Query" name:"RemoveAccount.6"`
-	RemoveAccount5       string `position:"Query" name:"RemoveAccount.5"`
-	RemoveAccount8       string `position:"Query" name:"RemoveAccount.8"`
-	RemoveAccount7       string `position:"Query" name:"RemoveAccount.7"`
-	AddAccount4          string `position:"Query" name:"AddAccount.4"`
-	AddAccount5          string `position:"Query" name:"AddAccount.5"`
-	AddAccount2          string `position:"Query" name:"AddAccount.2"`
-	AddAccount3          string `position:"Query" name:"AddAccount.3"`
-	AddAccount8          string `position:"Query" name:"AddAccount.8"`
-	AddAccount9          string `position:"Query" name:"AddAccount.9"`
-	AddAccount6          string `position:"Query" name:"AddAccount.6"`
-	AddAccount10         string `position:"Query" name:"AddAccount.10"`
-	AddAccount7          string `position:"Query" name:"AddAccount.7"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                AddAccount1  string `position:"Query" name:"AddAccount.1"`
+                RemoveAccount1  string `position:"Query" name:"RemoveAccount.1"`
+                RemoveAccount2  string `position:"Query" name:"RemoveAccount.2"`
+                RemoveAccount3  string `position:"Query" name:"RemoveAccount.3"`
+                RemoveAccount4  string `position:"Query" name:"RemoveAccount.4"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ImageId  string `position:"Query" name:"ImageId"`
+                RemoveAccount9  string `position:"Query" name:"RemoveAccount.9"`
+                RemoveAccount10  string `position:"Query" name:"RemoveAccount.10"`
+                RemoveAccount6  string `position:"Query" name:"RemoveAccount.6"`
+                RemoveAccount5  string `position:"Query" name:"RemoveAccount.5"`
+                RemoveAccount8  string `position:"Query" name:"RemoveAccount.8"`
+                RemoveAccount7  string `position:"Query" name:"RemoveAccount.7"`
+                AddAccount4  string `position:"Query" name:"AddAccount.4"`
+                AddAccount5  string `position:"Query" name:"AddAccount.5"`
+                AddAccount2  string `position:"Query" name:"AddAccount.2"`
+                AddAccount3  string `position:"Query" name:"AddAccount.3"`
+                AddAccount8  string `position:"Query" name:"AddAccount.8"`
+                AddAccount9  string `position:"Query" name:"AddAccount.9"`
+                AddAccount6  string `position:"Query" name:"AddAccount.6"`
+                AddAccount10  string `position:"Query" name:"AddAccount.10"`
+                AddAccount7  string `position:"Query" name:"AddAccount.7"`
 }
 
+
 type ModifyImageSharePermissionResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermissionRequest) {
-	request = &ModifyImageSharePermissionRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "", "")
-	return
+request = &ModifyImageSharePermissionRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "", "")
+return
 }
 
 func CreateModifyImageSharePermissionResponse() (response *ModifyImageSharePermissionResponse) {
-	response = &ModifyImageSharePermissionResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyImageSharePermissionResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

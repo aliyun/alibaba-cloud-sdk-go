@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ImportKeyPair(request *ImportKeyPairRequest) (response *ImportKeyPairResponse, err error) {
-	response = CreateImportKeyPairResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateImportKeyPairResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-chan *ImportKeyPairResponse, <-chan error) {
-	responseChan := make(chan *ImportKeyPairResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ImportKeyPair(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ImportKeyPairResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ImportKeyPair(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, callback func(response *ImportKeyPairResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ImportKeyPairResponse
-		var err error
-		defer close(result)
-		response, err = client.ImportKeyPair(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, callback func(response *ImportKeyPairResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ImportKeyPairResponse
+var err error
+defer close(result)
+response, err = client.ImportKeyPair(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ImportKeyPairRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PublicKeyBody        string `position:"Query" name:"PublicKeyBody"`
-	KeyPairName          string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PublicKeyBody  string `position:"Query" name:"PublicKeyBody"`
+                KeyPairName  string `position:"Query" name:"KeyPairName"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ImportKeyPairResponse struct {
-	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
-	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            KeyPairName     string `json:"KeyPairName" xml:"KeyPairName"`
+            KeyPairFingerPrint     string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
 }
 
 func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
-	request = &ImportKeyPairRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "", "")
-	return
+request = &ImportKeyPairRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "", "")
+return
 }
 
 func CreateImportKeyPairResponse() (response *ImportKeyPairResponse) {
-	response = &ImportKeyPairResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ImportKeyPairResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

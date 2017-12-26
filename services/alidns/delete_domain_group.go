@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,76 +17,78 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteDomainGroup(request *DeleteDomainGroupRequest) (response *DeleteDomainGroupResponse, err error) {
-	response = CreateDeleteDomainGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteDomainGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteDomainGroupWithChan(request *DeleteDomainGroupRequest) (<-chan *DeleteDomainGroupResponse, <-chan error) {
-	responseChan := make(chan *DeleteDomainGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteDomainGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteDomainGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteDomainGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteDomainGroupWithCallback(request *DeleteDomainGroupRequest, callback func(response *DeleteDomainGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteDomainGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteDomainGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteDomainGroupWithCallback(request *DeleteDomainGroupRequest, callback func(response *DeleteDomainGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteDomainGroupResponse
+var err error
+defer close(result)
+response, err = client.DeleteDomainGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteDomainGroupRequest struct {
-	*requests.RpcRequest
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                GroupId  string `position:"Query" name:"GroupId"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DeleteDomainGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	GroupName string `json:"GroupName" xml:"GroupName"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            GroupName     string `json:"GroupName" xml:"GroupName"`
 }
 
 func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
-	request = &DeleteDomainGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteDomainGroup", "", "")
-	return
+request = &DeleteDomainGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteDomainGroup", "", "")
+return
 }
 
 func CreateDeleteDomainGroupResponse() (response *DeleteDomainGroupResponse) {
-	response = &DeleteDomainGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteDomainGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

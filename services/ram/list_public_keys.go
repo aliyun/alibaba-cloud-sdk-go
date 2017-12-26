@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListPublicKeys(request *ListPublicKeysRequest) (response *ListPublicKeysResponse, err error) {
-	response = CreateListPublicKeysResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListPublicKeysResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-chan *ListPublicKeysResponse, <-chan error) {
-	responseChan := make(chan *ListPublicKeysResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListPublicKeys(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListPublicKeysResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListPublicKeys(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListPublicKeysWithCallback(request *ListPublicKeysRequest, callback func(response *ListPublicKeysResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListPublicKeysResponse
-		var err error
-		defer close(result)
-		response, err = client.ListPublicKeys(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListPublicKeysWithCallback(request *ListPublicKeysRequest, callback func(response *ListPublicKeysResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListPublicKeysResponse
+var err error
+defer close(result)
+response, err = client.ListPublicKeys(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListPublicKeysRequest struct {
-	*requests.RpcRequest
-	UserName string `position:"Query" name:"UserName"`
+*requests.RpcRequest
+                UserName  string `position:"Query" name:"UserName"`
 }
 
+
 type ListPublicKeysResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PublicKeys struct {
-		PublicKey []struct {
-			PublicKeyId string `json:"PublicKeyId" xml:"PublicKeyId"`
-			Status      string `json:"Status" xml:"Status"`
-			CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-		} `json:"PublicKey" xml:"PublicKey"`
-	} `json:"PublicKeys" xml:"PublicKeys"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                PublicKeys struct {
+                    PublicKey []struct {
+            PublicKeyId     string `json:"PublicKeyId" xml:"PublicKeyId"`
+            Status     string `json:"Status" xml:"Status"`
+            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
+                    }   `json:"PublicKey" xml:"PublicKey"`
+                } `json:"PublicKeys" xml:"PublicKeys"`
 }
 
 func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
-	request = &ListPublicKeysRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListPublicKeys", "", "")
-	return
+request = &ListPublicKeysRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "ListPublicKeys", "", "")
+return
 }
 
 func CreateListPublicKeysResponse() (response *ListPublicKeysResponse) {
-	response = &ListPublicKeysResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListPublicKeysResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

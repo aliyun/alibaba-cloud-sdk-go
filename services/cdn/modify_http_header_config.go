@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,80 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyHttpHeaderConfig(request *ModifyHttpHeaderConfigRequest) (response *ModifyHttpHeaderConfigResponse, err error) {
-	response = CreateModifyHttpHeaderConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyHttpHeaderConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyHttpHeaderConfigWithChan(request *ModifyHttpHeaderConfigRequest) (<-chan *ModifyHttpHeaderConfigResponse, <-chan error) {
-	responseChan := make(chan *ModifyHttpHeaderConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyHttpHeaderConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyHttpHeaderConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyHttpHeaderConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHeaderConfigRequest, callback func(response *ModifyHttpHeaderConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyHttpHeaderConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyHttpHeaderConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHeaderConfigRequest, callback func(response *ModifyHttpHeaderConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyHttpHeaderConfigResponse
+var err error
+defer close(result)
+response, err = client.ModifyHttpHeaderConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyHttpHeaderConfigRequest struct {
-	*requests.RpcRequest
-	HeaderValue   string `position:"Query" name:"HeaderValue"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ConfigID      string `position:"Query" name:"ConfigID"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	HeaderKey     string `position:"Query" name:"HeaderKey"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                HeaderKey  string `position:"Query" name:"HeaderKey"`
+                HeaderValue  string `position:"Query" name:"HeaderValue"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                ConfigID  string `position:"Query" name:"ConfigID"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type ModifyHttpHeaderConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigRequest) {
-	request = &ModifyHttpHeaderConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyHttpHeaderConfig", "", "")
-	return
+request = &ModifyHttpHeaderConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyHttpHeaderConfig", "", "")
+return
 }
 
 func CreateModifyHttpHeaderConfigResponse() (response *ModifyHttpHeaderConfigResponse) {
-	response = &ModifyHttpHeaderConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyHttpHeaderConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

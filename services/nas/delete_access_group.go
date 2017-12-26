@@ -1,3 +1,4 @@
+
 package nas
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,73 +17,75 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteAccessGroup(request *DeleteAccessGroupRequest) (response *DeleteAccessGroupResponse, err error) {
-	response = CreateDeleteAccessGroupResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDeleteAccessGroupResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupRequest) (<-chan *DeleteAccessGroupResponse, <-chan error) {
-	responseChan := make(chan *DeleteAccessGroupResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DeleteAccessGroup(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DeleteAccessGroupResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DeleteAccessGroup(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRequest, callback func(response *DeleteAccessGroupResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DeleteAccessGroupResponse
-		var err error
-		defer close(result)
-		response, err = client.DeleteAccessGroup(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRequest, callback func(response *DeleteAccessGroupResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DeleteAccessGroupResponse
+var err error
+defer close(result)
+response, err = client.DeleteAccessGroup(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DeleteAccessGroupRequest struct {
-	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
+*requests.RpcRequest
+                AccessGroupName  string `position:"Query" name:"AccessGroupName"`
 }
 
+
 type DeleteAccessGroupResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
-	request = &DeleteAccessGroupRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessGroup", "", "")
-	return
+request = &DeleteAccessGroupRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessGroup", "", "")
+return
 }
 
 func CreateDeleteAccessGroupResponse() (response *DeleteAccessGroupResponse) {
-	response = &DeleteAccessGroupResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DeleteAccessGroupResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,77 +17,79 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyAccountNotification(request *ModifyAccountNotificationRequest) (response *ModifyAccountNotificationResponse, err error) {
-	response = CreateModifyAccountNotificationResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyAccountNotificationResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyAccountNotificationWithChan(request *ModifyAccountNotificationRequest) (<-chan *ModifyAccountNotificationResponse, <-chan error) {
-	responseChan := make(chan *ModifyAccountNotificationResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyAccountNotification(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyAccountNotificationResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyAccountNotification(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyAccountNotificationWithCallback(request *ModifyAccountNotificationRequest, callback func(response *ModifyAccountNotificationResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyAccountNotificationResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyAccountNotification(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyAccountNotificationWithCallback(request *ModifyAccountNotificationRequest, callback func(response *ModifyAccountNotificationResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyAccountNotificationResponse
+var err error
+defer close(result)
+response, err = client.ModifyAccountNotification(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyAccountNotificationRequest struct {
-	*requests.RpcRequest
-	Region               string `position:"Query" name:"Region"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                Region  string `position:"Query" name:"Region"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Status  string `position:"Query" name:"Status"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyAccountNotificationResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificationRequest) {
-	request = &ModifyAccountNotificationRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyAccountNotification", "", "")
-	return
+request = &ModifyAccountNotificationRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "ModifyAccountNotification", "", "")
+return
 }
 
 func CreateModifyAccountNotificationResponse() (response *ModifyAccountNotificationResponse) {
-	response = &ModifyAccountNotificationResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyAccountNotificationResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

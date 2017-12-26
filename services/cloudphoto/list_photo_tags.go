@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,85 +17,87 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListPhotoTags(request *ListPhotoTagsRequest) (response *ListPhotoTagsResponse, err error) {
-	response = CreateListPhotoTagsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListPhotoTagsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListPhotoTagsWithChan(request *ListPhotoTagsRequest) (<-chan *ListPhotoTagsResponse, <-chan error) {
-	responseChan := make(chan *ListPhotoTagsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListPhotoTags(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListPhotoTagsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListPhotoTags(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, callback func(response *ListPhotoTagsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListPhotoTagsResponse
-		var err error
-		defer close(result)
-		response, err = client.ListPhotoTags(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, callback func(response *ListPhotoTagsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListPhotoTagsResponse
+var err error
+defer close(result)
+response, err = client.ListPhotoTags(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListPhotoTagsRequest struct {
-	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Lang      string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                Lang  string `position:"Query" name:"Lang"`
+                PhotoId  string `position:"Query" name:"PhotoId"`
 }
 
+
 type ListPhotoTagsResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
-	Tags      []struct {
-		Id        int64  `json:"Id"`
-		IsSubTag  bool   `json:"IsSubTag"`
-		Name      string `json:"Name"`
-		ParentTag string `json:"ParentTag"`
-	} `json:"Tags"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
+                Tags  []struct {
+            Id     int64 `json:"Id" xml:"Id"`
+            IsSubTag     bool `json:"IsSubTag" xml:"IsSubTag"`
+            Name     string `json:"Name" xml:"Name"`
+            ParentTag     string `json:"ParentTag" xml:"ParentTag"`
+                }  `json:"Tags" xml:"Tags"`
 }
 
 func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
-	request = &ListPhotoTagsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "", "")
-	return
+request = &ListPhotoTagsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "", "")
+return
 }
 
 func CreateListPhotoTagsResponse() (response *ListPhotoTagsResponse) {
-	response = &ListPhotoTagsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListPhotoTagsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

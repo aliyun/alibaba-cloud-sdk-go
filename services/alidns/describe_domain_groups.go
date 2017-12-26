@@ -1,3 +1,4 @@
+
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,87 +17,89 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainGroups(request *DescribeDomainGroupsRequest) (response *DescribeDomainGroupsResponse, err error) {
-	response = CreateDescribeDomainGroupsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainGroupsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainGroupsWithChan(request *DescribeDomainGroupsRequest) (<-chan *DescribeDomainGroupsResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainGroupsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomainGroups(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainGroupsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomainGroups(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainGroupsWithCallback(request *DescribeDomainGroupsRequest, callback func(response *DescribeDomainGroupsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainGroupsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomainGroups(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainGroupsWithCallback(request *DescribeDomainGroupsRequest, callback func(response *DescribeDomainGroupsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainGroupsResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomainGroups(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainGroupsRequest struct {
-	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                KeyWord  string `position:"Query" name:"KeyWord"`
+                UserClientIp  string `position:"Query" name:"UserClientIp"`
+                Lang  string `position:"Query" name:"Lang"`
 }
 
+
 type DescribeDomainGroupsResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int64  `json:"PageSize" xml:"PageSize"`
-	DomainGroups struct {
-		DomainGroup []struct {
-			GroupId     string `json:"GroupId" xml:"GroupId"`
-			GroupName   string `json:"GroupName" xml:"GroupName"`
-			DomainCount int64  `json:"DomainCount" xml:"DomainCount"`
-		} `json:"DomainGroup" xml:"DomainGroup"`
-	} `json:"DomainGroups" xml:"DomainGroups"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int64 `json:"PageSize" xml:"PageSize"`
+                DomainGroups struct {
+                    DomainGroup []struct {
+            GroupId     string `json:"GroupId" xml:"GroupId"`
+            GroupName     string `json:"GroupName" xml:"GroupName"`
+            DomainCount     int64 `json:"DomainCount" xml:"DomainCount"`
+                    }   `json:"DomainGroup" xml:"DomainGroup"`
+                } `json:"DomainGroups" xml:"DomainGroups"`
 }
 
 func CreateDescribeDomainGroupsRequest() (request *DescribeDomainGroupsRequest) {
-	request = &DescribeDomainGroupsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainGroups", "", "")
-	return
+request = &DescribeDomainGroupsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainGroups", "", "")
+return
 }
 
 func CreateDescribeDomainGroupsResponse() (response *DescribeDomainGroupsResponse) {
-	response = &DescribeDomainGroupsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainGroupsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

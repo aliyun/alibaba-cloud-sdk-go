@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,88 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error) {
-	response = CreateDescribeServerRelatedGlobalAccelerationInstancesResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeServerRelatedGlobalAccelerationInstancesResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (<-chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, <-chan error) {
-	responseChan := make(chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeServerRelatedGlobalAccelerationInstances(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeServerRelatedGlobalAccelerationInstances(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallback(request *DescribeServerRelatedGlobalAccelerationInstancesRequest, callback func(response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeServerRelatedGlobalAccelerationInstancesResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeServerRelatedGlobalAccelerationInstances(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallback(request *DescribeServerRelatedGlobalAccelerationInstancesRequest, callback func(response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeServerRelatedGlobalAccelerationInstancesResponse
+var err error
+defer close(result)
+response, err = client.DescribeServerRelatedGlobalAccelerationInstances(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
-	*requests.RpcRequest
-	ServerType           string `position:"Query" name:"ServerType"`
-	ServerId             string `position:"Query" name:"ServerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ServerType  string `position:"Query" name:"ServerType"`
+                ServerId  string `position:"Query" name:"ServerId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
-	*responses.BaseResponse
-	RequestId                   string `json:"RequestId" xml:"RequestId"`
-	GlobalAccelerationInstances struct {
-		GlobalAccelerationInstance []struct {
-			RegionId                     string `json:"RegionId" xml:"RegionId"`
-			GlobalAccelerationInstanceId string `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
-			IpAddress                    string `json:"IpAddress" xml:"IpAddress"`
-			ServerIpAddress              string `json:"ServerIpAddress" xml:"ServerIpAddress"`
-		} `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
-	} `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                GlobalAccelerationInstances struct {
+                    GlobalAccelerationInstance []struct {
+            RegionId     string `json:"RegionId" xml:"RegionId"`
+            GlobalAccelerationInstanceId     string `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
+            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
+            ServerIpAddress     string `json:"ServerIpAddress" xml:"ServerIpAddress"`
+                    }   `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
+                } `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
 func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
-	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "", "")
-	return
+request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "", "")
+return
 }
 
 func CreateDescribeServerRelatedGlobalAccelerationInstancesResponse() (response *DescribeServerRelatedGlobalAccelerationInstancesResponse) {
-	response = &DescribeServerRelatedGlobalAccelerationInstancesResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeServerRelatedGlobalAccelerationInstancesResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

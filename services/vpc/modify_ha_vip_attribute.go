@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyHaVipAttribute(request *ModifyHaVipAttributeRequest) (response *ModifyHaVipAttributeResponse, err error) {
-	response = CreateModifyHaVipAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyHaVipAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttributeRequest) (<-chan *ModifyHaVipAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyHaVipAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyHaVipAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyHaVipAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyHaVipAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttributeRequest, callback func(response *ModifyHaVipAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyHaVipAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyHaVipAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttributeRequest, callback func(response *ModifyHaVipAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyHaVipAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyHaVipAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyHaVipAttributeRequest struct {
-	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	HaVipId              string `position:"Query" name:"HaVipId"`
+*requests.RpcRequest
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Description  string `position:"Query" name:"Description"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                HaVipId  string `position:"Query" name:"HaVipId"`
 }
 
+
 type ModifyHaVipAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) {
-	request = &ModifyHaVipAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "", "")
-	return
+request = &ModifyHaVipAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "", "")
+return
 }
 
 func CreateModifyHaVipAttributeResponse() (response *ModifyHaVipAttributeResponse) {
-	response = &ModifyHaVipAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyHaVipAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

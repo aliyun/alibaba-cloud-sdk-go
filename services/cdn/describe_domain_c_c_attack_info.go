@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,96 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainCCAttackInfo(request *DescribeDomainCCAttackInfoRequest) (response *DescribeDomainCCAttackInfoResponse, err error) {
-	response = CreateDescribeDomainCCAttackInfoResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDomainCCAttackInfoResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDomainCCAttackInfoWithChan(request *DescribeDomainCCAttackInfoRequest) (<-chan *DescribeDomainCCAttackInfoResponse, <-chan error) {
-	responseChan := make(chan *DescribeDomainCCAttackInfoResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDomainCCAttackInfo(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDomainCCAttackInfoResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDomainCCAttackInfo(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainCCAttackInfoWithCallback(request *DescribeDomainCCAttackInfoRequest, callback func(response *DescribeDomainCCAttackInfoResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDomainCCAttackInfoResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDomainCCAttackInfo(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDomainCCAttackInfoWithCallback(request *DescribeDomainCCAttackInfoRequest, callback func(response *DescribeDomainCCAttackInfoResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDomainCCAttackInfoResponse
+var err error
+defer close(result)
+response, err = client.DescribeDomainCCAttackInfo(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDomainCCAttackInfoRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeDomainCCAttackInfoResponse struct {
-	*responses.BaseResponse
-	RequestId        string `json:"RequestId"`
-	DomainName       string `json:"DomainName"`
-	StartTime        string `json:"StartTime"`
-	EndTime          string `json:"EndTime"`
-	AttackIpDataList []struct {
-		Ip          string `json:"Ip"`
-		AttackCount string `json:"AttackCount"`
-		Result      string `json:"Result"`
-	} `json:"AttackIpDataList"`
-	AttackedUrlDataList []struct {
-		Url         string `json:"Url"`
-		AttackCount string `json:"AttackCount"`
-		Result      string `json:"Result"`
-	} `json:"AttackedUrlDataList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            DomainName     string `json:"DomainName" xml:"DomainName"`
+            StartTime     string `json:"StartTime" xml:"StartTime"`
+            EndTime     string `json:"EndTime" xml:"EndTime"`
+                AttackIpDataList struct {
+                    AttackIpDatas []struct {
+            Ip     string `json:"Ip" xml:"Ip"`
+            AttackCount     string `json:"AttackCount" xml:"AttackCount"`
+            Result     string `json:"Result" xml:"Result"`
+                    }   `json:"AttackIpDatas" xml:"AttackIpDatas"`
+                } `json:"AttackIpDataList" xml:"AttackIpDataList"`
+                AttackedUrlDataList struct {
+                    AttackedUrlDatas []struct {
+            Url     string `json:"Url" xml:"Url"`
+            AttackCount     string `json:"AttackCount" xml:"AttackCount"`
+            Result     string `json:"Result" xml:"Result"`
+                    }   `json:"AttackedUrlDatas" xml:"AttackedUrlDatas"`
+                } `json:"AttackedUrlDataList" xml:"AttackedUrlDataList"`
 }
 
 func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackInfoRequest) {
-	request = &DescribeDomainCCAttackInfoRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo", "", "")
-	return
+request = &DescribeDomainCCAttackInfoRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo", "", "")
+return
 }
 
 func CreateDescribeDomainCCAttackInfoResponse() (response *DescribeDomainCCAttackInfoResponse) {
-	response = &DescribeDomainCCAttackInfoResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDomainCCAttackInfoResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyPostpaidDBInstanceSpec(request *ModifyPostpaidDBInstanceSpecRequest) (response *ModifyPostpaidDBInstanceSpecResponse, err error) {
-	response = CreateModifyPostpaidDBInstanceSpecResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyPostpaidDBInstanceSpecResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyPostpaidDBInstanceSpecWithChan(request *ModifyPostpaidDBInstanceSpecRequest) (<-chan *ModifyPostpaidDBInstanceSpecResponse, <-chan error) {
-	responseChan := make(chan *ModifyPostpaidDBInstanceSpecResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyPostpaidDBInstanceSpec(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyPostpaidDBInstanceSpecResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyPostpaidDBInstanceSpec(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyPostpaidDBInstanceSpecWithCallback(request *ModifyPostpaidDBInstanceSpecRequest, callback func(response *ModifyPostpaidDBInstanceSpecResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyPostpaidDBInstanceSpecResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyPostpaidDBInstanceSpec(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyPostpaidDBInstanceSpecWithCallback(request *ModifyPostpaidDBInstanceSpecRequest, callback func(response *ModifyPostpaidDBInstanceSpecResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyPostpaidDBInstanceSpecResponse
+var err error
+defer close(result)
+response, err = client.ModifyPostpaidDBInstanceSpec(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyPostpaidDBInstanceSpecRequest struct {
-	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBInstanceClass      string `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage    string `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                DBInstanceClass  string `position:"Query" name:"DBInstanceClass"`
+                DBInstanceStorage  string `position:"Query" name:"DBInstanceStorage"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyPostpaidDBInstanceSpecResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyPostpaidDBInstanceSpecRequest() (request *ModifyPostpaidDBInstanceSpecRequest) {
-	request = &ModifyPostpaidDBInstanceSpecRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyPostpaidDBInstanceSpec", "", "")
-	return
+request = &ModifyPostpaidDBInstanceSpecRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Rds", "2014-08-15", "ModifyPostpaidDBInstanceSpec", "", "")
+return
 }
 
 func CreateModifyPostpaidDBInstanceSpecResponse() (response *ModifyPostpaidDBInstanceSpecResponse) {
-	response = &ModifyPostpaidDBInstanceSpecResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyPostpaidDBInstanceSpecResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

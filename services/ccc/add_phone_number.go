@@ -1,3 +1,4 @@
+
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,99 +17,100 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddPhoneNumber(request *AddPhoneNumberRequest) (response *AddPhoneNumberResponse, err error) {
-	response = CreateAddPhoneNumberResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddPhoneNumberResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-chan *AddPhoneNumberResponse, <-chan error) {
-	responseChan := make(chan *AddPhoneNumberResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddPhoneNumber(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddPhoneNumberResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddPhoneNumber(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest, callback func(response *AddPhoneNumberResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddPhoneNumberResponse
-		var err error
-		defer close(result)
-		response, err = client.AddPhoneNumber(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest, callback func(response *AddPhoneNumberResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddPhoneNumberResponse
+var err error
+defer close(result)
+response, err = client.AddPhoneNumber(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddPhoneNumberRequest struct {
-	*requests.RpcRequest
-	ContactFlowId string `position:"Query" name:"ContactFlowId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	Usage         string `position:"Query" name:"Usage"`
-	PhoneNumber   string `position:"Query" name:"PhoneNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                PhoneNumber  string `position:"Query" name:"PhoneNumber"`
+                Usage  string `position:"Query" name:"Usage"`
+                ContactFlowId  string `position:"Query" name:"ContactFlowId"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type AddPhoneNumberResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
-	PhoneNumber    struct {
-		PhoneNumberId          string `json:"PhoneNumberId"`
-		InstanceId             string `json:"InstanceId"`
-		Number                 string `json:"Number"`
-		PhoneNumberDescription string `json:"PhoneNumberDescription"`
-		TestOnly               bool   `json:"TestOnly"`
-		RemainingTime          int    `json:"RemainingTime"`
-		AllowOutbound          bool   `json:"AllowOutbound"`
-		Usage                  string `json:"Usage"`
-		Trunks                 int    `json:"Trunks"`
-		ContactFlow            struct {
-			ContactFlowId          string `json:"ContactFlowId"`
-			InstanceId             string `json:"InstanceId"`
-			ContactFlowName        string `json:"ContactFlowName"`
-			ContactFlowDescription string `json:"ContactFlowDescription"`
-			Type                   string `json:"Type"`
-		} `json:"ContactFlow"`
-	} `json:"PhoneNumber"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            HttpStatusCode     int `json:"HttpStatusCode" xml:"HttpStatusCode"`
+            PhoneNumber struct {
+            PhoneNumberId     string `json:"PhoneNumberId" xml:"PhoneNumberId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            Number     string `json:"Number" xml:"Number"`
+            PhoneNumberDescription     string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+            TestOnly     bool `json:"TestOnly" xml:"TestOnly"`
+            RemainingTime     int `json:"RemainingTime" xml:"RemainingTime"`
+            AllowOutbound     bool `json:"AllowOutbound" xml:"AllowOutbound"`
+            Usage     string `json:"Usage" xml:"Usage"`
+            Trunks     int `json:"Trunks" xml:"Trunks"`
+            ContactFlow struct {
+            ContactFlowId     string `json:"ContactFlowId" xml:"ContactFlowId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            ContactFlowName     string `json:"ContactFlowName" xml:"ContactFlowName"`
+            ContactFlowDescription     string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+            Type     string `json:"Type" xml:"Type"`
+            }  `json:"ContactFlow" xml:"ContactFlow"`
+            }  `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
 func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
-	request = &AddPhoneNumberRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "AddPhoneNumber", "", "")
-	return
+request = &AddPhoneNumberRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CCC", "2017-07-05", "AddPhoneNumber", "", "")
+return
 }
 
 func CreateAddPhoneNumberResponse() (response *AddPhoneNumberResponse) {
-	response = &AddPhoneNumberResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddPhoneNumberResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

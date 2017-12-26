@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,113 +17,115 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeVpnConnections(request *DescribeVpnConnectionsRequest) (response *DescribeVpnConnectionsResponse, err error) {
-	response = CreateDescribeVpnConnectionsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeVpnConnectionsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeVpnConnectionsWithChan(request *DescribeVpnConnectionsRequest) (<-chan *DescribeVpnConnectionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeVpnConnectionsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeVpnConnections(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeVpnConnectionsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeVpnConnections(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeVpnConnectionsWithCallback(request *DescribeVpnConnectionsRequest, callback func(response *DescribeVpnConnectionsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeVpnConnectionsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeVpnConnections(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeVpnConnectionsWithCallback(request *DescribeVpnConnectionsRequest, callback func(response *DescribeVpnConnectionsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeVpnConnectionsResponse
+var err error
+defer close(result)
+response, err = client.DescribeVpnConnections(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeVpnConnectionsRequest struct {
-	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	VpnGatewayId         string `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                VpnGatewayId  string `position:"Query" name:"VpnGatewayId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                CustomerGatewayId  string `position:"Query" name:"CustomerGatewayId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
 }
 
+
 type DescribeVpnConnectionsResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	VpnConnections struct {
-		VpnConnection []struct {
-			VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-			CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-			VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-			Name              string `json:"Name" xml:"Name"`
-			LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-			RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-			CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-			EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
-			Status            string `json:"Status" xml:"Status"`
-			IkeConfig         struct {
-				Psk         string `json:"Psk" xml:"Psk"`
-				IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-				IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-				IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-				IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-				IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-				IkeLifetime int64  `json:"IkeLifetime" xml:"IkeLifetime"`
-				LocalId     string `json:"LocalId" xml:"LocalId"`
-				RemoteId    string `json:"RemoteId" xml:"RemoteId"`
-			} `json:"IkeConfig" xml:"IkeConfig"`
-			IpsecConfig struct {
-				IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-				IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-				IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-				IpsecLifetime int64  `json:"IpsecLifetime" xml:"IpsecLifetime"`
-			} `json:"IpsecConfig" xml:"IpsecConfig"`
-		} `json:"VpnConnection" xml:"VpnConnection"`
-	} `json:"VpnConnections" xml:"VpnConnections"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int `json:"PageSize" xml:"PageSize"`
+                VpnConnections struct {
+                    VpnConnection []struct {
+            VpnConnectionId     string `json:"VpnConnectionId" xml:"VpnConnectionId"`
+            CustomerGatewayId     string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+            VpnGatewayId     string `json:"VpnGatewayId" xml:"VpnGatewayId"`
+            Name     string `json:"Name" xml:"Name"`
+            LocalSubnet     string `json:"LocalSubnet" xml:"LocalSubnet"`
+            RemoteSubnet     string `json:"RemoteSubnet" xml:"RemoteSubnet"`
+            CreateTime     int64 `json:"CreateTime" xml:"CreateTime"`
+            EffectImmediately     bool `json:"EffectImmediately" xml:"EffectImmediately"`
+            Status     string `json:"Status" xml:"Status"`
+            IkeConfig struct {
+            Psk     string `json:"Psk" xml:"Psk"`
+            IkeVersion     string `json:"IkeVersion" xml:"IkeVersion"`
+            IkeMode     string `json:"IkeMode" xml:"IkeMode"`
+            IkeEncAlg     string `json:"IkeEncAlg" xml:"IkeEncAlg"`
+            IkeAuthAlg     string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+            IkePfs     string `json:"IkePfs" xml:"IkePfs"`
+            IkeLifetime     int64 `json:"IkeLifetime" xml:"IkeLifetime"`
+            LocalId     string `json:"LocalId" xml:"LocalId"`
+            RemoteId     string `json:"RemoteId" xml:"RemoteId"`
+            }  `json:"IkeConfig" xml:"IkeConfig"`
+            IpsecConfig struct {
+            IpsecEncAlg     string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
+            IpsecAuthAlg     string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
+            IpsecPfs     string `json:"IpsecPfs" xml:"IpsecPfs"`
+            IpsecLifetime     int64 `json:"IpsecLifetime" xml:"IpsecLifetime"`
+            }  `json:"IpsecConfig" xml:"IpsecConfig"`
+                    }   `json:"VpnConnection" xml:"VpnConnection"`
+                } `json:"VpnConnections" xml:"VpnConnections"`
 }
 
 func CreateDescribeVpnConnectionsRequest() (request *DescribeVpnConnectionsRequest) {
-	request = &DescribeVpnConnectionsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnections", "", "")
-	return
+request = &DescribeVpnConnectionsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnections", "", "")
+return
 }
 
 func CreateDescribeVpnConnectionsResponse() (response *DescribeVpnConnectionsResponse) {
-	response = &DescribeVpnConnectionsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeVpnConnectionsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

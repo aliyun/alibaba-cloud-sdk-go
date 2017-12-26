@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,90 +17,92 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamOnlineBps(request *DescribeLiveStreamOnlineBpsRequest) (response *DescribeLiveStreamOnlineBpsResponse, err error) {
-	response = CreateDescribeLiveStreamOnlineBpsResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeLiveStreamOnlineBpsResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeLiveStreamOnlineBpsWithChan(request *DescribeLiveStreamOnlineBpsRequest) (<-chan *DescribeLiveStreamOnlineBpsResponse, <-chan error) {
-	responseChan := make(chan *DescribeLiveStreamOnlineBpsResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeLiveStreamOnlineBps(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeLiveStreamOnlineBpsResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeLiveStreamOnlineBps(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamOnlineBpsWithCallback(request *DescribeLiveStreamOnlineBpsRequest, callback func(response *DescribeLiveStreamOnlineBpsResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeLiveStreamOnlineBpsResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeLiveStreamOnlineBps(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeLiveStreamOnlineBpsWithCallback(request *DescribeLiveStreamOnlineBpsRequest, callback func(response *DescribeLiveStreamOnlineBpsResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeLiveStreamOnlineBpsResponse
+var err error
+defer close(result)
+response, err = client.DescribeLiveStreamOnlineBps(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeLiveStreamOnlineBpsRequest struct {
-	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StreamName  string `position:"Query" name:"StreamName"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeLiveStreamOnlineBpsResponse struct {
-	*responses.BaseResponse
-	RequestId                string  `json:"RequestId"`
-	TotalUserNumber          int64   `json:"TotalUserNumber"`
-	FlvBps                   float64 `json:"FlvBps"`
-	HlsBps                   float64 `json:"HlsBps"`
-	LiveStreamOnlineBpsInfos []struct {
-		StreamUrl string  `json:"StreamUrl"`
-		UpBps     float64 `json:"UpBps"`
-		DownBps   float64 `json:"DownBps"`
-		Time      string  `json:"Time"`
-	} `json:"LiveStreamOnlineBpsInfos"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalUserNumber     int64 `json:"TotalUserNumber" xml:"TotalUserNumber"`
+            FlvBps     float64 `json:"FlvBps" xml:"FlvBps"`
+            HlsBps     float64 `json:"HlsBps" xml:"HlsBps"`
+                LiveStreamOnlineBpsInfos struct {
+                    LiveStreamOnlineBpsInfo []struct {
+            StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
+            UpBps     float64 `json:"UpBps" xml:"UpBps"`
+            DownBps     float64 `json:"DownBps" xml:"DownBps"`
+            Time     string `json:"Time" xml:"Time"`
+                    }   `json:"LiveStreamOnlineBpsInfo" xml:"LiveStreamOnlineBpsInfo"`
+                } `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
 }
 
 func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnlineBpsRequest) {
-	request = &DescribeLiveStreamOnlineBpsRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps", "", "")
-	return
+request = &DescribeLiveStreamOnlineBpsRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps", "", "")
+return
 }
 
 func CreateDescribeLiveStreamOnlineBpsResponse() (response *DescribeLiveStreamOnlineBpsResponse) {
-	response = &DescribeLiveStreamOnlineBpsResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeLiveStreamOnlineBpsResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

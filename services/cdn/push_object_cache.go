@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response *PushObjectCacheResponse, err error) {
-	response = CreatePushObjectCacheResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreatePushObjectCacheResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (<-chan *PushObjectCacheResponse, <-chan error) {
-	responseChan := make(chan *PushObjectCacheResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.PushObjectCache(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *PushObjectCacheResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.PushObjectCache(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheRequest, callback func(response *PushObjectCacheResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *PushObjectCacheResponse
-		var err error
-		defer close(result)
-		response, err = client.PushObjectCache(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheRequest, callback func(response *PushObjectCacheResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *PushObjectCacheResponse
+var err error
+defer close(result)
+response, err = client.PushObjectCache(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type PushObjectCacheRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ObjectPath    string `position:"Query" name:"ObjectPath"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ObjectPath  string `position:"Query" name:"ObjectPath"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type PushObjectCacheResponse struct {
-	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	PushTaskId string `json:"PushTaskId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PushTaskId     string `json:"PushTaskId" xml:"PushTaskId"`
 }
 
 func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
-	request = &PushObjectCacheRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "PushObjectCache", "", "")
-	return
+request = &PushObjectCacheRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "PushObjectCache", "", "")
+return
 }
 
 func CreatePushObjectCacheResponse() (response *PushObjectCacheResponse) {
-	response = &PushObjectCacheResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &PushObjectCacheResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

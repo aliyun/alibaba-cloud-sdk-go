@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,110 +17,112 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribePrice(request *DescribePriceRequest) (response *DescribePriceResponse, err error) {
-	response = CreateDescribePriceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribePriceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-chan *DescribePriceResponse, <-chan error) {
-	responseChan := make(chan *DescribePriceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribePrice(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribePriceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribePrice(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, callback func(response *DescribePriceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribePriceResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribePrice(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, callback func(response *DescribePriceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribePriceResponse
+var err error
+defer close(result)
+response, err = client.DescribePrice(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribePriceRequest struct {
-	*requests.RpcRequest
-	DataDisk2Size           string `position:"Query" name:"DataDisk.2.Size"`
-	InternetMaxBandwidthOut string `position:"Query" name:"InternetMaxBandwidthOut"`
-	DataDisk3Size           string `position:"Query" name:"DataDisk.3.Size"`
-	SystemDiskCategory      string `position:"Query" name:"SystemDisk.Category"`
-	InternetChargeType      string `position:"Query" name:"InternetChargeType"`
-	DataDisk4Category       string `position:"Query" name:"DataDisk.4.Category"`
-	DataDisk4Size           string `position:"Query" name:"DataDisk.4.Size"`
-	ResourceType            string `position:"Query" name:"ResourceType"`
-	PriceUnit               string `position:"Query" name:"PriceUnit"`
-	Period                  string `position:"Query" name:"Period"`
-	OwnerId                 string `position:"Query" name:"OwnerId"`
-	ImageId                 string `position:"Query" name:"ImageId"`
-	IoOptimized             string `position:"Query" name:"IoOptimized"`
-	InstanceType            string `position:"Query" name:"InstanceType"`
-	Amount                  string `position:"Query" name:"Amount"`
-	DataDisk1Category       string `position:"Query" name:"DataDisk.1.Category"`
-	ResourceOwnerAccount    string `position:"Query" name:"ResourceOwnerAccount"`
-	DataDisk2Category       string `position:"Query" name:"DataDisk.2.Category"`
-	DataDisk1Size           string `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk3Category       string `position:"Query" name:"DataDisk.3.Category"`
-	ResourceOwnerId         string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string `position:"Query" name:"OwnerAccount"`
-	SystemDiskSize          string `position:"Query" name:"SystemDisk.Size"`
-	InstanceNetworkType     string `position:"Query" name:"InstanceNetworkType"`
+*requests.RpcRequest
+                DataDisk2Size  string `position:"Query" name:"DataDisk.2.Size"`
+                InternetMaxBandwidthOut  string `position:"Query" name:"InternetMaxBandwidthOut"`
+                DataDisk3Size  string `position:"Query" name:"DataDisk.3.Size"`
+                SystemDiskCategory  string `position:"Query" name:"SystemDisk.Category"`
+                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
+                DataDisk4Category  string `position:"Query" name:"DataDisk.4.Category"`
+                DataDisk4Size  string `position:"Query" name:"DataDisk.4.Size"`
+                ResourceType  string `position:"Query" name:"ResourceType"`
+                PriceUnit  string `position:"Query" name:"PriceUnit"`
+                Period  string `position:"Query" name:"Period"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ImageId  string `position:"Query" name:"ImageId"`
+                IoOptimized  string `position:"Query" name:"IoOptimized"`
+                InstanceType  string `position:"Query" name:"InstanceType"`
+                Amount  string `position:"Query" name:"Amount"`
+                DataDisk1Category  string `position:"Query" name:"DataDisk.1.Category"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                DataDisk2Category  string `position:"Query" name:"DataDisk.2.Category"`
+                DataDisk1Size  string `position:"Query" name:"DataDisk.1.Size"`
+                DataDisk3Category  string `position:"Query" name:"DataDisk.3.Category"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                SystemDiskSize  string `position:"Query" name:"SystemDisk.Size"`
+                InstanceNetworkType  string `position:"Query" name:"InstanceNetworkType"`
 }
 
+
 type DescribePriceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Price struct {
-			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-			Currency      string  `json:"Currency" xml:"Currency"`
-		} `json:"Price" xml:"Price"`
-		Rules struct {
-			Rule []struct {
-				RuleId      int64  `json:"RuleId" xml:"RuleId"`
-				Description string `json:"Description" xml:"Description"`
-			} `json:"Rule" xml:"Rule"`
-		} `json:"Rules" xml:"Rules"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            PriceInfo struct {
+            Price struct {
+            OriginalPrice     float64 `json:"OriginalPrice" xml:"OriginalPrice"`
+            DiscountPrice     float64 `json:"DiscountPrice" xml:"DiscountPrice"`
+            TradePrice     float64 `json:"TradePrice" xml:"TradePrice"`
+            Currency     string `json:"Currency" xml:"Currency"`
+            }  `json:"Price" xml:"Price"`
+                Rules struct {
+                    Rule []struct {
+            RuleId     int64 `json:"RuleId" xml:"RuleId"`
+            Description     string `json:"Description" xml:"Description"`
+                    }   `json:"Rule" xml:"Rule"`
+                } `json:"Rules" xml:"Rules"`
+            }  `json:"PriceInfo" xml:"PriceInfo"`
 }
 
 func CreateDescribePriceRequest() (request *DescribePriceRequest) {
-	request = &DescribePriceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "", "")
-	return
+request = &DescribePriceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "", "")
+return
 }
 
 func CreateDescribePriceResponse() (response *DescribePriceResponse) {
-	response = &DescribePriceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribePriceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

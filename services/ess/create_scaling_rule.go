@@ -1,3 +1,4 @@
+
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,84 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateScalingRule(request *CreateScalingRuleRequest) (response *CreateScalingRuleResponse, err error) {
-	response = CreateCreateScalingRuleResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateCreateScalingRuleResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) CreateScalingRuleWithChan(request *CreateScalingRuleRequest) (<-chan *CreateScalingRuleResponse, <-chan error) {
-	responseChan := make(chan *CreateScalingRuleResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.CreateScalingRule(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *CreateScalingRuleResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.CreateScalingRule(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRequest, callback func(response *CreateScalingRuleResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *CreateScalingRuleResponse
-		var err error
-		defer close(result)
-		response, err = client.CreateScalingRule(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRequest, callback func(response *CreateScalingRuleResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *CreateScalingRuleResponse
+var err error
+defer close(result)
+response, err = client.CreateScalingRule(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type CreateScalingRuleRequest struct {
-	*requests.RpcRequest
-	ScalingRuleName      string `position:"Query" name:"ScalingRuleName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType       string `position:"Query" name:"AdjustmentType"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Cooldown             string `position:"Query" name:"Cooldown"`
-	AdjustmentValue      string `position:"Query" name:"AdjustmentValue"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+*requests.RpcRequest
+                ScalingRuleName  string `position:"Query" name:"ScalingRuleName"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AdjustmentType  string `position:"Query" name:"AdjustmentType"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Cooldown  string `position:"Query" name:"Cooldown"`
+                AdjustmentValue  string `position:"Query" name:"AdjustmentValue"`
+                ScalingGroupId  string `position:"Query" name:"ScalingGroupId"`
 }
 
+
 type CreateScalingRuleResponse struct {
-	*responses.BaseResponse
-	ScalingRuleId  string `json:"ScalingRuleId" xml:"ScalingRuleId"`
-	ScalingRuleAri string `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            ScalingRuleId     string `json:"ScalingRuleId" xml:"ScalingRuleId"`
+            ScalingRuleAri     string `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCreateScalingRuleRequest() (request *CreateScalingRuleRequest) {
-	request = &CreateScalingRuleRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingRule", "", "")
-	return
+request = &CreateScalingRuleRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingRule", "", "")
+return
 }
 
 func CreateCreateScalingRuleResponse() (response *CreateScalingRuleResponse) {
-	response = &CreateScalingRuleResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &CreateScalingRuleResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

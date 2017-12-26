@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,107 +17,109 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDeploymentSetTopology(request *DescribeDeploymentSetTopologyRequest) (response *DescribeDeploymentSetTopologyResponse, err error) {
-	response = CreateDescribeDeploymentSetTopologyResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeDeploymentSetTopologyResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeDeploymentSetTopologyWithChan(request *DescribeDeploymentSetTopologyRequest) (<-chan *DescribeDeploymentSetTopologyResponse, <-chan error) {
-	responseChan := make(chan *DescribeDeploymentSetTopologyResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeDeploymentSetTopology(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeDeploymentSetTopologyResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeDeploymentSetTopology(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *DescribeDeploymentSetTopologyRequest, callback func(response *DescribeDeploymentSetTopologyResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeDeploymentSetTopologyResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeDeploymentSetTopology(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *DescribeDeploymentSetTopologyRequest, callback func(response *DescribeDeploymentSetTopologyResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeDeploymentSetTopologyResponse
+var err error
+defer close(result)
+response, err = client.DescribeDeploymentSetTopology(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeDeploymentSetTopologyRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	DeploymentSetId      string `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Granularity  string `position:"Query" name:"Granularity"`
+                Domain  string `position:"Query" name:"Domain"`
+                Strategy  string `position:"Query" name:"Strategy"`
+                DeploymentSetName  string `position:"Query" name:"DeploymentSetName"`
+                DeploymentSetId  string `position:"Query" name:"DeploymentSetId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                NetworkType  string `position:"Query" name:"NetworkType"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type DescribeDeploymentSetTopologyResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Switchs   struct {
-		Switch []struct {
-			SwitchId string `json:"SwitchId" xml:"SwitchId"`
-			Hosts    struct {
-				Host []struct {
-					HostId      string `json:"HostId" xml:"HostId"`
-					InstanceIds struct {
-						InstanceId []string `json:"InstanceId" xml:"InstanceId"`
-					} `json:"InstanceIds" xml:"InstanceIds"`
-				} `json:"Host" xml:"Host"`
-			} `json:"Hosts" xml:"Hosts"`
-		} `json:"Switch" xml:"Switch"`
-	} `json:"Switchs" xml:"Switchs"`
-	Racks struct {
-		Rack []struct {
-			RackId string `json:"RackId" xml:"RackId"`
-			Hosts1 struct {
-				Host []struct {
-					HostId       string `json:"HostId" xml:"HostId"`
-					InstanceIds3 struct {
-						InstanceId []string `json:"InstanceId" xml:"InstanceId"`
-					} `json:"InstanceIds" xml:"InstanceIds"`
-				} `json:"Host" xml:"Host"`
-			} `json:"Hosts" xml:"Hosts"`
-		} `json:"Rack" xml:"Rack"`
-	} `json:"Racks" xml:"Racks"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                Switchs struct {
+                    Switch []struct {
+            SwitchId     string `json:"SwitchId" xml:"SwitchId"`
+                Hosts struct {
+                    Host []struct {
+            HostId     string `json:"HostId" xml:"HostId"`
+                InstanceIds struct {
+                InstanceId []    string `json:"InstanceId" xml:"InstanceId"`
+                } `json:"InstanceIds" xml:"InstanceIds"`
+                    }   `json:"Host" xml:"Host"`
+                } `json:"Hosts" xml:"Hosts"`
+                    }   `json:"Switch" xml:"Switch"`
+                } `json:"Switchs" xml:"Switchs"`
+                Racks struct {
+                    Rack []struct {
+            RackId     string `json:"RackId" xml:"RackId"`
+                Hosts1 struct {
+                    Host []struct {
+            HostId     string `json:"HostId" xml:"HostId"`
+                InstanceIds3 struct {
+                InstanceId []    string `json:"InstanceId" xml:"InstanceId"`
+                } `json:"InstanceIds" xml:"InstanceIds"`
+                    }   `json:"Host" xml:"Host"`
+                } `json:"Hosts" xml:"Hosts"`
+                    }   `json:"Rack" xml:"Rack"`
+                } `json:"Racks" xml:"Racks"`
 }
 
 func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSetTopologyRequest) {
-	request = &DescribeDeploymentSetTopologyRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "", "")
-	return
+request = &DescribeDeploymentSetTopologyRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "", "")
+return
 }
 
 func CreateDescribeDeploymentSetTopologyResponse() (response *DescribeDeploymentSetTopologyResponse) {
-	response = &DescribeDeploymentSetTopologyResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeDeploymentSetTopologyResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

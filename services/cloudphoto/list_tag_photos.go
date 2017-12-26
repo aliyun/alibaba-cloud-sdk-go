@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,90 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListTagPhotos(request *ListTagPhotosRequest) (response *ListTagPhotosResponse, err error) {
-	response = CreateListTagPhotosResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListTagPhotosResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListTagPhotosWithChan(request *ListTagPhotosRequest) (<-chan *ListTagPhotosResponse, <-chan error) {
-	responseChan := make(chan *ListTagPhotosResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListTagPhotos(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListTagPhotosResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListTagPhotos(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, callback func(response *ListTagPhotosResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListTagPhotosResponse
-		var err error
-		defer close(result)
-		response, err = client.ListTagPhotos(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, callback func(response *ListTagPhotosResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListTagPhotosResponse
+var err error
+defer close(result)
+response, err = client.ListTagPhotos(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListTagPhotosRequest struct {
-	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	Size      string `position:"Query" name:"Size"`
-	TagId     string `position:"Query" name:"TagId"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	State     string `position:"Query" name:"State"`
-	Direction string `position:"Query" name:"Direction"`
+*requests.RpcRequest
+                Cursor  string `position:"Query" name:"Cursor"`
+                TagId  string `position:"Query" name:"TagId"`
+                Direction  string `position:"Query" name:"Direction"`
+                State  string `position:"Query" name:"State"`
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                Size  string `position:"Query" name:"Size"`
 }
 
+
 type ListTagPhotosResponse struct {
-	*responses.BaseResponse
-	Code       string `json:"Code"`
-	Message    string `json:"Message"`
-	NextCursor string `json:"NextCursor"`
-	TotalCount int    `json:"TotalCount"`
-	RequestId  string `json:"RequestId"`
-	Action     string `json:"Action"`
-	Results    []struct {
-		PhotoId int64  `json:"PhotoId"`
-		State   string `json:"State"`
-	} `json:"Results"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            NextCursor     string `json:"NextCursor" xml:"NextCursor"`
+            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
+                Results  []struct {
+            PhotoId     int64 `json:"PhotoId" xml:"PhotoId"`
+            State     string `json:"State" xml:"State"`
+                }  `json:"Results" xml:"Results"`
 }
 
 func CreateListTagPhotosRequest() (request *ListTagPhotosRequest) {
-	request = &ListTagPhotosRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTagPhotos", "", "")
-	return
+request = &ListTagPhotosRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTagPhotos", "", "")
+return
 }
 
 func CreateListTagPhotosResponse() (response *ListTagPhotosResponse) {
-	response = &ListTagPhotosResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListTagPhotosResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

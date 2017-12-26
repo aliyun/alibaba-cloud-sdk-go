@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,87 +17,89 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyInstanceSpec(request *ModifyInstanceSpecRequest) (response *ModifyInstanceSpecResponse, err error) {
-	response = CreateModifyInstanceSpecResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyInstanceSpecResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequest) (<-chan *ModifyInstanceSpecResponse, <-chan error) {
-	responseChan := make(chan *ModifyInstanceSpecResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyInstanceSpec(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyInstanceSpecResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyInstanceSpec(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpecRequest, callback func(response *ModifyInstanceSpecResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyInstanceSpecResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyInstanceSpec(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpecRequest, callback func(response *ModifyInstanceSpecResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyInstanceSpecResponse
+var err error
+defer close(result)
+response, err = client.ModifyInstanceSpec(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyInstanceSpecRequest struct {
-	*requests.RpcRequest
-	AllowMigrateAcrossZone           string `position:"Query" name:"AllowMigrateAcrossZone"`
-	InternetMaxBandwidthOut          string `position:"Query" name:"InternetMaxBandwidthOut"`
-	ClientToken                      string `position:"Query" name:"ClientToken"`
-	SystemDiskCategory               string `position:"Query" name:"SystemDisk.Category"`
-	TemporaryEndTime                 string `position:"Query" name:"Temporary.EndTime"`
-	OwnerId                          string `position:"Query" name:"OwnerId"`
-	Async                            string `position:"Query" name:"Async"`
-	InstanceType                     string `position:"Query" name:"InstanceType"`
-	ResourceOwnerAccount             string `position:"Query" name:"ResourceOwnerAccount"`
-	TemporaryStartTime               string `position:"Query" name:"Temporary.StartTime"`
-	InternetMaxBandwidthIn           string `position:"Query" name:"InternetMaxBandwidthIn"`
-	ResourceOwnerId                  string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                     string `position:"Query" name:"OwnerAccount"`
-	TemporaryInternetMaxBandwidthOut string `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
-	InstanceId                       string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                AllowMigrateAcrossZone  string `position:"Query" name:"AllowMigrateAcrossZone"`
+                InternetMaxBandwidthOut  string `position:"Query" name:"InternetMaxBandwidthOut"`
+                ClientToken  string `position:"Query" name:"ClientToken"`
+                SystemDiskCategory  string `position:"Query" name:"SystemDisk.Category"`
+                TemporaryEndTime  string `position:"Query" name:"Temporary.EndTime"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                Async  string `position:"Query" name:"Async"`
+                InstanceType  string `position:"Query" name:"InstanceType"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                TemporaryStartTime  string `position:"Query" name:"Temporary.StartTime"`
+                InternetMaxBandwidthIn  string `position:"Query" name:"InternetMaxBandwidthIn"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                TemporaryInternetMaxBandwidthOut  string `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type ModifyInstanceSpecResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
-	request = &ModifyInstanceSpecRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceSpec", "", "")
-	return
+request = &ModifyInstanceSpecRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceSpec", "", "")
+return
 }
 
 func CreateModifyInstanceSpecResponse() (response *ModifyInstanceSpecResponse) {
-	response = &ModifyInstanceSpecResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyInstanceSpecResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

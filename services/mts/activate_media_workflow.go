@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,86 +17,86 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ActivateMediaWorkflow(request *ActivateMediaWorkflowRequest) (response *ActivateMediaWorkflowResponse, err error) {
-	response = CreateActivateMediaWorkflowResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateActivateMediaWorkflowResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ActivateMediaWorkflowWithChan(request *ActivateMediaWorkflowRequest) (<-chan *ActivateMediaWorkflowResponse, <-chan error) {
-	responseChan := make(chan *ActivateMediaWorkflowResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ActivateMediaWorkflow(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ActivateMediaWorkflowResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ActivateMediaWorkflow(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWorkflowRequest, callback func(response *ActivateMediaWorkflowResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ActivateMediaWorkflowResponse
-		var err error
-		defer close(result)
-		response, err = client.ActivateMediaWorkflow(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWorkflowRequest, callback func(response *ActivateMediaWorkflowResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ActivateMediaWorkflowResponse
+var err error
+defer close(result)
+response, err = client.ActivateMediaWorkflow(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ActivateMediaWorkflowRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	MediaWorkflowId      string `position:"Query" name:"MediaWorkflowId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                MediaWorkflowId  string `position:"Query" name:"MediaWorkflowId"`
 }
 
+
 type ActivateMediaWorkflowResponse struct {
-	*responses.BaseResponse
-	RequestId     string `json:"RequestId"`
-	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId"`
-		Name            string `json:"Name"`
-		Topology        string `json:"Topology"`
-		State           string `json:"State"`
-		CreationTime    string `json:"CreationTime"`
-	} `json:"MediaWorkflow"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            MediaWorkflow struct {
+            MediaWorkflowId     string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+            Name     string `json:"Name" xml:"Name"`
+            Topology     string `json:"Topology" xml:"Topology"`
+            State     string `json:"State" xml:"State"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+            }  `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
 func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest) {
-	request = &ActivateMediaWorkflowRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ActivateMediaWorkflow", "", "")
-	return
+request = &ActivateMediaWorkflowRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "ActivateMediaWorkflow", "", "")
+return
 }
 
 func CreateActivateMediaWorkflowResponse() (response *ActivateMediaWorkflowResponse) {
-	response = &ActivateMediaWorkflowResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ActivateMediaWorkflowResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

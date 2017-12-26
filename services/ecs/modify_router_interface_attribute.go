@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyRouterInterfaceAttribute(request *ModifyRouterInterfaceAttributeRequest) (response *ModifyRouterInterfaceAttributeResponse, err error) {
-	response = CreateModifyRouterInterfaceAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateModifyRouterInterfaceAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRouterInterfaceAttributeRequest) (<-chan *ModifyRouterInterfaceAttributeResponse, <-chan error) {
-	responseChan := make(chan *ModifyRouterInterfaceAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ModifyRouterInterfaceAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ModifyRouterInterfaceAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ModifyRouterInterfaceAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ModifyRouterInterfaceAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.ModifyRouterInterfaceAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ModifyRouterInterfaceAttributeResponse
+var err error
+defer close(result)
+response, err = client.ModifyRouterInterfaceAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ModifyRouterInterfaceAttributeRequest struct {
-	*requests.RpcRequest
-	HealthCheckSourceIp      string `position:"Query" name:"HealthCheckSourceIp"`
-	OppositeRouterType       string `position:"Query" name:"OppositeRouterType"`
-	HealthCheckTargetIp      string `position:"Query" name:"HealthCheckTargetIp"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	OppositeInterfaceOwnerId string `position:"Query" name:"OppositeInterfaceOwnerId"`
-	OppositeRouterId         string `position:"Query" name:"OppositeRouterId"`
-	Description              string `position:"Query" name:"Description"`
-	Name                     string `position:"Query" name:"Name"`
-	OppositeInterfaceId      string `position:"Query" name:"OppositeInterfaceId"`
-	RouterInterfaceId        string `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
+*requests.RpcRequest
+                HealthCheckSourceIp  string `position:"Query" name:"HealthCheckSourceIp"`
+                OppositeRouterType  string `position:"Query" name:"OppositeRouterType"`
+                HealthCheckTargetIp  string `position:"Query" name:"HealthCheckTargetIp"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                OppositeInterfaceOwnerId  string `position:"Query" name:"OppositeInterfaceOwnerId"`
+                OppositeRouterId  string `position:"Query" name:"OppositeRouterId"`
+                Description  string `position:"Query" name:"Description"`
+                Name  string `position:"Query" name:"Name"`
+                OppositeInterfaceId  string `position:"Query" name:"OppositeInterfaceId"`
+                RouterInterfaceId  string `position:"Query" name:"RouterInterfaceId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ModifyRouterInterfaceAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfaceAttributeRequest) {
-	request = &ModifyRouterInterfaceAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "", "")
-	return
+request = &ModifyRouterInterfaceAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "", "")
+return
 }
 
 func CreateModifyRouterInterfaceAttributeResponse() (response *ModifyRouterInterfaceAttributeResponse) {
-	response = &ModifyRouterInterfaceAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ModifyRouterInterfaceAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

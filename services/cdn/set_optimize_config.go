@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetOptimizeConfig(request *SetOptimizeConfigRequest) (response *SetOptimizeConfigResponse, err error) {
-	response = CreateSetOptimizeConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetOptimizeConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigRequest) (<-chan *SetOptimizeConfigResponse, <-chan error) {
-	responseChan := make(chan *SetOptimizeConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetOptimizeConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetOptimizeConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetOptimizeConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRequest, callback func(response *SetOptimizeConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetOptimizeConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetOptimizeConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRequest, callback func(response *SetOptimizeConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetOptimizeConfigResponse
+var err error
+defer close(result)
+response, err = client.SetOptimizeConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetOptimizeConfigRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Enable        string `position:"Query" name:"Enable"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                Enable  string `position:"Query" name:"Enable"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetOptimizeConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
-	request = &SetOptimizeConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetOptimizeConfig", "", "")
-	return
+request = &SetOptimizeConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetOptimizeConfig", "", "")
+return
 }
 
 func CreateSetOptimizeConfigResponse() (response *SetOptimizeConfigResponse) {
-	response = &SetOptimizeConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetOptimizeConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

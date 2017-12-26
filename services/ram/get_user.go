@@ -1,3 +1,4 @@
+
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
-	response = CreateGetUserResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetUserResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
-	responseChan := make(chan *GetUserResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetUser(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetUserResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetUser(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetUserResponse
-		var err error
-		defer close(result)
-		response, err = client.GetUser(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetUserResponse
+var err error
+defer close(result)
+response, err = client.GetUser(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetUserRequest struct {
-	*requests.RpcRequest
-	UserName string `position:"Query" name:"UserName"`
+*requests.RpcRequest
+                UserName  string `position:"Query" name:"UserName"`
 }
 
+
 type GetUserResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	User      struct {
-		UserId        string `json:"UserId" xml:"UserId"`
-		UserName      string `json:"UserName" xml:"UserName"`
-		DisplayName   string `json:"DisplayName" xml:"DisplayName"`
-		MobilePhone   string `json:"MobilePhone" xml:"MobilePhone"`
-		Email         string `json:"Email" xml:"Email"`
-		Comments      string `json:"Comments" xml:"Comments"`
-		CreateDate    string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate    string `json:"UpdateDate" xml:"UpdateDate"`
-		LastLoginDate string `json:"LastLoginDate" xml:"LastLoginDate"`
-	} `json:"User" xml:"User"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            User struct {
+            UserId     string `json:"UserId" xml:"UserId"`
+            UserName     string `json:"UserName" xml:"UserName"`
+            DisplayName     string `json:"DisplayName" xml:"DisplayName"`
+            MobilePhone     string `json:"MobilePhone" xml:"MobilePhone"`
+            Email     string `json:"Email" xml:"Email"`
+            Comments     string `json:"Comments" xml:"Comments"`
+            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
+            UpdateDate     string `json:"UpdateDate" xml:"UpdateDate"`
+            LastLoginDate     string `json:"LastLoginDate" xml:"LastLoginDate"`
+            }  `json:"User" xml:"User"`
 }
 
 func CreateGetUserRequest() (request *GetUserRequest) {
-	request = &GetUserRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "GetUser", "", "")
-	return
+request = &GetUserRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ram", "2015-05-01", "GetUser", "", "")
+return
 }
 
 func CreateGetUserResponse() (response *GetUserResponse) {
-	response = &GetUserResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetUserResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

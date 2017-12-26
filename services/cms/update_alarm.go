@@ -1,3 +1,4 @@
+
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,88 +17,91 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateAlarm(request *UpdateAlarmRequest) (response *UpdateAlarmResponse, err error) {
-	response = CreateUpdateAlarmResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUpdateAlarmResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *UpdateAlarmResponse, <-chan error) {
-	responseChan := make(chan *UpdateAlarmResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UpdateAlarm(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UpdateAlarmResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UpdateAlarm(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callback func(response *UpdateAlarmResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UpdateAlarmResponse
-		var err error
-		defer close(result)
-		response, err = client.UpdateAlarm(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callback func(response *UpdateAlarmResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UpdateAlarmResponse
+var err error
+defer close(result)
+response, err = client.UpdateAlarm(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UpdateAlarmRequest struct {
-	*requests.RpcRequest
-	EndTime            string `position:"Query" name:"EndTime"`
-	ComparisonOperator string `position:"Query" name:"ComparisonOperator"`
-	Id                 string `position:"Query" name:"Id"`
-	StartTime          string `position:"Query" name:"StartTime"`
-	EvaluationCount    string `position:"Query" name:"EvaluationCount"`
-	Name               string `position:"Query" name:"Name"`
-	NotifyType         string `position:"Query" name:"NotifyType"`
-	SilenceTime        string `position:"Query" name:"SilenceTime"`
-	Period             string `position:"Query" name:"Period"`
-	ContactGroups      string `position:"Query" name:"ContactGroups"`
-	Threshold          string `position:"Query" name:"Threshold"`
-	Statistics         string `position:"Query" name:"Statistics"`
-	CallbyCmsOwner     string `position:"Query" name:"callby_cms_owner"`
+*requests.RpcRequest
+                ComparisonOperator  string `position:"Query" name:"ComparisonOperator"`
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                NotifyType  string `position:"Query" name:"NotifyType"`
+                Period  string `position:"Query" name:"Period"`
+                Statistics  string `position:"Query" name:"Statistics"`
+                Threshold  string `position:"Query" name:"Threshold"`
+                Id  string `position:"Query" name:"Id"`
+                Webhook  string `position:"Query" name:"Webhook"`
+                Name  string `position:"Query" name:"Name"`
+                EvaluationCount  string `position:"Query" name:"EvaluationCount"`
+                SilenceTime  string `position:"Query" name:"SilenceTime"`
+                ContactGroups  string `position:"Query" name:"ContactGroups"`
+                CallbyCmsOwner  string `position:"Query" name:"callby_cms_owner"`
 }
 
+
 type UpdateAlarmResponse struct {
-	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            Success     bool `json:"Success" xml:"Success"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
-	request = &UpdateAlarmRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateAlarm", "", "")
-	return
+request = &UpdateAlarmRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cms", "2017-03-01", "UpdateAlarm", "", "")
+return
 }
 
 func CreateUpdateAlarmResponse() (response *UpdateAlarmResponse) {
-	response = &UpdateAlarmResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UpdateAlarmResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

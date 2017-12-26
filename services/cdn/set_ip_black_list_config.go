@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,78 +17,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest) (response *SetIpBlackListConfigResponse, err error) {
-	response = CreateSetIpBlackListConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSetIpBlackListConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfigRequest) (<-chan *SetIpBlackListConfigResponse, <-chan error) {
-	responseChan := make(chan *SetIpBlackListConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SetIpBlackListConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SetIpBlackListConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SetIpBlackListConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListConfigRequest, callback func(response *SetIpBlackListConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SetIpBlackListConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.SetIpBlackListConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListConfigRequest, callback func(response *SetIpBlackListConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SetIpBlackListConfigResponse
+var err error
+defer close(result)
+response, err = client.SetIpBlackListConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SetIpBlackListConfigRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	BlockIps      string `position:"Query" name:"BlockIps"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                DomainName  string `position:"Query" name:"DomainName"`
+                BlockIps  string `position:"Query" name:"BlockIps"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type SetIpBlackListConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) {
-	request = &SetIpBlackListConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIpBlackListConfig", "", "")
-	return
+request = &SetIpBlackListConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "SetIpBlackListConfig", "", "")
+return
 }
 
 func CreateSetIpBlackListConfigResponse() (response *SetIpBlackListConfigResponse) {
-	response = &SetIpBlackListConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SetIpBlackListConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

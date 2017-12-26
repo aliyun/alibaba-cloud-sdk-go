@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,81 +17,81 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequest) (response *AddLiveAppRecordConfigResponse, err error) {
-	response = CreateAddLiveAppRecordConfigResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddLiveAppRecordConfigResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordConfigRequest) (<-chan *AddLiveAppRecordConfigResponse, <-chan error) {
-	responseChan := make(chan *AddLiveAppRecordConfigResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddLiveAppRecordConfig(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddLiveAppRecordConfigResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddLiveAppRecordConfig(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppRecordConfigRequest, callback func(response *AddLiveAppRecordConfigResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddLiveAppRecordConfigResponse
-		var err error
-		defer close(result)
-		response, err = client.AddLiveAppRecordConfig(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppRecordConfigRequest, callback func(response *AddLiveAppRecordConfigResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddLiveAppRecordConfigResponse
+var err error
+defer close(result)
+response, err = client.AddLiveAppRecordConfig(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddLiveAppRecordConfigRequest struct {
-	*requests.RpcRequest
-	OssBucket       string `position:"Query" name:"OssBucket"`
-	AppName         string `position:"Query" name:"AppName"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	OssEndpoint     string `position:"Query" name:"OssEndpoint"`
-	OssObjectPrefix string `position:"Query" name:"OssObjectPrefix"`
-	Action          string `position:"Query" name:"Action"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                OssBucket  string `position:"Query" name:"OssBucket"`
+                DomainName  string `position:"Query" name:"DomainName"`
+                OssEndpoint  string `position:"Query" name:"OssEndpoint"`
+                AppName  string `position:"Query" name:"AppName"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                OssObjectPrefix  string `position:"Query" name:"OssObjectPrefix"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type AddLiveAppRecordConfigResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigRequest) {
-	request = &AddLiveAppRecordConfigRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "AddLiveAppRecordConfig", "", "")
-	return
+request = &AddLiveAppRecordConfigRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "AddLiveAppRecordConfig", "", "")
+return
 }
 
 func CreateAddLiveAppRecordConfigResponse() (response *AddLiveAppRecordConfigResponse) {
-	response = &AddLiveAppRecordConfigResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddLiveAppRecordConfigResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

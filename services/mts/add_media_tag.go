@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,80 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddMediaTag(request *AddMediaTagRequest) (response *AddMediaTagResponse, err error) {
-	response = CreateAddMediaTagResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateAddMediaTagResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) AddMediaTagWithChan(request *AddMediaTagRequest) (<-chan *AddMediaTagResponse, <-chan error) {
-	responseChan := make(chan *AddMediaTagResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.AddMediaTag(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *AddMediaTagResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.AddMediaTag(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) AddMediaTagWithCallback(request *AddMediaTagRequest, callback func(response *AddMediaTagResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *AddMediaTagResponse
-		var err error
-		defer close(result)
-		response, err = client.AddMediaTag(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) AddMediaTagWithCallback(request *AddMediaTagRequest, callback func(response *AddMediaTagResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *AddMediaTagResponse
+var err error
+defer close(result)
+response, err = client.AddMediaTag(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type AddMediaTagRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Tag                  string `position:"Query" name:"Tag"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MediaId              string `position:"Query" name:"MediaId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Tag  string `position:"Query" name:"Tag"`
+                MediaId  string `position:"Query" name:"MediaId"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type AddMediaTagResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {
-	request = &AddMediaTagRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaTag", "", "")
-	return
+request = &AddMediaTagRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaTag", "", "")
+return
 }
 
 func CreateAddMediaTagResponse() (response *AddMediaTagResponse) {
-	response = &AddMediaTagResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &AddMediaTagResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

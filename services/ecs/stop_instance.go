@@ -1,3 +1,4 @@
+
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,82 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) StopInstance(request *StopInstanceRequest) (response *StopInstanceResponse, err error) {
-	response = CreateStopInstanceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateStopInstanceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan *StopInstanceResponse, <-chan error) {
-	responseChan := make(chan *StopInstanceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.StopInstance(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *StopInstanceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.StopInstance(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, callback func(response *StopInstanceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *StopInstanceResponse
-		var err error
-		defer close(result)
-		response, err = client.StopInstance(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, callback func(response *StopInstanceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *StopInstanceResponse
+var err error
+defer close(result)
+response, err = client.StopInstance(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type StopInstanceRequest struct {
-	*requests.RpcRequest
-	ConfirmStop          string `position:"Query" name:"ConfirmStop"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ForceStop            string `position:"Query" name:"ForceStop"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+*requests.RpcRequest
+                ConfirmStop  string `position:"Query" name:"ConfirmStop"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ForceStop  string `position:"Query" name:"ForceStop"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                StoppedMode  string `position:"Query" name:"StoppedMode"`
+                InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
+
 type StopInstanceResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateStopInstanceRequest() (request *StopInstanceRequest) {
-	request = &StopInstanceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance", "", "")
-	return
+request = &StopInstanceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance", "", "")
+return
 }
 
 func CreateStopInstanceResponse() (response *StopInstanceResponse) {
-	response = &StopInstanceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &StopInstanceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

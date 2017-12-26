@@ -1,3 +1,4 @@
+
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,85 +17,87 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeRuleAttribute(request *DescribeRuleAttributeRequest) (response *DescribeRuleAttributeResponse, err error) {
-	response = CreateDescribeRuleAttributeResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeRuleAttributeResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttributeRequest) (<-chan *DescribeRuleAttributeResponse, <-chan error) {
-	responseChan := make(chan *DescribeRuleAttributeResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeRuleAttribute(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeRuleAttributeResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeRuleAttribute(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAttributeRequest, callback func(response *DescribeRuleAttributeResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeRuleAttributeResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeRuleAttribute(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAttributeRequest, callback func(response *DescribeRuleAttributeResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeRuleAttributeResponse
+var err error
+defer close(result)
+response, err = client.DescribeRuleAttribute(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeRuleAttributeRequest struct {
-	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	RuleId               string `position:"Query" name:"RuleId"`
+*requests.RpcRequest
+                Tags  string `position:"Query" name:"Tags"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                AccessKeyId  string `position:"Query" name:"access_key_id"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                RuleId  string `position:"Query" name:"RuleId"`
 }
 
+
 type DescribeRuleAttributeResponse struct {
-	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RuleName       string `json:"RuleName" xml:"RuleName"`
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerPort   string `json:"ListenerPort" xml:"ListenerPort"`
-	Domain         string `json:"Domain" xml:"Domain"`
-	Url            string `json:"Url" xml:"Url"`
-	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            RuleName     string `json:"RuleName" xml:"RuleName"`
+            LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+            ListenerPort     string `json:"ListenerPort" xml:"ListenerPort"`
+            Domain     string `json:"Domain" xml:"Domain"`
+            Url     string `json:"Url" xml:"Url"`
+            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
 }
 
 func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest) {
-	request = &DescribeRuleAttributeRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRuleAttribute", "", "")
-	return
+request = &DescribeRuleAttributeRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRuleAttribute", "", "")
+return
 }
 
 func CreateDescribeRuleAttributeResponse() (response *DescribeRuleAttributeResponse) {
-	response = &DescribeRuleAttributeResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeRuleAttributeResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

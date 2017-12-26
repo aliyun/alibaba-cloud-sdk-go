@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,80 +17,82 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetThumbnail(request *GetThumbnailRequest) (response *GetThumbnailResponse, err error) {
-	response = CreateGetThumbnailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetThumbnailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) GetThumbnailWithChan(request *GetThumbnailRequest) (<-chan *GetThumbnailResponse, <-chan error) {
-	responseChan := make(chan *GetThumbnailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetThumbnail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetThumbnailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetThumbnail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) GetThumbnailWithCallback(request *GetThumbnailRequest, callback func(response *GetThumbnailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetThumbnailResponse
-		var err error
-		defer close(result)
-		response, err = client.GetThumbnail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetThumbnailWithCallback(request *GetThumbnailRequest, callback func(response *GetThumbnailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetThumbnailResponse
+var err error
+defer close(result)
+response, err = client.GetThumbnail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type GetThumbnailRequest struct {
-	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	ZoomType  string `position:"Query" name:"ZoomType"`
+*requests.RpcRequest
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                ZoomType  string `position:"Query" name:"ZoomType"`
+                PhotoId  string `position:"Query" name:"PhotoId"`
 }
 
+
 type GetThumbnailResponse struct {
-	*responses.BaseResponse
-	Code         string `json:"Code"`
-	Message      string `json:"Message"`
-	ThumbnailUrl string `json:"ThumbnailUrl"`
-	RequestId    string `json:"RequestId"`
-	Action       string `json:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            ThumbnailUrl     string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateGetThumbnailRequest() (request *GetThumbnailRequest) {
-	request = &GetThumbnailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnail", "", "")
-	return
+request = &GetThumbnailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnail", "", "")
+return
 }
 
 func CreateGetThumbnailResponse() (response *GetThumbnailResponse) {
-	response = &GetThumbnailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetThumbnailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

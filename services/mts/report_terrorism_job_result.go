@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,82 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ReportTerrorismJobResult(request *ReportTerrorismJobResultRequest) (response *ReportTerrorismJobResultResponse, err error) {
-	response = CreateReportTerrorismJobResultResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateReportTerrorismJobResultResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ReportTerrorismJobResultWithChan(request *ReportTerrorismJobResultRequest) (<-chan *ReportTerrorismJobResultResponse, <-chan error) {
-	responseChan := make(chan *ReportTerrorismJobResultResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ReportTerrorismJobResult(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ReportTerrorismJobResultResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ReportTerrorismJobResult(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerrorismJobResultRequest, callback func(response *ReportTerrorismJobResultResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ReportTerrorismJobResultResponse
-		var err error
-		defer close(result)
-		response, err = client.ReportTerrorismJobResult(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerrorismJobResultRequest, callback func(response *ReportTerrorismJobResultResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ReportTerrorismJobResultResponse
+var err error
+defer close(result)
+response, err = client.ReportTerrorismJobResult(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ReportTerrorismJobResultRequest struct {
-	*requests.RpcRequest
-	JobId                string `position:"Query" name:"JobId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Label                string `position:"Query" name:"Label"`
-	Detail               string `position:"Query" name:"Detail"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                Detail  string `position:"Query" name:"Detail"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Label  string `position:"Query" name:"Label"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                JobId  string `position:"Query" name:"JobId"`
 }
 
+
 type ReportTerrorismJobResultResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultRequest) {
-	request = &ReportTerrorismJobResultRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTerrorismJobResult", "", "")
-	return
+request = &ReportTerrorismJobResultRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "ReportTerrorismJobResult", "", "")
+return
 }
 
 func CreateReportTerrorismJobResultResponse() (response *ReportTerrorismJobResultResponse) {
-	response = &ReportTerrorismJobResultResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ReportTerrorismJobResultResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,87 +17,91 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryMediaWorkflowList(request *QueryMediaWorkflowListRequest) (response *QueryMediaWorkflowListResponse, err error) {
-	response = CreateQueryMediaWorkflowListResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateQueryMediaWorkflowListResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) QueryMediaWorkflowListWithChan(request *QueryMediaWorkflowListRequest) (<-chan *QueryMediaWorkflowListResponse, <-chan error) {
-	responseChan := make(chan *QueryMediaWorkflowListResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.QueryMediaWorkflowList(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *QueryMediaWorkflowListResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.QueryMediaWorkflowList(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWorkflowListRequest, callback func(response *QueryMediaWorkflowListResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *QueryMediaWorkflowListResponse
-		var err error
-		defer close(result)
-		response, err = client.QueryMediaWorkflowList(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWorkflowListRequest, callback func(response *QueryMediaWorkflowListResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *QueryMediaWorkflowListResponse
+var err error
+defer close(result)
+response, err = client.QueryMediaWorkflowList(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type QueryMediaWorkflowListRequest struct {
-	*requests.RpcRequest
-	MediaWorkflowIds     string `position:"Query" name:"MediaWorkflowIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                MediaWorkflowIds  string `position:"Query" name:"MediaWorkflowIds"`
 }
 
+
 type QueryMediaWorkflowListResponse struct {
-	*responses.BaseResponse
-	RequestId                string   `json:"RequestId"`
-	NonExistMediaWorkflowIds []string `json:"NonExistMediaWorkflowIds"`
-	MediaWorkflowList        []struct {
-		MediaWorkflowId string `json:"MediaWorkflowId"`
-		Name            string `json:"Name"`
-		Topology        string `json:"Topology"`
-		State           string `json:"State"`
-		CreationTime    string `json:"CreationTime"`
-	} `json:"MediaWorkflowList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                NonExistMediaWorkflowIds struct {
+                MediaWorkflowId []    string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+                } `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
+                MediaWorkflowList struct {
+                    MediaWorkflow []struct {
+            MediaWorkflowId     string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+            Name     string `json:"Name" xml:"Name"`
+            Topology     string `json:"Topology" xml:"Topology"`
+            State     string `json:"State" xml:"State"`
+            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+                    }   `json:"MediaWorkflow" xml:"MediaWorkflow"`
+                } `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListRequest) {
-	request = &QueryMediaWorkflowListRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "", "")
-	return
+request = &QueryMediaWorkflowListRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "", "")
+return
 }
 
 func CreateQueryMediaWorkflowListResponse() (response *QueryMediaWorkflowListResponse) {
-	response = &QueryMediaWorkflowListResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &QueryMediaWorkflowListResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

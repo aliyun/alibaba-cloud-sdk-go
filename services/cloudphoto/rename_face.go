@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,79 +17,81 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RenameFace(request *RenameFaceRequest) (response *RenameFaceResponse, err error) {
-	response = CreateRenameFaceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRenameFaceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *RenameFaceResponse, <-chan error) {
-	responseChan := make(chan *RenameFaceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RenameFace(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RenameFaceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RenameFace(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callback func(response *RenameFaceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RenameFaceResponse
-		var err error
-		defer close(result)
-		response, err = client.RenameFace(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callback func(response *RenameFaceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RenameFaceResponse
+var err error
+defer close(result)
+response, err = client.RenameFace(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RenameFaceRequest struct {
-	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	FaceId    string `position:"Query" name:"FaceId"`
-	FaceName  string `position:"Query" name:"FaceName"`
+*requests.RpcRequest
+                FaceName  string `position:"Query" name:"FaceName"`
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                FaceId  string `position:"Query" name:"FaceId"`
 }
 
+
 type RenameFaceResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
 }
 
 func CreateRenameFaceRequest() (request *RenameFaceRequest) {
-	request = &RenameFaceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameFace", "", "")
-	return
+request = &RenameFaceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameFace", "", "")
+return
 }
 
 func CreateRenameFaceResponse() (response *RenameFaceResponse) {
-	response = &RenameFaceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RenameFaceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,83 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (response *SubmitFacerecogJobResponse, err error) {
-	response = CreateSubmitFacerecogJobResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSubmitFacerecogJobResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequest) (<-chan *SubmitFacerecogJobResponse, <-chan error) {
-	responseChan := make(chan *SubmitFacerecogJobResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SubmitFacerecogJob(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SubmitFacerecogJobResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SubmitFacerecogJob(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJobRequest, callback func(response *SubmitFacerecogJobResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SubmitFacerecogJobResponse
-		var err error
-		defer close(result)
-		response, err = client.SubmitFacerecogJob(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJobRequest, callback func(response *SubmitFacerecogJobResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SubmitFacerecogJobResponse
+var err error
+defer close(result)
+response, err = client.SubmitFacerecogJob(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SubmitFacerecogJobRequest struct {
-	*requests.RpcRequest
-	Input                string `position:"Query" name:"Input"`
-	UserData             string `position:"Query" name:"UserData"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FacerecogConfig      string `position:"Query" name:"FacerecogConfig"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+*requests.RpcRequest
+                UserData  string `position:"Query" name:"UserData"`
+                Input  string `position:"Query" name:"Input"`
+                PipelineId  string `position:"Query" name:"PipelineId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                FacerecogConfig  string `position:"Query" name:"FacerecogConfig"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type SubmitFacerecogJobResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
-	request = &SubmitFacerecogJobRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "", "")
-	return
+request = &SubmitFacerecogJobRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "", "")
+return
 }
 
 func CreateSubmitFacerecogJobResponse() (response *SubmitFacerecogJobResponse) {
-	response = &SubmitFacerecogJobResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SubmitFacerecogJobResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

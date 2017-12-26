@@ -1,3 +1,4 @@
+
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,92 +17,94 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeBandwidthPackagePublicIpMonitorData(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) (response *DescribeBandwidthPackagePublicIpMonitorDataResponse, err error) {
-	response = CreateDescribeBandwidthPackagePublicIpMonitorDataResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeBandwidthPackagePublicIpMonitorDataResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithChan(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) (<-chan *DescribeBandwidthPackagePublicIpMonitorDataResponse, <-chan error) {
-	responseChan := make(chan *DescribeBandwidthPackagePublicIpMonitorDataResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeBandwidthPackagePublicIpMonitorData(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeBandwidthPackagePublicIpMonitorDataResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeBandwidthPackagePublicIpMonitorData(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(request *DescribeBandwidthPackagePublicIpMonitorDataRequest, callback func(response *DescribeBandwidthPackagePublicIpMonitorDataResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeBandwidthPackagePublicIpMonitorDataResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeBandwidthPackagePublicIpMonitorData(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(request *DescribeBandwidthPackagePublicIpMonitorDataRequest, callback func(response *DescribeBandwidthPackagePublicIpMonitorDataResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeBandwidthPackagePublicIpMonitorDataResponse
+var err error
+defer close(result)
+response, err = client.DescribeBandwidthPackagePublicIpMonitorData(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
-	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AllocationId         string `position:"Query" name:"AllocationId"`
+*requests.RpcRequest
+                EndTime  string `position:"Query" name:"EndTime"`
+                StartTime  string `position:"Query" name:"StartTime"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                Period  string `position:"Query" name:"Period"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                AllocationId  string `position:"Query" name:"AllocationId"`
 }
 
+
 type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	MonitorDatas struct {
-		MonitorData []struct {
-			RX                   int64  `json:"RX" xml:"RX"`
-			TX                   int64  `json:"TX" xml:"TX"`
-			ReceivedBandwidth    int64  `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
-			TransportedBandwidth int64  `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
-			Flow                 int64  `json:"Flow" xml:"Flow"`
-			Bandwidth            int64  `json:"Bandwidth" xml:"Bandwidth"`
-			Packets              int64  `json:"Packets" xml:"Packets"`
-			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"MonitorData" xml:"MonitorData"`
-	} `json:"MonitorDatas" xml:"MonitorDatas"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+                MonitorDatas struct {
+                    MonitorData []struct {
+            RX     int64 `json:"RX" xml:"RX"`
+            TX     int64 `json:"TX" xml:"TX"`
+            ReceivedBandwidth     int64 `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
+            TransportedBandwidth     int64 `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
+            Flow     int64 `json:"Flow" xml:"Flow"`
+            Bandwidth     int64 `json:"Bandwidth" xml:"Bandwidth"`
+            Packets     int64 `json:"Packets" xml:"Packets"`
+            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+                    }   `json:"MonitorData" xml:"MonitorData"`
+                } `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
 func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
-	request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "", "")
-	return
+request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "", "")
+return
 }
 
 func CreateDescribeBandwidthPackagePublicIpMonitorDataResponse() (response *DescribeBandwidthPackagePublicIpMonitorDataResponse) {
-	response = &DescribeBandwidthPackagePublicIpMonitorDataResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeBandwidthPackagePublicIpMonitorDataResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

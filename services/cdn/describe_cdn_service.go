@@ -1,3 +1,4 @@
+
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeCdnService(request *DescribeCdnServiceRequest) (response *DescribeCdnServiceResponse, err error) {
-	response = CreateDescribeCdnServiceResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateDescribeCdnServiceResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) DescribeCdnServiceWithChan(request *DescribeCdnServiceRequest) (<-chan *DescribeCdnServiceResponse, <-chan error) {
-	responseChan := make(chan *DescribeCdnServiceResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.DescribeCdnService(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *DescribeCdnServiceResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.DescribeCdnService(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) DescribeCdnServiceWithCallback(request *DescribeCdnServiceRequest, callback func(response *DescribeCdnServiceResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *DescribeCdnServiceResponse
-		var err error
-		defer close(result)
-		response, err = client.DescribeCdnService(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) DescribeCdnServiceWithCallback(request *DescribeCdnServiceRequest, callback func(response *DescribeCdnServiceResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *DescribeCdnServiceResponse
+var err error
+defer close(result)
+response, err = client.DescribeCdnService(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type DescribeCdnServiceRequest struct {
-	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
+
 type DescribeCdnServiceResponse struct {
-	*responses.BaseResponse
-	RequestId          string `json:"RequestId"`
-	InstanceId         string `json:"InstanceId"`
-	InternetChargeType string `json:"InternetChargeType"`
-	OpeningTime        string `json:"OpeningTime"`
-	ChangingChargeType string `json:"ChangingChargeType"`
-	ChangingAffectTime string `json:"ChangingAffectTime"`
-	OperationLocks     []struct {
-		LockReason string `json:"LockReason"`
-	} `json:"OperationLocks"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+            InternetChargeType     string `json:"InternetChargeType" xml:"InternetChargeType"`
+            OpeningTime     string `json:"OpeningTime" xml:"OpeningTime"`
+            ChangingChargeType     string `json:"ChangingChargeType" xml:"ChangingChargeType"`
+            ChangingAffectTime     string `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+                OperationLocks struct {
+                    LockReason []struct {
+            LockReason     string `json:"LockReason" xml:"LockReason"`
+                    }   `json:"LockReason" xml:"LockReason"`
+                } `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {
-	request = &DescribeCdnServiceRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnService", "", "")
-	return
+request = &DescribeCdnServiceRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnService", "", "")
+return
 }
 
 func CreateDescribeCdnServiceResponse() (response *DescribeCdnServiceResponse) {
-	response = &DescribeCdnServiceResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &DescribeCdnServiceResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

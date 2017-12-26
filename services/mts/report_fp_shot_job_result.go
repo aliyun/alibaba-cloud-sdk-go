@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,82 +17,82 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultRequest) (response *ReportFpShotJobResultResponse, err error) {
-	response = CreateReportFpShotJobResultResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateReportFpShotJobResultResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResultRequest) (<-chan *ReportFpShotJobResultResponse, <-chan error) {
-	responseChan := make(chan *ReportFpShotJobResultResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ReportFpShotJobResult(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ReportFpShotJobResultResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ReportFpShotJobResult(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJobResultRequest, callback func(response *ReportFpShotJobResultResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ReportFpShotJobResultResponse
-		var err error
-		defer close(result)
-		response, err = client.ReportFpShotJobResult(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJobResultRequest, callback func(response *ReportFpShotJobResultResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ReportFpShotJobResultResponse
+var err error
+defer close(result)
+response, err = client.ReportFpShotJobResult(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ReportFpShotJobResultRequest struct {
-	*requests.RpcRequest
-	Result               string `position:"Query" name:"Result"`
-	JobId                string `position:"Query" name:"JobId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Details              string `position:"Query" name:"Details"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                Result  string `position:"Query" name:"Result"`
+                Details  string `position:"Query" name:"Details"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                JobId  string `position:"Query" name:"JobId"`
 }
 
+
 type ReportFpShotJobResultResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest) {
-	request = &ReportFpShotJobResultRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "", "")
-	return
+request = &ReportFpShotJobResultRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "", "")
+return
 }
 
 func CreateReportFpShotJobResultResponse() (response *ReportFpShotJobResultResponse) {
-	response = &ReportFpShotJobResultResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ReportFpShotJobResultResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

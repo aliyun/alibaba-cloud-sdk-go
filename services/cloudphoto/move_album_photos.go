@@ -1,3 +1,4 @@
+
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,85 +17,87 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) MoveAlbumPhotos(request *MoveAlbumPhotosRequest) (response *MoveAlbumPhotosResponse, err error) {
-	response = CreateMoveAlbumPhotosResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateMoveAlbumPhotosResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (<-chan *MoveAlbumPhotosResponse, <-chan error) {
-	responseChan := make(chan *MoveAlbumPhotosResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.MoveAlbumPhotos(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *MoveAlbumPhotosResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.MoveAlbumPhotos(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosRequest, callback func(response *MoveAlbumPhotosResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *MoveAlbumPhotosResponse
-		var err error
-		defer close(result)
-		response, err = client.MoveAlbumPhotos(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosRequest, callback func(response *MoveAlbumPhotosResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *MoveAlbumPhotosResponse
+var err error
+defer close(result)
+response, err = client.MoveAlbumPhotos(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type MoveAlbumPhotosRequest struct {
-	*requests.RpcRequest
-	SourceAlbumId string    `position:"Query" name:"SourceAlbumId"`
-	TargetAlbumId string    `position:"Query" name:"TargetAlbumId"`
-	LibraryId     string    `position:"Query" name:"LibraryId"`
-	PhotoId       *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName     string    `position:"Query" name:"StoreName"`
+*requests.RpcRequest
+                TargetAlbumId  string `position:"Query" name:"TargetAlbumId"`
+                SourceAlbumId  string `position:"Query" name:"SourceAlbumId"`
+                LibraryId  string `position:"Query" name:"LibraryId"`
+                StoreName  string `position:"Query" name:"StoreName"`
+                PhotoId  *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
+
 type MoveAlbumPhotosResponse struct {
-	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
-	Results   []struct {
-		Id      int64  `json:"Id"`
-		Code    string `json:"Code"`
-		Message string `json:"Message"`
-	} `json:"Results"`
+*responses.BaseResponse
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Action     string `json:"Action" xml:"Action"`
+                Results  []struct {
+            Id     int64 `json:"Id" xml:"Id"`
+            Code     string `json:"Code" xml:"Code"`
+            Message     string `json:"Message" xml:"Message"`
+                }  `json:"Results" xml:"Results"`
 }
 
 func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
-	request = &MoveAlbumPhotosRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "", "")
-	return
+request = &MoveAlbumPhotosRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "", "")
+return
 }
 
 func CreateMoveAlbumPhotosResponse() (response *MoveAlbumPhotosResponse) {
-	response = &MoveAlbumPhotosResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &MoveAlbumPhotosResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,93 +17,93 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateVideoSummaryPipeline(request *UpdateVideoSummaryPipelineRequest) (response *UpdateVideoSummaryPipelineResponse, err error) {
-	response = CreateUpdateVideoSummaryPipelineResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateUpdateVideoSummaryPipelineResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) UpdateVideoSummaryPipelineWithChan(request *UpdateVideoSummaryPipelineRequest) (<-chan *UpdateVideoSummaryPipelineResponse, <-chan error) {
-	responseChan := make(chan *UpdateVideoSummaryPipelineResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.UpdateVideoSummaryPipeline(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *UpdateVideoSummaryPipelineResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.UpdateVideoSummaryPipeline(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) UpdateVideoSummaryPipelineWithCallback(request *UpdateVideoSummaryPipelineRequest, callback func(response *UpdateVideoSummaryPipelineResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *UpdateVideoSummaryPipelineResponse
-		var err error
-		defer close(result)
-		response, err = client.UpdateVideoSummaryPipeline(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) UpdateVideoSummaryPipelineWithCallback(request *UpdateVideoSummaryPipelineRequest, callback func(response *UpdateVideoSummaryPipelineResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *UpdateVideoSummaryPipelineResponse
+var err error
+defer close(result)
+response, err = client.UpdateVideoSummaryPipeline(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type UpdateVideoSummaryPipelineRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	Action               string `position:"Query" name:"Action"`
-	State                string `position:"Query" name:"State"`
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Priority             string `position:"Query" name:"Priority"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+*requests.RpcRequest
+                NotifyConfig  string `position:"Query" name:"NotifyConfig"`
+                PipelineId  string `position:"Query" name:"PipelineId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                Priority  string `position:"Query" name:"Priority"`
+                Name  string `position:"Query" name:"Name"`
+                State  string `position:"Query" name:"State"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type UpdateVideoSummaryPipelineResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Priority     int    `json:"Priority"`
-		NotifyConfig struct {
-			Topic     string `json:"Topic"`
-			QueueName string `json:"QueueName"`
-		} `json:"NotifyConfig"`
-	} `json:"Pipeline"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            Pipeline struct {
+            Id     string `json:"Id" xml:"Id"`
+            Name     string `json:"Name" xml:"Name"`
+            State     string `json:"State" xml:"State"`
+            Priority     int `json:"Priority" xml:"Priority"`
+            NotifyConfig struct {
+            Topic     string `json:"Topic" xml:"Topic"`
+            QueueName     string `json:"QueueName" xml:"QueueName"`
+            }  `json:"NotifyConfig" xml:"NotifyConfig"`
+            }  `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateUpdateVideoSummaryPipelineRequest() (request *UpdateVideoSummaryPipelineRequest) {
-	request = &UpdateVideoSummaryPipelineRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateVideoSummaryPipeline", "", "")
-	return
+request = &UpdateVideoSummaryPipelineRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "UpdateVideoSummaryPipeline", "", "")
+return
 }
 
 func CreateUpdateVideoSummaryPipelineResponse() (response *UpdateVideoSummaryPipelineResponse) {
-	response = &UpdateVideoSummaryPipelineResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &UpdateVideoSummaryPipelineResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

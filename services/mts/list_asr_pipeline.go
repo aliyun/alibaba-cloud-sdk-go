@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,94 +17,96 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListAsrPipeline(request *ListAsrPipelineRequest) (response *ListAsrPipelineResponse, err error) {
-	response = CreateListAsrPipelineResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateListAsrPipelineResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) ListAsrPipelineWithChan(request *ListAsrPipelineRequest) (<-chan *ListAsrPipelineResponse, <-chan error) {
-	responseChan := make(chan *ListAsrPipelineResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.ListAsrPipeline(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *ListAsrPipelineResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.ListAsrPipeline(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) ListAsrPipelineWithCallback(request *ListAsrPipelineRequest, callback func(response *ListAsrPipelineResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *ListAsrPipelineResponse
-		var err error
-		defer close(result)
-		response, err = client.ListAsrPipeline(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) ListAsrPipelineWithCallback(request *ListAsrPipelineRequest, callback func(response *ListAsrPipelineResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *ListAsrPipelineResponse
+var err error
+defer close(result)
+response, err = client.ListAsrPipeline(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type ListAsrPipelineRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	Action               string `position:"Query" name:"Action"`
-	State                string `position:"Query" name:"State"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+*requests.RpcRequest
+                PageSize  string `position:"Query" name:"PageSize"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                PageNumber  string `position:"Query" name:"PageNumber"`
+                State  string `position:"Query" name:"State"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
 }
 
+
 type ListAsrPipelineResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	TotalCount   int64  `json:"TotalCount"`
-	PageNumber   int64  `json:"PageNumber"`
-	PageSize     int64  `json:"PageSize"`
-	PipelineList []struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Priority     string `json:"Priority"`
-		NotifyConfig struct {
-			Topic     string `json:"Topic"`
-			QueueName string `json:"QueueName"`
-		} `json:"NotifyConfig"`
-	} `json:"PipelineList"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
+            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
+            PageSize     int64 `json:"PageSize" xml:"PageSize"`
+                PipelineList struct {
+                    Pipeline []struct {
+            Id     string `json:"Id" xml:"Id"`
+            Name     string `json:"Name" xml:"Name"`
+            State     string `json:"State" xml:"State"`
+            Priority     string `json:"Priority" xml:"Priority"`
+            NotifyConfig struct {
+            Topic     string `json:"Topic" xml:"Topic"`
+            QueueName     string `json:"QueueName" xml:"QueueName"`
+            }  `json:"NotifyConfig" xml:"NotifyConfig"`
+                    }   `json:"Pipeline" xml:"Pipeline"`
+                } `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
-	request = &ListAsrPipelineRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAsrPipeline", "", "")
-	return
+request = &ListAsrPipelineRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "ListAsrPipeline", "", "")
+return
 }
 
 func CreateListAsrPipelineResponse() (response *ListAsrPipelineResponse) {
-	response = &ListAsrPipelineResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &ListAsrPipelineResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

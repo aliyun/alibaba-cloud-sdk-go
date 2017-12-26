@@ -1,3 +1,4 @@
+
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,83 +17,83 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *SubmitTagJobResponse, err error) {
-	response = CreateSubmitTagJobResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSubmitTagJobResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan *SubmitTagJobResponse, <-chan error) {
-	responseChan := make(chan *SubmitTagJobResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SubmitTagJob(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SubmitTagJobResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SubmitTagJob(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, callback func(response *SubmitTagJobResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SubmitTagJobResponse
-		var err error
-		defer close(result)
-		response, err = client.SubmitTagJob(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, callback func(response *SubmitTagJobResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SubmitTagJobResponse
+var err error
+defer close(result)
+response, err = client.SubmitTagJob(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SubmitTagJobRequest struct {
-	*requests.RpcRequest
-	Input                string `position:"Query" name:"Input"`
-	UserData             string `position:"Query" name:"UserData"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	TagConfig            string `position:"Query" name:"TagConfig"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+*requests.RpcRequest
+                UserData  string `position:"Query" name:"UserData"`
+                Input  string `position:"Query" name:"Input"`
+                PipelineId  string `position:"Query" name:"PipelineId"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                TagConfig  string `position:"Query" name:"TagConfig"`
 }
 
+
 type SubmitTagJobResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
-	request = &SubmitTagJobRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "", "")
-	return
+request = &SubmitTagJobRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "", "")
+return
 }
 
 func CreateSubmitTagJobResponse() (response *SubmitTagJobResponse) {
-	response = &SubmitTagJobResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SubmitTagJobResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

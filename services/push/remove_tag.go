@@ -1,3 +1,4 @@
+
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,74 +17,76 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RemoveTag(request *RemoveTagRequest) (response *RemoveTagResponse, err error) {
-	response = CreateRemoveTagResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateRemoveTagResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) RemoveTagWithChan(request *RemoveTagRequest) (<-chan *RemoveTagResponse, <-chan error) {
-	responseChan := make(chan *RemoveTagResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.RemoveTag(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *RemoveTagResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.RemoveTag(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) RemoveTagWithCallback(request *RemoveTagRequest, callback func(response *RemoveTagResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *RemoveTagResponse
-		var err error
-		defer close(result)
-		response, err = client.RemoveTag(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) RemoveTagWithCallback(request *RemoveTagRequest, callback func(response *RemoveTagResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *RemoveTagResponse
+var err error
+defer close(result)
+response, err = client.RemoveTag(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type RemoveTagRequest struct {
-	*requests.RpcRequest
-	AppKey  string `position:"Query" name:"AppKey"`
-	TagName string `position:"Query" name:"TagName"`
+*requests.RpcRequest
+                AppKey  string `position:"Query" name:"AppKey"`
+                TagName  string `position:"Query" name:"TagName"`
 }
 
+
 type RemoveTagResponse struct {
-	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRemoveTagRequest() (request *RemoveTagRequest) {
-	request = &RemoveTagRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Push", "2016-08-01", "RemoveTag", "", "")
-	return
+request = &RemoveTagRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Push", "2016-08-01", "RemoveTag", "", "")
+return
 }
 
 func CreateRemoveTagResponse() (response *RemoveTagResponse) {
-	response = &RemoveTagResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &RemoveTagResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+

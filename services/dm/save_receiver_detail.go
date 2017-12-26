@@ -1,3 +1,4 @@
+
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,84 +17,86 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SaveReceiverDetail(request *SaveReceiverDetailRequest) (response *SaveReceiverDetailResponse, err error) {
-	response = CreateSaveReceiverDetailResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateSaveReceiverDetailResponse()
+err = client.DoAction(request, response)
+return
 }
 
 func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequest) (<-chan *SaveReceiverDetailResponse, <-chan error) {
-	responseChan := make(chan *SaveReceiverDetailResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.SaveReceiverDetail(request)
-		responseChan <- response
-		errChan <- err
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *SaveReceiverDetailResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.SaveReceiverDetail(request)
+responseChan <- response
+errChan <- err
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
-func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetailRequest, callback func(response *SaveReceiverDetailResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *SaveReceiverDetailResponse
-		var err error
-		defer close(result)
-		response, err = client.SaveReceiverDetail(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetailRequest, callback func(response *SaveReceiverDetailResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *SaveReceiverDetailResponse
+var err error
+defer close(result)
+response, err = client.SaveReceiverDetail(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 type SaveReceiverDetailRequest struct {
-	*requests.RpcRequest
-	Detail               string `position:"Query" name:"Detail"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ReceiverId           string `position:"Query" name:"ReceiverId"`
+*requests.RpcRequest
+                Detail  string `position:"Query" name:"Detail"`
+                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
+                OwnerId  string `position:"Query" name:"OwnerId"`
+                ReceiverId  string `position:"Query" name:"ReceiverId"`
 }
 
+
 type SaveReceiverDetailResponse struct {
-	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	SuccessCount int    `json:"SuccessCount" xml:"SuccessCount"`
-	ErrorCount   int    `json:"ErrorCount" xml:"ErrorCount"`
-	Data         struct {
-		Detail []struct {
-			Email string `json:"Email" xml:"Email"`
-		} `json:"Detail" xml:"Detail"`
-	} `json:"Data" xml:"Data"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            SuccessCount     int `json:"SuccessCount" xml:"SuccessCount"`
+            ErrorCount     int `json:"ErrorCount" xml:"ErrorCount"`
+                Data struct {
+                    Detail []struct {
+            Email     string `json:"Email" xml:"Email"`
+                    }   `json:"Detail" xml:"Detail"`
+                } `json:"Data" xml:"Data"`
 }
 
 func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
-	request = &SaveReceiverDetailRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "SaveReceiverDetail", "", "")
-	return
+request = &SaveReceiverDetailRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Dm", "2015-11-23", "SaveReceiverDetail", "", "")
+return
 }
 
 func CreateSaveReceiverDetailResponse() (response *SaveReceiverDetailResponse) {
-	response = &SaveReceiverDetailResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &SaveReceiverDetailResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
