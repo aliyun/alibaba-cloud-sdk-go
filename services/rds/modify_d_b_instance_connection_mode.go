@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceConnectionModeRequest) (response *ModifyDBInstanceConnectionModeResponse, err error) {
-response = CreateModifyDBInstanceConnectionModeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDBInstanceConnectionModeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBInstanceConnectionModeRequest) (<-chan *ModifyDBInstanceConnectionModeResponse, <-chan error) {
-responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDBInstanceConnectionMode(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDBInstanceConnectionMode(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDBInstanceConnectionModeResponse
-var err error
-defer close(result)
-response, err = client.ModifyDBInstanceConnectionMode(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDBInstanceConnectionModeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDBInstanceConnectionMode(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyDBInstanceConnectionModeRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                ConnectionMode  string `position:"Query" name:"ConnectionMode"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ConnectionMode       string `position:"Query" name:"ConnectionMode"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type ModifyDBInstanceConnectionModeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceConnectionModeRequest) {
-request = &ModifyDBInstanceConnectionModeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "", "")
-return
+	request = &ModifyDBInstanceConnectionModeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "", "")
+	return
 }
 
 func CreateModifyDBInstanceConnectionModeResponse() (response *ModifyDBInstanceConnectionModeResponse) {
-response = &ModifyDBInstanceConnectionModeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDBInstanceConnectionModeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

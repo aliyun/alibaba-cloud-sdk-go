@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,107 +16,105 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRequest) (response *SearchWaterMarkTemplateResponse, err error) {
-response = CreateSearchWaterMarkTemplateResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSearchWaterMarkTemplateResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTemplateRequest) (<-chan *SearchWaterMarkTemplateResponse, <-chan error) {
-responseChan := make(chan *SearchWaterMarkTemplateResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SearchWaterMarkTemplate(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SearchWaterMarkTemplateResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SearchWaterMarkTemplate(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMarkTemplateRequest, callback func(response *SearchWaterMarkTemplateResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SearchWaterMarkTemplateResponse
-var err error
-defer close(result)
-response, err = client.SearchWaterMarkTemplate(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMarkTemplateRequest, callback func(response *SearchWaterMarkTemplateResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SearchWaterMarkTemplateResponse
+		var err error
+		defer close(result)
+		response, err = client.SearchWaterMarkTemplate(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SearchWaterMarkTemplateRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                State  string `position:"Query" name:"State"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	State                string `position:"Query" name:"State"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type SearchWaterMarkTemplateResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int64 `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int64 `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int64 `json:"PageSize" xml:"PageSize"`
-                WaterMarkTemplateList struct {
-                    WaterMarkTemplate []struct {
-            Id     string `json:"Id" xml:"Id"`
-            Name     string `json:"Name" xml:"Name"`
-            Width     string `json:"Width" xml:"Width"`
-            Height     string `json:"Height" xml:"Height"`
-            Dx     string `json:"Dx" xml:"Dx"`
-            Dy     string `json:"Dy" xml:"Dy"`
-            ReferPos     string `json:"ReferPos" xml:"ReferPos"`
-            Type     string `json:"Type" xml:"Type"`
-            State     string `json:"State" xml:"State"`
-            Timeline struct {
-            Start     string `json:"Start" xml:"Start"`
-            Duration     string `json:"Duration" xml:"Duration"`
-            }  `json:"Timeline" xml:"Timeline"`
-            RatioRefer struct {
-            Dx     string `json:"Dx" xml:"Dx"`
-            Dy     string `json:"Dy" xml:"Dy"`
-            Width     string `json:"Width" xml:"Width"`
-            Height     string `json:"Height" xml:"Height"`
-            }  `json:"RatioRefer" xml:"RatioRefer"`
-                    }   `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
-                } `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	*responses.BaseResponse
+	RequestId             string          `json:"RequestId" xml:"RequestId"`
+	TotalCount            request.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            request.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize              request.Integer `json:"PageSize" xml:"PageSize"`
+	WaterMarkTemplateList struct {
+		WaterMarkTemplate []struct {
+			Id       string `json:"Id" xml:"Id"`
+			Name     string `json:"Name" xml:"Name"`
+			Width    string `json:"Width" xml:"Width"`
+			Height   string `json:"Height" xml:"Height"`
+			Dx       string `json:"Dx" xml:"Dx"`
+			Dy       string `json:"Dy" xml:"Dy"`
+			ReferPos string `json:"ReferPos" xml:"ReferPos"`
+			Type     string `json:"Type" xml:"Type"`
+			State    string `json:"State" xml:"State"`
+			Timeline struct {
+				Start    string `json:"Start" xml:"Start"`
+				Duration string `json:"Duration" xml:"Duration"`
+			} `json:"Timeline" xml:"Timeline"`
+			RatioRefer struct {
+				Dx     string `json:"Dx" xml:"Dx"`
+				Dy     string `json:"Dy" xml:"Dy"`
+				Width  string `json:"Width" xml:"Width"`
+				Height string `json:"Height" xml:"Height"`
+			} `json:"RatioRefer" xml:"RatioRefer"`
+		} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
+	} `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {
-request = &SearchWaterMarkTemplateRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "", "")
-return
+	request = &SearchWaterMarkTemplateRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "", "")
+	return
 }
 
 func CreateSearchWaterMarkTemplateResponse() (response *SearchWaterMarkTemplateResponse) {
-response = &SearchWaterMarkTemplateResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SearchWaterMarkTemplateResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

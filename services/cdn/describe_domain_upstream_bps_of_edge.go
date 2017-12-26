@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainUpstreamBpsOfEdge(request *DescribeDomainUpstreamBpsOfEdgeRequest) (response *DescribeDomainUpstreamBpsOfEdgeResponse, err error) {
-response = CreateDescribeDomainUpstreamBpsOfEdgeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDomainUpstreamBpsOfEdgeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDomainUpstreamBpsOfEdgeWithChan(request *DescribeDomainUpstreamBpsOfEdgeRequest) (<-chan *DescribeDomainUpstreamBpsOfEdgeResponse, <-chan error) {
-responseChan := make(chan *DescribeDomainUpstreamBpsOfEdgeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDomainUpstreamBpsOfEdge(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDomainUpstreamBpsOfEdgeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDomainUpstreamBpsOfEdge(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainUpstreamBpsOfEdgeWithCallback(request *DescribeDomainUpstreamBpsOfEdgeRequest, callback func(response *DescribeDomainUpstreamBpsOfEdgeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDomainUpstreamBpsOfEdgeResponse
-var err error
-defer close(result)
-response, err = client.DescribeDomainUpstreamBpsOfEdge(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDomainUpstreamBpsOfEdgeWithCallback(request *DescribeDomainUpstreamBpsOfEdgeRequest, callback func(response *DescribeDomainUpstreamBpsOfEdgeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDomainUpstreamBpsOfEdgeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDomainUpstreamBpsOfEdge(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDomainUpstreamBpsOfEdgeRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeDomainUpstreamBpsOfEdgeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                BpsDatas struct {
-                    DomainBpsModel []struct {
-            Time     string `json:"Time" xml:"Time"`
-            Bps     float64 `json:"Bps" xml:"Bps"`
-                    }   `json:"DomainBpsModel" xml:"DomainBpsModel"`
-                } `json:"BpsDatas" xml:"BpsDatas"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	BpsDatas  struct {
+		DomainBpsModel []struct {
+			Time string        `json:"Time" xml:"Time"`
+			Bps  request.Float `json:"Bps" xml:"Bps"`
+		} `json:"DomainBpsModel" xml:"DomainBpsModel"`
+	} `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateDescribeDomainUpstreamBpsOfEdgeRequest() (request *DescribeDomainUpstreamBpsOfEdgeRequest) {
-request = &DescribeDomainUpstreamBpsOfEdgeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge", "", "")
-return
+	request = &DescribeDomainUpstreamBpsOfEdgeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge", "", "")
+	return
 }
 
 func CreateDescribeDomainUpstreamBpsOfEdgeResponse() (response *DescribeDomainUpstreamBpsOfEdgeResponse) {
-response = &DescribeDomainUpstreamBpsOfEdgeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDomainUpstreamBpsOfEdgeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

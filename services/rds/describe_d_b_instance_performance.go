@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,97 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstancePerformanceRequest) (response *DescribeDBInstancePerformanceResponse, err error) {
-response = CreateDescribeDBInstancePerformanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDBInstancePerformanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBInstancePerformanceRequest) (<-chan *DescribeDBInstancePerformanceResponse, <-chan error) {
-responseChan := make(chan *DescribeDBInstancePerformanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDBInstancePerformance(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDBInstancePerformanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDBInstancePerformance(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstancePerformanceWithCallback(request *DescribeDBInstancePerformanceRequest, callback func(response *DescribeDBInstancePerformanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDBInstancePerformanceResponse
-var err error
-defer close(result)
-response, err = client.DescribeDBInstancePerformance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDBInstancePerformanceWithCallback(request *DescribeDBInstancePerformanceRequest, callback func(response *DescribeDBInstancePerformanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDBInstancePerformanceResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDBInstancePerformance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDBInstancePerformanceRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Key  string `position:"Query" name:"Key"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Key                  string `position:"Query" name:"Key"`
 }
 
-
 type DescribeDBInstancePerformanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-                PerformanceKeys struct {
-                    PerformanceKey []struct {
-            Key     string `json:"Key" xml:"Key"`
-            Unit     string `json:"Unit" xml:"Unit"`
-            ValueFormat     string `json:"ValueFormat" xml:"ValueFormat"`
-                Values struct {
-                    PerformanceValue []struct {
-            Value     string `json:"Value" xml:"Value"`
-            Date     string `json:"Date" xml:"Date"`
-                    }   `json:"PerformanceValue" xml:"PerformanceValue"`
-                } `json:"Values" xml:"Values"`
-                    }   `json:"PerformanceKey" xml:"PerformanceKey"`
-                } `json:"PerformanceKeys" xml:"PerformanceKeys"`
+	*responses.BaseResponse
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId    string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine          string `json:"Engine" xml:"Engine"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
+	PerformanceKeys struct {
+		PerformanceKey []struct {
+			Key         string `json:"Key" xml:"Key"`
+			Unit        string `json:"Unit" xml:"Unit"`
+			ValueFormat string `json:"ValueFormat" xml:"ValueFormat"`
+			Values      struct {
+				PerformanceValue []struct {
+					Value string `json:"Value" xml:"Value"`
+					Date  string `json:"Date" xml:"Date"`
+				} `json:"PerformanceValue" xml:"PerformanceValue"`
+			} `json:"Values" xml:"Values"`
+		} `json:"PerformanceKey" xml:"PerformanceKey"`
+	} `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
 func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePerformanceRequest) {
-request = &DescribeDBInstancePerformanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePerformance", "", "")
-return
+	request = &DescribeDBInstancePerformanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePerformance", "", "")
+	return
 }
 
 func CreateDescribeDBInstancePerformanceResponse() (response *DescribeDBInstancePerformanceResponse) {
-response = &DescribeDBInstancePerformanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDBInstancePerformanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetLibrary(request *GetLibraryRequest) (response *GetLibraryResponse, err error) {
-response = CreateGetLibraryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetLibraryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *GetLibraryResponse, <-chan error) {
-responseChan := make(chan *GetLibraryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetLibrary(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetLibraryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetLibrary(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callback func(response *GetLibraryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetLibraryResponse
-var err error
-defer close(result)
-response, err = client.GetLibrary(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callback func(response *GetLibraryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetLibraryResponse
+		var err error
+		defer close(result)
+		response, err = client.GetLibrary(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetLibraryRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
+	*requests.RpcRequest
+	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
 }
 
-
 type GetLibraryResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-            Library struct {
-            Quota struct {
-            TotalQuota     int64 `json:"TotalQuota" xml:"TotalQuota"`
-            FacesCount     int `json:"FacesCount" xml:"FacesCount"`
-            PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
-            UsedQuota     int64 `json:"UsedQuota" xml:"UsedQuota"`
-            VideosCount     int `json:"VideosCount" xml:"VideosCount"`
-            }  `json:"Quota" xml:"Quota"`
-            AutoCleanConfig struct {
-            AutoCleanEnabled     bool `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-            AutoCleanDays     int `json:"AutoCleanDays" xml:"AutoCleanDays"`
-            }  `json:"AutoCleanConfig" xml:"AutoCleanConfig"`
-            }  `json:"Library" xml:"Library"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Library   struct {
+		Quota struct {
+			TotalQuota  request.Integer `json:"TotalQuota" xml:"TotalQuota"`
+			FacesCount  request.Integer `json:"FacesCount" xml:"FacesCount"`
+			PhotosCount request.Integer `json:"PhotosCount" xml:"PhotosCount"`
+			UsedQuota   request.Integer `json:"UsedQuota" xml:"UsedQuota"`
+			VideosCount request.Integer `json:"VideosCount" xml:"VideosCount"`
+		} `json:"Quota" xml:"Quota"`
+		AutoCleanConfig struct {
+			AutoCleanEnabled request.Boolean `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
+			AutoCleanDays    request.Integer `json:"AutoCleanDays" xml:"AutoCleanDays"`
+		} `json:"AutoCleanConfig" xml:"AutoCleanConfig"`
+	} `json:"Library" xml:"Library"`
 }
 
 func CreateGetLibraryRequest() (request *GetLibraryRequest) {
-request = &GetLibraryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "", "")
-return
+	request = &GetLibraryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "", "")
+	return
 }
 
 func CreateGetLibraryResponse() (response *GetLibraryResponse) {
-response = &GetLibraryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetLibraryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

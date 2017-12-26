@@ -18,11 +18,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"encoding/xml"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
 
 type AcsResponse interface {

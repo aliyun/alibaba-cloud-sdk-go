@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,84 +16,82 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateDomainRecord(request *UpdateDomainRecordRequest) (response *UpdateDomainRecordResponse, err error) {
-response = CreateUpdateDomainRecordResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdateDomainRecordResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UpdateDomainRecordWithChan(request *UpdateDomainRecordRequest) (<-chan *UpdateDomainRecordResponse, <-chan error) {
-responseChan := make(chan *UpdateDomainRecordResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdateDomainRecord(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdateDomainRecordResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdateDomainRecord(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecordRequest, callback func(response *UpdateDomainRecordResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdateDomainRecordResponse
-var err error
-defer close(result)
-response, err = client.UpdateDomainRecord(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecordRequest, callback func(response *UpdateDomainRecordResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdateDomainRecordResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdateDomainRecord(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UpdateDomainRecordRequest struct {
-*requests.RpcRequest
-                Priority  string `position:"Query" name:"Priority"`
-                Value  string `position:"Query" name:"Value"`
-                RR  string `position:"Query" name:"RR"`
-                Line  string `position:"Query" name:"Line"`
-                TTL  string `position:"Query" name:"TTL"`
-                Type  string `position:"Query" name:"Type"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
-                RecordId  string `position:"Query" name:"RecordId"`
+	*requests.RpcRequest
+	Priority     string `position:"Query" name:"Priority"`
+	Value        string `position:"Query" name:"Value"`
+	RR           string `position:"Query" name:"RR"`
+	Line         string `position:"Query" name:"Line"`
+	TTL          string `position:"Query" name:"TTL"`
+	Type         string `position:"Query" name:"Type"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
+	RecordId     string `position:"Query" name:"RecordId"`
 }
 
-
 type UpdateDomainRecordResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RecordId     string `json:"RecordId" xml:"RecordId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
 func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
-request = &UpdateDomainRecordRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDomainRecord", "", "")
-return
+	request = &UpdateDomainRecordRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDomainRecord", "", "")
+	return
 }
 
 func CreateUpdateDomainRecordResponse() (response *UpdateDomainRecordResponse) {
-response = &UpdateDomainRecordResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdateDomainRecordResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

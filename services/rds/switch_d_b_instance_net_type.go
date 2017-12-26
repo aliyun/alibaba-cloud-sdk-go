@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRequest) (response *SwitchDBInstanceNetTypeResponse, err error) {
-response = CreateSwitchDBInstanceNetTypeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSwitchDBInstanceNetTypeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceNetTypeRequest) (<-chan *SwitchDBInstanceNetTypeResponse, <-chan error) {
-responseChan := make(chan *SwitchDBInstanceNetTypeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SwitchDBInstanceNetType(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SwitchDBInstanceNetTypeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SwitchDBInstanceNetType(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInstanceNetTypeRequest, callback func(response *SwitchDBInstanceNetTypeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SwitchDBInstanceNetTypeResponse
-var err error
-defer close(result)
-response, err = client.SwitchDBInstanceNetType(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInstanceNetTypeRequest, callback func(response *SwitchDBInstanceNetTypeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SwitchDBInstanceNetTypeResponse
+		var err error
+		defer close(result)
+		response, err = client.SwitchDBInstanceNetType(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SwitchDBInstanceNetTypeRequest struct {
-*requests.RpcRequest
-                Port  string `position:"Query" name:"Port"`
-                ConnectionStringPrefix  string `position:"Query" name:"ConnectionStringPrefix"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ConnectionStringType  string `position:"Query" name:"ConnectionStringType"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Port                   string `position:"Query" name:"Port"`
+	ConnectionStringPrefix string `position:"Query" name:"ConnectionStringPrefix"`
+	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
+	ClientToken            string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
+	ConnectionStringType   string `position:"Query" name:"ConnectionStringType"`
+	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
 }
 
-
 type SwitchDBInstanceNetTypeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeRequest) {
-request = &SwitchDBInstanceNetTypeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceNetType", "", "")
-return
+	request = &SwitchDBInstanceNetTypeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceNetType", "", "")
+	return
 }
 
 func CreateSwitchDBInstanceNetTypeResponse() (response *SwitchDBInstanceNetTypeResponse) {
-response = &SwitchDBInstanceNetTypeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SwitchDBInstanceNetTypeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

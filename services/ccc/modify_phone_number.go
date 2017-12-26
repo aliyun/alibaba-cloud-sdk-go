@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,100 +16,98 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (response *ModifyPhoneNumberResponse, err error) {
-response = CreateModifyPhoneNumberResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyPhoneNumberResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberRequest) (<-chan *ModifyPhoneNumberResponse, <-chan error) {
-responseChan := make(chan *ModifyPhoneNumberResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyPhoneNumber(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyPhoneNumberResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyPhoneNumber(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRequest, callback func(response *ModifyPhoneNumberResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyPhoneNumberResponse
-var err error
-defer close(result)
-response, err = client.ModifyPhoneNumber(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRequest, callback func(response *ModifyPhoneNumberResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyPhoneNumberResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyPhoneNumber(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyPhoneNumberRequest struct {
-*requests.RpcRequest
-                PhoneNumberId  string `position:"Query" name:"PhoneNumberId"`
-                Usage  string `position:"Query" name:"Usage"`
-                ContactFlowId  string `position:"Query" name:"ContactFlowId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
+	Usage         string `position:"Query" name:"Usage"`
+	ContactFlowId string `position:"Query" name:"ContactFlowId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
 }
 
-
 type ModifyPhoneNumberResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     int `json:"HttpStatusCode" xml:"HttpStatusCode"`
-            PhoneNumber struct {
-            PhoneNumberId     string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Number     string `json:"Number" xml:"Number"`
-            PhoneNumberDescription     string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-            TestOnly     bool `json:"TestOnly" xml:"TestOnly"`
-            RemainingTime     int `json:"RemainingTime" xml:"RemainingTime"`
-            AllowOutbound     bool `json:"AllowOutbound" xml:"AllowOutbound"`
-            Usage     string `json:"Usage" xml:"Usage"`
-            Trunks     int `json:"Trunks" xml:"Trunks"`
-            ContactFlow struct {
-            ContactFlowId     string `json:"ContactFlowId" xml:"ContactFlowId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            ContactFlowName     string `json:"ContactFlowName" xml:"ContactFlowName"`
-            ContactFlowDescription     string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-            Type     string `json:"Type" xml:"Type"`
-            }  `json:"ContactFlow" xml:"ContactFlow"`
-            }  `json:"PhoneNumber" xml:"PhoneNumber"`
+	*responses.BaseResponse
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Success        request.Boolean `json:"Success" xml:"Success"`
+	Code           string          `json:"Code" xml:"Code"`
+	Message        string          `json:"Message" xml:"Message"`
+	HttpStatusCode request.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	PhoneNumber    struct {
+		PhoneNumberId          string          `json:"PhoneNumberId" xml:"PhoneNumberId"`
+		InstanceId             string          `json:"InstanceId" xml:"InstanceId"`
+		Number                 string          `json:"Number" xml:"Number"`
+		PhoneNumberDescription string          `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+		TestOnly               request.Boolean `json:"TestOnly" xml:"TestOnly"`
+		RemainingTime          request.Integer `json:"RemainingTime" xml:"RemainingTime"`
+		AllowOutbound          request.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+		Usage                  string          `json:"Usage" xml:"Usage"`
+		Trunks                 request.Integer `json:"Trunks" xml:"Trunks"`
+		ContactFlow            struct {
+			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
+			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
+			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+			Type                   string `json:"Type" xml:"Type"`
+		} `json:"ContactFlow" xml:"ContactFlow"`
+	} `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
 func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
-request = &ModifyPhoneNumberRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPhoneNumber", "", "")
-return
+	request = &ModifyPhoneNumberRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPhoneNumber", "", "")
+	return
 }
 
 func CreateModifyPhoneNumberResponse() (response *ModifyPhoneNumberResponse) {
-response = &ModifyPhoneNumberResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyPhoneNumberResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

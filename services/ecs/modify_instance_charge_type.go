@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeTypeRequest) (response *ModifyInstanceChargeTypeResponse, err error) {
-response = CreateModifyInstanceChargeTypeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyInstanceChargeTypeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceChargeTypeRequest) (<-chan *ModifyInstanceChargeTypeResponse, <-chan error) {
-responseChan := make(chan *ModifyInstanceChargeTypeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyInstanceChargeType(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyInstanceChargeTypeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyInstanceChargeType(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstanceChargeTypeRequest, callback func(response *ModifyInstanceChargeTypeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyInstanceChargeTypeResponse
-var err error
-defer close(result)
-response, err = client.ModifyInstanceChargeType(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstanceChargeTypeRequest, callback func(response *ModifyInstanceChargeTypeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyInstanceChargeTypeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyInstanceChargeType(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyInstanceChargeTypeRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                InstanceIds  string `position:"Query" name:"InstanceIds"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Period  string `position:"Query" name:"Period"`
-                PeriodUnit  string `position:"Query" name:"PeriodUnit"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AutoPay  string `position:"Query" name:"AutoPay"`
-                IncludeDataDisks  string `position:"Query" name:"IncludeDataDisks"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                DryRun  string `position:"Query" name:"DryRun"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	InstanceIds          string `position:"Query" name:"InstanceIds"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Period               string `position:"Query" name:"Period"`
+	PeriodUnit           string `position:"Query" name:"PeriodUnit"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              string `position:"Query" name:"AutoPay"`
+	IncludeDataDisks     string `position:"Query" name:"IncludeDataDisks"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	DryRun               string `position:"Query" name:"DryRun"`
 }
 
-
 type ModifyInstanceChargeTypeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            OrderId     string `json:"OrderId" xml:"OrderId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeRequest) {
-request = &ModifyInstanceChargeTypeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceChargeType", "", "")
-return
+	request = &ModifyInstanceChargeTypeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceChargeType", "", "")
+	return
 }
 
 func CreateModifyInstanceChargeTypeResponse() (response *ModifyInstanceChargeTypeResponse) {
-response = &ModifyInstanceChargeTypeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyInstanceChargeTypeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

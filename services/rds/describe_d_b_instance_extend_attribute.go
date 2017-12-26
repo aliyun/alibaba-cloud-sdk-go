@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,87 +16,85 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstanceExtendAttribute(request *DescribeDBInstanceExtendAttributeRequest) (response *DescribeDBInstanceExtendAttributeResponse, err error) {
-response = CreateDescribeDBInstanceExtendAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDBInstanceExtendAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDBInstanceExtendAttributeWithChan(request *DescribeDBInstanceExtendAttributeRequest) (<-chan *DescribeDBInstanceExtendAttributeResponse, <-chan error) {
-responseChan := make(chan *DescribeDBInstanceExtendAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDBInstanceExtendAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDBInstanceExtendAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDBInstanceExtendAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstanceExtendAttributeWithCallback(request *DescribeDBInstanceExtendAttributeRequest, callback func(response *DescribeDBInstanceExtendAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDBInstanceExtendAttributeResponse
-var err error
-defer close(result)
-response, err = client.DescribeDBInstanceExtendAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDBInstanceExtendAttributeWithCallback(request *DescribeDBInstanceExtendAttributeRequest, callback func(response *DescribeDBInstanceExtendAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDBInstanceExtendAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDBInstanceExtendAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDBInstanceExtendAttributeRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeDBInstanceExtendAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            CanTempUpgrade     bool `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
-            TempUpgradeTimeStart     string `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
-            TempUpgradeTimeEnd     string `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
-            TempUpgradeRecoveryTime     string `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
-            TempUpgradeRecoveryClass     string `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
-            TempUpgradeRecoveryCpu     int `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
-            TempUpgradeRecoveryMemory     int `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
-            TempUpgradeRecoveryMaxIOPS     string `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
-            TempUpgradeRecoveryMaxConnections     string `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
+	*responses.BaseResponse
+	RequestId                         string          `json:"RequestId" xml:"RequestId"`
+	CanTempUpgrade                    request.Boolean `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
+	TempUpgradeTimeStart              string          `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
+	TempUpgradeTimeEnd                string          `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
+	TempUpgradeRecoveryTime           string          `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
+	TempUpgradeRecoveryClass          string          `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
+	TempUpgradeRecoveryCpu            request.Integer `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
+	TempUpgradeRecoveryMemory         request.Integer `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
+	TempUpgradeRecoveryMaxIOPS        string          `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
+	TempUpgradeRecoveryMaxConnections string          `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
 }
 
 func CreateDescribeDBInstanceExtendAttributeRequest() (request *DescribeDBInstanceExtendAttributeRequest) {
-request = &DescribeDBInstanceExtendAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceExtendAttribute", "", "")
-return
+	request = &DescribeDBInstanceExtendAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceExtendAttribute", "", "")
+	return
 }
 
 func CreateDescribeDBInstanceExtendAttributeResponse() (response *DescribeDBInstanceExtendAttributeResponse) {
-response = &DescribeDBInstanceExtendAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDBInstanceExtendAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

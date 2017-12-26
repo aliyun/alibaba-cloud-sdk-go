@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,91 +16,89 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateVServerGroup(request *CreateVServerGroupRequest) (response *CreateVServerGroupResponse, err error) {
-response = CreateCreateVServerGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateVServerGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequest) (<-chan *CreateVServerGroupResponse, <-chan error) {
-responseChan := make(chan *CreateVServerGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateVServerGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateVServerGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateVServerGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroupRequest, callback func(response *CreateVServerGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateVServerGroupResponse
-var err error
-defer close(result)
-response, err = client.CreateVServerGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroupRequest, callback func(response *CreateVServerGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateVServerGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateVServerGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateVServerGroupRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                VServerGroupName  string `position:"Query" name:"VServerGroupName"`
-                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                BackendServers  string `position:"Query" name:"BackendServers"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	VServerGroupName     string `position:"Query" name:"VServerGroupName"`
+	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	BackendServers       string `position:"Query" name:"BackendServers"`
 }
 
-
 type CreateVServerGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
-                BackendServers struct {
-                    BackendServer []struct {
-            ServerId     string `json:"ServerId" xml:"ServerId"`
-            Port     int `json:"Port" xml:"Port"`
-            Weight     int `json:"Weight" xml:"Weight"`
-                    }   `json:"BackendServer" xml:"BackendServer"`
-                } `json:"BackendServers" xml:"BackendServers"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
+	BackendServers struct {
+		BackendServer []struct {
+			ServerId string          `json:"ServerId" xml:"ServerId"`
+			Port     request.Integer `json:"Port" xml:"Port"`
+			Weight   request.Integer `json:"Weight" xml:"Weight"`
+		} `json:"BackendServer" xml:"BackendServer"`
+	} `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
-request = &CreateVServerGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "CreateVServerGroup", "", "")
-return
+	request = &CreateVServerGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateVServerGroup", "", "")
+	return
 }
 
 func CreateCreateVServerGroupResponse() (response *CreateVServerGroupResponse) {
-response = &CreateVServerGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateVServerGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

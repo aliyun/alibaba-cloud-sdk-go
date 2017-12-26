@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ReportMediaDetailJobResult(request *ReportMediaDetailJobResultRequest) (response *ReportMediaDetailJobResultResponse, err error) {
-response = CreateReportMediaDetailJobResultResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateReportMediaDetailJobResultResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ReportMediaDetailJobResultWithChan(request *ReportMediaDetailJobResultRequest) (<-chan *ReportMediaDetailJobResultResponse, <-chan error) {
-responseChan := make(chan *ReportMediaDetailJobResultResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ReportMediaDetailJobResult(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ReportMediaDetailJobResultResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ReportMediaDetailJobResult(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMediaDetailJobResultRequest, callback func(response *ReportMediaDetailJobResultResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ReportMediaDetailJobResultResponse
-var err error
-defer close(result)
-response, err = client.ReportMediaDetailJobResult(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMediaDetailJobResultRequest, callback func(response *ReportMediaDetailJobResultResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ReportMediaDetailJobResultResponse
+		var err error
+		defer close(result)
+		response, err = client.ReportMediaDetailJobResult(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ReportMediaDetailJobResultRequest struct {
-*requests.RpcRequest
-                Results  string `position:"Query" name:"Results"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Tag  string `position:"Query" name:"Tag"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                JobId  string `position:"Query" name:"JobId"`
+	*requests.RpcRequest
+	Results              string `position:"Query" name:"Results"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Tag                  string `position:"Query" name:"Tag"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	JobId                string `position:"Query" name:"JobId"`
 }
 
-
 type ReportMediaDetailJobResultResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            JobId     string `json:"JobId" xml:"JobId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobResultRequest) {
-request = &ReportMediaDetailJobResultRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "", "")
-return
+	request = &ReportMediaDetailJobResultRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "", "")
+	return
 }
 
 func CreateReportMediaDetailJobResultResponse() (response *ReportMediaDetailJobResultResponse) {
-response = &ReportMediaDetailJobResultResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ReportMediaDetailJobResultResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

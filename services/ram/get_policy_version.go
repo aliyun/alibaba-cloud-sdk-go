@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (response *GetPolicyVersionResponse, err error) {
-response = CreateGetPolicyVersionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetPolicyVersionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest) (<-chan *GetPolicyVersionResponse, <-chan error) {
-responseChan := make(chan *GetPolicyVersionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetPolicyVersion(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetPolicyVersionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetPolicyVersion(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequest, callback func(response *GetPolicyVersionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetPolicyVersionResponse
-var err error
-defer close(result)
-response, err = client.GetPolicyVersion(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequest, callback func(response *GetPolicyVersionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetPolicyVersionResponse
+		var err error
+		defer close(result)
+		response, err = client.GetPolicyVersion(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetPolicyVersionRequest struct {
-*requests.RpcRequest
-                VersionId  string `position:"Query" name:"VersionId"`
-                PolicyType  string `position:"Query" name:"PolicyType"`
-                PolicyName  string `position:"Query" name:"PolicyName"`
+	*requests.RpcRequest
+	VersionId  string `position:"Query" name:"VersionId"`
+	PolicyType string `position:"Query" name:"PolicyType"`
+	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
-
 type GetPolicyVersionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PolicyVersion struct {
-            VersionId     string `json:"VersionId" xml:"VersionId"`
-            IsDefaultVersion     bool `json:"IsDefaultVersion" xml:"IsDefaultVersion"`
-            PolicyDocument     string `json:"PolicyDocument" xml:"PolicyDocument"`
-            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
-            }  `json:"PolicyVersion" xml:"PolicyVersion"`
+	*responses.BaseResponse
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	PolicyVersion struct {
+		VersionId        string          `json:"VersionId" xml:"VersionId"`
+		IsDefaultVersion request.Boolean `json:"IsDefaultVersion" xml:"IsDefaultVersion"`
+		PolicyDocument   string          `json:"PolicyDocument" xml:"PolicyDocument"`
+		CreateDate       string          `json:"CreateDate" xml:"CreateDate"`
+	} `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
 func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
-request = &GetPolicyVersionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "GetPolicyVersion", "", "")
-return
+	request = &GetPolicyVersionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetPolicyVersion", "", "")
+	return
 }
 
 func CreateGetPolicyVersionResponse() (response *GetPolicyVersionResponse) {
-response = &GetPolicyVersionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetPolicyVersionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,97 +16,95 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDiskMonitorData(request *DescribeDiskMonitorDataRequest) (response *DescribeDiskMonitorDataResponse, err error) {
-response = CreateDescribeDiskMonitorDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDiskMonitorDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonitorDataRequest) (<-chan *DescribeDiskMonitorDataResponse, <-chan error) {
-responseChan := make(chan *DescribeDiskMonitorDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDiskMonitorData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDiskMonitorDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDiskMonitorData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskMonitorDataRequest, callback func(response *DescribeDiskMonitorDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDiskMonitorDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeDiskMonitorData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskMonitorDataRequest, callback func(response *DescribeDiskMonitorDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDiskMonitorDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDiskMonitorData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDiskMonitorDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                DiskId  string `position:"Query" name:"DiskId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                Period  string `position:"Query" name:"Period"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	DiskId               string `position:"Query" name:"DiskId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Period               string `position:"Query" name:"Period"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeDiskMonitorDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-                MonitorData struct {
-                    DiskMonitorData []struct {
-            DiskId     string `json:"DiskId" xml:"DiskId"`
-            IOPSRead     int `json:"IOPSRead" xml:"IOPSRead"`
-            IOPSWrite     int `json:"IOPSWrite" xml:"IOPSWrite"`
-            IOPSTotal     int `json:"IOPSTotal" xml:"IOPSTotal"`
-            BPSRead     int `json:"BPSRead" xml:"BPSRead"`
-            BPSWrite     int `json:"BPSWrite" xml:"BPSWrite"`
-            BPSTotal     int `json:"BPSTotal" xml:"BPSTotal"`
-            LatencyRead     int `json:"LatencyRead" xml:"LatencyRead"`
-            LatencyWrite     int `json:"LatencyWrite" xml:"LatencyWrite"`
-            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
-                    }   `json:"DiskMonitorData" xml:"DiskMonitorData"`
-                } `json:"MonitorData" xml:"MonitorData"`
+	*responses.BaseResponse
+	RequestId   string          `json:"RequestId" xml:"RequestId"`
+	TotalCount  request.Integer `json:"TotalCount" xml:"TotalCount"`
+	MonitorData struct {
+		DiskMonitorData []struct {
+			DiskId       string          `json:"DiskId" xml:"DiskId"`
+			IOPSRead     request.Integer `json:"IOPSRead" xml:"IOPSRead"`
+			IOPSWrite    request.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
+			IOPSTotal    request.Integer `json:"IOPSTotal" xml:"IOPSTotal"`
+			BPSRead      request.Integer `json:"BPSRead" xml:"BPSRead"`
+			BPSWrite     request.Integer `json:"BPSWrite" xml:"BPSWrite"`
+			BPSTotal     request.Integer `json:"BPSTotal" xml:"BPSTotal"`
+			LatencyRead  request.Integer `json:"LatencyRead" xml:"LatencyRead"`
+			LatencyWrite request.Integer `json:"LatencyWrite" xml:"LatencyWrite"`
+			TimeStamp    string          `json:"TimeStamp" xml:"TimeStamp"`
+		} `json:"DiskMonitorData" xml:"DiskMonitorData"`
+	} `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {
-request = &DescribeDiskMonitorDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiskMonitorData", "", "")
-return
+	request = &DescribeDiskMonitorDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiskMonitorData", "", "")
+	return
 }
 
 func CreateDescribeDiskMonitorDataResponse() (response *DescribeDiskMonitorDataResponse) {
-response = &DescribeDiskMonitorDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDiskMonitorDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

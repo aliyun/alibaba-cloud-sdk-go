@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamStreamStatus(request *DescribeLiveStreamStreamStatusRequest) (response *DescribeLiveStreamStreamStatusResponse, err error) {
-response = CreateDescribeLiveStreamStreamStatusResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamStreamStatusResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamStreamStatusWithChan(request *DescribeLiveStreamStreamStatusRequest) (<-chan *DescribeLiveStreamStreamStatusResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamStreamStatusResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamStreamStatus(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamStreamStatusResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamStreamStatus(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *DescribeLiveStreamStreamStatusRequest, callback func(response *DescribeLiveStreamStreamStatusResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamStreamStatusResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamStreamStatus(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *DescribeLiveStreamStreamStatusRequest, callback func(response *DescribeLiveStreamStreamStatusResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamStreamStatusResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamStreamStatus(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamStreamStatusRequest struct {
-*requests.RpcRequest
-                StreamName  string `position:"Query" name:"StreamName"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	StreamName    string `position:"Query" name:"StreamName"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamStreamStatusResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            StreamStatus     string `json:"StreamStatus" xml:"StreamStatus"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	StreamStatus string `json:"StreamStatus" xml:"StreamStatus"`
 }
 
 func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamStreamStatusRequest) {
-request = &DescribeLiveStreamStreamStatusRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamStreamStatus", "", "")
-return
+	request = &DescribeLiveStreamStreamStatusRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamStreamStatus", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamStreamStatusResponse() (response *DescribeLiveStreamStreamStatusResponse) {
-response = &DescribeLiveStreamStreamStatusResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamStreamStatusResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

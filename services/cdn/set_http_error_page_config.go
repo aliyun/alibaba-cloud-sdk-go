@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetHttpErrorPageConfig(request *SetHttpErrorPageConfigRequest) (response *SetHttpErrorPageConfigResponse, err error) {
-response = CreateSetHttpErrorPageConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetHttpErrorPageConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageConfigRequest) (<-chan *SetHttpErrorPageConfigResponse, <-chan error) {
-responseChan := make(chan *SetHttpErrorPageConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetHttpErrorPageConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetHttpErrorPageConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetHttpErrorPageConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPageConfigRequest, callback func(response *SetHttpErrorPageConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetHttpErrorPageConfigResponse
-var err error
-defer close(result)
-response, err = client.SetHttpErrorPageConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPageConfigRequest, callback func(response *SetHttpErrorPageConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetHttpErrorPageConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.SetHttpErrorPageConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetHttpErrorPageConfigRequest struct {
-*requests.RpcRequest
-                PageUrl  string `position:"Query" name:"PageUrl"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                ErrorCode  string `position:"Query" name:"ErrorCode"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	PageUrl       string `position:"Query" name:"PageUrl"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	ErrorCode     string `position:"Query" name:"ErrorCode"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type SetHttpErrorPageConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigRequest) {
-request = &SetHttpErrorPageConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "", "")
-return
+	request = &SetHttpErrorPageConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "", "")
+	return
 }
 
 func CreateSetHttpErrorPageConfigResponse() (response *SetHttpErrorPageConfigResponse) {
-response = &SetHttpErrorPageConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetHttpErrorPageConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

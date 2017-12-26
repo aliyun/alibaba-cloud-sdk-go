@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteMasterSlaveVServerGroup(request *DeleteMasterSlaveVServerGroupRequest) (response *DeleteMasterSlaveVServerGroupResponse, err error) {
-response = CreateDeleteMasterSlaveVServerGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteMasterSlaveVServerGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteMasterSlaveVServerGroupWithChan(request *DeleteMasterSlaveVServerGroupRequest) (<-chan *DeleteMasterSlaveVServerGroupResponse, <-chan error) {
-responseChan := make(chan *DeleteMasterSlaveVServerGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteMasterSlaveVServerGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteMasterSlaveVServerGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteMasterSlaveVServerGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteMasterSlaveVServerGroupWithCallback(request *DeleteMasterSlaveVServerGroupRequest, callback func(response *DeleteMasterSlaveVServerGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteMasterSlaveVServerGroupResponse
-var err error
-defer close(result)
-response, err = client.DeleteMasterSlaveVServerGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteMasterSlaveVServerGroupWithCallback(request *DeleteMasterSlaveVServerGroupRequest, callback func(response *DeleteMasterSlaveVServerGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteMasterSlaveVServerGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteMasterSlaveVServerGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteMasterSlaveVServerGroupRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                MasterSlaveVServerGroupId  string `position:"Query" name:"MasterSlaveVServerGroupId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Tags                      string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount      string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId               string `position:"Query" name:"access_key_id"`
+	MasterSlaveVServerGroupId string `position:"Query" name:"MasterSlaveVServerGroupId"`
+	ResourceOwnerId           string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount              string `position:"Query" name:"OwnerAccount"`
+	OwnerId                   string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeleteMasterSlaveVServerGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteMasterSlaveVServerGroupRequest() (request *DeleteMasterSlaveVServerGroupRequest) {
-request = &DeleteMasterSlaveVServerGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "", "")
-return
+	request = &DeleteMasterSlaveVServerGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "", "")
+	return
 }
 
 func CreateDeleteMasterSlaveVServerGroupResponse() (response *DeleteMasterSlaveVServerGroupResponse) {
-response = &DeleteMasterSlaveVServerGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteMasterSlaveVServerGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

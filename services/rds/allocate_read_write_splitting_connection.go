@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AllocateReadWriteSplittingConnection(request *AllocateReadWriteSplittingConnectionRequest) (response *AllocateReadWriteSplittingConnectionResponse, err error) {
-response = CreateAllocateReadWriteSplittingConnectionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAllocateReadWriteSplittingConnectionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AllocateReadWriteSplittingConnectionWithChan(request *AllocateReadWriteSplittingConnectionRequest) (<-chan *AllocateReadWriteSplittingConnectionResponse, <-chan error) {
-responseChan := make(chan *AllocateReadWriteSplittingConnectionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AllocateReadWriteSplittingConnection(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AllocateReadWriteSplittingConnectionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AllocateReadWriteSplittingConnection(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AllocateReadWriteSplittingConnectionWithCallback(request *AllocateReadWriteSplittingConnectionRequest, callback func(response *AllocateReadWriteSplittingConnectionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AllocateReadWriteSplittingConnectionResponse
-var err error
-defer close(result)
-response, err = client.AllocateReadWriteSplittingConnection(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AllocateReadWriteSplittingConnectionWithCallback(request *AllocateReadWriteSplittingConnectionRequest, callback func(response *AllocateReadWriteSplittingConnectionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AllocateReadWriteSplittingConnectionResponse
+		var err error
+		defer close(result)
+		response, err = client.AllocateReadWriteSplittingConnection(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AllocateReadWriteSplittingConnectionRequest struct {
-*requests.RpcRequest
-                Port  string `position:"Query" name:"Port"`
-                MaxDelayTime  string `position:"Query" name:"MaxDelayTime"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                Weight  string `position:"Query" name:"Weight"`
-                DistributionType  string `position:"Query" name:"DistributionType"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ConnectionStringPrefix  string `position:"Query" name:"ConnectionStringPrefix"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                IPType  string `position:"Query" name:"IPType"`
+	*requests.RpcRequest
+	Port                   string `position:"Query" name:"Port"`
+	MaxDelayTime           string `position:"Query" name:"MaxDelayTime"`
+	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
+	Weight                 string `position:"Query" name:"Weight"`
+	DistributionType       string `position:"Query" name:"DistributionType"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
+	ConnectionStringPrefix string `position:"Query" name:"ConnectionStringPrefix"`
+	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
+	IPType                 string `position:"Query" name:"IPType"`
 }
 
-
 type AllocateReadWriteSplittingConnectionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAllocateReadWriteSplittingConnectionRequest() (request *AllocateReadWriteSplittingConnectionRequest) {
-request = &AllocateReadWriteSplittingConnectionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "", "")
-return
+	request = &AllocateReadWriteSplittingConnectionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "", "")
+	return
 }
 
 func CreateAllocateReadWriteSplittingConnectionResponse() (response *AllocateReadWriteSplittingConnectionResponse) {
-response = &AllocateReadWriteSplittingConnectionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AllocateReadWriteSplittingConnectionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

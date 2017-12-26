@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UploadPublicKey(request *UploadPublicKeyRequest) (response *UploadPublicKeyResponse, err error) {
-response = CreateUploadPublicKeyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUploadPublicKeyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (<-chan *UploadPublicKeyResponse, <-chan error) {
-responseChan := make(chan *UploadPublicKeyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UploadPublicKey(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UploadPublicKeyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UploadPublicKey(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UploadPublicKeyWithCallback(request *UploadPublicKeyRequest, callback func(response *UploadPublicKeyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UploadPublicKeyResponse
-var err error
-defer close(result)
-response, err = client.UploadPublicKey(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UploadPublicKeyWithCallback(request *UploadPublicKeyRequest, callback func(response *UploadPublicKeyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UploadPublicKeyResponse
+		var err error
+		defer close(result)
+		response, err = client.UploadPublicKey(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UploadPublicKeyRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                PublicKeySpec  string `position:"Query" name:"PublicKeySpec"`
+	*requests.RpcRequest
+	UserName      string `position:"Query" name:"UserName"`
+	PublicKeySpec string `position:"Query" name:"PublicKeySpec"`
 }
 
-
 type UploadPublicKeyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            PublicKey struct {
-            PublicKeyId     string `json:"PublicKeyId" xml:"PublicKeyId"`
-            PublicKeySpec     string `json:"PublicKeySpec" xml:"PublicKeySpec"`
-            Status     string `json:"Status" xml:"Status"`
-            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
-            }  `json:"PublicKey" xml:"PublicKey"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PublicKey struct {
+		PublicKeyId   string `json:"PublicKeyId" xml:"PublicKeyId"`
+		PublicKeySpec string `json:"PublicKeySpec" xml:"PublicKeySpec"`
+		Status        string `json:"Status" xml:"Status"`
+		CreateDate    string `json:"CreateDate" xml:"CreateDate"`
+	} `json:"PublicKey" xml:"PublicKey"`
 }
 
 func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
-request = &UploadPublicKeyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "UploadPublicKey", "", "")
-return
+	request = &UploadPublicKeyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "UploadPublicKey", "", "")
+	return
 }
 
 func CreateUploadPublicKeyResponse() (response *UploadPublicKeyResponse) {
-response = &UploadPublicKeyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UploadPublicKeyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

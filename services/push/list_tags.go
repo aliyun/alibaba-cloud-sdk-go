@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResponse, err error) {
-response = CreateListTagsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListTagsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTagsResponse, <-chan error) {
-responseChan := make(chan *ListTagsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListTags(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListTagsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListTags(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListTagsResponse
-var err error
-defer close(result)
-response, err = client.ListTags(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListTagsResponse
+		var err error
+		defer close(result)
+		response, err = client.ListTags(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListTagsRequest struct {
-*requests.RpcRequest
-                AppKey  string `position:"Query" name:"AppKey"`
+	*requests.RpcRequest
+	AppKey string `position:"Query" name:"AppKey"`
 }
 
-
 type ListTagsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                TagInfos struct {
-                    TagInfo []struct {
-            TagName     string `json:"TagName" xml:"TagName"`
-                    }   `json:"TagInfo" xml:"TagInfo"`
-                } `json:"TagInfos" xml:"TagInfos"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	TagInfos  struct {
+		TagInfo []struct {
+			TagName string `json:"TagName" xml:"TagName"`
+		} `json:"TagInfo" xml:"TagInfo"`
+	} `json:"TagInfos" xml:"TagInfos"`
 }
 
 func CreateListTagsRequest() (request *ListTagsRequest) {
-request = &ListTagsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "ListTags", "", "")
-return
+	request = &ListTagsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "ListTags", "", "")
+	return
 }
 
 func CreateListTagsResponse() (response *ListTagsResponse) {
-response = &ListTagsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListTagsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

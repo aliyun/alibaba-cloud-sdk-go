@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyTag(request *ModifyTagRequest) (response *ModifyTagResponse, err error) {
-response = CreateModifyTagResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyTagResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *ModifyTagResponse, <-chan error) {
-responseChan := make(chan *ModifyTagResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyTag(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyTagResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyTag(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback func(response *ModifyTagResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyTagResponse
-var err error
-defer close(result)
-response, err = client.ModifyTag(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback func(response *ModifyTagResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyTagResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyTag(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyTagRequest struct {
-*requests.RpcRequest
-                TagId  string `position:"Query" name:"TagId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                TagName  string `position:"Query" name:"TagName"`
+	*requests.RpcRequest
+	TagId                string `position:"Query" name:"TagId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	TagName              string `position:"Query" name:"TagName"`
 }
 
-
 type ModifyTagResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyTagRequest() (request *ModifyTagRequest) {
-request = &ModifyTagRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTag", "", "")
-return
+	request = &ModifyTagRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTag", "", "")
+	return
 }
 
 func CreateModifyTagResponse() (response *ModifyTagResponse) {
-response = &ModifyTagResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyTagResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

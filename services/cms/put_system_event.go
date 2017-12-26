@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PutSystemEvent(request *PutSystemEventRequest) (response *PutSystemEventResponse, err error) {
-response = CreatePutSystemEventResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePutSystemEventResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-chan *PutSystemEventResponse, <-chan error) {
-responseChan := make(chan *PutSystemEventResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PutSystemEvent(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PutSystemEventResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PutSystemEvent(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest, callback func(response *PutSystemEventResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PutSystemEventResponse
-var err error
-defer close(result)
-response, err = client.PutSystemEvent(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest, callback func(response *PutSystemEventResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PutSystemEventResponse
+		var err error
+		defer close(result)
+		response, err = client.PutSystemEvent(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type PutSystemEventRequest struct {
-*requests.RpcRequest
-                EventInfo  string `position:"Query" name:"EventInfo"`
+	*requests.RpcRequest
+	EventInfo string `position:"Query" name:"EventInfo"`
 }
 
-
 type PutSystemEventResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            Data     string `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	Code    string `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
 }
 
 func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
-request = &PutSystemEventRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "PutSystemEvent", "", "")
-return
+	request = &PutSystemEventRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutSystemEvent", "", "")
+	return
 }
 
 func CreatePutSystemEventResponse() (response *PutSystemEventResponse) {
-response = &PutSystemEventResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PutSystemEventResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

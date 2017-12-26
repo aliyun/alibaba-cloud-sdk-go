@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,105 +16,103 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeNatGateways(request *DescribeNatGatewaysRequest) (response *DescribeNatGatewaysResponse, err error) {
-response = CreateDescribeNatGatewaysResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeNatGatewaysResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRequest) (<-chan *DescribeNatGatewaysResponse, <-chan error) {
-responseChan := make(chan *DescribeNatGatewaysResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeNatGateways(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeNatGatewaysResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeNatGateways(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewaysRequest, callback func(response *DescribeNatGatewaysResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeNatGatewaysResponse
-var err error
-defer close(result)
-response, err = client.DescribeNatGateways(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewaysRequest, callback func(response *DescribeNatGatewaysResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeNatGatewaysResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeNatGateways(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeNatGatewaysRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                VpcId  string `position:"Query" name:"VpcId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                NatGatewayId  string `position:"Query" name:"NatGatewayId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	VpcId                string `position:"Query" name:"VpcId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	NatGatewayId         string `position:"Query" name:"NatGatewayId"`
 }
 
-
 type DescribeNatGatewaysResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                NatGateways struct {
-                    NatGateway []struct {
-            NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            Name     string `json:"Name" xml:"Name"`
-            Description     string `json:"Description" xml:"Description"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            Spec     string `json:"Spec" xml:"Spec"`
-            InstanceChargeType     string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-            BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Status     string `json:"Status" xml:"Status"`
-                ForwardTableIds struct {
-                ForwardTableId []    string `json:"ForwardTableId" xml:"ForwardTableId"`
-                } `json:"ForwardTableIds" xml:"ForwardTableIds"`
-                BandwidthPackageIds struct {
-                BandwidthPackageId []    string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-                } `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
-                    }   `json:"NatGateway" xml:"NatGateway"`
-                } `json:"NatGateways" xml:"NatGateways"`
+	*responses.BaseResponse
+	RequestId   string          `json:"RequestId" xml:"RequestId"`
+	TotalCount  request.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  request.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize    request.Integer `json:"PageSize" xml:"PageSize"`
+	NatGateways struct {
+		NatGateway []struct {
+			NatGatewayId       string `json:"NatGatewayId" xml:"NatGatewayId"`
+			RegionId           string `json:"RegionId" xml:"RegionId"`
+			Name               string `json:"Name" xml:"Name"`
+			Description        string `json:"Description" xml:"Description"`
+			VpcId              string `json:"VpcId" xml:"VpcId"`
+			Spec               string `json:"Spec" xml:"Spec"`
+			InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+			BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
+			CreationTime       string `json:"CreationTime" xml:"CreationTime"`
+			Status             string `json:"Status" xml:"Status"`
+			ForwardTableIds    struct {
+				ForwardTableId []string `json:"ForwardTableId" xml:"ForwardTableId"`
+			} `json:"ForwardTableIds" xml:"ForwardTableIds"`
+			BandwidthPackageIds struct {
+				BandwidthPackageId []string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+			} `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+		} `json:"NatGateway" xml:"NatGateway"`
+	} `json:"NatGateways" xml:"NatGateways"`
 }
 
 func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
-request = &DescribeNatGatewaysRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNatGateways", "", "")
-return
+	request = &DescribeNatGatewaysRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNatGateways", "", "")
+	return
 }
 
 func CreateDescribeNatGatewaysResponse() (response *DescribeNatGatewaysResponse) {
-response = &DescribeNatGatewaysResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeNatGatewaysResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

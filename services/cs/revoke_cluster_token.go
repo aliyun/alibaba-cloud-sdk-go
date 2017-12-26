@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,74 +16,72 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RevokeClusterToken(request *RevokeClusterTokenRequest) (response *RevokeClusterTokenResponse, err error) {
-response = CreateRevokeClusterTokenResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRevokeClusterTokenResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequest) (<-chan *RevokeClusterTokenResponse, <-chan error) {
-responseChan := make(chan *RevokeClusterTokenResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RevokeClusterToken(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RevokeClusterTokenResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RevokeClusterToken(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RevokeClusterTokenWithCallback(request *RevokeClusterTokenRequest, callback func(response *RevokeClusterTokenResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RevokeClusterTokenResponse
-var err error
-defer close(result)
-response, err = client.RevokeClusterToken(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RevokeClusterTokenWithCallback(request *RevokeClusterTokenRequest, callback func(response *RevokeClusterTokenResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RevokeClusterTokenResponse
+		var err error
+		defer close(result)
+		response, err = client.RevokeClusterToken(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RevokeClusterTokenRequest struct {
-*requests.RoaRequest
-                Token  string `position:"Path" name:"Token"`
+	*requests.RoaRequest
+	Token string `position:"Path" name:"Token"`
 }
 
-
 type RevokeClusterTokenResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
-request = &RevokeClusterTokenRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "RevokeClusterToken", "/token/[Token]/revoke", "", "")
-return
+	request = &RevokeClusterTokenRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "RevokeClusterToken", "/token/[Token]/revoke", "", "")
+	return
 }
 
 func CreateRevokeClusterTokenResponse() (response *RevokeClusterTokenResponse) {
-response = &RevokeClusterTokenResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RevokeClusterTokenResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

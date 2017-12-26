@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,84 +16,82 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleResponse, err error) {
-response = CreateGetRoleResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetRoleResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleResponse, <-chan error) {
-responseChan := make(chan *GetRoleResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetRole(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetRoleResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetRole(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func(response *GetRoleResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetRoleResponse
-var err error
-defer close(result)
-response, err = client.GetRole(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func(response *GetRoleResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetRoleResponse
+		var err error
+		defer close(result)
+		response, err = client.GetRole(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetRoleRequest struct {
-*requests.RpcRequest
-                RoleName  string `position:"Query" name:"RoleName"`
+	*requests.RpcRequest
+	RoleName string `position:"Query" name:"RoleName"`
 }
 
-
 type GetRoleResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Role struct {
-            RoleId     string `json:"RoleId" xml:"RoleId"`
-            RoleName     string `json:"RoleName" xml:"RoleName"`
-            Arn     string `json:"Arn" xml:"Arn"`
-            Description     string `json:"Description" xml:"Description"`
-            AssumeRolePolicyDocument     string `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
-            CreateDate     string `json:"CreateDate" xml:"CreateDate"`
-            UpdateDate     string `json:"UpdateDate" xml:"UpdateDate"`
-            }  `json:"Role" xml:"Role"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Role      struct {
+		RoleId                   string `json:"RoleId" xml:"RoleId"`
+		RoleName                 string `json:"RoleName" xml:"RoleName"`
+		Arn                      string `json:"Arn" xml:"Arn"`
+		Description              string `json:"Description" xml:"Description"`
+		AssumeRolePolicyDocument string `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
+		CreateDate               string `json:"CreateDate" xml:"CreateDate"`
+		UpdateDate               string `json:"UpdateDate" xml:"UpdateDate"`
+	} `json:"Role" xml:"Role"`
 }
 
 func CreateGetRoleRequest() (request *GetRoleRequest) {
-request = &GetRoleRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "GetRole", "", "")
-return
+	request = &GetRoleRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetRole", "", "")
+	return
 }
 
 func CreateGetRoleResponse() (response *GetRoleResponse) {
-response = &GetRoleResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetRoleResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

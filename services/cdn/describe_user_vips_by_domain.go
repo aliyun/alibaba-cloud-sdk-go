@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomainRequest) (response *DescribeUserVipsByDomainResponse, err error) {
-response = CreateDescribeUserVipsByDomainResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeUserVipsByDomainResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVipsByDomainRequest) (<-chan *DescribeUserVipsByDomainResponse, <-chan error) {
-responseChan := make(chan *DescribeUserVipsByDomainResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeUserVipsByDomain(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeUserVipsByDomainResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeUserVipsByDomain(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUserVipsByDomainRequest, callback func(response *DescribeUserVipsByDomainResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeUserVipsByDomainResponse
-var err error
-defer close(result)
-response, err = client.DescribeUserVipsByDomain(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUserVipsByDomainRequest, callback func(response *DescribeUserVipsByDomainResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeUserVipsByDomainResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeUserVipsByDomain(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeUserVipsByDomainRequest struct {
-*requests.RpcRequest
-                DomainName  string `position:"Query" name:"DomainName"`
-                Available  string `position:"Query" name:"Available"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	DomainName    string `position:"Query" name:"DomainName"`
+	Available     string `position:"Query" name:"Available"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeUserVipsByDomainResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DomainName     int64 `json:"DomainName" xml:"DomainName"`
-                Vips struct {
-                Vip []    string `json:"Vip" xml:"Vip"`
-                } `json:"Vips" xml:"Vips"`
+	*responses.BaseResponse
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	DomainName request.Integer `json:"DomainName" xml:"DomainName"`
+	Vips       struct {
+		Vip []string `json:"Vip" xml:"Vip"`
+	} `json:"Vips" xml:"Vips"`
 }
 
 func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {
-request = &DescribeUserVipsByDomainRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserVipsByDomain", "", "")
-return
+	request = &DescribeUserVipsByDomainRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserVipsByDomain", "", "")
+	return
 }
 
 func CreateDescribeUserVipsByDomainResponse() (response *DescribeUserVipsByDomainResponse) {
-response = &DescribeUserVipsByDomainResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeUserVipsByDomainResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

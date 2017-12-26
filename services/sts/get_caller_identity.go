@@ -1,4 +1,3 @@
-
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package sts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetCallerIdentity(request *GetCallerIdentityRequest) (response *GetCallerIdentityResponse, err error) {
-response = CreateGetCallerIdentityResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetCallerIdentityResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetCallerIdentityWithChan(request *GetCallerIdentityRequest) (<-chan *GetCallerIdentityResponse, <-chan error) {
-responseChan := make(chan *GetCallerIdentityResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetCallerIdentity(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetCallerIdentityResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetCallerIdentity(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRequest, callback func(response *GetCallerIdentityResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetCallerIdentityResponse
-var err error
-defer close(result)
-response, err = client.GetCallerIdentity(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRequest, callback func(response *GetCallerIdentityResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetCallerIdentityResponse
+		var err error
+		defer close(result)
+		response, err = client.GetCallerIdentity(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetCallerIdentityRequest struct {
-*requests.RpcRequest
+	*requests.RpcRequest
 }
 
-
 type GetCallerIdentityResponse struct {
-*responses.BaseResponse
-            AccountId     string `json:"AccountId" xml:"AccountId"`
-            UserId     string `json:"UserId" xml:"UserId"`
-            Arn     string `json:"Arn" xml:"Arn"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	AccountId string `json:"AccountId" xml:"AccountId"`
+	UserId    string `json:"UserId" xml:"UserId"`
+	Arn       string `json:"Arn" xml:"Arn"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
-request = &GetCallerIdentityRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "", "")
-return
+	request = &GetCallerIdentityRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "", "")
+	return
 }
 
 func CreateGetCallerIdentityResponse() (response *GetCallerIdentityResponse) {
-response = &GetCallerIdentityResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetCallerIdentityResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

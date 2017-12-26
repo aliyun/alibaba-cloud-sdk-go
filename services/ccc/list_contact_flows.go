@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,113 +16,111 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListContactFlows(request *ListContactFlowsRequest) (response *ListContactFlowsResponse, err error) {
-response = CreateListContactFlowsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListContactFlowsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListContactFlowsWithChan(request *ListContactFlowsRequest) (<-chan *ListContactFlowsResponse, <-chan error) {
-responseChan := make(chan *ListContactFlowsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListContactFlows(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListContactFlowsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListContactFlows(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequest, callback func(response *ListContactFlowsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListContactFlowsResponse
-var err error
-defer close(result)
-response, err = client.ListContactFlows(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequest, callback func(response *ListContactFlowsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListContactFlowsResponse
+		var err error
+		defer close(result)
+		response, err = client.ListContactFlows(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListContactFlowsRequest struct {
-*requests.RpcRequest
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-
 type ListContactFlowsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     int `json:"HttpStatusCode" xml:"HttpStatusCode"`
-                ContactFlows struct {
-                    ContactFlow []struct {
-            ContactFlowId     string `json:"ContactFlowId" xml:"ContactFlowId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            ContactFlowName     string `json:"ContactFlowName" xml:"ContactFlowName"`
-            ContactFlowDescription     string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-            Type     string `json:"Type" xml:"Type"`
-            AppliedVersion     string `json:"AppliedVersion" xml:"AppliedVersion"`
-                Versions struct {
-                    ContactFlowVersion []struct {
-            ContactFlowVersionId     string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
-            Version     string `json:"Version" xml:"Version"`
-            ContactFlowVersionDescription     string `json:"ContactFlowVersionDescription" xml:"ContactFlowVersionDescription"`
-            LastModified     string `json:"LastModified" xml:"LastModified"`
-            LastModifiedBy     string `json:"LastModifiedBy" xml:"LastModifiedBy"`
-            LockedBy     string `json:"LockedBy" xml:"LockedBy"`
-            Status     string `json:"Status" xml:"Status"`
-                    }   `json:"ContactFlowVersion" xml:"ContactFlowVersion"`
-                } `json:"Versions" xml:"Versions"`
-                PhoneNumbers struct {
-                    PhoneNumber []struct {
-            PhoneNumberId     string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Number     string `json:"Number" xml:"Number"`
-            PhoneNumberDescription     string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-            TestOnly     bool `json:"TestOnly" xml:"TestOnly"`
-            RemainingTime     int `json:"RemainingTime" xml:"RemainingTime"`
-            AllowOutbound     bool `json:"AllowOutbound" xml:"AllowOutbound"`
-            Usage     string `json:"Usage" xml:"Usage"`
-            Trunks     int `json:"Trunks" xml:"Trunks"`
-                    }   `json:"PhoneNumber" xml:"PhoneNumber"`
-                } `json:"PhoneNumbers" xml:"PhoneNumbers"`
-                    }   `json:"ContactFlow" xml:"ContactFlow"`
-                } `json:"ContactFlows" xml:"ContactFlows"`
+	*responses.BaseResponse
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Success        request.Boolean `json:"Success" xml:"Success"`
+	Code           string          `json:"Code" xml:"Code"`
+	Message        string          `json:"Message" xml:"Message"`
+	HttpStatusCode request.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ContactFlows   struct {
+		ContactFlow []struct {
+			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
+			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
+			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+			Type                   string `json:"Type" xml:"Type"`
+			AppliedVersion         string `json:"AppliedVersion" xml:"AppliedVersion"`
+			Versions               struct {
+				ContactFlowVersion []struct {
+					ContactFlowVersionId          string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
+					Version                       string `json:"Version" xml:"Version"`
+					ContactFlowVersionDescription string `json:"ContactFlowVersionDescription" xml:"ContactFlowVersionDescription"`
+					LastModified                  string `json:"LastModified" xml:"LastModified"`
+					LastModifiedBy                string `json:"LastModifiedBy" xml:"LastModifiedBy"`
+					LockedBy                      string `json:"LockedBy" xml:"LockedBy"`
+					Status                        string `json:"Status" xml:"Status"`
+				} `json:"ContactFlowVersion" xml:"ContactFlowVersion"`
+			} `json:"Versions" xml:"Versions"`
+			PhoneNumbers struct {
+				PhoneNumber []struct {
+					PhoneNumberId          string          `json:"PhoneNumberId" xml:"PhoneNumberId"`
+					InstanceId             string          `json:"InstanceId" xml:"InstanceId"`
+					Number                 string          `json:"Number" xml:"Number"`
+					PhoneNumberDescription string          `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+					TestOnly               request.Boolean `json:"TestOnly" xml:"TestOnly"`
+					RemainingTime          request.Integer `json:"RemainingTime" xml:"RemainingTime"`
+					AllowOutbound          request.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+					Usage                  string          `json:"Usage" xml:"Usage"`
+					Trunks                 request.Integer `json:"Trunks" xml:"Trunks"`
+				} `json:"PhoneNumber" xml:"PhoneNumber"`
+			} `json:"PhoneNumbers" xml:"PhoneNumbers"`
+		} `json:"ContactFlow" xml:"ContactFlow"`
+	} `json:"ContactFlows" xml:"ContactFlows"`
 }
 
 func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
-request = &ListContactFlowsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "ListContactFlows", "", "")
-return
+	request = &ListContactFlowsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListContactFlows", "", "")
+	return
 }
 
 func CreateListContactFlowsResponse() (response *ListContactFlowsResponse) {
-response = &ListContactFlowsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListContactFlowsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

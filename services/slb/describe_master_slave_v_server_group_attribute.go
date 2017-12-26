@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,91 +16,89 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeMasterSlaveVServerGroupAttribute(request *DescribeMasterSlaveVServerGroupAttributeRequest) (response *DescribeMasterSlaveVServerGroupAttributeResponse, err error) {
-response = CreateDescribeMasterSlaveVServerGroupAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeMasterSlaveVServerGroupAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeMasterSlaveVServerGroupAttributeWithChan(request *DescribeMasterSlaveVServerGroupAttributeRequest) (<-chan *DescribeMasterSlaveVServerGroupAttributeResponse, <-chan error) {
-responseChan := make(chan *DescribeMasterSlaveVServerGroupAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeMasterSlaveVServerGroupAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeMasterSlaveVServerGroupAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeMasterSlaveVServerGroupAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeMasterSlaveVServerGroupAttributeWithCallback(request *DescribeMasterSlaveVServerGroupAttributeRequest, callback func(response *DescribeMasterSlaveVServerGroupAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeMasterSlaveVServerGroupAttributeResponse
-var err error
-defer close(result)
-response, err = client.DescribeMasterSlaveVServerGroupAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeMasterSlaveVServerGroupAttributeWithCallback(request *DescribeMasterSlaveVServerGroupAttributeRequest, callback func(response *DescribeMasterSlaveVServerGroupAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeMasterSlaveVServerGroupAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeMasterSlaveVServerGroupAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeMasterSlaveVServerGroupAttributeRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                MasterSlaveVServerGroupId  string `position:"Query" name:"MasterSlaveVServerGroupId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Tags                      string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount      string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId               string `position:"Query" name:"access_key_id"`
+	MasterSlaveVServerGroupId string `position:"Query" name:"MasterSlaveVServerGroupId"`
+	ResourceOwnerId           string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount              string `position:"Query" name:"OwnerAccount"`
+	OwnerId                   string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeMasterSlaveVServerGroupAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            MasterSlaveVServerGroupId     string `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
-            MasterSlaveVServerGroupName     string `json:"MasterSlaveVServerGroupName" xml:"MasterSlaveVServerGroupName"`
-                MasterSlaveBackendServers struct {
-                    MasterSlaveBackendServer []struct {
-            ServerId     string `json:"ServerId" xml:"ServerId"`
-            Port     int `json:"Port" xml:"Port"`
-            Weight     int `json:"Weight" xml:"Weight"`
-            IsBackup     int `json:"IsBackup" xml:"IsBackup"`
-                    }   `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
-                } `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
+	*responses.BaseResponse
+	RequestId                   string `json:"RequestId" xml:"RequestId"`
+	MasterSlaveVServerGroupId   string `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
+	MasterSlaveVServerGroupName string `json:"MasterSlaveVServerGroupName" xml:"MasterSlaveVServerGroupName"`
+	MasterSlaveBackendServers   struct {
+		MasterSlaveBackendServer []struct {
+			ServerId string          `json:"ServerId" xml:"ServerId"`
+			Port     request.Integer `json:"Port" xml:"Port"`
+			Weight   request.Integer `json:"Weight" xml:"Weight"`
+			IsBackup request.Integer `json:"IsBackup" xml:"IsBackup"`
+		} `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
+	} `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
 func CreateDescribeMasterSlaveVServerGroupAttributeRequest() (request *DescribeMasterSlaveVServerGroupAttributeRequest) {
-request = &DescribeMasterSlaveVServerGroupAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroupAttribute", "", "")
-return
+	request = &DescribeMasterSlaveVServerGroupAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroupAttribute", "", "")
+	return
 }
 
 func CreateDescribeMasterSlaveVServerGroupAttributeResponse() (response *DescribeMasterSlaveVServerGroupAttributeResponse) {
-response = &DescribeMasterSlaveVServerGroupAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeMasterSlaveVServerGroupAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

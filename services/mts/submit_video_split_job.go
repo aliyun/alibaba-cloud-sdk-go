@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (response *SubmitVideoSplitJobResponse, err error) {
-response = CreateSubmitVideoSplitJobResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSubmitVideoSplitJobResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRequest) (<-chan *SubmitVideoSplitJobResponse, <-chan error) {
-responseChan := make(chan *SubmitVideoSplitJobResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SubmitVideoSplitJob(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SubmitVideoSplitJobResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SubmitVideoSplitJob(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJobRequest, callback func(response *SubmitVideoSplitJobResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SubmitVideoSplitJobResponse
-var err error
-defer close(result)
-response, err = client.SubmitVideoSplitJob(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJobRequest, callback func(response *SubmitVideoSplitJobResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SubmitVideoSplitJobResponse
+		var err error
+		defer close(result)
+		response, err = client.SubmitVideoSplitJob(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SubmitVideoSplitJobRequest struct {
-*requests.RpcRequest
-                UserData  string `position:"Query" name:"UserData"`
-                Input  string `position:"Query" name:"Input"`
-                PipelineId  string `position:"Query" name:"PipelineId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                VideoSplitConfig  string `position:"Query" name:"VideoSplitConfig"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	UserData             string `position:"Query" name:"UserData"`
+	Input                string `position:"Query" name:"Input"`
+	PipelineId           string `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	VideoSplitConfig     string `position:"Query" name:"VideoSplitConfig"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type SubmitVideoSplitJobResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            JobId     string `json:"JobId" xml:"JobId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
-request = &SubmitVideoSplitJobRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "", "")
-return
+	request = &SubmitVideoSplitJobRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "", "")
+	return
 }
 
 func CreateSubmitVideoSplitJobResponse() (response *SubmitVideoSplitJobResponse) {
-response = &SubmitVideoSplitJobResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SubmitVideoSplitJobResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

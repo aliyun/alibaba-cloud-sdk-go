@@ -1,4 +1,3 @@
-
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package sts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AssumeRole(request *AssumeRoleRequest) (response *AssumeRoleResponse, err error) {
-response = CreateAssumeRoleResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAssumeRoleResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *AssumeRoleResponse, <-chan error) {
-responseChan := make(chan *AssumeRoleResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AssumeRole(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AssumeRoleResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AssumeRole(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callback func(response *AssumeRoleResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AssumeRoleResponse
-var err error
-defer close(result)
-response, err = client.AssumeRole(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callback func(response *AssumeRoleResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AssumeRoleResponse
+		var err error
+		defer close(result)
+		response, err = client.AssumeRole(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AssumeRoleRequest struct {
-*requests.RpcRequest
-                RoleArn  string `position:"Query" name:"RoleArn"`
-                Policy  string `position:"Query" name:"Policy"`
-                DurationSeconds  string `position:"Query" name:"DurationSeconds"`
-                RoleSessionName  string `position:"Query" name:"RoleSessionName"`
+	*requests.RpcRequest
+	RoleArn         string `position:"Query" name:"RoleArn"`
+	Policy          string `position:"Query" name:"Policy"`
+	DurationSeconds string `position:"Query" name:"DurationSeconds"`
+	RoleSessionName string `position:"Query" name:"RoleSessionName"`
 }
 
-
 type AssumeRoleResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Credentials struct {
-            SecurityToken     string `json:"SecurityToken" xml:"SecurityToken"`
-            AccessKeySecret     string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-            AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
-            Expiration     string `json:"Expiration" xml:"Expiration"`
-            }  `json:"Credentials" xml:"Credentials"`
-            AssumedRoleUser struct {
-            Arn     string `json:"Arn" xml:"Arn"`
-            AssumedRoleId     string `json:"AssumedRoleId" xml:"AssumedRoleId"`
-            }  `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Credentials struct {
+		SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
+		AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+		AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
+		Expiration      string `json:"Expiration" xml:"Expiration"`
+	} `json:"Credentials" xml:"Credentials"`
+	AssumedRoleUser struct {
+		Arn           string `json:"Arn" xml:"Arn"`
+		AssumedRoleId string `json:"AssumedRoleId" xml:"AssumedRoleId"`
+	} `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
 }
 
 func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
-request = &AssumeRoleRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRole", "", "")
-return
+	request = &AssumeRoleRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRole", "", "")
+	return
 }
 
 func CreateAssumeRoleResponse() (response *AssumeRoleResponse) {
-response = &AssumeRoleResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AssumeRoleResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

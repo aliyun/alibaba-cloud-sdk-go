@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GrantOperatorPermission(request *GrantOperatorPermissionRequest) (response *GrantOperatorPermissionResponse, err error) {
-response = CreateGrantOperatorPermissionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGrantOperatorPermissionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPermissionRequest) (<-chan *GrantOperatorPermissionResponse, <-chan error) {
-responseChan := make(chan *GrantOperatorPermissionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GrantOperatorPermission(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GrantOperatorPermissionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GrantOperatorPermission(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperatorPermissionRequest, callback func(response *GrantOperatorPermissionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GrantOperatorPermissionResponse
-var err error
-defer close(result)
-response, err = client.GrantOperatorPermission(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperatorPermissionRequest, callback func(response *GrantOperatorPermissionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GrantOperatorPermissionResponse
+		var err error
+		defer close(result)
+		response, err = client.GrantOperatorPermission(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GrantOperatorPermissionRequest struct {
-*requests.RpcRequest
-                ExpiredTime  string `position:"Query" name:"ExpiredTime"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Privileges  string `position:"Query" name:"Privileges"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ExpiredTime          string `position:"Query" name:"ExpiredTime"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Privileges           string `position:"Query" name:"Privileges"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type GrantOperatorPermissionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionRequest) {
-request = &GrantOperatorPermissionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "", "")
-return
+	request = &GrantOperatorPermissionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "", "")
+	return
 }
 
 func CreateGrantOperatorPermissionResponse() (response *GrantOperatorPermissionResponse) {
-response = &GrantOperatorPermissionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GrantOperatorPermissionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

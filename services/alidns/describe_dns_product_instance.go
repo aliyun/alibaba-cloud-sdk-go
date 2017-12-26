@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,108 +16,106 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDnsProductInstance(request *DescribeDnsProductInstanceRequest) (response *DescribeDnsProductInstanceResponse, err error) {
-response = CreateDescribeDnsProductInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDnsProductInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDnsProductInstanceWithChan(request *DescribeDnsProductInstanceRequest) (<-chan *DescribeDnsProductInstanceResponse, <-chan error) {
-responseChan := make(chan *DescribeDnsProductInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDnsProductInstance(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDnsProductInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDnsProductInstance(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDnsProductInstanceRequest, callback func(response *DescribeDnsProductInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDnsProductInstanceResponse
-var err error
-defer close(result)
-response, err = client.DescribeDnsProductInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDnsProductInstanceRequest, callback func(response *DescribeDnsProductInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDnsProductInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDnsProductInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDnsProductInstanceRequest struct {
-*requests.RpcRequest
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
-
 type DescribeDnsProductInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            VersionCode     string `json:"VersionCode" xml:"VersionCode"`
-            VersionName     string `json:"VersionName" xml:"VersionName"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            StartTimestamp     int64 `json:"StartTimestamp" xml:"StartTimestamp"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            EndTimestamp     int64 `json:"EndTimestamp" xml:"EndTimestamp"`
-            Domain     string `json:"Domain" xml:"Domain"`
-            BindCount     int64 `json:"BindCount" xml:"BindCount"`
-            BindUsedCount     int64 `json:"BindUsedCount" xml:"BindUsedCount"`
-            TTLMinValue     int64 `json:"TTLMinValue" xml:"TTLMinValue"`
-            SubDomainLevel     int64 `json:"SubDomainLevel" xml:"SubDomainLevel"`
-            DnsSLBCount     int64 `json:"DnsSLBCount" xml:"DnsSLBCount"`
-            URLForwardCount     int64 `json:"URLForwardCount" xml:"URLForwardCount"`
-            DDosDefendFlow     int64 `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
-            DDosDefendQuery     int64 `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
-            OverseaDDosDefendFlow     int64 `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
-            SearchEngineLines     string `json:"SearchEngineLines" xml:"SearchEngineLines"`
-            ISPLines     string `json:"ISPLines" xml:"ISPLines"`
-            ISPRegionLines     string `json:"ISPRegionLines" xml:"ISPRegionLines"`
-            OverseaLine     string `json:"OverseaLine" xml:"OverseaLine"`
-            MonitorNodeCount     int64 `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
-            MonitorFrequency     int64 `json:"MonitorFrequency" xml:"MonitorFrequency"`
-            MonitorTaskCount     int64 `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
-            RegionLines     bool `json:"RegionLines" xml:"RegionLines"`
-            Gslb     bool `json:"Gslb" xml:"Gslb"`
-            InClean     bool `json:"InClean" xml:"InClean"`
-            InBlackHole     bool `json:"InBlackHole" xml:"InBlackHole"`
-                DnsServers struct {
-                DnsServer []    string `json:"DnsServer" xml:"DnsServer"`
-                } `json:"DnsServers" xml:"DnsServers"`
+	*responses.BaseResponse
+	RequestId             string          `json:"RequestId" xml:"RequestId"`
+	InstanceId            string          `json:"InstanceId" xml:"InstanceId"`
+	VersionCode           string          `json:"VersionCode" xml:"VersionCode"`
+	VersionName           string          `json:"VersionName" xml:"VersionName"`
+	StartTime             string          `json:"StartTime" xml:"StartTime"`
+	StartTimestamp        request.Integer `json:"StartTimestamp" xml:"StartTimestamp"`
+	EndTime               string          `json:"EndTime" xml:"EndTime"`
+	EndTimestamp          request.Integer `json:"EndTimestamp" xml:"EndTimestamp"`
+	Domain                string          `json:"Domain" xml:"Domain"`
+	BindCount             request.Integer `json:"BindCount" xml:"BindCount"`
+	BindUsedCount         request.Integer `json:"BindUsedCount" xml:"BindUsedCount"`
+	TTLMinValue           request.Integer `json:"TTLMinValue" xml:"TTLMinValue"`
+	SubDomainLevel        request.Integer `json:"SubDomainLevel" xml:"SubDomainLevel"`
+	DnsSLBCount           request.Integer `json:"DnsSLBCount" xml:"DnsSLBCount"`
+	URLForwardCount       request.Integer `json:"URLForwardCount" xml:"URLForwardCount"`
+	DDosDefendFlow        request.Integer `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
+	DDosDefendQuery       request.Integer `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
+	OverseaDDosDefendFlow request.Integer `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
+	SearchEngineLines     string          `json:"SearchEngineLines" xml:"SearchEngineLines"`
+	ISPLines              string          `json:"ISPLines" xml:"ISPLines"`
+	ISPRegionLines        string          `json:"ISPRegionLines" xml:"ISPRegionLines"`
+	OverseaLine           string          `json:"OverseaLine" xml:"OverseaLine"`
+	MonitorNodeCount      request.Integer `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
+	MonitorFrequency      request.Integer `json:"MonitorFrequency" xml:"MonitorFrequency"`
+	MonitorTaskCount      request.Integer `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
+	RegionLines           request.Boolean `json:"RegionLines" xml:"RegionLines"`
+	Gslb                  request.Boolean `json:"Gslb" xml:"Gslb"`
+	InClean               request.Boolean `json:"InClean" xml:"InClean"`
+	InBlackHole           request.Boolean `json:"InBlackHole" xml:"InBlackHole"`
+	DnsServers            struct {
+		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
+	} `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInstanceRequest) {
-request = &DescribeDnsProductInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstance", "", "")
-return
+	request = &DescribeDnsProductInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstance", "", "")
+	return
 }
 
 func CreateDescribeDnsProductInstanceResponse() (response *DescribeDnsProductInstanceResponse) {
-response = &DescribeDnsProductInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDnsProductInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

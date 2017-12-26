@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetUserAgentAcessRestriction(request *SetUserAgentAcessRestrictionRequest) (response *SetUserAgentAcessRestrictionResponse, err error) {
-response = CreateSetUserAgentAcessRestrictionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetUserAgentAcessRestrictionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetUserAgentAcessRestrictionWithChan(request *SetUserAgentAcessRestrictionRequest) (<-chan *SetUserAgentAcessRestrictionResponse, <-chan error) {
-responseChan := make(chan *SetUserAgentAcessRestrictionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetUserAgentAcessRestriction(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetUserAgentAcessRestrictionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetUserAgentAcessRestriction(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetUserAgentAcessRestrictionWithCallback(request *SetUserAgentAcessRestrictionRequest, callback func(response *SetUserAgentAcessRestrictionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetUserAgentAcessRestrictionResponse
-var err error
-defer close(result)
-response, err = client.SetUserAgentAcessRestriction(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetUserAgentAcessRestrictionWithCallback(request *SetUserAgentAcessRestrictionRequest, callback func(response *SetUserAgentAcessRestrictionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetUserAgentAcessRestrictionResponse
+		var err error
+		defer close(result)
+		response, err = client.SetUserAgentAcessRestriction(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetUserAgentAcessRestrictionRequest struct {
-*requests.RpcRequest
-                UserAgent  string `position:"Query" name:"UserAgent"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                Type  string `position:"Query" name:"Type"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	UserAgent     string `position:"Query" name:"UserAgent"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Type          string `position:"Query" name:"Type"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type SetUserAgentAcessRestrictionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRestrictionRequest) {
-request = &SetUserAgentAcessRestrictionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserAgentAcessRestriction", "", "")
-return
+	request = &SetUserAgentAcessRestrictionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserAgentAcessRestriction", "", "")
+	return
 }
 
 func CreateSetUserAgentAcessRestrictionResponse() (response *SetUserAgentAcessRestrictionResponse) {
-response = &SetUserAgentAcessRestrictionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetUserAgentAcessRestrictionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

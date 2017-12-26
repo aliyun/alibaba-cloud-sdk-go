@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamFrameLossRatio(request *DescribeLiveStreamFrameLossRatioRequest) (response *DescribeLiveStreamFrameLossRatioResponse, err error) {
-response = CreateDescribeLiveStreamFrameLossRatioResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamFrameLossRatioResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamFrameLossRatioWithChan(request *DescribeLiveStreamFrameLossRatioRequest) (<-chan *DescribeLiveStreamFrameLossRatioResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamFrameLossRatioResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamFrameLossRatio(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamFrameLossRatioResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamFrameLossRatio(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamFrameLossRatioWithCallback(request *DescribeLiveStreamFrameLossRatioRequest, callback func(response *DescribeLiveStreamFrameLossRatioResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamFrameLossRatioResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamFrameLossRatio(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamFrameLossRatioWithCallback(request *DescribeLiveStreamFrameLossRatioRequest, callback func(response *DescribeLiveStreamFrameLossRatioResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamFrameLossRatioResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamFrameLossRatio(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamFrameLossRatioRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StreamName  string `position:"Query" name:"StreamName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamFrameLossRatioResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                FrameLossRatioInfos struct {
-                    FrameLossRatioInfo []struct {
-            StreamUrl     string `json:"StreamUrl" xml:"StreamUrl"`
-            FrameLossRatio     float64 `json:"FrameLossRatio" xml:"FrameLossRatio"`
-            Time     string `json:"Time" xml:"Time"`
-                    }   `json:"FrameLossRatioInfo" xml:"FrameLossRatioInfo"`
-                } `json:"FrameLossRatioInfos" xml:"FrameLossRatioInfos"`
+	*responses.BaseResponse
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	FrameLossRatioInfos struct {
+		FrameLossRatioInfo []struct {
+			StreamUrl      string        `json:"StreamUrl" xml:"StreamUrl"`
+			FrameLossRatio request.Float `json:"FrameLossRatio" xml:"FrameLossRatio"`
+			Time           string        `json:"Time" xml:"Time"`
+		} `json:"FrameLossRatioInfo" xml:"FrameLossRatioInfo"`
+	} `json:"FrameLossRatioInfos" xml:"FrameLossRatioInfos"`
 }
 
 func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStreamFrameLossRatioRequest) {
-request = &DescribeLiveStreamFrameLossRatioRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio", "", "")
-return
+	request = &DescribeLiveStreamFrameLossRatioRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamFrameLossRatioResponse() (response *DescribeLiveStreamFrameLossRatioResponse) {
-response = &DescribeLiveStreamFrameLossRatioResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamFrameLossRatioResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

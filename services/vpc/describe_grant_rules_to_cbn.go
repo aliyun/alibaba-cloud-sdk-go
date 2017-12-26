@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,91 +16,89 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeGrantRulesToCbn(request *DescribeGrantRulesToCbnRequest) (response *DescribeGrantRulesToCbnResponse, err error) {
-response = CreateDescribeGrantRulesToCbnResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeGrantRulesToCbnResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeGrantRulesToCbnWithChan(request *DescribeGrantRulesToCbnRequest) (<-chan *DescribeGrantRulesToCbnResponse, <-chan error) {
-responseChan := make(chan *DescribeGrantRulesToCbnResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeGrantRulesToCbn(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeGrantRulesToCbnResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeGrantRulesToCbn(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeGrantRulesToCbnWithCallback(request *DescribeGrantRulesToCbnRequest, callback func(response *DescribeGrantRulesToCbnResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeGrantRulesToCbnResponse
-var err error
-defer close(result)
-response, err = client.DescribeGrantRulesToCbn(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeGrantRulesToCbnWithCallback(request *DescribeGrantRulesToCbnRequest, callback func(response *DescribeGrantRulesToCbnResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeGrantRulesToCbnResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeGrantRulesToCbn(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeGrantRulesToCbnRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
-                InstanceType  string `position:"Query" name:"InstanceType"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
+	InstanceType         string `position:"Query" name:"InstanceType"`
 }
 
-
 type DescribeGrantRulesToCbnResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                CbnGrantRules struct {
-                    CbnGrantRule []struct {
-            CbnInstanceId     string `json:"CbnInstanceId" xml:"CbnInstanceId"`
-            CbnOwnerId     int64 `json:"CbnOwnerId" xml:"CbnOwnerId"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-                    }   `json:"CbnGrantRule" xml:"CbnGrantRule"`
-                } `json:"CbnGrantRules" xml:"CbnGrantRules"`
+	*responses.BaseResponse
+	RequestId     string          `json:"RequestId" xml:"RequestId"`
+	TotalCount    request.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    request.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize      request.Integer `json:"PageSize" xml:"PageSize"`
+	CbnGrantRules struct {
+		CbnGrantRule []struct {
+			CbnInstanceId string          `json:"CbnInstanceId" xml:"CbnInstanceId"`
+			CbnOwnerId    request.Integer `json:"CbnOwnerId" xml:"CbnOwnerId"`
+			CreationTime  string          `json:"CreationTime" xml:"CreationTime"`
+		} `json:"CbnGrantRule" xml:"CbnGrantRule"`
+	} `json:"CbnGrantRules" xml:"CbnGrantRules"`
 }
 
 func CreateDescribeGrantRulesToCbnRequest() (request *DescribeGrantRulesToCbnRequest) {
-request = &DescribeGrantRulesToCbnRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCbn", "", "")
-return
+	request = &DescribeGrantRulesToCbnRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCbn", "", "")
+	return
 }
 
 func CreateDescribeGrantRulesToCbnResponse() (response *DescribeGrantRulesToCbnResponse) {
-response = &DescribeGrantRulesToCbnResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeGrantRulesToCbnResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

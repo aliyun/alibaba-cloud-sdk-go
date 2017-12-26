@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *QueryAliasesResponse, err error) {
-response = CreateQueryAliasesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryAliasesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan *QueryAliasesResponse, <-chan error) {
-responseChan := make(chan *QueryAliasesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryAliases(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryAliasesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryAliases(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, callback func(response *QueryAliasesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryAliasesResponse
-var err error
-defer close(result)
-response, err = client.QueryAliases(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, callback func(response *QueryAliasesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryAliasesResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryAliases(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryAliasesRequest struct {
-*requests.RpcRequest
-                AppKey  string `position:"Query" name:"AppKey"`
-                DeviceId  string `position:"Query" name:"DeviceId"`
+	*requests.RpcRequest
+	AppKey   string `position:"Query" name:"AppKey"`
+	DeviceId string `position:"Query" name:"DeviceId"`
 }
 
-
 type QueryAliasesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                AliasInfos struct {
-                    AliasInfo []struct {
-            AliasName     string `json:"AliasName" xml:"AliasName"`
-                    }   `json:"AliasInfo" xml:"AliasInfo"`
-                } `json:"AliasInfos" xml:"AliasInfos"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	AliasInfos struct {
+		AliasInfo []struct {
+			AliasName string `json:"AliasName" xml:"AliasName"`
+		} `json:"AliasInfo" xml:"AliasInfo"`
+	} `json:"AliasInfos" xml:"AliasInfos"`
 }
 
 func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
-request = &QueryAliasesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "QueryAliases", "", "")
-return
+	request = &QueryAliasesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryAliases", "", "")
+	return
 }
 
 func CreateQueryAliasesResponse() (response *QueryAliasesResponse) {
-response = &QueryAliasesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryAliasesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

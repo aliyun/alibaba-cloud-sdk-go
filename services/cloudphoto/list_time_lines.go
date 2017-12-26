@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,109 +16,107 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListTimeLines(request *ListTimeLinesRequest) (response *ListTimeLinesResponse, err error) {
-response = CreateListTimeLinesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListTimeLinesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-chan *ListTimeLinesResponse, <-chan error) {
-responseChan := make(chan *ListTimeLinesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListTimeLines(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListTimeLinesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListTimeLines(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, callback func(response *ListTimeLinesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListTimeLinesResponse
-var err error
-defer close(result)
-response, err = client.ListTimeLines(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, callback func(response *ListTimeLinesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListTimeLinesResponse
+		var err error
+		defer close(result)
+		response, err = client.ListTimeLines(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListTimeLinesRequest struct {
-*requests.RpcRequest
-                FilterBy  string `position:"Query" name:"FilterBy"`
-                Cursor  string `position:"Query" name:"Cursor"`
-                Order  string `position:"Query" name:"Order"`
-                Direction  string `position:"Query" name:"Direction"`
-                TimeLineCount  string `position:"Query" name:"TimeLineCount"`
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                TimeLineUnit  string `position:"Query" name:"TimeLineUnit"`
-                PhotoSize  string `position:"Query" name:"PhotoSize"`
+	*requests.RpcRequest
+	FilterBy      string `position:"Query" name:"FilterBy"`
+	Cursor        string `position:"Query" name:"Cursor"`
+	Order         string `position:"Query" name:"Order"`
+	Direction     string `position:"Query" name:"Direction"`
+	TimeLineCount string `position:"Query" name:"TimeLineCount"`
+	LibraryId     string `position:"Query" name:"LibraryId"`
+	StoreName     string `position:"Query" name:"StoreName"`
+	TimeLineUnit  string `position:"Query" name:"TimeLineUnit"`
+	PhotoSize     string `position:"Query" name:"PhotoSize"`
 }
 
-
 type ListTimeLinesResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            NextCursor     int `json:"NextCursor" xml:"NextCursor"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                TimeLines  []struct {
-            StartTime     int64 `json:"StartTime" xml:"StartTime"`
-            EndTime     int64 `json:"EndTime" xml:"EndTime"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
-                Photos  []struct {
-            Id     int64 `json:"Id" xml:"Id"`
-            Title     string `json:"Title" xml:"Title"`
-            FileId     string `json:"FileId" xml:"FileId"`
-            State     string `json:"State" xml:"State"`
-            Md5     string `json:"Md5" xml:"Md5"`
-            IsVideo     bool `json:"IsVideo" xml:"IsVideo"`
-            Remark     string `json:"Remark" xml:"Remark"`
-            Width     int64 `json:"Width" xml:"Width"`
-            Height     int64 `json:"Height" xml:"Height"`
-            Ctime     int64 `json:"Ctime" xml:"Ctime"`
-            Mtime     int64 `json:"Mtime" xml:"Mtime"`
-            TakenAt     int64 `json:"TakenAt" xml:"TakenAt"`
-            ShareExpireTime     int64 `json:"ShareExpireTime" xml:"ShareExpireTime"`
-            Like     int64 `json:"Like" xml:"Like"`
-                }  `json:"Photos" xml:"Photos"`
-                }  `json:"TimeLines" xml:"TimeLines"`
+	*responses.BaseResponse
+	Code       string          `json:"Code" xml:"Code"`
+	Message    string          `json:"Message" xml:"Message"`
+	NextCursor request.Integer `json:"NextCursor" xml:"NextCursor"`
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	Action     string          `json:"Action" xml:"Action"`
+	TimeLines  []struct {
+		StartTime   request.Integer `json:"StartTime" xml:"StartTime"`
+		EndTime     request.Integer `json:"EndTime" xml:"EndTime"`
+		TotalCount  request.Integer `json:"TotalCount" xml:"TotalCount"`
+		PhotosCount request.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		Photos      []struct {
+			Id              request.Integer `json:"Id" xml:"Id"`
+			Title           string          `json:"Title" xml:"Title"`
+			FileId          string          `json:"FileId" xml:"FileId"`
+			State           string          `json:"State" xml:"State"`
+			Md5             string          `json:"Md5" xml:"Md5"`
+			IsVideo         request.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Remark          string          `json:"Remark" xml:"Remark"`
+			Width           request.Integer `json:"Width" xml:"Width"`
+			Height          request.Integer `json:"Height" xml:"Height"`
+			Ctime           request.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime           request.Integer `json:"Mtime" xml:"Mtime"`
+			TakenAt         request.Integer `json:"TakenAt" xml:"TakenAt"`
+			ShareExpireTime request.Integer `json:"ShareExpireTime" xml:"ShareExpireTime"`
+			Like            request.Integer `json:"Like" xml:"Like"`
+		} `json:"Photos" xml:"Photos"`
+	} `json:"TimeLines" xml:"TimeLines"`
 }
 
 func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
-request = &ListTimeLinesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLines", "", "")
-return
+	request = &ListTimeLinesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLines", "", "")
+	return
 }
 
 func CreateListTimeLinesResponse() (response *ListTimeLinesResponse) {
-response = &ListTimeLinesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListTimeLinesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

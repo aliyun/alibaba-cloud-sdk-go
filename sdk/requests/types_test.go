@@ -1,8 +1,8 @@
 package requests
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestNewInteger(t *testing.T) {
@@ -28,4 +28,3 @@ func TestNewFloat(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, value, 123123.123123)
 }
-

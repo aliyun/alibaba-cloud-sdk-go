@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (response *DeleteScheduledTaskResponse, err error) {
-response = CreateDeleteScheduledTaskResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteScheduledTaskResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRequest) (<-chan *DeleteScheduledTaskResponse, <-chan error) {
-responseChan := make(chan *DeleteScheduledTaskResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteScheduledTask(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteScheduledTaskResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteScheduledTask(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTaskRequest, callback func(response *DeleteScheduledTaskResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteScheduledTaskResponse
-var err error
-defer close(result)
-response, err = client.DeleteScheduledTask(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTaskRequest, callback func(response *DeleteScheduledTaskResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteScheduledTaskResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteScheduledTask(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteScheduledTaskRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ScheduledTaskId  string `position:"Query" name:"ScheduledTaskId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ScheduledTaskId      string `position:"Query" name:"ScheduledTaskId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeleteScheduledTaskResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
-request = &DeleteScheduledTaskRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "", "")
-return
+	request = &DeleteScheduledTaskRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "", "")
+	return
 }
 
 func CreateDeleteScheduledTaskResponse() (response *DeleteScheduledTaskResponse) {
-response = &DeleteScheduledTaskResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteScheduledTaskResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

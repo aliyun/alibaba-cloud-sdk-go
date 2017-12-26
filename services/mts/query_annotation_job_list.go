@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,107 +16,105 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryAnnotationJobList(request *QueryAnnotationJobListRequest) (response *QueryAnnotationJobListResponse, err error) {
-response = CreateQueryAnnotationJobListResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryAnnotationJobListResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJobListRequest) (<-chan *QueryAnnotationJobListResponse, <-chan error) {
-responseChan := make(chan *QueryAnnotationJobListResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryAnnotationJobList(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryAnnotationJobListResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryAnnotationJobList(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotationJobListRequest, callback func(response *QueryAnnotationJobListResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryAnnotationJobListResponse
-var err error
-defer close(result)
-response, err = client.QueryAnnotationJobList(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotationJobListRequest, callback func(response *QueryAnnotationJobListResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryAnnotationJobListResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryAnnotationJobList(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryAnnotationJobListRequest struct {
-*requests.RpcRequest
-                AnnotationJobIds  string `position:"Query" name:"AnnotationJobIds"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	AnnotationJobIds     string `position:"Query" name:"AnnotationJobIds"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type QueryAnnotationJobListResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                NonExistIds struct {
-                String []    string `json:"String" xml:"String"`
-                } `json:"NonExistIds" xml:"NonExistIds"`
-                AnnotationJobList struct {
-                    AnnotationJob []struct {
-            Id     string `json:"Id" xml:"Id"`
-            UserData     string `json:"UserData" xml:"UserData"`
-            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
-            State     string `json:"State" xml:"State"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Input struct {
-            Bucket     string `json:"Bucket" xml:"Bucket"`
-            Location     string `json:"Location" xml:"Location"`
-            Object     string `json:"Object" xml:"Object"`
-            }  `json:"Input" xml:"Input"`
-            VideoAnnotationResult struct {
-            Details     string `json:"Details" xml:"Details"`
-                Annotations struct {
-                    Annotation []struct {
-            Label     string `json:"Label" xml:"Label"`
-            Score     string `json:"Score" xml:"Score"`
-                    }   `json:"Annotation" xml:"Annotation"`
-                } `json:"Annotations" xml:"Annotations"`
-            }  `json:"VideoAnnotationResult" xml:"VideoAnnotationResult"`
-                    }   `json:"AnnotationJob" xml:"AnnotationJob"`
-                } `json:"AnnotationJobList" xml:"AnnotationJobList"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	AnnotationJobList struct {
+		AnnotationJob []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			VideoAnnotationResult struct {
+				Details     string `json:"Details" xml:"Details"`
+				Annotations struct {
+					Annotation []struct {
+						Label string `json:"Label" xml:"Label"`
+						Score string `json:"Score" xml:"Score"`
+					} `json:"Annotation" xml:"Annotation"`
+				} `json:"Annotations" xml:"Annotations"`
+			} `json:"VideoAnnotationResult" xml:"VideoAnnotationResult"`
+		} `json:"AnnotationJob" xml:"AnnotationJob"`
+	} `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
 func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {
-request = &QueryAnnotationJobListRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "", "")
-return
+	request = &QueryAnnotationJobListRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "", "")
+	return
 }
 
 func CreateQueryAnnotationJobListResponse() (response *QueryAnnotationJobListResponse) {
-response = &QueryAnnotationJobListResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryAnnotationJobListResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachDisk(request *AttachDiskRequest) (response *AttachDiskResponse, err error) {
-response = CreateAttachDiskResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAttachDiskResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AttachDiskWithChan(request *AttachDiskRequest) (<-chan *AttachDiskResponse, <-chan error) {
-responseChan := make(chan *AttachDiskResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AttachDisk(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AttachDiskResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AttachDisk(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callback func(response *AttachDiskResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AttachDiskResponse
-var err error
-defer close(result)
-response, err = client.AttachDisk(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callback func(response *AttachDiskResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AttachDiskResponse
+		var err error
+		defer close(result)
+		response, err = client.AttachDisk(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AttachDiskRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Device  string `position:"Query" name:"Device"`
-                DiskId  string `position:"Query" name:"DiskId"`
-                DeleteWithInstance  string `position:"Query" name:"DeleteWithInstance"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Device               string `position:"Query" name:"Device"`
+	DiskId               string `position:"Query" name:"DiskId"`
+	DeleteWithInstance   string `position:"Query" name:"DeleteWithInstance"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
-
 type AttachDiskResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAttachDiskRequest() (request *AttachDiskRequest) {
-request = &AttachDiskRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "", "")
-return
+	request = &AttachDiskRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "", "")
+	return
 }
 
 func CreateAttachDiskResponse() (response *AttachDiskResponse) {
-response = &AttachDiskResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AttachDiskResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

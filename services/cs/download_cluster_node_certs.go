@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,75 +16,73 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DownloadClusterNodeCerts(request *DownloadClusterNodeCertsRequest) (response *DownloadClusterNodeCertsResponse, err error) {
-response = CreateDownloadClusterNodeCertsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDownloadClusterNodeCertsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterNodeCertsRequest) (<-chan *DownloadClusterNodeCertsResponse, <-chan error) {
-responseChan := make(chan *DownloadClusterNodeCertsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DownloadClusterNodeCerts(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DownloadClusterNodeCertsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DownloadClusterNodeCerts(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClusterNodeCertsRequest, callback func(response *DownloadClusterNodeCertsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DownloadClusterNodeCertsResponse
-var err error
-defer close(result)
-response, err = client.DownloadClusterNodeCerts(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClusterNodeCertsRequest, callback func(response *DownloadClusterNodeCertsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DownloadClusterNodeCertsResponse
+		var err error
+		defer close(result)
+		response, err = client.DownloadClusterNodeCerts(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DownloadClusterNodeCertsRequest struct {
-*requests.RoaRequest
-                Token  string `position:"Path" name:"Token"`
-                NodeId  string `position:"Path" name:"NodeId"`
+	*requests.RoaRequest
+	Token  string `position:"Path" name:"Token"`
+	NodeId string `position:"Path" name:"NodeId"`
 }
 
-
 type DownloadClusterNodeCertsResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsRequest) {
-request = &DownloadClusterNodeCertsRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
-return
+	request = &DownloadClusterNodeCertsRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
+	return
 }
 
 func CreateDownloadClusterNodeCertsResponse() (response *DownloadClusterNodeCertsResponse) {
-response = &DownloadClusterNodeCertsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DownloadClusterNodeCertsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

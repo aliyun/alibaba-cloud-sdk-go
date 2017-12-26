@@ -9,10 +9,10 @@ func NewInteger(n int) Integer {
 }
 
 func (integer Integer) hasValue() bool {
-	return  integer != ""
+	return integer != ""
 }
 
-func (integer Integer) getValue() (int, error){
+func (integer Integer) getValue() (int, error) {
 	return strconv.Atoi(string(integer))
 }
 
@@ -23,10 +23,10 @@ func NewBoolean(bool bool) Boolean {
 }
 
 func (boolean Boolean) hasValue() bool {
-	return  boolean != ""
+	return boolean != ""
 }
 
-func (boolean Boolean) getValue() (bool, error){
+func (boolean Boolean) getValue() (bool, error) {
 	return strconv.ParseBool(string(boolean))
 }
 
@@ -37,9 +37,9 @@ func NewFloat(f float64) Float {
 }
 
 func (float Float) hasValue() bool {
-	return  float != ""
+	return float != ""
 }
 
-func (float Float) getValue() (float64, error){
+func (float Float) getValue() (float64, error) {
 	return strconv.ParseFloat(string(float), 64)
 }

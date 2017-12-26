@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,91 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SenderStatisticsByTagNameAndBatchID(request *SenderStatisticsByTagNameAndBatchIDRequest) (response *SenderStatisticsByTagNameAndBatchIDResponse, err error) {
-response = CreateSenderStatisticsByTagNameAndBatchIDResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSenderStatisticsByTagNameAndBatchIDResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *SenderStatisticsByTagNameAndBatchIDRequest) (<-chan *SenderStatisticsByTagNameAndBatchIDResponse, <-chan error) {
-responseChan := make(chan *SenderStatisticsByTagNameAndBatchIDResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SenderStatisticsByTagNameAndBatchID(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SenderStatisticsByTagNameAndBatchIDResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SenderStatisticsByTagNameAndBatchID(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *SenderStatisticsByTagNameAndBatchIDRequest, callback func(response *SenderStatisticsByTagNameAndBatchIDResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SenderStatisticsByTagNameAndBatchIDResponse
-var err error
-defer close(result)
-response, err = client.SenderStatisticsByTagNameAndBatchID(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *SenderStatisticsByTagNameAndBatchIDRequest, callback func(response *SenderStatisticsByTagNameAndBatchIDResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SenderStatisticsByTagNameAndBatchIDResponse
+		var err error
+		defer close(result)
+		response, err = client.SenderStatisticsByTagNameAndBatchID(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SenderStatisticsByTagNameAndBatchIDRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                AccountName  string `position:"Query" name:"AccountName"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                TagName  string `position:"Query" name:"TagName"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	AccountName          string `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	TagName              string `position:"Query" name:"TagName"`
 }
 
-
 type SenderStatisticsByTagNameAndBatchIDResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-                Data struct {
-                    Stat []struct {
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            RequestCount     string `json:"requestCount" xml:"requestCount"`
-            SuccessCount     string `json:"successCount" xml:"successCount"`
-            FaildCount     string `json:"faildCount" xml:"faildCount"`
-            UnavailableCount     string `json:"unavailableCount" xml:"unavailableCount"`
-            SucceededPercent     string `json:"succeededPercent" xml:"succeededPercent"`
-            UnavailablePercent     string `json:"unavailablePercent" xml:"unavailablePercent"`
-                    }   `json:"stat" xml:"stat"`
-                } `json:"data" xml:"data"`
+	*responses.BaseResponse
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	TotalCount request.Integer `json:"TotalCount" xml:"TotalCount"`
+	Data       struct {
+		Stat []struct {
+			CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+			RequestCount       string `json:"requestCount" xml:"requestCount"`
+			SuccessCount       string `json:"successCount" xml:"successCount"`
+			FaildCount         string `json:"faildCount" xml:"faildCount"`
+			UnavailableCount   string `json:"unavailableCount" xml:"unavailableCount"`
+			SucceededPercent   string `json:"succeededPercent" xml:"succeededPercent"`
+			UnavailablePercent string `json:"unavailablePercent" xml:"unavailablePercent"`
+		} `json:"stat" xml:"stat"`
+	} `json:"data" xml:"data"`
 }
 
 func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {
-request = &SenderStatisticsByTagNameAndBatchIDRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "SenderStatisticsByTagNameAndBatchID", "", "")
-return
+	request = &SenderStatisticsByTagNameAndBatchIDRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "SenderStatisticsByTagNameAndBatchID", "", "")
+	return
 }
 
 func CreateSenderStatisticsByTagNameAndBatchIDResponse() (response *SenderStatisticsByTagNameAndBatchIDResponse) {
-response = &SenderStatisticsByTagNameAndBatchIDResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SenderStatisticsByTagNameAndBatchIDResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

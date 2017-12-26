@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteCustomerGateway(request *DeleteCustomerGatewayRequest) (response *DeleteCustomerGatewayResponse, err error) {
-response = CreateDeleteCustomerGatewayResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteCustomerGatewayResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteCustomerGatewayWithChan(request *DeleteCustomerGatewayRequest) (<-chan *DeleteCustomerGatewayResponse, <-chan error) {
-responseChan := make(chan *DeleteCustomerGatewayResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteCustomerGateway(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteCustomerGatewayResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteCustomerGateway(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteCustomerGatewayWithCallback(request *DeleteCustomerGatewayRequest, callback func(response *DeleteCustomerGatewayResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteCustomerGatewayResponse
-var err error
-defer close(result)
-response, err = client.DeleteCustomerGateway(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteCustomerGatewayWithCallback(request *DeleteCustomerGatewayRequest, callback func(response *DeleteCustomerGatewayResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteCustomerGatewayResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteCustomerGateway(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteCustomerGatewayRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                CustomerGatewayId  string `position:"Query" name:"CustomerGatewayId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type DeleteCustomerGatewayResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteCustomerGatewayRequest() (request *DeleteCustomerGatewayRequest) {
-request = &DeleteCustomerGatewayRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteCustomerGateway", "", "")
-return
+	request = &DeleteCustomerGatewayRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteCustomerGateway", "", "")
+	return
 }
 
 func CreateDeleteCustomerGatewayResponse() (response *DeleteCustomerGatewayResponse) {
-response = &DeleteCustomerGatewayResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteCustomerGatewayResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

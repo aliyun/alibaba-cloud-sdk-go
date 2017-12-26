@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,99 +16,97 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResponse, err error) {
-response = CreateListTagsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListTagsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTagsResponse, <-chan error) {
-responseChan := make(chan *ListTagsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListTags(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListTagsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListTags(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListTagsResponse
-var err error
-defer close(result)
-response, err = client.ListTags(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListTagsResponse
+		var err error
+		defer close(result)
+		response, err = client.ListTags(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListTagsRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
+	Lang      string `position:"Query" name:"Lang"`
 }
 
-
 type ListTagsResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                Tags  []struct {
-            Id     int64 `json:"Id" xml:"Id"`
-            Name     string `json:"Name" xml:"Name"`
-            IsSubTag     bool `json:"IsSubTag" xml:"IsSubTag"`
-            ParentTag     string `json:"ParentTag" xml:"ParentTag"`
-            Cover struct {
-            Id     int64 `json:"Id" xml:"Id"`
-            Title     string `json:"Title" xml:"Title"`
-            FileId     string `json:"FileId" xml:"FileId"`
-            State     string `json:"State" xml:"State"`
-            Md5     string `json:"Md5" xml:"Md5"`
-            IsVideo     bool `json:"IsVideo" xml:"IsVideo"`
-            Remark     string `json:"Remark" xml:"Remark"`
-            Width     int64 `json:"Width" xml:"Width"`
-            Height     int64 `json:"Height" xml:"Height"`
-            Ctime     int64 `json:"Ctime" xml:"Ctime"`
-            Mtime     int64 `json:"Mtime" xml:"Mtime"`
-            }  `json:"Cover" xml:"Cover"`
-                }  `json:"Tags" xml:"Tags"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Tags      []struct {
+		Id        request.Integer `json:"Id" xml:"Id"`
+		Name      string          `json:"Name" xml:"Name"`
+		IsSubTag  request.Boolean `json:"IsSubTag" xml:"IsSubTag"`
+		ParentTag string          `json:"ParentTag" xml:"ParentTag"`
+		Cover     struct {
+			Id      request.Integer `json:"Id" xml:"Id"`
+			Title   string          `json:"Title" xml:"Title"`
+			FileId  string          `json:"FileId" xml:"FileId"`
+			State   string          `json:"State" xml:"State"`
+			Md5     string          `json:"Md5" xml:"Md5"`
+			IsVideo request.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Remark  string          `json:"Remark" xml:"Remark"`
+			Width   request.Integer `json:"Width" xml:"Width"`
+			Height  request.Integer `json:"Height" xml:"Height"`
+			Ctime   request.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime   request.Integer `json:"Mtime" xml:"Mtime"`
+		} `json:"Cover" xml:"Cover"`
+	} `json:"Tags" xml:"Tags"`
 }
 
 func CreateListTagsRequest() (request *ListTagsRequest) {
-request = &ListTagsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTags", "", "")
-return
+	request = &ListTagsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTags", "", "")
+	return
 }
 
 func CreateListTagsResponse() (response *ListTagsResponse) {
-response = &ListTagsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListTagsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

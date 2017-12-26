@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) NodeProcessCreate(request *NodeProcessCreateRequest) (response *NodeProcessCreateResponse, err error) {
-response = CreateNodeProcessCreateResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateNodeProcessCreateResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateRequest) (<-chan *NodeProcessCreateResponse, <-chan error) {
-responseChan := make(chan *NodeProcessCreateResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.NodeProcessCreate(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *NodeProcessCreateResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.NodeProcessCreate(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRequest, callback func(response *NodeProcessCreateResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *NodeProcessCreateResponse
-var err error
-defer close(result)
-response, err = client.NodeProcessCreate(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRequest, callback func(response *NodeProcessCreateResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *NodeProcessCreateResponse
+		var err error
+		defer close(result)
+		response, err = client.NodeProcessCreate(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type NodeProcessCreateRequest struct {
-*requests.RpcRequest
-                ProcessName  string `position:"Query" name:"ProcessName"`
-                Name  string `position:"Query" name:"Name"`
-                Command  string `position:"Query" name:"Command"`
-                ProcessUser  string `position:"Query" name:"ProcessUser"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ProcessName string `position:"Query" name:"ProcessName"`
+	Name        string `position:"Query" name:"Name"`
+	Command     string `position:"Query" name:"Command"`
+	ProcessUser string `position:"Query" name:"ProcessUser"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
-
 type NodeProcessCreateResponse struct {
-*responses.BaseResponse
-            ErrorCode     int `json:"ErrorCode" xml:"ErrorCode"`
-            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
-            Success     bool `json:"Success" xml:"Success"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	ErrorCode    request.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string          `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      request.Boolean `json:"Success" xml:"Success"`
+	RequestId    string          `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
-request = &NodeProcessCreateRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "", "")
-return
+	request = &NodeProcessCreateRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "", "")
+	return
 }
 
 func CreateNodeProcessCreateResponse() (response *NodeProcessCreateResponse) {
-response = &NodeProcessCreateResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &NodeProcessCreateResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

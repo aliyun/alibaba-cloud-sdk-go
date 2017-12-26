@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,93 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateReadOnlyDBInstance(request *CreateReadOnlyDBInstanceRequest) (response *CreateReadOnlyDBInstanceResponse, err error) {
-response = CreateCreateReadOnlyDBInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateReadOnlyDBInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDBInstanceRequest) (<-chan *CreateReadOnlyDBInstanceResponse, <-chan error) {
-responseChan := make(chan *CreateReadOnlyDBInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateReadOnlyDBInstance(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateReadOnlyDBInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateReadOnlyDBInstance(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOnlyDBInstanceRequest, callback func(response *CreateReadOnlyDBInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateReadOnlyDBInstanceResponse
-var err error
-defer close(result)
-response, err = client.CreateReadOnlyDBInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOnlyDBInstanceRequest, callback func(response *CreateReadOnlyDBInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateReadOnlyDBInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateReadOnlyDBInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateReadOnlyDBInstanceRequest struct {
-*requests.RpcRequest
-                VSwitchId  string `position:"Query" name:"VSwitchId"`
-                PrivateIpAddress  string `position:"Query" name:"PrivateIpAddress"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ZoneId  string `position:"Query" name:"ZoneId"`
-                DBInstanceClass  string `position:"Query" name:"DBInstanceClass"`
-                DBInstanceStorage  string `position:"Query" name:"DBInstanceStorage"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                DBInstanceDescription  string `position:"Query" name:"DBInstanceDescription"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PayType  string `position:"Query" name:"PayType"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                VPCId  string `position:"Query" name:"VPCId"`
-                EngineVersion  string `position:"Query" name:"EngineVersion"`
-                InstanceNetworkType  string `position:"Query" name:"InstanceNetworkType"`
+	*requests.RpcRequest
+	VSwitchId             string `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string `position:"Query" name:"PrivateIpAddress"`
+	DBInstanceId          string `position:"Query" name:"DBInstanceId"`
+	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
+	ClientToken           string `position:"Query" name:"ClientToken"`
+	ZoneId                string `position:"Query" name:"ZoneId"`
+	DBInstanceClass       string `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage     string `position:"Query" name:"DBInstanceStorage"`
+	OwnerId               string `position:"Query" name:"OwnerId"`
+	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
+	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+	PayType               string `position:"Query" name:"PayType"`
+	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
+	VPCId                 string `position:"Query" name:"VPCId"`
+	EngineVersion         string `position:"Query" name:"EngineVersion"`
+	InstanceNetworkType   string `position:"Query" name:"InstanceNetworkType"`
 }
 
-
 type CreateReadOnlyDBInstanceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     string `json:"OrderId" xml:"OrderId"`
-            ConnectionString     string `json:"ConnectionString" xml:"ConnectionString"`
-            Port     string `json:"Port" xml:"Port"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId          string `json:"OrderId" xml:"OrderId"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	Port             string `json:"Port" xml:"Port"`
 }
 
 func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceRequest) {
-request = &CreateReadOnlyDBInstanceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "", "")
-return
+	request = &CreateReadOnlyDBInstanceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "", "")
+	return
 }
 
 func CreateCreateReadOnlyDBInstanceResponse() (response *CreateReadOnlyDBInstanceResponse) {
-response = &CreateReadOnlyDBInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateReadOnlyDBInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

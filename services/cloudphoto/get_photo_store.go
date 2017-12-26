@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,94 +16,92 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetPhotoStore(request *GetPhotoStoreRequest) (response *GetPhotoStoreResponse, err error) {
-response = CreateGetPhotoStoreResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetPhotoStoreResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-chan *GetPhotoStoreResponse, <-chan error) {
-responseChan := make(chan *GetPhotoStoreResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetPhotoStore(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetPhotoStoreResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetPhotoStore(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetPhotoStoreWithCallback(request *GetPhotoStoreRequest, callback func(response *GetPhotoStoreResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetPhotoStoreResponse
-var err error
-defer close(result)
-response, err = client.GetPhotoStore(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetPhotoStoreWithCallback(request *GetPhotoStoreRequest, callback func(response *GetPhotoStoreResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetPhotoStoreResponse
+		var err error
+		defer close(result)
+		response, err = client.GetPhotoStore(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetPhotoStoreRequest struct {
-*requests.RpcRequest
-                StoreName  string `position:"Query" name:"StoreName"`
+	*requests.RpcRequest
+	StoreName string `position:"Query" name:"StoreName"`
 }
 
-
 type GetPhotoStoreResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-            PhotoStore struct {
-            Id     int64 `json:"Id" xml:"Id"`
-            Name     string `json:"Name" xml:"Name"`
-            Remark     string `json:"Remark" xml:"Remark"`
-            AutoCleanEnabled     bool `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-            AutoCleanDays     int `json:"AutoCleanDays" xml:"AutoCleanDays"`
-            DefaultQuota     int64 `json:"DefaultQuota" xml:"DefaultQuota"`
-            Ctime     int64 `json:"Ctime" xml:"Ctime"`
-            Mtime     int64 `json:"Mtime" xml:"Mtime"`
-                Buckets  []struct {
-            Name     string `json:"Name" xml:"Name"`
-            Region     string `json:"Region" xml:"Region"`
-            State     string `json:"State" xml:"State"`
-            Acl     string `json:"Acl" xml:"Acl"`
-                }  `json:"Buckets" xml:"Buckets"`
-            }  `json:"PhotoStore" xml:"PhotoStore"`
+	*responses.BaseResponse
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Action     string `json:"Action" xml:"Action"`
+	PhotoStore struct {
+		Id               request.Integer `json:"Id" xml:"Id"`
+		Name             string          `json:"Name" xml:"Name"`
+		Remark           string          `json:"Remark" xml:"Remark"`
+		AutoCleanEnabled request.Boolean `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
+		AutoCleanDays    request.Integer `json:"AutoCleanDays" xml:"AutoCleanDays"`
+		DefaultQuota     request.Integer `json:"DefaultQuota" xml:"DefaultQuota"`
+		Ctime            request.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime            request.Integer `json:"Mtime" xml:"Mtime"`
+		Buckets          []struct {
+			Name   string `json:"Name" xml:"Name"`
+			Region string `json:"Region" xml:"Region"`
+			State  string `json:"State" xml:"State"`
+			Acl    string `json:"Acl" xml:"Acl"`
+		} `json:"Buckets" xml:"Buckets"`
+	} `json:"PhotoStore" xml:"PhotoStore"`
 }
 
 func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {
-request = &GetPhotoStoreRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotoStore", "", "")
-return
+	request = &GetPhotoStoreRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotoStore", "", "")
+	return
 }
 
 func CreateGetPhotoStoreResponse() (response *GetPhotoStoreResponse) {
-response = &GetPhotoStoreResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetPhotoStoreResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

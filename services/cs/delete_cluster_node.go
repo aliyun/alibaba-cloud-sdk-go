@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,76 +16,74 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteClusterNode(request *DeleteClusterNodeRequest) (response *DeleteClusterNodeResponse, err error) {
-response = CreateDeleteClusterNodeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteClusterNodeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteClusterNodeWithChan(request *DeleteClusterNodeRequest) (<-chan *DeleteClusterNodeResponse, <-chan error) {
-responseChan := make(chan *DeleteClusterNodeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteClusterNode(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteClusterNodeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteClusterNode(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRequest, callback func(response *DeleteClusterNodeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteClusterNodeResponse
-var err error
-defer close(result)
-response, err = client.DeleteClusterNode(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRequest, callback func(response *DeleteClusterNodeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteClusterNodeResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteClusterNode(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteClusterNodeRequest struct {
-*requests.RoaRequest
-                ClusterId  string `position:"Path" name:"ClusterId"`
-                Force  string `position:"Query" name:"Force"`
-                Ip  string `position:"Path" name:"Ip"`
+	*requests.RoaRequest
+	ClusterId string `position:"Path" name:"ClusterId"`
+	Force     string `position:"Query" name:"Force"`
+	Ip        string `position:"Path" name:"Ip"`
 }
 
-
 type DeleteClusterNodeResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateDeleteClusterNodeRequest() (request *DeleteClusterNodeRequest) {
-request = &DeleteClusterNodeRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNode", "/clusters/[ClusterId]/ip/[Ip]", "", "")
-return
+	request = &DeleteClusterNodeRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNode", "/clusters/[ClusterId]/ip/[Ip]", "", "")
+	return
 }
 
 func CreateDeleteClusterNodeResponse() (response *DeleteClusterNodeResponse) {
-response = &DeleteClusterNodeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteClusterNodeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,96 +16,94 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SenderStatisticsDetailByParam(request *SenderStatisticsDetailByParamRequest) (response *SenderStatisticsDetailByParamResponse, err error) {
-response = CreateSenderStatisticsDetailByParamResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSenderStatisticsDetailByParamResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SenderStatisticsDetailByParamWithChan(request *SenderStatisticsDetailByParamRequest) (<-chan *SenderStatisticsDetailByParamResponse, <-chan error) {
-responseChan := make(chan *SenderStatisticsDetailByParamResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SenderStatisticsDetailByParam(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SenderStatisticsDetailByParamResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SenderStatisticsDetailByParam(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SenderStatisticsDetailByParamWithCallback(request *SenderStatisticsDetailByParamRequest, callback func(response *SenderStatisticsDetailByParamResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SenderStatisticsDetailByParamResponse
-var err error
-defer close(result)
-response, err = client.SenderStatisticsDetailByParam(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SenderStatisticsDetailByParamWithCallback(request *SenderStatisticsDetailByParamRequest, callback func(response *SenderStatisticsDetailByParamResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SenderStatisticsDetailByParamResponse
+		var err error
+		defer close(result)
+		response, err = client.SenderStatisticsDetailByParam(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SenderStatisticsDetailByParamRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                NextStart  string `position:"Query" name:"NextStart"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                AccountName  string `position:"Query" name:"AccountName"`
-                ToAddress  string `position:"Query" name:"ToAddress"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Status  string `position:"Query" name:"Status"`
-                Length  string `position:"Query" name:"Length"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                TagName  string `position:"Query" name:"TagName"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	NextStart            string `position:"Query" name:"NextStart"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	AccountName          string `position:"Query" name:"AccountName"`
+	ToAddress            string `position:"Query" name:"ToAddress"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Status               string `position:"Query" name:"Status"`
+	Length               string `position:"Query" name:"Length"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	TagName              string `position:"Query" name:"TagName"`
 }
 
-
 type SenderStatisticsDetailByParamResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            NextStart     int `json:"NextStart" xml:"NextStart"`
-                Data struct {
-                    MailDetail []struct {
-            LastUpdateTime     string `json:"LastUpdateTime" xml:"LastUpdateTime"`
-            UtcLastUpdateTime     string `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-            AccountName     string `json:"AccountName" xml:"AccountName"`
-            ToAddress     string `json:"ToAddress" xml:"ToAddress"`
-            Status     int `json:"Status" xml:"Status"`
-            Message     string `json:"Message" xml:"Message"`
-                    }   `json:"mailDetail" xml:"mailDetail"`
-                } `json:"data" xml:"data"`
+	*responses.BaseResponse
+	RequestId string          `json:"RequestId" xml:"RequestId"`
+	NextStart request.Integer `json:"NextStart" xml:"NextStart"`
+	Data      struct {
+		MailDetail []struct {
+			LastUpdateTime    string          `json:"LastUpdateTime" xml:"LastUpdateTime"`
+			UtcLastUpdateTime string          `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
+			AccountName       string          `json:"AccountName" xml:"AccountName"`
+			ToAddress         string          `json:"ToAddress" xml:"ToAddress"`
+			Status            request.Integer `json:"Status" xml:"Status"`
+			Message           string          `json:"Message" xml:"Message"`
+		} `json:"mailDetail" xml:"mailDetail"`
+	} `json:"data" xml:"data"`
 }
 
 func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDetailByParamRequest) {
-request = &SenderStatisticsDetailByParamRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "SenderStatisticsDetailByParam", "", "")
-return
+	request = &SenderStatisticsDetailByParamRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "SenderStatisticsDetailByParam", "", "")
+	return
 }
 
 func CreateSenderStatisticsDetailByParamResponse() (response *SenderStatisticsDetailByParamResponse) {
-response = &SenderStatisticsDetailByParamResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SenderStatisticsDetailByParamResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

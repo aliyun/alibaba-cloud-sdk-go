@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,74 +16,72 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GatherLogsToken(request *GatherLogsTokenRequest) (response *GatherLogsTokenResponse, err error) {
-response = CreateGatherLogsTokenResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGatherLogsTokenResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (<-chan *GatherLogsTokenResponse, <-chan error) {
-responseChan := make(chan *GatherLogsTokenResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GatherLogsToken(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GatherLogsTokenResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GatherLogsToken(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GatherLogsTokenWithCallback(request *GatherLogsTokenRequest, callback func(response *GatherLogsTokenResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GatherLogsTokenResponse
-var err error
-defer close(result)
-response, err = client.GatherLogsToken(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GatherLogsTokenWithCallback(request *GatherLogsTokenRequest, callback func(response *GatherLogsTokenResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GatherLogsTokenResponse
+		var err error
+		defer close(result)
+		response, err = client.GatherLogsToken(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GatherLogsTokenRequest struct {
-*requests.RoaRequest
-                Token  string `position:"Path" name:"Token"`
+	*requests.RoaRequest
+	Token string `position:"Path" name:"Token"`
 }
 
-
 type GatherLogsTokenResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
-request = &GatherLogsTokenRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "GatherLogsToken", "/token/[Token]/gather_logs", "", "")
-return
+	request = &GatherLogsTokenRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "GatherLogsToken", "/token/[Token]/gather_logs", "", "")
+	return
 }
 
 func CreateGatherLogsTokenResponse() (response *GatherLogsTokenResponse) {
-response = &GatherLogsTokenResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GatherLogsTokenResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

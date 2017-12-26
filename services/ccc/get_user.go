@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,112 +16,110 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
-response = CreateGetUserResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetUserResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
-responseChan := make(chan *GetUserResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetUser(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetUserResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetUser(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetUserResponse
-var err error
-defer close(result)
-response, err = client.GetUser(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetUserResponse
+		var err error
+		defer close(result)
+		response, err = client.GetUser(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetUserRequest struct {
-*requests.RpcRequest
-                UserId  string `position:"Query" name:"UserId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	UserId     string `position:"Query" name:"UserId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-
 type GetUserResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     int `json:"HttpStatusCode" xml:"HttpStatusCode"`
-            User struct {
-            UserId     string `json:"UserId" xml:"UserId"`
-            RamId     string `json:"RamId" xml:"RamId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Detail struct {
-            LoginName     string `json:"LoginName" xml:"LoginName"`
-            DisplayName     string `json:"DisplayName" xml:"DisplayName"`
-            Phone     string `json:"Phone" xml:"Phone"`
-            Email     string `json:"Email" xml:"Email"`
-            Department     string `json:"Department" xml:"Department"`
-            }  `json:"Detail" xml:"Detail"`
-                Roles struct {
-                    Role []struct {
-            RoleId     string `json:"RoleId" xml:"RoleId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            RoleName     string `json:"RoleName" xml:"RoleName"`
-            RoleDescription     string `json:"RoleDescription" xml:"RoleDescription"`
-                    }   `json:"Role" xml:"Role"`
-                } `json:"Roles" xml:"Roles"`
-                SkillLevels struct {
-                    SkillLevel []struct {
-            SkillLevelId     string `json:"SkillLevelId" xml:"SkillLevelId"`
-            Level     int `json:"Level" xml:"Level"`
-            Skill struct {
-            SkillGroupId     string `json:"SkillGroupId" xml:"SkillGroupId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            SkillGroupName     string `json:"SkillGroupName" xml:"SkillGroupName"`
-            SkillGroupDescription     string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-            }  `json:"Skill" xml:"Skill"`
-                    }   `json:"SkillLevel" xml:"SkillLevel"`
-                } `json:"SkillLevels" xml:"SkillLevels"`
-            }  `json:"User" xml:"User"`
+	*responses.BaseResponse
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Success        request.Boolean `json:"Success" xml:"Success"`
+	Code           string          `json:"Code" xml:"Code"`
+	Message        string          `json:"Message" xml:"Message"`
+	HttpStatusCode request.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	User           struct {
+		UserId     string `json:"UserId" xml:"UserId"`
+		RamId      string `json:"RamId" xml:"RamId"`
+		InstanceId string `json:"InstanceId" xml:"InstanceId"`
+		Detail     struct {
+			LoginName   string `json:"LoginName" xml:"LoginName"`
+			DisplayName string `json:"DisplayName" xml:"DisplayName"`
+			Phone       string `json:"Phone" xml:"Phone"`
+			Email       string `json:"Email" xml:"Email"`
+			Department  string `json:"Department" xml:"Department"`
+		} `json:"Detail" xml:"Detail"`
+		Roles struct {
+			Role []struct {
+				RoleId          string `json:"RoleId" xml:"RoleId"`
+				InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+				RoleName        string `json:"RoleName" xml:"RoleName"`
+				RoleDescription string `json:"RoleDescription" xml:"RoleDescription"`
+			} `json:"Role" xml:"Role"`
+		} `json:"Roles" xml:"Roles"`
+		SkillLevels struct {
+			SkillLevel []struct {
+				SkillLevelId string          `json:"SkillLevelId" xml:"SkillLevelId"`
+				Level        request.Integer `json:"Level" xml:"Level"`
+				Skill        struct {
+					SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
+					InstanceId            string `json:"InstanceId" xml:"InstanceId"`
+					SkillGroupName        string `json:"SkillGroupName" xml:"SkillGroupName"`
+					SkillGroupDescription string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+				} `json:"Skill" xml:"Skill"`
+			} `json:"SkillLevel" xml:"SkillLevel"`
+		} `json:"SkillLevels" xml:"SkillLevels"`
+	} `json:"User" xml:"User"`
 }
 
 func CreateGetUserRequest() (request *GetUserRequest) {
-request = &GetUserRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "GetUser", "", "")
-return
+	request = &GetUserRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetUser", "", "")
+	return
 }
 
 func CreateGetUserResponse() (response *GetUserResponse) {
-response = &GetUserResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetUserResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,120 +16,118 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) EnableScalingGroup(request *EnableScalingGroupRequest) (response *EnableScalingGroupResponse, err error) {
-response = CreateEnableScalingGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateEnableScalingGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) EnableScalingGroupWithChan(request *EnableScalingGroupRequest) (<-chan *EnableScalingGroupResponse, <-chan error) {
-responseChan := make(chan *EnableScalingGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.EnableScalingGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *EnableScalingGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.EnableScalingGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) EnableScalingGroupWithCallback(request *EnableScalingGroupRequest, callback func(response *EnableScalingGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *EnableScalingGroupResponse
-var err error
-defer close(result)
-response, err = client.EnableScalingGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) EnableScalingGroupWithCallback(request *EnableScalingGroupRequest, callback func(response *EnableScalingGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *EnableScalingGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.EnableScalingGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type EnableScalingGroupRequest struct {
-*requests.RpcRequest
-                ActiveScalingConfigurationId  string `position:"Query" name:"ActiveScalingConfigurationId"`
-                LoadBalancerWeight11  string `position:"Query" name:"LoadBalancerWeight.11"`
-                LoadBalancerWeight12  string `position:"Query" name:"LoadBalancerWeight.12"`
-                LoadBalancerWeight10  string `position:"Query" name:"LoadBalancerWeight.10"`
-                LoadBalancerWeight15  string `position:"Query" name:"LoadBalancerWeight.15"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                LoadBalancerWeight16  string `position:"Query" name:"LoadBalancerWeight.16"`
-                LoadBalancerWeight13  string `position:"Query" name:"LoadBalancerWeight.13"`
-                LoadBalancerWeight14  string `position:"Query" name:"LoadBalancerWeight.14"`
-                InstanceId10  string `position:"Query" name:"InstanceId.10"`
-                InstanceId12  string `position:"Query" name:"InstanceId.12"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                InstanceId11  string `position:"Query" name:"InstanceId.11"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                InstanceId19  string `position:"Query" name:"InstanceId.19"`
-                InstanceId17  string `position:"Query" name:"InstanceId.17"`
-                InstanceId18  string `position:"Query" name:"InstanceId.18"`
-                InstanceId6  string `position:"Query" name:"InstanceId.6"`
-                InstanceId15  string `position:"Query" name:"InstanceId.15"`
-                LoadBalancerWeight1  string `position:"Query" name:"LoadBalancerWeight.1"`
-                InstanceId7  string `position:"Query" name:"InstanceId.7"`
-                InstanceId16  string `position:"Query" name:"InstanceId.16"`
-                InstanceId8  string `position:"Query" name:"InstanceId.8"`
-                InstanceId13  string `position:"Query" name:"InstanceId.13"`
-                InstanceId9  string `position:"Query" name:"InstanceId.9"`
-                InstanceId14  string `position:"Query" name:"InstanceId.14"`
-                LoadBalancerWeight18  string `position:"Query" name:"LoadBalancerWeight.18"`
-                LoadBalancerWeight4  string `position:"Query" name:"LoadBalancerWeight.4"`
-                InstanceId2  string `position:"Query" name:"InstanceId.2"`
-                LoadBalancerWeight17  string `position:"Query" name:"LoadBalancerWeight.17"`
-                LoadBalancerWeight5  string `position:"Query" name:"LoadBalancerWeight.5"`
-                InstanceId3  string `position:"Query" name:"InstanceId.3"`
-                LoadBalancerWeight2  string `position:"Query" name:"LoadBalancerWeight.2"`
-                InstanceId4  string `position:"Query" name:"InstanceId.4"`
-                LoadBalancerWeight19  string `position:"Query" name:"LoadBalancerWeight.19"`
-                LoadBalancerWeight3  string `position:"Query" name:"LoadBalancerWeight.3"`
-                InstanceId5  string `position:"Query" name:"InstanceId.5"`
-                LoadBalancerWeight8  string `position:"Query" name:"LoadBalancerWeight.8"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                LoadBalancerWeight9  string `position:"Query" name:"LoadBalancerWeight.9"`
-                LoadBalancerWeight6  string `position:"Query" name:"LoadBalancerWeight.6"`
-                ScalingGroupId  string `position:"Query" name:"ScalingGroupId"`
-                LoadBalancerWeight7  string `position:"Query" name:"LoadBalancerWeight.7"`
-                InstanceId1  string `position:"Query" name:"InstanceId.1"`
-                LoadBalancerWeight20  string `position:"Query" name:"LoadBalancerWeight.20"`
-                InstanceId20  string `position:"Query" name:"InstanceId.20"`
+	*requests.RpcRequest
+	ActiveScalingConfigurationId string `position:"Query" name:"ActiveScalingConfigurationId"`
+	LoadBalancerWeight11         string `position:"Query" name:"LoadBalancerWeight.11"`
+	LoadBalancerWeight12         string `position:"Query" name:"LoadBalancerWeight.12"`
+	LoadBalancerWeight10         string `position:"Query" name:"LoadBalancerWeight.10"`
+	LoadBalancerWeight15         string `position:"Query" name:"LoadBalancerWeight.15"`
+	ResourceOwnerAccount         string `position:"Query" name:"ResourceOwnerAccount"`
+	LoadBalancerWeight16         string `position:"Query" name:"LoadBalancerWeight.16"`
+	LoadBalancerWeight13         string `position:"Query" name:"LoadBalancerWeight.13"`
+	LoadBalancerWeight14         string `position:"Query" name:"LoadBalancerWeight.14"`
+	InstanceId10                 string `position:"Query" name:"InstanceId.10"`
+	InstanceId12                 string `position:"Query" name:"InstanceId.12"`
+	ResourceOwnerId              string `position:"Query" name:"ResourceOwnerId"`
+	InstanceId11                 string `position:"Query" name:"InstanceId.11"`
+	OwnerAccount                 string `position:"Query" name:"OwnerAccount"`
+	InstanceId19                 string `position:"Query" name:"InstanceId.19"`
+	InstanceId17                 string `position:"Query" name:"InstanceId.17"`
+	InstanceId18                 string `position:"Query" name:"InstanceId.18"`
+	InstanceId6                  string `position:"Query" name:"InstanceId.6"`
+	InstanceId15                 string `position:"Query" name:"InstanceId.15"`
+	LoadBalancerWeight1          string `position:"Query" name:"LoadBalancerWeight.1"`
+	InstanceId7                  string `position:"Query" name:"InstanceId.7"`
+	InstanceId16                 string `position:"Query" name:"InstanceId.16"`
+	InstanceId8                  string `position:"Query" name:"InstanceId.8"`
+	InstanceId13                 string `position:"Query" name:"InstanceId.13"`
+	InstanceId9                  string `position:"Query" name:"InstanceId.9"`
+	InstanceId14                 string `position:"Query" name:"InstanceId.14"`
+	LoadBalancerWeight18         string `position:"Query" name:"LoadBalancerWeight.18"`
+	LoadBalancerWeight4          string `position:"Query" name:"LoadBalancerWeight.4"`
+	InstanceId2                  string `position:"Query" name:"InstanceId.2"`
+	LoadBalancerWeight17         string `position:"Query" name:"LoadBalancerWeight.17"`
+	LoadBalancerWeight5          string `position:"Query" name:"LoadBalancerWeight.5"`
+	InstanceId3                  string `position:"Query" name:"InstanceId.3"`
+	LoadBalancerWeight2          string `position:"Query" name:"LoadBalancerWeight.2"`
+	InstanceId4                  string `position:"Query" name:"InstanceId.4"`
+	LoadBalancerWeight19         string `position:"Query" name:"LoadBalancerWeight.19"`
+	LoadBalancerWeight3          string `position:"Query" name:"LoadBalancerWeight.3"`
+	InstanceId5                  string `position:"Query" name:"InstanceId.5"`
+	LoadBalancerWeight8          string `position:"Query" name:"LoadBalancerWeight.8"`
+	OwnerId                      string `position:"Query" name:"OwnerId"`
+	LoadBalancerWeight9          string `position:"Query" name:"LoadBalancerWeight.9"`
+	LoadBalancerWeight6          string `position:"Query" name:"LoadBalancerWeight.6"`
+	ScalingGroupId               string `position:"Query" name:"ScalingGroupId"`
+	LoadBalancerWeight7          string `position:"Query" name:"LoadBalancerWeight.7"`
+	InstanceId1                  string `position:"Query" name:"InstanceId.1"`
+	LoadBalancerWeight20         string `position:"Query" name:"LoadBalancerWeight.20"`
+	InstanceId20                 string `position:"Query" name:"InstanceId.20"`
 }
 
-
 type EnableScalingGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
-request = &EnableScalingGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "EnableScalingGroup", "", "")
-return
+	request = &EnableScalingGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "EnableScalingGroup", "", "")
+	return
 }
 
 func CreateEnableScalingGroupResponse() (response *EnableScalingGroupResponse) {
-response = &EnableScalingGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &EnableScalingGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteReceiverDetail(request *DeleteReceiverDetailRequest) (response *DeleteReceiverDetailResponse, err error) {
-response = CreateDeleteReceiverDetailResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteReceiverDetailResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetailRequest) (<-chan *DeleteReceiverDetailResponse, <-chan error) {
-responseChan := make(chan *DeleteReceiverDetailResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteReceiverDetail(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteReceiverDetailResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteReceiverDetail(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDetailRequest, callback func(response *DeleteReceiverDetailResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteReceiverDetailResponse
-var err error
-defer close(result)
-response, err = client.DeleteReceiverDetail(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDetailRequest, callback func(response *DeleteReceiverDetailResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteReceiverDetailResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteReceiverDetail(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteReceiverDetailRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Email  string `position:"Query" name:"Email"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ReceiverId  string `position:"Query" name:"ReceiverId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Email                string `position:"Query" name:"Email"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ReceiverId           string `position:"Query" name:"ReceiverId"`
 }
 
-
 type DeleteReceiverDetailResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) {
-request = &DeleteReceiverDetailRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "DeleteReceiverDetail", "", "")
-return
+	request = &DeleteReceiverDetailRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteReceiverDetail", "", "")
+	return
 }
 
 func CreateDeleteReceiverDetailResponse() (response *DeleteReceiverDetailResponse) {
-response = &DeleteReceiverDetailResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteReceiverDetailResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

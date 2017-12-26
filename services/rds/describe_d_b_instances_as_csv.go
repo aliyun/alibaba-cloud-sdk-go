@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,125 +16,123 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsvRequest) (response *DescribeDBInstancesAsCsvResponse, err error) {
-response = CreateDescribeDBInstancesAsCsvResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDBInstancesAsCsvResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstancesAsCsvRequest) (<-chan *DescribeDBInstancesAsCsvResponse, <-chan error) {
-responseChan := make(chan *DescribeDBInstancesAsCsvResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDBInstancesAsCsv(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDBInstancesAsCsvResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDBInstancesAsCsv(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBInstancesAsCsvRequest, callback func(response *DescribeDBInstancesAsCsvResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDBInstancesAsCsvResponse
-var err error
-defer close(result)
-response, err = client.DescribeDBInstancesAsCsv(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBInstancesAsCsvRequest, callback func(response *DescribeDBInstancesAsCsvResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDBInstancesAsCsvResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDBInstancesAsCsv(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDBInstancesAsCsvRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeDBInstancesAsCsvResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                Items struct {
-                    DBInstanceAttribute []struct {
-            InsId     int `json:"InsId" xml:"InsId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-            PayType     string `json:"PayType" xml:"PayType"`
-            DBInstanceClassType     string `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
-            DBInstanceType     string `json:"DBInstanceType" xml:"DBInstanceType"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            ConnectionString     string `json:"ConnectionString" xml:"ConnectionString"`
-            Port     string `json:"Port" xml:"Port"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            EngineVersion     string `json:"EngineVersion" xml:"EngineVersion"`
-            DBInstanceClass     string `json:"DBInstanceClass" xml:"DBInstanceClass"`
-            DBInstanceMemory     int64 `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
-            DBInstanceStorage     int `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
-            DBInstanceNetType     string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-            DBInstanceStatus     string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-            DBInstanceDescription     string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-            LockMode     string `json:"LockMode" xml:"LockMode"`
-            LockReason     string `json:"LockReason" xml:"LockReason"`
-            ReadDelayTime     string `json:"ReadDelayTime" xml:"ReadDelayTime"`
-            DBMaxQuantity     int `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
-            AccountMaxQuantity     int `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
-            MaintainTime     string `json:"MaintainTime" xml:"MaintainTime"`
-            AvailabilityValue     string `json:"AvailabilityValue" xml:"AvailabilityValue"`
-            MaxIOPS     int `json:"MaxIOPS" xml:"MaxIOPS"`
-            MaxConnections     int `json:"MaxConnections" xml:"MaxConnections"`
-            MasterInstanceId     string `json:"MasterInstanceId" xml:"MasterInstanceId"`
-            DBInstanceCPU     string `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
-            IncrementSourceDBInstanceId     string `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
-            GuardDBInstanceId     string `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
-            TempDBInstanceId     string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
-            SecurityIPList     string `json:"SecurityIPList" xml:"SecurityIPList"`
-            ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-            InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-            Category     string `json:"Category" xml:"Category"`
-            AccountType     string `json:"AccountType" xml:"AccountType"`
-            SupportUpgradeAccountType     string `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
-            ConnectionMode     string `json:"ConnectionMode" xml:"ConnectionMode"`
-            Tags     string `json:"Tags" xml:"Tags"`
-                    }   `json:"DBInstanceAttribute" xml:"DBInstanceAttribute"`
-                } `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Items     struct {
+		DBInstanceAttribute []struct {
+			InsId                       request.Integer `json:"InsId" xml:"InsId"`
+			DBInstanceId                string          `json:"DBInstanceId" xml:"DBInstanceId"`
+			DBInstanceName              string          `json:"DBInstanceName" xml:"DBInstanceName"`
+			PayType                     string          `json:"PayType" xml:"PayType"`
+			DBInstanceClassType         string          `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
+			DBInstanceType              string          `json:"DBInstanceType" xml:"DBInstanceType"`
+			RegionId                    string          `json:"RegionId" xml:"RegionId"`
+			ConnectionString            string          `json:"ConnectionString" xml:"ConnectionString"`
+			Port                        string          `json:"Port" xml:"Port"`
+			Engine                      string          `json:"Engine" xml:"Engine"`
+			EngineVersion               string          `json:"EngineVersion" xml:"EngineVersion"`
+			DBInstanceClass             string          `json:"DBInstanceClass" xml:"DBInstanceClass"`
+			DBInstanceMemory            request.Integer `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
+			DBInstanceStorage           request.Integer `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+			DBInstanceNetType           string          `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+			DBInstanceStatus            string          `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+			DBInstanceDescription       string          `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+			LockMode                    string          `json:"LockMode" xml:"LockMode"`
+			LockReason                  string          `json:"LockReason" xml:"LockReason"`
+			ReadDelayTime               string          `json:"ReadDelayTime" xml:"ReadDelayTime"`
+			DBMaxQuantity               request.Integer `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
+			AccountMaxQuantity          request.Integer `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
+			CreationTime                string          `json:"CreationTime" xml:"CreationTime"`
+			ExpireTime                  string          `json:"ExpireTime" xml:"ExpireTime"`
+			MaintainTime                string          `json:"MaintainTime" xml:"MaintainTime"`
+			AvailabilityValue           string          `json:"AvailabilityValue" xml:"AvailabilityValue"`
+			MaxIOPS                     request.Integer `json:"MaxIOPS" xml:"MaxIOPS"`
+			MaxConnections              request.Integer `json:"MaxConnections" xml:"MaxConnections"`
+			MasterInstanceId            string          `json:"MasterInstanceId" xml:"MasterInstanceId"`
+			DBInstanceCPU               string          `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
+			IncrementSourceDBInstanceId string          `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
+			GuardDBInstanceId           string          `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
+			TempDBInstanceId            string          `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+			SecurityIPList              string          `json:"SecurityIPList" xml:"SecurityIPList"`
+			ZoneId                      string          `json:"ZoneId" xml:"ZoneId"`
+			InstanceNetworkType         string          `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+			Category                    string          `json:"Category" xml:"Category"`
+			AccountType                 string          `json:"AccountType" xml:"AccountType"`
+			SupportUpgradeAccountType   string          `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
+			VpcId                       string          `json:"VpcId" xml:"VpcId"`
+			VSwitchId                   string          `json:"VSwitchId" xml:"VSwitchId"`
+			ConnectionMode              string          `json:"ConnectionMode" xml:"ConnectionMode"`
+			Tags                        string          `json:"Tags" xml:"Tags"`
+		} `json:"DBInstanceAttribute" xml:"DBInstanceAttribute"`
+	} `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvRequest) {
-request = &DescribeDBInstancesAsCsvRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "", "")
-return
+	request = &DescribeDBInstancesAsCsvRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "", "")
+	return
 }
 
 func CreateDescribeDBInstancesAsCsvResponse() (response *DescribeDBInstancesAsCsvResponse) {
-response = &DescribeDBInstancesAsCsvResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDBInstancesAsCsvResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

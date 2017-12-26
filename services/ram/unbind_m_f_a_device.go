@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response *UnbindMFADeviceResponse, err error) {
-response = CreateUnbindMFADeviceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUnbindMFADeviceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (<-chan *UnbindMFADeviceResponse, <-chan error) {
-responseChan := make(chan *UnbindMFADeviceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UnbindMFADevice(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UnbindMFADeviceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UnbindMFADevice(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceRequest, callback func(response *UnbindMFADeviceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UnbindMFADeviceResponse
-var err error
-defer close(result)
-response, err = client.UnbindMFADevice(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceRequest, callback func(response *UnbindMFADeviceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UnbindMFADeviceResponse
+		var err error
+		defer close(result)
+		response, err = client.UnbindMFADevice(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UnbindMFADeviceRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
+	*requests.RpcRequest
+	UserName string `position:"Query" name:"UserName"`
 }
 
-
 type UnbindMFADeviceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            MFADevice struct {
-            SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-            }  `json:"MFADevice" xml:"MFADevice"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	MFADevice struct {
+		SerialNumber string `json:"SerialNumber" xml:"SerialNumber"`
+	} `json:"MFADevice" xml:"MFADevice"`
 }
 
 func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
-request = &UnbindMFADeviceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "UnbindMFADevice", "", "")
-return
+	request = &UnbindMFADeviceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "UnbindMFADevice", "", "")
+	return
 }
 
 func CreateUnbindMFADeviceResponse() (response *UnbindMFADeviceResponse) {
-response = &UnbindMFADeviceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UnbindMFADeviceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

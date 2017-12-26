@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CheckDevices(request *CheckDevicesRequest) (response *CheckDevicesResponse, err error) {
-response = CreateCheckDevicesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCheckDevicesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CheckDevicesWithChan(request *CheckDevicesRequest) (<-chan *CheckDevicesResponse, <-chan error) {
-responseChan := make(chan *CheckDevicesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CheckDevices(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CheckDevicesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CheckDevices(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CheckDevicesWithCallback(request *CheckDevicesRequest, callback func(response *CheckDevicesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CheckDevicesResponse
-var err error
-defer close(result)
-response, err = client.CheckDevices(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CheckDevicesWithCallback(request *CheckDevicesRequest, callback func(response *CheckDevicesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CheckDevicesResponse
+		var err error
+		defer close(result)
+		response, err = client.CheckDevices(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CheckDevicesRequest struct {
-*requests.RpcRequest
-                AppKey  string `position:"Query" name:"AppKey"`
-                DeviceIds  string `position:"Query" name:"DeviceIds"`
+	*requests.RpcRequest
+	AppKey    string `position:"Query" name:"AppKey"`
+	DeviceIds string `position:"Query" name:"DeviceIds"`
 }
 
-
 type CheckDevicesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                DeviceCheckInfos struct {
-                    DeviceCheckInfo []struct {
-            DeviceId     string `json:"DeviceId" xml:"DeviceId"`
-            Available     bool `json:"Available" xml:"Available"`
-                    }   `json:"DeviceCheckInfo" xml:"DeviceCheckInfo"`
-                } `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DeviceCheckInfos struct {
+		DeviceCheckInfo []struct {
+			DeviceId  string          `json:"DeviceId" xml:"DeviceId"`
+			Available request.Boolean `json:"Available" xml:"Available"`
+		} `json:"DeviceCheckInfo" xml:"DeviceCheckInfo"`
+	} `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
 }
 
 func CreateCheckDevicesRequest() (request *CheckDevicesRequest) {
-request = &CheckDevicesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "CheckDevices", "", "")
-return
+	request = &CheckDevicesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "CheckDevices", "", "")
+	return
 }
 
 func CreateCheckDevicesResponse() (response *CheckDevicesResponse) {
-response = &CheckDevicesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CheckDevicesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

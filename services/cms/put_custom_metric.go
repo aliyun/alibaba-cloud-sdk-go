@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PutCustomMetric(request *PutCustomMetricRequest) (response *PutCustomMetricResponse, err error) {
-response = CreatePutCustomMetricResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePutCustomMetricResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) PutCustomMetricWithChan(request *PutCustomMetricRequest) (<-chan *PutCustomMetricResponse, <-chan error) {
-responseChan := make(chan *PutCustomMetricResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PutCustomMetric(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PutCustomMetricResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PutCustomMetric(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) PutCustomMetricWithCallback(request *PutCustomMetricRequest, callback func(response *PutCustomMetricResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PutCustomMetricResponse
-var err error
-defer close(result)
-response, err = client.PutCustomMetric(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PutCustomMetricWithCallback(request *PutCustomMetricRequest, callback func(response *PutCustomMetricResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PutCustomMetricResponse
+		var err error
+		defer close(result)
+		response, err = client.PutCustomMetric(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type PutCustomMetricRequest struct {
-*requests.RpcRequest
-                MetricList  string `position:"Query" name:"MetricList"`
+	*requests.RpcRequest
+	MetricList string `position:"Query" name:"MetricList"`
 }
 
-
 type PutCustomMetricResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            Data     string `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	Code    string `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
 }
 
 func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
-request = &PutCustomMetricRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "PutCustomMetric", "", "")
-return
+	request = &PutCustomMetricRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutCustomMetric", "", "")
+	return
 }
 
 func CreatePutCustomMetricResponse() (response *PutCustomMetricResponse) {
-response = &PutCustomMetricResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PutCustomMetricResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

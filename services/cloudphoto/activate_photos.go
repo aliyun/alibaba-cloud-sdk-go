@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ActivatePhotos(request *ActivatePhotosRequest) (response *ActivatePhotosResponse, err error) {
-response = CreateActivatePhotosResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateActivatePhotosResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-chan *ActivatePhotosResponse, <-chan error) {
-responseChan := make(chan *ActivatePhotosResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ActivatePhotos(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ActivatePhotosResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ActivatePhotos(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest, callback func(response *ActivatePhotosResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ActivatePhotosResponse
-var err error
-defer close(result)
-response, err = client.ActivatePhotos(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest, callback func(response *ActivatePhotosResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ActivatePhotosResponse
+		var err error
+		defer close(result)
+		response, err = client.ActivatePhotos(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ActivatePhotosRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                PhotoId  *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	*requests.RpcRequest
+	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
-
 type ActivatePhotosResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                Results  []struct {
-            Id     int64 `json:"Id" xml:"Id"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-                }  `json:"Results" xml:"Results"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   []struct {
+		Id      request.Integer `json:"Id" xml:"Id"`
+		Code    string          `json:"Code" xml:"Code"`
+		Message string          `json:"Message" xml:"Message"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
-request = &ActivatePhotosRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ActivatePhotos", "", "")
-return
+	request = &ActivatePhotosRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ActivatePhotos", "", "")
+	return
 }
 
 func CreateActivatePhotosResponse() (response *ActivatePhotosResponse) {
-response = &ActivatePhotosResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ActivatePhotosResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

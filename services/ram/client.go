@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,28 +16,28 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-    "github.com/aliyun/alibaba-cloud-sdk-go/sdk"
-    "github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 )
 
 type Client struct {
-    sdk.Client
+	sdk.Client
 }
 
 func NewClient() (client *Client, err error) {
-    client = &Client{}
-    err = client.Init()
-    return
+	client = &Client{}
+	err = client.Init()
+	return
 }
 
 func NewClientWithOptions(regionId string, config *sdk.Config, credential auth.Credential) (client *Client, err error) {
-    client = &Client{}
-    err = client.InitWithOptions(regionId, config, credential)
-    return
+	client = &Client{}
+	err = client.InitWithOptions(regionId, config, credential)
+	return
 }
 
 func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (client *Client, err error) {
-    client = &Client{}
-    err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
-    return
+	client = &Client{}
+	err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
+	return
 }

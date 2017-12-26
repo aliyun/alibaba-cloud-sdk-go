@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,89 +16,87 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RemoveTags(request *RemoveTagsRequest) (response *RemoveTagsResponse, err error) {
-response = CreateRemoveTagsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRemoveTagsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *RemoveTagsResponse, <-chan error) {
-responseChan := make(chan *RemoveTagsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RemoveTags(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RemoveTagsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RemoveTags(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callback func(response *RemoveTagsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RemoveTagsResponse
-var err error
-defer close(result)
-response, err = client.RemoveTags(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callback func(response *RemoveTagsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RemoveTagsResponse
+		var err error
+		defer close(result)
+		response, err = client.RemoveTags(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RemoveTagsRequest struct {
-*requests.RpcRequest
-                ResourceType  string `position:"Query" name:"ResourceType"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
-                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
-                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
-                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
-                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
-                ResourceId  string `position:"Query" name:"ResourceId"`
-                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
-                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
-                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
+	*requests.RpcRequest
+	ResourceType         string `position:"Query" name:"ResourceType"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
+	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
+	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
+	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
+	ResourceId           string `position:"Query" name:"ResourceId"`
+	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
+	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
 }
 
-
 type RemoveTagsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
-request = &RemoveTagsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RemoveTags", "", "")
-return
+	request = &RemoveTagsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RemoveTags", "", "")
+	return
 }
 
 func CreateRemoveTagsResponse() (response *RemoveTagsResponse) {
-response = &RemoveTagsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RemoveTagsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

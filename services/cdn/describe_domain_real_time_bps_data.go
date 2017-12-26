@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainRealTimeBpsData(request *DescribeDomainRealTimeBpsDataRequest) (response *DescribeDomainRealTimeBpsDataResponse, err error) {
-response = CreateDescribeDomainRealTimeBpsDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDomainRealTimeBpsDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDomainRealTimeBpsDataWithChan(request *DescribeDomainRealTimeBpsDataRequest) (<-chan *DescribeDomainRealTimeBpsDataResponse, <-chan error) {
-responseChan := make(chan *DescribeDomainRealTimeBpsDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDomainRealTimeBpsData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDomainRealTimeBpsDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDomainRealTimeBpsData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainRealTimeBpsDataWithCallback(request *DescribeDomainRealTimeBpsDataRequest, callback func(response *DescribeDomainRealTimeBpsDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDomainRealTimeBpsDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeDomainRealTimeBpsData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDomainRealTimeBpsDataWithCallback(request *DescribeDomainRealTimeBpsDataRequest, callback func(response *DescribeDomainRealTimeBpsDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDomainRealTimeBpsDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDomainRealTimeBpsData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDomainRealTimeBpsDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                Version  string `position:"Query" name:"Version"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                IspNameEn  string `position:"Query" name:"IspNameEn"`
-                LocationNameEn  string `position:"Query" name:"LocationNameEn"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime        string `position:"Query" name:"EndTime"`
+	Version        string `position:"Query" name:"Version"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	OwnerId        string `position:"Query" name:"OwnerId"`
+	SecurityToken  string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeDomainRealTimeBpsDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                Data struct {
-                    BpsModel []struct {
-            Bps     float64 `json:"Bps" xml:"Bps"`
-            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
-                    }   `json:"BpsModel" xml:"BpsModel"`
-                } `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      struct {
+		BpsModel []struct {
+			Bps       request.Float `json:"Bps" xml:"Bps"`
+			TimeStamp string        `json:"TimeStamp" xml:"TimeStamp"`
+		} `json:"BpsModel" xml:"BpsModel"`
+	} `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTimeBpsDataRequest) {
-request = &DescribeDomainRealTimeBpsDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData", "", "")
-return
+	request = &DescribeDomainRealTimeBpsDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData", "", "")
+	return
 }
 
 func CreateDescribeDomainRealTimeBpsDataResponse() (response *DescribeDomainRealTimeBpsDataResponse) {
-response = &DescribeDomainRealTimeBpsDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDomainRealTimeBpsDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

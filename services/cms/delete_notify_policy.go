@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
-response = CreateDeleteNotifyPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteNotifyPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
-responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteNotifyPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteNotifyPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteNotifyPolicyResponse
-var err error
-defer close(result)
-response, err = client.DeleteNotifyPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteNotifyPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteNotifyPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteNotifyPolicyRequest struct {
-*requests.RpcRequest
-                Id  string `position:"Query" name:"Id"`
-                AlertName  string `position:"Query" name:"AlertName"`
-                PolicyType  string `position:"Query" name:"PolicyType"`
-                Dimensions  string `position:"Query" name:"Dimensions"`
+	*requests.RpcRequest
+	Id         string `position:"Query" name:"Id"`
+	AlertName  string `position:"Query" name:"AlertName"`
+	PolicyType string `position:"Query" name:"PolicyType"`
+	Dimensions string `position:"Query" name:"Dimensions"`
 }
 
-
 type DeleteNotifyPolicyResponse struct {
-*responses.BaseResponse
-            Code     string `json:"code" xml:"code"`
-            Message     string `json:"message" xml:"message"`
-            Success     string `json:"success" xml:"success"`
-            TraceId     string `json:"traceId" xml:"traceId"`
-            Result     int `json:"result" xml:"result"`
+	*responses.BaseResponse
+	Code    string          `json:"code" xml:"code"`
+	Message string          `json:"message" xml:"message"`
+	Success string          `json:"success" xml:"success"`
+	TraceId string          `json:"traceId" xml:"traceId"`
+	Result  request.Integer `json:"result" xml:"result"`
 }
 
 func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
-request = &DeleteNotifyPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "", "")
-return
+	request = &DeleteNotifyPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "", "")
+	return
 }
 
 func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
-response = &DeleteNotifyPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteNotifyPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

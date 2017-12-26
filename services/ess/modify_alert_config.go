@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyAlertConfig(request *ModifyAlertConfigRequest) (response *ModifyAlertConfigResponse, err error) {
-response = CreateModifyAlertConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyAlertConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyAlertConfigWithChan(request *ModifyAlertConfigRequest) (<-chan *ModifyAlertConfigResponse, <-chan error) {
-responseChan := make(chan *ModifyAlertConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyAlertConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyAlertConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyAlertConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRequest, callback func(response *ModifyAlertConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyAlertConfigResponse
-var err error
-defer close(result)
-response, err = client.ModifyAlertConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRequest, callback func(response *ModifyAlertConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyAlertConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyAlertConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyAlertConfigRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                SuccessConfig  string `position:"Query" name:"SuccessConfig"`
-                FailConfig  string `position:"Query" name:"FailConfig"`
-                RejectConfig  string `position:"Query" name:"RejectConfig"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ScalingGroupId  string `position:"Query" name:"ScalingGroupId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	SuccessConfig        string `position:"Query" name:"SuccessConfig"`
+	FailConfig           string `position:"Query" name:"FailConfig"`
+	RejectConfig         string `position:"Query" name:"RejectConfig"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
 }
 
-
 type ModifyAlertConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyAlertConfigRequest() (request *ModifyAlertConfigRequest) {
-request = &ModifyAlertConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "ModifyAlertConfig", "", "")
-return
+	request = &ModifyAlertConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyAlertConfig", "", "")
+	return
 }
 
 func CreateModifyAlertConfigResponse() (response *ModifyAlertConfigResponse) {
-response = &ModifyAlertConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyAlertConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

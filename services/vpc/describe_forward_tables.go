@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,103 +16,101 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeForwardTables(request *DescribeForwardTablesRequest) (response *DescribeForwardTablesResponse, err error) {
-response = CreateDescribeForwardTablesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeForwardTablesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeForwardTablesWithChan(request *DescribeForwardTablesRequest) (<-chan *DescribeForwardTablesResponse, <-chan error) {
-responseChan := make(chan *DescribeForwardTablesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeForwardTables(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeForwardTablesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeForwardTables(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeForwardTablesWithCallback(request *DescribeForwardTablesRequest, callback func(response *DescribeForwardTablesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeForwardTablesResponse
-var err error
-defer close(result)
-response, err = client.DescribeForwardTables(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeForwardTablesWithCallback(request *DescribeForwardTablesRequest, callback func(response *DescribeForwardTablesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeForwardTablesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeForwardTables(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeForwardTablesRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ForwardTableId  string `position:"Query" name:"ForwardTableId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ForwardTableId       string `position:"Query" name:"ForwardTableId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeForwardTablesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     int `json:"PageNumber" xml:"PageNumber"`
-            PageSize     int `json:"PageSize" xml:"PageSize"`
-                ForwardTables struct {
-                    ForwardTable []struct {
-            NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
-            ForwardTableId     string `json:"ForwardTableId" xml:"ForwardTableId"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-                ForwardEntrys struct {
-                    ForwardEntry []struct {
-            ForwardTableId     string `json:"ForwardTableId" xml:"ForwardTableId"`
-            ForwardEntryId     string `json:"ForwardEntryId" xml:"ForwardEntryId"`
-            ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
-            ExternalPort     string `json:"ExternalPort" xml:"ExternalPort"`
-            IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
-            InternalIp     string `json:"InternalIp" xml:"InternalIp"`
-            InternalPort     string `json:"InternalPort" xml:"InternalPort"`
-            Status     string `json:"Status" xml:"Status"`
-                    }   `json:"ForwardEntry" xml:"ForwardEntry"`
-                } `json:"ForwardEntrys" xml:"ForwardEntrys"`
-                    }   `json:"ForwardTable" xml:"ForwardTable"`
-                } `json:"ForwardTables" xml:"ForwardTables"`
+	*responses.BaseResponse
+	RequestId     string          `json:"RequestId" xml:"RequestId"`
+	TotalCount    request.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    request.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize      request.Integer `json:"PageSize" xml:"PageSize"`
+	ForwardTables struct {
+		ForwardTable []struct {
+			NatGatewayId   string `json:"NatGatewayId" xml:"NatGatewayId"`
+			ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
+			CreationTime   string `json:"CreationTime" xml:"CreationTime"`
+			ForwardEntrys  struct {
+				ForwardEntry []struct {
+					ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
+					ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
+					ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
+					ExternalPort   string `json:"ExternalPort" xml:"ExternalPort"`
+					IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
+					InternalIp     string `json:"InternalIp" xml:"InternalIp"`
+					InternalPort   string `json:"InternalPort" xml:"InternalPort"`
+					Status         string `json:"Status" xml:"Status"`
+				} `json:"ForwardEntry" xml:"ForwardEntry"`
+			} `json:"ForwardEntrys" xml:"ForwardEntrys"`
+		} `json:"ForwardTable" xml:"ForwardTable"`
+	} `json:"ForwardTables" xml:"ForwardTables"`
 }
 
 func CreateDescribeForwardTablesRequest() (request *DescribeForwardTablesRequest) {
-request = &DescribeForwardTablesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTables", "", "")
-return
+	request = &DescribeForwardTablesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTables", "", "")
+	return
 }
 
 func CreateDescribeForwardTablesResponse() (response *DescribeForwardTablesResponse) {
-response = &DescribeForwardTablesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeForwardTablesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

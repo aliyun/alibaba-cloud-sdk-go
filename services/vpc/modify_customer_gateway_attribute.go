@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,87 +16,85 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyCustomerGatewayAttribute(request *ModifyCustomerGatewayAttributeRequest) (response *ModifyCustomerGatewayAttributeResponse, err error) {
-response = CreateModifyCustomerGatewayAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyCustomerGatewayAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCustomerGatewayAttributeRequest) (<-chan *ModifyCustomerGatewayAttributeResponse, <-chan error) {
-responseChan := make(chan *ModifyCustomerGatewayAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyCustomerGatewayAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyCustomerGatewayAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyCustomerGatewayAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *ModifyCustomerGatewayAttributeRequest, callback func(response *ModifyCustomerGatewayAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyCustomerGatewayAttributeResponse
-var err error
-defer close(result)
-response, err = client.ModifyCustomerGatewayAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *ModifyCustomerGatewayAttributeRequest, callback func(response *ModifyCustomerGatewayAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyCustomerGatewayAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyCustomerGatewayAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyCustomerGatewayAttributeRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                Name  string `position:"Query" name:"Name"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                CustomerGatewayId  string `position:"Query" name:"CustomerGatewayId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	Name                 string `position:"Query" name:"Name"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type ModifyCustomerGatewayAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            CustomerGatewayId     string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-            IpAddress     string `json:"IpAddress" xml:"IpAddress"`
-            Name     string `json:"Name" xml:"Name"`
-            Description     string `json:"Description" xml:"Description"`
-            CreateTime     int64 `json:"CreateTime" xml:"CreateTime"`
+	*responses.BaseResponse
+	RequestId         string          `json:"RequestId" xml:"RequestId"`
+	CustomerGatewayId string          `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	IpAddress         string          `json:"IpAddress" xml:"IpAddress"`
+	Name              string          `json:"Name" xml:"Name"`
+	Description       string          `json:"Description" xml:"Description"`
+	CreateTime        request.Integer `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatewayAttributeRequest) {
-request = &ModifyCustomerGatewayAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "", "")
-return
+	request = &ModifyCustomerGatewayAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "", "")
+	return
 }
 
 func CreateModifyCustomerGatewayAttributeResponse() (response *ModifyCustomerGatewayAttributeResponse) {
-response = &ModifyCustomerGatewayAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyCustomerGatewayAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

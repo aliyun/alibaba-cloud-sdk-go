@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AddIpfilter(request *AddIpfilterRequest) (response *AddIpfilterResponse, err error) {
-response = CreateAddIpfilterResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAddIpfilterResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *AddIpfilterResponse, <-chan error) {
-responseChan := make(chan *AddIpfilterResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AddIpfilter(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AddIpfilterResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AddIpfilter(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callback func(response *AddIpfilterResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AddIpfilterResponse
-var err error
-defer close(result)
-response, err = client.AddIpfilter(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callback func(response *AddIpfilterResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AddIpfilterResponse
+		var err error
+		defer close(result)
+		response, err = client.AddIpfilter(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AddIpfilterRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                IpAddress  string `position:"Query" name:"IpAddress"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	IpAddress            string `position:"Query" name:"IpAddress"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type AddIpfilterResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
-request = &AddIpfilterRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "AddIpfilter", "", "")
-return
+	request = &AddIpfilterRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "AddIpfilter", "", "")
+	return
 }
 
 func CreateAddIpfilterResponse() (response *AddIpfilterResponse) {
-response = &AddIpfilterResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AddIpfilterResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

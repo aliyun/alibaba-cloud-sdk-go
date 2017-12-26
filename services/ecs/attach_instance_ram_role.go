@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachInstanceRamRole(request *AttachInstanceRamRoleRequest) (response *AttachInstanceRamRoleResponse, err error) {
-response = CreateAttachInstanceRamRoleResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAttachInstanceRamRoleResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AttachInstanceRamRoleWithChan(request *AttachInstanceRamRoleRequest) (<-chan *AttachInstanceRamRoleResponse, <-chan error) {
-responseChan := make(chan *AttachInstanceRamRoleResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AttachInstanceRamRole(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AttachInstanceRamRoleResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AttachInstanceRamRole(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceRamRoleRequest, callback func(response *AttachInstanceRamRoleResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AttachInstanceRamRoleResponse
-var err error
-defer close(result)
-response, err = client.AttachInstanceRamRole(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceRamRoleRequest, callback func(response *AttachInstanceRamRoleResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AttachInstanceRamRoleResponse
+		var err error
+		defer close(result)
+		response, err = client.AttachInstanceRamRole(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AttachInstanceRamRoleRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                InstanceIds  string `position:"Query" name:"InstanceIds"`
-                RamRoleName  string `position:"Query" name:"RamRoleName"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string `position:"Query" name:"InstanceIds"`
+	RamRoleName          string `position:"Query" name:"RamRoleName"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type AttachInstanceRamRoleResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     int `json:"TotalCount" xml:"TotalCount"`
-            FailCount     int `json:"FailCount" xml:"FailCount"`
-            RamRoleName     string `json:"RamRoleName" xml:"RamRoleName"`
-                AttachInstanceRamRoleResults struct {
-                    AttachInstanceRamRoleResult []struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Success     bool `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-                    }   `json:"AttachInstanceRamRoleResult" xml:"AttachInstanceRamRoleResult"`
-                } `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
+	*responses.BaseResponse
+	RequestId                    string          `json:"RequestId" xml:"RequestId"`
+	TotalCount                   request.Integer `json:"TotalCount" xml:"TotalCount"`
+	FailCount                    request.Integer `json:"FailCount" xml:"FailCount"`
+	RamRoleName                  string          `json:"RamRoleName" xml:"RamRoleName"`
+	AttachInstanceRamRoleResults struct {
+		AttachInstanceRamRoleResult []struct {
+			InstanceId string          `json:"InstanceId" xml:"InstanceId"`
+			Success    request.Boolean `json:"Success" xml:"Success"`
+			Code       string          `json:"Code" xml:"Code"`
+			Message    string          `json:"Message" xml:"Message"`
+		} `json:"AttachInstanceRamRoleResult" xml:"AttachInstanceRamRoleResult"`
+	} `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
 }
 
 func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest) {
-request = &AttachInstanceRamRoleRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "", "")
-return
+	request = &AttachInstanceRamRoleRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "", "")
+	return
 }
 
 func CreateAttachInstanceRamRoleResponse() (response *AttachInstanceRamRoleResponse) {
-response = &AttachInstanceRamRoleResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AttachInstanceRamRoleResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

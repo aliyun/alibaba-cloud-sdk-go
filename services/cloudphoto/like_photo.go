@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) LikePhoto(request *LikePhotoRequest) (response *LikePhotoResponse, err error) {
-response = CreateLikePhotoResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateLikePhotoResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *LikePhotoResponse, <-chan error) {
-responseChan := make(chan *LikePhotoResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.LikePhoto(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *LikePhotoResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.LikePhoto(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback func(response *LikePhotoResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *LikePhotoResponse
-var err error
-defer close(result)
-response, err = client.LikePhoto(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback func(response *LikePhotoResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *LikePhotoResponse
+		var err error
+		defer close(result)
+		response, err = client.LikePhoto(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type LikePhotoRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                PhotoId  string `position:"Query" name:"PhotoId"`
+	*requests.RpcRequest
+	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
+	PhotoId   string `position:"Query" name:"PhotoId"`
 }
 
-
 type LikePhotoResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateLikePhotoRequest() (request *LikePhotoRequest) {
-request = &LikePhotoRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "", "")
-return
+	request = &LikePhotoRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "", "")
+	return
 }
 
 func CreateLikePhotoResponse() (response *LikePhotoResponse) {
-response = &LikePhotoResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &LikePhotoResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDomainRealTimeByteHitRateData(request *DescribeDomainRealTimeByteHitRateDataRequest) (response *DescribeDomainRealTimeByteHitRateDataResponse, err error) {
-response = CreateDescribeDomainRealTimeByteHitRateDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDomainRealTimeByteHitRateDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDomainRealTimeByteHitRateDataWithChan(request *DescribeDomainRealTimeByteHitRateDataRequest) (<-chan *DescribeDomainRealTimeByteHitRateDataResponse, <-chan error) {
-responseChan := make(chan *DescribeDomainRealTimeByteHitRateDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDomainRealTimeByteHitRateData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDomainRealTimeByteHitRateDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDomainRealTimeByteHitRateData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDomainRealTimeByteHitRateDataWithCallback(request *DescribeDomainRealTimeByteHitRateDataRequest, callback func(response *DescribeDomainRealTimeByteHitRateDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDomainRealTimeByteHitRateDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeDomainRealTimeByteHitRateData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDomainRealTimeByteHitRateDataWithCallback(request *DescribeDomainRealTimeByteHitRateDataRequest, callback func(response *DescribeDomainRealTimeByteHitRateDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDomainRealTimeByteHitRateDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDomainRealTimeByteHitRateData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDomainRealTimeByteHitRateDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Version  string `position:"Query" name:"Version"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	Version       string `position:"Query" name:"Version"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeDomainRealTimeByteHitRateDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                Data struct {
-                    ByteHitRateDataModel []struct {
-            ByteHitRate     float64 `json:"ByteHitRate" xml:"ByteHitRate"`
-            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
-                    }   `json:"ByteHitRateDataModel" xml:"ByteHitRateDataModel"`
-                } `json:"Data" xml:"Data"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      struct {
+		ByteHitRateDataModel []struct {
+			ByteHitRate request.Float `json:"ByteHitRate" xml:"ByteHitRate"`
+			TimeStamp   string        `json:"TimeStamp" xml:"TimeStamp"`
+		} `json:"ByteHitRateDataModel" xml:"ByteHitRateDataModel"`
+	} `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeByteHitRateDataRequest() (request *DescribeDomainRealTimeByteHitRateDataRequest) {
-request = &DescribeDomainRealTimeByteHitRateDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeByteHitRateData", "", "")
-return
+	request = &DescribeDomainRealTimeByteHitRateDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeByteHitRateData", "", "")
+	return
 }
 
 func CreateDescribeDomainRealTimeByteHitRateDataResponse() (response *DescribeDomainRealTimeByteHitRateDataResponse) {
-response = &DescribeDomainRealTimeByteHitRateDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDomainRealTimeByteHitRateDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
