@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,89 +16,87 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyDBInstancePayType(request *ModifyDBInstancePayTypeRequest) (response *ModifyDBInstancePayTypeResponse, err error) {
-response = CreateModifyDBInstancePayTypeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyDBInstancePayTypeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyDBInstancePayTypeWithChan(request *ModifyDBInstancePayTypeRequest) (<-chan *ModifyDBInstancePayTypeResponse, <-chan error) {
-responseChan := make(chan *ModifyDBInstancePayTypeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyDBInstancePayType(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyDBInstancePayTypeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyDBInstancePayType(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyDBInstancePayTypeWithCallback(request *ModifyDBInstancePayTypeRequest, callback func(response *ModifyDBInstancePayTypeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyDBInstancePayTypeResponse
-var err error
-defer close(result)
-response, err = client.ModifyDBInstancePayType(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyDBInstancePayTypeWithCallback(request *ModifyDBInstancePayTypeRequest, callback func(response *ModifyDBInstancePayTypeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyDBInstancePayTypeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyDBInstancePayType(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyDBInstancePayTypeRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                UsedTime  string `position:"Query" name:"UsedTime"`
-                Resource  string `position:"Query" name:"Resource"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Period  string `position:"Query" name:"Period"`
-                AgentId  string `position:"Query" name:"AgentId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AutoPay  string `position:"Query" name:"AutoPay"`
-                PayType  string `position:"Query" name:"PayType"`
-                BusinessInfo  string `position:"Query" name:"BusinessInfo"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	UsedTime             string `position:"Query" name:"UsedTime"`
+	Resource             string `position:"Query" name:"Resource"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Period               string `position:"Query" name:"Period"`
+	AgentId              string `position:"Query" name:"AgentId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              string `position:"Query" name:"AutoPay"`
+	PayType              string `position:"Query" name:"PayType"`
+	BusinessInfo         string `position:"Query" name:"BusinessInfo"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type ModifyDBInstancePayTypeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-            OrderId     requests.Integer `json:"OrderId" xml:"OrderId"`
+	*responses.BaseResponse
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string           `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      requests.Integer `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateModifyDBInstancePayTypeRequest() (request *ModifyDBInstancePayTypeRequest) {
-request = &ModifyDBInstancePayTypeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "", "")
-return
+	request = &ModifyDBInstancePayTypeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "", "")
+	return
 }
 
 func CreateModifyDBInstancePayTypeResponse() (response *ModifyDBInstancePayTypeResponse) {
-response = &ModifyDBInstancePayTypeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyDBInstancePayTypeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

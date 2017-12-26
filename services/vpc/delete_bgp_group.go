@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteBgpGroup(request *DeleteBgpGroupRequest) (response *DeleteBgpGroupResponse, err error) {
-response = CreateDeleteBgpGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteBgpGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteBgpGroupWithChan(request *DeleteBgpGroupRequest) (<-chan *DeleteBgpGroupResponse, <-chan error) {
-responseChan := make(chan *DeleteBgpGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteBgpGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteBgpGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteBgpGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteBgpGroupWithCallback(request *DeleteBgpGroupRequest, callback func(response *DeleteBgpGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteBgpGroupResponse
-var err error
-defer close(result)
-response, err = client.DeleteBgpGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteBgpGroupWithCallback(request *DeleteBgpGroupRequest, callback func(response *DeleteBgpGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteBgpGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteBgpGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteBgpGroupRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                BgpGroupId  string `position:"Query" name:"BgpGroupId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	BgpGroupId           string `position:"Query" name:"BgpGroupId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeleteBgpGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteBgpGroupRequest() (request *DeleteBgpGroupRequest) {
-request = &DeleteBgpGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpGroup", "", "")
-return
+	request = &DeleteBgpGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpGroup", "", "")
+	return
 }
 
 func CreateDeleteBgpGroupResponse() (response *DeleteBgpGroupResponse) {
-response = &DeleteBgpGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteBgpGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,101 +16,99 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeInstanceMonitorData(request *DescribeInstanceMonitorDataRequest) (response *DescribeInstanceMonitorDataResponse, err error) {
-response = CreateDescribeInstanceMonitorDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeInstanceMonitorDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeInstanceMonitorDataWithChan(request *DescribeInstanceMonitorDataRequest) (<-chan *DescribeInstanceMonitorDataResponse, <-chan error) {
-responseChan := make(chan *DescribeInstanceMonitorDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeInstanceMonitorData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeInstanceMonitorDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeInstanceMonitorData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeInstanceMonitorDataRequest, callback func(response *DescribeInstanceMonitorDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeInstanceMonitorDataResponse
-var err error
-defer close(result)
-response, err = client.DescribeInstanceMonitorData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeInstanceMonitorDataRequest, callback func(response *DescribeInstanceMonitorDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeInstanceMonitorDataResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeInstanceMonitorData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeInstanceMonitorDataRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                Period  string `position:"Query" name:"Period"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Period               string `position:"Query" name:"Period"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
-
 type DescribeInstanceMonitorDataResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                MonitorData struct {
-                    InstanceMonitorData []struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            CPU     requests.Integer `json:"CPU" xml:"CPU"`
-            IntranetRX     requests.Integer `json:"IntranetRX" xml:"IntranetRX"`
-            IntranetTX     requests.Integer `json:"IntranetTX" xml:"IntranetTX"`
-            IntranetBandwidth     requests.Integer `json:"IntranetBandwidth" xml:"IntranetBandwidth"`
-            InternetRX     requests.Integer `json:"InternetRX" xml:"InternetRX"`
-            InternetTX     requests.Integer `json:"InternetTX" xml:"InternetTX"`
-            InternetBandwidth     requests.Integer `json:"InternetBandwidth" xml:"InternetBandwidth"`
-            IOPSRead     requests.Integer `json:"IOPSRead" xml:"IOPSRead"`
-            IOPSWrite     requests.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
-            BPSRead     requests.Integer `json:"BPSRead" xml:"BPSRead"`
-            BPSWrite     requests.Integer `json:"BPSWrite" xml:"BPSWrite"`
-            CPUCreditUsage     requests.Float `json:"CPUCreditUsage" xml:"CPUCreditUsage"`
-            CPUCreditBalance     requests.Float `json:"CPUCreditBalance" xml:"CPUCreditBalance"`
-            TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
-                    }   `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
-                } `json:"MonitorData" xml:"MonitorData"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	MonitorData struct {
+		InstanceMonitorData []struct {
+			InstanceId        string           `json:"InstanceId" xml:"InstanceId"`
+			CPU               requests.Integer `json:"CPU" xml:"CPU"`
+			IntranetRX        requests.Integer `json:"IntranetRX" xml:"IntranetRX"`
+			IntranetTX        requests.Integer `json:"IntranetTX" xml:"IntranetTX"`
+			IntranetBandwidth requests.Integer `json:"IntranetBandwidth" xml:"IntranetBandwidth"`
+			InternetRX        requests.Integer `json:"InternetRX" xml:"InternetRX"`
+			InternetTX        requests.Integer `json:"InternetTX" xml:"InternetTX"`
+			InternetBandwidth requests.Integer `json:"InternetBandwidth" xml:"InternetBandwidth"`
+			IOPSRead          requests.Integer `json:"IOPSRead" xml:"IOPSRead"`
+			IOPSWrite         requests.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
+			BPSRead           requests.Integer `json:"BPSRead" xml:"BPSRead"`
+			BPSWrite          requests.Integer `json:"BPSWrite" xml:"BPSWrite"`
+			CPUCreditUsage    requests.Float   `json:"CPUCreditUsage" xml:"CPUCreditUsage"`
+			CPUCreditBalance  requests.Float   `json:"CPUCreditBalance" xml:"CPUCreditBalance"`
+			TimeStamp         string           `json:"TimeStamp" xml:"TimeStamp"`
+		} `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
+	} `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonitorDataRequest) {
-request = &DescribeInstanceMonitorDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "", "")
-return
+	request = &DescribeInstanceMonitorDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "", "")
+	return
 }
 
 func CreateDescribeInstanceMonitorDataResponse() (response *DescribeInstanceMonitorDataResponse) {
-response = &DescribeInstanceMonitorDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeInstanceMonitorDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

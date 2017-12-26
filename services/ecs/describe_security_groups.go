@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,119 +16,117 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSecurityGroups(request *DescribeSecurityGroupsRequest) (response *DescribeSecurityGroupsResponse, err error) {
-response = CreateDescribeSecurityGroupsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeSecurityGroupsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGroupsRequest) (<-chan *DescribeSecurityGroupsResponse, <-chan error) {
-responseChan := make(chan *DescribeSecurityGroupsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeSecurityGroups(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeSecurityGroupsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeSecurityGroups(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecurityGroupsRequest, callback func(response *DescribeSecurityGroupsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeSecurityGroupsResponse
-var err error
-defer close(result)
-response, err = client.DescribeSecurityGroups(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecurityGroupsRequest, callback func(response *DescribeSecurityGroupsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeSecurityGroupsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeSecurityGroups(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeSecurityGroupsRequest struct {
-*requests.RpcRequest
-                SecurityGroupName  string `position:"Query" name:"SecurityGroupName"`
-                PageSize  string `position:"Query" name:"PageSize"`
-                IsQueryEcsCount  string `position:"Query" name:"IsQueryEcsCount"`
-                SecurityGroupIds  string `position:"Query" name:"SecurityGroupIds"`
-                FuzzyQuery  string `position:"Query" name:"FuzzyQuery"`
-                NetworkType  string `position:"Query" name:"NetworkType"`
-                Tag3Key  string `position:"Query" name:"Tag.3.Key"`
-                Tag5Value  string `position:"Query" name:"Tag.5.Value"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Tag1Key  string `position:"Query" name:"Tag.1.Key"`
-                Tag1Value  string `position:"Query" name:"Tag.1.Value"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                Tag4Value  string `position:"Query" name:"Tag.4.Value"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                Tag5Key  string `position:"Query" name:"Tag.5.Key"`
-                Tag2Key  string `position:"Query" name:"Tag.2.Key"`
-                VpcId  string `position:"Query" name:"VpcId"`
-                DryRun  string `position:"Query" name:"DryRun"`
-                Tag3Value  string `position:"Query" name:"Tag.3.Value"`
-                Tag4Key  string `position:"Query" name:"Tag.4.Key"`
-                Tag2Value  string `position:"Query" name:"Tag.2.Value"`
+	*requests.RpcRequest
+	SecurityGroupName    string `position:"Query" name:"SecurityGroupName"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	IsQueryEcsCount      string `position:"Query" name:"IsQueryEcsCount"`
+	SecurityGroupIds     string `position:"Query" name:"SecurityGroupIds"`
+	FuzzyQuery           string `position:"Query" name:"FuzzyQuery"`
+	NetworkType          string `position:"Query" name:"NetworkType"`
+	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
+	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
+	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
+	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
+	VpcId                string `position:"Query" name:"VpcId"`
+	DryRun               string `position:"Query" name:"DryRun"`
+	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
+	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
 }
 
-
 type DescribeSecurityGroupsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
-                SecurityGroups struct {
-                    SecurityGroup []struct {
-            SecurityGroupId     string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-            Description     string `json:"Description" xml:"Description"`
-            SecurityGroupName     string `json:"SecurityGroupName" xml:"SecurityGroupName"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            AvailableInstanceAmount     requests.Integer `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
-            EcsCount     requests.Integer `json:"EcsCount" xml:"EcsCount"`
-                Tags struct {
-                    Tag []struct {
-            TagKey     string `json:"TagKey" xml:"TagKey"`
-            TagValue     string `json:"TagValue" xml:"TagValue"`
-                    }   `json:"Tag" xml:"Tag"`
-                } `json:"Tags" xml:"Tags"`
-                    }   `json:"SecurityGroup" xml:"SecurityGroup"`
-                } `json:"SecurityGroups" xml:"SecurityGroups"`
+	*responses.BaseResponse
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	RegionId       string           `json:"RegionId" xml:"RegionId"`
+	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
+	SecurityGroups struct {
+		SecurityGroup []struct {
+			SecurityGroupId         string           `json:"SecurityGroupId" xml:"SecurityGroupId"`
+			Description             string           `json:"Description" xml:"Description"`
+			SecurityGroupName       string           `json:"SecurityGroupName" xml:"SecurityGroupName"`
+			VpcId                   string           `json:"VpcId" xml:"VpcId"`
+			CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
+			AvailableInstanceAmount requests.Integer `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
+			EcsCount                requests.Integer `json:"EcsCount" xml:"EcsCount"`
+			Tags                    struct {
+				Tag []struct {
+					TagKey   string `json:"TagKey" xml:"TagKey"`
+					TagValue string `json:"TagValue" xml:"TagValue"`
+				} `json:"Tag" xml:"Tag"`
+			} `json:"Tags" xml:"Tags"`
+		} `json:"SecurityGroup" xml:"SecurityGroup"`
+	} `json:"SecurityGroups" xml:"SecurityGroups"`
 }
 
 func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsRequest) {
-request = &DescribeSecurityGroupsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "", "")
-return
+	request = &DescribeSecurityGroupsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "", "")
+	return
 }
 
 func CreateDescribeSecurityGroupsResponse() (response *DescribeSecurityGroupsResponse) {
-response = &DescribeSecurityGroupsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeSecurityGroupsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

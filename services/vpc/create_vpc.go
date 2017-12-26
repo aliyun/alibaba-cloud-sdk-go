@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateVpc(request *CreateVpcRequest) (response *CreateVpcResponse, err error) {
-response = CreateCreateVpcResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateVpcResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateVpcWithChan(request *CreateVpcRequest) (<-chan *CreateVpcResponse, <-chan error) {
-responseChan := make(chan *CreateVpcResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateVpc(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateVpcResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateVpc(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateVpcWithCallback(request *CreateVpcRequest, callback func(response *CreateVpcResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateVpcResponse
-var err error
-defer close(result)
-response, err = client.CreateVpc(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateVpcWithCallback(request *CreateVpcRequest, callback func(response *CreateVpcResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateVpcResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateVpc(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateVpcRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                VpcName  string `position:"Query" name:"VpcName"`
-                UserCidr  string `position:"Query" name:"UserCidr"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                CidrBlock  string `position:"Query" name:"CidrBlock"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	VpcName              string `position:"Query" name:"VpcName"`
+	UserCidr             string `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	CidrBlock            string `position:"Query" name:"CidrBlock"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type CreateVpcResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            VpcId     string `json:"VpcId" xml:"VpcId"`
-            VRouterId     string `json:"VRouterId" xml:"VRouterId"`
-            RouteTableId     string `json:"RouteTableId" xml:"RouteTableId"`
+	*responses.BaseResponse
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	VpcId        string `json:"VpcId" xml:"VpcId"`
+	VRouterId    string `json:"VRouterId" xml:"VRouterId"`
+	RouteTableId string `json:"RouteTableId" xml:"RouteTableId"`
 }
 
 func CreateCreateVpcRequest() (request *CreateVpcRequest) {
-request = &CreateVpcRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpc", "", "")
-return
+	request = &CreateVpcRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpc", "", "")
+	return
 }
 
 func CreateCreateVpcResponse() (response *CreateVpcResponse) {
-response = &CreateVpcResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateVpcResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

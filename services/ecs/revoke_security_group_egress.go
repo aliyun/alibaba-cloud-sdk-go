@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RevokeSecurityGroupEgress(request *RevokeSecurityGroupEgressRequest) (response *RevokeSecurityGroupEgressResponse, err error) {
-response = CreateRevokeSecurityGroupEgressResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRevokeSecurityGroupEgressResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RevokeSecurityGroupEgressWithChan(request *RevokeSecurityGroupEgressRequest) (<-chan *RevokeSecurityGroupEgressResponse, <-chan error) {
-responseChan := make(chan *RevokeSecurityGroupEgressResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RevokeSecurityGroupEgress(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RevokeSecurityGroupEgressResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RevokeSecurityGroupEgress(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecurityGroupEgressRequest, callback func(response *RevokeSecurityGroupEgressResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RevokeSecurityGroupEgressResponse
-var err error
-defer close(result)
-response, err = client.RevokeSecurityGroupEgress(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecurityGroupEgressRequest, callback func(response *RevokeSecurityGroupEgressResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RevokeSecurityGroupEgressResponse
+		var err error
+		defer close(result)
+		response, err = client.RevokeSecurityGroupEgress(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RevokeSecurityGroupEgressRequest struct {
-*requests.RpcRequest
-                PortRange  string `position:"Query" name:"PortRange"`
-                DestCidrIp  string `position:"Query" name:"DestCidrIp"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                Priority  string `position:"Query" name:"Priority"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                DestGroupId  string `position:"Query" name:"DestGroupId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
-                SourcePortRange  string `position:"Query" name:"SourcePortRange"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                IpProtocol  string `position:"Query" name:"IpProtocol"`
-                DestGroupOwnerAccount  string `position:"Query" name:"DestGroupOwnerAccount"`
-                DestGroupOwnerId  string `position:"Query" name:"DestGroupOwnerId"`
-                NicType  string `position:"Query" name:"NicType"`
-                Policy  string `position:"Query" name:"Policy"`
-                SourceCidrIp  string `position:"Query" name:"SourceCidrIp"`
+	*requests.RpcRequest
+	PortRange             string `position:"Query" name:"PortRange"`
+	DestCidrIp            string `position:"Query" name:"DestCidrIp"`
+	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
+	Description           string `position:"Query" name:"Description"`
+	Priority              string `position:"Query" name:"Priority"`
+	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
+	DestGroupId           string `position:"Query" name:"DestGroupId"`
+	ClientToken           string `position:"Query" name:"ClientToken"`
+	SecurityGroupId       string `position:"Query" name:"SecurityGroupId"`
+	SourcePortRange       string `position:"Query" name:"SourcePortRange"`
+	OwnerId               string `position:"Query" name:"OwnerId"`
+	IpProtocol            string `position:"Query" name:"IpProtocol"`
+	DestGroupOwnerAccount string `position:"Query" name:"DestGroupOwnerAccount"`
+	DestGroupOwnerId      string `position:"Query" name:"DestGroupOwnerId"`
+	NicType               string `position:"Query" name:"NicType"`
+	Policy                string `position:"Query" name:"Policy"`
+	SourceCidrIp          string `position:"Query" name:"SourceCidrIp"`
 }
 
-
 type RevokeSecurityGroupEgressResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgressRequest) {
-request = &RevokeSecurityGroupEgressRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "", "")
-return
+	request = &RevokeSecurityGroupEgressRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "", "")
+	return
 }
 
 func CreateRevokeSecurityGroupEgressResponse() (response *RevokeSecurityGroupEgressResponse) {
-response = &RevokeSecurityGroupEgressResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RevokeSecurityGroupEgressResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (response *DeleteScalingGroupResponse, err error) {
-response = CreateDeleteScalingGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteScalingGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequest) (<-chan *DeleteScalingGroupResponse, <-chan error) {
-responseChan := make(chan *DeleteScalingGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteScalingGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteScalingGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteScalingGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroupRequest, callback func(response *DeleteScalingGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteScalingGroupResponse
-var err error
-defer close(result)
-response, err = client.DeleteScalingGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroupRequest, callback func(response *DeleteScalingGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteScalingGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteScalingGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteScalingGroupRequest struct {
-*requests.RpcRequest
-                ForceDelete  string `position:"Query" name:"ForceDelete"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ScalingGroupId  string `position:"Query" name:"ScalingGroupId"`
+	*requests.RpcRequest
+	ForceDelete          string `position:"Query" name:"ForceDelete"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
 }
 
-
 type DeleteScalingGroupResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
-request = &DeleteScalingGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "", "")
-return
+	request = &DeleteScalingGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "", "")
+	return
 }
 
 func CreateDeleteScalingGroupResponse() (response *DeleteScalingGroupResponse) {
-response = &DeleteScalingGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteScalingGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

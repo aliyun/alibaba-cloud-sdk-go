@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,101 +16,99 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetLoadBalancerTCPListenerAttribute(request *SetLoadBalancerTCPListenerAttributeRequest) (response *SetLoadBalancerTCPListenerAttributeResponse, err error) {
-response = CreateSetLoadBalancerTCPListenerAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetLoadBalancerTCPListenerAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetLoadBalancerTCPListenerAttributeWithChan(request *SetLoadBalancerTCPListenerAttributeRequest) (<-chan *SetLoadBalancerTCPListenerAttributeResponse, <-chan error) {
-responseChan := make(chan *SetLoadBalancerTCPListenerAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetLoadBalancerTCPListenerAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetLoadBalancerTCPListenerAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetLoadBalancerTCPListenerAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetLoadBalancerTCPListenerAttributeWithCallback(request *SetLoadBalancerTCPListenerAttributeRequest, callback func(response *SetLoadBalancerTCPListenerAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetLoadBalancerTCPListenerAttributeResponse
-var err error
-defer close(result)
-response, err = client.SetLoadBalancerTCPListenerAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetLoadBalancerTCPListenerAttributeWithCallback(request *SetLoadBalancerTCPListenerAttributeRequest, callback func(response *SetLoadBalancerTCPListenerAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetLoadBalancerTCPListenerAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.SetLoadBalancerTCPListenerAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetLoadBalancerTCPListenerAttributeRequest struct {
-*requests.RpcRequest
-                VServerGroup  string `position:"Query" name:"VServerGroup"`
-                SynProxy  string `position:"Query" name:"SynProxy"`
-                UnhealthyThreshold  string `position:"Query" name:"UnhealthyThreshold"`
-                Bandwidth  string `position:"Query" name:"Bandwidth"`
-                HealthCheckType  string `position:"Query" name:"HealthCheckType"`
-                EstablishedTimeout  string `position:"Query" name:"EstablishedTimeout"`
-                HealthCheckDomain  string `position:"Query" name:"HealthCheckDomain"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                MasterSlaveServerGroupId  string `position:"Query" name:"MasterSlaveServerGroupId"`
-                PersistenceTimeout  string `position:"Query" name:"PersistenceTimeout"`
-                Tags  string `position:"Query" name:"Tags"`
-                HealthCheckHttpCode  string `position:"Query" name:"HealthCheckHttpCode"`
-                Scheduler  string `position:"Query" name:"Scheduler"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                VServerGroupId  string `position:"Query" name:"VServerGroupId"`
-                HealthCheckInterval  string `position:"Query" name:"HealthCheckInterval"`
-                ListenerPort  string `position:"Query" name:"ListenerPort"`
-                HealthCheckURI  string `position:"Query" name:"HealthCheckURI"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                MaxConnection  string `position:"Query" name:"MaxConnection"`
-                HealthCheckConnectPort  string `position:"Query" name:"HealthCheckConnectPort"`
-                LoadBalancerId  string `position:"Query" name:"LoadBalancerId"`
-                MasterSlaveServerGroup  string `position:"Query" name:"MasterSlaveServerGroup"`
-                HealthyThreshold  string `position:"Query" name:"HealthyThreshold"`
-                HealthCheckConnectTimeout  string `position:"Query" name:"HealthCheckConnectTimeout"`
+	*requests.RpcRequest
+	VServerGroup              string `position:"Query" name:"VServerGroup"`
+	SynProxy                  string `position:"Query" name:"SynProxy"`
+	UnhealthyThreshold        string `position:"Query" name:"UnhealthyThreshold"`
+	Bandwidth                 string `position:"Query" name:"Bandwidth"`
+	HealthCheckType           string `position:"Query" name:"HealthCheckType"`
+	EstablishedTimeout        string `position:"Query" name:"EstablishedTimeout"`
+	HealthCheckDomain         string `position:"Query" name:"HealthCheckDomain"`
+	ResourceOwnerAccount      string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId           string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount              string `position:"Query" name:"OwnerAccount"`
+	MasterSlaveServerGroupId  string `position:"Query" name:"MasterSlaveServerGroupId"`
+	PersistenceTimeout        string `position:"Query" name:"PersistenceTimeout"`
+	Tags                      string `position:"Query" name:"Tags"`
+	HealthCheckHttpCode       string `position:"Query" name:"HealthCheckHttpCode"`
+	Scheduler                 string `position:"Query" name:"Scheduler"`
+	OwnerId                   string `position:"Query" name:"OwnerId"`
+	VServerGroupId            string `position:"Query" name:"VServerGroupId"`
+	HealthCheckInterval       string `position:"Query" name:"HealthCheckInterval"`
+	ListenerPort              string `position:"Query" name:"ListenerPort"`
+	HealthCheckURI            string `position:"Query" name:"HealthCheckURI"`
+	AccessKeyId               string `position:"Query" name:"access_key_id"`
+	MaxConnection             string `position:"Query" name:"MaxConnection"`
+	HealthCheckConnectPort    string `position:"Query" name:"HealthCheckConnectPort"`
+	LoadBalancerId            string `position:"Query" name:"LoadBalancerId"`
+	MasterSlaveServerGroup    string `position:"Query" name:"MasterSlaveServerGroup"`
+	HealthyThreshold          string `position:"Query" name:"HealthyThreshold"`
+	HealthCheckConnectTimeout string `position:"Query" name:"HealthCheckConnectTimeout"`
 }
 
-
 type SetLoadBalancerTCPListenerAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetLoadBalancerTCPListenerAttributeRequest() (request *SetLoadBalancerTCPListenerAttributeRequest) {
-request = &SetLoadBalancerTCPListenerAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "", "")
-return
+	request = &SetLoadBalancerTCPListenerAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "", "")
+	return
 }
 
 func CreateSetLoadBalancerTCPListenerAttributeResponse() (response *SetLoadBalancerTCPListenerAttributeResponse) {
-response = &SetLoadBalancerTCPListenerAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetLoadBalancerTCPListenerAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

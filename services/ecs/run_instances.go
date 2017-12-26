@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,130 +16,129 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RunInstances(request *RunInstancesRequest) (response *RunInstancesResponse, err error) {
-response = CreateRunInstancesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRunInstancesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan *RunInstancesResponse, <-chan error) {
-responseChan := make(chan *RunInstancesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RunInstances(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RunInstancesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RunInstances(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, callback func(response *RunInstancesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RunInstancesResponse
-var err error
-defer close(result)
-response, err = client.RunInstances(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, callback func(response *RunInstancesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RunInstancesResponse
+		var err error
+		defer close(result)
+		response, err = client.RunInstances(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RunInstancesRequest struct {
-*requests.RpcRequest
-                SpotPriceLimit  string `position:"Query" name:"SpotPriceLimit"`
-                SystemDiskCategory  string `position:"Query" name:"SystemDisk.Category"`
-                SpotStrategy  string `position:"Query" name:"SpotStrategy"`
-                ZoneId  string `position:"Query" name:"ZoneId"`
-                Tag  *[]RunInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
-                Password  string `position:"Query" name:"Password"`
-                InstanceType  string `position:"Query" name:"InstanceType"`
-                Amount  string `position:"Query" name:"Amount"`
-                Description  string `position:"Query" name:"Description"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                VSwitchId  string `position:"Query" name:"VSwitchId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
-                SecurityGroupId  string `position:"Query" name:"SecurityGroupId"`
-                HostName  string `position:"Query" name:"HostName"`
-                KeyPairName  string `position:"Query" name:"KeyPairName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SystemDiskDiskName  string `position:"Query" name:"SystemDisk.DiskName"`
-                IoOptimized  string `position:"Query" name:"IoOptimized"`
-                InstanceName  string `position:"Query" name:"InstanceName"`
-                NetworkInterface  *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
-                SecurityEnhancementStrategy  string `position:"Query" name:"SecurityEnhancementStrategy"`
-                UserData  string `position:"Query" name:"UserData"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                SystemDiskSize  string `position:"Query" name:"SystemDisk.Size"`
-                DataDisk  *[]RunInstancesDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
-                InternetMaxBandwidthOut  string `position:"Query" name:"InternetMaxBandwidthOut"`
-                AutoReleaseTime  string `position:"Query" name:"AutoReleaseTime"`
-                ImageId  string `position:"Query" name:"ImageId"`
-                RamRoleName  string `position:"Query" name:"RamRoleName"`
-                InternetMaxBandwidthIn  string `position:"Query" name:"InternetMaxBandwidthIn"`
-                SystemDiskDescription  string `position:"Query" name:"SystemDisk.Description"`
+	*requests.RpcRequest
+	SpotPriceLimit              string                          `position:"Query" name:"SpotPriceLimit"`
+	SystemDiskCategory          string                          `position:"Query" name:"SystemDisk.Category"`
+	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
+	ZoneId                      string                          `position:"Query" name:"ZoneId"`
+	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
+	Password                    string                          `position:"Query" name:"Password"`
+	InstanceType                string                          `position:"Query" name:"InstanceType"`
+	Amount                      string                          `position:"Query" name:"Amount"`
+	Description                 string                          `position:"Query" name:"Description"`
+	ResourceOwnerId             string                          `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                string                          `position:"Query" name:"OwnerAccount"`
+	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
+	ClientToken                 string                          `position:"Query" name:"ClientToken"`
+	InternetChargeType          string                          `position:"Query" name:"InternetChargeType"`
+	SecurityGroupId             string                          `position:"Query" name:"SecurityGroupId"`
+	HostName                    string                          `position:"Query" name:"HostName"`
+	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
+	OwnerId                     string                          `position:"Query" name:"OwnerId"`
+	SystemDiskDiskName          string                          `position:"Query" name:"SystemDisk.DiskName"`
+	IoOptimized                 string                          `position:"Query" name:"IoOptimized"`
+	InstanceName                string                          `position:"Query" name:"InstanceName"`
+	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
+	UserData                    string                          `position:"Query" name:"UserData"`
+	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
+	SystemDiskSize              string                          `position:"Query" name:"SystemDisk.Size"`
+	DataDisk                    *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
+	InternetMaxBandwidthOut     string                          `position:"Query" name:"InternetMaxBandwidthOut"`
+	AutoReleaseTime             string                          `position:"Query" name:"AutoReleaseTime"`
+	ImageId                     string                          `position:"Query" name:"ImageId"`
+	RamRoleName                 string                          `position:"Query" name:"RamRoleName"`
+	InternetMaxBandwidthIn      string                          `position:"Query" name:"InternetMaxBandwidthIn"`
+	SystemDiskDescription       string                          `position:"Query" name:"SystemDisk.Description"`
 }
 
-type RunInstancesTag struct{
-        Key string `name:"Key"`
-        Value string `name:"Value"`
+type RunInstancesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
-type RunInstancesNetworkInterface struct{
-        PrimaryIpAddress string `name:"PrimaryIpAddress"`
-        VSwitchId string `name:"VSwitchId"`
-        SecurityGroupId string `name:"SecurityGroupId"`
-        NetworkInterfaceName string `name:"NetworkInterfaceName"`
-        Description string `name:"Description"`
+type RunInstancesNetworkInterface struct {
+	PrimaryIpAddress     string `name:"PrimaryIpAddress"`
+	VSwitchId            string `name:"VSwitchId"`
+	SecurityGroupId      string `name:"SecurityGroupId"`
+	NetworkInterfaceName string `name:"NetworkInterfaceName"`
+	Description          string `name:"Description"`
 }
-type RunInstancesDataDisk struct{
-        Size string `name:"Size"`
-        SnapshotId string `name:"SnapshotId"`
-        Category string `name:"Category"`
-        Encrypted string `name:"Encrypted"`
-        DiskName string `name:"DiskName"`
-        Description string `name:"Description"`
-        DeleteWithInstance string `name:"DeleteWithInstance"`
+type RunInstancesDataDisk struct {
+	Size               string `name:"Size"`
+	SnapshotId         string `name:"SnapshotId"`
+	Category           string `name:"Category"`
+	Encrypted          string `name:"Encrypted"`
+	DiskName           string `name:"DiskName"`
+	Description        string `name:"Description"`
+	DeleteWithInstance string `name:"DeleteWithInstance"`
 }
 
 type RunInstancesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                InstanceIdSets struct {
-                InstanceIdSet []    string `json:"InstanceIdSet" xml:"InstanceIdSet"`
-                } `json:"InstanceIdSets" xml:"InstanceIdSets"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	InstanceIdSets struct {
+		InstanceIdSet []string `json:"InstanceIdSet" xml:"InstanceIdSet"`
+	} `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 
 func CreateRunInstancesRequest() (request *RunInstancesRequest) {
-request = &RunInstancesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
-return
+	request = &RunInstancesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
+	return
 }
 
 func CreateRunInstancesResponse() (response *RunInstancesResponse) {
-response = &RunInstancesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RunInstancesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

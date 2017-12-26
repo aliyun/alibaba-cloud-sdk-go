@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateBandwidthPackage(request *CreateBandwidthPackageRequest) (response *CreateBandwidthPackageResponse, err error) {
-response = CreateCreateBandwidthPackageResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateBandwidthPackageResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateBandwidthPackageWithChan(request *CreateBandwidthPackageRequest) (<-chan *CreateBandwidthPackageResponse, <-chan error) {
-responseChan := make(chan *CreateBandwidthPackageResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateBandwidthPackage(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateBandwidthPackageResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateBandwidthPackage(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidthPackageRequest, callback func(response *CreateBandwidthPackageResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateBandwidthPackageResponse
-var err error
-defer close(result)
-response, err = client.CreateBandwidthPackage(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidthPackageRequest, callback func(response *CreateBandwidthPackageResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateBandwidthPackageResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateBandwidthPackage(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateBandwidthPackageRequest struct {
-*requests.RpcRequest
-                InternetChargeType  string `position:"Query" name:"InternetChargeType"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ISP  string `position:"Query" name:"ISP"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                NatGatewayId  string `position:"Query" name:"NatGatewayId"`
-                Bandwidth  string `position:"Query" name:"Bandwidth"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                Name  string `position:"Query" name:"Name"`
-                IpCount  string `position:"Query" name:"IpCount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                Zone  string `position:"Query" name:"Zone"`
+	*requests.RpcRequest
+	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ISP                  string `position:"Query" name:"ISP"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	NatGatewayId         string `position:"Query" name:"NatGatewayId"`
+	Bandwidth            string `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	Name                 string `position:"Query" name:"Name"`
+	IpCount              string `position:"Query" name:"IpCount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Zone                 string `position:"Query" name:"Zone"`
 }
 
-
 type CreateBandwidthPackageResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            BandwidthPackageId     string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	*responses.BaseResponse
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 }
 
 func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageRequest) {
-request = &CreateBandwidthPackageRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBandwidthPackage", "", "")
-return
+	request = &CreateBandwidthPackageRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBandwidthPackage", "", "")
+	return
 }
 
 func CreateCreateBandwidthPackageResponse() (response *CreateBandwidthPackageResponse) {
-response = &CreateBandwidthPackageResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateBandwidthPackageResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

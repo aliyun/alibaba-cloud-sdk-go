@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownloadsForSQLServerRequest) (response *DescribeOssDownloadsForSQLServerResponse, err error) {
-response = CreateDescribeOssDownloadsForSQLServerResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeOssDownloadsForSQLServerResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *DescribeOssDownloadsForSQLServerRequest) (<-chan *DescribeOssDownloadsForSQLServerResponse, <-chan error) {
-responseChan := make(chan *DescribeOssDownloadsForSQLServerResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeOssDownloadsForSQLServer(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeOssDownloadsForSQLServerResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeOssDownloadsForSQLServer(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *DescribeOssDownloadsForSQLServerRequest, callback func(response *DescribeOssDownloadsForSQLServerResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeOssDownloadsForSQLServerResponse
-var err error
-defer close(result)
-response, err = client.DescribeOssDownloadsForSQLServer(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *DescribeOssDownloadsForSQLServerRequest, callback func(response *DescribeOssDownloadsForSQLServerResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeOssDownloadsForSQLServerResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeOssDownloadsForSQLServer(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeOssDownloadsForSQLServerRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                MigrateTaskId  string `position:"Query" name:"MigrateTaskId"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	MigrateTaskId        string `position:"Query" name:"MigrateTaskId"`
 }
 
-
 type DescribeOssDownloadsForSQLServerResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-            MigrateIaskId     string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-                Items struct {
-                    OssDownload []struct {
-            FileName     string `json:"FileName" xml:"FileName"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            BakType     string `json:"BakType" xml:"BakType"`
-            FileSize     string `json:"FileSize" xml:"FileSize"`
-            Status     string `json:"Status" xml:"Status"`
-            IsAvail     string `json:"IsAvail" xml:"IsAvail"`
-            Desc     string `json:"Desc" xml:"Desc"`
-                    }   `json:"OssDownload" xml:"OssDownload"`
-                } `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+	MigrateIaskId  string `json:"MigrateIaskId" xml:"MigrateIaskId"`
+	Items          struct {
+		OssDownload []struct {
+			FileName   string `json:"FileName" xml:"FileName"`
+			CreateTime string `json:"CreateTime" xml:"CreateTime"`
+			BakType    string `json:"BakType" xml:"BakType"`
+			FileSize   string `json:"FileSize" xml:"FileSize"`
+			Status     string `json:"Status" xml:"Status"`
+			IsAvail    string `json:"IsAvail" xml:"IsAvail"`
+			Desc       string `json:"Desc" xml:"Desc"`
+		} `json:"OssDownload" xml:"OssDownload"`
+	} `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {
-request = &DescribeOssDownloadsForSQLServerRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "", "")
-return
+	request = &DescribeOssDownloadsForSQLServerRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "", "")
+	return
 }
 
 func CreateDescribeOssDownloadsForSQLServerResponse() (response *DescribeOssDownloadsForSQLServerResponse) {
-response = &DescribeOssDownloadsForSQLServerResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeOssDownloadsForSQLServerResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

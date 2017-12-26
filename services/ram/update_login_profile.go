@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (response *UpdateLoginProfileResponse, err error) {
-response = CreateUpdateLoginProfileResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdateLoginProfileResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequest) (<-chan *UpdateLoginProfileResponse, <-chan error) {
-responseChan := make(chan *UpdateLoginProfileResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdateLoginProfile(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdateLoginProfileResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdateLoginProfile(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfileRequest, callback func(response *UpdateLoginProfileResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdateLoginProfileResponse
-var err error
-defer close(result)
-response, err = client.UpdateLoginProfile(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfileRequest, callback func(response *UpdateLoginProfileResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdateLoginProfileResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdateLoginProfile(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UpdateLoginProfileRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                MFABindRequired  string `position:"Query" name:"MFABindRequired"`
-                PasswordResetRequired  string `position:"Query" name:"PasswordResetRequired"`
-                Password  string `position:"Query" name:"Password"`
+	*requests.RpcRequest
+	UserName              string `position:"Query" name:"UserName"`
+	MFABindRequired       string `position:"Query" name:"MFABindRequired"`
+	PasswordResetRequired string `position:"Query" name:"PasswordResetRequired"`
+	Password              string `position:"Query" name:"Password"`
 }
 
-
 type UpdateLoginProfileResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
-request = &UpdateLoginProfileRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "UpdateLoginProfile", "", "")
-return
+	request = &UpdateLoginProfileRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateLoginProfile", "", "")
+	return
 }
 
 func CreateUpdateLoginProfileResponse() (response *UpdateLoginProfileResponse) {
-response = &UpdateLoginProfileResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdateLoginProfileResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

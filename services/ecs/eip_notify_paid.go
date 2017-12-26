@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) EipNotifyPaid(request *EipNotifyPaidRequest) (response *EipNotifyPaidResponse, err error) {
-response = CreateEipNotifyPaidResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateEipNotifyPaidResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) EipNotifyPaidWithChan(request *EipNotifyPaidRequest) (<-chan *EipNotifyPaidResponse, <-chan error) {
-responseChan := make(chan *EipNotifyPaidResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.EipNotifyPaid(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *EipNotifyPaidResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.EipNotifyPaid(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, callback func(response *EipNotifyPaidResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *EipNotifyPaidResponse
-var err error
-defer close(result)
-response, err = client.EipNotifyPaid(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, callback func(response *EipNotifyPaidResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *EipNotifyPaidResponse
+		var err error
+		defer close(result)
+		response, err = client.EipNotifyPaid(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type EipNotifyPaidRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Data  string `position:"Query" name:"data"`
-                UserCidr  string `position:"Query" name:"UserCidr"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Data                 string `position:"Query" name:"data"`
+	UserCidr             string `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type EipNotifyPaidResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"requestId" xml:"requestId"`
-            Data     string `json:"data" xml:"data"`
-            Code     string `json:"code" xml:"code"`
-            Message     string `json:"message" xml:"message"`
-            Success     requests.Boolean `json:"success" xml:"success"`
+	*responses.BaseResponse
+	RequestId string           `json:"requestId" xml:"requestId"`
+	Data      string           `json:"data" xml:"data"`
+	Code      string           `json:"code" xml:"code"`
+	Message   string           `json:"message" xml:"message"`
+	Success   requests.Boolean `json:"success" xml:"success"`
 }
 
 func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
-request = &EipNotifyPaidRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "", "")
-return
+	request = &EipNotifyPaidRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "EipNotifyPaid", "", "")
+	return
 }
 
 func CreateEipNotifyPaidResponse() (response *EipNotifyPaidResponse) {
-response = &EipNotifyPaidResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &EipNotifyPaidResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

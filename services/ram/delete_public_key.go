@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,76 +16,74 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeletePublicKey(request *DeletePublicKeyRequest) (response *DeletePublicKeyResponse, err error) {
-response = CreateDeletePublicKeyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeletePublicKeyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (<-chan *DeletePublicKeyResponse, <-chan error) {
-responseChan := make(chan *DeletePublicKeyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeletePublicKey(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeletePublicKeyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeletePublicKey(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeletePublicKeyWithCallback(request *DeletePublicKeyRequest, callback func(response *DeletePublicKeyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeletePublicKeyResponse
-var err error
-defer close(result)
-response, err = client.DeletePublicKey(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeletePublicKeyWithCallback(request *DeletePublicKeyRequest, callback func(response *DeletePublicKeyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeletePublicKeyResponse
+		var err error
+		defer close(result)
+		response, err = client.DeletePublicKey(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeletePublicKeyRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                UserPublicKeyId  string `position:"Query" name:"UserPublicKeyId"`
+	*requests.RpcRequest
+	UserName        string `position:"Query" name:"UserName"`
+	UserPublicKeyId string `position:"Query" name:"UserPublicKeyId"`
 }
 
-
 type DeletePublicKeyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
-request = &DeletePublicKeyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "DeletePublicKey", "", "")
-return
+	request = &DeletePublicKeyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "DeletePublicKey", "", "")
+	return
 }
 
 func CreateDeletePublicKeyResponse() (response *DeletePublicKeyResponse) {
-response = &DeletePublicKeyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeletePublicKeyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

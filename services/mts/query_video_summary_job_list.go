@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,106 +16,104 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryVideoSummaryJobList(request *QueryVideoSummaryJobListRequest) (response *QueryVideoSummaryJobListResponse, err error) {
-response = CreateQueryVideoSummaryJobListResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryVideoSummaryJobListResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryVideoSummaryJobListWithChan(request *QueryVideoSummaryJobListRequest) (<-chan *QueryVideoSummaryJobListResponse, <-chan error) {
-responseChan := make(chan *QueryVideoSummaryJobListResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryVideoSummaryJobList(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryVideoSummaryJobListResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryVideoSummaryJobList(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSummaryJobListRequest, callback func(response *QueryVideoSummaryJobListResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryVideoSummaryJobListResponse
-var err error
-defer close(result)
-response, err = client.QueryVideoSummaryJobList(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSummaryJobListRequest, callback func(response *QueryVideoSummaryJobListResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryVideoSummaryJobListResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryVideoSummaryJobList(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryVideoSummaryJobListRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                JobIds  string `position:"Query" name:"JobIds"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	JobIds               string `position:"Query" name:"JobIds"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type QueryVideoSummaryJobListResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                NonExistIds struct {
-                String []    string `json:"String" xml:"String"`
-                } `json:"NonExistIds" xml:"NonExistIds"`
-                JobList struct {
-                    Job []struct {
-            Id     string `json:"Id" xml:"Id"`
-            UserData     string `json:"UserData" xml:"UserData"`
-            PipelineId     string `json:"PipelineId" xml:"PipelineId"`
-            State     string `json:"State" xml:"State"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Input struct {
-            Bucket     string `json:"Bucket" xml:"Bucket"`
-            Location     string `json:"Location" xml:"Location"`
-            Object     string `json:"Object" xml:"Object"`
-            }  `json:"Input" xml:"Input"`
-            VideoSummaryResult struct {
-                VideoSummaryList struct {
-                    VideoSummary []struct {
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-                    }   `json:"VideoSummary" xml:"VideoSummary"`
-                } `json:"VideoSummaryList" xml:"VideoSummaryList"`
-            }  `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
-                    }   `json:"Job" xml:"Job"`
-                } `json:"JobList" xml:"JobList"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	JobList struct {
+		Job []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			VideoSummaryResult struct {
+				VideoSummaryList struct {
+					VideoSummary []struct {
+						StartTime string `json:"StartTime" xml:"StartTime"`
+						EndTime   string `json:"EndTime" xml:"EndTime"`
+					} `json:"VideoSummary" xml:"VideoSummary"`
+				} `json:"VideoSummaryList" xml:"VideoSummaryList"`
+			} `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
+		} `json:"Job" xml:"Job"`
+	} `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {
-request = &QueryVideoSummaryJobListRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "", "")
-return
+	request = &QueryVideoSummaryJobListRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "", "")
+	return
 }
 
 func CreateQueryVideoSummaryJobListResponse() (response *QueryVideoSummaryJobListResponse) {
-response = &QueryVideoSummaryJobListResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryVideoSummaryJobListResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

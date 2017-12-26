@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CancelAutoSnapshotPolicy(request *CancelAutoSnapshotPolicyRequest) (response *CancelAutoSnapshotPolicyResponse, err error) {
-response = CreateCancelAutoSnapshotPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCancelAutoSnapshotPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapshotPolicyRequest) (<-chan *CancelAutoSnapshotPolicyResponse, <-chan error) {
-responseChan := make(chan *CancelAutoSnapshotPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CancelAutoSnapshotPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CancelAutoSnapshotPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CancelAutoSnapshotPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSnapshotPolicyRequest, callback func(response *CancelAutoSnapshotPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CancelAutoSnapshotPolicyResponse
-var err error
-defer close(result)
-response, err = client.CancelAutoSnapshotPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSnapshotPolicyRequest, callback func(response *CancelAutoSnapshotPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CancelAutoSnapshotPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.CancelAutoSnapshotPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CancelAutoSnapshotPolicyRequest struct {
-*requests.RpcRequest
-                DiskIds  string `position:"Query" name:"diskIds"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DiskIds              string `position:"Query" name:"diskIds"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type CancelAutoSnapshotPolicyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyRequest) {
-request = &CancelAutoSnapshotPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "", "")
-return
+	request = &CancelAutoSnapshotPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "", "")
+	return
 }
 
 func CreateCancelAutoSnapshotPolicyResponse() (response *CancelAutoSnapshotPolicyResponse) {
-response = &CancelAutoSnapshotPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CancelAutoSnapshotPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyVirtualBorderRouterAttribute(request *ModifyVirtualBorderRouterAttributeRequest) (response *ModifyVirtualBorderRouterAttributeResponse, err error) {
-response = CreateModifyVirtualBorderRouterAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyVirtualBorderRouterAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyVirtualBorderRouterAttributeWithChan(request *ModifyVirtualBorderRouterAttributeRequest) (<-chan *ModifyVirtualBorderRouterAttributeResponse, <-chan error) {
-responseChan := make(chan *ModifyVirtualBorderRouterAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyVirtualBorderRouterAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyVirtualBorderRouterAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyVirtualBorderRouterAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *ModifyVirtualBorderRouterAttributeRequest, callback func(response *ModifyVirtualBorderRouterAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyVirtualBorderRouterAttributeResponse
-var err error
-defer close(result)
-response, err = client.ModifyVirtualBorderRouterAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *ModifyVirtualBorderRouterAttributeRequest, callback func(response *ModifyVirtualBorderRouterAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyVirtualBorderRouterAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyVirtualBorderRouterAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyVirtualBorderRouterAttributeRequest struct {
-*requests.RpcRequest
-                VlanId  string `position:"Query" name:"VlanId"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                UserCidr  string `position:"Query" name:"UserCidr"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                CircuitCode  string `position:"Query" name:"CircuitCode"`
-                LocalGatewayIp  string `position:"Query" name:"LocalGatewayIp"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                PeerGatewayIp  string `position:"Query" name:"PeerGatewayIp"`
-                Name  string `position:"Query" name:"Name"`
-                PeeringSubnetMask  string `position:"Query" name:"PeeringSubnetMask"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                VbrId  string `position:"Query" name:"VbrId"`
+	*requests.RpcRequest
+	VlanId               string `position:"Query" name:"VlanId"`
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	UserCidr             string `position:"Query" name:"UserCidr"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	CircuitCode          string `position:"Query" name:"CircuitCode"`
+	LocalGatewayIp       string `position:"Query" name:"LocalGatewayIp"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	PeerGatewayIp        string `position:"Query" name:"PeerGatewayIp"`
+	Name                 string `position:"Query" name:"Name"`
+	PeeringSubnetMask    string `position:"Query" name:"PeeringSubnetMask"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	VbrId                string `position:"Query" name:"VbrId"`
 }
 
-
 type ModifyVirtualBorderRouterAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBorderRouterAttributeRequest) {
-request = &ModifyVirtualBorderRouterAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "", "")
-return
+	request = &ModifyVirtualBorderRouterAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "", "")
+	return
 }
 
 func CreateModifyVirtualBorderRouterAttributeResponse() (response *ModifyVirtualBorderRouterAttributeResponse) {
-response = &ModifyVirtualBorderRouterAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyVirtualBorderRouterAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

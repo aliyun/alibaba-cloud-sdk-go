@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRequest) (response *DeleteWaterMarkTemplateResponse, err error) {
-response = CreateDeleteWaterMarkTemplateResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDeleteWaterMarkTemplateResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTemplateRequest) (<-chan *DeleteWaterMarkTemplateResponse, <-chan error) {
-responseChan := make(chan *DeleteWaterMarkTemplateResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DeleteWaterMarkTemplate(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DeleteWaterMarkTemplateResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DeleteWaterMarkTemplate(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMarkTemplateRequest, callback func(response *DeleteWaterMarkTemplateResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DeleteWaterMarkTemplateResponse
-var err error
-defer close(result)
-response, err = client.DeleteWaterMarkTemplate(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMarkTemplateRequest, callback func(response *DeleteWaterMarkTemplateResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DeleteWaterMarkTemplateResponse
+		var err error
+		defer close(result)
+		response, err = client.DeleteWaterMarkTemplate(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DeleteWaterMarkTemplateRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                WaterMarkTemplateId  string `position:"Query" name:"WaterMarkTemplateId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	WaterMarkTemplateId  string `position:"Query" name:"WaterMarkTemplateId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DeleteWaterMarkTemplateResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            WaterMarkTemplateId     string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
+	*responses.BaseResponse
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	WaterMarkTemplateId string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 }
 
 func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateRequest) {
-request = &DeleteWaterMarkTemplateRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "", "")
-return
+	request = &DeleteWaterMarkTemplateRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "", "")
+	return
 }
 
 func CreateDeleteWaterMarkTemplateResponse() (response *DeleteWaterMarkTemplateResponse) {
-response = &DeleteWaterMarkTemplateResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DeleteWaterMarkTemplateResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

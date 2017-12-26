@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,75 +16,73 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ResetClusterNode(request *ResetClusterNodeRequest) (response *ResetClusterNodeResponse, err error) {
-response = CreateResetClusterNodeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateResetClusterNodeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ResetClusterNodeWithChan(request *ResetClusterNodeRequest) (<-chan *ResetClusterNodeResponse, <-chan error) {
-responseChan := make(chan *ResetClusterNodeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ResetClusterNode(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ResetClusterNodeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ResetClusterNode(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequest, callback func(response *ResetClusterNodeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ResetClusterNodeResponse
-var err error
-defer close(result)
-response, err = client.ResetClusterNode(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequest, callback func(response *ResetClusterNodeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ResetClusterNodeResponse
+		var err error
+		defer close(result)
+		response, err = client.ResetClusterNode(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ResetClusterNodeRequest struct {
-*requests.RoaRequest
-                ClusterId  string `position:"Path" name:"ClusterId"`
-                InstanceId  string `position:"Path" name:"InstanceId"`
+	*requests.RoaRequest
+	ClusterId  string `position:"Path" name:"ClusterId"`
+	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
-
 type ResetClusterNodeResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
-request = &ResetClusterNodeRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "")
-return
+	request = &ResetClusterNodeRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "")
+	return
 }
 
 func CreateResetClusterNodeResponse() (response *ResetClusterNodeResponse) {
-response = &ResetClusterNodeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ResetClusterNodeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

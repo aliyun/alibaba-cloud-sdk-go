@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ImportDatabaseBetweenInstances(request *ImportDatabaseBetweenInstancesRequest) (response *ImportDatabaseBetweenInstancesResponse, err error) {
-response = CreateImportDatabaseBetweenInstancesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateImportDatabaseBetweenInstancesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportDatabaseBetweenInstancesRequest) (<-chan *ImportDatabaseBetweenInstancesResponse, <-chan error) {
-responseChan := make(chan *ImportDatabaseBetweenInstancesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ImportDatabaseBetweenInstances(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ImportDatabaseBetweenInstancesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ImportDatabaseBetweenInstances(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *ImportDatabaseBetweenInstancesRequest, callback func(response *ImportDatabaseBetweenInstancesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ImportDatabaseBetweenInstancesResponse
-var err error
-defer close(result)
-response, err = client.ImportDatabaseBetweenInstances(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *ImportDatabaseBetweenInstancesRequest, callback func(response *ImportDatabaseBetweenInstancesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ImportDatabaseBetweenInstancesResponse
+		var err error
+		defer close(result)
+		response, err = client.ImportDatabaseBetweenInstances(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ImportDatabaseBetweenInstancesRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                DBInfo  string `position:"Query" name:"DBInfo"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                SourceDBInstanceId  string `position:"Query" name:"SourceDBInstanceId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	DBInfo               string `position:"Query" name:"DBInfo"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	SourceDBInstanceId   string `position:"Query" name:"SourceDBInstanceId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type ImportDatabaseBetweenInstancesResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            ImportId     string `json:"ImportId" xml:"ImportId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ImportId  string `json:"ImportId" xml:"ImportId"`
 }
 
 func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetweenInstancesRequest) {
-request = &ImportDatabaseBetweenInstancesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "", "")
-return
+	request = &ImportDatabaseBetweenInstancesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "", "")
+	return
 }
 
 func CreateImportDatabaseBetweenInstancesResponse() (response *ImportDatabaseBetweenInstancesResponse) {
-response = &ImportDatabaseBetweenInstancesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ImportDatabaseBetweenInstancesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

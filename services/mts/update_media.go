@@ -1,4 +1,3 @@
-
 package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,110 +16,108 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdateMedia(request *UpdateMediaRequest) (response *UpdateMediaResponse, err error) {
-response = CreateUpdateMediaResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdateMediaResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UpdateMediaWithChan(request *UpdateMediaRequest) (<-chan *UpdateMediaResponse, <-chan error) {
-responseChan := make(chan *UpdateMediaResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdateMedia(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdateMediaResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdateMedia(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callback func(response *UpdateMediaResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdateMediaResponse
-var err error
-defer close(result)
-response, err = client.UpdateMedia(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callback func(response *UpdateMediaResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdateMediaResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdateMedia(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UpdateMediaRequest struct {
-*requests.RpcRequest
-                Tags  string `position:"Query" name:"Tags"`
-                CateId  string `position:"Query" name:"CateId"`
-                Title  string `position:"Query" name:"Title"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Description  string `position:"Query" name:"Description"`
-                MediaId  string `position:"Query" name:"MediaId"`
-                CoverURL  string `position:"Query" name:"CoverURL"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	Tags                 string `position:"Query" name:"Tags"`
+	CateId               string `position:"Query" name:"CateId"`
+	Title                string `position:"Query" name:"Title"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string `position:"Query" name:"Description"`
+	MediaId              string `position:"Query" name:"MediaId"`
+	CoverURL             string `position:"Query" name:"CoverURL"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type UpdateMediaResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Media struct {
-            MediaId     string `json:"MediaId" xml:"MediaId"`
-            Title     string `json:"Title" xml:"Title"`
-            Description     string `json:"Description" xml:"Description"`
-            CoverURL     string `json:"CoverURL" xml:"CoverURL"`
-            CateId     requests.Integer `json:"CateId" xml:"CateId"`
-            Duration     string `json:"Duration" xml:"Duration"`
-            Format     string `json:"Format" xml:"Format"`
-            Size     string `json:"Size" xml:"Size"`
-            Bitrate     string `json:"Bitrate" xml:"Bitrate"`
-            Width     string `json:"Width" xml:"Width"`
-            Height     string `json:"Height" xml:"Height"`
-            Fps     string `json:"Fps" xml:"Fps"`
-            PublishState     string `json:"PublishState" xml:"PublishState"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-                Tags struct {
-                Tag []    string `json:"Tag" xml:"Tag"`
-                } `json:"Tags" xml:"Tags"`
-                RunIdList struct {
-                RunId []    string `json:"RunId" xml:"RunId"`
-                } `json:"RunIdList" xml:"RunIdList"`
-            File struct {
-            URL     string `json:"URL" xml:"URL"`
-            State     string `json:"State" xml:"State"`
-            }  `json:"File" xml:"File"`
-            }  `json:"Media" xml:"Media"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Media     struct {
+		MediaId      string           `json:"MediaId" xml:"MediaId"`
+		Title        string           `json:"Title" xml:"Title"`
+		Description  string           `json:"Description" xml:"Description"`
+		CoverURL     string           `json:"CoverURL" xml:"CoverURL"`
+		CateId       requests.Integer `json:"CateId" xml:"CateId"`
+		Duration     string           `json:"Duration" xml:"Duration"`
+		Format       string           `json:"Format" xml:"Format"`
+		Size         string           `json:"Size" xml:"Size"`
+		Bitrate      string           `json:"Bitrate" xml:"Bitrate"`
+		Width        string           `json:"Width" xml:"Width"`
+		Height       string           `json:"Height" xml:"Height"`
+		Fps          string           `json:"Fps" xml:"Fps"`
+		PublishState string           `json:"PublishState" xml:"PublishState"`
+		CreationTime string           `json:"CreationTime" xml:"CreationTime"`
+		Tags         struct {
+			Tag []string `json:"Tag" xml:"Tag"`
+		} `json:"Tags" xml:"Tags"`
+		RunIdList struct {
+			RunId []string `json:"RunId" xml:"RunId"`
+		} `json:"RunIdList" xml:"RunIdList"`
+		File struct {
+			URL   string `json:"URL" xml:"URL"`
+			State string `json:"State" xml:"State"`
+		} `json:"File" xml:"File"`
+	} `json:"Media" xml:"Media"`
 }
 
 func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
-request = &UpdateMediaRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "", "")
-return
+	request = &UpdateMediaRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "", "")
+	return
 }
 
 func CreateUpdateMediaResponse() (response *UpdateMediaResponse) {
-response = &UpdateMediaResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdateMediaResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

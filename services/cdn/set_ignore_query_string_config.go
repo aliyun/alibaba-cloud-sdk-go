@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetIgnoreQueryStringConfig(request *SetIgnoreQueryStringConfigRequest) (response *SetIgnoreQueryStringConfigResponse, err error) {
-response = CreateSetIgnoreQueryStringConfigResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetIgnoreQueryStringConfigResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQueryStringConfigRequest) (<-chan *SetIgnoreQueryStringConfigResponse, <-chan error) {
-responseChan := make(chan *SetIgnoreQueryStringConfigResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetIgnoreQueryStringConfig(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetIgnoreQueryStringConfigResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetIgnoreQueryStringConfig(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQueryStringConfigRequest, callback func(response *SetIgnoreQueryStringConfigResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetIgnoreQueryStringConfigResponse
-var err error
-defer close(result)
-response, err = client.SetIgnoreQueryStringConfig(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQueryStringConfigRequest, callback func(response *SetIgnoreQueryStringConfigResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetIgnoreQueryStringConfigResponse
+		var err error
+		defer close(result)
+		response, err = client.SetIgnoreQueryStringConfig(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetIgnoreQueryStringConfigRequest struct {
-*requests.RpcRequest
-                HashKeyArgs  string `position:"Query" name:"HashKeyArgs"`
-                KeepOssArgs  string `position:"Query" name:"KeepOssArgs"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                Enable  string `position:"Query" name:"Enable"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	HashKeyArgs   string `position:"Query" name:"HashKeyArgs"`
+	KeepOssArgs   string `position:"Query" name:"KeepOssArgs"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	Enable        string `position:"Query" name:"Enable"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type SetIgnoreQueryStringConfigResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringConfigRequest) {
-request = &SetIgnoreQueryStringConfigRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "", "")
-return
+	request = &SetIgnoreQueryStringConfigRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "", "")
+	return
 }
 
 func CreateSetIgnoreQueryStringConfigResponse() (response *SetIgnoreQueryStringConfigResponse) {
-response = &SetIgnoreQueryStringConfigResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetIgnoreQueryStringConfigResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

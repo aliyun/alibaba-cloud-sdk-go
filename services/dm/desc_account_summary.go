@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescAccountSummary(request *DescAccountSummaryRequest) (response *DescAccountSummaryResponse, err error) {
-response = CreateDescAccountSummaryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescAccountSummaryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescAccountSummaryWithChan(request *DescAccountSummaryRequest) (<-chan *DescAccountSummaryResponse, <-chan error) {
-responseChan := make(chan *DescAccountSummaryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescAccountSummary(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescAccountSummaryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescAccountSummary(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescAccountSummaryWithCallback(request *DescAccountSummaryRequest, callback func(response *DescAccountSummaryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescAccountSummaryResponse
-var err error
-defer close(result)
-response, err = client.DescAccountSummary(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescAccountSummaryWithCallback(request *DescAccountSummaryRequest, callback func(response *DescAccountSummaryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescAccountSummaryResponse
+		var err error
+		defer close(result)
+		response, err = client.DescAccountSummary(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescAccountSummaryRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescAccountSummaryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            UserStatus     requests.Integer `json:"UserStatus" xml:"UserStatus"`
-            QuotaLevel     requests.Integer `json:"QuotaLevel" xml:"QuotaLevel"`
-            MaxQuotaLevel     requests.Integer `json:"MaxQuotaLevel" xml:"MaxQuotaLevel"`
-            DailyQuota     requests.Integer `json:"DailyQuota" xml:"DailyQuota"`
-            MonthQuota     requests.Integer `json:"MonthQuota" xml:"MonthQuota"`
-            Tags     requests.Integer `json:"Tags" xml:"Tags"`
-            Domains     requests.Integer `json:"Domains" xml:"Domains"`
-            MailAddresses     requests.Integer `json:"MailAddresses" xml:"MailAddresses"`
-            Receivers     requests.Integer `json:"Receivers" xml:"Receivers"`
-            Templates     requests.Integer `json:"Templates" xml:"Templates"`
-            DayuStatus     requests.Integer `json:"DayuStatus" xml:"DayuStatus"`
-            SmsTemplates     requests.Integer `json:"SmsTemplates" xml:"SmsTemplates"`
-            SmsRecord     requests.Integer `json:"SmsRecord" xml:"SmsRecord"`
-            SmsSign     requests.Integer `json:"SmsSign" xml:"SmsSign"`
-            EnableTimes     requests.Integer `json:"EnableTimes" xml:"EnableTimes"`
+	*responses.BaseResponse
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	UserStatus    requests.Integer `json:"UserStatus" xml:"UserStatus"`
+	QuotaLevel    requests.Integer `json:"QuotaLevel" xml:"QuotaLevel"`
+	MaxQuotaLevel requests.Integer `json:"MaxQuotaLevel" xml:"MaxQuotaLevel"`
+	DailyQuota    requests.Integer `json:"DailyQuota" xml:"DailyQuota"`
+	MonthQuota    requests.Integer `json:"MonthQuota" xml:"MonthQuota"`
+	Tags          requests.Integer `json:"Tags" xml:"Tags"`
+	Domains       requests.Integer `json:"Domains" xml:"Domains"`
+	MailAddresses requests.Integer `json:"MailAddresses" xml:"MailAddresses"`
+	Receivers     requests.Integer `json:"Receivers" xml:"Receivers"`
+	Templates     requests.Integer `json:"Templates" xml:"Templates"`
+	DayuStatus    requests.Integer `json:"DayuStatus" xml:"DayuStatus"`
+	SmsTemplates  requests.Integer `json:"SmsTemplates" xml:"SmsTemplates"`
+	SmsRecord     requests.Integer `json:"SmsRecord" xml:"SmsRecord"`
+	SmsSign       requests.Integer `json:"SmsSign" xml:"SmsSign"`
+	EnableTimes   requests.Integer `json:"EnableTimes" xml:"EnableTimes"`
 }
 
 func CreateDescAccountSummaryRequest() (request *DescAccountSummaryRequest) {
-request = &DescAccountSummaryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary", "", "")
-return
+	request = &DescAccountSummaryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary", "", "")
+	return
 }
 
 func CreateDescAccountSummaryResponse() (response *DescAccountSummaryResponse) {
-response = &DescAccountSummaryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescAccountSummaryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

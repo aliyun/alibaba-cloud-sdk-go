@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetPublicAccessUrls(request *GetPublicAccessUrlsRequest) (response *GetPublicAccessUrlsResponse, err error) {
-response = CreateGetPublicAccessUrlsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetPublicAccessUrlsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRequest) (<-chan *GetPublicAccessUrlsResponse, <-chan error) {
-responseChan := make(chan *GetPublicAccessUrlsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetPublicAccessUrls(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetPublicAccessUrlsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetPublicAccessUrls(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUrlsRequest, callback func(response *GetPublicAccessUrlsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetPublicAccessUrlsResponse
-var err error
-defer close(result)
-response, err = client.GetPublicAccessUrls(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUrlsRequest, callback func(response *GetPublicAccessUrlsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetPublicAccessUrlsResponse
+		var err error
+		defer close(result)
+		response, err = client.GetPublicAccessUrls(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetPublicAccessUrlsRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                ZoomType  string `position:"Query" name:"ZoomType"`
-                DomainType  string `position:"Query" name:"DomainType"`
-                PhotoId  *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	*requests.RpcRequest
+	LibraryId  string    `position:"Query" name:"LibraryId"`
+	StoreName  string    `position:"Query" name:"StoreName"`
+	ZoomType   string    `position:"Query" name:"ZoomType"`
+	DomainType string    `position:"Query" name:"DomainType"`
+	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
-
 type GetPublicAccessUrlsResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                Results  []struct {
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            PhotoId     requests.Integer `json:"PhotoId" xml:"PhotoId"`
-            AccessUrl     string `json:"AccessUrl" xml:"AccessUrl"`
-                }  `json:"Results" xml:"Results"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   []struct {
+		Code      string           `json:"Code" xml:"Code"`
+		Message   string           `json:"Message" xml:"Message"`
+		PhotoId   requests.Integer `json:"PhotoId" xml:"PhotoId"`
+		AccessUrl string           `json:"AccessUrl" xml:"AccessUrl"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
-request = &GetPublicAccessUrlsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "", "")
-return
+	request = &GetPublicAccessUrlsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "", "")
+	return
 }
 
 func CreateGetPublicAccessUrlsResponse() (response *GetPublicAccessUrlsResponse) {
-response = &GetPublicAccessUrlsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetPublicAccessUrlsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

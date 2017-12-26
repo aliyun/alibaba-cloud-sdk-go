@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateVpnConnection(request *CreateVpnConnectionRequest) (response *CreateVpnConnectionResponse, err error) {
-response = CreateCreateVpnConnectionResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateVpnConnectionResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRequest) (<-chan *CreateVpnConnectionResponse, <-chan error) {
-responseChan := make(chan *CreateVpnConnectionResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateVpnConnection(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateVpnConnectionResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateVpnConnection(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnectionRequest, callback func(response *CreateVpnConnectionResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateVpnConnectionResponse
-var err error
-defer close(result)
-response, err = client.CreateVpnConnection(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnectionRequest, callback func(response *CreateVpnConnectionResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateVpnConnectionResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateVpnConnection(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateVpnConnectionRequest struct {
-*requests.RpcRequest
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                LocalSubnet  string `position:"Query" name:"LocalSubnet"`
-                VpnGatewayId  string `position:"Query" name:"VpnGatewayId"`
-                EffectImmediately  string `position:"Query" name:"EffectImmediately"`
-                RemoteSubnet  string `position:"Query" name:"RemoteSubnet"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                CustomerGatewayId  string `position:"Query" name:"CustomerGatewayId"`
-                IpsecConfig  string `position:"Query" name:"IpsecConfig"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Name  string `position:"Query" name:"Name"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                IkeConfig  string `position:"Query" name:"IkeConfig"`
+	*requests.RpcRequest
+	ClientToken          string `position:"Query" name:"ClientToken"`
+	LocalSubnet          string `position:"Query" name:"LocalSubnet"`
+	VpnGatewayId         string `position:"Query" name:"VpnGatewayId"`
+	EffectImmediately    string `position:"Query" name:"EffectImmediately"`
+	RemoteSubnet         string `position:"Query" name:"RemoteSubnet"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
+	IpsecConfig          string `position:"Query" name:"IpsecConfig"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Name                 string `position:"Query" name:"Name"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	IkeConfig            string `position:"Query" name:"IkeConfig"`
 }
 
-
 type CreateVpnConnectionResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            VpnConnectionId     string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-            Name     string `json:"Name" xml:"Name"`
-            CreateTime     requests.Integer `json:"CreateTime" xml:"CreateTime"`
+	*responses.BaseResponse
+	RequestId       string           `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId string           `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	Name            string           `json:"Name" xml:"Name"`
+	CreateTime      requests.Integer `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
-request = &CreateVpnConnectionRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "", "")
-return
+	request = &CreateVpnConnectionRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "", "")
+	return
 }
 
 func CreateCreateVpnConnectionResponse() (response *CreateVpnConnectionResponse) {
-response = &CreateVpnConnectionResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateVpnConnectionResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

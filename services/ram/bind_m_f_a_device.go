@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *BindMFADeviceResponse, err error) {
-response = CreateBindMFADeviceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateBindMFADeviceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-chan *BindMFADeviceResponse, <-chan error) {
-responseChan := make(chan *BindMFADeviceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.BindMFADevice(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *BindMFADeviceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.BindMFADevice(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, callback func(response *BindMFADeviceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *BindMFADeviceResponse
-var err error
-defer close(result)
-response, err = client.BindMFADevice(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, callback func(response *BindMFADeviceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *BindMFADeviceResponse
+		var err error
+		defer close(result)
+		response, err = client.BindMFADevice(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type BindMFADeviceRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                AuthenticationCode1  string `position:"Query" name:"AuthenticationCode1"`
-                AuthenticationCode2  string `position:"Query" name:"AuthenticationCode2"`
-                SerialNumber  string `position:"Query" name:"SerialNumber"`
+	*requests.RpcRequest
+	UserName            string `position:"Query" name:"UserName"`
+	AuthenticationCode1 string `position:"Query" name:"AuthenticationCode1"`
+	AuthenticationCode2 string `position:"Query" name:"AuthenticationCode2"`
+	SerialNumber        string `position:"Query" name:"SerialNumber"`
 }
 
-
 type BindMFADeviceResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
-request = &BindMFADeviceRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "BindMFADevice", "", "")
-return
+	request = &BindMFADeviceRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "BindMFADevice", "", "")
+	return
 }
 
 func CreateBindMFADeviceResponse() (response *BindMFADeviceResponse) {
-response = &BindMFADeviceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &BindMFADeviceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

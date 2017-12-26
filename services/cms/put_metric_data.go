@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) PutMetricData(request *PutMetricDataRequest) (response *PutMetricDataResponse, err error) {
-response = CreatePutMetricDataResponse()
-err = client.DoAction(request, response)
-return
+	response = CreatePutMetricDataResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-chan *PutMetricDataResponse, <-chan error) {
-responseChan := make(chan *PutMetricDataResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.PutMetricData(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *PutMetricDataResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.PutMetricData(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, callback func(response *PutMetricDataResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *PutMetricDataResponse
-var err error
-defer close(result)
-response, err = client.PutMetricData(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, callback func(response *PutMetricDataResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *PutMetricDataResponse
+		var err error
+		defer close(result)
+		response, err = client.PutMetricData(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type PutMetricDataRequest struct {
-*requests.RpcRequest
-                Body  string `position:"Query" name:"Body"`
-                CallbyCmsOwner  string `position:"Query" name:"callby_cms_owner"`
+	*requests.RpcRequest
+	Body           string `position:"Query" name:"Body"`
+	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 }
 
-
 type PutMetricDataResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
+	*responses.BaseResponse
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Success   requests.Boolean `json:"Success" xml:"Success"`
 }
 
 func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
-request = &PutMetricDataRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "", "")
-return
+	request = &PutMetricDataRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "", "")
+	return
 }
 
 func CreatePutMetricDataResponse() (response *PutMetricDataResponse) {
-response = &PutMetricDataResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &PutMetricDataResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

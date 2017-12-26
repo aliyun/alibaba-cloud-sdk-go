@@ -1,4 +1,3 @@
-
 package ram
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,77 +16,75 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) UpdatePublicKey(request *UpdatePublicKeyRequest) (response *UpdatePublicKeyResponse, err error) {
-response = CreateUpdatePublicKeyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateUpdatePublicKeyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (<-chan *UpdatePublicKeyResponse, <-chan error) {
-responseChan := make(chan *UpdatePublicKeyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.UpdatePublicKey(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *UpdatePublicKeyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.UpdatePublicKey(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyRequest, callback func(response *UpdatePublicKeyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *UpdatePublicKeyResponse
-var err error
-defer close(result)
-response, err = client.UpdatePublicKey(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyRequest, callback func(response *UpdatePublicKeyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *UpdatePublicKeyResponse
+		var err error
+		defer close(result)
+		response, err = client.UpdatePublicKey(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type UpdatePublicKeyRequest struct {
-*requests.RpcRequest
-                UserName  string `position:"Query" name:"UserName"`
-                Status  string `position:"Query" name:"Status"`
-                UserPublicKeyId  string `position:"Query" name:"UserPublicKeyId"`
+	*requests.RpcRequest
+	UserName        string `position:"Query" name:"UserName"`
+	Status          string `position:"Query" name:"Status"`
+	UserPublicKeyId string `position:"Query" name:"UserPublicKeyId"`
 }
 
-
 type UpdatePublicKeyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
-request = &UpdatePublicKeyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ram", "2015-05-01", "UpdatePublicKey", "", "")
-return
+	request = &UpdatePublicKeyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ram", "2015-05-01", "UpdatePublicKey", "", "")
+	return
 }
 
 func CreateUpdatePublicKeyResponse() (response *UpdatePublicKeyResponse) {
-response = &UpdatePublicKeyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &UpdatePublicKeyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

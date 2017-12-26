@@ -1,4 +1,3 @@
-
 package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,75 +16,73 @@ package cs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeClusterNodeInfoWithInstance(request *DescribeClusterNodeInfoWithInstanceRequest) (response *DescribeClusterNodeInfoWithInstanceResponse, err error) {
-response = CreateDescribeClusterNodeInfoWithInstanceResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeClusterNodeInfoWithInstanceResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeClusterNodeInfoWithInstanceWithChan(request *DescribeClusterNodeInfoWithInstanceRequest) (<-chan *DescribeClusterNodeInfoWithInstanceResponse, <-chan error) {
-responseChan := make(chan *DescribeClusterNodeInfoWithInstanceResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeClusterNodeInfoWithInstance(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeClusterNodeInfoWithInstanceResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeClusterNodeInfoWithInstance(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeClusterNodeInfoWithInstanceWithCallback(request *DescribeClusterNodeInfoWithInstanceRequest, callback func(response *DescribeClusterNodeInfoWithInstanceResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeClusterNodeInfoWithInstanceResponse
-var err error
-defer close(result)
-response, err = client.DescribeClusterNodeInfoWithInstance(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeClusterNodeInfoWithInstanceWithCallback(request *DescribeClusterNodeInfoWithInstanceRequest, callback func(response *DescribeClusterNodeInfoWithInstanceResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeClusterNodeInfoWithInstanceResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeClusterNodeInfoWithInstance(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeClusterNodeInfoWithInstanceRequest struct {
-*requests.RoaRequest
-                Token  string `position:"Path" name:"Token"`
-                InstanceId  string `position:"Path" name:"InstanceId"`
+	*requests.RoaRequest
+	Token      string `position:"Path" name:"Token"`
+	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
-
 type DescribeClusterNodeInfoWithInstanceResponse struct {
-*responses.BaseResponse
+	*responses.BaseResponse
 }
 
 func CreateDescribeClusterNodeInfoWithInstanceRequest() (request *DescribeClusterNodeInfoWithInstanceRequest) {
-request = &DescribeClusterNodeInfoWithInstanceRequest{
-RoaRequest: &requests.RoaRequest{},
-}
-request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterNodeInfoWithInstance", "/token/[Token]/instance/[InstanceId]/node_info", "", "")
-return
+	request = &DescribeClusterNodeInfoWithInstanceRequest{
+		RoaRequest: &requests.RoaRequest{},
+	}
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterNodeInfoWithInstance", "/token/[Token]/instance/[InstanceId]/node_info", "", "")
+	return
 }
 
 func CreateDescribeClusterNodeInfoWithInstanceResponse() (response *DescribeClusterNodeInfoWithInstanceResponse) {
-response = &DescribeClusterNodeInfoWithInstanceResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeClusterNodeInfoWithInstanceResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

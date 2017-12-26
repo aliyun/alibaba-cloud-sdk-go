@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,86 +16,84 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUserResponse, err error) {
-response = CreateModifyUserResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyUserResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *ModifyUserResponse, <-chan error) {
-responseChan := make(chan *ModifyUserResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyUser(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyUserResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyUser(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callback func(response *ModifyUserResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyUserResponse
-var err error
-defer close(result)
-response, err = client.ModifyUser(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callback func(response *ModifyUserResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyUserResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyUser(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyUserRequest struct {
-*requests.RpcRequest
-                Phone  string `position:"Query" name:"Phone"`
-                SkillLevel  *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-                RoleId  *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
-                Email  string `position:"Query" name:"Email"`
-                SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-                UserId  string `position:"Query" name:"UserId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
-                DisplayName  string `position:"Query" name:"DisplayName"`
+	*requests.RpcRequest
+	Phone        string    `position:"Query" name:"Phone"`
+	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	Email        string    `position:"Query" name:"Email"`
+	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	UserId       string    `position:"Query" name:"UserId"`
+	InstanceId   string    `position:"Query" name:"InstanceId"`
+	DisplayName  string    `position:"Query" name:"DisplayName"`
 }
 
-
 type ModifyUserResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	*responses.BaseResponse
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateModifyUserRequest() (request *ModifyUserRequest) {
-request = &ModifyUserRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "ModifyUser", "", "")
-return
+	request = &ModifyUserRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyUser", "", "")
+	return
 }
 
 func CreateModifyUserResponse() (response *ModifyUserResponse) {
-response = &ModifyUserResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyUserResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

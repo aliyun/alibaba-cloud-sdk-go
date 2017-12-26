@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *RefreshTokenResponse, err error) {
-response = CreateRefreshTokenResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRefreshTokenResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan *RefreshTokenResponse, <-chan error) {
-responseChan := make(chan *RefreshTokenResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RefreshToken(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RefreshTokenResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RefreshToken(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, callback func(response *RefreshTokenResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RefreshTokenResponse
-var err error
-defer close(result)
-response, err = client.RefreshToken(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, callback func(response *RefreshTokenResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RefreshTokenResponse
+		var err error
+		defer close(result)
+		response, err = client.RefreshToken(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RefreshTokenRequest struct {
-*requests.RpcRequest
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-
 type RefreshTokenResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
-            Token struct {
-            Signature     string `json:"Signature" xml:"Signature"`
-            SignData     string `json:"SignData" xml:"SignData"`
-            }  `json:"Token" xml:"Token"`
+	*responses.BaseResponse
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Token          struct {
+		Signature string `json:"Signature" xml:"Signature"`
+		SignData  string `json:"SignData" xml:"SignData"`
+	} `json:"Token" xml:"Token"`
 }
 
 func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
-request = &RefreshTokenRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "RefreshToken", "", "")
-return
+	request = &RefreshTokenRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "RefreshToken", "", "")
+	return
 }
 
 func CreateRefreshTokenResponse() (response *RefreshTokenResponse) {
-response = &RefreshTokenResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RefreshTokenResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

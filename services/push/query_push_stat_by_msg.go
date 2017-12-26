@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,91 +16,89 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryPushStatByMsg(request *QueryPushStatByMsgRequest) (response *QueryPushStatByMsgResponse, err error) {
-response = CreateQueryPushStatByMsgResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryPushStatByMsgResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryPushStatByMsgWithChan(request *QueryPushStatByMsgRequest) (<-chan *QueryPushStatByMsgResponse, <-chan error) {
-responseChan := make(chan *QueryPushStatByMsgResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryPushStatByMsg(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryPushStatByMsgResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryPushStatByMsg(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsgRequest, callback func(response *QueryPushStatByMsgResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryPushStatByMsgResponse
-var err error
-defer close(result)
-response, err = client.QueryPushStatByMsg(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsgRequest, callback func(response *QueryPushStatByMsgResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryPushStatByMsgResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryPushStatByMsg(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryPushStatByMsgRequest struct {
-*requests.RpcRequest
-                AppKey  string `position:"Query" name:"AppKey"`
-                MessageId  string `position:"Query" name:"MessageId"`
+	*requests.RpcRequest
+	AppKey    string `position:"Query" name:"AppKey"`
+	MessageId string `position:"Query" name:"MessageId"`
 }
 
-
 type QueryPushStatByMsgResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                PushStats struct {
-                    PushStat []struct {
-            MessageId     string `json:"MessageId" xml:"MessageId"`
-            AcceptCount     requests.Integer `json:"AcceptCount" xml:"AcceptCount"`
-            SentCount     requests.Integer `json:"SentCount" xml:"SentCount"`
-            ReceivedCount     requests.Integer `json:"ReceivedCount" xml:"ReceivedCount"`
-            OpenedCount     requests.Integer `json:"OpenedCount" xml:"OpenedCount"`
-            DeletedCount     requests.Integer `json:"DeletedCount" xml:"DeletedCount"`
-            SmsSentCount     requests.Integer `json:"SmsSentCount" xml:"SmsSentCount"`
-            SmsSkipCount     requests.Integer `json:"SmsSkipCount" xml:"SmsSkipCount"`
-            SmsFailedCount     requests.Integer `json:"SmsFailedCount" xml:"SmsFailedCount"`
-            SmsReceiveSuccessCount     requests.Integer `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
-            SmsReceiveFailedCount     requests.Integer `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
-                    }   `json:"PushStat" xml:"PushStat"`
-                } `json:"PushStats" xml:"PushStats"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	PushStats struct {
+		PushStat []struct {
+			MessageId              string           `json:"MessageId" xml:"MessageId"`
+			AcceptCount            requests.Integer `json:"AcceptCount" xml:"AcceptCount"`
+			SentCount              requests.Integer `json:"SentCount" xml:"SentCount"`
+			ReceivedCount          requests.Integer `json:"ReceivedCount" xml:"ReceivedCount"`
+			OpenedCount            requests.Integer `json:"OpenedCount" xml:"OpenedCount"`
+			DeletedCount           requests.Integer `json:"DeletedCount" xml:"DeletedCount"`
+			SmsSentCount           requests.Integer `json:"SmsSentCount" xml:"SmsSentCount"`
+			SmsSkipCount           requests.Integer `json:"SmsSkipCount" xml:"SmsSkipCount"`
+			SmsFailedCount         requests.Integer `json:"SmsFailedCount" xml:"SmsFailedCount"`
+			SmsReceiveSuccessCount requests.Integer `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
+			SmsReceiveFailedCount  requests.Integer `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
+		} `json:"PushStat" xml:"PushStat"`
+	} `json:"PushStats" xml:"PushStats"`
 }
 
 func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
-request = &QueryPushStatByMsgRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByMsg", "", "")
-return
+	request = &QueryPushStatByMsgRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByMsg", "", "")
+	return
 }
 
 func CreateQueryPushStatByMsgResponse() (response *QueryPushStatByMsgResponse) {
-response = &QueryPushStatByMsgResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryPushStatByMsgResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

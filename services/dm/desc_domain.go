@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,91 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescDomain(request *DescDomainRequest) (response *DescDomainResponse, err error) {
-response = CreateDescDomainResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescDomainResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *DescDomainResponse, <-chan error) {
-responseChan := make(chan *DescDomainResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescDomain(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescDomainResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescDomain(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callback func(response *DescDomainResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescDomainResponse
-var err error
-defer close(result)
-response, err = client.DescDomain(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callback func(response *DescDomainResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescDomainResponse
+		var err error
+		defer close(result)
+		response, err = client.DescDomain(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescDomainRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                DomainId  string `position:"Query" name:"DomainId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	DomainId             string `position:"Query" name:"DomainId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescDomainResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DomainId     string `json:"DomainId" xml:"DomainId"`
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            DomainType     string `json:"DomainType" xml:"DomainType"`
-            DomainStatus     string `json:"DomainStatus" xml:"DomainStatus"`
-            CnameRecord     string `json:"CnameRecord" xml:"CnameRecord"`
-            CnameConfirmStatus     string `json:"CnameConfirmStatus" xml:"CnameConfirmStatus"`
-            SpfAuthStatus     string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
-            MxAuthStatus     string `json:"MxAuthStatus" xml:"MxAuthStatus"`
-            DefaultDomain     string `json:"DefaultDomain" xml:"DefaultDomain"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            CnameAuthStatus     string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
-            IcpStatus     string `json:"IcpStatus" xml:"IcpStatus"`
-            SpfRecord     string `json:"SpfRecord" xml:"SpfRecord"`
-            MxRecord     string `json:"MxRecord" xml:"MxRecord"`
-            TracefRecord     string `json:"TracefRecord" xml:"TracefRecord"`
+	*responses.BaseResponse
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	DomainId           string `json:"DomainId" xml:"DomainId"`
+	DomainName         string `json:"DomainName" xml:"DomainName"`
+	DomainType         string `json:"DomainType" xml:"DomainType"`
+	DomainStatus       string `json:"DomainStatus" xml:"DomainStatus"`
+	CnameRecord        string `json:"CnameRecord" xml:"CnameRecord"`
+	CnameConfirmStatus string `json:"CnameConfirmStatus" xml:"CnameConfirmStatus"`
+	SpfAuthStatus      string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
+	MxAuthStatus       string `json:"MxAuthStatus" xml:"MxAuthStatus"`
+	DefaultDomain      string `json:"DefaultDomain" xml:"DefaultDomain"`
+	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	CnameAuthStatus    string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
+	IcpStatus          string `json:"IcpStatus" xml:"IcpStatus"`
+	SpfRecord          string `json:"SpfRecord" xml:"SpfRecord"`
+	MxRecord           string `json:"MxRecord" xml:"MxRecord"`
+	TracefRecord       string `json:"TracefRecord" xml:"TracefRecord"`
 }
 
 func CreateDescDomainRequest() (request *DescDomainRequest) {
-request = &DescDomainRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "DescDomain", "", "")
-return
+	request = &DescDomainRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "DescDomain", "", "")
+	return
 }
 
 func CreateDescDomainResponse() (response *DescDomainResponse) {
-response = &DescDomainResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescDomainResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

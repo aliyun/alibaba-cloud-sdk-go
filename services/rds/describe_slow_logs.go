@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,115 +16,113 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeSlowLogs(request *DescribeSlowLogsRequest) (response *DescribeSlowLogsResponse, err error) {
-response = CreateDescribeSlowLogsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeSlowLogsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeSlowLogsWithChan(request *DescribeSlowLogsRequest) (<-chan *DescribeSlowLogsResponse, <-chan error) {
-responseChan := make(chan *DescribeSlowLogsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeSlowLogs(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeSlowLogsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeSlowLogs(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequest, callback func(response *DescribeSlowLogsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeSlowLogsResponse
-var err error
-defer close(result)
-response, err = client.DescribeSlowLogs(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequest, callback func(response *DescribeSlowLogsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeSlowLogsResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeSlowLogs(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeSlowLogsRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                PageSize  string `position:"Query" name:"PageSize"`
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                DBName  string `position:"Query" name:"DBName"`
-                SortKey  string `position:"Query" name:"SortKey"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	EndTime              string `position:"Query" name:"EndTime"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
+	StartTime            string `position:"Query" name:"StartTime"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string `position:"Query" name:"DBName"`
+	SortKey              string `position:"Query" name:"SortKey"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
-
 type DescribeSlowLogsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Engine     string `json:"Engine" xml:"Engine"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            TotalRecordCount     requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-            PageRecordCount     requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
-                Items struct {
-                    SQLSlowLog []struct {
-            SlowLogId     requests.Integer `json:"SlowLogId" xml:"SlowLogId"`
-            SQLId     requests.Integer `json:"SQLId" xml:"SQLId"`
-            DBName     string `json:"DBName" xml:"DBName"`
-            SQLText     string `json:"SQLText" xml:"SQLText"`
-            MySQLTotalExecutionCounts     requests.Integer `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-            MySQLTotalExecutionTimes     requests.Integer `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-            TotalLockTimes     requests.Integer `json:"TotalLockTimes" xml:"TotalLockTimes"`
-            MaxLockTime     requests.Integer `json:"MaxLockTime" xml:"MaxLockTime"`
-            ParseTotalRowCounts     requests.Integer `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-            ParseMaxRowCount     requests.Integer `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-            ReturnTotalRowCounts     requests.Integer `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-            ReturnMaxRowCount     requests.Integer `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
-            CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-            SQLServerTotalExecutionCounts     requests.Integer `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-            SQLServerTotalExecutionTimes     requests.Integer `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-            TotalLogicalReadCounts     requests.Integer `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-            TotalPhysicalReadCounts     requests.Integer `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
-            ReportTime     string `json:"ReportTime" xml:"ReportTime"`
-            MaxExecutionTime     requests.Integer `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-            AvgExecutionTime     requests.Integer `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
-                    }   `json:"SQLSlowLog" xml:"SQLSlowLog"`
-                } `json:"Items" xml:"Items"`
+	*responses.BaseResponse
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Engine           string           `json:"Engine" xml:"Engine"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
+	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            struct {
+		SQLSlowLog []struct {
+			SlowLogId                     requests.Integer `json:"SlowLogId" xml:"SlowLogId"`
+			SQLId                         requests.Integer `json:"SQLId" xml:"SQLId"`
+			DBName                        string           `json:"DBName" xml:"DBName"`
+			SQLText                       string           `json:"SQLText" xml:"SQLText"`
+			MySQLTotalExecutionCounts     requests.Integer `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+			MySQLTotalExecutionTimes      requests.Integer `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
+			TotalLockTimes                requests.Integer `json:"TotalLockTimes" xml:"TotalLockTimes"`
+			MaxLockTime                   requests.Integer `json:"MaxLockTime" xml:"MaxLockTime"`
+			ParseTotalRowCounts           requests.Integer `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+			ParseMaxRowCount              requests.Integer `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+			ReturnTotalRowCounts          requests.Integer `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+			ReturnMaxRowCount             requests.Integer `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+			CreateTime                    string           `json:"CreateTime" xml:"CreateTime"`
+			SQLServerTotalExecutionCounts requests.Integer `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
+			SQLServerTotalExecutionTimes  requests.Integer `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+			TotalLogicalReadCounts        requests.Integer `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
+			TotalPhysicalReadCounts       requests.Integer `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
+			ReportTime                    string           `json:"ReportTime" xml:"ReportTime"`
+			MaxExecutionTime              requests.Integer `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+			AvgExecutionTime              requests.Integer `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
+		} `json:"SQLSlowLog" xml:"SQLSlowLog"`
+	} `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSlowLogsRequest() (request *DescribeSlowLogsRequest) {
-request = &DescribeSlowLogsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "", "")
-return
+	request = &DescribeSlowLogsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "", "")
+	return
 }
 
 func CreateDescribeSlowLogsResponse() (response *DescribeSlowLogsResponse) {
-response = &DescribeSlowLogsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeSlowLogsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

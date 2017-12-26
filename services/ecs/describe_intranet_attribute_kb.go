@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,84 +16,82 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeIntranetAttributeKb(request *DescribeIntranetAttributeKbRequest) (response *DescribeIntranetAttributeKbResponse, err error) {
-response = CreateDescribeIntranetAttributeKbResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeIntranetAttributeKbResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeIntranetAttributeKbWithChan(request *DescribeIntranetAttributeKbRequest) (<-chan *DescribeIntranetAttributeKbResponse, <-chan error) {
-responseChan := make(chan *DescribeIntranetAttributeKbResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeIntranetAttributeKb(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeIntranetAttributeKbResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeIntranetAttributeKb(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeIntranetAttributeKbRequest, callback func(response *DescribeIntranetAttributeKbResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeIntranetAttributeKbResponse
-var err error
-defer close(result)
-response, err = client.DescribeIntranetAttributeKb(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeIntranetAttributeKbRequest, callback func(response *DescribeIntranetAttributeKbResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeIntranetAttributeKbResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeIntranetAttributeKb(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeIntranetAttributeKbRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
-
 type DescribeIntranetAttributeKbResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            VlanId     string `json:"VlanId" xml:"VlanId"`
-            IntranetIpAddress     string `json:"IntranetIpAddress" xml:"IntranetIpAddress"`
-            IntranetMaxBandwidthIn     requests.Integer `json:"IntranetMaxBandwidthIn" xml:"IntranetMaxBandwidthIn"`
-            IntranetMaxBandwidthOut     requests.Integer `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
+	*responses.BaseResponse
+	RequestId               string           `json:"RequestId" xml:"RequestId"`
+	InstanceId              string           `json:"InstanceId" xml:"InstanceId"`
+	VlanId                  string           `json:"VlanId" xml:"VlanId"`
+	IntranetIpAddress       string           `json:"IntranetIpAddress" xml:"IntranetIpAddress"`
+	IntranetMaxBandwidthIn  requests.Integer `json:"IntranetMaxBandwidthIn" xml:"IntranetMaxBandwidthIn"`
+	IntranetMaxBandwidthOut requests.Integer `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
 }
 
 func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttributeKbRequest) {
-request = &DescribeIntranetAttributeKbRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "", "")
-return
+	request = &DescribeIntranetAttributeKbRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "", "")
+	return
 }
 
 func CreateDescribeIntranetAttributeKbResponse() (response *DescribeIntranetAttributeKbResponse) {
-response = &DescribeIntranetAttributeKbResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeIntranetAttributeKbResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

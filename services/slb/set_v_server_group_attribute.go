@@ -1,4 +1,3 @@
-
 package slb
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,92 +16,90 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) SetVServerGroupAttribute(request *SetVServerGroupAttributeRequest) (response *SetVServerGroupAttributeResponse, err error) {
-response = CreateSetVServerGroupAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateSetVServerGroupAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) SetVServerGroupAttributeWithChan(request *SetVServerGroupAttributeRequest) (<-chan *SetVServerGroupAttributeResponse, <-chan error) {
-responseChan := make(chan *SetVServerGroupAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.SetVServerGroupAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *SetVServerGroupAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.SetVServerGroupAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGroupAttributeRequest, callback func(response *SetVServerGroupAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *SetVServerGroupAttributeResponse
-var err error
-defer close(result)
-response, err = client.SetVServerGroupAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGroupAttributeRequest, callback func(response *SetVServerGroupAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *SetVServerGroupAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.SetVServerGroupAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type SetVServerGroupAttributeRequest struct {
-*requests.RpcRequest
-                VServerGroupId  string `position:"Query" name:"VServerGroupId"`
-                Tags  string `position:"Query" name:"Tags"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                AccessKeyId  string `position:"Query" name:"access_key_id"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                VServerGroupName  string `position:"Query" name:"VServerGroupName"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                BackendServers  string `position:"Query" name:"BackendServers"`
+	*requests.RpcRequest
+	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
+	Tags                 string `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	VServerGroupName     string `position:"Query" name:"VServerGroupName"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	BackendServers       string `position:"Query" name:"BackendServers"`
 }
 
-
 type SetVServerGroupAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            VServerGroupId     string `json:"VServerGroupId" xml:"VServerGroupId"`
-            VServerGroupName     string `json:"VServerGroupName" xml:"VServerGroupName"`
-                BackendServers struct {
-                    BackendServer []struct {
-            ServerId     string `json:"ServerId" xml:"ServerId"`
-            Port     requests.Integer `json:"Port" xml:"Port"`
-            Weight     requests.Integer `json:"Weight" xml:"Weight"`
-                    }   `json:"BackendServer" xml:"BackendServer"`
-                } `json:"BackendServers" xml:"BackendServers"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	VServerGroupId   string `json:"VServerGroupId" xml:"VServerGroupId"`
+	VServerGroupName string `json:"VServerGroupName" xml:"VServerGroupName"`
+	BackendServers   struct {
+		BackendServer []struct {
+			ServerId string           `json:"ServerId" xml:"ServerId"`
+			Port     requests.Integer `json:"Port" xml:"Port"`
+			Weight   requests.Integer `json:"Weight" xml:"Weight"`
+		} `json:"BackendServer" xml:"BackendServer"`
+	} `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeRequest) {
-request = &SetVServerGroupAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "", "")
-return
+	request = &SetVServerGroupAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "", "")
+	return
 }
 
 func CreateSetVServerGroupAttributeResponse() (response *SetVServerGroupAttributeResponse) {
-response = &SetVServerGroupAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &SetVServerGroupAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

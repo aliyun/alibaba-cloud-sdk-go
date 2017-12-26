@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,98 +16,96 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeAutoSnapshotPolicyEx(request *DescribeAutoSnapshotPolicyExRequest) (response *DescribeAutoSnapshotPolicyExResponse, err error) {
-response = CreateDescribeAutoSnapshotPolicyExResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeAutoSnapshotPolicyExResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeAutoSnapshotPolicyExWithChan(request *DescribeAutoSnapshotPolicyExRequest) (<-chan *DescribeAutoSnapshotPolicyExResponse, <-chan error) {
-responseChan := make(chan *DescribeAutoSnapshotPolicyExResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeAutoSnapshotPolicyEx(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeAutoSnapshotPolicyExResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeAutoSnapshotPolicyEx(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeAutoSnapshotPolicyExWithCallback(request *DescribeAutoSnapshotPolicyExRequest, callback func(response *DescribeAutoSnapshotPolicyExResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeAutoSnapshotPolicyExResponse
-var err error
-defer close(result)
-response, err = client.DescribeAutoSnapshotPolicyEx(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeAutoSnapshotPolicyExWithCallback(request *DescribeAutoSnapshotPolicyExRequest, callback func(response *DescribeAutoSnapshotPolicyExResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeAutoSnapshotPolicyExResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeAutoSnapshotPolicyEx(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeAutoSnapshotPolicyExRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                AutoSnapshotPolicyId  string `position:"Query" name:"AutoSnapshotPolicyId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	AutoSnapshotPolicyId string `position:"Query" name:"AutoSnapshotPolicyId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeAutoSnapshotPolicyExResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
-                AutoSnapshotPolicies struct {
-                    AutoSnapshotPolicy []struct {
-            AutoSnapshotPolicyId     string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-            RegionId     string `json:"RegionId" xml:"RegionId"`
-            AutoSnapshotPolicyName     string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
-            TimePoints     string `json:"TimePoints" xml:"TimePoints"`
-            RepeatWeekdays     string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-            RetentionDays     requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
-            DiskNums     requests.Integer `json:"DiskNums" xml:"DiskNums"`
-            VolumeNums     requests.Integer `json:"VolumeNums" xml:"VolumeNums"`
-            CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-            Status     string `json:"Status" xml:"Status"`
-                    }   `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
-                } `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
+	*responses.BaseResponse
+	RequestId            string           `json:"RequestId" xml:"RequestId"`
+	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
+	AutoSnapshotPolicies struct {
+		AutoSnapshotPolicy []struct {
+			AutoSnapshotPolicyId   string           `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+			RegionId               string           `json:"RegionId" xml:"RegionId"`
+			AutoSnapshotPolicyName string           `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
+			TimePoints             string           `json:"TimePoints" xml:"TimePoints"`
+			RepeatWeekdays         string           `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+			RetentionDays          requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
+			DiskNums               requests.Integer `json:"DiskNums" xml:"DiskNums"`
+			VolumeNums             requests.Integer `json:"VolumeNums" xml:"VolumeNums"`
+			CreationTime           string           `json:"CreationTime" xml:"CreationTime"`
+			Status                 string           `json:"Status" xml:"Status"`
+		} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
+	} `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
 }
 
 func CreateDescribeAutoSnapshotPolicyExRequest() (request *DescribeAutoSnapshotPolicyExRequest) {
-request = &DescribeAutoSnapshotPolicyExRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "", "")
-return
+	request = &DescribeAutoSnapshotPolicyExRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "", "")
+	return
 }
 
 func CreateDescribeAutoSnapshotPolicyExResponse() (response *DescribeAutoSnapshotPolicyExResponse) {
-response = &DescribeAutoSnapshotPolicyExResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeAutoSnapshotPolicyExResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,81 +16,79 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CheckDomainRecord(request *CheckDomainRecordRequest) (response *CheckDomainRecordResponse, err error) {
-response = CreateCheckDomainRecordResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCheckDomainRecordResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CheckDomainRecordWithChan(request *CheckDomainRecordRequest) (<-chan *CheckDomainRecordResponse, <-chan error) {
-responseChan := make(chan *CheckDomainRecordResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CheckDomainRecord(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CheckDomainRecordResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CheckDomainRecord(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRequest, callback func(response *CheckDomainRecordResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CheckDomainRecordResponse
-var err error
-defer close(result)
-response, err = client.CheckDomainRecord(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRequest, callback func(response *CheckDomainRecordResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CheckDomainRecordResponse
+		var err error
+		defer close(result)
+		response, err = client.CheckDomainRecord(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CheckDomainRecordRequest struct {
-*requests.RpcRequest
-                DomainName  string `position:"Query" name:"DomainName"`
-                Value  string `position:"Query" name:"Value"`
-                RR  string `position:"Query" name:"RR"`
-                Type  string `position:"Query" name:"Type"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	DomainName   string `position:"Query" name:"DomainName"`
+	Value        string `position:"Query" name:"Value"`
+	RR           string `position:"Query" name:"RR"`
+	Type         string `position:"Query" name:"Type"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
-
 type CheckDomainRecordResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            IsExist     requests.Boolean `json:"IsExist" xml:"IsExist"`
+	*responses.BaseResponse
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	IsExist   requests.Boolean `json:"IsExist" xml:"IsExist"`
 }
 
 func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
-request = &CheckDomainRecordRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "CheckDomainRecord", "", "")
-return
+	request = &CheckDomainRecordRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "CheckDomainRecord", "", "")
+	return
 }
 
 func CreateCheckDomainRecordResponse() (response *CheckDomainRecordResponse) {
-response = &CheckDomainRecordResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CheckDomainRecordResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

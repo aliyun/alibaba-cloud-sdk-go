@@ -1,4 +1,3 @@
-
 package dm
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,78 +16,76 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ApproveReplyMailAddress(request *ApproveReplyMailAddressRequest) (response *ApproveReplyMailAddressResponse, err error) {
-response = CreateApproveReplyMailAddressResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateApproveReplyMailAddressResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ApproveReplyMailAddressWithChan(request *ApproveReplyMailAddressRequest) (<-chan *ApproveReplyMailAddressResponse, <-chan error) {
-responseChan := make(chan *ApproveReplyMailAddressResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ApproveReplyMailAddress(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ApproveReplyMailAddressResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ApproveReplyMailAddress(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ApproveReplyMailAddressWithCallback(request *ApproveReplyMailAddressRequest, callback func(response *ApproveReplyMailAddressResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ApproveReplyMailAddressResponse
-var err error
-defer close(result)
-response, err = client.ApproveReplyMailAddress(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ApproveReplyMailAddressWithCallback(request *ApproveReplyMailAddressRequest, callback func(response *ApproveReplyMailAddressResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ApproveReplyMailAddressResponse
+		var err error
+		defer close(result)
+		response, err = client.ApproveReplyMailAddress(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ApproveReplyMailAddressRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                Ticket  string `position:"Query" name:"Ticket"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Ticket               string `position:"Query" name:"Ticket"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type ApproveReplyMailAddressResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateApproveReplyMailAddressRequest() (request *ApproveReplyMailAddressRequest) {
-request = &ApproveReplyMailAddressRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Dm", "2015-11-23", "ApproveReplyMailAddress", "", "")
-return
+	request = &ApproveReplyMailAddressRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveReplyMailAddress", "", "")
+	return
 }
 
 func CreateApproveReplyMailAddressResponse() (response *ApproveReplyMailAddressResponse) {
-response = &ApproveReplyMailAddressResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ApproveReplyMailAddressResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

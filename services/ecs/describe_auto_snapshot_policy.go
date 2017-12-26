@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,93 +16,91 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeAutoSnapshotPolicy(request *DescribeAutoSnapshotPolicyRequest) (response *DescribeAutoSnapshotPolicyResponse, err error) {
-response = CreateDescribeAutoSnapshotPolicyResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeAutoSnapshotPolicyResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeAutoSnapshotPolicyWithChan(request *DescribeAutoSnapshotPolicyRequest) (<-chan *DescribeAutoSnapshotPolicyResponse, <-chan error) {
-responseChan := make(chan *DescribeAutoSnapshotPolicyResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeAutoSnapshotPolicy(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeAutoSnapshotPolicyResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeAutoSnapshotPolicy(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAutoSnapshotPolicyRequest, callback func(response *DescribeAutoSnapshotPolicyResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeAutoSnapshotPolicyResponse
-var err error
-defer close(result)
-response, err = client.DescribeAutoSnapshotPolicy(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAutoSnapshotPolicyRequest, callback func(response *DescribeAutoSnapshotPolicyResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeAutoSnapshotPolicyResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeAutoSnapshotPolicy(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeAutoSnapshotPolicyRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type DescribeAutoSnapshotPolicyResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            AutoSnapshotOccupation     requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-            AutoSnapshotPolicy struct {
-            SystemDiskPolicyEnabled     string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
-            SystemDiskPolicyTimePeriod     string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`
-            SystemDiskPolicyRetentionDays     string `json:"SystemDiskPolicyRetentionDays" xml:"SystemDiskPolicyRetentionDays"`
-            SystemDiskPolicyRetentionLastWeek     string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
-            DataDiskPolicyEnabled     string `json:"DataDiskPolicyEnabled" xml:"DataDiskPolicyEnabled"`
-            DataDiskPolicyTimePeriod     string `json:"DataDiskPolicyTimePeriod" xml:"DataDiskPolicyTimePeriod"`
-            DataDiskPolicyRetentionDays     string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
-            DataDiskPolicyRetentionLastWeek     string `json:"DataDiskPolicyRetentionLastWeek" xml:"DataDiskPolicyRetentionLastWeek"`
-            }  `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
-            AutoSnapshotExcutionStatus struct {
-            SystemDiskExcutionStatus     string `json:"SystemDiskExcutionStatus" xml:"SystemDiskExcutionStatus"`
-            DataDiskExcutionStatus     string `json:"DataDiskExcutionStatus" xml:"DataDiskExcutionStatus"`
-            }  `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
+	*responses.BaseResponse
+	RequestId              string           `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	AutoSnapshotPolicy     struct {
+		SystemDiskPolicyEnabled           string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
+		SystemDiskPolicyTimePeriod        string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`
+		SystemDiskPolicyRetentionDays     string `json:"SystemDiskPolicyRetentionDays" xml:"SystemDiskPolicyRetentionDays"`
+		SystemDiskPolicyRetentionLastWeek string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
+		DataDiskPolicyEnabled             string `json:"DataDiskPolicyEnabled" xml:"DataDiskPolicyEnabled"`
+		DataDiskPolicyTimePeriod          string `json:"DataDiskPolicyTimePeriod" xml:"DataDiskPolicyTimePeriod"`
+		DataDiskPolicyRetentionDays       string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
+		DataDiskPolicyRetentionLastWeek   string `json:"DataDiskPolicyRetentionLastWeek" xml:"DataDiskPolicyRetentionLastWeek"`
+	} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
+	AutoSnapshotExcutionStatus struct {
+		SystemDiskExcutionStatus string `json:"SystemDiskExcutionStatus" xml:"SystemDiskExcutionStatus"`
+		DataDiskExcutionStatus   string `json:"DataDiskExcutionStatus" xml:"DataDiskExcutionStatus"`
+	} `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
 }
 
 func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPolicyRequest) {
-request = &DescribeAutoSnapshotPolicyRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicy", "", "")
-return
+	request = &DescribeAutoSnapshotPolicyRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicy", "", "")
+	return
 }
 
 func CreateDescribeAutoSnapshotPolicyResponse() (response *DescribeAutoSnapshotPolicyResponse) {
-response = &DescribeAutoSnapshotPolicyResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeAutoSnapshotPolicyResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

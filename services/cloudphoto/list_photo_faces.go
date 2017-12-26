@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListPhotoFaces(request *ListPhotoFacesRequest) (response *ListPhotoFacesResponse, err error) {
-response = CreateListPhotoFacesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListPhotoFacesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListPhotoFacesWithChan(request *ListPhotoFacesRequest) (<-chan *ListPhotoFacesResponse, <-chan error) {
-responseChan := make(chan *ListPhotoFacesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListPhotoFaces(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListPhotoFacesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListPhotoFaces(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest, callback func(response *ListPhotoFacesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListPhotoFacesResponse
-var err error
-defer close(result)
-response, err = client.ListPhotoFaces(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest, callback func(response *ListPhotoFacesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListPhotoFacesResponse
+		var err error
+		defer close(result)
+		response, err = client.ListPhotoFaces(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListPhotoFacesRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                PhotoId  string `position:"Query" name:"PhotoId"`
+	*requests.RpcRequest
+	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
+	PhotoId   string `position:"Query" name:"PhotoId"`
 }
 
-
 type ListPhotoFacesResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                Faces  []struct {
-            FaceId     requests.Integer `json:"FaceId" xml:"FaceId"`
-            FaceName     string `json:"FaceName" xml:"FaceName"`
-                Axis []    string  `json:"Axis" xml:"Axis"`
-                }  `json:"Faces" xml:"Faces"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Faces     []struct {
+		FaceId   requests.Integer `json:"FaceId" xml:"FaceId"`
+		FaceName string           `json:"FaceName" xml:"FaceName"`
+		Axis     []string         `json:"Axis" xml:"Axis"`
+	} `json:"Faces" xml:"Faces"`
 }
 
 func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
-request = &ListPhotoFacesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "", "")
-return
+	request = &ListPhotoFacesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "", "")
+	return
 }
 
 func CreateListPhotoFacesResponse() (response *ListPhotoFacesResponse) {
-response = &ListPhotoFacesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListPhotoFacesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

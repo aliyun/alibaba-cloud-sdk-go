@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *DisableAlarmResponse, err error) {
-response = CreateDisableAlarmResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDisableAlarmResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan *DisableAlarmResponse, <-chan error) {
-responseChan := make(chan *DisableAlarmResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DisableAlarm(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DisableAlarmResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DisableAlarm(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, callback func(response *DisableAlarmResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DisableAlarmResponse
-var err error
-defer close(result)
-response, err = client.DisableAlarm(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, callback func(response *DisableAlarmResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DisableAlarmResponse
+		var err error
+		defer close(result)
+		response, err = client.DisableAlarm(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DisableAlarmRequest struct {
-*requests.RpcRequest
-                Id  string `position:"Query" name:"Id"`
-                CallbyCmsOwner  string `position:"Query" name:"callby_cms_owner"`
+	*requests.RpcRequest
+	Id             string `position:"Query" name:"Id"`
+	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 }
 
-
 type DisableAlarmResponse struct {
-*responses.BaseResponse
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	Success   requests.Boolean `json:"Success" xml:"Success"`
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
-request = &DisableAlarmRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "DisableAlarm", "", "")
-return
+	request = &DisableAlarmRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "DisableAlarm", "", "")
+	return
 }
 
 func CreateDisableAlarmResponse() (response *DisableAlarmResponse) {
-response = &DisableAlarmResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DisableAlarmResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

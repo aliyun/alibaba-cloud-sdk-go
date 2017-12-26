@@ -1,4 +1,3 @@
-
 package cdn
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,91 +16,89 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeLiveStreamRecordContent(request *DescribeLiveStreamRecordContentRequest) (response *DescribeLiveStreamRecordContentResponse, err error) {
-response = CreateDescribeLiveStreamRecordContentResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeLiveStreamRecordContentResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeLiveStreamRecordContentWithChan(request *DescribeLiveStreamRecordContentRequest) (<-chan *DescribeLiveStreamRecordContentResponse, <-chan error) {
-responseChan := make(chan *DescribeLiveStreamRecordContentResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeLiveStreamRecordContent(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeLiveStreamRecordContentResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeLiveStreamRecordContent(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *DescribeLiveStreamRecordContentRequest, callback func(response *DescribeLiveStreamRecordContentResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeLiveStreamRecordContentResponse
-var err error
-defer close(result)
-response, err = client.DescribeLiveStreamRecordContent(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *DescribeLiveStreamRecordContentRequest, callback func(response *DescribeLiveStreamRecordContentResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeLiveStreamRecordContentResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeLiveStreamRecordContent(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeLiveStreamRecordContentRequest struct {
-*requests.RpcRequest
-                EndTime  string `position:"Query" name:"EndTime"`
-                StreamName  string `position:"Query" name:"StreamName"`
-                StartTime  string `position:"Query" name:"StartTime"`
-                DomainName  string `position:"Query" name:"DomainName"`
-                AppName  string `position:"Query" name:"AppName"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                SecurityToken  string `position:"Query" name:"SecurityToken"`
+	*requests.RpcRequest
+	EndTime       string `position:"Query" name:"EndTime"`
+	StreamName    string `position:"Query" name:"StreamName"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	AppName       string `position:"Query" name:"AppName"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
-
 type DescribeLiveStreamRecordContentResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                RecordContentInfoList struct {
-                    RecordContentInfo []struct {
-            OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
-            OssBucket     string `json:"OssBucket" xml:"OssBucket"`
-            OssObjectPrefix     string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            Duration     requests.Float `json:"Duration" xml:"Duration"`
-                    }   `json:"RecordContentInfo" xml:"RecordContentInfo"`
-                } `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
+	*responses.BaseResponse
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	RecordContentInfoList struct {
+		RecordContentInfo []struct {
+			OssEndpoint     string         `json:"OssEndpoint" xml:"OssEndpoint"`
+			OssBucket       string         `json:"OssBucket" xml:"OssBucket"`
+			OssObjectPrefix string         `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
+			StartTime       string         `json:"StartTime" xml:"StartTime"`
+			EndTime         string         `json:"EndTime" xml:"EndTime"`
+			Duration        requests.Float `json:"Duration" xml:"Duration"`
+		} `json:"RecordContentInfo" xml:"RecordContentInfo"`
+	} `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
 }
 
 func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStreamRecordContentRequest) {
-request = &DescribeLiveStreamRecordContentRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRecordContent", "", "")
-return
+	request = &DescribeLiveStreamRecordContentRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRecordContent", "", "")
+	return
 }
 
 func CreateDescribeLiveStreamRecordContentResponse() (response *DescribeLiveStreamRecordContentResponse) {
-response = &DescribeLiveStreamRecordContentResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeLiveStreamRecordContentResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

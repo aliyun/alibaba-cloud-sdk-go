@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RemovePhoneNumber(request *RemovePhoneNumberRequest) (response *RemovePhoneNumberResponse, err error) {
-response = CreateRemovePhoneNumberResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRemovePhoneNumberResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RemovePhoneNumberWithChan(request *RemovePhoneNumberRequest) (<-chan *RemovePhoneNumberResponse, <-chan error) {
-responseChan := make(chan *RemovePhoneNumberResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RemovePhoneNumber(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RemovePhoneNumberResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RemovePhoneNumber(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RemovePhoneNumberWithCallback(request *RemovePhoneNumberRequest, callback func(response *RemovePhoneNumberResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RemovePhoneNumberResponse
-var err error
-defer close(result)
-response, err = client.RemovePhoneNumber(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RemovePhoneNumberWithCallback(request *RemovePhoneNumberRequest, callback func(response *RemovePhoneNumberResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RemovePhoneNumberResponse
+		var err error
+		defer close(result)
+		response, err = client.RemovePhoneNumber(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RemovePhoneNumberRequest struct {
-*requests.RpcRequest
-                PhoneNumberId  string `position:"Query" name:"PhoneNumberId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
 }
 
-
 type RemovePhoneNumberResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	*responses.BaseResponse
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateRemovePhoneNumberRequest() (request *RemovePhoneNumberRequest) {
-request = &RemovePhoneNumberRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "RemovePhoneNumber", "", "")
-return
+	request = &RemovePhoneNumberRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "RemovePhoneNumber", "", "")
+	return
 }
 
 func CreateRemovePhoneNumberResponse() (response *RemovePhoneNumberResponse) {
-response = &RemovePhoneNumberResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RemovePhoneNumberResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

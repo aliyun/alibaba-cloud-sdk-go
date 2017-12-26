@@ -1,4 +1,3 @@
-
 package push
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response *QueryDeviceInfoResponse, err error) {
-response = CreateQueryDeviceInfoResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateQueryDeviceInfoResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (<-chan *QueryDeviceInfoResponse, <-chan error) {
-responseChan := make(chan *QueryDeviceInfoResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.QueryDeviceInfo(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *QueryDeviceInfoResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.QueryDeviceInfo(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoRequest, callback func(response *QueryDeviceInfoResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *QueryDeviceInfoResponse
-var err error
-defer close(result)
-response, err = client.QueryDeviceInfo(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoRequest, callback func(response *QueryDeviceInfoResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *QueryDeviceInfoResponse
+		var err error
+		defer close(result)
+		response, err = client.QueryDeviceInfo(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type QueryDeviceInfoRequest struct {
-*requests.RpcRequest
-                AppKey  string `position:"Query" name:"AppKey"`
-                DeviceId  string `position:"Query" name:"DeviceId"`
+	*requests.RpcRequest
+	AppKey   string `position:"Query" name:"AppKey"`
+	DeviceId string `position:"Query" name:"DeviceId"`
 }
 
-
 type QueryDeviceInfoResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DeviceInfo struct {
-            DeviceId     string `json:"DeviceId" xml:"DeviceId"`
-            DeviceType     string `json:"DeviceType" xml:"DeviceType"`
-            Account     string `json:"Account" xml:"Account"`
-            DeviceToken     string `json:"DeviceToken" xml:"DeviceToken"`
-            Tags     string `json:"Tags" xml:"Tags"`
-            Alias     string `json:"Alias" xml:"Alias"`
-            LastOnlineTime     string `json:"LastOnlineTime" xml:"LastOnlineTime"`
-            Online     requests.Boolean `json:"Online" xml:"Online"`
-            PhoneNumber     string `json:"PhoneNumber" xml:"PhoneNumber"`
-            PushEnabled     requests.Boolean `json:"PushEnabled" xml:"PushEnabled"`
-            }  `json:"DeviceInfo" xml:"DeviceInfo"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DeviceInfo struct {
+		DeviceId       string           `json:"DeviceId" xml:"DeviceId"`
+		DeviceType     string           `json:"DeviceType" xml:"DeviceType"`
+		Account        string           `json:"Account" xml:"Account"`
+		DeviceToken    string           `json:"DeviceToken" xml:"DeviceToken"`
+		Tags           string           `json:"Tags" xml:"Tags"`
+		Alias          string           `json:"Alias" xml:"Alias"`
+		LastOnlineTime string           `json:"LastOnlineTime" xml:"LastOnlineTime"`
+		Online         requests.Boolean `json:"Online" xml:"Online"`
+		PhoneNumber    string           `json:"PhoneNumber" xml:"PhoneNumber"`
+		PushEnabled    requests.Boolean `json:"PushEnabled" xml:"PushEnabled"`
+	} `json:"DeviceInfo" xml:"DeviceInfo"`
 }
 
 func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
-request = &QueryDeviceInfoRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "", "")
-return
+	request = &QueryDeviceInfoRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "", "")
+	return
 }
 
 func CreateQueryDeviceInfoResponse() (response *QueryDeviceInfoResponse) {
-response = &QueryDeviceInfoResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &QueryDeviceInfoResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

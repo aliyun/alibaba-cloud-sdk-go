@@ -1,4 +1,3 @@
-
 package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ProfileGet(request *ProfileGetRequest) (response *ProfileGetResponse, err error) {
-response = CreateProfileGetResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateProfileGetResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ProfileGetWithChan(request *ProfileGetRequest) (<-chan *ProfileGetResponse, <-chan error) {
-responseChan := make(chan *ProfileGetResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ProfileGet(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ProfileGetResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ProfileGet(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callback func(response *ProfileGetResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ProfileGetResponse
-var err error
-defer close(result)
-response, err = client.ProfileGet(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callback func(response *ProfileGetResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ProfileGetResponse
+		var err error
+		defer close(result)
+		response, err = client.ProfileGet(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ProfileGetRequest struct {
-*requests.RpcRequest
-                UserId  string `position:"Query" name:"UserId"`
+	*requests.RpcRequest
+	UserId string `position:"Query" name:"UserId"`
 }
 
-
 type ProfileGetResponse struct {
-*responses.BaseResponse
-            ErrorCode     requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
-            ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            UserId     requests.Integer `json:"UserId" xml:"UserId"`
-            AutoInstall     requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
+	*responses.BaseResponse
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	UserId       requests.Integer `json:"UserId" xml:"UserId"`
+	AutoInstall  requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
 }
 
 func CreateProfileGetRequest() (request *ProfileGetRequest) {
-request = &ProfileGetRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Cms", "2017-03-01", "ProfileGet", "", "")
-return
+	request = &ProfileGetRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileGet", "", "")
+	return
 }
 
 func CreateProfileGetResponse() (response *ProfileGetResponse) {
-response = &ProfileGetResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ProfileGetResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,127 +16,125 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeScalingRules(request *DescribeScalingRulesRequest) (response *DescribeScalingRulesResponse, err error) {
-response = CreateDescribeScalingRulesResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeScalingRulesResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeScalingRulesWithChan(request *DescribeScalingRulesRequest) (<-chan *DescribeScalingRulesResponse, <-chan error) {
-responseChan := make(chan *DescribeScalingRulesResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeScalingRules(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeScalingRulesResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeScalingRules(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeScalingRulesWithCallback(request *DescribeScalingRulesRequest, callback func(response *DescribeScalingRulesResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeScalingRulesResponse
-var err error
-defer close(result)
-response, err = client.DescribeScalingRules(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeScalingRulesWithCallback(request *DescribeScalingRulesRequest, callback func(response *DescribeScalingRulesResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeScalingRulesResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeScalingRules(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeScalingRulesRequest struct {
-*requests.RpcRequest
-                PageSize  string `position:"Query" name:"PageSize"`
-                ScalingRuleId10  string `position:"Query" name:"ScalingRuleId.10"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ScalingRuleName10  string `position:"Query" name:"ScalingRuleName.10"`
-                ScalingRuleAri10  string `position:"Query" name:"ScalingRuleAri.10"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                ScalingRuleAri9  string `position:"Query" name:"ScalingRuleAri.9"`
-                ScalingRuleId1  string `position:"Query" name:"ScalingRuleId.1"`
-                ScalingRuleId3  string `position:"Query" name:"ScalingRuleId.3"`
-                ScalingRuleId2  string `position:"Query" name:"ScalingRuleId.2"`
-                ScalingRuleId5  string `position:"Query" name:"ScalingRuleId.5"`
-                PageNumber  string `position:"Query" name:"PageNumber"`
-                ScalingRuleId4  string `position:"Query" name:"ScalingRuleId.4"`
-                ScalingRuleId7  string `position:"Query" name:"ScalingRuleId.7"`
-                ScalingRuleId6  string `position:"Query" name:"ScalingRuleId.6"`
-                ScalingRuleId9  string `position:"Query" name:"ScalingRuleId.9"`
-                ScalingRuleId8  string `position:"Query" name:"ScalingRuleId.8"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                ScalingGroupId  string `position:"Query" name:"ScalingGroupId"`
-                ScalingRuleName9  string `position:"Query" name:"ScalingRuleName.9"`
-                ScalingRuleName8  string `position:"Query" name:"ScalingRuleName.8"`
-                ScalingRuleAri2  string `position:"Query" name:"ScalingRuleAri.2"`
-                ScalingRuleName1  string `position:"Query" name:"ScalingRuleName.1"`
-                ScalingRuleAri1  string `position:"Query" name:"ScalingRuleAri.1"`
-                ScalingRuleAri4  string `position:"Query" name:"ScalingRuleAri.4"`
-                ScalingRuleName3  string `position:"Query" name:"ScalingRuleName.3"`
-                ScalingRuleAri3  string `position:"Query" name:"ScalingRuleAri.3"`
-                ScalingRuleName2  string `position:"Query" name:"ScalingRuleName.2"`
-                ScalingRuleAri6  string `position:"Query" name:"ScalingRuleAri.6"`
-                ScalingRuleName5  string `position:"Query" name:"ScalingRuleName.5"`
-                ScalingRuleAri5  string `position:"Query" name:"ScalingRuleAri.5"`
-                ScalingRuleName4  string `position:"Query" name:"ScalingRuleName.4"`
-                ScalingRuleAri8  string `position:"Query" name:"ScalingRuleAri.8"`
-                ScalingRuleName7  string `position:"Query" name:"ScalingRuleName.7"`
-                ScalingRuleAri7  string `position:"Query" name:"ScalingRuleAri.7"`
-                ScalingRuleName6  string `position:"Query" name:"ScalingRuleName.6"`
+	*requests.RpcRequest
+	PageSize             string `position:"Query" name:"PageSize"`
+	ScalingRuleId10      string `position:"Query" name:"ScalingRuleId.10"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingRuleName10    string `position:"Query" name:"ScalingRuleName.10"`
+	ScalingRuleAri10     string `position:"Query" name:"ScalingRuleAri.10"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ScalingRuleAri9      string `position:"Query" name:"ScalingRuleAri.9"`
+	ScalingRuleId1       string `position:"Query" name:"ScalingRuleId.1"`
+	ScalingRuleId3       string `position:"Query" name:"ScalingRuleId.3"`
+	ScalingRuleId2       string `position:"Query" name:"ScalingRuleId.2"`
+	ScalingRuleId5       string `position:"Query" name:"ScalingRuleId.5"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	ScalingRuleId4       string `position:"Query" name:"ScalingRuleId.4"`
+	ScalingRuleId7       string `position:"Query" name:"ScalingRuleId.7"`
+	ScalingRuleId6       string `position:"Query" name:"ScalingRuleId.6"`
+	ScalingRuleId9       string `position:"Query" name:"ScalingRuleId.9"`
+	ScalingRuleId8       string `position:"Query" name:"ScalingRuleId.8"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+	ScalingRuleName9     string `position:"Query" name:"ScalingRuleName.9"`
+	ScalingRuleName8     string `position:"Query" name:"ScalingRuleName.8"`
+	ScalingRuleAri2      string `position:"Query" name:"ScalingRuleAri.2"`
+	ScalingRuleName1     string `position:"Query" name:"ScalingRuleName.1"`
+	ScalingRuleAri1      string `position:"Query" name:"ScalingRuleAri.1"`
+	ScalingRuleAri4      string `position:"Query" name:"ScalingRuleAri.4"`
+	ScalingRuleName3     string `position:"Query" name:"ScalingRuleName.3"`
+	ScalingRuleAri3      string `position:"Query" name:"ScalingRuleAri.3"`
+	ScalingRuleName2     string `position:"Query" name:"ScalingRuleName.2"`
+	ScalingRuleAri6      string `position:"Query" name:"ScalingRuleAri.6"`
+	ScalingRuleName5     string `position:"Query" name:"ScalingRuleName.5"`
+	ScalingRuleAri5      string `position:"Query" name:"ScalingRuleAri.5"`
+	ScalingRuleName4     string `position:"Query" name:"ScalingRuleName.4"`
+	ScalingRuleAri8      string `position:"Query" name:"ScalingRuleAri.8"`
+	ScalingRuleName7     string `position:"Query" name:"ScalingRuleName.7"`
+	ScalingRuleAri7      string `position:"Query" name:"ScalingRuleAri.7"`
+	ScalingRuleName6     string `position:"Query" name:"ScalingRuleName.6"`
 }
 
-
 type DescribeScalingRulesResponse struct {
-*responses.BaseResponse
-            TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-            PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-            PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                ScalingRules struct {
-                    ScalingRule []struct {
-            ScalingRuleId     string `json:"ScalingRuleId" xml:"ScalingRuleId"`
-            ScalingGroupId     string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-            ScalingRuleName     string `json:"ScalingRuleName" xml:"ScalingRuleName"`
-            Cooldown     requests.Integer `json:"Cooldown" xml:"Cooldown"`
-            AdjustmentType     string `json:"AdjustmentType" xml:"AdjustmentType"`
-            AdjustmentValue     requests.Integer `json:"AdjustmentValue" xml:"AdjustmentValue"`
-            MinSize     requests.Integer `json:"MinSize" xml:"MinSize"`
-            MaxSize     requests.Integer `json:"MaxSize" xml:"MaxSize"`
-            ScalingRuleAri     string `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
-                    }   `json:"ScalingRule" xml:"ScalingRule"`
-                } `json:"ScalingRules" xml:"ScalingRules"`
+	*responses.BaseResponse
+	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	ScalingRules struct {
+		ScalingRule []struct {
+			ScalingRuleId   string           `json:"ScalingRuleId" xml:"ScalingRuleId"`
+			ScalingGroupId  string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			ScalingRuleName string           `json:"ScalingRuleName" xml:"ScalingRuleName"`
+			Cooldown        requests.Integer `json:"Cooldown" xml:"Cooldown"`
+			AdjustmentType  string           `json:"AdjustmentType" xml:"AdjustmentType"`
+			AdjustmentValue requests.Integer `json:"AdjustmentValue" xml:"AdjustmentValue"`
+			MinSize         requests.Integer `json:"MinSize" xml:"MinSize"`
+			MaxSize         requests.Integer `json:"MaxSize" xml:"MaxSize"`
+			ScalingRuleAri  string           `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
+		} `json:"ScalingRule" xml:"ScalingRule"`
+	} `json:"ScalingRules" xml:"ScalingRules"`
 }
 
 func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) {
-request = &DescribeScalingRulesRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "", "")
-return
+	request = &DescribeScalingRulesRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "", "")
+	return
 }
 
 func CreateDescribeScalingRulesResponse() (response *DescribeScalingRulesResponse) {
-response = &DescribeScalingRulesResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeScalingRulesResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

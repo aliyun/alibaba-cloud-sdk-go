@@ -1,4 +1,3 @@
-
 package ccc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,103 +16,101 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ListSkillGroups(request *ListSkillGroupsRequest) (response *ListSkillGroupsResponse, err error) {
-response = CreateListSkillGroupsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateListSkillGroupsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ListSkillGroupsWithChan(request *ListSkillGroupsRequest) (<-chan *ListSkillGroupsResponse, <-chan error) {
-responseChan := make(chan *ListSkillGroupsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ListSkillGroups(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ListSkillGroupsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ListSkillGroups(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsRequest, callback func(response *ListSkillGroupsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ListSkillGroupsResponse
-var err error
-defer close(result)
-response, err = client.ListSkillGroups(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsRequest, callback func(response *ListSkillGroupsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ListSkillGroupsResponse
+		var err error
+		defer close(result)
+		response, err = client.ListSkillGroups(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ListSkillGroupsRequest struct {
-*requests.RpcRequest
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-
 type ListSkillGroupsResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Success     requests.Boolean `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            HttpStatusCode     requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
-                SkillGroups struct {
-                    SkillGroup []struct {
-            SkillGroupId     string `json:"SkillGroupId" xml:"SkillGroupId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            SkillGroupName     string `json:"SkillGroupName" xml:"SkillGroupName"`
-            AccSkillGroupName     string `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
-            AccQueueName     string `json:"AccQueueName" xml:"AccQueueName"`
-            SkillGroupDescription     string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-            UserCount     requests.Integer `json:"UserCount" xml:"UserCount"`
-                OutboundPhoneNumbers struct {
-                    PhoneNumber []struct {
-            PhoneNumberId     string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Number     string `json:"Number" xml:"Number"`
-            PhoneNumberDescription     string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-            TestOnly     requests.Boolean `json:"TestOnly" xml:"TestOnly"`
-            RemainingTime     requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
-            AllowOutbound     requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
-            Usage     string `json:"Usage" xml:"Usage"`
-            Trunks     requests.Integer `json:"Trunks" xml:"Trunks"`
-                    }   `json:"PhoneNumber" xml:"PhoneNumber"`
-                } `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
-                    }   `json:"SkillGroup" xml:"SkillGroup"`
-                } `json:"SkillGroups" xml:"SkillGroups"`
+	*responses.BaseResponse
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillGroups    struct {
+		SkillGroup []struct {
+			SkillGroupId          string           `json:"SkillGroupId" xml:"SkillGroupId"`
+			InstanceId            string           `json:"InstanceId" xml:"InstanceId"`
+			SkillGroupName        string           `json:"SkillGroupName" xml:"SkillGroupName"`
+			AccSkillGroupName     string           `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
+			AccQueueName          string           `json:"AccQueueName" xml:"AccQueueName"`
+			SkillGroupDescription string           `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+			UserCount             requests.Integer `json:"UserCount" xml:"UserCount"`
+			OutboundPhoneNumbers  struct {
+				PhoneNumber []struct {
+					PhoneNumberId          string           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+					InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
+					Number                 string           `json:"Number" xml:"Number"`
+					PhoneNumberDescription string           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+					TestOnly               requests.Boolean `json:"TestOnly" xml:"TestOnly"`
+					RemainingTime          requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
+					AllowOutbound          requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+					Usage                  string           `json:"Usage" xml:"Usage"`
+					Trunks                 requests.Integer `json:"Trunks" xml:"Trunks"`
+				} `json:"PhoneNumber" xml:"PhoneNumber"`
+			} `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
+		} `json:"SkillGroup" xml:"SkillGroup"`
+	} `json:"SkillGroups" xml:"SkillGroups"`
 }
 
 func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {
-request = &ListSkillGroupsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroups", "", "")
-return
+	request = &ListSkillGroupsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroups", "", "")
+	return
 }
 
 func CreateListSkillGroupsResponse() (response *ListSkillGroupsResponse) {
-response = &ListSkillGroupsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ListSkillGroupsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

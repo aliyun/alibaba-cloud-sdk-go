@@ -1,4 +1,3 @@
-
 package alidns
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,79 +16,77 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RetrievalDomainName(request *RetrievalDomainNameRequest) (response *RetrievalDomainNameResponse, err error) {
-response = CreateRetrievalDomainNameResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRetrievalDomainNameResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRequest) (<-chan *RetrievalDomainNameResponse, <-chan error) {
-responseChan := make(chan *RetrievalDomainNameResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RetrievalDomainName(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RetrievalDomainNameResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RetrievalDomainName(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RetrievalDomainNameWithCallback(request *RetrievalDomainNameRequest, callback func(response *RetrievalDomainNameResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RetrievalDomainNameResponse
-var err error
-defer close(result)
-response, err = client.RetrievalDomainName(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RetrievalDomainNameWithCallback(request *RetrievalDomainNameRequest, callback func(response *RetrievalDomainNameResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RetrievalDomainNameResponse
+		var err error
+		defer close(result)
+		response, err = client.RetrievalDomainName(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RetrievalDomainNameRequest struct {
-*requests.RpcRequest
-                DomainName  string `position:"Query" name:"DomainName"`
-                UserClientIp  string `position:"Query" name:"UserClientIp"`
-                Lang  string `position:"Query" name:"Lang"`
+	*requests.RpcRequest
+	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
-
 type RetrievalDomainNameResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            DomainName     string `json:"DomainName" xml:"DomainName"`
-            WhoisEmail     string `json:"WhoisEmail" xml:"WhoisEmail"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	WhoisEmail string `json:"WhoisEmail" xml:"WhoisEmail"`
 }
 
 func CreateRetrievalDomainNameRequest() (request *RetrievalDomainNameRequest) {
-request = &RetrievalDomainNameRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Alidns", "2015-01-09", "RetrievalDomainName", "", "")
-return
+	request = &RetrievalDomainNameRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Alidns", "2015-01-09", "RetrievalDomainName", "", "")
+	return
 }
 
 func CreateRetrievalDomainNameResponse() (response *RetrievalDomainNameResponse) {
-response = &RetrievalDomainNameResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RetrievalDomainNameResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

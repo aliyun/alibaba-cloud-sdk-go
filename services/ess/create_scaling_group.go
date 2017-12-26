@@ -1,4 +1,3 @@
-
 package ess
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,86 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (response *CreateScalingGroupResponse, err error) {
-response = CreateCreateScalingGroupResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateScalingGroupResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequest) (<-chan *CreateScalingGroupResponse, <-chan error) {
-responseChan := make(chan *CreateScalingGroupResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateScalingGroup(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateScalingGroupResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateScalingGroup(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroupRequest, callback func(response *CreateScalingGroupResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateScalingGroupResponse
-var err error
-defer close(result)
-response, err = client.CreateScalingGroup(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroupRequest, callback func(response *CreateScalingGroupResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateScalingGroupResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateScalingGroup(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateScalingGroupRequest struct {
-*requests.RpcRequest
-                VSwitchId  string `position:"Query" name:"VSwitchId"`
-                MinSize  string `position:"Query" name:"MinSize"`
-                ScalingGroupName  string `position:"Query" name:"ScalingGroupName"`
-                LoadBalancerIds  string `position:"Query" name:"LoadBalancerIds"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                DBInstanceIds  string `position:"Query" name:"DBInstanceIds"`
-                MaxSize  string `position:"Query" name:"MaxSize"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                RemovalPolicy1  string `position:"Query" name:"RemovalPolicy.1"`
-                VSwitchIds  *[]string `position:"Query" name:"VSwitchIds"  type:"Repeated"`
-                RemovalPolicy2  string `position:"Query" name:"RemovalPolicy.2"`
-                DefaultCooldown  string `position:"Query" name:"DefaultCooldown"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
+	*requests.RpcRequest
+	VSwitchId            string    `position:"Query" name:"VSwitchId"`
+	MinSize              string    `position:"Query" name:"MinSize"`
+	ScalingGroupName     string    `position:"Query" name:"ScalingGroupName"`
+	LoadBalancerIds      string    `position:"Query" name:"LoadBalancerIds"`
+	OwnerId              string    `position:"Query" name:"OwnerId"`
+	DBInstanceIds        string    `position:"Query" name:"DBInstanceIds"`
+	MaxSize              string    `position:"Query" name:"MaxSize"`
+	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
+	RemovalPolicy1       string    `position:"Query" name:"RemovalPolicy.1"`
+	VSwitchIds           *[]string `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	RemovalPolicy2       string    `position:"Query" name:"RemovalPolicy.2"`
+	DefaultCooldown      string    `position:"Query" name:"DefaultCooldown"`
+	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
 }
 
-
 type CreateScalingGroupResponse struct {
-*responses.BaseResponse
-            ScalingGroupId     string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	ScalingGroupId string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
-request = &CreateScalingGroupRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "", "")
-return
+	request = &CreateScalingGroupRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "", "")
+	return
 }
 
 func CreateCreateScalingGroupResponse() (response *CreateScalingGroupResponse) {
-response = &CreateScalingGroupResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateScalingGroupResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

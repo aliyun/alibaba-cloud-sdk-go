@@ -1,4 +1,3 @@
-
 package cloudphoto
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,89 +16,87 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) GetFramedPhotoUrls(request *GetFramedPhotoUrlsRequest) (response *GetFramedPhotoUrlsResponse, err error) {
-response = CreateGetFramedPhotoUrlsResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetFramedPhotoUrlsResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequest) (<-chan *GetFramedPhotoUrlsResponse, <-chan error) {
-responseChan := make(chan *GetFramedPhotoUrlsResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetFramedPhotoUrls(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetFramedPhotoUrlsResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetFramedPhotoUrls(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrlsRequest, callback func(response *GetFramedPhotoUrlsResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetFramedPhotoUrlsResponse
-var err error
-defer close(result)
-response, err = client.GetFramedPhotoUrls(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrlsRequest, callback func(response *GetFramedPhotoUrlsResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetFramedPhotoUrlsResponse
+		var err error
+		defer close(result)
+		response, err = client.GetFramedPhotoUrls(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type GetFramedPhotoUrlsRequest struct {
-*requests.RpcRequest
-                LibraryId  string `position:"Query" name:"LibraryId"`
-                StoreName  string `position:"Query" name:"StoreName"`
-                FrameId  string `position:"Query" name:"FrameId"`
-                PhotoId  *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	*requests.RpcRequest
+	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	FrameId   string    `position:"Query" name:"FrameId"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
-
 type GetFramedPhotoUrlsResponse struct {
-*responses.BaseResponse
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Action     string `json:"Action" xml:"Action"`
-                Results struct {
-                    Result []struct {
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-            PhotoId     requests.Integer `json:"PhotoId" xml:"PhotoId"`
-            FramedPhotoUrl     string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
-                    }   `json:"Result" xml:"Result"`
-                } `json:"Results" xml:"Results"`
+	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   struct {
+		Result []struct {
+			Code           string           `json:"Code" xml:"Code"`
+			Message        string           `json:"Message" xml:"Message"`
+			PhotoId        requests.Integer `json:"PhotoId" xml:"PhotoId"`
+			FramedPhotoUrl string           `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+		} `json:"Result" xml:"Result"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
-request = &GetFramedPhotoUrlsRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "", "")
-return
+	request = &GetFramedPhotoUrlsRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "", "")
+	return
 }
 
 func CreateGetFramedPhotoUrlsResponse() (response *GetFramedPhotoUrlsResponse) {
-response = &GetFramedPhotoUrlsResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetFramedPhotoUrlsResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,88 +16,87 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (response *CreateRouteEntryResponse, err error) {
-response = CreateCreateRouteEntryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateCreateRouteEntryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest) (<-chan *CreateRouteEntryResponse, <-chan error) {
-responseChan := make(chan *CreateRouteEntryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.CreateRouteEntry(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *CreateRouteEntryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.CreateRouteEntry(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequest, callback func(response *CreateRouteEntryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *CreateRouteEntryResponse
-var err error
-defer close(result)
-response, err = client.CreateRouteEntry(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequest, callback func(response *CreateRouteEntryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *CreateRouteEntryResponse
+		var err error
+		defer close(result)
+		response, err = client.CreateRouteEntry(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type CreateRouteEntryRequest struct {
-*requests.RpcRequest
-                NextHopType  string `position:"Query" name:"NextHopType"`
-                ClientToken  string `position:"Query" name:"ClientToken"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                NextHopList  *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
-                NextHopId  string `position:"Query" name:"NextHopId"`
-                RouteTableId  string `position:"Query" name:"RouteTableId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                DestinationCidrBlock  string `position:"Query" name:"DestinationCidrBlock"`
+	*requests.RpcRequest
+	NextHopType          string                         `position:"Query" name:"NextHopType"`
+	ClientToken          string                         `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
+	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	ResourceOwnerId      string                         `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              string                         `position:"Query" name:"OwnerId"`
+	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
 }
 
-type CreateRouteEntryNextHopList struct{
-        NextHopType string `name:"NextHopType"`
-        NextHopId string `name:"NextHopId"`
+type CreateRouteEntryNextHopList struct {
+	NextHopType string `name:"NextHopType"`
+	NextHopId   string `name:"NextHopId"`
 }
 
 type CreateRouteEntryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
-request = &CreateRouteEntryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "", "")
-return
+	request = &CreateRouteEntryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "", "")
+	return
 }
 
 func CreateCreateRouteEntryResponse() (response *CreateRouteEntryResponse) {
-response = &CreateRouteEntryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &CreateRouteEntryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

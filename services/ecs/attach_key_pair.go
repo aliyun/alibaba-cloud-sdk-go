@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,90 +16,88 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) AttachKeyPair(request *AttachKeyPairRequest) (response *AttachKeyPairResponse, err error) {
-response = CreateAttachKeyPairResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateAttachKeyPairResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) AttachKeyPairWithChan(request *AttachKeyPairRequest) (<-chan *AttachKeyPairResponse, <-chan error) {
-responseChan := make(chan *AttachKeyPairResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.AttachKeyPair(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *AttachKeyPairResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.AttachKeyPair(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, callback func(response *AttachKeyPairResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *AttachKeyPairResponse
-var err error
-defer close(result)
-response, err = client.AttachKeyPair(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, callback func(response *AttachKeyPairResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *AttachKeyPairResponse
+		var err error
+		defer close(result)
+		response, err = client.AttachKeyPair(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type AttachKeyPairRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                InstanceIds  string `position:"Query" name:"InstanceIds"`
-                KeyPairName  string `position:"Query" name:"KeyPairName"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string `position:"Query" name:"InstanceIds"`
+	KeyPairName          string `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
-
 type AttachKeyPairResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            TotalCount     string `json:"TotalCount" xml:"TotalCount"`
-            FailCount     string `json:"FailCount" xml:"FailCount"`
-            KeyPairName     string `json:"KeyPairName" xml:"KeyPairName"`
-                Results struct {
-                    Result []struct {
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            Success     string `json:"Success" xml:"Success"`
-            Code     string `json:"Code" xml:"Code"`
-            Message     string `json:"Message" xml:"Message"`
-                    }   `json:"Result" xml:"Result"`
-                } `json:"Results" xml:"Results"`
+	*responses.BaseResponse
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	TotalCount  string `json:"TotalCount" xml:"TotalCount"`
+	FailCount   string `json:"FailCount" xml:"FailCount"`
+	KeyPairName string `json:"KeyPairName" xml:"KeyPairName"`
+	Results     struct {
+		Result []struct {
+			InstanceId string `json:"InstanceId" xml:"InstanceId"`
+			Success    string `json:"Success" xml:"Success"`
+			Code       string `json:"Code" xml:"Code"`
+			Message    string `json:"Message" xml:"Message"`
+		} `json:"Result" xml:"Result"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
-request = &AttachKeyPairRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "", "")
-return
+	request = &AttachKeyPairRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "", "")
+	return
 }
 
 func CreateAttachKeyPairResponse() (response *AttachKeyPairResponse) {
-response = &AttachKeyPairResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &AttachKeyPairResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

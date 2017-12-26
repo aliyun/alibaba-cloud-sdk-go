@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,83 +16,81 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeInstancePhysicalAttribute(request *DescribeInstancePhysicalAttributeRequest) (response *DescribeInstancePhysicalAttributeResponse, err error) {
-response = CreateDescribeInstancePhysicalAttributeResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeInstancePhysicalAttributeResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeInstancePhysicalAttributeWithChan(request *DescribeInstancePhysicalAttributeRequest) (<-chan *DescribeInstancePhysicalAttributeResponse, <-chan error) {
-responseChan := make(chan *DescribeInstancePhysicalAttributeResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeInstancePhysicalAttribute(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeInstancePhysicalAttributeResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeInstancePhysicalAttribute(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *DescribeInstancePhysicalAttributeRequest, callback func(response *DescribeInstancePhysicalAttributeResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeInstancePhysicalAttributeResponse
-var err error
-defer close(result)
-response, err = client.DescribeInstancePhysicalAttribute(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *DescribeInstancePhysicalAttributeRequest, callback func(response *DescribeInstancePhysicalAttributeResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeInstancePhysicalAttributeResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeInstancePhysicalAttribute(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeInstancePhysicalAttributeRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                InstanceId  string `position:"Query" name:"InstanceId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
 }
 
-
 type DescribeInstancePhysicalAttributeResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-            VlanId     string `json:"VlanId" xml:"VlanId"`
-            NodeControllerId     string `json:"NodeControllerId" xml:"NodeControllerId"`
-            RackId     string `json:"RackId" xml:"RackId"`
+	*responses.BaseResponse
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	VlanId           string `json:"VlanId" xml:"VlanId"`
+	NodeControllerId string `json:"NodeControllerId" xml:"NodeControllerId"`
+	RackId           string `json:"RackId" xml:"RackId"`
 }
 
 func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstancePhysicalAttributeRequest) {
-request = &DescribeInstancePhysicalAttributeRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "", "")
-return
+	request = &DescribeInstancePhysicalAttributeRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "", "")
+	return
 }
 
 func CreateDescribeInstancePhysicalAttributeResponse() (response *DescribeInstancePhysicalAttributeResponse) {
-response = &DescribeInstancePhysicalAttributeResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeInstancePhysicalAttributeResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

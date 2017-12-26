@@ -1,4 +1,3 @@
-
 package ecs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,85 +16,83 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (response *ModifyForwardEntryResponse, err error) {
-response = CreateModifyForwardEntryResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateModifyForwardEntryResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequest) (<-chan *ModifyForwardEntryResponse, <-chan error) {
-responseChan := make(chan *ModifyForwardEntryResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.ModifyForwardEntry(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *ModifyForwardEntryResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.ModifyForwardEntry(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntryRequest, callback func(response *ModifyForwardEntryResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *ModifyForwardEntryResponse
-var err error
-defer close(result)
-response, err = client.ModifyForwardEntry(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntryRequest, callback func(response *ModifyForwardEntryResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *ModifyForwardEntryResponse
+		var err error
+		defer close(result)
+		response, err = client.ModifyForwardEntry(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type ModifyForwardEntryRequest struct {
-*requests.RpcRequest
-                InternalIp  string `position:"Query" name:"InternalIp"`
-                ExternalIp  string `position:"Query" name:"ExternalIp"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                IpProtocol  string `position:"Query" name:"IpProtocol"`
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                ForwardTableId  string `position:"Query" name:"ForwardTableId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                ForwardEntryId  string `position:"Query" name:"ForwardEntryId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                ExternalPort  string `position:"Query" name:"ExternalPort"`
-                InternalPort  string `position:"Query" name:"InternalPort"`
+	*requests.RpcRequest
+	InternalIp           string `position:"Query" name:"InternalIp"`
+	ExternalIp           string `position:"Query" name:"ExternalIp"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	IpProtocol           string `position:"Query" name:"IpProtocol"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ForwardTableId       string `position:"Query" name:"ForwardTableId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ForwardEntryId       string `position:"Query" name:"ForwardEntryId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ExternalPort         string `position:"Query" name:"ExternalPort"`
+	InternalPort         string `position:"Query" name:"InternalPort"`
 }
 
-
 type ModifyForwardEntryResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
-request = &ModifyForwardEntryRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyForwardEntry", "", "")
-return
+	request = &ModifyForwardEntryRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyForwardEntry", "", "")
+	return
 }
 
 func CreateModifyForwardEntryResponse() (response *ModifyForwardEntryResponse) {
-response = &ModifyForwardEntryResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &ModifyForwardEntryResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

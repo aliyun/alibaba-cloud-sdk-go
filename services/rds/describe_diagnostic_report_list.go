@@ -1,4 +1,3 @@
-
 package rds
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,82 +16,80 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticReportListRequest) (response *DescribeDiagnosticReportListResponse, err error) {
-response = CreateDescribeDiagnosticReportListResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateDescribeDiagnosticReportListResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiagnosticReportListRequest) (<-chan *DescribeDiagnosticReportListResponse, <-chan error) {
-responseChan := make(chan *DescribeDiagnosticReportListResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.DescribeDiagnosticReportList(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *DescribeDiagnosticReportListResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.DescribeDiagnosticReportList(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) DescribeDiagnosticReportListWithCallback(request *DescribeDiagnosticReportListRequest, callback func(response *DescribeDiagnosticReportListResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *DescribeDiagnosticReportListResponse
-var err error
-defer close(result)
-response, err = client.DescribeDiagnosticReportList(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) DescribeDiagnosticReportListWithCallback(request *DescribeDiagnosticReportListRequest, callback func(response *DescribeDiagnosticReportListResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *DescribeDiagnosticReportListResponse
+		var err error
+		defer close(result)
+		response, err = client.DescribeDiagnosticReportList(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type DescribeDiagnosticReportListRequest struct {
-*requests.RpcRequest
-                DBInstanceId  string `position:"Query" name:"DBInstanceId"`
+	*requests.RpcRequest
+	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 }
 
-
 type DescribeDiagnosticReportListResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-                ReportList  []struct {
-            DiagnosticTime     string `json:"DiagnosticTime" xml:"DiagnosticTime"`
-            Score     requests.Integer `json:"Score" xml:"Score"`
-            StartTime     string `json:"StartTime" xml:"StartTime"`
-            EndTime     string `json:"EndTime" xml:"EndTime"`
-            DownloadURL     string `json:"DownloadURL" xml:"DownloadURL"`
-                }  `json:"ReportList" xml:"ReportList"`
+	*responses.BaseResponse
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	ReportList []struct {
+		DiagnosticTime string           `json:"DiagnosticTime" xml:"DiagnosticTime"`
+		Score          requests.Integer `json:"Score" xml:"Score"`
+		StartTime      string           `json:"StartTime" xml:"StartTime"`
+		EndTime        string           `json:"EndTime" xml:"EndTime"`
+		DownloadURL    string           `json:"DownloadURL" xml:"DownloadURL"`
+	} `json:"ReportList" xml:"ReportList"`
 }
 
 func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticReportListRequest) {
-request = &DescribeDiagnosticReportListRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDiagnosticReportList", "", "")
-return
+	request = &DescribeDiagnosticReportListRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDiagnosticReportList", "", "")
+	return
 }
 
 func CreateDescribeDiagnosticReportListResponse() (response *DescribeDiagnosticReportListResponse) {
-response = &DescribeDiagnosticReportListResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &DescribeDiagnosticReportListResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-

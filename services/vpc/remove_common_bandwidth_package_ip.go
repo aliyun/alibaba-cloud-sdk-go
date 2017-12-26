@@ -1,4 +1,3 @@
-
 package vpc
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,80 +16,78 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 func (client *Client) RemoveCommonBandwidthPackageIp(request *RemoveCommonBandwidthPackageIpRequest) (response *RemoveCommonBandwidthPackageIpResponse, err error) {
-response = CreateRemoveCommonBandwidthPackageIpResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateRemoveCommonBandwidthPackageIpResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 func (client *Client) RemoveCommonBandwidthPackageIpWithChan(request *RemoveCommonBandwidthPackageIpRequest) (<-chan *RemoveCommonBandwidthPackageIpResponse, <-chan error) {
-responseChan := make(chan *RemoveCommonBandwidthPackageIpResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.RemoveCommonBandwidthPackageIp(request)
-responseChan <- response
-errChan <- err
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *RemoveCommonBandwidthPackageIpResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.RemoveCommonBandwidthPackageIp(request)
+		responseChan <- response
+		errChan <- err
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
-func (client *Client) RemoveCommonBandwidthPackageIpWithCallback(request *RemoveCommonBandwidthPackageIpRequest, callback func(response *RemoveCommonBandwidthPackageIpResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *RemoveCommonBandwidthPackageIpResponse
-var err error
-defer close(result)
-response, err = client.RemoveCommonBandwidthPackageIp(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) RemoveCommonBandwidthPackageIpWithCallback(request *RemoveCommonBandwidthPackageIpRequest, callback func(response *RemoveCommonBandwidthPackageIpResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *RemoveCommonBandwidthPackageIpResponse
+		var err error
+		defer close(result)
+		response, err = client.RemoveCommonBandwidthPackageIp(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 type RemoveCommonBandwidthPackageIpRequest struct {
-*requests.RpcRequest
-                ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-                IpInstanceId  string `position:"Query" name:"IpInstanceId"`
-                ResourceOwnerId  string `position:"Query" name:"ResourceOwnerId"`
-                OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-                OwnerId  string `position:"Query" name:"OwnerId"`
-                BandwidthPackageId  string `position:"Query" name:"BandwidthPackageId"`
+	*requests.RpcRequest
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	IpInstanceId         string `position:"Query" name:"IpInstanceId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
 }
 
-
 type RemoveCommonBandwidthPackageIpResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
+	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateRemoveCommonBandwidthPackageIpRequest() (request *RemoveCommonBandwidthPackageIpRequest) {
-request = &RemoveCommonBandwidthPackageIpRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp", "", "")
-return
+	request = &RemoveCommonBandwidthPackageIpRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp", "", "")
+	return
 }
 
 func CreateRemoveCommonBandwidthPackageIpResponse() (response *RemoveCommonBandwidthPackageIpResponse) {
-response = &RemoveCommonBandwidthPackageIpResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &RemoveCommonBandwidthPackageIpResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
