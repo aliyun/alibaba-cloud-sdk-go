@@ -69,18 +69,18 @@ type NodeProcessesRequest struct {
 
 type NodeProcessesResponse struct {
 	*responses.BaseResponse
-	ErrorCode     int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage  string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success       bool   `json:"Success" xml:"Success"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ErrorCode     requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage  string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success       requests.Boolean `json:"Success" xml:"Success"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
 	NodeProcesses struct {
 		NodeProcess []struct {
-			Id          int64  `json:"Id" xml:"Id"`
-			Name        string `json:"Name" xml:"Name"`
-			InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-			ProcessName string `json:"ProcessName" xml:"ProcessName"`
-			ProcessUser string `json:"ProcessUser" xml:"ProcessUser"`
-			Command     string `json:"Command" xml:"Command"`
+			Id          requests.Integer `json:"Id" xml:"Id"`
+			Name        string           `json:"Name" xml:"Name"`
+			InstanceId  string           `json:"InstanceId" xml:"InstanceId"`
+			ProcessName string           `json:"ProcessName" xml:"ProcessName"`
+			ProcessUser string           `json:"ProcessUser" xml:"ProcessUser"`
+			Command     string           `json:"Command" xml:"Command"`
 		} `json:"NodeProcess" xml:"NodeProcess"`
 	} `json:"NodeProcesses" xml:"NodeProcesses"`
 }

@@ -64,31 +64,31 @@ func (client *Client) SenderStatisticsDetailByParamWithCallback(request *SenderS
 
 type SenderStatisticsDetailByParamRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	NextStart            string `position:"Query" name:"NextStart"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ToAddress            string `position:"Query" name:"ToAddress"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	Length               string `position:"Query" name:"Length"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	NextStart            string           `position:"Query" name:"NextStart"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ToAddress            string           `position:"Query" name:"ToAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	Length               requests.Integer `position:"Query" name:"Length"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type SenderStatisticsDetailByParamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	NextStart int    `json:"NextStart" xml:"NextStart"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	NextStart requests.Integer `json:"NextStart" xml:"NextStart"`
 	Data      struct {
 		MailDetail []struct {
-			LastUpdateTime    string `json:"LastUpdateTime" xml:"LastUpdateTime"`
-			UtcLastUpdateTime string `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-			AccountName       string `json:"AccountName" xml:"AccountName"`
-			ToAddress         string `json:"ToAddress" xml:"ToAddress"`
-			Status            int    `json:"Status" xml:"Status"`
-			Message           string `json:"Message" xml:"Message"`
+			LastUpdateTime    string           `json:"LastUpdateTime" xml:"LastUpdateTime"`
+			UtcLastUpdateTime string           `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
+			AccountName       string           `json:"AccountName" xml:"AccountName"`
+			ToAddress         string           `json:"ToAddress" xml:"ToAddress"`
+			Status            requests.Integer `json:"Status" xml:"Status"`
+			Message           string           `json:"Message" xml:"Message"`
 		} `json:"mailDetail" xml:"mailDetail"`
 	} `json:"data" xml:"data"`
 }

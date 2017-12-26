@@ -64,40 +64,44 @@ func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSpli
 
 type QueryVideoSplitJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryVideoSplitJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId"`
-	NonExistIds []string `json:"NonExistIds"`
-	JobList     []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"Input"`
-		VideoSplitResult struct {
-			VideoSplitList []struct {
-				StartTime string `json:"StartTime"`
-				EndTime   string `json:"EndTime"`
-				Path      string `json:"Path"`
-			} `json:"VideoSplitList"`
-		} `json:"VideoSplitResult"`
-	} `json:"JobList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	JobList struct {
+		Job []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			VideoSplitResult struct {
+				VideoSplitList struct {
+					VideoSplit []struct {
+						StartTime string `json:"StartTime" xml:"StartTime"`
+						EndTime   string `json:"EndTime" xml:"EndTime"`
+						Path      string `json:"Path" xml:"Path"`
+					} `json:"VideoSplit" xml:"VideoSplit"`
+				} `json:"VideoSplitList" xml:"VideoSplitList"`
+			} `json:"VideoSplitResult" xml:"VideoSplitResult"`
+		} `json:"Job" xml:"Job"`
+	} `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListRequest) {

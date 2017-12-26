@@ -64,45 +64,50 @@ func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequ
 
 type ListContactFlowsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type ListContactFlowsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
-	ContactFlows   []struct {
-		ContactFlowId          string `json:"ContactFlowId"`
-		InstanceId             string `json:"InstanceId"`
-		ContactFlowName        string `json:"ContactFlowName"`
-		ContactFlowDescription string `json:"ContactFlowDescription"`
-		Type                   string `json:"Type"`
-		AppliedVersion         string `json:"AppliedVersion"`
-		Versions               []struct {
-			ContactFlowVersionId          string `json:"ContactFlowVersionId"`
-			Version                       string `json:"Version"`
-			ContactFlowVersionDescription string `json:"ContactFlowVersionDescription"`
-			LastModified                  string `json:"LastModified"`
-			LastModifiedBy                string `json:"LastModifiedBy"`
-			LockedBy                      string `json:"LockedBy"`
-			Status                        string `json:"Status"`
-		} `json:"Versions"`
-		PhoneNumbers []struct {
-			PhoneNumberId          string `json:"PhoneNumberId"`
-			InstanceId             string `json:"InstanceId"`
-			Number                 string `json:"Number"`
-			PhoneNumberDescription string `json:"PhoneNumberDescription"`
-			TestOnly               bool   `json:"TestOnly"`
-			RemainingTime          int    `json:"RemainingTime"`
-			AllowOutbound          bool   `json:"AllowOutbound"`
-			Usage                  string `json:"Usage"`
-			Trunks                 int    `json:"Trunks"`
-		} `json:"PhoneNumbers"`
-	} `json:"ContactFlows"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ContactFlows   struct {
+		ContactFlow []struct {
+			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
+			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
+			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+			Type                   string `json:"Type" xml:"Type"`
+			AppliedVersion         string `json:"AppliedVersion" xml:"AppliedVersion"`
+			Versions               struct {
+				ContactFlowVersion []struct {
+					ContactFlowVersionId          string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
+					Version                       string `json:"Version" xml:"Version"`
+					ContactFlowVersionDescription string `json:"ContactFlowVersionDescription" xml:"ContactFlowVersionDescription"`
+					LastModified                  string `json:"LastModified" xml:"LastModified"`
+					LastModifiedBy                string `json:"LastModifiedBy" xml:"LastModifiedBy"`
+					LockedBy                      string `json:"LockedBy" xml:"LockedBy"`
+					Status                        string `json:"Status" xml:"Status"`
+				} `json:"ContactFlowVersion" xml:"ContactFlowVersion"`
+			} `json:"Versions" xml:"Versions"`
+			PhoneNumbers struct {
+				PhoneNumber []struct {
+					PhoneNumberId          string           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+					InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
+					Number                 string           `json:"Number" xml:"Number"`
+					PhoneNumberDescription string           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+					TestOnly               requests.Boolean `json:"TestOnly" xml:"TestOnly"`
+					RemainingTime          requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
+					AllowOutbound          requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+					Usage                  string           `json:"Usage" xml:"Usage"`
+					Trunks                 requests.Integer `json:"Trunks" xml:"Trunks"`
+				} `json:"PhoneNumber" xml:"PhoneNumber"`
+			} `json:"PhoneNumbers" xml:"PhoneNumbers"`
+		} `json:"ContactFlow" xml:"ContactFlow"`
+	} `json:"ContactFlows" xml:"ContactFlows"`
 }
 
 func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {

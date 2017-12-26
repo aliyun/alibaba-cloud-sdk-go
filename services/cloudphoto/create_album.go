@@ -64,40 +64,40 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
-	AlbumName string `position:"Query" name:"AlbumName"`
+	Remark    string `position:"Query" name:"Remark"`
 	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
-	Remark    string `position:"Query" name:"Remark"`
+	AlbumName string `position:"Query" name:"AlbumName"`
 }
 
 type CreateAlbumResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Album     struct {
-		Id          int64  `json:"Id"`
-		Name        string `json:"Name"`
-		State       string `json:"State"`
-		Remark      string `json:"Remark"`
-		PhotosCount int64  `json:"PhotosCount"`
-		Ctime       int64  `json:"Ctime"`
-		Mtime       int64  `json:"Mtime"`
+		Id          requests.Integer `json:"Id" xml:"Id"`
+		Name        string           `json:"Name" xml:"Name"`
+		State       string           `json:"State" xml:"State"`
+		Remark      string           `json:"Remark" xml:"Remark"`
+		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		Ctime       requests.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime       requests.Integer `json:"Mtime" xml:"Mtime"`
 		Cover       struct {
-			Id      int64  `json:"Id"`
-			Title   string `json:"Title"`
-			FileId  string `json:"FileId"`
-			State   string `json:"State"`
-			Md5     string `json:"Md5"`
-			IsVideo bool   `json:"IsVideo"`
-			Width   int64  `json:"Width"`
-			Height  int64  `json:"Height"`
-			Ctime   int64  `json:"Ctime"`
-			Mtime   int64  `json:"Mtime"`
-			Remark  string `json:"Remark"`
-		} `json:"Cover"`
-	} `json:"Album"`
+			Id      requests.Integer `json:"Id" xml:"Id"`
+			Title   string           `json:"Title" xml:"Title"`
+			FileId  string           `json:"FileId" xml:"FileId"`
+			State   string           `json:"State" xml:"State"`
+			Md5     string           `json:"Md5" xml:"Md5"`
+			IsVideo requests.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Width   requests.Integer `json:"Width" xml:"Width"`
+			Height  requests.Integer `json:"Height" xml:"Height"`
+			Ctime   requests.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime   requests.Integer `json:"Mtime" xml:"Mtime"`
+			Remark  string           `json:"Remark" xml:"Remark"`
+		} `json:"Cover" xml:"Cover"`
+	} `json:"Album" xml:"Album"`
 }
 
 func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {

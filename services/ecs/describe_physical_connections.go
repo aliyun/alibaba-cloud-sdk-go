@@ -64,14 +64,14 @@ func (client *Client) DescribePhysicalConnectionsWithCallback(request *DescribeP
 
 type DescribePhysicalConnectionsRequest struct {
 	*requests.RpcRequest
-	PageSize             string                               `position:"Query" name:"PageSize"`
+	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
 	ClientToken          string                               `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string                               `position:"Query" name:"PageNumber"`
+	PageNumber           requests.Integer                     `position:"Query" name:"PageNumber"`
 	UserCidr             string                               `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      string                               `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
-	OwnerId              string                               `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribePhysicalConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
@@ -82,30 +82,30 @@ type DescribePhysicalConnectionsFilter struct {
 
 type DescribePhysicalConnectionsResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int    `json:"PageSize" xml:"PageSize"`
-	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId             string           `json:"RequestId" xml:"RequestId"`
+	PageNumber            requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize              requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount            requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	PhysicalConnectionSet struct {
 		PhysicalConnectionType []struct {
-			PhysicalConnectionId          string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
-			AccessPointId                 string `json:"AccessPointId" xml:"AccessPointId"`
-			Type                          string `json:"Type" xml:"Type"`
-			Status                        string `json:"Status" xml:"Status"`
-			BusinessStatus                string `json:"BusinessStatus" xml:"BusinessStatus"`
-			CreationTime                  string `json:"CreationTime" xml:"CreationTime"`
-			EnabledTime                   string `json:"EnabledTime" xml:"EnabledTime"`
-			LineOperator                  string `json:"LineOperator" xml:"LineOperator"`
-			Spec                          string `json:"Spec" xml:"Spec"`
-			PeerLocation                  string `json:"PeerLocation" xml:"PeerLocation"`
-			PortType                      string `json:"PortType" xml:"PortType"`
-			RedundantPhysicalConnectionId string `json:"RedundantPhysicalConnectionId" xml:"RedundantPhysicalConnectionId"`
-			Name                          string `json:"Name" xml:"Name"`
-			Description                   string `json:"Description" xml:"Description"`
-			AdLocation                    string `json:"AdLocation" xml:"AdLocation"`
-			PortNumber                    string `json:"PortNumber" xml:"PortNumber"`
-			CircuitCode                   string `json:"CircuitCode" xml:"CircuitCode"`
-			Bandwidth                     int64  `json:"Bandwidth" xml:"Bandwidth"`
+			PhysicalConnectionId          string           `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
+			AccessPointId                 string           `json:"AccessPointId" xml:"AccessPointId"`
+			Type                          string           `json:"Type" xml:"Type"`
+			Status                        string           `json:"Status" xml:"Status"`
+			BusinessStatus                string           `json:"BusinessStatus" xml:"BusinessStatus"`
+			CreationTime                  string           `json:"CreationTime" xml:"CreationTime"`
+			EnabledTime                   string           `json:"EnabledTime" xml:"EnabledTime"`
+			LineOperator                  string           `json:"LineOperator" xml:"LineOperator"`
+			Spec                          string           `json:"Spec" xml:"Spec"`
+			PeerLocation                  string           `json:"PeerLocation" xml:"PeerLocation"`
+			PortType                      string           `json:"PortType" xml:"PortType"`
+			RedundantPhysicalConnectionId string           `json:"RedundantPhysicalConnectionId" xml:"RedundantPhysicalConnectionId"`
+			Name                          string           `json:"Name" xml:"Name"`
+			Description                   string           `json:"Description" xml:"Description"`
+			AdLocation                    string           `json:"AdLocation" xml:"AdLocation"`
+			PortNumber                    string           `json:"PortNumber" xml:"PortNumber"`
+			CircuitCode                   string           `json:"CircuitCode" xml:"CircuitCode"`
+			Bandwidth                     requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
 		} `json:"PhysicalConnectionType" xml:"PhysicalConnectionType"`
 	} `json:"PhysicalConnectionSet" xml:"PhysicalConnectionSet"`
 }

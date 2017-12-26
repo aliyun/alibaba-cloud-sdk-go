@@ -64,26 +64,26 @@ func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsS
 
 type StopMixStreamsServiceRequest struct {
 	*requests.RpcRequest
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	MainDomainName string `position:"Query" name:"MainDomainName"`
-	MixStreamName  string `position:"Query" name:"MixStreamName"`
-	Action         string `position:"Query" name:"Action"`
-	MixDomainName  string `position:"Query" name:"MixDomainName"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	MainAppName    string `position:"Query" name:"MainAppName"`
-	MixAppName     string `position:"Query" name:"MixAppName"`
-	MainStreamName string `position:"Query" name:"MainStreamName"`
-	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
+	MixStreamName  string           `position:"Query" name:"MixStreamName"`
+	MainDomainName string           `position:"Query" name:"MainDomainName"`
+	MixAppName     string           `position:"Query" name:"MixAppName"`
+	MainStreamName string           `position:"Query" name:"MainStreamName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	MixDomainName  string           `position:"Query" name:"MixDomainName"`
+	MainAppName    string           `position:"Query" name:"MainAppName"`
 }
 
 type StopMixStreamsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId"`
-	MixStreamsInfoList []struct {
-		DomainName string `json:"DomainName"`
-		AppName    string `json:"AppName"`
-		StreamName string `json:"StreamName"`
-	} `json:"MixStreamsInfoList"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	MixStreamsInfoList struct {
+		MixStreamsInfo []struct {
+			DomainName string `json:"DomainName" xml:"DomainName"`
+			AppName    string `json:"AppName" xml:"AppName"`
+			StreamName string `json:"StreamName" xml:"StreamName"`
+		} `json:"MixStreamsInfo" xml:"MixStreamsInfo"`
+	} `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
 func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {

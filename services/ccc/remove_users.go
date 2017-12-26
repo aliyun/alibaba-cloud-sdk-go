@@ -64,18 +64,17 @@ func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callb
 
 type RemoveUsersRequest struct {
 	*requests.RpcRequest
-	InstanceId  string    `position:"Query" name:"InstanceId"`
-	UserId      *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	AccessKeyId string    `position:"Query" name:"AccessKeyId"`
+	UserId     *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+	InstanceId string    `position:"Query" name:"InstanceId"`
 }
 
 type RemoveUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {

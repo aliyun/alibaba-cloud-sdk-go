@@ -64,41 +64,41 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	LoadBalancerSpec     string `position:"Query" name:"LoadBalancerSpec"`
-	EnableVpcVipFlow     string `position:"Query" name:"EnableVpcVipFlow"`
-	MasterZoneId         string `position:"Query" name:"MasterZoneId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	SlaveZoneId          string `position:"Query" name:"SlaveZoneId"`
-	LoadBalancerName     string `position:"Query" name:"LoadBalancerName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string `position:"Query" name:"PayType"`
-	PricingCycle         string `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tags                 string `position:"Query" name:"Tags"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Duration             string `position:"Query" name:"Duration"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	VpcId                string `position:"Query" name:"VpcId"`
+	AddressType          string           `position:"Query" name:"AddressType"`
+	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
+	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
+	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType              string           `position:"Query" name:"PayType"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 type CreateLoadBalancerResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId   string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Address          string `json:"Address" xml:"Address"`
-	LoadBalancerName string `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	VpcId            string `json:"VpcId" xml:"VpcId"`
-	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-	OrderId          int64  `json:"OrderId" xml:"OrderId"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId   string           `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId  string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Address          string           `json:"Address" xml:"Address"`
+	LoadBalancerName string           `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	VpcId            string           `json:"VpcId" xml:"VpcId"`
+	VSwitchId        string           `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkType      string           `json:"NetworkType" xml:"NetworkType"`
+	OrderId          requests.Integer `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {

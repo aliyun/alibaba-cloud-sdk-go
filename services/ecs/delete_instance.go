@@ -64,12 +64,13 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string `position:"Query" name:"Force"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	TerminateSubscription requests.Boolean `position:"Query" name:"TerminateSubscription"`
+	Force                 requests.Boolean `position:"Query" name:"Force"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId            string           `position:"Query" name:"InstanceId"`
 }
 
 type DeleteInstanceResponse struct {

@@ -64,19 +64,17 @@ func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *Descri
 
 type DescribeLiveStreamStreamStatusRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamStreamStatusResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	StreamStatus string `json:"StreamStatus"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	StreamStatus string `json:"StreamStatus" xml:"StreamStatus"`
 }
 
 func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamStreamStatusRequest) {

@@ -64,18 +64,18 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
 	Regions struct {
 		Region []struct {
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			ClassicUnavailable bool   `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
-			VpcUnavailable     bool   `json:"VpcUnavailable" xml:"VpcUnavailable"`
+			RegionId           string           `json:"RegionId" xml:"RegionId"`
+			ClassicUnavailable requests.Boolean `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
+			VpcUnavailable     requests.Boolean `json:"VpcUnavailable" xml:"VpcUnavailable"`
 		} `json:"Region" xml:"Region"`
 	} `json:"Regions" xml:"Regions"`
 }

@@ -64,23 +64,23 @@ func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddress
 
 type GetSenderAddressListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	NotifyUrl            string `position:"Query" name:"NotifyUrl"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Keyword              string `position:"Query" name:"Keyword"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Total                string           `position:"Query" name:"Total"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Keyword              string           `position:"Query" name:"Keyword"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               string           `position:"Query" name:"PageNo"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type GetSenderAddressListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Total     int    `json:"Total" xml:"Total"`
-	PageNo    int    `json:"PageNo" xml:"PageNo"`
-	PageSize  int    `json:"PageSize" xml:"PageSize"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Total     requests.Integer `json:"Total" xml:"Total"`
+	PageNo    requests.Integer `json:"PageNo" xml:"PageNo"`
+	PageSize  requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data      struct {
 		SenderAddressNotificationInfo []struct {
 			Region          string `json:"Region" xml:"Region"`

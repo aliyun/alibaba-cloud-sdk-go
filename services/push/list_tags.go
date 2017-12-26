@@ -64,7 +64,7 @@ func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback fu
 
 type ListTagsRequest struct {
 	*requests.RpcRequest
-	AppKey string `position:"Query" name:"AppKey"`
+	AppKey requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type ListTagsResponse struct {

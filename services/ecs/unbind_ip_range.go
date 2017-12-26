@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) RollbackVolume(request *RollbackVolumeRequest) (response *RollbackVolumeResponse, err error) {
-	response = CreateRollbackVolumeResponse()
+func (client *Client) UnbindIpRange(request *UnbindIpRangeRequest) (response *UnbindIpRangeResponse, err error) {
+	response = CreateUnbindIpRangeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) RollbackVolumeWithChan(request *RollbackVolumeRequest) (<-chan *RollbackVolumeResponse, <-chan error) {
-	responseChan := make(chan *RollbackVolumeResponse, 1)
+func (client *Client) UnbindIpRangeWithChan(request *UnbindIpRangeRequest) (<-chan *UnbindIpRangeResponse, <-chan error) {
+	responseChan := make(chan *UnbindIpRangeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RollbackVolume(request)
+		response, err := client.UnbindIpRange(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) RollbackVolumeWithChan(request *RollbackVolumeRequest) (<-
 	return responseChan, errChan
 }
 
-func (client *Client) RollbackVolumeWithCallback(request *RollbackVolumeRequest, callback func(response *RollbackVolumeResponse, err error)) <-chan int {
+func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, callback func(response *UnbindIpRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RollbackVolumeResponse
+		var response *UnbindIpRangeResponse
 		var err error
 		defer close(result)
-		response, err = client.RollbackVolume(request)
+		response, err = client.UnbindIpRange(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,31 +62,31 @@ func (client *Client) RollbackVolumeWithCallback(request *RollbackVolumeRequest,
 	return result
 }
 
-type RollbackVolumeRequest struct {
+type UnbindIpRangeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string `position:"Query" name:"SnapshotId"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-type RollbackVolumeResponse struct {
+type UnbindIpRangeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-func CreateRollbackVolumeRequest() (request *RollbackVolumeRequest) {
-	request = &RollbackVolumeRequest{
+func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
+	request = &UnbindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RollbackVolume", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange", "", "")
 	return
 }
 
-func CreateRollbackVolumeResponse() (response *RollbackVolumeResponse) {
-	response = &RollbackVolumeResponse{
+func CreateUnbindIpRangeResponse() (response *UnbindIpRangeResponse) {
+	response = &UnbindIpRangeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

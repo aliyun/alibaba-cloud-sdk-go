@@ -64,42 +64,44 @@ func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMed
 
 type RegisterMediaDetailPersonRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Images               string `position:"Query" name:"Images"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Category             string `position:"Query" name:"Category"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PersonName           string `position:"Query" name:"PersonName"`
+	Category             string           `position:"Query" name:"Category"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Images               string           `position:"Query" name:"Images"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PersonName           string           `position:"Query" name:"PersonName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RegisterMediaDetailPersonResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId"`
-	RegisteredPersonages []struct {
-		PersonName string `json:"PersonName"`
-		FaceId     string `json:"FaceId"`
-		Target     string `json:"Target"`
-		Quality    string `json:"Quality"`
-		Gender     string `json:"Gender"`
-		ImageId    string `json:"ImageId"`
-		ImageFile  struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"ImageFile"`
-	} `json:"RegisteredPersonages"`
-	FailedImages []struct {
-		Code       string `json:"Code"`
-		Success    string `json:"Success"`
-		ImageFile1 struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"ImageFile"`
-	} `json:"FailedImages"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	RegisteredPersonages struct {
+		RegisteredPersonage []struct {
+			PersonName string `json:"PersonName" xml:"PersonName"`
+			FaceId     string `json:"FaceId" xml:"FaceId"`
+			Target     string `json:"Target" xml:"Target"`
+			Quality    string `json:"Quality" xml:"Quality"`
+			Gender     string `json:"Gender" xml:"Gender"`
+			ImageId    string `json:"ImageId" xml:"ImageId"`
+			ImageFile  struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"ImageFile" xml:"ImageFile"`
+		} `json:"RegisteredPersonage" xml:"RegisteredPersonage"`
+	} `json:"RegisteredPersonages" xml:"RegisteredPersonages"`
+	FailedImages struct {
+		FailedImage []struct {
+			Code       string `json:"Code" xml:"Code"`
+			Success    string `json:"Success" xml:"Success"`
+			ImageFile1 struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"ImageFile" xml:"ImageFile"`
+		} `json:"FailedImage" xml:"FailedImage"`
+	} `json:"FailedImages" xml:"FailedImages"`
 }
 
 func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPersonRequest) {

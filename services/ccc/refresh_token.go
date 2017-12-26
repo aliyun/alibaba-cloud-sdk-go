@@ -64,21 +64,20 @@ func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, cal
 
 type RefreshTokenRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type RefreshTokenResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Token          struct {
-		Signature string `json:"Signature"`
-		SignData  string `json:"SignData"`
-	} `json:"Token"`
+		Signature string `json:"Signature" xml:"Signature"`
+		SignData  string `json:"SignData" xml:"SignData"`
+	} `json:"Token" xml:"Token"`
 }
 
 func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {

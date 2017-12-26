@@ -64,50 +64,50 @@ func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequ
 
 type DescribeSlowLogsRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	SortKey              string `position:"Query" name:"SortKey"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	SortKey              string           `position:"Query" name:"SortKey"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Engine           string           `json:"Engine" xml:"Engine"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
+	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLSlowLog []struct {
-			SlowLogId                     int64  `json:"SlowLogId" xml:"SlowLogId"`
-			SQLId                         int64  `json:"SQLId" xml:"SQLId"`
-			DBName                        string `json:"DBName" xml:"DBName"`
-			SQLText                       string `json:"SQLText" xml:"SQLText"`
-			MySQLTotalExecutionCounts     int64  `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-			MySQLTotalExecutionTimes      int64  `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-			TotalLockTimes                int64  `json:"TotalLockTimes" xml:"TotalLockTimes"`
-			MaxLockTime                   int64  `json:"MaxLockTime" xml:"MaxLockTime"`
-			ParseTotalRowCounts           int64  `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-			ParseMaxRowCount              int64  `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-			ReturnTotalRowCounts          int64  `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-			ReturnMaxRowCount             int64  `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
-			CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
-			SQLServerTotalExecutionCounts int64  `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-			SQLServerTotalExecutionTimes  int64  `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-			TotalLogicalReadCounts        int64  `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-			TotalPhysicalReadCounts       int64  `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
-			ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
-			MaxExecutionTime              int64  `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-			AvgExecutionTime              int64  `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
+			SlowLogId                     requests.Integer `json:"SlowLogId" xml:"SlowLogId"`
+			SQLId                         requests.Integer `json:"SQLId" xml:"SQLId"`
+			DBName                        string           `json:"DBName" xml:"DBName"`
+			SQLText                       string           `json:"SQLText" xml:"SQLText"`
+			MySQLTotalExecutionCounts     requests.Integer `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+			MySQLTotalExecutionTimes      requests.Integer `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
+			TotalLockTimes                requests.Integer `json:"TotalLockTimes" xml:"TotalLockTimes"`
+			MaxLockTime                   requests.Integer `json:"MaxLockTime" xml:"MaxLockTime"`
+			ParseTotalRowCounts           requests.Integer `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+			ParseMaxRowCount              requests.Integer `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+			ReturnTotalRowCounts          requests.Integer `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+			ReturnMaxRowCount             requests.Integer `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+			CreateTime                    string           `json:"CreateTime" xml:"CreateTime"`
+			SQLServerTotalExecutionCounts requests.Integer `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
+			SQLServerTotalExecutionTimes  requests.Integer `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+			TotalLogicalReadCounts        requests.Integer `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
+			TotalPhysicalReadCounts       requests.Integer `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
+			ReportTime                    string           `json:"ReportTime" xml:"ReportTime"`
+			MaxExecutionTime              requests.Integer `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+			AvgExecutionTime              requests.Integer `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
 		} `json:"SQLSlowLog" xml:"SQLSlowLog"`
 	} `json:"Items" xml:"Items"`
 }

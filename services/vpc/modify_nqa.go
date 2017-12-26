@@ -64,13 +64,13 @@ func (client *Client) ModifyNqaWithCallback(request *ModifyNqaRequest, callback 
 
 type ModifyNqaRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	DestinationIp        string `position:"Query" name:"DestinationIp"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	NqaId                string `position:"Query" name:"NqaId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DestinationIp        string           `position:"Query" name:"DestinationIp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	NqaId                string           `position:"Query" name:"NqaId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyNqaResponse struct {

@@ -64,41 +64,41 @@ func (client *Client) DescribeVpnConnectionWithCallback(request *DescribeVpnConn
 
 type DescribeVpnConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VpnConnectionId      string `position:"Query" name:"VpnConnectionId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeVpnConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string `json:"Name" xml:"Name"`
-	LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
-	Status            string `json:"Status" xml:"Status"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId   string           `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId string           `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId      string           `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name              string           `json:"Name" xml:"Name"`
+	LocalSubnet       string           `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet      string           `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime        requests.Integer `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately requests.Boolean `json:"EffectImmediately" xml:"EffectImmediately"`
+	Status            string           `json:"Status" xml:"Status"`
 	IkeConfig         struct {
-		Psk         string `json:"Psk" xml:"Psk"`
-		IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-		IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-		IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-		IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-		IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-		IkeLifetime int64  `json:"IkeLifetime" xml:"IkeLifetime"`
-		LocalId     string `json:"LocalId" xml:"LocalId"`
-		RemoteId    string `json:"RemoteId" xml:"RemoteId"`
+		Psk         string           `json:"Psk" xml:"Psk"`
+		IkeVersion  string           `json:"IkeVersion" xml:"IkeVersion"`
+		IkeMode     string           `json:"IkeMode" xml:"IkeMode"`
+		IkeEncAlg   string           `json:"IkeEncAlg" xml:"IkeEncAlg"`
+		IkeAuthAlg  string           `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+		IkePfs      string           `json:"IkePfs" xml:"IkePfs"`
+		IkeLifetime requests.Integer `json:"IkeLifetime" xml:"IkeLifetime"`
+		LocalId     string           `json:"LocalId" xml:"LocalId"`
+		RemoteId    string           `json:"RemoteId" xml:"RemoteId"`
 	} `json:"IkeConfig" xml:"IkeConfig"`
 	IpsecConfig struct {
-		IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-		IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-		IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-		IpsecLifetime int64  `json:"IpsecLifetime" xml:"IpsecLifetime"`
+		IpsecEncAlg   string           `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
+		IpsecAuthAlg  string           `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
+		IpsecPfs      string           `json:"IpsecPfs" xml:"IpsecPfs"`
+		IpsecLifetime requests.Integer `json:"IpsecLifetime" xml:"IpsecLifetime"`
 	} `json:"IpsecConfig" xml:"IpsecConfig"`
 }
 

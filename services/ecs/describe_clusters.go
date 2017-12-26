@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DetachVolume(request *DetachVolumeRequest) (response *DetachVolumeResponse, err error) {
-	response = CreateDetachVolumeResponse()
+func (client *Client) DescribeClusters(request *DescribeClustersRequest) (response *DescribeClustersResponse, err error) {
+	response = CreateDescribeClustersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DetachVolumeWithChan(request *DetachVolumeRequest) (<-chan *DetachVolumeResponse, <-chan error) {
-	responseChan := make(chan *DetachVolumeResponse, 1)
+func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest) (<-chan *DescribeClustersResponse, <-chan error) {
+	responseChan := make(chan *DescribeClustersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DetachVolume(request)
+		response, err := client.DescribeClusters(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DetachVolumeWithChan(request *DetachVolumeRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) DetachVolumeWithCallback(request *DetachVolumeRequest, callback func(response *DetachVolumeResponse, err error)) <-chan int {
+func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequest, callback func(response *DescribeClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DetachVolumeResponse
+		var response *DescribeClustersResponse
 		var err error
 		defer close(result)
-		response, err = client.DetachVolume(request)
+		response, err = client.DescribeClusters(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,31 +62,34 @@ func (client *Client) DetachVolumeWithCallback(request *DetachVolumeRequest, cal
 	return result
 }
 
-type DetachVolumeRequest struct {
+type DescribeClustersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-type DetachVolumeResponse struct {
+type DescribeClustersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Clusters  struct {
+		Cluster []struct {
+			ClusterId string `json:"ClusterId" xml:"ClusterId"`
+		} `json:"Cluster" xml:"Cluster"`
+	} `json:"Clusters" xml:"Clusters"`
 }
 
-func CreateDetachVolumeRequest() (request *DetachVolumeRequest) {
-	request = &DetachVolumeRequest{
+func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
+	request = &DescribeClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachVolume", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClusters", "", "")
 	return
 }
 
-func CreateDetachVolumeResponse() (response *DetachVolumeResponse) {
-	response = &DetachVolumeResponse{
+func CreateDescribeClustersResponse() (response *DescribeClustersResponse) {
+	response = &DescribeClustersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

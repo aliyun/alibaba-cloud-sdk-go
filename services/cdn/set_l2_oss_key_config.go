@@ -64,17 +64,15 @@ func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRe
 
 type SetL2OssKeyConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	DomainName     string `position:"Query" name:"DomainName"`
-	Action         string `position:"Query" name:"Action"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	PrivateOssAuth string `position:"Query" name:"PrivateOssAuth"`
-	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
+	PrivateOssAuth string           `position:"Query" name:"PrivateOssAuth"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetL2OssKeyConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {

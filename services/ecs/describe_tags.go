@@ -64,42 +64,42 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	ResourceId           string `position:"Query" name:"ResourceId"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 }
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	Tags       struct {
 		Tag []struct {
 			TagKey            string `json:"TagKey" xml:"TagKey"`
 			TagValue          string `json:"TagValue" xml:"TagValue"`
 			ResourceTypeCount struct {
-				Instance      int `json:"Instance" xml:"Instance"`
-				Disk          int `json:"Disk" xml:"Disk"`
-				Volume        int `json:"Volume" xml:"Volume"`
-				Image         int `json:"Image" xml:"Image"`
-				Snapshot      int `json:"Snapshot" xml:"Snapshot"`
-				Securitygroup int `json:"Securitygroup" xml:"Securitygroup"`
+				Instance      requests.Integer `json:"Instance" xml:"Instance"`
+				Disk          requests.Integer `json:"Disk" xml:"Disk"`
+				Volume        requests.Integer `json:"Volume" xml:"Volume"`
+				Image         requests.Integer `json:"Image" xml:"Image"`
+				Snapshot      requests.Integer `json:"Snapshot" xml:"Snapshot"`
+				Securitygroup requests.Integer `json:"Securitygroup" xml:"Securitygroup"`
 			} `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
 		} `json:"Tag" xml:"Tag"`
 	} `json:"Tags" xml:"Tags"`

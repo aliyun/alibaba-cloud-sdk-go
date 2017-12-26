@@ -64,24 +64,24 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *Descr
 
 type DescribeLiveStreamTranscodeInfoRequest struct {
 	*requests.RpcRequest
-	SecurityToken       string `position:"Query" name:"SecurityToken"`
-	Action              string `position:"Query" name:"Action"`
-	OwnerId             string `position:"Query" name:"OwnerId"`
-	DomainTranscodeName string `position:"Query" name:"DomainTranscodeName"`
-	AccessKeyId         string `position:"Query" name:"AccessKeyId"`
+	DomainTranscodeName string           `position:"Query" name:"DomainTranscodeName"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken       string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamTranscodeInfoResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId"`
-	DomainTranscodeList []struct {
-		TranscodeApp      string `json:"TranscodeApp"`
-		TranscodeId       string `json:"TranscodeId"`
-		TranscodeName     string `json:"TranscodeName"`
-		TranscodeRecord   string `json:"TranscodeRecord"`
-		TranscodeSnapshot string `json:"TranscodeSnapshot"`
-		TranscodeTemplate string `json:"TranscodeTemplate"`
-	} `json:"DomainTranscodeList"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	DomainTranscodeList struct {
+		DomainTranscodeInfo []struct {
+			TranscodeApp      string `json:"TranscodeApp" xml:"TranscodeApp"`
+			TranscodeId       string `json:"TranscodeId" xml:"TranscodeId"`
+			TranscodeName     string `json:"TranscodeName" xml:"TranscodeName"`
+			TranscodeRecord   string `json:"TranscodeRecord" xml:"TranscodeRecord"`
+			TranscodeSnapshot string `json:"TranscodeSnapshot" xml:"TranscodeSnapshot"`
+			TranscodeTemplate string `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
+		} `json:"DomainTranscodeInfo" xml:"DomainTranscodeInfo"`
+	} `json:"DomainTranscodeList" xml:"DomainTranscodeList"`
 }
 
 func CreateDescribeLiveStreamTranscodeInfoRequest() (request *DescribeLiveStreamTranscodeInfoRequest) {

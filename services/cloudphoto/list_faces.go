@@ -64,46 +64,46 @@ func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback 
 
 type ListFacesRequest struct {
 	*requests.RpcRequest
-	Cursor      string `position:"Query" name:"Cursor"`
-	HasFaceName string `position:"Query" name:"HasFaceName"`
-	Size        string `position:"Query" name:"Size"`
-	LibraryId   string `position:"Query" name:"LibraryId"`
-	StoreName   string `position:"Query" name:"StoreName"`
-	State       string `position:"Query" name:"State"`
-	Direction   string `position:"Query" name:"Direction"`
+	Cursor      string           `position:"Query" name:"Cursor"`
+	Direction   string           `position:"Query" name:"Direction"`
+	State       string           `position:"Query" name:"State"`
+	LibraryId   string           `position:"Query" name:"LibraryId"`
+	StoreName   string           `position:"Query" name:"StoreName"`
+	HasFaceName string           `position:"Query" name:"HasFaceName"`
+	Size        requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListFacesResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code"`
-	Message    string `json:"Message"`
-	NextCursor string `json:"NextCursor"`
-	TotalCount int    `json:"TotalCount"`
-	RequestId  string `json:"RequestId"`
-	Action     string `json:"Action"`
+	Code       string           `json:"Code" xml:"Code"`
+	Message    string           `json:"Message" xml:"Message"`
+	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	Action     string           `json:"Action" xml:"Action"`
 	Faces      []struct {
-		Id          int64    `json:"Id"`
-		Name        string   `json:"Name"`
-		PhotosCount int      `json:"PhotosCount"`
-		State       string   `json:"State"`
-		IsMe        bool     `json:"IsMe"`
-		Ctime       int64    `json:"Ctime"`
-		Mtime       int64    `json:"Mtime"`
-		Axis        []string `json:"Axis"`
+		Id          requests.Integer `json:"Id" xml:"Id"`
+		Name        string           `json:"Name" xml:"Name"`
+		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		State       string           `json:"State" xml:"State"`
+		IsMe        requests.Boolean `json:"IsMe" xml:"IsMe"`
+		Ctime       requests.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime       requests.Integer `json:"Mtime" xml:"Mtime"`
+		Axis        []string         `json:"Axis" xml:"Axis"`
 		Cover       struct {
-			Id      int64  `json:"Id"`
-			Title   string `json:"Title"`
-			FileId  string `json:"FileId"`
-			State   string `json:"State"`
-			Md5     string `json:"Md5"`
-			IsVideo bool   `json:"IsVideo"`
-			Width   int64  `json:"Width"`
-			Height  int64  `json:"Height"`
-			Ctime   int64  `json:"Ctime"`
-			Mtime   int64  `json:"Mtime"`
-			Remark  string `json:"Remark"`
-		} `json:"Cover"`
-	} `json:"Faces"`
+			Id      requests.Integer `json:"Id" xml:"Id"`
+			Title   string           `json:"Title" xml:"Title"`
+			FileId  string           `json:"FileId" xml:"FileId"`
+			State   string           `json:"State" xml:"State"`
+			Md5     string           `json:"Md5" xml:"Md5"`
+			IsVideo requests.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Width   requests.Integer `json:"Width" xml:"Width"`
+			Height  requests.Integer `json:"Height" xml:"Height"`
+			Ctime   requests.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime   requests.Integer `json:"Mtime" xml:"Mtime"`
+			Remark  string           `json:"Remark" xml:"Remark"`
+		} `json:"Cover" xml:"Cover"`
+	} `json:"Faces" xml:"Faces"`
 }
 
 func CreateListFacesRequest() (request *ListFacesRequest) {

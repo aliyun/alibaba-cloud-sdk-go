@@ -64,17 +64,17 @@ func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstan
 
 type ModifyInstanceChargeTypeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	InstanceIds          string `position:"Query" name:"InstanceIds"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Period               string `position:"Query" name:"Period"`
-	PeriodUnit           string `position:"Query" name:"PeriodUnit"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	IncludeDataDisks     string `position:"Query" name:"IncludeDataDisks"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	DryRun               string `position:"Query" name:"DryRun"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	IncludeDataDisks     requests.Boolean `position:"Query" name:"IncludeDataDisks"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 }
 
 type ModifyInstanceChargeTypeResponse struct {

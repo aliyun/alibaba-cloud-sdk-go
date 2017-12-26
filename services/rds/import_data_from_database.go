@@ -64,24 +64,24 @@ func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFrom
 
 type ImportDataFromDatabaseRequest struct {
 	*requests.RpcRequest
-	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
-	ImportDataType         string `position:"Query" name:"ImportDataType"`
-	SourceDatabaseIp       string `position:"Query" name:"SourceDatabaseIp"`
-	IsLockTable            string `position:"Query" name:"IsLockTable"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
-	SourceDatabaseUserName string `position:"Query" name:"SourceDatabaseUserName"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	SourceDatabaseDBNames  string `position:"Query" name:"SourceDatabaseDBNames"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	SourceDatabasePassword string `position:"Query" name:"SourceDatabasePassword"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	SourceDatabasePort     string `position:"Query" name:"SourceDatabasePort"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ImportDataType         string           `position:"Query" name:"ImportDataType"`
+	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
+	IsLockTable            string           `position:"Query" name:"IsLockTable"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	SourceDatabasePort     string           `position:"Query" name:"SourceDatabasePort"`
 }
 
 type ImportDataFromDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ImportId  int    `json:"ImportId" xml:"ImportId"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	ImportId  requests.Integer `json:"ImportId" xml:"ImportId"`
 }
 
 func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseRequest) {

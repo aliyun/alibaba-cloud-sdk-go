@@ -64,17 +64,17 @@ func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callbac
 
 type ProfileGetRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Query" name:"UserId"`
+	UserId requests.Integer `position:"Query" name:"UserId"`
 }
 
 type ProfileGetResponse struct {
 	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	UserId       int64  `json:"UserId" xml:"UserId"`
-	AutoInstall  bool   `json:"AutoInstall" xml:"AutoInstall"`
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	UserId       requests.Integer `json:"UserId" xml:"UserId"`
+	AutoInstall  requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
 }
 
 func CreateProfileGetRequest() (request *ProfileGetRequest) {

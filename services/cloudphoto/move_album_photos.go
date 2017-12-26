@@ -64,24 +64,24 @@ func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosReques
 
 type MoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
-	SourceAlbumId string    `position:"Query" name:"SourceAlbumId"`
-	TargetAlbumId string    `position:"Query" name:"TargetAlbumId"`
-	LibraryId     string    `position:"Query" name:"LibraryId"`
-	PhotoId       *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName     string    `position:"Query" name:"StoreName"`
+	TargetAlbumId requests.Integer `position:"Query" name:"TargetAlbumId"`
+	SourceAlbumId requests.Integer `position:"Query" name:"SourceAlbumId"`
+	LibraryId     string           `position:"Query" name:"LibraryId"`
+	StoreName     string           `position:"Query" name:"StoreName"`
+	PhotoId       *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type MoveAlbumPhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Id      int64  `json:"Id"`
-		Code    string `json:"Code"`
-		Message string `json:"Message"`
-	} `json:"Results"`
+		Id      requests.Integer `json:"Id" xml:"Id"`
+		Code    string           `json:"Code" xml:"Code"`
+		Message string           `json:"Message" xml:"Message"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {

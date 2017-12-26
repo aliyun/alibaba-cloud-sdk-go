@@ -64,19 +64,17 @@ func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFile
 
 type SetFileTypeForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
-	FileType      string `position:"Query" name:"FileType"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	Version       string `position:"Query" name:"Version"`
-	CodeString    string `position:"Query" name:"CodeString"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
+	CodeString    string           `position:"Query" name:"CodeString"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	FileType      string           `position:"Query" name:"FileType"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetFileTypeForceTtlCodeConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlCodeConfigRequest) {

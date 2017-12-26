@@ -64,17 +64,17 @@ func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentS
 
 type CreateDeploymentSetRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Granularity          string           `position:"Query" name:"Granularity"`
+	Domain               string           `position:"Query" name:"Domain"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateDeploymentSetResponse struct {

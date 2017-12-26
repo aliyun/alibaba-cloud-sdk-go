@@ -64,25 +64,25 @@ func (client *Client) DescribeLiveStreamsControlHistoryWithCallback(request *Des
 
 type DescribeLiveStreamsControlHistoryRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamsControlHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId"`
-	ControlInfo []struct {
-		StreamName string `json:"StreamName"`
-		ClientIP   string `json:"ClientIP"`
-		Action     string `json:"Action"`
-		TimeStamp  string `json:"TimeStamp"`
-	} `json:"ControlInfo"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	ControlInfo struct {
+		LiveStreamControlInfo []struct {
+			StreamName string `json:"StreamName" xml:"StreamName"`
+			ClientIP   string `json:"ClientIP" xml:"ClientIP"`
+			Action     string `json:"Action" xml:"Action"`
+			TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
+		} `json:"LiveStreamControlInfo" xml:"LiveStreamControlInfo"`
+	} `json:"ControlInfo" xml:"ControlInfo"`
 }
 
 func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStreamsControlHistoryRequest) {

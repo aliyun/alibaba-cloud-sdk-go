@@ -64,24 +64,24 @@ func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest,
 
 type MoveFacePhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId    string    `position:"Query" name:"LibraryId"`
-	TargetFaceId string    `position:"Query" name:"TargetFaceId"`
-	PhotoId      *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName    string    `position:"Query" name:"StoreName"`
-	SourceFaceId string    `position:"Query" name:"SourceFaceId"`
+	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
+	LibraryId    string           `position:"Query" name:"LibraryId"`
+	StoreName    string           `position:"Query" name:"StoreName"`
+	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
+	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type MoveFacePhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Id      int64  `json:"Id"`
-		Code    string `json:"Code"`
-		Message string `json:"Message"`
-	} `json:"Results"`
+		Id      requests.Integer `json:"Id" xml:"Id"`
+		Code    string           `json:"Code" xml:"Code"`
+		Message string           `json:"Message" xml:"Message"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {

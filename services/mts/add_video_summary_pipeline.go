@@ -64,30 +64,28 @@ func (client *Client) AddVideoSummaryPipelineWithCallback(request *AddVideoSumma
 
 type AddVideoSummaryPipelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	Action               string `position:"Query" name:"Action"`
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Priority             string `position:"Query" name:"Priority"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddVideoSummaryPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		Priority     int    `json:"Priority"`
-		State        string `json:"State"`
+		Id           string           `json:"Id" xml:"Id"`
+		Name         string           `json:"Name" xml:"Name"`
+		Priority     requests.Integer `json:"Priority" xml:"Priority"`
+		State        string           `json:"State" xml:"State"`
 		NotifyConfig struct {
-			Topic string `json:"Topic"`
-			Queue string `json:"Queue"`
-		} `json:"NotifyConfig"`
-	} `json:"Pipeline"`
+			Topic string `json:"Topic" xml:"Topic"`
+			Queue string `json:"Queue" xml:"Queue"`
+		} `json:"NotifyConfig" xml:"NotifyConfig"`
+	} `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddVideoSummaryPipelineRequest() (request *AddVideoSummaryPipelineRequest) {

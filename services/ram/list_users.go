@@ -64,15 +64,15 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	Marker   string `position:"Query" name:"Marker"`
-	MaxItems string `position:"Query" name:"MaxItems"`
+	Marker   string           `position:"Query" name:"Marker"`
+	MaxItems requests.Integer `position:"Query" name:"MaxItems"`
 }
 
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	IsTruncated requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string           `json:"Marker" xml:"Marker"`
 	Users       struct {
 		User []struct {
 			UserId      string `json:"UserId" xml:"UserId"`

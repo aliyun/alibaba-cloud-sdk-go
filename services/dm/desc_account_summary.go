@@ -64,29 +64,29 @@ func (client *Client) DescAccountSummaryWithCallback(request *DescAccountSummary
 
 type DescAccountSummaryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescAccountSummaryResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	UserStatus    int    `json:"UserStatus" xml:"UserStatus"`
-	QuotaLevel    int    `json:"QuotaLevel" xml:"QuotaLevel"`
-	MaxQuotaLevel int    `json:"MaxQuotaLevel" xml:"MaxQuotaLevel"`
-	DailyQuota    int    `json:"DailyQuota" xml:"DailyQuota"`
-	MonthQuota    int    `json:"MonthQuota" xml:"MonthQuota"`
-	Tags          int    `json:"Tags" xml:"Tags"`
-	Domains       int    `json:"Domains" xml:"Domains"`
-	MailAddresses int    `json:"MailAddresses" xml:"MailAddresses"`
-	Receivers     int    `json:"Receivers" xml:"Receivers"`
-	Templates     int    `json:"Templates" xml:"Templates"`
-	DayuStatus    int    `json:"DayuStatus" xml:"DayuStatus"`
-	SmsTemplates  int    `json:"SmsTemplates" xml:"SmsTemplates"`
-	SmsRecord     int    `json:"SmsRecord" xml:"SmsRecord"`
-	SmsSign       int    `json:"SmsSign" xml:"SmsSign"`
-	EnableTimes   int    `json:"EnableTimes" xml:"EnableTimes"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	UserStatus    requests.Integer `json:"UserStatus" xml:"UserStatus"`
+	QuotaLevel    requests.Integer `json:"QuotaLevel" xml:"QuotaLevel"`
+	MaxQuotaLevel requests.Integer `json:"MaxQuotaLevel" xml:"MaxQuotaLevel"`
+	DailyQuota    requests.Integer `json:"DailyQuota" xml:"DailyQuota"`
+	MonthQuota    requests.Integer `json:"MonthQuota" xml:"MonthQuota"`
+	Tags          requests.Integer `json:"Tags" xml:"Tags"`
+	Domains       requests.Integer `json:"Domains" xml:"Domains"`
+	MailAddresses requests.Integer `json:"MailAddresses" xml:"MailAddresses"`
+	Receivers     requests.Integer `json:"Receivers" xml:"Receivers"`
+	Templates     requests.Integer `json:"Templates" xml:"Templates"`
+	DayuStatus    requests.Integer `json:"DayuStatus" xml:"DayuStatus"`
+	SmsTemplates  requests.Integer `json:"SmsTemplates" xml:"SmsTemplates"`
+	SmsRecord     requests.Integer `json:"SmsRecord" xml:"SmsRecord"`
+	SmsSign       requests.Integer `json:"SmsSign" xml:"SmsSign"`
+	EnableTimes   requests.Integer `json:"EnableTimes" xml:"EnableTimes"`
 }
 
 func CreateDescAccountSummaryRequest() (request *DescAccountSummaryRequest) {

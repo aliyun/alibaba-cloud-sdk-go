@@ -64,28 +64,28 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	DateStr       string                          `position:"Query" name:"DateStr"`
-	MinTime       string                          `position:"Query" name:"MinTime"`
-	ReduceTail    string                          `position:"Query" name:"ReduceTail"`
-	MaxTime       string                          `position:"Query" name:"MaxTime"`
-	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
-	Measures      *[]string                       `position:"Query" name:"Measures"  type:"Repeated"`
-	IntervalInSec string                          `position:"Query" name:"IntervalInSec"`
-	IsDrillDown   string                          `position:"Query" name:"IsDrillDown"`
-	HungryMode    string                          `position:"Query" name:"HungryMode"`
-	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
-	Limit         string                          `position:"Query" name:"Limit"`
-	DatasetId     string                          `position:"Query" name:"DatasetId"`
+	Limit         requests.Integer                `position:"Query" name:"Limit"`
+	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
 	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
+	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
+	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
+	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
+	MinTime       requests.Integer                `position:"Query" name:"MinTime"`
+	MaxTime       requests.Integer                `position:"Query" name:"MaxTime"`
+	IsDrillDown   requests.Boolean                `position:"Query" name:"IsDrillDown"`
+	DateStr       requests.Integer                `position:"Query" name:"DateStr"`
 	Dimensions    *[]ARMSQueryDataSetDimensions   `position:"Query" name:"Dimensions"  type:"Repeated"`
+	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
+	Measures      *[]string                       `position:"Query" name:"Measures"  type:"Repeated"`
+	HungryMode    requests.Boolean                `position:"Query" name:"HungryMode"`
 }
 
-type ARMSQueryDataSetOptionalDims struct {
+type ARMSQueryDataSetRequiredDims struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 	Type  string `name:"Type"`
 }
-type ARMSQueryDataSetRequiredDims struct {
+type ARMSQueryDataSetOptionalDims struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 	Type  string `name:"Type"`
@@ -98,7 +98,7 @@ type ARMSQueryDataSetDimensions struct {
 
 type ARMSQueryDataSetResponse struct {
 	*responses.BaseResponse
-	Data string `json:"Data"`
+	Data string `json:"Data" xml:"Data"`
 }
 
 func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {

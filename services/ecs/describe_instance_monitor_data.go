@@ -64,14 +64,14 @@ func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeI
 
 type DescribeInstanceMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInstanceMonitorDataResponse struct {
@@ -79,21 +79,21 @@ type DescribeInstanceMonitorDataResponse struct {
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MonitorData struct {
 		InstanceMonitorData []struct {
-			InstanceId        string  `json:"InstanceId" xml:"InstanceId"`
-			CPU               int     `json:"CPU" xml:"CPU"`
-			IntranetRX        int     `json:"IntranetRX" xml:"IntranetRX"`
-			IntranetTX        int     `json:"IntranetTX" xml:"IntranetTX"`
-			IntranetBandwidth int     `json:"IntranetBandwidth" xml:"IntranetBandwidth"`
-			InternetRX        int     `json:"InternetRX" xml:"InternetRX"`
-			InternetTX        int     `json:"InternetTX" xml:"InternetTX"`
-			InternetBandwidth int     `json:"InternetBandwidth" xml:"InternetBandwidth"`
-			IOPSRead          int     `json:"IOPSRead" xml:"IOPSRead"`
-			IOPSWrite         int     `json:"IOPSWrite" xml:"IOPSWrite"`
-			BPSRead           int     `json:"BPSRead" xml:"BPSRead"`
-			BPSWrite          int     `json:"BPSWrite" xml:"BPSWrite"`
-			CPUCreditUsage    float64 `json:"CPUCreditUsage" xml:"CPUCreditUsage"`
-			CPUCreditBalance  float64 `json:"CPUCreditBalance" xml:"CPUCreditBalance"`
-			TimeStamp         string  `json:"TimeStamp" xml:"TimeStamp"`
+			InstanceId        string           `json:"InstanceId" xml:"InstanceId"`
+			CPU               requests.Integer `json:"CPU" xml:"CPU"`
+			IntranetRX        requests.Integer `json:"IntranetRX" xml:"IntranetRX"`
+			IntranetTX        requests.Integer `json:"IntranetTX" xml:"IntranetTX"`
+			IntranetBandwidth requests.Integer `json:"IntranetBandwidth" xml:"IntranetBandwidth"`
+			InternetRX        requests.Integer `json:"InternetRX" xml:"InternetRX"`
+			InternetTX        requests.Integer `json:"InternetTX" xml:"InternetTX"`
+			InternetBandwidth requests.Integer `json:"InternetBandwidth" xml:"InternetBandwidth"`
+			IOPSRead          requests.Integer `json:"IOPSRead" xml:"IOPSRead"`
+			IOPSWrite         requests.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
+			BPSRead           requests.Integer `json:"BPSRead" xml:"BPSRead"`
+			BPSWrite          requests.Integer `json:"BPSWrite" xml:"BPSWrite"`
+			CPUCreditUsage    requests.Float   `json:"CPUCreditUsage" xml:"CPUCreditUsage"`
+			CPUCreditBalance  requests.Float   `json:"CPUCreditBalance" xml:"CPUCreditBalance"`
+			TimeStamp         string           `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
 	} `json:"MonitorData" xml:"MonitorData"`
 }

@@ -1,4 +1,4 @@
-package ecs
+package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) ResizeVolume(request *ResizeVolumeRequest) (response *ResizeVolumeResponse, err error) {
-	response = CreateResizeVolumeResponse()
+func (client *Client) PutSystemEvent(request *PutSystemEventRequest) (response *PutSystemEventResponse, err error) {
+	response = CreatePutSystemEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) ResizeVolumeWithChan(request *ResizeVolumeRequest) (<-chan *ResizeVolumeResponse, <-chan error) {
-	responseChan := make(chan *ResizeVolumeResponse, 1)
+func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-chan *PutSystemEventResponse, <-chan error) {
+	responseChan := make(chan *PutSystemEventResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeVolume(request)
+		response, err := client.PutSystemEvent(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) ResizeVolumeWithChan(request *ResizeVolumeRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) ResizeVolumeWithCallback(request *ResizeVolumeRequest, callback func(response *ResizeVolumeResponse, err error)) <-chan int {
+func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest, callback func(response *PutSystemEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeVolumeResponse
+		var response *PutSystemEventResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeVolume(request)
+		response, err = client.PutSystemEvent(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,32 +62,28 @@ func (client *Client) ResizeVolumeWithCallback(request *ResizeVolumeRequest, cal
 	return result
 }
 
-type ResizeVolumeRequest struct {
+type PutSystemEventRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	NewSize              string `position:"Query" name:"NewSize"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	EventInfo string `position:"Query" name:"EventInfo"`
 }
 
-type ResizeVolumeResponse struct {
+type PutSystemEventResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code    string `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
 }
 
-func CreateResizeVolumeRequest() (request *ResizeVolumeRequest) {
-	request = &ResizeVolumeRequest{
+func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
+	request = &PutSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeVolume", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutSystemEvent", "", "")
 	return
 }
 
-func CreateResizeVolumeResponse() (response *ResizeVolumeResponse) {
-	response = &ResizeVolumeResponse{
+func CreatePutSystemEventResponse() (response *PutSystemEventResponse) {
+	response = &PutSystemEventResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

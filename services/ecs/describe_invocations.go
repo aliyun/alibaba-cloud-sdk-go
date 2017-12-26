@@ -64,35 +64,35 @@ func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocatio
 
 type DescribeInvocationsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	InvokeId             string `position:"Query" name:"InvokeId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	CommandName          string `position:"Query" name:"CommandName"`
-	Timed                string `position:"Query" name:"Timed"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	CommandId            string `position:"Query" name:"CommandId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InvokeStatus         string `position:"Query" name:"InvokeStatus"`
-	CommandType          string `position:"Query" name:"CommandType"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InvokeId             string           `position:"Query" name:"InvokeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommandName          string           `position:"Query" name:"CommandName"`
+	Timed                requests.Boolean `position:"Query" name:"Timed"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InvokeStatus         string           `position:"Query" name:"InvokeStatus"`
+	CommandType          string           `position:"Query" name:"CommandType"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInvocationsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Invocation struct {
 		InvocationItem []struct {
-			InvokeId     string `json:"InvokeId" xml:"InvokeId"`
-			CommandId    string `json:"CommandId" xml:"CommandId"`
-			CommandType  string `json:"CommandType" xml:"CommandType"`
-			CommandName  string `json:"CommandName" xml:"CommandName"`
-			Timed        bool   `json:"Timed" xml:"Timed"`
-			InvokeStatus string `json:"InvokeStatus" xml:"InvokeStatus"`
+			InvokeId     string           `json:"InvokeId" xml:"InvokeId"`
+			CommandId    string           `json:"CommandId" xml:"CommandId"`
+			CommandType  string           `json:"CommandType" xml:"CommandType"`
+			CommandName  string           `json:"CommandName" xml:"CommandName"`
+			Timed        requests.Boolean `json:"Timed" xml:"Timed"`
+			InvokeStatus string           `json:"InvokeStatus" xml:"InvokeStatus"`
 			InvokeItem   struct {
 				InvokeItemItem []struct {
 					InstanceId string `json:"InstanceId" xml:"InstanceId"`

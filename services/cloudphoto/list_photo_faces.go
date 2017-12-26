@@ -64,22 +64,22 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type ListPhotoFacesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Faces     []struct {
-		FaceId   int64    `json:"FaceId"`
-		FaceName string   `json:"FaceName"`
-		Axis     []string `json:"Axis"`
-	} `json:"Faces"`
+		FaceId   requests.Integer `json:"FaceId" xml:"FaceId"`
+		FaceName string           `json:"FaceName" xml:"FaceName"`
+		Axis     []string         `json:"Axis" xml:"Axis"`
+	} `json:"Faces" xml:"Faces"`
 }
 
 func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {

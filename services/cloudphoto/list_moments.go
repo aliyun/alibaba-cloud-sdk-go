@@ -64,31 +64,31 @@ func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callb
 
 type ListMomentsRequest struct {
 	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	Size      string `position:"Query" name:"Size"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	State     string `position:"Query" name:"State"`
-	Direction string `position:"Query" name:"Direction"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListMomentsResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code"`
-	Message    string `json:"Message"`
-	NextCursor string `json:"NextCursor"`
-	TotalCount int    `json:"TotalCount"`
-	RequestId  string `json:"RequestId"`
-	Action     string `json:"Action"`
+	Code       string           `json:"Code" xml:"Code"`
+	Message    string           `json:"Message" xml:"Message"`
+	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	Action     string           `json:"Action" xml:"Action"`
 	Moments    []struct {
-		Id           int64  `json:"Id"`
-		LocationName string `json:"LocationName"`
-		PhotosCount  int    `json:"PhotosCount"`
-		State        string `json:"State"`
-		TakenAt      int64  `json:"TakenAt"`
-		Ctime        int64  `json:"Ctime"`
-		Mtime        int64  `json:"Mtime"`
-	} `json:"Moments"`
+		Id           requests.Integer `json:"Id" xml:"Id"`
+		LocationName string           `json:"LocationName" xml:"LocationName"`
+		PhotosCount  requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		State        string           `json:"State" xml:"State"`
+		TakenAt      requests.Integer `json:"TakenAt" xml:"TakenAt"`
+		Ctime        requests.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime        requests.Integer `json:"Mtime" xml:"Mtime"`
+	} `json:"Moments" xml:"Moments"`
 }
 
 func CreateListMomentsRequest() (request *ListMomentsRequest) {

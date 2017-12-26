@@ -64,25 +64,25 @@ func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callbac
 
 type EditPhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId       string    `position:"Query" name:"LibraryId"`
-	ShareExpireTime string    `position:"Query" name:"ShareExpireTime"`
-	PhotoId         *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName       string    `position:"Query" name:"StoreName"`
-	Remark          string    `position:"Query" name:"Remark"`
-	Title           string    `position:"Query" name:"Title"`
+	Title           string           `position:"Query" name:"Title"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	Remark          string           `position:"Query" name:"Remark"`
+	LibraryId       string           `position:"Query" name:"LibraryId"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type EditPhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Id      int64  `json:"Id"`
-		Code    string `json:"Code"`
-		Message string `json:"Message"`
-	} `json:"Results"`
+		Id      requests.Integer `json:"Id" xml:"Id"`
+		Code    string           `json:"Code" xml:"Code"`
+		Message string           `json:"Message" xml:"Message"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateEditPhotosRequest() (request *EditPhotosRequest) {

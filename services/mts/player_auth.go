@@ -64,24 +64,24 @@ func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callbac
 
 type PlayerAuthRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
 }
 
 type PlayerAuthResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	LogURL     string `json:"LogURL"`
-	SwitchList []struct {
-		State        string `json:"State"`
-		FunctionId   string `json:"FunctionId"`
-		SwitchId     string `json:"SwitchId"`
-		FunctionName string `json:"FunctionName"`
-	} `json:"SwitchList"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	LogURL     string `json:"LogURL" xml:"LogURL"`
+	SwitchList struct {
+		Switch []struct {
+			State        string `json:"State" xml:"State"`
+			FunctionId   string `json:"FunctionId" xml:"FunctionId"`
+			SwitchId     string `json:"SwitchId" xml:"SwitchId"`
+			FunctionName string `json:"FunctionName" xml:"FunctionName"`
+		} `json:"Switch" xml:"Switch"`
+	} `json:"SwitchList" xml:"SwitchList"`
 }
 
 func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {

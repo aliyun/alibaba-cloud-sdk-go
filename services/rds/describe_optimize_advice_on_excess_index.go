@@ -64,26 +64,26 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *D
 
 type DescribeOptimizeAdviceOnExcessIndexRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnExcessIndex []struct {
-			DBName     string `json:"DBName" xml:"DBName"`
-			TableName  string `json:"TableName" xml:"TableName"`
-			IndexCount int64  `json:"IndexCount" xml:"IndexCount"`
+			DBName     string           `json:"DBName" xml:"DBName"`
+			TableName  string           `json:"TableName" xml:"TableName"`
+			IndexCount requests.Integer `json:"IndexCount" xml:"IndexCount"`
 		} `json:"AdviceOnExcessIndex" xml:"AdviceOnExcessIndex"`
 	} `json:"Items" xml:"Items"`
 }

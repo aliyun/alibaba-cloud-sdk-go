@@ -64,14 +64,14 @@ func (client *Client) ModifyVpcAttributeWithCallback(request *ModifyVpcAttribute
 
 type ModifyVpcAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	VpcName              string `position:"Query" name:"VpcName"`
-	UserCidr             string `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	VpcName              string           `position:"Query" name:"VpcName"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyVpcAttributeResponse struct {

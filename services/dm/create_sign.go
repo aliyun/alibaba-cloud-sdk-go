@@ -64,14 +64,14 @@ func (client *Client) CreateSignWithCallback(request *CreateSignRequest, callbac
 
 type CreateSignRequest struct {
 	*requests.RpcRequest
-	SignName             string `position:"Query" name:"SignName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Remark               string `position:"Query" name:"Remark"`
-	FileNames            string `position:"Query" name:"FileNames"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
-	SignType             string `position:"Query" name:"SignType"`
+	SignName             string           `position:"Query" name:"SignName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Remark               string           `position:"Query" name:"Remark"`
+	FileNames            string           `position:"Query" name:"FileNames"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
+	SignType             requests.Integer `position:"Query" name:"SignType"`
 }
 
 type CreateSignResponse struct {

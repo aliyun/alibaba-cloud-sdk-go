@@ -1,4 +1,4 @@
-package ecs
+package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeleteVolume(request *DeleteVolumeRequest) (response *DeleteVolumeResponse, err error) {
-	response = CreateDeleteVolumeResponse()
+func (client *Client) CheckAliyunCSServiceRole(request *CheckAliyunCSServiceRoleRequest) (response *CheckAliyunCSServiceRoleResponse, err error) {
+	response = CreateCheckAliyunCSServiceRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeleteVolumeWithChan(request *DeleteVolumeRequest) (<-chan *DeleteVolumeResponse, <-chan error) {
-	responseChan := make(chan *DeleteVolumeResponse, 1)
+func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSServiceRoleRequest) (<-chan *CheckAliyunCSServiceRoleResponse, <-chan error) {
+	responseChan := make(chan *CheckAliyunCSServiceRoleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteVolume(request)
+		response, err := client.CheckAliyunCSServiceRole(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DeleteVolumeWithChan(request *DeleteVolumeRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) DeleteVolumeWithCallback(request *DeleteVolumeRequest, callback func(response *DeleteVolumeResponse, err error)) <-chan int {
+func (client *Client) CheckAliyunCSServiceRoleWithCallback(request *CheckAliyunCSServiceRoleRequest, callback func(response *CheckAliyunCSServiceRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteVolumeResponse
+		var response *CheckAliyunCSServiceRoleResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteVolume(request)
+		response, err = client.CheckAliyunCSServiceRole(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,30 +62,24 @@ func (client *Client) DeleteVolumeWithCallback(request *DeleteVolumeRequest, cal
 	return result
 }
 
-type DeleteVolumeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+type CheckAliyunCSServiceRoleRequest struct {
+	*requests.RoaRequest
 }
 
-type DeleteVolumeResponse struct {
+type CheckAliyunCSServiceRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-func CreateDeleteVolumeRequest() (request *DeleteVolumeRequest) {
-	request = &DeleteVolumeRequest{
-		RpcRequest: &requests.RpcRequest{},
+func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleRequest) {
+	request = &CheckAliyunCSServiceRoleRequest{
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVolume", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "CheckAliyunCSServiceRole", "/aliyuncsrole/status", "", "")
 	return
 }
 
-func CreateDeleteVolumeResponse() (response *DeleteVolumeResponse) {
-	response = &DeleteVolumeResponse{
+func CreateCheckAliyunCSServiceRoleResponse() (response *CheckAliyunCSServiceRoleResponse) {
+	response = &CheckAliyunCSServiceRoleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

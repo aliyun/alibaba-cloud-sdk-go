@@ -64,19 +64,19 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBI
 
 type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
-	ReadWriteSplittingPrivateIpAddress   string `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
-	VSwitchId                            string `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress                     string `position:"Query" name:"PrivateIpAddress"`
-	DBInstanceId                         string `position:"Query" name:"DBInstanceId"`
-	ReadWriteSplittingClassicExpiredDays string `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
-	OwnerId                              string `position:"Query" name:"OwnerId"`
-	RetainClassic                        string `position:"Query" name:"RetainClassic"`
-	ResourceOwnerAccount                 string `position:"Query" name:"ResourceOwnerAccount"`
-	ClassicExpiredDays                   string `position:"Query" name:"ClassicExpiredDays"`
-	ResourceOwnerId                      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                         string `position:"Query" name:"OwnerAccount"`
-	VPCId                                string `position:"Query" name:"VPCId"`
-	InstanceNetworkType                  string `position:"Query" name:"InstanceNetworkType"`
+	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
+	VSwitchId                            string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
+	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
+	ReadWriteSplittingClassicExpiredDays requests.Integer `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
+	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
+	RetainClassic                        string           `position:"Query" name:"RetainClassic"`
+	ResourceOwnerAccount                 string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClassicExpiredDays                   string           `position:"Query" name:"ClassicExpiredDays"`
+	ResourceOwnerId                      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                         string           `position:"Query" name:"OwnerAccount"`
+	VPCId                                string           `position:"Query" name:"VPCId"`
+	InstanceNetworkType                  string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 type ModifyDBInstanceNetworkTypeResponse struct {

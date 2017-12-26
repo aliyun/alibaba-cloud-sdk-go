@@ -64,31 +64,33 @@ func (client *Client) DescribeDomainCCAttackInfoWithCallback(request *DescribeDo
 
 type DescribeDomainCCAttackInfoRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainCCAttackInfoResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId"`
-	DomainName       string `json:"DomainName"`
-	StartTime        string `json:"StartTime"`
-	EndTime          string `json:"EndTime"`
-	AttackIpDataList []struct {
-		Ip          string `json:"Ip"`
-		AttackCount string `json:"AttackCount"`
-		Result      string `json:"Result"`
-	} `json:"AttackIpDataList"`
-	AttackedUrlDataList []struct {
-		Url         string `json:"Url"`
-		AttackCount string `json:"AttackCount"`
-		Result      string `json:"Result"`
-	} `json:"AttackedUrlDataList"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
+	EndTime          string `json:"EndTime" xml:"EndTime"`
+	AttackIpDataList struct {
+		AttackIpDatas []struct {
+			Ip          string `json:"Ip" xml:"Ip"`
+			AttackCount string `json:"AttackCount" xml:"AttackCount"`
+			Result      string `json:"Result" xml:"Result"`
+		} `json:"AttackIpDatas" xml:"AttackIpDatas"`
+	} `json:"AttackIpDataList" xml:"AttackIpDataList"`
+	AttackedUrlDataList struct {
+		AttackedUrlDatas []struct {
+			Url         string `json:"Url" xml:"Url"`
+			AttackCount string `json:"AttackCount" xml:"AttackCount"`
+			Result      string `json:"Result" xml:"Result"`
+		} `json:"AttackedUrlDatas" xml:"AttackedUrlDatas"`
+	} `json:"AttackedUrlDataList" xml:"AttackedUrlDataList"`
 }
 
 func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackInfoRequest) {

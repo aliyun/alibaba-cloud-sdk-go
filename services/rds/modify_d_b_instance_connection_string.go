@@ -64,14 +64,14 @@ func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *Modi
 
 type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
-	Port                    string `position:"Query" name:"Port"`
-	ConnectionStringPrefix  string `position:"Query" name:"ConnectionStringPrefix"`
-	DBInstanceId            string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount    string `position:"Query" name:"ResourceOwnerAccount"`
-	CurrentConnectionString string `position:"Query" name:"CurrentConnectionString"`
-	ResourceOwnerId         string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string `position:"Query" name:"OwnerAccount"`
-	OwnerId                 string `position:"Query" name:"OwnerId"`
+	Port                    string           `position:"Query" name:"Port"`
+	ConnectionStringPrefix  string           `position:"Query" name:"ConnectionStringPrefix"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDBInstanceConnectionStringResponse struct {

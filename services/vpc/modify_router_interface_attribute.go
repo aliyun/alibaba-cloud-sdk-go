@@ -64,19 +64,19 @@ func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *Modify
 
 type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
-	HealthCheckSourceIp      string `position:"Query" name:"HealthCheckSourceIp"`
-	OppositeRouterType       string `position:"Query" name:"OppositeRouterType"`
-	HealthCheckTargetIp      string `position:"Query" name:"HealthCheckTargetIp"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	OppositeInterfaceOwnerId string `position:"Query" name:"OppositeInterfaceOwnerId"`
-	OppositeRouterId         string `position:"Query" name:"OppositeRouterId"`
-	Description              string `position:"Query" name:"Description"`
-	Name                     string `position:"Query" name:"Name"`
-	OppositeInterfaceId      string `position:"Query" name:"OppositeInterfaceId"`
-	RouterInterfaceId        string `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	DeleteHealthCheckIp      string `position:"Query" name:"DeleteHealthCheckIp"`
+	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
+	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
+	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
+	Description              string           `position:"Query" name:"Description"`
+	Name                     string           `position:"Query" name:"Name"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	DeleteHealthCheckIp      requests.Boolean `position:"Query" name:"DeleteHealthCheckIp"`
 }
 
 type ModifyRouterInterfaceAttributeResponse struct {

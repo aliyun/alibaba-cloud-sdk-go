@@ -64,16 +64,16 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 
 type CreateVSwitchRequest struct {
 	*requests.RpcRequest
-	VSwitchName          string `position:"Query" name:"VSwitchName"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	CidrBlock            string `position:"Query" name:"CidrBlock"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	CidrBlock            string           `position:"Query" name:"CidrBlock"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateVSwitchResponse struct {

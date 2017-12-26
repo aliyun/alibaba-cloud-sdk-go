@@ -64,23 +64,23 @@ func (client *Client) DescribeImageSharePermissionWithCallback(request *Describe
 
 type DescribeImageSharePermissionRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ImageId              string `position:"Query" name:"ImageId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
 }
 
 type DescribeImageSharePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RegionId    string `json:"RegionId" xml:"RegionId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	ImageId     string `json:"ImageId" xml:"ImageId"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	RegionId    string           `json:"RegionId" xml:"RegionId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
+	ImageId     string           `json:"ImageId" xml:"ImageId"`
 	ShareGroups struct {
 		ShareGroup []struct {
 			Group string `json:"Group" xml:"Group"`

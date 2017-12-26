@@ -64,11 +64,11 @@ func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatReques
 
 type QueryDeviceStatRequest struct {
 	*requests.RpcRequest
-	EndTime    string `position:"Query" name:"EndTime"`
-	StartTime  string `position:"Query" name:"StartTime"`
-	AppKey     string `position:"Query" name:"AppKey"`
-	DeviceType string `position:"Query" name:"DeviceType"`
-	QueryType  string `position:"Query" name:"QueryType"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	AppKey     requests.Integer `position:"Query" name:"AppKey"`
+	DeviceType string           `position:"Query" name:"DeviceType"`
+	QueryType  string           `position:"Query" name:"QueryType"`
 }
 
 type QueryDeviceStatResponse struct {
@@ -76,9 +76,9 @@ type QueryDeviceStatResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	AppDeviceStats struct {
 		AppDeviceStat []struct {
-			Time       string `json:"Time" xml:"Time"`
-			Count      int64  `json:"Count" xml:"Count"`
-			DeviceType string `json:"DeviceType" xml:"DeviceType"`
+			Time       string           `json:"Time" xml:"Time"`
+			Count      requests.Integer `json:"Count" xml:"Count"`
+			DeviceType string           `json:"DeviceType" xml:"DeviceType"`
 		} `json:"AppDeviceStat" xml:"AppDeviceStat"`
 	} `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }

@@ -64,16 +64,16 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	NetworkInterfaceName string `position:"Query" name:"NetworkInterfaceName"`
-	PrimaryIpAddress     string `position:"Query" name:"PrimaryIpAddress"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateNetworkInterfaceResponse struct {

@@ -1,4 +1,4 @@
-package ecs
+package cms
 
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) ReInitVolume(request *ReInitVolumeRequest) (response *ReInitVolumeResponse, err error) {
-	response = CreateReInitVolumeResponse()
+func (client *Client) DeleteCustomMetric(request *DeleteCustomMetricRequest) (response *DeleteCustomMetricResponse, err error) {
+	response = CreateDeleteCustomMetricResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) ReInitVolumeWithChan(request *ReInitVolumeRequest) (<-chan *ReInitVolumeResponse, <-chan error) {
-	responseChan := make(chan *ReInitVolumeResponse, 1)
+func (client *Client) DeleteCustomMetricWithChan(request *DeleteCustomMetricRequest) (<-chan *DeleteCustomMetricResponse, <-chan error) {
+	responseChan := make(chan *DeleteCustomMetricResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReInitVolume(request)
+		response, err := client.DeleteCustomMetric(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) ReInitVolumeWithChan(request *ReInitVolumeRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) ReInitVolumeWithCallback(request *ReInitVolumeRequest, callback func(response *ReInitVolumeResponse, err error)) <-chan int {
+func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetricRequest, callback func(response *DeleteCustomMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReInitVolumeResponse
+		var response *DeleteCustomMetricResponse
 		var err error
 		defer close(result)
-		response, err = client.ReInitVolume(request)
+		response, err = client.DeleteCustomMetric(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,31 +62,32 @@ func (client *Client) ReInitVolumeWithCallback(request *ReInitVolumeRequest, cal
 	return result
 }
 
-type ReInitVolumeRequest struct {
+type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Password             string `position:"Query" name:"Password"`
+	MetricName string `position:"Query" name:"MetricName"`
+	Md5        string `position:"Query" name:"Md5"`
+	UUID       string `position:"Query" name:"UUID"`
+	GroupId    string `position:"Query" name:"GroupId"`
 }
 
-type ReInitVolumeResponse struct {
+type DeleteCustomMetricResponse struct {
 	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    string `json:"Result" xml:"Result"`
 }
 
-func CreateReInitVolumeRequest() (request *ReInitVolumeRequest) {
-	request = &ReInitVolumeRequest{
+func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
+	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitVolume", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteCustomMetric", "", "")
 	return
 }
 
-func CreateReInitVolumeResponse() (response *ReInitVolumeResponse) {
-	response = &ReInitVolumeResponse{
+func CreateDeleteCustomMetricResponse() (response *DeleteCustomMetricResponse) {
+	response = &DeleteCustomMetricResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

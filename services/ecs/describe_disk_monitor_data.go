@@ -64,32 +64,32 @@ func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskM
 
 type DescribeDiskMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DiskId               string `position:"Query" name:"DiskId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDiskMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	MonitorData struct {
 		DiskMonitorData []struct {
-			DiskId       string `json:"DiskId" xml:"DiskId"`
-			IOPSRead     int    `json:"IOPSRead" xml:"IOPSRead"`
-			IOPSWrite    int    `json:"IOPSWrite" xml:"IOPSWrite"`
-			IOPSTotal    int    `json:"IOPSTotal" xml:"IOPSTotal"`
-			BPSRead      int    `json:"BPSRead" xml:"BPSRead"`
-			BPSWrite     int    `json:"BPSWrite" xml:"BPSWrite"`
-			BPSTotal     int    `json:"BPSTotal" xml:"BPSTotal"`
-			LatencyRead  int    `json:"LatencyRead" xml:"LatencyRead"`
-			LatencyWrite int    `json:"LatencyWrite" xml:"LatencyWrite"`
-			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
+			DiskId       string           `json:"DiskId" xml:"DiskId"`
+			IOPSRead     requests.Integer `json:"IOPSRead" xml:"IOPSRead"`
+			IOPSWrite    requests.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
+			IOPSTotal    requests.Integer `json:"IOPSTotal" xml:"IOPSTotal"`
+			BPSRead      requests.Integer `json:"BPSRead" xml:"BPSRead"`
+			BPSWrite     requests.Integer `json:"BPSWrite" xml:"BPSWrite"`
+			BPSTotal     requests.Integer `json:"BPSTotal" xml:"BPSTotal"`
+			LatencyRead  requests.Integer `json:"LatencyRead" xml:"LatencyRead"`
+			LatencyWrite requests.Integer `json:"LatencyWrite" xml:"LatencyWrite"`
+			TimeStamp    string           `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"DiskMonitorData" xml:"DiskMonitorData"`
 	} `json:"MonitorData" xml:"MonitorData"`
 }

@@ -64,37 +64,40 @@ func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsReques
 
 type ListSkillGroupsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type ListSkillGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
-	SkillGroups    []struct {
-		SkillGroupId          string `json:"SkillGroupId"`
-		InstanceId            string `json:"InstanceId"`
-		SkillGroupName        string `json:"SkillGroupName"`
-		AccSkillGroupName     string `json:"AccSkillGroupName"`
-		AccQueueName          string `json:"AccQueueName"`
-		SkillGroupDescription string `json:"SkillGroupDescription"`
-		UserCount             int    `json:"UserCount"`
-		OutboundPhoneNumbers  []struct {
-			PhoneNumberId          string `json:"PhoneNumberId"`
-			InstanceId             string `json:"InstanceId"`
-			Number                 string `json:"Number"`
-			PhoneNumberDescription string `json:"PhoneNumberDescription"`
-			TestOnly               bool   `json:"TestOnly"`
-			RemainingTime          int    `json:"RemainingTime"`
-			AllowOutbound          bool   `json:"AllowOutbound"`
-			Usage                  string `json:"Usage"`
-			Trunks                 int    `json:"Trunks"`
-		} `json:"OutboundPhoneNumbers"`
-	} `json:"SkillGroups"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillGroups    struct {
+		SkillGroup []struct {
+			SkillGroupId          string           `json:"SkillGroupId" xml:"SkillGroupId"`
+			InstanceId            string           `json:"InstanceId" xml:"InstanceId"`
+			SkillGroupName        string           `json:"SkillGroupName" xml:"SkillGroupName"`
+			AccSkillGroupName     string           `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
+			AccQueueName          string           `json:"AccQueueName" xml:"AccQueueName"`
+			SkillGroupDescription string           `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+			UserCount             requests.Integer `json:"UserCount" xml:"UserCount"`
+			OutboundPhoneNumbers  struct {
+				PhoneNumber []struct {
+					PhoneNumberId          string           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+					InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
+					Number                 string           `json:"Number" xml:"Number"`
+					PhoneNumberDescription string           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+					TestOnly               requests.Boolean `json:"TestOnly" xml:"TestOnly"`
+					RemainingTime          requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
+					AllowOutbound          requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+					Usage                  string           `json:"Usage" xml:"Usage"`
+					Trunks                 requests.Integer `json:"Trunks" xml:"Trunks"`
+				} `json:"PhoneNumber" xml:"PhoneNumber"`
+			} `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
+		} `json:"SkillGroup" xml:"SkillGroup"`
+	} `json:"SkillGroups" xml:"SkillGroups"`
 }
 
 func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {

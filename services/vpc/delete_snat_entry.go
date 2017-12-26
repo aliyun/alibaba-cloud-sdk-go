@@ -64,12 +64,12 @@ func (client *Client) DeleteSnatEntryWithCallback(request *DeleteSnatEntryReques
 
 type DeleteSnatEntryRequest struct {
 	*requests.RpcRequest
-	SnatEntryId          string `position:"Query" name:"SnatEntryId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SnatTableId          string `position:"Query" name:"SnatTableId"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SnatTableId          string           `position:"Query" name:"SnatTableId"`
 }
 
 type DeleteSnatEntryResponse struct {

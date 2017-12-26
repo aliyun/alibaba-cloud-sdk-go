@@ -64,30 +64,31 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	EndTime            string `position:"Query" name:"EndTime"`
-	ComparisonOperator string `position:"Query" name:"ComparisonOperator"`
-	StartTime          string `position:"Query" name:"StartTime"`
-	NotifyType         string `position:"Query" name:"NotifyType"`
-	Period             string `position:"Query" name:"Period"`
-	Namespace          string `position:"Query" name:"Namespace"`
-	Statistics         string `position:"Query" name:"Statistics"`
-	Threshold          string `position:"Query" name:"Threshold"`
-	MetricName         string `position:"Query" name:"MetricName"`
-	Name               string `position:"Query" name:"Name"`
-	EvaluationCount    string `position:"Query" name:"EvaluationCount"`
-	Dimensions         string `position:"Query" name:"Dimensions"`
-	SilenceTime        string `position:"Query" name:"SilenceTime"`
-	ContactGroups      string `position:"Query" name:"ContactGroups"`
-	CallbyCmsOwner     string `position:"Query" name:"callby_cms_owner"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	Namespace          string           `position:"Query" name:"Namespace"`
+	Statistics         string           `position:"Query" name:"Statistics"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	MetricName         string           `position:"Query" name:"MetricName"`
+	Webhook            string           `position:"Query" name:"Webhook"`
+	Name               string           `position:"Query" name:"Name"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	Dimensions         string           `position:"Query" name:"Dimensions"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type CreateAlarmResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      string `json:"Data" xml:"Data"`
+	Success   requests.Boolean `json:"Success" xml:"Success"`
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Data      string           `json:"Data" xml:"Data"`
 }
 
 func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {

@@ -64,20 +64,20 @@ func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfile
 
 type CreateLoginProfileRequest struct {
 	*requests.RpcRequest
-	UserName              string `position:"Query" name:"UserName"`
-	MFABindRequired       string `position:"Query" name:"MFABindRequired"`
-	PasswordResetRequired string `position:"Query" name:"PasswordResetRequired"`
-	Password              string `position:"Query" name:"Password"`
+	UserName              string           `position:"Query" name:"UserName"`
+	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
+	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
+	Password              string           `position:"Query" name:"Password"`
 }
 
 type CreateLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	LoginProfile struct {
-		UserName              string `json:"UserName" xml:"UserName"`
-		PasswordResetRequired bool   `json:"PasswordResetRequired" xml:"PasswordResetRequired"`
-		MFABindRequired       bool   `json:"MFABindRequired" xml:"MFABindRequired"`
-		CreateDate            string `json:"CreateDate" xml:"CreateDate"`
+		UserName              string           `json:"UserName" xml:"UserName"`
+		PasswordResetRequired requests.Boolean `json:"PasswordResetRequired" xml:"PasswordResetRequired"`
+		MFABindRequired       requests.Boolean `json:"MFABindRequired" xml:"MFABindRequired"`
+		CreateDate            string           `json:"CreateDate" xml:"CreateDate"`
 	} `json:"LoginProfile" xml:"LoginProfile"`
 }
 

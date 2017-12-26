@@ -64,30 +64,30 @@ func (client *Client) QuerySignByParamWithCallback(request *QuerySignByParamRequ
 
 type QuerySignByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type QuerySignByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Sign []struct {
-			SignId     int64  `json:"SignId" xml:"SignId"`
-			OrderId    string `json:"OrderId" xml:"OrderId"`
-			Remark     string `json:"Remark" xml:"Remark"`
-			AuditState string `json:"AuditState" xml:"AuditState"`
-			SignType   string `json:"SignType" xml:"SignType"`
-			GmtCreate  string `json:"GmtCreate" xml:"GmtCreate"`
-			SignName   string `json:"SignName" xml:"SignName"`
-			RejectInfo string `json:"RejectInfo" xml:"RejectInfo"`
+			SignId     requests.Integer `json:"SignId" xml:"SignId"`
+			OrderId    string           `json:"OrderId" xml:"OrderId"`
+			Remark     string           `json:"Remark" xml:"Remark"`
+			AuditState string           `json:"AuditState" xml:"AuditState"`
+			SignType   string           `json:"SignType" xml:"SignType"`
+			GmtCreate  string           `json:"GmtCreate" xml:"GmtCreate"`
+			SignName   string           `json:"SignName" xml:"SignName"`
+			RejectInfo string           `json:"RejectInfo" xml:"RejectInfo"`
 		} `json:"sign" xml:"sign"`
 	} `json:"data" xml:"data"`
 }

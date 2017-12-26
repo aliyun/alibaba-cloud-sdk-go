@@ -64,27 +64,27 @@ func (client *Client) ListMomentPhotosWithCallback(request *ListMomentPhotosRequ
 
 type ListMomentPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	Size      string `position:"Query" name:"Size"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	State     string `position:"Query" name:"State"`
-	MomentId  string `position:"Query" name:"MomentId"`
-	Direction string `position:"Query" name:"Direction"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	MomentId  requests.Integer `position:"Query" name:"MomentId"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListMomentPhotosResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code"`
-	Message    string `json:"Message"`
-	NextCursor string `json:"NextCursor"`
-	TotalCount int    `json:"TotalCount"`
-	RequestId  string `json:"RequestId"`
-	Action     string `json:"Action"`
+	Code       string           `json:"Code" xml:"Code"`
+	Message    string           `json:"Message" xml:"Message"`
+	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	Action     string           `json:"Action" xml:"Action"`
 	Results    []struct {
-		PhotoId int64  `json:"PhotoId"`
-		State   string `json:"State"`
-	} `json:"Results"`
+		PhotoId requests.Integer `json:"PhotoId" xml:"PhotoId"`
+		State   string           `json:"State" xml:"State"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateListMomentPhotosRequest() (request *ListMomentPhotosRequest) {

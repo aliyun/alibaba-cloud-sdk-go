@@ -64,20 +64,18 @@ func (client *Client) SetReqAuthConfigWithCallback(request *SetReqAuthConfigRequ
 
 type SetReqAuthConfigRequest struct {
 	*requests.RpcRequest
-	Key1          string `position:"Query" name:"Key1"`
-	Key2          string `position:"Query" name:"Key2"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	TimeOut       string `position:"Query" name:"TimeOut"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
-	AuthType      string `position:"Query" name:"AuthType"`
+	AuthType      string           `position:"Query" name:"AuthType"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Key2          string           `position:"Query" name:"Key2"`
+	Key1          string           `position:"Query" name:"Key1"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	TimeOut       string           `position:"Query" name:"TimeOut"`
 }
 
 type SetReqAuthConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {

@@ -64,21 +64,21 @@ func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysReques
 
 type DescribeTagKeysRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceId           string `position:"Query" name:"ResourceId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeTagKeysResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	TagKeys    struct {
 		TagKey []string `json:"TagKey" xml:"TagKey"`
 	} `json:"TagKeys" xml:"TagKeys"`

@@ -71,17 +71,19 @@ type GetSecurityPreferenceResponse struct {
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	SecurityPreference struct {
 		LoginProfilePreference struct {
-			EnableSaveMFATicket       bool `json:"EnableSaveMFATicket" xml:"EnableSaveMFATicket"`
-			AllowUserToChangePassword bool `json:"AllowUserToChangePassword" xml:"AllowUserToChangePassword"`
+			EnableSaveMFATicket       requests.Boolean `json:"EnableSaveMFATicket" xml:"EnableSaveMFATicket"`
+			AllowUserToChangePassword requests.Boolean `json:"AllowUserToChangePassword" xml:"AllowUserToChangePassword"`
+			LoginSessionDuration      requests.Integer `json:"LoginSessionDuration" xml:"LoginSessionDuration"`
+			LoginNetworkMasks         string           `json:"LoginNetworkMasks" xml:"LoginNetworkMasks"`
 		} `json:"LoginProfilePreference" xml:"LoginProfilePreference"`
 		AccessKeyPreference struct {
-			AllowUserToManageAccessKeys bool `json:"AllowUserToManageAccessKeys" xml:"AllowUserToManageAccessKeys"`
+			AllowUserToManageAccessKeys requests.Boolean `json:"AllowUserToManageAccessKeys" xml:"AllowUserToManageAccessKeys"`
 		} `json:"AccessKeyPreference" xml:"AccessKeyPreference"`
 		PublicKeyPreference struct {
-			AllowUserToManagePublicKeys bool `json:"AllowUserToManagePublicKeys" xml:"AllowUserToManagePublicKeys"`
+			AllowUserToManagePublicKeys requests.Boolean `json:"AllowUserToManagePublicKeys" xml:"AllowUserToManagePublicKeys"`
 		} `json:"PublicKeyPreference" xml:"PublicKeyPreference"`
 		MFAPreference struct {
-			AllowUserToManageMFADevices bool `json:"AllowUserToManageMFADevices" xml:"AllowUserToManageMFADevices"`
+			AllowUserToManageMFADevices requests.Boolean `json:"AllowUserToManageMFADevices" xml:"AllowUserToManageMFADevices"`
 		} `json:"MFAPreference" xml:"MFAPreference"`
 	} `json:"SecurityPreference" xml:"SecurityPreference"`
 }

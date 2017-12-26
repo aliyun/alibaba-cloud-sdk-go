@@ -64,44 +64,44 @@ func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMa
 
 type SearchWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	Action               string `position:"Query" name:"Action"`
-	State                string `position:"Query" name:"State"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	State                string           `position:"Query" name:"State"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SearchWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId"`
-	TotalCount            int64  `json:"TotalCount"`
-	PageNumber            int64  `json:"PageNumber"`
-	PageSize              int64  `json:"PageSize"`
-	WaterMarkTemplateList []struct {
-		Id       string `json:"Id"`
-		Name     string `json:"Name"`
-		Width    string `json:"Width"`
-		Height   string `json:"Height"`
-		Dx       string `json:"Dx"`
-		Dy       string `json:"Dy"`
-		ReferPos string `json:"ReferPos"`
-		Type     string `json:"Type"`
-		State    string `json:"State"`
-		Timeline struct {
-			Start    string `json:"Start"`
-			Duration string `json:"Duration"`
-		} `json:"Timeline"`
-		RatioRefer struct {
-			Dx     string `json:"Dx"`
-			Dy     string `json:"Dy"`
-			Width  string `json:"Width"`
-			Height string `json:"Height"`
-		} `json:"RatioRefer"`
-	} `json:"WaterMarkTemplateList"`
+	RequestId             string           `json:"RequestId" xml:"RequestId"`
+	TotalCount            requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize              requests.Integer `json:"PageSize" xml:"PageSize"`
+	WaterMarkTemplateList struct {
+		WaterMarkTemplate []struct {
+			Id       string `json:"Id" xml:"Id"`
+			Name     string `json:"Name" xml:"Name"`
+			Width    string `json:"Width" xml:"Width"`
+			Height   string `json:"Height" xml:"Height"`
+			Dx       string `json:"Dx" xml:"Dx"`
+			Dy       string `json:"Dy" xml:"Dy"`
+			ReferPos string `json:"ReferPos" xml:"ReferPos"`
+			Type     string `json:"Type" xml:"Type"`
+			State    string `json:"State" xml:"State"`
+			Timeline struct {
+				Start    string `json:"Start" xml:"Start"`
+				Duration string `json:"Duration" xml:"Duration"`
+			} `json:"Timeline" xml:"Timeline"`
+			RatioRefer struct {
+				Dx     string `json:"Dx" xml:"Dx"`
+				Dy     string `json:"Dy" xml:"Dy"`
+				Width  string `json:"Width" xml:"Width"`
+				Height string `json:"Height" xml:"Height"`
+			} `json:"RatioRefer" xml:"RatioRefer"`
+		} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
+	} `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {

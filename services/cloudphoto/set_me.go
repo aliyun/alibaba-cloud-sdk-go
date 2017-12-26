@@ -64,17 +64,17 @@ func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(res
 
 type SetMeRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	FaceId    string `position:"Query" name:"FaceId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
 }
 
 type SetMeResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateSetMeRequest() (request *SetMeRequest) {

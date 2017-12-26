@@ -64,28 +64,27 @@ func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequ
 
 type RequestLoginInfoRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type RequestLoginInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	LoginInfo      struct {
-		UserName       string `json:"UserName"`
-		DisplayName    string `json:"DisplayName"`
-		Region         string `json:"Region"`
-		WebRtcUrl      string `json:"WebRtcUrl"`
-		AgentServerUrl string `json:"AgentServerUrl"`
-		Extension      string `json:"Extension"`
-		TenantId       string `json:"TenantId"`
-		Signature      string `json:"Signature"`
-		SignData       string `json:"SignData"`
-	} `json:"LoginInfo"`
+		UserName       string `json:"UserName" xml:"UserName"`
+		DisplayName    string `json:"DisplayName" xml:"DisplayName"`
+		Region         string `json:"Region" xml:"Region"`
+		WebRtcUrl      string `json:"WebRtcUrl" xml:"WebRtcUrl"`
+		AgentServerUrl string `json:"AgentServerUrl" xml:"AgentServerUrl"`
+		Extension      string `json:"Extension" xml:"Extension"`
+		TenantId       string `json:"TenantId" xml:"TenantId"`
+		Signature      string `json:"Signature" xml:"Signature"`
+		SignData       string `json:"SignData" xml:"SignData"`
+	} `json:"LoginInfo" xml:"LoginInfo"`
 }
 
 func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {

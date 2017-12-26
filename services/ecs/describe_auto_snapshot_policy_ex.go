@@ -64,32 +64,33 @@ func (client *Client) DescribeAutoSnapshotPolicyExWithCallback(request *Describe
 
 type DescribeAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	AutoSnapshotPolicyId string `position:"Query" name:"AutoSnapshotPolicyId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	AutoSnapshotPolicyId string           `position:"Query" name:"AutoSnapshotPolicyId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeAutoSnapshotPolicyExResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
+	RequestId            string           `json:"RequestId" xml:"RequestId"`
+	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
 	AutoSnapshotPolicies struct {
 		AutoSnapshotPolicy []struct {
-			AutoSnapshotPolicyId   string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-			RegionId               string `json:"RegionId" xml:"RegionId"`
-			AutoSnapshotPolicyName string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
-			TimePoints             string `json:"TimePoints" xml:"TimePoints"`
-			RepeatWeekdays         string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-			RetentionDays          int    `json:"RetentionDays" xml:"RetentionDays"`
-			DiskNums               int    `json:"DiskNums" xml:"DiskNums"`
-			VolumeNums             int    `json:"VolumeNums" xml:"VolumeNums"`
-			CreationTime           string `json:"CreationTime" xml:"CreationTime"`
+			AutoSnapshotPolicyId   string           `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+			RegionId               string           `json:"RegionId" xml:"RegionId"`
+			AutoSnapshotPolicyName string           `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
+			TimePoints             string           `json:"TimePoints" xml:"TimePoints"`
+			RepeatWeekdays         string           `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+			RetentionDays          requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
+			DiskNums               requests.Integer `json:"DiskNums" xml:"DiskNums"`
+			VolumeNums             requests.Integer `json:"VolumeNums" xml:"VolumeNums"`
+			CreationTime           string           `json:"CreationTime" xml:"CreationTime"`
+			Status                 string           `json:"Status" xml:"Status"`
 		} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
 	} `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
 }

@@ -64,27 +64,27 @@ func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapac
 
 type DescribeCapacityHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
 type DescribeCapacityHistoryResponse struct {
 	*responses.BaseResponse
-	TotalCount           int `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int `json:"PageSize" xml:"PageSize"`
+	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
 	CapacityHistoryItems struct {
 		CapacityHistoryModel []struct {
-			ScalingGroupId      string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			TotalCapacity       int    `json:"TotalCapacity" xml:"TotalCapacity"`
-			AttachedCapacity    int    `json:"AttachedCapacity" xml:"AttachedCapacity"`
-			AutoCreatedCapacity int    `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
-			Timestamp           string `json:"Timestamp" xml:"Timestamp"`
+			ScalingGroupId      string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			TotalCapacity       requests.Integer `json:"TotalCapacity" xml:"TotalCapacity"`
+			AttachedCapacity    requests.Integer `json:"AttachedCapacity" xml:"AttachedCapacity"`
+			AutoCreatedCapacity requests.Integer `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
+			Timestamp           string           `json:"Timestamp" xml:"Timestamp"`
 		} `json:"CapacityHistoryModel" xml:"CapacityHistoryModel"`
 	} `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
 }

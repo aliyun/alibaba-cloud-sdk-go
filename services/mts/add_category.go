@@ -64,25 +64,23 @@ func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callb
 
 type AddCategoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ParentId             string `position:"Query" name:"ParentId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	CateName             string `position:"Query" name:"CateName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ParentId             requests.Integer `position:"Query" name:"ParentId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CateName             string           `position:"Query" name:"CateName"`
 }
 
 type AddCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Category  struct {
-		CateId   string `json:"CateId"`
-		CateName string `json:"CateName"`
-		ParentId string `json:"ParentId"`
-		Level    string `json:"Level"`
-	} `json:"Category"`
+		CateId   string `json:"CateId" xml:"CateId"`
+		CateName string `json:"CateName" xml:"CateName"`
+		ParentId string `json:"ParentId" xml:"ParentId"`
+		Level    string `json:"Level" xml:"Level"`
+	} `json:"Category" xml:"Category"`
 }
 
 func CreateAddCategoryRequest() (request *AddCategoryRequest) {

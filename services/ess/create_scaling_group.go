@@ -64,19 +64,19 @@ func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroup
 
 type CreateScalingGroupRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string    `position:"Query" name:"VSwitchId"`
-	MinSize              string    `position:"Query" name:"MinSize"`
-	ScalingGroupName     string    `position:"Query" name:"ScalingGroupName"`
-	LoadBalancerIds      string    `position:"Query" name:"LoadBalancerIds"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	DBInstanceIds        string    `position:"Query" name:"DBInstanceIds"`
-	MaxSize              string    `position:"Query" name:"MaxSize"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	RemovalPolicy1       string    `position:"Query" name:"RemovalPolicy.1"`
-	VSwitchIds           *[]string `position:"Query" name:"VSwitchIds"  type:"Repeated"`
-	RemovalPolicy2       string    `position:"Query" name:"RemovalPolicy.2"`
-	DefaultCooldown      string    `position:"Query" name:"DefaultCooldown"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	MinSize              requests.Integer `position:"Query" name:"MinSize"`
+	ScalingGroupName     string           `position:"Query" name:"ScalingGroupName"`
+	LoadBalancerIds      string           `position:"Query" name:"LoadBalancerIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceIds        string           `position:"Query" name:"DBInstanceIds"`
+	MaxSize              requests.Integer `position:"Query" name:"MaxSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RemovalPolicy1       string           `position:"Query" name:"RemovalPolicy.1"`
+	VSwitchIds           *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	RemovalPolicy2       string           `position:"Query" name:"RemovalPolicy.2"`
+	DefaultCooldown      requests.Integer `position:"Query" name:"DefaultCooldown"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateScalingGroupResponse struct {

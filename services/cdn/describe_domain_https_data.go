@@ -64,69 +64,69 @@ func (client *Client) DescribeDomainHttpsDataWithCallback(request *DescribeDomai
 
 type DescribeDomainHttpsDataRequest struct {
 	*requests.RpcRequest
-	DomainType    string `position:"Query" name:"DomainType"`
-	FixTimeGap    string `position:"Query" name:"FixTimeGap"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	TimeMerge     string `position:"Query" name:"TimeMerge"`
-	DomainNames   string `position:"Query" name:"DomainNames"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	Interval      string `position:"Query" name:"Interval"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	Cls           string `position:"Query" name:"Cls"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Cls           string           `position:"Query" name:"Cls"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	Interval      string           `position:"Query" name:"Interval"`
+	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainType    string           `position:"Query" name:"DomainType"`
+	DomainNames   string           `position:"Query" name:"DomainNames"`
+	TimeMerge     string           `position:"Query" name:"TimeMerge"`
 }
 
 type DescribeDomainHttpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId"`
-	DomainNames          string `json:"DomainNames"`
-	DataInterval         string `json:"DataInterval"`
-	HttpsStatisticsInfos []struct {
-		Time               string  `json:"Time"`
-		L1HttpsBps         float64 `json:"L1HttpsBps"`
-		L1HttpsInnerBps    float64 `json:"L1HttpsInnerBps"`
-		L1HttpsOutBps      float64 `json:"L1HttpsOutBps"`
-		L1HttpsQps         int64   `json:"L1HttpsQps"`
-		L1HttpsInnerQps    int64   `json:"L1HttpsInnerQps"`
-		L1HttpsOutQps      int64   `json:"L1HttpsOutQps"`
-		L1HttpsTtraf       int64   `json:"L1HttpsTtraf"`
-		HttpsSrcBps        int64   `json:"HttpsSrcBps"`
-		HttpsSrcTraf       int64   `json:"HttpsSrcTraf"`
-		L1HttpsInnerTraf   int64   `json:"L1HttpsInnerTraf"`
-		L1HttpsOutTraf     int64   `json:"L1HttpsOutTraf"`
-		HttpsByteHitRate   float64 `json:"HttpsByteHitRate"`
-		HttpsReqHitRate    float64 `json:"HttpsReqHitRate"`
-		L1HttpsHitRate     float64 `json:"L1HttpsHitRate"`
-		L1HttpsInnerAcc    float64 `json:"L1HttpsInner_acc"`
-		L1HttpsOutAcc      float64 `json:"L1HttpsOut_acc"`
-		L1HttpsTacc        float64 `json:"L1HttpsTacc"`
-		L1DyHttpsBps       float64 `json:"L1DyHttpsBps"`
-		L1DyHttpsInnerBps  float64 `json:"L1DyHttpsInnerBps"`
-		L1DyHttpsOutBps    float64 `json:"L1DyHttpsOutBps"`
-		L1StHttpsBps       float64 `json:"L1StHttpsBps"`
-		L1StHttpsInnerBps  float64 `json:"L1StHttpsInnerBps"`
-		L1StHttpsOutBps    float64 `json:"L1StHttpsOutBps"`
-		L1DyHttpsTraf      float64 `json:"l1DyHttpsTraf"`
-		L1DyHttpsInnerTraf float64 `json:"L1DyHttpsInnerTraf"`
-		L1DyHttpsOutTraf   float64 `json:"L1DyHttpsOutTraf"`
-		L1StHttpsTraf      float64 `json:"L1StHttpsTraf"`
-		L1StHttpsInnerTraf float64 `json:"L1StHttpsInnerTraf"`
-		L1StHttpsOutTraf   float64 `json:"L1StHttpsOutTraf"`
-		L1DyHttpsQps       float64 `json:"L1DyHttpsQps"`
-		L1DyHttpsInnerQps  float64 `json:"L1DyHttpsInnerQps"`
-		L1DyHttpsOutQps    float64 `json:"L1DyHttpsOutQps"`
-		L1StHttpsQps       float64 `json:"L1StHttpsQps"`
-		L1StHttpsInnerQps  float64 `json:"L1StHttpsInnerQps"`
-		L1StHttpsOutQps    float64 `json:"L1StHttpsOutQps"`
-		L1DyHttpsAcc       float64 `json:"L1DyHttpsAcc"`
-		L1DyHttpsInnerAcc  float64 `json:"L1DyHttpsInnerAcc"`
-		L1DyHttpsOutAcc    float64 `json:"L1DyHttpsOutAcc"`
-		L1StHttpsAcc       float64 `json:"L1StHttpsAcc"`
-		L1StHttpsInnerAcc  float64 `json:"L1StHttpsInnerAcc"`
-		L1StHttpsOutAcc    float64 `json:"L1StHttpsOutAcc"`
-	} `json:"HttpsStatisticsInfos"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	DomainNames          string `json:"DomainNames" xml:"DomainNames"`
+	DataInterval         string `json:"DataInterval" xml:"DataInterval"`
+	HttpsStatisticsInfos struct {
+		HttpsStatisticsInfo []struct {
+			Time               string           `json:"Time" xml:"Time"`
+			L1HttpsBps         requests.Float   `json:"L1HttpsBps" xml:"L1HttpsBps"`
+			L1HttpsInnerBps    requests.Float   `json:"L1HttpsInnerBps" xml:"L1HttpsInnerBps"`
+			L1HttpsOutBps      requests.Float   `json:"L1HttpsOutBps" xml:"L1HttpsOutBps"`
+			L1HttpsQps         requests.Integer `json:"L1HttpsQps" xml:"L1HttpsQps"`
+			L1HttpsInnerQps    requests.Integer `json:"L1HttpsInnerQps" xml:"L1HttpsInnerQps"`
+			L1HttpsOutQps      requests.Integer `json:"L1HttpsOutQps" xml:"L1HttpsOutQps"`
+			L1HttpsTtraf       requests.Integer `json:"L1HttpsTtraf" xml:"L1HttpsTtraf"`
+			HttpsSrcBps        requests.Integer `json:"HttpsSrcBps" xml:"HttpsSrcBps"`
+			HttpsSrcTraf       requests.Integer `json:"HttpsSrcTraf" xml:"HttpsSrcTraf"`
+			L1HttpsInnerTraf   requests.Integer `json:"L1HttpsInnerTraf" xml:"L1HttpsInnerTraf"`
+			L1HttpsOutTraf     requests.Integer `json:"L1HttpsOutTraf" xml:"L1HttpsOutTraf"`
+			HttpsByteHitRate   requests.Float   `json:"HttpsByteHitRate" xml:"HttpsByteHitRate"`
+			HttpsReqHitRate    requests.Float   `json:"HttpsReqHitRate" xml:"HttpsReqHitRate"`
+			L1HttpsHitRate     requests.Float   `json:"L1HttpsHitRate" xml:"L1HttpsHitRate"`
+			L1HttpsInnerAcc    requests.Float   `json:"L1HttpsInner_acc" xml:"L1HttpsInner_acc"`
+			L1HttpsOutAcc      requests.Float   `json:"L1HttpsOut_acc" xml:"L1HttpsOut_acc"`
+			L1HttpsTacc        requests.Float   `json:"L1HttpsTacc" xml:"L1HttpsTacc"`
+			L1DyHttpsBps       requests.Float   `json:"L1DyHttpsBps" xml:"L1DyHttpsBps"`
+			L1DyHttpsInnerBps  requests.Float   `json:"L1DyHttpsInnerBps" xml:"L1DyHttpsInnerBps"`
+			L1DyHttpsOutBps    requests.Float   `json:"L1DyHttpsOutBps" xml:"L1DyHttpsOutBps"`
+			L1StHttpsBps       requests.Float   `json:"L1StHttpsBps" xml:"L1StHttpsBps"`
+			L1StHttpsInnerBps  requests.Float   `json:"L1StHttpsInnerBps" xml:"L1StHttpsInnerBps"`
+			L1StHttpsOutBps    requests.Float   `json:"L1StHttpsOutBps" xml:"L1StHttpsOutBps"`
+			L1DyHttpsTraf      requests.Float   `json:"l1DyHttpsTraf" xml:"l1DyHttpsTraf"`
+			L1DyHttpsInnerTraf requests.Float   `json:"L1DyHttpsInnerTraf" xml:"L1DyHttpsInnerTraf"`
+			L1DyHttpsOutTraf   requests.Float   `json:"L1DyHttpsOutTraf" xml:"L1DyHttpsOutTraf"`
+			L1StHttpsTraf      requests.Float   `json:"L1StHttpsTraf" xml:"L1StHttpsTraf"`
+			L1StHttpsInnerTraf requests.Float   `json:"L1StHttpsInnerTraf" xml:"L1StHttpsInnerTraf"`
+			L1StHttpsOutTraf   requests.Float   `json:"L1StHttpsOutTraf" xml:"L1StHttpsOutTraf"`
+			L1DyHttpsQps       requests.Float   `json:"L1DyHttpsQps" xml:"L1DyHttpsQps"`
+			L1DyHttpsInnerQps  requests.Float   `json:"L1DyHttpsInnerQps" xml:"L1DyHttpsInnerQps"`
+			L1DyHttpsOutQps    requests.Float   `json:"L1DyHttpsOutQps" xml:"L1DyHttpsOutQps"`
+			L1StHttpsQps       requests.Float   `json:"L1StHttpsQps" xml:"L1StHttpsQps"`
+			L1StHttpsInnerQps  requests.Float   `json:"L1StHttpsInnerQps" xml:"L1StHttpsInnerQps"`
+			L1StHttpsOutQps    requests.Float   `json:"L1StHttpsOutQps" xml:"L1StHttpsOutQps"`
+			L1DyHttpsAcc       requests.Float   `json:"L1DyHttpsAcc" xml:"L1DyHttpsAcc"`
+			L1DyHttpsInnerAcc  requests.Float   `json:"L1DyHttpsInnerAcc" xml:"L1DyHttpsInnerAcc"`
+			L1DyHttpsOutAcc    requests.Float   `json:"L1DyHttpsOutAcc" xml:"L1DyHttpsOutAcc"`
+			L1StHttpsAcc       requests.Float   `json:"L1StHttpsAcc" xml:"L1StHttpsAcc"`
+			L1StHttpsInnerAcc  requests.Float   `json:"L1StHttpsInnerAcc" xml:"L1StHttpsInnerAcc"`
+			L1StHttpsOutAcc    requests.Float   `json:"L1StHttpsOutAcc" xml:"L1StHttpsOutAcc"`
+		} `json:"HttpsStatisticsInfo" xml:"HttpsStatisticsInfo"`
+	} `json:"HttpsStatisticsInfos" xml:"HttpsStatisticsInfos"`
 }
 
 func CreateDescribeDomainHttpsDataRequest() (request *DescribeDomainHttpsDataRequest) {

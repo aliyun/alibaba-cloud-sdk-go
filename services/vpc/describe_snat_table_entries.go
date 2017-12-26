@@ -64,22 +64,22 @@ func (client *Client) DescribeSnatTableEntriesWithCallback(request *DescribeSnat
 
 type DescribeSnatTableEntriesRequest struct {
 	*requests.RpcRequest
-	SnatEntryId          string `position:"Query" name:"SnatEntryId"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SnatTableId          string `position:"Query" name:"SnatTableId"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SnatTableId          string           `position:"Query" name:"SnatTableId"`
 }
 
 type DescribeSnatTableEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
 	SnatTableEntries struct {
 		SnatTableEntry []struct {
 			SnatTableId     string `json:"SnatTableId" xml:"SnatTableId"`

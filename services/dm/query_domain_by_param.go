@@ -64,34 +64,34 @@ func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParam
 
 type QueryDomainByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryDomainByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Domain []struct {
-			DomainId        string `json:"DomainId" xml:"DomainId"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
-			DomainRecord    string `json:"DomainRecord" xml:"DomainRecord"`
-			ConfirmStatus   string `json:"ConfirmStatus" xml:"ConfirmStatus"`
-			SpfAuthStatus   string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
-			MxAuthStatus    string `json:"MxAuthStatus" xml:"MxAuthStatus"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime   int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			CnameAuthStatus string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
-			IcpStatus       string `json:"IcpStatus" xml:"IcpStatus"`
+			DomainId        string           `json:"DomainId" xml:"DomainId"`
+			DomainName      string           `json:"DomainName" xml:"DomainName"`
+			DomainStatus    string           `json:"DomainStatus" xml:"DomainStatus"`
+			DomainRecord    string           `json:"DomainRecord" xml:"DomainRecord"`
+			ConfirmStatus   string           `json:"ConfirmStatus" xml:"ConfirmStatus"`
+			SpfAuthStatus   string           `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
+			MxAuthStatus    string           `json:"MxAuthStatus" xml:"MxAuthStatus"`
+			CreateTime      string           `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime   requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			CnameAuthStatus string           `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
+			IcpStatus       string           `json:"IcpStatus" xml:"IcpStatus"`
 		} `json:"domain" xml:"domain"`
 	} `json:"data" xml:"data"`
 }

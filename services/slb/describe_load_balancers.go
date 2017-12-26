@@ -64,55 +64,55 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
-	PageSize              string `position:"Query" name:"PageSize"`
-	AddressType           string `position:"Query" name:"AddressType"`
-	MasterZoneId          string `position:"Query" name:"MasterZoneId"`
-	NetworkType           string `position:"Query" name:"NetworkType"`
-	SlaveZoneId           string `position:"Query" name:"SlaveZoneId"`
-	ServerIntranetAddress string `position:"Query" name:"ServerIntranetAddress"`
-	LoadBalancerName      string `position:"Query" name:"LoadBalancerName"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string `position:"Query" name:"PayType"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	Tags                  string `position:"Query" name:"Tags"`
-	VSwitchId             string `position:"Query" name:"VSwitchId"`
-	InternetChargeType    string `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
-	PageNumber            string `position:"Query" name:"PageNumber"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	ServerId              string `position:"Query" name:"ServerId"`
-	Address               string `position:"Query" name:"Address"`
-	AccessKeyId           string `position:"Query" name:"access_key_id"`
-	LoadBalancerId        string `position:"Query" name:"LoadBalancerId"`
-	VpcId                 string `position:"Query" name:"VpcId"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	AddressType           string           `position:"Query" name:"AddressType"`
+	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
+	NetworkType           string           `position:"Query" name:"NetworkType"`
+	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
+	ServerIntranetAddress string           `position:"Query" name:"ServerIntranetAddress"`
+	LoadBalancerName      string           `position:"Query" name:"LoadBalancerName"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType               string           `position:"Query" name:"PayType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	InternetChargeType    string           `position:"Query" name:"InternetChargeType"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ServerId              string           `position:"Query" name:"ServerId"`
+	Address               string           `position:"Query" name:"Address"`
+	AccessKeyId           string           `position:"Query" name:"access_key_id"`
+	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
 }
 
 type DescribeLoadBalancersResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	PageNumber    requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize      requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount    requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	LoadBalancers struct {
 		LoadBalancer []struct {
-			LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-			LoadBalancerName   string `json:"LoadBalancerName" xml:"LoadBalancerName"`
-			LoadBalancerStatus string `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-			Address            string `json:"Address" xml:"Address"`
-			AddressType        string `json:"AddressType" xml:"AddressType"`
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			RegionIdAlias      string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-			VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-			VpcId              string `json:"VpcId" xml:"VpcId"`
-			NetworkType        string `json:"NetworkType" xml:"NetworkType"`
-			MasterZoneId       string `json:"MasterZoneId" xml:"MasterZoneId"`
-			SlaveZoneId        string `json:"SlaveZoneId" xml:"SlaveZoneId"`
-			InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-			CreateTime         string `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp    int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-			PayType            string `json:"PayType" xml:"PayType"`
-			ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			LoadBalancerId     string           `json:"LoadBalancerId" xml:"LoadBalancerId"`
+			LoadBalancerName   string           `json:"LoadBalancerName" xml:"LoadBalancerName"`
+			LoadBalancerStatus string           `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+			Address            string           `json:"Address" xml:"Address"`
+			AddressType        string           `json:"AddressType" xml:"AddressType"`
+			RegionId           string           `json:"RegionId" xml:"RegionId"`
+			RegionIdAlias      string           `json:"RegionIdAlias" xml:"RegionIdAlias"`
+			VSwitchId          string           `json:"VSwitchId" xml:"VSwitchId"`
+			VpcId              string           `json:"VpcId" xml:"VpcId"`
+			NetworkType        string           `json:"NetworkType" xml:"NetworkType"`
+			MasterZoneId       string           `json:"MasterZoneId" xml:"MasterZoneId"`
+			SlaveZoneId        string           `json:"SlaveZoneId" xml:"SlaveZoneId"`
+			InternetChargeType string           `json:"InternetChargeType" xml:"InternetChargeType"`
+			CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
+			CreateTimeStamp    requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+			PayType            string           `json:"PayType" xml:"PayType"`
+			ResourceGroupId    string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 		} `json:"LoadBalancer" xml:"LoadBalancer"`
 	} `json:"LoadBalancers" xml:"LoadBalancers"`
 }

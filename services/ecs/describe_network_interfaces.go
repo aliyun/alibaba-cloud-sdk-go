@@ -64,27 +64,27 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	PageSize             string    `position:"Query" name:"PageSize"`
-	Type                 string    `position:"Query" name:"Type"`
-	NetworkInterfaceName string    `position:"Query" name:"NetworkInterfaceName"`
-	PrimaryIpAddress     string    `position:"Query" name:"PrimaryIpAddress"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
-	VSwitchId            string    `position:"Query" name:"VSwitchId"`
-	PageNumber           string    `position:"Query" name:"PageNumber"`
-	SecurityGroupId      string    `position:"Query" name:"SecurityGroupId"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   *[]string `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
-	InstanceId           string    `position:"Query" name:"InstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Type                 string           `position:"Query" name:"Type"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeNetworkInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
+	RequestId            string           `json:"RequestId" xml:"RequestId"`
+	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
 	NetworkInterfaceSets struct {
 		NetworkInterfaceSet []struct {
 			NetworkInterfaceId   string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
@@ -108,8 +108,8 @@ type DescribeNetworkInterfacesResponse struct {
 			} `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
 			PrivateIpSets struct {
 				PrivateIpSet []struct {
-					PrivateIpAddress    string `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-					Primary             bool   `json:"Primary" xml:"Primary"`
+					PrivateIpAddress    string           `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+					Primary             requests.Boolean `json:"Primary" xml:"Primary"`
 					AssociatedPublicIp1 struct {
 						PublicIpAddress string `json:"PublicIpAddress" xml:"PublicIpAddress"`
 						AllocationId    string `json:"AllocationId" xml:"AllocationId"`

@@ -64,55 +64,55 @@ func (client *Client) DescribeScalingInstancesWithCallback(request *DescribeScal
 
 type DescribeScalingInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize               string `position:"Query" name:"PageSize"`
-	CreationType           string `position:"Query" name:"CreationType"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceId10           string `position:"Query" name:"InstanceId.10"`
-	HealthStatus           string `position:"Query" name:"HealthStatus"`
-	InstanceId12           string `position:"Query" name:"InstanceId.12"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	InstanceId11           string `position:"Query" name:"InstanceId.11"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	InstanceId19           string `position:"Query" name:"InstanceId.19"`
-	InstanceId17           string `position:"Query" name:"InstanceId.17"`
-	InstanceId18           string `position:"Query" name:"InstanceId.18"`
-	InstanceId15           string `position:"Query" name:"InstanceId.15"`
-	InstanceId6            string `position:"Query" name:"InstanceId.6"`
-	InstanceId16           string `position:"Query" name:"InstanceId.16"`
-	PageNumber             string `position:"Query" name:"PageNumber"`
-	InstanceId7            string `position:"Query" name:"InstanceId.7"`
-	InstanceId13           string `position:"Query" name:"InstanceId.13"`
-	ScalingConfigurationId string `position:"Query" name:"ScalingConfigurationId"`
-	InstanceId8            string `position:"Query" name:"InstanceId.8"`
-	InstanceId14           string `position:"Query" name:"InstanceId.14"`
-	InstanceId9            string `position:"Query" name:"InstanceId.9"`
-	InstanceId2            string `position:"Query" name:"InstanceId.2"`
-	InstanceId3            string `position:"Query" name:"InstanceId.3"`
-	InstanceId4            string `position:"Query" name:"InstanceId.4"`
-	InstanceId5            string `position:"Query" name:"InstanceId.5"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
-	ScalingGroupId         string `position:"Query" name:"ScalingGroupId"`
-	InstanceId1            string `position:"Query" name:"InstanceId.1"`
-	LifecycleState         string `position:"Query" name:"LifecycleState"`
-	InstanceId20           string `position:"Query" name:"InstanceId.20"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	CreationType           string           `position:"Query" name:"CreationType"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceId10           string           `position:"Query" name:"InstanceId.10"`
+	HealthStatus           string           `position:"Query" name:"HealthStatus"`
+	InstanceId12           string           `position:"Query" name:"InstanceId.12"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId11           string           `position:"Query" name:"InstanceId.11"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	InstanceId19           string           `position:"Query" name:"InstanceId.19"`
+	InstanceId17           string           `position:"Query" name:"InstanceId.17"`
+	InstanceId18           string           `position:"Query" name:"InstanceId.18"`
+	InstanceId15           string           `position:"Query" name:"InstanceId.15"`
+	InstanceId6            string           `position:"Query" name:"InstanceId.6"`
+	InstanceId16           string           `position:"Query" name:"InstanceId.16"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId7            string           `position:"Query" name:"InstanceId.7"`
+	InstanceId13           string           `position:"Query" name:"InstanceId.13"`
+	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
+	InstanceId8            string           `position:"Query" name:"InstanceId.8"`
+	InstanceId14           string           `position:"Query" name:"InstanceId.14"`
+	InstanceId9            string           `position:"Query" name:"InstanceId.9"`
+	InstanceId2            string           `position:"Query" name:"InstanceId.2"`
+	InstanceId3            string           `position:"Query" name:"InstanceId.3"`
+	InstanceId4            string           `position:"Query" name:"InstanceId.4"`
+	InstanceId5            string           `position:"Query" name:"InstanceId.5"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
+	InstanceId1            string           `position:"Query" name:"InstanceId.1"`
+	LifecycleState         string           `position:"Query" name:"LifecycleState"`
+	InstanceId20           string           `position:"Query" name:"InstanceId.20"`
 }
 
 type DescribeScalingInstancesResponse struct {
 	*responses.BaseResponse
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalCount       requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	ScalingInstances struct {
 		ScalingInstance []struct {
-			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-			ScalingConfigurationId string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-			ScalingGroupId         string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			HealthStatus           string `json:"HealthStatus" xml:"HealthStatus"`
-			LoadBalancerWeight     int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-			LifecycleState         string `json:"LifecycleState" xml:"LifecycleState"`
-			CreationTime           string `json:"CreationTime" xml:"CreationTime"`
-			CreationType           string `json:"CreationType" xml:"CreationType"`
+			InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
+			ScalingConfigurationId string           `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
+			ScalingGroupId         string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			HealthStatus           string           `json:"HealthStatus" xml:"HealthStatus"`
+			LoadBalancerWeight     requests.Integer `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
+			LifecycleState         string           `json:"LifecycleState" xml:"LifecycleState"`
+			CreationTime           string           `json:"CreationTime" xml:"CreationTime"`
+			CreationType           string           `json:"CreationType" xml:"CreationType"`
 		} `json:"ScalingInstance" xml:"ScalingInstance"`
 	} `json:"ScalingInstances" xml:"ScalingInstances"`
 }

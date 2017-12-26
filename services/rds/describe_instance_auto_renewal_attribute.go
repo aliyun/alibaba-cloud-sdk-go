@@ -64,30 +64,30 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *
 
 type DescribeInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceAutoRenewalAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		Item []struct {
-			DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			Duration     int    `json:"Duration" xml:"Duration"`
-			Status       string `json:"Status" xml:"Status"`
-			AutoRenew    string `json:"AutoRenew" xml:"AutoRenew"`
+			DBInstanceId string           `json:"DBInstanceId" xml:"DBInstanceId"`
+			RegionId     string           `json:"RegionId" xml:"RegionId"`
+			Duration     requests.Integer `json:"Duration" xml:"Duration"`
+			Status       string           `json:"Status" xml:"Status"`
+			AutoRenew    string           `json:"AutoRenew" xml:"AutoRenew"`
 		} `json:"Item" xml:"Item"`
 	} `json:"Items" xml:"Items"`
 }

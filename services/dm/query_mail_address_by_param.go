@@ -64,21 +64,21 @@ func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddr
 
 type QueryMailAddressByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Sendtype             string `position:"Query" name:"Sendtype"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Sendtype             string           `position:"Query" name:"Sendtype"`
 }
 
 type QueryMailAddressByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		MailAddress []struct {
 			MailAddressId string `json:"MailAddressId" xml:"MailAddressId"`

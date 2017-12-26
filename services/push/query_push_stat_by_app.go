@@ -64,10 +64,10 @@ func (client *Client) QueryPushStatByAppWithCallback(request *QueryPushStatByApp
 
 type QueryPushStatByAppRequest struct {
 	*requests.RpcRequest
-	EndTime     string `position:"Query" name:"EndTime"`
-	StartTime   string `position:"Query" name:"StartTime"`
-	Granularity string `position:"Query" name:"Granularity"`
-	AppKey      string `position:"Query" name:"AppKey"`
+	EndTime     string           `position:"Query" name:"EndTime"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	Granularity string           `position:"Query" name:"Granularity"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type QueryPushStatByAppResponse struct {
@@ -75,17 +75,17 @@ type QueryPushStatByAppResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	AppPushStats struct {
 		AppPushStat []struct {
-			Time                   string `json:"Time" xml:"Time"`
-			AcceptCount            int64  `json:"AcceptCount" xml:"AcceptCount"`
-			SentCount              int64  `json:"SentCount" xml:"SentCount"`
-			ReceivedCount          int64  `json:"ReceivedCount" xml:"ReceivedCount"`
-			OpenedCount            int64  `json:"OpenedCount" xml:"OpenedCount"`
-			DeletedCount           int64  `json:"DeletedCount" xml:"DeletedCount"`
-			SmsSentCount           int64  `json:"SmsSentCount" xml:"SmsSentCount"`
-			SmsSkipCount           int64  `json:"SmsSkipCount" xml:"SmsSkipCount"`
-			SmsFailedCount         int64  `json:"SmsFailedCount" xml:"SmsFailedCount"`
-			SmsReceiveSuccessCount int64  `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
-			SmsReceiveFailedCount  int64  `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
+			Time                   string           `json:"Time" xml:"Time"`
+			AcceptCount            requests.Integer `json:"AcceptCount" xml:"AcceptCount"`
+			SentCount              requests.Integer `json:"SentCount" xml:"SentCount"`
+			ReceivedCount          requests.Integer `json:"ReceivedCount" xml:"ReceivedCount"`
+			OpenedCount            requests.Integer `json:"OpenedCount" xml:"OpenedCount"`
+			DeletedCount           requests.Integer `json:"DeletedCount" xml:"DeletedCount"`
+			SmsSentCount           requests.Integer `json:"SmsSentCount" xml:"SmsSentCount"`
+			SmsSkipCount           requests.Integer `json:"SmsSkipCount" xml:"SmsSkipCount"`
+			SmsFailedCount         requests.Integer `json:"SmsFailedCount" xml:"SmsFailedCount"`
+			SmsReceiveSuccessCount requests.Integer `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
+			SmsReceiveFailedCount  requests.Integer `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
 		} `json:"AppPushStat" xml:"AppPushStat"`
 	} `json:"AppPushStats" xml:"AppPushStats"`
 }

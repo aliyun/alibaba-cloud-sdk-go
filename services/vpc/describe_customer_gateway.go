@@ -64,21 +64,21 @@ func (client *Client) DescribeCustomerGatewayWithCallback(request *DescribeCusto
 
 type DescribeCustomerGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeCustomerGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	IpAddress         string `json:"IpAddress" xml:"IpAddress"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	CustomerGatewayId string           `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	IpAddress         string           `json:"IpAddress" xml:"IpAddress"`
+	Name              string           `json:"Name" xml:"Name"`
+	Description       string           `json:"Description" xml:"Description"`
+	CreateTime        requests.Integer `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayRequest) {

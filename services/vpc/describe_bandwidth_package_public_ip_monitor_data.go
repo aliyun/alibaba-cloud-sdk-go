@@ -64,14 +64,14 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(re
 
 type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AllocationId         string `position:"Query" name:"AllocationId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
 }
 
 type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
@@ -79,14 +79,14 @@ type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	MonitorDatas struct {
 		MonitorData []struct {
-			RX                   int64  `json:"RX" xml:"RX"`
-			TX                   int64  `json:"TX" xml:"TX"`
-			ReceivedBandwidth    int64  `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
-			TransportedBandwidth int64  `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
-			Flow                 int64  `json:"Flow" xml:"Flow"`
-			Bandwidth            int64  `json:"Bandwidth" xml:"Bandwidth"`
-			Packets              int64  `json:"Packets" xml:"Packets"`
-			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
+			RX                   requests.Integer `json:"RX" xml:"RX"`
+			TX                   requests.Integer `json:"TX" xml:"TX"`
+			ReceivedBandwidth    requests.Integer `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
+			TransportedBandwidth requests.Integer `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
+			Flow                 requests.Integer `json:"Flow" xml:"Flow"`
+			Bandwidth            requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
+			Packets              requests.Integer `json:"Packets" xml:"Packets"`
+			TimeStamp            string           `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"MonitorData" xml:"MonitorData"`
 	} `json:"MonitorDatas" xml:"MonitorDatas"`
 }

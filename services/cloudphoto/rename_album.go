@@ -64,18 +64,18 @@ func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callb
 
 type RenameAlbumRequest struct {
 	*requests.RpcRequest
-	AlbumName string `position:"Query" name:"AlbumName"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	AlbumId   string `position:"Query" name:"AlbumId"`
-	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	AlbumName string           `position:"Query" name:"AlbumName"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
 }
 
 type RenameAlbumResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {

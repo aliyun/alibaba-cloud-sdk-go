@@ -64,11 +64,11 @@ func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *Descr
 
 type DescribeSecurityGroupReferencesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      *[]string `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSecurityGroupReferencesResponse struct {

@@ -64,32 +64,32 @@ func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequ
 
 type QueryTaskByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryTaskByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Task []struct {
-			TaskId        string `json:"TaskId" xml:"TaskId"`
-			ReceiversName string `json:"ReceiversName" xml:"ReceiversName"`
-			TemplateName  string `json:"TemplateName" xml:"TemplateName"`
-			TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			AddressType   string `json:"AddressType" xml:"AddressType"`
-			TagName       string `json:"TagName" xml:"TagName"`
-			RequestCount  string `json:"RequestCount" xml:"RequestCount"`
+			TaskId        string           `json:"TaskId" xml:"TaskId"`
+			ReceiversName string           `json:"ReceiversName" xml:"ReceiversName"`
+			TemplateName  string           `json:"TemplateName" xml:"TemplateName"`
+			TaskStatus    string           `json:"TaskStatus" xml:"TaskStatus"`
+			CreateTime    string           `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			AddressType   string           `json:"AddressType" xml:"AddressType"`
+			TagName       string           `json:"TagName" xml:"TagName"`
+			RequestCount  string           `json:"RequestCount" xml:"RequestCount"`
 		} `json:"task" xml:"task"`
 	} `json:"data" xml:"data"`
 }

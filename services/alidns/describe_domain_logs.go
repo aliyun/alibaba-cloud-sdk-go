@@ -64,30 +64,30 @@ func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogs
 
 type DescribeDomainLogsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	StartDate    string `position:"Query" name:"StartDate"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	EndDate      string `position:"Query" name:"endDate"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StartDate    string           `position:"Query" name:"StartDate"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	GroupId      string           `position:"Query" name:"GroupId"`
+	EndDate      string           `position:"Query" name:"endDate"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	DomainLogs struct {
 		DomainLog []struct {
-			ActionTime      string `json:"ActionTime" xml:"ActionTime"`
-			ActionTimestamp int64  `json:"ActionTimestamp" xml:"ActionTimestamp"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			Action          string `json:"Action" xml:"Action"`
-			Message         string `json:"Message" xml:"Message"`
-			ClientIp        string `json:"ClientIp" xml:"ClientIp"`
+			ActionTime      string           `json:"ActionTime" xml:"ActionTime"`
+			ActionTimestamp requests.Integer `json:"ActionTimestamp" xml:"ActionTimestamp"`
+			DomainName      string           `json:"DomainName" xml:"DomainName"`
+			Action          string           `json:"Action" xml:"Action"`
+			Message         string           `json:"Message" xml:"Message"`
+			ClientIp        string           `json:"ClientIp" xml:"ClientIp"`
 		} `json:"DomainLog" xml:"DomainLog"`
 	} `json:"DomainLogs" xml:"DomainLogs"`
 }

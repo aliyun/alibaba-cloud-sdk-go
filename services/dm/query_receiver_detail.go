@@ -64,27 +64,27 @@ func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDeta
 
 type QueryReceiverDetailRequest struct {
 	*requests.RpcRequest
-	NextStart            string `position:"Query" name:"NextStart"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ReceiverId           string `position:"Query" name:"ReceiverId"`
+	NextStart            string           `position:"Query" name:"NextStart"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReceiverId           string           `position:"Query" name:"ReceiverId"`
 }
 
 type QueryReceiverDetailResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	NextStart  string `json:"NextStart" xml:"NextStart"`
-	DataSchema string `json:"DataSchema" xml:"DataSchema"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string           `json:"NextStart" xml:"NextStart"`
+	DataSchema string           `json:"DataSchema" xml:"DataSchema"`
 	Data       struct {
 		Detail []struct {
-			Email         string `json:"Email" xml:"Email"`
-			Data          string `json:"Data" xml:"Data"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			Email         string           `json:"Email" xml:"Email"`
+			Data          string           `json:"Data" xml:"Data"`
+			CreateTime    string           `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
 		} `json:"detail" xml:"detail"`
 	} `json:"data" xml:"data"`
 }

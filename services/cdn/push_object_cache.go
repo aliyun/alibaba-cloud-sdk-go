@@ -64,17 +64,15 @@ func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheReques
 
 type PushObjectCacheRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ObjectPath    string `position:"Query" name:"ObjectPath"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	ObjectPath    string           `position:"Query" name:"ObjectPath"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type PushObjectCacheResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	PushTaskId string `json:"PushTaskId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PushTaskId string `json:"PushTaskId" xml:"PushTaskId"`
 }
 
 func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {

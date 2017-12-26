@@ -64,15 +64,15 @@ func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callbac
 
 type ListGroupsRequest struct {
 	*requests.RpcRequest
-	Marker   string `position:"Query" name:"Marker"`
-	MaxItems string `position:"Query" name:"MaxItems"`
+	Marker   string           `position:"Query" name:"Marker"`
+	MaxItems requests.Integer `position:"Query" name:"MaxItems"`
 }
 
 type ListGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	IsTruncated requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string           `json:"Marker" xml:"Marker"`
 	Groups      struct {
 		Group []struct {
 			GroupName  string `json:"GroupName" xml:"GroupName"`

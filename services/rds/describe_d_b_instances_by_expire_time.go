@@ -64,24 +64,24 @@ func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *Descr
 
 type DescribeDBInstancesByExpireTimeRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	Expired              string `position:"Query" name:"Expired"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ExpirePeriod         string `position:"Query" name:"ExpirePeriod"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	Expired              requests.Boolean `position:"Query" name:"Expired"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ExpirePeriod         requests.Integer `position:"Query" name:"ExpirePeriod"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDBInstancesByExpireTimeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		DBInstanceExpireTime []struct {
 			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`

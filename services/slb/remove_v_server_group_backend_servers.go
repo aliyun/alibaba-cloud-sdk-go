@@ -64,14 +64,14 @@ func (client *Client) RemoveVServerGroupBackendServersWithCallback(request *Remo
 
 type RemoveVServerGroupBackendServersRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BackendServers       string `position:"Query" name:"BackendServers"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
 type RemoveVServerGroupBackendServersResponse struct {
@@ -80,9 +80,9 @@ type RemoveVServerGroupBackendServersResponse struct {
 	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
 	BackendServers struct {
 		BackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Port     int    `json:"Port" xml:"Port"`
-			Weight   int    `json:"Weight" xml:"Weight"`
+			ServerId string           `json:"ServerId" xml:"ServerId"`
+			Port     requests.Integer `json:"Port" xml:"Port"`
+			Weight   requests.Integer `json:"Weight" xml:"Weight"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

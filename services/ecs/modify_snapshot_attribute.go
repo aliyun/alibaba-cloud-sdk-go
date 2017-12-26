@@ -64,13 +64,13 @@ func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapsho
 
 type ModifySnapshotAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string `position:"Query" name:"SnapshotId"`
-	Description          string `position:"Query" name:"Description"`
-	SnapshotName         string `position:"Query" name:"SnapshotName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	Description          string           `position:"Query" name:"Description"`
+	SnapshotName         string           `position:"Query" name:"SnapshotName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifySnapshotAttributeResponse struct {

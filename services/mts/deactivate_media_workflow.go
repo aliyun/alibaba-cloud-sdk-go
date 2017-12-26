@@ -64,25 +64,23 @@ func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMed
 
 type DeactivateMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	MediaWorkflowId      string `position:"Query" name:"MediaWorkflowId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type DeactivateMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId"`
-		Name            string `json:"Name"`
-		Topology        string `json:"Topology"`
-		State           string `json:"State"`
-		CreationTime    string `json:"CreationTime"`
-	} `json:"MediaWorkflow"`
+		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+		Name            string `json:"Name" xml:"Name"`
+		Topology        string `json:"Topology" xml:"Topology"`
+		State           string `json:"State" xml:"State"`
+		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
 func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {

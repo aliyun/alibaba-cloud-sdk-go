@@ -64,26 +64,26 @@ func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSyste
 
 type DescribeFileSystemsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	FileSystemId string `position:"Query" name:"FileSystemId"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemId string           `position:"Query" name:"FileSystemId"`
 }
 
 type DescribeFileSystemsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
 	FileSystems struct {
 		FileSystem []struct {
-			FileSystemId string `json:"FileSystemId" xml:"FileSystemId"`
-			Destription  string `json:"Destription" xml:"Destription"`
-			CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			ProtocolType string `json:"ProtocolType" xml:"ProtocolType"`
-			StorageType  string `json:"StorageType" xml:"StorageType"`
-			MeteredSize  int64  `json:"MeteredSize" xml:"MeteredSize"`
+			FileSystemId string           `json:"FileSystemId" xml:"FileSystemId"`
+			Destription  string           `json:"Destription" xml:"Destription"`
+			CreateTime   string           `json:"CreateTime" xml:"CreateTime"`
+			RegionId     string           `json:"RegionId" xml:"RegionId"`
+			ProtocolType string           `json:"ProtocolType" xml:"ProtocolType"`
+			StorageType  string           `json:"StorageType" xml:"StorageType"`
+			MeteredSize  requests.Integer `json:"MeteredSize" xml:"MeteredSize"`
 			MountTargets struct {
 				MountTarget []struct {
 					MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`

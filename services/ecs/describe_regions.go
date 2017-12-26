@@ -64,10 +64,12 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 }
 
 type DescribeRegionsResponse struct {
@@ -77,6 +79,7 @@ type DescribeRegionsResponse struct {
 		Region []struct {
 			RegionId  string `json:"RegionId" xml:"RegionId"`
 			LocalName string `json:"LocalName" xml:"LocalName"`
+			Status    string `json:"Status" xml:"Status"`
 		} `json:"Region" xml:"Region"`
 	} `json:"Regions" xml:"Regions"`
 }

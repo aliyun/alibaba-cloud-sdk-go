@@ -64,38 +64,38 @@ func (client *Client) DescribeFilesForSQLServerWithCallback(request *DescribeFil
 
 type DescribeFilesForSQLServerRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeFilesForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string           `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLServerUploadFile []struct {
-			DBName            string `json:"DBName" xml:"DBName"`
-			FileName          string `json:"FileName" xml:"FileName"`
-			FileSize          int64  `json:"FileSize" xml:"FileSize"`
-			InternetFtpServer string `json:"InternetFtpServer" xml:"InternetFtpServer"`
-			InternetPort      int    `json:"InternetPort" xml:"InternetPort"`
-			IntranetFtpserver string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
-			Intranetport      int    `json:"Intranetport" xml:"Intranetport"`
-			UserName          string `json:"UserName" xml:"UserName"`
-			Password          string `json:"Password" xml:"Password"`
-			FileStatus        string `json:"FileStatus" xml:"FileStatus"`
-			Description       string `json:"Description" xml:"Description"`
-			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
+			DBName            string           `json:"DBName" xml:"DBName"`
+			FileName          string           `json:"FileName" xml:"FileName"`
+			FileSize          requests.Integer `json:"FileSize" xml:"FileSize"`
+			InternetFtpServer string           `json:"InternetFtpServer" xml:"InternetFtpServer"`
+			InternetPort      requests.Integer `json:"InternetPort" xml:"InternetPort"`
+			IntranetFtpserver string           `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
+			Intranetport      requests.Integer `json:"Intranetport" xml:"Intranetport"`
+			UserName          string           `json:"UserName" xml:"UserName"`
+			Password          string           `json:"Password" xml:"Password"`
+			FileStatus        string           `json:"FileStatus" xml:"FileStatus"`
+			Description       string           `json:"Description" xml:"Description"`
+			CreationTime      string           `json:"CreationTime" xml:"CreationTime"`
 		} `json:"SQLServerUploadFile" xml:"SQLServerUploadFile"`
 	} `json:"Items" xml:"Items"`
 }

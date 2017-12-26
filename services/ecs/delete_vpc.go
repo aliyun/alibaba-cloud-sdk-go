@@ -64,11 +64,11 @@ func (client *Client) DeleteVpcWithCallback(request *DeleteVpcRequest, callback 
 
 type DeleteVpcRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteVpcResponse struct {

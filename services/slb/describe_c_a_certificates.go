@@ -64,13 +64,13 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
-	CACertificateId      string `position:"Query" name:"CACertificateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeCACertificatesResponse struct {
@@ -78,13 +78,13 @@ type DescribeCACertificatesResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	CACertificates struct {
 		CACertificate []struct {
-			RegionId          string `json:"RegionId" xml:"RegionId"`
-			CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
-			CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
-			Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-			ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp   int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+			RegionId          string           `json:"RegionId" xml:"RegionId"`
+			CACertificateId   string           `json:"CACertificateId" xml:"CACertificateId"`
+			CACertificateName string           `json:"CACertificateName" xml:"CACertificateName"`
+			Fingerprint       string           `json:"Fingerprint" xml:"Fingerprint"`
+			ResourceGroupId   string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			CreateTime        string           `json:"CreateTime" xml:"CreateTime"`
+			CreateTimeStamp   requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 		} `json:"CACertificate" xml:"CACertificate"`
 	} `json:"CACertificates" xml:"CACertificates"`
 }

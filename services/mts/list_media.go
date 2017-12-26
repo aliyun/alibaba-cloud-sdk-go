@@ -64,44 +64,48 @@ func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback 
 
 type ListMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	NextPageToken        string `position:"Query" name:"NextPageToken"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	MaximumPageSize      string `position:"Query" name:"MaximumPageSize"`
-	From                 string `position:"Query" name:"From"`
-	To                   string `position:"Query" name:"To"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	To                   string           `position:"Query" name:"To"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	From                 string           `position:"Query" name:"From"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 }
 
 type ListMediaResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId"`
-	NextPageToken string `json:"NextPageToken"`
-	MediaList     []struct {
-		MediaId      string   `json:"MediaId"`
-		Title        string   `json:"Title"`
-		Description  string   `json:"Description"`
-		CoverURL     string   `json:"CoverURL"`
-		CateId       int64    `json:"CateId"`
-		Duration     string   `json:"Duration"`
-		Format       string   `json:"Format"`
-		Size         string   `json:"Size"`
-		Bitrate      string   `json:"Bitrate"`
-		Width        string   `json:"Width"`
-		Height       string   `json:"Height"`
-		Fps          string   `json:"Fps"`
-		PublishState string   `json:"PublishState"`
-		CreationTime string   `json:"CreationTime"`
-		Tags         []string `json:"Tags"`
-		RunIdList    []string `json:"RunIdList"`
-		File         struct {
-			URL   string `json:"URL"`
-			State string `json:"State"`
-		} `json:"File"`
-	} `json:"MediaList"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	NextPageToken string `json:"NextPageToken" xml:"NextPageToken"`
+	MediaList     struct {
+		Media []struct {
+			MediaId      string           `json:"MediaId" xml:"MediaId"`
+			Title        string           `json:"Title" xml:"Title"`
+			Description  string           `json:"Description" xml:"Description"`
+			CoverURL     string           `json:"CoverURL" xml:"CoverURL"`
+			CateId       requests.Integer `json:"CateId" xml:"CateId"`
+			Duration     string           `json:"Duration" xml:"Duration"`
+			Format       string           `json:"Format" xml:"Format"`
+			Size         string           `json:"Size" xml:"Size"`
+			Bitrate      string           `json:"Bitrate" xml:"Bitrate"`
+			Width        string           `json:"Width" xml:"Width"`
+			Height       string           `json:"Height" xml:"Height"`
+			Fps          string           `json:"Fps" xml:"Fps"`
+			PublishState string           `json:"PublishState" xml:"PublishState"`
+			CreationTime string           `json:"CreationTime" xml:"CreationTime"`
+			Tags         struct {
+				Tag []string `json:"Tag" xml:"Tag"`
+			} `json:"Tags" xml:"Tags"`
+			RunIdList struct {
+				RunId []string `json:"RunId" xml:"RunId"`
+			} `json:"RunIdList" xml:"RunIdList"`
+			File struct {
+				URL   string `json:"URL" xml:"URL"`
+				State string `json:"State" xml:"State"`
+			} `json:"File" xml:"File"`
+		} `json:"Media" xml:"Media"`
+	} `json:"MediaList" xml:"MediaList"`
 }
 
 func CreateListMediaRequest() (request *ListMediaRequest) {

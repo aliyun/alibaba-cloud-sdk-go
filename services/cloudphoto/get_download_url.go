@@ -64,18 +64,18 @@ func (client *Client) GetDownloadUrlWithCallback(request *GetDownloadUrlRequest,
 
 type GetDownloadUrlRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type GetDownloadUrlResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code"`
-	Message     string `json:"Message"`
-	DownloadUrl string `json:"DownloadUrl"`
-	RequestId   string `json:"RequestId"`
-	Action      string `json:"Action"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Action      string `json:"Action" xml:"Action"`
 }
 
 func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {

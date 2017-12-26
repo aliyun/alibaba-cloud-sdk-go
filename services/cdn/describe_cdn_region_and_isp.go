@@ -64,23 +64,25 @@ func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRe
 
 type DescribeCdnRegionAndIspRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeCdnRegionAndIspResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	Regions   []struct {
-		NameZh string `json:"NameZh"`
-		NameEn string `json:"NameEn"`
-	} `json:"Regions"`
-	Isps []struct {
-		NameZh string `json:"NameZh"`
-		NameEn string `json:"NameEn"`
-	} `json:"Isps"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Regions   struct {
+		Region []struct {
+			NameZh string `json:"NameZh" xml:"NameZh"`
+			NameEn string `json:"NameEn" xml:"NameEn"`
+		} `json:"Region" xml:"Region"`
+	} `json:"Regions" xml:"Regions"`
+	Isps struct {
+		Isp []struct {
+			NameZh string `json:"NameZh" xml:"NameZh"`
+			NameEn string `json:"NameEn" xml:"NameEn"`
+		} `json:"Isp" xml:"Isp"`
+	} `json:"Isps" xml:"Isps"`
 }
 
 func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {

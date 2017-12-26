@@ -64,26 +64,26 @@ func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAtt
 
 type DescribeTaskAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	TaskId               string `position:"Query" name:"TaskId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TaskId               string           `position:"Query" name:"TaskId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeTaskAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TaskId               string `json:"TaskId" xml:"TaskId"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
-	TaskStatus           string `json:"TaskStatus" xml:"TaskStatus"`
-	TaskProcess          string `json:"TaskProcess" xml:"TaskProcess"`
-	SupportCancel        string `json:"SupportCancel" xml:"SupportCancel"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	SuccessCount         int    `json:"SuccessCount" xml:"SuccessCount"`
-	FailedCount          int    `json:"FailedCount" xml:"FailedCount"`
-	CreationTime         string `json:"CreationTime" xml:"CreationTime"`
-	FinishedTime         string `json:"FinishedTime" xml:"FinishedTime"`
+	RequestId            string           `json:"RequestId" xml:"RequestId"`
+	TaskId               string           `json:"TaskId" xml:"TaskId"`
+	RegionId             string           `json:"RegionId" xml:"RegionId"`
+	TaskAction           string           `json:"TaskAction" xml:"TaskAction"`
+	TaskStatus           string           `json:"TaskStatus" xml:"TaskStatus"`
+	TaskProcess          string           `json:"TaskProcess" xml:"TaskProcess"`
+	SupportCancel        string           `json:"SupportCancel" xml:"SupportCancel"`
+	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	SuccessCount         requests.Integer `json:"SuccessCount" xml:"SuccessCount"`
+	FailedCount          requests.Integer `json:"FailedCount" xml:"FailedCount"`
+	CreationTime         string           `json:"CreationTime" xml:"CreationTime"`
+	FinishedTime         string           `json:"FinishedTime" xml:"FinishedTime"`
 	OperationProgressSet struct {
 		OperationProgress []struct {
 			OperationStatus string `json:"OperationStatus" xml:"OperationStatus"`

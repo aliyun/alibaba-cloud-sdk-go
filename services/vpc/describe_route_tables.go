@@ -64,26 +64,26 @@ func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTabl
 
 type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	RouteTableId         string `position:"Query" name:"RouteTableId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Type                 string `position:"Query" name:"Type"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VRouterId            string `position:"Query" name:"VRouterId"`
-	RouterId             string `position:"Query" name:"RouterId"`
-	RouterType           string `position:"Query" name:"RouterType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string `position:"Query" name:"RouteTableName"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VRouterId            string           `position:"Query" name:"VRouterId"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeRouteTablesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
 	RouteTables struct {
 		RouteTable []struct {
 			VRouterId      string `json:"VRouterId" xml:"VRouterId"`
@@ -98,12 +98,14 @@ type DescribeRouteTablesResponse struct {
 					Status               string `json:"Status" xml:"Status"`
 					InstanceId           string `json:"InstanceId" xml:"InstanceId"`
 					NextHopType          string `json:"NextHopType" xml:"NextHopType"`
+					NextHopRegionId      string `json:"NextHopRegionId" xml:"NextHopRegionId"`
 					NextHops             struct {
 						NextHop []struct {
-							NextHopType string `json:"NextHopType" xml:"NextHopType"`
-							NextHopId   string `json:"NextHopId" xml:"NextHopId"`
-							Enabled     int    `json:"Enabled" xml:"Enabled"`
-							Weight      int    `json:"Weight" xml:"Weight"`
+							NextHopType     string           `json:"NextHopType" xml:"NextHopType"`
+							NextHopId       string           `json:"NextHopId" xml:"NextHopId"`
+							Enabled         requests.Integer `json:"Enabled" xml:"Enabled"`
+							Weight          requests.Integer `json:"Weight" xml:"Weight"`
+							NextHopRegionId string           `json:"NextHopRegionId" xml:"NextHopRegionId"`
 						} `json:"NextHop" xml:"NextHop"`
 					} `json:"NextHops" xml:"NextHops"`
 				} `json:"RouteEntry" xml:"RouteEntry"`

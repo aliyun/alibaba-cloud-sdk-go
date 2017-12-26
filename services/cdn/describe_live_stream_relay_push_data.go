@@ -64,27 +64,27 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *Descr
 
 type DescribeLiveStreamRelayPushDataRequest struct {
 	*requests.RpcRequest
-	RelayDomain   string `position:"Query" name:"RelayDomain"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	RelayDomain   string           `position:"Query" name:"RelayDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamRelayPushDataResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId"`
-	RelayPushDetailModelList []struct {
-		Time          string  `json:"Time"`
-		Stream        string  `json:"Stream"`
-		FrameRate     float64 `json:"FrameRate"`
-		BitRate       float64 `json:"BitRate"`
-		FrameLossRate float64 `json:"FrameLossRate"`
-		ServerAddr    string  `json:"ServerAddr"`
-		ClientAddr    string  `json:"ClientAddr"`
-	} `json:"RelayPushDetailModelList"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	RelayPushDetailModelList struct {
+		RelayPushDetailModel []struct {
+			Time          string         `json:"Time" xml:"Time"`
+			Stream        string         `json:"Stream" xml:"Stream"`
+			FrameRate     requests.Float `json:"FrameRate" xml:"FrameRate"`
+			BitRate       requests.Float `json:"BitRate" xml:"BitRate"`
+			FrameLossRate requests.Float `json:"FrameLossRate" xml:"FrameLossRate"`
+			ServerAddr    string         `json:"ServerAddr" xml:"ServerAddr"`
+			ClientAddr    string         `json:"ClientAddr" xml:"ClientAddr"`
+		} `json:"RelayPushDetailModel" xml:"RelayPushDetailModel"`
+	} `json:"RelayPushDetailModelList" xml:"RelayPushDetailModelList"`
 }
 
 func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStreamRelayPushDataRequest) {

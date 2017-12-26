@@ -64,24 +64,24 @@ func (client *Client) CreatePhysicalConnectionNewWithCallback(request *CreatePhy
 
 type CreatePhysicalConnectionNewRequest struct {
 	*requests.RpcRequest
-	PeerLocation                  string `position:"Query" name:"PeerLocation"`
-	ClientToken                   string `position:"Query" name:"ClientToken"`
-	UserCidr                      string `position:"Query" name:"UserCidr"`
-	InterfaceName                 string `position:"Query" name:"InterfaceName"`
-	AccessPointId                 string `position:"Query" name:"AccessPointId"`
-	RedundantPhysicalConnectionId string `position:"Query" name:"RedundantPhysicalConnectionId"`
-	OwnerId                       string `position:"Query" name:"OwnerId"`
-	Type                          string `position:"Query" name:"Type"`
-	Bandwidth                     string `position:"Query" name:"bandwidth"`
-	LineOperator                  string `position:"Query" name:"LineOperator"`
-	CircuitCode                   string `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string `position:"Query" name:"ResourceOwnerAccount"`
-	Description                   string `position:"Query" name:"Description"`
-	PortType                      string `position:"Query" name:"PortType"`
-	Name                          string `position:"Query" name:"Name"`
-	DeviceName                    string `position:"Query" name:"DeviceName"`
-	ResourceOwnerId               string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                  string `position:"Query" name:"OwnerAccount"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	UserCidr                      string           `position:"Query" name:"UserCidr"`
+	InterfaceName                 string           `position:"Query" name:"InterfaceName"`
+	AccessPointId                 string           `position:"Query" name:"AccessPointId"`
+	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	Type                          string           `position:"Query" name:"Type"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	LineOperator                  string           `position:"Query" name:"LineOperator"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description                   string           `position:"Query" name:"Description"`
+	PortType                      string           `position:"Query" name:"PortType"`
+	Name                          string           `position:"Query" name:"Name"`
+	DeviceName                    string           `position:"Query" name:"DeviceName"`
+	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreatePhysicalConnectionNewResponse struct {

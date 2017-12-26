@@ -64,18 +64,18 @@ func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequ
 
 type CreatePhotoStoreRequest struct {
 	*requests.RpcRequest
-	BucketName   string `position:"Query" name:"BucketName"`
-	StoreName    string `position:"Query" name:"StoreName"`
-	Remark       string `position:"Query" name:"Remark"`
-	DefaultQuota string `position:"Query" name:"DefaultQuota"`
+	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
+	BucketName   string           `position:"Query" name:"BucketName"`
+	Remark       string           `position:"Query" name:"Remark"`
+	StoreName    string           `position:"Query" name:"StoreName"`
 }
 
 type CreatePhotoStoreResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {

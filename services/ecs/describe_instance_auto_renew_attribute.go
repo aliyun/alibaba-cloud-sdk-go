@@ -64,11 +64,11 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInstanceAutoRenewAttributeResponse struct {
@@ -76,11 +76,11 @@ type DescribeInstanceAutoRenewAttributeResponse struct {
 	RequestId               string `json:"RequestId" xml:"RequestId"`
 	InstanceRenewAttributes struct {
 		InstanceRenewAttribute []struct {
-			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-			AutoRenewEnabled bool   `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
-			Duration         int    `json:"Duration" xml:"Duration"`
-			PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
-			RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
+			InstanceId       string           `json:"InstanceId" xml:"InstanceId"`
+			AutoRenewEnabled requests.Boolean `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
+			Duration         requests.Integer `json:"Duration" xml:"Duration"`
+			PeriodUnit       string           `json:"PeriodUnit" xml:"PeriodUnit"`
+			RenewalStatus    string           `json:"RenewalStatus" xml:"RenewalStatus"`
 		} `json:"InstanceRenewAttribute" xml:"InstanceRenewAttribute"`
 	} `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }

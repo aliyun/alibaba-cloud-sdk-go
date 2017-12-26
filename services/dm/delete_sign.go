@@ -64,11 +64,11 @@ func (client *Client) DeleteSignWithCallback(request *DeleteSignRequest, callbac
 
 type DeleteSignRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SignId               string `position:"Query" name:"SignId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SignId               requests.Integer `position:"Query" name:"SignId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type DeleteSignResponse struct {

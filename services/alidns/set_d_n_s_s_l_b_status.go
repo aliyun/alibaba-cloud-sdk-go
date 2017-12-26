@@ -64,17 +64,17 @@ func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusReques
 
 type SetDNSSLBStatusRequest struct {
 	*requests.RpcRequest
-	Open         string `position:"Query" name:"Open"`
-	SubDomain    string `position:"Query" name:"SubDomain"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	Open         requests.Boolean `position:"Query" name:"Open"`
+	SubDomain    string           `position:"Query" name:"SubDomain"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type SetDNSSLBStatusResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RecordCount int64  `json:"RecordCount" xml:"RecordCount"`
-	Open        bool   `json:"Open" xml:"Open"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	RecordCount requests.Integer `json:"RecordCount" xml:"RecordCount"`
+	Open        requests.Boolean `json:"Open" xml:"Open"`
 }
 
 func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {

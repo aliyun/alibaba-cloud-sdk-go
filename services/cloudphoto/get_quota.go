@@ -70,17 +70,17 @@ type GetQuotaRequest struct {
 
 type GetQuotaResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Quota     struct {
-		TotalQuota  int64 `json:"TotalQuota"`
-		FacesCount  int   `json:"FacesCount"`
-		PhotosCount int   `json:"PhotosCount"`
-		UsedQuota   int64 `json:"UsedQuota"`
-		VideosCount int   `json:"VideosCount"`
-	} `json:"Quota"`
+		TotalQuota  requests.Integer `json:"TotalQuota" xml:"TotalQuota"`
+		FacesCount  requests.Integer `json:"FacesCount" xml:"FacesCount"`
+		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		UsedQuota   requests.Integer `json:"UsedQuota" xml:"UsedQuota"`
+		VideosCount requests.Integer `json:"VideosCount" xml:"VideosCount"`
+	} `json:"Quota" xml:"Quota"`
 }
 
 func CreateGetQuotaRequest() (request *GetQuotaRequest) {

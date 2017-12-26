@@ -64,11 +64,12 @@ func (client *Client) DescribeDBInstanceIPArrayListWithCallback(request *Describ
 
 type DescribeDBInstanceIPArrayListRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	WhitelistNetType     string           `position:"Query" name:"WhitelistNetType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceIPArrayListResponse struct {
@@ -79,6 +80,7 @@ type DescribeDBInstanceIPArrayListResponse struct {
 			DBInstanceIPArrayName      string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
 			DBInstanceIPArrayAttribute string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
 			SecurityIPList             string `json:"SecurityIPList" xml:"SecurityIPList"`
+			WhitelistNetType           string `json:"WhitelistNetType" xml:"WhitelistNetType"`
 		} `json:"DBInstanceIPArray" xml:"DBInstanceIPArray"`
 	} `json:"Items" xml:"Items"`
 }

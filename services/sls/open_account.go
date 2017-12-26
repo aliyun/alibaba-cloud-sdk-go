@@ -64,8 +64,8 @@ func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callb
 
 type OpenAccountRequest struct {
 	*requests.RpcRequest
-	AliUid string `position:"Query" name:"AliUid"`
-	Bid    string `position:"Query" name:"Bid"`
+	AliUid requests.Integer `position:"Query" name:"AliUid"`
+	Bid    string           `position:"Query" name:"Bid"`
 }
 
 type OpenAccountResponse struct {

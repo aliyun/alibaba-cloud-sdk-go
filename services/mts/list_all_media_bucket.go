@@ -64,21 +64,21 @@ func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucket
 
 type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ListAllMediaBucketResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId"`
-	MediaBucketList []struct {
-		Bucket string `json:"Bucket"`
-		Type   string `json:"Type"`
-	} `json:"MediaBucketList"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	MediaBucketList struct {
+		MediaBucket []struct {
+			Bucket string `json:"Bucket" xml:"Bucket"`
+			Type   string `json:"Type" xml:"Type"`
+		} `json:"MediaBucket" xml:"MediaBucket"`
+	} `json:"MediaBucketList" xml:"MediaBucketList"`
 }
 
 func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {

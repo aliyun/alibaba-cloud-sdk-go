@@ -64,60 +64,61 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	SourceDiskType       string `position:"Query" name:"SourceDiskType"`
-	Filter2Key           string `position:"Query" name:"Filter.2.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Filter2Value         string `position:"Query" name:"Filter.2.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Filter1Value         string `position:"Query" name:"Filter.1.Value"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	SnapshotType         string `position:"Query" name:"SnapshotType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	SnapshotIds          string `position:"Query" name:"SnapshotIds"`
-	Status               string `position:"Query" name:"Status"`
-	SnapshotName         string `position:"Query" name:"SnapshotName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	SnapshotLinkId       string `position:"Query" name:"SnapshotLinkId"`
-	Encrypted            string `position:"Query" name:"Encrypted"`
-	Filter1Key           string `position:"Query" name:"Filter.1.Key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	DiskId               string `position:"Query" name:"DiskId"`
-	Usage                string `position:"Query" name:"Usage"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	SourceDiskType       string           `position:"Query" name:"SourceDiskType"`
+	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	SnapshotType         string           `position:"Query" name:"SnapshotType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SnapshotIds          string           `position:"Query" name:"SnapshotIds"`
+	Status               string           `position:"Query" name:"Status"`
+	SnapshotName         string           `position:"Query" name:"SnapshotName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	SnapshotLinkId       string           `position:"Query" name:"SnapshotLinkId"`
+	Encrypted            requests.Boolean `position:"Query" name:"Encrypted"`
+	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	Usage                string           `position:"Query" name:"Usage"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 }
 
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Snapshots  struct {
 		Snapshot []struct {
-			SnapshotId        string `json:"SnapshotId" xml:"SnapshotId"`
-			SnapshotName      string `json:"SnapshotName" xml:"SnapshotName"`
-			Progress          string `json:"Progress" xml:"Progress"`
-			ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-			SourceDiskId      string `json:"SourceDiskId" xml:"SourceDiskId"`
-			SourceDiskType    string `json:"SourceDiskType" xml:"SourceDiskType"`
-			RetentionDays     int    `json:"RetentionDays" xml:"RetentionDays"`
-			Encrypted         bool   `json:"Encrypted" xml:"Encrypted"`
-			SourceDiskSize    string `json:"SourceDiskSize" xml:"SourceDiskSize"`
-			Description       string `json:"Description" xml:"Description"`
-			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
-			Status            string `json:"Status" xml:"Status"`
-			Usage             string `json:"Usage" xml:"Usage"`
-			SourceStorageType string `json:"SourceStorageType" xml:"SourceStorageType"`
+			SnapshotId        string           `json:"SnapshotId" xml:"SnapshotId"`
+			SnapshotName      string           `json:"SnapshotName" xml:"SnapshotName"`
+			Progress          string           `json:"Progress" xml:"Progress"`
+			ProductCode       string           `json:"ProductCode" xml:"ProductCode"`
+			SourceDiskId      string           `json:"SourceDiskId" xml:"SourceDiskId"`
+			SourceDiskType    string           `json:"SourceDiskType" xml:"SourceDiskType"`
+			RetentionDays     requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
+			Encrypted         requests.Boolean `json:"Encrypted" xml:"Encrypted"`
+			SourceDiskSize    string           `json:"SourceDiskSize" xml:"SourceDiskSize"`
+			Description       string           `json:"Description" xml:"Description"`
+			CreationTime      string           `json:"CreationTime" xml:"CreationTime"`
+			Status            string           `json:"Status" xml:"Status"`
+			Usage             string           `json:"Usage" xml:"Usage"`
+			SourceStorageType string           `json:"SourceStorageType" xml:"SourceStorageType"`
 			Tags              struct {
 				Tag []struct {
 					TagKey   string `json:"TagKey" xml:"TagKey"`

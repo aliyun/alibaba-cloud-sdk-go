@@ -64,8 +64,8 @@ func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callb
 
 type UnbindPhoneRequest struct {
 	*requests.RpcRequest
-	AppKey   string `position:"Query" name:"AppKey"`
-	DeviceId string `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
+	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
 type UnbindPhoneResponse struct {

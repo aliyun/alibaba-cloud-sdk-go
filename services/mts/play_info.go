@@ -64,41 +64,43 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 
 type PlayInfoRequest struct {
 	*requests.RpcRequest
-	PlayDomain           string `position:"Query" name:"PlayDomain"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Formats              string `position:"Query" name:"Formats"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	HlsUriToken          string `position:"Query" name:"HlsUriToken"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MediaId              string `position:"Query" name:"MediaId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	Rand                 string `position:"Query" name:"Rand"`
-	Action               string `position:"Query" name:"Action"`
-	AuthTimeout          string `position:"Query" name:"AuthTimeout"`
-	AuthInfo             string `position:"Query" name:"AuthInfo"`
+	AuthInfo             string           `position:"Query" name:"AuthInfo"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	PlayDomain           string           `position:"Query" name:"PlayDomain"`
+	Rand                 string           `position:"Query" name:"Rand"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
+	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	Formats              string           `position:"Query" name:"Formats"`
 }
 
 type PlayInfoResponse struct {
 	*responses.BaseResponse
-	RequestId         string   `json:"RequestId"`
-	NotFoundCDNDomain []string `json:"NotFoundCDNDomain"`
-	PlayInfoList      []struct {
-		Url          string `json:"Url"`
-		Duration     string `json:"duration"`
-		Size         string `json:"size"`
-		Width        string `json:"width"`
-		Height       string `json:"height"`
-		Bitrate      string `json:"bitrate"`
-		Fps          string `json:"fps"`
-		Format       string `json:"format"`
-		Definition   string `json:"definition"`
-		Encryption   string `json:"encryption"`
-		Rand         string `json:"rand"`
-		Plaintext    string `json:"plaintext"`
-		Complexity   string `json:"complexity"`
-		ActivityName string `json:"activityName"`
-	} `json:"PlayInfoList"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	NotFoundCDNDomain struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
+	PlayInfoList struct {
+		PlayInfo []struct {
+			Url          string `json:"Url" xml:"Url"`
+			Duration     string `json:"duration" xml:"duration"`
+			Size         string `json:"size" xml:"size"`
+			Width        string `json:"width" xml:"width"`
+			Height       string `json:"height" xml:"height"`
+			Bitrate      string `json:"bitrate" xml:"bitrate"`
+			Fps          string `json:"fps" xml:"fps"`
+			Format       string `json:"format" xml:"format"`
+			Definition   string `json:"definition" xml:"definition"`
+			Encryption   string `json:"encryption" xml:"encryption"`
+			Rand         string `json:"rand" xml:"rand"`
+			Plaintext    string `json:"plaintext" xml:"plaintext"`
+			Complexity   string `json:"complexity" xml:"complexity"`
+			ActivityName string `json:"activityName" xml:"activityName"`
+		} `json:"PlayInfo" xml:"PlayInfo"`
+	} `json:"PlayInfoList" xml:"PlayInfoList"`
 }
 
 func CreatePlayInfoRequest() (request *PlayInfoRequest) {

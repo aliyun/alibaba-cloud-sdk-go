@@ -64,35 +64,35 @@ func (client *Client) SearchPipelineWithCallback(request *SearchPipelineRequest,
 
 type SearchPipelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	Action               string `position:"Query" name:"Action"`
-	State                string `position:"Query" name:"State"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	State                string           `position:"Query" name:"State"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SearchPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	TotalCount   int64  `json:"TotalCount"`
-	PageNumber   int64  `json:"PageNumber"`
-	PageSize     int64  `json:"PageSize"`
-	PipelineList []struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Speed        string `json:"Speed"`
-		SpeedLevel   int64  `json:"SpeedLevel"`
-		Role         string `json:"Role"`
-		NotifyConfig struct {
-			Topic     string `json:"Topic"`
-			QueueName string `json:"QueueName"`
-		} `json:"NotifyConfig"`
-	} `json:"PipelineList"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	PipelineList struct {
+		Pipeline []struct {
+			Id           string           `json:"Id" xml:"Id"`
+			Name         string           `json:"Name" xml:"Name"`
+			State        string           `json:"State" xml:"State"`
+			Speed        string           `json:"Speed" xml:"Speed"`
+			SpeedLevel   requests.Integer `json:"SpeedLevel" xml:"SpeedLevel"`
+			Role         string           `json:"Role" xml:"Role"`
+			NotifyConfig struct {
+				Topic     string `json:"Topic" xml:"Topic"`
+				QueueName string `json:"QueueName" xml:"QueueName"`
+			} `json:"NotifyConfig" xml:"NotifyConfig"`
+		} `json:"Pipeline" xml:"Pipeline"`
+	} `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {

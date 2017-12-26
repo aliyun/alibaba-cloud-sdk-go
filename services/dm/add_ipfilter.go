@@ -64,10 +64,10 @@ func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callb
 
 type AddIpfilterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	IpAddress            string `position:"Query" name:"IpAddress"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddIpfilterResponse struct {

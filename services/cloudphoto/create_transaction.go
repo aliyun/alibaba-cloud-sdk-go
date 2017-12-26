@@ -64,32 +64,32 @@ func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRe
 
 type CreateTransactionRequest struct {
 	*requests.RpcRequest
-	Ext       string `position:"Query" name:"Ext"`
-	Size      string `position:"Query" name:"Size"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Force     string `position:"Query" name:"Force"`
-	Md5       string `position:"Query" name:"Md5"`
+	Md5       string           `position:"Query" name:"Md5"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Force     string           `position:"Query" name:"Force"`
+	Ext       string           `position:"Query" name:"Ext"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type CreateTransactionResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code"`
-	Message     string `json:"Message"`
-	RequestId   string `json:"RequestId"`
-	Action      string `json:"Action"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Action      string `json:"Action" xml:"Action"`
 	Transaction struct {
 		Upload struct {
-			Bucket          string `json:"Bucket"`
-			FileId          string `json:"FileId"`
-			OssEndpoint     string `json:"OssEndpoint"`
-			ObjectKey       string `json:"ObjectKey"`
-			SessionId       string `json:"SessionId"`
-			AccessKeyId     string `json:"AccessKeyId"`
-			AccessKeySecret string `json:"AccessKeySecret"`
-			StsToken        string `json:"StsToken"`
-		} `json:"Upload"`
-	} `json:"Transaction"`
+			Bucket          string `json:"Bucket" xml:"Bucket"`
+			FileId          string `json:"FileId" xml:"FileId"`
+			OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
+			ObjectKey       string `json:"ObjectKey" xml:"ObjectKey"`
+			SessionId       string `json:"SessionId" xml:"SessionId"`
+			AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
+			AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+			StsToken        string `json:"StsToken" xml:"StsToken"`
+		} `json:"Upload" xml:"Upload"`
+	} `json:"Transaction" xml:"Transaction"`
 }
 
 func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {

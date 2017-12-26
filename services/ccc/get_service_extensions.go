@@ -66,20 +66,21 @@ type GetServiceExtensionsRequest struct {
 	*requests.RpcRequest
 	ServiceType string `position:"Query" name:"ServiceType"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
 }
 
 type GetServiceExtensionsResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId"`
-	Success           bool   `json:"Success"`
-	Code              string `json:"Code"`
-	Message           string `json:"Message"`
-	HttpStatusCode    int    `json:"HttpStatusCode"`
-	ServiceExtensions []struct {
-		Name   string `json:"Name"`
-		Number string `json:"Number"`
-	} `json:"ServiceExtensions"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	Success           requests.Boolean `json:"Success" xml:"Success"`
+	Code              string           `json:"Code" xml:"Code"`
+	Message           string           `json:"Message" xml:"Message"`
+	HttpStatusCode    requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ServiceExtensions struct {
+		ServiceExtension []struct {
+			Name   string `json:"Name" xml:"Name"`
+			Number string `json:"Number" xml:"Number"`
+		} `json:"ServiceExtension" xml:"ServiceExtension"`
+	} `json:"ServiceExtensions" xml:"ServiceExtensions"`
 }
 
 func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) {

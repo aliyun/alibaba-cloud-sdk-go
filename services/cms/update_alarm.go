@@ -64,27 +64,28 @@ func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callb
 
 type UpdateAlarmRequest struct {
 	*requests.RpcRequest
-	EndTime            string `position:"Query" name:"EndTime"`
-	ComparisonOperator string `position:"Query" name:"ComparisonOperator"`
-	Id                 string `position:"Query" name:"Id"`
-	StartTime          string `position:"Query" name:"StartTime"`
-	EvaluationCount    string `position:"Query" name:"EvaluationCount"`
-	Name               string `position:"Query" name:"Name"`
-	NotifyType         string `position:"Query" name:"NotifyType"`
-	SilenceTime        string `position:"Query" name:"SilenceTime"`
-	Period             string `position:"Query" name:"Period"`
-	ContactGroups      string `position:"Query" name:"ContactGroups"`
-	Threshold          string `position:"Query" name:"Threshold"`
-	Statistics         string `position:"Query" name:"Statistics"`
-	CallbyCmsOwner     string `position:"Query" name:"callby_cms_owner"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	Statistics         string           `position:"Query" name:"Statistics"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	Id                 string           `position:"Query" name:"Id"`
+	Webhook            string           `position:"Query" name:"Webhook"`
+	Name               string           `position:"Query" name:"Name"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type UpdateAlarmResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   requests.Boolean `json:"Success" xml:"Success"`
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {

@@ -64,21 +64,19 @@ func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request
 
 type DescribeRangeDataByLocateAndIspServiceRequest struct {
 	*requests.RpcRequest
-	IspNames      string `position:"Query" name:"IspNames"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainNames   string `position:"Query" name:"DomainNames"`
-	LocationNames string `position:"Query" name:"LocationNames"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"startTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	IspNames      string           `position:"Query" name:"IspNames"`
+	StartTime     string           `position:"Query" name:"startTime"`
+	LocationNames string           `position:"Query" name:"LocationNames"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainNames   string           `position:"Query" name:"DomainNames"`
 }
 
 type DescribeRangeDataByLocateAndIspServiceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	JsonResult string `json:"JsonResult"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	JsonResult string `json:"JsonResult" xml:"JsonResult"`
 }
 
 func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRangeDataByLocateAndIspServiceRequest) {

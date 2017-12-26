@@ -64,29 +64,29 @@ func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithCallback(requ
 
 type DescribeLiveStreamFrameAndBitRateByDomainRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamFrameAndBitRateByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId"`
-	Count                    int64  `json:"Count"`
-	PageNumber               int64  `json:"pageNumber"`
-	PageSize                 int64  `json:"pageSize"`
-	FrameRateAndBitRateInfos []struct {
-		StreamUrl      string  `json:"StreamUrl"`
-		VideoFrameRate float64 `json:"VideoFrameRate"`
-		AudioFrameRate float64 `json:"AudioFrameRate"`
-		BitRate        float64 `json:"BitRate"`
-		Time           string  `json:"Time"`
-	} `json:"FrameRateAndBitRateInfos"`
+	RequestId                string           `json:"RequestId" xml:"RequestId"`
+	Count                    requests.Integer `json:"Count" xml:"Count"`
+	PageNumber               requests.Integer `json:"pageNumber" xml:"pageNumber"`
+	PageSize                 requests.Integer `json:"pageSize" xml:"pageSize"`
+	FrameRateAndBitRateInfos struct {
+		FrameRateAndBitRateInfo []struct {
+			StreamUrl      string         `json:"StreamUrl" xml:"StreamUrl"`
+			VideoFrameRate requests.Float `json:"VideoFrameRate" xml:"VideoFrameRate"`
+			AudioFrameRate requests.Float `json:"AudioFrameRate" xml:"AudioFrameRate"`
+			BitRate        requests.Float `json:"BitRate" xml:"BitRate"`
+			Time           string         `json:"Time" xml:"Time"`
+		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
+	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *DescribeLiveStreamFrameAndBitRateByDomainRequest) {

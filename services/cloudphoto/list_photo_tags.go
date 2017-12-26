@@ -64,24 +64,24 @@ func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, c
 
 type ListPhotoTagsRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Lang      string `position:"Query" name:"Lang"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Lang      string           `position:"Query" name:"Lang"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type ListPhotoTagsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Tags      []struct {
-		Id        int64  `json:"Id"`
-		IsSubTag  bool   `json:"IsSubTag"`
-		Name      string `json:"Name"`
-		ParentTag string `json:"ParentTag"`
-	} `json:"Tags"`
+		Id        requests.Integer `json:"Id" xml:"Id"`
+		IsSubTag  requests.Boolean `json:"IsSubTag" xml:"IsSubTag"`
+		Name      string           `json:"Name" xml:"Name"`
+		ParentTag string           `json:"ParentTag" xml:"ParentTag"`
+	} `json:"Tags" xml:"Tags"`
 }
 
 func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {

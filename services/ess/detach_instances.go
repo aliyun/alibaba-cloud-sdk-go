@@ -64,31 +64,31 @@ func (client *Client) DetachInstancesWithCallback(request *DetachInstancesReques
 
 type DetachInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceId10         string `position:"Query" name:"InstanceId.10"`
-	InstanceId12         string `position:"Query" name:"InstanceId.12"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	InstanceId11         string `position:"Query" name:"InstanceId.11"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	InstanceId19         string `position:"Query" name:"InstanceId.19"`
-	InstanceId17         string `position:"Query" name:"InstanceId.17"`
-	InstanceId18         string `position:"Query" name:"InstanceId.18"`
-	InstanceId6          string `position:"Query" name:"InstanceId.6"`
-	InstanceId15         string `position:"Query" name:"InstanceId.15"`
-	InstanceId7          string `position:"Query" name:"InstanceId.7"`
-	InstanceId16         string `position:"Query" name:"InstanceId.16"`
-	InstanceId8          string `position:"Query" name:"InstanceId.8"`
-	InstanceId13         string `position:"Query" name:"InstanceId.13"`
-	InstanceId9          string `position:"Query" name:"InstanceId.9"`
-	InstanceId14         string `position:"Query" name:"InstanceId.14"`
-	InstanceId2          string `position:"Query" name:"InstanceId.2"`
-	InstanceId3          string `position:"Query" name:"InstanceId.3"`
-	InstanceId4          string `position:"Query" name:"InstanceId.4"`
-	InstanceId5          string `position:"Query" name:"InstanceId.5"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
-	InstanceId1          string `position:"Query" name:"InstanceId.1"`
-	InstanceId20         string `position:"Query" name:"InstanceId.20"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceId10         string           `position:"Query" name:"InstanceId.10"`
+	InstanceId12         string           `position:"Query" name:"InstanceId.12"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId11         string           `position:"Query" name:"InstanceId.11"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceId19         string           `position:"Query" name:"InstanceId.19"`
+	InstanceId17         string           `position:"Query" name:"InstanceId.17"`
+	InstanceId18         string           `position:"Query" name:"InstanceId.18"`
+	InstanceId6          string           `position:"Query" name:"InstanceId.6"`
+	InstanceId15         string           `position:"Query" name:"InstanceId.15"`
+	InstanceId7          string           `position:"Query" name:"InstanceId.7"`
+	InstanceId16         string           `position:"Query" name:"InstanceId.16"`
+	InstanceId8          string           `position:"Query" name:"InstanceId.8"`
+	InstanceId13         string           `position:"Query" name:"InstanceId.13"`
+	InstanceId9          string           `position:"Query" name:"InstanceId.9"`
+	InstanceId14         string           `position:"Query" name:"InstanceId.14"`
+	InstanceId2          string           `position:"Query" name:"InstanceId.2"`
+	InstanceId3          string           `position:"Query" name:"InstanceId.3"`
+	InstanceId4          string           `position:"Query" name:"InstanceId.4"`
+	InstanceId5          string           `position:"Query" name:"InstanceId.5"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	InstanceId1          string           `position:"Query" name:"InstanceId.1"`
+	InstanceId20         string           `position:"Query" name:"InstanceId.20"`
 }
 
 type DetachInstancesResponse struct {

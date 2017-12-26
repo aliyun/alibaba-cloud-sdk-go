@@ -64,10 +64,10 @@ func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthentica
 
 type VerifyAuthenticationRequest struct {
 	*requests.RpcRequest
-	Uid                  string `position:"Query" name:"Uid"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Uid                  requests.Integer `position:"Query" name:"Uid"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type VerifyAuthenticationResponse struct {

@@ -64,14 +64,14 @@ func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskCharge
 
 type ModifyDiskChargeTypeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	DiskIds              string `position:"Query" name:"DiskIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DiskIds              string           `position:"Query" name:"DiskIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyDiskChargeTypeResponse struct {

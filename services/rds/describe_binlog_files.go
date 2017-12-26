@@ -64,34 +64,34 @@ func (client *Client) DescribeBinlogFilesWithCallback(request *DescribeBinlogFil
 
 type DescribeBinlogFilesRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeBinlogFilesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalFileSize    int64  `json:"TotalFileSize" xml:"TotalFileSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalFileSize    requests.Integer `json:"TotalFileSize" xml:"TotalFileSize"`
 	Items            struct {
 		BinLogFile []struct {
-			FileSize             int64  `json:"FileSize" xml:"FileSize"`
-			LogBeginTime         string `json:"LogBeginTime" xml:"LogBeginTime"`
-			LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
-			DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
-			IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
-			LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
-			Checksum             string `json:"Checksum" xml:"Checksum"`
-			HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
+			FileSize             requests.Integer `json:"FileSize" xml:"FileSize"`
+			LogBeginTime         string           `json:"LogBeginTime" xml:"LogBeginTime"`
+			LogEndTime           string           `json:"LogEndTime" xml:"LogEndTime"`
+			DownloadLink         string           `json:"DownloadLink" xml:"DownloadLink"`
+			IntranetDownloadLink string           `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
+			LinkExpiredTime      string           `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
+			Checksum             string           `json:"Checksum" xml:"Checksum"`
+			HostInstanceID       string           `json:"HostInstanceID" xml:"HostInstanceID"`
 		} `json:"BinLogFile" xml:"BinLogFile"`
 	} `json:"Items" xml:"Items"`
 }

@@ -64,23 +64,23 @@ func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequ
 
 type RemoveFacePhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	FaceId    string    `position:"Query" name:"FaceId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type RemoveFacePhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Id      int64  `json:"Id"`
-		Code    string `json:"Code"`
-		Message string `json:"Message"`
-	} `json:"Results"`
+		Id      requests.Integer `json:"Id" xml:"Id"`
+		Code    string           `json:"Code" xml:"Code"`
+		Message string           `json:"Message" xml:"Message"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {

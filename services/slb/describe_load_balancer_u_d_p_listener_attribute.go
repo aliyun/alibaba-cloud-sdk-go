@@ -64,36 +64,36 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithCallback(reque
 
 type DescribeLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
-	ListenerPort              int    `json:"ListenerPort" xml:"ListenerPort"`
-	BackendServerPort         int    `json:"BackendServerPort" xml:"BackendServerPort"`
-	Status                    string `json:"Status" xml:"Status"`
-	Bandwidth                 int    `json:"Bandwidth" xml:"Bandwidth"`
-	Scheduler                 string `json:"Scheduler" xml:"Scheduler"`
-	PersistenceTimeout        int    `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
-	HealthCheck               string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthyThreshold          int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	UnhealthyThreshold        int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	HealthCheckConnectTimeout int    `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	HealthCheckConnectPort    int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckInterval       int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckReq            string `json:"HealthCheckReq" xml:"HealthCheckReq"`
-	HealthCheckExp            string `json:"HealthCheckExp" xml:"HealthCheckExp"`
-	MaxConnection             int    `json:"MaxConnection" xml:"MaxConnection"`
-	VServerGroupId            string `json:"VServerGroupId" xml:"VServerGroupId"`
-	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	RequestId                 string           `json:"RequestId" xml:"RequestId"`
+	ListenerPort              requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
+	BackendServerPort         requests.Integer `json:"BackendServerPort" xml:"BackendServerPort"`
+	Status                    string           `json:"Status" xml:"Status"`
+	Bandwidth                 requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
+	Scheduler                 string           `json:"Scheduler" xml:"Scheduler"`
+	PersistenceTimeout        requests.Integer `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
+	HealthCheck               string           `json:"HealthCheck" xml:"HealthCheck"`
+	HealthyThreshold          requests.Integer `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	UnhealthyThreshold        requests.Integer `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	HealthCheckConnectTimeout requests.Integer `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
+	HealthCheckConnectPort    requests.Integer `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	HealthCheckInterval       requests.Integer `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckReq            string           `json:"HealthCheckReq" xml:"HealthCheckReq"`
+	HealthCheckExp            string           `json:"HealthCheckExp" xml:"HealthCheckExp"`
+	MaxConnection             requests.Integer `json:"MaxConnection" xml:"MaxConnection"`
+	VServerGroupId            string           `json:"VServerGroupId" xml:"VServerGroupId"`
+	MasterSlaveServerGroupId  string           `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 }
 
 func CreateDescribeLoadBalancerUDPListenerAttributeRequest() (request *DescribeLoadBalancerUDPListenerAttributeRequest) {

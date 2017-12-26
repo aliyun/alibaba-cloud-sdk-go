@@ -64,28 +64,28 @@ func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *Descr
 
 type DescribeLiveStreamRecordContentRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamRecordContentResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId"`
-	RecordContentInfoList []struct {
-		OssEndpoint     string  `json:"OssEndpoint"`
-		OssBucket       string  `json:"OssBucket"`
-		OssObjectPrefix string  `json:"OssObjectPrefix"`
-		StartTime       string  `json:"StartTime"`
-		EndTime         string  `json:"EndTime"`
-		Duration        float64 `json:"Duration"`
-	} `json:"RecordContentInfoList"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	RecordContentInfoList struct {
+		RecordContentInfo []struct {
+			OssEndpoint     string         `json:"OssEndpoint" xml:"OssEndpoint"`
+			OssBucket       string         `json:"OssBucket" xml:"OssBucket"`
+			OssObjectPrefix string         `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
+			StartTime       string         `json:"StartTime" xml:"StartTime"`
+			EndTime         string         `json:"EndTime" xml:"EndTime"`
+			Duration        requests.Float `json:"Duration" xml:"Duration"`
+		} `json:"RecordContentInfo" xml:"RecordContentInfo"`
+	} `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
 }
 
 func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStreamRecordContentRequest) {

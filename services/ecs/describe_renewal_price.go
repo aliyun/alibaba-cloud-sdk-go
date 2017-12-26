@@ -64,14 +64,14 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	PriceUnit            string `position:"Query" name:"PriceUnit"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Period               string `position:"Query" name:"Period"`
-	ResourceId           string `position:"Query" name:"ResourceId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	PriceUnit            string           `position:"Query" name:"PriceUnit"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeRenewalPriceResponse struct {
@@ -79,15 +79,15 @@ type DescribeRenewalPriceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	PriceInfo struct {
 		Price struct {
-			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-			Currency      string  `json:"Currency" xml:"Currency"`
+			OriginalPrice requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
+			DiscountPrice requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
+			TradePrice    requests.Float `json:"TradePrice" xml:"TradePrice"`
+			Currency      string         `json:"Currency" xml:"Currency"`
 		} `json:"Price" xml:"Price"`
 		Rules struct {
 			Rule []struct {
-				RuleId      int64  `json:"RuleId" xml:"RuleId"`
-				Description string `json:"Description" xml:"Description"`
+				RuleId      requests.Integer `json:"RuleId" xml:"RuleId"`
+				Description string           `json:"Description" xml:"Description"`
 			} `json:"Rule" xml:"Rule"`
 		} `json:"Rules" xml:"Rules"`
 	} `json:"PriceInfo" xml:"PriceInfo"`

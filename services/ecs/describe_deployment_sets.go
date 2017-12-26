@@ -64,37 +64,37 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DeploymentSetIds     string `position:"Query" name:"DeploymentSetIds"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Granularity          string           `position:"Query" name:"Granularity"`
+	Domain               string           `position:"Query" name:"Domain"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDeploymentSetsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	RegionId       string           `json:"RegionId" xml:"RegionId"`
+	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
 	DeploymentSets struct {
 		DeploymentSet []struct {
-			DeploymentSetId          string `json:"DeploymentSetId" xml:"DeploymentSetId"`
-			DeploymentSetDescription string `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
-			DeploymentSetName        string `json:"DeploymentSetName" xml:"DeploymentSetName"`
-			Strategy                 string `json:"Strategy" xml:"Strategy"`
-			Domain                   string `json:"Domain" xml:"Domain"`
-			Granularity              string `json:"Granularity" xml:"Granularity"`
-			InstanceAmount           int    `json:"InstanceAmount" xml:"InstanceAmount"`
-			CreationTime             string `json:"CreationTime" xml:"CreationTime"`
+			DeploymentSetId          string           `json:"DeploymentSetId" xml:"DeploymentSetId"`
+			DeploymentSetDescription string           `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
+			DeploymentSetName        string           `json:"DeploymentSetName" xml:"DeploymentSetName"`
+			Strategy                 string           `json:"Strategy" xml:"Strategy"`
+			Domain                   string           `json:"Domain" xml:"Domain"`
+			Granularity              string           `json:"Granularity" xml:"Granularity"`
+			InstanceAmount           requests.Integer `json:"InstanceAmount" xml:"InstanceAmount"`
+			CreationTime             string           `json:"CreationTime" xml:"CreationTime"`
 		} `json:"DeploymentSet" xml:"DeploymentSet"`
 	} `json:"DeploymentSets" xml:"DeploymentSets"`
 }

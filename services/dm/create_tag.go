@@ -64,10 +64,10 @@ func (client *Client) CreateTagWithCallback(request *CreateTagRequest, callback 
 
 type CreateTagRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type CreateTagResponse struct {

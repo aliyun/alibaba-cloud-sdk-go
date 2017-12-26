@@ -64,22 +64,22 @@ func (client *Client) DescribeBackupPolicyWithCallback(request *DescribeBackupPo
 
 type DescribeBackupPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPeriod    int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime  string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	PreferredBackupTime      string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	PreferredBackupPeriod    string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	BackupLog                string `json:"BackupLog" xml:"BackupLog"`
-	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	RequestId                string           `json:"RequestId" xml:"RequestId"`
+	BackupRetentionPeriod    requests.Integer `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime  string           `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	PreferredBackupTime      string           `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	PreferredBackupPeriod    string           `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	BackupLog                string           `json:"BackupLog" xml:"BackupLog"`
+	LogBackupRetentionPeriod requests.Integer `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
 }
 
 func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) {

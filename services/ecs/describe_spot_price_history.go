@@ -64,34 +64,34 @@ func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpot
 
 type DescribeSpotPriceHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	OSType               string `position:"Query" name:"OSType"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	InstanceType         string `position:"Query" name:"InstanceType"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	IoOptimized          string `position:"Query" name:"IoOptimized"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	OSType               string           `position:"Query" name:"OSType"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               requests.Integer `position:"Query" name:"Offset"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IoOptimized          string           `position:"Query" name:"IoOptimized"`
 }
 
 type DescribeSpotPriceHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	NextOffset int    `json:"NextOffset" xml:"NextOffset"`
-	Currency   string `json:"Currency" xml:"Currency"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	NextOffset requests.Integer `json:"NextOffset" xml:"NextOffset"`
+	Currency   string           `json:"Currency" xml:"Currency"`
 	SpotPrices struct {
 		SpotPriceType []struct {
-			ZoneId       string  `json:"ZoneId" xml:"ZoneId"`
-			InstanceType string  `json:"InstanceType" xml:"InstanceType"`
-			IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
-			Timestamp    string  `json:"Timestamp" xml:"Timestamp"`
-			NetworkType  string  `json:"NetworkType" xml:"NetworkType"`
-			SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
-			OriginPrice  float64 `json:"OriginPrice" xml:"OriginPrice"`
+			ZoneId       string         `json:"ZoneId" xml:"ZoneId"`
+			InstanceType string         `json:"InstanceType" xml:"InstanceType"`
+			IoOptimized  string         `json:"IoOptimized" xml:"IoOptimized"`
+			Timestamp    string         `json:"Timestamp" xml:"Timestamp"`
+			NetworkType  string         `json:"NetworkType" xml:"NetworkType"`
+			SpotPrice    requests.Float `json:"SpotPrice" xml:"SpotPrice"`
+			OriginPrice  requests.Float `json:"OriginPrice" xml:"OriginPrice"`
 		} `json:"SpotPriceType" xml:"SpotPriceType"`
 	} `json:"SpotPrices" xml:"SpotPrices"`
 }

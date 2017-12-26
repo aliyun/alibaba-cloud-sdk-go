@@ -64,17 +64,17 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 
 type NodeInstallRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	Force      string `position:"Query" name:"Force"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId     string           `position:"Query" name:"UserId"`
+	Force      requests.Boolean `position:"Query" name:"Force"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 type NodeInstallResponse struct {
 	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateNodeInstallRequest() (request *NodeInstallRequest) {

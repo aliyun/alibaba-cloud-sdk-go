@@ -64,9 +64,9 @@ func (client *Client) BindPhoneWithCallback(request *BindPhoneRequest, callback 
 
 type BindPhoneRequest struct {
 	*requests.RpcRequest
-	PhoneNumber string `position:"Query" name:"PhoneNumber"`
-	AppKey      string `position:"Query" name:"AppKey"`
-	DeviceId    string `position:"Query" name:"DeviceId"`
+	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	DeviceId    string           `position:"Query" name:"DeviceId"`
 }
 
 type BindPhoneResponse struct {

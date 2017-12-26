@@ -64,49 +64,49 @@ func (client *Client) DescribeDnsProductInstancesWithCallback(request *DescribeD
 
 type DescribeDnsProductInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	VersionCode  string `position:"Query" name:"VersionCode"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	VersionCode  string           `position:"Query" name:"VersionCode"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDnsProductInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int64  `json:"PageSize" xml:"PageSize"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
 	DnsProducts struct {
 		DnsProduct []struct {
-			InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-			VersionCode           string `json:"VersionCode" xml:"VersionCode"`
-			VersionName           string `json:"VersionName" xml:"VersionName"`
-			StartTime             string `json:"StartTime" xml:"StartTime"`
-			EndTime               string `json:"EndTime" xml:"EndTime"`
-			StartTimestamp        int64  `json:"StartTimestamp" xml:"StartTimestamp"`
-			EndTimestamp          int64  `json:"EndTimestamp" xml:"EndTimestamp"`
-			Domain                string `json:"Domain" xml:"Domain"`
-			BindCount             int64  `json:"BindCount" xml:"BindCount"`
-			BindUsedCount         int64  `json:"BindUsedCount" xml:"BindUsedCount"`
-			TTLMinValue           int64  `json:"TTLMinValue" xml:"TTLMinValue"`
-			SubDomainLevel        int64  `json:"SubDomainLevel" xml:"SubDomainLevel"`
-			DnsSLBCount           int64  `json:"DnsSLBCount" xml:"DnsSLBCount"`
-			URLForwardCount       int64  `json:"URLForwardCount" xml:"URLForwardCount"`
-			DDosDefendFlow        int64  `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
-			DDosDefendQuery       int64  `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
-			OverseaDDosDefendFlow int64  `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
-			SearchEngineLines     string `json:"SearchEngineLines" xml:"SearchEngineLines"`
-			ISPLines              string `json:"ISPLines" xml:"ISPLines"`
-			ISPRegionLines        string `json:"ISPRegionLines" xml:"ISPRegionLines"`
-			OverseaLine           string `json:"OverseaLine" xml:"OverseaLine"`
-			MonitorNodeCount      int64  `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
-			MonitorFrequency      int64  `json:"MonitorFrequency" xml:"MonitorFrequency"`
-			MonitorTaskCount      int64  `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
-			RegionLines           bool   `json:"RegionLines" xml:"RegionLines"`
-			Gslb                  bool   `json:"Gslb" xml:"Gslb"`
-			InClean               bool   `json:"InClean" xml:"InClean"`
-			InBlackHole           bool   `json:"InBlackHole" xml:"InBlackHole"`
+			InstanceId            string           `json:"InstanceId" xml:"InstanceId"`
+			VersionCode           string           `json:"VersionCode" xml:"VersionCode"`
+			VersionName           string           `json:"VersionName" xml:"VersionName"`
+			StartTime             string           `json:"StartTime" xml:"StartTime"`
+			EndTime               string           `json:"EndTime" xml:"EndTime"`
+			StartTimestamp        requests.Integer `json:"StartTimestamp" xml:"StartTimestamp"`
+			EndTimestamp          requests.Integer `json:"EndTimestamp" xml:"EndTimestamp"`
+			Domain                string           `json:"Domain" xml:"Domain"`
+			BindCount             requests.Integer `json:"BindCount" xml:"BindCount"`
+			BindUsedCount         requests.Integer `json:"BindUsedCount" xml:"BindUsedCount"`
+			TTLMinValue           requests.Integer `json:"TTLMinValue" xml:"TTLMinValue"`
+			SubDomainLevel        requests.Integer `json:"SubDomainLevel" xml:"SubDomainLevel"`
+			DnsSLBCount           requests.Integer `json:"DnsSLBCount" xml:"DnsSLBCount"`
+			URLForwardCount       requests.Integer `json:"URLForwardCount" xml:"URLForwardCount"`
+			DDosDefendFlow        requests.Integer `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
+			DDosDefendQuery       requests.Integer `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
+			OverseaDDosDefendFlow requests.Integer `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
+			SearchEngineLines     string           `json:"SearchEngineLines" xml:"SearchEngineLines"`
+			ISPLines              string           `json:"ISPLines" xml:"ISPLines"`
+			ISPRegionLines        string           `json:"ISPRegionLines" xml:"ISPRegionLines"`
+			OverseaLine           string           `json:"OverseaLine" xml:"OverseaLine"`
+			MonitorNodeCount      requests.Integer `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
+			MonitorFrequency      requests.Integer `json:"MonitorFrequency" xml:"MonitorFrequency"`
+			MonitorTaskCount      requests.Integer `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
+			RegionLines           requests.Boolean `json:"RegionLines" xml:"RegionLines"`
+			Gslb                  requests.Boolean `json:"Gslb" xml:"Gslb"`
+			InClean               requests.Boolean `json:"InClean" xml:"InClean"`
+			InBlackHole           requests.Boolean `json:"InBlackHole" xml:"InBlackHole"`
 		} `json:"DnsProduct" xml:"DnsProduct"`
 	} `json:"DnsProducts" xml:"DnsProducts"`
 }

@@ -64,21 +64,19 @@ func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideo
 
 type ReportVideoSplitJobResultRequest struct {
 	*requests.RpcRequest
-	Result               string `position:"Query" name:"Result"`
-	JobId                string `position:"Query" name:"JobId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Details              string `position:"Query" name:"Details"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	Result               string           `position:"Query" name:"Result"`
+	Details              string           `position:"Query" name:"Details"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportVideoSplitJobResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResultRequest) {

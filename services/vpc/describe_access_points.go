@@ -64,13 +64,13 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
-	PageSize             string                        `position:"Query" name:"PageSize"`
+	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string                        `position:"Query" name:"PageNumber"`
+	PageNumber           requests.Integer              `position:"Query" name:"PageNumber"`
 	Name                 string                        `position:"Query" name:"Name"`
-	ResourceOwnerId      string                        `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
 	Type                 string                        `position:"Query" name:"Type"`
-	OwnerId              string                        `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	HostOperator         string                        `position:"Query" name:"HostOperator"`
 }
@@ -82,10 +82,10 @@ type DescribeAccessPointsFilter struct {
 
 type DescribeAccessPointsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	AccessPointSet struct {
 		AccessPointType []struct {
 			AccessPointId    string `json:"AccessPointId" xml:"AccessPointId"`

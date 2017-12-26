@@ -64,17 +64,15 @@ func (client *Client) SetUserDomainBlackListWithCallback(request *SetUserDomainB
 
 type SetUserDomainBlackListRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetUserDomainBlackListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetUserDomainBlackListRequest() (request *SetUserDomainBlackListRequest) {

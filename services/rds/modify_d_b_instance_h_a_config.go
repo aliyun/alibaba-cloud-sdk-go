@@ -64,13 +64,13 @@ func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInst
 
 type ModifyDBInstanceHAConfigRequest struct {
 	*requests.RpcRequest
-	DbInstanceId         string `position:"Query" name:"DbInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	HAMode               string `position:"Query" name:"HAMode"`
-	SyncMode             string `position:"Query" name:"SyncMode"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	HAMode               string           `position:"Query" name:"HAMode"`
+	SyncMode             string           `position:"Query" name:"SyncMode"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDBInstanceHAConfigResponse struct {

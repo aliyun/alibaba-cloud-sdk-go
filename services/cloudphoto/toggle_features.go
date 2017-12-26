@@ -64,17 +64,17 @@ func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest,
 
 type ToggleFeaturesRequest struct {
 	*requests.RpcRequest
+	EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
 	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
 	StoreName        string    `position:"Query" name:"StoreName"`
-	EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
 }
 
 type ToggleFeaturesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {

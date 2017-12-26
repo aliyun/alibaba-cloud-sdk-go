@@ -64,30 +64,30 @@ func (client *Client) DescribeLiveStreamFrameInfoWithCallback(request *DescribeL
 
 type DescribeLiveStreamFrameInfoRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamFrameInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	FrameDataInfos []struct {
-		Time       string  `json:"Time"`
-		Stream     string  `json:"Stream"`
-		ClientAddr string  `json:"ClientAddr"`
-		Server     string  `json:"Server"`
-		AudioRate  float64 `json:"AudioRate"`
-		AudioByte  float64 `json:"AudioByte"`
-		FrameRate  float64 `json:"FrameRate"`
-		FrameByte  float64 `json:"FrameByte"`
-	} `json:"FrameDataInfos"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	FrameDataInfos struct {
+		FrameDataModel []struct {
+			Time       string         `json:"Time" xml:"Time"`
+			Stream     string         `json:"Stream" xml:"Stream"`
+			ClientAddr string         `json:"ClientAddr" xml:"ClientAddr"`
+			Server     string         `json:"Server" xml:"Server"`
+			AudioRate  requests.Float `json:"AudioRate" xml:"AudioRate"`
+			AudioByte  requests.Float `json:"AudioByte" xml:"AudioByte"`
+			FrameRate  requests.Float `json:"FrameRate" xml:"FrameRate"`
+			FrameByte  requests.Float `json:"FrameByte" xml:"FrameByte"`
+		} `json:"FrameDataModel" xml:"FrameDataModel"`
+	} `json:"FrameDataInfos" xml:"FrameDataInfos"`
 }
 
 func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFrameInfoRequest) {

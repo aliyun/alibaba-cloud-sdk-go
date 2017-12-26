@@ -64,49 +64,55 @@ func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobList
 
 type QueryFpShotJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
-	RequestId     string   `json:"RequestId"`
-	NonExistIds   []string `json:"NonExistIds"`
-	FpShotJobList []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		InputFile    struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"InputFile"`
-		FpShotResult struct {
-			FpShots []struct {
-				PrimaryKey   string `json:"PrimaryKey"`
-				Similarity   string `json:"Similarity"`
-				FpShotSlices []struct {
-					Input struct {
-						Start    string `json:"Start"`
-						Duration string `json:"Duration"`
-					} `json:"Input"`
-					Duplication struct {
-						Start    string `json:"Start"`
-						Duration string `json:"Duration"`
-					} `json:"Duplication"`
-				} `json:"FpShotSlices"`
-			} `json:"FpShots"`
-		} `json:"FpShotResult"`
-	} `json:"FpShotJobList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	FpShotJobList struct {
+		FpShotJob []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			InputFile    struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"InputFile" xml:"InputFile"`
+			FpShotResult struct {
+				FpShots struct {
+					FpShot []struct {
+						PrimaryKey   string `json:"PrimaryKey" xml:"PrimaryKey"`
+						Similarity   string `json:"Similarity" xml:"Similarity"`
+						FpShotSlices struct {
+							FpShotSlice []struct {
+								Input struct {
+									Start    string `json:"Start" xml:"Start"`
+									Duration string `json:"Duration" xml:"Duration"`
+								} `json:"Input" xml:"Input"`
+								Duplication struct {
+									Start    string `json:"Start" xml:"Start"`
+									Duration string `json:"Duration" xml:"Duration"`
+								} `json:"Duplication" xml:"Duplication"`
+							} `json:"FpShotSlice" xml:"FpShotSlice"`
+						} `json:"FpShotSlices" xml:"FpShotSlices"`
+					} `json:"FpShot" xml:"FpShot"`
+				} `json:"FpShots" xml:"FpShots"`
+			} `json:"FpShotResult" xml:"FpShotResult"`
+		} `json:"FpShotJob" xml:"FpShotJob"`
+	} `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 
 func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {

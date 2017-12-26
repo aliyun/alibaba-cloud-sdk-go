@@ -64,18 +64,18 @@ func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callb
 
 type RegisterTagRequest struct {
 	*requests.RpcRequest
-	StoreName string `position:"Query" name:"StoreName"`
 	Text      string `position:"Query" name:"Text"`
 	TagKey    string `position:"Query" name:"TagKey"`
+	StoreName string `position:"Query" name:"StoreName"`
 	Lang      string `position:"Query" name:"Lang"`
 }
 
 type RegisterTagResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateRegisterTagRequest() (request *RegisterTagRequest) {

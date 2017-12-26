@@ -64,23 +64,23 @@ func (client *Client) DescribeLivePullStreamConfigWithCallback(request *Describe
 
 type DescribeLivePullStreamConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLivePullStreamConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId"`
-	LiveAppRecordList []struct {
-		DomainName string `json:"DomainName"`
-		StreamName string `json:"StreamName"`
-		SourceUrl  string `json:"SourceUrl"`
-		StartTime  string `json:"StartTime"`
-		EndTime    string `json:"EndTime"`
-	} `json:"LiveAppRecordList"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList struct {
+		LiveAppRecord []struct {
+			DomainName string `json:"DomainName" xml:"DomainName"`
+			StreamName string `json:"StreamName" xml:"StreamName"`
+			SourceUrl  string `json:"SourceUrl" xml:"SourceUrl"`
+			StartTime  string `json:"StartTime" xml:"StartTime"`
+			EndTime    string `json:"EndTime" xml:"EndTime"`
+		} `json:"LiveAppRecord" xml:"LiveAppRecord"`
+	} `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {

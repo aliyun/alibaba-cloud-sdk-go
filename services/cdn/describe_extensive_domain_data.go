@@ -64,33 +64,33 @@ func (client *Client) DescribeExtensiveDomainDataWithCallback(request *DescribeE
 
 type DescribeExtensiveDomainDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	ExtensiveDomain string `position:"Query" name:"ExtensiveDomain"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	Action          string `position:"Query" name:"Action"`
-	EndTime         string `position:"Query" name:"EndTime"`
-	StartTime       string `position:"Query" name:"StartTime"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
-	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ExtensiveDomain string           `position:"Query" name:"ExtensiveDomain"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeExtensiveDomainDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId"`
-	ExtensiveDomain string `json:"ExtensiveDomain"`
-	DataInterval    string `json:"DataInterval"`
-	StartTime       string `json:"StartTime"`
-	EndTime         string `json:"EndTime"`
-	PageNumber      string `json:"PageNumber"`
-	TotalCount      string `json:"TotalCount"`
-	PageSize        string `json:"PageSize"`
-	DataPerInterval []struct {
-		ExactDomain string `json:"ExactDomain"`
-		TimeStamp   string `json:"TimeStamp"`
-		Acc         string `json:"Acc"`
-		Flow        string `json:"Flow"`
-	} `json:"DataPerInterval"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ExtensiveDomain string `json:"ExtensiveDomain" xml:"ExtensiveDomain"`
+	DataInterval    string `json:"DataInterval" xml:"DataInterval"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
+	PageNumber      string `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      string `json:"TotalCount" xml:"TotalCount"`
+	PageSize        string `json:"PageSize" xml:"PageSize"`
+	DataPerInterval struct {
+		UsageData []struct {
+			ExactDomain string `json:"ExactDomain" xml:"ExactDomain"`
+			TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
+			Acc         string `json:"Acc" xml:"Acc"`
+			Flow        string `json:"Flow" xml:"Flow"`
+		} `json:"UsageData" xml:"UsageData"`
+	} `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
 func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomainDataRequest) {

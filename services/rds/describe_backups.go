@@ -64,48 +64,48 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	BackupStatus         string `position:"Query" name:"BackupStatus"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BackupLocation       string `position:"Query" name:"BackupLocation"`
-	BackupId             string `position:"Query" name:"BackupId"`
-	BackupMode           string `position:"Query" name:"BackupMode"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BackupStatus         string           `position:"Query" name:"BackupStatus"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BackupLocation       string           `position:"Query" name:"BackupLocation"`
+	BackupId             string           `position:"Query" name:"BackupId"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount string `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  string `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int64  `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount string           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       string           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  string           `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalBackupSize  requests.Integer `json:"TotalBackupSize" xml:"TotalBackupSize"`
 	Items            struct {
 		Backup []struct {
-			BackupId                  string `json:"BackupId" xml:"BackupId"`
-			DBInstanceId              string `json:"DBInstanceId" xml:"DBInstanceId"`
-			BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
-			BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
-			BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
-			BackupType                string `json:"BackupType" xml:"BackupType"`
-			BackupMode                string `json:"BackupMode" xml:"BackupMode"`
-			BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
-			BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-			BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
-			BackupLocation            string `json:"BackupLocation" xml:"BackupLocation"`
-			BackupExtractionStatus    string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
-			BackupScale               string `json:"BackupScale" xml:"BackupScale"`
-			BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
-			TotalBackupSize           int64  `json:"TotalBackupSize" xml:"TotalBackupSize"`
-			BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
-			HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
-			StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
+			BackupId                  string           `json:"BackupId" xml:"BackupId"`
+			DBInstanceId              string           `json:"DBInstanceId" xml:"DBInstanceId"`
+			BackupStatus              string           `json:"BackupStatus" xml:"BackupStatus"`
+			BackupStartTime           string           `json:"BackupStartTime" xml:"BackupStartTime"`
+			BackupEndTime             string           `json:"BackupEndTime" xml:"BackupEndTime"`
+			BackupType                string           `json:"BackupType" xml:"BackupType"`
+			BackupMode                string           `json:"BackupMode" xml:"BackupMode"`
+			BackupMethod              string           `json:"BackupMethod" xml:"BackupMethod"`
+			BackupDownloadURL         string           `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+			BackupIntranetDownloadURL string           `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+			BackupLocation            string           `json:"BackupLocation" xml:"BackupLocation"`
+			BackupExtractionStatus    string           `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
+			BackupScale               string           `json:"BackupScale" xml:"BackupScale"`
+			BackupDBNames             string           `json:"BackupDBNames" xml:"BackupDBNames"`
+			TotalBackupSize           requests.Integer `json:"TotalBackupSize" xml:"TotalBackupSize"`
+			BackupSize                requests.Integer `json:"BackupSize" xml:"BackupSize"`
+			HostInstanceID            string           `json:"HostInstanceID" xml:"HostInstanceID"`
+			StoreStatus               string           `json:"StoreStatus" xml:"StoreStatus"`
 		} `json:"Backup" xml:"Backup"`
 	} `json:"Items" xml:"Items"`
 }

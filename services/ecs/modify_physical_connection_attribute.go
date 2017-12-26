@@ -64,21 +64,21 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithCallback(request *Mod
 
 type ModifyPhysicalConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	PeerLocation                  string `position:"Query" name:"PeerLocation"`
-	ClientToken                   string `position:"Query" name:"ClientToken"`
-	UserCidr                      string `position:"Query" name:"UserCidr"`
-	RedundantPhysicalConnectionId string `position:"Query" name:"RedundantPhysicalConnectionId"`
-	PhysicalConnectionId          string `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId                       string `position:"Query" name:"OwnerId"`
-	Bandwidth                     string `position:"Query" name:"bandwidth"`
-	LineOperator                  string `position:"Query" name:"LineOperator"`
-	CircuitCode                   string `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string `position:"Query" name:"ResourceOwnerAccount"`
-	Description                   string `position:"Query" name:"Description"`
-	PortType                      string `position:"Query" name:"PortType"`
-	Name                          string `position:"Query" name:"Name"`
-	ResourceOwnerId               string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                  string `position:"Query" name:"OwnerAccount"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	UserCidr                      string           `position:"Query" name:"UserCidr"`
+	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
+	PhysicalConnectionId          string           `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	LineOperator                  string           `position:"Query" name:"LineOperator"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description                   string           `position:"Query" name:"Description"`
+	PortType                      string           `position:"Query" name:"PortType"`
+	Name                          string           `position:"Query" name:"Name"`
+	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyPhysicalConnectionAttributeResponse struct {

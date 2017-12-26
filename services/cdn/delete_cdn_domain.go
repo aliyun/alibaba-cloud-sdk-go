@@ -64,17 +64,15 @@ func (client *Client) DeleteCdnDomainWithCallback(request *DeleteCdnDomainReques
 
 type DeleteCdnDomainRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	Action          string `position:"Query" name:"Action"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type DeleteCdnDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {

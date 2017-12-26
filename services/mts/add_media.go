@@ -64,47 +64,49 @@ func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback fu
 
 type AddMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	Description           string `position:"Query" name:"Description"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	Title                 string `position:"Query" name:"Title"`
-	AccessKeyId           string `position:"Query" name:"AccessKeyId"`
-	Tags                  string `position:"Query" name:"Tags"`
-	CoverURL              string `position:"Query" name:"CoverURL"`
-	CateId                string `position:"Query" name:"CateId"`
-	Action                string `position:"Query" name:"Action"`
-	FileURL               string `position:"Query" name:"FileURL"`
-	MediaWorkflowId       string `position:"Query" name:"MediaWorkflowId"`
-	MediaWorkflowUserData string `position:"Query" name:"MediaWorkflowUserData"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	CateId                requests.Integer `position:"Query" name:"CateId"`
+	FileURL               string           `position:"Query" name:"FileURL"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Title                 string           `position:"Query" name:"Title"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description           string           `position:"Query" name:"Description"`
+	MediaWorkflowUserData string           `position:"Query" name:"MediaWorkflowUserData"`
+	CoverURL              string           `position:"Query" name:"CoverURL"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	MediaWorkflowId       string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type AddMediaResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Media     struct {
-		MediaId      string   `json:"MediaId"`
-		Title        string   `json:"Title"`
-		Description  string   `json:"Description"`
-		CoverURL     string   `json:"CoverURL"`
-		CateId       int64    `json:"CateId"`
-		Duration     string   `json:"Duration"`
-		Format       string   `json:"Format"`
-		Size         string   `json:"Size"`
-		Bitrate      string   `json:"Bitrate"`
-		Width        string   `json:"Width"`
-		Height       string   `json:"Height"`
-		Fps          string   `json:"Fps"`
-		PublishState string   `json:"PublishState"`
-		CreationTime string   `json:"CreationTime"`
-		Tags         []string `json:"Tags"`
-		RunIdList    []string `json:"RunIdList"`
-		File         struct {
-			URL   string `json:"URL"`
-			State string `json:"State"`
-		} `json:"File"`
-	} `json:"Media"`
+		MediaId      string           `json:"MediaId" xml:"MediaId"`
+		Title        string           `json:"Title" xml:"Title"`
+		Description  string           `json:"Description" xml:"Description"`
+		CoverURL     string           `json:"CoverURL" xml:"CoverURL"`
+		CateId       requests.Integer `json:"CateId" xml:"CateId"`
+		Duration     string           `json:"Duration" xml:"Duration"`
+		Format       string           `json:"Format" xml:"Format"`
+		Size         string           `json:"Size" xml:"Size"`
+		Bitrate      string           `json:"Bitrate" xml:"Bitrate"`
+		Width        string           `json:"Width" xml:"Width"`
+		Height       string           `json:"Height" xml:"Height"`
+		Fps          string           `json:"Fps" xml:"Fps"`
+		PublishState string           `json:"PublishState" xml:"PublishState"`
+		CreationTime string           `json:"CreationTime" xml:"CreationTime"`
+		Tags         struct {
+			Tag []string `json:"Tag" xml:"Tag"`
+		} `json:"Tags" xml:"Tags"`
+		RunIdList struct {
+			RunId []string `json:"RunId" xml:"RunId"`
+		} `json:"RunIdList" xml:"RunIdList"`
+		File struct {
+			URL   string `json:"URL" xml:"URL"`
+			State string `json:"State" xml:"State"`
+		} `json:"File" xml:"File"`
+	} `json:"Media" xml:"Media"`
 }
 
 func CreateAddMediaRequest() (request *AddMediaRequest) {

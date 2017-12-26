@@ -64,12 +64,12 @@ func (client *Client) AddCommonBandwidthPackageIpWithCallback(request *AddCommon
 
 type AddCommonBandwidthPackageIpRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	IpInstanceId         string `position:"Query" name:"IpInstanceId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 }
 
 type AddCommonBandwidthPackageIpResponse struct {

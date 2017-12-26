@@ -64,30 +64,32 @@ func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipe
 
 type QueryCoverPipelineListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string `position:"Query" name:"PipelineIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PipelineIds          string           `position:"Query" name:"PipelineIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryCoverPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId"`
-	NonExistIds  []string `json:"NonExistIds"`
-	PipelineList []struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Priority     string `json:"Priority"`
-		Role         string `json:"Role"`
-		NotifyConfig struct {
-			Topic string `json:"Topic"`
-			Queue string `json:"Queue"`
-		} `json:"NotifyConfig"`
-	} `json:"PipelineList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList struct {
+		Pipeline []struct {
+			Id           string `json:"Id" xml:"Id"`
+			Name         string `json:"Name" xml:"Name"`
+			State        string `json:"State" xml:"State"`
+			Priority     string `json:"Priority" xml:"Priority"`
+			Role         string `json:"Role" xml:"Role"`
+			NotifyConfig struct {
+				Topic string `json:"Topic" xml:"Topic"`
+				Queue string `json:"Queue" xml:"Queue"`
+			} `json:"NotifyConfig" xml:"NotifyConfig"`
+		} `json:"Pipeline" xml:"Pipeline"`
+	} `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListRequest) {

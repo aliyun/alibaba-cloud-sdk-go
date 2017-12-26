@@ -64,19 +64,17 @@ func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequ
 
 type UpdateMediaCoverRequest struct {
 	*requests.RpcRequest
-	CoverURL             string `position:"Query" name:"CoverURL"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MediaId              string `position:"Query" name:"MediaId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	CoverURL             string           `position:"Query" name:"CoverURL"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateMediaCoverResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {

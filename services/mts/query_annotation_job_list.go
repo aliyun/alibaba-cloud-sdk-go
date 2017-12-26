@@ -64,40 +64,44 @@ func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotatio
 
 type QueryAnnotationJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AnnotationJobIds     string `position:"Query" name:"AnnotationJobIds"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryAnnotationJobListResponse struct {
 	*responses.BaseResponse
-	RequestId         string   `json:"RequestId"`
-	NonExistIds       []string `json:"NonExistIds"`
-	AnnotationJobList []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"Input"`
-		VideoAnnotationResult struct {
-			Details     string `json:"Details"`
-			Annotations []struct {
-				Label string `json:"Label"`
-				Score string `json:"Score"`
-			} `json:"Annotations"`
-		} `json:"VideoAnnotationResult"`
-	} `json:"AnnotationJobList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	AnnotationJobList struct {
+		AnnotationJob []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			VideoAnnotationResult struct {
+				Details     string `json:"Details" xml:"Details"`
+				Annotations struct {
+					Annotation []struct {
+						Label string `json:"Label" xml:"Label"`
+						Score string `json:"Score" xml:"Score"`
+					} `json:"Annotation" xml:"Annotation"`
+				} `json:"Annotations" xml:"Annotations"`
+			} `json:"VideoAnnotationResult" xml:"VideoAnnotationResult"`
+		} `json:"AnnotationJob" xml:"AnnotationJob"`
+	} `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
 func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {

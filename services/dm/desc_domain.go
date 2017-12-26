@@ -64,10 +64,10 @@ func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callbac
 
 type DescDomainRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DomainId             string `position:"Query" name:"DomainId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DomainId             requests.Integer `position:"Query" name:"DomainId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescDomainResponse struct {

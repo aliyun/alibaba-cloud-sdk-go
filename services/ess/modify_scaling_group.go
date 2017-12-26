@@ -64,18 +64,18 @@ func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroup
 
 type ModifyScalingGroupRequest struct {
 	*requests.RpcRequest
-	ActiveScalingConfigurationId string `position:"Query" name:"ActiveScalingConfigurationId"`
-	MinSize                      string `position:"Query" name:"MinSize"`
-	ScalingGroupName             string `position:"Query" name:"ScalingGroupName"`
-	OwnerId                      string `position:"Query" name:"OwnerId"`
-	ScalingGroupId               string `position:"Query" name:"ScalingGroupId"`
-	MaxSize                      string `position:"Query" name:"MaxSize"`
-	ResourceOwnerAccount         string `position:"Query" name:"ResourceOwnerAccount"`
-	RemovalPolicy1               string `position:"Query" name:"RemovalPolicy.1"`
-	RemovalPolicy2               string `position:"Query" name:"RemovalPolicy.2"`
-	ResourceOwnerId              string `position:"Query" name:"ResourceOwnerId"`
-	DefaultCooldown              string `position:"Query" name:"DefaultCooldown"`
-	OwnerAccount                 string `position:"Query" name:"OwnerAccount"`
+	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
+	MinSize                      requests.Integer `position:"Query" name:"MinSize"`
+	ScalingGroupName             string           `position:"Query" name:"ScalingGroupName"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
+	MaxSize                      requests.Integer `position:"Query" name:"MaxSize"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	RemovalPolicy1               string           `position:"Query" name:"RemovalPolicy.1"`
+	RemovalPolicy2               string           `position:"Query" name:"RemovalPolicy.2"`
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DefaultCooldown              requests.Integer `position:"Query" name:"DefaultCooldown"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyScalingGroupResponse struct {

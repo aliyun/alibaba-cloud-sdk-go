@@ -64,24 +64,26 @@ func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrls
 
 type GetFramedPhotoUrlsRequest struct {
 	*requests.RpcRequest
-	FrameId   string    `position:"Query" name:"FrameId"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	FrameId   string    `position:"Query" name:"FrameId"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetFramedPhotoUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
-	Results   []struct {
-		Code           string `json:"Code"`
-		Message        string `json:"Message"`
-		PhotoId        int64  `json:"PhotoId"`
-		FramedPhotoUrl string `json:"FramedPhotoUrl"`
-	} `json:"Results"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   struct {
+		Result []struct {
+			Code           string           `json:"Code" xml:"Code"`
+			Message        string           `json:"Message" xml:"Message"`
+			PhotoId        requests.Integer `json:"PhotoId" xml:"PhotoId"`
+			FramedPhotoUrl string           `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+		} `json:"Result" xml:"Result"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {

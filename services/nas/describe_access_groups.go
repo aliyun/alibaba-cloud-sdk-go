@@ -64,24 +64,24 @@ func (client *Client) DescribeAccessGroupsWithCallback(request *DescribeAccessGr
 
 type DescribeAccessGroupsRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
+	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeAccessGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
 	AccessGroups struct {
 		AccessGroup []struct {
-			AccessGroupName  string `json:"AccessGroupName" xml:"AccessGroupName"`
-			AccessGroupType  string `json:"AccessGroupType" xml:"AccessGroupType"`
-			RuleCount        int    `json:"RuleCount" xml:"RuleCount"`
-			MountTargetCount int    `json:"MountTargetCount" xml:"MountTargetCount"`
-			Description      string `json:"Description" xml:"Description"`
+			AccessGroupName  string           `json:"AccessGroupName" xml:"AccessGroupName"`
+			AccessGroupType  string           `json:"AccessGroupType" xml:"AccessGroupType"`
+			RuleCount        requests.Integer `json:"RuleCount" xml:"RuleCount"`
+			MountTargetCount requests.Integer `json:"MountTargetCount" xml:"MountTargetCount"`
+			Description      string           `json:"Description" xml:"Description"`
 		} `json:"AccessGroup" xml:"AccessGroup"`
 	} `json:"AccessGroups" xml:"AccessGroups"`
 }

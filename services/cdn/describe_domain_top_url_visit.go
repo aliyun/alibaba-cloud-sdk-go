@@ -64,55 +64,63 @@ func (client *Client) DescribeDomainTopUrlVisitWithCallback(request *DescribeDom
 
 type DescribeDomainTopUrlVisitRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	SortBy        string `position:"Query" name:"SortBy"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	SortBy        string           `position:"Query" name:"SortBy"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainTopUrlVisitResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	DomainName string `json:"DomainName"`
-	StartTime  string `json:"StartTime"`
-	AllUrlList []struct {
-		UrlDetail       string  `json:"UrlDetail"`
-		VisitData       string  `json:"VisitData"`
-		VisitProportion float64 `json:"VisitProportion"`
-		Flow            string  `json:"Flow"`
-		FlowProportion  float64 `json:"FlowProportion"`
-	} `json:"AllUrlList"`
-	Url200List []struct {
-		UrlDetail       string  `json:"UrlDetail"`
-		VisitData       string  `json:"VisitData"`
-		VisitProportion float64 `json:"VisitProportion"`
-		Flow            string  `json:"Flow"`
-		FlowProportion  float64 `json:"FlowProportion"`
-	} `json:"Url200List"`
-	Url300List []struct {
-		UrlDetail       string  `json:"UrlDetail"`
-		VisitData       string  `json:"VisitData"`
-		VisitProportion float64 `json:"VisitProportion"`
-		Flow            string  `json:"Flow"`
-		FlowProportion  float64 `json:"FlowProportion"`
-	} `json:"Url300List"`
-	Url400List []struct {
-		UrlDetail       string  `json:"UrlDetail"`
-		VisitData       string  `json:"VisitData"`
-		VisitProportion float64 `json:"VisitProportion"`
-		Flow            string  `json:"Flow"`
-		FlowProportion  float64 `json:"FlowProportion"`
-	} `json:"Url400List"`
-	Url500List []struct {
-		UrlDetail       string  `json:"UrlDetail"`
-		VisitData       string  `json:"VisitData"`
-		VisitProportion float64 `json:"VisitProportion"`
-		Flow            string  `json:"Flow"`
-		FlowProportion  float64 `json:"FlowProportion"`
-	} `json:"Url500List"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	StartTime  string `json:"StartTime" xml:"StartTime"`
+	AllUrlList struct {
+		UrlList []struct {
+			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string         `json:"VisitData" xml:"VisitData"`
+			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string         `json:"Flow" xml:"Flow"`
+			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+		} `json:"UrlList" xml:"UrlList"`
+	} `json:"AllUrlList" xml:"AllUrlList"`
+	Url200List struct {
+		UrlList []struct {
+			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string         `json:"VisitData" xml:"VisitData"`
+			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string         `json:"Flow" xml:"Flow"`
+			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+		} `json:"UrlList" xml:"UrlList"`
+	} `json:"Url200List" xml:"Url200List"`
+	Url300List struct {
+		UrlList []struct {
+			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string         `json:"VisitData" xml:"VisitData"`
+			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string         `json:"Flow" xml:"Flow"`
+			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+		} `json:"UrlList" xml:"UrlList"`
+	} `json:"Url300List" xml:"Url300List"`
+	Url400List struct {
+		UrlList []struct {
+			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string         `json:"VisitData" xml:"VisitData"`
+			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string         `json:"Flow" xml:"Flow"`
+			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+		} `json:"UrlList" xml:"UrlList"`
+	} `json:"Url400List" xml:"Url400List"`
+	Url500List struct {
+		UrlList []struct {
+			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string         `json:"VisitData" xml:"VisitData"`
+			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string         `json:"Flow" xml:"Flow"`
+			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+		} `json:"UrlList" xml:"UrlList"`
+	} `json:"Url500List" xml:"Url500List"`
 }
 
 func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisitRequest) {

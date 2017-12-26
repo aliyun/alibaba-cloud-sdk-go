@@ -64,12 +64,12 @@ func (client *Client) ModifyMailAddressWithCallback(request *ModifyMailAddressRe
 
 type ModifyMailAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	MailAddressId        string `position:"Query" name:"MailAddressId"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Password             string `position:"Query" name:"Password"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Password             string           `position:"Query" name:"Password"`
 }
 
 type ModifyMailAddressResponse struct {

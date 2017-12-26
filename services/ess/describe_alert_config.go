@@ -64,17 +64,17 @@ func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConf
 
 type DescribeAlertConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
 type DescribeAlertConfigResponse struct {
 	*responses.BaseResponse
-	SuccessConfig int    `json:"SuccessConfig" xml:"SuccessConfig"`
-	FailConfig    int    `json:"FailConfig" xml:"FailConfig"`
-	RejectConfig  int    `json:"RejectConfig" xml:"RejectConfig"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
+	SuccessConfig requests.Integer `json:"SuccessConfig" xml:"SuccessConfig"`
+	FailConfig    requests.Integer `json:"FailConfig" xml:"FailConfig"`
+	RejectConfig  requests.Integer `json:"RejectConfig" xml:"RejectConfig"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {

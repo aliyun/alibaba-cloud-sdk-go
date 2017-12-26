@@ -64,27 +64,27 @@ func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, cal
 
 type GetTrackListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OffsetCreateTime     string `position:"Query" name:"OffsetCreateTime"`
+	Total                string           `position:"Query" name:"Total"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
 }
 
 type GetTrackListResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	Total                int    `json:"Total" xml:"Total"`
-	PageNo               int    `json:"PageNo" xml:"PageNo"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
-	OffsetCreateTime     string `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
-	OffsetCreateTimeDesc string `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
+	RequestId            string           `json:"RequestId" xml:"RequestId"`
+	Total                requests.Integer `json:"Total" xml:"Total"`
+	PageNo               requests.Integer `json:"PageNo" xml:"PageNo"`
+	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
+	OffsetCreateTime     string           `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string           `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
 	Data                 struct {
 		Stat []struct {
 			CreateTime           string `json:"CreateTime" xml:"CreateTime"`

@@ -64,29 +64,31 @@ func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescr
 
 type BatchDescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	StartTime     string `position:"Query" name:"StartTime"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Action        string `position:"Query" name:"Action"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	Version       string `position:"Query" name:"Version"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Version       string           `position:"Query" name:"Version"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type BatchDescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	PageNumber int    `json:"PageNumber"`
-	PageSize   int    `json:"PageSize"`
-	TotalCount int    `json:"TotalCount"`
-	BpsDatas   []struct {
-		Timestamp  string  `json:"Timestamp"`
-		L1Bps      float64 `json:"L1Bps"`
-		DomainName string  `json:"DomainName"`
-	} `json:"BpsDatas"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	BpsDatas   struct {
+		DataModule []struct {
+			Timestamp  string         `json:"Timestamp" xml:"Timestamp"`
+			L1Bps      requests.Float `json:"L1Bps" xml:"L1Bps"`
+			L1InnerBps requests.Float `json:"L1InnerBps" xml:"L1InnerBps"`
+			L1OutBps   requests.Float `json:"L1OutBps" xml:"L1OutBps"`
+			DomainName string         `json:"DomainName" xml:"DomainName"`
+		} `json:"DataModule" xml:"DataModule"`
+	} `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {

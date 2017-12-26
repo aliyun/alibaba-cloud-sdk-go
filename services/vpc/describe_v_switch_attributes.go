@@ -64,30 +64,30 @@ func (client *Client) DescribeVSwitchAttributesWithCallback(request *DescribeVSw
 
 type DescribeVSwitchAttributesRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeVSwitchAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
-	VpcId                   string `json:"VpcId" xml:"VpcId"`
-	Status                  string `json:"Status" xml:"Status"`
-	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
-	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
-	AvailableIpAddressCount int64  `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
-	Description             string `json:"Description" xml:"Description"`
-	VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
-	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
-	IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
+	RequestId               string           `json:"RequestId" xml:"RequestId"`
+	VSwitchId               string           `json:"VSwitchId" xml:"VSwitchId"`
+	VpcId                   string           `json:"VpcId" xml:"VpcId"`
+	Status                  string           `json:"Status" xml:"Status"`
+	CidrBlock               string           `json:"CidrBlock" xml:"CidrBlock"`
+	ZoneId                  string           `json:"ZoneId" xml:"ZoneId"`
+	AvailableIpAddressCount requests.Integer `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+	Description             string           `json:"Description" xml:"Description"`
+	VSwitchName             string           `json:"VSwitchName" xml:"VSwitchName"`
+	CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
+	IsDefault               requests.Boolean `json:"IsDefault" xml:"IsDefault"`
 	CloudResources          struct {
 		CloudResourceSetType []struct {
-			ResourceType  string `json:"ResourceType" xml:"ResourceType"`
-			ResourceCount int    `json:"ResourceCount" xml:"ResourceCount"`
+			ResourceType  string           `json:"ResourceType" xml:"ResourceType"`
+			ResourceCount requests.Integer `json:"ResourceCount" xml:"ResourceCount"`
 		} `json:"CloudResourceSetType" xml:"CloudResourceSetType"`
 	} `json:"CloudResources" xml:"CloudResources"`
 }

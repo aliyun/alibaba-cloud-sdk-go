@@ -64,19 +64,19 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithCallba
 
 type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	VlanId               string `position:"Query" name:"VlanId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	UserCidr             string `position:"Query" name:"UserCidr"`
-	PhysicalConnectionId string `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CircuitCode          string `position:"Query" name:"CircuitCode"`
-	LocalGatewayIp       string `position:"Query" name:"LocalGatewayIp"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PeerGatewayIp        string `position:"Query" name:"PeerGatewayIp"`
-	PeeringSubnetMask    string `position:"Query" name:"PeeringSubnetMask"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VbrId                string `position:"Query" name:"VbrId"`
+	VlanId               string           `position:"Query" name:"VlanId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CircuitCode          string           `position:"Query" name:"CircuitCode"`
+	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
+	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrId                string           `position:"Query" name:"VbrId"`
 }
 
 type AssociatePhysicalConnectionToVirtualBorderRouterResponse struct {

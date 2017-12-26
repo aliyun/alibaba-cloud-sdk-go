@@ -64,38 +64,37 @@ func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest,
 
 type AddPhoneNumberRequest struct {
 	*requests.RpcRequest
+	PhoneNumber   string `position:"Query" name:"PhoneNumber"`
+	Usage         string `position:"Query" name:"Usage"`
 	ContactFlowId string `position:"Query" name:"ContactFlowId"`
 	InstanceId    string `position:"Query" name:"InstanceId"`
-	Usage         string `position:"Query" name:"Usage"`
-	PhoneNumber   string `position:"Query" name:"PhoneNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
 }
 
 type AddPhoneNumberResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	PhoneNumber    struct {
-		PhoneNumberId          string `json:"PhoneNumberId"`
-		InstanceId             string `json:"InstanceId"`
-		Number                 string `json:"Number"`
-		PhoneNumberDescription string `json:"PhoneNumberDescription"`
-		TestOnly               bool   `json:"TestOnly"`
-		RemainingTime          int    `json:"RemainingTime"`
-		AllowOutbound          bool   `json:"AllowOutbound"`
-		Usage                  string `json:"Usage"`
-		Trunks                 int    `json:"Trunks"`
+		PhoneNumberId          string           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+		InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
+		Number                 string           `json:"Number" xml:"Number"`
+		PhoneNumberDescription string           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+		TestOnly               requests.Boolean `json:"TestOnly" xml:"TestOnly"`
+		RemainingTime          requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
+		AllowOutbound          requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
+		Usage                  string           `json:"Usage" xml:"Usage"`
+		Trunks                 requests.Integer `json:"Trunks" xml:"Trunks"`
 		ContactFlow            struct {
-			ContactFlowId          string `json:"ContactFlowId"`
-			InstanceId             string `json:"InstanceId"`
-			ContactFlowName        string `json:"ContactFlowName"`
-			ContactFlowDescription string `json:"ContactFlowDescription"`
-			Type                   string `json:"Type"`
-		} `json:"ContactFlow"`
-	} `json:"PhoneNumber"`
+			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
+			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
+			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+			Type                   string `json:"Type" xml:"Type"`
+		} `json:"ContactFlow" xml:"ContactFlow"`
+	} `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
 func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {

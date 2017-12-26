@@ -65,23 +65,25 @@ func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, c
 type GetThumbnailsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
 	ZoomType  string    `position:"Query" name:"ZoomType"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetThumbnailsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
-	Results   []struct {
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		PhotoId      int64  `json:"PhotoId"`
-		ThumbnailUrl string `json:"ThumbnailUrl"`
-	} `json:"Results"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   struct {
+		Result []struct {
+			Code         string           `json:"Code" xml:"Code"`
+			Message      string           `json:"Message" xml:"Message"`
+			PhotoId      requests.Integer `json:"PhotoId" xml:"PhotoId"`
+			ThumbnailUrl string           `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
+		} `json:"Result" xml:"Result"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {

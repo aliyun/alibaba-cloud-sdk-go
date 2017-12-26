@@ -64,11 +64,11 @@ func (client *Client) CreateAccessRuleWithCallback(request *CreateAccessRuleRequ
 
 type CreateAccessRuleRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	Priority        string `position:"Query" name:"Priority"`
-	RWAccessType    string `position:"Query" name:"RWAccessType"`
-	UserAccessType  string `position:"Query" name:"UserAccessType"`
-	SourceCidrIp    string `position:"Query" name:"SourceCidrIp"`
+	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
+	RWAccessType    string           `position:"Query" name:"RWAccessType"`
+	UserAccessType  string           `position:"Query" name:"UserAccessType"`
+	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
 }
 
 type CreateAccessRuleResponse struct {

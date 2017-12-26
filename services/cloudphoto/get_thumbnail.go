@@ -64,19 +64,19 @@ func (client *Client) GetThumbnailWithCallback(request *GetThumbnailRequest, cal
 
 type GetThumbnailRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	ZoomType  string `position:"Query" name:"ZoomType"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	ZoomType  string           `position:"Query" name:"ZoomType"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type GetThumbnailResponse struct {
 	*responses.BaseResponse
-	Code         string `json:"Code"`
-	Message      string `json:"Message"`
-	ThumbnailUrl string `json:"ThumbnailUrl"`
-	RequestId    string `json:"RequestId"`
-	Action       string `json:"Action"`
+	Code         string `json:"Code" xml:"Code"`
+	Message      string `json:"Message" xml:"Message"`
+	ThumbnailUrl string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Action       string `json:"Action" xml:"Action"`
 }
 
 func CreateGetThumbnailRequest() (request *GetThumbnailRequest) {

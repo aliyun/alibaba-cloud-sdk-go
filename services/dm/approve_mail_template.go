@@ -64,11 +64,11 @@ func (client *Client) ApproveMailTemplateWithCallback(request *ApproveMailTempla
 
 type ApproveMailTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateId           string `position:"Query" name:"TemplateId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type ApproveMailTemplateResponse struct {

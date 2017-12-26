@@ -64,17 +64,20 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string `position:"Query" name:"InstanceIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId           string           `json:"RequestId" xml:"RequestId"`
+	RegionId            string           `json:"RegionId" xml:"RegionId"`
+	TotalCount          requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	InstanceRamRoleSets struct {
 		InstanceRamRoleSet []struct {
 			InstanceId  string `json:"InstanceId" xml:"InstanceId"`

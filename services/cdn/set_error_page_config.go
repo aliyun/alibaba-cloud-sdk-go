@@ -64,18 +64,16 @@ func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfig
 
 type SetErrorPageConfigRequest struct {
 	*requests.RpcRequest
-	PageType      string `position:"Query" name:"PageType"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	CustomPageUrl string `position:"Query" name:"CustomPageUrl"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	PageType      string           `position:"Query" name:"PageType"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	CustomPageUrl string           `position:"Query" name:"CustomPageUrl"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetErrorPageConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetErrorPageConfigRequest() (request *SetErrorPageConfigRequest) {

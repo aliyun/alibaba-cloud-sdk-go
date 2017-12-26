@@ -69,13 +69,13 @@ type NodeStatusRequest struct {
 
 type NodeStatusResponse struct {
 	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	AutoInstall  bool   `json:"AutoInstall" xml:"AutoInstall"`
-	Status       string `json:"Status" xml:"Status"`
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	InstanceId   string           `json:"InstanceId" xml:"InstanceId"`
+	AutoInstall  requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
+	Status       string           `json:"Status" xml:"Status"`
 }
 
 func CreateNodeStatusRequest() (request *NodeStatusRequest) {

@@ -64,25 +64,25 @@ func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourc
 
 type DescribeResourceUsageRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine         string `json:"Engine" xml:"Engine"`
-	DiskUsed       int64  `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize       int64  `json:"DataSize" xml:"DataSize"`
-	LogSize        int64  `json:"LogSize" xml:"LogSize"`
-	BackupSize     int64  `json:"BackupSize" xml:"BackupSize"`
-	SQLSize        int64  `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	DBInstanceId   string           `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine         string           `json:"Engine" xml:"Engine"`
+	DiskUsed       requests.Integer `json:"DiskUsed" xml:"DiskUsed"`
+	DataSize       requests.Integer `json:"DataSize" xml:"DataSize"`
+	LogSize        requests.Integer `json:"LogSize" xml:"LogSize"`
+	BackupSize     requests.Integer `json:"BackupSize" xml:"BackupSize"`
+	SQLSize        requests.Integer `json:"SQLSize" xml:"SQLSize"`
+	ColdBackupSize requests.Integer `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
 func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {

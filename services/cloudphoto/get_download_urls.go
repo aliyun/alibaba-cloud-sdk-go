@@ -65,22 +65,24 @@ func (client *Client) GetDownloadUrlsWithCallback(request *GetDownloadUrlsReques
 type GetDownloadUrlsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetDownloadUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
-	Results   []struct {
-		Code        string `json:"Code"`
-		Message     string `json:"Message"`
-		PhotoId     int64  `json:"PhotoId"`
-		DownloadUrl string `json:"DownloadUrl"`
-	} `json:"Results"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Results   struct {
+		Result []struct {
+			Code        string           `json:"Code" xml:"Code"`
+			Message     string           `json:"Message" xml:"Message"`
+			PhotoId     requests.Integer `json:"PhotoId" xml:"PhotoId"`
+			DownloadUrl string           `json:"DownloadUrl" xml:"DownloadUrl"`
+		} `json:"Result" xml:"Result"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {

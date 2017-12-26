@@ -64,21 +64,19 @@ func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequ
 
 type SetDynamicConfigRequest struct {
 	*requests.RpcRequest
-	DynamicOrigin       string `position:"Query" name:"DynamicOrigin"`
-	StaticType          string `position:"Query" name:"StaticType"`
-	SecurityToken       string `position:"Query" name:"SecurityToken"`
-	StaticUri           string `position:"Query" name:"StaticUri"`
-	DomainName          string `position:"Query" name:"DomainName"`
-	Action              string `position:"Query" name:"Action"`
-	StaticPath          string `position:"Query" name:"StaticPath"`
-	DynamicCacheControl string `position:"Query" name:"DynamicCacheControl"`
-	OwnerId             string `position:"Query" name:"OwnerId"`
-	AccessKeyId         string `position:"Query" name:"AccessKeyId"`
+	DomainName          string           `position:"Query" name:"DomainName"`
+	StaticUri           string           `position:"Query" name:"StaticUri"`
+	DynamicOrigin       string           `position:"Query" name:"DynamicOrigin"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
+	StaticType          string           `position:"Query" name:"StaticType"`
+	SecurityToken       string           `position:"Query" name:"SecurityToken"`
+	StaticPath          string           `position:"Query" name:"StaticPath"`
+	DynamicCacheControl string           `position:"Query" name:"DynamicCacheControl"`
 }
 
 type SetDynamicConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {

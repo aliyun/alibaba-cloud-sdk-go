@@ -64,22 +64,20 @@ func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJ
 
 type SubmitVideoSplitJobRequest struct {
 	*requests.RpcRequest
-	Input                string `position:"Query" name:"Input"`
-	VideoSplitConfig     string `position:"Query" name:"VideoSplitConfig"`
-	UserData             string `position:"Query" name:"UserData"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VideoSplitConfig     string           `position:"Query" name:"VideoSplitConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitVideoSplitJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {

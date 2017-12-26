@@ -64,40 +64,38 @@ func (client *Client) AddWaterMarkTemplateWithCallback(request *AddWaterMarkTemp
 
 type AddWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Config               string `position:"Query" name:"Config"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	Config               string           `position:"Query" name:"Config"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	WaterMarkTemplate struct {
-		Id       string `json:"Id"`
-		Name     string `json:"Name"`
-		Width    string `json:"Width"`
-		Height   string `json:"Height"`
-		Dx       string `json:"Dx"`
-		Dy       string `json:"Dy"`
-		ReferPos string `json:"ReferPos"`
-		Type     string `json:"Type"`
-		State    string `json:"State"`
+		Id       string `json:"Id" xml:"Id"`
+		Name     string `json:"Name" xml:"Name"`
+		Width    string `json:"Width" xml:"Width"`
+		Height   string `json:"Height" xml:"Height"`
+		Dx       string `json:"Dx" xml:"Dx"`
+		Dy       string `json:"Dy" xml:"Dy"`
+		ReferPos string `json:"ReferPos" xml:"ReferPos"`
+		Type     string `json:"Type" xml:"Type"`
+		State    string `json:"State" xml:"State"`
 		Timeline struct {
-			Start    string `json:"Start"`
-			Duration string `json:"Duration"`
-		} `json:"Timeline"`
+			Start    string `json:"Start" xml:"Start"`
+			Duration string `json:"Duration" xml:"Duration"`
+		} `json:"Timeline" xml:"Timeline"`
 		RatioRefer struct {
-			Dx     string `json:"Dx"`
-			Dy     string `json:"Dy"`
-			Width  string `json:"Width"`
-			Height string `json:"Height"`
-		} `json:"RatioRefer"`
-	} `json:"WaterMarkTemplate"`
+			Dx     string `json:"Dx" xml:"Dx"`
+			Dy     string `json:"Dy" xml:"Dy"`
+			Width  string `json:"Width" xml:"Width"`
+			Height string `json:"Height" xml:"Height"`
+		} `json:"RatioRefer" xml:"RatioRefer"`
+	} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
 }
 
 func CreateAddWaterMarkTemplateRequest() (request *AddWaterMarkTemplateRequest) {

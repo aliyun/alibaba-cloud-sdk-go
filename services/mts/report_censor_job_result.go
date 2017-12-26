@@ -64,21 +64,19 @@ func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJob
 
 type ReportCensorJobResultRequest struct {
 	*requests.RpcRequest
-	JobId                string `position:"Query" name:"JobId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Label                string `position:"Query" name:"Label"`
-	Detail               string `position:"Query" name:"Detail"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	Detail               string           `position:"Query" name:"Detail"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Label                string           `position:"Query" name:"Label"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportCensorJobResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest) {

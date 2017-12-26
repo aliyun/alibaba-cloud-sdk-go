@@ -64,30 +64,30 @@ func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRe
 
 type SetPasswordPolicyRequest struct {
 	*requests.RpcRequest
-	MaxLoginAttemps            string `position:"Query" name:"MaxLoginAttemps"`
-	RequireUppercaseCharacters string `position:"Query" name:"RequireUppercaseCharacters"`
-	MinimumPasswordLength      string `position:"Query" name:"MinimumPasswordLength"`
-	MaxPasswordAge             string `position:"Query" name:"MaxPasswordAge"`
-	RequireNumbers             string `position:"Query" name:"RequireNumbers"`
-	RequireLowercaseCharacters string `position:"Query" name:"RequireLowercaseCharacters"`
-	PasswordReusePrevention    string `position:"Query" name:"PasswordReusePrevention"`
-	HardExpiry                 string `position:"Query" name:"HardExpiry"`
-	RequireSymbols             string `position:"Query" name:"RequireSymbols"`
+	MaxLoginAttemps            requests.Integer `position:"Query" name:"MaxLoginAttemps"`
+	RequireUppercaseCharacters requests.Boolean `position:"Query" name:"RequireUppercaseCharacters"`
+	MinimumPasswordLength      requests.Integer `position:"Query" name:"MinimumPasswordLength"`
+	MaxPasswordAge             requests.Integer `position:"Query" name:"MaxPasswordAge"`
+	RequireNumbers             requests.Boolean `position:"Query" name:"RequireNumbers"`
+	RequireLowercaseCharacters requests.Boolean `position:"Query" name:"RequireLowercaseCharacters"`
+	PasswordReusePrevention    requests.Integer `position:"Query" name:"PasswordReusePrevention"`
+	HardExpiry                 requests.Boolean `position:"Query" name:"HardExpiry"`
+	RequireSymbols             requests.Boolean `position:"Query" name:"RequireSymbols"`
 }
 
 type SetPasswordPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	PasswordPolicy struct {
-		MinimumPasswordLength      int  `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
-		RequireLowercaseCharacters bool `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
-		RequireUppercaseCharacters bool `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
-		RequireNumbers             bool `json:"RequireNumbers" xml:"RequireNumbers"`
-		RequireSymbols             bool `json:"RequireSymbols" xml:"RequireSymbols"`
-		HardExpiry                 bool `json:"HardExpiry" xml:"HardExpiry"`
-		MaxPasswordAge             int  `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
-		PasswordReusePrevention    int  `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
-		MaxLoginAttemps            int  `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
+		MinimumPasswordLength      requests.Integer `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
+		RequireLowercaseCharacters requests.Boolean `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
+		RequireUppercaseCharacters requests.Boolean `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
+		RequireNumbers             requests.Boolean `json:"RequireNumbers" xml:"RequireNumbers"`
+		RequireSymbols             requests.Boolean `json:"RequireSymbols" xml:"RequireSymbols"`
+		HardExpiry                 requests.Boolean `json:"HardExpiry" xml:"HardExpiry"`
+		MaxPasswordAge             requests.Integer `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
+		PasswordReusePrevention    requests.Integer `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
+		MaxLoginAttemps            requests.Integer `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
 	} `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 

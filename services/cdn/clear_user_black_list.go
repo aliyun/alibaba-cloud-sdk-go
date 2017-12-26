@@ -64,16 +64,14 @@ func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackList
 
 type ClearUserBlackListRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type ClearUserBlackListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {

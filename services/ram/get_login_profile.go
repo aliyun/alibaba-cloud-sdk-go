@@ -71,10 +71,10 @@ type GetLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	LoginProfile struct {
-		UserName              string `json:"UserName" xml:"UserName"`
-		PasswordResetRequired bool   `json:"PasswordResetRequired" xml:"PasswordResetRequired"`
-		MFABindRequired       bool   `json:"MFABindRequired" xml:"MFABindRequired"`
-		CreateDate            string `json:"CreateDate" xml:"CreateDate"`
+		UserName              string           `json:"UserName" xml:"UserName"`
+		PasswordResetRequired requests.Boolean `json:"PasswordResetRequired" xml:"PasswordResetRequired"`
+		MFABindRequired       requests.Boolean `json:"MFABindRequired" xml:"MFABindRequired"`
+		CreateDate            string           `json:"CreateDate" xml:"CreateDate"`
 	} `json:"LoginProfile" xml:"LoginProfile"`
 }
 

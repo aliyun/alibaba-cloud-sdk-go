@@ -64,34 +64,32 @@ func (client *Client) UpdateCoverPipelineWithCallback(request *UpdateCoverPipeli
 
 type UpdateCoverPipelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Role                 string `position:"Query" name:"Role"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	Action               string `position:"Query" name:"Action"`
-	State                string `position:"Query" name:"State"`
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Priority             string `position:"Query" name:"Priority"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	Name                 string           `position:"Query" name:"Name"`
+	State                string           `position:"Query" name:"State"`
+	Role                 string           `position:"Query" name:"Role"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Priority     int    `json:"Priority"`
-		Role         string `json:"Role"`
+		Id           string           `json:"Id" xml:"Id"`
+		Name         string           `json:"Name" xml:"Name"`
+		State        string           `json:"State" xml:"State"`
+		Priority     requests.Integer `json:"Priority" xml:"Priority"`
+		Role         string           `json:"Role" xml:"Role"`
 		NotifyConfig struct {
-			Topic string `json:"Topic"`
-			Queue string `json:"Queue"`
-		} `json:"NotifyConfig"`
-	} `json:"Pipeline"`
+			Topic string `json:"Topic" xml:"Topic"`
+			Queue string `json:"Queue" xml:"Queue"`
+		} `json:"NotifyConfig" xml:"NotifyConfig"`
+	} `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {

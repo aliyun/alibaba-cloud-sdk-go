@@ -64,14 +64,14 @@ func (client *Client) DescribeNewProjectEipMonitorDataWithCallback(request *Desc
 
 type DescribeNewProjectEipMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Period               string `position:"Query" name:"Period"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AllocationId         string `position:"Query" name:"AllocationId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
 }
 
 type DescribeNewProjectEipMonitorDataResponse struct {
@@ -79,12 +79,12 @@ type DescribeNewProjectEipMonitorDataResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	EipMonitorDatas struct {
 		EipMonitorData []struct {
-			EipRX        int    `json:"EipRX" xml:"EipRX"`
-			EipTX        int    `json:"EipTX" xml:"EipTX"`
-			EipFlow      int    `json:"EipFlow" xml:"EipFlow"`
-			EipBandwidth int    `json:"EipBandwidth" xml:"EipBandwidth"`
-			EipPackets   int    `json:"EipPackets" xml:"EipPackets"`
-			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
+			EipRX        requests.Integer `json:"EipRX" xml:"EipRX"`
+			EipTX        requests.Integer `json:"EipTX" xml:"EipTX"`
+			EipFlow      requests.Integer `json:"EipFlow" xml:"EipFlow"`
+			EipBandwidth requests.Integer `json:"EipBandwidth" xml:"EipBandwidth"`
+			EipPackets   requests.Integer `json:"EipPackets" xml:"EipPackets"`
+			TimeStamp    string           `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"EipMonitorData" xml:"EipMonitorData"`
 	} `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }

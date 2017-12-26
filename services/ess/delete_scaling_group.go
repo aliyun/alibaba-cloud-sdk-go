@@ -64,11 +64,11 @@ func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroup
 
 type DeleteScalingGroupRequest struct {
 	*requests.RpcRequest
-	ForceDelete          string `position:"Query" name:"ForceDelete"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+	ForceDelete          requests.Boolean `position:"Query" name:"ForceDelete"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
 type DeleteScalingGroupResponse struct {

@@ -64,23 +64,24 @@ func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback 
 
 type ListRolesRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	AccessKeyId string `position:"Query" name:"AccessKeyId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
-	Roles          []struct {
-		RoleId          string `json:"RoleId"`
-		InstanceId      string `json:"InstanceId"`
-		RoleName        string `json:"RoleName"`
-		RoleDescription string `json:"RoleDescription"`
-	} `json:"Roles"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Roles          struct {
+		Role []struct {
+			RoleId          string `json:"RoleId" xml:"RoleId"`
+			InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+			RoleName        string `json:"RoleName" xml:"RoleName"`
+			RoleDescription string `json:"RoleDescription" xml:"RoleDescription"`
+		} `json:"Role" xml:"Role"`
+	} `json:"Roles" xml:"Roles"`
 }
 
 func CreateListRolesRequest() (request *ListRolesRequest) {

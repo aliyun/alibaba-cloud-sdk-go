@@ -64,18 +64,18 @@ func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request 
 
 type CheckDiskEnableAutoSnapshotValidationRequest struct {
 	*requests.RpcRequest
-	DiskIds              string `position:"Query" name:"DiskIds"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DiskIds              string           `position:"Query" name:"DiskIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CheckDiskEnableAutoSnapshotValidationResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	IsPermitted            string `json:"IsPermitted" xml:"IsPermitted"`
-	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	RequestId              string           `json:"RequestId" xml:"RequestId"`
+	IsPermitted            string           `json:"IsPermitted" xml:"IsPermitted"`
+	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
 }
 
 func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEnableAutoSnapshotValidationRequest) {

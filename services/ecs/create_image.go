@@ -73,13 +73,13 @@ type CreateImageRequest struct {
 	DiskDeviceMapping    *[]CreateImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
 	Tag1Key              string                          `position:"Query" name:"Tag.1.Key"`
 	Tag1Value            string                          `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string                          `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
 	Tag4Value            string                          `position:"Query" name:"Tag.4.Value"`
 	Platform             string                          `position:"Query" name:"Platform"`
 	ClientToken          string                          `position:"Query" name:"ClientToken"`
 	ImageVersion         string                          `position:"Query" name:"ImageVersion"`
-	OwnerId              string                          `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
 	Tag5Key              string                          `position:"Query" name:"Tag.5.Key"`
 	ImageName            string                          `position:"Query" name:"ImageName"`
 	Tag2Key              string                          `position:"Query" name:"Tag.2.Key"`

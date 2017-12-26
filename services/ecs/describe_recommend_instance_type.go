@@ -64,17 +64,17 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
-	ProxyId              string `position:"Query" name:"proxyId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	Operator             string `position:"Query" name:"operator"`
-	InstanceType         string `position:"Query" name:"InstanceType"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Token                string `position:"Query" name:"token"`
-	Scene                string `position:"Query" name:"Scene"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Channel              string `position:"Query" name:"channel"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	Operator             string           `position:"Query" name:"operator"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Token                string           `position:"Query" name:"token"`
+	Scene                string           `position:"Query" name:"Scene"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Channel              string           `position:"Query" name:"channel"`
 }
 
 type DescribeRecommendInstanceTypeResponse struct {
@@ -86,12 +86,12 @@ type DescribeRecommendInstanceTypeResponse struct {
 			CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
 			Scene         string `json:"Scene" xml:"Scene"`
 			InstanceType  struct {
-				Generation         string `json:"Generation" xml:"Generation"`
-				InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-				InstanceType       string `json:"InstanceType" xml:"InstanceType"`
-				SupportIoOptimized string `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
-				Cores              int    `json:"Cores" xml:"Cores"`
-				Memory             int    `json:"Memory" xml:"Memory"`
+				Generation         string           `json:"Generation" xml:"Generation"`
+				InstanceTypeFamily string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+				InstanceType       string           `json:"InstanceType" xml:"InstanceType"`
+				SupportIoOptimized string           `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
+				Cores              requests.Integer `json:"Cores" xml:"Cores"`
+				Memory             requests.Integer `json:"Memory" xml:"Memory"`
 			} `json:"InstanceType" xml:"InstanceType"`
 			Zones struct {
 				Zone []struct {

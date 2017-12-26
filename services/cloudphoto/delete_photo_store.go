@@ -69,10 +69,10 @@ type DeletePhotoStoreRequest struct {
 
 type DeletePhotoStoreResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateDeletePhotoStoreRequest() (request *DeletePhotoStoreRequest) {

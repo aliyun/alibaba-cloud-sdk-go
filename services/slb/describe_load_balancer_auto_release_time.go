@@ -64,19 +64,19 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithCallback(request *D
 
 type DescribeLoadBalancerAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeLoadBalancerAutoReleaseTimeResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	AutoReleaseTime int64  `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	RequestId       string           `json:"RequestId" xml:"RequestId"`
+	AutoReleaseTime requests.Integer `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 }
 
 func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBalancerAutoReleaseTimeRequest) {

@@ -64,13 +64,13 @@ func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, c
 
 type CreateBgpPeerRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	BgpGroupId           string `position:"Query" name:"BgpGroupId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	PeerIpAddress        string `position:"Query" name:"PeerIpAddress"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
 }
 
 type CreateBgpPeerResponse struct {

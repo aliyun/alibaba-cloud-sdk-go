@@ -64,36 +64,36 @@ func (client *Client) DescribeDomainSlowRatioWithCallback(request *DescribeDomai
 
 type DescribeDomainSlowRatioRequest struct {
 	*requests.RpcRequest
-	StartTime     string `position:"Query" name:"StartTime"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Action        string `position:"Query" name:"Action"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	Version       string `position:"Query" name:"Version"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Version       string           `position:"Query" name:"Version"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainSlowRatioResponse struct {
 	*responses.BaseResponse
-	EndTime                  string `json:"EndTime"`
-	DataInterval             int    `json:"DataInterval"`
-	PageNumber               int    `json:"PageNumber"`
-	PageSize                 int    `json:"PageSize"`
-	TotalCount               int    `json:"TotalCount"`
-	StartTime                string `json:"StartTime"`
-	SlowRatioDataPerInterval []struct {
-		TotalUsers   int     `json:"TotalUsers"`
-		SlowUsers    int     `json:"SlowUsers"`
-		SlowRatio    float64 `json:"SlowRatio"`
-		RegionNameZh string  `json:"RegionNameZh"`
-		RegionNameEn string  `json:"RegionNameEn"`
-		IspNameZh    string  `json:"IspNameZh"`
-		IspNameEn    string  `json:"IspNameEn"`
-		Time         string  `json:"Time"`
-	} `json:"SlowRatioDataPerInterval"`
+	EndTime                  string           `json:"EndTime" xml:"EndTime"`
+	DataInterval             requests.Integer `json:"DataInterval" xml:"DataInterval"`
+	PageNumber               requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize                 requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount               requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	StartTime                string           `json:"StartTime" xml:"StartTime"`
+	SlowRatioDataPerInterval struct {
+		SlowRatioData []struct {
+			TotalUsers   requests.Integer `json:"TotalUsers" xml:"TotalUsers"`
+			SlowUsers    requests.Integer `json:"SlowUsers" xml:"SlowUsers"`
+			SlowRatio    requests.Float   `json:"SlowRatio" xml:"SlowRatio"`
+			RegionNameZh string           `json:"RegionNameZh" xml:"RegionNameZh"`
+			RegionNameEn string           `json:"RegionNameEn" xml:"RegionNameEn"`
+			IspNameZh    string           `json:"IspNameZh" xml:"IspNameZh"`
+			IspNameEn    string           `json:"IspNameEn" xml:"IspNameEn"`
+			Time         string           `json:"Time" xml:"Time"`
+		} `json:"SlowRatioData" xml:"SlowRatioData"`
+	} `json:"SlowRatioDataPerInterval" xml:"SlowRatioDataPerInterval"`
 }
 
 func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioRequest) {

@@ -64,25 +64,25 @@ func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUr
 
 type GetPublicAccessUrlsRequest struct {
 	*requests.RpcRequest
-	DomainType string    `position:"Query" name:"DomainType"`
 	LibraryId  string    `position:"Query" name:"LibraryId"`
-	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName  string    `position:"Query" name:"StoreName"`
 	ZoomType   string    `position:"Query" name:"ZoomType"`
+	DomainType string    `position:"Query" name:"DomainType"`
+	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetPublicAccessUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Code      string `json:"Code"`
-		Message   string `json:"Message"`
-		PhotoId   int64  `json:"PhotoId"`
-		AccessUrl string `json:"AccessUrl"`
-	} `json:"Results"`
+		Code      string           `json:"Code" xml:"Code"`
+		Message   string           `json:"Message" xml:"Message"`
+		PhotoId   requests.Integer `json:"PhotoId" xml:"PhotoId"`
+		AccessUrl string           `json:"AccessUrl" xml:"AccessUrl"`
+	} `json:"Results" xml:"Results"`
 }
 
 func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {

@@ -64,12 +64,12 @@ func (client *Client) ModifyAccessRuleWithCallback(request *ModifyAccessRuleRequ
 
 type ModifyAccessRuleRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	AccessRuleId    string `position:"Query" name:"AccessRuleId"`
-	Priority        string `position:"Query" name:"Priority"`
-	RWAccessType    string `position:"Query" name:"RWAccessType"`
-	UserAccessType  string `position:"Query" name:"UserAccessType"`
-	SourceCidrIp    string `position:"Query" name:"SourceCidrIp"`
+	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
+	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
+	RWAccessType    string           `position:"Query" name:"RWAccessType"`
+	UserAccessType  string           `position:"Query" name:"UserAccessType"`
+	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
 }
 
 type ModifyAccessRuleResponse struct {

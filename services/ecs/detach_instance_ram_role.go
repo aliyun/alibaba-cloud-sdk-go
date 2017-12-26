@@ -64,25 +64,25 @@ func (client *Client) DetachInstanceRamRoleWithCallback(request *DetachInstanceR
 
 type DetachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string `position:"Query" name:"InstanceIds"`
-	RamRoleName          string `position:"Query" name:"RamRoleName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DetachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	TotalCount                   int    `json:"TotalCount" xml:"TotalCount"`
-	FailCount                    int    `json:"FailCount" xml:"FailCount"`
-	RamRoleName                  string `json:"RamRoleName" xml:"RamRoleName"`
+	RequestId                    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount                   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	FailCount                    requests.Integer `json:"FailCount" xml:"FailCount"`
+	RamRoleName                  string           `json:"RamRoleName" xml:"RamRoleName"`
 	DetachInstanceRamRoleResults struct {
 		DetachInstanceRamRoleResult []struct {
-			InstanceId          string `json:"InstanceId" xml:"InstanceId"`
-			Success             bool   `json:"Success" xml:"Success"`
-			Code                string `json:"Code" xml:"Code"`
-			Message             string `json:"Message" xml:"Message"`
+			InstanceId          string           `json:"InstanceId" xml:"InstanceId"`
+			Success             requests.Boolean `json:"Success" xml:"Success"`
+			Code                string           `json:"Code" xml:"Code"`
+			Message             string           `json:"Message" xml:"Message"`
 			InstanceRamRoleSets struct {
 				InstanceRamRoleSet []struct {
 					InstanceId  string `json:"InstanceId" xml:"InstanceId"`

@@ -71,8 +71,8 @@ type ImportImageRequest struct {
 	Description          string                          `position:"Query" name:"Description"`
 	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
 	Architecture         string                          `position:"Query" name:"Architecture"`
-	ResourceOwnerId      string                          `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string                          `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
 	ImageName            string                          `position:"Query" name:"ImageName"`
 }
 

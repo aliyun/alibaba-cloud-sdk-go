@@ -64,36 +64,36 @@ func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsReques
 
 type DescribeDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	GroupId      string           `position:"Query" name:"GroupId"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Domains    struct {
 		Domain []struct {
-			DomainId        string `json:"DomainId" xml:"DomainId"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			PunyCode        string `json:"PunyCode" xml:"PunyCode"`
-			AliDomain       bool   `json:"AliDomain" xml:"AliDomain"`
-			RecordCount     int64  `json:"RecordCount" xml:"RecordCount"`
-			RegistrantEmail string `json:"RegistrantEmail" xml:"RegistrantEmail"`
-			Remark          string `json:"Remark" xml:"Remark"`
-			GroupId         string `json:"GroupId" xml:"GroupId"`
-			GroupName       string `json:"GroupName" xml:"GroupName"`
-			InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-			VersionCode     string `json:"VersionCode" xml:"VersionCode"`
-			VersionName     string `json:"VersionName" xml:"VersionName"`
-			InstanceEndTime string `json:"InstanceEndTime" xml:"InstanceEndTime"`
-			InstanceExpired bool   `json:"InstanceExpired" xml:"InstanceExpired"`
+			DomainId        string           `json:"DomainId" xml:"DomainId"`
+			DomainName      string           `json:"DomainName" xml:"DomainName"`
+			PunyCode        string           `json:"PunyCode" xml:"PunyCode"`
+			AliDomain       requests.Boolean `json:"AliDomain" xml:"AliDomain"`
+			RecordCount     requests.Integer `json:"RecordCount" xml:"RecordCount"`
+			RegistrantEmail string           `json:"RegistrantEmail" xml:"RegistrantEmail"`
+			Remark          string           `json:"Remark" xml:"Remark"`
+			GroupId         string           `json:"GroupId" xml:"GroupId"`
+			GroupName       string           `json:"GroupName" xml:"GroupName"`
+			InstanceId      string           `json:"InstanceId" xml:"InstanceId"`
+			VersionCode     string           `json:"VersionCode" xml:"VersionCode"`
+			VersionName     string           `json:"VersionName" xml:"VersionName"`
+			InstanceEndTime string           `json:"InstanceEndTime" xml:"InstanceEndTime"`
+			InstanceExpired requests.Boolean `json:"InstanceExpired" xml:"InstanceExpired"`
 			DnsServers      struct {
 				DnsServer []string `json:"DnsServer" xml:"DnsServer"`
 			} `json:"DnsServers" xml:"DnsServers"`

@@ -64,31 +64,31 @@ func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImag
 
 type ModifyImageSharePermissionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	AddAccount1          string `position:"Query" name:"AddAccount.1"`
-	RemoveAccount1       string `position:"Query" name:"RemoveAccount.1"`
-	RemoveAccount2       string `position:"Query" name:"RemoveAccount.2"`
-	RemoveAccount3       string `position:"Query" name:"RemoveAccount.3"`
-	RemoveAccount4       string `position:"Query" name:"RemoveAccount.4"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ImageId              string `position:"Query" name:"ImageId"`
-	RemoveAccount9       string `position:"Query" name:"RemoveAccount.9"`
-	RemoveAccount10      string `position:"Query" name:"RemoveAccount.10"`
-	RemoveAccount6       string `position:"Query" name:"RemoveAccount.6"`
-	RemoveAccount5       string `position:"Query" name:"RemoveAccount.5"`
-	RemoveAccount8       string `position:"Query" name:"RemoveAccount.8"`
-	RemoveAccount7       string `position:"Query" name:"RemoveAccount.7"`
-	AddAccount4          string `position:"Query" name:"AddAccount.4"`
-	AddAccount5          string `position:"Query" name:"AddAccount.5"`
-	AddAccount2          string `position:"Query" name:"AddAccount.2"`
-	AddAccount3          string `position:"Query" name:"AddAccount.3"`
-	AddAccount8          string `position:"Query" name:"AddAccount.8"`
-	AddAccount9          string `position:"Query" name:"AddAccount.9"`
-	AddAccount6          string `position:"Query" name:"AddAccount.6"`
-	AddAccount10         string `position:"Query" name:"AddAccount.10"`
-	AddAccount7          string `position:"Query" name:"AddAccount.7"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AddAccount1          string           `position:"Query" name:"AddAccount.1"`
+	RemoveAccount1       string           `position:"Query" name:"RemoveAccount.1"`
+	RemoveAccount2       string           `position:"Query" name:"RemoveAccount.2"`
+	RemoveAccount3       string           `position:"Query" name:"RemoveAccount.3"`
+	RemoveAccount4       string           `position:"Query" name:"RemoveAccount.4"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	RemoveAccount9       string           `position:"Query" name:"RemoveAccount.9"`
+	RemoveAccount10      string           `position:"Query" name:"RemoveAccount.10"`
+	RemoveAccount6       string           `position:"Query" name:"RemoveAccount.6"`
+	RemoveAccount5       string           `position:"Query" name:"RemoveAccount.5"`
+	RemoveAccount8       string           `position:"Query" name:"RemoveAccount.8"`
+	RemoveAccount7       string           `position:"Query" name:"RemoveAccount.7"`
+	AddAccount4          string           `position:"Query" name:"AddAccount.4"`
+	AddAccount5          string           `position:"Query" name:"AddAccount.5"`
+	AddAccount2          string           `position:"Query" name:"AddAccount.2"`
+	AddAccount3          string           `position:"Query" name:"AddAccount.3"`
+	AddAccount8          string           `position:"Query" name:"AddAccount.8"`
+	AddAccount9          string           `position:"Query" name:"AddAccount.9"`
+	AddAccount6          string           `position:"Query" name:"AddAccount.6"`
+	AddAccount10         string           `position:"Query" name:"AddAccount.10"`
+	AddAccount7          string           `position:"Query" name:"AddAccount.7"`
 }
 
 type ModifyImageSharePermissionResponse struct {

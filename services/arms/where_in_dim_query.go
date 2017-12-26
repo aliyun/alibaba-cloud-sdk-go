@@ -64,19 +64,19 @@ func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryReques
 
 type WhereInDimQueryRequest struct {
 	*requests.RpcRequest
+	Limit         requests.Integer             `position:"Query" name:"Limit"`
+	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
+	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
+	ReduceTail    requests.Boolean             `position:"Query" name:"ReduceTail"`
+	MinTime       requests.Integer             `position:"Query" name:"MinTime"`
+	MaxTime       requests.Integer             `position:"Query" name:"MaxTime"`
+	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 	DateStr       string                       `position:"Query" name:"DateStr"`
-	MinTime       string                       `position:"Query" name:"MinTime"`
-	ReduceTail    string                       `position:"Query" name:"ReduceTail"`
-	MaxTime       string                       `position:"Query" name:"MaxTime"`
-	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
-	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
-	IntervalInSec string                       `position:"Query" name:"IntervalInSec"`
-	IsDrillDown   string                       `position:"Query" name:"IsDrillDown"`
-	OrderByKey    string                       `position:"Query" name:"OrderByKey"`
-	Limit         string                       `position:"Query" name:"Limit"`
-	DatasetId     string                       `position:"Query" name:"DatasetId"`
 	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
 	Dimensions    *[]WhereInDimQueryDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
+	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
+	OrderByKey    string                       `position:"Query" name:"OrderByKey"`
+	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
 }
 
 type WhereInDimQueryDimensions struct {
@@ -87,7 +87,7 @@ type WhereInDimQueryDimensions struct {
 
 type WhereInDimQueryResponse struct {
 	*responses.BaseResponse
-	Data string `json:"Data"`
+	Data string `json:"Data" xml:"Data"`
 }
 
 func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {

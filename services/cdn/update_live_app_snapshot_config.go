@@ -64,22 +64,20 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithCallback(request *UpdateLiv
 
 type UpdateLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
-	TimeInterval       string `position:"Query" name:"TimeInterval"`
-	OssBucket          string `position:"Query" name:"OssBucket"`
-	AppName            string `position:"Query" name:"AppName"`
-	SecurityToken      string `position:"Query" name:"SecurityToken"`
-	DomainName         string `position:"Query" name:"DomainName"`
-	OssEndpoint        string `position:"Query" name:"OssEndpoint"`
-	Action             string `position:"Query" name:"Action"`
-	SequenceOssObject  string `position:"Query" name:"SequenceOssObject"`
-	OverwriteOssObject string `position:"Query" name:"OverwriteOssObject"`
-	OwnerId            string `position:"Query" name:"OwnerId"`
-	AccessKeyId        string `position:"Query" name:"AccessKeyId"`
+	TimeInterval       requests.Integer `position:"Query" name:"TimeInterval"`
+	OssBucket          string           `position:"Query" name:"OssBucket"`
+	DomainName         string           `position:"Query" name:"DomainName"`
+	OssEndpoint        string           `position:"Query" name:"OssEndpoint"`
+	AppName            string           `position:"Query" name:"AppName"`
+	SequenceOssObject  string           `position:"Query" name:"SequenceOssObject"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken      string           `position:"Query" name:"SecurityToken"`
+	OverwriteOssObject string           `position:"Query" name:"OverwriteOssObject"`
 }
 
 type UpdateLiveAppSnapshotConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotConfigRequest) {

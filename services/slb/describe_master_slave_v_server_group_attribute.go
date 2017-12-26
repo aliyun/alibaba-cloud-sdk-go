@@ -64,13 +64,13 @@ func (client *Client) DescribeMasterSlaveVServerGroupAttributeWithCallback(reque
 
 type DescribeMasterSlaveVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                      string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount      string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId               string `position:"Query" name:"access_key_id"`
-	MasterSlaveVServerGroupId string `position:"Query" name:"MasterSlaveVServerGroupId"`
-	ResourceOwnerId           string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount              string `position:"Query" name:"OwnerAccount"`
-	OwnerId                   string `position:"Query" name:"OwnerId"`
+	Tags                      string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId               string           `position:"Query" name:"access_key_id"`
+	MasterSlaveVServerGroupId string           `position:"Query" name:"MasterSlaveVServerGroupId"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeMasterSlaveVServerGroupAttributeResponse struct {
@@ -80,10 +80,10 @@ type DescribeMasterSlaveVServerGroupAttributeResponse struct {
 	MasterSlaveVServerGroupName string `json:"MasterSlaveVServerGroupName" xml:"MasterSlaveVServerGroupName"`
 	MasterSlaveBackendServers   struct {
 		MasterSlaveBackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Port     int    `json:"Port" xml:"Port"`
-			Weight   int    `json:"Weight" xml:"Weight"`
-			IsBackup int    `json:"IsBackup" xml:"IsBackup"`
+			ServerId string           `json:"ServerId" xml:"ServerId"`
+			Port     requests.Integer `json:"Port" xml:"Port"`
+			Weight   requests.Integer `json:"Weight" xml:"Weight"`
+			IsBackup requests.Integer `json:"IsBackup" xml:"IsBackup"`
 		} `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
 	} `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }

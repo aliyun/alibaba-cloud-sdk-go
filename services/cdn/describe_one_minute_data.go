@@ -64,20 +64,18 @@ func (client *Client) DescribeOneMinuteDataWithCallback(request *DescribeOneMinu
 
 type DescribeOneMinuteDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DataTime             string `position:"Query" name:"DataTime"`
-	DomainName           string `position:"Query" name:"DomainName"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	DomainName           string           `position:"Query" name:"DomainName"`
+	DataTime             string           `position:"Query" name:"DataTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOneMinuteDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	Bps       string `json:"Bps"`
-	Qps       string `json:"Qps"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Bps       string `json:"Bps" xml:"Bps"`
+	Qps       string `json:"Qps" xml:"Qps"`
 }
 
 func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest) {

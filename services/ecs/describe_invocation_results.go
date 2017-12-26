@@ -64,31 +64,31 @@ func (client *Client) DescribeInvocationResultsWithCallback(request *DescribeInv
 
 type DescribeInvocationResultsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	InvokeId             string `position:"Query" name:"InvokeId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InvokeId             string           `position:"Query" name:"InvokeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInvocationResultsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Invocation struct {
-		InvokeId    string `json:"InvokeId" xml:"InvokeId"`
-		PageSize    int64  `json:"PageSize" xml:"PageSize"`
-		PageNumber  int64  `json:"PageNumber" xml:"PageNumber"`
-		TotalCount  int64  `json:"TotalCount" xml:"TotalCount"`
-		Status      string `json:"Status" xml:"Status"`
+		InvokeId    string           `json:"InvokeId" xml:"InvokeId"`
+		PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
+		PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
+		TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+		Status      string           `json:"Status" xml:"Status"`
 		ResultLists struct {
 			ResultItem []struct {
-				InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-				FinishedTime string `json:"FinishedTime" xml:"FinishedTime"`
-				Output       string `json:"Output" xml:"Output"`
-				ExitCode     int64  `json:"ExitCode" xml:"ExitCode"`
+				InstanceId   string           `json:"InstanceId" xml:"InstanceId"`
+				FinishedTime string           `json:"FinishedTime" xml:"FinishedTime"`
+				Output       string           `json:"Output" xml:"Output"`
+				ExitCode     requests.Integer `json:"ExitCode" xml:"ExitCode"`
 			} `json:"ResultItem" xml:"ResultItem"`
 		} `json:"ResultLists" xml:"ResultLists"`
 	} `json:"Invocation" xml:"Invocation"`

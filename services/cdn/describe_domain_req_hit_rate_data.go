@@ -64,27 +64,27 @@ func (client *Client) DescribeDomainReqHitRateDataWithCallback(request *Describe
 
 type DescribeDomainReqHitRateDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	Interval      string `position:"Query" name:"Interval"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Interval      string           `position:"Query" name:"Interval"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainReqHitRateDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId"`
-	DomainName         string `json:"DomainName"`
-	DataInterval       string `json:"DataInterval"`
-	StartTime          string `json:"StartTime"`
-	EndTime            string `json:"EndTime"`
-	ReqHitRateInterval []struct {
-		TimeStamp string `json:"TimeStamp"`
-		Value     string `json:"Value"`
-	} `json:"ReqHitRateInterval"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	DomainName         string `json:"DomainName" xml:"DomainName"`
+	DataInterval       string `json:"DataInterval" xml:"DataInterval"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
+	EndTime            string `json:"EndTime" xml:"EndTime"`
+	ReqHitRateInterval struct {
+		DataModule []struct {
+			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+			Value     string `json:"Value" xml:"Value"`
+		} `json:"DataModule" xml:"DataModule"`
+	} `json:"ReqHitRateInterval" xml:"ReqHitRateInterval"`
 }
 
 func CreateDescribeDomainReqHitRateDataRequest() (request *DescribeDomainReqHitRateDataRequest) {

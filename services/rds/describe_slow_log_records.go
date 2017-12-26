@@ -64,36 +64,36 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SQLId                string `position:"Query" name:"SQLId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Engine           string           `json:"Engine" xml:"Engine"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLSlowRecord []struct {
-			HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-			DBName             string `json:"DBName" xml:"DBName"`
-			SQLText            string `json:"SQLText" xml:"SQLText"`
-			QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
-			LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
-			ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
-			ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-			ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+			HostAddress        string           `json:"HostAddress" xml:"HostAddress"`
+			DBName             string           `json:"DBName" xml:"DBName"`
+			SQLText            string           `json:"SQLText" xml:"SQLText"`
+			QueryTimes         requests.Integer `json:"QueryTimes" xml:"QueryTimes"`
+			LockTimes          requests.Integer `json:"LockTimes" xml:"LockTimes"`
+			ParseRowCounts     requests.Integer `json:"ParseRowCounts" xml:"ParseRowCounts"`
+			ReturnRowCounts    requests.Integer `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+			ExecutionStartTime string           `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 		} `json:"SQLSlowRecord" xml:"SQLSlowRecord"`
 	} `json:"Items" xml:"Items"`
 }

@@ -64,29 +64,29 @@ func (client *Client) DescribeDomainInfoWithCallback(request *DescribeDomainInfo
 
 type DescribeDomainInfoRequest struct {
 	*requests.RpcRequest
-	NeedDetailAttributes string `position:"Query" name:"NeedDetailAttributes"`
-	DomainName           string `position:"Query" name:"DomainName"`
-	UserClientIp         string `position:"Query" name:"UserClientIp"`
-	Lang                 string `position:"Query" name:"Lang"`
+	NeedDetailAttributes requests.Boolean `position:"Query" name:"NeedDetailAttributes"`
+	DomainName           string           `position:"Query" name:"DomainName"`
+	UserClientIp         string           `position:"Query" name:"UserClientIp"`
+	Lang                 string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainInfoResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	DomainId           string `json:"DomainId" xml:"DomainId"`
-	DomainName         string `json:"DomainName" xml:"DomainName"`
-	PunyCode           string `json:"PunyCode" xml:"PunyCode"`
-	AliDomain          bool   `json:"AliDomain" xml:"AliDomain"`
-	Remark             string `json:"Remark" xml:"Remark"`
-	GroupId            string `json:"GroupId" xml:"GroupId"`
-	GroupName          string `json:"GroupName" xml:"GroupName"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	VersionCode        string `json:"VersionCode" xml:"VersionCode"`
-	VersionName        string `json:"VersionName" xml:"VersionName"`
-	MinTtl             int64  `json:"MinTtl" xml:"MinTtl"`
-	RecordLineTreeJson string `json:"RecordLineTreeJson" xml:"RecordLineTreeJson"`
-	LineType           string `json:"LineType" xml:"LineType"`
-	RegionLines        bool   `json:"RegionLines" xml:"RegionLines"`
+	RequestId          string           `json:"RequestId" xml:"RequestId"`
+	DomainId           string           `json:"DomainId" xml:"DomainId"`
+	DomainName         string           `json:"DomainName" xml:"DomainName"`
+	PunyCode           string           `json:"PunyCode" xml:"PunyCode"`
+	AliDomain          requests.Boolean `json:"AliDomain" xml:"AliDomain"`
+	Remark             string           `json:"Remark" xml:"Remark"`
+	GroupId            string           `json:"GroupId" xml:"GroupId"`
+	GroupName          string           `json:"GroupName" xml:"GroupName"`
+	InstanceId         string           `json:"InstanceId" xml:"InstanceId"`
+	VersionCode        string           `json:"VersionCode" xml:"VersionCode"`
+	VersionName        string           `json:"VersionName" xml:"VersionName"`
+	MinTtl             requests.Integer `json:"MinTtl" xml:"MinTtl"`
+	RecordLineTreeJson string           `json:"RecordLineTreeJson" xml:"RecordLineTreeJson"`
+	LineType           string           `json:"LineType" xml:"LineType"`
+	RegionLines        requests.Boolean `json:"RegionLines" xml:"RegionLines"`
 	DnsServers         struct {
 		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
 	} `json:"DnsServers" xml:"DnsServers"`

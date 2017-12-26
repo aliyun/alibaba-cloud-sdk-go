@@ -64,27 +64,27 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	Netmode              string `position:"Query" name:"Netmode"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	ISP                  string `position:"Query" name:"ISP"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Period               string `position:"Query" name:"Period"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	PricingCycle         string `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	InstanceChargeType   string `position:"Query" name:"InstanceChargeType"`
+	Netmode              string           `position:"Query" name:"Netmode"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ISP                  string           `position:"Query" name:"ISP"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 }
 
 type AllocateEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	AllocationId string `json:"AllocationId" xml:"AllocationId"`
-	EipAddress   string `json:"EipAddress" xml:"EipAddress"`
-	OrderId      int64  `json:"OrderId" xml:"OrderId"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	AllocationId string           `json:"AllocationId" xml:"AllocationId"`
+	EipAddress   string           `json:"EipAddress" xml:"EipAddress"`
+	OrderId      requests.Integer `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {

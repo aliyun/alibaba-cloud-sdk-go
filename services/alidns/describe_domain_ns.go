@@ -71,9 +71,9 @@ type DescribeDomainNsRequest struct {
 
 type DescribeDomainNsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	AllAliDns     bool   `json:"AllAliDns" xml:"AllAliDns"`
-	IncludeAliDns bool   `json:"IncludeAliDns" xml:"IncludeAliDns"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	AllAliDns     requests.Boolean `json:"AllAliDns" xml:"AllAliDns"`
+	IncludeAliDns requests.Boolean `json:"IncludeAliDns" xml:"IncludeAliDns"`
 	DnsServers    struct {
 		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
 	} `json:"DnsServers" xml:"DnsServers"`

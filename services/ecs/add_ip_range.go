@@ -64,12 +64,12 @@ func (client *Client) AddIpRangeWithCallback(request *AddIpRangeRequest, callbac
 
 type AddIpRangeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	IpAddress            string `position:"Query" name:"IpAddress"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddIpRangeResponse struct {

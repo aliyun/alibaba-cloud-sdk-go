@@ -64,27 +64,27 @@ func (client *Client) DescribeLiveStreamRoomBitRateWithCallback(request *Describ
 
 type DescribeLiveStreamRoomBitRateRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamRoomBitRateResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId"`
-	FrameRateAndBitRateInfos []struct {
-		StreamUrl      string  `json:"StreamUrl"`
-		VideoFrameRate float64 `json:"VideoFrameRate"`
-		AudioFrameRate float64 `json:"AudioFrameRate"`
-		BitRate        float64 `json:"BitRate"`
-		Time           string  `json:"Time"`
-	} `json:"FrameRateAndBitRateInfos"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	FrameRateAndBitRateInfos struct {
+		FrameRateAndBitRateInfo []struct {
+			StreamUrl      string         `json:"StreamUrl" xml:"StreamUrl"`
+			VideoFrameRate requests.Float `json:"VideoFrameRate" xml:"VideoFrameRate"`
+			AudioFrameRate requests.Float `json:"AudioFrameRate" xml:"AudioFrameRate"`
+			BitRate        requests.Float `json:"BitRate" xml:"BitRate"`
+			Time           string         `json:"Time" xml:"Time"`
+		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
+	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamRoomBitRateRequest() (request *DescribeLiveStreamRoomBitRateRequest) {

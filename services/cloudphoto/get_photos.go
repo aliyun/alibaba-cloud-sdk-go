@@ -65,33 +65,33 @@ func (client *Client) GetPhotosWithCallback(request *GetPhotosRequest, callback 
 type GetPhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetPhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Photos    []struct {
-		Id              int64  `json:"Id"`
-		Title           string `json:"Title"`
-		FileId          string `json:"FileId"`
-		State           string `json:"State"`
-		Md5             string `json:"Md5"`
-		IsVideo         bool   `json:"IsVideo"`
-		Remark          string `json:"Remark"`
-		Width           int64  `json:"Width"`
-		Height          int64  `json:"Height"`
-		Ctime           int64  `json:"Ctime"`
-		Mtime           int64  `json:"Mtime"`
-		TakenAt         int64  `json:"TakenAt"`
-		InactiveTime    int64  `json:"InactiveTime"`
-		ShareExpireTime int64  `json:"ShareExpireTime"`
-		Like            int64  `json:"Like"`
-	} `json:"Photos"`
+		Id              requests.Integer `json:"Id" xml:"Id"`
+		Title           string           `json:"Title" xml:"Title"`
+		FileId          string           `json:"FileId" xml:"FileId"`
+		State           string           `json:"State" xml:"State"`
+		Md5             string           `json:"Md5" xml:"Md5"`
+		IsVideo         requests.Boolean `json:"IsVideo" xml:"IsVideo"`
+		Remark          string           `json:"Remark" xml:"Remark"`
+		Width           requests.Integer `json:"Width" xml:"Width"`
+		Height          requests.Integer `json:"Height" xml:"Height"`
+		Ctime           requests.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime           requests.Integer `json:"Mtime" xml:"Mtime"`
+		TakenAt         requests.Integer `json:"TakenAt" xml:"TakenAt"`
+		InactiveTime    requests.Integer `json:"InactiveTime" xml:"InactiveTime"`
+		ShareExpireTime requests.Integer `json:"ShareExpireTime" xml:"ShareExpireTime"`
+		Like            requests.Integer `json:"Like" xml:"Like"`
+	} `json:"Photos" xml:"Photos"`
 }
 
 func CreateGetPhotosRequest() (request *GetPhotosRequest) {

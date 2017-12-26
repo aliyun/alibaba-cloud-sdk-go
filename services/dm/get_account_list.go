@@ -64,23 +64,23 @@ func (client *Client) GetAccountListWithCallback(request *GetAccountListRequest,
 
 type GetAccountListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OffsetCreateTime     string `position:"Query" name:"OffsetCreateTime"`
+	Total                string           `position:"Query" name:"Total"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
 }
 
 type GetAccountListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Total     int    `json:"Total" xml:"Total"`
-	PageNo    int    `json:"PageNo" xml:"PageNo"`
-	PageSize  int    `json:"PageSize" xml:"PageSize"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Total     requests.Integer `json:"Total" xml:"Total"`
+	PageNo    requests.Integer `json:"PageNo" xml:"PageNo"`
+	PageSize  requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data      struct {
 		AccountNotificationInfo []struct {
 			Region     string `json:"Region" xml:"Region"`

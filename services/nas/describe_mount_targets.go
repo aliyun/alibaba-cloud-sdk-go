@@ -64,18 +64,18 @@ func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTar
 
 type DescribeMountTargetsRequest struct {
 	*requests.RpcRequest
-	PageSize          string `position:"Query" name:"PageSize"`
-	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
-	PageNumber        string `position:"Query" name:"PageNumber"`
-	FileSystemId      string `position:"Query" name:"FileSystemId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	MountTargetDomain string           `position:"Query" name:"MountTargetDomain"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemId      string           `position:"Query" name:"FileSystemId"`
 }
 
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
 	MountTargets struct {
 		MountTarget []struct {
 			MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`

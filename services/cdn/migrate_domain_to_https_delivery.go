@@ -64,19 +64,17 @@ func (client *Client) MigrateDomainToHttpsDeliveryWithCallback(request *MigrateD
 
 type MigrateDomainToHttpsDeliveryRequest struct {
 	*requests.RpcRequest
-	PrivateKey        string `position:"Query" name:"PrivateKey"`
-	ServerCertificate string `position:"Query" name:"ServerCertificate"`
-	SecurityToken     string `position:"Query" name:"SecurityToken"`
-	OwnerAccount      string `position:"Query" name:"OwnerAccount"`
-	DomainName        string `position:"Query" name:"DomainName"`
-	Action            string `position:"Query" name:"Action"`
-	OwnerId           string `position:"Query" name:"OwnerId"`
-	AccessKeyId       string `position:"Query" name:"AccessKeyId"`
+	ServerCertificate string           `position:"Query" name:"ServerCertificate"`
+	DomainName        string           `position:"Query" name:"DomainName"`
+	OwnerAccount      string           `position:"Query" name:"OwnerAccount"`
+	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken     string           `position:"Query" name:"SecurityToken"`
+	PrivateKey        string           `position:"Query" name:"PrivateKey"`
 }
 
 type MigrateDomainToHttpsDeliveryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateMigrateDomainToHttpsDeliveryRequest() (request *MigrateDomainToHttpsDeliveryRequest) {

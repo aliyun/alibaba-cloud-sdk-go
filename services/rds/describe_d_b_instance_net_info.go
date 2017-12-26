@@ -64,14 +64,14 @@ func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBI
 
 type DescribeDBInstanceNetInfoRequest struct {
 	*requests.RpcRequest
-	DBInstanceId             string `position:"Query" name:"DBInstanceId"`
-	Flag                     string `position:"Query" name:"Flag"`
-	ClientToken              string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	DBInstanceNetRWSplitType string `position:"Query" name:"DBInstanceNetRWSplitType"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount             string `position:"Query" name:"OwnerAccount"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
+	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	Flag                     string           `position:"Query" name:"Flag"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBInstanceNetRWSplitType string           `position:"Query" name:"DBInstanceNetRWSplitType"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceNetInfoResponse struct {

@@ -64,11 +64,11 @@ func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, c
 
 type DetachKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string `position:"Query" name:"InstanceIds"`
-	KeyPairName          string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DetachKeyPairResponse struct {

@@ -64,14 +64,14 @@ func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func
 
 type SetRuleRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	RuleId               string `position:"Query" name:"RuleId"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RuleId               string           `position:"Query" name:"RuleId"`
 }
 
 type SetRuleResponse struct {

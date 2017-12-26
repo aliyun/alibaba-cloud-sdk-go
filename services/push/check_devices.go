@@ -64,8 +64,8 @@ func (client *Client) CheckDevicesWithCallback(request *CheckDevicesRequest, cal
 
 type CheckDevicesRequest struct {
 	*requests.RpcRequest
-	AppKey    string `position:"Query" name:"AppKey"`
-	DeviceIds string `position:"Query" name:"DeviceIds"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	DeviceIds string           `position:"Query" name:"DeviceIds"`
 }
 
 type CheckDevicesResponse struct {
@@ -73,8 +73,8 @@ type CheckDevicesResponse struct {
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DeviceCheckInfos struct {
 		DeviceCheckInfo []struct {
-			DeviceId  string `json:"DeviceId" xml:"DeviceId"`
-			Available bool   `json:"Available" xml:"Available"`
+			DeviceId  string           `json:"DeviceId" xml:"DeviceId"`
+			Available requests.Boolean `json:"Available" xml:"Available"`
 		} `json:"DeviceCheckInfo" xml:"DeviceCheckInfo"`
 	} `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
 }

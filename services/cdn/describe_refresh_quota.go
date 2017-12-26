@@ -64,23 +64,21 @@ func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQ
 
 type DescribeRefreshQuotaRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeRefreshQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId"`
-	UrlQuota      string `json:"UrlQuota"`
-	DirQuota      string `json:"DirQuota"`
-	UrlRemain     string `json:"UrlRemain"`
-	DirRemain     string `json:"DirRemain"`
-	PreloadQuota  string `json:"PreloadQuota"`
-	BlockQuota    string `json:"BlockQuota"`
-	PreloadRemain string `json:"PreloadRemain"`
-	BlockRemain   string `json:"blockRemain"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	UrlQuota      string `json:"UrlQuota" xml:"UrlQuota"`
+	DirQuota      string `json:"DirQuota" xml:"DirQuota"`
+	UrlRemain     string `json:"UrlRemain" xml:"UrlRemain"`
+	DirRemain     string `json:"DirRemain" xml:"DirRemain"`
+	PreloadQuota  string `json:"PreloadQuota" xml:"PreloadQuota"`
+	BlockQuota    string `json:"BlockQuota" xml:"BlockQuota"`
+	PreloadRemain string `json:"PreloadRemain" xml:"PreloadRemain"`
+	BlockRemain   string `json:"blockRemain" xml:"blockRemain"`
 }
 
 func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) {

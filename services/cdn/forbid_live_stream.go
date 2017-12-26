@@ -64,20 +64,18 @@ func (client *Client) ForbidLiveStreamWithCallback(request *ForbidLiveStreamRequ
 
 type ForbidLiveStreamRequest struct {
 	*requests.RpcRequest
-	ResumeTime     string `position:"Query" name:"ResumeTime"`
-	AppName        string `position:"Query" name:"AppName"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	LiveStreamType string `position:"Query" name:"LiveStreamType"`
-	DomainName     string `position:"Query" name:"DomainName"`
-	Action         string `position:"Query" name:"Action"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	StreamName     string `position:"Query" name:"StreamName"`
-	AccessKeyId    string `position:"Query" name:"AccessKeyId"`
+	StreamName     string           `position:"Query" name:"StreamName"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	AppName        string           `position:"Query" name:"AppName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	ResumeTime     string           `position:"Query" name:"ResumeTime"`
+	LiveStreamType string           `position:"Query" name:"LiveStreamType"`
 }
 
 type ForbidLiveStreamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateForbidLiveStreamRequest() (request *ForbidLiveStreamRequest) {

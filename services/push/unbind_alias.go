@@ -64,10 +64,10 @@ func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callb
 
 type UnbindAliasRequest struct {
 	*requests.RpcRequest
-	UnbindAll string `position:"Query" name:"UnbindAll"`
-	AliasName string `position:"Query" name:"AliasName"`
-	AppKey    string `position:"Query" name:"AppKey"`
-	DeviceId  string `position:"Query" name:"DeviceId"`
+	UnbindAll requests.Boolean `position:"Query" name:"UnbindAll"`
+	AliasName string           `position:"Query" name:"AliasName"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	DeviceId  string           `position:"Query" name:"DeviceId"`
 }
 
 type UnbindAliasResponse struct {

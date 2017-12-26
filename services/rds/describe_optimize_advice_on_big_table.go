@@ -64,28 +64,28 @@ func (client *Client) DescribeOptimizeAdviceOnBigTableWithCallback(request *Desc
 
 type DescribeOptimizeAdviceOnBigTableRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOptimizeAdviceOnBigTableResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnBigTable []struct {
-			DBName    string `json:"DBName" xml:"DBName"`
-			TableName string `json:"TableName" xml:"TableName"`
-			TableSize int64  `json:"TableSize" xml:"TableSize"`
-			DataSize  int64  `json:"DataSize" xml:"DataSize"`
-			IndexSize int64  `json:"IndexSize" xml:"IndexSize"`
+			DBName    string           `json:"DBName" xml:"DBName"`
+			TableName string           `json:"TableName" xml:"TableName"`
+			TableSize requests.Integer `json:"TableSize" xml:"TableSize"`
+			DataSize  requests.Integer `json:"DataSize" xml:"DataSize"`
+			IndexSize requests.Integer `json:"IndexSize" xml:"IndexSize"`
 		} `json:"AdviceOnBigTable" xml:"AdviceOnBigTable"`
 	} `json:"Items" xml:"Items"`
 }

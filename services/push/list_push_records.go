@@ -64,30 +64,30 @@ func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsReques
 
 type ListPushRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
-	PageSize  string `position:"Query" name:"PageSize"`
-	StartTime string `position:"Query" name:"StartTime"`
-	Page      string `position:"Query" name:"Page"`
-	AppKey    string `position:"Query" name:"AppKey"`
-	PushType  string `position:"Query" name:"PushType"`
+	EndTime   string           `position:"Query" name:"EndTime"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	StartTime string           `position:"Query" name:"StartTime"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	PushType  string           `position:"Query" name:"PushType"`
 }
 
 type ListPushRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Total            int    `json:"Total" xml:"Total"`
-	Page             int    `json:"Page" xml:"Page"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Total            requests.Integer `json:"Total" xml:"Total"`
+	Page             requests.Integer `json:"Page" xml:"Page"`
+	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
 	PushMessageInfos struct {
 		PushMessageInfo []struct {
-			AppKey     int64  `json:"AppKey" xml:"AppKey"`
-			AppName    string `json:"AppName" xml:"AppName"`
-			MessageId  string `json:"MessageId" xml:"MessageId"`
-			Type       string `json:"Type" xml:"Type"`
-			DeviceType string `json:"DeviceType" xml:"DeviceType"`
-			PushTime   string `json:"PushTime" xml:"PushTime"`
-			Title      string `json:"Title" xml:"Title"`
-			Body       string `json:"Body" xml:"Body"`
+			AppKey     requests.Integer `json:"AppKey" xml:"AppKey"`
+			AppName    string           `json:"AppName" xml:"AppName"`
+			MessageId  string           `json:"MessageId" xml:"MessageId"`
+			Type       string           `json:"Type" xml:"Type"`
+			DeviceType string           `json:"DeviceType" xml:"DeviceType"`
+			PushTime   string           `json:"PushTime" xml:"PushTime"`
+			Title      string           `json:"Title" xml:"Title"`
+			Body       string           `json:"Body" xml:"Body"`
 		} `json:"PushMessageInfo" xml:"PushMessageInfo"`
 	} `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }

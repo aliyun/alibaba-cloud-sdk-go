@@ -64,18 +64,17 @@ func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequ
 
 type DeleteSkillGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId   string `position:"Query" name:"InstanceId"`
 	SkillGroupId string `position:"Query" name:"SkillGroupId"`
-	AccessKeyId  string `position:"Query" name:"AccessKeyId"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
 type DeleteSkillGroupResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {

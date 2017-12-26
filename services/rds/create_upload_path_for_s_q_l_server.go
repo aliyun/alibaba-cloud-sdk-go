@@ -64,24 +64,24 @@ func (client *Client) CreateUploadPathForSQLServerWithCallback(request *CreateUp
 
 type CreateUploadPathForSQLServerRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateUploadPathForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	InternetFtpServer string `json:"InternetFtpServer" xml:"InternetFtpServer"`
-	InternetPort      int    `json:"InternetPort" xml:"InternetPort"`
-	IntranetFtpserver string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
-	Intranetport      int    `json:"Intranetport" xml:"Intranetport"`
-	UserName          string `json:"UserName" xml:"UserName"`
-	Password          string `json:"Password" xml:"Password"`
-	FileName          string `json:"FileName" xml:"FileName"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	InternetFtpServer string           `json:"InternetFtpServer" xml:"InternetFtpServer"`
+	InternetPort      requests.Integer `json:"InternetPort" xml:"InternetPort"`
+	IntranetFtpserver string           `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
+	Intranetport      requests.Integer `json:"Intranetport" xml:"Intranetport"`
+	UserName          string           `json:"UserName" xml:"UserName"`
+	Password          string           `json:"Password" xml:"Password"`
+	FileName          string           `json:"FileName" xml:"FileName"`
 }
 
 func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQLServerRequest) {

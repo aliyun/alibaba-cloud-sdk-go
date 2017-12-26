@@ -64,26 +64,26 @@ func (client *Client) DescribeDomainCCDataWithCallback(request *DescribeDomainCC
 
 type DescribeDomainCCDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainCCDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	DomainName   string `json:"DomainName"`
-	DataInterval string `json:"DataInterval"`
-	StartTime    string `json:"StartTime"`
-	EndTime      string `json:"EndTime"`
-	CCDataList   []struct {
-		TimeStamp string `json:"TimeStamp"`
-		Count     string `json:"Count"`
-	} `json:"CCDataList"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
+	DataInterval string `json:"DataInterval" xml:"DataInterval"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
+	CCDataList   struct {
+		CCDatas []struct {
+			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+			Count     string `json:"Count" xml:"Count"`
+		} `json:"CCDatas" xml:"CCDatas"`
+	} `json:"CCDataList" xml:"CCDataList"`
 }
 
 func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) {

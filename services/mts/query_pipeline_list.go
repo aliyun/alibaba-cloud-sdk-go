@@ -64,31 +64,33 @@ func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRe
 
 type QueryPipelineListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string `position:"Query" name:"PipelineIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PipelineIds          string           `position:"Query" name:"PipelineIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId"`
-	NonExistPids []string `json:"NonExistPids"`
-	PipelineList []struct {
-		Id           string `json:"Id"`
-		Name         string `json:"Name"`
-		State        string `json:"State"`
-		Speed        string `json:"Speed"`
-		SpeedLevel   int64  `json:"SpeedLevel"`
-		Role         string `json:"Role"`
-		NotifyConfig struct {
-			Topic     string `json:"Topic"`
-			QueueName string `json:"QueueName"`
-		} `json:"NotifyConfig"`
-	} `json:"PipelineList"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	NonExistPids struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistPids" xml:"NonExistPids"`
+	PipelineList struct {
+		Pipeline []struct {
+			Id           string           `json:"Id" xml:"Id"`
+			Name         string           `json:"Name" xml:"Name"`
+			State        string           `json:"State" xml:"State"`
+			Speed        string           `json:"Speed" xml:"Speed"`
+			SpeedLevel   requests.Integer `json:"SpeedLevel" xml:"SpeedLevel"`
+			Role         string           `json:"Role" xml:"Role"`
+			NotifyConfig struct {
+				Topic     string `json:"Topic" xml:"Topic"`
+				QueueName string `json:"QueueName" xml:"QueueName"`
+			} `json:"NotifyConfig" xml:"NotifyConfig"`
+		} `json:"Pipeline" xml:"Pipeline"`
+	} `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {

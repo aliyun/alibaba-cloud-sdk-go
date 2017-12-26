@@ -64,22 +64,22 @@ func (client *Client) DescribeBandwidthPackagesWithCallback(request *DescribeBan
 
 type DescribeBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NatGatewayId         string `position:"Query" name:"NatGatewayId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 }
 
 type DescribeBandwidthPackagesResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	TotalCount        requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize          requests.Integer `json:"PageSize" xml:"PageSize"`
 	BandwidthPackages struct {
 		BandwidthPackage []struct {
 			BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
@@ -98,10 +98,10 @@ type DescribeBandwidthPackagesResponse struct {
 			ISP                string `json:"ISP" xml:"ISP"`
 			PublicIpAddresses  struct {
 				PublicIpAddresse []struct {
-					AllocationId    string `json:"AllocationId" xml:"AllocationId"`
-					IpAddress       string `json:"IpAddress" xml:"IpAddress"`
-					UsingStatus     string `json:"UsingStatus" xml:"UsingStatus"`
-					ApAccessEnabled bool   `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
+					AllocationId    string           `json:"AllocationId" xml:"AllocationId"`
+					IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
+					UsingStatus     string           `json:"UsingStatus" xml:"UsingStatus"`
+					ApAccessEnabled requests.Boolean `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
 				} `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
 			} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 		} `json:"BandwidthPackage" xml:"BandwidthPackage"`

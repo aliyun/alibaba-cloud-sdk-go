@@ -64,21 +64,21 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *Descri
 
 type DescribeOptimizeAdviceOnMissPKRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOptimizeAdviceOnMissPKResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnMissPK []struct {
 			DBName    string `json:"DBName" xml:"DBName"`

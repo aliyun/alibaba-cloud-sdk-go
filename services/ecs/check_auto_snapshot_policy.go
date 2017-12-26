@@ -64,25 +64,25 @@ func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnap
 
 type CheckAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	DataDiskPolicyRetentionLastWeek   string `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
-	DataDiskPolicyRetentionDays       string `position:"Query" name:"DataDiskPolicyRetentionDays"`
-	ResourceOwnerAccount              string `position:"Query" name:"ResourceOwnerAccount"`
-	DataDiskPolicyTimePeriod          string `position:"Query" name:"DataDiskPolicyTimePeriod"`
-	SystemDiskPolicyRetentionLastWeek string `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
-	SystemDiskPolicyEnabled           string `position:"Query" name:"SystemDiskPolicyEnabled"`
-	SystemDiskPolicyTimePeriod        string `position:"Query" name:"SystemDiskPolicyTimePeriod"`
-	ResourceOwnerId                   string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                      string `position:"Query" name:"OwnerAccount"`
-	OwnerId                           string `position:"Query" name:"OwnerId"`
-	DataDiskPolicyEnabled             string `position:"Query" name:"DataDiskPolicyEnabled"`
-	SystemDiskPolicyRetentionDays     string `position:"Query" name:"SystemDiskPolicyRetentionDays"`
+	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
+	DataDiskPolicyRetentionDays       requests.Integer `position:"Query" name:"DataDiskPolicyRetentionDays"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
+	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
+	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
+	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
+	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
+	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
 }
 
 type CheckAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-	IsPermittedModify      string `json:"IsPermittedModify" xml:"IsPermittedModify"`
+	RequestId              string           `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	IsPermittedModify      string           `json:"IsPermittedModify" xml:"IsPermittedModify"`
 }
 
 func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyRequest) {

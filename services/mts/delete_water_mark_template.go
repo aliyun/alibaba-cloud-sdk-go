@@ -64,19 +64,17 @@ func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMa
 
 type DeleteWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	WaterMarkTemplateId  string `position:"Query" name:"WaterMarkTemplateId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId"`
-	WaterMarkTemplateId string `json:"WaterMarkTemplateId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	WaterMarkTemplateId string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 }
 
 func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateRequest) {

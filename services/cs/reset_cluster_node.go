@@ -1,4 +1,4 @@
-package ecs
+package cs
 
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) AttachVolume(request *AttachVolumeRequest) (response *AttachVolumeResponse, err error) {
-	response = CreateAttachVolumeResponse()
+func (client *Client) ResetClusterNode(request *ResetClusterNodeRequest) (response *ResetClusterNodeResponse, err error) {
+	response = CreateResetClusterNodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) AttachVolumeWithChan(request *AttachVolumeRequest) (<-chan *AttachVolumeResponse, <-chan error) {
-	responseChan := make(chan *AttachVolumeResponse, 1)
+func (client *Client) ResetClusterNodeWithChan(request *ResetClusterNodeRequest) (<-chan *ResetClusterNodeResponse, <-chan error) {
+	responseChan := make(chan *ResetClusterNodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AttachVolume(request)
+		response, err := client.ResetClusterNode(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) AttachVolumeWithChan(request *AttachVolumeRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) AttachVolumeWithCallback(request *AttachVolumeRequest, callback func(response *AttachVolumeResponse, err error)) <-chan int {
+func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequest, callback func(response *ResetClusterNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AttachVolumeResponse
+		var response *ResetClusterNodeResponse
 		var err error
 		defer close(result)
-		response, err = client.AttachVolume(request)
+		response, err = client.ResetClusterNode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,31 +62,26 @@ func (client *Client) AttachVolumeWithCallback(request *AttachVolumeRequest, cal
 	return result
 }
 
-type AttachVolumeRequest struct {
-	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VolumeId             string `position:"Query" name:"VolumeId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+type ResetClusterNodeRequest struct {
+	*requests.RoaRequest
+	ClusterId  string `position:"Path" name:"ClusterId"`
+	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
-type AttachVolumeResponse struct {
+type ResetClusterNodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-func CreateAttachVolumeRequest() (request *AttachVolumeRequest) {
-	request = &AttachVolumeRequest{
-		RpcRequest: &requests.RpcRequest{},
+func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
+	request = &ResetClusterNodeRequest{
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachVolume", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "")
 	return
 }
 
-func CreateAttachVolumeResponse() (response *AttachVolumeResponse) {
-	response = &AttachVolumeResponse{
+func CreateResetClusterNodeResponse() (response *ResetClusterNodeResponse) {
+	response = &ResetClusterNodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -64,16 +64,16 @@ func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttribu
 
 type ModifyDiskAttributeRequest struct {
 	*requests.RpcRequest
-	DiskName             string `position:"Query" name:"DiskName"`
-	EnableAutoSnapshot   string `position:"Query" name:"EnableAutoSnapshot"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	DiskId               string `position:"Query" name:"DiskId"`
-	DeleteWithInstance   string `position:"Query" name:"DeleteWithInstance"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	DeleteAutoSnapshot   string `position:"Query" name:"DeleteAutoSnapshot"`
+	DiskName             string           `position:"Query" name:"DiskName"`
+	EnableAutoSnapshot   requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DeleteAutoSnapshot   requests.Boolean `position:"Query" name:"DeleteAutoSnapshot"`
 }
 
 type ModifyDiskAttributeResponse struct {

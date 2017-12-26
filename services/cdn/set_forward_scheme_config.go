@@ -64,19 +64,17 @@ func (client *Client) SetForwardSchemeConfigWithCallback(request *SetForwardSche
 
 type SetForwardSchemeConfigRequest struct {
 	*requests.RpcRequest
-	SchemeOrigin     string `position:"Query" name:"SchemeOrigin"`
-	SchemeOriginPort string `position:"Query" name:"SchemeOriginPort"`
-	SecurityToken    string `position:"Query" name:"SecurityToken"`
-	Enable           string `position:"Query" name:"Enable"`
-	DomainName       string `position:"Query" name:"DomainName"`
-	Action           string `position:"Query" name:"Action"`
-	OwnerId          string `position:"Query" name:"OwnerId"`
-	AccessKeyId      string `position:"Query" name:"AccessKeyId"`
+	SchemeOriginPort string           `position:"Query" name:"SchemeOriginPort"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	SchemeOrigin     string           `position:"Query" name:"SchemeOrigin"`
+	Enable           string           `position:"Query" name:"Enable"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetForwardSchemeConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigRequest) {

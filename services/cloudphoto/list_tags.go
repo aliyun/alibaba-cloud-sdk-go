@@ -71,29 +71,29 @@ type ListTagsRequest struct {
 
 type ListTagsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 	Tags      []struct {
-		Id        int64  `json:"Id"`
-		Name      string `json:"Name"`
-		IsSubTag  bool   `json:"IsSubTag"`
-		ParentTag string `json:"ParentTag"`
+		Id        requests.Integer `json:"Id" xml:"Id"`
+		Name      string           `json:"Name" xml:"Name"`
+		IsSubTag  requests.Boolean `json:"IsSubTag" xml:"IsSubTag"`
+		ParentTag string           `json:"ParentTag" xml:"ParentTag"`
 		Cover     struct {
-			Id      int64  `json:"Id"`
-			Title   string `json:"Title"`
-			FileId  string `json:"FileId"`
-			State   string `json:"State"`
-			Md5     string `json:"Md5"`
-			IsVideo bool   `json:"IsVideo"`
-			Remark  string `json:"Remark"`
-			Width   int64  `json:"Width"`
-			Height  int64  `json:"Height"`
-			Ctime   int64  `json:"Ctime"`
-			Mtime   int64  `json:"Mtime"`
-		} `json:"Cover"`
-	} `json:"Tags"`
+			Id      requests.Integer `json:"Id" xml:"Id"`
+			Title   string           `json:"Title" xml:"Title"`
+			FileId  string           `json:"FileId" xml:"FileId"`
+			State   string           `json:"State" xml:"State"`
+			Md5     string           `json:"Md5" xml:"Md5"`
+			IsVideo requests.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Remark  string           `json:"Remark" xml:"Remark"`
+			Width   requests.Integer `json:"Width" xml:"Width"`
+			Height  requests.Integer `json:"Height" xml:"Height"`
+			Ctime   requests.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime   requests.Integer `json:"Mtime" xml:"Mtime"`
+		} `json:"Cover" xml:"Cover"`
+	} `json:"Tags" xml:"Tags"`
 }
 
 func CreateListTagsRequest() (request *ListTagsRequest) {

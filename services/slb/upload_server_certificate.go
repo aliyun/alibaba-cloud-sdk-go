@@ -64,34 +64,34 @@ func (client *Client) UploadServerCertificateWithCallback(request *UploadServerC
 
 type UploadServerCertificateRequest struct {
 	*requests.RpcRequest
-	Tags                    string `position:"Query" name:"Tags"`
-	ResourceGroupId         string `position:"Query" name:"ResourceGroupId"`
-	AliCloudCertificateName string `position:"Query" name:"AliCloudCertificateName"`
-	OwnerId                 string `position:"Query" name:"OwnerId"`
-	ServerCertificateName   string `position:"Query" name:"ServerCertificateName"`
-	ServerCertificate       string `position:"Query" name:"ServerCertificate"`
-	ResourceOwnerAccount    string `position:"Query" name:"ResourceOwnerAccount"`
-	AliCloudCertificateId   string `position:"Query" name:"AliCloudCertificateId"`
-	AccessKeyId             string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId         string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string `position:"Query" name:"OwnerAccount"`
-	PrivateKey              string `position:"Query" name:"PrivateKey"`
+	Tags                    string           `position:"Query" name:"Tags"`
+	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
+	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
+	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
+	AccessKeyId             string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	PrivateKey              string           `position:"Query" name:"PrivateKey"`
 }
 
 type UploadServerCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	ServerCertificateId     string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	Fingerprint             string `json:"Fingerprint" xml:"Fingerprint"`
-	ServerCertificateName   string `json:"ServerCertificateName" xml:"ServerCertificateName"`
-	RegionId                string `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias           string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	AliCloudCertificateId   string `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-	AliCloudCertificateName string `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	IsAliCloudCertificate   int    `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp         int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RequestId               string           `json:"RequestId" xml:"RequestId"`
+	ServerCertificateId     string           `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	Fingerprint             string           `json:"Fingerprint" xml:"Fingerprint"`
+	ServerCertificateName   string           `json:"ServerCertificateName" xml:"ServerCertificateName"`
+	RegionId                string           `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias           string           `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	AliCloudCertificateId   string           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+	AliCloudCertificateName string           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
+	IsAliCloudCertificate   requests.Integer `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
+	ResourceGroupId         string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime              string           `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp         requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
 func CreateUploadServerCertificateRequest() (request *UploadServerCertificateRequest) {

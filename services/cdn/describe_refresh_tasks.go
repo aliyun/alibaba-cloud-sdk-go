@@ -64,37 +64,37 @@ func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshT
 
 type DescribeRefreshTasksRequest struct {
 	*requests.RpcRequest
-	ObjectPath      string `position:"Query" name:"ObjectPath"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	EndTime         string `position:"Query" name:"EndTime"`
-	StartTime       string `position:"Query" name:"StartTime"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
-	AccessKeyId     string `position:"Query" name:"AccessKeyId"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	Action          string `position:"Query" name:"Action"`
-	ObjectType      string `position:"Query" name:"ObjectType"`
-	TaskId          string `position:"Query" name:"TaskId"`
-	Status          string `position:"Query" name:"Status"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	ObjectPath      string           `position:"Query" name:"ObjectPath"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	Status          string           `position:"Query" name:"Status"`
+	TaskId          string           `position:"Query" name:"TaskId"`
+	ObjectType      string           `position:"Query" name:"ObjectType"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeRefreshTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId"`
-	PageNumber int64  `json:"PageNumber"`
-	PageSize   int64  `json:"PageSize"`
-	TotalCount int64  `json:"TotalCount"`
-	Tasks      []struct {
-		TaskId       string `json:"TaskId"`
-		ObjectPath   string `json:"ObjectPath"`
-		Process      string `json:"Process"`
-		Status       string `json:"Status"`
-		CreationTime string `json:"CreationTime"`
-		Description  string `json:"Description"`
-		ObjectType   string `json:"ObjectType"`
-	} `json:"Tasks"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	Tasks      struct {
+		CDNTask []struct {
+			TaskId       string `json:"TaskId" xml:"TaskId"`
+			ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
+			Process      string `json:"Process" xml:"Process"`
+			Status       string `json:"Status" xml:"Status"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Description  string `json:"Description" xml:"Description"`
+			ObjectType   string `json:"ObjectType" xml:"ObjectType"`
+		} `json:"CDNTask" xml:"CDNTask"`
+	} `json:"Tasks" xml:"Tasks"`
 }
 
 func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {

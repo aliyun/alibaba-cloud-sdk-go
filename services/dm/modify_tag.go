@@ -64,11 +64,11 @@ func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback 
 
 type ModifyTagRequest struct {
 	*requests.RpcRequest
-	TagId                string `position:"Query" name:"TagId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	TagId                requests.Integer `position:"Query" name:"TagId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type ModifyTagResponse struct {

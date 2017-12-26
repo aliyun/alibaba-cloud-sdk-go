@@ -64,44 +64,44 @@ func (client *Client) DescribeDomainsUsageByDayWithCallback(request *DescribeDom
 
 type DescribeDomainsUsageByDayRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainsUsageByDayResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId"`
-	DomainName   string `json:"DomainName"`
-	DataInterval string `json:"DataInterval"`
-	StartTime    string `json:"StartTime"`
-	EndTime      string `json:"EndTime"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
+	DataInterval string `json:"DataInterval" xml:"DataInterval"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
 	UsageTotal   struct {
-		BytesHitRate   string `json:"BytesHitRate"`
-		RequestHitRate string `json:"RequestHitRate"`
-		MaxBps         string `json:"MaxBps"`
-		MaxBpsTime     string `json:"MaxBpsTime"`
-		MaxSrcBps      string `json:"MaxSrcBps"`
-		MaxSrcBpsTime  string `json:"MaxSrcBpsTime"`
-		TotalAccess    string `json:"TotalAccess"`
-		TotalTraffic   string `json:"TotalTraffic"`
-	} `json:"UsageTotal"`
-	UsageByDays []struct {
-		TimeStamp      string `json:"TimeStamp"`
-		Qps            string `json:"Qps"`
-		BytesHitRate   string `json:"BytesHitRate"`
-		RequestHitRate string `json:"RequestHitRate"`
-		MaxBps         string `json:"MaxBps"`
-		MaxBpsTime     string `json:"MaxBpsTime"`
-		MaxSrcBps      string `json:"MaxSrcBps"`
-		MaxSrcBpsTime  string `json:"MaxSrcBpsTime"`
-		TotalAccess    string `json:"TotalAccess"`
-		TotalTraffic   string `json:"TotalTraffic"`
-	} `json:"UsageByDays"`
+		BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
+		RequestHitRate string `json:"RequestHitRate" xml:"RequestHitRate"`
+		MaxBps         string `json:"MaxBps" xml:"MaxBps"`
+		MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
+		MaxSrcBps      string `json:"MaxSrcBps" xml:"MaxSrcBps"`
+		MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
+		TotalAccess    string `json:"TotalAccess" xml:"TotalAccess"`
+		TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+	} `json:"UsageTotal" xml:"UsageTotal"`
+	UsageByDays struct {
+		UsageByDay []struct {
+			TimeStamp      string `json:"TimeStamp" xml:"TimeStamp"`
+			Qps            string `json:"Qps" xml:"Qps"`
+			BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
+			RequestHitRate string `json:"RequestHitRate" xml:"RequestHitRate"`
+			MaxBps         string `json:"MaxBps" xml:"MaxBps"`
+			MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
+			MaxSrcBps      string `json:"MaxSrcBps" xml:"MaxSrcBps"`
+			MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
+			TotalAccess    string `json:"TotalAccess" xml:"TotalAccess"`
+			TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+		} `json:"UsageByDay" xml:"UsageByDay"`
+	} `json:"UsageByDays" xml:"UsageByDays"`
 }
 
 func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDayRequest) {

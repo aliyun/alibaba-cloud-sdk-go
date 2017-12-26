@@ -71,35 +71,35 @@ type DescribeDnsProductInstanceRequest struct {
 
 type DescribeDnsProductInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-	VersionCode           string `json:"VersionCode" xml:"VersionCode"`
-	VersionName           string `json:"VersionName" xml:"VersionName"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	StartTimestamp        int64  `json:"StartTimestamp" xml:"StartTimestamp"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
-	EndTimestamp          int64  `json:"EndTimestamp" xml:"EndTimestamp"`
-	Domain                string `json:"Domain" xml:"Domain"`
-	BindCount             int64  `json:"BindCount" xml:"BindCount"`
-	BindUsedCount         int64  `json:"BindUsedCount" xml:"BindUsedCount"`
-	TTLMinValue           int64  `json:"TTLMinValue" xml:"TTLMinValue"`
-	SubDomainLevel        int64  `json:"SubDomainLevel" xml:"SubDomainLevel"`
-	DnsSLBCount           int64  `json:"DnsSLBCount" xml:"DnsSLBCount"`
-	URLForwardCount       int64  `json:"URLForwardCount" xml:"URLForwardCount"`
-	DDosDefendFlow        int64  `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
-	DDosDefendQuery       int64  `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
-	OverseaDDosDefendFlow int64  `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
-	SearchEngineLines     string `json:"SearchEngineLines" xml:"SearchEngineLines"`
-	ISPLines              string `json:"ISPLines" xml:"ISPLines"`
-	ISPRegionLines        string `json:"ISPRegionLines" xml:"ISPRegionLines"`
-	OverseaLine           string `json:"OverseaLine" xml:"OverseaLine"`
-	MonitorNodeCount      int64  `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
-	MonitorFrequency      int64  `json:"MonitorFrequency" xml:"MonitorFrequency"`
-	MonitorTaskCount      int64  `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
-	RegionLines           bool   `json:"RegionLines" xml:"RegionLines"`
-	Gslb                  bool   `json:"Gslb" xml:"Gslb"`
-	InClean               bool   `json:"InClean" xml:"InClean"`
-	InBlackHole           bool   `json:"InBlackHole" xml:"InBlackHole"`
+	RequestId             string           `json:"RequestId" xml:"RequestId"`
+	InstanceId            string           `json:"InstanceId" xml:"InstanceId"`
+	VersionCode           string           `json:"VersionCode" xml:"VersionCode"`
+	VersionName           string           `json:"VersionName" xml:"VersionName"`
+	StartTime             string           `json:"StartTime" xml:"StartTime"`
+	StartTimestamp        requests.Integer `json:"StartTimestamp" xml:"StartTimestamp"`
+	EndTime               string           `json:"EndTime" xml:"EndTime"`
+	EndTimestamp          requests.Integer `json:"EndTimestamp" xml:"EndTimestamp"`
+	Domain                string           `json:"Domain" xml:"Domain"`
+	BindCount             requests.Integer `json:"BindCount" xml:"BindCount"`
+	BindUsedCount         requests.Integer `json:"BindUsedCount" xml:"BindUsedCount"`
+	TTLMinValue           requests.Integer `json:"TTLMinValue" xml:"TTLMinValue"`
+	SubDomainLevel        requests.Integer `json:"SubDomainLevel" xml:"SubDomainLevel"`
+	DnsSLBCount           requests.Integer `json:"DnsSLBCount" xml:"DnsSLBCount"`
+	URLForwardCount       requests.Integer `json:"URLForwardCount" xml:"URLForwardCount"`
+	DDosDefendFlow        requests.Integer `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
+	DDosDefendQuery       requests.Integer `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
+	OverseaDDosDefendFlow requests.Integer `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
+	SearchEngineLines     string           `json:"SearchEngineLines" xml:"SearchEngineLines"`
+	ISPLines              string           `json:"ISPLines" xml:"ISPLines"`
+	ISPRegionLines        string           `json:"ISPRegionLines" xml:"ISPRegionLines"`
+	OverseaLine           string           `json:"OverseaLine" xml:"OverseaLine"`
+	MonitorNodeCount      requests.Integer `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
+	MonitorFrequency      requests.Integer `json:"MonitorFrequency" xml:"MonitorFrequency"`
+	MonitorTaskCount      requests.Integer `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
+	RegionLines           requests.Boolean `json:"RegionLines" xml:"RegionLines"`
+	Gslb                  requests.Boolean `json:"Gslb" xml:"Gslb"`
+	InClean               requests.Boolean `json:"InClean" xml:"InClean"`
+	InBlackHole           requests.Boolean `json:"InBlackHole" xml:"InBlackHole"`
 	DnsServers            struct {
 		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
 	} `json:"DnsServers" xml:"DnsServers"`

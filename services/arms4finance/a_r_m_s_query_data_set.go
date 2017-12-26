@@ -64,14 +64,14 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	Measures      *[]string                     `position:"Query" name:"Measures"  type:"Repeated"`
-	IntervalInSec string                        `position:"Query" name:"IntervalInSec"`
+	MaxTime       requests.Integer              `position:"Query" name:"MaxTime"`
+	IntervalInSec requests.Integer              `position:"Query" name:"IntervalInSec"`
+	IsDrillDown   requests.Boolean              `position:"Query" name:"IsDrillDown"`
+	DatasetId     requests.Integer              `position:"Query" name:"DatasetId"`
 	DateStr       string                        `position:"Query" name:"DateStr"`
-	IsDrillDown   string                        `position:"Query" name:"IsDrillDown"`
-	MinTime       string                        `position:"Query" name:"MinTime"`
-	DatasetId     string                        `position:"Query" name:"DatasetId"`
-	MaxTime       string                        `position:"Query" name:"MaxTime"`
 	Dimensions    *[]ARMSQueryDataSetDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
+	Measures      *[]string                     `position:"Query" name:"Measures"  type:"Repeated"`
+	MinTime       requests.Integer              `position:"Query" name:"MinTime"`
 }
 
 type ARMSQueryDataSetDimensions struct {
@@ -81,7 +81,7 @@ type ARMSQueryDataSetDimensions struct {
 
 type ARMSQueryDataSetResponse struct {
 	*responses.BaseResponse
-	Data string `json:"Data"`
+	Data string `json:"Data" xml:"Data"`
 }
 
 func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {

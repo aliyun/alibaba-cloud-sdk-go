@@ -64,11 +64,11 @@ func (client *Client) ReleaseEipAddressWithCallback(request *ReleaseEipAddressRe
 
 type ReleaseEipAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AllocationId         string `position:"Query" name:"AllocationId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
 }
 
 type ReleaseEipAddressResponse struct {

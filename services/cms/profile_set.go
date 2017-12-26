@@ -64,16 +64,17 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 
 type ProfileSetRequest struct {
 	*requests.RpcRequest
-	AutoInstall string `position:"Query" name:"AutoInstall"`
-	UserId      string `position:"Query" name:"UserId"`
+	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
+	UserId                   requests.Integer `position:"Query" name:"UserId"`
+	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 }
 
 type ProfileSetResponse struct {
 	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateProfileSetRequest() (request *ProfileSetRequest) {

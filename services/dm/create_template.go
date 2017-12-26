@@ -64,24 +64,24 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 
 type CreateTemplateRequest struct {
 	*requests.RpcRequest
-	TemplateNickName     string `position:"Query" name:"TemplateNickName"`
-	SmsContent           string `position:"Query" name:"SmsContent"`
-	TemplateName         string `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Remark               string `position:"Query" name:"Remark"`
-	TemplateType         string `position:"Query" name:"TemplateType"`
-	SmsType              string `position:"Query" name:"SmsType"`
-	TemplateSubject      string `position:"Query" name:"TemplateSubject"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TemplateText         string `position:"Query" name:"TemplateText"`
-	FromType             string `position:"Query" name:"FromType"`
+	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
+	SmsContent           string           `position:"Query" name:"SmsContent"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Remark               string           `position:"Query" name:"Remark"`
+	TemplateType         requests.Integer `position:"Query" name:"TemplateType"`
+	SmsType              requests.Integer `position:"Query" name:"SmsType"`
+	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateText         string           `position:"Query" name:"TemplateText"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type CreateTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TemplateId int    `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TemplateId requests.Integer `json:"TemplateId" xml:"TemplateId"`
 }
 
 func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {

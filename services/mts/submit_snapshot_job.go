@@ -64,73 +64,71 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
-	Input                string `position:"Query" name:"Input"`
-	UserData             string `position:"Query" name:"UserData"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SnapshotConfig       string `position:"Query" name:"SnapshotConfig"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitSnapshotJobResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	SnapshotJob struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Count        string `json:"Count"`
-		TileCount    string `json:"TileCount"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
+		Id           string `json:"Id" xml:"Id"`
+		UserData     string `json:"UserData" xml:"UserData"`
+		PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+		State        string `json:"State" xml:"State"`
+		Code         string `json:"Code" xml:"Code"`
+		Count        string `json:"Count" xml:"Count"`
+		TileCount    string `json:"TileCount" xml:"TileCount"`
+		Message      string `json:"Message" xml:"Message"`
+		CreationTime string `json:"CreationTime" xml:"CreationTime"`
 		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-			RoleArn  string `json:"RoleArn"`
-		} `json:"Input"`
+			Bucket   string `json:"Bucket" xml:"Bucket"`
+			Location string `json:"Location" xml:"Location"`
+			Object   string `json:"Object" xml:"Object"`
+			RoleArn  string `json:"RoleArn" xml:"RoleArn"`
+		} `json:"Input" xml:"Input"`
 		SnapshotConfig struct {
-			Time       string `json:"Time"`
-			Interval   string `json:"Interval"`
-			Num        string `json:"Num"`
-			Width      string `json:"Width"`
-			Height     string `json:"Height"`
-			FrameType  string `json:"FrameType"`
+			Time       string `json:"Time" xml:"Time"`
+			Interval   string `json:"Interval" xml:"Interval"`
+			Num        string `json:"Num" xml:"Num"`
+			Width      string `json:"Width" xml:"Width"`
+			Height     string `json:"Height" xml:"Height"`
+			FrameType  string `json:"FrameType" xml:"FrameType"`
 			OutputFile struct {
-				Bucket   string `json:"Bucket"`
-				Location string `json:"Location"`
-				Object   string `json:"Object"`
-				RoleArn  string `json:"RoleArn"`
-			} `json:"OutputFile"`
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+				RoleArn  string `json:"RoleArn" xml:"RoleArn"`
+			} `json:"OutputFile" xml:"OutputFile"`
 			TileOutputFile struct {
-				Bucket   string `json:"Bucket"`
-				Location string `json:"Location"`
-				Object   string `json:"Object"`
-				RoleArn  string `json:"RoleArn"`
-			} `json:"TileOutputFile"`
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+				RoleArn  string `json:"RoleArn" xml:"RoleArn"`
+			} `json:"TileOutputFile" xml:"TileOutputFile"`
 			TileOut struct {
-				Lines         string `json:"Lines"`
-				Columns       string `json:"Columns"`
-				CellWidth     string `json:"CellWidth"`
-				CellHeight    string `json:"CellHeight"`
-				Margin        string `json:"Margin"`
-				Padding       string `json:"Padding"`
-				Color         string `json:"Color"`
-				IsKeepCellPic string `json:"IsKeepCellPic"`
-			} `json:"TileOut"`
-		} `json:"SnapshotConfig"`
+				Lines         string `json:"Lines" xml:"Lines"`
+				Columns       string `json:"Columns" xml:"Columns"`
+				CellWidth     string `json:"CellWidth" xml:"CellWidth"`
+				CellHeight    string `json:"CellHeight" xml:"CellHeight"`
+				Margin        string `json:"Margin" xml:"Margin"`
+				Padding       string `json:"Padding" xml:"Padding"`
+				Color         string `json:"Color" xml:"Color"`
+				IsKeepCellPic string `json:"IsKeepCellPic" xml:"IsKeepCellPic"`
+			} `json:"TileOut" xml:"TileOut"`
+		} `json:"SnapshotConfig" xml:"SnapshotConfig"`
 		MNSMessageResult struct {
-			MessageId    string `json:"MessageId"`
-			ErrorMessage string `json:"ErrorMessage"`
-			ErrorCode    string `json:"ErrorCode"`
-		} `json:"MNSMessageResult"`
-	} `json:"SnapshotJob"`
+			MessageId    string `json:"MessageId" xml:"MessageId"`
+			ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+			ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+		} `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	} `json:"SnapshotJob" xml:"SnapshotJob"`
 }
 
 func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {

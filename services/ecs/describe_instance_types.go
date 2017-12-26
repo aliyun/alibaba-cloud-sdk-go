@@ -64,11 +64,11 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
-	InstanceTypeFamily   string `position:"Query" name:"InstanceTypeFamily"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceTypesResponse struct {
@@ -76,17 +76,17 @@ type DescribeInstanceTypesResponse struct {
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	InstanceTypes struct {
 		InstanceType []struct {
-			InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-			CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-			MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
-			InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-			LocalStorageCapacity int64   `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-			LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-			LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
-			GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
-			GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
-			InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
-			BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
+			InstanceTypeId       string           `json:"InstanceTypeId" xml:"InstanceTypeId"`
+			CpuCoreCount         requests.Integer `json:"CpuCoreCount" xml:"CpuCoreCount"`
+			MemorySize           requests.Float   `json:"MemorySize" xml:"MemorySize"`
+			InstanceTypeFamily   string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+			LocalStorageCapacity requests.Integer `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+			LocalStorageAmount   requests.Integer `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+			LocalStorageCategory string           `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
+			GPUAmount            requests.Integer `json:"GPUAmount" xml:"GPUAmount"`
+			GPUSpec              string           `json:"GPUSpec" xml:"GPUSpec"`
+			InitialCredit        requests.Integer `json:"InitialCredit" xml:"InitialCredit"`
+			BaselineCredit       requests.Integer `json:"BaselineCredit" xml:"BaselineCredit"`
 		} `json:"InstanceType" xml:"InstanceType"`
 	} `json:"InstanceTypes" xml:"InstanceTypes"`
 }

@@ -64,48 +64,48 @@ func (client *Client) ModifyVpnConnectionAttributeWithCallback(request *ModifyVp
 
 type ModifyVpnConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	LocalSubnet          string `position:"Query" name:"LocalSubnet"`
-	EffectImmediately    string `position:"Query" name:"EffectImmediately"`
-	RemoteSubnet         string `position:"Query" name:"RemoteSubnet"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	IpsecConfig          string `position:"Query" name:"IpsecConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VpnConnectionId      string `position:"Query" name:"VpnConnectionId"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	IkeConfig            string `position:"Query" name:"IkeConfig"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IkeConfig            string           `position:"Query" name:"IkeConfig"`
 }
 
 type ModifyVpnConnectionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId   string           `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId string           `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId      string           `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name              string           `json:"Name" xml:"Name"`
+	Description       string           `json:"Description" xml:"Description"`
+	LocalSubnet       string           `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet      string           `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime        requests.Integer `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately requests.Boolean `json:"EffectImmediately" xml:"EffectImmediately"`
 	IkeConfig         struct {
-		Psk         string `json:"Psk" xml:"Psk"`
-		IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-		IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-		IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-		IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-		IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-		IkeLifetime int64  `json:"IkeLifetime" xml:"IkeLifetime"`
-		LocalId     string `json:"LocalId" xml:"LocalId"`
-		RemoteId    string `json:"RemoteId" xml:"RemoteId"`
+		Psk         string           `json:"Psk" xml:"Psk"`
+		IkeVersion  string           `json:"IkeVersion" xml:"IkeVersion"`
+		IkeMode     string           `json:"IkeMode" xml:"IkeMode"`
+		IkeEncAlg   string           `json:"IkeEncAlg" xml:"IkeEncAlg"`
+		IkeAuthAlg  string           `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+		IkePfs      string           `json:"IkePfs" xml:"IkePfs"`
+		IkeLifetime requests.Integer `json:"IkeLifetime" xml:"IkeLifetime"`
+		LocalId     string           `json:"LocalId" xml:"LocalId"`
+		RemoteId    string           `json:"RemoteId" xml:"RemoteId"`
 	} `json:"IkeConfig" xml:"IkeConfig"`
 	IpsecConfig struct {
-		IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-		IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-		IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-		IpsecLifetime int64  `json:"IpsecLifetime" xml:"IpsecLifetime"`
+		IpsecEncAlg   string           `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
+		IpsecAuthAlg  string           `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
+		IpsecPfs      string           `json:"IpsecPfs" xml:"IpsecPfs"`
+		IpsecLifetime requests.Integer `json:"IpsecLifetime" xml:"IpsecLifetime"`
 	} `json:"IpsecConfig" xml:"IpsecConfig"`
 }
 

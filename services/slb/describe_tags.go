@@ -64,29 +64,29 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	DistinctKey          string `position:"Query" name:"DistinctKey"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	DistinctKey          requests.Boolean `position:"Query" name:"DistinctKey"`
 }
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	TagSets    struct {
 		TagSet []struct {
-			TagKey        string `json:"TagKey" xml:"TagKey"`
-			TagValue      string `json:"TagValue" xml:"TagValue"`
-			InstanceCount int    `json:"InstanceCount" xml:"InstanceCount"`
+			TagKey        string           `json:"TagKey" xml:"TagKey"`
+			TagValue      string           `json:"TagValue" xml:"TagValue"`
+			InstanceCount requests.Integer `json:"InstanceCount" xml:"InstanceCount"`
 		} `json:"TagSet" xml:"TagSet"`
 	} `json:"TagSets" xml:"TagSets"`
 }

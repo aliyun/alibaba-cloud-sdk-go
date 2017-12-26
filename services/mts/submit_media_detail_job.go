@@ -64,22 +64,20 @@ func (client *Client) SubmitMediaDetailJobWithCallback(request *SubmitMediaDetai
 
 type SubmitMediaDetailJobRequest struct {
 	*requests.RpcRequest
-	Input                string `position:"Query" name:"Input"`
-	UserData             string `position:"Query" name:"UserData"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	MediaDetailConfig    string `position:"Query" name:"MediaDetailConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	PipelineId           string `position:"Query" name:"PipelineId"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaDetailConfig    string           `position:"Query" name:"MediaDetailConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitMediaDetailJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateSubmitMediaDetailJobRequest() (request *SubmitMediaDetailJobRequest) {

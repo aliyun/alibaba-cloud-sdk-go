@@ -64,22 +64,22 @@ func (client *Client) EipFillProductWithCallback(request *EipFillProductRequest,
 
 type EipFillProductRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Data                 string `position:"Query" name:"data"`
-	UserCidr             string `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Data                 string           `position:"Query" name:"data"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type EipFillProductResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Data      string `json:"data" xml:"data"`
-	Code      string `json:"code" xml:"code"`
-	Success   bool   `json:"success" xml:"success"`
-	Message   string `json:"message" xml:"message"`
+	RequestId string           `json:"requestId" xml:"requestId"`
+	Data      string           `json:"data" xml:"data"`
+	Code      string           `json:"code" xml:"code"`
+	Success   requests.Boolean `json:"success" xml:"success"`
+	Message   string           `json:"message" xml:"message"`
 }
 
 func CreateEipFillProductRequest() (request *EipFillProductRequest) {

@@ -64,19 +64,19 @@ func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUser
 
 type DescribeUserVipsByDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Available     string `position:"Query" name:"Available"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Available     string           `position:"Query" name:"Available"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeUserVipsByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId"`
-	DomainName int64    `json:"DomainName"`
-	Vips       []string `json:"Vips"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	DomainName requests.Integer `json:"DomainName" xml:"DomainName"`
+	Vips       struct {
+		Vip []string `json:"Vip" xml:"Vip"`
+	} `json:"Vips" xml:"Vips"`
 }
 
 func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {

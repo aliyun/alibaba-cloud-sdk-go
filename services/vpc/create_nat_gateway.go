@@ -70,10 +70,10 @@ type CreateNatGatewayRequest struct {
 	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string                              `position:"Query" name:"Description"`
 	Name                 string                              `position:"Query" name:"Name"`
-	ResourceOwnerId      string                              `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
 	VpcId                string                              `position:"Query" name:"VpcId"`
 	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
-	OwnerId              string                              `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 }
 
 type CreateNatGatewayBandwidthPackage struct {

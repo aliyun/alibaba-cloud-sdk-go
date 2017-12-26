@@ -64,41 +64,41 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 
 type NodeListRequest struct {
 	*requests.RpcRequest
-	PageSize      string `position:"Query" name:"PageSize"`
-	Status        string `position:"Query" name:"Status"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	InstanceIds   string `position:"Query" name:"InstanceIds"`
-	KeyWord       string `position:"Query" name:"KeyWord"`
-	SerialNumbers string `position:"Query" name:"SerialNumbers"`
-	UserId        string `position:"Query" name:"UserId"`
-	HostName      string `position:"Query" name:"HostName"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Status        string           `position:"Query" name:"Status"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceIds   string           `position:"Query" name:"InstanceIds"`
+	KeyWord       string           `position:"Query" name:"KeyWord"`
+	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
+	UserId        requests.Integer `position:"Query" name:"UserId"`
+	HostName      string           `position:"Query" name:"HostName"`
 }
 
 type NodeListResponse struct {
 	*responses.BaseResponse
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageTotal    int    `json:"PageTotal" xml:"PageTotal"`
-	Total        int    `json:"Total" xml:"Total"`
+	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      requests.Boolean `json:"Success" xml:"Success"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	PageTotal    requests.Integer `json:"PageTotal" xml:"PageTotal"`
+	Total        requests.Integer `json:"Total" xml:"Total"`
 	Nodes        struct {
 		Node []struct {
-			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-			SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-			HostName         string `json:"HostName" xml:"HostName"`
-			AliUid           int64  `json:"AliUid" xml:"AliUid"`
-			OperatingSystem  string `json:"OperatingSystem" xml:"OperatingSystem"`
-			IpGroup          string `json:"IpGroup" xml:"IpGroup"`
-			Region           string `json:"Region" xml:"Region"`
-			TianjimonVersion string `json:"TianjimonVersion" xml:"TianjimonVersion"`
-			EipAddress       string `json:"EipAddress" xml:"EipAddress"`
-			EipId            string `json:"EipId" xml:"EipId"`
-			AliyunHost       bool   `json:"AliyunHost" xml:"AliyunHost"`
-			NatIp            string `json:"NatIp" xml:"NatIp"`
-			NetworkType      string `json:"NetworkType" xml:"NetworkType"`
+			InstanceId       string           `json:"InstanceId" xml:"InstanceId"`
+			SerialNumber     string           `json:"SerialNumber" xml:"SerialNumber"`
+			HostName         string           `json:"HostName" xml:"HostName"`
+			AliUid           requests.Integer `json:"AliUid" xml:"AliUid"`
+			OperatingSystem  string           `json:"OperatingSystem" xml:"OperatingSystem"`
+			IpGroup          string           `json:"IpGroup" xml:"IpGroup"`
+			Region           string           `json:"Region" xml:"Region"`
+			TianjimonVersion string           `json:"TianjimonVersion" xml:"TianjimonVersion"`
+			EipAddress       string           `json:"EipAddress" xml:"EipAddress"`
+			EipId            string           `json:"EipId" xml:"EipId"`
+			AliyunHost       requests.Boolean `json:"AliyunHost" xml:"AliyunHost"`
+			NatIp            string           `json:"NatIp" xml:"NatIp"`
+			NetworkType      string           `json:"NetworkType" xml:"NetworkType"`
 		} `json:"Node" xml:"Node"`
 	} `json:"Nodes" xml:"Nodes"`
 }

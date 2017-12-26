@@ -64,13 +64,13 @@ func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySe
 
 type ModifySecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	SecurityGroupName    string `position:"Query" name:"SecurityGroupName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifySecurityGroupAttributeResponse struct {

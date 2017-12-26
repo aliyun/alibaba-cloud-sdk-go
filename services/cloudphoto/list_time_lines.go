@@ -64,46 +64,46 @@ func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, c
 
 type ListTimeLinesRequest struct {
 	*requests.RpcRequest
-	Cursor        string `position:"Query" name:"Cursor"`
-	PhotoSize     string `position:"Query" name:"PhotoSize"`
-	TimeLineCount string `position:"Query" name:"TimeLineCount"`
-	LibraryId     string `position:"Query" name:"LibraryId"`
-	StoreName     string `position:"Query" name:"StoreName"`
-	TimeLineUnit  string `position:"Query" name:"TimeLineUnit"`
-	FilterBy      string `position:"Query" name:"FilterBy"`
-	Direction     string `position:"Query" name:"Direction"`
-	Order         string `position:"Query" name:"Order"`
+	FilterBy      string           `position:"Query" name:"FilterBy"`
+	Cursor        requests.Integer `position:"Query" name:"Cursor"`
+	Order         string           `position:"Query" name:"Order"`
+	Direction     string           `position:"Query" name:"Direction"`
+	TimeLineCount requests.Integer `position:"Query" name:"TimeLineCount"`
+	LibraryId     string           `position:"Query" name:"LibraryId"`
+	StoreName     string           `position:"Query" name:"StoreName"`
+	TimeLineUnit  string           `position:"Query" name:"TimeLineUnit"`
+	PhotoSize     requests.Integer `position:"Query" name:"PhotoSize"`
 }
 
 type ListTimeLinesResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code"`
-	Message    string `json:"Message"`
-	NextCursor int    `json:"NextCursor"`
-	RequestId  string `json:"RequestId"`
-	Action     string `json:"Action"`
+	Code       string           `json:"Code" xml:"Code"`
+	Message    string           `json:"Message" xml:"Message"`
+	NextCursor requests.Integer `json:"NextCursor" xml:"NextCursor"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	Action     string           `json:"Action" xml:"Action"`
 	TimeLines  []struct {
-		StartTime   int64 `json:"StartTime"`
-		EndTime     int64 `json:"EndTime"`
-		TotalCount  int   `json:"TotalCount"`
-		PhotosCount int   `json:"PhotosCount"`
+		StartTime   requests.Integer `json:"StartTime" xml:"StartTime"`
+		EndTime     requests.Integer `json:"EndTime" xml:"EndTime"`
+		TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
 		Photos      []struct {
-			Id              int64  `json:"Id"`
-			Title           string `json:"Title"`
-			FileId          string `json:"FileId"`
-			State           string `json:"State"`
-			Md5             string `json:"Md5"`
-			IsVideo         bool   `json:"IsVideo"`
-			Remark          string `json:"Remark"`
-			Width           int64  `json:"Width"`
-			Height          int64  `json:"Height"`
-			Ctime           int64  `json:"Ctime"`
-			Mtime           int64  `json:"Mtime"`
-			TakenAt         int64  `json:"TakenAt"`
-			ShareExpireTime int64  `json:"ShareExpireTime"`
-			Like            int64  `json:"Like"`
-		} `json:"Photos"`
-	} `json:"TimeLines"`
+			Id              requests.Integer `json:"Id" xml:"Id"`
+			Title           string           `json:"Title" xml:"Title"`
+			FileId          string           `json:"FileId" xml:"FileId"`
+			State           string           `json:"State" xml:"State"`
+			Md5             string           `json:"Md5" xml:"Md5"`
+			IsVideo         requests.Boolean `json:"IsVideo" xml:"IsVideo"`
+			Remark          string           `json:"Remark" xml:"Remark"`
+			Width           requests.Integer `json:"Width" xml:"Width"`
+			Height          requests.Integer `json:"Height" xml:"Height"`
+			Ctime           requests.Integer `json:"Ctime" xml:"Ctime"`
+			Mtime           requests.Integer `json:"Mtime" xml:"Mtime"`
+			TakenAt         requests.Integer `json:"TakenAt" xml:"TakenAt"`
+			ShareExpireTime requests.Integer `json:"ShareExpireTime" xml:"ShareExpireTime"`
+			Like            requests.Integer `json:"Like" xml:"Like"`
+		} `json:"Photos" xml:"Photos"`
+	} `json:"TimeLines" xml:"TimeLines"`
 }
 
 func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {

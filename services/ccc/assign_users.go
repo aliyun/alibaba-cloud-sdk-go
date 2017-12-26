@@ -66,19 +66,18 @@ type AssignUsersRequest struct {
 	*requests.RpcRequest
 	UserRamId    *[]string `position:"Query" name:"UserRamId"  type:"Repeated"`
 	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	InstanceId   string    `position:"Query" name:"InstanceId"`
 	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
 	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	AccessKeyId  string    `position:"Query" name:"AccessKeyId"`
+	InstanceId   string    `position:"Query" name:"InstanceId"`
 }
 
 type AssignUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId"`
-	Success        bool   `json:"Success"`
-	Code           string `json:"Code"`
-	Message        string `json:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        requests.Boolean `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateAssignUsersRequest() (request *AssignUsersRequest) {

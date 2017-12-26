@@ -64,24 +64,24 @@ func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *Modify
 
 type ModifyCustomerGatewayAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyCustomerGatewayAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	IpAddress         string `json:"IpAddress" xml:"IpAddress"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	CustomerGatewayId string           `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	IpAddress         string           `json:"IpAddress" xml:"IpAddress"`
+	Name              string           `json:"Name" xml:"Name"`
+	Description       string           `json:"Description" xml:"Description"`
+	CreateTime        requests.Integer `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatewayAttributeRequest) {

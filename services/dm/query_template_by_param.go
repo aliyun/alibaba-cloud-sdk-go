@@ -64,34 +64,34 @@ func (client *Client) QueryTemplateByParamWithCallback(request *QueryTemplateByP
 
 type QueryTemplateByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromType             string `position:"Query" name:"FromType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type QueryTemplateByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Template []struct {
-			TemplateId      string `json:"TemplateId" xml:"TemplateId"`
-			TemplateName    string `json:"TemplateName" xml:"TemplateName"`
-			TemplateComment string `json:"TemplateComment" xml:"TemplateComment"`
-			TemplateStatus  string `json:"TemplateStatus" xml:"TemplateStatus"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreatetime   int64  `json:"UtcCreatetime" xml:"UtcCreatetime"`
-			TemplateType    int    `json:"TemplateType" xml:"TemplateType"`
-			SmsTemplateCode int    `json:"SmsTemplateCode" xml:"SmsTemplateCode"`
-			Smsrejectinfo   int    `json:"Smsrejectinfo" xml:"Smsrejectinfo"`
-			SmsStatus       int    `json:"SmsStatus" xml:"SmsStatus"`
+			TemplateId      string           `json:"TemplateId" xml:"TemplateId"`
+			TemplateName    string           `json:"TemplateName" xml:"TemplateName"`
+			TemplateComment string           `json:"TemplateComment" xml:"TemplateComment"`
+			TemplateStatus  string           `json:"TemplateStatus" xml:"TemplateStatus"`
+			CreateTime      string           `json:"CreateTime" xml:"CreateTime"`
+			UtcCreatetime   requests.Integer `json:"UtcCreatetime" xml:"UtcCreatetime"`
+			TemplateType    requests.Integer `json:"TemplateType" xml:"TemplateType"`
+			SmsTemplateCode requests.Integer `json:"SmsTemplateCode" xml:"SmsTemplateCode"`
+			Smsrejectinfo   requests.Integer `json:"Smsrejectinfo" xml:"Smsrejectinfo"`
+			SmsStatus       requests.Integer `json:"SmsStatus" xml:"SmsStatus"`
 		} `json:"template" xml:"template"`
 	} `json:"data" xml:"data"`
 }

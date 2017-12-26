@@ -64,19 +64,19 @@ func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest,
 
 type EditPhotoStoreRequest struct {
 	*requests.RpcRequest
-	AutoCleanEnabled string `position:"Query" name:"AutoCleanEnabled"`
-	StoreName        string `position:"Query" name:"StoreName"`
-	Remark           string `position:"Query" name:"Remark"`
-	DefaultQuota     string `position:"Query" name:"DefaultQuota"`
-	AutoCleanDays    string `position:"Query" name:"AutoCleanDays"`
+	DefaultQuota     requests.Integer `position:"Query" name:"DefaultQuota"`
+	Remark           string           `position:"Query" name:"Remark"`
+	AutoCleanDays    requests.Integer `position:"Query" name:"AutoCleanDays"`
+	StoreName        string           `position:"Query" name:"StoreName"`
+	AutoCleanEnabled string           `position:"Query" name:"AutoCleanEnabled"`
 }
 
 type EditPhotoStoreResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code"`
-	Message   string `json:"Message"`
-	RequestId string `json:"RequestId"`
-	Action    string `json:"Action"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
 func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {

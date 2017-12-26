@@ -64,33 +64,33 @@ func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequ
 
 type DescribeCommandsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	Type                 string `position:"Query" name:"Type"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	CommandId            string `position:"Query" name:"CommandId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Type                 string           `position:"Query" name:"Type"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeCommandsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int64  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int64  `json:"PageSize" xml:"PageSize"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
 	CommandList struct {
 		Command []struct {
-			CommandId      string `json:"CommandId" xml:"CommandId"`
-			Name           string `json:"Name" xml:"Name"`
-			Type           string `json:"Type" xml:"Type"`
-			Description    string `json:"Description" xml:"Description"`
-			CommandContent string `json:"CommandContent" xml:"CommandContent"`
-			WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
-			Timeout        int64  `json:"Timeout" xml:"Timeout"`
+			CommandId      string           `json:"CommandId" xml:"CommandId"`
+			Name           string           `json:"Name" xml:"Name"`
+			Type           string           `json:"Type" xml:"Type"`
+			Description    string           `json:"Description" xml:"Description"`
+			CommandContent string           `json:"CommandContent" xml:"CommandContent"`
+			WorkingDir     string           `json:"WorkingDir" xml:"WorkingDir"`
+			Timeout        requests.Integer `json:"Timeout" xml:"Timeout"`
 		} `json:"Command" xml:"Command"`
 	} `json:"CommandList" xml:"CommandList"`
 }

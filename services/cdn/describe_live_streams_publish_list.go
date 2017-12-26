@@ -64,33 +64,33 @@ func (client *Client) DescribeLiveStreamsPublishListWithCallback(request *Descri
 
 type DescribeLiveStreamsPublishListRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamsPublishListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId"`
-	PublishInfo []struct {
-		DomainName   string `json:"DomainName"`
-		AppName      string `json:"AppName"`
-		StreamName   string `json:"StreamName"`
-		StreamUrl    string `json:"StreamUrl"`
-		PublishTime  string `json:"PublishTime"`
-		StopTime     string `json:"StopTime"`
-		PublishUrl   string `json:"PublishUrl"`
-		ClientAddr   string `json:"ClientAddr"`
-		EdgeNodeAddr string `json:"EdgeNodeAddr"`
-	} `json:"PublishInfo"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	PublishInfo struct {
+		LiveStreamPublishInfo []struct {
+			DomainName   string `json:"DomainName" xml:"DomainName"`
+			AppName      string `json:"AppName" xml:"AppName"`
+			StreamName   string `json:"StreamName" xml:"StreamName"`
+			StreamUrl    string `json:"StreamUrl" xml:"StreamUrl"`
+			PublishTime  string `json:"PublishTime" xml:"PublishTime"`
+			StopTime     string `json:"StopTime" xml:"StopTime"`
+			PublishUrl   string `json:"PublishUrl" xml:"PublishUrl"`
+			ClientAddr   string `json:"ClientAddr" xml:"ClientAddr"`
+			EdgeNodeAddr string `json:"EdgeNodeAddr" xml:"EdgeNodeAddr"`
+		} `json:"LiveStreamPublishInfo" xml:"LiveStreamPublishInfo"`
+	} `json:"PublishInfo" xml:"PublishInfo"`
 }
 
 func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreamsPublishListRequest) {

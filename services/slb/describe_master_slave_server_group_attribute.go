@@ -64,13 +64,13 @@ func (client *Client) DescribeMasterSlaveServerGroupAttributeWithCallback(reques
 
 type DescribeMasterSlaveServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                     string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId              string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount             string `position:"Query" name:"OwnerAccount"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	MasterSlaveServerGroupId string `position:"Query" name:"MasterSlaveServerGroupId"`
+	Tags                     string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId              string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 }
 
 type DescribeMasterSlaveServerGroupAttributeResponse struct {
@@ -80,10 +80,10 @@ type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	MasterSlaveServerGroupName string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
 	MasterSlaveBackendServers  struct {
 		MasterSlaveBackendServer []struct {
-			ServerId   string `json:"ServerId" xml:"ServerId"`
-			Port       int    `json:"Port" xml:"Port"`
-			Weight     int    `json:"Weight" xml:"Weight"`
-			ServerType string `json:"ServerType" xml:"ServerType"`
+			ServerId   string           `json:"ServerId" xml:"ServerId"`
+			Port       requests.Integer `json:"Port" xml:"Port"`
+			Weight     requests.Integer `json:"Weight" xml:"Weight"`
+			ServerType string           `json:"ServerType" xml:"ServerType"`
 		} `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
 	} `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }

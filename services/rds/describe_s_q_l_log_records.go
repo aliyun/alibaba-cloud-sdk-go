@@ -64,39 +64,39 @@ func (client *Client) DescribeSQLLogRecordsWithCallback(request *DescribeSQLLogR
 
 type DescribeSQLLogRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	Form                 string `position:"Query" name:"Form"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Database             string `position:"Query" name:"Database"`
-	SQLId                string `position:"Query" name:"SQLId"`
-	QueryKeywords        string `position:"Query" name:"QueryKeywords"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	User                 string `position:"Query" name:"User"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	Form                 string           `position:"Query" name:"Form"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Database             string           `position:"Query" name:"Database"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	User                 string           `position:"Query" name:"User"`
 }
 
 type DescribeSQLLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLRecord []struct {
-			DBName              string `json:"DBName" xml:"DBName"`
-			AccountName         string `json:"AccountName" xml:"AccountName"`
-			HostAddress         string `json:"HostAddress" xml:"HostAddress"`
-			SQLText             string `json:"SQLText" xml:"SQLText"`
-			TotalExecutionTimes int64  `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
-			ReturnRowCounts     int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-			ExecuteTime         string `json:"ExecuteTime" xml:"ExecuteTime"`
-			ThreadID            string `json:"ThreadID" xml:"ThreadID"`
+			DBName              string           `json:"DBName" xml:"DBName"`
+			AccountName         string           `json:"AccountName" xml:"AccountName"`
+			HostAddress         string           `json:"HostAddress" xml:"HostAddress"`
+			SQLText             string           `json:"SQLText" xml:"SQLText"`
+			TotalExecutionTimes requests.Integer `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
+			ReturnRowCounts     requests.Integer `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+			ExecuteTime         string           `json:"ExecuteTime" xml:"ExecuteTime"`
+			ThreadID            string           `json:"ThreadID" xml:"ThreadID"`
 		} `json:"SQLRecord" xml:"SQLRecord"`
 	} `json:"Items" xml:"Items"`
 }

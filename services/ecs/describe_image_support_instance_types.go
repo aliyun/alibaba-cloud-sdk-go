@@ -64,10 +64,10 @@ func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *Des
 
 type DescribeImageSupportInstanceTypesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ImageId              string `position:"Query" name:"ImageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
 }
 
 type DescribeImageSupportInstanceTypesResponse struct {
@@ -77,10 +77,10 @@ type DescribeImageSupportInstanceTypesResponse struct {
 	ImageId       string `json:"ImageId" xml:"ImageId"`
 	InstanceTypes struct {
 		InstanceType []struct {
-			InstanceTypeId     string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-			CpuCoreCount       int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-			MemorySize         float64 `json:"MemorySize" xml:"MemorySize"`
-			InstanceTypeFamily string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+			InstanceTypeId     string           `json:"InstanceTypeId" xml:"InstanceTypeId"`
+			CpuCoreCount       requests.Integer `json:"CpuCoreCount" xml:"CpuCoreCount"`
+			MemorySize         requests.Float   `json:"MemorySize" xml:"MemorySize"`
+			InstanceTypeFamily string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 		} `json:"InstanceType" xml:"InstanceType"`
 	} `json:"InstanceTypes" xml:"InstanceTypes"`
 }

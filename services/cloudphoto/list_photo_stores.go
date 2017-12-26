@@ -68,25 +68,25 @@ type ListPhotoStoresRequest struct {
 
 type ListPhotoStoresResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code"`
-	Message     string `json:"Message"`
-	RequestId   string `json:"RequestId"`
-	Action      string `json:"Action"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Action      string `json:"Action" xml:"Action"`
 	PhotoStores []struct {
-		Id               int64  `json:"Id"`
-		Name             string `json:"Name"`
-		Remark           string `json:"Remark"`
-		AutoCleanEnabled bool   `json:"AutoCleanEnabled"`
-		AutoCleanDays    int    `json:"AutoCleanDays"`
-		DefaultQuota     int64  `json:"DefaultQuota"`
-		Ctime            int64  `json:"Ctime"`
-		Mtime            int64  `json:"Mtime"`
+		Id               requests.Integer `json:"Id" xml:"Id"`
+		Name             string           `json:"Name" xml:"Name"`
+		Remark           string           `json:"Remark" xml:"Remark"`
+		AutoCleanEnabled requests.Boolean `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
+		AutoCleanDays    requests.Integer `json:"AutoCleanDays" xml:"AutoCleanDays"`
+		DefaultQuota     requests.Integer `json:"DefaultQuota" xml:"DefaultQuota"`
+		Ctime            requests.Integer `json:"Ctime" xml:"Ctime"`
+		Mtime            requests.Integer `json:"Mtime" xml:"Mtime"`
 		Buckets          []struct {
-			Name   string `json:"Name"`
-			Region string `json:"Region"`
-			State  string `json:"State"`
-		} `json:"Buckets"`
-	} `json:"PhotoStores"`
+			Name   string `json:"Name" xml:"Name"`
+			Region string `json:"Region" xml:"Region"`
+			State  string `json:"State" xml:"State"`
+		} `json:"Buckets" xml:"Buckets"`
+	} `json:"PhotoStores" xml:"PhotoStores"`
 }
 
 func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {

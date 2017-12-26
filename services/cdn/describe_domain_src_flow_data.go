@@ -64,29 +64,29 @@ func (client *Client) DescribeDomainSrcFlowDataWithCallback(request *DescribeDom
 
 type DescribeDomainSrcFlowDataRequest struct {
 	*requests.RpcRequest
-	FixTimeGap    string `position:"Query" name:"FixTimeGap"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	TimeMerge     string `position:"Query" name:"TimeMerge"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	Interval      string `position:"Query" name:"Interval"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Interval      string           `position:"Query" name:"Interval"`
+	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	TimeMerge     string           `position:"Query" name:"TimeMerge"`
 }
 
 type DescribeDomainSrcFlowDataResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId"`
-	DomainName             string `json:"DomainName"`
-	DataInterval           string `json:"DataInterval"`
-	StartTime              string `json:"StartTime"`
-	EndTime                string `json:"EndTime"`
-	SrcFlowDataPerInterval []struct {
-		TimeStamp string `json:"TimeStamp"`
-		Value     string `json:"Value"`
-	} `json:"SrcFlowDataPerInterval"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	DomainName             string `json:"DomainName" xml:"DomainName"`
+	DataInterval           string `json:"DataInterval" xml:"DataInterval"`
+	StartTime              string `json:"StartTime" xml:"StartTime"`
+	EndTime                string `json:"EndTime" xml:"EndTime"`
+	SrcFlowDataPerInterval struct {
+		DataModule []struct {
+			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+			Value     string `json:"Value" xml:"Value"`
+		} `json:"DataModule" xml:"DataModule"`
+	} `json:"SrcFlowDataPerInterval" xml:"SrcFlowDataPerInterval"`
 }
 
 func CreateDescribeDomainSrcFlowDataRequest() (request *DescribeDomainSrcFlowDataRequest) {

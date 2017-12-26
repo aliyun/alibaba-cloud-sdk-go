@@ -64,26 +64,26 @@ func (client *Client) QueryInvalidAddressWithCallback(request *QueryInvalidAddre
 
 type QueryInvalidAddressRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	NextStart            string `position:"Query" name:"NextStart"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	Length               string `position:"Query" name:"Length"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	NextStart            string           `position:"Query" name:"NextStart"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	Length               requests.Integer `position:"Query" name:"Length"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryInvalidAddressResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	NextStart  int    `json:"NextStart" xml:"NextStart"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	NextStart  requests.Integer `json:"NextStart" xml:"NextStart"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
 	Data       struct {
 		MailDetail []struct {
-			LastUpdateTime    string `json:"LastUpdateTime" xml:"LastUpdateTime"`
-			UtcLastUpdateTime int64  `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-			ToAddress         string `json:"ToAddress" xml:"ToAddress"`
+			LastUpdateTime    string           `json:"LastUpdateTime" xml:"LastUpdateTime"`
+			UtcLastUpdateTime requests.Integer `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
+			ToAddress         string           `json:"ToAddress" xml:"ToAddress"`
 		} `json:"mailDetail" xml:"mailDetail"`
 	} `json:"data" xml:"data"`
 }

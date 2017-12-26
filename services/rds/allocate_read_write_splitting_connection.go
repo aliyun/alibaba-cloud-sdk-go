@@ -64,17 +64,17 @@ func (client *Client) AllocateReadWriteSplittingConnectionWithCallback(request *
 
 type AllocateReadWriteSplittingConnectionRequest struct {
 	*requests.RpcRequest
-	Port                   string `position:"Query" name:"Port"`
-	MaxDelayTime           string `position:"Query" name:"MaxDelayTime"`
-	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
-	Weight                 string `position:"Query" name:"Weight"`
-	DistributionType       string `position:"Query" name:"DistributionType"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
-	ConnectionStringPrefix string `position:"Query" name:"ConnectionStringPrefix"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	IPType                 string `position:"Query" name:"IPType"`
+	Port                   string           `position:"Query" name:"Port"`
+	MaxDelayTime           string           `position:"Query" name:"MaxDelayTime"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	Weight                 string           `position:"Query" name:"Weight"`
+	DistributionType       string           `position:"Query" name:"DistributionType"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	IPType                 string           `position:"Query" name:"IPType"`
 }
 
 type AllocateReadWriteSplittingConnectionResponse struct {

@@ -64,26 +64,26 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TaskAction           string `position:"Query" name:"TaskAction"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	TaskIds              string `position:"Query" name:"TaskIds"`
-	TaskStatus           string `position:"Query" name:"TaskStatus"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TaskAction           string           `position:"Query" name:"TaskAction"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TaskIds              string           `position:"Query" name:"TaskIds"`
+	TaskStatus           string           `position:"Query" name:"TaskStatus"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	RegionId   string           `json:"RegionId" xml:"RegionId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	TaskSet    struct {
 		Task []struct {
 			TaskId        string `json:"TaskId" xml:"TaskId"`

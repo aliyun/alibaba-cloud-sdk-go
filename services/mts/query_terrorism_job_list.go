@@ -64,59 +64,65 @@ func (client *Client) QueryTerrorismJobListWithCallback(request *QueryTerrorismJ
 
 type QueryTerrorismJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryTerrorismJobListResponse struct {
 	*responses.BaseResponse
-	RequestId        string   `json:"RequestId"`
-	NonExistIds      []string `json:"NonExistIds"`
-	TerrorismJobList []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"Input"`
-		TerrorismConfig struct {
-			Interval   string `json:"Interval"`
-			BizType    string `json:"BizType"`
-			OutputFile struct {
-				Bucket   string `json:"Bucket"`
-				Location string `json:"Location"`
-				Object   string `json:"Object"`
-			} `json:"OutputFile"`
-		} `json:"TerrorismConfig"`
-		CensorTerrorismResult struct {
-			Label                string `json:"Label"`
-			Suggestion           string `json:"Suggestion"`
-			MaxScore             string `json:"MaxScore"`
-			AverageScore         string `json:"AverageScore"`
-			TerrorismCounterList []struct {
-				Count int    `json:"Count"`
-				Label string `json:"Label"`
-			} `json:"TerrorismCounterList"`
-			TerrorismTopList []struct {
-				Label     string `json:"Label"`
-				Score     string `json:"Score"`
-				Timestamp string `json:"Timestamp"`
-				Index     string `json:"Index"`
-				Object    string `json:"Object"`
-			} `json:"TerrorismTopList"`
-		} `json:"CensorTerrorismResult"`
-	} `json:"TerrorismJobList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	TerrorismJobList struct {
+		TerrorismJob []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			TerrorismConfig struct {
+				Interval   string `json:"Interval" xml:"Interval"`
+				BizType    string `json:"BizType" xml:"BizType"`
+				OutputFile struct {
+					Bucket   string `json:"Bucket" xml:"Bucket"`
+					Location string `json:"Location" xml:"Location"`
+					Object   string `json:"Object" xml:"Object"`
+				} `json:"OutputFile" xml:"OutputFile"`
+			} `json:"TerrorismConfig" xml:"TerrorismConfig"`
+			CensorTerrorismResult struct {
+				Label                string `json:"Label" xml:"Label"`
+				Suggestion           string `json:"Suggestion" xml:"Suggestion"`
+				MaxScore             string `json:"MaxScore" xml:"MaxScore"`
+				AverageScore         string `json:"AverageScore" xml:"AverageScore"`
+				TerrorismCounterList struct {
+					Counter []struct {
+						Count requests.Integer `json:"Count" xml:"Count"`
+						Label string           `json:"Label" xml:"Label"`
+					} `json:"Counter" xml:"Counter"`
+				} `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
+				TerrorismTopList struct {
+					Top []struct {
+						Label     string `json:"Label" xml:"Label"`
+						Score     string `json:"Score" xml:"Score"`
+						Timestamp string `json:"Timestamp" xml:"Timestamp"`
+						Index     string `json:"Index" xml:"Index"`
+						Object    string `json:"Object" xml:"Object"`
+					} `json:"Top" xml:"Top"`
+				} `json:"TerrorismTopList" xml:"TerrorismTopList"`
+			} `json:"CensorTerrorismResult" xml:"CensorTerrorismResult"`
+		} `json:"TerrorismJob" xml:"TerrorismJob"`
+	} `json:"TerrorismJobList" xml:"TerrorismJobList"`
 }
 
 func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest) {

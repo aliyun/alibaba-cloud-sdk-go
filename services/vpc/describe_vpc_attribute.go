@@ -64,37 +64,44 @@ func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttri
 
 type DescribeVpcAttributeRequest struct {
 	*requests.RpcRequest
-	IsDefault            string `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeVpcAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	Status             string `json:"Status" xml:"Status"`
-	VpcName            string `json:"VpcName" xml:"VpcName"`
-	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock          string `json:"CidrBlock" xml:"CidrBlock"`
-	VRouterId          string `json:"VRouterId" xml:"VRouterId"`
-	Description        string `json:"Description" xml:"Description"`
-	IsDefault          bool   `json:"IsDefault" xml:"IsDefault"`
-	ClassicLinkEnabled bool   `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
+	RequestId          string           `json:"RequestId" xml:"RequestId"`
+	VpcId              string           `json:"VpcId" xml:"VpcId"`
+	RegionId           string           `json:"RegionId" xml:"RegionId"`
+	Status             string           `json:"Status" xml:"Status"`
+	VpcName            string           `json:"VpcName" xml:"VpcName"`
+	CreationTime       string           `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock          string           `json:"CidrBlock" xml:"CidrBlock"`
+	VRouterId          string           `json:"VRouterId" xml:"VRouterId"`
+	Description        string           `json:"Description" xml:"Description"`
+	IsDefault          requests.Boolean `json:"IsDefault" xml:"IsDefault"`
+	ClassicLinkEnabled requests.Boolean `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
 	VSwitchIds         struct {
 		VSwitchId []string `json:"VSwitchId" xml:"VSwitchId"`
 	} `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs struct {
 		UserCidr []string `json:"UserCidr" xml:"UserCidr"`
 	} `json:"UserCidrs" xml:"UserCidrs"`
+	AssociatedCbns struct {
+		AssociatedCbn []struct {
+			CbnStatus   string           `json:"CbnStatus" xml:"CbnStatus"`
+			CbnId       string           `json:"CbnId" xml:"CbnId"`
+			CbnOwnerUid requests.Integer `json:"CbnOwnerUid" xml:"CbnOwnerUid"`
+		} `json:"AssociatedCbn" xml:"AssociatedCbn"`
+	} `json:"AssociatedCbns" xml:"AssociatedCbns"`
 	CloudResources struct {
 		CloudResourceSetType []struct {
-			ResourceType  string `json:"ResourceType" xml:"ResourceType"`
-			ResourceCount int    `json:"ResourceCount" xml:"ResourceCount"`
+			ResourceType  string           `json:"ResourceType" xml:"ResourceType"`
+			ResourceCount requests.Integer `json:"ResourceCount" xml:"ResourceCount"`
 		} `json:"CloudResourceSetType" xml:"CloudResourceSetType"`
 	} `json:"CloudResources" xml:"CloudResources"`
 }

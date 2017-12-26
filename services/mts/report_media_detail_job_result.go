@@ -64,21 +64,19 @@ func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMedi
 
 type ReportMediaDetailJobResultRequest struct {
 	*requests.RpcRequest
-	JobId                string `position:"Query" name:"JobId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	Tag                  string `position:"Query" name:"Tag"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Results              string `position:"Query" name:"Results"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	Results              string           `position:"Query" name:"Results"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportMediaDetailJobResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
-	JobId     string `json:"JobId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobResultRequest) {

@@ -64,31 +64,31 @@ func (client *Client) QueryReceiverByParamWithCallback(request *QueryReceiverByP
 
 type QueryReceiverByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryReceiverByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	NextStart  string `json:"NextStart" xml:"NextStart"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
+	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string           `json:"NextStart" xml:"NextStart"`
+	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Receiver []struct {
-			ReceiverId      string `json:"ReceiverId" xml:"ReceiverId"`
-			ReceiversName   string `json:"ReceiversName" xml:"ReceiversName"`
-			Count           string `json:"Count" xml:"Count"`
-			ReceiversAlias  string `json:"ReceiversAlias" xml:"ReceiversAlias"`
-			Desc            string `json:"Desc" xml:"Desc"`
-			ReceiversStatus string `json:"ReceiversStatus" xml:"ReceiversStatus"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime   int64  `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			ReceiverId      string           `json:"ReceiverId" xml:"ReceiverId"`
+			ReceiversName   string           `json:"ReceiversName" xml:"ReceiversName"`
+			Count           string           `json:"Count" xml:"Count"`
+			ReceiversAlias  string           `json:"ReceiversAlias" xml:"ReceiversAlias"`
+			Desc            string           `json:"Desc" xml:"Desc"`
+			ReceiversStatus string           `json:"ReceiversStatus" xml:"ReceiversStatus"`
+			CreateTime      string           `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime   requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
 		} `json:"receiver" xml:"receiver"`
 	} `json:"data" xml:"data"`
 }

@@ -64,45 +64,49 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
-	CoverJobIds          string `position:"Query" name:"CoverJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryCoverJobListResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId"`
-	NonExistIds  []string `json:"NonExistIds"`
-	CoverJobList []struct {
-		Id           string `json:"Id"`
-		UserData     string `json:"UserData"`
-		PipelineId   string `json:"PipelineId"`
-		State        string `json:"State"`
-		Code         string `json:"Code"`
-		Message      string `json:"Message"`
-		CreationTime string `json:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket"`
-			Location string `json:"Location"`
-			Object   string `json:"Object"`
-		} `json:"Input"`
-		CoverConfig struct {
-			OutputFile struct {
-				Bucket   string `json:"Bucket"`
-				Location string `json:"Location"`
-				Object   string `json:"Object"`
-			} `json:"OutputFile"`
-		} `json:"CoverConfig"`
-		CoverImageList []struct {
-			Score string `json:"Score"`
-			Url   string `json:"Url"`
-			Time  string `json:"Time"`
-		} `json:"CoverImageList"`
-	} `json:"CoverJobList"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	NonExistIds struct {
+		String []string `json:"String" xml:"String"`
+	} `json:"NonExistIds" xml:"NonExistIds"`
+	CoverJobList struct {
+		CoverJob []struct {
+			Id           string `json:"Id" xml:"Id"`
+			UserData     string `json:"UserData" xml:"UserData"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			Input        struct {
+				Bucket   string `json:"Bucket" xml:"Bucket"`
+				Location string `json:"Location" xml:"Location"`
+				Object   string `json:"Object" xml:"Object"`
+			} `json:"Input" xml:"Input"`
+			CoverConfig struct {
+				OutputFile struct {
+					Bucket   string `json:"Bucket" xml:"Bucket"`
+					Location string `json:"Location" xml:"Location"`
+					Object   string `json:"Object" xml:"Object"`
+				} `json:"OutputFile" xml:"OutputFile"`
+			} `json:"CoverConfig" xml:"CoverConfig"`
+			CoverImageList struct {
+				CoverImage []struct {
+					Score string `json:"Score" xml:"Score"`
+					Url   string `json:"Url" xml:"Url"`
+					Time  string `json:"Time" xml:"Time"`
+				} `json:"CoverImage" xml:"CoverImage"`
+			} `json:"CoverImageList" xml:"CoverImageList"`
+		} `json:"CoverJob" xml:"CoverJob"`
+	} `json:"CoverJobList" xml:"CoverJobList"`
 }
 
 func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {

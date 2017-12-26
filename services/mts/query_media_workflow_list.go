@@ -64,26 +64,28 @@ func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWork
 
 type QueryMediaWorkflowListRequest struct {
 	*requests.RpcRequest
-	MediaWorkflowIds     string `position:"Query" name:"MediaWorkflowIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Action               string `position:"Query" name:"Action"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AccessKeyId          string `position:"Query" name:"AccessKeyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowIds     string           `position:"Query" name:"MediaWorkflowIds"`
 }
 
 type QueryMediaWorkflowListResponse struct {
 	*responses.BaseResponse
-	RequestId                string   `json:"RequestId"`
-	NonExistMediaWorkflowIds []string `json:"NonExistMediaWorkflowIds"`
-	MediaWorkflowList        []struct {
-		MediaWorkflowId string `json:"MediaWorkflowId"`
-		Name            string `json:"Name"`
-		Topology        string `json:"Topology"`
-		State           string `json:"State"`
-		CreationTime    string `json:"CreationTime"`
-	} `json:"MediaWorkflowList"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	NonExistMediaWorkflowIds struct {
+		MediaWorkflowId []string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+	} `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
+	MediaWorkflowList struct {
+		MediaWorkflow []struct {
+			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+			Name            string `json:"Name" xml:"Name"`
+			Topology        string `json:"Topology" xml:"Topology"`
+			State           string `json:"State" xml:"State"`
+			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+		} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+	} `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListRequest) {

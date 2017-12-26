@@ -64,14 +64,14 @@ func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthSt
 
 type DescribeHealthStatusRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeHealthStatusResponse struct {
@@ -79,10 +79,10 @@ type DescribeHealthStatusResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	BackendServers struct {
 		BackendServer []struct {
-			ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
-			ServerId           string `json:"ServerId" xml:"ServerId"`
-			Port               int    `json:"Port" xml:"Port"`
-			ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
+			ListenerPort       requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
+			ServerId           string           `json:"ServerId" xml:"ServerId"`
+			Port               requests.Integer `json:"Port" xml:"Port"`
+			ServerHealthStatus string           `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

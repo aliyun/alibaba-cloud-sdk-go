@@ -64,31 +64,31 @@ func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddre
 
 type DescribeEipAddressesRequest struct {
 	*requests.RpcRequest
-	PageSize               string `position:"Query" name:"PageSize"`
-	EipAddress             string `position:"Query" name:"EipAddress"`
-	Status                 string `position:"Query" name:"Status"`
-	PageNumber             string `position:"Query" name:"PageNumber"`
-	Filter2Key             string `position:"Query" name:"Filter.2.Key"`
-	AssociatedInstanceType string `position:"Query" name:"AssociatedInstanceType"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
-	AllocationId           string `position:"Query" name:"AllocationId"`
-	LockReason             string `position:"Query" name:"LockReason"`
-	Filter2Value           string `position:"Query" name:"Filter.2.Value"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	AssociatedInstanceId   string `position:"Query" name:"AssociatedInstanceId"`
-	Filter1Value           string `position:"Query" name:"Filter.1.Value"`
-	Filter1Key             string `position:"Query" name:"Filter.1.Key"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	ChargeType             string `position:"Query" name:"ChargeType"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	EipAddress             string           `position:"Query" name:"EipAddress"`
+	Status                 string           `position:"Query" name:"Status"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	Filter2Key             string           `position:"Query" name:"Filter.2.Key"`
+	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	AllocationId           string           `position:"Query" name:"AllocationId"`
+	LockReason             string           `position:"Query" name:"LockReason"`
+	Filter2Value           string           `position:"Query" name:"Filter.2.Value"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
+	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`
+	Filter1Key             string           `position:"Query" name:"Filter.1.Key"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ChargeType             string           `position:"Query" name:"ChargeType"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeEipAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
+	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
 	EipAddresses struct {
 		EipAddress []struct {
 			RegionId           string `json:"RegionId" xml:"RegionId"`

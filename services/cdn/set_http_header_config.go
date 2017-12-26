@@ -64,18 +64,16 @@ func (client *Client) SetHttpHeaderConfigWithCallback(request *SetHttpHeaderConf
 
 type SetHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
-	HeaderValue   string `position:"Query" name:"HeaderValue"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Action        string `position:"Query" name:"Action"`
-	HeaderKey     string `position:"Query" name:"HeaderKey"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	HeaderKey     string           `position:"Query" name:"HeaderKey"`
+	HeaderValue   string           `position:"Query" name:"HeaderValue"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetHttpHeaderConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {

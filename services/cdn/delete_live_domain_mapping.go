@@ -64,17 +64,15 @@ func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDom
 
 type DeleteLiveDomainMappingRequest struct {
 	*requests.RpcRequest
-	PullDomain    string `position:"Query" name:"PullDomain"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	PushDomain    string `position:"Query" name:"PushDomain"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
+	PullDomain    string           `position:"Query" name:"PullDomain"`
+	PushDomain    string           `position:"Query" name:"PushDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DeleteLiveDomainMappingResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingRequest) {

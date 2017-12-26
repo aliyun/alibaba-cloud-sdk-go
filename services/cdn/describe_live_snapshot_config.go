@@ -64,36 +64,36 @@ func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLi
 
 type DescribeLiveSnapshotConfigRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Action        string `position:"Query" name:"Action"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	PageNum       string `position:"Query" name:"PageNum"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	AccessKeyId   string `position:"Query" name:"AccessKeyId"`
-	Order         string `position:"Query" name:"Order"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Order         string           `position:"Query" name:"Order"`
+	AppName       string           `position:"Query" name:"AppName"`
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveSnapshotConfigResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId"`
-	PageNum                      int    `json:"PageNum"`
-	PageSize                     int    `json:"PageSize"`
-	Order                        string `json:"Order"`
-	TotalNum                     int    `json:"TotalNum"`
-	TotalPage                    int    `json:"TotalPage"`
-	LiveStreamSnapshotConfigList []struct {
-		DomainName         string `json:"DomainName"`
-		AppName            string `json:"AppName"`
-		TimeInterval       int    `json:"TimeInterval"`
-		OssEndpoint        string `json:"OssEndpoint"`
-		OssBucket          string `json:"OssBucket"`
-		OverwriteOssObject string `json:"OverwriteOssObject"`
-		SequenceOssObject  string `json:"SequenceOssObject"`
-		CreateTime         string `json:"CreateTime"`
-	} `json:"LiveStreamSnapshotConfigList"`
+	RequestId                    string           `json:"RequestId" xml:"RequestId"`
+	PageNum                      requests.Integer `json:"PageNum" xml:"PageNum"`
+	PageSize                     requests.Integer `json:"PageSize" xml:"PageSize"`
+	Order                        string           `json:"Order" xml:"Order"`
+	TotalNum                     requests.Integer `json:"TotalNum" xml:"TotalNum"`
+	TotalPage                    requests.Integer `json:"TotalPage" xml:"TotalPage"`
+	LiveStreamSnapshotConfigList struct {
+		LiveStreamSnapshotConfig []struct {
+			DomainName         string           `json:"DomainName" xml:"DomainName"`
+			AppName            string           `json:"AppName" xml:"AppName"`
+			TimeInterval       requests.Integer `json:"TimeInterval" xml:"TimeInterval"`
+			OssEndpoint        string           `json:"OssEndpoint" xml:"OssEndpoint"`
+			OssBucket          string           `json:"OssBucket" xml:"OssBucket"`
+			OverwriteOssObject string           `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
+			SequenceOssObject  string           `json:"SequenceOssObject" xml:"SequenceOssObject"`
+			CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
+		} `json:"LiveStreamSnapshotConfig" xml:"LiveStreamSnapshotConfig"`
+	} `json:"LiveStreamSnapshotConfigList" xml:"LiveStreamSnapshotConfigList"`
 }
 
 func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotConfigRequest) {

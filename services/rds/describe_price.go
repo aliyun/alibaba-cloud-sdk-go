@@ -64,33 +64,33 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	InstanceUsedType     string `position:"Query" name:"InstanceUsedType"`
-	UsedTime             string `position:"Query" name:"UsedTime"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	Engine               string `position:"Query" name:"Engine"`
-	DBInstanceClass      string `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage    string `position:"Query" name:"DBInstanceStorage"`
-	OrderType            string `position:"Query" name:"OrderType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CommodityCode        string `position:"Query" name:"CommodityCode"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string `position:"Query" name:"PayType"`
-	Quantity             string `position:"Query" name:"Quantity"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string `position:"Query" name:"EngineVersion"`
-	TimeType             string `position:"Query" name:"TimeType"`
+	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Engine               string           `position:"Query" name:"Engine"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	OrderType            string           `position:"Query" name:"OrderType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType              string           `position:"Query" name:"PayType"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	TimeType             string           `position:"Query" name:"TimeType"`
 }
 
 type DescribePriceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	PriceInfo struct {
-		Currency      string  `json:"Currency" xml:"Currency"`
-		OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-		TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-		DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
+		Currency      string         `json:"Currency" xml:"Currency"`
+		OriginalPrice requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
+		TradePrice    requests.Float `json:"TradePrice" xml:"TradePrice"`
+		DiscountPrice requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
 		RuleIds       struct {
 			RuleId []string `json:"RuleId" xml:"RuleId"`
 		} `json:"RuleIds" xml:"RuleIds"`
@@ -110,9 +110,9 @@ type DescribePriceResponse struct {
 	} `json:"PriceInfo" xml:"PriceInfo"`
 	Rules struct {
 		Rule []struct {
-			RuleId      int64  `json:"RuleId" xml:"RuleId"`
-			Name        string `json:"Name" xml:"Name"`
-			Description string `json:"Description" xml:"Description"`
+			RuleId      requests.Integer `json:"RuleId" xml:"RuleId"`
+			Name        string           `json:"Name" xml:"Name"`
+			Description string           `json:"Description" xml:"Description"`
 		} `json:"Rule" xml:"Rule"`
 	} `json:"Rules" xml:"Rules"`
 }
