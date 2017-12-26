@@ -64,9 +64,9 @@ func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomai
 
 type DescribeDomainsBySourceRequest struct {
 	*requests.RpcRequest
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Sources       string `position:"Query" name:"Sources"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Sources       string           `position:"Query" name:"Sources"`
 }
 
 type DescribeDomainsBySourceResponse struct {

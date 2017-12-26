@@ -64,12 +64,12 @@ func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequ
 
 type BindOutputBucketRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Bucket               string `position:"Query" name:"Bucket"`
-	RoleArn              string `position:"Query" name:"RoleArn"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bucket               string           `position:"Query" name:"Bucket"`
+	RoleArn              string           `position:"Query" name:"RoleArn"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type BindOutputBucketResponse struct {

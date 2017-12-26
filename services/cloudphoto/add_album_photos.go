@@ -64,10 +64,10 @@ func (client *Client) AddAlbumPhotosWithCallback(request *AddAlbumPhotosRequest,
 
 type AddAlbumPhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	AlbumId   string    `position:"Query" name:"AlbumId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type AddAlbumPhotosResponse struct {

@@ -64,11 +64,11 @@ func (client *Client) DescribeOssDownloadsWithCallback(request *DescribeOssDownl
 
 type DescribeOssDownloadsRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MigrateTaskId        string `position:"Query" name:"MigrateTaskId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
 }
 
 type DescribeOssDownloadsResponse struct {

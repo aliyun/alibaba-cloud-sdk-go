@@ -64,20 +64,20 @@ func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *Mo
 
 type ModifyVirtualBorderRouterAttributeRequest struct {
 	*requests.RpcRequest
-	VlanId               string `position:"Query" name:"VlanId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	UserCidr             string `position:"Query" name:"UserCidr"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CircuitCode          string `position:"Query" name:"CircuitCode"`
-	LocalGatewayIp       string `position:"Query" name:"LocalGatewayIp"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	PeerGatewayIp        string `position:"Query" name:"PeerGatewayIp"`
-	Name                 string `position:"Query" name:"Name"`
-	PeeringSubnetMask    string `position:"Query" name:"PeeringSubnetMask"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VbrId                string `position:"Query" name:"VbrId"`
+	VlanId               requests.Integer `position:"Query" name:"VlanId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CircuitCode          string           `position:"Query" name:"CircuitCode"`
+	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
+	Name                 string           `position:"Query" name:"Name"`
+	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrId                string           `position:"Query" name:"VbrId"`
 }
 
 type ModifyVirtualBorderRouterAttributeResponse struct {

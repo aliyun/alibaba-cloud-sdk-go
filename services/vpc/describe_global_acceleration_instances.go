@@ -64,18 +64,18 @@ func (client *Client) DescribeGlobalAccelerationInstancesWithCallback(request *D
 
 type DescribeGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize                     string `position:"Query" name:"PageSize"`
-	Status                       string `position:"Query" name:"Status"`
-	PageNumber                   string `position:"Query" name:"PageNumber"`
-	OwnerId                      string `position:"Query" name:"OwnerId"`
-	IpAddress                    string `position:"Query" name:"IpAddress"`
-	ServerId                     string `position:"Query" name:"ServerId"`
-	GlobalAccelerationInstanceId string `position:"Query" name:"GlobalAccelerationInstanceId"`
-	ResourceOwnerAccount         string `position:"Query" name:"ResourceOwnerAccount"`
-	Name                         string `position:"Query" name:"Name"`
-	ServiceLocation              string `position:"Query" name:"ServiceLocation"`
-	ResourceOwnerId              string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                 string `position:"Query" name:"OwnerAccount"`
+	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
+	Status                       string           `position:"Query" name:"Status"`
+	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	IpAddress                    string           `position:"Query" name:"IpAddress"`
+	ServerId                     string           `position:"Query" name:"ServerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	Name                         string           `position:"Query" name:"Name"`
+	ServiceLocation              string           `position:"Query" name:"ServiceLocation"`
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeGlobalAccelerationInstancesResponse struct {

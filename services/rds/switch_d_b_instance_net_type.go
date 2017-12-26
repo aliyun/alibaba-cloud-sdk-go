@@ -64,15 +64,15 @@ func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInsta
 
 type SwitchDBInstanceNetTypeRequest struct {
 	*requests.RpcRequest
-	Port                   string `position:"Query" name:"Port"`
-	ConnectionStringPrefix string `position:"Query" name:"ConnectionStringPrefix"`
-	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
-	ClientToken            string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	ConnectionStringType   string `position:"Query" name:"ConnectionStringType"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
+	Port                   string           `position:"Query" name:"Port"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ClientToken            string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ConnectionStringType   string           `position:"Query" name:"ConnectionStringType"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SwitchDBInstanceNetTypeResponse struct {

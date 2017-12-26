@@ -64,13 +64,13 @@ func (client *Client) DescribeDampPolicyByPolicyNameWithCallback(request *Descri
 
 type DescribeDampPolicyByPolicyNameRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PolicyName           string `position:"Query" name:"PolicyName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDampPolicyByPolicyNameResponse struct {

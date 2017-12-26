@@ -64,12 +64,12 @@ func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryName
 
 type UpdateCategoryNameRequest struct {
 	*requests.RpcRequest
-	CateId               string `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CateName             string `position:"Query" name:"CateName"`
+	CateId               string           `position:"Query" name:"CateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CateName             string           `position:"Query" name:"CateName"`
 }
 
 type UpdateCategoryNameResponse struct {

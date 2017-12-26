@@ -64,15 +64,15 @@ func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGr
 
 type SetVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string `position:"Query" name:"VServerGroupId"`
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	VServerGroupName     string `position:"Query" name:"VServerGroupName"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BackendServers       string `position:"Query" name:"BackendServers"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VServerGroupName     string           `position:"Query" name:"VServerGroupName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
 type SetVServerGroupAttributeResponse struct {

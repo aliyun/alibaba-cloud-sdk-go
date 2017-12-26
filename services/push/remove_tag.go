@@ -64,8 +64,8 @@ func (client *Client) RemoveTagWithCallback(request *RemoveTagRequest, callback 
 
 type RemoveTagRequest struct {
 	*requests.RpcRequest
-	AppKey  string `position:"Query" name:"AppKey"`
-	TagName string `position:"Query" name:"TagName"`
+	AppKey  requests.Integer `position:"Query" name:"AppKey"`
+	TagName string           `position:"Query" name:"TagName"`
 }
 
 type RemoveTagResponse struct {

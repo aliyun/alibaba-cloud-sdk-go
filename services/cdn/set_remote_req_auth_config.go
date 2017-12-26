@@ -64,17 +64,17 @@ func (client *Client) SetRemoteReqAuthConfigWithCallback(request *SetRemoteReqAu
 
 type SetRemoteReqAuthConfigRequest struct {
 	*requests.RpcRequest
-	AuthType      string `position:"Query" name:"AuthType"`
-	AuthEnable    string `position:"Query" name:"AuthEnable"`
-	AuthCrash     string `position:"Query" name:"AuthCrash"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	AuthAddr      string `position:"Query" name:"AuthAddr"`
-	AuthProvider  string `position:"Query" name:"AuthProvider"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	AuthPath      string `position:"Query" name:"AuthPath"`
-	AuthFileType  string `position:"Query" name:"AuthFileType"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	TimeOut       string `position:"Query" name:"TimeOut"`
+	AuthType      string           `position:"Query" name:"AuthType"`
+	AuthEnable    string           `position:"Query" name:"AuthEnable"`
+	AuthCrash     string           `position:"Query" name:"AuthCrash"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AuthAddr      string           `position:"Query" name:"AuthAddr"`
+	AuthProvider  string           `position:"Query" name:"AuthProvider"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AuthPath      string           `position:"Query" name:"AuthPath"`
+	AuthFileType  string           `position:"Query" name:"AuthFileType"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	TimeOut       string           `position:"Query" name:"TimeOut"`
 }
 
 type SetRemoteReqAuthConfigResponse struct {

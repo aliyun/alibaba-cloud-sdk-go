@@ -64,15 +64,15 @@ func (client *Client) ModifyLoadBalancerInstanceSpecWithCallback(request *Modify
 
 type ModifyLoadBalancerInstanceSpecRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	LoadBalancerSpec     string `position:"Query" name:"LoadBalancerSpec"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyLoadBalancerInstanceSpecResponse struct {

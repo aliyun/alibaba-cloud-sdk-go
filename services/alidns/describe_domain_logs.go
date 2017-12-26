@@ -64,14 +64,14 @@ func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogs
 
 type DescribeDomainLogsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	StartDate    string `position:"Query" name:"StartDate"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	EndDate      string `position:"Query" name:"endDate"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StartDate    string           `position:"Query" name:"StartDate"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	GroupId      string           `position:"Query" name:"GroupId"`
+	EndDate      string           `position:"Query" name:"endDate"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainLogsResponse struct {

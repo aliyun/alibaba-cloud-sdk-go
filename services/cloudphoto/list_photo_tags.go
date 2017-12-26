@@ -64,10 +64,10 @@ func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, c
 
 type ListPhotoTagsRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Lang      string `position:"Query" name:"Lang"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Lang      string           `position:"Query" name:"Lang"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type ListPhotoTagsResponse struct {

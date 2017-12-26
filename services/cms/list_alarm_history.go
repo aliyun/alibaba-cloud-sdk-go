@@ -64,12 +64,12 @@ func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequ
 
 type ListAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime        string `position:"Query" name:"EndTime"`
-	Id             string `position:"Query" name:"Id"`
-	Cursor         string `position:"Query" name:"Cursor"`
-	StartTime      string `position:"Query" name:"StartTime"`
-	Size           string `position:"Query" name:"Size"`
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	Id             string           `position:"Query" name:"Id"`
+	Cursor         string           `position:"Query" name:"Cursor"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	Size           requests.Integer `position:"Query" name:"Size"`
+	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type ListAlarmHistoryResponse struct {

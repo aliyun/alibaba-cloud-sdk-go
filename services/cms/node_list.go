@@ -64,14 +64,14 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 
 type NodeListRequest struct {
 	*requests.RpcRequest
-	PageSize      string `position:"Query" name:"PageSize"`
-	Status        string `position:"Query" name:"Status"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	InstanceIds   string `position:"Query" name:"InstanceIds"`
-	KeyWord       string `position:"Query" name:"KeyWord"`
-	SerialNumbers string `position:"Query" name:"SerialNumbers"`
-	UserId        string `position:"Query" name:"UserId"`
-	HostName      string `position:"Query" name:"HostName"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Status        string           `position:"Query" name:"Status"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceIds   string           `position:"Query" name:"InstanceIds"`
+	KeyWord       string           `position:"Query" name:"KeyWord"`
+	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
+	UserId        requests.Integer `position:"Query" name:"UserId"`
+	HostName      string           `position:"Query" name:"HostName"`
 }
 
 type NodeListResponse struct {

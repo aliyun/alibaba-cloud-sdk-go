@@ -64,9 +64,9 @@ func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSyste
 
 type DescribeFileSystemsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	FileSystemId string `position:"Query" name:"FileSystemId"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemId string           `position:"Query" name:"FileSystemId"`
 }
 
 type DescribeFileSystemsResponse struct {

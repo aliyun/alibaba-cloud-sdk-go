@@ -64,9 +64,9 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
-	Config        string `position:"Query" name:"Config"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Config        string           `position:"Query" name:"Config"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeUserConfigsResponse struct {

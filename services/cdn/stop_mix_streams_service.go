@@ -64,14 +64,14 @@ func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsS
 
 type StopMixStreamsServiceRequest struct {
 	*requests.RpcRequest
-	MixStreamName  string `position:"Query" name:"MixStreamName"`
-	MainDomainName string `position:"Query" name:"MainDomainName"`
-	MixAppName     string `position:"Query" name:"MixAppName"`
-	MainStreamName string `position:"Query" name:"MainStreamName"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	MixDomainName  string `position:"Query" name:"MixDomainName"`
-	MainAppName    string `position:"Query" name:"MainAppName"`
+	MixStreamName  string           `position:"Query" name:"MixStreamName"`
+	MainDomainName string           `position:"Query" name:"MainDomainName"`
+	MixAppName     string           `position:"Query" name:"MixAppName"`
+	MainStreamName string           `position:"Query" name:"MainStreamName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	MixDomainName  string           `position:"Query" name:"MixDomainName"`
+	MainAppName    string           `position:"Query" name:"MainAppName"`
 }
 
 type StopMixStreamsServiceResponse struct {

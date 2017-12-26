@@ -64,11 +64,11 @@ func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequ
 
 type ListNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	Id         string `position:"Query" name:"Id"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	PolicyType string `position:"Query" name:"PolicyType"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	Id         string           `position:"Query" name:"Id"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	AlertName  string           `position:"Query" name:"AlertName"`
+	PolicyType string           `position:"Query" name:"PolicyType"`
+	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 
 type ListNotifyPolicyResponse struct {

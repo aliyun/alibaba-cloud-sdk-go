@@ -64,11 +64,11 @@ func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicy
 
 type CreateNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	EndTime    string `position:"Query" name:"EndTime"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	StartTime  string `position:"Query" name:"StartTime"`
-	PolicyType string `position:"Query" name:"PolicyType"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	AlertName  string           `position:"Query" name:"AlertName"`
+	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	PolicyType string           `position:"Query" name:"PolicyType"`
+	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 
 type CreateNotifyPolicyResponse struct {

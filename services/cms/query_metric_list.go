@@ -64,18 +64,18 @@ func (client *Client) QueryMetricListWithCallback(request *QueryMetricListReques
 
 type QueryMetricListRequest struct {
 	*requests.RpcRequest
-	EndTime         string `position:"Query" name:"EndTime"`
-	StartTime       string `position:"Query" name:"StartTime"`
-	Cursor          string `position:"Query" name:"Cursor"`
-	Express         string `position:"Query" name:"Express"`
-	Period          string `position:"Query" name:"Period"`
-	Project         string `position:"Query" name:"Project"`
-	Page            string `position:"Query" name:"Page"`
-	Metric          string `position:"Query" name:"Metric"`
-	Length          string `position:"Query" name:"Length"`
-	Dimensions      string `position:"Query" name:"Dimensions"`
-	ResourceOwnerId string `position:"Query" name:"ResourceOwnerId"`
-	CallbyCmsOwner  string `position:"Query" name:"callby_cms_owner"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	Cursor          string           `position:"Query" name:"Cursor"`
+	Express         string           `position:"Query" name:"Express"`
+	Period          string           `position:"Query" name:"Period"`
+	Project         string           `position:"Query" name:"Project"`
+	Page            string           `position:"Query" name:"Page"`
+	Metric          string           `position:"Query" name:"Metric"`
+	Length          string           `position:"Query" name:"Length"`
+	Dimensions      string           `position:"Query" name:"Dimensions"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type QueryMetricListResponse struct {

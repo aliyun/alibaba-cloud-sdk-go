@@ -64,10 +64,10 @@ func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRul
 
 type DescribeAccessRulesRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	AccessRuleId    string `position:"Query" name:"AccessRuleId"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
+	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeAccessRulesResponse struct {

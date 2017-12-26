@@ -64,16 +64,16 @@ func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callb
 
 type UpdateMediaRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	CateId               string `position:"Query" name:"CateId"`
-	Title                string `position:"Query" name:"Title"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	MediaId              string `position:"Query" name:"MediaId"`
-	CoverURL             string `position:"Query" name:"CoverURL"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	Title                string           `position:"Query" name:"Title"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	CoverURL             string           `position:"Query" name:"CoverURL"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateMediaResponse struct {

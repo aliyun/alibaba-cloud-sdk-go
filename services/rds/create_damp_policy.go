@@ -64,18 +64,18 @@ func (client *Client) CreateDampPolicyWithCallback(request *CreateDampPolicyRequ
 
 type CreateDampPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	TimeRules            string `position:"Query" name:"TimeRules"`
-	PolicyName           string `position:"Query" name:"PolicyName"`
-	ActionRules          string `position:"Query" name:"ActionRules"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Handlers             string `position:"Query" name:"Handlers"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string `position:"Query" name:"Priority"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	SourceRules          string `position:"Query" name:"SourceRules"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	TimeRules            string           `position:"Query" name:"TimeRules"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
+	ActionRules          string           `position:"Query" name:"ActionRules"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Handlers             string           `position:"Query" name:"Handlers"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceRules          string           `position:"Query" name:"SourceRules"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
 type CreateDampPolicyResponse struct {

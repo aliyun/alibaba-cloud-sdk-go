@@ -64,13 +64,13 @@ func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerror
 
 type ReportTerrorismJobResultRequest struct {
 	*requests.RpcRequest
-	Detail               string `position:"Query" name:"Detail"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Label                string `position:"Query" name:"Label"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	JobId                string `position:"Query" name:"JobId"`
+	Detail               string           `position:"Query" name:"Detail"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Label                string           `position:"Query" name:"Label"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportTerrorismJobResultResponse struct {

@@ -64,15 +64,15 @@ func (client *Client) ListTimeLinePhotosWithCallback(request *ListTimeLinePhotos
 
 type ListTimeLinePhotosRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
-	FilterBy  string `position:"Query" name:"FilterBy"`
-	StartTime string `position:"Query" name:"StartTime"`
-	Order     string `position:"Query" name:"Order"`
-	Page      string `position:"Query" name:"Page"`
-	Direction string `position:"Query" name:"Direction"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Size      string `position:"Query" name:"Size"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	FilterBy  string           `position:"Query" name:"FilterBy"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	Order     string           `position:"Query" name:"Order"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	Direction string           `position:"Query" name:"Direction"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListTimeLinePhotosResponse struct {

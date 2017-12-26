@@ -64,16 +64,16 @@ func (client *Client) CreateLiveStreamRecordIndexFilesWithCallback(request *Crea
 
 type CreateLiveStreamRecordIndexFilesRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OssBucket     string `position:"Query" name:"OssBucket"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OssEndpoint   string `position:"Query" name:"OssEndpoint"`
-	AppName       string `position:"Query" name:"AppName"`
-	OssObject     string `position:"Query" name:"OssObject"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OssBucket     string           `position:"Query" name:"OssBucket"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OssEndpoint   string           `position:"Query" name:"OssEndpoint"`
+	AppName       string           `position:"Query" name:"AppName"`
+	OssObject     string           `position:"Query" name:"OssObject"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type CreateLiveStreamRecordIndexFilesResponse struct {

@@ -64,8 +64,8 @@ func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsg
 
 type QueryPushStatByMsgRequest struct {
 	*requests.RpcRequest
-	AppKey    string `position:"Query" name:"AppKey"`
-	MessageId string `position:"Query" name:"MessageId"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	MessageId string           `position:"Query" name:"MessageId"`
 }
 
 type QueryPushStatByMsgResponse struct {

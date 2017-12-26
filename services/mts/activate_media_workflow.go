@@ -64,11 +64,11 @@ func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWo
 
 type ActivateMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MediaWorkflowId      string `position:"Query" name:"MediaWorkflowId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type ActivateMediaWorkflowResponse struct {

@@ -64,11 +64,11 @@ func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJ
 
 type QueryFacerecogJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	FacerecogJobIds      string `position:"Query" name:"FacerecogJobIds"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	FacerecogJobIds      string           `position:"Query" name:"FacerecogJobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryFacerecogJobListResponse struct {

@@ -64,9 +64,9 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 
 type ProfileSetRequest struct {
 	*requests.RpcRequest
-	AutoInstall              string `position:"Query" name:"AutoInstall"`
-	UserId                   string `position:"Query" name:"UserId"`
-	EnableInstallAgentNewECS string `position:"Query" name:"EnableInstallAgentNewECS"`
+	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
+	UserId                   requests.Integer `position:"Query" name:"UserId"`
+	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 }
 
 type ProfileSetResponse struct {

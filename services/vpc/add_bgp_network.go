@@ -64,14 +64,14 @@ func (client *Client) AddBgpNetworkWithCallback(request *AddBgpNetworkRequest, c
 
 type AddBgpNetworkRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DstCidrBlock         string `position:"Query" name:"DstCidrBlock"`
-	RouterId             string `position:"Query" name:"RouterId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DstCidrBlock         string           `position:"Query" name:"DstCidrBlock"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddBgpNetworkResponse struct {

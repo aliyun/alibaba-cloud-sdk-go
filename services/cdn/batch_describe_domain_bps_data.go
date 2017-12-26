@@ -64,14 +64,14 @@ func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescr
 
 type BatchDescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	Version       string `position:"Query" name:"Version"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Version       string           `position:"Query" name:"Version"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type BatchDescribeDomainBpsDataResponse struct {

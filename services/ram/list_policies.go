@@ -64,9 +64,9 @@ func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, cal
 
 type ListPoliciesRequest struct {
 	*requests.RpcRequest
-	Marker     string `position:"Query" name:"Marker"`
-	PolicyType string `position:"Query" name:"PolicyType"`
-	MaxItems   string `position:"Query" name:"MaxItems"`
+	Marker     string           `position:"Query" name:"Marker"`
+	PolicyType string           `position:"Query" name:"PolicyType"`
+	MaxItems   requests.Integer `position:"Query" name:"MaxItems"`
 }
 
 type ListPoliciesResponse struct {

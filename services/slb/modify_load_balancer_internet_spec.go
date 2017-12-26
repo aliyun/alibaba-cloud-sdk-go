@@ -64,16 +64,16 @@ func (client *Client) ModifyLoadBalancerInternetSpecWithCallback(request *Modify
 
 type ModifyLoadBalancerInternetSpecRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyLoadBalancerInternetSpecResponse struct {

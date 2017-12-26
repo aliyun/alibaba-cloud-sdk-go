@@ -64,15 +64,15 @@ func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callb
 
 type CreateRulesRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	ListenerPort         string `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	RuleList             string `position:"Query" name:"RuleList"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	RuleList             string           `position:"Query" name:"RuleList"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateRulesResponse struct {

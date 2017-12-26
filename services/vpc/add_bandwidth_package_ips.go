@@ -64,13 +64,13 @@ func (client *Client) AddBandwidthPackageIpsWithCallback(request *AddBandwidthPa
 
 type AddBandwidthPackageIpsRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	IpCount              string `position:"Query" name:"IpCount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpCount              string           `position:"Query" name:"IpCount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 }
 
 type AddBandwidthPackageIpsResponse struct {

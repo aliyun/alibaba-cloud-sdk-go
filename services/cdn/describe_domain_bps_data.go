@@ -64,17 +64,17 @@ func (client *Client) DescribeDomainBpsDataWithCallback(request *DescribeDomainB
 
 type DescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string `position:"Query" name:"EndTime"`
-	StartTime      string `position:"Query" name:"StartTime"`
-	Interval       string `position:"Query" name:"Interval"`
-	FixTimeGap     string `position:"Query" name:"FixTimeGap"`
-	LocationNameEn string `position:"Query" name:"LocationNameEn"`
-	IspNameEn      string `position:"Query" name:"IspNameEn"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	DomainType     string `position:"Query" name:"DomainType"`
-	DomainName     string `position:"Query" name:"DomainName"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	TimeMerge      string `position:"Query" name:"TimeMerge"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	Interval       string           `position:"Query" name:"Interval"`
+	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	DomainType     string           `position:"Query" name:"DomainType"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 }
 
 type DescribeDomainBpsDataResponse struct {

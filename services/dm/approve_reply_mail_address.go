@@ -64,10 +64,10 @@ func (client *Client) ApproveReplyMailAddressWithCallback(request *ApproveReplyM
 
 type ApproveReplyMailAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Ticket               string `position:"Query" name:"Ticket"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Ticket               string           `position:"Query" name:"Ticket"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ApproveReplyMailAddressResponse struct {

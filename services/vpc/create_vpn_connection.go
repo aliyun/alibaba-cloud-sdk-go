@@ -64,19 +64,19 @@ func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnecti
 
 type CreateVpnConnectionRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	LocalSubnet          string `position:"Query" name:"LocalSubnet"`
-	VpnGatewayId         string `position:"Query" name:"VpnGatewayId"`
-	EffectImmediately    string `position:"Query" name:"EffectImmediately"`
-	RemoteSubnet         string `position:"Query" name:"RemoteSubnet"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CustomerGatewayId    string `position:"Query" name:"CustomerGatewayId"`
-	IpsecConfig          string `position:"Query" name:"IpsecConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	IkeConfig            string `position:"Query" name:"IkeConfig"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IkeConfig            string           `position:"Query" name:"IkeConfig"`
 }
 
 type CreateVpnConnectionResponse struct {

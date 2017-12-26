@@ -64,12 +64,12 @@ func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRe
 
 type CreateTransactionRequest struct {
 	*requests.RpcRequest
-	Md5       string `position:"Query" name:"Md5"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Force     string `position:"Query" name:"Force"`
-	Ext       string `position:"Query" name:"Ext"`
-	Size      string `position:"Query" name:"Size"`
+	Md5       string           `position:"Query" name:"Md5"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Force     string           `position:"Query" name:"Force"`
+	Ext       string           `position:"Query" name:"Ext"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type CreateTransactionResponse struct {

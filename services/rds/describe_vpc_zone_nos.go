@@ -64,13 +64,13 @@ func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNos
 
 type DescribeVpcZoneNosRequest struct {
 	*requests.RpcRequest
-	Region               string `position:"Query" name:"Region"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Region               string           `position:"Query" name:"Region"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeVpcZoneNosResponse struct {

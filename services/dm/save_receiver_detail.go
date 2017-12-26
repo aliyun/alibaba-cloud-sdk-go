@@ -64,11 +64,11 @@ func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetail
 
 type SaveReceiverDetailRequest struct {
 	*requests.RpcRequest
-	Detail               string `position:"Query" name:"Detail"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ReceiverId           string `position:"Query" name:"ReceiverId"`
+	Detail               string           `position:"Query" name:"Detail"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReceiverId           string           `position:"Query" name:"ReceiverId"`
 }
 
 type SaveReceiverDetailResponse struct {

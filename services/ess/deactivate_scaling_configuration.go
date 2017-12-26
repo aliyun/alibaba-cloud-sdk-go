@@ -64,10 +64,10 @@ func (client *Client) DeactivateScalingConfigurationWithCallback(request *Deacti
 
 type DeactivateScalingConfigurationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingConfigurationId string `position:"Query" name:"ScalingConfigurationId"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeactivateScalingConfigurationResponse struct {

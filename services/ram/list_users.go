@@ -64,8 +64,8 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	Marker   string `position:"Query" name:"Marker"`
-	MaxItems string `position:"Query" name:"MaxItems"`
+	Marker   string           `position:"Query" name:"Marker"`
+	MaxItems requests.Integer `position:"Query" name:"MaxItems"`
 }
 
 type ListUsersResponse struct {

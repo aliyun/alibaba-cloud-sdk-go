@@ -64,33 +64,33 @@ func (client *Client) DescribeScalingConfigurationsWithCallback(request *Describ
 
 type DescribeScalingConfigurationsRequest struct {
 	*requests.RpcRequest
-	PageSize                   string `position:"Query" name:"PageSize"`
-	ScalingConfigurationId2    string `position:"Query" name:"ScalingConfigurationId.2"`
-	ScalingConfigurationId3    string `position:"Query" name:"ScalingConfigurationId.3"`
-	ScalingConfigurationId1    string `position:"Query" name:"ScalingConfigurationId.1"`
-	ScalingConfigurationId9    string `position:"Query" name:"ScalingConfigurationId.9"`
-	ScalingConfigurationId8    string `position:"Query" name:"ScalingConfigurationId.8"`
-	ResourceOwnerAccount       string `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingConfigurationId7    string `position:"Query" name:"ScalingConfigurationId.7"`
-	ScalingConfigurationName3  string `position:"Query" name:"ScalingConfigurationName.3"`
-	ScalingConfigurationId6    string `position:"Query" name:"ScalingConfigurationId.6"`
-	ScalingConfigurationName2  string `position:"Query" name:"ScalingConfigurationName.2"`
-	ScalingConfigurationId5    string `position:"Query" name:"ScalingConfigurationId.5"`
-	ScalingConfigurationName1  string `position:"Query" name:"ScalingConfigurationName.1"`
-	ScalingConfigurationId4    string `position:"Query" name:"ScalingConfigurationId.4"`
-	ResourceOwnerId            string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount               string `position:"Query" name:"OwnerAccount"`
-	ScalingConfigurationName10 string `position:"Query" name:"ScalingConfigurationName.10"`
-	PageNumber                 string `position:"Query" name:"PageNumber"`
-	ScalingConfigurationName4  string `position:"Query" name:"ScalingConfigurationName.4"`
-	ScalingConfigurationName5  string `position:"Query" name:"ScalingConfigurationName.5"`
-	ScalingConfigurationName6  string `position:"Query" name:"ScalingConfigurationName.6"`
-	ScalingConfigurationName7  string `position:"Query" name:"ScalingConfigurationName.7"`
-	ScalingConfigurationName8  string `position:"Query" name:"ScalingConfigurationName.8"`
-	OwnerId                    string `position:"Query" name:"OwnerId"`
-	ScalingConfigurationName9  string `position:"Query" name:"ScalingConfigurationName.9"`
-	ScalingGroupId             string `position:"Query" name:"ScalingGroupId"`
-	ScalingConfigurationId10   string `position:"Query" name:"ScalingConfigurationId.10"`
+	PageSize                   requests.Integer `position:"Query" name:"PageSize"`
+	ScalingConfigurationId2    string           `position:"Query" name:"ScalingConfigurationId.2"`
+	ScalingConfigurationId3    string           `position:"Query" name:"ScalingConfigurationId.3"`
+	ScalingConfigurationId1    string           `position:"Query" name:"ScalingConfigurationId.1"`
+	ScalingConfigurationId9    string           `position:"Query" name:"ScalingConfigurationId.9"`
+	ScalingConfigurationId8    string           `position:"Query" name:"ScalingConfigurationId.8"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingConfigurationId7    string           `position:"Query" name:"ScalingConfigurationId.7"`
+	ScalingConfigurationName3  string           `position:"Query" name:"ScalingConfigurationName.3"`
+	ScalingConfigurationId6    string           `position:"Query" name:"ScalingConfigurationId.6"`
+	ScalingConfigurationName2  string           `position:"Query" name:"ScalingConfigurationName.2"`
+	ScalingConfigurationId5    string           `position:"Query" name:"ScalingConfigurationId.5"`
+	ScalingConfigurationName1  string           `position:"Query" name:"ScalingConfigurationName.1"`
+	ScalingConfigurationId4    string           `position:"Query" name:"ScalingConfigurationId.4"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	ScalingConfigurationName10 string           `position:"Query" name:"ScalingConfigurationName.10"`
+	PageNumber                 requests.Integer `position:"Query" name:"PageNumber"`
+	ScalingConfigurationName4  string           `position:"Query" name:"ScalingConfigurationName.4"`
+	ScalingConfigurationName5  string           `position:"Query" name:"ScalingConfigurationName.5"`
+	ScalingConfigurationName6  string           `position:"Query" name:"ScalingConfigurationName.6"`
+	ScalingConfigurationName7  string           `position:"Query" name:"ScalingConfigurationName.7"`
+	ScalingConfigurationName8  string           `position:"Query" name:"ScalingConfigurationName.8"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingConfigurationName9  string           `position:"Query" name:"ScalingConfigurationName.9"`
+	ScalingGroupId             string           `position:"Query" name:"ScalingGroupId"`
+	ScalingConfigurationId10   string           `position:"Query" name:"ScalingConfigurationId.10"`
 }
 
 type DescribeScalingConfigurationsResponse struct {

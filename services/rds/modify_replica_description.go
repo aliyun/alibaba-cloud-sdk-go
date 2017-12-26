@@ -64,13 +64,13 @@ func (client *Client) ModifyReplicaDescriptionWithCallback(request *ModifyReplic
 
 type ModifyReplicaDescriptionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReplicaId            string `position:"Query" name:"ReplicaId"`
-	ReplicaDescription   string `position:"Query" name:"ReplicaDescription"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	ReplicaDescription   string           `position:"Query" name:"ReplicaDescription"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
 type ModifyReplicaDescriptionResponse struct {

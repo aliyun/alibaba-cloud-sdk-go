@@ -64,9 +64,9 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 
 type NodeInstallRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	Force      string `position:"Query" name:"Force"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId     string           `position:"Query" name:"UserId"`
+	Force      requests.Boolean `position:"Query" name:"Force"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 type NodeInstallResponse struct {

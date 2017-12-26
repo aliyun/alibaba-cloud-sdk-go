@@ -64,13 +64,13 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *S
 
 type SenderStatisticsByTagNameAndBatchIDRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type SenderStatisticsByTagNameAndBatchIDResponse struct {

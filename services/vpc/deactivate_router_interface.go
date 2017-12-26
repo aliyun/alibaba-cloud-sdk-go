@@ -64,10 +64,10 @@ func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateR
 
 type DeactivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	RouterInterfaceId    string `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeactivateRouterInterfaceResponse struct {

@@ -64,21 +64,21 @@ func (client *Client) DescribeBackupsForSecurityWithCallback(request *DescribeBa
 
 type DescribeBackupsForSecurityRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	BackupStatus         string `position:"Query" name:"BackupStatus"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	TargetAliBid         string `position:"Query" name:"TargetAliBid"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BackupLocation       string `position:"Query" name:"BackupLocation"`
-	BackupId             string `position:"Query" name:"BackupId"`
-	BackupMode           string `position:"Query" name:"BackupMode"`
-	TargetAliUid         string `position:"Query" name:"TargetAliUid"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BackupStatus         string           `position:"Query" name:"BackupStatus"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	TargetAliBid         string           `position:"Query" name:"TargetAliBid"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BackupLocation       string           `position:"Query" name:"BackupLocation"`
+	BackupId             string           `position:"Query" name:"BackupId"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
+	TargetAliUid         string           `position:"Query" name:"TargetAliUid"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeBackupsForSecurityResponse struct {

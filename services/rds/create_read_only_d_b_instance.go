@@ -64,23 +64,23 @@ func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOn
 
 type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
-	VSwitchId             string `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string `position:"Query" name:"PrivateIpAddress"`
-	DBInstanceId          string `position:"Query" name:"DBInstanceId"`
-	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
-	ClientToken           string `position:"Query" name:"ClientToken"`
-	ZoneId                string `position:"Query" name:"ZoneId"`
-	DBInstanceClass       string `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage     string `position:"Query" name:"DBInstanceStorage"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string `position:"Query" name:"PayType"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	VPCId                 string `position:"Query" name:"VPCId"`
-	EngineVersion         string `position:"Query" name:"EngineVersion"`
-	InstanceNetworkType   string `position:"Query" name:"InstanceNetworkType"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType               string           `position:"Query" name:"PayType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 type CreateReadOnlyDBInstanceResponse struct {

@@ -64,15 +64,15 @@ func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRe
 
 type SetPasswordPolicyRequest struct {
 	*requests.RpcRequest
-	MaxLoginAttemps            string `position:"Query" name:"MaxLoginAttemps"`
-	RequireUppercaseCharacters string `position:"Query" name:"RequireUppercaseCharacters"`
-	MinimumPasswordLength      string `position:"Query" name:"MinimumPasswordLength"`
-	MaxPasswordAge             string `position:"Query" name:"MaxPasswordAge"`
-	RequireNumbers             string `position:"Query" name:"RequireNumbers"`
-	RequireLowercaseCharacters string `position:"Query" name:"RequireLowercaseCharacters"`
-	PasswordReusePrevention    string `position:"Query" name:"PasswordReusePrevention"`
-	HardExpiry                 string `position:"Query" name:"HardExpiry"`
-	RequireSymbols             string `position:"Query" name:"RequireSymbols"`
+	MaxLoginAttemps            requests.Integer `position:"Query" name:"MaxLoginAttemps"`
+	RequireUppercaseCharacters requests.Boolean `position:"Query" name:"RequireUppercaseCharacters"`
+	MinimumPasswordLength      requests.Integer `position:"Query" name:"MinimumPasswordLength"`
+	MaxPasswordAge             requests.Integer `position:"Query" name:"MaxPasswordAge"`
+	RequireNumbers             requests.Boolean `position:"Query" name:"RequireNumbers"`
+	RequireLowercaseCharacters requests.Boolean `position:"Query" name:"RequireLowercaseCharacters"`
+	PasswordReusePrevention    requests.Integer `position:"Query" name:"PasswordReusePrevention"`
+	HardExpiry                 requests.Boolean `position:"Query" name:"HardExpiry"`
+	RequireSymbols             requests.Boolean `position:"Query" name:"RequireSymbols"`
 }
 
 type SetPasswordPolicyResponse struct {

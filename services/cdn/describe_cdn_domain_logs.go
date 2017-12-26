@@ -64,14 +64,14 @@ func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDoma
 
 type DescribeCdnDomainLogsRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	LogDay        string `position:"Query" name:"LogDay"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	LogDay        string           `position:"Query" name:"LogDay"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeCdnDomainLogsResponse struct {

@@ -64,13 +64,13 @@ func (client *Client) SetSecurityPreferenceWithCallback(request *SetSecurityPref
 
 type SetSecurityPreferenceRequest struct {
 	*requests.RpcRequest
-	LoginSessionDuration        string `position:"Query" name:"LoginSessionDuration"`
-	AllowUserToManageAccessKeys string `position:"Query" name:"AllowUserToManageAccessKeys"`
-	LoginNetworkMasks           string `position:"Query" name:"LoginNetworkMasks"`
-	AllowUserToChangePassword   string `position:"Query" name:"AllowUserToChangePassword"`
-	AllowUserToManagePublicKeys string `position:"Query" name:"AllowUserToManagePublicKeys"`
-	AllowUserToManageMFADevices string `position:"Query" name:"AllowUserToManageMFADevices"`
-	EnableSaveMFATicket         string `position:"Query" name:"EnableSaveMFATicket"`
+	LoginSessionDuration        requests.Integer `position:"Query" name:"LoginSessionDuration"`
+	AllowUserToManageAccessKeys requests.Boolean `position:"Query" name:"AllowUserToManageAccessKeys"`
+	LoginNetworkMasks           string           `position:"Query" name:"LoginNetworkMasks"`
+	AllowUserToChangePassword   requests.Boolean `position:"Query" name:"AllowUserToChangePassword"`
+	AllowUserToManagePublicKeys requests.Boolean `position:"Query" name:"AllowUserToManagePublicKeys"`
+	AllowUserToManageMFADevices requests.Boolean `position:"Query" name:"AllowUserToManageMFADevices"`
+	EnableSaveMFATicket         requests.Boolean `position:"Query" name:"EnableSaveMFATicket"`
 }
 
 type SetSecurityPreferenceResponse struct {

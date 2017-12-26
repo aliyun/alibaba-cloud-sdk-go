@@ -64,17 +64,17 @@ func (client *Client) DescribeVSwitchesWithCallback(request *DescribeVSwitchesRe
 
 type DescribeVSwitchesRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	VSwitchName          string `position:"Query" name:"VSwitchName"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	IsDefault            string `position:"Query" name:"IsDefault"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	VpcId                string `position:"Query" name:"VpcId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 type DescribeVSwitchesResponse struct {

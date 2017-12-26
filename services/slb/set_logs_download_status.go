@@ -64,14 +64,14 @@ func (client *Client) SetLogsDownloadStatusWithCallback(request *SetLogsDownload
 
 type SetLogsDownloadStatusRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	RoleName             string `position:"Query" name:"RoleName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	LogsDownloadStatus   string `position:"Query" name:"LogsDownloadStatus"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	RoleName             string           `position:"Query" name:"RoleName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LogsDownloadStatus   string           `position:"Query" name:"LogsDownloadStatus"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SetLogsDownloadStatusResponse struct {

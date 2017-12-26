@@ -64,17 +64,17 @@ func (client *Client) DescribeRouteTableListWithCallback(request *DescribeRouteT
 
 type DescribeRouteTableListRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	RouteTableId         string `position:"Query" name:"RouteTableId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string `position:"Query" name:"RouterId"`
-	RouterType           string `position:"Query" name:"RouterType"`
-	RouteTableName       string `position:"Query" name:"RouteTableName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeRouteTableListResponse struct {

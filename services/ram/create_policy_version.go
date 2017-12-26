@@ -64,9 +64,9 @@ func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersi
 
 type CreatePolicyVersionRequest struct {
 	*requests.RpcRequest
-	SetAsDefault   string `position:"Query" name:"SetAsDefault"`
-	PolicyDocument string `position:"Query" name:"PolicyDocument"`
-	PolicyName     string `position:"Query" name:"PolicyName"`
+	SetAsDefault   requests.Boolean `position:"Query" name:"SetAsDefault"`
+	PolicyDocument string           `position:"Query" name:"PolicyDocument"`
+	PolicyName     string           `position:"Query" name:"PolicyName"`
 }
 
 type CreatePolicyVersionResponse struct {

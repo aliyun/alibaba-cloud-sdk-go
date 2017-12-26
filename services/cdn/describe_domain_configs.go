@@ -64,10 +64,10 @@ func (client *Client) DescribeDomainConfigsWithCallback(request *DescribeDomainC
 
 type DescribeDomainConfigsRequest struct {
 	*requests.RpcRequest
-	ConfigList    string `position:"Query" name:"ConfigList"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	ConfigList    string           `position:"Query" name:"ConfigList"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainConfigsResponse struct {

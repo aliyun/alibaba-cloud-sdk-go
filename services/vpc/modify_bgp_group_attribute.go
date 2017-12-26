@@ -64,17 +64,17 @@ func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGrou
 
 type ModifyBgpGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	BgpGroupId           string `position:"Query" name:"BgpGroupId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	AuthKey              string `position:"Query" name:"AuthKey"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	IsFakeAsn            string `position:"Query" name:"IsFakeAsn"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PeerAsn              string `position:"Query" name:"PeerAsn"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AuthKey              string           `position:"Query" name:"AuthKey"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
 }
 
 type ModifyBgpGroupAttributeResponse struct {

@@ -64,13 +64,13 @@ func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchA
 
 type ModifyVSwitchAttributeRequest struct {
 	*requests.RpcRequest
-	VSwitchName          string `position:"Query" name:"VSwitchName"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyVSwitchAttributeResponse struct {

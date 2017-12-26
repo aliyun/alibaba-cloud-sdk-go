@@ -64,13 +64,13 @@ func (client *Client) ModifySenderAddressNotificationWithCallback(request *Modif
 
 type ModifySenderAddressNotificationRequest struct {
 	*requests.RpcRequest
-	Region               string `position:"Query" name:"Region"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	SenderAddressId      string `position:"Query" name:"SenderAddressId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SenderAddress        string `position:"Query" name:"SenderAddress"`
+	Region               string           `position:"Query" name:"Region"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               string           `position:"Query" name:"Status"`
+	SenderAddressId      string           `position:"Query" name:"SenderAddressId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SenderAddress        string           `position:"Query" name:"SenderAddress"`
 }
 
 type ModifySenderAddressNotificationResponse struct {

@@ -64,17 +64,17 @@ func (client *Client) SendTestByTemplateWithCallback(request *SendTestByTemplate
 
 type SendTestByTemplateRequest struct {
 	*requests.RpcRequest
-	Birthday             string `position:"Query" name:"Birthday"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	NickName             string `position:"Query" name:"NickName"`
-	TemplateId           string `position:"Query" name:"TemplateId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	UserName             string `position:"Query" name:"UserName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Email                string `position:"Query" name:"Email"`
-	Gender               string `position:"Query" name:"Gender"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Mobile               string `position:"Query" name:"Mobile"`
+	Birthday             string           `position:"Query" name:"Birthday"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	NickName             string           `position:"Query" name:"NickName"`
+	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UserName             string           `position:"Query" name:"UserName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Email                string           `position:"Query" name:"Email"`
+	Gender               string           `position:"Query" name:"Gender"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Mobile               string           `position:"Query" name:"Mobile"`
 }
 
 type SendTestByTemplateResponse struct {

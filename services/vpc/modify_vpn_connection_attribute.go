@@ -64,18 +64,18 @@ func (client *Client) ModifyVpnConnectionAttributeWithCallback(request *ModifyVp
 
 type ModifyVpnConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	LocalSubnet          string `position:"Query" name:"LocalSubnet"`
-	EffectImmediately    string `position:"Query" name:"EffectImmediately"`
-	RemoteSubnet         string `position:"Query" name:"RemoteSubnet"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	IpsecConfig          string `position:"Query" name:"IpsecConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VpnConnectionId      string `position:"Query" name:"VpnConnectionId"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	IkeConfig            string `position:"Query" name:"IkeConfig"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IkeConfig            string           `position:"Query" name:"IkeConfig"`
 }
 
 type ModifyVpnConnectionAttributeResponse struct {

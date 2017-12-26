@@ -64,12 +64,12 @@ func (client *Client) CreateMailAddressWithCallback(request *CreateMailAddressRe
 
 type CreateMailAddressRequest struct {
 	*requests.RpcRequest
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Sendtype             string `position:"Query" name:"Sendtype"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Sendtype             string           `position:"Query" name:"Sendtype"`
 }
 
 type CreateMailAddressResponse struct {

@@ -64,30 +64,30 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
-	UsedTime              string `position:"Query" name:"UsedTime"`
-	ZoneId                string `position:"Query" name:"ZoneId"`
-	DBInstanceClass       string `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage     string `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string `position:"Query" name:"PayType"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	VSwitchId             string `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string `position:"Query" name:"PrivateIpAddress"`
-	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
-	ClientToken           string `position:"Query" name:"ClientToken"`
-	Engine                string `position:"Query" name:"Engine"`
-	DBInstanceNetType     string `position:"Query" name:"DBInstanceNetType"`
-	Period                string `position:"Query" name:"Period"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	SecurityIPList        string `position:"Query" name:"SecurityIPList"`
-	SystemDBCharset       string `position:"Query" name:"SystemDBCharset"`
-	ConnectionMode        string `position:"Query" name:"ConnectionMode"`
-	VPCId                 string `position:"Query" name:"VPCId"`
-	TunnelId              string `position:"Query" name:"TunnelId"`
-	EngineVersion         string `position:"Query" name:"EngineVersion"`
-	InstanceNetworkType   string `position:"Query" name:"InstanceNetworkType"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType               string           `position:"Query" name:"PayType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	Engine                string           `position:"Query" name:"Engine"`
+	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
+	Period                string           `position:"Query" name:"Period"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
+	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
+	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	TunnelId              string           `position:"Query" name:"TunnelId"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 type CreateDBInstanceResponse struct {

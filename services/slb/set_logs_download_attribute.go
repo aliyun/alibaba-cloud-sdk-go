@@ -64,15 +64,15 @@ func (client *Client) SetLogsDownloadAttributeWithCallback(request *SetLogsDownl
 
 type SetLogsDownloadAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	RoleName             string `position:"Query" name:"RoleName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	LogType              string `position:"Query" name:"LogType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OSSBucketName        string `position:"Query" name:"OSSBucketName"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	RoleName             string           `position:"Query" name:"RoleName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	LogType              string           `position:"Query" name:"LogType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OSSBucketName        string           `position:"Query" name:"OSSBucketName"`
 }
 
 type SetLogsDownloadAttributeResponse struct {

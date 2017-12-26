@@ -64,10 +64,10 @@ func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfile
 
 type UpdateLoginProfileRequest struct {
 	*requests.RpcRequest
-	UserName              string `position:"Query" name:"UserName"`
-	MFABindRequired       string `position:"Query" name:"MFABindRequired"`
-	PasswordResetRequired string `position:"Query" name:"PasswordResetRequired"`
-	Password              string `position:"Query" name:"Password"`
+	UserName              string           `position:"Query" name:"UserName"`
+	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
+	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
+	Password              string           `position:"Query" name:"Password"`
 }
 
 type UpdateLoginProfileResponse struct {

@@ -64,20 +64,20 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	Limit         string                          `position:"Query" name:"Limit"`
-	IntervalInSec string                          `position:"Query" name:"IntervalInSec"`
+	Limit         requests.Integer                `position:"Query" name:"Limit"`
+	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
 	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
-	DatasetId     string                          `position:"Query" name:"DatasetId"`
-	ReduceTail    string                          `position:"Query" name:"ReduceTail"`
+	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
+	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
 	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
-	MinTime       string                          `position:"Query" name:"MinTime"`
-	MaxTime       string                          `position:"Query" name:"MaxTime"`
-	IsDrillDown   string                          `position:"Query" name:"IsDrillDown"`
-	DateStr       string                          `position:"Query" name:"DateStr"`
+	MinTime       requests.Integer                `position:"Query" name:"MinTime"`
+	MaxTime       requests.Integer                `position:"Query" name:"MaxTime"`
+	IsDrillDown   requests.Boolean                `position:"Query" name:"IsDrillDown"`
+	DateStr       requests.Integer                `position:"Query" name:"DateStr"`
 	Dimensions    *[]ARMSQueryDataSetDimensions   `position:"Query" name:"Dimensions"  type:"Repeated"`
 	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
 	Measures      *[]string                       `position:"Query" name:"Measures"  type:"Repeated"`
-	HungryMode    string                          `position:"Query" name:"HungryMode"`
+	HungryMode    requests.Boolean                `position:"Query" name:"HungryMode"`
 }
 
 type ARMSQueryDataSetRequiredDims struct {

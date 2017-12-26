@@ -64,8 +64,8 @@ func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoReques
 
 type QueryDeviceInfoRequest struct {
 	*requests.RpcRequest
-	AppKey   string `position:"Query" name:"AppKey"`
-	DeviceId string `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
+	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
 type QueryDeviceInfoResponse struct {

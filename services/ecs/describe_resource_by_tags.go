@@ -64,22 +64,22 @@ func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResour
 
 type DescribeResourceByTagsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	ResourceType         string `position:"Query" name:"ResourceType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 }
 
 type DescribeResourceByTagsResponse struct {

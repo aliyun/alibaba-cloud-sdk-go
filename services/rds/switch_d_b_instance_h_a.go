@@ -64,15 +64,15 @@ func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHA
 
 type SwitchDBInstanceHARequest struct {
 	*requests.RpcRequest
-	EffectiveTime        string `position:"Query" name:"EffectiveTime"`
-	Operation            string `position:"Query" name:"Operation"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string `position:"Query" name:"Force"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NodeId               string `position:"Query" name:"NodeId"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	Operation            string           `position:"Query" name:"Operation"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Force                string           `position:"Query" name:"Force"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 }
 
 type SwitchDBInstanceHAResponse struct {

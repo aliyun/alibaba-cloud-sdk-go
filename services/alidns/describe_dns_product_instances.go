@@ -64,11 +64,11 @@ func (client *Client) DescribeDnsProductInstancesWithCallback(request *DescribeD
 
 type DescribeDnsProductInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	VersionCode  string `position:"Query" name:"VersionCode"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	VersionCode  string           `position:"Query" name:"VersionCode"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDnsProductInstancesResponse struct {

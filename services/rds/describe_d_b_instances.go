@@ -64,34 +64,34 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	SearchKey            string `position:"Query" name:"SearchKey"`
-	Tag5Value            string `position:"Query" name:"Tag.5.value"`
-	DBInstanceStatus     string `position:"Query" name:"DBInstanceStatus"`
-	Tag3Key              string `position:"Query" name:"Tag.3.key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key              string `position:"Query" name:"Tag.1.key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string `position:"Query" name:"Tag.4.value"`
-	Tags                 string `position:"Query" name:"Tags"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	Engine               string `position:"Query" name:"Engine"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	DBInstanceType       string `position:"Query" name:"DBInstanceType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.key"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	ConnectionMode       string `position:"Query" name:"ConnectionMode"`
-	Tag3Value            string `position:"Query" name:"Tag.3.value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.value"`
-	InstanceNetworkType  string `position:"Query" name:"InstanceNetworkType"`
-	Tag4Key              string `position:"Query" name:"Tag.4.key"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	SearchKey            string           `position:"Query" name:"SearchKey"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Engine               string           `position:"Query" name:"Engine"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
 }
 
 type DescribeDBInstancesResponse struct {

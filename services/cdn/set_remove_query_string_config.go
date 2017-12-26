@@ -64,11 +64,11 @@ func (client *Client) SetRemoveQueryStringConfigWithCallback(request *SetRemoveQ
 
 type SetRemoveQueryStringConfigRequest struct {
 	*requests.RpcRequest
-	AliRemoveArgs string `position:"Query" name:"AliRemoveArgs"`
-	KeepOssArgs   string `position:"Query" name:"KeepOssArgs"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AliRemoveArgs string           `position:"Query" name:"AliRemoveArgs"`
+	KeepOssArgs   string           `position:"Query" name:"KeepOssArgs"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetRemoveQueryStringConfigResponse struct {

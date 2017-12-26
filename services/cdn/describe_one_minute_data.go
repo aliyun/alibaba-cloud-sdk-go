@@ -64,11 +64,11 @@ func (client *Client) DescribeOneMinuteDataWithCallback(request *DescribeOneMinu
 
 type DescribeOneMinuteDataRequest struct {
 	*requests.RpcRequest
-	DomainName           string `position:"Query" name:"DomainName"`
-	DataTime             string `position:"Query" name:"DataTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DomainName           string           `position:"Query" name:"DomainName"`
+	DataTime             string           `position:"Query" name:"DataTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOneMinuteDataResponse struct {

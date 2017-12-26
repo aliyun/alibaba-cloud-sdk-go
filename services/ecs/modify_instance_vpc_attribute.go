@@ -64,13 +64,13 @@ func (client *Client) ModifyInstanceVpcAttributeWithCallback(request *ModifyInst
 
 type ModifyInstanceVpcAttributeRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress     string `position:"Query" name:"PrivateIpAddress"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyInstanceVpcAttributeResponse struct {

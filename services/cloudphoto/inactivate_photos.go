@@ -64,10 +64,10 @@ func (client *Client) InactivatePhotosWithCallback(request *InactivatePhotosRequ
 
 type InactivatePhotosRequest struct {
 	*requests.RpcRequest
-	InactiveTime string    `position:"Query" name:"InactiveTime"`
-	LibraryId    string    `position:"Query" name:"LibraryId"`
-	StoreName    string    `position:"Query" name:"StoreName"`
-	PhotoId      *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	InactiveTime requests.Integer `position:"Query" name:"InactiveTime"`
+	LibraryId    string           `position:"Query" name:"LibraryId"`
+	StoreName    string           `position:"Query" name:"StoreName"`
+	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type InactivatePhotosResponse struct {

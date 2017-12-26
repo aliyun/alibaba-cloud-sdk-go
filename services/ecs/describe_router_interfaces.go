@@ -64,11 +64,11 @@ func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRout
 
 type DescribeRouterInterfacesRequest struct {
 	*requests.RpcRequest
-	PageSize             string                            `position:"Query" name:"PageSize"`
+	PageSize             requests.Integer                  `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string                            `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string                            `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      string                            `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string                            `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                  `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer                  `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 

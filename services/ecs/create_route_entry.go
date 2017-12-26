@@ -70,9 +70,9 @@ type CreateRouteEntryRequest struct {
 	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
 	NextHopId            string                         `position:"Query" name:"NextHopId"`
 	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
-	ResourceOwnerId      string                         `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	OwnerId              string                         `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
 }
 

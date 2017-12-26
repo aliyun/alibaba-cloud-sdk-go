@@ -64,13 +64,13 @@ func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, c
 
 type ListTagPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	TagId     string `position:"Query" name:"TagId"`
-	Direction string `position:"Query" name:"Direction"`
-	State     string `position:"Query" name:"State"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Size      string `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	TagId     requests.Integer `position:"Query" name:"TagId"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListTagPhotosResponse struct {

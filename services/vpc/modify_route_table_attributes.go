@@ -64,17 +64,17 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceUid          string `position:"Query" name:"ResourceUid"`
-	KbpsBandwidth        string `position:"Query" name:"KbpsBandwidth"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceBid          string `position:"Query" name:"ResourceBid"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string `position:"Query" name:"RouteTableName"`
-	RouteTableId         string `position:"Query" name:"RouteTableId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type ModifyRouteTableAttributesResponse struct {

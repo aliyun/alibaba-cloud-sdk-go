@@ -64,14 +64,14 @@ func (client *Client) DescribePhysicalConnectionsWithCallback(request *DescribeP
 
 type DescribePhysicalConnectionsRequest struct {
 	*requests.RpcRequest
-	PageSize             string                               `position:"Query" name:"PageSize"`
+	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
 	ClientToken          string                               `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string                               `position:"Query" name:"PageNumber"`
+	PageNumber           requests.Integer                     `position:"Query" name:"PageNumber"`
 	UserCidr             string                               `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      string                               `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
-	OwnerId              string                               `position:"Query" name:"OwnerId"`
+	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribePhysicalConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 

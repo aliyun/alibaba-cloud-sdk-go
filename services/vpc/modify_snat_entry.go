@@ -64,13 +64,13 @@ func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryReques
 
 type ModifySnatEntryRequest struct {
 	*requests.RpcRequest
-	SnatEntryId          string `position:"Query" name:"SnatEntryId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SnatIp               string `position:"Query" name:"SnatIp"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SnatTableId          string `position:"Query" name:"SnatTableId"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnatIp               string           `position:"Query" name:"SnatIp"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SnatTableId          string           `position:"Query" name:"SnatTableId"`
 }
 
 type ModifySnatEntryResponse struct {

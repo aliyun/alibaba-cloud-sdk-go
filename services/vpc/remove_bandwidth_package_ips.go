@@ -64,13 +64,13 @@ func (client *Client) RemoveBandwidthPackageIpsWithCallback(request *RemoveBandw
 
 type RemoveBandwidthPackageIpsRequest struct {
 	*requests.RpcRequest
-	RemovedIpAddresses   *[]string `position:"Query" name:"RemovedIpAddresses"  type:"Repeated"`
-	ClientToken          string    `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string    `position:"Query" name:"BandwidthPackageId"`
+	RemovedIpAddresses   *[]string        `position:"Query" name:"RemovedIpAddresses"  type:"Repeated"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 }
 
 type RemoveBandwidthPackageIpsResponse struct {

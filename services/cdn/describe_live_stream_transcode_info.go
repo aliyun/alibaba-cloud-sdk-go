@@ -64,9 +64,9 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *Descr
 
 type DescribeLiveStreamTranscodeInfoRequest struct {
 	*requests.RpcRequest
-	DomainTranscodeName string `position:"Query" name:"DomainTranscodeName"`
-	OwnerId             string `position:"Query" name:"OwnerId"`
-	SecurityToken       string `position:"Query" name:"SecurityToken"`
+	DomainTranscodeName string           `position:"Query" name:"DomainTranscodeName"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken       string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamTranscodeInfoResponse struct {

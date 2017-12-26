@@ -64,14 +64,14 @@ func (client *Client) DescribeRecordLogsWithCallback(request *DescribeRecordLogs
 
 type DescribeRecordLogsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	StartDate    string `position:"Query" name:"StartDate"`
-	DomainName   string `position:"Query" name:"DomainName"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	EndDate      string `position:"Query" name:"endDate"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StartDate    string           `position:"Query" name:"StartDate"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	EndDate      string           `position:"Query" name:"endDate"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeRecordLogsResponse struct {

@@ -64,14 +64,14 @@ func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, c
 
 type InvokeCommandRequest struct {
 	*requests.RpcRequest
-	Frequency            string    `position:"Query" name:"Frequency"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
-	Timed                string    `position:"Query" name:"Timed"`
-	CommandId            string    `position:"Query" name:"CommandId"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	InstanceId           *[]string `position:"Query" name:"InstanceId"  type:"Repeated"`
+	Frequency            string           `position:"Query" name:"Frequency"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Timed                requests.Boolean `position:"Query" name:"Timed"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 type InvokeCommandResponse struct {

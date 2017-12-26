@@ -64,11 +64,11 @@ func (client *Client) SetReqHeaderConfigWithCallback(request *SetReqHeaderConfig
 
 type SetReqHeaderConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	Value         string `position:"Query" name:"Value"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Key           string `position:"Query" name:"Key"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Value         string           `position:"Query" name:"Value"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Key           string           `position:"Query" name:"Key"`
 }
 
 type SetReqHeaderConfigResponse struct {

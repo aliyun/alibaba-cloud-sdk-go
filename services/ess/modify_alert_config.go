@@ -64,12 +64,12 @@ func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRe
 
 type ModifyAlertConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SuccessConfig        string `position:"Query" name:"SuccessConfig"`
-	FailConfig           string `position:"Query" name:"FailConfig"`
-	RejectConfig         string `position:"Query" name:"RejectConfig"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingGroupId       string `position:"Query" name:"ScalingGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SuccessConfig        requests.Integer `position:"Query" name:"SuccessConfig"`
+	FailConfig           requests.Integer `position:"Query" name:"FailConfig"`
+	RejectConfig         requests.Integer `position:"Query" name:"RejectConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
 type ModifyAlertConfigResponse struct {

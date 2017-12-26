@@ -64,10 +64,10 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithCallback(request *SetLive
 
 type SetLiveStreamsNotifyUrlConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string `position:"Query" name:"DomainName"`
-	NotifyUrl     string `position:"Query" name:"NotifyUrl"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	NotifyUrl     string           `position:"Query" name:"NotifyUrl"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetLiveStreamsNotifyUrlConfigResponse struct {

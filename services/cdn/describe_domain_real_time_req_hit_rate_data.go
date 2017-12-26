@@ -64,12 +64,12 @@ func (client *Client) DescribeDomainRealTimeReqHitRateDataWithCallback(request *
 
 type DescribeDomainRealTimeReqHitRateDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	Version       string `position:"Query" name:"Version"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainRealTimeReqHitRateDataResponse struct {

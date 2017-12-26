@@ -64,15 +64,15 @@ func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, c
 
 type GetRegionListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OffsetCreateTime     string `position:"Query" name:"OffsetCreateTime"`
+	Total                string           `position:"Query" name:"Total"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
 }
 
 type GetRegionListResponse struct {

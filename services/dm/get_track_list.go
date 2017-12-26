@@ -64,17 +64,17 @@ func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, cal
 
 type GetTrackListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	OffsetCreateTime     string `position:"Query" name:"OffsetCreateTime"`
+	Total                string           `position:"Query" name:"Total"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
 }
 
 type GetTrackListResponse struct {

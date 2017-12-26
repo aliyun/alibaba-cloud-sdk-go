@@ -64,14 +64,14 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	MaxTime       string                        `position:"Query" name:"MaxTime"`
-	IntervalInSec string                        `position:"Query" name:"IntervalInSec"`
-	IsDrillDown   string                        `position:"Query" name:"IsDrillDown"`
-	DatasetId     string                        `position:"Query" name:"DatasetId"`
+	MaxTime       requests.Integer              `position:"Query" name:"MaxTime"`
+	IntervalInSec requests.Integer              `position:"Query" name:"IntervalInSec"`
+	IsDrillDown   requests.Boolean              `position:"Query" name:"IsDrillDown"`
+	DatasetId     requests.Integer              `position:"Query" name:"DatasetId"`
 	DateStr       string                        `position:"Query" name:"DateStr"`
 	Dimensions    *[]ARMSQueryDataSetDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
 	Measures      *[]string                     `position:"Query" name:"Measures"  type:"Repeated"`
-	MinTime       string                        `position:"Query" name:"MinTime"`
+	MinTime       requests.Integer              `position:"Query" name:"MinTime"`
 }
 
 type ARMSQueryDataSetDimensions struct {

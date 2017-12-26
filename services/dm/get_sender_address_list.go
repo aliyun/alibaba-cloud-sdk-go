@@ -64,15 +64,15 @@ func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddress
 
 type GetSenderAddressListRequest struct {
 	*requests.RpcRequest
-	Total                string `position:"Query" name:"Total"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	NotifyUrl            string `position:"Query" name:"NotifyUrl"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Keyword              string `position:"Query" name:"Keyword"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string `position:"Query" name:"PageNo"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Total                string           `position:"Query" name:"Total"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Keyword              string           `position:"Query" name:"Keyword"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNo               string           `position:"Query" name:"PageNo"`
+	Offset               string           `position:"Query" name:"Offset"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type GetSenderAddressListResponse struct {

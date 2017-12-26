@@ -64,9 +64,9 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *Descr
 
 type DescribeLiveStreamDomainAppInfoRequest struct {
 	*requests.RpcRequest
-	AppDomain     string `position:"Query" name:"AppDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AppDomain     string           `position:"Query" name:"AppDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamDomainAppInfoResponse struct {

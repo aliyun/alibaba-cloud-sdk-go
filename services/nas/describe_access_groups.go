@@ -64,9 +64,9 @@ func (client *Client) DescribeAccessGroupsWithCallback(request *DescribeAccessGr
 
 type DescribeAccessGroupsRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
+	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeAccessGroupsResponse struct {

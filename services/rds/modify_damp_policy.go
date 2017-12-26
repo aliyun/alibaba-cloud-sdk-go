@@ -64,17 +64,17 @@ func (client *Client) ModifyDampPolicyWithCallback(request *ModifyDampPolicyRequ
 
 type ModifyDampPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	TimeRules            string `position:"Query" name:"TimeRules"`
-	PolicyName           string `position:"Query" name:"PolicyName"`
-	ActionRules          string `position:"Query" name:"ActionRules"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Handlers             string `position:"Query" name:"Handlers"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	SourceRules          string `position:"Query" name:"SourceRules"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	TimeRules            string           `position:"Query" name:"TimeRules"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
+	ActionRules          string           `position:"Query" name:"ActionRules"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Handlers             string           `position:"Query" name:"Handlers"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SourceRules          string           `position:"Query" name:"SourceRules"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
 type ModifyDampPolicyResponse struct {

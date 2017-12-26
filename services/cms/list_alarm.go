@@ -64,15 +64,15 @@ func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback 
 
 type ListAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string `position:"Query" name:"Id"`
-	PageSize       string `position:"Query" name:"PageSize"`
-	Dimension      string `position:"Query" name:"Dimension"`
-	PageNumber     string `position:"Query" name:"PageNumber"`
-	Name           string `position:"Query" name:"Name"`
-	State          string `position:"Query" name:"State"`
-	IsEnable       string `position:"Query" name:"IsEnable"`
-	Namespace      string `position:"Query" name:"Namespace"`
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Id             string           `position:"Query" name:"Id"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	Dimension      string           `position:"Query" name:"Dimension"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	Name           string           `position:"Query" name:"Name"`
+	State          string           `position:"Query" name:"State"`
+	IsEnable       requests.Boolean `position:"Query" name:"IsEnable"`
+	Namespace      string           `position:"Query" name:"Namespace"`
+	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type ListAlarmResponse struct {

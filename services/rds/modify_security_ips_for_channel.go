@@ -64,16 +64,16 @@ func (client *Client) ModifySecurityIpsForChannelWithCallback(request *ModifySec
 
 type ModifySecurityIpsForChannelRequest struct {
 	*requests.RpcRequest
-	DBInstanceId               string `position:"Query" name:"DBInstanceId"`
-	ModifyMode                 string `position:"Query" name:"ModifyMode"`
-	ClientToken                string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount       string `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityIps                string `position:"Query" name:"SecurityIps"`
-	DBInstanceIPArrayName      string `position:"Query" name:"DBInstanceIPArrayName"`
-	DBInstanceIPArrayAttribute string `position:"Query" name:"DBInstanceIPArrayAttribute"`
-	ResourceOwnerId            string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount               string `position:"Query" name:"OwnerAccount"`
-	OwnerId                    string `position:"Query" name:"OwnerId"`
+	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
+	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
+	ClientToken                string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	SecurityIps                string           `position:"Query" name:"SecurityIps"`
+	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
+	DBInstanceIPArrayAttribute string           `position:"Query" name:"DBInstanceIPArrayAttribute"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifySecurityIpsForChannelResponse struct {

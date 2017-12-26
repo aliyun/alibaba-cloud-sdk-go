@@ -64,14 +64,14 @@ func (client *Client) CreateSnatEntryWithCallback(request *CreateSnatEntryReques
 
 type CreateSnatEntryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	SourceCIDR           string `position:"Query" name:"SourceCIDR"`
-	SnatIp               string `position:"Query" name:"SnatIp"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SourceVSwitchId      string `position:"Query" name:"SourceVSwitchId"`
-	SnatTableId          string `position:"Query" name:"SnatTableId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SourceCIDR           string           `position:"Query" name:"SourceCIDR"`
+	SnatIp               string           `position:"Query" name:"SnatIp"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SourceVSwitchId      string           `position:"Query" name:"SourceVSwitchId"`
+	SnatTableId          string           `position:"Query" name:"SnatTableId"`
 }
 
 type CreateSnatEntryResponse struct {

@@ -64,14 +64,14 @@ func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback 
 
 type ListMediaRequest struct {
 	*requests.RpcRequest
-	To                   string `position:"Query" name:"To"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	From                 string `position:"Query" name:"From"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	MaximumPageSize      string `position:"Query" name:"MaximumPageSize"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NextPageToken        string `position:"Query" name:"NextPageToken"`
+	To                   string           `position:"Query" name:"To"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	From                 string           `position:"Query" name:"From"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 }
 
 type ListMediaResponse struct {

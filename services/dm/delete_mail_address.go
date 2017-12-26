@@ -64,10 +64,10 @@ func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRe
 
 type DeleteMailAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	MailAddressId        string `position:"Query" name:"MailAddressId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteMailAddressResponse struct {

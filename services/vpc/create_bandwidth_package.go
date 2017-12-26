@@ -64,19 +64,19 @@ func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidt
 
 type CreateBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ISP                  string `position:"Query" name:"ISP"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NatGatewayId         string `position:"Query" name:"NatGatewayId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	IpCount              string `position:"Query" name:"IpCount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Zone                 string `position:"Query" name:"Zone"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ISP                  string           `position:"Query" name:"ISP"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	IpCount              requests.Integer `position:"Query" name:"IpCount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Zone                 string           `position:"Query" name:"Zone"`
 }
 
 type CreateBandwidthPackageResponse struct {

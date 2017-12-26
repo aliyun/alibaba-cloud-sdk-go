@@ -64,18 +64,18 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	DeploymentSetIds     string `position:"Query" name:"DeploymentSetIds"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Granularity          string           `position:"Query" name:"Granularity"`
+	Domain               string           `position:"Query" name:"Domain"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDeploymentSetsResponse struct {

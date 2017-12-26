@@ -64,10 +64,10 @@ func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func
 
 type BindTagRequest struct {
 	*requests.RpcRequest
-	KeyType   string `position:"Query" name:"KeyType"`
-	AppKey    string `position:"Query" name:"AppKey"`
-	TagName   string `position:"Query" name:"TagName"`
-	ClientKey string `position:"Query" name:"ClientKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	TagName   string           `position:"Query" name:"TagName"`
+	ClientKey string           `position:"Query" name:"ClientKey"`
 }
 
 type BindTagResponse struct {

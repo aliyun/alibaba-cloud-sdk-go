@@ -64,14 +64,14 @@ func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainS
 
 type SetDomainServerCertificateRequest struct {
 	*requests.RpcRequest
-	Region                  string `position:"Query" name:"Region"`
-	ServerCertificate       string `position:"Query" name:"ServerCertificate"`
-	CertName                string `position:"Query" name:"CertName"`
-	DomainName              string `position:"Query" name:"DomainName"`
-	OwnerId                 string `position:"Query" name:"OwnerId"`
-	SecurityToken           string `position:"Query" name:"SecurityToken"`
-	PrivateKey              string `position:"Query" name:"PrivateKey"`
-	ServerCertificateStatus string `position:"Query" name:"ServerCertificateStatus"`
+	Region                  string           `position:"Query" name:"Region"`
+	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
+	CertName                string           `position:"Query" name:"CertName"`
+	DomainName              string           `position:"Query" name:"DomainName"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken           string           `position:"Query" name:"SecurityToken"`
+	PrivateKey              string           `position:"Query" name:"PrivateKey"`
+	ServerCertificateStatus string           `position:"Query" name:"ServerCertificateStatus"`
 }
 
 type SetDomainServerCertificateResponse struct {

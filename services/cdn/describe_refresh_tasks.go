@@ -64,18 +64,18 @@ func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshT
 
 type DescribeRefreshTasksRequest struct {
 	*requests.RpcRequest
-	EndTime         string `position:"Query" name:"EndTime"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	StartTime       string `position:"Query" name:"StartTime"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	ObjectPath      string `position:"Query" name:"ObjectPath"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
-	Status          string `position:"Query" name:"Status"`
-	TaskId          string `position:"Query" name:"TaskId"`
-	ObjectType      string `position:"Query" name:"ObjectType"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	ObjectPath      string           `position:"Query" name:"ObjectPath"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	Status          string           `position:"Query" name:"Status"`
+	TaskId          string           `position:"Query" name:"TaskId"`
+	ObjectType      string           `position:"Query" name:"ObjectType"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeRefreshTasksResponse struct {

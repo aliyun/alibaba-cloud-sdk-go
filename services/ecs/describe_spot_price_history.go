@@ -64,18 +64,18 @@ func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpot
 
 type DescribeSpotPriceHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	OSType               string `position:"Query" name:"OSType"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	InstanceType         string `position:"Query" name:"InstanceType"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Offset               string `position:"Query" name:"Offset"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	IoOptimized          string `position:"Query" name:"IoOptimized"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	OSType               string           `position:"Query" name:"OSType"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Offset               requests.Integer `position:"Query" name:"Offset"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IoOptimized          string           `position:"Query" name:"IoOptimized"`
 }
 
 type DescribeSpotPriceHistoryResponse struct {

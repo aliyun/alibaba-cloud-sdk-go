@@ -64,10 +64,10 @@ func (client *Client) ListUsersOfSkillGroupWithCallback(request *ListUsersOfSkil
 
 type ListUsersOfSkillGroupRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	SkillGroupId string `position:"Query" name:"SkillGroupId"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 type ListUsersOfSkillGroupResponse struct {

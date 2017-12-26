@@ -64,21 +64,21 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	UsedTime             string `position:"Query" name:"UsedTime"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	DBInstanceClass      string `position:"Query" name:"DBInstanceClass"`
-	OrderType            string `position:"Query" name:"OrderType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	CommodityCode        string `position:"Query" name:"CommodityCode"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string `position:"Query" name:"PayType"`
-	BusinessInfo         string `position:"Query" name:"BusinessInfo"`
-	Quantity             string `position:"Query" name:"Quantity"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PromotionCode        string `position:"Query" name:"PromotionCode"`
-	TimeType             string `position:"Query" name:"TimeType"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	OrderType            string           `position:"Query" name:"OrderType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType              string           `position:"Query" name:"PayType"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PromotionCode        string           `position:"Query" name:"PromotionCode"`
+	TimeType             string           `position:"Query" name:"TimeType"`
 }
 
 type DescribeRenewalPriceResponse struct {

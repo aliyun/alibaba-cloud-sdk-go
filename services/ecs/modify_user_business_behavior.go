@@ -64,12 +64,12 @@ func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUser
 
 type ModifyUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	StatusValue          string `position:"Query" name:"statusValue"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	StatusKey            string `position:"Query" name:"statusKey"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	StatusValue          string           `position:"Query" name:"statusValue"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StatusKey            string           `position:"Query" name:"statusKey"`
 }
 
 type ModifyUserBusinessBehaviorResponse struct {

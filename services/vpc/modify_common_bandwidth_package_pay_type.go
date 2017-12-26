@@ -64,19 +64,19 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *M
 
 type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	*requests.RpcRequest
-	ResourceUid          string `position:"Query" name:"ResourceUid"`
-	KbpsBandwidth        string `position:"Query" name:"KbpsBandwidth"`
-	ResourceBid          string `position:"Query" name:"ResourceBid"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	BandwidthPackageId   string `position:"Query" name:"BandwidthPackageId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
-	Duration             string `position:"Query" name:"Duration"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	PayType              string `position:"Query" name:"PayType"`
-	PricingCycle         string `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	PayType              string           `position:"Query" name:"PayType"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyCommonBandwidthPackagePayTypeResponse struct {

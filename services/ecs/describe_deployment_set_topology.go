@@ -64,15 +64,15 @@ func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *Describ
 
 type DescribeDeploymentSetTopologyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Granularity          string `position:"Query" name:"Granularity"`
-	Domain               string `position:"Query" name:"Domain"`
-	Strategy             string `position:"Query" name:"Strategy"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	DeploymentSetId      string `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	NetworkType          string `position:"Query" name:"NetworkType"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Granularity          string           `position:"Query" name:"Granularity"`
+	Domain               string           `position:"Query" name:"Domain"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDeploymentSetTopologyResponse struct {

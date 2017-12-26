@@ -64,9 +64,9 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	PageSize   string `position:"Query" name:"PageSize"`
-	PageNumber string `position:"Query" name:"PageNumber"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 type ListUsersResponse struct {

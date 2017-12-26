@@ -64,13 +64,13 @@ func (client *Client) RevokeAccountPrivilegeWithCallback(request *RevokeAccountP
 
 type RevokeAccountPrivilegeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RevokeAccountPrivilegeResponse struct {

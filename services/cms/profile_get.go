@@ -64,7 +64,7 @@ func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callbac
 
 type ProfileGetRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Query" name:"UserId"`
+	UserId requests.Integer `position:"Query" name:"UserId"`
 }
 
 type ProfileGetResponse struct {

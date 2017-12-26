@@ -64,11 +64,11 @@ func (client *Client) DescribeLiveStreamRelayPushErrorsWithCallback(request *Des
 
 type DescribeLiveStreamRelayPushErrorsRequest struct {
 	*requests.RpcRequest
-	EndTime       string `position:"Query" name:"EndTime"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	RelayDomain   string `position:"Query" name:"RelayDomain"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	RelayDomain   string           `position:"Query" name:"RelayDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveStreamRelayPushErrorsResponse struct {

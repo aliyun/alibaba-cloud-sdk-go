@@ -64,18 +64,18 @@ func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback fu
 
 type AddMediaRequest struct {
 	*requests.RpcRequest
-	Tags                  string `position:"Query" name:"Tags"`
-	CateId                string `position:"Query" name:"CateId"`
-	FileURL               string `position:"Query" name:"FileURL"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	Title                 string `position:"Query" name:"Title"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	Description           string `position:"Query" name:"Description"`
-	MediaWorkflowUserData string `position:"Query" name:"MediaWorkflowUserData"`
-	CoverURL              string `position:"Query" name:"CoverURL"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	MediaWorkflowId       string `position:"Query" name:"MediaWorkflowId"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	CateId                requests.Integer `position:"Query" name:"CateId"`
+	FileURL               string           `position:"Query" name:"FileURL"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Title                 string           `position:"Query" name:"Title"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description           string           `position:"Query" name:"Description"`
+	MediaWorkflowUserData string           `position:"Query" name:"MediaWorkflowUserData"`
+	CoverURL              string           `position:"Query" name:"CoverURL"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	MediaWorkflowId       string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type AddMediaResponse struct {

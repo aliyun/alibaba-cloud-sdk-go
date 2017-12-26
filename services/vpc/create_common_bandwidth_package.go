@@ -64,16 +64,16 @@ func (client *Client) CreateCommonBandwidthPackageWithCallback(request *CreateCo
 
 type CreateCommonBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	InternetChargeType   string `position:"Query" name:"InternetChargeType"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Ratio                string `position:"Query" name:"Ratio"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Bandwidth            string `position:"Query" name:"Bandwidth"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Ratio                requests.Integer `position:"Query" name:"Ratio"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 }
 
 type CreateCommonBandwidthPackageResponse struct {

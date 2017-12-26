@@ -64,14 +64,14 @@ func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, cal
 
 type CreateBackupRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	BackupMethod         string `position:"Query" name:"BackupMethod"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	BackupType           string `position:"Query" name:"BackupType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BackupMethod         string           `position:"Query" name:"BackupMethod"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	BackupType           string           `position:"Query" name:"BackupType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateBackupResponse struct {

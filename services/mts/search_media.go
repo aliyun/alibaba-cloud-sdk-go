@@ -64,20 +64,20 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 
 type SearchMediaRequest struct {
 	*requests.RpcRequest
-	To                   string `position:"Query" name:"To"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	CateId               string `position:"Query" name:"CateId"`
-	SortBy               string `position:"Query" name:"SortBy"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	Tag                  string `position:"Query" name:"Tag"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	From                 string `position:"Query" name:"From"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Title                string `position:"Query" name:"Title"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	To                   string           `position:"Query" name:"To"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	CateId               string           `position:"Query" name:"CateId"`
+	SortBy               string           `position:"Query" name:"SortBy"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	From                 string           `position:"Query" name:"From"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Title                string           `position:"Query" name:"Title"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type SearchMediaResponse struct {

@@ -64,12 +64,12 @@ func (client *Client) UpdateMediaWorkflowWithCallback(request *UpdateMediaWorkfl
 
 type UpdateMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Topology             string `position:"Query" name:"Topology"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	MediaWorkflowId      string `position:"Query" name:"MediaWorkflowId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Topology             string           `position:"Query" name:"Topology"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type UpdateMediaWorkflowResponse struct {

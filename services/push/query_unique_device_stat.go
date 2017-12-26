@@ -64,10 +64,10 @@ func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDevi
 
 type QueryUniqueDeviceStatRequest struct {
 	*requests.RpcRequest
-	EndTime     string `position:"Query" name:"EndTime"`
-	StartTime   string `position:"Query" name:"StartTime"`
-	Granularity string `position:"Query" name:"Granularity"`
-	AppKey      string `position:"Query" name:"AppKey"`
+	EndTime     string           `position:"Query" name:"EndTime"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	Granularity string           `position:"Query" name:"Granularity"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type QueryUniqueDeviceStatResponse struct {

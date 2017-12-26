@@ -64,21 +64,21 @@ func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest,
 
 type SingleSendMailRequest struct {
 	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	TextBody             string `position:"Query" name:"TextBody"`
-	ReplyToAddress       string `position:"Query" name:"ReplyToAddress"`
-	ReplyAddressAlias    string `position:"Query" name:"ReplyAddressAlias"`
-	Subject              string `position:"Query" name:"Subject"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	FromAlias            string `position:"Query" name:"FromAlias"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ToAddress            string `position:"Query" name:"ToAddress"`
-	ClickTrace           string `position:"Query" name:"ClickTrace"`
-	HtmlBody             string `position:"Query" name:"HtmlBody"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	AddressType          requests.Integer `position:"Query" name:"AddressType"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	TextBody             string           `position:"Query" name:"TextBody"`
+	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
+	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
+	Subject              string           `position:"Query" name:"Subject"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FromAlias            string           `position:"Query" name:"FromAlias"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ToAddress            string           `position:"Query" name:"ToAddress"`
+	ClickTrace           string           `position:"Query" name:"ClickTrace"`
+	HtmlBody             string           `position:"Query" name:"HtmlBody"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type SingleSendMailResponse struct {

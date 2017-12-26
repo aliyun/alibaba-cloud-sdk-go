@@ -64,10 +64,10 @@ func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callbac
 
 type AssumeRoleRequest struct {
 	*requests.RpcRequest
-	RoleArn         string `position:"Query" name:"RoleArn"`
-	Policy          string `position:"Query" name:"Policy"`
-	DurationSeconds string `position:"Query" name:"DurationSeconds"`
-	RoleSessionName string `position:"Query" name:"RoleSessionName"`
+	RoleArn         string           `position:"Query" name:"RoleArn"`
+	Policy          string           `position:"Query" name:"Policy"`
+	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
+	RoleSessionName string           `position:"Query" name:"RoleSessionName"`
 }
 
 type AssumeRoleResponse struct {

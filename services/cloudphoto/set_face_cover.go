@@ -64,10 +64,10 @@ func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, cal
 
 type SetFaceCoverRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	FaceId    string `position:"Query" name:"FaceId"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type SetFaceCoverResponse struct {

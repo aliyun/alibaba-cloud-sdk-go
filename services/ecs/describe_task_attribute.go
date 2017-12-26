@@ -64,10 +64,10 @@ func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAtt
 
 type DescribeTaskAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	TaskId               string `position:"Query" name:"TaskId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TaskId               string           `position:"Query" name:"TaskId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeTaskAttributeResponse struct {

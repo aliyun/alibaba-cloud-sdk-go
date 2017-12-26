@@ -64,13 +64,13 @@ func (client *Client) DescribeExtensiveDomainDataWithCallback(request *DescribeE
 
 type DescribeExtensiveDomainDataRequest struct {
 	*requests.RpcRequest
-	EndTime         string `position:"Query" name:"EndTime"`
-	PageSize        string `position:"Query" name:"PageSize"`
-	StartTime       string `position:"Query" name:"StartTime"`
-	PageNumber      string `position:"Query" name:"PageNumber"`
-	ExtensiveDomain string `position:"Query" name:"ExtensiveDomain"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ExtensiveDomain string           `position:"Query" name:"ExtensiveDomain"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeExtensiveDomainDataResponse struct {

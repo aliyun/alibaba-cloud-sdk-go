@@ -64,13 +64,13 @@ func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMed
 
 type RegisterMediaDetailPersonRequest struct {
 	*requests.RpcRequest
-	Category             string `position:"Query" name:"Category"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Images               string `position:"Query" name:"Images"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	PersonName           string `position:"Query" name:"PersonName"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Category             string           `position:"Query" name:"Category"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Images               string           `position:"Query" name:"Images"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PersonName           string           `position:"Query" name:"PersonName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RegisterMediaDetailPersonResponse struct {

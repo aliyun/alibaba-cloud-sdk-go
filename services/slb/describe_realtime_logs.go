@@ -64,18 +64,18 @@ func (client *Client) DescribeRealtimeLogsWithCallback(request *DescribeRealtime
 
 type DescribeRealtimeLogsRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	LogType              string `position:"Query" name:"LogType"`
-	LogStartTime         string `position:"Query" name:"LogStartTime"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	LogEndTime           string `position:"Query" name:"LogEndTime"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	LogType              string           `position:"Query" name:"LogType"`
+	LogStartTime         string           `position:"Query" name:"LogStartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	LogEndTime           string           `position:"Query" name:"LogEndTime"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 type DescribeRealtimeLogsResponse struct {

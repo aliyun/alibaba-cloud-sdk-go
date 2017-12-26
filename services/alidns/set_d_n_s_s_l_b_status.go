@@ -64,10 +64,10 @@ func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusReques
 
 type SetDNSSLBStatusRequest struct {
 	*requests.RpcRequest
-	Open         string `position:"Query" name:"Open"`
-	SubDomain    string `position:"Query" name:"SubDomain"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	Open         requests.Boolean `position:"Query" name:"Open"`
+	SubDomain    string           `position:"Query" name:"SubDomain"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type SetDNSSLBStatusResponse struct {

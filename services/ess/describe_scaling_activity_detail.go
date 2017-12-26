@@ -64,10 +64,10 @@ func (client *Client) DescribeScalingActivityDetailWithCallback(request *Describ
 
 type DescribeScalingActivityDetailRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ScalingActivityId    string `position:"Query" name:"ScalingActivityId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingActivityId    string           `position:"Query" name:"ScalingActivityId"`
 }
 
 type DescribeScalingActivityDetailResponse struct {

@@ -64,11 +64,11 @@ func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSS
 
 type DescribeDNSSLBSubDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	DomainName   string `position:"Query" name:"DomainName"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDNSSLBSubDomainsResponse struct {

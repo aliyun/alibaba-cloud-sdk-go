@@ -64,18 +64,18 @@ func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTa
 
 type CreateScheduledTaskRequest struct {
 	*requests.RpcRequest
-	RecurrenceEndTime    string `position:"Query" name:"RecurrenceEndTime"`
-	LaunchTime           string `position:"Query" name:"LaunchTime"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	RecurrenceValue      string `position:"Query" name:"RecurrenceValue"`
-	LaunchExpirationTime string `position:"Query" name:"LaunchExpirationTime"`
-	RecurrenceType       string `position:"Query" name:"RecurrenceType"`
-	TaskEnabled          string `position:"Query" name:"TaskEnabled"`
-	ScheduledTaskName    string `position:"Query" name:"ScheduledTaskName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	ScheduledAction      string `position:"Query" name:"ScheduledAction"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	LaunchTime           string           `position:"Query" name:"LaunchTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
+	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateScheduledTaskResponse struct {

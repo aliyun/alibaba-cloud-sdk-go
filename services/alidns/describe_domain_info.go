@@ -64,10 +64,10 @@ func (client *Client) DescribeDomainInfoWithCallback(request *DescribeDomainInfo
 
 type DescribeDomainInfoRequest struct {
 	*requests.RpcRequest
-	NeedDetailAttributes string `position:"Query" name:"NeedDetailAttributes"`
-	DomainName           string `position:"Query" name:"DomainName"`
-	UserClientIp         string `position:"Query" name:"UserClientIp"`
-	Lang                 string `position:"Query" name:"Lang"`
+	NeedDetailAttributes requests.Boolean `position:"Query" name:"NeedDetailAttributes"`
+	DomainName           string           `position:"Query" name:"DomainName"`
+	UserClientIp         string           `position:"Query" name:"UserClientIp"`
+	Lang                 string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainInfoResponse struct {

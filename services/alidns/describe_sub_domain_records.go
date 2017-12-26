@@ -64,12 +64,12 @@ func (client *Client) DescribeSubDomainRecordsWithCallback(request *DescribeSubD
 
 type DescribeSubDomainRecordsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	SubDomain    string `position:"Query" name:"SubDomain"`
-	Type         string `position:"Query" name:"Type"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	SubDomain    string           `position:"Query" name:"SubDomain"`
+	Type         string           `position:"Query" name:"Type"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeSubDomainRecordsResponse struct {

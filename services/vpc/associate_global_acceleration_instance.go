@@ -64,14 +64,14 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithCallback(request *A
 
 type AssociateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	GlobalAccelerationInstanceId string `position:"Query" name:"GlobalAccelerationInstanceId"`
-	BackendServerRegionId        string `position:"Query" name:"BackendServerRegionId"`
-	ResourceOwnerAccount         string `position:"Query" name:"ResourceOwnerAccount"`
-	BackendServerId              string `position:"Query" name:"BackendServerId"`
-	ResourceOwnerId              string `position:"Query" name:"ResourceOwnerId"`
-	BackendServerType            string `position:"Query" name:"BackendServerType"`
-	OwnerAccount                 string `position:"Query" name:"OwnerAccount"`
-	OwnerId                      string `position:"Query" name:"OwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	BackendServerRegionId        string           `position:"Query" name:"BackendServerRegionId"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	BackendServerId              string           `position:"Query" name:"BackendServerId"`
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BackendServerType            string           `position:"Query" name:"BackendServerType"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AssociateGlobalAccelerationInstanceResponse struct {

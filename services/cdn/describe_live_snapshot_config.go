@@ -64,14 +64,14 @@ func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLi
 
 type DescribeLiveSnapshotConfigRequest struct {
 	*requests.RpcRequest
-	PageSize      string `position:"Query" name:"PageSize"`
-	StreamName    string `position:"Query" name:"StreamName"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	Order         string `position:"Query" name:"Order"`
-	AppName       string `position:"Query" name:"AppName"`
-	PageNum       string `position:"Query" name:"PageNum"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Order         string           `position:"Query" name:"Order"`
+	AppName       string           `position:"Query" name:"AppName"`
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeLiveSnapshotConfigResponse struct {

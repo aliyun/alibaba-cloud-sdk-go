@@ -64,7 +64,7 @@ func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, cal
 
 type AccessKeyGetRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Query" name:"UserId"`
+	UserId requests.Integer `position:"Query" name:"UserId"`
 }
 
 type AccessKeyGetResponse struct {

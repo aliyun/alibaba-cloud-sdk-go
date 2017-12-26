@@ -64,16 +64,16 @@ func (client *Client) StartMixStreamsServiceWithCallback(request *StartMixStream
 
 type StartMixStreamsServiceRequest struct {
 	*requests.RpcRequest
-	MixStreamName  string `position:"Query" name:"MixStreamName"`
-	MixType        string `position:"Query" name:"MixType"`
-	MainDomainName string `position:"Query" name:"MainDomainName"`
-	MixTemplate    string `position:"Query" name:"MixTemplate"`
-	MixAppName     string `position:"Query" name:"MixAppName"`
-	MainStreamName string `position:"Query" name:"MainStreamName"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	MixDomainName  string `position:"Query" name:"MixDomainName"`
-	MainAppName    string `position:"Query" name:"MainAppName"`
+	MixStreamName  string           `position:"Query" name:"MixStreamName"`
+	MixType        string           `position:"Query" name:"MixType"`
+	MainDomainName string           `position:"Query" name:"MainDomainName"`
+	MixTemplate    string           `position:"Query" name:"MixTemplate"`
+	MixAppName     string           `position:"Query" name:"MixAppName"`
+	MainStreamName string           `position:"Query" name:"MainStreamName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	MixDomainName  string           `position:"Query" name:"MixDomainName"`
+	MainAppName    string           `position:"Query" name:"MainAppName"`
 }
 
 type StartMixStreamsServiceResponse struct {

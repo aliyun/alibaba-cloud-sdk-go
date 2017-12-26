@@ -64,10 +64,10 @@ func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTar
 
 type DescribeMountTargetsRequest struct {
 	*requests.RpcRequest
-	PageSize          string `position:"Query" name:"PageSize"`
-	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
-	PageNumber        string `position:"Query" name:"PageNumber"`
-	FileSystemId      string `position:"Query" name:"FileSystemId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	MountTargetDomain string           `position:"Query" name:"MountTargetDomain"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemId      string           `position:"Query" name:"FileSystemId"`
 }
 
 type DescribeMountTargetsResponse struct {

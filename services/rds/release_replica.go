@@ -64,12 +64,12 @@ func (client *Client) ReleaseReplicaWithCallback(request *ReleaseReplicaRequest,
 
 type ReleaseReplicaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReplicaId            string `position:"Query" name:"ReplicaId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
 type ReleaseReplicaResponse struct {

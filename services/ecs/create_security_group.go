@@ -64,24 +64,24 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SecurityGroupName    string `position:"Query" name:"SecurityGroupName"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.Key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.Key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Tag1Key              string `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string `position:"Query" name:"Tag.2.Key"`
-	Tag1Value            string `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string `position:"Query" name:"Tag.4.Value"`
-	VpcId                string `position:"Query" name:"VpcId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag3Value            string `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.Key"`
+	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 }
 
 type CreateSecurityGroupResponse struct {

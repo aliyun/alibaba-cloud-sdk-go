@@ -64,10 +64,10 @@ func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequ
 
 type RemoveFacePhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	FaceId    string    `position:"Query" name:"FaceId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type RemoveFacePhotosResponse struct {

@@ -64,13 +64,13 @@ func (client *Client) ListAlbumPhotosWithCallback(request *ListAlbumPhotosReques
 
 type ListAlbumPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	Direction string `position:"Query" name:"Direction"`
-	State     string `position:"Query" name:"State"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	AlbumId   string `position:"Query" name:"AlbumId"`
-	Size      string `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListAlbumPhotosResponse struct {

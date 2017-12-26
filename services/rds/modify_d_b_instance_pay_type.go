@@ -64,19 +64,19 @@ func (client *Client) ModifyDBInstancePayTypeWithCallback(request *ModifyDBInsta
 
 type ModifyDBInstancePayTypeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	UsedTime             string `position:"Query" name:"UsedTime"`
-	Resource             string `position:"Query" name:"Resource"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Period               string `position:"Query" name:"Period"`
-	AgentId              string `position:"Query" name:"AgentId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	PayType              string `position:"Query" name:"PayType"`
-	BusinessInfo         string `position:"Query" name:"BusinessInfo"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	UsedTime             requests.Integer `position:"Query" name:"UsedTime"`
+	Resource             string           `position:"Query" name:"Resource"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Period               string           `position:"Query" name:"Period"`
+	AgentId              string           `position:"Query" name:"AgentId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              string           `position:"Query" name:"AutoPay"`
+	PayType              string           `position:"Query" name:"PayType"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDBInstancePayTypeResponse struct {

@@ -64,17 +64,17 @@ func (client *Client) ModifyLoadBalancerPayTypeWithCallback(request *ModifyLoadB
 
 type ModifyLoadBalancerPayTypeRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Duration             string `position:"Query" name:"Duration"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              string `position:"Query" name:"AutoPay"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	PayType              string `position:"Query" name:"PayType"`
-	PricingCycle         string `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string `position:"Query" name:"LoadBalancerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	PayType              string           `position:"Query" name:"PayType"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 type ModifyLoadBalancerPayTypeResponse struct {

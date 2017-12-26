@@ -64,17 +64,17 @@ func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, c
 
 type BatchSendMailRequest struct {
 	*requests.RpcRequest
-	AddressType          string `position:"Query" name:"AddressType"`
-	TemplateName         string `position:"Query" name:"TemplateName"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ReplyAddressAlias    string `position:"Query" name:"ReplyAddressAlias"`
-	ClickTrace           string `position:"Query" name:"ClickTrace"`
-	ReceiversName        string `position:"Query" name:"ReceiversName"`
-	ReplyAddress         string `position:"Query" name:"ReplyAddress"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	AddressType          requests.Integer `position:"Query" name:"AddressType"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
+	ClickTrace           string           `position:"Query" name:"ClickTrace"`
+	ReceiversName        string           `position:"Query" name:"ReceiversName"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type BatchSendMailResponse struct {

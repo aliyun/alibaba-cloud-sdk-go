@@ -64,28 +64,28 @@ func (client *Client) DescribeDBInstancesByPerformanceWithCallback(request *Desc
 
 type DescribeDBInstancesByPerformanceRequest struct {
 	*requests.RpcRequest
-	Tags                 string `position:"Query" name:"Tags"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ProxyId              string `position:"Query" name:"proxyId"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	Tag5Key              string `position:"Query" name:"Tag.5.key"`
-	Tag5Value            string `position:"Query" name:"Tag.5.value"`
-	Tag3Key              string `position:"Query" name:"Tag.3.key"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Tag2Key              string `position:"Query" name:"Tag.2.key"`
-	Tag1Key              string `position:"Query" name:"Tag.1.key"`
-	SortKey              string `position:"Query" name:"SortKey"`
-	Tag1Value            string `position:"Query" name:"Tag.1.value"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string `position:"Query" name:"Tag.4.value"`
-	Tag3Value            string `position:"Query" name:"Tag.3.value"`
-	SortMethod           string `position:"Query" name:"SortMethod"`
-	Tag2Value            string `position:"Query" name:"Tag.2.value"`
-	Tag4Key              string `position:"Query" name:"Tag.4.key"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	SortKey              string           `position:"Query" name:"SortKey"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	SortMethod           string           `position:"Query" name:"SortMethod"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
 }
 
 type DescribeDBInstancesByPerformanceResponse struct {

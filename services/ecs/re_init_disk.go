@@ -64,15 +64,15 @@ func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callbac
 
 type ReInitDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount        string `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityEnhancementStrategy string `position:"Query" name:"SecurityEnhancementStrategy"`
-	DiskId                      string `position:"Query" name:"DiskId"`
-	KeyPairName                 string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId             string `position:"Query" name:"ResourceOwnerId"`
-	AutoStartInstance           string `position:"Query" name:"AutoStartInstance"`
-	OwnerAccount                string `position:"Query" name:"OwnerAccount"`
-	OwnerId                     string `position:"Query" name:"OwnerId"`
-	Password                    string `position:"Query" name:"Password"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
+	DiskId                      string           `position:"Query" name:"DiskId"`
+	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoStartInstance           requests.Boolean `position:"Query" name:"AutoStartInstance"`
+	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Password                    string           `position:"Query" name:"Password"`
 }
 
 type ReInitDiskResponse struct {

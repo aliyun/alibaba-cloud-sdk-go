@@ -64,14 +64,14 @@ func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamT
 
 type AddLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	Template      string `position:"Query" name:"Template"`
-	App           string `position:"Query" name:"App"`
-	Record        string `position:"Query" name:"Record"`
-	Snapshot      string `position:"Query" name:"Snapshot"`
-	Domain        string `position:"Query" name:"Domain"`
-	OwnerAccount  string `position:"Query" name:"OwnerAccount"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Template      string           `position:"Query" name:"Template"`
+	App           string           `position:"Query" name:"App"`
+	Record        string           `position:"Query" name:"Record"`
+	Snapshot      string           `position:"Query" name:"Snapshot"`
+	Domain        string           `position:"Query" name:"Domain"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type AddLiveStreamTranscodeResponse struct {

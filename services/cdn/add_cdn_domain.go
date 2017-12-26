@@ -64,21 +64,21 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
-	Region          string `position:"Query" name:"Region"`
-	CheckUrl        string `position:"Query" name:"CheckUrl"`
-	TopLevelDomain  string `position:"Query" name:"TopLevelDomain"`
-	Scope           string `position:"Query" name:"Scope"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
-	Sources         string `position:"Query" name:"Sources"`
-	SourcePort      string `position:"Query" name:"SourcePort"`
-	Priorities      string `position:"Query" name:"Priorities"`
-	DomainName      string `position:"Query" name:"DomainName"`
-	LiveType        string `position:"Query" name:"LiveType"`
-	CdnType         string `position:"Query" name:"CdnType"`
-	OwnerAccount    string `position:"Query" name:"OwnerAccount"`
-	SourceType      string `position:"Query" name:"SourceType"`
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	Region          string           `position:"Query" name:"Region"`
+	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	Scope           string           `position:"Query" name:"Scope"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	Sources         string           `position:"Query" name:"Sources"`
+	SourcePort      requests.Integer `position:"Query" name:"SourcePort"`
+	Priorities      string           `position:"Query" name:"Priorities"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	LiveType        string           `position:"Query" name:"LiveType"`
+	CdnType         string           `position:"Query" name:"CdnType"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
+	SourceType      string           `position:"Query" name:"SourceType"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 type AddCdnDomainResponse struct {

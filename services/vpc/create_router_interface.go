@@ -64,27 +64,27 @@ func (client *Client) CreateRouterInterfaceWithCallback(request *CreateRouterInt
 
 type CreateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	Spec                     string `position:"Query" name:"Spec"`
-	OppositeRegionId         string `position:"Query" name:"OppositeRegionId"`
-	HealthCheckTargetIp      string `position:"Query" name:"HealthCheckTargetIp"`
-	ClientToken              string `position:"Query" name:"ClientToken"`
-	OppositeInterfaceOwnerId string `position:"Query" name:"OppositeInterfaceOwnerId"`
-	OppositeRouterId         string `position:"Query" name:"OppositeRouterId"`
-	UserCidr                 string `position:"Query" name:"UserCidr"`
-	AccessPointId            string `position:"Query" name:"AccessPointId"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	HealthCheckSourceIp      string `position:"Query" name:"HealthCheckSourceIp"`
-	OppositeRouterType       string `position:"Query" name:"OppositeRouterType"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	Description              string `position:"Query" name:"Description"`
-	Name                     string `position:"Query" name:"Name"`
-	RouterId                 string `position:"Query" name:"RouterId"`
-	OppositeInterfaceId      string `position:"Query" name:"OppositeInterfaceId"`
-	Role                     string `position:"Query" name:"Role"`
-	RouterType               string `position:"Query" name:"RouterType"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount             string `position:"Query" name:"OwnerAccount"`
-	OppositeAccessPointId    string `position:"Query" name:"OppositeAccessPointId"`
+	Spec                     string           `position:"Query" name:"Spec"`
+	OppositeRegionId         string           `position:"Query" name:"OppositeRegionId"`
+	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
+	OppositeInterfaceOwnerId string           `position:"Query" name:"OppositeInterfaceOwnerId"`
+	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
+	UserCidr                 string           `position:"Query" name:"UserCidr"`
+	AccessPointId            string           `position:"Query" name:"AccessPointId"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
+	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description              string           `position:"Query" name:"Description"`
+	Name                     string           `position:"Query" name:"Name"`
+	RouterId                 string           `position:"Query" name:"RouterId"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	Role                     string           `position:"Query" name:"Role"`
+	RouterType               string           `position:"Query" name:"RouterType"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OppositeAccessPointId    string           `position:"Query" name:"OppositeAccessPointId"`
 }
 
 type CreateRouterInterfaceResponse struct {

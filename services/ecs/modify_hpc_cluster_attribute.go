@@ -64,14 +64,14 @@ func (client *Client) ModifyHpcClusterAttributeWithCallback(request *ModifyHpcCl
 
 type ModifyHpcClusterAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Name                 string `position:"Query" name:"Name"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	HpcClusterId         string `position:"Query" name:"HpcClusterId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HpcClusterId         string           `position:"Query" name:"HpcClusterId"`
 }
 
 type ModifyHpcClusterAttributeResponse struct {

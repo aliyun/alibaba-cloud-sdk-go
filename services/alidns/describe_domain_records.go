@@ -64,17 +64,17 @@ func (client *Client) DescribeDomainRecordsWithCallback(request *DescribeDomainR
 
 type DescribeDomainRecordsRequest struct {
 	*requests.RpcRequest
-	PageSize     string `position:"Query" name:"PageSize"`
-	DomainName   string `position:"Query" name:"DomainName"`
-	ValueKeyWord string `position:"Query" name:"ValueKeyWord"`
-	PageNumber   string `position:"Query" name:"PageNumber"`
-	Direction    string `position:"Query" name:"Direction"`
-	KeyWord      string `position:"Query" name:"KeyWord"`
-	OrderBy      string `position:"Query" name:"OrderBy"`
-	TypeKeyWord  string `position:"Query" name:"TypeKeyWord"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	RRKeyWord    string `position:"Query" name:"RRKeyWord"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	ValueKeyWord string           `position:"Query" name:"ValueKeyWord"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	Direction    string           `position:"Query" name:"Direction"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	OrderBy      string           `position:"Query" name:"OrderBy"`
+	TypeKeyWord  string           `position:"Query" name:"TypeKeyWord"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	RRKeyWord    string           `position:"Query" name:"RRKeyWord"`
 }
 
 type DescribeDomainRecordsResponse struct {

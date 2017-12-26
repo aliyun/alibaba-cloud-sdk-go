@@ -64,16 +64,16 @@ func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, cal
 
 type RunInstancesRequest struct {
 	*requests.RpcRequest
-	SpotPriceLimit              string                          `position:"Query" name:"SpotPriceLimit"`
+	SpotPriceLimit              requests.Float                  `position:"Query" name:"SpotPriceLimit"`
 	SystemDiskCategory          string                          `position:"Query" name:"SystemDisk.Category"`
 	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
 	ZoneId                      string                          `position:"Query" name:"ZoneId"`
 	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	Password                    string                          `position:"Query" name:"Password"`
 	InstanceType                string                          `position:"Query" name:"InstanceType"`
-	Amount                      string                          `position:"Query" name:"Amount"`
+	Amount                      requests.Integer                `position:"Query" name:"Amount"`
 	Description                 string                          `position:"Query" name:"Description"`
-	ResourceOwnerId             string                          `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId             requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                string                          `position:"Query" name:"OwnerAccount"`
 	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
 	ClientToken                 string                          `position:"Query" name:"ClientToken"`
@@ -81,7 +81,7 @@ type RunInstancesRequest struct {
 	SecurityGroupId             string                          `position:"Query" name:"SecurityGroupId"`
 	HostName                    string                          `position:"Query" name:"HostName"`
 	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
-	OwnerId                     string                          `position:"Query" name:"OwnerId"`
+	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
 	SystemDiskDiskName          string                          `position:"Query" name:"SystemDisk.DiskName"`
 	IoOptimized                 string                          `position:"Query" name:"IoOptimized"`
 	InstanceName                string                          `position:"Query" name:"InstanceName"`
@@ -91,11 +91,11 @@ type RunInstancesRequest struct {
 	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
 	SystemDiskSize              string                          `position:"Query" name:"SystemDisk.Size"`
 	DataDisk                    *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
-	InternetMaxBandwidthOut     string                          `position:"Query" name:"InternetMaxBandwidthOut"`
+	InternetMaxBandwidthOut     requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
 	AutoReleaseTime             string                          `position:"Query" name:"AutoReleaseTime"`
 	ImageId                     string                          `position:"Query" name:"ImageId"`
 	RamRoleName                 string                          `position:"Query" name:"RamRoleName"`
-	InternetMaxBandwidthIn      string                          `position:"Query" name:"InternetMaxBandwidthIn"`
+	InternetMaxBandwidthIn      requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
 	SystemDiskDescription       string                          `position:"Query" name:"SystemDisk.Description"`
 }
 

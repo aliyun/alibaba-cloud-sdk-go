@@ -64,11 +64,11 @@ func (client *Client) DescribeDomainTopUrlVisitWithCallback(request *DescribeDom
 
 type DescribeDomainTopUrlVisitRequest struct {
 	*requests.RpcRequest
-	SortBy        string `position:"Query" name:"SortBy"`
-	StartTime     string `position:"Query" name:"StartTime"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	SortBy        string           `position:"Query" name:"SortBy"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainTopUrlVisitResponse struct {

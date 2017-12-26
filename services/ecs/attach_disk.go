@@ -64,14 +64,14 @@ func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callbac
 
 type AttachDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Device               string `position:"Query" name:"Device"`
-	DiskId               string `position:"Query" name:"DiskId"`
-	DeleteWithInstance   string `position:"Query" name:"DeleteWithInstance"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Device               string           `position:"Query" name:"Device"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type AttachDiskResponse struct {

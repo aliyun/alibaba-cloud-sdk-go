@@ -64,13 +64,13 @@ func (client *Client) CreateNqaWithCallback(request *CreateNqaRequest, callback 
 
 type CreateNqaRequest struct {
 	*requests.RpcRequest
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	DestinationIp        string `position:"Query" name:"DestinationIp"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string `position:"Query" name:"RouterId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DestinationIp        string           `position:"Query" name:"DestinationIp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateNqaResponse struct {

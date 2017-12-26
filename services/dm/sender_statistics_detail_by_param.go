@@ -64,17 +64,17 @@ func (client *Client) SenderStatisticsDetailByParamWithCallback(request *SenderS
 
 type SenderStatisticsDetailByParamRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	NextStart            string `position:"Query" name:"NextStart"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	AccountName          string `position:"Query" name:"AccountName"`
-	ToAddress            string `position:"Query" name:"ToAddress"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string `position:"Query" name:"Status"`
-	Length               string `position:"Query" name:"Length"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	TagName              string `position:"Query" name:"TagName"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	NextStart            string           `position:"Query" name:"NextStart"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	ToAddress            string           `position:"Query" name:"ToAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Status               requests.Integer `position:"Query" name:"Status"`
+	Length               requests.Integer `position:"Query" name:"Length"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type SenderStatisticsDetailByParamResponse struct {

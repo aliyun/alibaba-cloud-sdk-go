@@ -64,11 +64,11 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PublicKeyBody        string `position:"Query" name:"PublicKeyBody"`
-	KeyPairName          string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ImportKeyPairResponse struct {

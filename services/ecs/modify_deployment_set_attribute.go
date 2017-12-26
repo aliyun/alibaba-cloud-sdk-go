@@ -64,13 +64,13 @@ func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDe
 
 type ModifyDeploymentSetAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	DeploymentSetName    string `position:"Query" name:"DeploymentSetName"`
-	DeploymentSetId      string `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDeploymentSetAttributeResponse struct {

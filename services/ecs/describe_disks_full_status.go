@@ -64,19 +64,19 @@ func (client *Client) DescribeDisksFullStatusWithCallback(request *DescribeDisks
 
 type DescribeDisksFullStatusRequest struct {
 	*requests.RpcRequest
-	PageSize             string    `position:"Query" name:"PageSize"`
-	EventTimeEnd         string    `position:"Query" name:"EventTime.End"`
-	EventId              *[]string `position:"Query" name:"EventId"  type:"Repeated"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	HealthStatus         string    `position:"Query" name:"HealthStatus"`
-	EventTimeStart       string    `position:"Query" name:"EventTime.Start"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
-	PageNumber           string    `position:"Query" name:"PageNumber"`
-	Status               string    `position:"Query" name:"Status"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	DiskId               *[]string `position:"Query" name:"DiskId"  type:"Repeated"`
-	EventType            string    `position:"Query" name:"EventType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	EventTimeEnd         string           `position:"Query" name:"EventTime.End"`
+	EventId              *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	HealthStatus         string           `position:"Query" name:"HealthStatus"`
+	EventTimeStart       string           `position:"Query" name:"EventTime.Start"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Status               string           `position:"Query" name:"Status"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DiskId               *[]string        `position:"Query" name:"DiskId"  type:"Repeated"`
+	EventType            string           `position:"Query" name:"EventType"`
 }
 
 type DescribeDisksFullStatusResponse struct {

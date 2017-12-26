@@ -64,9 +64,9 @@ func (client *Client) SetQuotaWithCallback(request *SetQuotaRequest, callback fu
 
 type SetQuotaRequest struct {
 	*requests.RpcRequest
-	TotalQuota string `position:"Query" name:"TotalQuota"`
-	LibraryId  string `position:"Query" name:"LibraryId"`
-	StoreName  string `position:"Query" name:"StoreName"`
+	TotalQuota requests.Integer `position:"Query" name:"TotalQuota"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
+	StoreName  string           `position:"Query" name:"StoreName"`
 }
 
 type SetQuotaResponse struct {

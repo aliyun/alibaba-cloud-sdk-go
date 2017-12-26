@@ -64,18 +64,18 @@ func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImp
 
 type DescibeImportsFromDatabaseRequest struct {
 	*requests.RpcRequest
-	EndTime              string `position:"Query" name:"EndTime"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ImportId             string `position:"Query" name:"ImportId"`
-	StartTime            string `position:"Query" name:"StartTime"`
-	ClientToken          string `position:"Query" name:"ClientToken"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	Engine               string `position:"Query" name:"Engine"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ImportId             requests.Integer `position:"Query" name:"ImportId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Engine               string           `position:"Query" name:"Engine"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescibeImportsFromDatabaseResponse struct {

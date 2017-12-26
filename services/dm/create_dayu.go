@@ -64,10 +64,10 @@ func (client *Client) CreateDayuWithCallback(request *CreateDayuRequest, callbac
 
 type CreateDayuRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccountType          string `position:"Query" name:"AccountType"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccountType          requests.Integer `position:"Query" name:"AccountType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CreateDayuResponse struct {

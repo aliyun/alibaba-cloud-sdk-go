@@ -64,8 +64,8 @@ func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAcc
 
 type DescribeAccountAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeAccountAttributesResponse struct {

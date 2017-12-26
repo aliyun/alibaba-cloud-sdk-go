@@ -64,16 +64,16 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId             string `position:"Query" name:"DBInstanceId"`
-	PreferredBackupPeriod    string `position:"Query" name:"PreferredBackupPeriod"`
-	BackupRetentionPeriod    string `position:"Query" name:"BackupRetentionPeriod"`
-	ResourceOwnerAccount     string `position:"Query" name:"ResourceOwnerAccount"`
-	PreferredBackupTime      string `position:"Query" name:"PreferredBackupTime"`
-	ResourceOwnerId          string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount             string `position:"Query" name:"OwnerAccount"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	LogBackupRetentionPeriod string `position:"Query" name:"LogBackupRetentionPeriod"`
-	BackupLog                string `position:"Query" name:"BackupLog"`
+	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	PreferredBackupPeriod    string           `position:"Query" name:"PreferredBackupPeriod"`
+	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	BackupLog                string           `position:"Query" name:"BackupLog"`
 }
 
 type ModifyBackupPolicyResponse struct {

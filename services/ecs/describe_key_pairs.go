@@ -64,13 +64,13 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	KeyPairFingerPrint   string `position:"Query" name:"KeyPairFingerPrint"`
-	KeyPairName          string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	KeyPairFingerPrint   string           `position:"Query" name:"KeyPairFingerPrint"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeKeyPairsResponse struct {

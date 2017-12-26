@@ -64,28 +64,28 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
-	PageSize              string `position:"Query" name:"PageSize"`
-	AddressType           string `position:"Query" name:"AddressType"`
-	MasterZoneId          string `position:"Query" name:"MasterZoneId"`
-	NetworkType           string `position:"Query" name:"NetworkType"`
-	SlaveZoneId           string `position:"Query" name:"SlaveZoneId"`
-	ServerIntranetAddress string `position:"Query" name:"ServerIntranetAddress"`
-	LoadBalancerName      string `position:"Query" name:"LoadBalancerName"`
-	ResourceOwnerAccount  string `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string `position:"Query" name:"PayType"`
-	ResourceOwnerId       string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string `position:"Query" name:"OwnerAccount"`
-	Tags                  string `position:"Query" name:"Tags"`
-	VSwitchId             string `position:"Query" name:"VSwitchId"`
-	InternetChargeType    string `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
-	PageNumber            string `position:"Query" name:"PageNumber"`
-	OwnerId               string `position:"Query" name:"OwnerId"`
-	ServerId              string `position:"Query" name:"ServerId"`
-	Address               string `position:"Query" name:"Address"`
-	AccessKeyId           string `position:"Query" name:"access_key_id"`
-	LoadBalancerId        string `position:"Query" name:"LoadBalancerId"`
-	VpcId                 string `position:"Query" name:"VpcId"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	AddressType           string           `position:"Query" name:"AddressType"`
+	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
+	NetworkType           string           `position:"Query" name:"NetworkType"`
+	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
+	ServerIntranetAddress string           `position:"Query" name:"ServerIntranetAddress"`
+	LoadBalancerName      string           `position:"Query" name:"LoadBalancerName"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	PayType               string           `position:"Query" name:"PayType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	InternetChargeType    string           `position:"Query" name:"InternetChargeType"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ServerId              string           `position:"Query" name:"ServerId"`
+	Address               string           `position:"Query" name:"Address"`
+	AccessKeyId           string           `position:"Query" name:"access_key_id"`
+	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
 }
 
 type DescribeLoadBalancersResponse struct {

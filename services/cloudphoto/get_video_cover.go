@@ -64,10 +64,10 @@ func (client *Client) GetVideoCoverWithCallback(request *GetVideoCoverRequest, c
 
 type GetVideoCoverRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	ZoomType  string `position:"Query" name:"ZoomType"`
-	PhotoId   string `position:"Query" name:"PhotoId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	ZoomType  string           `position:"Query" name:"ZoomType"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type GetVideoCoverResponse struct {

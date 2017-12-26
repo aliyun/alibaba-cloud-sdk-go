@@ -64,14 +64,14 @@ func (client *Client) CreateMigrateTaskForSQLServerWithCallback(request *CreateM
 
 type CreateMigrateTaskForSQLServerRequest struct {
 	*requests.RpcRequest
-	TaskType             string `position:"Query" name:"TaskType"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string `position:"Query" name:"DBName"`
-	OSSUrls              string `position:"Query" name:"OSSUrls"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	IsOnlineDB           string `position:"Query" name:"IsOnlineDB"`
+	TaskType             string           `position:"Query" name:"TaskType"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBName               string           `position:"Query" name:"DBName"`
+	OSSUrls              string           `position:"Query" name:"OSSUrls"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IsOnlineDB           string           `position:"Query" name:"IsOnlineDB"`
 }
 
 type CreateMigrateTaskForSQLServerResponse struct {

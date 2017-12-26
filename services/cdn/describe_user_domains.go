@@ -64,19 +64,19 @@ func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomai
 
 type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize         string `position:"Query" name:"PageSize"`
-	CheckDomainShow  string `position:"Query" name:"CheckDomainShow"`
-	DomainName       string `position:"Query" name:"DomainName"`
-	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-	PageNumber       string `position:"Query" name:"PageNumber"`
-	DomainSearchType string `position:"Query" name:"DomainSearchType"`
-	CdnType          string `position:"Query" name:"CdnType"`
-	FuncId           string `position:"Query" name:"FuncId"`
-	OwnerId          string `position:"Query" name:"OwnerId"`
-	SecurityToken    string `position:"Query" name:"SecurityToken"`
-	Sources          string `position:"Query" name:"Sources"`
-	DomainStatus     string `position:"Query" name:"DomainStatus"`
-	FuncFilter       string `position:"Query" name:"FuncFilter"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	CdnType          string           `position:"Query" name:"CdnType"`
+	FuncId           string           `position:"Query" name:"FuncId"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	Sources          string           `position:"Query" name:"Sources"`
+	DomainStatus     string           `position:"Query" name:"DomainStatus"`
+	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 }
 
 type DescribeUserDomainsResponse struct {

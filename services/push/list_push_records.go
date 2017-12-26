@@ -64,12 +64,12 @@ func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsReques
 
 type ListPushRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
-	PageSize  string `position:"Query" name:"PageSize"`
-	StartTime string `position:"Query" name:"StartTime"`
-	Page      string `position:"Query" name:"Page"`
-	AppKey    string `position:"Query" name:"AppKey"`
-	PushType  string `position:"Query" name:"PushType"`
+	EndTime   string           `position:"Query" name:"EndTime"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	StartTime string           `position:"Query" name:"StartTime"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	PushType  string           `position:"Query" name:"PushType"`
 }
 
 type ListPushRecordsResponse struct {

@@ -64,13 +64,13 @@ func (client *Client) ListMomentPhotosWithCallback(request *ListMomentPhotosRequ
 
 type ListMomentPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string `position:"Query" name:"Cursor"`
-	Direction string `position:"Query" name:"Direction"`
-	State     string `position:"Query" name:"State"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	MomentId  string `position:"Query" name:"MomentId"`
-	Size      string `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	MomentId  requests.Integer `position:"Query" name:"MomentId"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListMomentPhotosResponse struct {

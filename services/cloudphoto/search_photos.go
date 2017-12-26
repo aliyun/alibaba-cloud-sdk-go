@@ -64,11 +64,11 @@ func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, cal
 
 type SearchPhotosRequest struct {
 	*requests.RpcRequest
-	Page      string `position:"Query" name:"Page"`
-	Keyword   string `position:"Query" name:"Keyword"`
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Size      string `position:"Query" name:"Size"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	Keyword   string           `position:"Query" name:"Keyword"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type SearchPhotosResponse struct {

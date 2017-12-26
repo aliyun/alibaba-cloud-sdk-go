@@ -64,7 +64,7 @@ func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSess
 
 type GenerateSessionAccessKeyRequest struct {
 	*requests.RpcRequest
-	DurationSeconds string `position:"Query" name:"DurationSeconds"`
+	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
 }
 
 type GenerateSessionAccessKeyResponse struct {

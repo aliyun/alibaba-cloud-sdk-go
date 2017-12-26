@@ -64,7 +64,7 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	SpotPriceLimit              string                    `position:"Query" name:"SpotPriceLimit"`
+	SpotPriceLimit              requests.Float            `position:"Query" name:"SpotPriceLimit"`
 	SystemDiskCategory          string                    `position:"Query" name:"SystemDisk.Category"`
 	SpotStrategy                string                    `position:"Query" name:"SpotStrategy"`
 	ZoneId                      string                    `position:"Query" name:"ZoneId"`
@@ -78,21 +78,21 @@ type CreateInstanceRequest struct {
 	Description                 string                    `position:"Query" name:"Description"`
 	Tag1Key                     string                    `position:"Query" name:"Tag.1.Key"`
 	Tag1Value                   string                    `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId             string                    `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId             requests.Integer          `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                string                    `position:"Query" name:"OwnerAccount"`
-	AutoRenewPeriod             string                    `position:"Query" name:"AutoRenewPeriod"`
+	AutoRenewPeriod             requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
 	VSwitchId                   string                    `position:"Query" name:"VSwitchId"`
 	ClientToken                 string                    `position:"Query" name:"ClientToken"`
 	InternetChargeType          string                    `position:"Query" name:"InternetChargeType"`
 	SecurityGroupId             string                    `position:"Query" name:"SecurityGroupId"`
 	HostName                    string                    `position:"Query" name:"HostName"`
 	KeyPairName                 string                    `position:"Query" name:"KeyPairName"`
-	OwnerId                     string                    `position:"Query" name:"OwnerId"`
+	OwnerId                     requests.Integer          `position:"Query" name:"OwnerId"`
 	SystemDiskDiskName          string                    `position:"Query" name:"SystemDisk.DiskName"`
-	Period                      string                    `position:"Query" name:"Period"`
+	Period                      requests.Integer          `position:"Query" name:"Period"`
 	Tag5Key                     string                    `position:"Query" name:"Tag.5.Key"`
 	IoOptimized                 string                    `position:"Query" name:"IoOptimized"`
-	UseAdditionalService        string                    `position:"Query" name:"UseAdditionalService"`
+	UseAdditionalService        requests.Boolean          `position:"Query" name:"UseAdditionalService"`
 	InstanceName                string                    `position:"Query" name:"InstanceName"`
 	Tag2Key                     string                    `position:"Query" name:"Tag.2.Key"`
 	Tag4Key                     string                    `position:"Query" name:"Tag.4.Key"`
@@ -100,18 +100,18 @@ type CreateInstanceRequest struct {
 	UserData                    string                    `position:"Query" name:"UserData"`
 	ResourceOwnerAccount        string                    `position:"Query" name:"ResourceOwnerAccount"`
 	NodeControllerId            string                    `position:"Query" name:"NodeControllerId"`
-	AutoRenew                   string                    `position:"Query" name:"AutoRenew"`
+	AutoRenew                   requests.Boolean          `position:"Query" name:"AutoRenew"`
 	Tag4Value                   string                    `position:"Query" name:"Tag.4.Value"`
-	SystemDiskSize              string                    `position:"Query" name:"SystemDisk.Size"`
+	SystemDiskSize              requests.Integer          `position:"Query" name:"SystemDisk.Size"`
 	DataDisk                    *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
-	InternetMaxBandwidthOut     string                    `position:"Query" name:"InternetMaxBandwidthOut"`
+	InternetMaxBandwidthOut     requests.Integer          `position:"Query" name:"InternetMaxBandwidthOut"`
 	PrivateIpAddress            string                    `position:"Query" name:"PrivateIpAddress"`
 	VlanId                      string                    `position:"Query" name:"VlanId"`
 	ResourceGroupId             string                    `position:"Query" name:"ResourceGroupId"`
 	ImageId                     string                    `position:"Query" name:"ImageId"`
 	HpcClusterId                string                    `position:"Query" name:"HpcClusterId"`
 	RamRoleName                 string                    `position:"Query" name:"RamRoleName"`
-	InternetMaxBandwidthIn      string                    `position:"Query" name:"InternetMaxBandwidthIn"`
+	InternetMaxBandwidthIn      requests.Integer          `position:"Query" name:"InternetMaxBandwidthIn"`
 	DeploymentSetId             string                    `position:"Query" name:"DeploymentSetId"`
 	SystemDiskDescription       string                    `position:"Query" name:"SystemDisk.Description"`
 	InstanceChargeType          string                    `position:"Query" name:"InstanceChargeType"`

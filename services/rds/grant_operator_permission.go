@@ -64,13 +64,13 @@ func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperator
 
 type GrantOperatorPermissionRequest struct {
 	*requests.RpcRequest
-	ExpiredTime          string `position:"Query" name:"ExpiredTime"`
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Privileges           string `position:"Query" name:"Privileges"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	ExpiredTime          string           `position:"Query" name:"ExpiredTime"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Privileges           string           `position:"Query" name:"Privileges"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type GrantOperatorPermissionResponse struct {

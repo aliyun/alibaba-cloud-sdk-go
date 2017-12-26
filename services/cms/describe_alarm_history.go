@@ -64,19 +64,19 @@ func (client *Client) DescribeAlarmHistoryWithCallback(request *DescribeAlarmHis
 
 type DescribeAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime    string `position:"Query" name:"EndTime"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	StartTime  string `position:"Query" name:"StartTime"`
-	Status     string `position:"Query" name:"Status"`
-	RuleName   string `position:"Query" name:"RuleName"`
-	State      string `position:"Query" name:"State"`
-	Namespace  string `position:"Query" name:"Namespace"`
-	MetricName string `position:"Query" name:"MetricName"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	Page       string `position:"Query" name:"Page"`
-	Ascending  string `position:"Query" name:"Ascending"`
-	GroupId    string `position:"Query" name:"GroupId"`
-	OnlyCount  string `position:"Query" name:"OnlyCount"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	Status     string           `position:"Query" name:"Status"`
+	RuleName   string           `position:"Query" name:"RuleName"`
+	State      string           `position:"Query" name:"State"`
+	Namespace  string           `position:"Query" name:"Namespace"`
+	MetricName string           `position:"Query" name:"MetricName"`
+	AlertName  string           `position:"Query" name:"AlertName"`
+	Page       requests.Integer `position:"Query" name:"Page"`
+	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	OnlyCount  requests.Boolean `position:"Query" name:"OnlyCount"`
 }
 
 type DescribeAlarmHistoryResponse struct {

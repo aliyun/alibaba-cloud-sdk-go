@@ -64,15 +64,15 @@ func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callb
 
 type AddPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Speed                string `position:"Query" name:"Speed"`
-	Name                 string `position:"Query" name:"Name"`
-	Role                 string `position:"Query" name:"Role"`
-	SpeedLevel           string `position:"Query" name:"SpeedLevel"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Speed                string           `position:"Query" name:"Speed"`
+	Name                 string           `position:"Query" name:"Name"`
+	Role                 string           `position:"Query" name:"Role"`
+	SpeedLevel           requests.Integer `position:"Query" name:"SpeedLevel"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddPipelineResponse struct {

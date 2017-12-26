@@ -64,13 +64,13 @@ func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDeta
 
 type QueryReceiverDetailRequest struct {
 	*requests.RpcRequest
-	NextStart            string `position:"Query" name:"NextStart"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ReceiverId           string `position:"Query" name:"ReceiverId"`
+	NextStart            string           `position:"Query" name:"NextStart"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReceiverId           string           `position:"Query" name:"ReceiverId"`
 }
 
 type QueryReceiverDetailResponse struct {

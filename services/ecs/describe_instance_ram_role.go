@@ -64,13 +64,13 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	PageSize             string `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string `position:"Query" name:"InstanceIds"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	RamRoleName          string `position:"Query" name:"RamRoleName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceRamRoleResponse struct {

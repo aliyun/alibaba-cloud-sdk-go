@@ -64,17 +64,17 @@ func (client *Client) CheckResourceWithCallback(request *CheckResourceRequest, c
 
 type CheckResourceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string `position:"Query" name:"DBInstanceId"`
-	Engine               string `position:"Query" name:"Engine"`
-	ZoneId               string `position:"Query" name:"ZoneId"`
-	DBInstanceUseType    string `position:"Query" name:"DBInstanceUseType"`
-	DBInstanceClass      string `position:"Query" name:"DBInstanceClass"`
-	SpecifyCount         string `position:"Query" name:"SpecifyCount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string `position:"Query" name:"EngineVersion"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Engine               string           `position:"Query" name:"Engine"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	DBInstanceUseType    string           `position:"Query" name:"DBInstanceUseType"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	SpecifyCount         string           `position:"Query" name:"SpecifyCount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 }
 
 type CheckResourceResponse struct {

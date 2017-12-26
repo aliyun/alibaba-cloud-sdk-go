@@ -64,9 +64,9 @@ func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest,
 
 type DescribeIpInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	IP            string `position:"Query" name:"IP"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	IP            string           `position:"Query" name:"IP"`
 }
 
 type DescribeIpInfoResponse struct {

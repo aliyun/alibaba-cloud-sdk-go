@@ -64,11 +64,11 @@ func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDe
 
 type DeleteReceiverDetailRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Email                string `position:"Query" name:"Email"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	ReceiverId           string `position:"Query" name:"ReceiverId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Email                string           `position:"Query" name:"Email"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReceiverId           string           `position:"Query" name:"ReceiverId"`
 }
 
 type DeleteReceiverDetailResponse struct {

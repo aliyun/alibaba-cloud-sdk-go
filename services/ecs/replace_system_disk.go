@@ -64,18 +64,18 @@ func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRe
 
 type ReplaceSystemDiskRequest struct {
 	*requests.RpcRequest
-	UseAdditionalService        string `position:"Query" name:"UseAdditionalService"`
-	ClientToken                 string `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount        string `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityEnhancementStrategy string `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                 string `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId             string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                string `position:"Query" name:"OwnerAccount"`
-	OwnerId                     string `position:"Query" name:"OwnerId"`
-	Password                    string `position:"Query" name:"Password"`
-	SystemDiskSize              string `position:"Query" name:"SystemDisk.Size"`
-	ImageId                     string `position:"Query" name:"ImageId"`
-	InstanceId                  string `position:"Query" name:"InstanceId"`
+	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
+	ClientToken                 string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
+	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Password                    string           `position:"Query" name:"Password"`
+	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	ImageId                     string           `position:"Query" name:"ImageId"`
+	InstanceId                  string           `position:"Query" name:"InstanceId"`
 }
 
 type ReplaceSystemDiskResponse struct {

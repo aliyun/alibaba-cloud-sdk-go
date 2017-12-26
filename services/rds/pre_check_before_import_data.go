@@ -64,18 +64,18 @@ func (client *Client) PreCheckBeforeImportDataWithCallback(request *PreCheckBefo
 
 type PreCheckBeforeImportDataRequest struct {
 	*requests.RpcRequest
-	DBInstanceId           string `position:"Query" name:"DBInstanceId"`
-	ImportDataType         string `position:"Query" name:"ImportDataType"`
-	ClientToken            string `position:"Query" name:"ClientToken"`
-	SourceDatabaseIp       string `position:"Query" name:"SourceDatabaseIp"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
-	SourceDatabaseUserName string `position:"Query" name:"SourceDatabaseUserName"`
-	ResourceOwnerAccount   string `position:"Query" name:"ResourceOwnerAccount"`
-	SourceDatabaseDBNames  string `position:"Query" name:"SourceDatabaseDBNames"`
-	ResourceOwnerId        string `position:"Query" name:"ResourceOwnerId"`
-	SourceDatabasePassword string `position:"Query" name:"SourceDatabasePassword"`
-	OwnerAccount           string `position:"Query" name:"OwnerAccount"`
-	SourceDatabasePort     string `position:"Query" name:"SourceDatabasePort"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ImportDataType         string           `position:"Query" name:"ImportDataType"`
+	ClientToken            string           `position:"Query" name:"ClientToken"`
+	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	SourceDatabasePort     string           `position:"Query" name:"SourceDatabasePort"`
 }
 
 type PreCheckBeforeImportDataResponse struct {

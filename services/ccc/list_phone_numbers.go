@@ -64,8 +64,8 @@ func (client *Client) ListPhoneNumbersWithCallback(request *ListPhoneNumbersRequ
 
 type ListPhoneNumbersRequest struct {
 	*requests.RpcRequest
-	OutboundOnly string `position:"Query" name:"OutboundOnly"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
+	OutboundOnly requests.Boolean `position:"Query" name:"OutboundOnly"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 type ListPhoneNumbersResponse struct {

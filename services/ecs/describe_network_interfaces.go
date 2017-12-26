@@ -64,19 +64,19 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	PageSize             string    `position:"Query" name:"PageSize"`
-	Type                 string    `position:"Query" name:"Type"`
-	NetworkInterfaceName string    `position:"Query" name:"NetworkInterfaceName"`
-	PrimaryIpAddress     string    `position:"Query" name:"PrimaryIpAddress"`
-	ResourceOwnerAccount string    `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string    `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string    `position:"Query" name:"OwnerAccount"`
-	VSwitchId            string    `position:"Query" name:"VSwitchId"`
-	PageNumber           string    `position:"Query" name:"PageNumber"`
-	SecurityGroupId      string    `position:"Query" name:"SecurityGroupId"`
-	OwnerId              string    `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   *[]string `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
-	InstanceId           string    `position:"Query" name:"InstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Type                 string           `position:"Query" name:"Type"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeNetworkInterfacesResponse struct {

@@ -64,13 +64,13 @@ func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificate
 
 type SetCACertificateNameRequest struct {
 	*requests.RpcRequest
-	CACertificateId      string `position:"Query" name:"CACertificateId"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string `position:"Query" name:"access_key_id"`
-	CACertificateName    string `position:"Query" name:"CACertificateName"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	CACertificateName    string           `position:"Query" name:"CACertificateName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SetCACertificateNameResponse struct {

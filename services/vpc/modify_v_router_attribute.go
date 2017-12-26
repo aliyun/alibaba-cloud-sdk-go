@@ -64,13 +64,13 @@ func (client *Client) ModifyVRouterAttributeWithCallback(request *ModifyVRouterA
 
 type ModifyVRouterAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	VRouterId            string `position:"Query" name:"VRouterId"`
-	Description          string `position:"Query" name:"Description"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
-	VRouterName          string `position:"Query" name:"VRouterName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VRouterId            string           `position:"Query" name:"VRouterId"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VRouterName          string           `position:"Query" name:"VRouterName"`
 }
 
 type ModifyVRouterAttributeResponse struct {

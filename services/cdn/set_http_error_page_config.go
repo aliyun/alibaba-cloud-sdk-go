@@ -64,11 +64,11 @@ func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPa
 
 type SetHttpErrorPageConfigRequest struct {
 	*requests.RpcRequest
-	PageUrl       string `position:"Query" name:"PageUrl"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	ErrorCode     string `position:"Query" name:"ErrorCode"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	PageUrl       string           `position:"Query" name:"PageUrl"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	ErrorCode     string           `position:"Query" name:"ErrorCode"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetHttpErrorPageConfigResponse struct {

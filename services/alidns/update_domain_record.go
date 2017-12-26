@@ -64,15 +64,15 @@ func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecord
 
 type UpdateDomainRecordRequest struct {
 	*requests.RpcRequest
-	Priority     string `position:"Query" name:"Priority"`
-	Value        string `position:"Query" name:"Value"`
-	RR           string `position:"Query" name:"RR"`
-	Line         string `position:"Query" name:"Line"`
-	TTL          string `position:"Query" name:"TTL"`
-	Type         string `position:"Query" name:"Type"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	RecordId     string `position:"Query" name:"RecordId"`
+	Priority     requests.Integer `position:"Query" name:"Priority"`
+	Value        string           `position:"Query" name:"Value"`
+	RR           string           `position:"Query" name:"RR"`
+	Line         string           `position:"Query" name:"Line"`
+	TTL          requests.Integer `position:"Query" name:"TTL"`
+	Type         string           `position:"Query" name:"Type"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	RecordId     string           `position:"Query" name:"RecordId"`
 }
 
 type UpdateDomainRecordResponse struct {
