@@ -14,8 +14,6 @@
 
 package errors
 
-import "fmt"
-
 const (
 	DefaultClientErrorStatus = 400
 	DefaultClientErrorCode   = "SDK.ClientError"
@@ -56,8 +54,9 @@ func NewClientError(errorCode, message string, originErr error) Error {
 func (err *ClientError) Error() string {
 	if err.originError != nil {
 		return err.originError.Error()
+	} else {
+		return ""
 	}
-	return fmt.Sprintf("[%s] %s", err.errorCode, err.message)
 }
 
 func (err *ClientError) OriginError() error {

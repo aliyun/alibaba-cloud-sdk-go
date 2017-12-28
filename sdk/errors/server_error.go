@@ -14,8 +14,6 @@
 
 package errors
 
-import "fmt"
-
 type ServerError struct {
 	httpStatus int
 	errorCode  string
@@ -43,7 +41,7 @@ func (err *ServerError) Message() string {
 }
 
 func (err *ServerError) Error() string {
-	return fmt.Sprintf("SDK.ServerError %s %s", err.errorCode, err.message)
+	return "SDK.ServerError"
 }
 
 func (err *ServerError) OriginError() error {

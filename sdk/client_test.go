@@ -116,10 +116,10 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	//err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
-	//if err != nil {
-	//	panic(err)
-	//}
+	err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
+	if err != nil {
+		panic(err)
+	}
 	err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
 	if err != nil {
 		panic(err)
@@ -492,4 +492,20 @@ func TestRpcGetForRoleArn(t *testing.T) {
 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
 
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+func TestCommonRoaRequestForAcceptXML(t *testing.T) {
+	roaRequest := requests.NewCommonRequest()
+	roaRequest.Product = "Acs"
+	roaRequest.Version = "2015-01-01"
+	roaRequest.ApiName = "GetGlobal"
+	roaRequest.PathPattern = "/"
+	roaRequest.Domain = "acs.aliyuncs.com"
+	roaRequest.AcceptFormat = "XML"
+
+	response, err := client.ProcessCommonRequest(roaRequest)
+
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
 }

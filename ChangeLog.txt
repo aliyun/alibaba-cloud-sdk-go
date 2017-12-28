@@ -1,3 +1,6 @@
+2017-12-29 Version: 0.6.8
+1, Allow the setting of AcceptFormat in the Request.
+
 2017-12-26 Version: 0.6.5
 1, Add video AI service interface.
 

@@ -94,7 +94,7 @@ type baseRequest struct {
 	version    string
 	actionName string
 
-	acceptFormat string
+	AcceptFormat string
 
 	QueryParams map[string]string
 	Headers     map[string]string
@@ -144,7 +144,7 @@ func (request *baseRequest) addFormParam(key, value string) {
 }
 
 func (request *baseRequest) GetAcceptFormat() string {
-	return request.acceptFormat
+	return request.AcceptFormat
 }
 
 func (request *baseRequest) GetLocationServiceCode() string {
@@ -199,7 +199,7 @@ func (request *baseRequest) GetContentType() (contentType string, contains bool)
 func defaultBaseRequest() (request *baseRequest) {
 	request = &baseRequest{
 		Scheme:       HTTP,
-		acceptFormat: "JSON",
+		AcceptFormat: "JSON",
 		Method:       GET,
 		QueryParams:  make(map[string]string),
 		Headers: map[string]string{
