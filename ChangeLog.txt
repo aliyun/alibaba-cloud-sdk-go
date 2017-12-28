@@ -1,3 +1,7 @@
+2017-12-29 Version: 0.7.0
+1, First release for Domain-intl.
+2, Add interfaces for domain name registration and management.
+
 2017-12-29 Version: 0.6.8
 1, Allow the setting of AcceptFormat in the Request.
 
