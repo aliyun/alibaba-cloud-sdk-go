@@ -73,32 +73,32 @@ type DescribeCdnDomainDetailResponse struct {
 	*responses.BaseResponse
 	RequestId            string `json:"RequestId" xml:"RequestId"`
 	GetDomainDetailModel struct {
-		GmtCreated              string           `json:"GmtCreated" xml:"GmtCreated"`
-		GmtModified             string           `json:"GmtModified" xml:"GmtModified"`
-		SourceType              string           `json:"SourceType" xml:"SourceType"`
-		DomainStatus            string           `json:"DomainStatus" xml:"DomainStatus"`
-		SourcePort              requests.Integer `json:"SourcePort" xml:"SourcePort"`
-		CdnType                 string           `json:"CdnType" xml:"CdnType"`
-		Cname                   string           `json:"Cname" xml:"Cname"`
-		HttpsCname              string           `json:"HttpsCname" xml:"HttpsCname"`
-		DomainName              string           `json:"DomainName" xml:"DomainName"`
-		Description             string           `json:"Description" xml:"Description"`
-		ServerCertificateStatus string           `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
-		ServerCertificate       string           `json:"ServerCertificate" xml:"ServerCertificate"`
-		Region                  string           `json:"Region" xml:"Region"`
-		Scope                   string           `json:"Scope" xml:"Scope"`
-		CertificateName         string           `json:"CertificateName" xml:"CertificateName"`
-		ResourceGroupId         string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+		GmtCreated              string `json:"GmtCreated" xml:"GmtCreated"`
+		GmtModified             string `json:"GmtModified" xml:"GmtModified"`
+		SourceType              string `json:"SourceType" xml:"SourceType"`
+		DomainStatus            string `json:"DomainStatus" xml:"DomainStatus"`
+		SourcePort              int    `json:"SourcePort" xml:"SourcePort"`
+		CdnType                 string `json:"CdnType" xml:"CdnType"`
+		Cname                   string `json:"Cname" xml:"Cname"`
+		HttpsCname              string `json:"HttpsCname" xml:"HttpsCname"`
+		DomainName              string `json:"DomainName" xml:"DomainName"`
+		Description             string `json:"Description" xml:"Description"`
+		ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
+		ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
+		Region                  string `json:"Region" xml:"Region"`
+		Scope                   string `json:"Scope" xml:"Scope"`
+		CertificateName         string `json:"CertificateName" xml:"CertificateName"`
+		ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 		Sources                 struct {
 			Source []string `json:"Source" xml:"Source"`
 		} `json:"Sources" xml:"Sources"`
 		SourceModels struct {
 			SourceModel []struct {
-				Content  string           `json:"Content" xml:"Content"`
-				Type     string           `json:"Type" xml:"Type"`
-				Port     requests.Integer `json:"Port" xml:"Port"`
-				Enabled  string           `json:"Enabled" xml:"Enabled"`
-				Priority string           `json:"Priority" xml:"Priority"`
+				Content  string `json:"Content" xml:"Content"`
+				Type     string `json:"Type" xml:"Type"`
+				Port     int    `json:"Port" xml:"Port"`
+				Enabled  string `json:"Enabled" xml:"Enabled"`
+				Priority string `json:"Priority" xml:"Priority"`
 			} `json:"SourceModel" xml:"SourceModel"`
 		} `json:"SourceModels" xml:"SourceModels"`
 	} `json:"GetDomainDetailModel" xml:"GetDomainDetailModel"`

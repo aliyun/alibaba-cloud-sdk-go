@@ -78,8 +78,8 @@ type DescribeLiveStreamBpsDataResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	BpsDatas  struct {
 		DomainBpsModel []struct {
-			Time string         `json:"Time" xml:"Time"`
-			Bps  requests.Float `json:"Bps" xml:"Bps"`
+			Time string  `json:"Time" xml:"Time"`
+			Bps  float64 `json:"Bps" xml:"Bps"`
 		} `json:"DomainBpsModel" xml:"DomainBpsModel"`
 	} `json:"BpsDatas" xml:"BpsDatas"`
 }

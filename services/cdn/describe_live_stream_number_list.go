@@ -78,8 +78,8 @@ type DescribeLiveStreamNumberListResponse struct {
 	DomainName        string `json:"DomainName" xml:"DomainName"`
 	StreamNumberInfos struct {
 		StreamNumberInfo []struct {
-			Number requests.Integer `json:"Number" xml:"Number"`
-			Time   string           `json:"Time" xml:"Time"`
+			Number int    `json:"Number" xml:"Number"`
+			Time   string `json:"Time" xml:"Time"`
 		} `json:"StreamNumberInfo" xml:"StreamNumberInfo"`
 	} `json:"StreamNumberInfos" xml:"StreamNumberInfos"`
 }

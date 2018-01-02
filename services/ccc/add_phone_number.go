@@ -72,21 +72,21 @@ type AddPhoneNumberRequest struct {
 
 type AddPhoneNumberResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	PhoneNumber    struct {
-		PhoneNumberId          string           `json:"PhoneNumberId" xml:"PhoneNumberId"`
-		InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
-		Number                 string           `json:"Number" xml:"Number"`
-		PhoneNumberDescription string           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-		TestOnly               requests.Boolean `json:"TestOnly" xml:"TestOnly"`
-		RemainingTime          requests.Integer `json:"RemainingTime" xml:"RemainingTime"`
-		AllowOutbound          requests.Boolean `json:"AllowOutbound" xml:"AllowOutbound"`
-		Usage                  string           `json:"Usage" xml:"Usage"`
-		Trunks                 requests.Integer `json:"Trunks" xml:"Trunks"`
+		PhoneNumberId          string `json:"PhoneNumberId" xml:"PhoneNumberId"`
+		InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+		Number                 string `json:"Number" xml:"Number"`
+		PhoneNumberDescription string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+		TestOnly               bool   `json:"TestOnly" xml:"TestOnly"`
+		RemainingTime          int    `json:"RemainingTime" xml:"RemainingTime"`
+		AllowOutbound          bool   `json:"AllowOutbound" xml:"AllowOutbound"`
+		Usage                  string `json:"Usage" xml:"Usage"`
+		Trunks                 int    `json:"Trunks" xml:"Trunks"`
 		ContactFlow            struct {
 			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
 			InstanceId             string `json:"InstanceId" xml:"InstanceId"`

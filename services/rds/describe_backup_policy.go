@@ -73,13 +73,13 @@ type DescribeBackupPolicyRequest struct {
 
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                string           `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPeriod    requests.Integer `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime  string           `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	PreferredBackupTime      string           `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	PreferredBackupPeriod    string           `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	BackupLog                string           `json:"BackupLog" xml:"BackupLog"`
-	LogBackupRetentionPeriod requests.Integer `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	BackupRetentionPeriod    int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime  string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	PreferredBackupTime      string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	PreferredBackupPeriod    string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	BackupLog                string `json:"BackupLog" xml:"BackupLog"`
+	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
 }
 
 func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) {

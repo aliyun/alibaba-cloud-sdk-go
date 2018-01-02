@@ -82,10 +82,10 @@ type DescribeInstanceHistoryEventsRequest struct {
 
 type DescribeInstanceHistoryEventsResponse struct {
 	*responses.BaseResponse
-	RequestId              string           `json:"RequestId" xml:"RequestId"`
-	TotalCount             requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber             requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize               requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	TotalCount             int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber             int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize               int    `json:"PageSize" xml:"PageSize"`
 	InstanceSystemEventSet struct {
 		InstanceSystemEventType []struct {
 			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
@@ -93,8 +93,8 @@ type DescribeInstanceHistoryEventsResponse struct {
 			EventPublishTime string `json:"EventPublishTime" xml:"EventPublishTime"`
 			NotBefore        string `json:"NotBefore" xml:"NotBefore"`
 			EventType        struct {
-				Code requests.Integer `json:"Code" xml:"Code"`
-				Name string           `json:"Name" xml:"Name"`
+				Code int    `json:"Code" xml:"Code"`
+				Name string `json:"Name" xml:"Name"`
 			} `json:"EventType" xml:"EventType"`
 		} `json:"InstanceSystemEventType" xml:"InstanceSystemEventType"`
 	} `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`

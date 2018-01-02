@@ -69,12 +69,13 @@ type ProfileGetRequest struct {
 
 type ProfileGetResponse struct {
 	*responses.BaseResponse
-	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      requests.Boolean `json:"Success" xml:"Success"`
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	UserId       requests.Integer `json:"UserId" xml:"UserId"`
-	AutoInstall  requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
+	ErrorCode                int    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage             string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success                  bool   `json:"Success" xml:"Success"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	UserId                   int    `json:"UserId" xml:"UserId"`
+	AutoInstall              bool   `json:"AutoInstall" xml:"AutoInstall"`
+	EnableInstallAgentNewECS bool   `json:"EnableInstallAgentNewECS" xml:"EnableInstallAgentNewECS"`
 }
 
 func CreateProfileGetRequest() (request *ProfileGetRequest) {

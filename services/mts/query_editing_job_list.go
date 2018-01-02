@@ -79,14 +79,14 @@ type QueryEditingJobListResponse struct {
 	} `json:"NonExistJobIds" xml:"NonExistJobIds"`
 	JobList struct {
 		Job []struct {
-			JobId         string           `json:"JobId" xml:"JobId"`
-			State         string           `json:"State" xml:"State"`
-			Code          string           `json:"Code" xml:"Code"`
-			Message       string           `json:"Message" xml:"Message"`
-			Percent       requests.Integer `json:"Percent" xml:"Percent"`
-			PipelineId    string           `json:"PipelineId" xml:"PipelineId"`
-			CreationTime  string           `json:"CreationTime" xml:"CreationTime"`
-			FinishTime    string           `json:"FinishTime" xml:"FinishTime"`
+			JobId         string `json:"JobId" xml:"JobId"`
+			State         string `json:"State" xml:"State"`
+			Code          string `json:"Code" xml:"Code"`
+			Message       string `json:"Message" xml:"Message"`
+			Percent       int    `json:"Percent" xml:"Percent"`
+			PipelineId    string `json:"PipelineId" xml:"PipelineId"`
+			CreationTime  string `json:"CreationTime" xml:"CreationTime"`
+			FinishTime    string `json:"FinishTime" xml:"FinishTime"`
 			EditingConfig struct {
 				TemplateId         string `json:"TemplateId" xml:"TemplateId"`
 				UserData           string `json:"UserData" xml:"UserData"`
@@ -114,8 +114,8 @@ type QueryEditingJobListResponse struct {
 				} `json:"OutputFile" xml:"OutputFile"`
 				M3U8NonStandardSupport struct {
 					TS struct {
-						Md5Support  requests.Boolean `json:"Md5Support" xml:"Md5Support"`
-						SizeSupport requests.Boolean `json:"SizeSupport" xml:"SizeSupport"`
+						Md5Support  bool `json:"Md5Support" xml:"Md5Support"`
+						SizeSupport bool `json:"SizeSupport" xml:"SizeSupport"`
 					} `json:"TS" xml:"TS"`
 				} `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
 				Properties struct {

@@ -77,10 +77,10 @@ type DescribeDBInstanceByTagsRequest struct {
 
 type DescribeDBInstanceByTagsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            struct {
 		DBInstanceTag []struct {
 			DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`

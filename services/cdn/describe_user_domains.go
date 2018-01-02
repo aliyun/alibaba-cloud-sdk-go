@@ -66,25 +66,25 @@ type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	CdnType          string           `position:"Query" name:"CdnType"`
 	FuncId           string           `position:"Query" name:"FuncId"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	Sources          string           `position:"Query" name:"Sources"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	CdnType          string           `position:"Query" name:"CdnType"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 }
 
 type DescribeUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Domains    struct {
 		PageData []struct {
 			DomainName      string `json:"DomainName" xml:"DomainName"`

@@ -80,10 +80,10 @@ type DescribeRefreshTasksRequest struct {
 
 type DescribeRefreshTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Tasks      struct {
 		CDNTask []struct {
 			TaskId       string `json:"TaskId" xml:"TaskId"`

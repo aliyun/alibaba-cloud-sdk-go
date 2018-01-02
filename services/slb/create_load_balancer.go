@@ -90,15 +90,15 @@ type CreateLoadBalancerRequest struct {
 
 type CreateLoadBalancerResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId   string           `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId  string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Address          string           `json:"Address" xml:"Address"`
-	LoadBalancerName string           `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	VpcId            string           `json:"VpcId" xml:"VpcId"`
-	VSwitchId        string           `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType      string           `json:"NetworkType" xml:"NetworkType"`
-	OrderId          requests.Integer `json:"OrderId" xml:"OrderId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId   string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Address          string `json:"Address" xml:"Address"`
+	LoadBalancerName string `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	VpcId            string `json:"VpcId" xml:"VpcId"`
+	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
+	OrderId          int    `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {

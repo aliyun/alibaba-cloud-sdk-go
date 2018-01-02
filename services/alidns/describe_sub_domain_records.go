@@ -74,23 +74,23 @@ type DescribeSubDomainRecordsRequest struct {
 
 type DescribeSubDomainRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	TotalCount    requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize      requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int    `json:"PageSize" xml:"PageSize"`
 	DomainRecords struct {
 		Record []struct {
-			DomainName string           `json:"DomainName" xml:"DomainName"`
-			RecordId   string           `json:"RecordId" xml:"RecordId"`
-			RR         string           `json:"RR" xml:"RR"`
-			Type       string           `json:"Type" xml:"Type"`
-			Value      string           `json:"Value" xml:"Value"`
-			TTL        requests.Integer `json:"TTL" xml:"TTL"`
-			Priority   requests.Integer `json:"Priority" xml:"Priority"`
-			Line       string           `json:"Line" xml:"Line"`
-			Status     string           `json:"Status" xml:"Status"`
-			Locked     requests.Boolean `json:"Locked" xml:"Locked"`
-			Weight     requests.Integer `json:"Weight" xml:"Weight"`
+			DomainName string `json:"DomainName" xml:"DomainName"`
+			RecordId   string `json:"RecordId" xml:"RecordId"`
+			RR         string `json:"RR" xml:"RR"`
+			Type       string `json:"Type" xml:"Type"`
+			Value      string `json:"Value" xml:"Value"`
+			TTL        int    `json:"TTL" xml:"TTL"`
+			Priority   int    `json:"Priority" xml:"Priority"`
+			Line       string `json:"Line" xml:"Line"`
+			Status     string `json:"Status" xml:"Status"`
+			Locked     bool   `json:"Locked" xml:"Locked"`
+			Weight     int    `json:"Weight" xml:"Weight"`
 		} `json:"Record" xml:"Record"`
 	} `json:"DomainRecords" xml:"DomainRecords"`
 }

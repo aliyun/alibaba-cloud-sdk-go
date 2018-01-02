@@ -80,18 +80,18 @@ type DescribeSpotPriceHistoryRequest struct {
 
 type DescribeSpotPriceHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	NextOffset requests.Integer `json:"NextOffset" xml:"NextOffset"`
-	Currency   string           `json:"Currency" xml:"Currency"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	NextOffset int    `json:"NextOffset" xml:"NextOffset"`
+	Currency   string `json:"Currency" xml:"Currency"`
 	SpotPrices struct {
 		SpotPriceType []struct {
-			ZoneId       string         `json:"ZoneId" xml:"ZoneId"`
-			InstanceType string         `json:"InstanceType" xml:"InstanceType"`
-			IoOptimized  string         `json:"IoOptimized" xml:"IoOptimized"`
-			Timestamp    string         `json:"Timestamp" xml:"Timestamp"`
-			NetworkType  string         `json:"NetworkType" xml:"NetworkType"`
-			SpotPrice    requests.Float `json:"SpotPrice" xml:"SpotPrice"`
-			OriginPrice  requests.Float `json:"OriginPrice" xml:"OriginPrice"`
+			ZoneId       string  `json:"ZoneId" xml:"ZoneId"`
+			InstanceType string  `json:"InstanceType" xml:"InstanceType"`
+			IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
+			Timestamp    string  `json:"Timestamp" xml:"Timestamp"`
+			NetworkType  string  `json:"NetworkType" xml:"NetworkType"`
+			SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
+			OriginPrice  float64 `json:"OriginPrice" xml:"OriginPrice"`
 		} `json:"SpotPriceType" xml:"SpotPriceType"`
 	} `json:"SpotPrices" xml:"SpotPrices"`
 }

@@ -75,16 +75,16 @@ type DescribeCapacityHistoryRequest struct {
 
 type DescribeCapacityHistoryResponse struct {
 	*responses.BaseResponse
-	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
+	TotalCount           int `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int `json:"PageSize" xml:"PageSize"`
 	CapacityHistoryItems struct {
 		CapacityHistoryModel []struct {
-			ScalingGroupId      string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			TotalCapacity       requests.Integer `json:"TotalCapacity" xml:"TotalCapacity"`
-			AttachedCapacity    requests.Integer `json:"AttachedCapacity" xml:"AttachedCapacity"`
-			AutoCreatedCapacity requests.Integer `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
-			Timestamp           string           `json:"Timestamp" xml:"Timestamp"`
+			ScalingGroupId      string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			TotalCapacity       int    `json:"TotalCapacity" xml:"TotalCapacity"`
+			AttachedCapacity    int    `json:"AttachedCapacity" xml:"AttachedCapacity"`
+			AutoCreatedCapacity int    `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
+			Timestamp           string `json:"Timestamp" xml:"Timestamp"`
 		} `json:"CapacityHistoryModel" xml:"CapacityHistoryModel"`
 	} `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
 }

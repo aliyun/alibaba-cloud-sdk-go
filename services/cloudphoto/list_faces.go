@@ -75,33 +75,33 @@ type ListFacesRequest struct {
 
 type ListFacesResponse struct {
 	*responses.BaseResponse
-	Code       string           `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	Action     string           `json:"Action" xml:"Action"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	NextCursor string `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Action     string `json:"Action" xml:"Action"`
 	Faces      []struct {
-		Id          requests.Integer `json:"Id" xml:"Id"`
-		Name        string           `json:"Name" xml:"Name"`
-		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
-		State       string           `json:"State" xml:"State"`
-		IsMe        requests.Boolean `json:"IsMe" xml:"IsMe"`
-		Ctime       requests.Integer `json:"Ctime" xml:"Ctime"`
-		Mtime       requests.Integer `json:"Mtime" xml:"Mtime"`
-		Axis        []string         `json:"Axis" xml:"Axis"`
+		Id          int      `json:"Id" xml:"Id"`
+		Name        string   `json:"Name" xml:"Name"`
+		PhotosCount int      `json:"PhotosCount" xml:"PhotosCount"`
+		State       string   `json:"State" xml:"State"`
+		IsMe        bool     `json:"IsMe" xml:"IsMe"`
+		Ctime       int      `json:"Ctime" xml:"Ctime"`
+		Mtime       int      `json:"Mtime" xml:"Mtime"`
+		Axis        []string `json:"Axis" xml:"Axis"`
 		Cover       struct {
-			Id      requests.Integer `json:"Id" xml:"Id"`
-			Title   string           `json:"Title" xml:"Title"`
-			FileId  string           `json:"FileId" xml:"FileId"`
-			State   string           `json:"State" xml:"State"`
-			Md5     string           `json:"Md5" xml:"Md5"`
-			IsVideo requests.Boolean `json:"IsVideo" xml:"IsVideo"`
-			Width   requests.Integer `json:"Width" xml:"Width"`
-			Height  requests.Integer `json:"Height" xml:"Height"`
-			Ctime   requests.Integer `json:"Ctime" xml:"Ctime"`
-			Mtime   requests.Integer `json:"Mtime" xml:"Mtime"`
-			Remark  string           `json:"Remark" xml:"Remark"`
+			Id      int    `json:"Id" xml:"Id"`
+			Title   string `json:"Title" xml:"Title"`
+			FileId  string `json:"FileId" xml:"FileId"`
+			State   string `json:"State" xml:"State"`
+			Md5     string `json:"Md5" xml:"Md5"`
+			IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
+			Width   int    `json:"Width" xml:"Width"`
+			Height  int    `json:"Height" xml:"Height"`
+			Ctime   int    `json:"Ctime" xml:"Ctime"`
+			Mtime   int    `json:"Mtime" xml:"Mtime"`
+			Remark  string `json:"Remark" xml:"Remark"`
 		} `json:"Cover" xml:"Cover"`
 	} `json:"Faces" xml:"Faces"`
 }

@@ -64,9 +64,9 @@ func (client *Client) ResendEmailVerificationWithCallback(request *ResendEmailVe
 
 type ResendEmailVerificationRequest struct {
 	*requests.RpcRequest
+	Email        string `position:"Query" name:"Email"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	Email        string `position:"Query" name:"Email"`
 }
 
 type ResendEmailVerificationResponse struct {

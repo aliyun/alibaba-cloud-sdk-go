@@ -99,20 +99,20 @@ type DescribeScalingInstancesRequest struct {
 
 type DescribeScalingInstancesResponse struct {
 	*responses.BaseResponse
-	TotalCount       requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int    `json:"PageSize" xml:"PageSize"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ScalingInstances struct {
 		ScalingInstance []struct {
-			InstanceId             string           `json:"InstanceId" xml:"InstanceId"`
-			ScalingConfigurationId string           `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-			ScalingGroupId         string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			HealthStatus           string           `json:"HealthStatus" xml:"HealthStatus"`
-			LoadBalancerWeight     requests.Integer `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-			LifecycleState         string           `json:"LifecycleState" xml:"LifecycleState"`
-			CreationTime           string           `json:"CreationTime" xml:"CreationTime"`
-			CreationType           string           `json:"CreationType" xml:"CreationType"`
+			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+			ScalingConfigurationId string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
+			ScalingGroupId         string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			HealthStatus           string `json:"HealthStatus" xml:"HealthStatus"`
+			LoadBalancerWeight     int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
+			LifecycleState         string `json:"LifecycleState" xml:"LifecycleState"`
+			CreationTime           string `json:"CreationTime" xml:"CreationTime"`
+			CreationType           string `json:"CreationType" xml:"CreationType"`
 		} `json:"ScalingInstance" xml:"ScalingInstance"`
 	} `json:"ScalingInstances" xml:"ScalingInstances"`
 }

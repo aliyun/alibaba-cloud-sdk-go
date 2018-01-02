@@ -75,8 +75,8 @@ type QueryUniqueDeviceStatResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	AppDeviceStats struct {
 		AppDeviceStat []struct {
-			Time  string           `json:"Time" xml:"Time"`
-			Count requests.Integer `json:"Count" xml:"Count"`
+			Time  string `json:"Time" xml:"Time"`
+			Count int    `json:"Count" xml:"Count"`
 		} `json:"AppDeviceStat" xml:"AppDeviceStat"`
 	} `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }

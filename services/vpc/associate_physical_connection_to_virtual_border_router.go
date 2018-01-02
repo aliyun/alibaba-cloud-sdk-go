@@ -66,7 +66,6 @@ type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
 	VlanId               string           `position:"Query" name:"VlanId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`

@@ -77,21 +77,21 @@ type DescribeBinlogFilesRequest struct {
 
 type DescribeBinlogFilesResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalFileSize    requests.Integer `json:"TotalFileSize" xml:"TotalFileSize"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalFileSize    int    `json:"TotalFileSize" xml:"TotalFileSize"`
 	Items            struct {
 		BinLogFile []struct {
-			FileSize             requests.Integer `json:"FileSize" xml:"FileSize"`
-			LogBeginTime         string           `json:"LogBeginTime" xml:"LogBeginTime"`
-			LogEndTime           string           `json:"LogEndTime" xml:"LogEndTime"`
-			DownloadLink         string           `json:"DownloadLink" xml:"DownloadLink"`
-			IntranetDownloadLink string           `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
-			LinkExpiredTime      string           `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
-			Checksum             string           `json:"Checksum" xml:"Checksum"`
-			HostInstanceID       string           `json:"HostInstanceID" xml:"HostInstanceID"`
+			FileSize             int    `json:"FileSize" xml:"FileSize"`
+			LogBeginTime         string `json:"LogBeginTime" xml:"LogBeginTime"`
+			LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
+			DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
+			IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
+			LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
+			Checksum             string `json:"Checksum" xml:"Checksum"`
+			HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
 		} `json:"BinLogFile" xml:"BinLogFile"`
 	} `json:"Items" xml:"Items"`
 }

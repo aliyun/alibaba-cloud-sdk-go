@@ -76,24 +76,21 @@ type DescribeMigrateTasksRequest struct {
 
 type DescribeMigrateTasksResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DBInstanceID     string           `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName   string           `json:"DBInstanceName" xml:"DBInstanceName"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		MigrateTask []struct {
 			DBName        string `json:"DBName" xml:"DBName"`
 			MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
 			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 			EndTime       string `json:"EndTime" xml:"EndTime"`
-			TaskType      string `json:"TaskType" xml:"TaskType"`
+			BackupMode    string `json:"BackupMode" xml:"BackupMode"`
 			Status        string `json:"Status" xml:"Status"`
 			IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-			Desc          string `json:"Desc" xml:"Desc"`
+			Description   string `json:"Description" xml:"Description"`
 		} `json:"MigrateTask" xml:"MigrateTask"`
 	} `json:"Items" xml:"Items"`
 }

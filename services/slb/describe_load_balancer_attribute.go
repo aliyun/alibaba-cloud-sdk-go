@@ -75,48 +75,48 @@ type DescribeLoadBalancerAttributeRequest struct {
 
 type DescribeLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId          string           `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId     string           `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId    string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	LoadBalancerName   string           `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerStatus string           `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	RegionId           string           `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias      string           `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	Address            string           `json:"Address" xml:"Address"`
-	AddressType        string           `json:"AddressType" xml:"AddressType"`
-	VpcId              string           `json:"VpcId" xml:"VpcId"`
-	VSwitchId          string           `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType        string           `json:"NetworkType" xml:"NetworkType"`
-	InternetChargeType string           `json:"InternetChargeType" xml:"InternetChargeType"`
-	AutoReleaseTime    requests.Integer `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-	Bandwidth          requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
-	LoadBalancerSpec   string           `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
-	CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp    requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	EndTime            string           `json:"EndTime" xml:"EndTime"`
-	EndTimeStamp       requests.Integer `json:"EndTimeStamp" xml:"EndTimeStamp"`
-	PayType            string           `json:"PayType" xml:"PayType"`
-	MasterZoneId       string           `json:"MasterZoneId" xml:"MasterZoneId"`
-	SlaveZoneId        string           `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerName   string `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	LoadBalancerStatus string `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias      string `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	Address            string `json:"Address" xml:"Address"`
+	AddressType        string `json:"AddressType" xml:"AddressType"`
+	VpcId              string `json:"VpcId" xml:"VpcId"`
+	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+	AutoReleaseTime    int    `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
+	LoadBalancerSpec   string `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
+	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp    int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	EndTime            string `json:"EndTime" xml:"EndTime"`
+	EndTimeStamp       int    `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	PayType            string `json:"PayType" xml:"PayType"`
+	MasterZoneId       string `json:"MasterZoneId" xml:"MasterZoneId"`
+	SlaveZoneId        string `json:"SlaveZoneId" xml:"SlaveZoneId"`
 	ListenerPorts      struct {
 		ListenerPort []string `json:"ListenerPort" xml:"ListenerPort"`
 	} `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal struct {
 		ListenerPortAndProtocal []struct {
-			ListenerPort     requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
-			ListenerProtocal string           `json:"ListenerProtocal" xml:"ListenerProtocal"`
+			ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
+			ListenerProtocal string `json:"ListenerProtocal" xml:"ListenerProtocal"`
 		} `json:"ListenerPortAndProtocal" xml:"ListenerPortAndProtocal"`
 	} `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol struct {
 		ListenerPortAndProtocol []struct {
-			ListenerPort     requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
-			ListenerProtocol string           `json:"ListenerProtocol" xml:"ListenerProtocol"`
+			ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
+			ListenerProtocol string `json:"ListenerProtocol" xml:"ListenerProtocol"`
 		} `json:"ListenerPortAndProtocol" xml:"ListenerPortAndProtocol"`
 	} `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
 	BackendServers struct {
 		BackendServer []struct {
-			ServerId string           `json:"ServerId" xml:"ServerId"`
-			Weight   requests.Integer `json:"Weight" xml:"Weight"`
+			ServerId string `json:"ServerId" xml:"ServerId"`
+			Weight   int    `json:"Weight" xml:"Weight"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

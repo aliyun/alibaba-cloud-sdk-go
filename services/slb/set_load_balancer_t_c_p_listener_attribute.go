@@ -84,8 +84,8 @@ type SetLoadBalancerTCPListenerAttributeRequest struct {
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
 	HealthCheckURI            string           `position:"Query" name:"HealthCheckURI"`
-	AccessKeyId               string           `position:"Query" name:"access_key_id"`
 	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
+	AccessKeyId               string           `position:"Query" name:"access_key_id"`
 	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	MasterSlaveServerGroup    string           `position:"Query" name:"MasterSlaveServerGroup"`

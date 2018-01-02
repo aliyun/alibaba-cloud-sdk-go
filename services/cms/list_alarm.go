@@ -77,32 +77,32 @@ type ListAlarmRequest struct {
 
 type ListAlarmResponse struct {
 	*responses.BaseResponse
-	Success   requests.Boolean `json:"Success" xml:"Success"`
-	Code      string           `json:"Code" xml:"Code"`
-	Message   string           `json:"Message" xml:"Message"`
-	NextToken requests.Integer `json:"NextToken" xml:"NextToken"`
-	Total     requests.Integer `json:"Total" xml:"Total"`
-	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	NextToken int    `json:"NextToken" xml:"NextToken"`
+	Total     int    `json:"Total" xml:"Total"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	AlarmList struct {
 		Alarm []struct {
-			Id                 string           `json:"Id" xml:"Id"`
-			Name               string           `json:"Name" xml:"Name"`
-			Namespace          string           `json:"Namespace" xml:"Namespace"`
-			MetricName         string           `json:"MetricName" xml:"MetricName"`
-			Dimensions         string           `json:"Dimensions" xml:"Dimensions"`
-			Period             requests.Integer `json:"Period" xml:"Period"`
-			Statistics         string           `json:"Statistics" xml:"Statistics"`
-			ComparisonOperator string           `json:"ComparisonOperator" xml:"ComparisonOperator"`
-			Threshold          string           `json:"Threshold" xml:"Threshold"`
-			EvaluationCount    requests.Integer `json:"EvaluationCount" xml:"EvaluationCount"`
-			StartTime          requests.Integer `json:"StartTime" xml:"StartTime"`
-			EndTime            requests.Integer `json:"EndTime" xml:"EndTime"`
-			SilenceTime        requests.Integer `json:"SilenceTime" xml:"SilenceTime"`
-			NotifyType         requests.Integer `json:"NotifyType" xml:"NotifyType"`
-			Enable             requests.Boolean `json:"Enable" xml:"Enable"`
-			State              string           `json:"State" xml:"State"`
-			ContactGroups      string           `json:"ContactGroups" xml:"ContactGroups"`
-			Webhook            string           `json:"Webhook" xml:"Webhook"`
+			Id                 string `json:"Id" xml:"Id"`
+			Name               string `json:"Name" xml:"Name"`
+			Namespace          string `json:"Namespace" xml:"Namespace"`
+			MetricName         string `json:"MetricName" xml:"MetricName"`
+			Dimensions         string `json:"Dimensions" xml:"Dimensions"`
+			Period             int    `json:"Period" xml:"Period"`
+			Statistics         string `json:"Statistics" xml:"Statistics"`
+			ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
+			Threshold          string `json:"Threshold" xml:"Threshold"`
+			EvaluationCount    int    `json:"EvaluationCount" xml:"EvaluationCount"`
+			StartTime          int    `json:"StartTime" xml:"StartTime"`
+			EndTime            int    `json:"EndTime" xml:"EndTime"`
+			SilenceTime        int    `json:"SilenceTime" xml:"SilenceTime"`
+			NotifyType         int    `json:"NotifyType" xml:"NotifyType"`
+			Enable             bool   `json:"Enable" xml:"Enable"`
+			State              string `json:"State" xml:"State"`
+			ContactGroups      string `json:"ContactGroups" xml:"ContactGroups"`
+			Webhook            string `json:"Webhook" xml:"Webhook"`
 		} `json:"Alarm" xml:"Alarm"`
 	} `json:"AlarmList" xml:"AlarmList"`
 }

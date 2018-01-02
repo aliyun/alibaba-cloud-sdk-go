@@ -71,8 +71,8 @@ type ListSummaryAppsResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	SummaryAppInfos struct {
 		SummaryAppInfo []struct {
-			AppName string           `json:"AppName" xml:"AppName"`
-			AppKey  requests.Integer `json:"AppKey" xml:"AppKey"`
+			AppName string `json:"AppName" xml:"AppName"`
+			AppKey  int    `json:"AppKey" xml:"AppKey"`
 		} `json:"SummaryAppInfo" xml:"SummaryAppInfo"`
 	} `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
 }

@@ -77,8 +77,8 @@ type DescribeDomainRealTimeReqHitRateDataResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      struct {
 		ReqHitRateDataModel []struct {
-			ReqHitRate requests.Float `json:"ReqHitRate" xml:"ReqHitRate"`
-			TimeStamp  string         `json:"TimeStamp" xml:"TimeStamp"`
+			ReqHitRate float64 `json:"ReqHitRate" xml:"ReqHitRate"`
+			TimeStamp  string  `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"ReqHitRateDataModel" xml:"ReqHitRateDataModel"`
 	} `json:"Data" xml:"Data"`
 }

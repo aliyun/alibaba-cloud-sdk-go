@@ -79,8 +79,8 @@ type CreateDBInstanceRequest struct {
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	Engine                string           `position:"Query" name:"Engine"`
 	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
-	Period                string           `position:"Query" name:"Period"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Period                string           `position:"Query" name:"Period"`
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
 	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`

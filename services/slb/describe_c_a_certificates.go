@@ -78,13 +78,13 @@ type DescribeCACertificatesResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	CACertificates struct {
 		CACertificate []struct {
-			RegionId          string           `json:"RegionId" xml:"RegionId"`
-			CACertificateId   string           `json:"CACertificateId" xml:"CACertificateId"`
-			CACertificateName string           `json:"CACertificateName" xml:"CACertificateName"`
-			Fingerprint       string           `json:"Fingerprint" xml:"Fingerprint"`
-			ResourceGroupId   string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			CreateTime        string           `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp   requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+			RegionId          string `json:"RegionId" xml:"RegionId"`
+			CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
+			CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
+			Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
+			ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+			CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 		} `json:"CACertificate" xml:"CACertificate"`
 	} `json:"CACertificates" xml:"CACertificates"`
 }

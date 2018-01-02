@@ -75,16 +75,16 @@ type QueryReceiverDetailRequest struct {
 
 type QueryReceiverDetailResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	NextStart  string           `json:"NextStart" xml:"NextStart"`
-	DataSchema string           `json:"DataSchema" xml:"DataSchema"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string `json:"NextStart" xml:"NextStart"`
+	DataSchema string `json:"DataSchema" xml:"DataSchema"`
 	Data       struct {
 		Detail []struct {
-			Email         string           `json:"Email" xml:"Email"`
-			Data          string           `json:"Data" xml:"Data"`
-			CreateTime    string           `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			Email         string `json:"Email" xml:"Email"`
+			Data          string `json:"Data" xml:"Data"`
+			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
 		} `json:"detail" xml:"detail"`
 	} `json:"data" xml:"data"`
 }

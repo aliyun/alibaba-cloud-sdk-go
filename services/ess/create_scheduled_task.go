@@ -70,8 +70,8 @@ type CreateScheduledTaskRequest struct {
 	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
 	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
 	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`

@@ -79,9 +79,9 @@ type EditPhotosResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Id      requests.Integer `json:"Id" xml:"Id"`
-		Code    string           `json:"Code" xml:"Code"`
-		Message string           `json:"Message" xml:"Message"`
+		Id      int    `json:"Id" xml:"Id"`
+		Code    string `json:"Code" xml:"Code"`
+		Message string `json:"Message" xml:"Message"`
 	} `json:"Results" xml:"Results"`
 }
 

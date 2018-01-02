@@ -78,22 +78,22 @@ type DescribeVSwitchesRequest struct {
 
 type DescribeVSwitchesResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	VSwitches  struct {
 		VSwitch []struct {
-			VSwitchId               string           `json:"VSwitchId" xml:"VSwitchId"`
-			VpcId                   string           `json:"VpcId" xml:"VpcId"`
-			Status                  string           `json:"Status" xml:"Status"`
-			CidrBlock               string           `json:"CidrBlock" xml:"CidrBlock"`
-			ZoneId                  string           `json:"ZoneId" xml:"ZoneId"`
-			AvailableIpAddressCount requests.Integer `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
-			Description             string           `json:"Description" xml:"Description"`
-			VSwitchName             string           `json:"VSwitchName" xml:"VSwitchName"`
-			CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
-			IsDefault               requests.Boolean `json:"IsDefault" xml:"IsDefault"`
+			VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
+			VpcId                   string `json:"VpcId" xml:"VpcId"`
+			Status                  string `json:"Status" xml:"Status"`
+			CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
+			ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
+			AvailableIpAddressCount int    `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+			Description             string `json:"Description" xml:"Description"`
+			VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
+			CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+			IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
 		} `json:"VSwitch" xml:"VSwitch"`
 	} `json:"VSwitches" xml:"VSwitches"`
 }

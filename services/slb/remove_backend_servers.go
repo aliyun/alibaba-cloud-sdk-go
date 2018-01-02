@@ -80,8 +80,8 @@ type RemoveBackendServersResponse struct {
 	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	BackendServers struct {
 		BackendServer []struct {
-			ServerId string           `json:"ServerId" xml:"ServerId"`
-			Weight   requests.Integer `json:"Weight" xml:"Weight"`
+			ServerId string `json:"ServerId" xml:"ServerId"`
+			Weight   int    `json:"Weight" xml:"Weight"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

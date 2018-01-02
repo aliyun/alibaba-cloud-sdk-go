@@ -73,16 +73,16 @@ type DetachInstanceRamRoleRequest struct {
 
 type DetachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId                    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount                   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	FailCount                    requests.Integer `json:"FailCount" xml:"FailCount"`
-	RamRoleName                  string           `json:"RamRoleName" xml:"RamRoleName"`
+	RequestId                    string `json:"RequestId" xml:"RequestId"`
+	TotalCount                   int    `json:"TotalCount" xml:"TotalCount"`
+	FailCount                    int    `json:"FailCount" xml:"FailCount"`
+	RamRoleName                  string `json:"RamRoleName" xml:"RamRoleName"`
 	DetachInstanceRamRoleResults struct {
 		DetachInstanceRamRoleResult []struct {
-			InstanceId          string           `json:"InstanceId" xml:"InstanceId"`
-			Success             requests.Boolean `json:"Success" xml:"Success"`
-			Code                string           `json:"Code" xml:"Code"`
-			Message             string           `json:"Message" xml:"Message"`
+			InstanceId          string `json:"InstanceId" xml:"InstanceId"`
+			Success             bool   `json:"Success" xml:"Success"`
+			Code                string `json:"Code" xml:"Code"`
+			Message             string `json:"Message" xml:"Message"`
 			InstanceRamRoleSets struct {
 				InstanceRamRoleSet []struct {
 					InstanceId  string `json:"InstanceId" xml:"InstanceId"`

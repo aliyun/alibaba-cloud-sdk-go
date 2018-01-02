@@ -70,8 +70,8 @@ type SetLoadBalancerUDPListenerAttributeRequest struct {
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
 	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
+	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
 	Tags                      string           `position:"Query" name:"Tags"`
 	Scheduler                 string           `position:"Query" name:"Scheduler"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`

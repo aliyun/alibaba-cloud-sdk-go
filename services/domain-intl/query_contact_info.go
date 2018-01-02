@@ -64,9 +64,9 @@ func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequ
 
 type QueryContactInfoRequest struct {
 	*requests.RpcRequest
+	DomainName   string `position:"Query" name:"DomainName"`
 	ContactType  string `position:"Query" name:"ContactType"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
-	DomainName   string `position:"Query" name:"DomainName"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 

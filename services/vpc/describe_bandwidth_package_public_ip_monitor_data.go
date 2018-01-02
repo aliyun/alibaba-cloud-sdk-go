@@ -79,14 +79,14 @@ type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	MonitorDatas struct {
 		MonitorData []struct {
-			RX                   requests.Integer `json:"RX" xml:"RX"`
-			TX                   requests.Integer `json:"TX" xml:"TX"`
-			ReceivedBandwidth    requests.Integer `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
-			TransportedBandwidth requests.Integer `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
-			Flow                 requests.Integer `json:"Flow" xml:"Flow"`
-			Bandwidth            requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
-			Packets              requests.Integer `json:"Packets" xml:"Packets"`
-			TimeStamp            string           `json:"TimeStamp" xml:"TimeStamp"`
+			RX                   int    `json:"RX" xml:"RX"`
+			TX                   int    `json:"TX" xml:"TX"`
+			ReceivedBandwidth    int    `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
+			TransportedBandwidth int    `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
+			Flow                 int    `json:"Flow" xml:"Flow"`
+			Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
+			Packets              int    `json:"Packets" xml:"Packets"`
+			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"MonitorData" xml:"MonitorData"`
 	} `json:"MonitorDatas" xml:"MonitorDatas"`
 }

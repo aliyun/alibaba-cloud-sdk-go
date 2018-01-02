@@ -75,11 +75,11 @@ type EipNotifyPaidRequest struct {
 
 type EipNotifyPaidResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"requestId" xml:"requestId"`
-	Data      string           `json:"data" xml:"data"`
-	Code      string           `json:"code" xml:"code"`
-	Message   string           `json:"message" xml:"message"`
-	Success   requests.Boolean `json:"success" xml:"success"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Data      string `json:"data" xml:"data"`
+	Code      string `json:"code" xml:"code"`
+	Message   string `json:"message" xml:"message"`
+	Success   bool   `json:"success" xml:"success"`
 }
 
 func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {

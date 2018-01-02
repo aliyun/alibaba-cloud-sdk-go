@@ -69,13 +69,13 @@ type AccessKeyGetRequest struct {
 
 type AccessKeyGetResponse struct {
 	*responses.BaseResponse
-	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      requests.Boolean `json:"Success" xml:"Success"`
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	UserId       requests.Integer `json:"UserId" xml:"UserId"`
-	AccessKey    string           `json:"AccessKey" xml:"AccessKey"`
-	SecretKey    string           `json:"SecretKey" xml:"SecretKey"`
+	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	UserId       int    `json:"UserId" xml:"UserId"`
+	AccessKey    string `json:"AccessKey" xml:"AccessKey"`
+	SecretKey    string `json:"SecretKey" xml:"SecretKey"`
 }
 
 func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {

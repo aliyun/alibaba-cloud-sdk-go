@@ -96,24 +96,24 @@ type DescribeScalingActivitiesRequest struct {
 
 type DescribeScalingActivitiesResponse struct {
 	*responses.BaseResponse
-	TotalCount        requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize          requests.Integer `json:"PageSize" xml:"PageSize"`
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
+	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int    `json:"PageSize" xml:"PageSize"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ScalingActivities struct {
 		ScalingActivity []struct {
-			ScalingActivityId   string           `json:"ScalingActivityId" xml:"ScalingActivityId"`
-			ScalingGroupId      string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			Description         string           `json:"Description" xml:"Description"`
-			Cause               string           `json:"Cause" xml:"Cause"`
-			StartTime           string           `json:"StartTime" xml:"StartTime"`
-			EndTime             string           `json:"EndTime" xml:"EndTime"`
-			Progress            requests.Integer `json:"Progress" xml:"Progress"`
-			StatusCode          string           `json:"StatusCode" xml:"StatusCode"`
-			StatusMessage       string           `json:"StatusMessage" xml:"StatusMessage"`
-			TotalCapacity       string           `json:"TotalCapacity" xml:"TotalCapacity"`
-			AttachedCapacity    string           `json:"AttachedCapacity" xml:"AttachedCapacity"`
-			AutoCreatedCapacity string           `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
+			ScalingActivityId   string `json:"ScalingActivityId" xml:"ScalingActivityId"`
+			ScalingGroupId      string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			Description         string `json:"Description" xml:"Description"`
+			Cause               string `json:"Cause" xml:"Cause"`
+			StartTime           string `json:"StartTime" xml:"StartTime"`
+			EndTime             string `json:"EndTime" xml:"EndTime"`
+			Progress            int    `json:"Progress" xml:"Progress"`
+			StatusCode          string `json:"StatusCode" xml:"StatusCode"`
+			StatusMessage       string `json:"StatusMessage" xml:"StatusMessage"`
+			TotalCapacity       string `json:"TotalCapacity" xml:"TotalCapacity"`
+			AttachedCapacity    string `json:"AttachedCapacity" xml:"AttachedCapacity"`
+			AutoCreatedCapacity string `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
 		} `json:"ScalingActivity" xml:"ScalingActivity"`
 	} `json:"ScalingActivities" xml:"ScalingActivities"`
 }

@@ -66,23 +66,23 @@ type CheckAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
 	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
 	DataDiskPolicyRetentionDays       requests.Integer `position:"Query" name:"DataDiskPolicyRetentionDays"`
-	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
 	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
 	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
-	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
 	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
+	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
+	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
 	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
-	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
 	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
+	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
 }
 
 type CheckAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId              string           `json:"RequestId" xml:"RequestId"`
-	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-	IsPermittedModify      string           `json:"IsPermittedModify" xml:"IsPermittedModify"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	IsPermittedModify      string `json:"IsPermittedModify" xml:"IsPermittedModify"`
 }
 
 func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyRequest) {

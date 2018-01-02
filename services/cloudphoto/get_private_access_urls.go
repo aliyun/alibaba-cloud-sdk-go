@@ -77,10 +77,10 @@ type GetPrivateAccessUrlsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
 	Results   []struct {
-		Code      string           `json:"Code" xml:"Code"`
-		Message   string           `json:"Message" xml:"Message"`
-		PhotoId   requests.Integer `json:"PhotoId" xml:"PhotoId"`
-		AccessUrl string           `json:"AccessUrl" xml:"AccessUrl"`
+		Code      string `json:"Code" xml:"Code"`
+		Message   string `json:"Message" xml:"Message"`
+		PhotoId   int    `json:"PhotoId" xml:"PhotoId"`
+		AccessUrl string `json:"AccessUrl" xml:"AccessUrl"`
 	} `json:"Results" xml:"Results"`
 }
 

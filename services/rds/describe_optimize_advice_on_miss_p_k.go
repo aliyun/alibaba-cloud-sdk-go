@@ -75,10 +75,10 @@ type DescribeOptimizeAdviceOnMissPKRequest struct {
 
 type DescribeOptimizeAdviceOnMissPKResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnMissPK []struct {
 			DBName    string `json:"DBName" xml:"DBName"`

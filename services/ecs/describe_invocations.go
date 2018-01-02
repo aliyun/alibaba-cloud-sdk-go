@@ -81,26 +81,27 @@ type DescribeInvocationsRequest struct {
 
 type DescribeInvocationsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	Invocation struct {
-		InvocationItem []struct {
-			InvokeId     string           `json:"InvokeId" xml:"InvokeId"`
-			CommandId    string           `json:"CommandId" xml:"CommandId"`
-			CommandType  string           `json:"CommandType" xml:"CommandType"`
-			CommandName  string           `json:"CommandName" xml:"CommandName"`
-			Timed        requests.Boolean `json:"Timed" xml:"Timed"`
-			InvokeStatus string           `json:"InvokeStatus" xml:"InvokeStatus"`
-			InvokeItem   struct {
-				InvokeItemItem []struct {
-					InstanceId string `json:"InstanceId" xml:"InstanceId"`
-					Status     string `json:"Status" xml:"Status"`
-				} `json:"InvokeItemItem" xml:"InvokeItemItem"`
-			} `json:"InvokeItem" xml:"InvokeItem"`
-		} `json:"InvocationItem" xml:"InvocationItem"`
-	} `json:"Invocation" xml:"Invocation"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	Invocations struct {
+		Invocation []struct {
+			InvokeId        string `json:"InvokeId" xml:"InvokeId"`
+			CommandId       string `json:"CommandId" xml:"CommandId"`
+			CommandType     string `json:"CommandType" xml:"CommandType"`
+			CommandName     string `json:"CommandName" xml:"CommandName"`
+			Frequency       string `json:"Frequency" xml:"Frequency"`
+			Timed           bool   `json:"Timed" xml:"Timed"`
+			InvokeStatus    string `json:"InvokeStatus" xml:"InvokeStatus"`
+			InvokeInstances struct {
+				InvokeInstance []struct {
+					InstanceId           string `json:"InstanceId" xml:"InstanceId"`
+					InstanceInvokeStatus string `json:"InstanceInvokeStatus" xml:"InstanceInvokeStatus"`
+				} `json:"InvokeInstance" xml:"InvokeInstance"`
+			} `json:"InvokeInstances" xml:"InvokeInstances"`
+		} `json:"Invocation" xml:"Invocation"`
+	} `json:"Invocations" xml:"Invocations"`
 }
 
 func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {

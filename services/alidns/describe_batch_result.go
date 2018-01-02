@@ -71,11 +71,11 @@ type DescribeBatchResultRequest struct {
 
 type DescribeBatchResultResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	TraceId       string           `json:"TraceId" xml:"TraceId"`
-	Status        requests.Integer `json:"Status" xml:"Status"`
-	BatchCount    requests.Integer `json:"BatchCount" xml:"BatchCount"`
-	SuccessNumber requests.Integer `json:"SuccessNumber" xml:"SuccessNumber"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TraceId       string `json:"TraceId" xml:"TraceId"`
+	Status        int    `json:"Status" xml:"Status"`
+	BatchCount    int    `json:"BatchCount" xml:"BatchCount"`
+	SuccessNumber int    `json:"SuccessNumber" xml:"SuccessNumber"`
 	FailResults   struct {
 		FailResult []struct {
 			BatchIndex string `json:"BatchIndex" xml:"BatchIndex"`

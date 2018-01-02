@@ -73,12 +73,12 @@ type DescribeIntranetAttributeKbRequest struct {
 
 type DescribeIntranetAttributeKbResponse struct {
 	*responses.BaseResponse
-	RequestId               string           `json:"RequestId" xml:"RequestId"`
-	InstanceId              string           `json:"InstanceId" xml:"InstanceId"`
-	VlanId                  string           `json:"VlanId" xml:"VlanId"`
-	IntranetIpAddress       string           `json:"IntranetIpAddress" xml:"IntranetIpAddress"`
-	IntranetMaxBandwidthIn  requests.Integer `json:"IntranetMaxBandwidthIn" xml:"IntranetMaxBandwidthIn"`
-	IntranetMaxBandwidthOut requests.Integer `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
+	VlanId                  string `json:"VlanId" xml:"VlanId"`
+	IntranetIpAddress       string `json:"IntranetIpAddress" xml:"IntranetIpAddress"`
+	IntranetMaxBandwidthIn  int    `json:"IntranetMaxBandwidthIn" xml:"IntranetMaxBandwidthIn"`
+	IntranetMaxBandwidthOut int    `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
 }
 
 func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttributeKbRequest) {

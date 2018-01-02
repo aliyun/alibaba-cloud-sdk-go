@@ -94,11 +94,11 @@ type CreateDBInstanceReplicaRequest struct {
 
 type CreateDBInstanceReplicaResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string           `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId      requests.Integer `json:"OrderId" xml:"OrderId"`
-	ReplicaId    string           `json:"ReplicaId" xml:"ReplicaId"`
-	WorkflowId   string           `json:"WorkflowId" xml:"WorkflowId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      int    `json:"OrderId" xml:"OrderId"`
+	ReplicaId    string `json:"ReplicaId" xml:"ReplicaId"`
+	WorkflowId   string `json:"WorkflowId" xml:"WorkflowId"`
 }
 
 func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaRequest) {

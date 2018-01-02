@@ -71,10 +71,10 @@ type DescribeAlertConfigRequest struct {
 
 type DescribeAlertConfigResponse struct {
 	*responses.BaseResponse
-	SuccessConfig requests.Integer `json:"SuccessConfig" xml:"SuccessConfig"`
-	FailConfig    requests.Integer `json:"FailConfig" xml:"FailConfig"`
-	RejectConfig  requests.Integer `json:"RejectConfig" xml:"RejectConfig"`
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	SuccessConfig int    `json:"SuccessConfig" xml:"SuccessConfig"`
+	FailConfig    int    `json:"FailConfig" xml:"FailConfig"`
+	RejectConfig  int    `json:"RejectConfig" xml:"RejectConfig"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {

@@ -64,9 +64,9 @@ func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVe
 
 type DeleteEmailVerificationRequest struct {
 	*requests.RpcRequest
+	Email        string `position:"Query" name:"Email"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	Email        string `position:"Query" name:"Email"`
 }
 
 type DeleteEmailVerificationResponse struct {

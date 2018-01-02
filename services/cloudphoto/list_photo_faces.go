@@ -76,9 +76,9 @@ type ListPhotoFacesResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
 	Faces     []struct {
-		FaceId   requests.Integer `json:"FaceId" xml:"FaceId"`
-		FaceName string           `json:"FaceName" xml:"FaceName"`
-		Axis     []string         `json:"Axis" xml:"Axis"`
+		FaceId   int      `json:"FaceId" xml:"FaceId"`
+		FaceName string   `json:"FaceName" xml:"FaceName"`
+		Axis     []string `json:"Axis" xml:"Axis"`
 	} `json:"Faces" xml:"Faces"`
 }
 

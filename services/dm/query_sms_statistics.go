@@ -74,8 +74,8 @@ type QuerySmsStatisticsRequest struct {
 
 type QuerySmsStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Data       struct {
 		Stat []struct {
 			CreateTime   string `json:"CreateTime" xml:"CreateTime"`

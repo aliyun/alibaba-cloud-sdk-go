@@ -80,10 +80,10 @@ type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	MasterSlaveServerGroupName string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
 	MasterSlaveBackendServers  struct {
 		MasterSlaveBackendServer []struct {
-			ServerId   string           `json:"ServerId" xml:"ServerId"`
-			Port       requests.Integer `json:"Port" xml:"Port"`
-			Weight     requests.Integer `json:"Weight" xml:"Weight"`
-			ServerType string           `json:"ServerType" xml:"ServerType"`
+			ServerId   string `json:"ServerId" xml:"ServerId"`
+			Port       int    `json:"Port" xml:"Port"`
+			Weight     int    `json:"Weight" xml:"Weight"`
+			ServerType string `json:"ServerType" xml:"ServerType"`
 		} `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
 	} `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }

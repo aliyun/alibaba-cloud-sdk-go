@@ -66,12 +66,12 @@ type DescribeReplicaPerformanceRequest struct {
 	*requests.RpcRequest
 	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Key                  string           `position:"Query" name:"Key"`
 }

@@ -90,10 +90,10 @@ type DescribeDBInstancesByPerformanceRequest struct {
 
 type DescribeDBInstancesByPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		DBInstancePerformance []struct {
 			CPUUsage              string `json:"CPUUsage" xml:"CPUUsage"`

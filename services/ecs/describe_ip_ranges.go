@@ -76,12 +76,12 @@ type DescribeIpRangesRequest struct {
 
 type DescribeIpRangesResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	RegionId   string           `json:"RegionId" xml:"RegionId"`
-	ClusterId  string           `json:"ClusterId" xml:"ClusterId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
+	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	IpRanges   struct {
 		IpRange []struct {
 			IpAddress string `json:"IpAddress" xml:"IpAddress"`

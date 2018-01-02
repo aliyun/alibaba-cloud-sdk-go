@@ -80,20 +80,20 @@ type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId                                   string           `json:"RequestId" xml:"RequestId"`
-	PageNumber                                  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize                                    requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount                                  requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId                                   string `json:"RequestId" xml:"RequestId"`
+	PageNumber                                  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize                                    int    `json:"PageSize" xml:"PageSize"`
+	TotalCount                                  int    `json:"TotalCount" xml:"TotalCount"`
 	VirtualBorderRouterForPhysicalConnectionSet struct {
 		VirtualBorderRouterForPhysicalConnectionType []struct {
-			VbrId           string           `json:"VbrId" xml:"VbrId"`
-			VbrOwnerUid     requests.Integer `json:"VbrOwnerUid" xml:"VbrOwnerUid"`
-			CreationTime    string           `json:"CreationTime" xml:"CreationTime"`
-			ActivationTime  string           `json:"ActivationTime" xml:"ActivationTime"`
-			TerminationTime string           `json:"TerminationTime" xml:"TerminationTime"`
-			RecoveryTime    string           `json:"RecoveryTime" xml:"RecoveryTime"`
-			VlanId          requests.Integer `json:"VlanId" xml:"VlanId"`
-			CircuitCode     string           `json:"CircuitCode" xml:"CircuitCode"`
+			VbrId           string `json:"VbrId" xml:"VbrId"`
+			VbrOwnerUid     int    `json:"VbrOwnerUid" xml:"VbrOwnerUid"`
+			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+			ActivationTime  string `json:"ActivationTime" xml:"ActivationTime"`
+			TerminationTime string `json:"TerminationTime" xml:"TerminationTime"`
+			RecoveryTime    string `json:"RecoveryTime" xml:"RecoveryTime"`
+			VlanId          int    `json:"VlanId" xml:"VlanId"`
+			CircuitCode     string `json:"CircuitCode" xml:"CircuitCode"`
 		} `json:"VirtualBorderRouterForPhysicalConnectionType" xml:"VirtualBorderRouterForPhysicalConnectionType"`
 	} `json:"VirtualBorderRouterForPhysicalConnectionSet" xml:"VirtualBorderRouterForPhysicalConnectionSet"`
 }

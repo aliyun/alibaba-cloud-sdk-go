@@ -72,11 +72,11 @@ type DeleteNotifyPolicyRequest struct {
 
 type DeleteNotifyPolicyResponse struct {
 	*responses.BaseResponse
-	Code    string           `json:"code" xml:"code"`
-	Message string           `json:"message" xml:"message"`
-	Success string           `json:"success" xml:"success"`
-	TraceId string           `json:"traceId" xml:"traceId"`
-	Result  requests.Integer `json:"result" xml:"result"`
+	Code    string `json:"code" xml:"code"`
+	Message string `json:"message" xml:"message"`
+	Success string `json:"success" xml:"success"`
+	TraceId string `json:"traceId" xml:"traceId"`
+	Result  int    `json:"result" xml:"result"`
 }
 
 func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {

@@ -77,8 +77,8 @@ type DescribeDomainRealTimeByteHitRateDataResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      struct {
 		ByteHitRateDataModel []struct {
-			ByteHitRate requests.Float `json:"ByteHitRate" xml:"ByteHitRate"`
-			TimeStamp   string         `json:"TimeStamp" xml:"TimeStamp"`
+			ByteHitRate float64 `json:"ByteHitRate" xml:"ByteHitRate"`
+			TimeStamp   string  `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"ByteHitRateDataModel" xml:"ByteHitRateDataModel"`
 	} `json:"Data" xml:"Data"`
 }

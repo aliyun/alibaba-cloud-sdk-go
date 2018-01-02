@@ -64,25 +64,25 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 	ResourceBid          string           `position:"Query" name:"ResourceBid"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyRouteTableAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Code      string           `json:"Code" xml:"Code"`
-	Message   string           `json:"Message" xml:"Message"`
-	Success   requests.Boolean `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttributesRequest) {

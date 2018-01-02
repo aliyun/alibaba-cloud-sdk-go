@@ -75,15 +75,15 @@ type ListTagPhotosRequest struct {
 
 type ListTagPhotosResponse struct {
 	*responses.BaseResponse
-	Code       string           `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	Action     string           `json:"Action" xml:"Action"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	NextCursor string `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Action     string `json:"Action" xml:"Action"`
 	Results    []struct {
-		PhotoId requests.Integer `json:"PhotoId" xml:"PhotoId"`
-		State   string           `json:"State" xml:"State"`
+		PhotoId int    `json:"PhotoId" xml:"PhotoId"`
+		State   string `json:"State" xml:"State"`
 	} `json:"Results" xml:"Results"`
 }
 

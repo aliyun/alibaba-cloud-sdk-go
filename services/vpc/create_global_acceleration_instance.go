@@ -64,16 +64,17 @@ func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *Crea
 
 type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	BandwidthType        string           `position:"Query" name:"BandwidthType"`
 	Description          string           `position:"Query" name:"Description"`
 	Name                 string           `position:"Query" name:"Name"`
 	ServiceLocation      string           `position:"Query" name:"ServiceLocation"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type CreateGlobalAccelerationInstanceResponse struct {

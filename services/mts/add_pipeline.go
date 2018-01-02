@@ -79,12 +79,12 @@ type AddPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string           `json:"Id" xml:"Id"`
-		Name         string           `json:"Name" xml:"Name"`
-		State        string           `json:"State" xml:"State"`
-		Speed        string           `json:"Speed" xml:"Speed"`
-		SpeedLevel   requests.Integer `json:"SpeedLevel" xml:"SpeedLevel"`
-		Role         string           `json:"Role" xml:"Role"`
+		Id           string `json:"Id" xml:"Id"`
+		Name         string `json:"Name" xml:"Name"`
+		State        string `json:"State" xml:"State"`
+		Speed        string `json:"Speed" xml:"Speed"`
+		SpeedLevel   int    `json:"SpeedLevel" xml:"SpeedLevel"`
+		Role         string `json:"Role" xml:"Role"`
 		NotifyConfig struct {
 			Topic     string `json:"Topic" xml:"Topic"`
 			QueueName string `json:"QueueName" xml:"QueueName"`

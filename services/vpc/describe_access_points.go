@@ -82,10 +82,10 @@ type DescribeAccessPointsFilter struct {
 
 type DescribeAccessPointsResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 	AccessPointSet struct {
 		AccessPointType []struct {
 			AccessPointId    string `json:"AccessPointId" xml:"AccessPointId"`

@@ -75,15 +75,15 @@ type DescribeGrantRulesToCbnRequest struct {
 
 type DescribeGrantRulesToCbnResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	TotalCount    requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize      requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int    `json:"PageSize" xml:"PageSize"`
 	CbnGrantRules struct {
 		CbnGrantRule []struct {
-			CbnInstanceId string           `json:"CbnInstanceId" xml:"CbnInstanceId"`
-			CbnOwnerId    requests.Integer `json:"CbnOwnerId" xml:"CbnOwnerId"`
-			CreationTime  string           `json:"CreationTime" xml:"CreationTime"`
+			CbnInstanceId string `json:"CbnInstanceId" xml:"CbnInstanceId"`
+			CbnOwnerId    int    `json:"CbnOwnerId" xml:"CbnOwnerId"`
+			CreationTime  string `json:"CreationTime" xml:"CreationTime"`
 		} `json:"CbnGrantRule" xml:"CbnGrantRule"`
 	} `json:"CbnGrantRules" xml:"CbnGrantRules"`
 }

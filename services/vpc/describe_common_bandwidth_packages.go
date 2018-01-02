@@ -76,24 +76,24 @@ type DescribeCommonBandwidthPackagesRequest struct {
 
 type DescribeCommonBandwidthPackagesResponse struct {
 	*responses.BaseResponse
-	RequestId               string           `json:"RequestId" xml:"RequestId"`
-	TotalCount              requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber              requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize                requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	TotalCount              int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber              int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize                int    `json:"PageSize" xml:"PageSize"`
 	CommonBandwidthPackages struct {
 		CommonBandwidthPackage []struct {
-			BandwidthPackageId string           `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-			RegionId           string           `json:"RegionId" xml:"RegionId"`
-			Name               string           `json:"Name" xml:"Name"`
-			Description        string           `json:"Description" xml:"Description"`
-			Bandwidth          string           `json:"Bandwidth" xml:"Bandwidth"`
-			InstanceChargeType string           `json:"InstanceChargeType" xml:"InstanceChargeType"`
-			InternetChargeType string           `json:"InternetChargeType" xml:"InternetChargeType"`
-			BusinessStatus     string           `json:"BusinessStatus" xml:"BusinessStatus"`
-			CreationTime       string           `json:"CreationTime" xml:"CreationTime"`
-			ExpiredTime        string           `json:"ExpiredTime" xml:"ExpiredTime"`
-			Status             string           `json:"Status" xml:"Status"`
-			Ratio              requests.Integer `json:"Ratio" xml:"Ratio"`
+			BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+			RegionId           string `json:"RegionId" xml:"RegionId"`
+			Name               string `json:"Name" xml:"Name"`
+			Description        string `json:"Description" xml:"Description"`
+			Bandwidth          string `json:"Bandwidth" xml:"Bandwidth"`
+			InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+			InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+			BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
+			CreationTime       string `json:"CreationTime" xml:"CreationTime"`
+			ExpiredTime        string `json:"ExpiredTime" xml:"ExpiredTime"`
+			Status             string `json:"Status" xml:"Status"`
+			Ratio              int    `json:"Ratio" xml:"Ratio"`
 			PublicIpAddresses  struct {
 				PublicIpAddresse []struct {
 					AllocationId string `json:"AllocationId" xml:"AllocationId"`

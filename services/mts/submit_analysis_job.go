@@ -79,15 +79,15 @@ type SubmitAnalysisJobResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	AnalysisJob struct {
-		Id           string           `json:"Id" xml:"Id"`
-		UserData     string           `json:"UserData" xml:"UserData"`
-		State        string           `json:"State" xml:"State"`
-		Code         string           `json:"Code" xml:"Code"`
-		Message      string           `json:"Message" xml:"Message"`
-		Percent      requests.Integer `json:"Percent" xml:"Percent"`
-		CreationTime string           `json:"CreationTime" xml:"CreationTime"`
-		PipelineId   string           `json:"PipelineId" xml:"PipelineId"`
-		Priority     string           `json:"Priority" xml:"Priority"`
+		Id           string `json:"Id" xml:"Id"`
+		UserData     string `json:"UserData" xml:"UserData"`
+		State        string `json:"State" xml:"State"`
+		Code         string `json:"Code" xml:"Code"`
+		Message      string `json:"Message" xml:"Message"`
+		Percent      int    `json:"Percent" xml:"Percent"`
+		CreationTime string `json:"CreationTime" xml:"CreationTime"`
+		PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+		Priority     string `json:"Priority" xml:"Priority"`
 		InputFile    struct {
 			Bucket   string `json:"Bucket" xml:"Bucket"`
 			Location string `json:"Location" xml:"Location"`

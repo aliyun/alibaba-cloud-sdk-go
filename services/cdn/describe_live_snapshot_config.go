@@ -76,22 +76,22 @@ type DescribeLiveSnapshotConfigRequest struct {
 
 type DescribeLiveSnapshotConfigResponse struct {
 	*responses.BaseResponse
-	RequestId                    string           `json:"RequestId" xml:"RequestId"`
-	PageNum                      requests.Integer `json:"PageNum" xml:"PageNum"`
-	PageSize                     requests.Integer `json:"PageSize" xml:"PageSize"`
-	Order                        string           `json:"Order" xml:"Order"`
-	TotalNum                     requests.Integer `json:"TotalNum" xml:"TotalNum"`
-	TotalPage                    requests.Integer `json:"TotalPage" xml:"TotalPage"`
+	RequestId                    string `json:"RequestId" xml:"RequestId"`
+	PageNum                      int    `json:"PageNum" xml:"PageNum"`
+	PageSize                     int    `json:"PageSize" xml:"PageSize"`
+	Order                        string `json:"Order" xml:"Order"`
+	TotalNum                     int    `json:"TotalNum" xml:"TotalNum"`
+	TotalPage                    int    `json:"TotalPage" xml:"TotalPage"`
 	LiveStreamSnapshotConfigList struct {
 		LiveStreamSnapshotConfig []struct {
-			DomainName         string           `json:"DomainName" xml:"DomainName"`
-			AppName            string           `json:"AppName" xml:"AppName"`
-			TimeInterval       requests.Integer `json:"TimeInterval" xml:"TimeInterval"`
-			OssEndpoint        string           `json:"OssEndpoint" xml:"OssEndpoint"`
-			OssBucket          string           `json:"OssBucket" xml:"OssBucket"`
-			OverwriteOssObject string           `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
-			SequenceOssObject  string           `json:"SequenceOssObject" xml:"SequenceOssObject"`
-			CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
+			DomainName         string `json:"DomainName" xml:"DomainName"`
+			AppName            string `json:"AppName" xml:"AppName"`
+			TimeInterval       int    `json:"TimeInterval" xml:"TimeInterval"`
+			OssEndpoint        string `json:"OssEndpoint" xml:"OssEndpoint"`
+			OssBucket          string `json:"OssBucket" xml:"OssBucket"`
+			OverwriteOssObject string `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
+			SequenceOssObject  string `json:"SequenceOssObject" xml:"SequenceOssObject"`
+			CreateTime         string `json:"CreateTime" xml:"CreateTime"`
 		} `json:"LiveStreamSnapshotConfig" xml:"LiveStreamSnapshotConfig"`
 	} `json:"LiveStreamSnapshotConfigList" xml:"LiveStreamSnapshotConfigList"`
 }

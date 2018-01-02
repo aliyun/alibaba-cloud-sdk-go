@@ -78,9 +78,9 @@ type DescribeLiveStreamFrameLossRatioResponse struct {
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	FrameLossRatioInfos struct {
 		FrameLossRatioInfo []struct {
-			StreamUrl      string         `json:"StreamUrl" xml:"StreamUrl"`
-			FrameLossRatio requests.Float `json:"FrameLossRatio" xml:"FrameLossRatio"`
-			Time           string         `json:"Time" xml:"Time"`
+			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+			FrameLossRatio float64 `json:"FrameLossRatio" xml:"FrameLossRatio"`
+			Time           string  `json:"Time" xml:"Time"`
 		} `json:"FrameLossRatioInfo" xml:"FrameLossRatioInfo"`
 	} `json:"FrameLossRatioInfos" xml:"FrameLossRatioInfos"`
 }

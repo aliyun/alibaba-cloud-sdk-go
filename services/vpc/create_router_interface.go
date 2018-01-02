@@ -70,7 +70,6 @@ type CreateRouterInterfaceRequest struct {
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	OppositeInterfaceOwnerId string           `position:"Query" name:"OppositeInterfaceOwnerId"`
 	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
-	UserCidr                 string           `position:"Query" name:"UserCidr"`
 	AccessPointId            string           `position:"Query" name:"AccessPointId"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`

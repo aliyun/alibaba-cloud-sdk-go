@@ -76,14 +76,14 @@ type QueryInvalidAddressRequest struct {
 
 type QueryInvalidAddressResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	NextStart  requests.Integer `json:"NextStart" xml:"NextStart"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	NextStart  int    `json:"NextStart" xml:"NextStart"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Data       struct {
 		MailDetail []struct {
-			LastUpdateTime    string           `json:"LastUpdateTime" xml:"LastUpdateTime"`
-			UtcLastUpdateTime requests.Integer `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-			ToAddress         string           `json:"ToAddress" xml:"ToAddress"`
+			LastUpdateTime    string `json:"LastUpdateTime" xml:"LastUpdateTime"`
+			UtcLastUpdateTime int    `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
+			ToAddress         string `json:"ToAddress" xml:"ToAddress"`
 		} `json:"mailDetail" xml:"mailDetail"`
 	} `json:"data" xml:"data"`
 }

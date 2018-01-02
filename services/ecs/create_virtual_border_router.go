@@ -67,8 +67,8 @@ type CreateVirtualBorderRouterRequest struct {
 	VlanId               requests.Integer `position:"Query" name:"VlanId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

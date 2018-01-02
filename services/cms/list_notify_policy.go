@@ -73,19 +73,19 @@ type ListNotifyPolicyRequest struct {
 
 type ListNotifyPolicyResponse struct {
 	*responses.BaseResponse
-	Code             string           `json:"code" xml:"code"`
-	Message          string           `json:"message" xml:"message"`
-	Success          string           `json:"success" xml:"success"`
-	TraceId          string           `json:"traceId" xml:"traceId"`
-	Total            requests.Integer `json:"total" xml:"total"`
+	Code             string `json:"code" xml:"code"`
+	Message          string `json:"message" xml:"message"`
+	Success          string `json:"success" xml:"success"`
+	TraceId          string `json:"traceId" xml:"traceId"`
+	Total            int    `json:"total" xml:"total"`
 	NotifyPolicyList struct {
 		NotifyPolicy []struct {
-			AlertName  string           `json:"AlertName" xml:"AlertName"`
-			Dimensions string           `json:"Dimensions" xml:"Dimensions"`
-			Type       string           `json:"Type" xml:"Type"`
-			Id         string           `json:"Id" xml:"Id"`
-			StartTime  requests.Integer `json:"StartTime" xml:"StartTime"`
-			EndTime    requests.Integer `json:"EndTime" xml:"EndTime"`
+			AlertName  string `json:"AlertName" xml:"AlertName"`
+			Dimensions string `json:"Dimensions" xml:"Dimensions"`
+			Type       string `json:"Type" xml:"Type"`
+			Id         string `json:"Id" xml:"Id"`
+			StartTime  int    `json:"StartTime" xml:"StartTime"`
+			EndTime    int    `json:"EndTime" xml:"EndTime"`
 		} `json:"NotifyPolicy" xml:"NotifyPolicy"`
 	} `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
 }

@@ -69,10 +69,10 @@ type OrderSucceededCallbackRequest struct {
 
 type OrderSucceededCallbackResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"requestId" xml:"requestId"`
-	Data      string           `json:"data" xml:"data"`
-	Success   requests.Boolean `json:"success" xml:"success"`
-	Synchro   requests.Boolean `json:"synchro" xml:"synchro"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Data      string `json:"data" xml:"data"`
+	Success   bool   `json:"success" xml:"success"`
+	Synchro   bool   `json:"synchro" xml:"synchro"`
 }
 
 func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackRequest) {

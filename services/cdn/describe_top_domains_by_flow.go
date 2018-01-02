@@ -73,20 +73,20 @@ type DescribeTopDomainsByFlowRequest struct {
 
 type DescribeTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	StartTime         string           `json:"StartTime" xml:"StartTime"`
-	EndTime           string           `json:"EndTime" xml:"EndTime"`
-	DomainCount       requests.Integer `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount requests.Integer `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	StartTime         string `json:"StartTime" xml:"StartTime"`
+	EndTime           string `json:"EndTime" xml:"EndTime"`
+	DomainCount       int    `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int    `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
 	TopDomains        struct {
 		TopDomain []struct {
-			DomainName     string           `json:"DomainName" xml:"DomainName"`
-			Rank           requests.Integer `json:"Rank" xml:"Rank"`
-			TotalTraffic   string           `json:"TotalTraffic" xml:"TotalTraffic"`
-			TrafficPercent string           `json:"TrafficPercent" xml:"TrafficPercent"`
-			MaxBps         requests.Integer `json:"MaxBps" xml:"MaxBps"`
-			MaxBpsTime     string           `json:"MaxBpsTime" xml:"MaxBpsTime"`
-			TotalAccess    requests.Integer `json:"TotalAccess" xml:"TotalAccess"`
+			DomainName     string `json:"DomainName" xml:"DomainName"`
+			Rank           int    `json:"Rank" xml:"Rank"`
+			TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+			TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
+			MaxBps         int    `json:"MaxBps" xml:"MaxBps"`
+			MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
+			TotalAccess    int    `json:"TotalAccess" xml:"TotalAccess"`
 		} `json:"TopDomain" xml:"TopDomain"`
 	} `json:"TopDomains" xml:"TopDomains"`
 }

@@ -73,9 +73,9 @@ type SaveReceiverDetailRequest struct {
 
 type SaveReceiverDetailResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	SuccessCount requests.Integer `json:"SuccessCount" xml:"SuccessCount"`
-	ErrorCount   requests.Integer `json:"ErrorCount" xml:"ErrorCount"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	SuccessCount int    `json:"SuccessCount" xml:"SuccessCount"`
+	ErrorCount   int    `json:"ErrorCount" xml:"ErrorCount"`
 	Data         struct {
 		Detail []struct {
 			Email string `json:"Email" xml:"Email"`

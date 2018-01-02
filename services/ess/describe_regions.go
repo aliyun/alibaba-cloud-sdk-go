@@ -73,9 +73,9 @@ type DescribeRegionsResponse struct {
 	*responses.BaseResponse
 	Regions struct {
 		Region []struct {
-			RegionId           string           `json:"RegionId" xml:"RegionId"`
-			ClassicUnavailable requests.Boolean `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
-			VpcUnavailable     requests.Boolean `json:"VpcUnavailable" xml:"VpcUnavailable"`
+			RegionId           string `json:"RegionId" xml:"RegionId"`
+			ClassicUnavailable bool   `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
+			VpcUnavailable     bool   `json:"VpcUnavailable" xml:"VpcUnavailable"`
 		} `json:"Region" xml:"Region"`
 	} `json:"Regions" xml:"Regions"`
 }

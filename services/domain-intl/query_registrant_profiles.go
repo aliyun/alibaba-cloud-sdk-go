@@ -64,42 +64,42 @@ func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistra
 
 type QueryRegistrantProfilesRequest struct {
 	*requests.RpcRequest
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
+	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
+	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
 	Lang                     string           `position:"Query" name:"Lang"`
-	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
-	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 }
 
 type QueryRegistrantProfilesResponse struct {
 	*responses.BaseResponse
-	RequestId          string           `json:"RequestId" xml:"RequestId"`
-	TotalItemNum       requests.Integer `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum     requests.Integer `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum       requests.Integer `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize           requests.Integer `json:"PageSize" xml:"PageSize"`
-	PrePage            requests.Boolean `json:"PrePage" xml:"PrePage"`
-	NextPage           requests.Boolean `json:"NextPage" xml:"NextPage"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	TotalItemNum       int    `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum     int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum       int    `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize           int    `json:"PageSize" xml:"PageSize"`
+	PrePage            bool   `json:"PrePage" xml:"PrePage"`
+	NextPage           bool   `json:"NextPage" xml:"NextPage"`
 	RegistrantProfiles struct {
 		RegistrantProfile []struct {
-			RegistrantProfileId      requests.Integer `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
-			CreateTime               string           `json:"CreateTime" xml:"CreateTime"`
-			UpdateTime               string           `json:"UpdateTime" xml:"UpdateTime"`
-			DefaultRegistrantProfile requests.Boolean `json:"DefaultRegistrantProfile" xml:"DefaultRegistrantProfile"`
-			RegistrantName           string           `json:"RegistrantName" xml:"RegistrantName"`
-			RegistrantOrganization   string           `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-			Country                  string           `json:"Country" xml:"Country"`
-			Province                 string           `json:"Province" xml:"Province"`
-			City                     string           `json:"City" xml:"City"`
-			Address                  string           `json:"Address" xml:"Address"`
-			Email                    string           `json:"Email" xml:"Email"`
-			PostalCode               string           `json:"PostalCode" xml:"PostalCode"`
-			TelArea                  string           `json:"TelArea" xml:"TelArea"`
-			Telephone                string           `json:"Telephone" xml:"Telephone"`
-			TelExt                   string           `json:"TelExt" xml:"TelExt"`
-			EmailVerificationStatus  requests.Integer `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
+			RegistrantProfileId      int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+			CreateTime               string `json:"CreateTime" xml:"CreateTime"`
+			UpdateTime               string `json:"UpdateTime" xml:"UpdateTime"`
+			DefaultRegistrantProfile bool   `json:"DefaultRegistrantProfile" xml:"DefaultRegistrantProfile"`
+			RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
+			RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
+			Country                  string `json:"Country" xml:"Country"`
+			Province                 string `json:"Province" xml:"Province"`
+			City                     string `json:"City" xml:"City"`
+			Address                  string `json:"Address" xml:"Address"`
+			Email                    string `json:"Email" xml:"Email"`
+			PostalCode               string `json:"PostalCode" xml:"PostalCode"`
+			TelArea                  string `json:"TelArea" xml:"TelArea"`
+			Telephone                string `json:"Telephone" xml:"Telephone"`
+			TelExt                   string `json:"TelExt" xml:"TelExt"`
+			EmailVerificationStatus  int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
 		} `json:"RegistrantProfile" xml:"RegistrantProfile"`
 	} `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
 }

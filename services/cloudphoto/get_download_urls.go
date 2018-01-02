@@ -77,10 +77,10 @@ type GetDownloadUrlsResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Results   struct {
 		Result []struct {
-			Code        string           `json:"Code" xml:"Code"`
-			Message     string           `json:"Message" xml:"Message"`
-			PhotoId     requests.Integer `json:"PhotoId" xml:"PhotoId"`
-			DownloadUrl string           `json:"DownloadUrl" xml:"DownloadUrl"`
+			Code        string `json:"Code" xml:"Code"`
+			Message     string `json:"Message" xml:"Message"`
+			PhotoId     int    `json:"PhotoId" xml:"PhotoId"`
+			DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
 		} `json:"Result" xml:"Result"`
 	} `json:"Results" xml:"Results"`
 }

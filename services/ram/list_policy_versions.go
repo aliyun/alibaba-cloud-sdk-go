@@ -73,10 +73,10 @@ type ListPolicyVersionsResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	PolicyVersions struct {
 		PolicyVersion []struct {
-			VersionId        string           `json:"VersionId" xml:"VersionId"`
-			IsDefaultVersion requests.Boolean `json:"IsDefaultVersion" xml:"IsDefaultVersion"`
-			PolicyDocument   string           `json:"PolicyDocument" xml:"PolicyDocument"`
-			CreateDate       string           `json:"CreateDate" xml:"CreateDate"`
+			VersionId        string `json:"VersionId" xml:"VersionId"`
+			IsDefaultVersion bool   `json:"IsDefaultVersion" xml:"IsDefaultVersion"`
+			PolicyDocument   string `json:"PolicyDocument" xml:"PolicyDocument"`
+			CreateDate       string `json:"CreateDate" xml:"CreateDate"`
 		} `json:"PolicyVersion" xml:"PolicyVersion"`
 	} `json:"PolicyVersions" xml:"PolicyVersions"`
 }

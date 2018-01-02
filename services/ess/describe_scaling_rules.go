@@ -76,8 +76,8 @@ type DescribeScalingRulesRequest struct {
 	ScalingRuleId3       string           `position:"Query" name:"ScalingRuleId.3"`
 	ScalingRuleId2       string           `position:"Query" name:"ScalingRuleId.2"`
 	ScalingRuleId5       string           `position:"Query" name:"ScalingRuleId.5"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ScalingRuleId4       string           `position:"Query" name:"ScalingRuleId.4"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ScalingRuleId7       string           `position:"Query" name:"ScalingRuleId.7"`
 	ScalingRuleId6       string           `position:"Query" name:"ScalingRuleId.6"`
 	ScalingRuleId9       string           `position:"Query" name:"ScalingRuleId.9"`
@@ -105,21 +105,21 @@ type DescribeScalingRulesRequest struct {
 
 type DescribeScalingRulesResponse struct {
 	*responses.BaseResponse
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ScalingRules struct {
 		ScalingRule []struct {
-			ScalingRuleId   string           `json:"ScalingRuleId" xml:"ScalingRuleId"`
-			ScalingGroupId  string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			ScalingRuleName string           `json:"ScalingRuleName" xml:"ScalingRuleName"`
-			Cooldown        requests.Integer `json:"Cooldown" xml:"Cooldown"`
-			AdjustmentType  string           `json:"AdjustmentType" xml:"AdjustmentType"`
-			AdjustmentValue requests.Integer `json:"AdjustmentValue" xml:"AdjustmentValue"`
-			MinSize         requests.Integer `json:"MinSize" xml:"MinSize"`
-			MaxSize         requests.Integer `json:"MaxSize" xml:"MaxSize"`
-			ScalingRuleAri  string           `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
+			ScalingRuleId   string `json:"ScalingRuleId" xml:"ScalingRuleId"`
+			ScalingGroupId  string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			ScalingRuleName string `json:"ScalingRuleName" xml:"ScalingRuleName"`
+			Cooldown        int    `json:"Cooldown" xml:"Cooldown"`
+			AdjustmentType  string `json:"AdjustmentType" xml:"AdjustmentType"`
+			AdjustmentValue int    `json:"AdjustmentValue" xml:"AdjustmentValue"`
+			MinSize         int    `json:"MinSize" xml:"MinSize"`
+			MaxSize         int    `json:"MaxSize" xml:"MaxSize"`
+			ScalingRuleAri  string `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
 		} `json:"ScalingRule" xml:"ScalingRule"`
 	} `json:"ScalingRules" xml:"ScalingRules"`
 }

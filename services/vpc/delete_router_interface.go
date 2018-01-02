@@ -67,7 +67,6 @@ type DeleteRouterInterfaceRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

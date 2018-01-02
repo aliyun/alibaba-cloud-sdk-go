@@ -80,8 +80,8 @@ type ImportDataFromDatabaseRequest struct {
 
 type ImportDataFromDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	ImportId  requests.Integer `json:"ImportId" xml:"ImportId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ImportId  int    `json:"ImportId" xml:"ImportId"`
 }
 
 func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseRequest) {

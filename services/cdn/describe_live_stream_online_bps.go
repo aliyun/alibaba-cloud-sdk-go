@@ -75,16 +75,16 @@ type DescribeLiveStreamOnlineBpsRequest struct {
 
 type DescribeLiveStreamOnlineBpsResponse struct {
 	*responses.BaseResponse
-	RequestId                string           `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber          requests.Integer `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	FlvBps                   requests.Float   `json:"FlvBps" xml:"FlvBps"`
-	HlsBps                   requests.Float   `json:"HlsBps" xml:"HlsBps"`
+	RequestId                string  `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber          int     `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	FlvBps                   float64 `json:"FlvBps" xml:"FlvBps"`
+	HlsBps                   float64 `json:"HlsBps" xml:"HlsBps"`
 	LiveStreamOnlineBpsInfos struct {
 		LiveStreamOnlineBpsInfo []struct {
-			StreamUrl string         `json:"StreamUrl" xml:"StreamUrl"`
-			UpBps     requests.Float `json:"UpBps" xml:"UpBps"`
-			DownBps   requests.Float `json:"DownBps" xml:"DownBps"`
-			Time      string         `json:"Time" xml:"Time"`
+			StreamUrl string  `json:"StreamUrl" xml:"StreamUrl"`
+			UpBps     float64 `json:"UpBps" xml:"UpBps"`
+			DownBps   float64 `json:"DownBps" xml:"DownBps"`
+			Time      string  `json:"Time" xml:"Time"`
 		} `json:"LiveStreamOnlineBpsInfo" xml:"LiveStreamOnlineBpsInfo"`
 	} `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
 }

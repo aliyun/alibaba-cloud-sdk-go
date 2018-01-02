@@ -64,13 +64,13 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *
 
 type SaveSingleTaskForUpdatingContactInfoRequest struct {
 	*requests.RpcRequest
-	InstanceId          string           `position:"Query" name:"InstanceId"`
+	DomainName          string           `position:"Query" name:"DomainName"`
+	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
 	ContactType         string           `position:"Query" name:"ContactType"`
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	DomainName          string           `position:"Query" name:"DomainName"`
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
 	Lang                string           `position:"Query" name:"Lang"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
 }
 
 type SaveSingleTaskForUpdatingContactInfoResponse struct {

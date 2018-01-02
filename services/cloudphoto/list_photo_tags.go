@@ -77,10 +77,10 @@ type ListPhotoTagsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
 	Tags      []struct {
-		Id        requests.Integer `json:"Id" xml:"Id"`
-		IsSubTag  requests.Boolean `json:"IsSubTag" xml:"IsSubTag"`
-		Name      string           `json:"Name" xml:"Name"`
-		ParentTag string           `json:"ParentTag" xml:"ParentTag"`
+		Id        int    `json:"Id" xml:"Id"`
+		IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
+		Name      string `json:"Name" xml:"Name"`
+		ParentTag string `json:"ParentTag" xml:"ParentTag"`
 	} `json:"Tags" xml:"Tags"`
 }
 

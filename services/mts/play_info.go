@@ -65,16 +65,16 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 type PlayInfoRequest struct {
 	*requests.RpcRequest
 	AuthInfo             string           `position:"Query" name:"AuthInfo"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
+	Formats              string           `position:"Query" name:"Formats"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	MediaId              string           `position:"Query" name:"MediaId"`
 	PlayDomain           string           `position:"Query" name:"PlayDomain"`
-	Rand                 string           `position:"Query" name:"Rand"`
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	Rand                 string           `position:"Query" name:"Rand"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
-	Formats              string           `position:"Query" name:"Formats"`
 }
 
 type PlayInfoResponse struct {
@@ -85,20 +85,21 @@ type PlayInfoResponse struct {
 	} `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
 	PlayInfoList struct {
 		PlayInfo []struct {
-			Url          string `json:"Url" xml:"Url"`
-			Duration     string `json:"duration" xml:"duration"`
-			Size         string `json:"size" xml:"size"`
-			Width        string `json:"width" xml:"width"`
-			Height       string `json:"height" xml:"height"`
-			Bitrate      string `json:"bitrate" xml:"bitrate"`
-			Fps          string `json:"fps" xml:"fps"`
-			Format       string `json:"format" xml:"format"`
-			Definition   string `json:"definition" xml:"definition"`
-			Encryption   string `json:"encryption" xml:"encryption"`
-			Rand         string `json:"rand" xml:"rand"`
-			Plaintext    string `json:"plaintext" xml:"plaintext"`
-			Complexity   string `json:"complexity" xml:"complexity"`
-			ActivityName string `json:"activityName" xml:"activityName"`
+			Url            string `json:"Url" xml:"Url"`
+			Duration       string `json:"duration" xml:"duration"`
+			Size           string `json:"size" xml:"size"`
+			Width          string `json:"width" xml:"width"`
+			Height         string `json:"height" xml:"height"`
+			Bitrate        string `json:"bitrate" xml:"bitrate"`
+			Fps            string `json:"fps" xml:"fps"`
+			Format         string `json:"format" xml:"format"`
+			Definition     string `json:"definition" xml:"definition"`
+			Encryption     string `json:"encryption" xml:"encryption"`
+			Rand           string `json:"rand" xml:"rand"`
+			Plaintext      string `json:"plaintext" xml:"plaintext"`
+			Complexity     string `json:"complexity" xml:"complexity"`
+			ActivityName   string `json:"activityName" xml:"activityName"`
+			EncryptionType string `json:"encryptionType" xml:"encryptionType"`
 		} `json:"PlayInfo" xml:"PlayInfo"`
 	} `json:"PlayInfoList" xml:"PlayInfoList"`
 }

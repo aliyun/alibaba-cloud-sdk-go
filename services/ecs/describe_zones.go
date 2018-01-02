@@ -94,7 +94,7 @@ type DescribeZonesResponse struct {
 			} `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
 			AvailableResources struct {
 				ResourcesInfo []struct {
-					IoOptimized          requests.Boolean `json:"IoOptimized" xml:"IoOptimized"`
+					IoOptimized          bool `json:"IoOptimized" xml:"IoOptimized"`
 					SystemDiskCategories struct {
 						SupportedSystemDiskCategory []string `json:"supportedSystemDiskCategory" xml:"supportedSystemDiskCategory"`
 					} `json:"SystemDiskCategories" xml:"SystemDiskCategories"`

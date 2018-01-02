@@ -86,12 +86,12 @@ type DescribeRecommendInstanceTypeResponse struct {
 			CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
 			Scene         string `json:"Scene" xml:"Scene"`
 			InstanceType  struct {
-				Generation         string           `json:"Generation" xml:"Generation"`
-				InstanceTypeFamily string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-				InstanceType       string           `json:"InstanceType" xml:"InstanceType"`
-				SupportIoOptimized string           `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
-				Cores              requests.Integer `json:"Cores" xml:"Cores"`
-				Memory             requests.Integer `json:"Memory" xml:"Memory"`
+				Generation         string `json:"Generation" xml:"Generation"`
+				InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+				InstanceType       string `json:"InstanceType" xml:"InstanceType"`
+				SupportIoOptimized string `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
+				Cores              int    `json:"Cores" xml:"Cores"`
+				Memory             int    `json:"Memory" xml:"Memory"`
 			} `json:"InstanceType" xml:"InstanceType"`
 			Zones struct {
 				Zone []struct {

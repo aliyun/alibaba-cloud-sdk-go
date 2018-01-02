@@ -83,20 +83,20 @@ type DescribeInstancesFullStatusRequest struct {
 
 type DescribeInstancesFullStatusResponse struct {
 	*responses.BaseResponse
-	RequestId             string           `json:"RequestId" xml:"RequestId"`
-	TotalCount            requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize              requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int    `json:"PageSize" xml:"PageSize"`
 	InstanceFullStatusSet struct {
 		InstanceFullStatusType []struct {
 			InstanceId string `json:"InstanceId" xml:"InstanceId"`
 			Status     struct {
-				Code requests.Integer `json:"Code" xml:"Code"`
-				Name string           `json:"Name" xml:"Name"`
+				Code int    `json:"Code" xml:"Code"`
+				Name string `json:"Name" xml:"Name"`
 			} `json:"Status" xml:"Status"`
 			HealthStatus struct {
-				Code requests.Integer `json:"Code" xml:"Code"`
-				Name string           `json:"Name" xml:"Name"`
+				Code int    `json:"Code" xml:"Code"`
+				Name string `json:"Name" xml:"Name"`
 			} `json:"HealthStatus" xml:"HealthStatus"`
 			ScheduledSystemEventSet struct {
 				ScheduledSystemEventType []struct {
@@ -104,12 +104,12 @@ type DescribeInstancesFullStatusResponse struct {
 					EventPublishTime string `json:"EventPublishTime" xml:"EventPublishTime"`
 					NotBefore        string `json:"NotBefore" xml:"NotBefore"`
 					EventCycleStatus struct {
-						Code requests.Integer `json:"Code" xml:"Code"`
-						Name string           `json:"Name" xml:"Name"`
+						Code int    `json:"Code" xml:"Code"`
+						Name string `json:"Name" xml:"Name"`
 					} `json:"EventCycleStatus" xml:"EventCycleStatus"`
 					EventType struct {
-						Code requests.Integer `json:"Code" xml:"Code"`
-						Name string           `json:"Name" xml:"Name"`
+						Code int    `json:"Code" xml:"Code"`
+						Name string `json:"Name" xml:"Name"`
 					} `json:"EventType" xml:"EventType"`
 				} `json:"ScheduledSystemEventType" xml:"ScheduledSystemEventType"`
 			} `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`

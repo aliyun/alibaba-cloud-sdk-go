@@ -66,8 +66,8 @@ type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
 	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
 	VSwitchId                            string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
 	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
+	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
 	ReadWriteSplittingClassicExpiredDays requests.Integer `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
 	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
 	RetainClassic                        string           `position:"Query" name:"RetainClassic"`

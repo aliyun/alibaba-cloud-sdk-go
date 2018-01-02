@@ -64,7 +64,7 @@ func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRe
 
 type CreateMigrateTaskRequest struct {
 	*requests.RpcRequest
-	TaskType             string           `position:"Query" name:"TaskType"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBName               string           `position:"Query" name:"DBName"`
@@ -76,13 +76,12 @@ type CreateMigrateTaskRequest struct {
 
 type CreateMigrateTaskResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	TaskId         string `json:"TaskId" xml:"TaskId"`
-	DBName         string `json:"DBName" xml:"DBName"`
-	MigrateIaskId  string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	TaskType       string `json:"TaskType" xml:"TaskType"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId  string `json:"DBInstanceId" xml:"DBInstanceId"`
+	TaskId        string `json:"TaskId" xml:"TaskId"`
+	DBName        string `json:"DBName" xml:"DBName"`
+	MigrateIaskId string `json:"MigrateIaskId" xml:"MigrateIaskId"`
+	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
 }
 
 func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {

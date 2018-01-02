@@ -66,14 +66,14 @@ type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
 	Tags                 string           `position:"Query" name:"Tags"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type MoveResourceGroupResponse struct {

@@ -76,17 +76,17 @@ type BatchDescribeDomainBpsDataRequest struct {
 
 type BatchDescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	BpsDatas   struct {
 		DataModule []struct {
-			Timestamp  string         `json:"Timestamp" xml:"Timestamp"`
-			L1Bps      requests.Float `json:"L1Bps" xml:"L1Bps"`
-			L1InnerBps requests.Float `json:"L1InnerBps" xml:"L1InnerBps"`
-			L1OutBps   requests.Float `json:"L1OutBps" xml:"L1OutBps"`
-			DomainName string         `json:"DomainName" xml:"DomainName"`
+			Timestamp  string  `json:"Timestamp" xml:"Timestamp"`
+			L1Bps      float64 `json:"L1Bps" xml:"L1Bps"`
+			L1InnerBps float64 `json:"L1InnerBps" xml:"L1InnerBps"`
+			L1OutBps   float64 `json:"L1OutBps" xml:"L1OutBps"`
+			DomainName string  `json:"DomainName" xml:"DomainName"`
 		} `json:"DataModule" xml:"DataModule"`
 	} `json:"BpsDatas" xml:"BpsDatas"`
 }

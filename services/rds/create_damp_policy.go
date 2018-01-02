@@ -73,8 +73,8 @@ type CreateDampPolicyRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceRules          string           `position:"Query" name:"SourceRules"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SourceRules          string           `position:"Query" name:"SourceRules"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 

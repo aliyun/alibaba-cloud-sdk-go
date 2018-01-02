@@ -67,6 +67,7 @@ type DescribeNatGatewaysRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Name                 string           `position:"Query" name:"Name"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -76,10 +77,10 @@ type DescribeNatGatewaysRequest struct {
 
 type DescribeNatGatewaysResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
 	NatGateways struct {
 		NatGateway []struct {
 			NatGatewayId       string `json:"NatGatewayId" xml:"NatGatewayId"`
@@ -103,10 +104,10 @@ type DescribeNatGatewaysResponse struct {
 			} `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 			IpLists struct {
 				IpList []struct {
-					AllocationId    string           `json:"AllocationId" xml:"AllocationId"`
-					IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
-					UsingStatus     string           `json:"UsingStatus" xml:"UsingStatus"`
-					ApAccessEnabled requests.Boolean `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
+					AllocationId    string `json:"AllocationId" xml:"AllocationId"`
+					IpAddress       string `json:"IpAddress" xml:"IpAddress"`
+					UsingStatus     string `json:"UsingStatus" xml:"UsingStatus"`
+					ApAccessEnabled bool   `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
 				} `json:"IpList" xml:"IpList"`
 			} `json:"IpLists" xml:"IpLists"`
 		} `json:"NatGateway" xml:"NatGateway"`

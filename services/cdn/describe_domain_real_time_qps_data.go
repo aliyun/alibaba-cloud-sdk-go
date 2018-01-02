@@ -79,8 +79,8 @@ type DescribeDomainRealTimeQpsDataResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      struct {
 		QpsModel []struct {
-			Qps       requests.Float `json:"Qps" xml:"Qps"`
-			TimeStamp string         `json:"TimeStamp" xml:"TimeStamp"`
+			Qps       float64 `json:"Qps" xml:"Qps"`
+			TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"QpsModel" xml:"QpsModel"`
 	} `json:"Data" xml:"Data"`
 }

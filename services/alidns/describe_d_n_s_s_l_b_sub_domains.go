@@ -73,16 +73,16 @@ type DescribeDNSSLBSubDomainsRequest struct {
 
 type DescribeDNSSLBSubDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	TotalCount    requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize      requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int    `json:"PageSize" xml:"PageSize"`
 	SlbSubDomains struct {
 		SlbSubDomain []struct {
-			SubDomain   string           `json:"SubDomain" xml:"SubDomain"`
-			RecordCount requests.Integer `json:"RecordCount" xml:"RecordCount"`
-			Open        requests.Boolean `json:"Open" xml:"Open"`
-			Type        string           `json:"Type" xml:"Type"`
+			SubDomain   string `json:"SubDomain" xml:"SubDomain"`
+			RecordCount int    `json:"RecordCount" xml:"RecordCount"`
+			Open        bool   `json:"Open" xml:"Open"`
+			Type        string `json:"Type" xml:"Type"`
 		} `json:"SlbSubDomain" xml:"SlbSubDomain"`
 	} `json:"SlbSubDomains" xml:"SlbSubDomains"`
 }

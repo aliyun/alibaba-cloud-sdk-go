@@ -76,10 +76,10 @@ type DescribeBandwidthPackagesRequest struct {
 
 type DescribeBandwidthPackagesResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalCount        requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize          requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int    `json:"PageSize" xml:"PageSize"`
 	BandwidthPackages struct {
 		BandwidthPackage []struct {
 			BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
@@ -98,10 +98,10 @@ type DescribeBandwidthPackagesResponse struct {
 			ISP                string `json:"ISP" xml:"ISP"`
 			PublicIpAddresses  struct {
 				PublicIpAddresse []struct {
-					AllocationId    string           `json:"AllocationId" xml:"AllocationId"`
-					IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
-					UsingStatus     string           `json:"UsingStatus" xml:"UsingStatus"`
-					ApAccessEnabled requests.Boolean `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
+					AllocationId    string `json:"AllocationId" xml:"AllocationId"`
+					IpAddress       string `json:"IpAddress" xml:"IpAddress"`
+					UsingStatus     string `json:"UsingStatus" xml:"UsingStatus"`
+					ApAccessEnabled bool   `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
 				} `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
 			} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 		} `json:"BandwidthPackage" xml:"BandwidthPackage"`

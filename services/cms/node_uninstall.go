@@ -69,10 +69,10 @@ type NodeUninstallRequest struct {
 
 type NodeUninstallResponse struct {
 	*responses.BaseResponse
-	ErrorCode    requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string           `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      requests.Boolean `json:"Success" xml:"Success"`
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
+	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool   `json:"Success" xml:"Success"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateNodeUninstallRequest() (request *NodeUninstallRequest) {

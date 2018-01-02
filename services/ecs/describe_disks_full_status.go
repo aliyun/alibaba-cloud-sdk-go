@@ -81,28 +81,28 @@ type DescribeDisksFullStatusRequest struct {
 
 type DescribeDisksFullStatusResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalCount        requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize          requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int    `json:"PageSize" xml:"PageSize"`
 	DiskFullStatusSet struct {
 		DiskFullStatusType []struct {
 			DiskId string `json:"DiskId" xml:"DiskId"`
 			Status struct {
-				Code requests.Integer `json:"Code" xml:"Code"`
-				Name string           `json:"Name" xml:"Name"`
+				Code int    `json:"Code" xml:"Code"`
+				Name string `json:"Name" xml:"Name"`
 			} `json:"Status" xml:"Status"`
 			HealthStatus struct {
-				Code requests.Integer `json:"Code" xml:"Code"`
-				Name string           `json:"Name" xml:"Name"`
+				Code int    `json:"Code" xml:"Code"`
+				Name string `json:"Name" xml:"Name"`
 			} `json:"HealthStatus" xml:"HealthStatus"`
 			DiskEventSet struct {
 				DiskEventType []struct {
 					EventId   string `json:"EventId" xml:"EventId"`
 					EventTime string `json:"EventTime" xml:"EventTime"`
 					EventType struct {
-						Code requests.Integer `json:"Code" xml:"Code"`
-						Name string           `json:"Name" xml:"Name"`
+						Code int    `json:"Code" xml:"Code"`
+						Name string `json:"Name" xml:"Name"`
 					} `json:"EventType" xml:"EventType"`
 				} `json:"DiskEventType" xml:"DiskEventType"`
 			} `json:"DiskEventSet" xml:"DiskEventSet"`

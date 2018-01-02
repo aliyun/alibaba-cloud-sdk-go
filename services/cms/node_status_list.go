@@ -69,15 +69,15 @@ type NodeStatusListRequest struct {
 
 type NodeStatusListResponse struct {
 	*responses.BaseResponse
-	ErrorCode      requests.Integer `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string           `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	ErrorCode      int    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success        bool   `json:"Success" xml:"Success"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	NodeStatusList struct {
 		NodeStatus []struct {
-			InstanceId  string           `json:"InstanceId" xml:"InstanceId"`
-			AutoInstall requests.Boolean `json:"AutoInstall" xml:"AutoInstall"`
-			Status      string           `json:"Status" xml:"Status"`
+			InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+			AutoInstall bool   `json:"AutoInstall" xml:"AutoInstall"`
+			Status      string `json:"Status" xml:"Status"`
 		} `json:"NodeStatus" xml:"NodeStatus"`
 	} `json:"NodeStatusList" xml:"NodeStatusList"`
 }

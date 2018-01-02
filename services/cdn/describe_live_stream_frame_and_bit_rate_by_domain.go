@@ -74,17 +74,17 @@ type DescribeLiveStreamFrameAndBitRateByDomainRequest struct {
 
 type DescribeLiveStreamFrameAndBitRateByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId                string           `json:"RequestId" xml:"RequestId"`
-	Count                    requests.Integer `json:"Count" xml:"Count"`
-	PageNumber               requests.Integer `json:"pageNumber" xml:"pageNumber"`
-	PageSize                 requests.Integer `json:"pageSize" xml:"pageSize"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	Count                    int    `json:"Count" xml:"Count"`
+	PageNumber               int    `json:"pageNumber" xml:"pageNumber"`
+	PageSize                 int    `json:"pageSize" xml:"pageSize"`
 	FrameRateAndBitRateInfos struct {
 		FrameRateAndBitRateInfo []struct {
-			StreamUrl      string         `json:"StreamUrl" xml:"StreamUrl"`
-			VideoFrameRate requests.Float `json:"VideoFrameRate" xml:"VideoFrameRate"`
-			AudioFrameRate requests.Float `json:"AudioFrameRate" xml:"AudioFrameRate"`
-			BitRate        requests.Float `json:"BitRate" xml:"BitRate"`
-			Time           string         `json:"Time" xml:"Time"`
+			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+			VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
+			AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
+			BitRate        float64 `json:"BitRate" xml:"BitRate"`
+			Time           string  `json:"Time" xml:"Time"`
 		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
 	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }

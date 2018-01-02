@@ -74,16 +74,16 @@ type DescribeSnapshotPackageRequest struct {
 
 type DescribeSnapshotPackageResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	TotalCount       requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int    `json:"PageSize" xml:"PageSize"`
 	SnapshotPackages struct {
 		SnapshotPackage []struct {
-			StartTime    string           `json:"StartTime" xml:"StartTime"`
-			EndTime      string           `json:"EndTime" xml:"EndTime"`
-			InitCapacity requests.Integer `json:"InitCapacity" xml:"InitCapacity"`
-			DisplayName  string           `json:"DisplayName" xml:"DisplayName"`
+			StartTime    string `json:"StartTime" xml:"StartTime"`
+			EndTime      string `json:"EndTime" xml:"EndTime"`
+			InitCapacity int    `json:"InitCapacity" xml:"InitCapacity"`
+			DisplayName  string `json:"DisplayName" xml:"DisplayName"`
 		} `json:"SnapshotPackage" xml:"SnapshotPackage"`
 	} `json:"SnapshotPackages" xml:"SnapshotPackages"`
 }

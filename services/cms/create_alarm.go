@@ -64,8 +64,8 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	EndTime            requests.Integer `position:"Query" name:"EndTime"`
 	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
 	StartTime          requests.Integer `position:"Query" name:"StartTime"`
 	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
 	Period             requests.Integer `position:"Query" name:"Period"`
@@ -84,11 +84,11 @@ type CreateAlarmRequest struct {
 
 type CreateAlarmResponse struct {
 	*responses.BaseResponse
-	Success   requests.Boolean `json:"Success" xml:"Success"`
-	Code      string           `json:"Code" xml:"Code"`
-	Message   string           `json:"Message" xml:"Message"`
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Data      string           `json:"Data" xml:"Data"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {

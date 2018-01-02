@@ -74,25 +74,25 @@ type ListAlarmHistoryRequest struct {
 
 type ListAlarmHistoryResponse struct {
 	*responses.BaseResponse
-	Success          requests.Boolean `json:"Success" xml:"Success"`
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	Cursor           string           `json:"Cursor" xml:"Cursor"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Success          bool   `json:"Success" xml:"Success"`
+	Code             string `json:"Code" xml:"Code"`
+	Message          string `json:"Message" xml:"Message"`
+	Cursor           string `json:"Cursor" xml:"Cursor"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	AlarmHistoryList struct {
 		AlarmHistory []struct {
-			Id              string           `json:"Id" xml:"Id"`
-			Name            string           `json:"Name" xml:"Name"`
-			Namespace       string           `json:"Namespace" xml:"Namespace"`
-			MetricName      string           `json:"MetricName" xml:"MetricName"`
-			Dimension       string           `json:"Dimension" xml:"Dimension"`
-			EvaluationCount requests.Integer `json:"EvaluationCount" xml:"EvaluationCount"`
-			Value           string           `json:"Value" xml:"Value"`
-			AlarmTime       requests.Integer `json:"AlarmTime" xml:"AlarmTime"`
-			LastTime        requests.Integer `json:"LastTime" xml:"LastTime"`
-			State           string           `json:"State" xml:"State"`
-			Status          requests.Integer `json:"Status" xml:"Status"`
-			ContactGroups   string           `json:"ContactGroups" xml:"ContactGroups"`
+			Id              string `json:"Id" xml:"Id"`
+			Name            string `json:"Name" xml:"Name"`
+			Namespace       string `json:"Namespace" xml:"Namespace"`
+			MetricName      string `json:"MetricName" xml:"MetricName"`
+			Dimension       string `json:"Dimension" xml:"Dimension"`
+			EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
+			Value           string `json:"Value" xml:"Value"`
+			AlarmTime       int    `json:"AlarmTime" xml:"AlarmTime"`
+			LastTime        int    `json:"LastTime" xml:"LastTime"`
+			State           string `json:"State" xml:"State"`
+			Status          int    `json:"Status" xml:"Status"`
+			ContactGroups   string `json:"ContactGroups" xml:"ContactGroups"`
 		} `json:"AlarmHistory" xml:"AlarmHistory"`
 	} `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }

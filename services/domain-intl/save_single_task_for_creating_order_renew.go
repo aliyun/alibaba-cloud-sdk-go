@@ -64,10 +64,10 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithCallback(request *S
 
 type SaveSingleTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
-	SubscriptionDuration  requests.Integer `position:"Query" name:"SubscriptionDuration"`
-	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	DomainName            string           `position:"Query" name:"DomainName"`
+	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
+	SubscriptionDuration  requests.Integer `position:"Query" name:"SubscriptionDuration"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
 }
 

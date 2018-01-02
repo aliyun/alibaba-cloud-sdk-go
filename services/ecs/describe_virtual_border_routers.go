@@ -79,32 +79,32 @@ type DescribeVirtualBorderRoutersFilter struct {
 
 type DescribeVirtualBorderRoutersResponse struct {
 	*responses.BaseResponse
-	RequestId              string           `json:"RequestId" xml:"RequestId"`
-	PageNumber             requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize               requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount             requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	PageNumber             int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize               int    `json:"PageSize" xml:"PageSize"`
+	TotalCount             int    `json:"TotalCount" xml:"TotalCount"`
 	VirtualBorderRouterSet struct {
 		VirtualBorderRouterType []struct {
-			VbrId                            string           `json:"VbrId" xml:"VbrId"`
-			CreationTime                     string           `json:"CreationTime" xml:"CreationTime"`
-			ActivationTime                   string           `json:"ActivationTime" xml:"ActivationTime"`
-			TerminationTime                  string           `json:"TerminationTime" xml:"TerminationTime"`
-			RecoveryTime                     string           `json:"RecoveryTime" xml:"RecoveryTime"`
-			Status                           string           `json:"Status" xml:"Status"`
-			VlanId                           requests.Integer `json:"VlanId" xml:"VlanId"`
-			CircuitCode                      string           `json:"CircuitCode" xml:"CircuitCode"`
-			RouteTableId                     string           `json:"RouteTableId" xml:"RouteTableId"`
-			VlanInterfaceId                  string           `json:"VlanInterfaceId" xml:"VlanInterfaceId"`
-			LocalGatewayIp                   string           `json:"LocalGatewayIp" xml:"LocalGatewayIp"`
-			PeerGatewayIp                    string           `json:"PeerGatewayIp" xml:"PeerGatewayIp"`
-			PeeringSubnetMask                string           `json:"PeeringSubnetMask" xml:"PeeringSubnetMask"`
-			PhysicalConnectionId             string           `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
-			PhysicalConnectionStatus         string           `json:"PhysicalConnectionStatus" xml:"PhysicalConnectionStatus"`
-			PhysicalConnectionBusinessStatus string           `json:"PhysicalConnectionBusinessStatus" xml:"PhysicalConnectionBusinessStatus"`
-			PhysicalConnectionOwnerUid       string           `json:"PhysicalConnectionOwnerUid" xml:"PhysicalConnectionOwnerUid"`
-			AccessPointId                    string           `json:"AccessPointId" xml:"AccessPointId"`
-			Name                             string           `json:"Name" xml:"Name"`
-			Description                      string           `json:"Description" xml:"Description"`
+			VbrId                            string `json:"VbrId" xml:"VbrId"`
+			CreationTime                     string `json:"CreationTime" xml:"CreationTime"`
+			ActivationTime                   string `json:"ActivationTime" xml:"ActivationTime"`
+			TerminationTime                  string `json:"TerminationTime" xml:"TerminationTime"`
+			RecoveryTime                     string `json:"RecoveryTime" xml:"RecoveryTime"`
+			Status                           string `json:"Status" xml:"Status"`
+			VlanId                           int    `json:"VlanId" xml:"VlanId"`
+			CircuitCode                      string `json:"CircuitCode" xml:"CircuitCode"`
+			RouteTableId                     string `json:"RouteTableId" xml:"RouteTableId"`
+			VlanInterfaceId                  string `json:"VlanInterfaceId" xml:"VlanInterfaceId"`
+			LocalGatewayIp                   string `json:"LocalGatewayIp" xml:"LocalGatewayIp"`
+			PeerGatewayIp                    string `json:"PeerGatewayIp" xml:"PeerGatewayIp"`
+			PeeringSubnetMask                string `json:"PeeringSubnetMask" xml:"PeeringSubnetMask"`
+			PhysicalConnectionId             string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
+			PhysicalConnectionStatus         string `json:"PhysicalConnectionStatus" xml:"PhysicalConnectionStatus"`
+			PhysicalConnectionBusinessStatus string `json:"PhysicalConnectionBusinessStatus" xml:"PhysicalConnectionBusinessStatus"`
+			PhysicalConnectionOwnerUid       string `json:"PhysicalConnectionOwnerUid" xml:"PhysicalConnectionOwnerUid"`
+			AccessPointId                    string `json:"AccessPointId" xml:"AccessPointId"`
+			Name                             string `json:"Name" xml:"Name"`
+			Description                      string `json:"Description" xml:"Description"`
 		} `json:"VirtualBorderRouterType" xml:"VirtualBorderRouterType"`
 	} `json:"VirtualBorderRouterSet" xml:"VirtualBorderRouterSet"`
 }

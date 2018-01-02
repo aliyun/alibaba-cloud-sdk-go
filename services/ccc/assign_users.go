@@ -73,11 +73,11 @@ type AssignUsersRequest struct {
 
 type AssignUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 func CreateAssignUsersRequest() (request *AssignUsersRequest) {

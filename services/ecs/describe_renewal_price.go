@@ -79,15 +79,15 @@ type DescribeRenewalPriceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	PriceInfo struct {
 		Price struct {
-			OriginalPrice requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    requests.Float `json:"TradePrice" xml:"TradePrice"`
-			Currency      string         `json:"Currency" xml:"Currency"`
+			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
+			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
+			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
+			Currency      string  `json:"Currency" xml:"Currency"`
 		} `json:"Price" xml:"Price"`
 		Rules struct {
 			Rule []struct {
-				RuleId      requests.Integer `json:"RuleId" xml:"RuleId"`
-				Description string           `json:"Description" xml:"Description"`
+				RuleId      int    `json:"RuleId" xml:"RuleId"`
+				Description string `json:"Description" xml:"Description"`
 			} `json:"Rule" xml:"Rule"`
 		} `json:"Rules" xml:"Rules"`
 	} `json:"PriceInfo" xml:"PriceInfo"`

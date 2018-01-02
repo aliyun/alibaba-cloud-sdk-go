@@ -75,17 +75,17 @@ type DescribeOptimizeAdviceOnBigTableRequest struct {
 
 type DescribeOptimizeAdviceOnBigTableResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnBigTable []struct {
-			DBName    string           `json:"DBName" xml:"DBName"`
-			TableName string           `json:"TableName" xml:"TableName"`
-			TableSize requests.Integer `json:"TableSize" xml:"TableSize"`
-			DataSize  requests.Integer `json:"DataSize" xml:"DataSize"`
-			IndexSize requests.Integer `json:"IndexSize" xml:"IndexSize"`
+			DBName    string `json:"DBName" xml:"DBName"`
+			TableName string `json:"TableName" xml:"TableName"`
+			TableSize int    `json:"TableSize" xml:"TableSize"`
+			DataSize  int    `json:"DataSize" xml:"DataSize"`
+			IndexSize int    `json:"IndexSize" xml:"IndexSize"`
 		} `json:"AdviceOnBigTable" xml:"AdviceOnBigTable"`
 	} `json:"Items" xml:"Items"`
 }

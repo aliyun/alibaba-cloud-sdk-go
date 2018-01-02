@@ -85,21 +85,21 @@ type DescribeTagsRequest struct {
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Tags       struct {
 		Tag []struct {
 			TagKey            string `json:"TagKey" xml:"TagKey"`
 			TagValue          string `json:"TagValue" xml:"TagValue"`
 			ResourceTypeCount struct {
-				Instance      requests.Integer `json:"Instance" xml:"Instance"`
-				Disk          requests.Integer `json:"Disk" xml:"Disk"`
-				Volume        requests.Integer `json:"Volume" xml:"Volume"`
-				Image         requests.Integer `json:"Image" xml:"Image"`
-				Snapshot      requests.Integer `json:"Snapshot" xml:"Snapshot"`
-				Securitygroup requests.Integer `json:"Securitygroup" xml:"Securitygroup"`
+				Instance      int `json:"Instance" xml:"Instance"`
+				Disk          int `json:"Disk" xml:"Disk"`
+				Volume        int `json:"Volume" xml:"Volume"`
+				Image         int `json:"Image" xml:"Image"`
+				Snapshot      int `json:"Snapshot" xml:"Snapshot"`
+				Securitygroup int `json:"Securitygroup" xml:"Securitygroup"`
 			} `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
 		} `json:"Tag" xml:"Tag"`
 	} `json:"Tags" xml:"Tags"`

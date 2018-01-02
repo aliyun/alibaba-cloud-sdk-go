@@ -79,13 +79,13 @@ type DescribeRouteTableListRequest struct {
 
 type DescribeRouteTableListResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	Code            string           `json:"Code" xml:"Code"`
-	Message         string           `json:"Message" xml:"Message"`
-	Success         requests.Boolean `json:"Success" xml:"Success"`
-	PageSize        requests.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber      requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalCount      requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	Code            string `json:"Code" xml:"Code"`
+	Message         string `json:"Message" xml:"Message"`
+	Success         bool   `json:"Success" xml:"Success"`
+	PageSize        int    `json:"PageSize" xml:"PageSize"`
+	PageNumber      int    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      int    `json:"TotalCount" xml:"TotalCount"`
 	RouterTableList struct {
 		RouterTableListType []struct {
 			VpcId          string `json:"VpcId" xml:"VpcId"`

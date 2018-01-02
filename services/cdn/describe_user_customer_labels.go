@@ -71,8 +71,8 @@ type DescribeUserCustomerLabelsRequest struct {
 
 type DescribeUserCustomerLabelsResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	IsInnerUser requests.Boolean `json:"IsInnerUser" xml:"IsInnerUser"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	IsInnerUser bool   `json:"IsInnerUser" xml:"IsInnerUser"`
 }
 
 func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLabelsRequest) {

@@ -75,12 +75,12 @@ type DescribeImageSharePermissionRequest struct {
 
 type DescribeImageSharePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	RegionId    string           `json:"RegionId" xml:"RegionId"`
-	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
-	ImageId     string           `json:"ImageId" xml:"ImageId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
+	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
+	ImageId     string `json:"ImageId" xml:"ImageId"`
 	ShareGroups struct {
 		ShareGroup []struct {
 			Group string `json:"Group" xml:"Group"`

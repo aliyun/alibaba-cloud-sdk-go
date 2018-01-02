@@ -107,8 +107,8 @@ type QueryCensorJobListResponse struct {
 				AverageScore    string `json:"AverageScore" xml:"AverageScore"`
 				PornCounterList struct {
 					Counter []struct {
-						Count requests.Integer `json:"Count" xml:"Count"`
-						Label string           `json:"Label" xml:"Label"`
+						Count int    `json:"Count" xml:"Count"`
+						Label string `json:"Label" xml:"Label"`
 					} `json:"Counter" xml:"Counter"`
 				} `json:"PornCounterList" xml:"PornCounterList"`
 				PornTopList struct {
@@ -128,8 +128,8 @@ type QueryCensorJobListResponse struct {
 				AverageScore         string `json:"AverageScore" xml:"AverageScore"`
 				TerrorismCounterList struct {
 					Counter []struct {
-						Count requests.Integer `json:"Count" xml:"Count"`
-						Label string           `json:"Label" xml:"Label"`
+						Count int    `json:"Count" xml:"Count"`
+						Label string `json:"Label" xml:"Label"`
 					} `json:"Counter" xml:"Counter"`
 				} `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
 				TerrorismTopList struct {

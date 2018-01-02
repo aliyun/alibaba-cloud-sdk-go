@@ -81,10 +81,10 @@ type DescribeNetworkInterfacesRequest struct {
 
 type DescribeNetworkInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId            string           `json:"RequestId" xml:"RequestId"`
-	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int    `json:"PageSize" xml:"PageSize"`
 	NetworkInterfaceSets struct {
 		NetworkInterfaceSet []struct {
 			NetworkInterfaceId   string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
@@ -108,8 +108,8 @@ type DescribeNetworkInterfacesResponse struct {
 			} `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
 			PrivateIpSets struct {
 				PrivateIpSet []struct {
-					PrivateIpAddress    string           `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-					Primary             requests.Boolean `json:"Primary" xml:"Primary"`
+					PrivateIpAddress    string `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+					Primary             bool   `json:"Primary" xml:"Primary"`
 					AssociatedPublicIp1 struct {
 						PublicIpAddress string `json:"PublicIpAddress" xml:"PublicIpAddress"`
 						AllocationId    string `json:"AllocationId" xml:"AllocationId"`

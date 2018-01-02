@@ -66,8 +66,8 @@ type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
 	Limit         requests.Integer                `position:"Query" name:"Limit"`
 	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
-	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
 	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
+	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
 	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
 	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
 	MinTime       requests.Integer                `position:"Query" name:"MinTime"`

@@ -81,10 +81,10 @@ type AllocateEipAddressRequest struct {
 
 type AllocateEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	AllocationId string           `json:"AllocationId" xml:"AllocationId"`
-	EipAddress   string           `json:"EipAddress" xml:"EipAddress"`
-	OrderId      requests.Integer `json:"OrderId" xml:"OrderId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	AllocationId string `json:"AllocationId" xml:"AllocationId"`
+	EipAddress   string `json:"EipAddress" xml:"EipAddress"`
+	OrderId      int    `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {

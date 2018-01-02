@@ -77,31 +77,31 @@ type ListTimeLinesRequest struct {
 
 type ListTimeLinesResponse struct {
 	*responses.BaseResponse
-	Code       string           `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	NextCursor requests.Integer `json:"NextCursor" xml:"NextCursor"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	Action     string           `json:"Action" xml:"Action"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	NextCursor int    `json:"NextCursor" xml:"NextCursor"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Action     string `json:"Action" xml:"Action"`
 	TimeLines  []struct {
-		StartTime   requests.Integer `json:"StartTime" xml:"StartTime"`
-		EndTime     requests.Integer `json:"EndTime" xml:"EndTime"`
-		TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
+		StartTime   int `json:"StartTime" xml:"StartTime"`
+		EndTime     int `json:"EndTime" xml:"EndTime"`
+		TotalCount  int `json:"TotalCount" xml:"TotalCount"`
+		PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
 		Photos      []struct {
-			Id              requests.Integer `json:"Id" xml:"Id"`
-			Title           string           `json:"Title" xml:"Title"`
-			FileId          string           `json:"FileId" xml:"FileId"`
-			State           string           `json:"State" xml:"State"`
-			Md5             string           `json:"Md5" xml:"Md5"`
-			IsVideo         requests.Boolean `json:"IsVideo" xml:"IsVideo"`
-			Remark          string           `json:"Remark" xml:"Remark"`
-			Width           requests.Integer `json:"Width" xml:"Width"`
-			Height          requests.Integer `json:"Height" xml:"Height"`
-			Ctime           requests.Integer `json:"Ctime" xml:"Ctime"`
-			Mtime           requests.Integer `json:"Mtime" xml:"Mtime"`
-			TakenAt         requests.Integer `json:"TakenAt" xml:"TakenAt"`
-			ShareExpireTime requests.Integer `json:"ShareExpireTime" xml:"ShareExpireTime"`
-			Like            requests.Integer `json:"Like" xml:"Like"`
+			Id              int    `json:"Id" xml:"Id"`
+			Title           string `json:"Title" xml:"Title"`
+			FileId          string `json:"FileId" xml:"FileId"`
+			State           string `json:"State" xml:"State"`
+			Md5             string `json:"Md5" xml:"Md5"`
+			IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
+			Remark          string `json:"Remark" xml:"Remark"`
+			Width           int    `json:"Width" xml:"Width"`
+			Height          int    `json:"Height" xml:"Height"`
+			Ctime           int    `json:"Ctime" xml:"Ctime"`
+			Mtime           int    `json:"Mtime" xml:"Mtime"`
+			TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
+			ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
+			Like            int    `json:"Like" xml:"Like"`
 		} `json:"Photos" xml:"Photos"`
 	} `json:"TimeLines" xml:"TimeLines"`
 }

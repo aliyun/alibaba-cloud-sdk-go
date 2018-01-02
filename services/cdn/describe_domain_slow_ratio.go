@@ -76,22 +76,22 @@ type DescribeDomainSlowRatioRequest struct {
 
 type DescribeDomainSlowRatioResponse struct {
 	*responses.BaseResponse
-	EndTime                  string           `json:"EndTime" xml:"EndTime"`
-	DataInterval             requests.Integer `json:"DataInterval" xml:"DataInterval"`
-	PageNumber               requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize                 requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount               requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	StartTime                string           `json:"StartTime" xml:"StartTime"`
+	EndTime                  string `json:"EndTime" xml:"EndTime"`
+	DataInterval             int    `json:"DataInterval" xml:"DataInterval"`
+	PageNumber               int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize                 int    `json:"PageSize" xml:"PageSize"`
+	TotalCount               int    `json:"TotalCount" xml:"TotalCount"`
+	StartTime                string `json:"StartTime" xml:"StartTime"`
 	SlowRatioDataPerInterval struct {
 		SlowRatioData []struct {
-			TotalUsers   requests.Integer `json:"TotalUsers" xml:"TotalUsers"`
-			SlowUsers    requests.Integer `json:"SlowUsers" xml:"SlowUsers"`
-			SlowRatio    requests.Float   `json:"SlowRatio" xml:"SlowRatio"`
-			RegionNameZh string           `json:"RegionNameZh" xml:"RegionNameZh"`
-			RegionNameEn string           `json:"RegionNameEn" xml:"RegionNameEn"`
-			IspNameZh    string           `json:"IspNameZh" xml:"IspNameZh"`
-			IspNameEn    string           `json:"IspNameEn" xml:"IspNameEn"`
-			Time         string           `json:"Time" xml:"Time"`
+			TotalUsers   int     `json:"TotalUsers" xml:"TotalUsers"`
+			SlowUsers    int     `json:"SlowUsers" xml:"SlowUsers"`
+			SlowRatio    float64 `json:"SlowRatio" xml:"SlowRatio"`
+			RegionNameZh string  `json:"RegionNameZh" xml:"RegionNameZh"`
+			RegionNameEn string  `json:"RegionNameEn" xml:"RegionNameEn"`
+			IspNameZh    string  `json:"IspNameZh" xml:"IspNameZh"`
+			IspNameEn    string  `json:"IspNameEn" xml:"IspNameEn"`
+			Time         string  `json:"Time" xml:"Time"`
 		} `json:"SlowRatioData" xml:"SlowRatioData"`
 	} `json:"SlowRatioDataPerInterval" xml:"SlowRatioDataPerInterval"`
 }

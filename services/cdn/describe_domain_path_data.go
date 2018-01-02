@@ -77,19 +77,19 @@ type DescribeDomainPathDataRequest struct {
 
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
-	DomainName          string           `json:"DomainName" xml:"DomainName"`
-	StartTime           string           `json:"StartTime" xml:"StartTime"`
-	EndTime             string           `json:"EndTime" xml:"EndTime"`
-	PageSize            requests.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber          requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	DataInterval        string           `json:"DataInterval" xml:"DataInterval"`
-	TotalCount          requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	DomainName          string `json:"DomainName" xml:"DomainName"`
+	StartTime           string `json:"StartTime" xml:"StartTime"`
+	EndTime             string `json:"EndTime" xml:"EndTime"`
+	PageSize            int    `json:"PageSize" xml:"PageSize"`
+	PageNumber          int    `json:"PageNumber" xml:"PageNumber"`
+	DataInterval        string `json:"DataInterval" xml:"DataInterval"`
+	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
 	PathDataPerInterval struct {
 		UsageData []struct {
-			Traffic requests.Integer `json:"Traffic" xml:"Traffic"`
-			Acc     requests.Integer `json:"Acc" xml:"Acc"`
-			Path    string           `json:"Path" xml:"Path"`
-			Time    string           `json:"Time" xml:"Time"`
+			Traffic int    `json:"Traffic" xml:"Traffic"`
+			Acc     int    `json:"Acc" xml:"Acc"`
+			Path    string `json:"Path" xml:"Path"`
+			Time    string `json:"Time" xml:"Time"`
 		} `json:"UsageData" xml:"UsageData"`
 	} `json:"PathDataPerInterval" xml:"PathDataPerInterval"`
 }

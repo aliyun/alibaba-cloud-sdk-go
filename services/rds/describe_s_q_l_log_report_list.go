@@ -77,24 +77,24 @@ type DescribeSQLLogReportListRequest struct {
 
 type DescribeSQLLogReportListResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		Item []struct {
 			ReportTime       string `json:"ReportTime" xml:"ReportTime"`
 			LatencyTopNItems struct {
 				LatencyTopNItem []struct {
-					SQLText         string           `json:"SQLText" xml:"SQLText"`
-					AvgLatency      requests.Integer `json:"AvgLatency" xml:"AvgLatency"`
-					SQLExecuteTimes requests.Integer `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
+					SQLText         string `json:"SQLText" xml:"SQLText"`
+					AvgLatency      int    `json:"AvgLatency" xml:"AvgLatency"`
+					SQLExecuteTimes int    `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
 				} `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
 			} `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
 			QPSTopNItems struct {
 				QPSTopNItem []struct {
-					SQLText         string           `json:"SQLText" xml:"SQLText"`
-					SQLExecuteTimes requests.Integer `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
+					SQLText         string `json:"SQLText" xml:"SQLText"`
+					SQLExecuteTimes int    `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
 				} `json:"QPSTopNItem" xml:"QPSTopNItem"`
 			} `json:"QPSTopNItems" xml:"QPSTopNItems"`
 		} `json:"Item" xml:"Item"`

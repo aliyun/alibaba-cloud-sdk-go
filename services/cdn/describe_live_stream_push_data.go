@@ -76,13 +76,13 @@ type DescribeLiveStreamPushDataResponse struct {
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	PushStreamModelList struct {
 		PushStreamModel []struct {
-			Time          string         `json:"Time" xml:"Time"`
-			Stream        string         `json:"Stream" xml:"Stream"`
-			FrameRate     requests.Float `json:"FrameRate" xml:"FrameRate"`
-			BitRate       requests.Float `json:"BitRate" xml:"BitRate"`
-			FrameLossRate requests.Float `json:"FrameLossRate" xml:"FrameLossRate"`
-			ServerAddr    string         `json:"ServerAddr" xml:"ServerAddr"`
-			ClientAddr    string         `json:"ClientAddr" xml:"ClientAddr"`
+			Time          string  `json:"Time" xml:"Time"`
+			Stream        string  `json:"Stream" xml:"Stream"`
+			FrameRate     float64 `json:"FrameRate" xml:"FrameRate"`
+			BitRate       float64 `json:"BitRate" xml:"BitRate"`
+			FrameLossRate float64 `json:"FrameLossRate" xml:"FrameLossRate"`
+			ServerAddr    string  `json:"ServerAddr" xml:"ServerAddr"`
+			ClientAddr    string  `json:"ClientAddr" xml:"ClientAddr"`
 		} `json:"PushStreamModel" xml:"PushStreamModel"`
 	} `json:"PushStreamModelList" xml:"PushStreamModelList"`
 }

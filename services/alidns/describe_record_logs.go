@@ -76,17 +76,17 @@ type DescribeRecordLogsRequest struct {
 
 type DescribeRecordLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	RecordLogs struct {
 		RecordLog []struct {
-			ActionTime      string           `json:"ActionTime" xml:"ActionTime"`
-			ActionTimestamp requests.Integer `json:"ActionTimestamp" xml:"ActionTimestamp"`
-			Action          string           `json:"Action" xml:"Action"`
-			Message         string           `json:"Message" xml:"Message"`
-			ClientIp        string           `json:"ClientIp" xml:"ClientIp"`
+			ActionTime      string `json:"ActionTime" xml:"ActionTime"`
+			ActionTimestamp int    `json:"ActionTimestamp" xml:"ActionTimestamp"`
+			Action          string `json:"Action" xml:"Action"`
+			Message         string `json:"Message" xml:"Message"`
+			ClientIp        string `json:"ClientIp" xml:"ClientIp"`
 		} `json:"RecordLog" xml:"RecordLog"`
 	} `json:"RecordLogs" xml:"RecordLogs"`
 }

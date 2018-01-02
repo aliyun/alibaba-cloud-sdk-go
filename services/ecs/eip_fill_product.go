@@ -75,11 +75,11 @@ type EipFillProductRequest struct {
 
 type EipFillProductResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"requestId" xml:"requestId"`
-	Data      string           `json:"data" xml:"data"`
-	Code      string           `json:"code" xml:"code"`
-	Success   requests.Boolean `json:"success" xml:"success"`
-	Message   string           `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Data      string `json:"data" xml:"data"`
+	Code      string `json:"code" xml:"code"`
+	Success   bool   `json:"success" xml:"success"`
+	Message   string `json:"message" xml:"message"`
 }
 
 func CreateEipFillProductRequest() (request *EipFillProductRequest) {

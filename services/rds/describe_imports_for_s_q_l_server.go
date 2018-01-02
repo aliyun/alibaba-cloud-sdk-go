@@ -78,17 +78,17 @@ type DescribeImportsForSQLServerRequest struct {
 
 type DescribeImportsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordCounts requests.Integer `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    requests.Integer `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalRecordCounts int    `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	SQLItemsCounts    int    `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
 	Items             struct {
 		SQLServerImport []struct {
-			ImportId     requests.Integer `json:"ImportId" xml:"ImportId"`
-			FileName     string           `json:"FileName" xml:"FileName"`
-			DBName       string           `json:"DBName" xml:"DBName"`
-			ImportStatus string           `json:"ImportStatus" xml:"ImportStatus"`
-			StartTime    string           `json:"StartTime" xml:"StartTime"`
+			ImportId     int    `json:"ImportId" xml:"ImportId"`
+			FileName     string `json:"FileName" xml:"FileName"`
+			DBName       string `json:"DBName" xml:"DBName"`
+			ImportStatus string `json:"ImportStatus" xml:"ImportStatus"`
+			StartTime    string `json:"StartTime" xml:"StartTime"`
 		} `json:"SQLServerImport" xml:"SQLServerImport"`
 	} `json:"Items" xml:"Items"`
 }

@@ -78,21 +78,21 @@ type DescribeCommandsRequest struct {
 
 type DescribeCommandsResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
-	CommandList struct {
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	Commands   struct {
 		Command []struct {
-			CommandId      string           `json:"CommandId" xml:"CommandId"`
-			Name           string           `json:"Name" xml:"Name"`
-			Type           string           `json:"Type" xml:"Type"`
-			Description    string           `json:"Description" xml:"Description"`
-			CommandContent string           `json:"CommandContent" xml:"CommandContent"`
-			WorkingDir     string           `json:"WorkingDir" xml:"WorkingDir"`
-			Timeout        requests.Integer `json:"Timeout" xml:"Timeout"`
+			CommandId      string `json:"CommandId" xml:"CommandId"`
+			Name           string `json:"Name" xml:"Name"`
+			Type           string `json:"Type" xml:"Type"`
+			Description    string `json:"Description" xml:"Description"`
+			CommandContent string `json:"CommandContent" xml:"CommandContent"`
+			WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
+			Timeout        int    `json:"Timeout" xml:"Timeout"`
 		} `json:"Command" xml:"Command"`
-	} `json:"CommandList" xml:"CommandList"`
+	} `json:"Commands" xml:"Commands"`
 }
 
 func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {

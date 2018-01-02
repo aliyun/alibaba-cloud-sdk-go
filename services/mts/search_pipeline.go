@@ -75,18 +75,18 @@ type SearchPipelineRequest struct {
 
 type SearchPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
 	PipelineList struct {
 		Pipeline []struct {
-			Id           string           `json:"Id" xml:"Id"`
-			Name         string           `json:"Name" xml:"Name"`
-			State        string           `json:"State" xml:"State"`
-			Speed        string           `json:"Speed" xml:"Speed"`
-			SpeedLevel   requests.Integer `json:"SpeedLevel" xml:"SpeedLevel"`
-			Role         string           `json:"Role" xml:"Role"`
+			Id           string `json:"Id" xml:"Id"`
+			Name         string `json:"Name" xml:"Name"`
+			State        string `json:"State" xml:"State"`
+			Speed        string `json:"Speed" xml:"Speed"`
+			SpeedLevel   int    `json:"SpeedLevel" xml:"SpeedLevel"`
+			Role         string `json:"Role" xml:"Role"`
 			NotifyConfig struct {
 				Topic     string `json:"Topic" xml:"Topic"`
 				QueueName string `json:"QueueName" xml:"QueueName"`

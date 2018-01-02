@@ -85,28 +85,33 @@ type DescribeEipAddressesRequest struct {
 
 type DescribeEipAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
 	EipAddresses struct {
 		EipAddress []struct {
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			IpAddress          string `json:"IpAddress" xml:"IpAddress"`
-			AllocationId       string `json:"AllocationId" xml:"AllocationId"`
-			Status             string `json:"Status" xml:"Status"`
-			InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-			Bandwidth          string `json:"Bandwidth" xml:"Bandwidth"`
-			EipBandwidth       string `json:"EipBandwidth" xml:"EipBandwidth"`
-			InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-			AllocationTime     string `json:"AllocationTime" xml:"AllocationTime"`
-			InstanceType       string `json:"InstanceType" xml:"InstanceType"`
-			ChargeType         string `json:"ChargeType" xml:"ChargeType"`
-			ExpiredTime        string `json:"ExpiredTime" xml:"ExpiredTime"`
-			Name               string `json:"Name" xml:"Name"`
-			Descritpion        string `json:"Descritpion" xml:"Descritpion"`
-			BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-			OperationLocks     struct {
+			RegionId             string `json:"RegionId" xml:"RegionId"`
+			IpAddress            string `json:"IpAddress" xml:"IpAddress"`
+			AllocationId         string `json:"AllocationId" xml:"AllocationId"`
+			Status               string `json:"Status" xml:"Status"`
+			InstanceId           string `json:"InstanceId" xml:"InstanceId"`
+			Bandwidth            string `json:"Bandwidth" xml:"Bandwidth"`
+			EipBandwidth         string `json:"EipBandwidth" xml:"EipBandwidth"`
+			InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
+			AllocationTime       string `json:"AllocationTime" xml:"AllocationTime"`
+			InstanceType         string `json:"InstanceType" xml:"InstanceType"`
+			InstanceRegionId     string `json:"InstanceRegionId" xml:"InstanceRegionId"`
+			ChargeType           string `json:"ChargeType" xml:"ChargeType"`
+			ExpiredTime          string `json:"ExpiredTime" xml:"ExpiredTime"`
+			Name                 string `json:"Name" xml:"Name"`
+			Descritpion          string `json:"Descritpion" xml:"Descritpion"`
+			BandwidthPackageId   string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+			BandwidthPackageType string `json:"BandwidthPackageType" xml:"BandwidthPackageType"`
+			AvailableRegions     struct {
+				AvailableRegion []string `json:"AvailableRegion" xml:"AvailableRegion"`
+			} `json:"AvailableRegions" xml:"AvailableRegions"`
+			OperationLocks struct {
 				LockReason []struct {
 					LockReason string `json:"LockReason" xml:"LockReason"`
 				} `json:"LockReason" xml:"LockReason"`

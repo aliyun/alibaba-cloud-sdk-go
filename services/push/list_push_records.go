@@ -74,20 +74,20 @@ type ListPushRecordsRequest struct {
 
 type ListPushRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Total            requests.Integer `json:"Total" xml:"Total"`
-	Page             requests.Integer `json:"Page" xml:"Page"`
-	PageSize         requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Total            int    `json:"Total" xml:"Total"`
+	Page             int    `json:"Page" xml:"Page"`
+	PageSize         int    `json:"PageSize" xml:"PageSize"`
 	PushMessageInfos struct {
 		PushMessageInfo []struct {
-			AppKey     requests.Integer `json:"AppKey" xml:"AppKey"`
-			AppName    string           `json:"AppName" xml:"AppName"`
-			MessageId  string           `json:"MessageId" xml:"MessageId"`
-			Type       string           `json:"Type" xml:"Type"`
-			DeviceType string           `json:"DeviceType" xml:"DeviceType"`
-			PushTime   string           `json:"PushTime" xml:"PushTime"`
-			Title      string           `json:"Title" xml:"Title"`
-			Body       string           `json:"Body" xml:"Body"`
+			AppKey     int    `json:"AppKey" xml:"AppKey"`
+			AppName    string `json:"AppName" xml:"AppName"`
+			MessageId  string `json:"MessageId" xml:"MessageId"`
+			Type       string `json:"Type" xml:"Type"`
+			DeviceType string `json:"DeviceType" xml:"DeviceType"`
+			PushTime   string `json:"PushTime" xml:"PushTime"`
+			Title      string `json:"Title" xml:"Title"`
+			Body       string `json:"Body" xml:"Body"`
 		} `json:"PushMessageInfo" xml:"PushMessageInfo"`
 	} `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }

@@ -64,27 +64,27 @@ func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantP
 
 type SaveRegistrantProfileRequest struct {
 	*requests.RpcRequest
-	Country                  string           `position:"Query" name:"Country"`
-	Address                  string           `position:"Query" name:"Address"`
-	TelArea                  string           `position:"Query" name:"TelArea"`
-	City                     string           `position:"Query" name:"City"`
-	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	Telephone                string           `position:"Query" name:"Telephone"`
-	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
-	TelExt                   string           `position:"Query" name:"TelExt"`
-	Province                 string           `position:"Query" name:"Province"`
 	PostalCode               string           `position:"Query" name:"PostalCode"`
+	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
+	RegistrantName           string           `position:"Query" name:"RegistrantName"`
+	TelArea                  string           `position:"Query" name:"TelArea"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
 	Lang                     string           `position:"Query" name:"Lang"`
+	TelExt                   string           `position:"Query" name:"TelExt"`
+	Country                  string           `position:"Query" name:"Country"`
+	City                     string           `position:"Query" name:"City"`
+	Address                  string           `position:"Query" name:"Address"`
 	Email                    string           `position:"Query" name:"Email"`
-	RegistrantName           string           `position:"Query" name:"RegistrantName"`
+	Province                 string           `position:"Query" name:"Province"`
+	Telephone                string           `position:"Query" name:"Telephone"`
+	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
 }
 
 type SaveRegistrantProfileResponse struct {
 	*responses.BaseResponse
-	RequestId           string           `json:"RequestId" xml:"RequestId"`
-	RegistrantProfileId requests.Integer `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	RegistrantProfileId int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 }
 
 func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest) {

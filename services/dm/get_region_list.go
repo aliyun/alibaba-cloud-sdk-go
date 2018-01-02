@@ -77,10 +77,10 @@ type GetRegionListRequest struct {
 
 type GetRegionListResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Total     requests.Integer `json:"Total" xml:"Total"`
-	PageNo    requests.Integer `json:"PageNo" xml:"PageNo"`
-	PageSize  requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Total     int    `json:"Total" xml:"Total"`
+	PageNo    int    `json:"PageNo" xml:"PageNo"`
+	PageSize  int    `json:"PageSize" xml:"PageSize"`
 	Data      struct {
 		RegionList []struct {
 			Region     string `json:"Region" xml:"Region"`

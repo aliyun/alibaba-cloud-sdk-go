@@ -78,11 +78,11 @@ type DescribeDomainTopReferVisitResponse struct {
 	StartTime    string `json:"StartTime" xml:"StartTime"`
 	TopReferList struct {
 		ReferList []struct {
-			ReferDetail     string         `json:"ReferDetail" xml:"ReferDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			ReferDetail     string  `json:"ReferDetail" xml:"ReferDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"ReferList" xml:"ReferList"`
 	} `json:"TopReferList" xml:"TopReferList"`
 }

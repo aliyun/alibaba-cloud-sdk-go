@@ -78,18 +78,18 @@ type DescribeLiveStreamRecordIndexFilesResponse struct {
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	RecordIndexInfoList struct {
 		RecordIndexInfo []struct {
-			RecordId   string           `json:"RecordId" xml:"RecordId"`
-			RecordUrl  string           `json:"RecordUrl" xml:"RecordUrl"`
-			DomainName string           `json:"DomainName" xml:"DomainName"`
-			AppName    string           `json:"AppName" xml:"AppName"`
-			StreamName string           `json:"StreamName" xml:"StreamName"`
-			OssObject  string           `json:"OssObject" xml:"OssObject"`
-			StartTime  string           `json:"StartTime" xml:"StartTime"`
-			EndTime    string           `json:"EndTime" xml:"EndTime"`
-			Duration   requests.Float   `json:"Duration" xml:"Duration"`
-			Height     requests.Integer `json:"Height" xml:"Height"`
-			Width      requests.Integer `json:"Width" xml:"Width"`
-			CreateTime string           `json:"CreateTime" xml:"CreateTime"`
+			RecordId   string  `json:"RecordId" xml:"RecordId"`
+			RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
+			DomainName string  `json:"DomainName" xml:"DomainName"`
+			AppName    string  `json:"AppName" xml:"AppName"`
+			StreamName string  `json:"StreamName" xml:"StreamName"`
+			OssObject  string  `json:"OssObject" xml:"OssObject"`
+			StartTime  string  `json:"StartTime" xml:"StartTime"`
+			EndTime    string  `json:"EndTime" xml:"EndTime"`
+			Duration   float64 `json:"Duration" xml:"Duration"`
+			Height     int     `json:"Height" xml:"Height"`
+			Width      int     `json:"Width" xml:"Width"`
+			CreateTime string  `json:"CreateTime" xml:"CreateTime"`
 		} `json:"RecordIndexInfo" xml:"RecordIndexInfo"`
 	} `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
 }

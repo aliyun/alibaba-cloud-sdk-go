@@ -80,11 +80,11 @@ type UpdateCoverPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string           `json:"Id" xml:"Id"`
-		Name         string           `json:"Name" xml:"Name"`
-		State        string           `json:"State" xml:"State"`
-		Priority     requests.Integer `json:"Priority" xml:"Priority"`
-		Role         string           `json:"Role" xml:"Role"`
+		Id           string `json:"Id" xml:"Id"`
+		Name         string `json:"Name" xml:"Name"`
+		State        string `json:"State" xml:"State"`
+		Priority     int    `json:"Priority" xml:"Priority"`
+		Role         string `json:"Role" xml:"Role"`
 		NotifyConfig struct {
 			Topic string `json:"Topic" xml:"Topic"`
 			Queue string `json:"Queue" xml:"Queue"`

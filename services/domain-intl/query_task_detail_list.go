@@ -64,37 +64,37 @@ func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailLi
 
 type QueryTaskDetailListRequest struct {
 	*requests.RpcRequest
-	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	TaskNo       string           `position:"Query" name:"TaskNo"`
 	DomainName   string           `position:"Query" name:"DomainName"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	Lang         string           `position:"Query" name:"Lang"`
+	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 type QueryTaskDetailListResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   requests.Integer `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum requests.Integer `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   requests.Integer `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	PrePage        requests.Boolean `json:"PrePage" xml:"PrePage"`
-	NextPage       requests.Boolean `json:"NextPage" xml:"NextPage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	PrePage        bool   `json:"PrePage" xml:"PrePage"`
+	NextPage       bool   `json:"NextPage" xml:"NextPage"`
 	Data           struct {
 		TaskDetail []struct {
-			TaskNo       string           `json:"TaskNo" xml:"TaskNo"`
-			TaskDetailNo string           `json:"TaskDetailNo" xml:"TaskDetailNo"`
-			TaskType     string           `json:"TaskType" xml:"TaskType"`
-			InstanceId   string           `json:"InstanceId" xml:"InstanceId"`
-			DomainName   string           `json:"DomainName" xml:"DomainName"`
-			TaskStatus   string           `json:"TaskStatus" xml:"TaskStatus"`
-			UpdateTime   string           `json:"UpdateTime" xml:"UpdateTime"`
-			CreateTime   string           `json:"CreateTime" xml:"CreateTime"`
-			TryCount     requests.Integer `json:"TryCount" xml:"TryCount"`
-			ErrorMsg     string           `json:"ErrorMsg" xml:"ErrorMsg"`
+			TaskNo       string `json:"TaskNo" xml:"TaskNo"`
+			TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
+			TaskType     string `json:"TaskType" xml:"TaskType"`
+			InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+			DomainName   string `json:"DomainName" xml:"DomainName"`
+			TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
+			UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
+			CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+			TryCount     int    `json:"TryCount" xml:"TryCount"`
+			ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
 		} `json:"TaskDetail" xml:"TaskDetail"`
 	} `json:"Data" xml:"Data"`
 }

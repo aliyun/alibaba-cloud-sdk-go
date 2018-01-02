@@ -75,21 +75,21 @@ type QueryTaskByParamRequest struct {
 
 type QueryTaskByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Task []struct {
-			TaskId        string           `json:"TaskId" xml:"TaskId"`
-			ReceiversName string           `json:"ReceiversName" xml:"ReceiversName"`
-			TemplateName  string           `json:"TemplateName" xml:"TemplateName"`
-			TaskStatus    string           `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime    string           `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime requests.Integer `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			AddressType   string           `json:"AddressType" xml:"AddressType"`
-			TagName       string           `json:"TagName" xml:"TagName"`
-			RequestCount  string           `json:"RequestCount" xml:"RequestCount"`
+			TaskId        string `json:"TaskId" xml:"TaskId"`
+			ReceiversName string `json:"ReceiversName" xml:"ReceiversName"`
+			TemplateName  string `json:"TemplateName" xml:"TemplateName"`
+			TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
+			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+			UtcCreateTime int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
+			AddressType   string `json:"AddressType" xml:"AddressType"`
+			TagName       string `json:"TagName" xml:"TagName"`
+			RequestCount  string `json:"RequestCount" xml:"RequestCount"`
 		} `json:"task" xml:"task"`
 	} `json:"data" xml:"data"`
 }

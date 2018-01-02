@@ -72,6 +72,7 @@ type DescribeGlobalAccelerationInstancesRequest struct {
 	ServerId                     string           `position:"Query" name:"ServerId"`
 	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	BandwidthType                string           `position:"Query" name:"BandwidthType"`
 	Name                         string           `position:"Query" name:"Name"`
 	ServiceLocation              string           `position:"Query" name:"ServiceLocation"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,10 +81,10 @@ type DescribeGlobalAccelerationInstancesRequest struct {
 
 type DescribeGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId                   string           `json:"RequestId" xml:"RequestId"`
-	TotalCount                  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber                  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize                    requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId                   string `json:"RequestId" xml:"RequestId"`
+	TotalCount                  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber                  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize                    int    `json:"PageSize" xml:"PageSize"`
 	GlobalAccelerationInstances struct {
 		GlobalAccelerationInstance []struct {
 			RegionId                     string `json:"RegionId" xml:"RegionId"`
@@ -93,6 +94,7 @@ type DescribeGlobalAccelerationInstancesResponse struct {
 			Bandwidth                    string `json:"Bandwidth" xml:"Bandwidth"`
 			InternetChargeType           string `json:"InternetChargeType" xml:"InternetChargeType"`
 			ChargeType                   string `json:"ChargeType" xml:"ChargeType"`
+			BandwidthType                string `json:"BandwidthType" xml:"BandwidthType"`
 			AccelerationLocation         string `json:"AccelerationLocation" xml:"AccelerationLocation"`
 			ServiceLocation              string `json:"ServiceLocation" xml:"ServiceLocation"`
 			Name                         string `json:"Name" xml:"Name"`
@@ -112,6 +114,12 @@ type DescribeGlobalAccelerationInstancesResponse struct {
 					ServerType      string `json:"ServerType" xml:"ServerType"`
 				} `json:"BackendServer" xml:"BackendServer"`
 			} `json:"BackendServers" xml:"BackendServers"`
+			PublicIpAddresses struct {
+				PublicIpAddress []struct {
+					AllocationId string `json:"AllocationId" xml:"AllocationId"`
+					IpAddress    string `json:"IpAddress" xml:"IpAddress"`
+				} `json:"PublicIpAddress" xml:"PublicIpAddress"`
+			} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 		} `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
 	} `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }

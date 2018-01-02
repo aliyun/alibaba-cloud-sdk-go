@@ -76,13 +76,13 @@ type DescribeLiveStreamOnlineUserNumRequest struct {
 
 type DescribeLiveStreamOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber requests.Integer `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int    `json:"TotalUserNumber" xml:"TotalUserNumber"`
 	OnlineUserInfo  struct {
 		LiveStreamOnlineUserNumInfo []struct {
-			StreamUrl  string           `json:"StreamUrl" xml:"StreamUrl"`
-			UserNumber requests.Integer `json:"UserNumber" xml:"UserNumber"`
-			Time       string           `json:"Time" xml:"Time"`
+			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
+			UserNumber int    `json:"UserNumber" xml:"UserNumber"`
+			Time       string `json:"Time" xml:"Time"`
 		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
 	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }

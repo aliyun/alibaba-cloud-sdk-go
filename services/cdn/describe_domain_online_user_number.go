@@ -76,8 +76,8 @@ type DescribeDomainOnlineUserNumberResponse struct {
 	RequestId                    string `json:"RequestId" xml:"RequestId"`
 	LiveStreamOnlineUserNumInfos struct {
 		LiveStreamOnlineUserNumInfo []struct {
-			Time       string           `json:"Time" xml:"Time"`
-			UserNumber requests.Integer `json:"UserNumber" xml:"UserNumber"`
+			Time       string `json:"Time" xml:"Time"`
+			UserNumber int    `json:"UserNumber" xml:"UserNumber"`
 		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
 	} `json:"LiveStreamOnlineUserNumInfos" xml:"LiveStreamOnlineUserNumInfos"`
 }

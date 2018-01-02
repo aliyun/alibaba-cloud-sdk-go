@@ -78,15 +78,15 @@ type DescribeTagsRequest struct {
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	TagSets    struct {
 		TagSet []struct {
-			TagKey        string           `json:"TagKey" xml:"TagKey"`
-			TagValue      string           `json:"TagValue" xml:"TagValue"`
-			InstanceCount requests.Integer `json:"InstanceCount" xml:"InstanceCount"`
+			TagKey        string `json:"TagKey" xml:"TagKey"`
+			TagValue      string `json:"TagValue" xml:"TagValue"`
+			InstanceCount int    `json:"InstanceCount" xml:"InstanceCount"`
 		} `json:"TagSet" xml:"TagSet"`
 	} `json:"TagSets" xml:"TagSets"`
 }

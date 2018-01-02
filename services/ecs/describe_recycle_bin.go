@@ -76,8 +76,8 @@ type DescribeRecycleBinRequest struct {
 
 type DescribeRecycleBinResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	TotalCount       requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
 	RecycleBinModels struct {
 		RecycleBinModel []struct {
 			ResourceId        string `json:"ResourceId" xml:"ResourceId"`

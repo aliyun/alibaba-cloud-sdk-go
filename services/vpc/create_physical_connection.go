@@ -66,7 +66,6 @@ type CreatePhysicalConnectionRequest struct {
 	*requests.RpcRequest
 	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	UserCidr                      string           `position:"Query" name:"UserCidr"`
 	AccessPointId                 string           `position:"Query" name:"AccessPointId"`
 	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`

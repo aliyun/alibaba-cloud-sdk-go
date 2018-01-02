@@ -99,26 +99,26 @@ type DescribeSnapshotsRequest struct {
 
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Snapshots  struct {
 		Snapshot []struct {
-			SnapshotId        string           `json:"SnapshotId" xml:"SnapshotId"`
-			SnapshotName      string           `json:"SnapshotName" xml:"SnapshotName"`
-			Progress          string           `json:"Progress" xml:"Progress"`
-			ProductCode       string           `json:"ProductCode" xml:"ProductCode"`
-			SourceDiskId      string           `json:"SourceDiskId" xml:"SourceDiskId"`
-			SourceDiskType    string           `json:"SourceDiskType" xml:"SourceDiskType"`
-			RetentionDays     requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
-			Encrypted         requests.Boolean `json:"Encrypted" xml:"Encrypted"`
-			SourceDiskSize    string           `json:"SourceDiskSize" xml:"SourceDiskSize"`
-			Description       string           `json:"Description" xml:"Description"`
-			CreationTime      string           `json:"CreationTime" xml:"CreationTime"`
-			Status            string           `json:"Status" xml:"Status"`
-			Usage             string           `json:"Usage" xml:"Usage"`
-			SourceStorageType string           `json:"SourceStorageType" xml:"SourceStorageType"`
+			SnapshotId        string `json:"SnapshotId" xml:"SnapshotId"`
+			SnapshotName      string `json:"SnapshotName" xml:"SnapshotName"`
+			Progress          string `json:"Progress" xml:"Progress"`
+			ProductCode       string `json:"ProductCode" xml:"ProductCode"`
+			SourceDiskId      string `json:"SourceDiskId" xml:"SourceDiskId"`
+			SourceDiskType    string `json:"SourceDiskType" xml:"SourceDiskType"`
+			RetentionDays     int    `json:"RetentionDays" xml:"RetentionDays"`
+			Encrypted         bool   `json:"Encrypted" xml:"Encrypted"`
+			SourceDiskSize    string `json:"SourceDiskSize" xml:"SourceDiskSize"`
+			Description       string `json:"Description" xml:"Description"`
+			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
+			Status            string `json:"Status" xml:"Status"`
+			Usage             string `json:"Usage" xml:"Usage"`
+			SourceStorageType string `json:"SourceStorageType" xml:"SourceStorageType"`
 			Tags              struct {
 				Tag []struct {
 					TagKey   string `json:"TagKey" xml:"TagKey"`

@@ -64,12 +64,12 @@ func (client *Client) SaveSingleTaskForCreatingOrderActivateWithCallback(request
 
 type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
-	SubscriptionDuration    requests.Integer `position:"Query" name:"SubscriptionDuration"`
-	PermitPremiumActivation requests.Boolean `position:"Query" name:"PermitPremiumActivation"`
-	UserClientIp            string           `position:"Query" name:"UserClientIp"`
-	DomainName              string           `position:"Query" name:"DomainName"`
-	RegistrantProfileId     requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	EnableDomainProxy       requests.Boolean `position:"Query" name:"EnableDomainProxy"`
+	DomainName              string           `position:"Query" name:"DomainName"`
+	PermitPremiumActivation requests.Boolean `position:"Query" name:"PermitPremiumActivation"`
+	SubscriptionDuration    requests.Integer `position:"Query" name:"SubscriptionDuration"`
+	UserClientIp            string           `position:"Query" name:"UserClientIp"`
+	RegistrantProfileId     requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	Lang                    string           `position:"Query" name:"Lang"`
 }
 

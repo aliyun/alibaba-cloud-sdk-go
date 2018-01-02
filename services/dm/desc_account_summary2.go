@@ -72,9 +72,9 @@ type DescAccountSummary2Request struct {
 
 type DescAccountSummary2Response struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	MnsMigrating      requests.Integer `json:"MnsMigrating" xml:"MnsMigrating"`
-	MnsForceMigrating requests.Integer `json:"MnsForceMigrating" xml:"MnsForceMigrating"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	MnsMigrating      int    `json:"MnsMigrating" xml:"MnsMigrating"`
+	MnsForceMigrating int    `json:"MnsForceMigrating" xml:"MnsForceMigrating"`
 }
 
 func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {

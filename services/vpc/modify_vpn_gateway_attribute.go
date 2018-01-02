@@ -76,19 +76,19 @@ type ModifyVpnGatewayAttributeRequest struct {
 
 type ModifyVpnGatewayAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	VpnGatewayId   string           `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	VpcId          string           `json:"VpcId" xml:"VpcId"`
-	VSwitchId      string           `json:"VSwitchId" xml:"VSwitchId"`
-	InternetIp     string           `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp     string           `json:"IntranetIp" xml:"IntranetIp"`
-	CreateTime     requests.Integer `json:"CreateTime" xml:"CreateTime"`
-	EndTime        requests.Integer `json:"EndTime" xml:"EndTime"`
-	Spec           string           `json:"Spec" xml:"Spec"`
-	Name           string           `json:"Name" xml:"Name"`
-	Description    string           `json:"Description" xml:"Description"`
-	Status         string           `json:"Status" xml:"Status"`
-	BusinessStatus string           `json:"BusinessStatus" xml:"BusinessStatus"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	VpnGatewayId   string `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	VpcId          string `json:"VpcId" xml:"VpcId"`
+	VSwitchId      string `json:"VSwitchId" xml:"VSwitchId"`
+	InternetIp     string `json:"InternetIp" xml:"InternetIp"`
+	IntranetIp     string `json:"IntranetIp" xml:"IntranetIp"`
+	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
+	EndTime        int    `json:"EndTime" xml:"EndTime"`
+	Spec           string `json:"Spec" xml:"Spec"`
+	Name           string `json:"Name" xml:"Name"`
+	Description    string `json:"Description" xml:"Description"`
+	Status         string `json:"Status" xml:"Status"`
+	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
 }
 
 func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttributeRequest) {

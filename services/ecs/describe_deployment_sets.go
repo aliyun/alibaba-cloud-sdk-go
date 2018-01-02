@@ -80,21 +80,21 @@ type DescribeDeploymentSetsRequest struct {
 
 type DescribeDeploymentSetsResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	RegionId       string           `json:"RegionId" xml:"RegionId"`
-	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
 	DeploymentSets struct {
 		DeploymentSet []struct {
-			DeploymentSetId          string           `json:"DeploymentSetId" xml:"DeploymentSetId"`
-			DeploymentSetDescription string           `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
-			DeploymentSetName        string           `json:"DeploymentSetName" xml:"DeploymentSetName"`
-			Strategy                 string           `json:"Strategy" xml:"Strategy"`
-			Domain                   string           `json:"Domain" xml:"Domain"`
-			Granularity              string           `json:"Granularity" xml:"Granularity"`
-			InstanceAmount           requests.Integer `json:"InstanceAmount" xml:"InstanceAmount"`
-			CreationTime             string           `json:"CreationTime" xml:"CreationTime"`
+			DeploymentSetId          string `json:"DeploymentSetId" xml:"DeploymentSetId"`
+			DeploymentSetDescription string `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
+			DeploymentSetName        string `json:"DeploymentSetName" xml:"DeploymentSetName"`
+			Strategy                 string `json:"Strategy" xml:"Strategy"`
+			Domain                   string `json:"Domain" xml:"Domain"`
+			Granularity              string `json:"Granularity" xml:"Granularity"`
+			InstanceAmount           int    `json:"InstanceAmount" xml:"InstanceAmount"`
+			CreationTime             string `json:"CreationTime" xml:"CreationTime"`
 		} `json:"DeploymentSet" xml:"DeploymentSet"`
 	} `json:"DeploymentSets" xml:"DeploymentSets"`
 }

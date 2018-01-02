@@ -64,8 +64,8 @@ func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, cal
 
 type QueryDnsHostRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	Lang       string `position:"Query" name:"Lang"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type QueryDnsHostResponse struct {

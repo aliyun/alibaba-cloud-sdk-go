@@ -78,10 +78,10 @@ type GetFramedPhotoUrlsResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Results   struct {
 		Result []struct {
-			Code           string           `json:"Code" xml:"Code"`
-			Message        string           `json:"Message" xml:"Message"`
-			PhotoId        requests.Integer `json:"PhotoId" xml:"PhotoId"`
-			FramedPhotoUrl string           `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+			Code           string `json:"Code" xml:"Code"`
+			Message        string `json:"Message" xml:"Message"`
+			PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
+			FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
 		} `json:"Result" xml:"Result"`
 	} `json:"Results" xml:"Results"`
 }

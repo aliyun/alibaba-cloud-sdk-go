@@ -78,11 +78,11 @@ type DescribeLiveStreamRoomBitRateResponse struct {
 	RequestId                string `json:"RequestId" xml:"RequestId"`
 	FrameRateAndBitRateInfos struct {
 		FrameRateAndBitRateInfo []struct {
-			StreamUrl      string         `json:"StreamUrl" xml:"StreamUrl"`
-			VideoFrameRate requests.Float `json:"VideoFrameRate" xml:"VideoFrameRate"`
-			AudioFrameRate requests.Float `json:"AudioFrameRate" xml:"AudioFrameRate"`
-			BitRate        requests.Float `json:"BitRate" xml:"BitRate"`
-			Time           string         `json:"Time" xml:"Time"`
+			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+			VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
+			AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
+			BitRate        float64 `json:"BitRate" xml:"BitRate"`
+			Time           string  `json:"Time" xml:"Time"`
 		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
 	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }

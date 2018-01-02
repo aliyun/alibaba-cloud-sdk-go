@@ -109,43 +109,43 @@ type DescribeDisksRequest struct {
 
 type DescribeDisksResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Disks      struct {
 		Disk []struct {
-			DiskId                        string           `json:"DiskId" xml:"DiskId"`
-			RegionId                      string           `json:"RegionId" xml:"RegionId"`
-			ZoneId                        string           `json:"ZoneId" xml:"ZoneId"`
-			DiskName                      string           `json:"DiskName" xml:"DiskName"`
-			Description                   string           `json:"Description" xml:"Description"`
-			Type                          string           `json:"Type" xml:"Type"`
-			Category                      string           `json:"Category" xml:"Category"`
-			Size                          requests.Integer `json:"Size" xml:"Size"`
-			ImageId                       string           `json:"ImageId" xml:"ImageId"`
-			SourceSnapshotId              string           `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
-			AutoSnapshotPolicyId          string           `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-			ProductCode                   string           `json:"ProductCode" xml:"ProductCode"`
-			Portable                      requests.Boolean `json:"Portable" xml:"Portable"`
-			Status                        string           `json:"Status" xml:"Status"`
-			InstanceId                    string           `json:"InstanceId" xml:"InstanceId"`
-			Device                        string           `json:"Device" xml:"Device"`
-			DeleteWithInstance            requests.Boolean `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
-			DeleteAutoSnapshot            requests.Boolean `json:"DeleteAutoSnapshot" xml:"DeleteAutoSnapshot"`
-			EnableAutoSnapshot            requests.Boolean `json:"EnableAutoSnapshot" xml:"EnableAutoSnapshot"`
-			EnableAutomatedSnapshotPolicy requests.Boolean `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
-			CreationTime                  string           `json:"CreationTime" xml:"CreationTime"`
-			AttachedTime                  string           `json:"AttachedTime" xml:"AttachedTime"`
-			DetachedTime                  string           `json:"DetachedTime" xml:"DetachedTime"`
-			DiskChargeType                string           `json:"DiskChargeType" xml:"DiskChargeType"`
-			ExpiredTime                   string           `json:"ExpiredTime" xml:"ExpiredTime"`
-			ResourceGroupId               string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			Encrypted                     requests.Boolean `json:"Encrypted" xml:"Encrypted"`
-			MountInstanceNum              requests.Integer `json:"MountInstanceNum" xml:"MountInstanceNum"`
-			IOPS                          requests.Integer `json:"IOPS" xml:"IOPS"`
-			IOPSRead                      requests.Integer `json:"IOPSRead" xml:"IOPSRead"`
-			IOPSWrite                     requests.Integer `json:"IOPSWrite" xml:"IOPSWrite"`
+			DiskId                        string `json:"DiskId" xml:"DiskId"`
+			RegionId                      string `json:"RegionId" xml:"RegionId"`
+			ZoneId                        string `json:"ZoneId" xml:"ZoneId"`
+			DiskName                      string `json:"DiskName" xml:"DiskName"`
+			Description                   string `json:"Description" xml:"Description"`
+			Type                          string `json:"Type" xml:"Type"`
+			Category                      string `json:"Category" xml:"Category"`
+			Size                          int    `json:"Size" xml:"Size"`
+			ImageId                       string `json:"ImageId" xml:"ImageId"`
+			SourceSnapshotId              string `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
+			AutoSnapshotPolicyId          string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+			ProductCode                   string `json:"ProductCode" xml:"ProductCode"`
+			Portable                      bool   `json:"Portable" xml:"Portable"`
+			Status                        string `json:"Status" xml:"Status"`
+			InstanceId                    string `json:"InstanceId" xml:"InstanceId"`
+			Device                        string `json:"Device" xml:"Device"`
+			DeleteWithInstance            bool   `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
+			DeleteAutoSnapshot            bool   `json:"DeleteAutoSnapshot" xml:"DeleteAutoSnapshot"`
+			EnableAutoSnapshot            bool   `json:"EnableAutoSnapshot" xml:"EnableAutoSnapshot"`
+			EnableAutomatedSnapshotPolicy bool   `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
+			CreationTime                  string `json:"CreationTime" xml:"CreationTime"`
+			AttachedTime                  string `json:"AttachedTime" xml:"AttachedTime"`
+			DetachedTime                  string `json:"DetachedTime" xml:"DetachedTime"`
+			DiskChargeType                string `json:"DiskChargeType" xml:"DiskChargeType"`
+			ExpiredTime                   string `json:"ExpiredTime" xml:"ExpiredTime"`
+			ResourceGroupId               string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			Encrypted                     bool   `json:"Encrypted" xml:"Encrypted"`
+			MountInstanceNum              int    `json:"MountInstanceNum" xml:"MountInstanceNum"`
+			IOPS                          int    `json:"IOPS" xml:"IOPS"`
+			IOPSRead                      int    `json:"IOPSRead" xml:"IOPSRead"`
+			IOPSWrite                     int    `json:"IOPSWrite" xml:"IOPSWrite"`
 			OperationLocks                struct {
 				OperationLock []struct {
 					LockReason string `json:"LockReason" xml:"LockReason"`

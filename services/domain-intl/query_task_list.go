@@ -64,31 +64,31 @@ func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, c
 
 type QueryTaskListRequest struct {
 	*requests.RpcRequest
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	BeginCreateTime requests.Integer `position:"Query" name:"BeginCreateTime"`
+	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 	EndCreateTime   requests.Integer `position:"Query" name:"EndCreateTime"`
 	UserClientIp    string           `position:"Query" name:"UserClientIp"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Lang            string           `position:"Query" name:"Lang"`
-	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 }
 
 type QueryTaskListResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   requests.Integer `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum requests.Integer `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   requests.Integer `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	PrePage        requests.Boolean `json:"PrePage" xml:"PrePage"`
-	NextPage       requests.Boolean `json:"NextPage" xml:"NextPage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	PrePage        bool   `json:"PrePage" xml:"PrePage"`
+	NextPage       bool   `json:"NextPage" xml:"NextPage"`
 	Data           struct {
 		TaskInfo []struct {
-			TaskType   string           `json:"TaskType" xml:"TaskType"`
-			TaskNum    requests.Integer `json:"TaskNum" xml:"TaskNum"`
-			TaskStatus string           `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime string           `json:"CreateTime" xml:"CreateTime"`
-			Clientip   string           `json:"Clientip" xml:"Clientip"`
-			TaskNo     string           `json:"TaskNo" xml:"TaskNo"`
+			TaskType   string `json:"TaskType" xml:"TaskType"`
+			TaskNum    int    `json:"TaskNum" xml:"TaskNum"`
+			TaskStatus string `json:"TaskStatus" xml:"TaskStatus"`
+			CreateTime string `json:"CreateTime" xml:"CreateTime"`
+			Clientip   string `json:"Clientip" xml:"Clientip"`
+			TaskNo     string `json:"TaskNo" xml:"TaskNo"`
 		} `json:"TaskInfo" xml:"TaskInfo"`
 	} `json:"Data" xml:"Data"`
 }

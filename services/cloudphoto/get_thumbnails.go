@@ -78,10 +78,10 @@ type GetThumbnailsResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Results   struct {
 		Result []struct {
-			Code         string           `json:"Code" xml:"Code"`
-			Message      string           `json:"Message" xml:"Message"`
-			PhotoId      requests.Integer `json:"PhotoId" xml:"PhotoId"`
-			ThumbnailUrl string           `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			PhotoId      int    `json:"PhotoId" xml:"PhotoId"`
+			ThumbnailUrl string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
 		} `json:"Result" xml:"Result"`
 	} `json:"Results" xml:"Results"`
 }

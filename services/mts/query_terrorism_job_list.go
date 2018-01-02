@@ -107,8 +107,8 @@ type QueryTerrorismJobListResponse struct {
 				AverageScore         string `json:"AverageScore" xml:"AverageScore"`
 				TerrorismCounterList struct {
 					Counter []struct {
-						Count requests.Integer `json:"Count" xml:"Count"`
-						Label string           `json:"Label" xml:"Label"`
+						Count int    `json:"Count" xml:"Count"`
+						Label string `json:"Label" xml:"Label"`
 					} `json:"Counter" xml:"Counter"`
 				} `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
 				TerrorismTopList struct {

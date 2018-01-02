@@ -77,10 +77,10 @@ type AddAsrPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string           `json:"Id" xml:"Id"`
-		Name         string           `json:"Name" xml:"Name"`
-		Priority     requests.Integer `json:"Priority" xml:"Priority"`
-		State        string           `json:"State" xml:"State"`
+		Id           string `json:"Id" xml:"Id"`
+		Name         string `json:"Name" xml:"Name"`
+		Priority     int    `json:"Priority" xml:"Priority"`
+		State        string `json:"State" xml:"State"`
 		NotifyConfig struct {
 			Topic string `json:"Topic" xml:"Topic"`
 			Queue string `json:"Queue" xml:"Queue"`

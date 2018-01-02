@@ -75,22 +75,22 @@ type DescribeAutoSnapshotPolicyExRequest struct {
 
 type DescribeAutoSnapshotPolicyExResponse struct {
 	*responses.BaseResponse
-	RequestId            string           `json:"RequestId" xml:"RequestId"`
-	TotalCount           requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize             requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int    `json:"PageSize" xml:"PageSize"`
 	AutoSnapshotPolicies struct {
 		AutoSnapshotPolicy []struct {
-			AutoSnapshotPolicyId   string           `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-			RegionId               string           `json:"RegionId" xml:"RegionId"`
-			AutoSnapshotPolicyName string           `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
-			TimePoints             string           `json:"TimePoints" xml:"TimePoints"`
-			RepeatWeekdays         string           `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-			RetentionDays          requests.Integer `json:"RetentionDays" xml:"RetentionDays"`
-			DiskNums               requests.Integer `json:"DiskNums" xml:"DiskNums"`
-			VolumeNums             requests.Integer `json:"VolumeNums" xml:"VolumeNums"`
-			CreationTime           string           `json:"CreationTime" xml:"CreationTime"`
-			Status                 string           `json:"Status" xml:"Status"`
+			AutoSnapshotPolicyId   string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+			RegionId               string `json:"RegionId" xml:"RegionId"`
+			AutoSnapshotPolicyName string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
+			TimePoints             string `json:"TimePoints" xml:"TimePoints"`
+			RepeatWeekdays         string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+			RetentionDays          int    `json:"RetentionDays" xml:"RetentionDays"`
+			DiskNums               int    `json:"DiskNums" xml:"DiskNums"`
+			VolumeNums             int    `json:"VolumeNums" xml:"VolumeNums"`
+			CreationTime           string `json:"CreationTime" xml:"CreationTime"`
+			Status                 string `json:"Status" xml:"Status"`
 		} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
 	} `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
 }

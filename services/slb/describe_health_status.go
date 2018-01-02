@@ -79,10 +79,10 @@ type DescribeHealthStatusResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	BackendServers struct {
 		BackendServer []struct {
-			ListenerPort       requests.Integer `json:"ListenerPort" xml:"ListenerPort"`
-			ServerId           string           `json:"ServerId" xml:"ServerId"`
-			Port               requests.Integer `json:"Port" xml:"Port"`
-			ServerHealthStatus string           `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
+			ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
+			ServerId           string `json:"ServerId" xml:"ServerId"`
+			Port               int    `json:"Port" xml:"Port"`
+			ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

@@ -70,9 +70,9 @@ type ListUsersRequest struct {
 
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	IsTruncated requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string           `json:"Marker" xml:"Marker"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string `json:"Marker" xml:"Marker"`
 	Users       struct {
 		User []struct {
 			UserId      string `json:"UserId" xml:"UserId"`

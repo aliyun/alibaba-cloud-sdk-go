@@ -98,11 +98,11 @@ type QueryAsrJobListResponse struct {
 				Duration    string `json:"Duration" xml:"Duration"`
 				AsrTextList struct {
 					AsrText []struct {
-						StartTime  requests.Integer `json:"StartTime" xml:"StartTime"`
-						EndTime    string           `json:"EndTime" xml:"EndTime"`
-						ChannelId  string           `json:"ChannelId" xml:"ChannelId"`
-						SpeechRate string           `json:"SpeechRate" xml:"SpeechRate"`
-						Text       string           `json:"Text" xml:"Text"`
+						StartTime  int    `json:"StartTime" xml:"StartTime"`
+						EndTime    string `json:"EndTime" xml:"EndTime"`
+						ChannelId  string `json:"ChannelId" xml:"ChannelId"`
+						SpeechRate string `json:"SpeechRate" xml:"SpeechRate"`
+						Text       string `json:"Text" xml:"Text"`
 					} `json:"AsrText" xml:"AsrText"`
 				} `json:"AsrTextList" xml:"AsrTextList"`
 			} `json:"AsrResult" xml:"AsrResult"`

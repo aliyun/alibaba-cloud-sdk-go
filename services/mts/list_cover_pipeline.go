@@ -75,22 +75,22 @@ type ListCoverPipelineRequest struct {
 
 type ListCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
 	PipelineList struct {
 		Pipeline []struct {
-			UserId       requests.Integer `json:"UserId" xml:"UserId"`
-			PipelineId   string           `json:"PipelineId" xml:"PipelineId"`
-			Name         string           `json:"Name" xml:"Name"`
-			State        string           `json:"State" xml:"State"`
-			Priority     string           `json:"Priority" xml:"Priority"`
-			QuotaNum     requests.Integer `json:"quotaNum" xml:"quotaNum"`
-			QuotaUsed    requests.Integer `json:"quotaUsed" xml:"quotaUsed"`
-			NotifyConfig string           `json:"NotifyConfig" xml:"NotifyConfig"`
-			Role         string           `json:"Role" xml:"Role"`
-			ExtendConfig string           `json:"ExtendConfig" xml:"ExtendConfig"`
+			UserId       int    `json:"UserId" xml:"UserId"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			Name         string `json:"Name" xml:"Name"`
+			State        string `json:"State" xml:"State"`
+			Priority     string `json:"Priority" xml:"Priority"`
+			QuotaNum     int    `json:"quotaNum" xml:"quotaNum"`
+			QuotaUsed    int    `json:"quotaUsed" xml:"quotaUsed"`
+			NotifyConfig string `json:"NotifyConfig" xml:"NotifyConfig"`
+			Role         string `json:"Role" xml:"Role"`
+			ExtendConfig string `json:"ExtendConfig" xml:"ExtendConfig"`
 		} `json:"Pipeline" xml:"Pipeline"`
 	} `json:"PipelineList" xml:"PipelineList"`
 }

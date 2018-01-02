@@ -78,47 +78,47 @@ type DescribeDomainTopUrlVisitResponse struct {
 	StartTime  string `json:"StartTime" xml:"StartTime"`
 	AllUrlList struct {
 		UrlList []struct {
-			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"UrlList" xml:"UrlList"`
 	} `json:"AllUrlList" xml:"AllUrlList"`
 	Url200List struct {
 		UrlList []struct {
-			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"UrlList" xml:"UrlList"`
 	} `json:"Url200List" xml:"Url200List"`
 	Url300List struct {
 		UrlList []struct {
-			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"UrlList" xml:"UrlList"`
 	} `json:"Url300List" xml:"Url300List"`
 	Url400List struct {
 		UrlList []struct {
-			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"UrlList" xml:"UrlList"`
 	} `json:"Url400List" xml:"Url400List"`
 	Url500List struct {
 		UrlList []struct {
-			UrlDetail       string         `json:"UrlDetail" xml:"UrlDetail"`
-			VisitData       string         `json:"VisitData" xml:"VisitData"`
-			VisitProportion requests.Float `json:"VisitProportion" xml:"VisitProportion"`
-			Flow            string         `json:"Flow" xml:"Flow"`
-			FlowProportion  requests.Float `json:"FlowProportion" xml:"FlowProportion"`
+			UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
+			VisitData       string  `json:"VisitData" xml:"VisitData"`
+			VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+			Flow            string  `json:"Flow" xml:"Flow"`
+			FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
 		} `json:"UrlList" xml:"UrlList"`
 	} `json:"Url500List" xml:"Url500List"`
 }

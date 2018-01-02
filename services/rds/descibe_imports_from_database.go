@@ -70,8 +70,8 @@ type DescibeImportsFromDatabaseRequest struct {
 	ImportId             requests.Integer `position:"Query" name:"ImportId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Engine               string           `position:"Query" name:"Engine"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,17 +80,17 @@ type DescibeImportsFromDatabaseRequest struct {
 
 type DescibeImportsFromDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		ImportResultFromDB []struct {
-			ImportId                    requests.Integer `json:"ImportId" xml:"ImportId"`
-			ImportDataType              string           `json:"ImportDataType" xml:"ImportDataType"`
-			ImportDataStatus            string           `json:"ImportDataStatus" xml:"ImportDataStatus"`
-			ImportDataStatusDescription string           `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
-			IncrementalImportingTime    string           `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
+			ImportId                    int    `json:"ImportId" xml:"ImportId"`
+			ImportDataType              string `json:"ImportDataType" xml:"ImportDataType"`
+			ImportDataStatus            string `json:"ImportDataStatus" xml:"ImportDataStatus"`
+			ImportDataStatusDescription string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
+			IncrementalImportingTime    string `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
 		} `json:"ImportResultFromDB" xml:"ImportResultFromDB"`
 	} `json:"Items" xml:"Items"`
 }

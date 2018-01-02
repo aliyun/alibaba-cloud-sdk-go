@@ -101,33 +101,33 @@ type DescribeImagesRequest struct {
 
 type DescribeImagesResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	RegionId   string           `json:"RegionId" xml:"RegionId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Images     struct {
 		Image []struct {
-			Progress             string           `json:"Progress" xml:"Progress"`
-			ImageId              string           `json:"ImageId" xml:"ImageId"`
-			ImageName            string           `json:"ImageName" xml:"ImageName"`
-			ImageVersion         string           `json:"ImageVersion" xml:"ImageVersion"`
-			Description          string           `json:"Description" xml:"Description"`
-			Size                 requests.Integer `json:"Size" xml:"Size"`
-			ImageOwnerAlias      string           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-			IsSupportIoOptimized requests.Boolean `json:"IsSupportIoOptimized" xml:"IsSupportIoOptimized"`
-			IsSupportCloudinit   requests.Boolean `json:"IsSupportCloudinit" xml:"IsSupportCloudinit"`
-			OSName               string           `json:"OSName" xml:"OSName"`
-			Architecture         string           `json:"Architecture" xml:"Architecture"`
-			Status               string           `json:"Status" xml:"Status"`
-			ProductCode          string           `json:"ProductCode" xml:"ProductCode"`
-			IsSubscribed         requests.Boolean `json:"IsSubscribed" xml:"IsSubscribed"`
-			CreationTime         string           `json:"CreationTime" xml:"CreationTime"`
-			IsSelfShared         string           `json:"IsSelfShared" xml:"IsSelfShared"`
-			OSType               string           `json:"OSType" xml:"OSType"`
-			Platform             string           `json:"Platform" xml:"Platform"`
-			Usage                string           `json:"Usage" xml:"Usage"`
-			IsCopied             requests.Boolean `json:"IsCopied" xml:"IsCopied"`
+			Progress             string `json:"Progress" xml:"Progress"`
+			ImageId              string `json:"ImageId" xml:"ImageId"`
+			ImageName            string `json:"ImageName" xml:"ImageName"`
+			ImageVersion         string `json:"ImageVersion" xml:"ImageVersion"`
+			Description          string `json:"Description" xml:"Description"`
+			Size                 int    `json:"Size" xml:"Size"`
+			ImageOwnerAlias      string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+			IsSupportIoOptimized bool   `json:"IsSupportIoOptimized" xml:"IsSupportIoOptimized"`
+			IsSupportCloudinit   bool   `json:"IsSupportCloudinit" xml:"IsSupportCloudinit"`
+			OSName               string `json:"OSName" xml:"OSName"`
+			Architecture         string `json:"Architecture" xml:"Architecture"`
+			Status               string `json:"Status" xml:"Status"`
+			ProductCode          string `json:"ProductCode" xml:"ProductCode"`
+			IsSubscribed         bool   `json:"IsSubscribed" xml:"IsSubscribed"`
+			CreationTime         string `json:"CreationTime" xml:"CreationTime"`
+			IsSelfShared         string `json:"IsSelfShared" xml:"IsSelfShared"`
+			OSType               string `json:"OSType" xml:"OSType"`
+			Platform             string `json:"Platform" xml:"Platform"`
+			Usage                string `json:"Usage" xml:"Usage"`
+			IsCopied             bool   `json:"IsCopied" xml:"IsCopied"`
 			DiskDeviceMappings   struct {
 				DiskDeviceMapping []struct {
 					SnapshotId      string `json:"SnapshotId" xml:"SnapshotId"`

@@ -64,11 +64,11 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithCallback(request *Sa
 
 type SaveBatchTaskForModifyingDomainDnsRequest struct {
 	*requests.RpcRequest
-	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	DomainName       *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
-	DomainNameServer *[]string        `position:"Query" name:"DomainNameServer"  type:"Repeated"`
-	Lang             string           `position:"Query" name:"Lang"`
 	AliyunDns        requests.Boolean `position:"Query" name:"AliyunDns"`
+	DomainNameServer *[]string        `position:"Query" name:"DomainNameServer"  type:"Repeated"`
+	UserClientIp     string           `position:"Query" name:"UserClientIp"`
+	Lang             string           `position:"Query" name:"Lang"`
 }
 
 type SaveBatchTaskForModifyingDomainDnsResponse struct {

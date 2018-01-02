@@ -81,10 +81,10 @@ type ModifyCommonBandwidthPackagePayTypeRequest struct {
 
 type ModifyCommonBandwidthPackagePayTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	OrderId   requests.Integer `json:"OrderId" xml:"OrderId"`
-	Code      string           `json:"Code" xml:"Code"`
-	Message   string           `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   int    `json:"OrderId" xml:"OrderId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 func CreateModifyCommonBandwidthPackagePayTypeRequest() (request *ModifyCommonBandwidthPackagePayTypeRequest) {

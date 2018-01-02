@@ -76,8 +76,8 @@ type RenewInstanceRequest struct {
 
 type RenewInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	OrderId   requests.Integer `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
 func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {

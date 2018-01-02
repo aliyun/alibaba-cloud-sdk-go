@@ -79,21 +79,21 @@ type DescribeSlowLogRecordsRequest struct {
 
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Engine           string           `json:"Engine" xml:"Engine"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Engine           string `json:"Engine" xml:"Engine"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLSlowRecord []struct {
-			HostAddress        string           `json:"HostAddress" xml:"HostAddress"`
-			DBName             string           `json:"DBName" xml:"DBName"`
-			SQLText            string           `json:"SQLText" xml:"SQLText"`
-			QueryTimes         requests.Integer `json:"QueryTimes" xml:"QueryTimes"`
-			LockTimes          requests.Integer `json:"LockTimes" xml:"LockTimes"`
-			ParseRowCounts     requests.Integer `json:"ParseRowCounts" xml:"ParseRowCounts"`
-			ReturnRowCounts    requests.Integer `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-			ExecutionStartTime string           `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+			HostAddress        string `json:"HostAddress" xml:"HostAddress"`
+			DBName             string `json:"DBName" xml:"DBName"`
+			SQLText            string `json:"SQLText" xml:"SQLText"`
+			QueryTimes         int    `json:"QueryTimes" xml:"QueryTimes"`
+			LockTimes          int    `json:"LockTimes" xml:"LockTimes"`
+			ParseRowCounts     int    `json:"ParseRowCounts" xml:"ParseRowCounts"`
+			ReturnRowCounts    int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+			ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 		} `json:"SQLSlowRecord" xml:"SQLSlowRecord"`
 	} `json:"Items" xml:"Items"`
 }

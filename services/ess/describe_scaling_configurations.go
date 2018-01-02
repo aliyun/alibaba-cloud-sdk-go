@@ -95,43 +95,43 @@ type DescribeScalingConfigurationsRequest struct {
 
 type DescribeScalingConfigurationsResponse struct {
 	*responses.BaseResponse
-	TotalCount            requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize              requests.Integer `json:"PageSize" xml:"PageSize"`
-	RequestId             string           `json:"RequestId" xml:"RequestId"`
+	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int    `json:"PageSize" xml:"PageSize"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
 	ScalingConfigurations struct {
 		ScalingConfiguration []struct {
-			ScalingConfigurationId      string           `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-			ScalingConfigurationName    string           `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
-			ScalingGroupId              string           `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			InstanceName                string           `json:"InstanceName" xml:"InstanceName"`
-			ImageId                     string           `json:"ImageId" xml:"ImageId"`
-			InstanceType                string           `json:"InstanceType" xml:"InstanceType"`
-			InstanceGeneration          string           `json:"InstanceGeneration" xml:"InstanceGeneration"`
-			SecurityGroupId             string           `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			IoOptimized                 string           `json:"IoOptimized" xml:"IoOptimized"`
-			InternetChargeType          string           `json:"InternetChargeType" xml:"InternetChargeType"`
-			InternetMaxBandwidthIn      requests.Integer `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-			InternetMaxBandwidthOut     requests.Integer `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-			SystemDiskCategory          string           `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
-			SystemDiskSize              requests.Integer `json:"SystemDiskSize" xml:"SystemDiskSize"`
-			LifecycleState              string           `json:"LifecycleState" xml:"LifecycleState"`
-			CreationTime                string           `json:"CreationTime" xml:"CreationTime"`
-			LoadBalancerWeight          requests.Integer `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-			UserData                    string           `json:"UserData" xml:"UserData"`
-			KeyPairName                 string           `json:"KeyPairName" xml:"KeyPairName"`
-			RamRoleName                 string           `json:"RamRoleName" xml:"RamRoleName"`
-			DeploymentSetId             string           `json:"DeploymentSetId" xml:"DeploymentSetId"`
-			SecurityEnhancementStrategy string           `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
+			ScalingConfigurationId      string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
+			ScalingConfigurationName    string `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
+			ScalingGroupId              string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+			InstanceName                string `json:"InstanceName" xml:"InstanceName"`
+			ImageId                     string `json:"ImageId" xml:"ImageId"`
+			InstanceType                string `json:"InstanceType" xml:"InstanceType"`
+			InstanceGeneration          string `json:"InstanceGeneration" xml:"InstanceGeneration"`
+			SecurityGroupId             string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+			IoOptimized                 string `json:"IoOptimized" xml:"IoOptimized"`
+			InternetChargeType          string `json:"InternetChargeType" xml:"InternetChargeType"`
+			InternetMaxBandwidthIn      int    `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+			InternetMaxBandwidthOut     int    `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+			SystemDiskCategory          string `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
+			SystemDiskSize              int    `json:"SystemDiskSize" xml:"SystemDiskSize"`
+			LifecycleState              string `json:"LifecycleState" xml:"LifecycleState"`
+			CreationTime                string `json:"CreationTime" xml:"CreationTime"`
+			LoadBalancerWeight          int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
+			UserData                    string `json:"UserData" xml:"UserData"`
+			KeyPairName                 string `json:"KeyPairName" xml:"KeyPairName"`
+			RamRoleName                 string `json:"RamRoleName" xml:"RamRoleName"`
+			DeploymentSetId             string `json:"DeploymentSetId" xml:"DeploymentSetId"`
+			SecurityEnhancementStrategy string `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
 			InstanceTypes               struct {
 				InstanceType []string `json:"InstanceType" xml:"InstanceType"`
 			} `json:"InstanceTypes" xml:"InstanceTypes"`
 			DataDisks struct {
 				DataDisk []struct {
-					Size       requests.Integer `json:"Size" xml:"Size"`
-					Category   string           `json:"Category" xml:"Category"`
-					SnapshotId string           `json:"SnapshotId" xml:"SnapshotId"`
-					Device     string           `json:"Device" xml:"Device"`
+					Size       int    `json:"Size" xml:"Size"`
+					Category   string `json:"Category" xml:"Category"`
+					SnapshotId string `json:"SnapshotId" xml:"SnapshotId"`
+					Device     string `json:"Device" xml:"Device"`
 				} `json:"DataDisk" xml:"DataDisk"`
 			} `json:"DataDisks" xml:"DataDisks"`
 			Tags struct {

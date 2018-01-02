@@ -73,30 +73,30 @@ type DescribeInstanceAttributeRequest struct {
 
 type DescribeInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string           `json:"RequestId" xml:"RequestId"`
-	InstanceId              string           `json:"InstanceId" xml:"InstanceId"`
-	InstanceName            string           `json:"InstanceName" xml:"InstanceName"`
-	ImageId                 string           `json:"ImageId" xml:"ImageId"`
-	RegionId                string           `json:"RegionId" xml:"RegionId"`
-	ZoneId                  string           `json:"ZoneId" xml:"ZoneId"`
-	ClusterId               string           `json:"ClusterId" xml:"ClusterId"`
-	InstanceType            string           `json:"InstanceType" xml:"InstanceType"`
-	Cpu                     requests.Integer `json:"Cpu" xml:"Cpu"`
-	Memory                  requests.Integer `json:"Memory" xml:"Memory"`
-	HostName                string           `json:"HostName" xml:"HostName"`
-	Status                  string           `json:"Status" xml:"Status"`
-	InternetChargeType      string           `json:"InternetChargeType" xml:"InternetChargeType"`
-	InternetMaxBandwidthIn  requests.Integer `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut requests.Integer `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-	VlanId                  string           `json:"VlanId" xml:"VlanId"`
-	SerialNumber            string           `json:"SerialNumber" xml:"SerialNumber"`
-	CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
-	Description             string           `json:"Description" xml:"Description"`
-	InstanceNetworkType     string           `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	IoOptimized             string           `json:"IoOptimized" xml:"IoOptimized"`
-	InstanceChargeType      string           `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	ExpiredTime             string           `json:"ExpiredTime" xml:"ExpiredTime"`
-	StoppedMode             string           `json:"StoppedMode" xml:"StoppedMode"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
+	InstanceName            string `json:"InstanceName" xml:"InstanceName"`
+	ImageId                 string `json:"ImageId" xml:"ImageId"`
+	RegionId                string `json:"RegionId" xml:"RegionId"`
+	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
+	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
+	InstanceType            string `json:"InstanceType" xml:"InstanceType"`
+	Cpu                     int    `json:"Cpu" xml:"Cpu"`
+	Memory                  int    `json:"Memory" xml:"Memory"`
+	HostName                string `json:"HostName" xml:"HostName"`
+	Status                  string `json:"Status" xml:"Status"`
+	InternetChargeType      string `json:"InternetChargeType" xml:"InternetChargeType"`
+	InternetMaxBandwidthIn  int    `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	InternetMaxBandwidthOut int    `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	VlanId                  string `json:"VlanId" xml:"VlanId"`
+	SerialNumber            string `json:"SerialNumber" xml:"SerialNumber"`
+	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+	Description             string `json:"Description" xml:"Description"`
+	InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	IoOptimized             string `json:"IoOptimized" xml:"IoOptimized"`
+	InstanceChargeType      string `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ExpiredTime             string `json:"ExpiredTime" xml:"ExpiredTime"`
+	StoppedMode             string `json:"StoppedMode" xml:"StoppedMode"`
 	SecurityGroupIds        struct {
 		SecurityGroupId []string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	} `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
@@ -115,10 +115,10 @@ type DescribeInstanceAttributeResponse struct {
 		} `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 	} `json:"VpcAttributes" xml:"VpcAttributes"`
 	EipAddress struct {
-		AllocationId       string           `json:"AllocationId" xml:"AllocationId"`
-		IpAddress          string           `json:"IpAddress" xml:"IpAddress"`
-		Bandwidth          requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
-		InternetChargeType string           `json:"InternetChargeType" xml:"InternetChargeType"`
+		AllocationId       string `json:"AllocationId" xml:"AllocationId"`
+		IpAddress          string `json:"IpAddress" xml:"IpAddress"`
+		Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
+		InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
 	} `json:"EipAddress" xml:"EipAddress"`
 	OperationLocks struct {
 		LockReason []struct {

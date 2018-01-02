@@ -74,11 +74,11 @@ type DescribeCdnMonitorDataRequest struct {
 
 type DescribeCdnMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	DomainName      string           `json:"DomainName" xml:"DomainName"`
-	MonitorInterval requests.Integer `json:"MonitorInterval" xml:"MonitorInterval"`
-	StartTime       string           `json:"StartTime" xml:"StartTime"`
-	EndTime         string           `json:"EndTime" xml:"EndTime"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	DomainName      string `json:"DomainName" xml:"DomainName"`
+	MonitorInterval int    `json:"MonitorInterval" xml:"MonitorInterval"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	EndTime         string `json:"EndTime" xml:"EndTime"`
 	MonitorDatas    struct {
 		CDNMonitorData []struct {
 			TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`

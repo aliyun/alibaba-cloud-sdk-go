@@ -77,17 +77,17 @@ type DescribeInstanceAutoRenewalAttributeRequest struct {
 
 type DescribeInstanceAutoRenewalAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		Item []struct {
-			DBInstanceId string           `json:"DBInstanceId" xml:"DBInstanceId"`
-			RegionId     string           `json:"RegionId" xml:"RegionId"`
-			Duration     requests.Integer `json:"Duration" xml:"Duration"`
-			Status       string           `json:"Status" xml:"Status"`
-			AutoRenew    string           `json:"AutoRenew" xml:"AutoRenew"`
+			DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+			RegionId     string `json:"RegionId" xml:"RegionId"`
+			Duration     int    `json:"Duration" xml:"Duration"`
+			Status       string `json:"Status" xml:"Status"`
+			AutoRenew    string `json:"AutoRenew" xml:"AutoRenew"`
 		} `json:"Item" xml:"Item"`
 	} `json:"Items" xml:"Items"`
 }

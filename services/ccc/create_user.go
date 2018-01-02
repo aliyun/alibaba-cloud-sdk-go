@@ -76,12 +76,12 @@ type CreateUserRequest struct {
 
 type CreateUserResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	UserId         string           `json:"UserId" xml:"UserId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	UserId         string `json:"UserId" xml:"UserId"`
 }
 
 func CreateCreateUserRequest() (request *CreateUserRequest) {

@@ -77,12 +77,12 @@ type GetNotifyPolicyResponse struct {
 	Success string `json:"success" xml:"success"`
 	TraceId string `json:"traceId" xml:"traceId"`
 	Result  struct {
-		AlertName  string           `json:"AlertName" xml:"AlertName"`
-		Dimensions string           `json:"Dimensions" xml:"Dimensions"`
-		Type       string           `json:"Type" xml:"Type"`
-		Id         string           `json:"Id" xml:"Id"`
-		StartTime  requests.Integer `json:"StartTime" xml:"StartTime"`
-		EndTime    requests.Integer `json:"EndTime" xml:"EndTime"`
+		AlertName  string `json:"AlertName" xml:"AlertName"`
+		Dimensions string `json:"Dimensions" xml:"Dimensions"`
+		Type       string `json:"Type" xml:"Type"`
+		Id         string `json:"Id" xml:"Id"`
+		StartTime  int    `json:"StartTime" xml:"StartTime"`
+		EndTime    int    `json:"EndTime" xml:"EndTime"`
 	} `json:"Result" xml:"Result"`
 }
 

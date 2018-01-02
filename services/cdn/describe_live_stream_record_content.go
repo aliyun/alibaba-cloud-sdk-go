@@ -78,12 +78,12 @@ type DescribeLiveStreamRecordContentResponse struct {
 	RequestId             string `json:"RequestId" xml:"RequestId"`
 	RecordContentInfoList struct {
 		RecordContentInfo []struct {
-			OssEndpoint     string         `json:"OssEndpoint" xml:"OssEndpoint"`
-			OssBucket       string         `json:"OssBucket" xml:"OssBucket"`
-			OssObjectPrefix string         `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-			StartTime       string         `json:"StartTime" xml:"StartTime"`
-			EndTime         string         `json:"EndTime" xml:"EndTime"`
-			Duration        requests.Float `json:"Duration" xml:"Duration"`
+			OssEndpoint     string  `json:"OssEndpoint" xml:"OssEndpoint"`
+			OssBucket       string  `json:"OssBucket" xml:"OssBucket"`
+			OssObjectPrefix string  `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
+			StartTime       string  `json:"StartTime" xml:"StartTime"`
+			EndTime         string  `json:"EndTime" xml:"EndTime"`
+			Duration        float64 `json:"Duration" xml:"Duration"`
 		} `json:"RecordContentInfo" xml:"RecordContentInfo"`
 	} `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
 }

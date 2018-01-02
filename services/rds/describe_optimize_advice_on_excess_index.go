@@ -75,15 +75,15 @@ type DescribeOptimizeAdviceOnExcessIndexRequest struct {
 
 type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount requests.Integer `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items             struct {
 		AdviceOnExcessIndex []struct {
-			DBName     string           `json:"DBName" xml:"DBName"`
-			TableName  string           `json:"TableName" xml:"TableName"`
-			IndexCount requests.Integer `json:"IndexCount" xml:"IndexCount"`
+			DBName     string `json:"DBName" xml:"DBName"`
+			TableName  string `json:"TableName" xml:"TableName"`
+			IndexCount int    `json:"IndexCount" xml:"IndexCount"`
 		} `json:"AdviceOnExcessIndex" xml:"AdviceOnExcessIndex"`
 	} `json:"Items" xml:"Items"`
 }

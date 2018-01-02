@@ -76,13 +76,13 @@ type UploadCACertificateRequest struct {
 
 type UploadCACertificateResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	CACertificateId   string           `json:"CACertificateId" xml:"CACertificateId"`
-	CACertificateName string           `json:"CACertificateName" xml:"CACertificateName"`
-	Fingerprint       string           `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string           `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp   requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
+	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
+	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
+	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
 func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {

@@ -76,22 +76,22 @@ type QueryTemplateByParamRequest struct {
 
 type QueryTemplateByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Data       struct {
 		Template []struct {
-			TemplateId      string           `json:"TemplateId" xml:"TemplateId"`
-			TemplateName    string           `json:"TemplateName" xml:"TemplateName"`
-			TemplateComment string           `json:"TemplateComment" xml:"TemplateComment"`
-			TemplateStatus  string           `json:"TemplateStatus" xml:"TemplateStatus"`
-			CreateTime      string           `json:"CreateTime" xml:"CreateTime"`
-			UtcCreatetime   requests.Integer `json:"UtcCreatetime" xml:"UtcCreatetime"`
-			TemplateType    requests.Integer `json:"TemplateType" xml:"TemplateType"`
-			SmsTemplateCode requests.Integer `json:"SmsTemplateCode" xml:"SmsTemplateCode"`
-			Smsrejectinfo   requests.Integer `json:"Smsrejectinfo" xml:"Smsrejectinfo"`
-			SmsStatus       requests.Integer `json:"SmsStatus" xml:"SmsStatus"`
+			TemplateId      string `json:"TemplateId" xml:"TemplateId"`
+			TemplateName    string `json:"TemplateName" xml:"TemplateName"`
+			TemplateComment string `json:"TemplateComment" xml:"TemplateComment"`
+			TemplateStatus  string `json:"TemplateStatus" xml:"TemplateStatus"`
+			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+			UtcCreatetime   int    `json:"UtcCreatetime" xml:"UtcCreatetime"`
+			TemplateType    int    `json:"TemplateType" xml:"TemplateType"`
+			SmsTemplateCode int    `json:"SmsTemplateCode" xml:"SmsTemplateCode"`
+			Smsrejectinfo   int    `json:"Smsrejectinfo" xml:"Smsrejectinfo"`
+			SmsStatus       int    `json:"SmsStatus" xml:"SmsStatus"`
 		} `json:"template" xml:"template"`
 	} `json:"data" xml:"data"`
 }

@@ -107,8 +107,8 @@ type QueryPornJobListResponse struct {
 				AverageScore    string `json:"AverageScore" xml:"AverageScore"`
 				PornCounterList struct {
 					Counter []struct {
-						Count requests.Integer `json:"Count" xml:"Count"`
-						Label string           `json:"Label" xml:"Label"`
+						Count int    `json:"Count" xml:"Count"`
+						Label string `json:"Label" xml:"Label"`
 					} `json:"Counter" xml:"Counter"`
 				} `json:"PornCounterList" xml:"PornCounterList"`
 				PornTopList struct {

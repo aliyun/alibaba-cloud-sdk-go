@@ -64,42 +64,42 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
-	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
-	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
-	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
-	DomainName            string           `position:"Query" name:"DomainName"`
-	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
-	PageNum               requests.Integer `position:"Query" name:"PageNum"`
-	OrderByType           string           `position:"Query" name:"OrderByType"`
 	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
+	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	PageNum               requests.Integer `position:"Query" name:"PageNum"`
+	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
-	QueryType             string           `position:"Query" name:"QueryType"`
 	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
+	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
+	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
+	OrderByType           string           `position:"Query" name:"OrderByType"`
+	DomainName            string           `position:"Query" name:"DomainName"`
+	QueryType             string           `position:"Query" name:"QueryType"`
 }
 
 type QueryDomainListResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   requests.Integer `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum requests.Integer `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   requests.Integer `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	PrePage        requests.Boolean `json:"PrePage" xml:"PrePage"`
-	NextPage       requests.Boolean `json:"NextPage" xml:"NextPage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	PrePage        bool   `json:"PrePage" xml:"PrePage"`
+	NextPage       bool   `json:"NextPage" xml:"NextPage"`
 	Data           struct {
 		Domain []struct {
-			DomainName           string           `json:"DomainName" xml:"DomainName"`
-			InstanceId           string           `json:"InstanceId" xml:"InstanceId"`
-			ExpirationDate       string           `json:"ExpirationDate" xml:"ExpirationDate"`
-			RegistrationDate     string           `json:"RegistrationDate" xml:"RegistrationDate"`
-			DomainType           string           `json:"DomainType" xml:"DomainType"`
-			DomainStatus         string           `json:"DomainStatus" xml:"DomainStatus"`
-			ProductId            string           `json:"ProductId" xml:"ProductId"`
-			ExpirationDateLong   requests.Integer `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-			RegistrationDateLong requests.Integer `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
-			Premium              requests.Boolean `json:"Premium" xml:"Premium"`
+			DomainName           string `json:"DomainName" xml:"DomainName"`
+			InstanceId           string `json:"InstanceId" xml:"InstanceId"`
+			ExpirationDate       string `json:"ExpirationDate" xml:"ExpirationDate"`
+			RegistrationDate     string `json:"RegistrationDate" xml:"RegistrationDate"`
+			DomainType           string `json:"DomainType" xml:"DomainType"`
+			DomainStatus         string `json:"DomainStatus" xml:"DomainStatus"`
+			ProductId            string `json:"ProductId" xml:"ProductId"`
+			ExpirationDateLong   int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+			RegistrationDateLong int    `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+			Premium              bool   `json:"Premium" xml:"Premium"`
 		} `json:"Domain" xml:"Domain"`
 	} `json:"Data" xml:"Data"`
 }

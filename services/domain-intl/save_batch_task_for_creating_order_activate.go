@@ -64,9 +64,9 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request 
 
 type SaveBatchTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
-	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
+	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 }
 
 type SaveBatchTaskForCreatingOrderActivateOrderActivateParam struct {

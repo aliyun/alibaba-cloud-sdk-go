@@ -66,12 +66,11 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	*requests.RpcRequest
 	VlanId                        requests.Integer `position:"Query" name:"VlanId"`
 	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	UserCidr                      string           `position:"Query" name:"UserCidr"`
 	AssociatedPhysicalConnections string           `position:"Query" name:"AssociatedPhysicalConnections"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description                   string           `position:"Query" name:"Description"`
 	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
 	Name                          string           `position:"Query" name:"Name"`

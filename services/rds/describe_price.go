@@ -87,10 +87,10 @@ type DescribePriceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	PriceInfo struct {
-		Currency      string         `json:"Currency" xml:"Currency"`
-		OriginalPrice requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
-		TradePrice    requests.Float `json:"TradePrice" xml:"TradePrice"`
-		DiscountPrice requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
+		Currency      string  `json:"Currency" xml:"Currency"`
+		OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
+		TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
+		DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
 		RuleIds       struct {
 			RuleId []string `json:"RuleId" xml:"RuleId"`
 		} `json:"RuleIds" xml:"RuleIds"`
@@ -110,9 +110,9 @@ type DescribePriceResponse struct {
 	} `json:"PriceInfo" xml:"PriceInfo"`
 	Rules struct {
 		Rule []struct {
-			RuleId      requests.Integer `json:"RuleId" xml:"RuleId"`
-			Name        string           `json:"Name" xml:"Name"`
-			Description string           `json:"Description" xml:"Description"`
+			RuleId      int    `json:"RuleId" xml:"RuleId"`
+			Name        string `json:"Name" xml:"Name"`
+			Description string `json:"Description" xml:"Description"`
 		} `json:"Rule" xml:"Rule"`
 	} `json:"Rules" xml:"Rules"`
 }

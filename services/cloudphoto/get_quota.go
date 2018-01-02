@@ -75,11 +75,11 @@ type GetQuotaResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
 	Quota     struct {
-		TotalQuota  requests.Integer `json:"TotalQuota" xml:"TotalQuota"`
-		FacesCount  requests.Integer `json:"FacesCount" xml:"FacesCount"`
-		PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
-		UsedQuota   requests.Integer `json:"UsedQuota" xml:"UsedQuota"`
-		VideosCount requests.Integer `json:"VideosCount" xml:"VideosCount"`
+		TotalQuota  int `json:"TotalQuota" xml:"TotalQuota"`
+		FacesCount  int `json:"FacesCount" xml:"FacesCount"`
+		PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
+		UsedQuota   int `json:"UsedQuota" xml:"UsedQuota"`
+		VideosCount int `json:"VideosCount" xml:"VideosCount"`
 	} `json:"Quota" xml:"Quota"`
 }
 

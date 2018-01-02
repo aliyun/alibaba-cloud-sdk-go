@@ -64,9 +64,9 @@ func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callb
 
 type VerifyEmailRequest struct {
 	*requests.RpcRequest
+	Token        string `position:"Query" name:"Token"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	Token        string `position:"Query" name:"Token"`
 }
 
 type VerifyEmailResponse struct {

@@ -77,11 +77,11 @@ type DescribeRealtimeDiagnosesRequest struct {
 
 type DescribeRealtimeDiagnosesResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Engine           string           `json:"Engine" xml:"Engine"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Engine           string `json:"Engine" xml:"Engine"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Tasks            struct {
 		RealtimeDiagnoseTasks []struct {
 			CreateTime  string `json:"CreateTime" xml:"CreateTime"`

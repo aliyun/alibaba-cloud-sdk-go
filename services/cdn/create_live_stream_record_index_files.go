@@ -80,12 +80,12 @@ type CreateLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	RecordInfo struct {
-		RecordId   string           `json:"RecordId" xml:"RecordId"`
-		RecordUrl  string           `json:"RecordUrl" xml:"RecordUrl"`
-		Duration   requests.Float   `json:"Duration" xml:"Duration"`
-		Height     requests.Integer `json:"Height" xml:"Height"`
-		Width      requests.Integer `json:"Width" xml:"Width"`
-		CreateTime string           `json:"CreateTime" xml:"CreateTime"`
+		RecordId   string  `json:"RecordId" xml:"RecordId"`
+		RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
+		Duration   float64 `json:"Duration" xml:"Duration"`
+		Height     int     `json:"Height" xml:"Height"`
+		Width      int     `json:"Width" xml:"Width"`
+		CreateTime string  `json:"CreateTime" xml:"CreateTime"`
 	} `json:"RecordInfo" xml:"RecordInfo"`
 }
 

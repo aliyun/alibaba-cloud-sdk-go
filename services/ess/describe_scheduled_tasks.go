@@ -134,22 +134,22 @@ type DescribeScheduledTasksRequest struct {
 
 type DescribeScheduledTasksResponse struct {
 	*responses.BaseResponse
-	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	ScheduledTasks struct {
 		ScheduledTask []struct {
-			ScheduledTaskId      string           `json:"ScheduledTaskId" xml:"ScheduledTaskId"`
-			ScheduledTaskName    string           `json:"ScheduledTaskName" xml:"ScheduledTaskName"`
-			Description          string           `json:"Description" xml:"Description"`
-			ScheduledAction      string           `json:"ScheduledAction" xml:"ScheduledAction"`
-			RecurrenceEndTime    string           `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
-			LaunchTime           string           `json:"LaunchTime" xml:"LaunchTime"`
-			RecurrenceType       string           `json:"RecurrenceType" xml:"RecurrenceType"`
-			RecurrenceValue      string           `json:"RecurrenceValue" xml:"RecurrenceValue"`
-			LaunchExpirationTime requests.Integer `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
-			TaskEnabled          requests.Boolean `json:"TaskEnabled" xml:"TaskEnabled"`
+			ScheduledTaskId      string `json:"ScheduledTaskId" xml:"ScheduledTaskId"`
+			ScheduledTaskName    string `json:"ScheduledTaskName" xml:"ScheduledTaskName"`
+			Description          string `json:"Description" xml:"Description"`
+			ScheduledAction      string `json:"ScheduledAction" xml:"ScheduledAction"`
+			RecurrenceEndTime    string `json:"RecurrenceEndTime" xml:"RecurrenceEndTime"`
+			LaunchTime           string `json:"LaunchTime" xml:"LaunchTime"`
+			RecurrenceType       string `json:"RecurrenceType" xml:"RecurrenceType"`
+			RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
+			LaunchExpirationTime int    `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
+			TaskEnabled          bool   `json:"TaskEnabled" xml:"TaskEnabled"`
 		} `json:"ScheduledTask" xml:"ScheduledTask"`
 	} `json:"ScheduledTasks" xml:"ScheduledTasks"`
 }

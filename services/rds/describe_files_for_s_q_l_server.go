@@ -77,25 +77,25 @@ type DescribeFilesForSQLServerRequest struct {
 
 type DescribeFilesForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string           `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLServerUploadFile []struct {
-			DBName            string           `json:"DBName" xml:"DBName"`
-			FileName          string           `json:"FileName" xml:"FileName"`
-			FileSize          requests.Integer `json:"FileSize" xml:"FileSize"`
-			InternetFtpServer string           `json:"InternetFtpServer" xml:"InternetFtpServer"`
-			InternetPort      requests.Integer `json:"InternetPort" xml:"InternetPort"`
-			IntranetFtpserver string           `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
-			Intranetport      requests.Integer `json:"Intranetport" xml:"Intranetport"`
-			UserName          string           `json:"UserName" xml:"UserName"`
-			Password          string           `json:"Password" xml:"Password"`
-			FileStatus        string           `json:"FileStatus" xml:"FileStatus"`
-			Description       string           `json:"Description" xml:"Description"`
-			CreationTime      string           `json:"CreationTime" xml:"CreationTime"`
+			DBName            string `json:"DBName" xml:"DBName"`
+			FileName          string `json:"FileName" xml:"FileName"`
+			FileSize          int    `json:"FileSize" xml:"FileSize"`
+			InternetFtpServer string `json:"InternetFtpServer" xml:"InternetFtpServer"`
+			InternetPort      int    `json:"InternetPort" xml:"InternetPort"`
+			IntranetFtpserver string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
+			Intranetport      int    `json:"Intranetport" xml:"Intranetport"`
+			UserName          string `json:"UserName" xml:"UserName"`
+			Password          string `json:"Password" xml:"Password"`
+			FileStatus        string `json:"FileStatus" xml:"FileStatus"`
+			Description       string `json:"Description" xml:"Description"`
+			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
 		} `json:"SQLServerUploadFile" xml:"SQLServerUploadFile"`
 	} `json:"Items" xml:"Items"`
 }

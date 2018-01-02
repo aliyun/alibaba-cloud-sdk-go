@@ -76,19 +76,19 @@ type DescribeCdnDomainLogsRequest struct {
 
 type DescribeCdnDomainLogsResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
-	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
+	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 	DomainLogModel struct {
 		DomainName       string `json:"DomainName" xml:"DomainName"`
 		DomainLogDetails struct {
 			DomainLogDetail []struct {
-				LogName   string           `json:"LogName" xml:"LogName"`
-				LogPath   string           `json:"LogPath" xml:"LogPath"`
-				LogSize   requests.Integer `json:"LogSize" xml:"LogSize"`
-				StartTime string           `json:"StartTime" xml:"StartTime"`
-				EndTime   string           `json:"EndTime" xml:"EndTime"`
+				LogName   string `json:"LogName" xml:"LogName"`
+				LogPath   string `json:"LogPath" xml:"LogPath"`
+				LogSize   int    `json:"LogSize" xml:"LogSize"`
+				StartTime string `json:"StartTime" xml:"StartTime"`
+				EndTime   string `json:"EndTime" xml:"EndTime"`
 			} `json:"DomainLogDetail" xml:"DomainLogDetail"`
 		} `json:"DomainLogDetails" xml:"DomainLogDetails"`
 	} `json:"DomainLogModel" xml:"DomainLogModel"`

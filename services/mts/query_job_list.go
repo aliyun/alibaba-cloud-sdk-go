@@ -79,14 +79,14 @@ type QueryJobListResponse struct {
 	} `json:"NonExistJobIds" xml:"NonExistJobIds"`
 	JobList struct {
 		Job []struct {
-			JobId        string           `json:"JobId" xml:"JobId"`
-			State        string           `json:"State" xml:"State"`
-			Code         string           `json:"Code" xml:"Code"`
-			Message      string           `json:"Message" xml:"Message"`
-			Percent      requests.Integer `json:"Percent" xml:"Percent"`
-			PipelineId   string           `json:"PipelineId" xml:"PipelineId"`
-			CreationTime string           `json:"CreationTime" xml:"CreationTime"`
-			FinishTime   string           `json:"FinishTime" xml:"FinishTime"`
+			JobId        string `json:"JobId" xml:"JobId"`
+			State        string `json:"State" xml:"State"`
+			Code         string `json:"Code" xml:"Code"`
+			Message      string `json:"Message" xml:"Message"`
+			Percent      int    `json:"Percent" xml:"Percent"`
+			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
+			FinishTime   string `json:"FinishTime" xml:"FinishTime"`
 			Input        struct {
 				Bucket   string `json:"Bucket" xml:"Bucket"`
 				Location string `json:"Location" xml:"Location"`
@@ -110,8 +110,8 @@ type QueryJobListResponse struct {
 				} `json:"OutputFile" xml:"OutputFile"`
 				M3U8NonStandardSupport struct {
 					TS struct {
-						Md5Support  requests.Boolean `json:"Md5Support" xml:"Md5Support"`
-						SizeSupport requests.Boolean `json:"SizeSupport" xml:"SizeSupport"`
+						Md5Support  bool `json:"Md5Support" xml:"Md5Support"`
+						SizeSupport bool `json:"SizeSupport" xml:"SizeSupport"`
 					} `json:"TS" xml:"TS"`
 				} `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
 				Properties struct {
@@ -326,13 +326,13 @@ type QueryJobListResponse struct {
 				} `json:"OpeningList" xml:"OpeningList"`
 				TailSlateList struct {
 					TailSlate []struct {
-						TailUrl       string           `json:"TailUrl" xml:"TailUrl"`
-						Start         string           `json:"Start" xml:"Start"`
-						BlendDuration string           `json:"BlendDuration" xml:"BlendDuration"`
-						Width         string           `json:"Width" xml:"Width"`
-						Height        string           `json:"Height" xml:"Height"`
-						IsMergeAudio  requests.Boolean `json:"IsMergeAudio" xml:"IsMergeAudio"`
-						BgColor       string           `json:"BgColor" xml:"BgColor"`
+						TailUrl       string `json:"TailUrl" xml:"TailUrl"`
+						Start         string `json:"Start" xml:"Start"`
+						BlendDuration string `json:"BlendDuration" xml:"BlendDuration"`
+						Width         string `json:"Width" xml:"Width"`
+						Height        string `json:"Height" xml:"Height"`
+						IsMergeAudio  bool   `json:"IsMergeAudio" xml:"IsMergeAudio"`
+						BgColor       string `json:"BgColor" xml:"BgColor"`
 					} `json:"TailSlate" xml:"TailSlate"`
 				} `json:"TailSlateList" xml:"TailSlateList"`
 			} `json:"Output" xml:"Output"`

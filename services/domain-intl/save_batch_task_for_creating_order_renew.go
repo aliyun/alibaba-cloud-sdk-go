@@ -64,8 +64,8 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *Sa
 
 type SaveBatchTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
-	UserClientIp    string                                               `position:"Query" name:"UserClientIp"`
 	OrderRenewParam *[]SaveBatchTaskForCreatingOrderRenewOrderRenewParam `position:"Query" name:"OrderRenewParam"  type:"Repeated"`
+	UserClientIp    string                                               `position:"Query" name:"UserClientIp"`
 	Lang            string                                               `position:"Query" name:"Lang"`
 }
 

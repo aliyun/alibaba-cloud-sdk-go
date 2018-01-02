@@ -70,15 +70,15 @@ type DescribeLimitationRequest struct {
 
 type DescribeLimitationResponse struct {
 	*responses.BaseResponse
-	MaxNumberOfScalingGroups         requests.Integer `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
-	MaxNumberOfScalingConfigurations requests.Integer `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
-	MaxNumberOfScalingRules          requests.Integer `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
-	MaxNumberOfScheduledTasks        requests.Integer `json:"MaxNumberOfScheduledTasks" xml:"MaxNumberOfScheduledTasks"`
-	MaxNumberOfScalingInstances      requests.Integer `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
-	MaxNumberOfDBInstances           requests.Integer `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
-	MaxNumberOfLoadBalancers         requests.Integer `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
-	MaxNumberOfMinSize               requests.Integer `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
-	MaxNumberOfMaxSize               requests.Integer `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
+	MaxNumberOfScalingGroups         int `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
+	MaxNumberOfScalingConfigurations int `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
+	MaxNumberOfScalingRules          int `json:"MaxNumberOfScalingRules" xml:"MaxNumberOfScalingRules"`
+	MaxNumberOfScheduledTasks        int `json:"MaxNumberOfScheduledTasks" xml:"MaxNumberOfScheduledTasks"`
+	MaxNumberOfScalingInstances      int `json:"MaxNumberOfScalingInstances" xml:"MaxNumberOfScalingInstances"`
+	MaxNumberOfDBInstances           int `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
+	MaxNumberOfLoadBalancers         int `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
+	MaxNumberOfMinSize               int `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`
+	MaxNumberOfMaxSize               int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 }
 
 func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {

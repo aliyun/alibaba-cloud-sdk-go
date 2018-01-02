@@ -82,9 +82,9 @@ type SetVServerGroupAttributeResponse struct {
 	VServerGroupName string `json:"VServerGroupName" xml:"VServerGroupName"`
 	BackendServers   struct {
 		BackendServer []struct {
-			ServerId string           `json:"ServerId" xml:"ServerId"`
-			Port     requests.Integer `json:"Port" xml:"Port"`
-			Weight   requests.Integer `json:"Weight" xml:"Weight"`
+			ServerId string `json:"ServerId" xml:"ServerId"`
+			Port     int    `json:"Port" xml:"Port"`
+			Weight   int    `json:"Weight" xml:"Weight"`
 		} `json:"BackendServer" xml:"BackendServer"`
 	} `json:"BackendServers" xml:"BackendServers"`
 }

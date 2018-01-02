@@ -71,11 +71,11 @@ type DescribeSQLDiagnosisListResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	SQLDiagList []struct {
-		SQLDiagId string           `json:"SQLDiagId" xml:"SQLDiagId"`
-		StartTime string           `json:"StartTime" xml:"StartTime"`
-		EndTime   string           `json:"EndTime" xml:"EndTime"`
-		Status    requests.Integer `json:"Status" xml:"Status"`
-		Progress  requests.Integer `json:"Progress" xml:"Progress"`
+		SQLDiagId string `json:"SQLDiagId" xml:"SQLDiagId"`
+		StartTime string `json:"StartTime" xml:"StartTime"`
+		EndTime   string `json:"EndTime" xml:"EndTime"`
+		Status    int    `json:"Status" xml:"Status"`
+		Progress  int    `json:"Progress" xml:"Progress"`
 	} `json:"SQLDiagList" xml:"SQLDiagList"`
 }
 

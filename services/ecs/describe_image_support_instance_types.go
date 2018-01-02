@@ -77,10 +77,10 @@ type DescribeImageSupportInstanceTypesResponse struct {
 	ImageId       string `json:"ImageId" xml:"ImageId"`
 	InstanceTypes struct {
 		InstanceType []struct {
-			InstanceTypeId     string           `json:"InstanceTypeId" xml:"InstanceTypeId"`
-			CpuCoreCount       requests.Integer `json:"CpuCoreCount" xml:"CpuCoreCount"`
-			MemorySize         requests.Float   `json:"MemorySize" xml:"MemorySize"`
-			InstanceTypeFamily string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+			InstanceTypeId     string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
+			CpuCoreCount       int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+			MemorySize         float64 `json:"MemorySize" xml:"MemorySize"`
+			InstanceTypeFamily string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 		} `json:"InstanceType" xml:"InstanceType"`
 	} `json:"InstanceTypes" xml:"InstanceTypes"`
 }

@@ -76,11 +76,11 @@ type DescribeInstanceAutoRenewAttributeResponse struct {
 	RequestId               string `json:"RequestId" xml:"RequestId"`
 	InstanceRenewAttributes struct {
 		InstanceRenewAttribute []struct {
-			InstanceId       string           `json:"InstanceId" xml:"InstanceId"`
-			AutoRenewEnabled requests.Boolean `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
-			Duration         requests.Integer `json:"Duration" xml:"Duration"`
-			PeriodUnit       string           `json:"PeriodUnit" xml:"PeriodUnit"`
-			RenewalStatus    string           `json:"RenewalStatus" xml:"RenewalStatus"`
+			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+			AutoRenewEnabled bool   `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
+			Duration         int    `json:"Duration" xml:"Duration"`
+			PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
+			RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
 		} `json:"InstanceRenewAttribute" xml:"InstanceRenewAttribute"`
 	} `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }

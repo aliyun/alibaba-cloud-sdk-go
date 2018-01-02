@@ -79,8 +79,8 @@ type DescribeDomainRealTimeBpsDataResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      struct {
 		BpsModel []struct {
-			Bps       requests.Float `json:"Bps" xml:"Bps"`
-			TimeStamp string         `json:"TimeStamp" xml:"TimeStamp"`
+			Bps       float64 `json:"Bps" xml:"Bps"`
+			TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"BpsModel" xml:"BpsModel"`
 	} `json:"Data" xml:"Data"`
 }

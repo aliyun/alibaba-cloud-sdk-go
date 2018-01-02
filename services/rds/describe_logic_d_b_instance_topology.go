@@ -71,25 +71,25 @@ type DescribeLogicDBInstanceTopologyRequest struct {
 
 type DescribeLogicDBInstanceTopologyResponse struct {
 	*responses.BaseResponse
-	DBInstanceId          requests.Integer `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceName        string           `json:"DBInstanceName" xml:"DBInstanceName"`
-	DBInstanceStatus      requests.Integer `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	DBInstanceStatusDesc  string           `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-	DBInstanceConnType    string           `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
-	DBInstanceDescription string           `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	Engine                string           `json:"Engine" xml:"Engine"`
-	EngineVersion         string           `json:"EngineVersion" xml:"EngineVersion"`
+	DBInstanceId          int    `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
+	DBInstanceStatus      int    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
+	DBInstanceConnType    string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
+	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	Engine                string `json:"Engine" xml:"Engine"`
+	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
 	Items                 struct {
 		LogicDBInstanceParameter []struct {
-			DBInstanceID          requests.Integer `json:"DBInstanceID" xml:"DBInstanceID"`
-			DBInstanceName        string           `json:"DBInstanceName" xml:"DBInstanceName"`
-			DBInstanceStatus      requests.Integer `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			DBInstanceStatusDesc  string           `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-			DBInstanceConnType    string           `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
-			DBInstanceDescription string           `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			Engine                string           `json:"Engine" xml:"Engine"`
-			EngineVersion         string           `json:"EngineVersion" xml:"EngineVersion"`
-			CharacterType         string           `json:"CharacterType" xml:"CharacterType"`
+			DBInstanceID          int    `json:"DBInstanceID" xml:"DBInstanceID"`
+			DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
+			DBInstanceStatus      int    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+			DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
+			DBInstanceConnType    string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
+			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+			Engine                string `json:"Engine" xml:"Engine"`
+			EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
+			CharacterType         string `json:"CharacterType" xml:"CharacterType"`
 		} `json:"LogicDBInstanceParameter" xml:"LogicDBInstanceParameter"`
 	} `json:"Items" xml:"Items"`
 }

@@ -64,17 +64,17 @@ func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapsh
 
 type DescribeSnapshotsUsageRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeSnapshotsUsageResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	SnapshotCount requests.Integer `json:"SnapshotCount" xml:"SnapshotCount"`
-	SnapshotSize  requests.Integer `json:"SnapshotSize" xml:"SnapshotSize"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	SnapshotCount int    `json:"SnapshotCount" xml:"SnapshotCount"`
+	SnapshotSize  int    `json:"SnapshotSize" xml:"SnapshotSize"`
 }
 
 func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageRequest) {

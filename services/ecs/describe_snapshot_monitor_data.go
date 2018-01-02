@@ -78,8 +78,8 @@ type DescribeSnapshotMonitorDataResponse struct {
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	MonitorData struct {
 		DataPoint []struct {
-			TimeStamp string           `json:"TimeStamp" xml:"TimeStamp"`
-			Size      requests.Integer `json:"Size" xml:"Size"`
+			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+			Size      int    `json:"Size" xml:"Size"`
 		} `json:"DataPoint" xml:"DataPoint"`
 	} `json:"MonitorData" xml:"MonitorData"`
 }

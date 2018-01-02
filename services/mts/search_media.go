@@ -82,26 +82,26 @@ type SearchMediaRequest struct {
 
 type SearchMediaResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalNum   requests.Integer `json:"TotalNum" xml:"TotalNum"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalNum   int    `json:"TotalNum" xml:"TotalNum"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	MediaList  struct {
 		Media []struct {
-			MediaId      string           `json:"MediaId" xml:"MediaId"`
-			Title        string           `json:"Title" xml:"Title"`
-			Description  string           `json:"Description" xml:"Description"`
-			CoverURL     string           `json:"CoverURL" xml:"CoverURL"`
-			CateId       requests.Integer `json:"CateId" xml:"CateId"`
-			Duration     string           `json:"Duration" xml:"Duration"`
-			Format       string           `json:"Format" xml:"Format"`
-			Size         string           `json:"Size" xml:"Size"`
-			Bitrate      string           `json:"Bitrate" xml:"Bitrate"`
-			Width        string           `json:"Width" xml:"Width"`
-			Height       string           `json:"Height" xml:"Height"`
-			Fps          string           `json:"Fps" xml:"Fps"`
-			PublishState string           `json:"PublishState" xml:"PublishState"`
-			CreationTime string           `json:"CreationTime" xml:"CreationTime"`
+			MediaId      string `json:"MediaId" xml:"MediaId"`
+			Title        string `json:"Title" xml:"Title"`
+			Description  string `json:"Description" xml:"Description"`
+			CoverURL     string `json:"CoverURL" xml:"CoverURL"`
+			CateId       int    `json:"CateId" xml:"CateId"`
+			Duration     string `json:"Duration" xml:"Duration"`
+			Format       string `json:"Format" xml:"Format"`
+			Size         string `json:"Size" xml:"Size"`
+			Bitrate      string `json:"Bitrate" xml:"Bitrate"`
+			Width        string `json:"Width" xml:"Width"`
+			Height       string `json:"Height" xml:"Height"`
+			Fps          string `json:"Fps" xml:"Fps"`
+			PublishState string `json:"PublishState" xml:"PublishState"`
+			CreationTime string `json:"CreationTime" xml:"CreationTime"`
 			Tags         struct {
 				Tag []string `json:"Tag" xml:"Tag"`
 			} `json:"Tags" xml:"Tags"`

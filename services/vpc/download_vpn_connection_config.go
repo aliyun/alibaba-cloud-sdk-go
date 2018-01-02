@@ -80,21 +80,21 @@ type DownloadVpnConnectionConfigResponse struct {
 		Local        string `json:"Local" xml:"Local"`
 		Remote       string `json:"Remote" xml:"Remote"`
 		IkeConfig    struct {
-			Psk         string           `json:"Psk" xml:"Psk"`
-			IkeVersion  string           `json:"IkeVersion" xml:"IkeVersion"`
-			IkeMode     string           `json:"IkeMode" xml:"IkeMode"`
-			IkeEncAlg   string           `json:"IkeEncAlg" xml:"IkeEncAlg"`
-			IkeAuthAlg  string           `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-			IkePfs      string           `json:"IkePfs" xml:"IkePfs"`
-			IkeLifetime requests.Integer `json:"IkeLifetime" xml:"IkeLifetime"`
-			LocalId     string           `json:"LocalId" xml:"LocalId"`
-			RemoteId    string           `json:"RemoteId" xml:"RemoteId"`
+			Psk         string `json:"Psk" xml:"Psk"`
+			IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
+			IkeMode     string `json:"IkeMode" xml:"IkeMode"`
+			IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
+			IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+			IkePfs      string `json:"IkePfs" xml:"IkePfs"`
+			IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
+			LocalId     string `json:"LocalId" xml:"LocalId"`
+			RemoteId    string `json:"RemoteId" xml:"RemoteId"`
 		} `json:"IkeConfig" xml:"IkeConfig"`
 		IpsecConfig struct {
-			IpsecEncAlg   string           `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-			IpsecAuthAlg  string           `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-			IpsecPfs      string           `json:"IpsecPfs" xml:"IpsecPfs"`
-			IpsecLifetime requests.Integer `json:"IpsecLifetime" xml:"IpsecLifetime"`
+			IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
+			IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
+			IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
+			IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
 		} `json:"IpsecConfig" xml:"IpsecConfig"`
 	} `json:"VpnConnectionConfig" xml:"VpnConnectionConfig"`
 }

@@ -79,11 +79,11 @@ type DescribeTasksRequest struct {
 
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	RegionId   string           `json:"RegionId" xml:"RegionId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	RegionId   string `json:"RegionId" xml:"RegionId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	TaskSet    struct {
 		Task []struct {
 			TaskId        string `json:"TaskId" xml:"TaskId"`

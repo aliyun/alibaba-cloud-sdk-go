@@ -76,15 +76,15 @@ type GetLibraryResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Library   struct {
 		Quota struct {
-			TotalQuota  requests.Integer `json:"TotalQuota" xml:"TotalQuota"`
-			FacesCount  requests.Integer `json:"FacesCount" xml:"FacesCount"`
-			PhotosCount requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
-			UsedQuota   requests.Integer `json:"UsedQuota" xml:"UsedQuota"`
-			VideosCount requests.Integer `json:"VideosCount" xml:"VideosCount"`
+			TotalQuota  int `json:"TotalQuota" xml:"TotalQuota"`
+			FacesCount  int `json:"FacesCount" xml:"FacesCount"`
+			PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
+			UsedQuota   int `json:"UsedQuota" xml:"UsedQuota"`
+			VideosCount int `json:"VideosCount" xml:"VideosCount"`
 		} `json:"Quota" xml:"Quota"`
 		AutoCleanConfig struct {
-			AutoCleanEnabled requests.Boolean `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-			AutoCleanDays    requests.Integer `json:"AutoCleanDays" xml:"AutoCleanDays"`
+			AutoCleanEnabled bool `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
+			AutoCleanDays    int  `json:"AutoCleanDays" xml:"AutoCleanDays"`
 		} `json:"AutoCleanConfig" xml:"AutoCleanConfig"`
 	} `json:"Library" xml:"Library"`
 }

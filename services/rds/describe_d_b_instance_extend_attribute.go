@@ -72,16 +72,16 @@ type DescribeDBInstanceExtendAttributeRequest struct {
 
 type DescribeDBInstanceExtendAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                         string           `json:"RequestId" xml:"RequestId"`
-	CanTempUpgrade                    requests.Boolean `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
-	TempUpgradeTimeStart              string           `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
-	TempUpgradeTimeEnd                string           `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
-	TempUpgradeRecoveryTime           string           `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
-	TempUpgradeRecoveryClass          string           `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
-	TempUpgradeRecoveryCpu            requests.Integer `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
-	TempUpgradeRecoveryMemory         requests.Integer `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
-	TempUpgradeRecoveryMaxIOPS        string           `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
-	TempUpgradeRecoveryMaxConnections string           `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
+	RequestId                         string `json:"RequestId" xml:"RequestId"`
+	CanTempUpgrade                    bool   `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
+	TempUpgradeTimeStart              string `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
+	TempUpgradeTimeEnd                string `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
+	TempUpgradeRecoveryTime           string `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
+	TempUpgradeRecoveryClass          string `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
+	TempUpgradeRecoveryCpu            int    `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
+	TempUpgradeRecoveryMemory         int    `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
+	TempUpgradeRecoveryMaxIOPS        string `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
+	TempUpgradeRecoveryMaxConnections string `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
 }
 
 func CreateDescribeDBInstanceExtendAttributeRequest() (request *DescribeDBInstanceExtendAttributeRequest) {

@@ -68,8 +68,8 @@ type DescribeSecurityGroupsRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
 	SecurityGroupIds     string           `position:"Query" name:"SecurityGroupIds"`
-	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
+	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -92,20 +92,20 @@ type DescribeSecurityGroupsRequest struct {
 
 type DescribeSecurityGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	RegionId       string           `json:"RegionId" xml:"RegionId"`
-	TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize       requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int    `json:"PageSize" xml:"PageSize"`
 	SecurityGroups struct {
 		SecurityGroup []struct {
-			SecurityGroupId         string           `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			Description             string           `json:"Description" xml:"Description"`
-			SecurityGroupName       string           `json:"SecurityGroupName" xml:"SecurityGroupName"`
-			VpcId                   string           `json:"VpcId" xml:"VpcId"`
-			CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
-			AvailableInstanceAmount requests.Integer `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
-			EcsCount                requests.Integer `json:"EcsCount" xml:"EcsCount"`
+			SecurityGroupId         string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+			Description             string `json:"Description" xml:"Description"`
+			SecurityGroupName       string `json:"SecurityGroupName" xml:"SecurityGroupName"`
+			VpcId                   string `json:"VpcId" xml:"VpcId"`
+			CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+			AvailableInstanceAmount int    `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
+			EcsCount                int    `json:"EcsCount" xml:"EcsCount"`
 			Tags                    struct {
 				Tag []struct {
 					TagKey   string `json:"TagKey" xml:"TagKey"`

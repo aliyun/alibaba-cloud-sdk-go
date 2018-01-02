@@ -72,14 +72,14 @@ type GetPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Policy    struct {
-		PolicyName      string           `json:"PolicyName" xml:"PolicyName"`
-		PolicyType      string           `json:"PolicyType" xml:"PolicyType"`
-		Description     string           `json:"Description" xml:"Description"`
-		DefaultVersion  string           `json:"DefaultVersion" xml:"DefaultVersion"`
-		PolicyDocument  string           `json:"PolicyDocument" xml:"PolicyDocument"`
-		CreateDate      string           `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate      string           `json:"UpdateDate" xml:"UpdateDate"`
-		AttachmentCount requests.Integer `json:"AttachmentCount" xml:"AttachmentCount"`
+		PolicyName      string `json:"PolicyName" xml:"PolicyName"`
+		PolicyType      string `json:"PolicyType" xml:"PolicyType"`
+		Description     string `json:"Description" xml:"Description"`
+		DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
+		PolicyDocument  string `json:"PolicyDocument" xml:"PolicyDocument"`
+		CreateDate      string `json:"CreateDate" xml:"CreateDate"`
+		UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
+		AttachmentCount int    `json:"AttachmentCount" xml:"AttachmentCount"`
 	} `json:"Policy" xml:"Policy"`
 }
 

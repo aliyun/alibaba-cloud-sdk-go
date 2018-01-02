@@ -74,9 +74,9 @@ type DescribeSQLCollectorPolicyRequest struct {
 
 type DescribeSQLCollectorPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId          string           `json:"RequestId" xml:"RequestId"`
-	SQLCollectorStatus string           `json:"SQLCollectorStatus" xml:"SQLCollectorStatus"`
-	StoragePeriod      requests.Integer `json:"StoragePeriod" xml:"StoragePeriod"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	SQLCollectorStatus string `json:"SQLCollectorStatus" xml:"SQLCollectorStatus"`
+	StoragePeriod      int    `json:"StoragePeriod" xml:"StoragePeriod"`
 }
 
 func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPolicyRequest) {

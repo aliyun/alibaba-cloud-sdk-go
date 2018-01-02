@@ -64,8 +64,8 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithCallback(request 
 
 type SaveSingleTaskForSynchronizingDnsHostRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	Lang       string `position:"Query" name:"Lang"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type SaveSingleTaskForSynchronizingDnsHostResponse struct {

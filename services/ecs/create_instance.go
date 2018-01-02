@@ -66,8 +66,8 @@ type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	SpotPriceLimit              requests.Float            `position:"Query" name:"SpotPriceLimit"`
 	SystemDiskCategory          string                    `position:"Query" name:"SystemDisk.Category"`
-	SpotStrategy                string                    `position:"Query" name:"SpotStrategy"`
 	ZoneId                      string                    `position:"Query" name:"ZoneId"`
+	SpotStrategy                string                    `position:"Query" name:"SpotStrategy"`
 	ClusterId                   string                    `position:"Query" name:"ClusterId"`
 	InnerIpAddress              string                    `position:"Query" name:"InnerIpAddress"`
 	Password                    string                    `position:"Query" name:"Password"`
@@ -87,8 +87,8 @@ type CreateInstanceRequest struct {
 	SecurityGroupId             string                    `position:"Query" name:"SecurityGroupId"`
 	HostName                    string                    `position:"Query" name:"HostName"`
 	KeyPairName                 string                    `position:"Query" name:"KeyPairName"`
-	OwnerId                     requests.Integer          `position:"Query" name:"OwnerId"`
 	SystemDiskDiskName          string                    `position:"Query" name:"SystemDisk.DiskName"`
+	OwnerId                     requests.Integer          `position:"Query" name:"OwnerId"`
 	Period                      requests.Integer          `position:"Query" name:"Period"`
 	Tag5Key                     string                    `position:"Query" name:"Tag.5.Key"`
 	IoOptimized                 string                    `position:"Query" name:"IoOptimized"`

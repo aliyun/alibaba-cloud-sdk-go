@@ -73,15 +73,15 @@ type DescribeDomainGroupsRequest struct {
 
 type DescribeDomainGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
 	DomainGroups struct {
 		DomainGroup []struct {
-			GroupId     string           `json:"GroupId" xml:"GroupId"`
-			GroupName   string           `json:"GroupName" xml:"GroupName"`
-			DomainCount requests.Integer `json:"DomainCount" xml:"DomainCount"`
+			GroupId     string `json:"GroupId" xml:"GroupId"`
+			GroupName   string `json:"GroupName" xml:"GroupName"`
+			DomainCount int    `json:"DomainCount" xml:"DomainCount"`
 		} `json:"DomainGroup" xml:"DomainGroup"`
 	} `json:"DomainGroups" xml:"DomainGroups"`
 }

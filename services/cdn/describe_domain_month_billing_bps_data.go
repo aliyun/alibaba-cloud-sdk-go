@@ -74,19 +74,19 @@ type DescribeDomainMonthBillingBpsDataRequest struct {
 
 type DescribeDomainMonthBillingBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId              string         `json:"RequestId" xml:"RequestId"`
-	DomainName             string         `json:"DomainName" xml:"DomainName"`
-	StartTime              string         `json:"StartTime" xml:"StartTime"`
-	EndTime                string         `json:"EndTime" xml:"EndTime"`
-	Bandwidth95Bps         requests.Float `json:"Bandwidth95Bps" xml:"Bandwidth95Bps"`
-	DomesticBandwidth95Bps requests.Float `json:"DomesticBandwidth95Bps" xml:"DomesticBandwidth95Bps"`
-	OverseasBandwidth95Bps requests.Float `json:"OverseasBandwidth95Bps" xml:"OverseasBandwidth95Bps"`
-	MonthavgBps            requests.Float `json:"MonthavgBps" xml:"MonthavgBps"`
-	DomesticMonthavgBps    requests.Float `json:"DomesticMonthavgBps" xml:"DomesticMonthavgBps"`
-	OverseasMonthavgBps    requests.Float `json:"OverseasMonthavgBps" xml:"OverseasMonthavgBps"`
-	Month4thBps            requests.Float `json:"Month4thBps" xml:"Month4thBps"`
-	DomesticMonth4thBps    requests.Float `json:"DomesticMonth4thBps" xml:"DomesticMonth4thBps"`
-	OverseasMonth4thBps    requests.Float `json:"OverseasMonth4thBps" xml:"OverseasMonth4thBps"`
+	RequestId              string  `json:"RequestId" xml:"RequestId"`
+	DomainName             string  `json:"DomainName" xml:"DomainName"`
+	StartTime              string  `json:"StartTime" xml:"StartTime"`
+	EndTime                string  `json:"EndTime" xml:"EndTime"`
+	Bandwidth95Bps         float64 `json:"Bandwidth95Bps" xml:"Bandwidth95Bps"`
+	DomesticBandwidth95Bps float64 `json:"DomesticBandwidth95Bps" xml:"DomesticBandwidth95Bps"`
+	OverseasBandwidth95Bps float64 `json:"OverseasBandwidth95Bps" xml:"OverseasBandwidth95Bps"`
+	MonthavgBps            float64 `json:"MonthavgBps" xml:"MonthavgBps"`
+	DomesticMonthavgBps    float64 `json:"DomesticMonthavgBps" xml:"DomesticMonthavgBps"`
+	OverseasMonthavgBps    float64 `json:"OverseasMonthavgBps" xml:"OverseasMonthavgBps"`
+	Month4thBps            float64 `json:"Month4thBps" xml:"Month4thBps"`
+	DomesticMonth4thBps    float64 `json:"DomesticMonth4thBps" xml:"DomesticMonth4thBps"`
+	OverseasMonth4thBps    float64 `json:"OverseasMonth4thBps" xml:"OverseasMonth4thBps"`
 }
 
 func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMonthBillingBpsDataRequest) {

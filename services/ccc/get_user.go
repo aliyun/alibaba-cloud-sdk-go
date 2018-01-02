@@ -70,11 +70,11 @@ type GetUserRequest struct {
 
 type GetUserResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	User           struct {
 		UserId     string `json:"UserId" xml:"UserId"`
 		RamId      string `json:"RamId" xml:"RamId"`
@@ -96,8 +96,8 @@ type GetUserResponse struct {
 		} `json:"Roles" xml:"Roles"`
 		SkillLevels struct {
 			SkillLevel []struct {
-				SkillLevelId string           `json:"SkillLevelId" xml:"SkillLevelId"`
-				Level        requests.Integer `json:"Level" xml:"Level"`
+				SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
+				Level        int    `json:"Level" xml:"Level"`
 				Skill        struct {
 					SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
 					InstanceId            string `json:"InstanceId" xml:"InstanceId"`

@@ -78,14 +78,14 @@ type DescribeLiveStreamFrameInfoResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	FrameDataInfos struct {
 		FrameDataModel []struct {
-			Time       string         `json:"Time" xml:"Time"`
-			Stream     string         `json:"Stream" xml:"Stream"`
-			ClientAddr string         `json:"ClientAddr" xml:"ClientAddr"`
-			Server     string         `json:"Server" xml:"Server"`
-			AudioRate  requests.Float `json:"AudioRate" xml:"AudioRate"`
-			AudioByte  requests.Float `json:"AudioByte" xml:"AudioByte"`
-			FrameRate  requests.Float `json:"FrameRate" xml:"FrameRate"`
-			FrameByte  requests.Float `json:"FrameByte" xml:"FrameByte"`
+			Time       string  `json:"Time" xml:"Time"`
+			Stream     string  `json:"Stream" xml:"Stream"`
+			ClientAddr string  `json:"ClientAddr" xml:"ClientAddr"`
+			Server     string  `json:"Server" xml:"Server"`
+			AudioRate  float64 `json:"AudioRate" xml:"AudioRate"`
+			AudioByte  float64 `json:"AudioByte" xml:"AudioByte"`
+			FrameRate  float64 `json:"FrameRate" xml:"FrameRate"`
+			FrameByte  float64 `json:"FrameByte" xml:"FrameByte"`
 		} `json:"FrameDataModel" xml:"FrameDataModel"`
 	} `json:"FrameDataInfos" xml:"FrameDataInfos"`
 }

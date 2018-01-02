@@ -71,12 +71,12 @@ type ListContactGroupRequest struct {
 
 type ListContactGroupResponse struct {
 	*responses.BaseResponse
-	Success       requests.Boolean `json:"Success" xml:"Success"`
-	Code          string           `json:"Code" xml:"Code"`
-	Message       string           `json:"Message" xml:"Message"`
-	NextToken     requests.Integer `json:"NextToken" xml:"NextToken"`
-	Total         requests.Integer `json:"Total" xml:"Total"`
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	Success       bool   `json:"Success" xml:"Success"`
+	Code          string `json:"Code" xml:"Code"`
+	Message       string `json:"Message" xml:"Message"`
+	NextToken     int    `json:"NextToken" xml:"NextToken"`
+	Total         int    `json:"Total" xml:"Total"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ContactGroups struct {
 		ContactGroup []string `json:"ContactGroup" xml:"ContactGroup"`
 	} `json:"ContactGroups" xml:"ContactGroups"`

@@ -74,14 +74,14 @@ type CreateUploadPathForSQLServerRequest struct {
 
 type CreateUploadPathForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	InternetFtpServer string           `json:"InternetFtpServer" xml:"InternetFtpServer"`
-	InternetPort      requests.Integer `json:"InternetPort" xml:"InternetPort"`
-	IntranetFtpserver string           `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
-	Intranetport      requests.Integer `json:"Intranetport" xml:"Intranetport"`
-	UserName          string           `json:"UserName" xml:"UserName"`
-	Password          string           `json:"Password" xml:"Password"`
-	FileName          string           `json:"FileName" xml:"FileName"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	InternetFtpServer string `json:"InternetFtpServer" xml:"InternetFtpServer"`
+	InternetPort      int    `json:"InternetPort" xml:"InternetPort"`
+	IntranetFtpserver string `json:"IntranetFtpserver" xml:"IntranetFtpserver"`
+	Intranetport      int    `json:"Intranetport" xml:"Intranetport"`
+	UserName          string `json:"UserName" xml:"UserName"`
+	Password          string `json:"Password" xml:"Password"`
+	FileName          string `json:"FileName" xml:"FileName"`
 }
 
 func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQLServerRequest) {

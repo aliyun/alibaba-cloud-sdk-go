@@ -80,18 +80,18 @@ type UploadServerCertificateRequest struct {
 
 type UploadServerCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId               string           `json:"RequestId" xml:"RequestId"`
-	ServerCertificateId     string           `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	Fingerprint             string           `json:"Fingerprint" xml:"Fingerprint"`
-	ServerCertificateName   string           `json:"ServerCertificateName" xml:"ServerCertificateName"`
-	RegionId                string           `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias           string           `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	AliCloudCertificateId   string           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-	AliCloudCertificateName string           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	IsAliCloudCertificate   requests.Integer `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string           `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp         requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	ServerCertificateId     string `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	Fingerprint             string `json:"Fingerprint" xml:"Fingerprint"`
+	ServerCertificateName   string `json:"ServerCertificateName" xml:"ServerCertificateName"`
+	RegionId                string `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias           string `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	AliCloudCertificateId   string `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+	AliCloudCertificateName string `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
+	IsAliCloudCertificate   int    `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
+	ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp         int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
 func CreateUploadServerCertificateRequest() (request *UploadServerCertificateRequest) {

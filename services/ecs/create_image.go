@@ -65,8 +65,8 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 type CreateImageRequest struct {
 	*requests.RpcRequest
 	Architecture         string                          `position:"Query" name:"Architecture"`
-	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
 	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
+	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
 	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
 	SnapshotId           string                          `position:"Query" name:"SnapshotId"`
 	Description          string                          `position:"Query" name:"Description"`

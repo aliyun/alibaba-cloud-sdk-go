@@ -71,21 +71,21 @@ type ListUsersRequest struct {
 
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Users          struct {
-		TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-		PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-		PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+		TotalCount int `json:"TotalCount" xml:"TotalCount"`
+		PageNumber int `json:"PageNumber" xml:"PageNumber"`
+		PageSize   int `json:"PageSize" xml:"PageSize"`
 		List       struct {
 			User []struct {
-				UserId     string           `json:"UserId" xml:"UserId"`
-				RamId      string           `json:"RamId" xml:"RamId"`
-				InstanceId string           `json:"InstanceId" xml:"InstanceId"`
-				Primary    requests.Boolean `json:"Primary" xml:"Primary"`
+				UserId     string `json:"UserId" xml:"UserId"`
+				RamId      string `json:"RamId" xml:"RamId"`
+				InstanceId string `json:"InstanceId" xml:"InstanceId"`
+				Primary    bool   `json:"Primary" xml:"Primary"`
 				Detail     struct {
 					LoginName   string `json:"LoginName" xml:"LoginName"`
 					DisplayName string `json:"DisplayName" xml:"DisplayName"`
@@ -103,8 +103,8 @@ type ListUsersResponse struct {
 				} `json:"Roles" xml:"Roles"`
 				SkillLevels struct {
 					SkillLevel []struct {
-						SkillLevelId string           `json:"SkillLevelId" xml:"SkillLevelId"`
-						Level        requests.Integer `json:"Level" xml:"Level"`
+						SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
+						Level        int    `json:"Level" xml:"Level"`
 						Skill        struct {
 							SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
 							InstanceId            string `json:"InstanceId" xml:"InstanceId"`

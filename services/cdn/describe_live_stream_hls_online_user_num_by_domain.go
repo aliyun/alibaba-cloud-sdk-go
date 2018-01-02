@@ -75,16 +75,16 @@ type DescribeLiveStreamHlsOnlineUserNumByDomainRequest struct {
 
 type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber requests.Integer `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	Count           requests.Integer `json:"Count" xml:"Count"`
-	PageNumber      requests.Integer `json:"pageNumber" xml:"pageNumber"`
-	PageSize        requests.Integer `json:"pageSize" xml:"pageSize"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int    `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	Count           int    `json:"Count" xml:"Count"`
+	PageNumber      int    `json:"pageNumber" xml:"pageNumber"`
+	PageSize        int    `json:"pageSize" xml:"pageSize"`
 	OnlineUserInfo  struct {
 		LiveStreamOnlineUserNumInfo []struct {
-			StreamUrl  string           `json:"StreamUrl" xml:"StreamUrl"`
-			UserNumber requests.Integer `json:"UserNumber" xml:"UserNumber"`
-			Time       string           `json:"Time" xml:"Time"`
+			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
+			UserNumber int    `json:"UserNumber" xml:"UserNumber"`
+			Time       string `json:"Time" xml:"Time"`
 		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
 	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }

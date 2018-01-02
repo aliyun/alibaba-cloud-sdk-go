@@ -76,12 +76,12 @@ type ModifyCustomerGatewayAttributeRequest struct {
 
 type ModifyCustomerGatewayAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	CustomerGatewayId string           `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	IpAddress         string           `json:"IpAddress" xml:"IpAddress"`
-	Name              string           `json:"Name" xml:"Name"`
-	Description       string           `json:"Description" xml:"Description"`
-	CreateTime        requests.Integer `json:"CreateTime" xml:"CreateTime"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	IpAddress         string `json:"IpAddress" xml:"IpAddress"`
+	Name              string `json:"Name" xml:"Name"`
+	Description       string `json:"Description" xml:"Description"`
+	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatewayAttributeRequest) {

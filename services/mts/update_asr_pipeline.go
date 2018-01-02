@@ -79,10 +79,10 @@ type UpdateAsrPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Pipeline  struct {
-		Id           string           `json:"Id" xml:"Id"`
-		Name         string           `json:"Name" xml:"Name"`
-		State        string           `json:"State" xml:"State"`
-		Priority     requests.Integer `json:"Priority" xml:"Priority"`
+		Id           string `json:"Id" xml:"Id"`
+		Name         string `json:"Name" xml:"Name"`
+		State        string `json:"State" xml:"State"`
+		Priority     int    `json:"Priority" xml:"Priority"`
 		NotifyConfig struct {
 			Topic     string `json:"Topic" xml:"Topic"`
 			QueueName string `json:"QueueName" xml:"QueueName"`

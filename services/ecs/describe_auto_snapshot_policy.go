@@ -72,8 +72,8 @@ type DescribeAutoSnapshotPolicyRequest struct {
 
 type DescribeAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId              string           `json:"RequestId" xml:"RequestId"`
-	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
 	AutoSnapshotPolicy     struct {
 		SystemDiskPolicyEnabled           string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
 		SystemDiskPolicyTimePeriod        string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`

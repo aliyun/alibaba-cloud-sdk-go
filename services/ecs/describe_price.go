@@ -64,29 +64,29 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
 	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
-	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
-	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
-	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
+	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
 	ResourceType            string           `position:"Query" name:"ResourceType"`
+	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
 	PriceUnit               string           `position:"Query" name:"PriceUnit"`
-	Period                  requests.Integer `position:"Query" name:"Period"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ImageId                 string           `position:"Query" name:"ImageId"`
-	IoOptimized             string           `position:"Query" name:"IoOptimized"`
 	InstanceType            string           `position:"Query" name:"InstanceType"`
 	Amount                  requests.Integer `position:"Query" name:"Amount"`
-	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
-	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
+	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	Period                  requests.Integer `position:"Query" name:"Period"`
+	ImageId                 string           `position:"Query" name:"ImageId"`
+	IoOptimized             string           `position:"Query" name:"IoOptimized"`
+	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
+	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
+	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
 	InstanceNetworkType     string           `position:"Query" name:"InstanceNetworkType"`
 }
 
@@ -95,15 +95,15 @@ type DescribePriceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	PriceInfo struct {
 		Price struct {
-			OriginalPrice requests.Float `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice requests.Float `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    requests.Float `json:"TradePrice" xml:"TradePrice"`
-			Currency      string         `json:"Currency" xml:"Currency"`
+			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
+			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
+			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
+			Currency      string  `json:"Currency" xml:"Currency"`
 		} `json:"Price" xml:"Price"`
 		Rules struct {
 			Rule []struct {
-				RuleId      requests.Integer `json:"RuleId" xml:"RuleId"`
-				Description string           `json:"Description" xml:"Description"`
+				RuleId      int    `json:"RuleId" xml:"RuleId"`
+				Description string `json:"Description" xml:"Description"`
 			} `json:"Rule" xml:"Rule"`
 		} `json:"Rules" xml:"Rules"`
 	} `json:"PriceInfo" xml:"PriceInfo"`

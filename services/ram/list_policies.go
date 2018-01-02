@@ -71,18 +71,18 @@ type ListPoliciesRequest struct {
 
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	IsTruncated requests.Boolean `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string           `json:"Marker" xml:"Marker"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string `json:"Marker" xml:"Marker"`
 	Policies    struct {
 		Policy []struct {
-			PolicyName      string           `json:"PolicyName" xml:"PolicyName"`
-			PolicyType      string           `json:"PolicyType" xml:"PolicyType"`
-			Description     string           `json:"Description" xml:"Description"`
-			DefaultVersion  string           `json:"DefaultVersion" xml:"DefaultVersion"`
-			CreateDate      string           `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate      string           `json:"UpdateDate" xml:"UpdateDate"`
-			AttachmentCount requests.Integer `json:"AttachmentCount" xml:"AttachmentCount"`
+			PolicyName      string `json:"PolicyName" xml:"PolicyName"`
+			PolicyType      string `json:"PolicyType" xml:"PolicyType"`
+			Description     string `json:"Description" xml:"Description"`
+			DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
+			CreateDate      string `json:"CreateDate" xml:"CreateDate"`
+			UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
+			AttachmentCount int    `json:"AttachmentCount" xml:"AttachmentCount"`
 		} `json:"Policy" xml:"Policy"`
 	} `json:"Policies" xml:"Policies"`
 }

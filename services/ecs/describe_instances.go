@@ -117,52 +117,52 @@ type DescribeInstancesRequest struct {
 
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	Instances  struct {
 		Instance []struct {
-			InstanceId              string           `json:"InstanceId" xml:"InstanceId"`
-			InstanceName            string           `json:"InstanceName" xml:"InstanceName"`
-			Description             string           `json:"Description" xml:"Description"`
-			ImageId                 string           `json:"ImageId" xml:"ImageId"`
-			OSName                  string           `json:"OSName" xml:"OSName"`
-			OSType                  string           `json:"OSType" xml:"OSType"`
-			RegionId                string           `json:"RegionId" xml:"RegionId"`
-			ZoneId                  string           `json:"ZoneId" xml:"ZoneId"`
-			ClusterId               string           `json:"ClusterId" xml:"ClusterId"`
-			InstanceType            string           `json:"InstanceType" xml:"InstanceType"`
-			Cpu                     requests.Integer `json:"Cpu" xml:"Cpu"`
-			Memory                  requests.Integer `json:"Memory" xml:"Memory"`
-			HostName                string           `json:"HostName" xml:"HostName"`
-			Status                  string           `json:"Status" xml:"Status"`
-			SerialNumber            string           `json:"SerialNumber" xml:"SerialNumber"`
-			InternetChargeType      string           `json:"InternetChargeType" xml:"InternetChargeType"`
-			InternetMaxBandwidthIn  requests.Integer `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-			InternetMaxBandwidthOut requests.Integer `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-			VlanId                  string           `json:"VlanId" xml:"VlanId"`
-			CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
-			StartTime               string           `json:"StartTime" xml:"StartTime"`
-			InstanceNetworkType     string           `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-			InstanceChargeType      string           `json:"InstanceChargeType" xml:"InstanceChargeType"`
-			SaleCycle               string           `json:"SaleCycle" xml:"SaleCycle"`
-			ExpiredTime             string           `json:"ExpiredTime" xml:"ExpiredTime"`
-			AutoReleaseTime         string           `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-			IoOptimized             requests.Boolean `json:"IoOptimized" xml:"IoOptimized"`
-			DeviceAvailable         requests.Boolean `json:"DeviceAvailable" xml:"DeviceAvailable"`
-			InstanceTypeFamily      string           `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-			LocalStorageCapacity    requests.Integer `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-			LocalStorageAmount      requests.Integer `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-			GPUAmount               requests.Integer `json:"GPUAmount" xml:"GPUAmount"`
-			GPUSpec                 string           `json:"GPUSpec" xml:"GPUSpec"`
-			SpotStrategy            string           `json:"SpotStrategy" xml:"SpotStrategy"`
-			SpotPriceLimit          requests.Float   `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-			ResourceGroupId         string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			KeyPairName             string           `json:"KeyPairName" xml:"KeyPairName"`
-			Recyclable              requests.Boolean `json:"Recyclable" xml:"Recyclable"`
-			HpcClusterId            string           `json:"HpcClusterId" xml:"HpcClusterId"`
-			StoppedMode             string           `json:"StoppedMode" xml:"StoppedMode"`
+			InstanceId              string  `json:"InstanceId" xml:"InstanceId"`
+			InstanceName            string  `json:"InstanceName" xml:"InstanceName"`
+			Description             string  `json:"Description" xml:"Description"`
+			ImageId                 string  `json:"ImageId" xml:"ImageId"`
+			OSName                  string  `json:"OSName" xml:"OSName"`
+			OSType                  string  `json:"OSType" xml:"OSType"`
+			RegionId                string  `json:"RegionId" xml:"RegionId"`
+			ZoneId                  string  `json:"ZoneId" xml:"ZoneId"`
+			ClusterId               string  `json:"ClusterId" xml:"ClusterId"`
+			InstanceType            string  `json:"InstanceType" xml:"InstanceType"`
+			Cpu                     int     `json:"Cpu" xml:"Cpu"`
+			Memory                  int     `json:"Memory" xml:"Memory"`
+			HostName                string  `json:"HostName" xml:"HostName"`
+			Status                  string  `json:"Status" xml:"Status"`
+			SerialNumber            string  `json:"SerialNumber" xml:"SerialNumber"`
+			InternetChargeType      string  `json:"InternetChargeType" xml:"InternetChargeType"`
+			InternetMaxBandwidthIn  int     `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+			InternetMaxBandwidthOut int     `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+			VlanId                  string  `json:"VlanId" xml:"VlanId"`
+			CreationTime            string  `json:"CreationTime" xml:"CreationTime"`
+			StartTime               string  `json:"StartTime" xml:"StartTime"`
+			InstanceNetworkType     string  `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+			InstanceChargeType      string  `json:"InstanceChargeType" xml:"InstanceChargeType"`
+			SaleCycle               string  `json:"SaleCycle" xml:"SaleCycle"`
+			ExpiredTime             string  `json:"ExpiredTime" xml:"ExpiredTime"`
+			AutoReleaseTime         string  `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+			IoOptimized             bool    `json:"IoOptimized" xml:"IoOptimized"`
+			DeviceAvailable         bool    `json:"DeviceAvailable" xml:"DeviceAvailable"`
+			InstanceTypeFamily      string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+			LocalStorageCapacity    int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+			LocalStorageAmount      int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+			GPUAmount               int     `json:"GPUAmount" xml:"GPUAmount"`
+			GPUSpec                 string  `json:"GPUSpec" xml:"GPUSpec"`
+			SpotStrategy            string  `json:"SpotStrategy" xml:"SpotStrategy"`
+			SpotPriceLimit          float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+			ResourceGroupId         string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			KeyPairName             string  `json:"KeyPairName" xml:"KeyPairName"`
+			Recyclable              bool    `json:"Recyclable" xml:"Recyclable"`
+			HpcClusterId            string  `json:"HpcClusterId" xml:"HpcClusterId"`
+			StoppedMode             string  `json:"StoppedMode" xml:"StoppedMode"`
 			SecurityGroupIds        struct {
 				SecurityGroupId []string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 			} `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
@@ -184,11 +184,11 @@ type DescribeInstancesResponse struct {
 				} `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 			} `json:"VpcAttributes" xml:"VpcAttributes"`
 			EipAddress struct {
-				AllocationId         string           `json:"AllocationId" xml:"AllocationId"`
-				IpAddress            string           `json:"IpAddress" xml:"IpAddress"`
-				Bandwidth            requests.Integer `json:"Bandwidth" xml:"Bandwidth"`
-				InternetChargeType   string           `json:"InternetChargeType" xml:"InternetChargeType"`
-				IsSupportUnassociate requests.Boolean `json:"IsSupportUnassociate" xml:"IsSupportUnassociate"`
+				AllocationId         string `json:"AllocationId" xml:"AllocationId"`
+				IpAddress            string `json:"IpAddress" xml:"IpAddress"`
+				Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
+				InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
+				IsSupportUnassociate bool   `json:"IsSupportUnassociate" xml:"IsSupportUnassociate"`
 			} `json:"EipAddress" xml:"EipAddress"`
 			NetworkInterfaces struct {
 				NetworkInterface []struct {

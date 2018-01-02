@@ -96,38 +96,38 @@ type DescribeDBInstancesRequest struct {
 
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		DBInstance []struct {
-			InsId                 requests.Integer `json:"InsId" xml:"InsId"`
-			DBInstanceId          string           `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceDescription string           `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			PayType               string           `json:"PayType" xml:"PayType"`
-			DBInstanceType        string           `json:"DBInstanceType" xml:"DBInstanceType"`
-			RegionId              string           `json:"RegionId" xml:"RegionId"`
-			ExpireTime            string           `json:"ExpireTime" xml:"ExpireTime"`
-			DBInstanceStatus      string           `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			Engine                string           `json:"Engine" xml:"Engine"`
-			DBInstanceNetType     string           `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-			ConnectionMode        string           `json:"ConnectionMode" xml:"ConnectionMode"`
-			LockMode              string           `json:"LockMode" xml:"LockMode"`
-			DBInstanceClass       string           `json:"DBInstanceClass" xml:"DBInstanceClass"`
-			InstanceNetworkType   string           `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-			LockReason            string           `json:"LockReason" xml:"LockReason"`
-			ZoneId                string           `json:"ZoneId" xml:"ZoneId"`
-			MutriORsignle         requests.Boolean `json:"MutriORsignle" xml:"MutriORsignle"`
-			CreateTime            string           `json:"CreateTime" xml:"CreateTime"`
-			EngineVersion         string           `json:"EngineVersion" xml:"EngineVersion"`
-			GuardDBInstanceId     string           `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
-			TempDBInstanceId      string           `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
-			MasterInstanceId      string           `json:"MasterInstanceId" xml:"MasterInstanceId"`
-			VpcId                 string           `json:"VpcId" xml:"VpcId"`
-			VSwitchId             string           `json:"VSwitchId" xml:"VSwitchId"`
-			ReplicateId           string           `json:"ReplicateId" xml:"ReplicateId"`
-			ResourceGroupId       string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			InsId                 int    `json:"InsId" xml:"InsId"`
+			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
+			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+			PayType               string `json:"PayType" xml:"PayType"`
+			DBInstanceType        string `json:"DBInstanceType" xml:"DBInstanceType"`
+			RegionId              string `json:"RegionId" xml:"RegionId"`
+			ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
+			DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+			Engine                string `json:"Engine" xml:"Engine"`
+			DBInstanceNetType     string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+			ConnectionMode        string `json:"ConnectionMode" xml:"ConnectionMode"`
+			LockMode              string `json:"LockMode" xml:"LockMode"`
+			DBInstanceClass       string `json:"DBInstanceClass" xml:"DBInstanceClass"`
+			InstanceNetworkType   string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+			LockReason            string `json:"LockReason" xml:"LockReason"`
+			ZoneId                string `json:"ZoneId" xml:"ZoneId"`
+			MutriORsignle         bool   `json:"MutriORsignle" xml:"MutriORsignle"`
+			CreateTime            string `json:"CreateTime" xml:"CreateTime"`
+			EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
+			GuardDBInstanceId     string `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
+			TempDBInstanceId      string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+			MasterInstanceId      string `json:"MasterInstanceId" xml:"MasterInstanceId"`
+			VpcId                 string `json:"VpcId" xml:"VpcId"`
+			VSwitchId             string `json:"VSwitchId" xml:"VSwitchId"`
+			ReplicateId           string `json:"ReplicateId" xml:"ReplicateId"`
+			ResourceGroupId       string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 			ReadOnlyDBInstanceIds struct {
 				ReadOnlyDBInstanceId []struct {
 					DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`

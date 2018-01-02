@@ -76,14 +76,14 @@ type DescribeMigrateTasksForSQLServerRequest struct {
 
 type DescribeMigrateTasksForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DBInstanceID     string           `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName   string           `json:"DBInstanceName" xml:"DBInstanceName"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceID     string `json:"DBInstanceID" xml:"DBInstanceID"`
+	DBInstanceName   string `json:"DBInstanceName" xml:"DBInstanceName"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
+	EndTime          string `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		MigrateTask []struct {
 			DBName        string `json:"DBName" xml:"DBName"`

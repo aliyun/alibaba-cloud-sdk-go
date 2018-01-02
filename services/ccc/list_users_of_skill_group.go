@@ -72,15 +72,15 @@ type ListUsersOfSkillGroupRequest struct {
 
 type ListUsersOfSkillGroupResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	Success        requests.Boolean `json:"Success" xml:"Success"`
-	Code           string           `json:"Code" xml:"Code"`
-	Message        string           `json:"Message" xml:"Message"`
-	HttpStatusCode requests.Integer `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Users          struct {
-		TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-		PageNumber requests.Integer `json:"PageNumber" xml:"PageNumber"`
-		PageSize   requests.Integer `json:"PageSize" xml:"PageSize"`
+		TotalCount int `json:"TotalCount" xml:"TotalCount"`
+		PageNumber int `json:"PageNumber" xml:"PageNumber"`
+		PageSize   int `json:"PageSize" xml:"PageSize"`
 		List       struct {
 			User []struct {
 				UserId     string `json:"UserId" xml:"UserId"`
@@ -95,11 +95,11 @@ type ListUsersOfSkillGroupResponse struct {
 				} `json:"Detail" xml:"Detail"`
 				Roles struct {
 					Role []struct {
-						RoleId          string           `json:"RoleId" xml:"RoleId"`
-						InstanceId      string           `json:"InstanceId" xml:"InstanceId"`
-						RoleName        string           `json:"RoleName" xml:"RoleName"`
-						RoleDescription string           `json:"RoleDescription" xml:"RoleDescription"`
-						UserCount       requests.Integer `json:"UserCount" xml:"UserCount"`
+						RoleId          string `json:"RoleId" xml:"RoleId"`
+						InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+						RoleName        string `json:"RoleName" xml:"RoleName"`
+						RoleDescription string `json:"RoleDescription" xml:"RoleDescription"`
+						UserCount       int    `json:"UserCount" xml:"UserCount"`
 						Privileges      struct {
 							Privilege []struct {
 								PrivilegeId          string `json:"PrivilegeId" xml:"PrivilegeId"`
@@ -111,8 +111,8 @@ type ListUsersOfSkillGroupResponse struct {
 				} `json:"Roles" xml:"Roles"`
 				SkillLevels struct {
 					SkillLevel []struct {
-						SkillLevelId string           `json:"SkillLevelId" xml:"SkillLevelId"`
-						Level        requests.Integer `json:"Level" xml:"Level"`
+						SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
+						Level        int    `json:"Level" xml:"Level"`
 						Skill        struct {
 							SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
 							InstanceId            string `json:"InstanceId" xml:"InstanceId"`

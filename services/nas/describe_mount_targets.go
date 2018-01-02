@@ -72,10 +72,10 @@ type DescribeMountTargetsRequest struct {
 
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
-	RequestId    string           `json:"RequestId" xml:"RequestId"`
-	TotalCount   requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageSize     requests.Integer `json:"PageSize" xml:"PageSize"`
-	PageNumber   requests.Integer `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int    `json:"PageSize" xml:"PageSize"`
+	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
 	MountTargets struct {
 		MountTarget []struct {
 			MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`

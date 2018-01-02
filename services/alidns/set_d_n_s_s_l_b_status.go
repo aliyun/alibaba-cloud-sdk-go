@@ -72,9 +72,9 @@ type SetDNSSLBStatusRequest struct {
 
 type SetDNSSLBStatusResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	RecordCount requests.Integer `json:"RecordCount" xml:"RecordCount"`
-	Open        requests.Boolean `json:"Open" xml:"Open"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	RecordCount int    `json:"RecordCount" xml:"RecordCount"`
+	Open        bool   `json:"Open" xml:"Open"`
 }
 
 func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {

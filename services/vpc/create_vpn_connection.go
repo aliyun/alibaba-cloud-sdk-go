@@ -81,10 +81,10 @@ type CreateVpnConnectionRequest struct {
 
 type CreateVpnConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId string           `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	Name            string           `json:"Name" xml:"Name"`
-	CreateTime      requests.Integer `json:"CreateTime" xml:"CreateTime"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId string `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	Name            string `json:"Name" xml:"Name"`
+	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
 }
 
 func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {

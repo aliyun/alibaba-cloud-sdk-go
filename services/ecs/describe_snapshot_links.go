@@ -77,21 +77,21 @@ type DescribeSnapshotLinksRequest struct {
 
 type DescribeSnapshotLinksResponse struct {
 	*responses.BaseResponse
-	RequestId     string           `json:"RequestId" xml:"RequestId"`
-	TotalCount    requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize      requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int    `json:"PageSize" xml:"PageSize"`
 	SnapshotLinks struct {
 		SnapshotLink []struct {
-			SnapshotLinkId string           `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-			RegionId       string           `json:"RegionId" xml:"RegionId"`
-			InstanceId     string           `json:"InstanceId" xml:"InstanceId"`
-			InstanceName   string           `json:"InstanceName" xml:"InstanceName"`
-			SourceDiskId   string           `json:"SourceDiskId" xml:"SourceDiskId"`
-			SourceDiskSize requests.Integer `json:"SourceDiskSize" xml:"SourceDiskSize"`
-			SourceDiskType string           `json:"SourceDiskType" xml:"SourceDiskType"`
-			TotalSize      requests.Integer `json:"TotalSize" xml:"TotalSize"`
-			TotalCount     requests.Integer `json:"TotalCount" xml:"TotalCount"`
+			SnapshotLinkId string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
+			RegionId       string `json:"RegionId" xml:"RegionId"`
+			InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+			InstanceName   string `json:"InstanceName" xml:"InstanceName"`
+			SourceDiskId   string `json:"SourceDiskId" xml:"SourceDiskId"`
+			SourceDiskSize int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
+			SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
+			TotalSize      int    `json:"TotalSize" xml:"TotalSize"`
+			TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 		} `json:"SnapshotLink" xml:"SnapshotLink"`
 	} `json:"SnapshotLinks" xml:"SnapshotLinks"`
 }

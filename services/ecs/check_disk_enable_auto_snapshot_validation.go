@@ -73,9 +73,9 @@ type CheckDiskEnableAutoSnapshotValidationRequest struct {
 
 type CheckDiskEnableAutoSnapshotValidationResponse struct {
 	*responses.BaseResponse
-	RequestId              string           `json:"RequestId" xml:"RequestId"`
-	IsPermitted            string           `json:"IsPermitted" xml:"IsPermitted"`
-	AutoSnapshotOccupation requests.Integer `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	IsPermitted            string `json:"IsPermitted" xml:"IsPermitted"`
+	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
 }
 
 func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEnableAutoSnapshotValidationRequest) {

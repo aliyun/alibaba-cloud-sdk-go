@@ -74,14 +74,14 @@ type GetPhotoStoreResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Action     string `json:"Action" xml:"Action"`
 	PhotoStore struct {
-		Id               requests.Integer `json:"Id" xml:"Id"`
-		Name             string           `json:"Name" xml:"Name"`
-		Remark           string           `json:"Remark" xml:"Remark"`
-		AutoCleanEnabled requests.Boolean `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-		AutoCleanDays    requests.Integer `json:"AutoCleanDays" xml:"AutoCleanDays"`
-		DefaultQuota     requests.Integer `json:"DefaultQuota" xml:"DefaultQuota"`
-		Ctime            requests.Integer `json:"Ctime" xml:"Ctime"`
-		Mtime            requests.Integer `json:"Mtime" xml:"Mtime"`
+		Id               int    `json:"Id" xml:"Id"`
+		Name             string `json:"Name" xml:"Name"`
+		Remark           string `json:"Remark" xml:"Remark"`
+		AutoCleanEnabled bool   `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
+		AutoCleanDays    int    `json:"AutoCleanDays" xml:"AutoCleanDays"`
+		DefaultQuota     int    `json:"DefaultQuota" xml:"DefaultQuota"`
+		Ctime            int    `json:"Ctime" xml:"Ctime"`
+		Mtime            int    `json:"Mtime" xml:"Mtime"`
 		Buckets          []struct {
 			Name   string `json:"Name" xml:"Name"`
 			Region string `json:"Region" xml:"Region"`

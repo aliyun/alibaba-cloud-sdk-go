@@ -79,12 +79,12 @@ type DescribeNewProjectEipMonitorDataResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	EipMonitorDatas struct {
 		EipMonitorData []struct {
-			EipRX        requests.Integer `json:"EipRX" xml:"EipRX"`
-			EipTX        requests.Integer `json:"EipTX" xml:"EipTX"`
-			EipFlow      requests.Integer `json:"EipFlow" xml:"EipFlow"`
-			EipBandwidth requests.Integer `json:"EipBandwidth" xml:"EipBandwidth"`
-			EipPackets   requests.Integer `json:"EipPackets" xml:"EipPackets"`
-			TimeStamp    string           `json:"TimeStamp" xml:"TimeStamp"`
+			EipRX        int    `json:"EipRX" xml:"EipRX"`
+			EipTX        int    `json:"EipTX" xml:"EipTX"`
+			EipFlow      int    `json:"EipFlow" xml:"EipFlow"`
+			EipBandwidth int    `json:"EipBandwidth" xml:"EipBandwidth"`
+			EipPackets   int    `json:"EipPackets" xml:"EipPackets"`
+			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 		} `json:"EipMonitorData" xml:"EipMonitorData"`
 	} `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }

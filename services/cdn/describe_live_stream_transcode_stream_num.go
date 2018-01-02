@@ -72,10 +72,10 @@ type DescribeLiveStreamTranscodeStreamNumRequest struct {
 
 type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	*responses.BaseResponse
-	RequestId         string           `json:"RequestId" xml:"RequestId"`
-	Total             requests.Integer `json:"Total" xml:"Total"`
-	TranscodedNumber  requests.Integer `json:"TranscodedNumber" xml:"TranscodedNumber"`
-	UntranscodeNumber requests.Integer `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Total             int    `json:"Total" xml:"Total"`
+	TranscodedNumber  int    `json:"TranscodedNumber" xml:"TranscodedNumber"`
+	UntranscodeNumber int    `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
 }
 
 func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveStreamTranscodeStreamNumRequest) {

@@ -79,17 +79,17 @@ type DescribeServerCertificatesResponse struct {
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	ServerCertificates struct {
 		ServerCertificate []struct {
-			ServerCertificateId     string           `json:"ServerCertificateId" xml:"ServerCertificateId"`
-			Fingerprint             string           `json:"Fingerprint" xml:"Fingerprint"`
-			ServerCertificateName   string           `json:"ServerCertificateName" xml:"ServerCertificateName"`
-			RegionId                string           `json:"RegionId" xml:"RegionId"`
-			RegionIdAlias           string           `json:"RegionIdAlias" xml:"RegionIdAlias"`
-			AliCloudCertificateId   string           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-			AliCloudCertificateName string           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-			IsAliCloudCertificate   requests.Integer `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-			ResourceGroupId         string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			CreateTime              string           `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp         requests.Integer `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+			ServerCertificateId     string `json:"ServerCertificateId" xml:"ServerCertificateId"`
+			Fingerprint             string `json:"Fingerprint" xml:"Fingerprint"`
+			ServerCertificateName   string `json:"ServerCertificateName" xml:"ServerCertificateName"`
+			RegionId                string `json:"RegionId" xml:"RegionId"`
+			RegionIdAlias           string `json:"RegionIdAlias" xml:"RegionIdAlias"`
+			AliCloudCertificateId   string `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+			AliCloudCertificateName string `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
+			IsAliCloudCertificate   int    `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
+			ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+			CreateTime              string `json:"CreateTime" xml:"CreateTime"`
+			CreateTimeStamp         int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 		} `json:"ServerCertificate" xml:"ServerCertificate"`
 	} `json:"ServerCertificates" xml:"ServerCertificates"`
 }

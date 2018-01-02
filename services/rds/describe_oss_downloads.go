@@ -73,18 +73,18 @@ type DescribeOssDownloadsRequest struct {
 
 type DescribeOssDownloadsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	MigrateIaskId  string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	Items          struct {
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId  string `json:"DBInstanceId" xml:"DBInstanceId"`
+	MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
+	Items         struct {
 		OssDownload []struct {
-			FileName   string `json:"FileName" xml:"FileName"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-			BakType    string `json:"BakType" xml:"BakType"`
-			FileSize   string `json:"FileSize" xml:"FileSize"`
-			Status     string `json:"Status" xml:"Status"`
-			IsAvail    string `json:"IsAvail" xml:"IsAvail"`
-			Desc       string `json:"Desc" xml:"Desc"`
+			FileName    string `json:"FileName" xml:"FileName"`
+			CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+			BackupMode  string `json:"BackupMode" xml:"BackupMode"`
+			FileSize    string `json:"FileSize" xml:"FileSize"`
+			Status      string `json:"Status" xml:"Status"`
+			IsAvailable string `json:"IsAvailable" xml:"IsAvailable"`
+			Description string `json:"Description" xml:"Description"`
 		} `json:"OssDownload" xml:"OssDownload"`
 	} `json:"Items" xml:"Items"`
 }

@@ -74,15 +74,15 @@ type DescribeResourceUsageRequest struct {
 
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string           `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine         string           `json:"Engine" xml:"Engine"`
-	DiskUsed       requests.Integer `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize       requests.Integer `json:"DataSize" xml:"DataSize"`
-	LogSize        requests.Integer `json:"LogSize" xml:"LogSize"`
-	BackupSize     requests.Integer `json:"BackupSize" xml:"BackupSize"`
-	SQLSize        requests.Integer `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize requests.Integer `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine         string `json:"Engine" xml:"Engine"`
+	DiskUsed       int    `json:"DiskUsed" xml:"DiskUsed"`
+	DataSize       int    `json:"DataSize" xml:"DataSize"`
+	LogSize        int    `json:"LogSize" xml:"LogSize"`
+	BackupSize     int    `json:"BackupSize" xml:"BackupSize"`
+	SQLSize        int    `json:"SQLSize" xml:"SQLSize"`
+	ColdBackupSize int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
 func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {

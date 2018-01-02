@@ -79,10 +79,10 @@ type DescribeRouteTablesRequest struct {
 
 type DescribeRouteTablesResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	TotalCount  requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageSize    requests.Integer `json:"PageSize" xml:"PageSize"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int    `json:"PageSize" xml:"PageSize"`
 	RouteTables struct {
 		RouteTable []struct {
 			VRouterId      string `json:"VRouterId" xml:"VRouterId"`
@@ -99,10 +99,10 @@ type DescribeRouteTablesResponse struct {
 					NextHopType          string `json:"NextHopType" xml:"NextHopType"`
 					NextHops             struct {
 						NextHop []struct {
-							NextHopType string           `json:"NextHopType" xml:"NextHopType"`
-							NextHopId   string           `json:"NextHopId" xml:"NextHopId"`
-							Enabled     requests.Integer `json:"Enabled" xml:"Enabled"`
-							Weight      requests.Integer `json:"Weight" xml:"Weight"`
+							NextHopType string `json:"NextHopType" xml:"NextHopType"`
+							NextHopId   string `json:"NextHopId" xml:"NextHopId"`
+							Enabled     int    `json:"Enabled" xml:"Enabled"`
+							Weight      int    `json:"Weight" xml:"Weight"`
 						} `json:"NextHop" xml:"NextHop"`
 					} `json:"NextHops" xml:"NextHops"`
 				} `json:"RouteEntry" xml:"RouteEntry"`

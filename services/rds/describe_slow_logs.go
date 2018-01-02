@@ -79,35 +79,35 @@ type DescribeSlowLogsRequest struct {
 
 type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Engine           string           `json:"Engine" xml:"Engine"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       requests.Integer `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Engine           string `json:"Engine" xml:"Engine"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
+	EndTime          string `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            struct {
 		SQLSlowLog []struct {
-			SlowLogId                     requests.Integer `json:"SlowLogId" xml:"SlowLogId"`
-			SQLId                         requests.Integer `json:"SQLId" xml:"SQLId"`
-			DBName                        string           `json:"DBName" xml:"DBName"`
-			SQLText                       string           `json:"SQLText" xml:"SQLText"`
-			MySQLTotalExecutionCounts     requests.Integer `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-			MySQLTotalExecutionTimes      requests.Integer `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-			TotalLockTimes                requests.Integer `json:"TotalLockTimes" xml:"TotalLockTimes"`
-			MaxLockTime                   requests.Integer `json:"MaxLockTime" xml:"MaxLockTime"`
-			ParseTotalRowCounts           requests.Integer `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-			ParseMaxRowCount              requests.Integer `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-			ReturnTotalRowCounts          requests.Integer `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-			ReturnMaxRowCount             requests.Integer `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
-			CreateTime                    string           `json:"CreateTime" xml:"CreateTime"`
-			SQLServerTotalExecutionCounts requests.Integer `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-			SQLServerTotalExecutionTimes  requests.Integer `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-			TotalLogicalReadCounts        requests.Integer `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-			TotalPhysicalReadCounts       requests.Integer `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
-			ReportTime                    string           `json:"ReportTime" xml:"ReportTime"`
-			MaxExecutionTime              requests.Integer `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-			AvgExecutionTime              requests.Integer `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
+			SlowLogId                     int    `json:"SlowLogId" xml:"SlowLogId"`
+			SQLId                         int    `json:"SQLId" xml:"SQLId"`
+			DBName                        string `json:"DBName" xml:"DBName"`
+			SQLText                       string `json:"SQLText" xml:"SQLText"`
+			MySQLTotalExecutionCounts     int    `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+			MySQLTotalExecutionTimes      int    `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
+			TotalLockTimes                int    `json:"TotalLockTimes" xml:"TotalLockTimes"`
+			MaxLockTime                   int    `json:"MaxLockTime" xml:"MaxLockTime"`
+			ParseTotalRowCounts           int    `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+			ParseMaxRowCount              int    `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+			ReturnTotalRowCounts          int    `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+			ReturnMaxRowCount             int    `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+			CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
+			SQLServerTotalExecutionCounts int    `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
+			SQLServerTotalExecutionTimes  int    `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+			TotalLogicalReadCounts        int    `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
+			TotalPhysicalReadCounts       int    `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
+			ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
+			MaxExecutionTime              int    `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+			AvgExecutionTime              int    `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
 		} `json:"SQLSlowLog" xml:"SQLSlowLog"`
 	} `json:"Items" xml:"Items"`
 }

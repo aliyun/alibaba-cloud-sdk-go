@@ -79,9 +79,9 @@ type DescribeDomainBpsDataByTimeStampResponse struct {
 	TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
 	BpsDataList struct {
 		BpsDataModel []struct {
-			LocationName string           `json:"LocationName" xml:"LocationName"`
-			IspName      string           `json:"IspName" xml:"IspName"`
-			Bps          requests.Integer `json:"Bps" xml:"Bps"`
+			LocationName string `json:"LocationName" xml:"LocationName"`
+			IspName      string `json:"IspName" xml:"IspName"`
+			Bps          int    `json:"Bps" xml:"Bps"`
 		} `json:"BpsDataModel" xml:"BpsDataModel"`
 	} `json:"BpsDataList" xml:"BpsDataList"`
 }

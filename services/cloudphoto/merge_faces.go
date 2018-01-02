@@ -78,9 +78,9 @@ type MergeFacesResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Results   struct {
 		Result []struct {
-			Id      requests.Integer `json:"Id" xml:"Id"`
-			Code    string           `json:"Code" xml:"Code"`
-			Message string           `json:"Message" xml:"Message"`
+			Id      int    `json:"Id" xml:"Id"`
+			Code    string `json:"Code" xml:"Code"`
+			Message string `json:"Message" xml:"Message"`
 		} `json:"Result" xml:"Result"`
 	} `json:"Results" xml:"Results"`
 }

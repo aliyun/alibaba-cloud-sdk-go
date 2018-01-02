@@ -75,8 +75,8 @@ type DescribeLoadBalancerAutoReleaseTimeRequest struct {
 
 type DescribeLoadBalancerAutoReleaseTimeResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	AutoReleaseTime requests.Integer `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	AutoReleaseTime int    `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 }
 
 func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBalancerAutoReleaseTimeRequest) {

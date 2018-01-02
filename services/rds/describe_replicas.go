@@ -76,10 +76,10 @@ type DescribeReplicasRequest struct {
 
 type DescribeReplicasResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	PageNumber       string           `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount requests.Integer `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  requests.Integer `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
 	Replicas         []struct {
 		ReplicaId          string `json:"ReplicaId" xml:"ReplicaId"`
 		ReplicaDescription string `json:"ReplicaDescription" xml:"ReplicaDescription"`

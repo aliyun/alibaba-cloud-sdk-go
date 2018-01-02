@@ -71,12 +71,9 @@ type CopyDatabaseRequest struct {
 
 type CopyDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID string `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBID         string `json:"DBID" xml:"DBID"`
-	DBName       string `json:"DBName" xml:"DBName"`
-	DBStatus     string `json:"DBStatus" xml:"DBStatus"`
-	TaskId       string `json:"TaskId" xml:"TaskId"`
+	DBName   string `json:"DBName" xml:"DBName"`
+	DBStatus string `json:"DBStatus" xml:"DBStatus"`
+	TaskId   string `json:"TaskId" xml:"TaskId"`
 }
 
 func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {

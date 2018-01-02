@@ -81,31 +81,31 @@ type DescribeAlarmHistoryRequest struct {
 
 type DescribeAlarmHistoryResponse struct {
 	*responses.BaseResponse
-	Success          requests.Boolean `json:"Success" xml:"Success"`
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	Total            string           `json:"Total" xml:"Total"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Success          bool   `json:"Success" xml:"Success"`
+	Code             string `json:"Code" xml:"Code"`
+	Message          string `json:"Message" xml:"Message"`
+	Total            string `json:"Total" xml:"Total"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	AlarmHistoryList struct {
 		AlarmHistory []struct {
-			Id              string           `json:"Id" xml:"Id"`
-			AlertName       string           `json:"AlertName" xml:"AlertName"`
-			GroupId         string           `json:"GroupId" xml:"GroupId"`
-			Namespace       string           `json:"Namespace" xml:"Namespace"`
-			MetricName      string           `json:"MetricName" xml:"MetricName"`
-			Dimensions      string           `json:"Dimensions" xml:"Dimensions"`
-			Expression      string           `json:"Expression" xml:"Expression"`
-			EvaluationCount requests.Integer `json:"EvaluationCount" xml:"EvaluationCount"`
-			Value           string           `json:"Value" xml:"Value"`
-			AlertTime       requests.Integer `json:"AlertTime" xml:"AlertTime"`
-			LastTime        requests.Integer `json:"LastTime" xml:"LastTime"`
-			Level           string           `json:"Level" xml:"Level"`
-			PreLevel        string           `json:"PreLevel" xml:"PreLevel"`
-			RuleName        string           `json:"ruleName" xml:"ruleName"`
-			State           string           `json:"State" xml:"State"`
-			Status          requests.Integer `json:"Status" xml:"Status"`
-			UserId          string           `json:"UserId" xml:"UserId"`
-			Webhooks        string           `json:"Webhooks" xml:"Webhooks"`
+			Id              string `json:"Id" xml:"Id"`
+			AlertName       string `json:"AlertName" xml:"AlertName"`
+			GroupId         string `json:"GroupId" xml:"GroupId"`
+			Namespace       string `json:"Namespace" xml:"Namespace"`
+			MetricName      string `json:"MetricName" xml:"MetricName"`
+			Dimensions      string `json:"Dimensions" xml:"Dimensions"`
+			Expression      string `json:"Expression" xml:"Expression"`
+			EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
+			Value           string `json:"Value" xml:"Value"`
+			AlertTime       int    `json:"AlertTime" xml:"AlertTime"`
+			LastTime        int    `json:"LastTime" xml:"LastTime"`
+			Level           string `json:"Level" xml:"Level"`
+			PreLevel        string `json:"PreLevel" xml:"PreLevel"`
+			RuleName        string `json:"ruleName" xml:"ruleName"`
+			State           string `json:"State" xml:"State"`
+			Status          int    `json:"Status" xml:"Status"`
+			UserId          string `json:"UserId" xml:"UserId"`
+			Webhooks        string `json:"Webhooks" xml:"Webhooks"`
 			ContactGroups   struct {
 				ContactGroup []string `json:"ContactGroup" xml:"ContactGroup"`
 			} `json:"ContactGroups" xml:"ContactGroups"`

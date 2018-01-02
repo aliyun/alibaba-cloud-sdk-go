@@ -71,10 +71,10 @@ type GetMainDomainNameRequest struct {
 
 type GetMainDomainNameResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	DomainName  string           `json:"DomainName" xml:"DomainName"`
-	RR          string           `json:"RR" xml:"RR"`
-	DomainLevel requests.Integer `json:"DomainLevel" xml:"DomainLevel"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	DomainName  string `json:"DomainName" xml:"DomainName"`
+	RR          string `json:"RR" xml:"RR"`
+	DomainLevel int    `json:"DomainLevel" xml:"DomainLevel"`
 }
 
 func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {

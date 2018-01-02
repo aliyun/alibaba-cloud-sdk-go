@@ -72,9 +72,9 @@ type UpdateDNSSLBWeightRequest struct {
 
 type UpdateDNSSLBWeightResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	RecordId  string           `json:"RecordId" xml:"RecordId"`
-	Weight    requests.Integer `json:"Weight" xml:"Weight"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	RecordId  string `json:"RecordId" xml:"RecordId"`
+	Weight    int    `json:"Weight" xml:"Weight"`
 }
 
 func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {

@@ -74,20 +74,20 @@ type ListMomentsRequest struct {
 
 type ListMomentsResponse struct {
 	*responses.BaseResponse
-	Code       string           `json:"Code" xml:"Code"`
-	Message    string           `json:"Message" xml:"Message"`
-	NextCursor string           `json:"NextCursor" xml:"NextCursor"`
-	TotalCount requests.Integer `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	Action     string           `json:"Action" xml:"Action"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	NextCursor string `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Action     string `json:"Action" xml:"Action"`
 	Moments    []struct {
-		Id           requests.Integer `json:"Id" xml:"Id"`
-		LocationName string           `json:"LocationName" xml:"LocationName"`
-		PhotosCount  requests.Integer `json:"PhotosCount" xml:"PhotosCount"`
-		State        string           `json:"State" xml:"State"`
-		TakenAt      requests.Integer `json:"TakenAt" xml:"TakenAt"`
-		Ctime        requests.Integer `json:"Ctime" xml:"Ctime"`
-		Mtime        requests.Integer `json:"Mtime" xml:"Mtime"`
+		Id           int    `json:"Id" xml:"Id"`
+		LocationName string `json:"LocationName" xml:"LocationName"`
+		PhotosCount  int    `json:"PhotosCount" xml:"PhotosCount"`
+		State        string `json:"State" xml:"State"`
+		TakenAt      int    `json:"TakenAt" xml:"TakenAt"`
+		Ctime        int    `json:"Ctime" xml:"Ctime"`
+		Mtime        int    `json:"Mtime" xml:"Mtime"`
 	} `json:"Moments" xml:"Moments"`
 }
 

@@ -67,9 +67,9 @@ type DescribeDomainFlowDataRequest struct {
 	EndTime        string           `position:"Query" name:"EndTime"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	Interval       string           `position:"Query" name:"Interval"`
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	DomainType     string           `position:"Query" name:"DomainType"`
 	DomainName     string           `position:"Query" name:"DomainName"`

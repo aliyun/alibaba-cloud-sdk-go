@@ -74,8 +74,8 @@ type ImportDataForSQLServerRequest struct {
 
 type ImportDataForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	ImportID  requests.Integer `json:"ImportID" xml:"ImportID"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	ImportID  int    `json:"ImportID" xml:"ImportID"`
 }
 
 func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerRequest) {

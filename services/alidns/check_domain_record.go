@@ -74,8 +74,8 @@ type CheckDomainRecordRequest struct {
 
 type CheckDomainRecordResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	IsExist   requests.Boolean `json:"IsExist" xml:"IsExist"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	IsExist   bool   `json:"IsExist" xml:"IsExist"`
 }
 
 func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
