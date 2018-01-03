@@ -113,7 +113,7 @@ type DescribeSnapshotsResponse struct {
 			SourceDiskType    string `json:"SourceDiskType" xml:"SourceDiskType"`
 			RetentionDays     int    `json:"RetentionDays" xml:"RetentionDays"`
 			Encrypted         bool   `json:"Encrypted" xml:"Encrypted"`
-			SourceDiskSize    string `json:"SourceDiskSize" xml:"SourceDiskSize"`
+			SourceDiskSize    int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
 			Description       string `json:"Description" xml:"Description"`
 			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
 			Status            string `json:"Status" xml:"Status"`
