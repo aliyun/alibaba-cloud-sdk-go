@@ -1,3 +1,6 @@
+2018-01-04 Version: 0.7.3
+1, Remove get entity info API, replaced by get entity instance.
+
 2017-12-29 Version: 0.7.0
 1, First release for Domain-intl.
 2, Add interfaces for domain name registration and management.
