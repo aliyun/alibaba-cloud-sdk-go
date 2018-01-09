@@ -1,82 +1,22 @@
 package integration
 
 import (
-	"testing"
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"fmt"
-	"time"
-	"os"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
+	"os"
+	"testing"
+	"time"
 )
 
 const (
 	InstanceDefaultTimeout = 120
 	DefaultWaitForInterval = 10
 
-	Creating = "Creating"
-	Pending  = "Pending"
-	Running  = "Running"
-	Starting = "Starting"
-
-	Stopped  = "Stopped"
-	Stopping = "Stopping"
-	Deleted  = "Deleted"
+	Running = "Running"
+	Stopped = "Stopped"
+	Deleted = "Deleted"
 )
-
-//func TestSimple(t *testing.T) {
-//	config := getConfigFromEnv()
-//	ecsClient, err := ecs.NewClientWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
-//	if err != nil {
-//		panic(err)
-//	}
-//	request := ecs.CreateDescribeRegionsRequest()
-//	response, err := ecsClient.DescribeRegions(request)
-//	if err != nil {
-//		panic(err)
-//	}
-//	assert.Equal(t, 200, response.GetHttpStatus())
-//	fmt.Print(response.GetHttpContentString())
-//}
-
-func assertErrorNil(t *testing.T, err error, message string) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, message+": %v\n", err)
-	}
-}
-
-func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, status string, timeout int) {
-	if timeout <= 0 {
-		timeout = InstanceDefaultTimeout
-	}
-	for {
-		request := ecs.CreateDescribeInstanceAttributeRequest()
-		request.InstanceId = instanceId
-		response, err := client.DescribeInstanceAttribute(request)
-		assertErrorNil(t, err, "Failed to create describe instance request\n")
-
-
-		if status == Deleted {
-			if response.GetHttpStatus() == 404 || response.Status == Deleted{
-				fmt.Printf("delete instance(%s) success\n", instanceId)
-				break
-			}
-		}else{
-			if response.Status == status {
-				fmt.Printf("instance(%s) status changed to %s, wait a moment\n", instanceId, status)
-				time.Sleep(DefaultWaitForInterval * time.Second)
-				break
-			}else{
-				fmt.Printf("instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, status)
-			}
-		}
-
-		timeout = timeout - DefaultWaitForInterval
-		if timeout <= 0 {
-			t.Errorf(fmt.Sprintf("wait for instance(%s) status to %s timeout(%d)\n", instanceId, status, timeout))
-		}
-		time.Sleep(DefaultWaitForInterval * time.Second)
-	}
-}
 
 // create -> start -> stop -> delete
 func TestEcsInstance(t *testing.T) {
@@ -126,7 +66,7 @@ func getDemoInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeIn
 	return response
 }
 
-func createInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInstanceAttributeResponse)(instanceId string){
+func createInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInstanceAttributeResponse) (instanceId string) {
 	fmt.Print("creating instance...")
 	request := ecs.CreateCreateInstanceRequest()
 	request.ImageId = param.ImageId
@@ -140,32 +80,71 @@ func createInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInstanc
 	return
 }
 
-func startInstance(t *testing.T, client *ecs.Client, instanceId string){
+func startInstance(t *testing.T, client *ecs.Client, instanceId string) {
 	fmt.Printf("starting instance(%s)...", instanceId)
 	request := ecs.CreateStartInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.StartInstance(request)
-	assertErrorNil(t, err, "Failed to start instance " + instanceId)
+	assertErrorNil(t, err, "Failed to start instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 }
 
-func stopInstance(t *testing.T, client *ecs.Client, instanceId string){
+func stopInstance(t *testing.T, client *ecs.Client, instanceId string) {
 	fmt.Printf("stopping instance(%s)...", instanceId)
 	request := ecs.CreateStopInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.StopInstance(request)
-	assertErrorNil(t, err, "Failed to stop instance " + instanceId)
+	assertErrorNil(t, err, "Failed to stop instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 }
 
-func deleteInstance(t *testing.T, client *ecs.Client, instanceId string){
+func deleteInstance(t *testing.T, client *ecs.Client, instanceId string) {
 	fmt.Printf("deleting instance(%s)...", instanceId)
 	request := ecs.CreateDeleteInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.DeleteInstance(request)
-	assertErrorNil(t, err, "Failed to delete instance " + instanceId)
+	assertErrorNil(t, err, "Failed to delete instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
+}
+
+func assertErrorNil(t *testing.T, err error, message string) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, message+": %v\n", err)
+	}
+}
+
+func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, status string, timeout int) {
+	if timeout <= 0 {
+		timeout = InstanceDefaultTimeout
+	}
+	for {
+		request := ecs.CreateDescribeInstanceAttributeRequest()
+		request.InstanceId = instanceId
+		response, err := client.DescribeInstanceAttribute(request)
+		assertErrorNil(t, err, "Failed to create describe instance request\n")
+
+		if status == Deleted {
+			if response.GetHttpStatus() == 404 || response.Status == Deleted {
+				fmt.Printf("delete instance(%s) success\n", instanceId)
+				break
+			}
+		} else {
+			if response.Status == status {
+				fmt.Printf("instance(%s) status changed to %s, wait a moment\n", instanceId, status)
+				time.Sleep(DefaultWaitForInterval * time.Second)
+				break
+			} else {
+				fmt.Printf("instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, status)
+			}
+		}
+
+		timeout = timeout - DefaultWaitForInterval
+		if timeout <= 0 {
+			t.Errorf(fmt.Sprintf("wait for instance(%s) status to %s timeout(%d)\n", instanceId, status, timeout))
+		}
+		time.Sleep(DefaultWaitForInterval * time.Second)
+	}
 }
