@@ -24,7 +24,7 @@ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 glide get github.com/aliyun/alibaba-cloud-sdk-go
 ```
 
-另外，阿里云Java SDK也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
+另外，阿里云Go SDK也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
 
 ## 开始调用
 以下这个代码示例向您展示了调用阿里云GO SDK的3个主要步骤：
