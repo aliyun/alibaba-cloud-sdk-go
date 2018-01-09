@@ -52,7 +52,7 @@ func TestEcsInstance(t *testing.T) {
 	stopInstance(t, ecsClient, instanceId)
 
 	// wait
-	waitForInstance(t, ecsClient, instanceId, Stopped, 120)
+	waitForInstance(t, ecsClient, instanceId, Stopped, 600)
 }
 
 func getDemoInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeInstanceAttributeResponse {
