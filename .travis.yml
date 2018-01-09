@@ -8,14 +8,13 @@ go:
   - 1.9.x
 
 install:
-#  - go get -u github.com/Masterminds/glide
-#  - glide install
-  - go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
+  - go get -u github.com/Masterminds/glide
+  - glide install
 
 notifications:
     webhooks: https://oapi.dingtalk.com/robot/send?access_token=096ed387df243a6d60835aadeccc47165f3813bc7cb81cdd0cfeadfd28e3acc1
     email: false
-    on_success: always
+    on_success: change
     on_failure: always
 
 script:
@@ -23,4 +22,4 @@ script:
   - go vet ./services/...
   - go build ./sdk
   - go build ./services/...
-  - go test ./sdk/test/simple_test.go
+  - go test -v ./integration/...
