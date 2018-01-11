@@ -25,6 +25,7 @@ import (
 	"os"
 	"os/user"
 	"testing"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
 var client, clientKeyPair, clientEcs, clientRoleArn *Client
@@ -89,45 +90,39 @@ func getConfigFromEnv() *TestConfig {
 }
 
 func testSetup() {
-	config := getConfigFromEnv()
-	if config == nil {
-		config = getConfigFromFile()
+	testConfig := getConfigFromEnv()
+	if testConfig == nil {
+		testConfig = getConfigFromFile()
 	}
+
+	clientConfig := NewConfig().
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-	client = &Client{
-		config: &Config{
-			HttpTransport: tr,
-		},
+
+	var err error
+	credential := &credentials.BaseCredential{
+		AccessKeyId:     testConfig.AccessKeyId,
+		AccessKeySecret: testConfig.AccessKeySecret,
 	}
-	clientEcs = &Client{}
-	clientRoleArn = &Client{
-		config: &Config{
-			HttpTransport: tr,
-		},
-	}
-	clientKeyPair = &Client{
-		config: &Config{
-			HttpTransport: tr,
-		},
-	}
-	err := client.InitWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
+	client, err = NewClientWith
 	if err != nil {
 		panic(err)
 	}
-	err = clientKeyPair.InitWithKeyPair("cn-hangzhou", config.PublicKeyId, config.PrivateKey, 3600)
-	if err != nil {
-		panic(err)
-	}
-	err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
-	if err != nil {
-		panic(err)
-	}
-	err = clientRoleArn.InitWithRoleArn("cn-hangzhou", config.ChildAK, config.ChildSecret, config.RoleArn, "clientTest")
-	if err != nil {
-		panic(err)
-	}
+	client.config.HttpTransport = tr
+
+	//err = clientKeyPair.InitWithKeyPair("cn-hangzhou", testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//err = clientRoleArn.InitWithRoleArn("cn-hangzhou", testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
+	//if err != nil {
+	//	panic(err)
+	//}
 }
 
 func testTearDown() {
