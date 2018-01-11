@@ -1,8 +1,10 @@
-hash: 4245a525277b39155bfbf48e67c176b1e3c637d88d73e8f622e416fa26d9d9d4
-updated: 2017-11-20T16:19:26.767119824+08:00
+hash: 8c102e206e59c5696ee34277c9480202d776b65781cad393a25087d83966e4f3
+updated: 2018-01-10T11:08:35.178977776+08:00
 imports:
 - name: github.com/jmespath/go-jmespath
   version: 3433f3ea46d9f8019119e7dd41274e112a2359a9
+- name: github.com/json-iterator/go
+  version: f7279a603edee96fe7764d3de9c6ff8cf9970994
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 testImports:
@@ -15,6 +17,6 @@ testImports:
   subpackages:
   - difflib
 - name: github.com/stretchr/testify
-  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  version: b91bfb9ebec76498946beb6af7c0230c7cc7ba6c
   subpackages:
   - assert

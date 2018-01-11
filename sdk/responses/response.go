@@ -16,7 +16,6 @@ package responses
 
 import (
 	"bytes"
-	"encoding/json"
 	"encoding/xml"
 	"io/ioutil"
 	"net/http"
@@ -39,7 +38,8 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 		return
 	}
 	if strings.ToUpper(format) == "JSON" {
-		err = json.Unmarshal(response.GetHttpContentBytes(), response)
+		initJsonParserOnce()
+		err = jsonParser.Unmarshal(response.GetHttpContentBytes(), response)
 	} else if strings.ToUpper(format) == "XML" {
 		err = xml.Unmarshal(response.GetHttpContentBytes(), response)
 	}
