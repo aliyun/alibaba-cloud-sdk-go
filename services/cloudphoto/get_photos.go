@@ -65,8 +65,8 @@ func (client *Client) GetPhotosWithCallback(request *GetPhotosRequest, callback 
 type GetPhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName string    `position:"Query" name:"StoreName"`
 }
 
 type GetPhotosResponse struct {
@@ -79,12 +79,14 @@ type GetPhotosResponse struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
+		Location        string `json:"Location" xml:"Location"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
 		Remark          string `json:"Remark" xml:"Remark"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`
+		Size            int    `json:"Size" xml:"Size"`
 		Ctime           int    `json:"Ctime" xml:"Ctime"`
 		Mtime           int    `json:"Mtime" xml:"Mtime"`
 		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`

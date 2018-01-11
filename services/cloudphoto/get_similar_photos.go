@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) ListPhotos(request *ListPhotosRequest) (response *ListPhotosResponse, err error) {
-	response = CreateListPhotosResponse()
+func (client *Client) GetSimilarPhotos(request *GetSimilarPhotosRequest) (response *GetSimilarPhotosResponse, err error) {
+	response = CreateGetSimilarPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *ListPhotosResponse, <-chan error) {
-	responseChan := make(chan *ListPhotosResponse, 1)
+func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest) (<-chan *GetSimilarPhotosResponse, <-chan error) {
+	responseChan := make(chan *GetSimilarPhotosResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListPhotos(request)
+		response, err := client.GetSimilarPhotos(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callback func(response *ListPhotosResponse, err error)) <-chan int {
+func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequest, callback func(response *GetSimilarPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListPhotosResponse
+		var response *GetSimilarPhotosResponse
 		var err error
 		defer close(result)
-		response, err = client.ListPhotos(request)
+		response, err = client.GetSimilarPhotos(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,25 +62,20 @@ func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callbac
 	return result
 }
 
-type ListPhotosRequest struct {
+type GetSimilarPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string           `position:"Query" name:"Cursor"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	State     string           `position:"Query" name:"State"`
-	Direction string           `position:"Query" name:"Direction"`
 }
 
-type ListPhotosResponse struct {
+type GetSimilarPhotosResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor string `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Photos     []struct {
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Photos    []struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
@@ -97,19 +92,20 @@ type ListPhotosResponse struct {
 		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
 		InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
 		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
+		Like            int    `json:"Like" xml:"Like"`
 	} `json:"Photos" xml:"Photos"`
 }
 
-func CreateListPhotosRequest() (request *ListPhotosRequest) {
-	request = &ListPhotosRequest{
+func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
+	request = &GetSimilarPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetSimilarPhotos", "", "")
 	return
 }
 
-func CreateListPhotosResponse() (response *ListPhotosResponse) {
-	response = &ListPhotosResponse{
+func CreateGetSimilarPhotosResponse() (response *GetSimilarPhotosResponse) {
+	response = &GetSimilarPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

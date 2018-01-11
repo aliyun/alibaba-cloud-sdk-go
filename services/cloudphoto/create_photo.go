@@ -64,15 +64,15 @@ func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callb
 
 type CreatePhotoRequest struct {
 	*requests.RpcRequest
-	Staging         string           `position:"Query" name:"Staging"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 	PhotoTitle      string           `position:"Query" name:"PhotoTitle"`
-	Remark          string           `position:"Query" name:"Remark"`
-	UploadType      string           `position:"Query" name:"UploadType"`
 	LibraryId       string           `position:"Query" name:"LibraryId"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 	StoreName       string           `position:"Query" name:"StoreName"`
-	FileId          string           `position:"Query" name:"FileId"`
+	UploadType      string           `position:"Query" name:"UploadType"`
+	Remark          string           `position:"Query" name:"Remark"`
 	SessionId       string           `position:"Query" name:"SessionId"`
+	Staging         string           `position:"Query" name:"Staging"`
+	FileId          string           `position:"Query" name:"FileId"`
 }
 
 type CreatePhotoResponse struct {
@@ -85,9 +85,11 @@ type CreatePhotoResponse struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
+		Location        string `json:"Location" xml:"Location"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
+		Size            int    `json:"Size" xml:"Size"`
 		Remark          string `json:"Remark" xml:"Remark"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`

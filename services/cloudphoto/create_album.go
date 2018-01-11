@@ -64,10 +64,10 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
-	Remark    string `position:"Query" name:"Remark"`
+	AlbumName string `position:"Query" name:"AlbumName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
-	AlbumName string `position:"Query" name:"AlbumName"`
+	Remark    string `position:"Query" name:"Remark"`
 }
 
 type CreateAlbumResponse struct {

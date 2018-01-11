@@ -65,12 +65,12 @@ func (client *Client) ListFacePhotosWithCallback(request *ListFacePhotosRequest,
 type ListFacePhotosRequest struct {
 	*requests.RpcRequest
 	Cursor    string           `position:"Query" name:"Cursor"`
-	Direction string           `position:"Query" name:"Direction"`
-	State     string           `position:"Query" name:"State"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
 	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
-	Size      requests.Integer `position:"Query" name:"Size"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 type ListFacePhotosResponse struct {

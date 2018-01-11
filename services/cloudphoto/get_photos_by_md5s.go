@@ -64,10 +64,10 @@ func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sReques
 
 type GetPhotosByMd5sRequest struct {
 	*requests.RpcRequest
-	State     string    `position:"Query" name:"State"`
-	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	State     string    `position:"Query" name:"State"`
+	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
 }
 
 type GetPhotosByMd5sResponse struct {
@@ -80,10 +80,12 @@ type GetPhotosByMd5sResponse struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
+		Location        string `json:"Location" xml:"Location"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
 		Remark          string `json:"Remark" xml:"Remark"`
+		Size            int    `json:"Size" xml:"Size"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`
 		Ctime           int    `json:"Ctime" xml:"Ctime"`

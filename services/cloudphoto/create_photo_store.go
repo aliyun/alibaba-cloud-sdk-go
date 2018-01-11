@@ -64,10 +64,10 @@ func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequ
 
 type CreatePhotoStoreRequest struct {
 	*requests.RpcRequest
-	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
 	BucketName   string           `position:"Query" name:"BucketName"`
-	Remark       string           `position:"Query" name:"Remark"`
 	StoreName    string           `position:"Query" name:"StoreName"`
+	Remark       string           `position:"Query" name:"Remark"`
+	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
 }
 
 type CreatePhotoStoreResponse struct {

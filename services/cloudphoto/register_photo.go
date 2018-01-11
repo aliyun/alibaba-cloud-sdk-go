@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) ListPhotos(request *ListPhotosRequest) (response *ListPhotosResponse, err error) {
-	response = CreateListPhotosResponse()
+func (client *Client) RegisterPhoto(request *RegisterPhotoRequest) (response *RegisterPhotoResponse, err error) {
+	response = CreateRegisterPhotoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *ListPhotosResponse, <-chan error) {
-	responseChan := make(chan *ListPhotosResponse, 1)
+func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-chan *RegisterPhotoResponse, <-chan error) {
+	responseChan := make(chan *RegisterPhotoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListPhotos(request)
+		response, err := client.RegisterPhoto(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callback func(response *ListPhotosResponse, err error)) <-chan int {
+func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, callback func(response *RegisterPhotoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListPhotosResponse
+		var response *RegisterPhotoResponse
 		var err error
 		defer close(result)
-		response, err = client.ListPhotos(request)
+		response, err = client.RegisterPhoto(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,54 +62,58 @@ func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callbac
 	return result
 }
 
-type ListPhotosRequest struct {
+type RegisterPhotoRequest struct {
 	*requests.RpcRequest
-	Cursor    string           `position:"Query" name:"Cursor"`
-	Size      requests.Integer `position:"Query" name:"Size"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	State     string           `position:"Query" name:"State"`
-	Direction string           `position:"Query" name:"Direction"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
+	Latitude   requests.Float   `position:"Query" name:"Latitude"`
+	PhotoTitle string           `position:"Query" name:"PhotoTitle"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	IsVideo    string           `position:"Query" name:"IsVideo"`
+	Remark     string           `position:"Query" name:"Remark"`
+	Size       requests.Integer `position:"Query" name:"Size"`
+	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
+	Width      requests.Integer `position:"Query" name:"Width"`
+	Location   string           `position:"Query" name:"Location"`
+	Longitude  requests.Float   `position:"Query" name:"Longitude"`
+	Height     requests.Integer `position:"Query" name:"Height"`
+	Md5        string           `position:"Query" name:"Md5"`
 }
 
-type ListPhotosResponse struct {
+type RegisterPhotoResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor string `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Photos     []struct {
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
+	Photo     struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
 		Location        string `json:"Location" xml:"Location"`
+		FileId          string `json:"FileId" xml:"FileId"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Remark          string `json:"Remark" xml:"Remark"`
 		Size            int    `json:"Size" xml:"Size"`
+		Remark          string `json:"Remark" xml:"Remark"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`
 		Ctime           int    `json:"Ctime" xml:"Ctime"`
 		Mtime           int    `json:"Mtime" xml:"Mtime"`
 		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
 		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photos" xml:"Photos"`
+	} `json:"Photo" xml:"Photo"`
 }
 
-func CreateListPhotosRequest() (request *ListPhotosRequest) {
-	request = &ListPhotosRequest{
+func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
+	request = &RegisterPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterPhoto", "", "")
 	return
 }
 
-func CreateListPhotosResponse() (response *ListPhotosResponse) {
-	response = &ListPhotosResponse{
+func CreateRegisterPhotoResponse() (response *RegisterPhotoResponse) {
+	response = &RegisterPhotoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

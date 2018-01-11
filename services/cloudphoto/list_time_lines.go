@@ -64,15 +64,15 @@ func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, c
 
 type ListTimeLinesRequest struct {
 	*requests.RpcRequest
-	FilterBy      string           `position:"Query" name:"FilterBy"`
 	Cursor        requests.Integer `position:"Query" name:"Cursor"`
-	Order         string           `position:"Query" name:"Order"`
-	Direction     string           `position:"Query" name:"Direction"`
+	PhotoSize     requests.Integer `position:"Query" name:"PhotoSize"`
 	TimeLineCount requests.Integer `position:"Query" name:"TimeLineCount"`
 	LibraryId     string           `position:"Query" name:"LibraryId"`
 	StoreName     string           `position:"Query" name:"StoreName"`
 	TimeLineUnit  string           `position:"Query" name:"TimeLineUnit"`
-	PhotoSize     requests.Integer `position:"Query" name:"PhotoSize"`
+	FilterBy      string           `position:"Query" name:"FilterBy"`
+	Direction     string           `position:"Query" name:"Direction"`
+	Order         string           `position:"Query" name:"Order"`
 }
 
 type ListTimeLinesResponse struct {
@@ -90,11 +90,13 @@ type ListTimeLinesResponse struct {
 		Photos      []struct {
 			Id              int    `json:"Id" xml:"Id"`
 			Title           string `json:"Title" xml:"Title"`
+			Location        string `json:"Location" xml:"Location"`
 			FileId          string `json:"FileId" xml:"FileId"`
 			State           string `json:"State" xml:"State"`
 			Md5             string `json:"Md5" xml:"Md5"`
 			IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
 			Remark          string `json:"Remark" xml:"Remark"`
+			Size            int    `json:"Size" xml:"Size"`
 			Width           int    `json:"Width" xml:"Width"`
 			Height          int    `json:"Height" xml:"Height"`
 			Ctime           int    `json:"Ctime" xml:"Ctime"`

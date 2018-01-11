@@ -65,9 +65,9 @@ func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, c
 type GetThumbnailsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
 	ZoomType  string    `position:"Query" name:"ZoomType"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetThumbnailsResponse struct {

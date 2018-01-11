@@ -1,3 +1,7 @@
+2018-01-11 Version: 0.7.6
+1, replace photo tag 2000 upgrade to 5000
+2, add TrashQuota
+
 2018-01-11 Version: 0.7.5
 1, Make the json.Unmarshal more robust
 
