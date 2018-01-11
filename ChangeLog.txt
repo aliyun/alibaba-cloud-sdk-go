@@ -1,3 +1,6 @@
+2018-01-11 Version: 0.7.7
+1, Bug fix: Replenish user interface
+
 2018-01-11 Version: 0.7.6
 1, replace photo tag 2000 upgrade to 5000
 2, add TrashQuota

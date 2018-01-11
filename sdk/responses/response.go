@@ -16,7 +16,9 @@ package responses
 
 import (
 	"bytes"
+	"encoding/json"
 	"encoding/xml"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io/ioutil"
 	"net/http"
 	"strconv"
@@ -24,6 +26,7 @@ import (
 )
 
 type AcsResponse interface {
+	IsSuccess() bool
 	GetHttpStatus() int
 	GetHttpHeaders() map[string][]string
 	GetHttpContentString() string
@@ -35,6 +38,10 @@ type AcsResponse interface {
 func Unmarshal(response AcsResponse, httpResponse *http.Response, format string) (err error) {
 	err = response.parseFromHttpResponse(httpResponse)
 	if err != nil {
+		return
+	}
+	if !response.IsSuccess() {
+		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, response.GetHttpContentString())
 		return
 	}
 	if strings.ToUpper(format) == "JSON" {
