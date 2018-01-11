@@ -65,8 +65,8 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 }
 
 type ListPhotoFacesResponse struct {

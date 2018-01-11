@@ -187,7 +187,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		httpRequest.Header[key] = []string{value}
 	}
 	var httpResponse *http.Response
-	for retryTimes := 0; retryTimes < client.config.MaxRetryTime; retryTimes++ {
+	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
 		httpResponse, err = client.httpClient.Do(httpRequest)
 
 		// retry params

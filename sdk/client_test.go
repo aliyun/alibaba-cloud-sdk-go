@@ -95,22 +95,19 @@ func testSetup() {
 		testConfig = getConfigFromFile()
 	}
 
-	clientConfig := NewConfig().
-	tr := &http.Transport{
+	clientConfig := NewConfig().WithHttpTransport(&http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	}
+	})
 
 	var err error
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     testConfig.AccessKeyId,
 		AccessKeySecret: testConfig.AccessKeySecret,
 	}
-	client, err = NewClientWith
+	client, err = NewClientWithOptions("cn-hangzhou", clientConfig, credential)
 	if err != nil {
 		panic(err)
 	}
-	client.config.HttpTransport = tr
-
 	//err = clientKeyPair.InitWithKeyPair("cn-hangzhou", testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
 	//if err != nil {
 	//	panic(err)
@@ -421,21 +418,21 @@ func TestRpcGetForLocationCache(t *testing.T) {
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }
 
-func TestRpcGetForKeyPair(t *testing.T) {
-	request := getFtTestRpcRequest()
-	request.Method = requests.GET
-
-	response := &responses.BaseResponse{}
-	err := clientKeyPair.DoAction(request, response)
-	assert.Nil(t, err)
-	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-	assert.NotNil(t, response.GetHttpContentString())
-
-	var responseBean MockResponse
-	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-}
+//func TestRpcGetForKeyPair(t *testing.T) {
+//	request := getFtTestRpcRequest()
+//	request.Method = requests.GET
+//
+//	response := &responses.BaseResponse{}
+//	err := clientKeyPair.DoAction(request, response)
+//	assert.Nil(t, err)
+//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+//	assert.NotNil(t, response.GetHttpContentString())
+//
+//	var responseBean MockResponse
+//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+//
+//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+//}
 
 /*func TestRpcGetForEcs(t *testing.T) {
 	//测试接口，想测试的时候，要替换掉singer_ecs_instance中对应的变量，并且还要提供一个mock服务
@@ -464,30 +461,30 @@ func TestRpcGetForKeyPair(t *testing.T) {
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }*/
 
-func TestRpcGetForRoleArn(t *testing.T) {
-	request := getFtTestRpcRequest()
-	request.Method = requests.GET
-
-	response := &responses.BaseResponse{}
-	err := clientRoleArn.DoAction(request, response)
-	assert.Nil(t, err)
-	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-	assert.NotNil(t, response.GetHttpContentString())
-
-	var responseBean MockResponse
-	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-
-	err = clientRoleArn.DoAction(request, response)
-	assert.Nil(t, err)
-	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-	assert.NotNil(t, response.GetHttpContentString())
-
-	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-}
+//func TestRpcGetForRoleArn(t *testing.T) {
+//	request := getFtTestRpcRequest()
+//	request.Method = requests.GET
+//
+//	response := &responses.BaseResponse{}
+//	err := clientRoleArn.DoAction(request, response)
+//	assert.Nil(t, err)
+//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+//	assert.NotNil(t, response.GetHttpContentString())
+//
+//	var responseBean MockResponse
+//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+//
+//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+//
+//	err = clientRoleArn.DoAction(request, response)
+//	assert.Nil(t, err)
+//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+//	assert.NotNil(t, response.GetHttpContentString())
+//
+//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+//
+//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+//}
 
 func TestCommonRoaRequestForAcceptXML(t *testing.T) {
 	roaRequest := requests.NewCommonRequest()

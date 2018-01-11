@@ -65,12 +65,12 @@ func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback 
 type ListFacesRequest struct {
 	*requests.RpcRequest
 	Cursor      string           `position:"Query" name:"Cursor"`
-	Direction   string           `position:"Query" name:"Direction"`
-	State       string           `position:"Query" name:"State"`
-	LibraryId   string           `position:"Query" name:"LibraryId"`
-	StoreName   string           `position:"Query" name:"StoreName"`
 	HasFaceName string           `position:"Query" name:"HasFaceName"`
 	Size        requests.Integer `position:"Query" name:"Size"`
+	LibraryId   string           `position:"Query" name:"LibraryId"`
+	StoreName   string           `position:"Query" name:"StoreName"`
+	State       string           `position:"Query" name:"State"`
+	Direction   string           `position:"Query" name:"Direction"`
 }
 
 type ListFacesResponse struct {
