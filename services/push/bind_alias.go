@@ -78,7 +78,8 @@ func CreateBindAliasRequest() (request *BindAliasRequest) {
 	request = &BindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "BindAlias", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "BindAlias", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

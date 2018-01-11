@@ -90,7 +90,8 @@ func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	request = &GetFramedPhotoUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,7 +99,8 @@ func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	request = &SearchPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

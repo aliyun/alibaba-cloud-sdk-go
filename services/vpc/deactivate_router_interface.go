@@ -79,7 +79,8 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -75,7 +75,8 @@ func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttribut
 	request = &DescribeTemplateAttributeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplateAttribute", "/templates/[TemplateId]", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTemplateAttribute", "/templates/[TemplateId]", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

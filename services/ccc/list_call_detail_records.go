@@ -136,7 +136,8 @@ func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest
 	request = &ListCallDetailRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallDetailRecords", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallDetailRecords", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

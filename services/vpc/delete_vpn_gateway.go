@@ -81,7 +81,8 @@ func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	request = &DeleteVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnGateway", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnGateway", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

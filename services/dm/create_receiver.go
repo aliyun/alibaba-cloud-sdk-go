@@ -81,7 +81,8 @@ func CreateCreateReceiverRequest() (request *CreateReceiverRequest) {
 	request = &CreateReceiverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateReceiver", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CreateReceiver", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

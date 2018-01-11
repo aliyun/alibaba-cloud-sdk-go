@@ -120,7 +120,8 @@ func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMedia", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMedia", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -75,7 +75,8 @@ func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
 	request = &RevokeClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "RevokeClusterToken", "/token/[Token]/revoke", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "RevokeClusterToken", "/token/[Token]/revoke", "", "openAPI")
+	request.Method = requests.DELETE
 	return
 }
 

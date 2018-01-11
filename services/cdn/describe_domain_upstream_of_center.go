@@ -86,7 +86,8 @@ func CreateDescribeDomainUpstreamOfCenterRequest() (request *DescribeDomainUpstr
 	request = &DescribeDomainUpstreamOfCenterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamOfCenter", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamOfCenter", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

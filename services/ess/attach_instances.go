@@ -121,7 +121,8 @@ func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	request = &AttachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "AttachInstances", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "AttachInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

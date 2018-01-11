@@ -83,7 +83,8 @@ func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultR
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

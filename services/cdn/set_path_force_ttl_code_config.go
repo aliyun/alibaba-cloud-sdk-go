@@ -81,7 +81,8 @@ func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfi
 	request = &SetPathForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetPathForceTtlCodeConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetPathForceTtlCodeConfig", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

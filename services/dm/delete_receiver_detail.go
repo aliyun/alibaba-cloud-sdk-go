@@ -80,7 +80,8 @@ func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) 
 	request = &DeleteReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteReceiverDetail", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteReceiverDetail", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

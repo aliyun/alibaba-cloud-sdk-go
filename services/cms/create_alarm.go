@@ -64,8 +64,8 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
 	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
 	StartTime          requests.Integer `position:"Query" name:"StartTime"`
 	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
 	Period             requests.Integer `position:"Query" name:"Period"`
@@ -95,7 +95,8 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	request = &CreateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "CreateAlarm", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "CreateAlarm", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

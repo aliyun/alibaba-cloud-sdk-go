@@ -75,7 +75,8 @@ func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
 	request = &CreateClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateClusterToken", "/clusters/[ClusterId]/token", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "CreateClusterToken", "/clusters/[ClusterId]/token", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

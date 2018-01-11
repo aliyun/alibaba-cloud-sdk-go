@@ -109,7 +109,8 @@ func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 	request = &ListRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListRecordings", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListRecordings", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

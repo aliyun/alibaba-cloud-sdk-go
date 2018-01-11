@@ -78,7 +78,8 @@ func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
 	request = &PutSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "PutSystemEvent", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutSystemEvent", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

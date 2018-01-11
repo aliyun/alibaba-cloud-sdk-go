@@ -76,11 +76,14 @@ type GetLibraryResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 	Library   struct {
 		Quota struct {
-			TotalQuota  int `json:"TotalQuota" xml:"TotalQuota"`
-			FacesCount  int `json:"FacesCount" xml:"FacesCount"`
-			PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
-			UsedQuota   int `json:"UsedQuota" xml:"UsedQuota"`
-			VideosCount int `json:"VideosCount" xml:"VideosCount"`
+			TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
+			TotalTrashQuota int `json:"TotalTrashQuota" xml:"TotalTrashQuota"`
+			FacesCount      int `json:"FacesCount" xml:"FacesCount"`
+			PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
+			UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
+			VideosCount     int `json:"VideosCount" xml:"VideosCount"`
+			ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
+			InactiveSize    int `json:"InactiveSize" xml:"InactiveSize"`
 		} `json:"Quota" xml:"Quota"`
 		AutoCleanConfig struct {
 			AutoCleanEnabled bool `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
@@ -93,7 +96,8 @@ func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

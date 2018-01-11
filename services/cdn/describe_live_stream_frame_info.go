@@ -94,7 +94,8 @@ func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFram
 	request = &DescribeLiveStreamFrameInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameInfo", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameInfo", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

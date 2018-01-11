@@ -100,7 +100,8 @@ func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) 
 	request = &QueryTemplateByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTemplateByParam", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTemplateByParam", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

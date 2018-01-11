@@ -75,7 +75,8 @@ func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunn
 	request = &DescribeAgilityTunnelAgentInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeAgilityTunnelAgentInfo", "/agility/[Token]/agent_info", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeAgilityTunnelAgentInfo", "/agility/[Token]/agent_info", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

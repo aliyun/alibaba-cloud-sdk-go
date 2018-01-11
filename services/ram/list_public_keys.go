@@ -83,7 +83,8 @@ func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
 	request = &ListPublicKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListPublicKeys", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "ListPublicKeys", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,8 @@ func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	request = &BindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "BindInputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "BindInputBucket", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

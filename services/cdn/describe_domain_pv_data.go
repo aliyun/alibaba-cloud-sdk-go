@@ -90,7 +90,8 @@ func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) 
 	request = &DescribeDomainPvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainPvData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainPvData", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -73,8 +73,8 @@ type CreateDampPolicyRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SourceRules          string           `position:"Query" name:"SourceRules"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 }
 
@@ -89,7 +89,8 @@ func CreateCreateDampPolicyRequest() (request *CreateDampPolicyRequest) {
 	request = &CreateDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDampPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDampPolicy", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

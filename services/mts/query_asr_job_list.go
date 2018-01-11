@@ -114,7 +114,8 @@ func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	request = &QueryAsrJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

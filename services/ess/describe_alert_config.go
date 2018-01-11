@@ -81,7 +81,8 @@ func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	request = &DescribeAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlertConfig", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlertConfig", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

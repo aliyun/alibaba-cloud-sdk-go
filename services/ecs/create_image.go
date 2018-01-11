@@ -65,8 +65,8 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 type CreateImageRequest struct {
 	*requests.RpcRequest
 	Architecture         string                          `position:"Query" name:"Architecture"`
-	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
 	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
+	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
 	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
 	SnapshotId           string                          `position:"Query" name:"SnapshotId"`
 	Description          string                          `position:"Query" name:"Description"`
@@ -106,7 +106,8 @@ func CreateCreateImageRequest() (request *CreateImageRequest) {
 	request = &CreateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

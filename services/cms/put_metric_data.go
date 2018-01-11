@@ -80,7 +80,8 @@ func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	request = &PutMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

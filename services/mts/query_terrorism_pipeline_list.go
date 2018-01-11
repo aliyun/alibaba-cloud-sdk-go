@@ -95,7 +95,8 @@ func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineL
 	request = &QueryTerrorismPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

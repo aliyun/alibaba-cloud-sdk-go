@@ -81,7 +81,8 @@ func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLock
 	request = &DescribeDatabaseLockDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

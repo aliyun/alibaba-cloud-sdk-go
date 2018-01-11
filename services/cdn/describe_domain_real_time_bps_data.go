@@ -89,7 +89,8 @@ func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTi
 	request = &DescribeDomainRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

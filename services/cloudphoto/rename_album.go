@@ -82,7 +82,8 @@ func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	request = &RenameAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

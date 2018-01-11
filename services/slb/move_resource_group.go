@@ -66,14 +66,14 @@ type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
 	Tags                 string           `position:"Query" name:"Tags"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type MoveResourceGroupResponse struct {
@@ -85,7 +85,8 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

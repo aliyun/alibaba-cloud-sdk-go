@@ -98,7 +98,8 @@ func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
 	request = &QueryTaskByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTaskByParam", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTaskByParam", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

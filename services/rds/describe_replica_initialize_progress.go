@@ -88,7 +88,8 @@ func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaI
 	request = &DescribeReplicaInitializeProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaInitializeProgress", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaInitializeProgress", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

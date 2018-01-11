@@ -96,7 +96,8 @@ func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {
 	request = &DescribeDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainLogs", "", "")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainLogs", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

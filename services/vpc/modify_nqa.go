@@ -82,7 +82,8 @@ func CreateModifyNqaRequest() (request *ModifyNqaRequest) {
 	request = &ModifyNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNqa", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNqa", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

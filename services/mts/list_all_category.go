@@ -87,7 +87,8 @@ func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,8 @@ func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
 	request = &DeleteForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteForwardEntry", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteForwardEntry", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

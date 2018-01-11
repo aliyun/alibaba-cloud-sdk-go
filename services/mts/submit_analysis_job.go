@@ -172,7 +172,8 @@ func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	request = &SubmitAnalysisJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnalysisJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnalysisJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -398,7 +398,8 @@ func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
 	request = &QueryEditingJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryEditingJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryEditingJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

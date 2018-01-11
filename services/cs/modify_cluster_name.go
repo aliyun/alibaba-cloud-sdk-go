@@ -74,7 +74,8 @@ func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 	request = &ModifyClusterNameRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ModifyClusterName", "/clusters/[ClusterId]/name/[ClusterName]", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "ModifyClusterName", "/clusters/[ClusterId]/name/[ClusterName]", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

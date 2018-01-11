@@ -108,7 +108,8 @@ func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListReque
 	request = &QueryAnnotationJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

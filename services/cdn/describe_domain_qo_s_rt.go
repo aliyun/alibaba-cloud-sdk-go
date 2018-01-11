@@ -92,7 +92,8 @@ func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
 	request = &DescribeDomainQoSRtRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainQoSRt", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainQoSRt", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

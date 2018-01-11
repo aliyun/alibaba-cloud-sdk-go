@@ -101,7 +101,8 @@ func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
 	request = &ListPhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "ListPhoneNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ListPhoneNumbers", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

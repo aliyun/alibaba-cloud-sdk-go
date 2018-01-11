@@ -79,7 +79,8 @@ func CreateSetLiveStreamsNotifyUrlConfigRequest() (request *SetLiveStreamsNotify
 	request = &SetLiveStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

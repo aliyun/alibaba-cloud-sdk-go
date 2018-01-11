@@ -92,7 +92,8 @@ func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListReque
 	request = &QueryMediaWorkflowListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

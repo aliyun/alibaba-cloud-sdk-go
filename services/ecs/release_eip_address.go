@@ -80,7 +80,8 @@ func CreateReleaseEipAddressRequest() (request *ReleaseEipAddressRequest) {
 	request = &ReleaseEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseEipAddress", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseEipAddress", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

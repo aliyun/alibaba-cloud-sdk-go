@@ -79,7 +79,8 @@ func CreateCreateDomainRequest() (request *CreateDomainRequest) {
 	request = &CreateDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateDomain", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CreateDomain", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

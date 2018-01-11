@@ -97,7 +97,8 @@ func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	request = &QueryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

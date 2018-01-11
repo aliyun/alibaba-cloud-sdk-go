@@ -119,7 +119,8 @@ func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
 	request = &QueryPushDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushDetail", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushDetail", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -79,7 +79,8 @@ func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 	request = &SetMaxQuotaLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "SetMaxQuotaLevel", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "SetMaxQuotaLevel", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

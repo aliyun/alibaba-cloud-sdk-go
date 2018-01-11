@@ -84,7 +84,8 @@ func CreateCreateSnatEntryRequest() (request *CreateSnatEntryRequest) {
 	request = &CreateSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSnatEntry", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSnatEntry", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

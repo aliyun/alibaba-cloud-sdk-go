@@ -89,7 +89,8 @@ func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -65,8 +65,8 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	EndTime              string           `position:"Query" name:"EndTime"`
-	BackupStatus         string           `position:"Query" name:"BackupStatus"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BackupStatus         string           `position:"Query" name:"BackupStatus"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
@@ -114,7 +114,8 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

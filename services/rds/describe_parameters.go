@@ -97,7 +97,8 @@ func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

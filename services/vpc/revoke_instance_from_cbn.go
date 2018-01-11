@@ -84,7 +84,8 @@ func CreateRevokeInstanceFromCbnRequest() (request *RevokeInstanceFromCbnRequest
 	request = &RevokeInstanceFromCbnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RevokeInstanceFromCbn", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RevokeInstanceFromCbn", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

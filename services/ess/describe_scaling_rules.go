@@ -76,8 +76,8 @@ type DescribeScalingRulesRequest struct {
 	ScalingRuleId3       string           `position:"Query" name:"ScalingRuleId.3"`
 	ScalingRuleId2       string           `position:"Query" name:"ScalingRuleId.2"`
 	ScalingRuleId5       string           `position:"Query" name:"ScalingRuleId.5"`
-	ScalingRuleId4       string           `position:"Query" name:"ScalingRuleId.4"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ScalingRuleId4       string           `position:"Query" name:"ScalingRuleId.4"`
 	ScalingRuleId7       string           `position:"Query" name:"ScalingRuleId.7"`
 	ScalingRuleId6       string           `position:"Query" name:"ScalingRuleId.6"`
 	ScalingRuleId9       string           `position:"Query" name:"ScalingRuleId.9"`
@@ -128,7 +128,8 @@ func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) 
 	request = &DescribeScalingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

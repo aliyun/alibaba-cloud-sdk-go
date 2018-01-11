@@ -79,7 +79,8 @@ func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackReque
 	request = &OrderSucceededCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2016-08-01", "OrderSucceededCallback", "", "")
+	request.InitWithApiInfo("Sls", "2016-08-01", "OrderSucceededCallback", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

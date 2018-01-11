@@ -77,7 +77,8 @@ func CreateCancelPushRequest() (request *CancelPushRequest) {
 	request = &CancelPushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "CancelPush", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "CancelPush", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

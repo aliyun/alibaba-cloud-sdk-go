@@ -83,7 +83,8 @@ func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResul
 	request = &ReportVideoSplitJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportVideoSplitJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportVideoSplitJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

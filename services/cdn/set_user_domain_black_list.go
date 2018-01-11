@@ -79,7 +79,8 @@ func CreateSetUserDomainBlackListRequest() (request *SetUserDomainBlackListReque
 	request = &SetUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserDomainBlackList", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserDomainBlackList", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

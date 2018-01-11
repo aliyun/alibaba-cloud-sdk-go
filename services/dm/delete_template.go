@@ -80,7 +80,8 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteTemplate", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteTemplate", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

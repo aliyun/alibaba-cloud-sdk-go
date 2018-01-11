@@ -75,7 +75,8 @@ func CreateDescribeClusterScaledNodeRequest() (request *DescribeClusterScaledNod
 	request = &DescribeClusterScaledNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterScaledNode", "/clusters/[ClusterId]/scaled_nodes/", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterScaledNode", "/clusters/[ClusterId]/scaled_nodes/", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

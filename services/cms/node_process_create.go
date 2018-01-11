@@ -83,7 +83,8 @@ func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	request = &NodeProcessCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

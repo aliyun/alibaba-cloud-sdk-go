@@ -64,9 +64,10 @@ func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRe
 
 type DeleteClusterNodeRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
-	Force     string `position:"Query" name:"Force"`
-	Ip        string `position:"Path" name:"Ip"`
+	ReleaseInstance string `position:"Query" name:"releaseInstance"`
+	ClusterId       string `position:"Path" name:"ClusterId"`
+	Force           string `position:"Query" name:"force"`
+	Ip              string `position:"Path" name:"Ip"`
 }
 
 type DeleteClusterNodeResponse struct {
@@ -77,7 +78,8 @@ func CreateDeleteClusterNodeRequest() (request *DeleteClusterNodeRequest) {
 	request = &DeleteClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNode", "/clusters/[ClusterId]/ip/[Ip]", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNode", "/clusters/[ClusterId]/ip/[Ip]", "", "openAPI")
+	request.Method = requests.DELETE
 	return
 }
 

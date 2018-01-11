@@ -82,7 +82,8 @@ func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionR
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaDescription", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaDescription", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

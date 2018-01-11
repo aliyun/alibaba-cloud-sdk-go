@@ -79,7 +79,8 @@ func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLab
 	request = &DescribeUserCustomerLabelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserCustomerLabels", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserCustomerLabels", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

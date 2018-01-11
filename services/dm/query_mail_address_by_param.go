@@ -101,7 +101,8 @@ func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamReq
 	request = &QueryMailAddressByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryMailAddressByParam", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryMailAddressByParam", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

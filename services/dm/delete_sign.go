@@ -80,7 +80,8 @@ func CreateDeleteSignRequest() (request *DeleteSignRequest) {
 	request = &DeleteSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteSign", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteSign", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

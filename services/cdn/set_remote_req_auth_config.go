@@ -86,7 +86,8 @@ func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigReque
 	request = &SetRemoteReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRemoteReqAuthConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRemoteReqAuthConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

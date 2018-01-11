@@ -82,7 +82,8 @@ func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	request = &RegisterTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

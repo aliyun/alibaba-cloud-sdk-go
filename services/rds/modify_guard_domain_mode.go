@@ -82,7 +82,8 @@ func CreateModifyGuardDomainModeRequest() (request *ModifyGuardDomainModeRequest
 	request = &ModifyGuardDomainModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyGuardDomainMode", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyGuardDomainMode", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

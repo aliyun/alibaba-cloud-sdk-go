@@ -87,7 +87,8 @@ func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) 
 	request = &GetServiceExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "GetServiceExtensions", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetServiceExtensions", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

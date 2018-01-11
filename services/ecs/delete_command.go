@@ -64,11 +64,11 @@ func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, c
 
 type DeleteCommandRequest struct {
 	*requests.RpcRequest
+	CommandId            string           `position:"Query" name:"CommandId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteCommandResponse struct {
@@ -80,7 +80,8 @@ func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
 	request = &DeleteCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteCommand", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteCommand", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

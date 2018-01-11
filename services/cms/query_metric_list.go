@@ -67,8 +67,8 @@ type QueryMetricListRequest struct {
 	EndTime         string           `position:"Query" name:"EndTime"`
 	StartTime       string           `position:"Query" name:"StartTime"`
 	Cursor          string           `position:"Query" name:"Cursor"`
-	Period          string           `position:"Query" name:"Period"`
 	Express         string           `position:"Query" name:"Express"`
+	Period          string           `position:"Query" name:"Period"`
 	Project         string           `position:"Query" name:"Project"`
 	Page            string           `position:"Query" name:"Page"`
 	Metric          string           `position:"Query" name:"Metric"`
@@ -93,7 +93,8 @@ func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricList", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricList", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

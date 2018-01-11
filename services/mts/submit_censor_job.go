@@ -84,7 +84,8 @@ func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
 	request = &SubmitCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCensorJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCensorJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

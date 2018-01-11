@@ -76,7 +76,8 @@ func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsR
 	request = &DownloadClusterNodeCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

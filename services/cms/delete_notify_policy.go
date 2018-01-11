@@ -83,7 +83,8 @@ func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	request = &DeleteNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

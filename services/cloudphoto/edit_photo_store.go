@@ -64,11 +64,12 @@ func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest,
 
 type EditPhotoStoreRequest struct {
 	*requests.RpcRequest
-	DefaultQuota     requests.Integer `position:"Query" name:"DefaultQuota"`
-	Remark           string           `position:"Query" name:"Remark"`
-	AutoCleanDays    requests.Integer `position:"Query" name:"AutoCleanDays"`
-	StoreName        string           `position:"Query" name:"StoreName"`
-	AutoCleanEnabled string           `position:"Query" name:"AutoCleanEnabled"`
+	DefaultQuota      requests.Integer `position:"Query" name:"DefaultQuota"`
+	Remark            string           `position:"Query" name:"Remark"`
+	AutoCleanDays     requests.Integer `position:"Query" name:"AutoCleanDays"`
+	StoreName         string           `position:"Query" name:"StoreName"`
+	DefaultTrashQuota requests.Integer `position:"Query" name:"DefaultTrashQuota"`
+	AutoCleanEnabled  string           `position:"Query" name:"AutoCleanEnabled"`
 }
 
 type EditPhotoStoreResponse struct {
@@ -83,7 +84,8 @@ func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
 	request = &EditPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotoStore", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

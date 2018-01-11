@@ -85,7 +85,8 @@ func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest
 	request = &QueryCustomMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomMetricList", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomMetricList", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

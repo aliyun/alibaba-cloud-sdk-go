@@ -90,7 +90,8 @@ func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
 	request = &QueryTagByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTagByParam", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryTagByParam", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

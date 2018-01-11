@@ -76,7 +76,8 @@ func CreateDescribeServiceContainersRequest() (request *DescribeServiceContainer
 	request = &DescribeServiceContainersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeServiceContainers", "/clusters/[ClusterId]/services/[ServiceId]/containers", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeServiceContainers", "/clusters/[ClusterId]/services/[ServiceId]/containers", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

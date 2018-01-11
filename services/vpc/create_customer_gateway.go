@@ -88,7 +88,8 @@ func CreateCreateCustomerGatewayRequest() (request *CreateCustomerGatewayRequest
 	request = &CreateCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCustomerGateway", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

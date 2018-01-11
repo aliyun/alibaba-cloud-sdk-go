@@ -120,7 +120,8 @@ func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecu
 	request = &ListMediaWorkflowExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

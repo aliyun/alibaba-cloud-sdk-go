@@ -66,50 +66,50 @@ type DescribeScalingGroupsRequest struct {
 	*requests.RpcRequest
 	ScalingGroupName5    string           `position:"Query" name:"ScalingGroupName.5"`
 	ScalingGroupName6    string           `position:"Query" name:"ScalingGroupName.6"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ScalingGroupName3    string           `position:"Query" name:"ScalingGroupName.3"`
 	ScalingGroupName4    string           `position:"Query" name:"ScalingGroupName.4"`
+	ScalingGroupId10     string           `position:"Query" name:"ScalingGroupId.10"`
 	ScalingGroupName9    string           `position:"Query" name:"ScalingGroupName.9"`
+	ScalingGroupId13     string           `position:"Query" name:"ScalingGroupId.13"`
 	ScalingGroupName     string           `position:"Query" name:"ScalingGroupName"`
+	ScalingGroupId12     string           `position:"Query" name:"ScalingGroupId.12"`
 	ScalingGroupName7    string           `position:"Query" name:"ScalingGroupName.7"`
+	ScalingGroupId15     string           `position:"Query" name:"ScalingGroupId.15"`
 	ScalingGroupName8    string           `position:"Query" name:"ScalingGroupName.8"`
+	ScalingGroupId14     string           `position:"Query" name:"ScalingGroupId.14"`
 	ScalingGroupName1    string           `position:"Query" name:"ScalingGroupName.1"`
 	ScalingGroupName2    string           `position:"Query" name:"ScalingGroupName.2"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupName20   string           `position:"Query" name:"ScalingGroupName.20"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ScalingGroupId6      string           `position:"Query" name:"ScalingGroupId.6"`
 	ScalingGroupId5      string           `position:"Query" name:"ScalingGroupId.5"`
 	ScalingGroupId4      string           `position:"Query" name:"ScalingGroupId.4"`
 	ScalingGroupId3      string           `position:"Query" name:"ScalingGroupId.3"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ScalingGroupId9      string           `position:"Query" name:"ScalingGroupId.9"`
 	ScalingGroupId8      string           `position:"Query" name:"ScalingGroupId.8"`
 	ScalingGroupId7      string           `position:"Query" name:"ScalingGroupId.7"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingGroupId2      string           `position:"Query" name:"ScalingGroupId.2"`
-	ScalingGroupId1      string           `position:"Query" name:"ScalingGroupId.1"`
-	ScalingGroupId20     string           `position:"Query" name:"ScalingGroupId.20"`
-	ScalingGroupId19     string           `position:"Query" name:"ScalingGroupId.19"`
-	ScalingGroupId18     string           `position:"Query" name:"ScalingGroupId.18"`
-	ScalingGroupId17     string           `position:"Query" name:"ScalingGroupId.17"`
-	ScalingGroupId16     string           `position:"Query" name:"ScalingGroupId.16"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ScalingGroupId10     string           `position:"Query" name:"ScalingGroupId.10"`
-	ScalingGroupId13     string           `position:"Query" name:"ScalingGroupId.13"`
-	ScalingGroupId12     string           `position:"Query" name:"ScalingGroupId.12"`
-	ScalingGroupId15     string           `position:"Query" name:"ScalingGroupId.15"`
-	ScalingGroupId14     string           `position:"Query" name:"ScalingGroupId.14"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupName20   string           `position:"Query" name:"ScalingGroupName.20"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ScalingGroupName16   string           `position:"Query" name:"ScalingGroupName.16"`
+	ScalingGroupId2      string           `position:"Query" name:"ScalingGroupId.2"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingGroupName17   string           `position:"Query" name:"ScalingGroupName.17"`
+	ScalingGroupId1      string           `position:"Query" name:"ScalingGroupId.1"`
 	ScalingGroupName18   string           `position:"Query" name:"ScalingGroupName.18"`
 	ScalingGroupName19   string           `position:"Query" name:"ScalingGroupName.19"`
+	ScalingGroupId20     string           `position:"Query" name:"ScalingGroupId.20"`
 	ScalingGroupName13   string           `position:"Query" name:"ScalingGroupName.13"`
 	ScalingGroupName12   string           `position:"Query" name:"ScalingGroupName.12"`
 	ScalingGroupName15   string           `position:"Query" name:"ScalingGroupName.15"`
 	ScalingGroupName14   string           `position:"Query" name:"ScalingGroupName.14"`
+	ScalingGroupId19     string           `position:"Query" name:"ScalingGroupId.19"`
+	ScalingGroupId18     string           `position:"Query" name:"ScalingGroupId.18"`
 	ScalingGroupName11   string           `position:"Query" name:"ScalingGroupName.11"`
+	ScalingGroupId17     string           `position:"Query" name:"ScalingGroupId.17"`
 	ScalingGroupName10   string           `position:"Query" name:"ScalingGroupName.10"`
+	ScalingGroupId16     string           `position:"Query" name:"ScalingGroupId.16"`
 }
 
 type DescribeScalingGroupsResponse struct {
@@ -156,7 +156,8 @@ func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest
 	request = &DescribeScalingGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingGroups", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingGroups", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

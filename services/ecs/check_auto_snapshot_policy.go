@@ -66,16 +66,16 @@ type CheckAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
 	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
 	DataDiskPolicyRetentionDays       requests.Integer `position:"Query" name:"DataDiskPolicyRetentionDays"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
 	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
 	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
-	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
-	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
 	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
+	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
 	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
-	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
+	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
 	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
+	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
 }
 
 type CheckAutoSnapshotPolicyResponse struct {
@@ -89,7 +89,8 @@ func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyReq
 	request = &CheckAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CheckAutoSnapshotPolicy", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CheckAutoSnapshotPolicy", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

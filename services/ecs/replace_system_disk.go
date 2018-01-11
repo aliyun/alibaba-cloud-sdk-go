@@ -64,17 +64,17 @@ func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRe
 
 type ReplaceSystemDiskRequest struct {
 	*requests.RpcRequest
+	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
 	ClientToken                 string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
 	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
-	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
-	ImageId                     string           `position:"Query" name:"ImageId"`
-	Password                    string           `position:"Query" name:"Password"`
-	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
-	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Password                    string           `position:"Query" name:"Password"`
 	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	ImageId                     string           `position:"Query" name:"ImageId"`
 	InstanceId                  string           `position:"Query" name:"InstanceId"`
 }
 
@@ -88,7 +88,8 @@ func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
 	request = &ReplaceSystemDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

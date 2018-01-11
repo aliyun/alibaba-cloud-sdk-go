@@ -79,7 +79,8 @@ func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) 
 	request = &DeleteInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteInvalidAddress", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteInvalidAddress", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

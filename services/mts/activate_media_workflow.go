@@ -87,7 +87,8 @@ func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest
 	request = &ActivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ActivateMediaWorkflow", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ActivateMediaWorkflow", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

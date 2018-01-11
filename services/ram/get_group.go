@@ -82,7 +82,8 @@ func CreateGetGroupRequest() (request *GetGroupRequest) {
 	request = &GetGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "GetGroup", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "GetGroup", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

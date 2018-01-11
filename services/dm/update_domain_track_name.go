@@ -80,7 +80,8 @@ func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest
 	request = &UpdateDomainTrackNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "UpdateDomainTrackName", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "UpdateDomainTrackName", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -74,7 +74,8 @@ func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
 	request = &AddAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "AddAgilityCluster", "/add_agility_cluster", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "AddAgilityCluster", "/add_agility_cluster", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

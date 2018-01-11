@@ -101,7 +101,8 @@ func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest
 	request = &ListEntitiesForPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListEntitiesForPolicy", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "ListEntitiesForPolicy", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

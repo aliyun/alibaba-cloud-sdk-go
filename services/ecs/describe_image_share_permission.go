@@ -97,7 +97,8 @@ func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePer
 	request = &DescribeImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

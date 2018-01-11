@@ -79,7 +79,8 @@ func CreateCreateDayuRequest() (request *CreateDayuRequest) {
 	request = &CreateDayuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateDayu", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CreateDayu", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

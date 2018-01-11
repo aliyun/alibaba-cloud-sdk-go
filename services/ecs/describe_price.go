@@ -64,29 +64,29 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
+	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
 	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
-	ResourceType            string           `position:"Query" name:"ResourceType"`
+	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
+	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
+	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
 	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
+	ResourceType            string           `position:"Query" name:"ResourceType"`
 	PriceUnit               string           `position:"Query" name:"PriceUnit"`
+	Period                  requests.Integer `position:"Query" name:"Period"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId                 string           `position:"Query" name:"ImageId"`
+	IoOptimized             string           `position:"Query" name:"IoOptimized"`
 	InstanceType            string           `position:"Query" name:"InstanceType"`
 	Amount                  requests.Integer `position:"Query" name:"Amount"`
+	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
+	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
+	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
-	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
-	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Period                  requests.Integer `position:"Query" name:"Period"`
-	ImageId                 string           `position:"Query" name:"ImageId"`
-	IoOptimized             string           `position:"Query" name:"IoOptimized"`
-	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
-	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
 	InstanceNetworkType     string           `position:"Query" name:"InstanceNetworkType"`
 }
 
@@ -113,7 +113,8 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

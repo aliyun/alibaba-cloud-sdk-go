@@ -65,8 +65,8 @@ func (client *Client) DescribeGlobalAccelerationInstancesWithCallback(request *D
 type DescribeGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
 	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
-	Status                       string           `position:"Query" name:"Status"`
 	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	Status                       string           `position:"Query" name:"Status"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	IpAddress                    string           `position:"Query" name:"IpAddress"`
 	ServerId                     string           `position:"Query" name:"ServerId"`
@@ -128,7 +128,8 @@ func CreateDescribeGlobalAccelerationInstancesRequest() (request *DescribeGlobal
 	request = &DescribeGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

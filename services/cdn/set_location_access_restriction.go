@@ -80,7 +80,8 @@ func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRest
 	request = &SetLocationAccessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetLocationAccessRestriction", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetLocationAccessRestriction", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

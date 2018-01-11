@@ -83,7 +83,8 @@ func CreateAddBgpNetworkRequest() (request *AddBgpNetworkRequest) {
 	request = &AddBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBgpNetwork", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBgpNetwork", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

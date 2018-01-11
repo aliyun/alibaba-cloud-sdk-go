@@ -77,7 +77,8 @@ func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
 	request = &ModifyAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessGroup", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessGroup", "nas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

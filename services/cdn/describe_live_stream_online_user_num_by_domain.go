@@ -93,7 +93,8 @@ func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLi
 	request = &DescribeLiveStreamOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNumByDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNumByDomain", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

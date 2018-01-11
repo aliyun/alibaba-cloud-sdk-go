@@ -70,8 +70,8 @@ type CreateScheduledTaskRequest struct {
 	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
 	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
@@ -88,7 +88,8 @@ func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScheduledTask", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScheduledTask", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

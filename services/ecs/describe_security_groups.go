@@ -68,8 +68,8 @@ type DescribeSecurityGroupsRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
 	SecurityGroupIds     string           `position:"Query" name:"SecurityGroupIds"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
 	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -120,7 +120,8 @@ func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsReque
 	request = &DescribeSecurityGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

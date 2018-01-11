@@ -86,7 +86,8 @@ func CreateDeleteAlbumsRequest() (request *DeleteAlbumsRequest) {
 	request = &DeleteAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteAlbums", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteAlbums", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

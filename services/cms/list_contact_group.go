@@ -86,7 +86,8 @@ func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	request = &ListContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

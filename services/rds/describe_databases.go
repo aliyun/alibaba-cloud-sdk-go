@@ -98,7 +98,8 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabases", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

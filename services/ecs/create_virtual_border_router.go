@@ -67,8 +67,8 @@ type CreateVirtualBorderRouterRequest struct {
 	VlanId               requests.Integer `position:"Query" name:"VlanId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -91,7 +91,8 @@ func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRoute
 	request = &CreateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

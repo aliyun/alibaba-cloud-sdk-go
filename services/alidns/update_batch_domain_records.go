@@ -79,7 +79,8 @@ func CreateUpdateBatchDomainRecordsRequest() (request *UpdateBatchDomainRecordsR
 	request = &UpdateBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateBatchDomainRecords", "", "")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateBatchDomainRecords", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

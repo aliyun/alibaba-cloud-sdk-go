@@ -81,7 +81,8 @@ func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
 	request = &ListSummaryAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "ListSummaryApps", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "ListSummaryApps", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

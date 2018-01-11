@@ -90,7 +90,8 @@ func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {
 	request = &GetThumbnailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

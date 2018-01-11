@@ -85,7 +85,8 @@ func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayReq
 	request = &DescribeCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateway", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateway", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

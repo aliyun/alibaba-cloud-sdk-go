@@ -81,7 +81,8 @@ func CreateAddIpRangeRequest() (request *AddIpRangeRequest) {
 	request = &AddIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AddIpRange", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AddIpRange", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

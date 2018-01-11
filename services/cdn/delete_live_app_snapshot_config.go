@@ -79,7 +79,8 @@ func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotC
 	request = &DeleteLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,8 @@ func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
 	request = &SingleSendSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "SingleSendSms", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "SingleSendSms", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

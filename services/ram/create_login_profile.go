@@ -85,7 +85,8 @@ func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 	request = &CreateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "CreateLoginProfile", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "CreateLoginProfile", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

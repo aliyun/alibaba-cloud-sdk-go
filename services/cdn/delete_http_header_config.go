@@ -79,7 +79,8 @@ func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigReque
 	request = &DeleteHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteHttpHeaderConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteHttpHeaderConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

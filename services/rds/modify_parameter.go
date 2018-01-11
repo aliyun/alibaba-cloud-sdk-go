@@ -83,7 +83,8 @@ func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

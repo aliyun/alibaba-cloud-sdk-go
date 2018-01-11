@@ -95,7 +95,8 @@ func CreateQueryVideoSummaryPipelineListRequest() (request *QueryVideoSummaryPip
 	request = &QueryVideoSummaryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

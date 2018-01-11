@@ -77,7 +77,8 @@ func CreateSetDefaultPolicyVersionRequest() (request *SetDefaultPolicyVersionReq
 	request = &SetDefaultPolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "SetDefaultPolicyVersion", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "SetDefaultPolicyVersion", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

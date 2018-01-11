@@ -86,10 +86,12 @@ type ListTimeLinePhotosResponse struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
+		Location        string `json:"Location" xml:"Location"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
 		Remark          string `json:"Remark" xml:"Remark"`
+		Size            int    `json:"Size" xml:"Size"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`
 		Ctime           int    `json:"Ctime" xml:"Ctime"`
@@ -104,7 +106,8 @@ func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
 	request = &ListTimeLinePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLinePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLinePhotos", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

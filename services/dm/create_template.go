@@ -65,17 +65,17 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 type CreateTemplateRequest struct {
 	*requests.RpcRequest
 	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	Remark               string           `position:"Query" name:"Remark"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FromType             requests.Integer `position:"Query" name:"FromType"`
 	SmsContent           string           `position:"Query" name:"SmsContent"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Remark               string           `position:"Query" name:"Remark"`
 	TemplateType         requests.Integer `position:"Query" name:"TemplateType"`
-	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
 	SmsType              requests.Integer `position:"Query" name:"SmsType"`
+	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TemplateText         string           `position:"Query" name:"TemplateText"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type CreateTemplateResponse struct {
@@ -88,7 +88,8 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateTemplate", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CreateTemplate", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

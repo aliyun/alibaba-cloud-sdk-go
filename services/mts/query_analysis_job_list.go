@@ -173,7 +173,8 @@ func CreateQueryAnalysisJobListRequest() (request *QueryAnalysisJobListRequest) 
 	request = &QueryAnalysisJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnalysisJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnalysisJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

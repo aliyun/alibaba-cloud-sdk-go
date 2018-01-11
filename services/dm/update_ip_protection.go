@@ -79,7 +79,8 @@ func CreateUpdateIpProtectionRequest() (request *UpdateIpProtectionRequest) {
 	request = &UpdateIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "UpdateIpProtection", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "UpdateIpProtection", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

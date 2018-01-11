@@ -80,7 +80,8 @@ func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificatio
 	request = &ModifyAccountNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyAccountNotification", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyAccountNotification", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

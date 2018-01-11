@@ -88,7 +88,8 @@ func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	request = &MoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

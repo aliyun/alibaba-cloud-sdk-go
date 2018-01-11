@@ -65,8 +65,8 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -119,7 +119,8 @@ func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) 
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRenewalPrice", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRenewalPrice", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

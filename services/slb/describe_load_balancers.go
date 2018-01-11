@@ -64,8 +64,8 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
-	AddressType           string           `position:"Query" name:"AddressType"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	AddressType           string           `position:"Query" name:"AddressType"`
 	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
 	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
@@ -84,8 +84,8 @@ type DescribeLoadBalancersRequest struct {
 	ServerId              string           `position:"Query" name:"ServerId"`
 	Address               string           `position:"Query" name:"Address"`
 	AccessKeyId           string           `position:"Query" name:"access_key_id"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
 	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
 }
 
 type DescribeLoadBalancersResponse struct {
@@ -121,7 +121,8 @@ func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest
 	request = &DescribeLoadBalancersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancers", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancers", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

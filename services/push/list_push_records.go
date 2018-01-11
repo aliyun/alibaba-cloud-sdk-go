@@ -96,7 +96,8 @@ func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
 	request = &ListPushRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "ListPushRecords", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "ListPushRecords", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateDescAccountSummaryRequest() (request *DescAccountSummaryRequest) {
 	request = &DescAccountSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -90,7 +90,8 @@ func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
 	request = &QuerySmsStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QuerySmsStatistics", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QuerySmsStatistics", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

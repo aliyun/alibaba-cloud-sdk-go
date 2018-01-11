@@ -80,7 +80,8 @@ func CreateApproveSmsTemplateRequest() (request *ApproveSmsTemplateRequest) {
 	request = &ApproveSmsTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveSmsTemplate", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveSmsTemplate", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

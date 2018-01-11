@@ -107,7 +107,8 @@ func CreateNodeListRequest() (request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

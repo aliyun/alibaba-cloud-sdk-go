@@ -84,7 +84,8 @@ func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	request = &SubmitTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

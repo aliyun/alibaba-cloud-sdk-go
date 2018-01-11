@@ -82,7 +82,8 @@ func CreateProfileGetRequest() (request *ProfileGetRequest) {
 	request = &ProfileGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileGet", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileGet", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -82,7 +82,8 @@ func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBl
 	request = &DescribeLiveStreamsBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsBlockList", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsBlockList", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

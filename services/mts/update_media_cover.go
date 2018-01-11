@@ -81,7 +81,8 @@ func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	request = &UpdateMediaCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCover", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCover", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

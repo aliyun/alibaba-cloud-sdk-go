@@ -81,7 +81,8 @@ func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceReque
 	request = &AttachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachNetworkInterface", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

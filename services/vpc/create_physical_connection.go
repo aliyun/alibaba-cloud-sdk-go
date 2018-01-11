@@ -91,7 +91,8 @@ func CreateCreatePhysicalConnectionRequest() (request *CreatePhysicalConnectionR
 	request = &CreatePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnection", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnection", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

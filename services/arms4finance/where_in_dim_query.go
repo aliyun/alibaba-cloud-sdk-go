@@ -90,7 +90,8 @@ func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	request = &WhereInDimQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "WhereInDimQuery", "", "")
+	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "WhereInDimQuery", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

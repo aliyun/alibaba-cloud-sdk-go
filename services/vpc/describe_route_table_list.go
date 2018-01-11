@@ -104,7 +104,8 @@ func CreateDescribeRouteTableListRequest() (request *DescribeRouteTableListReque
 	request = &DescribeRouteTableListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTableList", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTableList", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

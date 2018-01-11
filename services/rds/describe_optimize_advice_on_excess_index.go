@@ -92,7 +92,8 @@ func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimi
 	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

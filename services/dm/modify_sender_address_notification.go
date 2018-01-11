@@ -82,7 +82,8 @@ func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddres
 	request = &ModifySenderAddressNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ModifySenderAddressNotification", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "ModifySenderAddressNotification", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

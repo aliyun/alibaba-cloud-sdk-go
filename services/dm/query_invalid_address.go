@@ -92,7 +92,8 @@ func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {
 	request = &QueryInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QueryInvalidAddress", "", "")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QueryInvalidAddress", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

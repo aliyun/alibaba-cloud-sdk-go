@@ -131,7 +131,8 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

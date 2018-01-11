@@ -76,7 +76,8 @@ func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
 	request = &ResetClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

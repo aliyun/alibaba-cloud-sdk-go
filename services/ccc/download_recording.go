@@ -86,7 +86,8 @@ func CreateDownloadRecordingRequest() (request *DownloadRecordingRequest) {
 	request = &DownloadRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadRecording", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadRecording", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,8 @@ func CreateCancelImportRequest() (request *CancelImportRequest) {
 	request = &CancelImportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CancelImport", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CancelImport", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

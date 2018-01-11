@@ -91,7 +91,8 @@ func CreateListFacePhotosRequest() (request *ListFacePhotosRequest) {
 	request = &ListFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFacePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFacePhotos", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

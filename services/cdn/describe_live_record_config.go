@@ -88,7 +88,8 @@ func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigR
 	request = &DescribeLiveRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveRecordConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveRecordConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

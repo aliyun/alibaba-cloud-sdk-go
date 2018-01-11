@@ -96,7 +96,8 @@ func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	request = &CreateTransactionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

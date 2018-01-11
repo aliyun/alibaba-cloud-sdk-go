@@ -79,7 +79,8 @@ func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 	request = &UpdateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateLoginProfile", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateLoginProfile", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

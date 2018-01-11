@@ -82,7 +82,8 @@ func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	request = &SetRefererConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRefererConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRefererConfig", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

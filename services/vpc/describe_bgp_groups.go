@@ -104,7 +104,8 @@ func CreateDescribeBgpGroupsRequest() (request *DescribeBgpGroupsRequest) {
 	request = &DescribeBgpGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpGroups", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpGroups", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

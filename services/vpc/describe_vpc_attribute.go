@@ -110,7 +110,8 @@ func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) 
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

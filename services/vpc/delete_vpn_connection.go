@@ -81,7 +81,8 @@ func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
 	request = &DeleteVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnConnection", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnConnection", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

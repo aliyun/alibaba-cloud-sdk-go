@@ -69,8 +69,8 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	AssociatedPhysicalConnections string           `position:"Query" name:"AssociatedPhysicalConnections"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
 	Description                   string           `position:"Query" name:"Description"`
 	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
 	Name                          string           `position:"Query" name:"Name"`
@@ -89,7 +89,8 @@ func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBo
 	request = &ModifyVirtualBorderRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

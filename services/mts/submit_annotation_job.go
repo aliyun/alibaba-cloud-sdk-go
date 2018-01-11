@@ -84,7 +84,8 @@ func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	request = &SubmitAnnotationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnnotationJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnnotationJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

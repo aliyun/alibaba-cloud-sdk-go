@@ -86,7 +86,8 @@ func CreateDescribeDomainUpstreamBpsOfEdgeRequest() (request *DescribeDomainUpst
 	request = &DescribeDomainUpstreamBpsOfEdgeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainUpstreamBpsOfEdge", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

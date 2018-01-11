@@ -113,7 +113,7 @@ type DescribeSnapshotsResponse struct {
 			SourceDiskType    string `json:"SourceDiskType" xml:"SourceDiskType"`
 			RetentionDays     int    `json:"RetentionDays" xml:"RetentionDays"`
 			Encrypted         bool   `json:"Encrypted" xml:"Encrypted"`
-			SourceDiskSize    int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
+			SourceDiskSize    string `json:"SourceDiskSize" xml:"SourceDiskSize"`
 			Description       string `json:"Description" xml:"Description"`
 			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
 			Status            string `json:"Status" xml:"Status"`
@@ -133,7 +133,8 @@ func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 	request = &DescribeSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshots", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshots", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -80,10 +80,12 @@ type GetPhotosByMd5sResponse struct {
 		Id              int    `json:"Id" xml:"Id"`
 		Title           string `json:"Title" xml:"Title"`
 		FileId          string `json:"FileId" xml:"FileId"`
+		Location        string `json:"Location" xml:"Location"`
 		State           string `json:"State" xml:"State"`
 		Md5             string `json:"Md5" xml:"Md5"`
 		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
 		Remark          string `json:"Remark" xml:"Remark"`
+		Size            int    `json:"Size" xml:"Size"`
 		Width           int    `json:"Width" xml:"Width"`
 		Height          int    `json:"Height" xml:"Height"`
 		Ctime           int    `json:"Ctime" xml:"Ctime"`
@@ -97,7 +99,8 @@ func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,8 @@ func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	request = &GetMainDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "", "")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

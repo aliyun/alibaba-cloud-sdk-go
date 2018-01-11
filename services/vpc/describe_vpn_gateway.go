@@ -92,7 +92,8 @@ func CreateDescribeVpnGatewayRequest() (request *DescribeVpnGatewayRequest) {
 	request = &DescribeVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

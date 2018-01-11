@@ -89,7 +89,8 @@ func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStre
 	request = &DescribeLiveStreamsControlHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsControlHistory", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsControlHistory", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

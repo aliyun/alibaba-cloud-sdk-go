@@ -404,7 +404,8 @@ func CreateSubmitEditingJobsRequest() (request *SubmitEditingJobsRequest) {
 	request = &SubmitEditingJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitEditingJobs", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitEditingJobs", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

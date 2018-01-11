@@ -86,7 +86,8 @@ func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsD
 	request = &DescribeDomainMax95BpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainMax95BpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainMax95BpsData", "", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,8 @@ func CreateAssociateGlobalAccelerationInstanceRequest() (request *AssociateGloba
 	request = &AssociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateGlobalAccelerationInstance", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateGlobalAccelerationInstance", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,7 +76,8 @@ func CreateDescribeClusterNodeInfoWithInstanceRequest() (request *DescribeCluste
 	request = &DescribeClusterNodeInfoWithInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterNodeInfoWithInstance", "/token/[Token]/instance/[InstanceId]/node_info", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterNodeInfoWithInstance", "/token/[Token]/instance/[InstanceId]/node_info", "", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

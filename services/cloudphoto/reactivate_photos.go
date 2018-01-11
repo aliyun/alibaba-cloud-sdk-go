@@ -86,7 +86,8 @@ func CreateReactivatePhotosRequest() (request *ReactivatePhotosRequest) {
 	request = &ReactivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ReactivatePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ReactivatePhotos", "cloudphoto", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
