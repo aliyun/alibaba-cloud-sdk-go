@@ -1,4 +1,7 @@
-2018-01-04 Version: 0.7.4
+2018-01-11 Version: 0.7.5
+1, Make the json.Unmarshal more robust
+
+2018-01-09 Version: 0.7.4
 1, Add integration tests
 
 2018-01-04 Version: 0.7.3
