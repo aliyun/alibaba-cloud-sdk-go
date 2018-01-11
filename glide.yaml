@@ -6,6 +6,8 @@ import:
   version: ^1.1.0
 - package: github.com/jmespath/go-jmespath
   version: ^0.2.2
+- package: github.com/json-iterator/go
+  version: ^1.0.4
 testImport:
 - package: github.com/stretchr/testify
   version: ^1.1.4
