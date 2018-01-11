@@ -116,7 +116,7 @@ func assertErrorNil(t *testing.T, err error, message string) {
 	}
 }
 
-func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, status string, timeout int) {
+func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, targetStatus string, timeout int) {
 	if timeout <= 0 {
 		timeout = InstanceDefaultTimeout
 	}
@@ -124,26 +124,28 @@ func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, status
 		request := ecs.CreateDescribeInstanceAttributeRequest()
 		request.InstanceId = instanceId
 		response, err := client.DescribeInstanceAttribute(request)
-		assertErrorNil(t, err, "Failed to create describe instance request\n")
 
-		if status == Deleted {
+		if targetStatus == Deleted {
 			if response.GetHttpStatus() == 404 || response.Status == Deleted {
 				fmt.Printf("delete instance(%s) success\n", instanceId)
 				break
+			} else {
+				assertErrorNil(t, err, "Failed to describe instance \n")
 			}
 		} else {
-			if response.Status == status {
-				fmt.Printf("instance(%s) status changed to %s, wait a moment\n", instanceId, status)
+			assertErrorNil(t, err, "Failed to describe instance \n")
+			if response.Status == targetStatus {
+				fmt.Printf("instance(%s) status changed to %s, wait a moment\n", instanceId, targetStatus)
 				time.Sleep(DefaultWaitForInterval * time.Second)
 				break
 			} else {
-				fmt.Printf("instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, status)
+				fmt.Printf("instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, targetStatus)
 			}
 		}
 
 		timeout = timeout - DefaultWaitForInterval
 		if timeout <= 0 {
-			t.Errorf(fmt.Sprintf("wait for instance(%s) status to %s timeout(%d)\n", instanceId, status, timeout))
+			t.Errorf(fmt.Sprintf("wait for instance(%s) status to %s timeout(%d)\n", instanceId, targetStatus, timeout))
 		}
 		time.Sleep(DefaultWaitForInterval * time.Second)
 	}

@@ -16,7 +16,6 @@ package responses
 
 import (
 	"bytes"
-	"encoding/json"
 	"encoding/xml"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io/ioutil"
