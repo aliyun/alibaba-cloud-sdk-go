@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
-	"os"
 	"testing"
 	"time"
 	"strings"
@@ -13,7 +12,7 @@ import (
 
 const (
 	EcsInstanceDefaultTimeout = 120
-	EcsDefaultWaitForInterval = 10
+	EcsDefaultWaitForInterval = 20
 
 	EcsInstanceStatusRunning  = "Running"
 	EcsInstanceStatusStopped  = "Stopped"
@@ -30,7 +29,7 @@ func TestEcsInstance(t *testing.T) {
 	fmt.Printf("Init client success\n")
 
 	// get demo instance attributes
-	param := getDemoInstanceAttributes(t, ecsClient)
+	param := getDemoEcsInstanceAttributes(t, ecsClient)
 
 	// create
 	instanceId := createEcsInstance(t, ecsClient, param)
@@ -60,10 +59,10 @@ func TestEcsInstance(t *testing.T) {
 	deleteAllTestEcsInstance(t, ecsClient)
 }
 
-func getDemoInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeInstanceAttributeResponse {
+func getDemoEcsInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeInstanceAttributeResponse {
 	fmt.Print("trying to get demo ecs instance...")
 	request := ecs.CreateDescribeInstanceAttributeRequest()
-	request.InstanceId = os.Getenv("DEMO_ECS_INSTANCE_ID")
+	request.InstanceId = getEcsDemoInstanceId()
 	response, err := client.DescribeInstanceAttribute(request)
 	assertErrorNil(t, err, "Failed to get demo ecs instance attributes")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
@@ -75,7 +74,7 @@ func createEcsInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInst
 	fmt.Print("creating ecs instance...")
 	request := ecs.CreateCreateInstanceRequest()
 	request.ImageId = param.ImageId
-	request.InstanceName = "SdkIntegrationTestInstance" + strconv.FormatInt(time.Now().Unix(), 10)
+	request.InstanceName = InstanceNamePrefix + strconv.FormatInt(time.Now().Unix(), 10)
 	request.SecurityGroupId = param.SecurityGroupIds.SecurityGroupId[0]
 	request.InstanceType = "ecs.t1.small"
 	response, err := client.CreateInstance(request)
@@ -124,10 +123,10 @@ func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 	response, err := client.DescribeInstances(request)
 	assertErrorNil(t, err, "Failed to list all ecs instances ")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
-	fmt.Println("success!")
+	fmt.Printf("success! TotalCount = %s\n", response.TotalCount)
 
 	for _, instanceInfo := range response.Instances.Instance {
-		if strings.HasPrefix(instanceInfo.InstanceName, "SdkIntegrationTestInstance") {
+		if strings.HasPrefix(instanceInfo.InstanceName, InstanceNamePrefix) {
 			fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
 				instanceInfo.Status, instanceInfo.InstanceId)
 			if instanceInfo.Status == EcsInstanceStatusRunning {

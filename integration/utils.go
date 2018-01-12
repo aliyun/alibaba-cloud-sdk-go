@@ -6,6 +6,8 @@ import (
 	"fmt"
 )
 
+const InstanceNamePrefix  = "SdkIntegrationTestInstance"
+
 type Config struct {
 	AccessKeyId     string
 	AccessKeySecret string
@@ -31,6 +33,11 @@ func getConfigFromEnv() *Config {
 	} else {
 		return config
 	}
+}
+
+
+func getEcsDemoInstanceId() string {
+	return os.Getenv("DEMO_ECS_INSTANCE_ID")
 }
 
 func assertErrorNil(t *testing.T, err error, message string) {
