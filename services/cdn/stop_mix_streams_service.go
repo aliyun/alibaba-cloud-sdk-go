@@ -90,7 +90,7 @@ func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest
 	request = &StopMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "StopMixStreamsService", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "StopMixStreamsService", "", "")
 	request.Method = requests.POST
 	return
 }

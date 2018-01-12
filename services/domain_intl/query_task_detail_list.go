@@ -103,7 +103,7 @@ func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	request = &QueryTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryTaskDetailList", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryTaskDetailList", "", "")
 	request.Method = requests.POST
 	return
 }

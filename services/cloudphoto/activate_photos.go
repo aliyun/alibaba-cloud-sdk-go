@@ -65,8 +65,8 @@ func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest,
 type ActivatePhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type ActivatePhotosResponse struct {

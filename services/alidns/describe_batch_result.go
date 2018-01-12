@@ -88,7 +88,7 @@ func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
 	request = &DescribeBatchResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResult", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResult", "", "")
 	request.Method = requests.POST
 	return
 }

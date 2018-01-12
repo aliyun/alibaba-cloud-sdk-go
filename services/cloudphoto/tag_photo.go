@@ -64,11 +64,11 @@ func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback fu
 
 type TagPhotoRequest struct {
 	*requests.RpcRequest
-	LibraryId  string           `position:"Query" name:"LibraryId"`
-	Confidence *[]string        `position:"Query" name:"Confidence"  type:"Repeated"`
-	StoreName  string           `position:"Query" name:"StoreName"`
-	PhotoId    requests.Integer `position:"Query" name:"PhotoId"`
 	TagKey     *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	Confidence *[]string        `position:"Query" name:"Confidence"  type:"Repeated"`
+	PhotoId    requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type TagPhotoResponse struct {

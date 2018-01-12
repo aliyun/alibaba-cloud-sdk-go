@@ -82,7 +82,7 @@ func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveS
 	request = &DescribeLiveStreamTranscodeStreamNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum", "", "")
 	request.Method = requests.POST
 	return
 }

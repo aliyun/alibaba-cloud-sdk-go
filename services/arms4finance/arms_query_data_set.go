@@ -88,7 +88,7 @@ func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	request = &ARMSQueryDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet", "", "openAPI")
+	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet", "", "")
 	request.Method = requests.POST
 	return
 }

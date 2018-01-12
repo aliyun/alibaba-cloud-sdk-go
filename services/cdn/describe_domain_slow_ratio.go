@@ -100,7 +100,7 @@ func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioReq
 	request = &DescribeDomainSlowRatioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainSlowRatio", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainSlowRatio", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -79,7 +79,7 @@ func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 	request = &UnbindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "UnbindTag", "", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "UnbindTag", "", "")
 	request.Method = requests.POST
 	return
 }

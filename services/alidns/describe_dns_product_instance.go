@@ -109,7 +109,7 @@ func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInsta
 	request = &DescribeDnsProductInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstance", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstance", "", "")
 	request.Method = requests.POST
 	return
 }

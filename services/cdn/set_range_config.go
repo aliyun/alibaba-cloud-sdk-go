@@ -79,7 +79,7 @@ func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
 	request = &SetRangeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRangeConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRangeConfig", "", "")
 	request.Method = requests.POST
 	return
 }

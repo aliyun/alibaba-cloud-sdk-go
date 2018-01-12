@@ -81,7 +81,7 @@ func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTask
 	request = &SaveSingleTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRenew", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRenew", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -76,7 +76,7 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	request = &DescribeImagesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeImages", "/images", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeImages", "/images", "", "")
 	request.Method = requests.GET
 	return
 }

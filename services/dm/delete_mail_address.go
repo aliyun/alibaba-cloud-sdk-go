@@ -79,7 +79,7 @@ func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
 	request = &DeleteMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteMailAddress", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteMailAddress", "", "")
 	request.Method = requests.POST
 	return
 }

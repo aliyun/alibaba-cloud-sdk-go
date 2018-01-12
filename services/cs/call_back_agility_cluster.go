@@ -76,7 +76,7 @@ func CreateCallBackAgilityClusterRequest() (request *CallBackAgilityClusterReque
 	request = &CallBackAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CallBackAgilityCluster", "/agility/token/[Token]/req_once/[ReqOnce]/callback", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "CallBackAgilityCluster", "/agility/token/[Token]/req_once/[ReqOnce]/callback", "", "")
 	request.Method = requests.POST
 	return
 }

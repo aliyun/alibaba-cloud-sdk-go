@@ -81,7 +81,7 @@ func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringCon
 	request = &SetIgnoreQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamS
 	request = &DescribeLiveStreamSnapshotInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamSnapshotInfo", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamSnapshotInfo", "", "")
 	request.Method = requests.POST
 	return
 }

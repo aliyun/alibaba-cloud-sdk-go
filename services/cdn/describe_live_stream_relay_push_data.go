@@ -91,7 +91,7 @@ func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStream
 	request = &DescribeLiveStreamRelayPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData", "", "")
 	request.Method = requests.POST
 	return
 }

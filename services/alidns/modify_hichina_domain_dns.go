@@ -84,7 +84,7 @@ func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSReque
 	request = &ModifyHichinaDomainDNSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "", "")
 	request.Method = requests.POST
 	return
 }

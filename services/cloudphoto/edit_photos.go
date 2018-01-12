@@ -64,12 +64,12 @@ func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callbac
 
 type EditPhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId       string           `position:"Query" name:"LibraryId"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
-	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName       string           `position:"Query" name:"StoreName"`
-	Remark          string           `position:"Query" name:"Remark"`
 	Title           string           `position:"Query" name:"Title"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	Remark          string           `position:"Query" name:"Remark"`
+	LibraryId       string           `position:"Query" name:"LibraryId"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type EditPhotosResponse struct {

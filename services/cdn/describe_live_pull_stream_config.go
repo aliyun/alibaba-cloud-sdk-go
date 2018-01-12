@@ -87,7 +87,7 @@ func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStrea
 	request = &DescribeLivePullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "", "")
 	request.Method = requests.POST
 	return
 }

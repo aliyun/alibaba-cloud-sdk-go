@@ -93,7 +93,7 @@ func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *Describe
 	request = &DescribeLiveStreamFrameAndBitRateByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameAndBitRateByDomain", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameAndBitRateByDomain", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -65,8 +65,8 @@ func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequ
 type GetSimilarPhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type GetSimilarPhotosResponse struct {

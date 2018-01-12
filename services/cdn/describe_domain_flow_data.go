@@ -104,7 +104,7 @@ func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataReque
 	request = &DescribeDomainFlowDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainFlowData", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainFlowData", "", "")
 	request.Method = requests.POST
 	return
 }

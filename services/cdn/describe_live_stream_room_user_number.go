@@ -91,7 +91,7 @@ func CreateDescribeLiveStreamRoomUserNumberRequest() (request *DescribeLiveStrea
 	request = &DescribeLiveStreamRoomUserNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomUserNumber", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomUserNumber", "", "")
 	request.Method = requests.POST
 	return
 }

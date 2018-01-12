@@ -81,7 +81,7 @@ func CreateSetDomainRecordStatusRequest() (request *SetDomainRecordStatusRequest
 	request = &SetDomainRecordStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDomainRecordStatus", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDomainRecordStatus", "", "")
 	request.Method = requests.POST
 	return
 }

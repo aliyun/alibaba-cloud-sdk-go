@@ -79,7 +79,7 @@ func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 	request = &DeleteTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteTag", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteTag", "", "")
 	request.Method = requests.POST
 	return
 }

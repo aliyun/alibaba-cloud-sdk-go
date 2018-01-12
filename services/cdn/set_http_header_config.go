@@ -80,7 +80,7 @@ func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {
 	request = &SetHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpHeaderConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpHeaderConfig", "", "")
 	request.Method = requests.POST
 	return
 }

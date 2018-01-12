@@ -80,7 +80,7 @@ func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
 	request = &AddDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "AddDomainGroup", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "AddDomainGroup", "", "")
 	request.Method = requests.POST
 	return
 }

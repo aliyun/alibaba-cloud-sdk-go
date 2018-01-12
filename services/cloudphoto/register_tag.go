@@ -64,9 +64,9 @@ func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callb
 
 type RegisterTagRequest struct {
 	*requests.RpcRequest
-	StoreName string `position:"Query" name:"StoreName"`
 	Text      string `position:"Query" name:"Text"`
 	TagKey    string `position:"Query" name:"TagKey"`
+	StoreName string `position:"Query" name:"StoreName"`
 	Lang      string `position:"Query" name:"Lang"`
 }
 

@@ -117,7 +117,7 @@ func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest
 	request = &DescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainBpsData", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainBpsData", "", "")
 	request.Method = requests.POST
 	return
 }

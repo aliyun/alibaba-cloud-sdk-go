@@ -81,7 +81,7 @@ func CreateCreateMailAddressRequest() (request *CreateMailAddressRequest) {
 	request = &CreateMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CreateMailAddress", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CreateMailAddress", "", "")
 	request.Method = requests.POST
 	return
 }

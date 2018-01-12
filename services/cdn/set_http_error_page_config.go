@@ -80,7 +80,7 @@ func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigReque
 	request = &SetHttpErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpErrorPageConfig", "", "")
 	request.Method = requests.POST
 	return
 }

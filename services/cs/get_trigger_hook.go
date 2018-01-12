@@ -76,7 +76,7 @@ func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
 	request = &GetTriggerHookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "GetTriggerHook", "/hook/trigger/[ClusterId]/[ProjectId]", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "GetTriggerHook", "/hook/trigger/[ClusterId]/[ProjectId]", "", "")
 	request.Method = requests.GET
 	return
 }

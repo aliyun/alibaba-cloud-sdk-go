@@ -64,19 +64,19 @@ func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, c
 
 type RegisterPhotoRequest struct {
 	*requests.RpcRequest
-	LibraryId  string           `position:"Query" name:"LibraryId"`
-	Latitude   requests.Float   `position:"Query" name:"Latitude"`
 	PhotoTitle string           `position:"Query" name:"PhotoTitle"`
-	StoreName  string           `position:"Query" name:"StoreName"`
-	IsVideo    string           `position:"Query" name:"IsVideo"`
 	Remark     string           `position:"Query" name:"Remark"`
+	Location   string           `position:"Query" name:"Location"`
+	Width      requests.Integer `position:"Query" name:"Width"`
+	IsVideo    string           `position:"Query" name:"IsVideo"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
 	Size       requests.Integer `position:"Query" name:"Size"`
 	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
-	Width      requests.Integer `position:"Query" name:"Width"`
-	Location   string           `position:"Query" name:"Location"`
-	Longitude  requests.Float   `position:"Query" name:"Longitude"`
 	Height     requests.Integer `position:"Query" name:"Height"`
 	Md5        string           `position:"Query" name:"Md5"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	Longitude  requests.Float   `position:"Query" name:"Longitude"`
+	Latitude   requests.Float   `position:"Query" name:"Latitude"`
 }
 
 type RegisterPhotoResponse struct {

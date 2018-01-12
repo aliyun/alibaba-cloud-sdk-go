@@ -78,7 +78,7 @@ func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest
 	request = &DetachPolicyFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromGroup", "", "openAPI")
+	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromGroup", "", "")
 	request.Method = requests.POST
 	return
 }

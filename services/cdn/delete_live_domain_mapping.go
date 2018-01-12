@@ -79,7 +79,7 @@ func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingReq
 	request = &DeleteLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLiveDomainMapping", "", "")
 	request.Method = requests.POST
 	return
 }

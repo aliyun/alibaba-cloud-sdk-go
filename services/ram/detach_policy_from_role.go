@@ -78,7 +78,7 @@ func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) 
 	request = &DetachPolicyFromRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromRole", "", "openAPI")
+	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromRole", "", "")
 	request.Method = requests.POST
 	return
 }

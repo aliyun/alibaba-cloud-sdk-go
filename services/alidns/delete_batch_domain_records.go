@@ -79,7 +79,7 @@ func CreateDeleteBatchDomainRecordsRequest() (request *DeleteBatchDomainRecordsR
 	request = &DeleteBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteBatchDomainRecords", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteBatchDomainRecords", "", "")
 	request.Method = requests.POST
 	return
 }

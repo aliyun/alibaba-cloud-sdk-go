@@ -84,7 +84,7 @@ func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 	request = &RefreshTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "RefreshToken", "", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "RefreshToken", "", "")
 	request.Method = requests.POST
 	return
 }

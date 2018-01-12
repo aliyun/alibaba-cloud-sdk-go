@@ -80,7 +80,7 @@ func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTa
 	request = &SaveBatchTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForDomainNameProxyService", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForDomainNameProxyService", "", "")
 	request.Method = requests.POST
 	return
 }

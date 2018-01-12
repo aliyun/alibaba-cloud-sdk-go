@@ -79,7 +79,7 @@ func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
 	request = &CheckInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "CheckInvalidAddress", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "CheckInvalidAddress", "", "")
 	request.Method = requests.POST
 	return
 }

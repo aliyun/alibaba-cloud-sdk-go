@@ -79,7 +79,7 @@ func CreateBindTagRequest() (request *BindTagRequest) {
 	request = &BindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "BindTag", "", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "BindTag", "", "")
 	request.Method = requests.POST
 	return
 }

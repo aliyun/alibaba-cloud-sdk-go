@@ -94,7 +94,7 @@ func CreateQueryPushStatByAppRequest() (request *QueryPushStatByAppRequest) {
 	request = &QueryPushStatByAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByApp", "", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByApp", "", "")
 	request.Method = requests.POST
 	return
 }

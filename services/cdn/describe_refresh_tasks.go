@@ -101,7 +101,7 @@ func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) 
 	request = &DescribeRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshTasks", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeRefreshTasks", "", "")
 	request.Method = requests.POST
 	return
 }

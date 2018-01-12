@@ -83,7 +83,7 @@ func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
 	request = &SetReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetReqAuthConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetReqAuthConfig", "", "")
 	request.Method = requests.POST
 	return
 }

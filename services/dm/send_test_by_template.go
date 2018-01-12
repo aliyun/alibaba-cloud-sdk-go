@@ -86,7 +86,7 @@ func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
 	request = &SendTestByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "SendTestByTemplate", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "SendTestByTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -80,7 +80,7 @@ func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringCon
 	request = &SetRemoveQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRemoveQueryStringConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRemoveQueryStringConfig", "", "")
 	request.Method = requests.POST
 	return
 }

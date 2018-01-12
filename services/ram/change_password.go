@@ -77,7 +77,7 @@ func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 	request = &ChangePasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ChangePassword", "", "openAPI")
+	request.InitWithApiInfo("Ram", "2015-05-01", "ChangePassword", "", "")
 	request.Method = requests.POST
 	return
 }

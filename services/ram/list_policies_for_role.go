@@ -85,7 +85,7 @@ func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 	request = &ListPoliciesForRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListPoliciesForRole", "", "openAPI")
+	request.InitWithApiInfo("Ram", "2015-05-01", "ListPoliciesForRole", "", "")
 	request.Method = requests.POST
 	return
 }

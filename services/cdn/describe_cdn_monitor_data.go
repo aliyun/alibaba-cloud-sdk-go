@@ -95,7 +95,7 @@ func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataReque
 	request = &DescribeCdnMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnMonitorData", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnMonitorData", "", "")
 	request.Method = requests.POST
 	return
 }

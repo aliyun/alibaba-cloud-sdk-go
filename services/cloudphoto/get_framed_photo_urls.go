@@ -64,10 +64,10 @@ func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrls
 
 type GetFramedPhotoUrlsRequest struct {
 	*requests.RpcRequest
-	FrameId   string    `position:"Query" name:"FrameId"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	FrameId   string    `position:"Query" name:"FrameId"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetFramedPhotoUrlsResponse struct {

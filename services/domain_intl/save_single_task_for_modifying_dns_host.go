@@ -80,7 +80,7 @@ func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForModifyingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "", "")
 	request.Method = requests.POST
 	return
 }

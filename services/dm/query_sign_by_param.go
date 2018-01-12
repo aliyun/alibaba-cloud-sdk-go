@@ -96,7 +96,7 @@ func CreateQuerySignByParamRequest() (request *QuerySignByParamRequest) {
 	request = &QuerySignByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "QuerySignByParam", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "QuerySignByParam", "", "")
 	request.Method = requests.POST
 	return
 }

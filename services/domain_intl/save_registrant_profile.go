@@ -91,7 +91,7 @@ func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveRegistrantProfile", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveRegistrantProfile", "", "")
 	request.Method = requests.POST
 	return
 }

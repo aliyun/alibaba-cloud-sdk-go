@@ -79,7 +79,7 @@ func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
 	request = &SetL2OssKeyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "")
 	request.Method = requests.POST
 	return
 }

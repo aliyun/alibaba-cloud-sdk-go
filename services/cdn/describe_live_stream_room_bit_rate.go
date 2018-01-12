@@ -91,7 +91,7 @@ func CreateDescribeLiveStreamRoomBitRateRequest() (request *DescribeLiveStreamRo
 	request = &DescribeLiveStreamRoomBitRateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomBitRate", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRoomBitRate", "", "")
 	request.Method = requests.POST
 	return
 }

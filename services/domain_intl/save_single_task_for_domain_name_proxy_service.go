@@ -80,7 +80,7 @@ func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingle
 	request = &SaveSingleTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForDomainNameProxyService", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForDomainNameProxyService", "", "")
 	request.Method = requests.POST
 	return
 }

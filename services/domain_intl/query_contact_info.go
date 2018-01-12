@@ -91,7 +91,7 @@ func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
 	request = &QueryContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryContactInfo", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryContactInfo", "", "")
 	request.Method = requests.POST
 	return
 }

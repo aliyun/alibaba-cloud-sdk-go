@@ -100,7 +100,7 @@ func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotCon
 	request = &DescribeLiveSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig", "", "")
 	request.Method = requests.POST
 	return
 }

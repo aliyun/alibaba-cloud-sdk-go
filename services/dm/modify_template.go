@@ -87,7 +87,7 @@ func CreateModifyTemplateRequest() (request *ModifyTemplateRequest) {
 	request = &ModifyTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTemplate", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

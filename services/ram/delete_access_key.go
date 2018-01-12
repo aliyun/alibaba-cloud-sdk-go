@@ -77,7 +77,7 @@ func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 	request = &DeleteAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteAccessKey", "", "openAPI")
+	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteAccessKey", "", "")
 	request.Method = requests.POST
 	return
 }

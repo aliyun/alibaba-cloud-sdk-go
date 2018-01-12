@@ -80,7 +80,7 @@ func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest
 	request = &DeleteIpfilterByEdmIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteIpfilterByEdmId", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteIpfilterByEdmId", "", "")
 	request.Method = requests.POST
 	return
 }

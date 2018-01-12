@@ -87,7 +87,7 @@ func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
 	request = &BatchSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "BatchSendMail", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "BatchSendMail", "", "")
 	request.Method = requests.POST
 	return
 }

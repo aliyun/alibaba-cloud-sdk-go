@@ -84,7 +84,7 @@ func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	request = &PushNoticeToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToiOS", "", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToiOS", "", "")
 	request.Method = requests.POST
 	return
 }

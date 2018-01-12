@@ -127,7 +127,7 @@ func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisi
 	request = &DescribeDomainTopUrlVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainTopUrlVisit", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainTopUrlVisit", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,7 +84,7 @@ func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	request = &DescribeCdnTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -79,7 +79,7 @@ func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomai
 	request = &ApplyForRetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "ApplyForRetrievalDomainName", "", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "ApplyForRetrievalDomainName", "", "")
 	request.Method = requests.POST
 	return
 }

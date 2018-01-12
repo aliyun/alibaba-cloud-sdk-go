@@ -74,7 +74,7 @@ func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest
 	request = &UpdateSubUserResoucesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "UpdateSubUserResouces", "/ram/resources", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "UpdateSubUserResouces", "/ram/resources", "", "")
 	request.Method = requests.POST
 	return
 }

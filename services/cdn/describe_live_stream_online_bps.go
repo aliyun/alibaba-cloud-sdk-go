@@ -93,7 +93,7 @@ func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnli
 	request = &DescribeLiveStreamOnlineBpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamOnlineBps", "", "")
 	request.Method = requests.POST
 	return
 }

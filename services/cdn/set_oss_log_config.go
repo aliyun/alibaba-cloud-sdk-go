@@ -80,7 +80,7 @@ func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
 	request = &SetOssLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetOssLogConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetOssLogConfig", "", "")
 	request.Method = requests.POST
 	return
 }

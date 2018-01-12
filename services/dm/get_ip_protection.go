@@ -79,7 +79,7 @@ func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
 	request = &GetIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "GetIpProtection", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "GetIpProtection", "", "")
 	request.Method = requests.POST
 	return
 }

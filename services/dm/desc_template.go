@@ -90,7 +90,7 @@ func CreateDescTemplateRequest() (request *DescTemplateRequest) {
 	request = &DescTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "DescTemplate", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "DescTemplate", "", "")
 	request.Method = requests.POST
 	return
 }

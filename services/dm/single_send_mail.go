@@ -91,7 +91,7 @@ func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
 	request = &SingleSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "SingleSendMail", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "SingleSendMail", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) 
 	request = &GetSenderAddressListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "GetSenderAddressList", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "GetSenderAddressList", "", "")
 	request.Method = requests.POST
 	return
 }

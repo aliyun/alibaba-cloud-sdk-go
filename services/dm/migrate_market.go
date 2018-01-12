@@ -80,7 +80,7 @@ func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
 	request = &MigrateMarketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "MigrateMarket", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "MigrateMarket", "", "")
 	request.Method = requests.POST
 	return
 }

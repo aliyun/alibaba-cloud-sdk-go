@@ -80,7 +80,7 @@ func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchT
 	request = &SaveBatchTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForTransferProhibitionLock", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForTransferProhibitionLock", "", "")
 	request.Method = requests.POST
 	return
 }

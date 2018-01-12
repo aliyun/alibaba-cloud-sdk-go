@@ -75,7 +75,7 @@ func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 	request = &DescribeTaskInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTaskInfo", "/tasks/[TaskId]", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeTaskInfo", "/tasks/[TaskId]", "", "")
 	request.Method = requests.GET
 	return
 }

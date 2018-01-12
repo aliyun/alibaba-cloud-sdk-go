@@ -85,7 +85,7 @@ func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPus
 	request = &DescribeLiveStreamPushErrorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamPushErrors", "", "")
 	request.Method = requests.POST
 	return
 }

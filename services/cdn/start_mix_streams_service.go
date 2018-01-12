@@ -92,7 +92,7 @@ func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceReque
 	request = &StartMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "StartMixStreamsService", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "StartMixStreamsService", "", "")
 	request.Method = requests.POST
 	return
 }

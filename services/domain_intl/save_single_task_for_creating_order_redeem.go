@@ -80,7 +80,7 @@ func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRedeem", "", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRedeem", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -75,7 +75,7 @@ func CreateScaleInClusterRequest() (request *ScaleInClusterRequest) {
 	request = &ScaleInClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ScaleInCluster", "/clusters/[ClusterId]/scalein", "", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "ScaleInCluster", "/clusters/[ClusterId]/scalein", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -80,7 +80,7 @@ func CreateDeleteLivePullStreamInfoRequest() (request *DeleteLivePullStreamInfoR
 	request = &DeleteLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLivePullStreamInfo", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteLivePullStreamInfo", "", "")
 	request.Method = requests.POST
 	return
 }

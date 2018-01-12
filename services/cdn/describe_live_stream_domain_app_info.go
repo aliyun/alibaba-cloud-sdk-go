@@ -90,7 +90,7 @@ func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStream
 	request = &DescribeLiveStreamDomainAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamDomainAppInfo", "", "")
 	request.Method = requests.POST
 	return
 }

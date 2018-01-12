@@ -79,7 +79,7 @@ func CreateApproveReplyMailAddressRequest() (request *ApproveReplyMailAddressReq
 	request = &ApproveReplyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveReplyMailAddress", "", "openAPI")
+	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveReplyMailAddress", "", "")
 	request.Method = requests.POST
 	return
 }

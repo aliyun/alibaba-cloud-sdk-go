@@ -79,7 +79,7 @@ func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) 
 	request = &SetIpBlackListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIpBlackListConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIpBlackListConfig", "", "")
 	request.Method = requests.POST
 	return
 }

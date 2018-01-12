@@ -87,7 +87,7 @@ func CreateGetConfigRequest() (request *GetConfigRequest) {
 	request = &GetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "GetConfig", "", "openAPI")
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetConfig", "", "")
 	request.Method = requests.POST
 	return
 }

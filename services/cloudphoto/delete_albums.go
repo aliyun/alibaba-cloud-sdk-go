@@ -65,8 +65,8 @@ func (client *Client) DeleteAlbumsWithCallback(request *DeleteAlbumsRequest, cal
 type DeleteAlbumsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	AlbumId   *[]string `position:"Query" name:"AlbumId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	AlbumId   *[]string `position:"Query" name:"AlbumId"  type:"Repeated"`
 }
 
 type DeleteAlbumsResponse struct {

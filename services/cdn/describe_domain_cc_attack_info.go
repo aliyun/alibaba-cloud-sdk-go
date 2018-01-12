@@ -97,7 +97,7 @@ func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackI
 	request = &DescribeDomainCCAttackInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo", "", "")
 	request.Method = requests.POST
 	return
 }

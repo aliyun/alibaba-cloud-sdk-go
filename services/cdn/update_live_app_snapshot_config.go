@@ -84,7 +84,7 @@ func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotC
 	request = &UpdateLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig", "", "")
 	request.Method = requests.POST
 	return
 }

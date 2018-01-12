@@ -95,7 +95,7 @@ func CreateDescribeLiveStreamRecordIndexFileRequest() (request *DescribeLiveStre
 	request = &DescribeLiveStreamRecordIndexFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile", "", "")
 	request.Method = requests.POST
 	return
 }

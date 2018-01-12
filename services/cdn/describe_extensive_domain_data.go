@@ -97,7 +97,7 @@ func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomai
 	request = &DescribeExtensiveDomainDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeExtensiveDomainData", "", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeExtensiveDomainData", "", "")
 	request.Method = requests.POST
 	return
 }
