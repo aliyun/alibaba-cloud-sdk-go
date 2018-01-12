@@ -17,6 +17,7 @@ package sdk
 import (
 	"crypto/tls"
 	"encoding/json"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/stretchr/testify/assert"
@@ -25,7 +26,6 @@ import (
 	"os"
 	"os/user"
 	"testing"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
 var client, clientKeyPair, clientEcs, clientRoleArn *Client

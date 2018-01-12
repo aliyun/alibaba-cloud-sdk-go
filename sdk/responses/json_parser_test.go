@@ -1,10 +1,10 @@
 package responses
 
 import (
-	"testing"
 	"encoding/json"
-	"github.com/stretchr/testify/assert"
 	"fmt"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestFuzzyFieldUnmarshal(t *testing.T) {

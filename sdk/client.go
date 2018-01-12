@@ -21,8 +21,8 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"net/http"
 	"net"
+	"net/http"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
