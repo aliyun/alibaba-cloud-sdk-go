@@ -108,7 +108,7 @@ func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPerso
 	request = &RegisterMediaDetailPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailPerson", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts", "openAPI")
 	return
 }
 

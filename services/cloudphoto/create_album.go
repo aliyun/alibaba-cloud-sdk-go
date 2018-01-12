@@ -64,10 +64,10 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
-	AlbumName string `position:"Query" name:"AlbumName"`
+	Remark    string `position:"Query" name:"Remark"`
 	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
-	Remark    string `position:"Query" name:"Remark"`
+	AlbumName string `position:"Query" name:"AlbumName"`
 }
 
 type CreateAlbumResponse struct {
@@ -104,7 +104,7 @@ func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	request = &CreateAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateAlbum", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateAlbum", "cloudphoto", "openAPI")
 	return
 }
 

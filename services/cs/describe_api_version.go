@@ -75,6 +75,7 @@ func CreateDescribeApiVersionRequest() (request *DescribeApiVersionRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "DescribeApiVersion", "/version", "", "")
+	request.Method = requests.GET
 	return
 }
 

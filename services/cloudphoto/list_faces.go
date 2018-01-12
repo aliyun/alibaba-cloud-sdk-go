@@ -65,12 +65,12 @@ func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback 
 type ListFacesRequest struct {
 	*requests.RpcRequest
 	Cursor      string           `position:"Query" name:"Cursor"`
-	HasFaceName string           `position:"Query" name:"HasFaceName"`
-	Size        requests.Integer `position:"Query" name:"Size"`
+	Direction   string           `position:"Query" name:"Direction"`
+	State       string           `position:"Query" name:"State"`
 	LibraryId   string           `position:"Query" name:"LibraryId"`
 	StoreName   string           `position:"Query" name:"StoreName"`
-	State       string           `position:"Query" name:"State"`
-	Direction   string           `position:"Query" name:"Direction"`
+	HasFaceName string           `position:"Query" name:"HasFaceName"`
+	Size        requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListFacesResponse struct {
@@ -110,7 +110,7 @@ func CreateListFacesRequest() (request *ListFacesRequest) {
 	request = &ListFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFaces", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI")
 	return
 }
 

@@ -1,3 +1,7 @@
+2018-01-11 Version: 0.7.8
+1. complete partly missed service codes
+2. add default http method for roa requests
+
 2018-01-11 Version: 0.7.7
 1, Bug fix: Replenish user interface
 

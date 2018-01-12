@@ -94,7 +94,7 @@ func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAd
 	request = &DescribeOptimizeAdviceOnStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "rds", "openAPI")
 	return
 }
 

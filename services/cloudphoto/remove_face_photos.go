@@ -65,9 +65,9 @@ func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequ
 type RemoveFacePhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type RemoveFacePhotosResponse struct {
@@ -87,7 +87,7 @@ func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
 	request = &RemoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RemoveFacePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RemoveFacePhotos", "cloudphoto", "openAPI")
 	return
 }
 

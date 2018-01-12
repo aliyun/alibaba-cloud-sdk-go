@@ -103,7 +103,7 @@ func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest
 	request = &DescribeTaskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "ecs", "openAPI")
 	return
 }
 

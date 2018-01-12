@@ -83,7 +83,7 @@ func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	request = &CreateNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNqa", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNqa", "vpc", "openAPI")
 	return
 }
 

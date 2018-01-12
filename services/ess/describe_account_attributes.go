@@ -85,7 +85,7 @@ func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttribute
 	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
 	return
 }
 

@@ -65,8 +65,8 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type ListPhotoFacesResponse struct {
@@ -86,7 +86,7 @@ func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
 	request = &ListPhotoFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "cloudphoto", "openAPI")
 	return
 }
 

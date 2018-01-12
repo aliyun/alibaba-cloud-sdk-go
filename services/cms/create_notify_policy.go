@@ -84,7 +84,7 @@ func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
 	request = &CreateNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "CreateNotifyPolicy", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "CreateNotifyPolicy", "cms", "openAPI")
 	return
 }
 

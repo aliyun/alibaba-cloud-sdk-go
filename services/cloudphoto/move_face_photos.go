@@ -64,11 +64,11 @@ func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest,
 
 type MoveFacePhotosRequest struct {
 	*requests.RpcRequest
+	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
 	LibraryId    string           `position:"Query" name:"LibraryId"`
+	StoreName    string           `position:"Query" name:"StoreName"`
 	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
 	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
-	StoreName    string           `position:"Query" name:"StoreName"`
-	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
 }
 
 type MoveFacePhotosResponse struct {
@@ -88,7 +88,7 @@ func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "cloudphoto", "openAPI")
 	return
 }
 

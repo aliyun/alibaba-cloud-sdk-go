@@ -82,7 +82,7 @@ func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "mts", "openAPI")
 	return
 }
 

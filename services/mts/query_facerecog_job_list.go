@@ -113,7 +113,7 @@ func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "mts", "openAPI")
 	return
 }
 

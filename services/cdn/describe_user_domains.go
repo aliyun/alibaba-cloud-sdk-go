@@ -66,15 +66,15 @@ type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
+	DomainName       string           `position:"Query" name:"DomainName"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	Sources          string           `position:"Query" name:"Sources"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
 	CdnType          string           `position:"Query" name:"CdnType"`
+	FuncId           string           `position:"Query" name:"FuncId"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	Sources          string           `position:"Query" name:"Sources"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 }

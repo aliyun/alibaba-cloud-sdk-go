@@ -64,8 +64,8 @@ func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *Crea
 
 type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -88,7 +88,7 @@ func CreateCreateGlobalAccelerationInstanceRequest() (request *CreateGlobalAccel
 	request = &CreateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc", "openAPI")
 	return
 }
 

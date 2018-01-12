@@ -81,7 +81,7 @@ func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	request = &ProfileSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileSet", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI")
 	return
 }
 

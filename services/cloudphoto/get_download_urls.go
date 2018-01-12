@@ -65,8 +65,8 @@ func (client *Client) GetDownloadUrlsWithCallback(request *GetDownloadUrlsReques
 type GetDownloadUrlsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetDownloadUrlsResponse struct {
@@ -89,7 +89,7 @@ func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {
 	request = &GetDownloadUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrls", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrls", "cloudphoto", "openAPI")
 	return
 }
 

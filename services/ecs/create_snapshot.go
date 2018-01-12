@@ -94,7 +94,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "ecs", "openAPI")
 	return
 }
 

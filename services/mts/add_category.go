@@ -87,7 +87,7 @@ func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddCategory", "mts", "openAPI")
 	return
 }
 

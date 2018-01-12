@@ -76,6 +76,7 @@ func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "AttachInstances", "/clusters/[ClusterId]/attach", "", "")
+	request.Method = requests.POST
 	return
 }
 

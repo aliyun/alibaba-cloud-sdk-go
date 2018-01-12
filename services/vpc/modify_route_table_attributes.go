@@ -64,17 +64,17 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
-	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
 	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyRouteTableAttributesResponse struct {
@@ -89,7 +89,7 @@ func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttribu
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc", "openAPI")
 	return
 }
 

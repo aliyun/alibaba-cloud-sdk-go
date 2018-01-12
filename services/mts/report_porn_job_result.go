@@ -83,7 +83,7 @@ func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	request = &ReportPornJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportPornJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportPornJobResult", "mts", "openAPI")
 	return
 }
 

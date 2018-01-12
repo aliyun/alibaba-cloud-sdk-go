@@ -64,10 +64,10 @@ func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sReques
 
 type GetPhotosByMd5sRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	State     string    `position:"Query" name:"State"`
 	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
 }
 
 type GetPhotosByMd5sResponse struct {
@@ -99,7 +99,7 @@ func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI")
 	return
 }
 

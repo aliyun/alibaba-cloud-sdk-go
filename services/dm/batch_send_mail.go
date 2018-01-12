@@ -67,13 +67,13 @@ type BatchSendMailRequest struct {
 	AddressType          requests.Integer `position:"Query" name:"AddressType"`
 	TemplateName         string           `position:"Query" name:"TemplateName"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
-	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
 	ClickTrace           string           `position:"Query" name:"ClickTrace"`
 	ReceiversName        string           `position:"Query" name:"ReceiversName"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TagName              string           `position:"Query" name:"TagName"`
 }
 

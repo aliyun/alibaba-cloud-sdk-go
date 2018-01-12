@@ -81,7 +81,7 @@ func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {
 	request = &AddMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaTag", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaTag", "mts", "openAPI")
 	return
 }
 

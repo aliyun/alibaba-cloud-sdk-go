@@ -64,11 +64,11 @@ func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, cal
 
 type SearchPhotosRequest struct {
 	*requests.RpcRequest
-	Size      requests.Integer `position:"Query" name:"Size"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	Page      requests.Integer `position:"Query" name:"Page"`
 	Keyword   string           `position:"Query" name:"Keyword"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type SearchPhotosResponse struct {
@@ -100,7 +100,7 @@ func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "cloudphoto", "openAPI")
 	return
 }
 

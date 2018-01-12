@@ -81,7 +81,7 @@ func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateReq
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts", "openAPI")
 	return
 }
 

@@ -64,11 +64,11 @@ func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosReques
 
 type MoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
-	SourceAlbumId requests.Integer `position:"Query" name:"SourceAlbumId"`
 	TargetAlbumId requests.Integer `position:"Query" name:"TargetAlbumId"`
+	SourceAlbumId requests.Integer `position:"Query" name:"SourceAlbumId"`
 	LibraryId     string           `position:"Query" name:"LibraryId"`
-	PhotoId       *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName     string           `position:"Query" name:"StoreName"`
+	PhotoId       *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type MoveAlbumPhotosResponse struct {
@@ -88,7 +88,7 @@ func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	request = &MoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "cloudphoto", "openAPI")
 	return
 }
 

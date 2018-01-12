@@ -83,7 +83,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateHaVip", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateHaVip", "vpc", "openAPI")
 	return
 }
 

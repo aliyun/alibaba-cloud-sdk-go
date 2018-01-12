@@ -82,7 +82,7 @@ func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	request = &CreateSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "mts", "openAPI")
 	return
 }
 

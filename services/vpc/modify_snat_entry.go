@@ -82,7 +82,7 @@ func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	request = &ModifySnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySnatEntry", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySnatEntry", "vpc", "openAPI")
 	return
 }
 

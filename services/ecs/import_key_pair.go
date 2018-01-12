@@ -82,7 +82,7 @@ func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	request = &ImportKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "ecs", "openAPI")
 	return
 }
 

@@ -75,6 +75,7 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "CreateTemplate", "/templates", "", "")
+	request.Method = requests.PUT
 	return
 }
 

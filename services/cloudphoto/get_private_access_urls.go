@@ -65,9 +65,9 @@ func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccess
 type GetPrivateAccessUrlsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
 	ZoomType  string    `position:"Query" name:"ZoomType"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetPrivateAccessUrlsResponse struct {
@@ -88,7 +88,7 @@ func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) 
 	request = &GetPrivateAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI")
 	return
 }
 

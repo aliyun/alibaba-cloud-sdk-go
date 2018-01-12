@@ -94,7 +94,7 @@ func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	request = &CheckResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckResource", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckResource", "rds", "openAPI")
 	return
 }
 

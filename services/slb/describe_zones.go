@@ -93,7 +93,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeZones", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeZones", "slb", "openAPI")
 	return
 }
 

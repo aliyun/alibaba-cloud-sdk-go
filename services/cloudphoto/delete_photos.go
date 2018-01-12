@@ -65,8 +65,8 @@ func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, cal
 type DeletePhotosRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type DeletePhotosResponse struct {
@@ -86,7 +86,7 @@ func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
 	request = &DeletePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeletePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeletePhotos", "cloudphoto", "openAPI")
 	return
 }
 

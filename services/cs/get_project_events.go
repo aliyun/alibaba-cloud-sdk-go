@@ -77,6 +77,7 @@ func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "GetProjectEvents", "/clusters/[ClusterId]/projects/[ProjectId]/events", "", "")
+	request.Method = requests.GET
 	return
 }
 

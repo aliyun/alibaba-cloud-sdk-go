@@ -65,11 +65,11 @@ func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callb
 type ListMomentsRequest struct {
 	*requests.RpcRequest
 	Cursor    string           `position:"Query" name:"Cursor"`
-	Size      requests.Integer `position:"Query" name:"Size"`
+	Direction string           `position:"Query" name:"Direction"`
+	State     string           `position:"Query" name:"State"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	State     string           `position:"Query" name:"State"`
-	Direction string           `position:"Query" name:"Direction"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 type ListMomentsResponse struct {
@@ -95,7 +95,7 @@ func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	request = &ListMomentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListMoments", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListMoments", "cloudphoto", "openAPI")
 	return
 }
 

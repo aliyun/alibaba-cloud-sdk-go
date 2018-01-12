@@ -83,7 +83,7 @@ func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobRes
 	request = &ReportMediaDetailJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts", "openAPI")
 	return
 }
 

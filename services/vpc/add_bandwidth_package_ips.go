@@ -82,7 +82,7 @@ func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsReque
 	request = &AddBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBandwidthPackageIps", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBandwidthPackageIps", "vpc", "openAPI")
 	return
 }
 

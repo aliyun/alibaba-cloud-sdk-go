@@ -84,7 +84,7 @@ func CreateGrantInstanceToCbnRequest() (request *GrantInstanceToCbnRequest) {
 	request = &GrantInstanceToCbnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCbn", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCbn", "vpc", "openAPI")
 	return
 }
 

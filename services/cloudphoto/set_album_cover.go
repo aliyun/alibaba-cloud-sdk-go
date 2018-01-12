@@ -65,9 +65,9 @@ func (client *Client) SetAlbumCoverWithCallback(request *SetAlbumCoverRequest, c
 type SetAlbumCoverRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 }
 
 type SetAlbumCoverResponse struct {
@@ -82,7 +82,7 @@ func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
 	request = &SetAlbumCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetAlbumCover", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetAlbumCover", "cloudphoto", "openAPI")
 	return
 }
 

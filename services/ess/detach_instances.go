@@ -101,7 +101,7 @@ func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 	request = &DetachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DetachInstances", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI")
 	return
 }
 

@@ -88,7 +88,7 @@ func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatew
 	request = &ModifyCustomerGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "vpc", "openAPI")
 	return
 }
 

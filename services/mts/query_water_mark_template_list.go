@@ -106,7 +106,7 @@ func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateL
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts", "openAPI")
 	return
 }
 

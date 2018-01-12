@@ -75,6 +75,7 @@ func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "ModifyClusterName", "/clusters/[ClusterId]/name/[ClusterName]", "", "")
+	request.Method = requests.POST
 	return
 }
 

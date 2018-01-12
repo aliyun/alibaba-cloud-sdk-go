@@ -105,7 +105,7 @@ func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVpcs", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVpcs", "ecs", "openAPI")
 	return
 }
 

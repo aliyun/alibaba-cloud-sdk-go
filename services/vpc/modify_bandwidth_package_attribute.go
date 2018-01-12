@@ -82,7 +82,7 @@ func CreateModifyBandwidthPackageAttributeRequest() (request *ModifyBandwidthPac
 	request = &ModifyBandwidthPackageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBandwidthPackageAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBandwidthPackageAttribute", "vpc", "openAPI")
 	return
 }
 

@@ -83,7 +83,7 @@ func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBa
 	request = &DescribeLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAutoReleaseTime", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAutoReleaseTime", "slb", "openAPI")
 	return
 }
 

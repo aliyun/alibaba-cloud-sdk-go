@@ -83,7 +83,7 @@ func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInter
 	request = &ModifyNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs", "openAPI")
 	return
 }
 

@@ -77,6 +77,7 @@ func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) 
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "CallbackClusterToken", "/token/[Token]/req_once/[ReqOnce]/callback", "", "")
+	request.Method = requests.POST
 	return
 }
 

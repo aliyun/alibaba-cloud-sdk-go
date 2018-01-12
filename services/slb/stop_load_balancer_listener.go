@@ -83,7 +83,7 @@ func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerR
 	request = &StopLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "StopLoadBalancerListener", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "StopLoadBalancerListener", "slb", "openAPI")
 	return
 }
 

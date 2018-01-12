@@ -83,7 +83,7 @@ func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
 	request = &CreateBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpPeer", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpPeer", "vpc", "openAPI")
 	return
 }
 

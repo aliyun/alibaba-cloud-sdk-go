@@ -81,7 +81,7 @@ func CreateDetachNetworkInterfaceRequest() (request *DetachNetworkInterfaceReque
 	request = &DetachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachNetworkInterface", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs", "openAPI")
 	return
 }
 

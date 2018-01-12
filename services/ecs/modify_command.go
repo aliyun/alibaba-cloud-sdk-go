@@ -85,7 +85,7 @@ func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
 	request = &ModifyCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "ecs", "openAPI")
 	return
 }
 

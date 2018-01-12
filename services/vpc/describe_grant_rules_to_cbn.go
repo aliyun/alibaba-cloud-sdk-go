@@ -92,7 +92,7 @@ func CreateDescribeGrantRulesToCbnRequest() (request *DescribeGrantRulesToCbnReq
 	request = &DescribeGrantRulesToCbnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCbn", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCbn", "vpc", "openAPI")
 	return
 }
 

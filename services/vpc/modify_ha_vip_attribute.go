@@ -82,7 +82,7 @@ func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) 
 	request = &ModifyHaVipAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "vpc", "openAPI")
 	return
 }
 

@@ -81,7 +81,7 @@ func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	request = &BindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "mts", "openAPI")
 	return
 }
 

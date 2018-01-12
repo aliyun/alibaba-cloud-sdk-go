@@ -82,7 +82,7 @@ func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionR
 	request = &DeletePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePhysicalConnection", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI")
 	return
 }
 

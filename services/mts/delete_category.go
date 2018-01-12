@@ -80,7 +80,7 @@ func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {
 	request = &DeleteCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI")
 	return
 }
 

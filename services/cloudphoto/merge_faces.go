@@ -65,9 +65,9 @@ func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callbac
 type MergeFacesRequest struct {
 	*requests.RpcRequest
 	LibraryId    string           `position:"Query" name:"LibraryId"`
-	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
 	StoreName    string           `position:"Query" name:"StoreName"`
 	FaceId       *[]string        `position:"Query" name:"FaceId"  type:"Repeated"`
+	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
 }
 
 type MergeFacesResponse struct {
@@ -89,7 +89,7 @@ func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "cloudphoto", "openAPI")
 	return
 }
 

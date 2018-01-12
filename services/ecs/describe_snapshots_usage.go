@@ -64,10 +64,10 @@ func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapsh
 
 type DescribeSnapshotsUsageRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeSnapshotsUsageResponse struct {
@@ -81,7 +81,7 @@ func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageReque
 	request = &DescribeSnapshotsUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs", "openAPI")
 	return
 }
 

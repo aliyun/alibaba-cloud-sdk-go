@@ -98,7 +98,7 @@ func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertifica
 	request = &DescribeServerCertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeServerCertificates", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeServerCertificates", "slb", "openAPI")
 	return
 }
 

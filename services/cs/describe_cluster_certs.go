@@ -76,6 +76,7 @@ func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) 
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterCerts", "/clusters/[ClusterId]/certs", "", "")
+	request.Method = requests.GET
 	return
 }
 

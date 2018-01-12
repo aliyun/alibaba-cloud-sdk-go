@@ -65,9 +65,9 @@ func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, c
 type GetThumbnailsRequest struct {
 	*requests.RpcRequest
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
 	ZoomType  string    `position:"Query" name:"ZoomType"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetThumbnailsResponse struct {
@@ -90,7 +90,7 @@ func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {
 	request = &GetThumbnailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "cloudphoto", "openAPI")
 	return
 }
 

@@ -64,10 +64,10 @@ func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callbac
 
 type RenameFaceRequest struct {
 	*requests.RpcRequest
+	FaceName  string           `position:"Query" name:"FaceName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
 	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
-	FaceName  string           `position:"Query" name:"FaceName"`
 }
 
 type RenameFaceResponse struct {
@@ -82,7 +82,7 @@ func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 	request = &RenameFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameFace", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameFace", "cloudphoto", "openAPI")
 	return
 }
 

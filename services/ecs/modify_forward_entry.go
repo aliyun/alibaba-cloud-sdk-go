@@ -86,7 +86,7 @@ func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
 	request = &ModifyForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyForwardEntry", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs", "openAPI")
 	return
 }
 

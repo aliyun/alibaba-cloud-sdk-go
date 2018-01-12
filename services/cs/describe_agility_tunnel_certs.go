@@ -76,6 +76,7 @@ func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCe
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "DescribeAgilityTunnelCerts", "/agility/[Token]/agent_certs", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -64,11 +64,11 @@ func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUr
 
 type GetPublicAccessUrlsRequest struct {
 	*requests.RpcRequest
-	DomainType string    `position:"Query" name:"DomainType"`
 	LibraryId  string    `position:"Query" name:"LibraryId"`
-	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName  string    `position:"Query" name:"StoreName"`
 	ZoomType   string    `position:"Query" name:"ZoomType"`
+	DomainType string    `position:"Query" name:"DomainType"`
+	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
 type GetPublicAccessUrlsResponse struct {
@@ -89,7 +89,7 @@ func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI")
 	return
 }
 

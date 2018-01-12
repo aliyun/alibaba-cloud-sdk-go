@@ -65,9 +65,9 @@ func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, cal
 type SetFaceCoverRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type SetFaceCoverResponse struct {
@@ -82,7 +82,7 @@ func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	request = &SetFaceCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "cloudphoto", "openAPI")
 	return
 }
 

@@ -66,8 +66,8 @@ type SingleSendMailRequest struct {
 	*requests.RpcRequest
 	AddressType          requests.Integer `position:"Query" name:"AddressType"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
 	TextBody             string           `position:"Query" name:"TextBody"`
+	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
 	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
 	Subject              string           `position:"Query" name:"Subject"`
 	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`

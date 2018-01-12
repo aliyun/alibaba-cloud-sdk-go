@@ -120,7 +120,7 @@ func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesR
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouterInterfaces", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc", "openAPI")
 	return
 }
 

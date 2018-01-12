@@ -65,17 +65,17 @@ func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest,
 type ModifyTemplateRequest struct {
 	*requests.RpcRequest
 	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	Remark               string           `position:"Query" name:"Remark"`
-	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FromType             requests.Integer `position:"Query" name:"FromType"`
 	SmsContent           string           `position:"Query" name:"SmsContent"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
+	Remark               string           `position:"Query" name:"Remark"`
 	SmsType              requests.Integer `position:"Query" name:"SmsType"`
+	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
+	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TemplateText         string           `position:"Query" name:"TemplateText"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type ModifyTemplateResponse struct {

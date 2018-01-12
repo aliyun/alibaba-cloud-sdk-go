@@ -77,7 +77,7 @@ func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
 	request = &DeleteAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessRule", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessRule", "nas", "openAPI")
 	return
 }
 

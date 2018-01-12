@@ -76,6 +76,7 @@ func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "GatherLogsToken", "/token/[Token]/gather_logs", "", "")
+	request.Method = requests.POST
 	return
 }
 

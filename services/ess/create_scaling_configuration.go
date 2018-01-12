@@ -64,9 +64,9 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
+	DataDisk1SnapshotId         string           `position:"Query" name:"DataDisk.1.SnapshotId"`
 	SystemDiskCategory          string           `position:"Query" name:"SystemDisk.Category"`
 	DataDisk3Size               requests.Integer `position:"Query" name:"DataDisk.3.Size"`
-	DataDisk1SnapshotId         string           `position:"Query" name:"DataDisk.1.SnapshotId"`
 	DataDisk2Device             string           `position:"Query" name:"DataDisk.2.Device"`
 	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 	DataDisk1Device             string           `position:"Query" name:"DataDisk.1.Device"`
@@ -118,7 +118,7 @@ func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurat
 	request = &CreateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
 	return
 }
 

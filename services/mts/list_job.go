@@ -347,7 +347,7 @@ func CreateListJobRequest() (request *ListJobRequest) {
 	request = &ListJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListJob", "mts", "openAPI")
 	return
 }
 

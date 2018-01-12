@@ -94,7 +94,7 @@ func CreateUpdateVideoSummaryPipelineRequest() (request *UpdateVideoSummaryPipel
 	request = &UpdateVideoSummaryPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateVideoSummaryPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateVideoSummaryPipeline", "mts", "openAPI")
 	return
 }
 

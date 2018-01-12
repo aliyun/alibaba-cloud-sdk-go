@@ -81,7 +81,7 @@ func CreateCancelJobRequest() (request *CancelJobRequest) {
 	request = &CancelJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CancelJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CancelJob", "mts", "openAPI")
 	return
 }
 

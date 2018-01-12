@@ -80,7 +80,7 @@ func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	request = &DeleteScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "ess", "openAPI")
 	return
 }
 

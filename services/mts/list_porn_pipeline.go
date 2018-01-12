@@ -97,7 +97,7 @@ func CreateListPornPipelineRequest() (request *ListPornPipelineRequest) {
 	request = &ListPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListPornPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListPornPipeline", "mts", "openAPI")
 	return
 }
 

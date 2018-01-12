@@ -87,7 +87,7 @@ func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeR
 	request = &ModifyInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceChargeType", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs", "openAPI")
 	return
 }
 

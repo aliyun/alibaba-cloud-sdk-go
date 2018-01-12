@@ -1,13 +1,13 @@
 package responses
 
 import (
-	"testing"
 	"encoding/json"
-	"github.com/stretchr/testify/assert"
 	"fmt"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
-func TestUnmarshal(t *testing.T) {
+func TestFuzzyFieldUnmarshal(t *testing.T) {
 	from, err := getJsonBytes()
 	if err != nil {
 		panic(err)
@@ -49,6 +49,17 @@ func TestUnmarshal(t *testing.T) {
 	assert.Equal(t, false, to.EmptyStrToBool)
 	assert.Equal(t, "", to.EmptyStrToStr)
 }
+
+//func TestFuzzyTypeUnmarshal(t *testing.T){
+//	arrayJson := "[{\"instance_type\":\"ecs.n4.large\",\"vpc_id\":\"\",\"vswitch_id\":\"\",\"vswitch_cidr\":\"\",\"image_id\":\"registry-internal.cn-beijing.aliyuncs.com/acs/agent\",\"data_disk_size\":0,\"data_disk_category\":\"cloud_ssd\",\"security_group_id\":\"sg-2ze57kc2cf36f9mrsrjx\",\"tags\":\"\",\"zone_id\":\"cn-beijing-a\",\"-\":\"PayByTraffic\",\"name\":\"Hello\",\"cluster_id\":\"ca737c2c04143464eaf439e245ceb1bf4\",\"size\":3,\"region_id\":\"cn-beijing\",\"network_mode\":\"classic\",\"subnet_cidr\":\"172.18.1.1/24\",\"state\":\"running\",\"master_url\":\"https://master4g7.cs-cn-beijing.aliyun.com:20019\",\"agent_version\":\"0.9-cdb96d4\",\"external_loadbalancer_id\":\"lb-2zegrgbsmjvxx1r1v26pn\",\"internal_master_url\":\"https://master4g7.cs-cn-beijing.aliyun-inc.com:20019\",\"port\":20019,\"node_status\":\"{\\\"health\\\":0,\\\"unhealth\\\":3}\",\"cluster_healthy\":\"unhealth\",\"docker_version\":\"17.06.1-ce\",\"cluster_type\":\"aliyun\",\"swarm_mode\":true,\"init_version\":\"\",\"current_version\":\"\",\"meta_data\":\"\",\"upgrade_components\":null,\"capabilities\":{\"acslogging\":true,\"acsrouting\":true,\"blue-green_confirm\":true,\"blue-green_deployment\":true,\"cluster_event\":true,\"compose_v2\":true,\"config_map\":true,\"cron\":true,\"default_update_method\":true,\"drain\":true,\"logging_sls\":true,\"monitoring\":true,\"node_scaling\":true,\"porject_event_deletion\":true,\"porject_trigger\":true,\"rebalance\":true,\"reset_node\":true,\"routing_custom_root_domain\":true,\"routing_slb\":true,\"scalingtrigger\":true,\"slb-blue-green_deployment\":true,\"update_force_reschedule\":true,\"volume_ossfs\":true,\"volume_yunpan\":true},\"need_update_agent\":false,\"created\":\"2017-09-12T07:26:58Z\",\"updated\":\"2017-12-26T11:36:41Z\",\"outputs\":null,\"parameters\":null}]"
+//	commonResponse := NewCommonResponse()
+//	// support auto json type trans
+//	initJsonParserOnce()
+//	err := jsonParser.Unmarshal([]byte(arrayJson), commonResponse)
+//	if err != nil {
+//		panic(err)
+//	}
+//}
 
 func getJsonBytes() ([]byte, error) {
 	from := &From{

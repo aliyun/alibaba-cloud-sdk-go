@@ -64,9 +64,9 @@ func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callb
 
 type RegisterTagRequest struct {
 	*requests.RpcRequest
-	StoreName string `position:"Query" name:"StoreName"`
 	Text      string `position:"Query" name:"Text"`
 	TagKey    string `position:"Query" name:"TagKey"`
+	StoreName string `position:"Query" name:"StoreName"`
 	Lang      string `position:"Query" name:"Lang"`
 }
 
@@ -82,7 +82,7 @@ func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	request = &RegisterTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterTag", "cloudphoto", "openAPI")
 	return
 }
 

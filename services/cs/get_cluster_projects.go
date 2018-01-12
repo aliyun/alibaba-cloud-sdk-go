@@ -76,6 +76,7 @@ func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "GetClusterProjects", "/clusters/[ClusterId]/projects", "", "")
+	request.Method = requests.GET
 	return
 }
 

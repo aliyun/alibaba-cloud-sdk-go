@@ -86,7 +86,7 @@ func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerI
 	request = &ModifyLoadBalancerInternetSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb", "openAPI")
 	return
 }
 

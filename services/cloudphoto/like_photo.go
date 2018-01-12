@@ -65,8 +65,8 @@ func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback 
 type LikePhotoRequest struct {
 	*requests.RpcRequest
 	LibraryId string           `position:"Query" name:"LibraryId"`
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 }
 
 type LikePhotoResponse struct {
@@ -81,7 +81,7 @@ func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	request = &LikePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "cloudphoto", "openAPI")
 	return
 }
 

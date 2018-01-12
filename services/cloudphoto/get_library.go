@@ -96,7 +96,7 @@ func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto", "openAPI")
 	return
 }
 

@@ -76,6 +76,7 @@ func CreateDescribeUserContainersRequest() (request *DescribeUserContainersReque
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("CS", "2015-12-15", "DescribeUserContainers", "/region/[RegionId]/containers", "", "")
+	request.Method = requests.GET
 	return
 }
 

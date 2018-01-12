@@ -83,7 +83,7 @@ func CreateModifyInstanceAutoRenewAttributeRequest() (request *ModifyInstanceAut
 	request = &ModifyInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs", "openAPI")
 	return
 }
 

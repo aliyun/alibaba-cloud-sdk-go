@@ -82,7 +82,7 @@ func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIp
 	request = &RemoveBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveBandwidthPackageIps", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveBandwidthPackageIps", "vpc", "openAPI")
 	return
 }
 

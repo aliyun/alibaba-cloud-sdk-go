@@ -83,7 +83,7 @@ func CreateSetRuleRequest() (request *SetRuleRequest) {
 	request = &SetRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetRule", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetRule", "slb", "openAPI")
 	return
 }
 
