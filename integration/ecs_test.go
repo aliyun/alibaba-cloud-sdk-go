@@ -7,15 +7,17 @@ import (
 	"os"
 	"testing"
 	"time"
+	"strings"
+	"strconv"
 )
 
 const (
-	InstanceDefaultTimeout = 120
-	DefaultWaitForInterval = 10
+	EcsInstanceDefaultTimeout = 120
+	EcsDefaultWaitForInterval = 10
 
-	Running = "Running"
-	Stopped = "Stopped"
-	Deleted = "Deleted"
+	EcsInstanceStatusRunning  = "Running"
+	EcsInstanceStatusStopped  = "Stopped"
+	EcsInstanceStatusDeleted  = "Deleted"
 )
 
 // create -> start -> stop -> delete
@@ -31,122 +33,148 @@ func TestEcsInstance(t *testing.T) {
 	param := getDemoInstanceAttributes(t, ecsClient)
 
 	// create
-	instanceId := createInstance(t, ecsClient, param)
+	instanceId := createEcsInstance(t, ecsClient, param)
 
 	// defer wait for deleted
-	defer waitForInstance(t, ecsClient, instanceId, Deleted, 120)
+	defer waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusDeleted, 120)
 
 	// defer delete
-	defer deleteInstance(t, ecsClient, instanceId)
+	defer deleteEcsInstance(t, ecsClient, instanceId)
 
 	// wait
-	waitForInstance(t, ecsClient, instanceId, Stopped, 60)
+	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusStopped, 60)
 
 	// start
-	startInstance(t, ecsClient, instanceId)
+	startEcsInstance(t, ecsClient, instanceId)
 
 	// wait
-	waitForInstance(t, ecsClient, instanceId, Running, 120)
+	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusRunning, 120)
 
 	// stop
-	stopInstance(t, ecsClient, instanceId)
+	stopEcsInstance(t, ecsClient, instanceId)
 
 	// wait
-	waitForInstance(t, ecsClient, instanceId, Stopped, 600)
+	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusStopped, 600)
+
+	// delete all test instance
+	deleteAllTestEcsInstance(t, ecsClient)
 }
 
 func getDemoInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeInstanceAttributeResponse {
-	fmt.Print("trying to get demo instance...")
+	fmt.Print("trying to get demo ecs instance...")
 	request := ecs.CreateDescribeInstanceAttributeRequest()
 	request.InstanceId = os.Getenv("DEMO_ECS_INSTANCE_ID")
 	response, err := client.DescribeInstanceAttribute(request)
-	assertErrorNil(t, err, "Failed to get demo instance attributes")
+	assertErrorNil(t, err, "Failed to get demo ecs instance attributes")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 	return response
 }
 
-func createInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInstanceAttributeResponse) (instanceId string) {
-	fmt.Print("creating instance...")
+func createEcsInstance(t *testing.T, client *ecs.Client, param *ecs.DescribeInstanceAttributeResponse) (instanceId string) {
+	fmt.Print("creating ecs instance...")
 	request := ecs.CreateCreateInstanceRequest()
 	request.ImageId = param.ImageId
+	request.InstanceName = "SdkIntegrationTestInstance" + strconv.FormatInt(time.Now().Unix(), 10)
 	request.SecurityGroupId = param.SecurityGroupIds.SecurityGroupId[0]
 	request.InstanceType = "ecs.t1.small"
 	response, err := client.CreateInstance(request)
-	assertErrorNil(t, err, "Failed to create instance")
+	assertErrorNil(t, err, "Failed to create ecs instance")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	instanceId = response.InstanceId
 	fmt.Printf("success(%d)! instanceId = %s\n", response.GetHttpStatus(), instanceId)
 	return
 }
 
-func startInstance(t *testing.T, client *ecs.Client, instanceId string) {
-	fmt.Printf("starting instance(%s)...", instanceId)
+func startEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
+	fmt.Printf("starting ecs instance(%s)...", instanceId)
 	request := ecs.CreateStartInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.StartInstance(request)
-	assertErrorNil(t, err, "Failed to start instance "+instanceId)
+	assertErrorNil(t, err, "Failed to start ecs instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 }
 
-func stopInstance(t *testing.T, client *ecs.Client, instanceId string) {
-	fmt.Printf("stopping instance(%s)...", instanceId)
+func stopEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
+	fmt.Printf("stopping ecs instance(%s)...", instanceId)
 	request := ecs.CreateStopInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.StopInstance(request)
-	assertErrorNil(t, err, "Failed to stop instance "+instanceId)
+	assertErrorNil(t, err, "Failed to stop ecs instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 }
 
-func deleteInstance(t *testing.T, client *ecs.Client, instanceId string) {
-	fmt.Printf("deleting instance(%s)...", instanceId)
+func deleteEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
+	fmt.Printf("deleting ecs instance(%s)...", instanceId)
 	request := ecs.CreateDeleteInstanceRequest()
 	request.InstanceId = instanceId
 	response, err := client.DeleteInstance(request)
-	assertErrorNil(t, err, "Failed to delete instance "+instanceId)
+	assertErrorNil(t, err, "Failed to delete ecs instance "+instanceId)
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
 	fmt.Println("success!")
 }
 
-func assertErrorNil(t *testing.T, err error, message string) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, message+": %v\n", err)
+func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
+	fmt.Print("list all ecs instances...")
+	request := ecs.CreateDescribeInstancesRequest()
+	request.PageSize = "10"
+	request.PageNumber = "1"
+	response, err := client.DescribeInstances(request)
+	assertErrorNil(t, err, "Failed to list all ecs instances ")
+	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
+	fmt.Println("success!")
+
+	for _, instanceInfo := range response.Instances.Instance {
+		if strings.HasPrefix(instanceInfo.InstanceName, "SdkIntegrationTestInstance") {
+			fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
+				instanceInfo.Status, instanceInfo.InstanceId)
+			if instanceInfo.Status == EcsInstanceStatusRunning {
+				// stop
+				stopEcsInstance(t, client, instanceInfo.InstanceId)
+			}else if instanceInfo.Status == EcsInstanceStatusStopped {
+				// delete
+				deleteEcsInstance(t, client, instanceInfo.InstanceId)
+				// wait
+				waitForEcsInstance(t, client, instanceInfo.InstanceId, EcsInstanceStatusDeleted, 600)
+			}
+		}
 	}
+
 }
 
-func waitForInstance(t *testing.T, client *ecs.Client, instanceId string, targetStatus string, timeout int) {
+func waitForEcsInstance(t *testing.T, client *ecs.Client, instanceId string, targetStatus string, timeout int) {
 	if timeout <= 0 {
-		timeout = InstanceDefaultTimeout
+		timeout = EcsInstanceDefaultTimeout
 	}
 	for {
 		request := ecs.CreateDescribeInstanceAttributeRequest()
 		request.InstanceId = instanceId
 		response, err := client.DescribeInstanceAttribute(request)
 
-		if targetStatus == Deleted {
-			if response.GetHttpStatus() == 404 || response.Status == Deleted {
-				fmt.Printf("delete instance(%s) success\n", instanceId)
+		if targetStatus == EcsInstanceStatusDeleted {
+			if response.GetHttpStatus() == 404 || response.Status == EcsInstanceStatusDeleted {
+				fmt.Printf("delete ecs instance(%s) success\n", instanceId)
 				break
 			} else {
-				assertErrorNil(t, err, "Failed to describe instance \n")
+				assertErrorNil(t, err, "Failed to describe ecs instance \n")
 			}
 		} else {
-			assertErrorNil(t, err, "Failed to describe instance \n")
+			assertErrorNil(t, err, "Failed to describe ecs instance \n")
 			if response.Status == targetStatus {
-				fmt.Printf("instance(%s) status changed to %s, wait a moment\n", instanceId, targetStatus)
-				time.Sleep(DefaultWaitForInterval * time.Second)
+				fmt.Printf("ecs instance(%s) status changed to %s, wait a moment\n", instanceId, targetStatus)
+				time.Sleep(EcsDefaultWaitForInterval * time.Second)
 				break
 			} else {
-				fmt.Printf("instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, targetStatus)
+				fmt.Printf("ecs instance(%s) status is %s, wait for changing to %s\n", instanceId, response.Status, targetStatus)
 			}
 		}
 
-		timeout = timeout - DefaultWaitForInterval
+		timeout = timeout - EcsDefaultWaitForInterval
 		if timeout <= 0 {
-			t.Errorf(fmt.Sprintf("wait for instance(%s) status to %s timeout(%d)\n", instanceId, targetStatus, timeout))
+			t.Errorf(fmt.Sprintf("wait for ecs instance(%s) status to %s timeout(%d)\n", instanceId, targetStatus, timeout))
 		}
-		time.Sleep(DefaultWaitForInterval * time.Second)
+		time.Sleep(EcsDefaultWaitForInterval * time.Second)
 	}
 }

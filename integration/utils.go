@@ -1,6 +1,10 @@
 package integration
 
-import "os"
+import (
+	"os"
+	"testing"
+	"fmt"
+)
 
 type Config struct {
 	AccessKeyId     string
@@ -26,5 +30,11 @@ func getConfigFromEnv() *Config {
 		return nil
 	} else {
 		return config
+	}
+}
+
+func assertErrorNil(t *testing.T, err error, message string) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, message+": %v\n", err)
 	}
 }
