@@ -109,7 +109,6 @@ func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryRegistrantProfiles", "", "")
-	request.Method = requests.POST
 	return
 }
 

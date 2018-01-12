@@ -96,7 +96,6 @@ func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornPipelineList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

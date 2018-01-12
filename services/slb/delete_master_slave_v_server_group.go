@@ -83,7 +83,6 @@ func CreateDeleteMasterSlaveVServerGroupRequest() (request *DeleteMasterSlaveVSe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

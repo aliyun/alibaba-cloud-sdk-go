@@ -78,7 +78,6 @@ func CreateOpenAccountRequest() (request *OpenAccountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sls", "2016-08-01", "OpenAccount", "", "")
-	request.Method = requests.POST
 	return
 }
 

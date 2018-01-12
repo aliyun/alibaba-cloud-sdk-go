@@ -79,7 +79,6 @@ func CreateDetachPolicyFromUserRequest() (request *DetachPolicyFromUserRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromUser", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,6 @@ func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "QueryAliases", "", "")
-	request.Method = requests.POST
 	return
 }
 

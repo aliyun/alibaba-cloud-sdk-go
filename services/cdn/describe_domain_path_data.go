@@ -99,7 +99,6 @@ func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainPathData", "", "")
-	request.Method = requests.GET
 	return
 }
 

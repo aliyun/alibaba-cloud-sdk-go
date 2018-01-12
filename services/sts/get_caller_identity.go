@@ -79,7 +79,6 @@ func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "", "")
-	request.Method = requests.POST
 	return
 }
 

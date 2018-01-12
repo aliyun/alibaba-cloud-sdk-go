@@ -97,7 +97,6 @@ func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainsBySource", "", "")
-	request.Method = requests.POST
 	return
 }
 

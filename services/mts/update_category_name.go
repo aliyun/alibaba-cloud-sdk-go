@@ -82,7 +82,6 @@ func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

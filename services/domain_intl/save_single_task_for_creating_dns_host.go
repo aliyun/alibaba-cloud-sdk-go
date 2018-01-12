@@ -81,7 +81,6 @@ func CreateSaveSingleTaskForCreatingDnsHostRequest() (request *SaveSingleTaskFor
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingDnsHost", "", "")
-	request.Method = requests.POST
 	return
 }
 

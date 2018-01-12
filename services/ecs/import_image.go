@@ -98,7 +98,6 @@ func CreateImportImageRequest() (request *ImportImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

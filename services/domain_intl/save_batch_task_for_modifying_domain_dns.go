@@ -82,7 +82,6 @@ func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskFo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForModifyingDomainDns", "", "")
-	request.Method = requests.POST
 	return
 }
 

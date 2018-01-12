@@ -97,7 +97,6 @@ func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "GetMyGroups", "cms", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,6 @@ func CreateSaveSingleTaskForUpdateProhibitionLockRequest() (request *SaveSingleT
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForUpdateProhibitionLock", "", "")
-	request.Method = requests.POST
 	return
 }
 

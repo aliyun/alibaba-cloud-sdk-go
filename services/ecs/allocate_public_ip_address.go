@@ -84,7 +84,6 @@ func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

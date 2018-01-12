@@ -84,7 +84,6 @@ func CreateSetRuleRequest() (request *SetRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "SetRule", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

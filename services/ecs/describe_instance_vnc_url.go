@@ -82,7 +82,6 @@ func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateMigrateDomainToHttpsDeliveryRequest() (request *MigrateDomainToHttpsD
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "MigrateDomainToHttpsDelivery", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,6 @@ func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRefererConfig", "", "")
-	request.Method = requests.POST
 	return
 }
 

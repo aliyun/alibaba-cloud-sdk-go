@@ -101,7 +101,6 @@ func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetSimilarPhotos", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

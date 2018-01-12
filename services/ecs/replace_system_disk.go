@@ -89,7 +89,6 @@ func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

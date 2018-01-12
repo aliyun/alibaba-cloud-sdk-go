@@ -97,7 +97,6 @@ func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

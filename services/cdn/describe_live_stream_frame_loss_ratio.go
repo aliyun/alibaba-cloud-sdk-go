@@ -90,7 +90,6 @@ func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStrea
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamFrameLossRatio", "", "")
-	request.Method = requests.POST
 	return
 }
 

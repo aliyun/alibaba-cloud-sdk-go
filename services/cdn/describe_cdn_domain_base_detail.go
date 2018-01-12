@@ -93,7 +93,6 @@ func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseD
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnDomainBaseDetail", "", "")
-	request.Method = requests.POST
 	return
 }
 

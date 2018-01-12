@@ -89,7 +89,6 @@ func CreateDescribeMasterSlaveServerGroupsRequest() (request *DescribeMasterSlav
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -84,7 +84,6 @@ func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetDynamicConfig", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -154,7 +154,6 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImages", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

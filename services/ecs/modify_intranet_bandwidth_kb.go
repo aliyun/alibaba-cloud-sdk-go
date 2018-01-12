@@ -83,7 +83,6 @@ func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthK
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryDnsHost", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,6 @@ func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "JoinResourceGroup", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

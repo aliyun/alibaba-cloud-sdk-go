@@ -94,7 +94,6 @@ func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeCapacityHistory", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

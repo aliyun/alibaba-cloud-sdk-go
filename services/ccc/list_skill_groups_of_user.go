@@ -107,7 +107,6 @@ func CreateListSkillGroupsOfUserRequest() (request *ListSkillGroupsOfUserRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroupsOfUser", "", "")
-	request.Method = requests.POST
 	return
 }
 

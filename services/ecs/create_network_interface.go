@@ -87,7 +87,6 @@ func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

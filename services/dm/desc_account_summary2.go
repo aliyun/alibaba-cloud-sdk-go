@@ -82,7 +82,6 @@ func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "DescAccountSummary2", "", "")
-	request.Method = requests.POST
 	return
 }
 

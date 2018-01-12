@@ -80,7 +80,6 @@ func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sls", "2016-08-01", "OrderSucceededCallback", "", "")
-	request.Method = requests.POST
 	return
 }
 

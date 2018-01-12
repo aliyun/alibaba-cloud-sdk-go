@@ -81,7 +81,6 @@ func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetUserAgentAcessRestriction", "", "")
-	request.Method = requests.POST
 	return
 }
 

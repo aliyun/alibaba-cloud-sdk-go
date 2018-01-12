@@ -83,7 +83,6 @@ func CreateSaveBatchTaskForUpdatingContactInfoRequest() (request *SaveBatchTaskF
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

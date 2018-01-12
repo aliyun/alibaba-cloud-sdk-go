@@ -99,7 +99,6 @@ func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

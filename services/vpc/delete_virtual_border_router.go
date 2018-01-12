@@ -82,7 +82,6 @@ func CreateDeleteVirtualBorderRouterRequest() (request *DeleteVirtualBorderRoute
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVirtualBorderRouter", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

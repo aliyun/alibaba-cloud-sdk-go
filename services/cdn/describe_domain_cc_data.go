@@ -91,7 +91,6 @@ func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainCCData", "", "")
-	request.Method = requests.POST
 	return
 }
 

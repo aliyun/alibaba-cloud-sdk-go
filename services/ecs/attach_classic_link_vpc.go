@@ -81,7 +81,6 @@ func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachClassicLinkVpc", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

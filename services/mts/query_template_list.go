@@ -149,7 +149,6 @@ func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTemplateList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

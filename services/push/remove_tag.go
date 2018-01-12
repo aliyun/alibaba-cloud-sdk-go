@@ -78,7 +78,6 @@ func CreateRemoveTagRequest() (request *RemoveTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "RemoveTag", "", "")
-	request.Method = requests.POST
 	return
 }
 

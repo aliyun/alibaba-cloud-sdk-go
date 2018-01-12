@@ -80,7 +80,6 @@ func CreateCreateTagRequest() (request *CreateTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "CreateTag", "", "")
-	request.Method = requests.POST
 	return
 }
 

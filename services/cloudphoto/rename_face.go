@@ -83,7 +83,6 @@ func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameFace", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

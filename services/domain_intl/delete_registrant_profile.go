@@ -79,7 +79,6 @@ func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "DeleteRegistrantProfile", "", "")
-	request.Method = requests.POST
 	return
 }
 

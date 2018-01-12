@@ -153,7 +153,6 @@ func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

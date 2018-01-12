@@ -82,7 +82,6 @@ func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyMailAddress", "", "")
-	request.Method = requests.POST
 	return
 }
 

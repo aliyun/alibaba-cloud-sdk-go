@@ -79,7 +79,6 @@ func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "PutCustomMetric", "cms", "openAPI")
-	request.Method = requests.GET
 	return
 }
 

@@ -86,7 +86,6 @@ func CreateAddDomainRecordRequest() (request *AddDomainRecordRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "AddDomainRecord", "", "")
-	request.Method = requests.POST
 	return
 }
 

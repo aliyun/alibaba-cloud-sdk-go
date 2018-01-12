@@ -111,7 +111,6 @@ func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

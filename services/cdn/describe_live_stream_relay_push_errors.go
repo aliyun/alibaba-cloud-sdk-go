@@ -86,7 +86,6 @@ func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStre
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors", "", "")
-	request.Method = requests.POST
 	return
 }
 

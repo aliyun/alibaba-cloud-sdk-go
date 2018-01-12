@@ -90,7 +90,6 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -85,7 +85,6 @@ func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitPornJob", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

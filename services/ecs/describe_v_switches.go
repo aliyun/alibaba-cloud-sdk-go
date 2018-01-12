@@ -103,7 +103,6 @@ func CreateDescribeVSwitchesRequest() (request *DescribeVSwitchesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVSwitches", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

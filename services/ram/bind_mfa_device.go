@@ -80,7 +80,6 @@ func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "BindMFADevice", "", "")
-	request.Method = requests.POST
 	return
 }
 

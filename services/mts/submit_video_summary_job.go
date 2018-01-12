@@ -85,7 +85,6 @@ func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

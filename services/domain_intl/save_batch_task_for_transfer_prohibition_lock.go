@@ -81,7 +81,6 @@ func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchT
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForTransferProhibitionLock", "", "")
-	request.Method = requests.POST
 	return
 }
 

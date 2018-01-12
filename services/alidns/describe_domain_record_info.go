@@ -93,7 +93,6 @@ func CreateDescribeDomainRecordInfoRequest() (request *DescribeDomainRecordInfoR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

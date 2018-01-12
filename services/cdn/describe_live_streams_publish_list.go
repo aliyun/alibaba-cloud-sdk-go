@@ -98,7 +98,6 @@ func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreams
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsPublishList", "", "")
-	request.Method = requests.POST
 	return
 }
 

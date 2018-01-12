@@ -109,7 +109,6 @@ func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterPhoto", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

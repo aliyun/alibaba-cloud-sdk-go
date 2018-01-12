@@ -84,7 +84,6 @@ func CreateGetVideoCoverRequest() (request *GetVideoCoverRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetVideoCover", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

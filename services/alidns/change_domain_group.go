@@ -82,7 +82,6 @@ func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "ChangeDomainGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

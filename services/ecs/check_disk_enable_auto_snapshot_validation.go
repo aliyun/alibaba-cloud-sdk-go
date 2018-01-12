@@ -83,7 +83,6 @@ func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEna
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

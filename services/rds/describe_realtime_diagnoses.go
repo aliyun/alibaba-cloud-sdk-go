@@ -97,7 +97,6 @@ func CreateDescribeRealtimeDiagnosesRequest() (request *DescribeRealtimeDiagnose
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRealtimeDiagnoses", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

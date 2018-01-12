@@ -99,7 +99,6 @@ func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaUsage", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

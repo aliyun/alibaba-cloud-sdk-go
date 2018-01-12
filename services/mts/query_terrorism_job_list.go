@@ -130,7 +130,6 @@ func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismJobList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

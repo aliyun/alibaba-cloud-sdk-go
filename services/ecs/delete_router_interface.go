@@ -83,7 +83,6 @@ func CreateDeleteRouterInterfaceRequest() (request *DeleteRouterInterfaceRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

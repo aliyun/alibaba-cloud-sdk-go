@@ -83,7 +83,6 @@ func CreateModifyVRouterAttributeRequest() (request *ModifyVRouterAttributeReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVRouterAttribute", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

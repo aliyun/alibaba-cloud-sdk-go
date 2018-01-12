@@ -88,7 +88,6 @@ func CreateDescribeDampPoliciesByCidRequest() (request *DescribeDampPoliciesByCi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPoliciesByCid", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

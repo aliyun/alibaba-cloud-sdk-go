@@ -89,7 +89,6 @@ func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTagKeys", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

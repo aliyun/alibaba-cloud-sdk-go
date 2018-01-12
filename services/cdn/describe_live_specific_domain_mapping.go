@@ -86,7 +86,6 @@ func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpec
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveSpecificDomainMapping", "", "")
-	request.Method = requests.POST
 	return
 }
 

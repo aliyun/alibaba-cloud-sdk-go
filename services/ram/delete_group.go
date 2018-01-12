@@ -77,7 +77,6 @@ func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

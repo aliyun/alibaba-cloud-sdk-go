@@ -89,7 +89,6 @@ func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNum
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamNumberList", "", "")
-	request.Method = requests.POST
 	return
 }
 

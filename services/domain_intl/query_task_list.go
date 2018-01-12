@@ -98,7 +98,6 @@ func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryTaskList", "", "")
-	request.Method = requests.POST
 	return
 }
 

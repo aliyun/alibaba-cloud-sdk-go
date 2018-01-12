@@ -81,7 +81,6 @@ func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteIpfilterByEdmId", "", "")
-	request.Method = requests.POST
 	return
 }
 

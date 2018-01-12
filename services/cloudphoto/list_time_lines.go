@@ -113,7 +113,6 @@ func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLines", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

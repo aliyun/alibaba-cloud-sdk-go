@@ -82,7 +82,6 @@ func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "CheckReplyToMailAddress", "", "")
-	request.Method = requests.POST
 	return
 }
 

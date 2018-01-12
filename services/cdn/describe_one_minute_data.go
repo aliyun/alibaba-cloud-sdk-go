@@ -83,7 +83,6 @@ func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeOneMinuteData", "", "")
-	request.Method = requests.POST
 	return
 }
 

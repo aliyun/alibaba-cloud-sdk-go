@@ -97,7 +97,6 @@ func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCoverPipelineList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

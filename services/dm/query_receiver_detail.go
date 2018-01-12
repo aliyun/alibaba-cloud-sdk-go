@@ -94,7 +94,6 @@ func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "QueryReceiverDetail", "", "")
-	request.Method = requests.POST
 	return
 }
 

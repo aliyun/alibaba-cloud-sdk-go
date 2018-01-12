@@ -96,7 +96,6 @@ func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordLogs", "", "")
-	request.Method = requests.POST
 	return
 }
 

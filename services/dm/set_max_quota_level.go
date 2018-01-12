@@ -80,7 +80,6 @@ func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "SetMaxQuotaLevel", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -80,7 +80,6 @@ func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

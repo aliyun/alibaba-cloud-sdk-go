@@ -99,7 +99,6 @@ func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVRouters", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

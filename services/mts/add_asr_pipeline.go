@@ -93,7 +93,6 @@ func CreateAddAsrPipelineRequest() (request *AddAsrPipelineRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "AddAsrPipeline", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -95,7 +95,6 @@ func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCensorPipeline", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

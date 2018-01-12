@@ -83,7 +83,6 @@ func CreateAllocateInstancePrivateConnectionRequest() (request *AllocateInstance
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstancePrivateConnection", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

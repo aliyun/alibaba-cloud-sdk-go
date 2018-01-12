@@ -80,7 +80,6 @@ func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UnbindMFADevice", "", "")
-	request.Method = requests.POST
 	return
 }
 

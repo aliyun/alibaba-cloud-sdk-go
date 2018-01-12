@@ -95,7 +95,6 @@ func CreateGetAccountListRequest() (request *GetAccountListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "GetAccountList", "", "")
-	request.Method = requests.POST
 	return
 }
 

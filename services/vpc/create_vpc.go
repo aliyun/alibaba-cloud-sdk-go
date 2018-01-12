@@ -88,7 +88,6 @@ func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

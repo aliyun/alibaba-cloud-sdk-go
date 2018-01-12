@@ -94,7 +94,6 @@ func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *Describ
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamHlsOnlineUserNumByDomain", "", "")
-	request.Method = requests.POST
 	return
 }
 

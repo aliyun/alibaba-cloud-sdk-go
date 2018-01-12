@@ -97,7 +97,6 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

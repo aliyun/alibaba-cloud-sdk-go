@@ -82,7 +82,6 @@ func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -89,7 +89,6 @@ func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupCategories", "cms", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -80,7 +80,6 @@ func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetUserMFAInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

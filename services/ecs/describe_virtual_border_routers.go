@@ -114,7 +114,6 @@ func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorder
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

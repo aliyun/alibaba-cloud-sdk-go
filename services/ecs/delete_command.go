@@ -81,7 +81,6 @@ func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteCommand", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

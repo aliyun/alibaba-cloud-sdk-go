@@ -98,7 +98,6 @@ func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDeta
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "SenderStatisticsDetailByParam", "", "")
-	request.Method = requests.POST
 	return
 }
 

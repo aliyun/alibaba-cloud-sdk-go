@@ -105,7 +105,6 @@ func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHist
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

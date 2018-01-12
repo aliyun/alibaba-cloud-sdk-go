@@ -85,7 +85,6 @@ func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpShotJob", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

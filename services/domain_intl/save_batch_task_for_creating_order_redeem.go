@@ -85,7 +85,6 @@ func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskF
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRedeem", "", "")
-	request.Method = requests.POST
 	return
 }
 

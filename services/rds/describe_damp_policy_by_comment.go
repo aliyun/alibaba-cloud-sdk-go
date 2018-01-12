@@ -88,7 +88,6 @@ func CreateDescribeDampPolicyByCommentRequest() (request *DescribeDampPolicyByCo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByComment", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -84,7 +84,6 @@ func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserVipsByDomain", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateDeleteCustomerGatewayRequest() (request *DeleteCustomerGatewayRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteCustomerGateway", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -121,7 +121,6 @@ func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

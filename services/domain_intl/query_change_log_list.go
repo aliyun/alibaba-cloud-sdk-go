@@ -100,7 +100,6 @@ func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryChangeLogList", "", "")
-	request.Method = requests.POST
 	return
 }
 

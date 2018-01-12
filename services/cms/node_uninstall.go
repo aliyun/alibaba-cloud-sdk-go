@@ -80,7 +80,6 @@ func CreateNodeUninstallRequest() (request *NodeUninstallRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "NodeUninstall", "cms", "openAPI")
-	request.Method = requests.GET
 	return
 }
 

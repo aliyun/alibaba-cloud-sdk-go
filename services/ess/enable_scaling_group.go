@@ -122,7 +122,6 @@ func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "EnableScalingGroup", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

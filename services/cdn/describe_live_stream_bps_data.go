@@ -89,7 +89,6 @@ func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamBpsData", "", "")
-	request.Method = requests.POST
 	return
 }
 

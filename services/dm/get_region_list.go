@@ -94,7 +94,6 @@ func CreateGetRegionListRequest() (request *GetRegionListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "GetRegionList", "", "")
-	request.Method = requests.POST
 	return
 }
 

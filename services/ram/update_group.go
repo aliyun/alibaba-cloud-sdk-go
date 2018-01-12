@@ -85,7 +85,6 @@ func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -84,7 +84,6 @@ func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

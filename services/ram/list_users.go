@@ -92,7 +92,6 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListUsers", "", "")
-	request.Method = requests.POST
 	return
 }
 

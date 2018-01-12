@@ -93,7 +93,6 @@ func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateAlarm", "cms", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

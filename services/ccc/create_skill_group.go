@@ -87,7 +87,6 @@ func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateSkillGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -92,7 +92,6 @@ func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAccessRules", "nas", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

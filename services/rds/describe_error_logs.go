@@ -94,7 +94,6 @@ func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

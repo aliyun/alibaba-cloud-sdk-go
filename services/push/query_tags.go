@@ -84,7 +84,6 @@ func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "", "")
-	request.Method = requests.POST
 	return
 }
 

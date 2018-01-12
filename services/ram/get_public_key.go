@@ -84,7 +84,6 @@ func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetPublicKey", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -99,7 +99,6 @@ func CreateUploadServerCertificateRequest() (request *UploadServerCertificateReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

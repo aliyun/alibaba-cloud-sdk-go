@@ -91,7 +91,6 @@ func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -130,7 +130,6 @@ func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "DescribeAlarmHistory", "cms", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

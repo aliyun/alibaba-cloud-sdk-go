@@ -82,7 +82,6 @@ func CreateDeleteHaVipRequest() (request *DeleteHaVipRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteHaVip", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

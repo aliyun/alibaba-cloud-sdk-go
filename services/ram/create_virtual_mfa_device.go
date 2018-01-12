@@ -82,7 +82,6 @@ func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateVirtualMFADevice", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamStreamStatus", "", "")
-	request.Method = requests.POST
 	return
 }
 

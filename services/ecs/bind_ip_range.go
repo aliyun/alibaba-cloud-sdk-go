@@ -82,7 +82,6 @@ func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "BindIpRange", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -78,7 +78,6 @@ func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "UnbindPhone", "", "")
-	request.Method = requests.POST
 	return
 }
 

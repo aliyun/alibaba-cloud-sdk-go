@@ -92,7 +92,6 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "AllocateEipAddress", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

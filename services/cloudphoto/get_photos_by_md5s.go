@@ -100,7 +100,6 @@ func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

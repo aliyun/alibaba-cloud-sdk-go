@@ -82,7 +82,6 @@ func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlC
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetFileTypeForceTtlCodeConfig", "", "")
-	request.Method = requests.GET
 	return
 }
 

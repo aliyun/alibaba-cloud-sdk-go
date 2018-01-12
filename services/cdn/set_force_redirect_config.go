@@ -80,7 +80,6 @@ func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetForceRedirectConfig", "", "")
-	request.Method = requests.POST
 	return
 }
 

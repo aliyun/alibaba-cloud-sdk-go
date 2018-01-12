@@ -88,7 +88,6 @@ func CreateInactivatePhotosRequest() (request *InactivatePhotosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "InactivatePhotos", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

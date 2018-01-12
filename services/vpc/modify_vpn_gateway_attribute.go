@@ -96,7 +96,6 @@ func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttribut
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnGatewayAttribute", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

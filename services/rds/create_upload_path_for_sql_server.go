@@ -89,7 +89,6 @@ func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQ
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -84,7 +84,6 @@ func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPol
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

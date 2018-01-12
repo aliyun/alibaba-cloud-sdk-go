@@ -84,7 +84,6 @@ func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListene
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "StartLoadBalancerListener", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -80,7 +80,6 @@ func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteDomainGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -109,7 +109,6 @@ func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

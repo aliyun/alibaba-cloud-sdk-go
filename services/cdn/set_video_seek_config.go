@@ -80,7 +80,6 @@ func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetVideoSeekConfig", "", "")
-	request.Method = requests.POST
 	return
 }
 

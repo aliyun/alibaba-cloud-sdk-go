@@ -84,7 +84,6 @@ func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTas
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveSingleTaskForUpdatingContactInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

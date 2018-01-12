@@ -82,7 +82,6 @@ func CreateSetMeRequest() (request *SetMeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetMe", "cloudphoto", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

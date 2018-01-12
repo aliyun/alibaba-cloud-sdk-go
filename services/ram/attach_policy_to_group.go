@@ -79,7 +79,6 @@ func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -87,7 +87,6 @@ func CreateCreateRoleRequest() (request *CreateRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateRole", "", "")
-	request.Method = requests.POST
 	return
 }
 

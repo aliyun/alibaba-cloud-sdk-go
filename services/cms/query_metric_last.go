@@ -94,7 +94,6 @@ func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricLast", "cms", "openAPI")
-	request.Method = requests.GET
 	return
 }
 

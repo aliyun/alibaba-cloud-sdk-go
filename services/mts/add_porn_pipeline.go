@@ -93,7 +93,6 @@ func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "AddPornPipeline", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

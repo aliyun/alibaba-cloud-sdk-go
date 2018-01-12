@@ -82,7 +82,6 @@ func CreateRemovePhoneNumberRequest() (request *RemovePhoneNumberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RemovePhoneNumber", "", "")
-	request.Method = requests.POST
 	return
 }
 

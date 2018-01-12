@@ -89,7 +89,6 @@ func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "GetIpfilterList", "", "")
-	request.Method = requests.POST
 	return
 }
 

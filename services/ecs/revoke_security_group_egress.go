@@ -94,7 +94,6 @@ func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgres
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

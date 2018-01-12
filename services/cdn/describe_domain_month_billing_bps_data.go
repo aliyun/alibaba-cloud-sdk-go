@@ -94,7 +94,6 @@ func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainMonthBillingBpsData", "", "")
-	request.Method = requests.POST
 	return
 }
 

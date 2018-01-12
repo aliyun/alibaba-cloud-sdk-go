@@ -101,7 +101,6 @@ func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "QueryDomainByParam", "", "")
-	request.Method = requests.POST
 	return
 }
 

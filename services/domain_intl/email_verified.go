@@ -79,7 +79,6 @@ func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "EmailVerified", "", "")
-	request.Method = requests.POST
 	return
 }
 

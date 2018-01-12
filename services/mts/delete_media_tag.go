@@ -82,7 +82,6 @@ func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaTag", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

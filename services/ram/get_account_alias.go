@@ -77,7 +77,6 @@ func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetAccountAlias", "", "")
-	request.Method = requests.POST
 	return
 }
 

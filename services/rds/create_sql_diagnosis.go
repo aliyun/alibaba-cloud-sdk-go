@@ -80,7 +80,6 @@ func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateSQLDiagnosis", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

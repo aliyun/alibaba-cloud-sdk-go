@@ -97,7 +97,6 @@ func CreateDescribeNqasRequest() (request *DescribeNqasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNqas", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

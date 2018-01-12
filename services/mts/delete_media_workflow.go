@@ -88,7 +88,6 @@ func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

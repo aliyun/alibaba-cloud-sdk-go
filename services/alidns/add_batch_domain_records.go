@@ -80,7 +80,6 @@ func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "AddBatchDomainRecords", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -87,7 +87,6 @@ func CreateDescribeDomainDownstreamBpsOfEdgeRequest() (request *DescribeDomainDo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainDownstreamBpsOfEdge", "", "")
-	request.Method = requests.POST
 	return
 }
 

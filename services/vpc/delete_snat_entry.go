@@ -82,7 +82,6 @@ func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSnatEntry", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -81,7 +81,6 @@ func CreateApproveTemplateRequest() (request *ApproveTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "ApproveTemplate", "", "")
-	request.Method = requests.POST
 	return
 }
 

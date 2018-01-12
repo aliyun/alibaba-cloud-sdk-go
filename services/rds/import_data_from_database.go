@@ -89,7 +89,6 @@ func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataFromDatabase", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

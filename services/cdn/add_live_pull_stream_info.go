@@ -84,7 +84,6 @@ func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "AddLivePullStreamInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

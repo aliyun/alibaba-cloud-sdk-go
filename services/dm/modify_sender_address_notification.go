@@ -83,7 +83,6 @@ func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddres
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "ModifySenderAddressNotification", "", "")
-	request.Method = requests.POST
 	return
 }
 

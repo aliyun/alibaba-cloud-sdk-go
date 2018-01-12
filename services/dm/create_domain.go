@@ -80,7 +80,6 @@ func CreateCreateDomainRequest() (request *CreateDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "CreateDomain", "", "")
-	request.Method = requests.POST
 	return
 }
 

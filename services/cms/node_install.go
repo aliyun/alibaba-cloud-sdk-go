@@ -82,7 +82,6 @@ func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2017-03-01", "NodeInstall", "cms", "openAPI")
-	request.Method = requests.GET
 	return
 }
 

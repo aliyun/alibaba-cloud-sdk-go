@@ -87,7 +87,6 @@ func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVSwitch", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -79,7 +79,6 @@ func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "StopCdnDomain", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -83,7 +83,6 @@ func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateGroup", "", "")
-	request.Method = requests.POST
 	return
 }
 

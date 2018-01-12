@@ -88,7 +88,6 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetUser", "", "")
-	request.Method = requests.POST
 	return
 }
 

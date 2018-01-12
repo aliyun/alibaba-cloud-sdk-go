@@ -80,7 +80,6 @@ func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("NAS", "2017-06-26", "CreateAccessGroup", "nas", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

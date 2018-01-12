@@ -122,7 +122,6 @@ func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForBuy", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

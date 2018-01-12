@@ -98,7 +98,6 @@ func CreateListCensorPipelineRequest() (request *ListCensorPipelineRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "ListCensorPipeline", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

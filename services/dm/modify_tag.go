@@ -81,7 +81,6 @@ func CreateModifyTagRequest() (request *ModifyTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyTag", "", "")
-	request.Method = requests.POST
 	return
 }
 

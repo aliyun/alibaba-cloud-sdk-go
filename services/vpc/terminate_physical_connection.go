@@ -82,7 +82,6 @@ func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConne
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "TerminatePhysicalConnection", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateModifyAlertConfigRequest() (request *ModifyAlertConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyAlertConfig", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

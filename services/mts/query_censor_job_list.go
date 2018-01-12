@@ -151,7 +151,6 @@ func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorJobList", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -82,7 +82,6 @@ func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "SetPathForceTtlCodeConfig", "", "")
-	request.Method = requests.GET
 	return
 }
 

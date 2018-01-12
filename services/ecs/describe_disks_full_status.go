@@ -115,7 +115,6 @@ func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

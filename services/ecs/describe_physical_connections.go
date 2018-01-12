@@ -115,7 +115,6 @@ func CreateDescribePhysicalConnectionsRequest() (request *DescribePhysicalConnec
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePhysicalConnections", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

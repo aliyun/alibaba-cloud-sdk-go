@@ -81,7 +81,6 @@ func CreateDeleteSignRequest() (request *DeleteSignRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "DeleteSign", "", "")
-	request.Method = requests.POST
 	return
 }
 

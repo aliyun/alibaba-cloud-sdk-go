@@ -99,7 +99,6 @@ func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceByTags", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

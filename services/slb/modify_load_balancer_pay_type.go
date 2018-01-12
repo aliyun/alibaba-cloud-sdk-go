@@ -88,7 +88,6 @@ func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTyp
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "slb", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

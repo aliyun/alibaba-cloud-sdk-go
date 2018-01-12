@@ -86,7 +86,6 @@ func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamLimitInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

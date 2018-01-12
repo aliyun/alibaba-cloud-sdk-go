@@ -106,7 +106,6 @@ func CreateGetTrackListRequest() (request *GetTrackListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "GetTrackList", "", "")
-	request.Method = requests.POST
 	return
 }
 

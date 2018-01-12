@@ -87,7 +87,6 @@ func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

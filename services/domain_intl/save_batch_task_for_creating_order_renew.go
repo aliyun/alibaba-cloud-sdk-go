@@ -86,7 +86,6 @@ func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskFo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRenew", "", "")
-	request.Method = requests.POST
 	return
 }
 

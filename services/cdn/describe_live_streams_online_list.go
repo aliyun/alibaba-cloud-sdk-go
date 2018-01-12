@@ -89,7 +89,6 @@ func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsO
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList", "", "")
-	request.Method = requests.POST
 	return
 }
 

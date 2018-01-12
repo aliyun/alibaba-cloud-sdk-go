@@ -81,7 +81,6 @@ func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificatio
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "ModifyAccountNotification", "", "")
-	request.Method = requests.POST
 	return
 }
 

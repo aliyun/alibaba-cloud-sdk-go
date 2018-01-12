@@ -83,7 +83,6 @@ func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

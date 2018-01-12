@@ -87,7 +87,6 @@ func CreateDescribeDomainOnlineUserNumberRequest() (request *DescribeDomainOnlin
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainOnlineUserNumber", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -84,7 +84,6 @@ func CreateCreateSignRequest() (request *CreateSignRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "CreateSign", "", "")
-	request.Method = requests.POST
 	return
 }
 

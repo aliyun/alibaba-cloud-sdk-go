@@ -92,7 +92,6 @@ func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RequestLoginInfo", "", "")
-	request.Method = requests.POST
 	return
 }
 

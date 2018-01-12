@@ -82,7 +82,6 @@ func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteNqa", "vpc", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

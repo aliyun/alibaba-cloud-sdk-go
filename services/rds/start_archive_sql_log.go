@@ -86,7 +86,6 @@ func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "StartArchiveSQLLog", "rds", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -95,7 +95,6 @@ func CreateDescDomainRequest() (request *DescDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "DescDomain", "", "")
-	request.Method = requests.POST
 	return
 }
 

@@ -79,7 +79,6 @@ func CreateEnableAccountRequest() (request *EnableAccountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "EnableAccount", "", "")
-	request.Method = requests.POST
 	return
 }
 

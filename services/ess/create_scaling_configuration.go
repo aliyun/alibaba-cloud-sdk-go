@@ -119,7 +119,6 @@ func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

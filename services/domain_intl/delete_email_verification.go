@@ -89,7 +89,6 @@ func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Domain-intl", "2017-12-18", "DeleteEmailVerification", "", "")
-	request.Method = requests.POST
 	return
 }
 

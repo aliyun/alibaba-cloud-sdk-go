@@ -82,7 +82,6 @@ func CreateModifyEipAddressAttributeRequest() (request *ModifyEipAddressAttribut
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyEipAddressAttribute", "ecs", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

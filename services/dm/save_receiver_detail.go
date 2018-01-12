@@ -88,7 +88,6 @@ func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dm", "2015-11-23", "SaveReceiverDetail", "", "")
-	request.Method = requests.POST
 	return
 }
 
