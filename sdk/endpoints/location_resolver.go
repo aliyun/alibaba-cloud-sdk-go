@@ -17,14 +17,43 @@ import (
 	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"time"
+	"sync"
 )
 
 const (
 	EndpointCacheExpireTime = 3600 //Seconds
 )
 
-var lastClearTimePerProduct map[string]int64 = make(map[string]int64)
-var endpointCache map[string]string = make(map[string]string)
+type EndpointItem struct {
+	URL      string
+	ExpireAt time.Time
+}
+
+type EndpointCache struct {
+	m sync.Map
+}
+
+func (s *EndpointCache) Set(key string, url string) {
+	s.m.Store(key, &EndpointItem{
+		URL:      url,
+		ExpireAt: time.Now().Add(EndpointCacheExpireTime * time.Second),
+	})
+}
+
+func (s *EndpointCache) Get(key string) (url string, exist bool) {
+	if v, ok := s.m.Load(key); ok {
+		if e := v.(*EndpointItem); ok {
+			if e.ExpireAt.Before(time.Now()) {
+				s.m.Delete(key)
+				return "", false
+			}
+			return e.URL, true
+		}
+	}
+	return "", false
+}
+
+var endpointCache = &EndpointCache{}
 
 type LocationResolver struct {
 }
@@ -37,8 +66,8 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	//get from cache
 	cacheKey := param.Product + "#" + param.RegionId
-	if endpointCache != nil && len(endpointCache[cacheKey]) > 0 && !CheckCacheIsExpire(cacheKey) {
-		endpoint = endpointCache[cacheKey]
+	if url, ok := endpointCache.Get(cacheKey); ok {
+		endpoint = url
 		support = true
 		return
 	}
@@ -78,30 +107,13 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 	}
 	if len(getEndpointResponse.Endpoints.Endpoint[0].Endpoint) > 0 {
 		endpoint = getEndpointResponse.Endpoints.Endpoint[0].Endpoint
-		endpointCache[cacheKey] = endpoint
-		lastClearTimePerProduct[cacheKey] = time.Now().Unix()
+		endpointCache.Set(cacheKey, endpoint)
 		support = true
 		return
 	}
 
 	support = false
 	return
-}
-
-func CheckCacheIsExpire(cacheKey string) bool {
-	lastClearTime := lastClearTimePerProduct[cacheKey]
-	if lastClearTime <= 0 {
-		lastClearTime = time.Now().Unix()
-		lastClearTimePerProduct[cacheKey] = lastClearTime
-	}
-
-	now := time.Now().Unix()
-	elapsedTime := now - lastClearTime
-	if elapsedTime > EndpointCacheExpireTime {
-		return true
-	}
-
-	return false
 }
 
 type GetEndpointResponse struct {
