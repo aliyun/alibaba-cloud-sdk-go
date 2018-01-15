@@ -37,6 +37,9 @@ const (
 
 	MissingParamCode = "SDK.MissingParam"
 	InvalidParamCode = "SDK.InvalidParam"
+
+	JsonUnmarshalCode = "SDK.JsonUnmarshalError"
+	JsonUnmarshalMessage = "Failed to unmarshal response, but you can get the data via response.GetHttpStatusCode() and response.GetHttpContentString()"
 )
 
 type ClientError struct {
@@ -54,11 +57,11 @@ func NewClientError(errorCode, message string, originErr error) Error {
 }
 
 func (err *ClientError) Error() string {
+	clientErrMsg := fmt.Sprintf("[%s] %s", err.errorCode, err.message)
 	if err.originError != nil {
-		return err.originError.Error()
+		return clientErrMsg + "\noriginal error:\n" + err.originError.Error()
 	}
-
-	return fmt.Sprintf("[%s] %s", err.errorCode, err.message)
+	return clientErrMsg
 }
 
 func (err *ClientError) OriginError() error {

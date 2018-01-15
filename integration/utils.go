@@ -29,7 +29,7 @@ func getConfigFromEnv() *Config {
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
 	}
 	if config.AccessKeyId == "" {
-		return nil
+		panic("Get ACCESS_KEY_ID from environment variables failed")
 	} else {
 		return config
 	}
