@@ -251,6 +251,27 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	return
 }
 
+func NewClientWithKeyPair(regionId string, config *Config, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+	client = &Client{}
+	client.config = config
+	err = client.InitWithKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
+	return
+}
+
+func NewClientWithEcsInstance(regionId string, config *Config, roleName string) (client *Client, err error) {
+	client = &Client{}
+	client.config = config
+	err = client.InitWithEcsInstance(regionId, roleName)
+	return
+}
+
+func NewClientWithRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	client = &Client{}
+	client.config = config
+	err = client.InitWithRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	return
+}
+
 func (client *Client) ProcessCommonRequest(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
 	request.TransToAcsRequest()
 	response = responses.NewCommonResponse()
