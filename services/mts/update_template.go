@@ -64,17 +64,17 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 
 type UpdateTemplateRequest struct {
 	*requests.RpcRequest
-	Audio                string           `position:"Query" name:"Audio"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MuxConfig            string           `position:"Query" name:"MuxConfig"`
 	Container            string           `position:"Query" name:"Container"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MuxConfig            string           `position:"Query" name:"MuxConfig"`
+	Video                string           `position:"Query" name:"Video"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
 	Name                 string           `position:"Query" name:"Name"`
 	TransConfig          string           `position:"Query" name:"TransConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Video                string           `position:"Query" name:"Video"`
+	Audio                string           `position:"Query" name:"Audio"`
 }
 
 type UpdateTemplateResponse struct {

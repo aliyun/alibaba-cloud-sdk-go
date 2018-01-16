@@ -64,13 +64,13 @@ func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterM
 
 type RegisterMediaDetailScenarioRequest struct {
 	*requests.RpcRequest
-	Scenario             string           `position:"Query" name:"Scenario"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Scenario             string           `position:"Query" name:"Scenario"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RegisterMediaDetailScenarioResponse struct {

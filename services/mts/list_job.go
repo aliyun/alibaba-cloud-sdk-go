@@ -64,16 +64,16 @@ func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func
 
 type ListJobRequest struct {
 	*requests.RpcRequest
-	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
-	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
-	PipelineId                 string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	State                      string           `position:"Query" name:"State"`
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
+	State                      string           `position:"Query" name:"State"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
+	PipelineId                 string           `position:"Query" name:"PipelineId"`
 }
 
 type ListJobResponse struct {

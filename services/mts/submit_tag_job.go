@@ -64,14 +64,14 @@ func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, cal
 
 type SubmitTagJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TagConfig            string           `position:"Query" name:"TagConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitTagJobResponse struct {

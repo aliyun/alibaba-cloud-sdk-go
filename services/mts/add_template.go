@@ -64,16 +64,16 @@ func (client *Client) AddTemplateWithCallback(request *AddTemplateRequest, callb
 
 type AddTemplateRequest struct {
 	*requests.RpcRequest
-	Audio                string           `position:"Query" name:"Audio"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MuxConfig            string           `position:"Query" name:"MuxConfig"`
 	Container            string           `position:"Query" name:"Container"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	TransConfig          string           `position:"Query" name:"TransConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MuxConfig            string           `position:"Query" name:"MuxConfig"`
 	Video                string           `position:"Query" name:"Video"`
+	Audio                string           `position:"Query" name:"Audio"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddTemplateResponse struct {

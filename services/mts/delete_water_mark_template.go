@@ -64,11 +64,11 @@ func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMa
 
 type DeleteWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
 }
 
 type DeleteWaterMarkTemplateResponse struct {

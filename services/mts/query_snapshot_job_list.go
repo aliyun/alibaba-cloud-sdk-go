@@ -64,9 +64,9 @@ func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJob
 
 type QuerySnapshotJobListRequest struct {
 	*requests.RpcRequest
-	SnapshotJobIds       string           `position:"Query" name:"SnapshotJobIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnapshotJobIds       string           `position:"Query" name:"SnapshotJobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

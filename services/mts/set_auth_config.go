@@ -64,10 +64,10 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Key2                 string `position:"Query" name:"Key2"`
 	Key1                 string `position:"Query" name:"Key1"`
+	Key2                 string `position:"Query" name:"Key2"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }

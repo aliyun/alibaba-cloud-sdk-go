@@ -64,13 +64,13 @@ func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkfl
 
 type SearchMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	StateList            string           `position:"Query" name:"StateList"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	StateList            string           `position:"Query" name:"StateList"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type SearchMediaWorkflowResponse struct {
@@ -84,6 +84,7 @@ type SearchMediaWorkflowResponse struct {
 			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
 			Name            string `json:"Name" xml:"Name"`
 			Topology        string `json:"Topology" xml:"Topology"`
+			TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
 			State           string `json:"State" xml:"State"`
 			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
 		} `json:"MediaWorkflow" xml:"MediaWorkflow"`
