@@ -64,9 +64,9 @@ func (client *Client) DeleteCategoryWithCallback(request *DeleteCategoryRequest,
 
 type DeleteCategoryRequest struct {
 	*requests.RpcRequest
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

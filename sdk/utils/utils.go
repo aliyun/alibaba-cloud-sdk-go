@@ -90,6 +90,9 @@ func InitStructWithDefaultTag(bean interface{}) {
 		case "int":
 			intValue, _ := strconv.ParseInt(defaultValue, 10, 64)
 			setter.SetInt(intValue)
+		case "time.Duration":
+			intValue, _ := strconv.ParseInt(defaultValue, 10, 64)
+			setter.SetInt(intValue)
 		case "string":
 			setter.SetString(defaultValue)
 		case "bool":

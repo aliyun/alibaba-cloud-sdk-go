@@ -64,14 +64,14 @@ func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJob
 
 type SubmitTerrorismJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
 }
 
 type SubmitTerrorismJobResponse struct {

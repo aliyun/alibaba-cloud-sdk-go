@@ -64,10 +64,10 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshC
 
 type RefreshCdnDomainConfigsCacheRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Domains              string `position:"Query" name:"Domains"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Domains              string `position:"Query" name:"Domains"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 

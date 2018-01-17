@@ -64,9 +64,9 @@ func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callbac
 
 type GetPackageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Data                 string `position:"Query" name:"Data"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Data                 string `position:"Query" name:"Data"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }

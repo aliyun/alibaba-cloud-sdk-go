@@ -64,17 +64,17 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 
 type PlayInfoRequest struct {
 	*requests.RpcRequest
-	AuthInfo             string           `position:"Query" name:"AuthInfo"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
-	MediaId              string           `position:"Query" name:"MediaId"`
 	PlayDomain           string           `position:"Query" name:"PlayDomain"`
-	Rand                 string           `position:"Query" name:"Rand"`
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
 	Formats              string           `position:"Query" name:"Formats"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	Rand                 string           `position:"Query" name:"Rand"`
+	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	AuthInfo             string           `position:"Query" name:"AuthInfo"`
 }
 
 type PlayInfoResponse struct {

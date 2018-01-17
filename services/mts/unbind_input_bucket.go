@@ -64,10 +64,10 @@ func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRe
 
 type UnbindInputBucketRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bucket               string           `position:"Query" name:"Bucket"`
-	RoleArn              string           `position:"Query" name:"RoleArn"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RoleArn              string           `position:"Query" name:"RoleArn"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

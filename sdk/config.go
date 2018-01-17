@@ -25,7 +25,7 @@ type Config struct {
 	MaxRetryTime      int             `default:"3"`
 	UserAgent         string          `default:""`
 	Debug             bool            `default:"false"`
-	Timeout           time.Duration   `default:""`
+	Timeout           time.Duration   `default:"10000000000"`
 	HttpTransport     *http.Transport `default:""`
 	EnableAsync       bool            `default:"false"`
 	MaxTaskQueueSize  int             `default:"1000"`

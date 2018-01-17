@@ -31,7 +31,7 @@ func TestRdsInstance(t *testing.T) {
 
 	waitForRdsInstance(t, rdsClient, dbInstanceId, RdsInstanceStatusRunning, 1200)
 
-	createAccount(t, rdsClient, dbInstanceId)
+	//createAccount(t, rdsClient, dbInstanceId)
 
 	//nodeId := getHAConfig(t, rdsClient, dbInstanceId)
 	//
@@ -41,7 +41,7 @@ func TestRdsInstance(t *testing.T) {
 
 	deleteDBInstance(t, rdsClient, dbInstanceId)
 
-	deleteAllTestRdsInstance(t, rdsClient)
+	//deleteAllTestRdsInstance(t, rdsClient)
 }
 
 func createDBInstance(t *testing.T, client *rds.Client) (rdsInstanceId string) {
