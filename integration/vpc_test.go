@@ -1,12 +1,12 @@
 package integration
 
 import (
-	"testing"
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
-	"strconv"
-	"time"
 	"github.com/stretchr/testify/assert"
+	"strconv"
+	"testing"
+	"time"
 )
 
 func TestVpcInstance(t *testing.T) {
@@ -62,7 +62,7 @@ func createVswitchInstance(t *testing.T, client *vpc.Client, vpcId string) (vswi
 	return
 }
 
-func deleteVSwitchInstance(t *testing.T, client *vpc.Client, vswitchId string)() {
+func deleteVSwitchInstance(t *testing.T, client *vpc.Client, vswitchId string) {
 	fmt.Printf("deleting vswitch instance(%s)...", vswitchId)
 	request := vpc.CreateDeleteVSwitchRequest()
 	request.VSwitchId = vswitchId
@@ -73,7 +73,7 @@ func deleteVSwitchInstance(t *testing.T, client *vpc.Client, vswitchId string)()
 	return
 }
 
-func deleteVpcInstance(t *testing.T, client *vpc.Client, vpcId string){
+func deleteVpcInstance(t *testing.T, client *vpc.Client, vpcId string) {
 	fmt.Printf("deleting vpc instance(%s)...", vpcId)
 	request := vpc.CreateDeleteVpcRequest()
 	request.VpcId = vpcId

@@ -38,7 +38,7 @@ const (
 	MissingParamCode = "SDK.MissingParam"
 	InvalidParamCode = "SDK.InvalidParam"
 
-	JsonUnmarshalCode = "SDK.JsonUnmarshalError"
+	JsonUnmarshalCode    = "SDK.JsonUnmarshalError"
 	JsonUnmarshalMessage = "Failed to unmarshal response, but you can get the data via response.GetHttpStatusCode() and response.GetHttpContentString()"
 )
 

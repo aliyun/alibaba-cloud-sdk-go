@@ -1,13 +1,13 @@
 package integration
 
 import (
-	"testing"
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/rds"
 	"github.com/stretchr/testify/assert"
-	"time"
 	"strconv"
 	"strings"
+	"testing"
+	"time"
 )
 
 const (
@@ -63,7 +63,7 @@ func createDBInstance(t *testing.T, client *rds.Client) (rdsInstanceId string) {
 	return
 }
 
-func getHAConfig(t *testing.T, client *rds.Client, instanceId string)(nodeId string){
+func getHAConfig(t *testing.T, client *rds.Client, instanceId string) (nodeId string) {
 	fmt.Print("get dbInstance HA nodeId...")
 	request := rds.CreateDescribeDBInstanceHAConfigRequest()
 	request.DBInstanceId = instanceId
@@ -75,7 +75,7 @@ func getHAConfig(t *testing.T, client *rds.Client, instanceId string)(nodeId str
 	return
 }
 
-func changeNodeToMaster(t *testing.T, client *rds.Client, instanceId, nodeId string){
+func changeNodeToMaster(t *testing.T, client *rds.Client, instanceId, nodeId string) {
 	fmt.Print("trying to change current instance to master...")
 	request := rds.CreateSwitchDBInstanceHARequest()
 	request.DBInstanceId = instanceId
