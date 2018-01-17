@@ -44,7 +44,7 @@ func TestSlbInstance(t *testing.T) {
 	stopSlbInstance(t, slbClient, instanceId)
 
 	// delete all test instance
-	deleteAllTestSlbInstance(t, slbClient)
+	//deleteAllTestSlbInstance(t, slbClient)
 }
 
 func createSlbInstance(t *testing.T, client *slb.Client) (instanceId string) {

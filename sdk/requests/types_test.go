@@ -10,7 +10,10 @@ func TestNewInteger(t *testing.T) {
 	assert.True(t, integer.hasValue())
 	value, err := integer.getValue()
 	assert.Nil(t, err)
-	assert.Equal(t, value, 123123)
+	assert.Equal(t, 123123, value)
+	var expected Integer
+	expected = "123123"
+	assert.Equal(t, expected, integer)
 }
 
 func TestNewBoolean(t *testing.T) {
@@ -18,7 +21,10 @@ func TestNewBoolean(t *testing.T) {
 	assert.True(t, boolean.hasValue())
 	value, err := boolean.getValue()
 	assert.Nil(t, err)
-	assert.Equal(t, value, false)
+	assert.Equal(t, false, value)
+	var expected Boolean
+	expected = "false"
+	assert.Equal(t, expected, boolean)
 }
 
 func TestNewFloat(t *testing.T) {
@@ -26,5 +32,8 @@ func TestNewFloat(t *testing.T) {
 	assert.True(t, float.hasValue())
 	value, err := float.getValue()
 	assert.Nil(t, err)
-	assert.Equal(t, value, 123123.123123)
+	assert.Equal(t, 123123.123123, value)
+	var expected Float
+	expected = "123123.123123"
+	assert.Equal(t, expected, float)
 }

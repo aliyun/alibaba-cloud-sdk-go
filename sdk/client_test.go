@@ -15,7 +15,6 @@
 package sdk
 
 import (
-	"crypto/tls"
 	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
@@ -95,11 +94,13 @@ func testSetup() {
 		testConfig = getConfigFromFile()
 	}
 
-	clientConfig := NewConfig().WithHttpTransport(&http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	})
-
 	var err error
+
+	clientConfig := NewConfig().
+		WithEnableAsync(true).
+		WithGoRoutinePoolSize(5).
+		WithMaxTaskQueueSize(1000)
+
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     testConfig.AccessKeyId,
 		AccessKeySecret: testConfig.AccessKeySecret,

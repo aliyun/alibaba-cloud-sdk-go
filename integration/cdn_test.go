@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
 	"github.com/stretchr/testify/assert"
-	"os"
 )
 
 func TestCdnInstance(t *testing.T) {
@@ -19,9 +18,6 @@ func TestCdnInstance(t *testing.T) {
 	// getCdnStatus
 	assertCdnStatus(t, cdnClient)
 
-	// test travis if the key is hidden
-	testKey := os.Getenv("TestKey")
-	fmt.Println("test key : " + testKey)
 }
 
 func assertCdnStatus(t *testing.T, client *cdn.Client){

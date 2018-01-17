@@ -8,6 +8,7 @@ import (
 	"time"
 	"strings"
 	"strconv"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 const (
@@ -56,7 +57,7 @@ func TestEcsInstance(t *testing.T) {
 	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusStopped, 600)
 
 	// delete all test instance
-	deleteAllTestEcsInstance(t, ecsClient)
+	//deleteAllTestEcsInstance(t, ecsClient)
 }
 
 func getDemoEcsInstanceAttributes(t *testing.T, client *ecs.Client) *ecs.DescribeInstanceAttributeResponse {
@@ -118,8 +119,8 @@ func deleteEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
 func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 	fmt.Print("list all ecs instances...")
 	request := ecs.CreateDescribeInstancesRequest()
-	request.PageSize = "10"
-	request.PageNumber = "1"
+	request.PageSize = requests.NewInteger(10)
+	request.PageNumber = requests.NewInteger(1)
 	response, err := client.DescribeInstances(request)
 	assertErrorNil(t, err, "Failed to list all ecs instances ")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
@@ -151,6 +152,10 @@ func waitForEcsInstance(t *testing.T, client *ecs.Client, instanceId string, tar
 		request := ecs.CreateDescribeInstanceAttributeRequest()
 		request.InstanceId = instanceId
 		response, err := client.DescribeInstanceAttribute(request)
+		response.GetHttpStatus()
+		response.GetHttpHeaders()
+		response.GetHttpContentBytes()
+		response.GetHttpContentString()
 
 		if targetStatus == EcsInstanceStatusDeleted {
 			if response.GetHttpStatus() == 404 || response.Status == EcsInstanceStatusDeleted {
