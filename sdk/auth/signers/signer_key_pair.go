@@ -29,7 +29,7 @@ import (
 type SignerKeyPair struct {
 	*credentialUpdater
 	sessionCredential *SessionAkCredential
-	credential        *credentials.KeyPairCredential
+	credential        *credentials.RsaKeyPairCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
@@ -38,7 +38,7 @@ type SessionAkCredential struct {
 	accessKeySecret string
 }
 
-func NewSignerKeyPair(credential *credentials.KeyPairCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerKeyPair, err error) {
+func NewSignerKeyPair(credential *credentials.RsaKeyPairCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerKeyPair, err error) {
 	signer = &SignerKeyPair{
 		credential: credential,
 		commonApi:  commonApi,

@@ -118,11 +118,11 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	clientEcs, err = NewClientWithRamRoleNameOnEcs("cn-hangzhou", clientConfig, "conan")
+	clientEcs, err = NewClientWithStsRoleNameOnEcs("cn-hangzhou", clientConfig, "conan")
 	if err != nil {
 		panic(err)
 	}
-	clientRoleArn, err = NewClientWithRamRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
+	clientRoleArn, err = NewClientWithStsRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
 	if err != nil {
 		panic(err)
 	}

@@ -2,6 +2,7 @@
 1. Set default timeout to 10s
 2. Make integration tests more stable
 3. Fix the problem of LocationResolver in concurrency
+4. Modifying the naming specification
 
 2018-01-16 Version: 0.8.0
 1,  Add TriggerMode param in AddMediaWorkflow.

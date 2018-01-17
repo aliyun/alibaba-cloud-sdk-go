@@ -44,15 +44,15 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 		{
 			signer, err = signers.NewSignerSts(instance)
 		}
-	case *credentials.StsAssumeRoleCredential:
+	case *credentials.StsRoleArnCredential:
 		{
 			signer, err = signers.NewSignerStsAssumeRole(instance, commonApi)
 		}
-	case *credentials.KeyPairCredential:
+	case *credentials.RsaKeyPairCredential:
 		{
 			signer, err = signers.NewSignerKeyPair(instance, commonApi)
 		}
-	case *credentials.EcsInstanceCredential:
+	case *credentials.StsRoleNameOnEcsCredential:
 		{
 			signer, err = signers.NewSignereEcsInstance(instance, commonApi)
 		}

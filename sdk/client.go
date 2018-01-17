@@ -92,9 +92,9 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+func (client *Client) InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsAssumeRoleCredential{
+	credential := &credentials.StsRoleArnCredential{
 		AccessKeyId:     accessKeyId,
 		AccessKeySecret: accessKeySecret,
 		RoleArn:         roleArn,
@@ -105,7 +105,7 @@ func (client *Client) InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret,
 
 func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.KeyPairCredential{
+	credential := &credentials.RsaKeyPairCredential{
 		PrivateKey:        privateKey,
 		PublicKeyId:       publicKeyId,
 		SessionExpiration: sessionExpiration,
@@ -113,9 +113,9 @@ func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey strin
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithRamRoleNameOnEcs(regionId, roleName string) (err error) {
+func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.EcsInstanceCredential{
+	credential := &credentials.StsRoleNameOnEcsCredential{
 		RoleName: roleName,
 	}
 	return client.InitWithOptions(regionId, config, credential)
@@ -258,17 +258,17 @@ func NewClientWithRsaKeyPair(regionId string, config *Config, publicKeyId, priva
 	return
 }
 
-func NewClientWithRamRoleNameOnEcs(regionId string, config *Config, roleName string) (client *Client, err error) {
+func NewClientWithStsRoleNameOnEcs(regionId string, config *Config, roleName string) (client *Client, err error) {
 	client = &Client{}
 	client.config = config
-	err = client.InitWithRamRoleNameOnEcs(regionId, roleName)
+	err = client.InitWithStsRoleNameOnEcs(regionId, roleName)
 	return
 }
 
-func NewClientWithRamRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+func NewClientWithStsRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
 	client.config = config
-	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	err = client.InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 	return
 }
 

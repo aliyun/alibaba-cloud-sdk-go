@@ -29,11 +29,11 @@ import (
 type SignerEcsInstance struct {
 	*credentialUpdater
 	sessionCredential *sessionCredential
-	credential        *credentials.EcsInstanceCredential
+	credential        *credentials.StsRoleNameOnEcsCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
-func NewSignereEcsInstance(credential *credentials.EcsInstanceCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerEcsInstance, err error) {
+func NewSignereEcsInstance(credential *credentials.StsRoleNameOnEcsCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerEcsInstance, err error) {
 	signer = &SignerEcsInstance{
 		credential: credential,
 		commonApi:  commonApi,
