@@ -16,6 +16,7 @@ package endpoints
 import (
 	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"sync"
 	"time"
 )
 
@@ -23,8 +24,15 @@ const (
 	EndpointCacheExpireTime = 3600 //Seconds
 )
 
-var lastClearTimePerProduct map[string]int64 = make(map[string]int64)
-var endpointCache map[string]string = make(map[string]string)
+var lastClearTimePerProduct = struct {
+	sync.RWMutex
+	cache map[string]int64
+}{cache: make(map[string]int64)}
+
+var endpointCache = struct {
+	sync.RWMutex
+	cache map[string]string
+}{cache: make(map[string]string)}
 
 type LocationResolver struct {
 }
@@ -37,8 +45,8 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	//get from cache
 	cacheKey := param.Product + "#" + param.RegionId
-	if endpointCache != nil && len(endpointCache[cacheKey]) > 0 && !CheckCacheIsExpire(cacheKey) {
-		endpoint = endpointCache[cacheKey]
+	if endpointCache.cache != nil && len(endpointCache.cache[cacheKey]) > 0 && !CheckCacheIsExpire(cacheKey) {
+		endpoint = endpointCache.cache[cacheKey]
 		support = true
 		return
 	}
@@ -78,8 +86,12 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 	}
 	if len(getEndpointResponse.Endpoints.Endpoint[0].Endpoint) > 0 {
 		endpoint = getEndpointResponse.Endpoints.Endpoint[0].Endpoint
-		endpointCache[cacheKey] = endpoint
-		lastClearTimePerProduct[cacheKey] = time.Now().Unix()
+		endpointCache.Lock()
+		endpointCache.cache[cacheKey] = endpoint
+		endpointCache.Unlock()
+		lastClearTimePerProduct.Lock()
+		lastClearTimePerProduct.cache[cacheKey] = time.Now().Unix()
+		lastClearTimePerProduct.Unlock()
 		support = true
 		return
 	}
@@ -89,10 +101,12 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 }
 
 func CheckCacheIsExpire(cacheKey string) bool {
-	lastClearTime := lastClearTimePerProduct[cacheKey]
+	lastClearTime := lastClearTimePerProduct.cache[cacheKey]
 	if lastClearTime <= 0 {
 		lastClearTime = time.Now().Unix()
-		lastClearTimePerProduct[cacheKey] = lastClearTime
+		lastClearTimePerProduct.Lock()
+		lastClearTimePerProduct.cache[cacheKey] = lastClearTime
+		lastClearTimePerProduct.Unlock()
 	}
 
 	now := time.Now().Unix()
