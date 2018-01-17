@@ -64,11 +64,11 @@ func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback 
 
 type CancelJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type CancelJobResponse struct {

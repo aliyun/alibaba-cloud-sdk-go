@@ -1,3 +1,8 @@
+2018-01-16 Version: 0.8.0
+1,  Add TriggerMode param in AddMediaWorkflow.
+2, Add TriggerMode param in QueryMediaWorkflowList/SearchMediaWorkflow/UpdateMediaWorkflow.
+3, Add interface UpdateMediaWorkflowTriggerMode.
+
 2018-01-11 Version: 0.7.8
 1. complete partly missed service codes
 2. add default http method for roa requests

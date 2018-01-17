@@ -64,15 +64,15 @@ func (client *Client) ListMediaWorkflowExecutionsWithCallback(request *ListMedia
 
 type ListMediaWorkflowExecutionsRequest struct {
 	*requests.RpcRequest
-	InputFileURL         string           `position:"Query" name:"InputFileURL"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	InputFileURL         string           `position:"Query" name:"InputFileURL"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
 }
 
 type ListMediaWorkflowExecutionsResponse struct {

@@ -64,14 +64,14 @@ func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, c
 
 type SubmitPornJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PornConfig           string           `position:"Query" name:"PornConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PornConfig           string           `position:"Query" name:"PornConfig"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitPornJobResponse struct {

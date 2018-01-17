@@ -64,11 +64,11 @@ func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotatio
 
 type QueryAnnotationJobListRequest struct {
 	*requests.RpcRequest
-	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
 }
 
 type QueryAnnotationJobListResponse struct {

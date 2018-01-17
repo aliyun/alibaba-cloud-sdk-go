@@ -64,11 +64,11 @@ func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, c
 
 type CreateSessionRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	EndUserId            string           `position:"Query" name:"EndUserId"`
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndUserId            string           `position:"Query" name:"EndUserId"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 }
 
