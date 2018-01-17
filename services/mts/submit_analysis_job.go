@@ -64,15 +64,15 @@ func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRe
 
 type SubmitAnalysisJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string           `position:"Query" name:"Priority"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AnalysisConfig       string           `position:"Query" name:"AnalysisConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AnalysisConfig       string           `position:"Query" name:"AnalysisConfig"`
+	Priority             string           `position:"Query" name:"Priority"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitAnalysisJobResponse struct {

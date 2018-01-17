@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeactivateMediaWorkflow(request *DeactivateMediaWorkflowRequest) (response *DeactivateMediaWorkflowResponse, err error) {
-	response = CreateDeactivateMediaWorkflowResponse()
+func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflowTriggerModeRequest) (response *UpdateMediaWorkflowTriggerModeResponse, err error) {
+	response = CreateUpdateMediaWorkflowTriggerModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWorkflowRequest) (<-chan *DeactivateMediaWorkflowResponse, <-chan error) {
-	responseChan := make(chan *DeactivateMediaWorkflowResponse, 1)
+func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMediaWorkflowTriggerModeRequest) (<-chan *UpdateMediaWorkflowTriggerModeResponse, <-chan error) {
+	responseChan := make(chan *UpdateMediaWorkflowTriggerModeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeactivateMediaWorkflow(request)
+		response, err := client.UpdateMediaWorkflowTriggerMode(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWo
 	return responseChan, errChan
 }
 
-func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMediaWorkflowRequest, callback func(response *DeactivateMediaWorkflowResponse, err error)) <-chan int {
+func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *UpdateMediaWorkflowTriggerModeRequest, callback func(response *UpdateMediaWorkflowTriggerModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeactivateMediaWorkflowResponse
+		var response *UpdateMediaWorkflowTriggerModeResponse
 		var err error
 		defer close(result)
-		response, err = client.DeactivateMediaWorkflow(request)
+		response, err = client.UpdateMediaWorkflowTriggerMode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,37 +62,39 @@ func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMed
 	return result
 }
 
-type DeactivateMediaWorkflowRequest struct {
+type UpdateMediaWorkflowTriggerModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TriggerMode          string           `position:"Query" name:"TriggerMode"`
 }
 
-type DeactivateMediaWorkflowResponse struct {
+type UpdateMediaWorkflowTriggerModeResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow struct {
 		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
 		Name            string `json:"Name" xml:"Name"`
 		Topology        string `json:"Topology" xml:"Topology"`
+		TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
 		State           string `json:"State" xml:"State"`
 		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
 	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {
-	request = &DeactivateMediaWorkflowRequest{
+func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflowTriggerModeRequest) {
+	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeactivateMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts", "openAPI")
 	return
 }
 
-func CreateDeactivateMediaWorkflowResponse() (response *DeactivateMediaWorkflowResponse) {
-	response = &DeactivateMediaWorkflowResponse{
+func CreateUpdateMediaWorkflowTriggerModeResponse() (response *UpdateMediaWorkflowTriggerModeResponse) {
+	response = &UpdateMediaWorkflowTriggerModeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

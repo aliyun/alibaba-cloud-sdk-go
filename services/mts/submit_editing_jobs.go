@@ -64,15 +64,15 @@ func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRe
 
 type SubmitEditingJobsRequest struct {
 	*requests.RpcRequest
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	EditingInputs        string           `position:"Query" name:"EditingInputs"`
 	OutputBucket         string           `position:"Query" name:"OutputBucket"`
-	OutputLocation       string           `position:"Query" name:"OutputLocation"`
-	EditingJobOutputs    string           `position:"Query" name:"EditingJobOutputs"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EditingJobOutputs    string           `position:"Query" name:"EditingJobOutputs"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OutputLocation       string           `position:"Query" name:"OutputLocation"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EditingInputs        string           `position:"Query" name:"EditingInputs"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitEditingJobsResponse struct {

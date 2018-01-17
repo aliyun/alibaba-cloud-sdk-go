@@ -65,12 +65,12 @@ func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideo
 type ReportVideoSplitJobResultRequest struct {
 	*requests.RpcRequest
 	Result               string           `position:"Query" name:"Result"`
-	Details              string           `position:"Query" name:"Details"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Details              string           `position:"Query" name:"Details"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ReportVideoSplitJobResultResponse struct {

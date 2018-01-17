@@ -65,11 +65,11 @@ func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobRe
 type ReportCoverJobResultRequest struct {
 	*requests.RpcRequest
 	Result               string           `position:"Query" name:"Result"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportCoverJobResultResponse struct {
