@@ -1,3 +1,7 @@
+2018-01-17 Version: 0.8.1
+1. Set default timeout to 10s
+2. Make integration tests more stable
+
 2018-01-16 Version: 0.8.0
 1,  Add TriggerMode param in AddMediaWorkflow.
 2, Add TriggerMode param in QueryMediaWorkflowList/SearchMediaWorkflow/UpdateMediaWorkflow.
