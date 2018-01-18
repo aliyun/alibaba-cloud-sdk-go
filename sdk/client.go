@@ -190,10 +190,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
 		httpResponse, err = client.httpClient.Do(httpRequest)
 
-		// retry params
 		var timeout bool
-		var serverError bool
-
 		// receive error
 		if err != nil {
 			// if not timeout error, return
@@ -201,9 +198,8 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 				return
 			}
 		}
-		serverError = isServerError(httpResponse)
 		//  if status code >= 500 or timeout, will trigger retry
-		if client.config.AutoRetry && (timeout || serverError) {
+		if client.config.AutoRetry && (timeout || isServerError(httpResponse)) {
 			continue
 		}
 		break
