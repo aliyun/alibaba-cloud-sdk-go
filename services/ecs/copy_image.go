@@ -64,25 +64,25 @@ func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback 
 
 type CopyImageRequest struct {
 	*requests.RpcRequest
-	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key                string           `position:"Query" name:"Tag.5.Key"`
-	ImageId                string           `position:"Query" name:"ImageId"`
-	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag5Value              string           `position:"Query" name:"Tag.5.Value"`
-	Tag3Key                string           `position:"Query" name:"Tag.3.Key"`
-	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key                string           `position:"Query" name:"Tag.1.Key"`
-	Tag2Key                string           `position:"Query" name:"Tag.2.Key"`
-	Tag1Value              string           `position:"Query" name:"Tag.1.Value"`
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Tag4Value              string           `position:"Query" name:"Tag.4.Value"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ImageId                string           `position:"Query" name:"ImageId"`
+	Tag2Key                string           `position:"Query" name:"Tag.2.Key"`
+	Tag5Key                string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
+	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Tag3Value              string           `position:"Query" name:"Tag.3.Value"`
-	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
+	Tag3Key                string           `position:"Query" name:"Tag.3.Key"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value              string           `position:"Query" name:"Tag.5.Value"`
+	Tag1Key                string           `position:"Query" name:"Tag.1.Key"`
+	Tag1Value              string           `position:"Query" name:"Tag.1.Value"`
+	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 	Tag2Value              string           `position:"Query" name:"Tag.2.Value"`
 	Tag4Key                string           `position:"Query" name:"Tag.4.Key"`
+	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
+	Tag3Value              string           `position:"Query" name:"Tag.3.Value"`
 }
 
 type CopyImageResponse struct {

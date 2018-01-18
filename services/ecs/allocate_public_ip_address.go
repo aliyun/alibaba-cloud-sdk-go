@@ -64,13 +64,13 @@ func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePubli
 
 type AllocatePublicIpAddressRequest struct {
 	*requests.RpcRequest
-	VlanId               string           `position:"Query" name:"VlanId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	IpAddress            string           `position:"Query" name:"IpAddress"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VlanId               string           `position:"Query" name:"VlanId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AllocatePublicIpAddressResponse struct {

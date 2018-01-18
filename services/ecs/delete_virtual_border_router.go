@@ -64,13 +64,13 @@ func (client *Client) DeleteVirtualBorderRouterWithCallback(request *DeleteVirtu
 
 type DeleteVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteVirtualBorderRouterResponse struct {

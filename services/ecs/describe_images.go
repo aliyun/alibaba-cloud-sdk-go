@@ -64,39 +64,39 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 
 type DescribeImagesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OSType               string           `position:"Query" name:"OSType"`
-	IsSupportIoOptimized requests.Boolean `position:"Query" name:"IsSupportIoOptimized"`
-	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
-	Architecture         string           `position:"Query" name:"Architecture"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	IsSupportCloudinit   requests.Boolean `position:"Query" name:"IsSupportCloudinit"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ImageOwnerAlias      string           `position:"Query" name:"ImageOwnerAlias"`
-	Status               string           `position:"Query" name:"Status"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
-	ImageName            string           `position:"Query" name:"ImageName"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
+	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
 	Usage                string           `position:"Query" name:"Usage"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ImageOwnerAlias      string           `position:"Query" name:"ImageOwnerAlias"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	IsSupportIoOptimized requests.Boolean `position:"Query" name:"IsSupportIoOptimized"`
+	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
+	ImageName            string           `position:"Query" name:"ImageName"`
+	IsSupportCloudinit   requests.Boolean `position:"Query" name:"IsSupportCloudinit"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Architecture         string           `position:"Query" name:"Architecture"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ShowExpired          requests.Boolean `position:"Query" name:"ShowExpired"`
+	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
+	OSType               string           `position:"Query" name:"OSType"`
+	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 type DescribeImagesResponse struct {

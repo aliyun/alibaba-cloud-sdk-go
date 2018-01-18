@@ -64,13 +64,13 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithCallb
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
-	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
+	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
+	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
 }
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {

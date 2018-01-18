@@ -64,10 +64,10 @@ func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, c
 
 type AttachKeyPairRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

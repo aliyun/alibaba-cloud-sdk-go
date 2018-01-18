@@ -64,12 +64,12 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 
 type DeleteImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                requests.Boolean `position:"Query" name:"Force"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Force                requests.Boolean `position:"Query" name:"Force"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteImageResponse struct {

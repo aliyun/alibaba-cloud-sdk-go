@@ -64,10 +64,10 @@ func (client *Client) ApplyAutoSnapshotPolicyWithCallback(request *ApplyAutoSnap
 
 type ApplyAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	DiskIds              string           `position:"Query" name:"diskIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AutoSnapshotPolicyId string           `position:"Query" name:"autoSnapshotPolicyId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskIds              string           `position:"Query" name:"diskIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

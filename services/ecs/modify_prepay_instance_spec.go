@@ -64,14 +64,14 @@ func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepay
 
 type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyPrepayInstanceSpecResponse struct {

@@ -64,12 +64,12 @@ func (client *Client) DeleteRouterInterfaceWithCallback(request *DeleteRouterInt
 
 type DeleteRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
