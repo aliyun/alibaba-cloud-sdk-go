@@ -65,13 +65,13 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *Modi
 type ModifyInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	Duration             requests.Integer `position:"Query" name:"Duration"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyInstanceAutoRenewAttributeResponse struct {

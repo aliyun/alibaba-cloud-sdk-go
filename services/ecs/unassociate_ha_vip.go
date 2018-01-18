@@ -64,14 +64,14 @@ func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequ
 
 type UnassociateHaVipRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string           `position:"Query" name:"Force"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Force                string           `position:"Query" name:"Force"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UnassociateHaVipResponse struct {

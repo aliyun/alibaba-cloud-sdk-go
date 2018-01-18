@@ -64,16 +64,16 @@ func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callb
 
 type ImportImageRequest struct {
 	*requests.RpcRequest
-	Platform             string                          `position:"Query" name:"Platform"`
-	RoleName             string                          `position:"Query" name:"RoleName"`
-	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
-	OSType               string                          `position:"Query" name:"OSType"`
-	Description          string                          `position:"Query" name:"Description"`
 	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	Architecture         string                          `position:"Query" name:"Architecture"`
 	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
 	ImageName            string                          `position:"Query" name:"ImageName"`
+	RoleName             string                          `position:"Query" name:"RoleName"`
+	Description          string                          `position:"Query" name:"Description"`
+	OSType               string                          `position:"Query" name:"OSType"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
+	Platform             string                          `position:"Query" name:"Platform"`
+	Architecture         string                          `position:"Query" name:"Architecture"`
 }
 
 type ImportImageDiskDeviceMapping struct {

@@ -65,8 +65,8 @@ func (client *Client) DeleteVSwitchWithCallback(request *DeleteVSwitchRequest, c
 type DeleteVSwitchRequest struct {
 	*requests.RpcRequest
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

@@ -64,20 +64,20 @@ func (client *Client) DescribeInstanceHistoryEventsWithCallback(request *Describ
 
 type DescribeInstanceHistoryEventsRequest struct {
 	*requests.RpcRequest
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	EventCycleStatus      string           `position:"Query" name:"EventCycleStatus"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
-	EventType             string           `position:"Query" name:"EventType"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
 	InstanceId            string           `position:"Query" name:"InstanceId"`
+	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
+	EventType             string           `position:"Query" name:"EventType"`
 }
 
 type DescribeInstanceHistoryEventsResponse struct {

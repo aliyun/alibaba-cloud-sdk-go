@@ -1,3 +1,7 @@
+2018-01-18 Version: 0.8.1
+1, Update ECS go SDK to catch up with other langs.
+2, DescribeImageSupportInstanceTypes add new param Filter and ActionType
+
 2018-01-16 Version: 0.8.0
 1,  Add TriggerMode param in AddMediaWorkflow.
 2, Add TriggerMode param in QueryMediaWorkflowList/SearchMediaWorkflow/UpdateMediaWorkflow.
