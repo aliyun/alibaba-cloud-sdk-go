@@ -15,6 +15,7 @@
 package sdk
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
@@ -81,7 +82,7 @@ func getConfigFromEnv() *TestConfig {
 		ChildAK:         os.Getenv("CHILD_AK"),
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
 	}
-	if config.AccessKeyId == "" {
+	if config.AccessKeyId == "" || os.Getenv("ENV_TYPE") != "CI" {
 		return nil
 	} else {
 		return config
@@ -99,7 +100,10 @@ func testSetup() {
 	clientConfig := NewConfig().
 		WithEnableAsync(true).
 		WithGoRoutinePoolSize(5).
-		WithMaxTaskQueueSize(1000)
+		WithMaxTaskQueueSize(1000).
+		WithHttpTransport(&http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		})
 
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     testConfig.AccessKeyId,
@@ -109,16 +113,16 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	clientKeyPair, err = NewClientWithKeyPair("cn-hangzhou", clientConfig, testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
+	clientKeyPair, err = NewClientWithRsaKeyPair("cn-hangzhou", clientConfig, testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
 	clientKeyPair.config = clientConfig
 	if err != nil {
 		panic(err)
 	}
-	clientEcs, err = NewClientWithEcsInstance("cn-hangzhou", clientConfig, "conan")
+	clientEcs, err = NewClientWithStsRoleNameOnEcs("cn-hangzhou", clientConfig, "conan")
 	if err != nil {
 		panic(err)
 	}
-	clientRoleArn, err = NewClientWithRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
+	clientRoleArn, err = NewClientWithStsRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
 	if err != nil {
 		panic(err)
 	}
@@ -299,7 +303,7 @@ func getFtTestRpcRequest() (request *requests.RpcRequest) {
 func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
 	request = &requests.RpcRequest{}
 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "ft", "openAPI")
-	request.RegionId = "cn-hangzhou"
+	request.RegionId = "ft-cn-hangzhou"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
 	return
 }

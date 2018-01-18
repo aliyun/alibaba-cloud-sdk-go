@@ -1,6 +1,6 @@
 package credentials
 
-type KeyPairCredential struct {
+type RsaKeyPairCredential struct {
 	PrivateKey        string
 	PublicKeyId       string
 	SessionExpiration int

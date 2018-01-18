@@ -92,9 +92,9 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+func (client *Client) InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsAssumeRoleCredential{
+	credential := &credentials.StsRoleArnCredential{
 		AccessKeyId:     accessKeyId,
 		AccessKeySecret: accessKeySecret,
 		RoleArn:         roleArn,
@@ -103,9 +103,9 @@ func (client *Client) InitWithRoleArn(regionId, accessKeyId, accessKeySecret, ro
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
+func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.KeyPairCredential{
+	credential := &credentials.RsaKeyPairCredential{
 		PrivateKey:        privateKey,
 		PublicKeyId:       publicKeyId,
 		SessionExpiration: sessionExpiration,
@@ -113,9 +113,9 @@ func (client *Client) InitWithKeyPair(regionId, publicKeyId, privateKey string, 
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithEcsInstance(regionId, roleName string) (err error) {
+func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.EcsInstanceCredential{
+	credential := &credentials.StsRoleNameOnEcsCredential{
 		RoleName: roleName,
 	}
 	return client.InitWithOptions(regionId, config, credential)
@@ -146,12 +146,12 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 
 	// resolve endpoint
 	resolveParam := &endpoints.ResolveParam{
-		Domain:           request.GetDomain(),
-		Product:          request.GetProduct(),
-		RegionId:         client.regionId,
-		LocationProduct:  request.GetLocationServiceCode(),
-		LocationEndpoint: request.GetLocationEndpointType(),
-		CommonApi:        client.ProcessCommonRequest,
+		Domain:               request.GetDomain(),
+		Product:              request.GetProduct(),
+		RegionId:             regionId,
+		LocationProduct:      request.GetLocationServiceCode(),
+		LocationEndpointType: request.GetLocationEndpointType(),
+		CommonApi:            client.ProcessCommonRequest,
 	}
 	endpoint, err := endpoints.Resolve(resolveParam)
 	if err != nil {
@@ -247,24 +247,24 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	return
 }
 
-func NewClientWithKeyPair(regionId string, config *Config, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+func NewClientWithRsaKeyPair(regionId string, config *Config, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
 	client = &Client{}
 	client.config = config
-	err = client.InitWithKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
+	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
 	return
 }
 
-func NewClientWithEcsInstance(regionId string, config *Config, roleName string) (client *Client, err error) {
+func NewClientWithStsRoleNameOnEcs(regionId string, config *Config, roleName string) (client *Client, err error) {
 	client = &Client{}
 	client.config = config
-	err = client.InitWithEcsInstance(regionId, roleName)
+	err = client.InitWithStsRoleNameOnEcs(regionId, roleName)
 	return
 }
 
-func NewClientWithRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+func NewClientWithStsRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
 	client.config = config
-	err = client.InitWithRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	err = client.InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 	return
 }
 

@@ -2,14 +2,14 @@ package integration
 
 import (
 	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/slb"
 	"github.com/stretchr/testify/assert"
+	"net/http"
+	"strconv"
+	"strings"
 	"testing"
 	"time"
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/slb"
-	"strconv"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
-	"net/http"
-	"strings"
 )
 
 const (

@@ -61,14 +61,13 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	getEndpointRequest.QueryParams["Id"] = param.RegionId
 	getEndpointRequest.QueryParams["ServiceCode"] = param.LocationProduct
-	if len(param.LocationEndpoint) > 0 {
-		getEndpointRequest.QueryParams["Type"] = param.LocationEndpoint
+	if len(param.LocationEndpointType) > 0 {
+		getEndpointRequest.QueryParams["Type"] = param.LocationEndpointType
 	} else {
 		getEndpointRequest.QueryParams["Type"] = "openAPI"
 	}
 
 	response, err := param.CommonApi(getEndpointRequest)
-	//{"Endpoints":{"Endpoint":[{"Protocols":{"Protocols":["HTTP","HTTPS"]},"Type":"openAPI","Namespace":"26842","Id":"cn-hangzhou","SerivceCode":"apigateway","Endpoint":"apigateway.cn-hangzhou.aliyuncs.com"}]},"RequestId":"3287538B-19A0-4550-9995-143C5EDBD955","Success":true}
 	var getEndpointResponse GetEndpointResponse
 	if !response.IsSuccess() {
 		support = false

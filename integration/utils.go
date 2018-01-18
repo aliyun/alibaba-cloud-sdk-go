@@ -1,12 +1,12 @@
 package integration
 
 import (
+	"fmt"
 	"os"
 	"testing"
-	"fmt"
 )
 
-const InstanceNamePrefix  = "SdkIntegrationTestInstance"
+const InstanceNamePrefix = "SdkIntegrationTestInstance"
 
 type Config struct {
 	AccessKeyId     string
@@ -34,7 +34,6 @@ func getConfigFromEnv() *Config {
 		return config
 	}
 }
-
 
 func getEcsDemoInstanceId() string {
 	return os.Getenv("DEMO_ECS_INSTANCE_ID")

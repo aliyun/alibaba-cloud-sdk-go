@@ -35,7 +35,7 @@ type SignerStsAssumeRole struct {
 	*credentialUpdater
 	roleSessionName   string
 	sessionCredential *sessionCredential
-	credential        *credentials.StsAssumeRoleCredential
+	credential        *credentials.StsRoleArnCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
@@ -45,7 +45,7 @@ type sessionCredential struct {
 	securityToken   string
 }
 
-func NewSignerStsAssumeRole(credential *credentials.StsAssumeRoleCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
+func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
 	signer = &SignerStsAssumeRole{
 		credential: credential,
 		commonApi:  commonApi,

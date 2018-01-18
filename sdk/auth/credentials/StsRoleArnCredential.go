@@ -1,6 +1,6 @@
 package credentials
 
-type StsAssumeRoleCredential struct {
+type StsRoleArnCredential struct {
 	AccessKeyId           string
 	AccessKeySecret       string
 	RoleArn               string

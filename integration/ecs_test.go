@@ -2,22 +2,22 @@ package integration
 
 import (
 	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
+	"strconv"
+	"strings"
 	"testing"
 	"time"
-	"strings"
-	"strconv"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 const (
 	EcsInstanceDefaultTimeout = 120
 	EcsDefaultWaitForInterval = 20
 
-	EcsInstanceStatusRunning  = "Running"
-	EcsInstanceStatusStopped  = "Stopped"
-	EcsInstanceStatusDeleted  = "Deleted"
+	EcsInstanceStatusRunning = "Running"
+	EcsInstanceStatusStopped = "Stopped"
+	EcsInstanceStatusDeleted = "Deleted"
 )
 
 // create -> start -> stop -> delete
@@ -133,7 +133,7 @@ func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 			if instanceInfo.Status == EcsInstanceStatusRunning {
 				// stop
 				stopEcsInstance(t, client, instanceInfo.InstanceId)
-			}else if instanceInfo.Status == EcsInstanceStatusStopped {
+			} else if instanceInfo.Status == EcsInstanceStatusStopped {
 				// delete
 				deleteEcsInstance(t, client, instanceInfo.InstanceId)
 				// wait
