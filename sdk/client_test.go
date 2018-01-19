@@ -28,7 +28,7 @@ import (
 	"testing"
 )
 
-var client, clientKeyPair, clientEcs, clientRoleArn *Client
+var client, clientKeyPair, clientEcs, clientRoleArn, clientSts *Client
 
 type TestConfig struct {
 	AccessKeyId     string
@@ -36,6 +36,9 @@ type TestConfig struct {
 	PublicKeyId     string
 	PrivateKey      string
 	RoleArn         string
+	StsToken        string
+	StsAk           string
+	StsSecret       string
 	ChildAK         string
 	ChildSecret     string
 }
@@ -81,6 +84,9 @@ func getConfigFromEnv() *TestConfig {
 		RoleArn:         os.Getenv("ROLE_ARN"),
 		ChildAK:         os.Getenv("CHILD_AK"),
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
+		StsToken:        os.Getenv("STS_TOKEN"),
+		StsAk:           os.Getenv("STS_AK"),
+		StsSecret:       os.Getenv("STS_SECRET"),
 	}
 	if config.AccessKeyId == "" || os.Getenv("ENV_TYPE") != "CI" {
 		return nil
@@ -116,16 +122,27 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	clientKeyPair, err = NewClientWithRsaKeyPair("cn-hangzhou", clientConfig, testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
-	clientKeyPair.config = clientConfig
+
+	rsaKeypairCredential := credentials.NewRsaKeyPairCredential(testConfig.PrivateKey, testConfig.PublicKeyId, 3600)
+	clientKeyPair, err = NewClientWithOptions("cn-hangzhou", clientConfig, rsaKeypairCredential)
 	if err != nil {
 		panic(err)
 	}
-	clientEcs, err = NewClientWithStsRoleNameOnEcs("cn-hangzhou", clientConfig, "conan")
+
+	roleNameOnEcsCredential := credentials.NewStsRoleNameOnEcsCredential("conan")
+	clientEcs, err = NewClientWithOptions("cn-hangzhou", clientConfig, roleNameOnEcsCredential)
 	if err != nil {
 		panic(err)
 	}
-	clientRoleArn, err = NewClientWithStsRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
+
+	stsRoleArnCredential := credentials.NewStsRoleArnCredential(testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest", 3600)
+	clientRoleArn, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsRoleArnCredential)
+	if err != nil {
+		panic(err)
+	}
+
+	stsCredential := credentials.NewStsCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
+	clientSts, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
 	if err != nil {
 		panic(err)
 	}
@@ -494,6 +511,23 @@ func TestRpcGetForRoleArn(t *testing.T) {
 
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }
+
+//测试Sts的时候要先获取一套stsToken和ak，由于有时效性，所以先把代码注释掉，测试的时候先获取stsToken完成后再调用
+//func TestRpcGetForSts(t *testing.T) {
+//	request := getFtTestRpcRequest()
+//	request.Method = requests.GET
+//
+//	response := &responses.BaseResponse{}
+//	err := clientSts.DoAction(request, response)
+//	assert.Nil(t, err)
+//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+//	assert.NotNil(t, response.GetHttpContentString())
+//
+//	var responseBean MockResponse
+//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+//
+//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+//}
 
 func TestCommonRoaRequestForAcceptXML(t *testing.T) {
 	roaRequest := requests.NewCommonRequest()
