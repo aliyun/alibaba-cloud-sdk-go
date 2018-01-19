@@ -104,6 +104,9 @@ func testSetup() {
 		WithHttpTransport(&http.Transport{
 			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		})
+		//}).
+		//WithMaxRetryTime(15).
+		//WithTimeout(10)
 
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     testConfig.AccessKeyId,
@@ -141,7 +144,7 @@ func TestRoaGet(t *testing.T) {
 
 	response := &responses.BaseResponse{}
 	err := client.DoAction(request, response)
-	assert.Nil(t, err)
+	assert.Nil(t, err, err.Error())
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
 	assert.NotNil(t, response.GetHttpContentString())
 

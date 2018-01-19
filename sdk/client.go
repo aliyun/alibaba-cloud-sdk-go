@@ -23,6 +23,8 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"net"
 	"net/http"
+	"fmt"
+	"strconv"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
@@ -193,8 +195,13 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		var timeout bool
 		// receive error
 		if err != nil {
-			// if not timeout error, return
 			if timeout = isTimeout(err); !timeout {
+				// if not timeout error, return
+				return
+			} else if retryTimes >= client.config.MaxRetryTime {
+				// timeout but reached the max retry times, return
+				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes + 1), strconv.Itoa(retryTimes + 1))
+				err = errors.NewClientError(errors.TimeoutErrorCode, timeoutErrorMsg, err)
 				return
 			}
 		}

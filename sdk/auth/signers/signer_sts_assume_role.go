@@ -67,7 +67,7 @@ func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, common
 		if credential.RoleSessionExpiration > 900 && credential.RoleSessionExpiration < 3600 {
 			signer.credentialExpiration = credential.RoleSessionExpiration
 		} else {
-			err = errors.NewClientError(errors.InvalidParamCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
+			err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
 		}
 	} else {
 		signer.credentialExpiration = defaultDurationSeconds
