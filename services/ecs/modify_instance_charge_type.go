@@ -64,17 +64,17 @@ func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstan
 
 type ModifyInstanceChargeTypeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Period               requests.Integer `position:"Query" name:"Period"`
-	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	IncludeDataDisks     requests.Boolean `position:"Query" name:"IncludeDataDisks"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 type ModifyInstanceChargeTypeResponse struct {

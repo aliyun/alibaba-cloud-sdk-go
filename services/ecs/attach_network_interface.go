@@ -64,12 +64,12 @@ func (client *Client) AttachNetworkInterfaceWithCallback(request *AttachNetworkI
 
 type AttachNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 type AttachNetworkInterfaceResponse struct {

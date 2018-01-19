@@ -64,16 +64,16 @@ func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, c
 
 type ModifyCommandRequest struct {
 	*requests.RpcRequest
-	WorkingDir           string           `position:"Query" name:"WorkingDir"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	WorkingDir           string           `position:"Query" name:"WorkingDir"`
+	Description          string           `position:"Query" name:"Description"`
 	CommandId            string           `position:"Query" name:"CommandId"`
 	CommandContent       string           `position:"Query" name:"CommandContent"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Timeout              requests.Integer `position:"Query" name:"Timeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 type ModifyCommandResponse struct {

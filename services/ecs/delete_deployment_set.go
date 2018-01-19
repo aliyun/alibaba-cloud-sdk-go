@@ -64,9 +64,9 @@ func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentS
 
 type DeleteDeploymentSetRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

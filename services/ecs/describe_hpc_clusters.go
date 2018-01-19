@@ -64,14 +64,14 @@ func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcCluste
 
 type DescribeHpcClustersRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	HpcClusterIds        string           `position:"Query" name:"HpcClusterIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HpcClusterIds        string           `position:"Query" name:"HpcClusterIds"`
 }
 
 type DescribeHpcClustersResponse struct {

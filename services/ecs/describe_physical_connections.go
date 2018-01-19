@@ -64,15 +64,15 @@ func (client *Client) DescribePhysicalConnectionsWithCallback(request *DescribeP
 
 type DescribePhysicalConnectionsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
-	ClientToken          string                               `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer                     `position:"Query" name:"PageNumber"`
-	UserCidr             string                               `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribePhysicalConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string                               `position:"Query" name:"ClientToken"`
+	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
+	UserCidr             string                               `position:"Query" name:"UserCidr"`
+	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                     `position:"Query" name:"PageNumber"`
 }
 
 type DescribePhysicalConnectionsFilter struct {

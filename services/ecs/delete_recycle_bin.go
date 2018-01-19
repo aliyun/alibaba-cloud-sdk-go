@@ -64,8 +64,8 @@ func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequ
 
 type DeleteRecycleBinRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceIds          string           `position:"Query" name:"resourceIds"`
