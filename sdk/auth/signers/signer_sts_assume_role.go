@@ -35,7 +35,7 @@ type SignerStsAssumeRole struct {
 	*credentialUpdater
 	roleSessionName   string
 	sessionCredential *sessionCredential
-	credential        *credentials.StsAssumeRoleCredential
+	credential        *credentials.StsRoleArnCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
@@ -45,7 +45,7 @@ type sessionCredential struct {
 	securityToken   string
 }
 
-func NewSignerStsAssumeRole(credential *credentials.StsAssumeRoleCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
+func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
 	signer = &SignerStsAssumeRole{
 		credential: credential,
 		commonApi:  commonApi,
@@ -64,10 +64,10 @@ func NewSignerStsAssumeRole(credential *credentials.StsAssumeRoleCredential, com
 		signer.roleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
 	}
 	if credential.RoleSessionExpiration > 0 {
-		if credential.RoleSessionExpiration > 900 && credential.RoleSessionExpiration < 3600 {
+		if credential.RoleSessionExpiration >= 900 && credential.RoleSessionExpiration <= 3600 {
 			signer.credentialExpiration = credential.RoleSessionExpiration
 		} else {
-			err = errors.NewClientError(errors.InvalidParamCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
+			err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
 		}
 	} else {
 		signer.credentialExpiration = defaultDurationSeconds

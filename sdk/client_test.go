@@ -28,7 +28,7 @@ import (
 	"testing"
 )
 
-var client, clientKeyPair, clientEcs, clientRoleArn *Client
+var client, clientKeyPair, clientEcs, clientRoleArn, clientSts *Client
 
 type TestConfig struct {
 	AccessKeyId     string
@@ -36,6 +36,9 @@ type TestConfig struct {
 	PublicKeyId     string
 	PrivateKey      string
 	RoleArn         string
+	StsToken        string
+	StsAk           string
+	StsSecret       string
 	ChildAK         string
 	ChildSecret     string
 }
@@ -81,8 +84,11 @@ func getConfigFromEnv() *TestConfig {
 		RoleArn:         os.Getenv("ROLE_ARN"),
 		ChildAK:         os.Getenv("CHILD_AK"),
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
+		StsToken:        os.Getenv("STS_TOKEN"),
+		StsAk:           os.Getenv("STS_AK"),
+		StsSecret:       os.Getenv("STS_SECRET"),
 	}
-	if config.AccessKeyId == "" {
+	if config.AccessKeyId == "" || os.Getenv("ENV_TYPE") != "CI" {
 		return nil
 	} else {
 		return config
@@ -95,11 +101,19 @@ func testSetup() {
 		testConfig = getConfigFromFile()
 	}
 
-	clientConfig := NewConfig().WithHttpTransport(&http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	})
-
 	var err error
+
+	clientConfig := NewConfig().
+		WithEnableAsync(true).
+		WithGoRoutinePoolSize(5).
+		WithMaxTaskQueueSize(1000).
+		WithHttpTransport(&http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		})
+		//}).
+		//WithMaxRetryTime(15).
+		//WithTimeout(10)
+
 	credential := &credentials.BaseCredential{
 		AccessKeyId:     testConfig.AccessKeyId,
 		AccessKeySecret: testConfig.AccessKeySecret,
@@ -108,18 +122,30 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	//err = clientKeyPair.InitWithKeyPair("cn-hangzhou", testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
-	//if err != nil {
-	//	panic(err)
-	//}
-	//err = clientEcs.InitWithEcsInstance("cn-hangzhou", "conan")
-	//if err != nil {
-	//	panic(err)
-	//}
-	//err = clientRoleArn.InitWithRoleArn("cn-hangzhou", testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
-	//if err != nil {
-	//	panic(err)
-	//}
+
+	rsaKeypairCredential := credentials.NewRsaKeyPairCredential(testConfig.PrivateKey, testConfig.PublicKeyId, 3600)
+	clientKeyPair, err = NewClientWithOptions("cn-hangzhou", clientConfig, rsaKeypairCredential)
+	if err != nil {
+		panic(err)
+	}
+
+	roleNameOnEcsCredential := credentials.NewStsRoleNameOnEcsCredential("conan")
+	clientEcs, err = NewClientWithOptions("cn-hangzhou", clientConfig, roleNameOnEcsCredential)
+	if err != nil {
+		panic(err)
+	}
+
+	stsRoleArnCredential := credentials.NewStsRoleArnCredential(testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest", 3600)
+	clientRoleArn, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsRoleArnCredential)
+	if err != nil {
+		panic(err)
+	}
+
+	stsCredential := credentials.NewStsTokenCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
+	clientSts, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func testTearDown() {
@@ -297,7 +323,7 @@ func getFtTestRpcRequest() (request *requests.RpcRequest) {
 func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
 	request = &requests.RpcRequest{}
 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "ft", "openAPI")
-	request.RegionId = "cn-hangzhou"
+	request.RegionId = "ft-cn-hangzhou"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
 	return
 }
@@ -418,21 +444,21 @@ func TestRpcGetForLocationCache(t *testing.T) {
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }
 
-//func TestRpcGetForKeyPair(t *testing.T) {
-//	request := getFtTestRpcRequest()
-//	request.Method = requests.GET
-//
-//	response := &responses.BaseResponse{}
-//	err := clientKeyPair.DoAction(request, response)
-//	assert.Nil(t, err)
-//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-//	assert.NotNil(t, response.GetHttpContentString())
-//
-//	var responseBean MockResponse
-//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-//
-//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-//}
+func TestRpcGetForKeyPair(t *testing.T) {
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientKeyPair.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
 
 /*func TestRpcGetForEcs(t *testing.T) {
 	//测试接口，想测试的时候，要替换掉singer_ecs_instance中对应的变量，并且还要提供一个mock服务
@@ -461,26 +487,43 @@ func TestRpcGetForLocationCache(t *testing.T) {
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }*/
 
-//func TestRpcGetForRoleArn(t *testing.T) {
+func TestRpcGetForRoleArn(t *testing.T) {
+	request := getFtTestRpcRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientRoleArn.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+
+	err = clientRoleArn.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
+//测试Sts的时候要先获取一套stsToken和ak，由于有时效性，所以先把代码注释掉，测试的时候先获取stsToken完成后再调用
+//func TestRpcGetForSts(t *testing.T) {
 //	request := getFtTestRpcRequest()
 //	request.Method = requests.GET
 //
 //	response := &responses.BaseResponse{}
-//	err := clientRoleArn.DoAction(request, response)
+//	err := clientSts.DoAction(request, response)
 //	assert.Nil(t, err)
 //	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
 //	assert.NotNil(t, response.GetHttpContentString())
 //
 //	var responseBean MockResponse
-//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-//
-//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-//
-//	err = clientRoleArn.DoAction(request, response)
-//	assert.Nil(t, err)
-//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-//	assert.NotNil(t, response.GetHttpContentString())
-//
 //	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
 //
 //	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])

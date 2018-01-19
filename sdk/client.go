@@ -23,6 +23,8 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"net"
 	"net/http"
+	"fmt"
+	"strconv"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
@@ -92,9 +94,19 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+func (client *Client) InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsAssumeRoleCredential{
+	credential := &credentials.StsTokenCredential{
+		AccessKeyId:       accessKeyId,
+		AccessKeySecret:   accessKeySecret,
+		AccessKeyStsToken: securityToken,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
+func (client *Client) InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.StsRoleArnCredential{
 		AccessKeyId:     accessKeyId,
 		AccessKeySecret: accessKeySecret,
 		RoleArn:         roleArn,
@@ -103,9 +115,9 @@ func (client *Client) InitWithRoleArn(regionId, accessKeyId, accessKeySecret, ro
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
+func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.KeyPairCredential{
+	credential := &credentials.RsaKeyPairCredential{
 		PrivateKey:        privateKey,
 		PublicKeyId:       publicKeyId,
 		SessionExpiration: sessionExpiration,
@@ -113,21 +125,20 @@ func (client *Client) InitWithKeyPair(regionId, publicKeyId, privateKey string, 
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithEcsInstance(regionId, roleName string) (err error) {
+func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.EcsInstanceCredential{
+	credential := &credentials.StsRoleNameOnEcsCredential{
 		RoleName: roleName,
 	}
 	return client.InitWithOptions(regionId, config, credential)
 }
 
 func (client *Client) InitClientConfig() (config *Config) {
-	config = NewConfig()
 	if client.config != nil {
-		config = client.config
+		return client.config
+	}else{
+		return NewConfig()
 	}
-
-	return
 }
 
 func (client *Client) DoAction(request requests.AcsRequest, response responses.AcsResponse) (err error) {
@@ -146,12 +157,12 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 
 	// resolve endpoint
 	resolveParam := &endpoints.ResolveParam{
-		Domain:           request.GetDomain(),
-		Product:          request.GetProduct(),
-		RegionId:         client.regionId,
-		LocationProduct:  request.GetLocationServiceCode(),
-		LocationEndpoint: request.GetLocationEndpointType(),
-		CommonApi:        client.ProcessCommonRequest,
+		Domain:               request.GetDomain(),
+		Product:              request.GetProduct(),
+		RegionId:             regionId,
+		LocationProduct:      request.GetLocationServiceCode(),
+		LocationEndpointType: request.GetLocationEndpointType(),
+		CommonApi:            client.ProcessCommonRequest,
 	}
 	endpoint, err := endpoints.Resolve(resolveParam)
 	if err != nil {
@@ -190,20 +201,21 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
 		httpResponse, err = client.httpClient.Do(httpRequest)
 
-		// retry params
 		var timeout bool
-		var serverError bool
-
 		// receive error
 		if err != nil {
-			// if not timeout error, return
 			if timeout = isTimeout(err); !timeout {
+				// if not timeout error, return
+				return
+			} else if retryTimes >= client.config.MaxRetryTime {
+				// timeout but reached the max retry times, return
+				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes + 1), strconv.Itoa(retryTimes + 1))
+				err = errors.NewClientError(errors.TimeoutErrorCode, timeoutErrorMsg, err)
 				return
 			}
 		}
-		serverError = isServerError(httpResponse)
 		//  if status code >= 500 or timeout, will trigger retry
-		if client.config.AutoRetry && (timeout || serverError) {
+		if client.config.AutoRetry && (timeout || isServerError(httpResponse)) {
 			continue
 		}
 		break
@@ -248,6 +260,30 @@ func NewClientWithOptions(regionId string, config *Config, credential auth.Crede
 func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
+	return
+}
+
+func NewClientWithStsToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken)
+	return
+}
+
+func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
+	return
+}
+
+func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithStsRoleNameOnEcs(regionId, roleName)
+	return
+}
+
+func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 	return
 }
 

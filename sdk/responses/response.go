@@ -43,9 +43,16 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, response.GetHttpContentString())
 		return
 	}
+	if _, isCommonResponse := response.(CommonResponse); isCommonResponse {
+		// common response need not unmarshal
+		return
+	}
 	if strings.ToUpper(format) == "JSON" {
 		initJsonParserOnce()
 		err = jsonParser.Unmarshal(response.GetHttpContentBytes(), response)
+		if err != nil {
+			err = errors.NewClientError(errors.JsonUnmarshalErrorCode, errors.JsonUnmarshalErrorMessage, err)
+		}
 	} else if strings.ToUpper(format) == "XML" {
 		err = xml.Unmarshal(response.GetHttpContentBytes(), response)
 	}

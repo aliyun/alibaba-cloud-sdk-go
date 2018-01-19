@@ -2,21 +2,22 @@ package integration
 
 import (
 	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
+	"strconv"
+	"strings"
 	"testing"
 	"time"
-	"strings"
-	"strconv"
 )
 
 const (
 	EcsInstanceDefaultTimeout = 120
 	EcsDefaultWaitForInterval = 20
 
-	EcsInstanceStatusRunning  = "Running"
-	EcsInstanceStatusStopped  = "Stopped"
-	EcsInstanceStatusDeleted  = "Deleted"
+	EcsInstanceStatusRunning = "Running"
+	EcsInstanceStatusStopped = "Stopped"
+	EcsInstanceStatusDeleted = "Deleted"
 )
 
 // create -> start -> stop -> delete
@@ -55,7 +56,7 @@ func TestEcsInstance(t *testing.T) {
 	// wait
 	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusStopped, 600)
 
-	// delete all test instance
+	//delete all test instance
 	deleteAllTestEcsInstance(t, ecsClient)
 }
 
@@ -118,29 +119,35 @@ func deleteEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
 func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 	fmt.Print("list all ecs instances...")
 	request := ecs.CreateDescribeInstancesRequest()
-	request.PageSize = "10"
-	request.PageNumber = "1"
+	request.PageSize = requests.NewInteger(10)
+	request.PageNumber = requests.NewInteger(1)
 	response, err := client.DescribeInstances(request)
 	assertErrorNil(t, err, "Failed to list all ecs instances ")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
-	fmt.Printf("success! TotalCount = %s\n", response.TotalCount)
+	fmt.Printf("success! TotalCount = %s\n", strconv.Itoa(response.TotalCount))
 
 	for _, instanceInfo := range response.Instances.Instance {
 		if strings.HasPrefix(instanceInfo.InstanceName, InstanceNamePrefix) {
-			fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
-				instanceInfo.Status, instanceInfo.InstanceId)
-			if instanceInfo.Status == EcsInstanceStatusRunning {
-				// stop
-				stopEcsInstance(t, client, instanceInfo.InstanceId)
-			}else if instanceInfo.Status == EcsInstanceStatusStopped {
-				// delete
-				deleteEcsInstance(t, client, instanceInfo.InstanceId)
-				// wait
-				waitForEcsInstance(t, client, instanceInfo.InstanceId, EcsInstanceStatusDeleted, 600)
+			createTime, err := strconv.ParseInt(instanceInfo.InstanceName[26:len(instanceInfo.InstanceName)], 10, 64)
+			assertErrorNil(t, err, "Parse instance create time failed: "+instanceInfo.InstanceName)
+			if (time.Now().Unix() - createTime) < (5 * 60) {
+				fmt.Printf("found undeleted ecs instance(%s) but created in 5 minutes, try to delete next time\n",instanceInfo.InstanceName)
+				return
+			}else{
+				fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
+					instanceInfo.Status, instanceInfo.InstanceId)
+				if instanceInfo.Status == EcsInstanceStatusRunning {
+					// stop
+					stopEcsInstance(t, client, instanceInfo.InstanceId)
+				} else if instanceInfo.Status == EcsInstanceStatusStopped {
+					// delete
+					deleteEcsInstance(t, client, instanceInfo.InstanceId)
+					// wait
+					waitForEcsInstance(t, client, instanceInfo.InstanceId, EcsInstanceStatusDeleted, 600)
+				}
 			}
 		}
 	}
-
 }
 
 func waitForEcsInstance(t *testing.T, client *ecs.Client, instanceId string, targetStatus string, timeout int) {

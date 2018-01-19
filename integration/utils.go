@@ -1,12 +1,12 @@
 package integration
 
 import (
+	"fmt"
 	"os"
 	"testing"
-	"fmt"
 )
 
-const InstanceNamePrefix  = "SdkIntegrationTestInstance"
+const InstanceNamePrefix = "SdkIntegrationTestInstance"
 
 type Config struct {
 	AccessKeyId     string
@@ -29,12 +29,11 @@ func getConfigFromEnv() *Config {
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
 	}
 	if config.AccessKeyId == "" {
-		return nil
+		panic("Get ACCESS_KEY_ID from environment variables failed")
 	} else {
 		return config
 	}
 }
-
 
 func getEcsDemoInstanceId() string {
 	return os.Getenv("DEMO_ECS_INSTANCE_ID")

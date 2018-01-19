@@ -19,14 +19,14 @@ import (
 )
 
 type SignerV2 struct {
-	credential *credentials.KeyPairCredential
+	credential *credentials.RsaKeyPairCredential
 }
 
 func (signer *SignerV2) GetExtraParam() map[string]string {
 	return nil
 }
 
-func NewSignerV2(credential *credentials.KeyPairCredential) (*SignerV2, error) {
+func NewSignerV2(credential *credentials.RsaKeyPairCredential) (*SignerV2, error) {
 	return &SignerV2{
 		credential: credential,
 	}, nil
