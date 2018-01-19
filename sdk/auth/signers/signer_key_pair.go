@@ -55,7 +55,7 @@ func NewSignerKeyPair(credential *credentials.RsaKeyPairCredential, commonApi fu
 		if credential.SessionExpiration >= 900 && credential.SessionExpiration <= 3600 {
 			signer.credentialExpiration = credential.SessionExpiration
 		} else {
-			err = errors.NewClientError(errors.InvalidParamCode, "Key Pair session duration should be in the range of 15min - 1Hr", nil)
+			err = errors.NewClientError(errors.InvalidParamErrorCode, "Key Pair session duration should be in the range of 15min - 1Hr", nil)
 		}
 	} else {
 		signer.credentialExpiration = defaultDurationSeconds

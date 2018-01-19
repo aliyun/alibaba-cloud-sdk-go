@@ -51,7 +51,7 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 		initJsonParserOnce()
 		err = jsonParser.Unmarshal(response.GetHttpContentBytes(), response)
 		if err != nil {
-			err = errors.NewClientError(errors.JsonUnmarshalCode, errors.JsonUnmarshalMessage, err)
+			err = errors.NewClientError(errors.JsonUnmarshalErrorCode, errors.JsonUnmarshalErrorMessage, err)
 		}
 	} else if strings.ToUpper(format) == "XML" {
 		err = xml.Unmarshal(response.GetHttpContentBytes(), response)

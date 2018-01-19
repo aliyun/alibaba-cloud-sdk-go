@@ -19,10 +19,10 @@ import (
 )
 
 type SignerSts struct {
-	credential *credentials.StsCredential
+	credential *credentials.StsTokenCredential
 }
 
-func NewSignerSts(credential *credentials.StsCredential) (*SignerSts, error) {
+func NewSignerSts(credential *credentials.StsTokenCredential) (*SignerSts, error) {
 	return &SignerSts{
 		credential: credential,
 	}, nil

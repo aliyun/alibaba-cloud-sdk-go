@@ -1,15 +1,15 @@
 package credentials
 
-type StsCredential struct {
+type StsTokenCredential struct {
 	AccessKeyId       string
 	AccessKeySecret   string
 	AccessKeyStsToken string
 }
 
-func NewStsCredential(AccessKeyId, AccessKeySecret, AccessKeyStsToken string) *StsCredential {
-	return &StsCredential{
-		AccessKeyId:       AccessKeyId,
-		AccessKeySecret:   AccessKeySecret,
-		AccessKeyStsToken: AccessKeyStsToken,
+func NewStsTokenCredential(accessKeyId, accessKeySecret, accessKeyStsToken string) *StsTokenCredential {
+	return &StsTokenCredential{
+		AccessKeyId:       accessKeyId,
+		AccessKeySecret:   accessKeySecret,
+		AccessKeyStsToken: accessKeyStsToken,
 	}
 }

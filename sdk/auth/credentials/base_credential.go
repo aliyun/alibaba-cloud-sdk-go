@@ -5,9 +5,9 @@ type BaseCredential struct {
 	AccessKeySecret string
 }
 
-func NewBaseCredential(AccessKeyId, AccessKeySecret string) *BaseCredential {
+func NewBaseCredential(accessKeyId, accessKeySecret string) *BaseCredential {
 	return &BaseCredential{
-		AccessKeyId:     AccessKeyId,
-		AccessKeySecret: AccessKeySecret,
+		AccessKeyId:     accessKeyId,
+		AccessKeySecret: accessKeySecret,
 	}
 }

@@ -141,7 +141,7 @@ func testSetup() {
 		panic(err)
 	}
 
-	stsCredential := credentials.NewStsCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
+	stsCredential := credentials.NewStsTokenCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
 	clientSts, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
 	if err != nil {
 		panic(err)
@@ -161,7 +161,7 @@ func TestRoaGet(t *testing.T) {
 
 	response := &responses.BaseResponse{}
 	err := client.DoAction(request, response)
-	assert.Nil(t, err, err.Error())
+	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
 	assert.NotNil(t, response.GetHttpContentString())
 

@@ -40,7 +40,7 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 		{
 			signer, err = signers.NewSignerV1(instance)
 		}
-	case *credentials.StsCredential:
+	case *credentials.StsTokenCredential:
 		{
 			signer, err = signers.NewSignerSts(instance)
 		}
@@ -57,8 +57,8 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 			signer, err = signers.NewSignereEcsInstance(instance, commonApi)
 		}
 	default:
-		message := fmt.Sprintf(errors.UnsupportedCredentialMessage, reflect.TypeOf(credential))
-		err = errors.NewClientError(errors.UnsupportedCredentialCode, message, nil)
+		message := fmt.Sprintf(errors.UnsupportedCredentialErrorMessage, reflect.TypeOf(credential))
+		err = errors.NewClientError(errors.UnsupportedCredentialErrorCode, message, nil)
 	}
 	return
 }
@@ -74,8 +74,8 @@ func Sign(request requests.AcsRequest, signer Signer, regionId string) (err erro
 			signRpcRequest(request, signer, regionId)
 		}
 	default:
-		message := fmt.Sprintf(errors.UnknownRequestTypeMessage, reflect.TypeOf(request))
-		err = errors.NewClientError(errors.UnknownRequestTypeCode, message, nil)
+		message := fmt.Sprintf(errors.UnknownRequestTypeErrorMessage, reflect.TypeOf(request))
+		err = errors.NewClientError(errors.UnknownRequestTypeErrorCode, message, nil)
 	}
 
 	return

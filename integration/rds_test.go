@@ -8,6 +8,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 )
 
 const (
@@ -22,8 +24,13 @@ const (
 func TestRdsInstance(t *testing.T) {
 
 	// init client
-	config := getConfigFromEnv()
-	rdsClient, err := rds.NewClientWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
+	testConfig := getConfigFromEnv()
+	credential := &credentials.BaseCredential{
+		AccessKeyId:     testConfig.AccessKeyId,
+		AccessKeySecret: testConfig.AccessKeySecret,
+	}
+	clientConfig := sdk.NewConfig().WithTimeout(30 * time.Second)
+	rdsClient, err := rds.NewClientWithOptions("cn-hangzhou", clientConfig, credential)
 	assertErrorNil(t, err, "Failed to init client")
 	fmt.Printf("Init client success\n")
 
@@ -41,7 +48,7 @@ func TestRdsInstance(t *testing.T) {
 
 	deleteDBInstance(t, rdsClient, dbInstanceId)
 
-	//deleteAllTestRdsInstance(t, rdsClient)
+	deleteAllTestRdsInstance(t, rdsClient)
 }
 
 func createDBInstance(t *testing.T, client *rds.Client) (rdsInstanceId string) {
@@ -171,11 +178,17 @@ func deleteAllTestRdsInstance(t *testing.T, client *rds.Client) {
 	fmt.Printf("found %s instances\n", strconv.Itoa(listResponse.TotalRecordCount))
 	for _, instance := range listResponse.Items.DBInstance {
 		if strings.HasPrefix(instance.DBInstanceDescription, InstanceNamePrefix) {
-			fmt.Printf("found test instance(%s), trying to delte it\n", instance.DBInstanceId)
-			deleteDBInstance(t, client, instance.DBInstanceId)
+			createTime, err := strconv.ParseInt(instance.DBInstanceDescription[len(InstanceNamePrefix):], 10, 64)
+			assertErrorNil(t, err, "Parse instance create time failed: "+instance.DBInstanceDescription)
+			if (time.Now().Unix() - createTime) < (5 * 60) {
+				fmt.Printf("found undeleted rds instance(%s) but created in 5 minutes, try to delete next time\n", instance.DBInstanceDescription)
+				return
+			} else {
+				fmt.Printf("found rds test instance(%s), trying to delte it\n", instance.DBInstanceId)
+				deleteDBInstance(t, client, instance.DBInstanceId)
+			}
 		}
 	}
-
 }
 
 func getSingleInstanceStatusFromDescribeDBInstanceAttributeResponse(response *rds.DescribeDBInstanceAttributeResponse) string {

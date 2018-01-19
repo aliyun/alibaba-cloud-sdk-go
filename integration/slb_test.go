@@ -44,7 +44,7 @@ func TestSlbInstance(t *testing.T) {
 	stopSlbInstance(t, slbClient, instanceId)
 
 	// delete all test instance
-	//deleteAllTestSlbInstance(t, slbClient)
+	deleteAllTestSlbInstance(t, slbClient)
 }
 
 func createSlbInstance(t *testing.T, client *slb.Client) (instanceId string) {
@@ -128,18 +128,25 @@ func deleteAllTestSlbInstance(t *testing.T, client *slb.Client) {
 	response, err := client.DescribeLoadBalancers(request)
 	assertErrorNil(t, err, "Failed to list all slb instances")
 	assert.Equal(t, 200, response.GetHttpStatus(), response.GetHttpContentString())
-	fmt.Printf("success(%d)! TotalCount = %s\n", response.GetHttpStatus(), response.TotalCount)
+	fmt.Printf("success(%d)! TotalCount = %s\n", response.GetHttpStatus(), strconv.Itoa(response.TotalCount))
 
 	for _, slbInstanceInfo := range response.LoadBalancers.LoadBalancer {
 		if strings.HasPrefix(slbInstanceInfo.LoadBalancerName, InstanceNamePrefix) {
-			fmt.Printf("found undeleted slb instance(%s), status=%s, try to delete it.\n",
-				slbInstanceInfo.LoadBalancerId, slbInstanceInfo.LoadBalancerStatus)
-			if slbInstanceInfo.LoadBalancerStatus != SlbInstanceStopped {
-				// stop
-				stopSlbInstance(t, client, slbInstanceInfo.LoadBalancerId)
+			createTime, err := strconv.ParseInt(slbInstanceInfo.LoadBalancerName[len(InstanceNamePrefix):], 10, 64)
+			assertErrorNil(t, err, "Parse instance create time failed: "+slbInstanceInfo.LoadBalancerName)
+			if (time.Now().Unix() - createTime) < (5 * 60) {
+				fmt.Printf("found undeleted slb instance(%s) but created in 5 minutes, try to delete next time\n", slbInstanceInfo.LoadBalancerName)
+				return
+			} else {
+				fmt.Printf("found undeleted slb instance(%s), status=%s, try to delete it.\n",
+					slbInstanceInfo.LoadBalancerId, slbInstanceInfo.LoadBalancerStatus)
+				if slbInstanceInfo.LoadBalancerStatus != SlbInstanceStopped {
+					// stop
+					stopSlbInstance(t, client, slbInstanceInfo.LoadBalancerId)
+				}
+				// delete
+				deleteSlbInstance(t, client, slbInstanceInfo.LoadBalancerId)
 			}
-			// delete
-			deleteSlbInstance(t, client, slbInstanceInfo.LoadBalancerId)
 		}
 	}
 }

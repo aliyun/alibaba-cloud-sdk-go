@@ -4,8 +4,8 @@ type StsRoleNameOnEcsCredential struct {
 	RoleName string
 }
 
-func NewStsRoleNameOnEcsCredential(RoleName string) *StsRoleNameOnEcsCredential {
+func NewStsRoleNameOnEcsCredential(roleName string) *StsRoleNameOnEcsCredential {
 	return &StsRoleNameOnEcsCredential{
-		RoleName: RoleName,
+		RoleName: roleName,
 	}
 }

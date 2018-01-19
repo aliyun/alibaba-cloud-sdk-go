@@ -44,8 +44,8 @@ func Resolve(param *ResolveParam) (endpoint string, err error) {
 	}
 
 	// not support
-	errorMsg := fmt.Sprintf(errors.CanNotResolveEndpointMessage, param, ResolveEndpointUserGuideLink)
-	err = errors.NewClientError(errors.CanNotResolveEndpointCode, errorMsg, nil)
+	errorMsg := fmt.Sprintf(errors.CanNotResolveEndpointErrorMessage, param, ResolveEndpointUserGuideLink)
+	err = errors.NewClientError(errors.CanNotResolveEndpointErrorCode, errorMsg, nil)
 	return
 }
 

@@ -279,8 +279,8 @@ func addParam(request AcsRequest, position, name, value string) (err error) {
 		case Body:
 			request.addFormParam(name, value)
 		default:
-			errMsg := fmt.Sprintf(errors.UnsupportedParamPositionMessage, position)
-			err = errors.NewClientError(errors.UnsupportedParamPositionCode, errMsg, nil)
+			errMsg := fmt.Sprintf(errors.UnsupportedParamPositionErrorMessage, position)
+			err = errors.NewClientError(errors.UnsupportedParamPositionErrorCode, errMsg, nil)
 		}
 	}
 	return

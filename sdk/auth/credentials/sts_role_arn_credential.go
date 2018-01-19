@@ -8,12 +8,12 @@ type StsRoleArnCredential struct {
 	RoleSessionExpiration int
 }
 
-func NewStsRoleArnCredential(AccessKeyId, AccessKeySecret, RoleArn, RoleSessionName string, RoleSessionExpiration int) *StsRoleArnCredential {
+func NewStsRoleArnCredential(accessKeyId, accessKeySecret, roleArn, roleSessionName string, roleSessionExpiration int) *StsRoleArnCredential {
 	return &StsRoleArnCredential{
-		AccessKeyId:           AccessKeyId,
-		AccessKeySecret:       AccessKeySecret,
-		RoleArn:               RoleArn,
-		RoleSessionName:       RoleSessionName,
-		RoleSessionExpiration: RoleSessionExpiration,
+		AccessKeyId:           accessKeyId,
+		AccessKeySecret:       accessKeySecret,
+		RoleArn:               roleArn,
+		RoleSessionName:       roleSessionName,
+		RoleSessionExpiration: roleSessionExpiration,
 	}
 }

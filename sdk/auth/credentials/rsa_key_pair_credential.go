@@ -6,10 +6,10 @@ type RsaKeyPairCredential struct {
 	SessionExpiration int
 }
 
-func NewRsaKeyPairCredential(PrivateKey, PublicKeyId string, SessionExpiration int) *RsaKeyPairCredential {
+func NewRsaKeyPairCredential(privateKey, publicKeyId string, sessionExpiration int) *RsaKeyPairCredential {
 	return &RsaKeyPairCredential{
-		PrivateKey:        PrivateKey,
-		PublicKeyId:       PublicKeyId,
-		SessionExpiration: SessionExpiration,
+		PrivateKey:        privateKey,
+		PublicKeyId:       publicKeyId,
+		SessionExpiration: sessionExpiration,
 	}
 }

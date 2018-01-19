@@ -96,7 +96,7 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 
 func (client *Client) InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsCredential{
+	credential := &credentials.StsTokenCredential{
 		AccessKeyId:       accessKeyId,
 		AccessKeySecret:   accessKeySecret,
 		AccessKeyStsToken: securityToken,
@@ -134,12 +134,11 @@ func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err e
 }
 
 func (client *Client) InitClientConfig() (config *Config) {
-	config = NewConfig()
 	if client.config != nil {
-		config = client.config
+		return client.config
+	}else{
+		return NewConfig()
 	}
-
-	return
 }
 
 func (client *Client) DoAction(request requests.AcsRequest, response responses.AcsResponse) (err error) {
@@ -264,9 +263,9 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	return
 }
 
-func NewClientWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (client *Client, err error) {
+func NewClientWithStsToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken string) (client *Client, err error) {
 	client = &Client{}
-	err = client.InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, accessKeySecret)
+	err = client.InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken)
 	return
 }
 
