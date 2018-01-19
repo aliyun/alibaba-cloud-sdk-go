@@ -28,7 +28,7 @@ import (
 	"testing"
 )
 
-var client, clientKeyPair, clientEcs, clientRoleArn *Client
+var client, clientKeyPair, clientEcs, clientRoleArn, clientSts *Client
 
 type TestConfig struct {
 	AccessKeyId     string
@@ -36,6 +36,7 @@ type TestConfig struct {
 	PublicKeyId     string
 	PrivateKey      string
 	RoleArn         string
+	StsToken        string
 	ChildAK         string
 	ChildSecret     string
 }
@@ -113,16 +114,27 @@ func testSetup() {
 	if err != nil {
 		panic(err)
 	}
-	clientKeyPair, err = NewClientWithRsaKeyPair("cn-hangzhou", clientConfig, testConfig.PublicKeyId, testConfig.PrivateKey, 3600)
-	clientKeyPair.config = clientConfig
+
+	rsaKeypairCredential := credentials.NewRsaKeyPairCredential(testConfig.PrivateKey, testConfig.PublicKeyId, 3600)
+	clientKeyPair, err = NewClientWithOptions("cn-hangzhou", clientConfig, rsaKeypairCredential)
 	if err != nil {
 		panic(err)
 	}
-	clientEcs, err = NewClientWithStsRoleNameOnEcs("cn-hangzhou", clientConfig, "conan")
+
+	roleNameOnEcsCredential := credentials.NewStsRoleNameOnEcsCredential("conan")
+	clientEcs, err = NewClientWithOptions("cn-hangzhou", clientConfig, roleNameOnEcsCredential)
 	if err != nil {
 		panic(err)
 	}
-	clientRoleArn, err = NewClientWithStsRoleArn("cn-hangzhou", clientConfig, testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest")
+
+	stsRoleArnCredential := credentials.NewStsRoleArnCredential(testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest", 3600)
+	clientRoleArn, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsRoleArnCredential)
+	if err != nil {
+		panic(err)
+	}
+
+	stsCredential := credentials.NewStsCredential(testConfig.AccessKeyId, testConfig.AccessKeySecret, testConfig.StsToken)
+	client, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
 	if err != nil {
 		panic(err)
 	}

@@ -64,7 +64,7 @@ func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, common
 		signer.roleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
 	}
 	if credential.RoleSessionExpiration > 0 {
-		if credential.RoleSessionExpiration > 900 && credential.RoleSessionExpiration < 3600 {
+		if credential.RoleSessionExpiration >= 900 && credential.RoleSessionExpiration <= 3600 {
 			signer.credentialExpiration = credential.RoleSessionExpiration
 		} else {
 			err = errors.NewClientError(errors.InvalidParamCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)

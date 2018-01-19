@@ -92,6 +92,16 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
+func (client *Client) InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.StsCredential{
+		AccessKeyId:       accessKeyId,
+		AccessKeySecret:   accessKeySecret,
+		AccessKeyStsToken: securityToken,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
 func (client *Client) InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
 	config := client.InitClientConfig()
 	credential := &credentials.StsRoleArnCredential{
@@ -247,23 +257,26 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	return
 }
 
-func NewClientWithRsaKeyPair(regionId string, config *Config, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+func NewClientWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (client *Client, err error) {
 	client = &Client{}
-	client.config = config
+	err = client.InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, accessKeySecret)
+	return
+}
+
+func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+	client = &Client{}
 	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
 	return
 }
 
-func NewClientWithStsRoleNameOnEcs(regionId string, config *Config, roleName string) (client *Client, err error) {
+func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
 	client = &Client{}
-	client.config = config
 	err = client.InitWithStsRoleNameOnEcs(regionId, roleName)
 	return
 }
 
-func NewClientWithStsRoleArn(regionId string, config *Config, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
-	client.config = config
 	err = client.InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 	return
 }
