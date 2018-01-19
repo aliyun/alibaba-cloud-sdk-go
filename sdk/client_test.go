@@ -37,6 +37,8 @@ type TestConfig struct {
 	PrivateKey      string
 	RoleArn         string
 	StsToken        string
+	StsAk           string
+	StsSecret       string
 	ChildAK         string
 	ChildSecret     string
 }
@@ -82,6 +84,9 @@ func getConfigFromEnv() *TestConfig {
 		RoleArn:         os.Getenv("ROLE_ARN"),
 		ChildAK:         os.Getenv("CHILD_AK"),
 		ChildSecret:     os.Getenv("CHILD_SECRET"),
+		StsToken:        os.Getenv("STS_TOKEN"),
+		StsAk:           os.Getenv("STS_AK"),
+		StsSecret:       os.Getenv("STS_SECRET"),
 	}
 	if config.AccessKeyId == "" || os.Getenv("ENV_TYPE") != "CI" {
 		return nil
@@ -133,8 +138,8 @@ func testSetup() {
 		panic(err)
 	}
 
-	stsCredential := credentials.NewStsCredential(testConfig.AccessKeyId, testConfig.AccessKeySecret, testConfig.StsToken)
-	client, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
+	stsCredential := credentials.NewStsCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
+	clientSts, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
 	if err != nil {
 		panic(err)
 	}
@@ -503,6 +508,23 @@ func TestRpcGetForRoleArn(t *testing.T) {
 
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }
+
+//测试Sts的时候要先获取一套stsToken和ak，由于有时效性，所以先把代码注释掉，测试的时候先获取stsToken完成后再调用
+//func TestRpcGetForSts(t *testing.T) {
+//	request := getFtTestRpcRequest()
+//	request.Method = requests.GET
+//
+//	response := &responses.BaseResponse{}
+//	err := clientSts.DoAction(request, response)
+//	assert.Nil(t, err)
+//	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+//	assert.NotNil(t, response.GetHttpContentString())
+//
+//	var responseBean MockResponse
+//	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+//
+//	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+//}
 
 func TestCommonRoaRequestForAcceptXML(t *testing.T) {
 	roaRequest := requests.NewCommonRequest()
