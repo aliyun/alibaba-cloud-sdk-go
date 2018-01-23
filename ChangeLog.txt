@@ -1,3 +1,7 @@
+2018-01-23 Version: 0.8.3
+1, Tesla Dam API release.
+2, Add ActionDiskCheck, ActionDiskMask, ActionDiskRma, HostGets.
+
 2018-01-18 Version: 0.8.2
 1. Set default timeout to 10s
 2. Make integration tests more stable
