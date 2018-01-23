@@ -188,7 +188,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 
 	requestMethod := request.GetMethod()
-	requestUrl := request.GetUrl()
+	requestUrl := request.BuildUrl()
 	body := request.GetBodyReader()
 	httpRequest, err := http.NewRequest(requestMethod, requestUrl, body)
 	if err != nil {
@@ -216,6 +216,12 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		}
 		//  if status code >= 500 or timeout, will trigger retry
 		if client.config.AutoRetry && (timeout || isServerError(httpResponse)) {
+			// rewrite signatureNonce and signature
+			if signer != nil {
+				err = auth.Sign(request, signer, regionId)
+			} else {
+				err = auth.Sign(request, client.signer, regionId)
+			}
 			continue
 		}
 		break

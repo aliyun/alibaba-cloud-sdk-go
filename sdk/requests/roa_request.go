@@ -44,13 +44,10 @@ func (request *RoaRequest) GetBodyReader() io.Reader {
 }
 
 func (request *RoaRequest) GetQueries() string {
-	if len(request.queries) == 0 {
-		request.buildQueries()
-	}
 	return request.queries
 }
 
-func (request *RoaRequest) buildQueries() {
+func (request *RoaRequest) BuildQueries() string {
 	// replace path params with value
 	path := request.pathPattern
 	for key, value := range request.PathParams {
@@ -87,11 +84,17 @@ func (request *RoaRequest) buildQueries() {
 		}
 	}
 	request.queries = urlBuilder.String()
+	return request.queries
 }
 
 func (request *RoaRequest) GetUrl() string {
 	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
 }
+
+func (request *RoaRequest) BuildUrl() string {
+	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
+}
+
 
 func (request *RoaRequest) addPathParam(key, value string) {
 	request.PathParams[key] = value

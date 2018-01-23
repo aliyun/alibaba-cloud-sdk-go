@@ -59,6 +59,7 @@ type AcsRequest interface {
 	GetPort() string
 	GetRegionId() string
 	GetUrl() string
+	GetQueries() string
 	GetHeaders() map[string]string
 	GetQueryParams() map[string]string
 	GetFormParams() map[string]string
@@ -74,8 +75,9 @@ type AcsRequest interface {
 
 	SetDomain(domain string)
 	SetContent(content []byte)
+	BuildUrl() string
+	BuildQueries() string
 
-	GetQueries() string
 	addHeaderParam(key, value string)
 	addQueryParam(key, value string)
 	addFormParam(key, value string)
