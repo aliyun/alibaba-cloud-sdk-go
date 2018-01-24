@@ -33,8 +33,12 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteUser(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

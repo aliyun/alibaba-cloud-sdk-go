@@ -33,8 +33,12 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateInstance(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

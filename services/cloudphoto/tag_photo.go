@@ -33,8 +33,12 @@ func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPho
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.TagPhoto(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) DescribeDomainDownstreamBpsOfEdgeWithChan(request *Describ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeDomainDownstreamBpsOfEdge(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

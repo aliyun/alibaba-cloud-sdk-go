@@ -33,8 +33,12 @@ func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, 
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.Push(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

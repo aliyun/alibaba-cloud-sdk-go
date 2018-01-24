@@ -33,8 +33,12 @@ func (client *Client) ListGroupsForUserWithChan(request *ListGroupsForUserReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListGroupsForUser(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

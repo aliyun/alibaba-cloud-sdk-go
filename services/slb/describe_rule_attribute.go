@@ -33,8 +33,12 @@ func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttribu
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeRuleAttribute(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

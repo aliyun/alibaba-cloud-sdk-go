@@ -33,8 +33,12 @@ func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnCo
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DownloadVpnConnectionConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

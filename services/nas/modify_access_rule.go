@@ -33,8 +33,12 @@ func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyAccessRule(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

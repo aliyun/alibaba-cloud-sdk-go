@@ -33,8 +33,12 @@ func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.GetFramedPhotoUrls(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

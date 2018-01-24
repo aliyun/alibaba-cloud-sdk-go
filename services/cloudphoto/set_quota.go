@@ -33,8 +33,12 @@ func (client *Client) SetQuotaWithChan(request *SetQuotaRequest) (<-chan *SetQuo
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.SetQuota(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

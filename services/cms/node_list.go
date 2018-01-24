@@ -33,8 +33,12 @@ func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeLi
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

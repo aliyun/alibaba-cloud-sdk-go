@@ -131,9 +131,9 @@ func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 			createTime, err := strconv.ParseInt(instanceInfo.InstanceName[26:len(instanceInfo.InstanceName)], 10, 64)
 			assertErrorNil(t, err, "Parse instance create time failed: "+instanceInfo.InstanceName)
 			if (time.Now().Unix() - createTime) < (60 * 60) {
-				fmt.Printf("found undeleted ecs instance(%s) but created in 60 minutes, try to delete next time\n",instanceInfo.InstanceName)
+				fmt.Printf("found undeleted ecs instance(%s) but created in 60 minutes, try to delete next time\n", instanceInfo.InstanceName)
 				return
-			}else{
+			} else {
 				fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
 					instanceInfo.Status, instanceInfo.InstanceId)
 				if instanceInfo.Status == EcsInstanceStatusRunning {

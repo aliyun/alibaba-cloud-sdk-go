@@ -1,3 +1,9 @@
+2018-01-24 Version: 0.8.3
+1. improve: asyncWithChan avoid panic of "write on closed channel"
+2. improve: asyncWithChan support select case usage
+3. bug fix: repeated signature nonce while retry
+4. bug fix: calling request.GetUrl() ahead of client.DoAction() will cause problems
+
 2018-01-18 Version: 0.8.2
 1. Set default timeout to 10s
 2. Make integration tests more stable

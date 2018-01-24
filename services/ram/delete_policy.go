@@ -33,8 +33,12 @@ func (client *Client) DeletePolicyWithChan(request *DeletePolicyRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeletePolicy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

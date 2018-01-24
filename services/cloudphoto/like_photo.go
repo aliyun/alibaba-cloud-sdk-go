@@ -33,8 +33,12 @@ func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *Like
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.LikePhoto(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

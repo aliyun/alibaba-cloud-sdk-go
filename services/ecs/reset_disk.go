@@ -33,8 +33,12 @@ func (client *Client) ResetDiskWithChan(request *ResetDiskRequest) (<-chan *Rese
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ResetDisk(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

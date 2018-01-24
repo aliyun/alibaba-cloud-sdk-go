@@ -33,8 +33,12 @@ func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiv
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeLiveStreamsOnlineList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

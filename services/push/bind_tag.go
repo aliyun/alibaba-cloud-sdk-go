@@ -33,8 +33,12 @@ func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagR
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.BindTag(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListAccessKeys(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

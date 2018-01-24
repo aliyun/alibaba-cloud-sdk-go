@@ -33,8 +33,12 @@ func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacte
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeCharacterSetName(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

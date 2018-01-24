@@ -33,8 +33,12 @@ func (client *Client) DeleteRulesWithChan(request *DeleteRulesRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteRules(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

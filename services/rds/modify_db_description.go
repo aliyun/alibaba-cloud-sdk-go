@@ -33,8 +33,12 @@ func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRe
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyDBDescription(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

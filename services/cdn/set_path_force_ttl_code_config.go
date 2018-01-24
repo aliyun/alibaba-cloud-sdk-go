@@ -33,8 +33,12 @@ func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtl
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.SetPathForceTtlCodeConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

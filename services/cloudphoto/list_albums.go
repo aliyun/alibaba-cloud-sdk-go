@@ -33,8 +33,12 @@ func (client *Client) ListAlbumsWithChan(request *ListAlbumsRequest) (<-chan *Li
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListAlbums(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCol
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeSQLCollectorPolicy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

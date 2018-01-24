@@ -33,8 +33,12 @@ func (client *Client) DeleteSignWithChan(request *DeleteSignRequest) (<-chan *De
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteSign(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) AddCoverPipelineWithChan(request *AddCoverPipelineRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.AddCoverPipeline(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

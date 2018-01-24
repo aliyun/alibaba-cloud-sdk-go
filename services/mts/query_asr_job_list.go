@@ -33,8 +33,12 @@ func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryAsrJobList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) CreateCustomerGatewayWithChan(request *CreateCustomerGatew
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateCustomerGateway(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantPr
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryRegistrantProfiles(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

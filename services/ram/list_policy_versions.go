@@ -33,8 +33,12 @@ func (client *Client) ListPolicyVersionsWithChan(request *ListPolicyVersionsRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListPolicyVersions(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

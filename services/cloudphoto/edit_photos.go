@@ -33,8 +33,12 @@ func (client *Client) EditPhotosWithChan(request *EditPhotosRequest) (<-chan *Ed
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.EditPhotos(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

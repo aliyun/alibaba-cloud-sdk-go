@@ -33,8 +33,12 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *Sav
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.SaveBatchTaskForCreatingOrderActivate(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err
