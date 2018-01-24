@@ -33,12 +33,8 @@ func (client *Client) QueryCustomMetricListWithChan(request *QueryCustomMetricLi
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryCustomMetricList(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +64,13 @@ func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetr
 
 type QueryCustomMetricListRequest struct {
 	*requests.RpcRequest
+	Size       string `position:"Query" name:"Size"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	Page       string `position:"Query" name:"Page"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Dimension  string `position:"Query" name:"Dimension"`
-	Page       string `position:"Query" name:"Page"`
-	Md5        string `position:"Query" name:"Md5"`
 	UUID       string `position:"Query" name:"UUID"`
-	GroupId    string `position:"Query" name:"GroupId"`
-	Size       string `position:"Query" name:"Size"`
+	Md5        string `position:"Query" name:"Md5"`
 }
 
 type QueryCustomMetricListResponse struct {

@@ -33,12 +33,8 @@ func (client *Client) NodeUninstallWithChan(request *NodeUninstallRequest) (<-ch
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeUninstall(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err

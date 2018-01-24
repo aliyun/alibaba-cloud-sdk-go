@@ -33,12 +33,8 @@ func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeProcessDelete(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +64,9 @@ func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRe
 
 type NodeProcessDeleteRequest struct {
 	*requests.RpcRequest
-	Id         string `position:"Query" name:"Id"`
-	Name       string `position:"Query" name:"Name"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Name       string `position:"Query" name:"Name"`
+	Id         string `position:"Query" name:"Id"`
 }
 
 type NodeProcessDeleteResponse struct {

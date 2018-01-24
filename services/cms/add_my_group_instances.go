@@ -33,12 +33,8 @@ func (client *Client) AddMyGroupInstancesWithChan(request *AddMyGroupInstancesRe
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.AddMyGroupInstances(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +64,8 @@ func (client *Client) AddMyGroupInstancesWithCallback(request *AddMyGroupInstanc
 
 type AddMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 	Instances string           `position:"Query" name:"Instances"`
+	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 }
 
 type AddMyGroupInstancesResponse struct {

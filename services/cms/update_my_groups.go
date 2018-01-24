@@ -33,12 +33,8 @@ func (client *Client) UpdateMyGroupsWithChan(request *UpdateMyGroupsRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.UpdateMyGroups(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +64,12 @@ func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest,
 
 type UpdateMyGroupsRequest struct {
 	*requests.RpcRequest
-	GroupName     string           `position:"Query" name:"GroupName"`
-	GroupId       string           `position:"Query" name:"GroupId"`
-	Type          string           `position:"Query" name:"Type"`
-	BindUrls      string           `position:"Query" name:"BindUrls"`
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
+	GroupId       string           `position:"Query" name:"GroupId"`
 	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
+	Type          string           `position:"Query" name:"Type"`
+	GroupName     string           `position:"Query" name:"GroupName"`
+	BindUrls      string           `position:"Query" name:"BindUrls"`
 }
 
 type UpdateMyGroupsResponse struct {

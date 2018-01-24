@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
-	response = CreateDeleteNotifyPolicyResponse()
+func (client *Client) QuerySystemEventHistogram(request *QuerySystemEventHistogramRequest) (response *QuerySystemEventHistogramResponse, err error) {
+	response = CreateQuerySystemEventHistogramResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
-	responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
+func (client *Client) QuerySystemEventHistogramWithChan(request *QuerySystemEventHistogramRequest) (<-chan *QuerySystemEventHistogramResponse, <-chan error) {
+	responseChan := make(chan *QuerySystemEventHistogramResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteNotifyPolicy(request)
+		response, err := client.QuerySystemEventHistogram(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 	return responseChan, errChan
 }
 
-func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
+func (client *Client) QuerySystemEventHistogramWithCallback(request *QuerySystemEventHistogramRequest, callback func(response *QuerySystemEventHistogramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteNotifyPolicyResponse
+		var response *QuerySystemEventHistogramResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteNotifyPolicy(request)
+		response, err = client.QuerySystemEventHistogram(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,33 +62,28 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 	return result
 }
 
-type DeleteNotifyPolicyRequest struct {
+type QuerySystemEventHistogramRequest struct {
 	*requests.RpcRequest
-	PolicyType string `position:"Query" name:"PolicyType"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	Id         string `position:"Query" name:"Id"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
-type DeleteNotifyPolicyResponse struct {
+type QuerySystemEventHistogramResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"code" xml:"code"`
-	Message string `json:"message" xml:"message"`
-	Success string `json:"success" xml:"success"`
-	TraceId string `json:"traceId" xml:"traceId"`
-	Result  int    `json:"result" xml:"result"`
+	Code    string `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
 }
 
-func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
-	request = &DeleteNotifyPolicyRequest{
+func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogramRequest) {
+	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventHistogram", "cms", "openAPI")
 	return
 }
 
-func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
-	response = &DeleteNotifyPolicyResponse{
+func CreateQuerySystemEventHistogramResponse() (response *QuerySystemEventHistogramResponse) {
+	response = &QuerySystemEventHistogramResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

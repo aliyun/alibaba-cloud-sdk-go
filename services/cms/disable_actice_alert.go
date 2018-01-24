@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
-	response = CreateDeleteNotifyPolicyResponse()
+func (client *Client) DisableActiceAlert(request *DisableActiceAlertRequest) (response *DisableActiceAlertResponse, err error) {
+	response = CreateDisableActiceAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
-	responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
+func (client *Client) DisableActiceAlertWithChan(request *DisableActiceAlertRequest) (<-chan *DisableActiceAlertResponse, <-chan error) {
+	responseChan := make(chan *DisableActiceAlertResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteNotifyPolicy(request)
+		response, err := client.DisableActiceAlert(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 	return responseChan, errChan
 }
 
-func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
+func (client *Client) DisableActiceAlertWithCallback(request *DisableActiceAlertRequest, callback func(response *DisableActiceAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteNotifyPolicyResponse
+		var response *DisableActiceAlertResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteNotifyPolicy(request)
+		response, err = client.DisableActiceAlert(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,33 +62,30 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 	return result
 }
 
-type DeleteNotifyPolicyRequest struct {
+type DisableActiceAlertRequest struct {
 	*requests.RpcRequest
-	PolicyType string `position:"Query" name:"PolicyType"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	Id         string `position:"Query" name:"Id"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	Product string `position:"Query" name:"Product"`
+	UserId  string `position:"Query" name:"UserId"`
 }
 
-type DeleteNotifyPolicyResponse struct {
+type DisableActiceAlertResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"code" xml:"code"`
-	Message string `json:"message" xml:"message"`
-	Success string `json:"success" xml:"success"`
-	TraceId string `json:"traceId" xml:"traceId"`
-	Result  int    `json:"result" xml:"result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
-func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
-	request = &DeleteNotifyPolicyRequest{
+func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
+	request = &DisableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DisableActiceAlert", "cms", "openAPI")
 	return
 }
 
-func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
-	response = &DeleteNotifyPolicyResponse{
+func CreateDisableActiceAlertResponse() (response *DisableActiceAlertResponse) {
+	response = &DisableActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

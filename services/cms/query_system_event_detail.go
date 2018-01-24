@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
-	response = CreateDeleteNotifyPolicyResponse()
+func (client *Client) QuerySystemEventDetail(request *QuerySystemEventDetailRequest) (response *QuerySystemEventDetailResponse, err error) {
+	response = CreateQuerySystemEventDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
-	responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
+func (client *Client) QuerySystemEventDetailWithChan(request *QuerySystemEventDetailRequest) (<-chan *QuerySystemEventDetailResponse, <-chan error) {
+	responseChan := make(chan *QuerySystemEventDetailResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteNotifyPolicy(request)
+		response, err := client.QuerySystemEventDetail(request)
 		responseChan <- response
 		errChan <- err
 	})
@@ -44,13 +44,13 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 	return responseChan, errChan
 }
 
-func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
+func (client *Client) QuerySystemEventDetailWithCallback(request *QuerySystemEventDetailRequest, callback func(response *QuerySystemEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteNotifyPolicyResponse
+		var response *QuerySystemEventDetailResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteNotifyPolicy(request)
+		response, err = client.QuerySystemEventDetail(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -62,33 +62,28 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 	return result
 }
 
-type DeleteNotifyPolicyRequest struct {
+type QuerySystemEventDetailRequest struct {
 	*requests.RpcRequest
-	PolicyType string `position:"Query" name:"PolicyType"`
-	AlertName  string `position:"Query" name:"AlertName"`
-	Id         string `position:"Query" name:"Id"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
-type DeleteNotifyPolicyResponse struct {
+type QuerySystemEventDetailResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"code" xml:"code"`
-	Message string `json:"message" xml:"message"`
-	Success string `json:"success" xml:"success"`
-	TraceId string `json:"traceId" xml:"traceId"`
-	Result  int    `json:"result" xml:"result"`
+	Code    string `json:"Code" xml:"Code"`
+	Message string `json:"Message" xml:"Message"`
+	Data    string `json:"Data" xml:"Data"`
 }
 
-func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
-	request = &DeleteNotifyPolicyRequest{
+func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailRequest) {
+	request = &QuerySystemEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventDetail", "cms", "openAPI")
 	return
 }
 
-func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
-	response = &DeleteNotifyPolicyResponse{
+func CreateQuerySystemEventDetailResponse() (response *QuerySystemEventDetailResponse) {
+	response = &QuerySystemEventDetailResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

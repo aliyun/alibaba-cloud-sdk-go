@@ -33,12 +33,8 @@ func (client *Client) ListNotifyPolicyWithChan(request *ListNotifyPolicyRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListNotifyPolicy(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +64,10 @@ func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequ
 
 type ListNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	Id         string           `position:"Query" name:"Id"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	AlertName  string           `position:"Query" name:"AlertName"`
 	PolicyType string           `position:"Query" name:"PolicyType"`
+	AlertName  string           `position:"Query" name:"AlertName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Id         string           `position:"Query" name:"Id"`
 	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 

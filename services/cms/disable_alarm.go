@@ -33,12 +33,8 @@ func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DisableAlarm(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +64,8 @@ func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, cal
 
 type DisableAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string `position:"Query" name:"Id"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Id             string `position:"Query" name:"Id"`
 }
 
 type DisableAlarmResponse struct {

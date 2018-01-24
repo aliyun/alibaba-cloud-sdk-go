@@ -33,12 +33,8 @@ func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListContactGroup(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +64,9 @@ func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequ
 
 type ListContactGroupRequest struct {
 	*requests.RpcRequest
+	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type ListContactGroupResponse struct {

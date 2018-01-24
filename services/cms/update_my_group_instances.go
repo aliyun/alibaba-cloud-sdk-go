@@ -33,12 +33,8 @@ func (client *Client) UpdateMyGroupInstancesWithChan(request *UpdateMyGroupInsta
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.UpdateMyGroupInstances(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +64,8 @@ func (client *Client) UpdateMyGroupInstancesWithCallback(request *UpdateMyGroupI
 
 type UpdateMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 	Instances string           `position:"Query" name:"Instances"`
+	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 }
 
 type UpdateMyGroupInstancesResponse struct {

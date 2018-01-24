@@ -33,12 +33,8 @@ func (client *Client) ListAlarmWithChan(request *ListAlarmRequest) (<-chan *List
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListAlarm(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +64,15 @@ func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback 
 
 type ListAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string           `position:"Query" name:"Id"`
+	IsEnable       requests.Boolean `position:"Query" name:"IsEnable"`
+	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
+	Name           string           `position:"Query" name:"Name"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	Id             string           `position:"Query" name:"Id"`
+	State          string           `position:"Query" name:"State"`
 	Dimension      string           `position:"Query" name:"Dimension"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	Name           string           `position:"Query" name:"Name"`
-	State          string           `position:"Query" name:"State"`
-	IsEnable       requests.Boolean `position:"Query" name:"IsEnable"`
-	Namespace      string           `position:"Query" name:"Namespace"`
-	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type ListAlarmResponse struct {

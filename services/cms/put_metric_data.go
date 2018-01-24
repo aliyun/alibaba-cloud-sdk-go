@@ -33,12 +33,8 @@ func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-ch
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.PutMetricData(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +64,8 @@ func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, c
 
 type PutMetricDataRequest struct {
 	*requests.RpcRequest
-	Body           string `position:"Query" name:"Body"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Body           string `position:"Query" name:"Body"`
 }
 
 type PutMetricDataResponse struct {

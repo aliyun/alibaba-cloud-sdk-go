@@ -33,12 +33,8 @@ func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeProcessCreate(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +64,11 @@ func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRe
 
 type NodeProcessCreateRequest struct {
 	*requests.RpcRequest
+	InstanceId  string `position:"Query" name:"InstanceId"`
 	ProcessName string `position:"Query" name:"ProcessName"`
 	Name        string `position:"Query" name:"Name"`
-	Command     string `position:"Query" name:"Command"`
 	ProcessUser string `position:"Query" name:"ProcessUser"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
+	Command     string `position:"Query" name:"Command"`
 }
 
 type NodeProcessCreateResponse struct {

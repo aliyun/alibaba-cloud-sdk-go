@@ -33,12 +33,8 @@ func (client *Client) ListMyGroupsWithChan(request *ListMyGroupsRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListMyGroups(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +64,14 @@ func (client *Client) ListMyGroupsWithCallback(request *ListMyGroupsRequest, cal
 
 type ListMyGroupsRequest struct {
 	*requests.RpcRequest
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
-	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
-	Keyword             string           `position:"Query" name:"Keyword"`
-	GroupName           string           `position:"Query" name:"GroupName"`
-	BindUrls            string           `position:"Query" name:"BindUrls"`
-	Type                string           `position:"Query" name:"Type"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Keyword             string           `position:"Query" name:"Keyword"`
+	Type                string           `position:"Query" name:"Type"`
+	GroupName           string           `position:"Query" name:"GroupName"`
+	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
+	BindUrls            string           `position:"Query" name:"BindUrls"`
 }
 
 type ListMyGroupsResponse struct {

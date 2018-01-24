@@ -33,12 +33,8 @@ func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeLi
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeList(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +64,14 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 
 type NodeListRequest struct {
 	*requests.RpcRequest
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Status        string           `position:"Query" name:"Status"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceIds   string           `position:"Query" name:"InstanceIds"`
-	KeyWord       string           `position:"Query" name:"KeyWord"`
-	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
-	UserId        requests.Integer `position:"Query" name:"UserId"`
 	HostName      string           `position:"Query" name:"HostName"`
+	InstanceIds   string           `position:"Query" name:"InstanceIds"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord       string           `position:"Query" name:"KeyWord"`
+	UserId        requests.Integer `position:"Query" name:"UserId"`
+	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	Status        string           `position:"Query" name:"Status"`
 }
 
 type NodeListResponse struct {

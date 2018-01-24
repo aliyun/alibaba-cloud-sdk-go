@@ -33,12 +33,8 @@ func (client *Client) CreateMyGroupsWithChan(request *CreateMyGroupsRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateMyGroups(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-
+		responseChan <- response
+		errChan <- err
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +64,11 @@ func (client *Client) CreateMyGroupsWithCallback(request *CreateMyGroupsRequest,
 
 type CreateMyGroupsRequest struct {
 	*requests.RpcRequest
-	BindUrl       string           `position:"Query" name:"BindUrl"`
-	GroupName     string           `position:"Query" name:"GroupName"`
-	Type          string           `position:"Query" name:"Type"`
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
+	Type          string           `position:"Query" name:"Type"`
+	GroupName     string           `position:"Query" name:"GroupName"`
+	BindUrl       string           `position:"Query" name:"BindUrl"`
 }
 
 type CreateMyGroupsResponse struct {

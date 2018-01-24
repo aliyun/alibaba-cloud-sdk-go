@@ -1,3 +1,7 @@
+2018-01-24 Version: 0.9.2
+1, Add ActiveAlert API : ListActiveAlertRuleRequest/ListProductOfActiceAlertRequest/EnableActiceAlertRequest/DisableActiceAlertRequest
+
+
 2018-01-24 Version: 0.9.1
 1. improve: asyncWithChan avoid panic of "write on closed channel"
 2. improve: asyncWithChan support select case usage
