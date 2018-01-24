@@ -33,8 +33,12 @@ func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTyp
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeInstanceTypes(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

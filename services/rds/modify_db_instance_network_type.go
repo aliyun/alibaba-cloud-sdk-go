@@ -33,8 +33,12 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInsta
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyDBInstanceNetworkType(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

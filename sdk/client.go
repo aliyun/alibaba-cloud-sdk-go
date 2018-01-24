@@ -15,6 +15,7 @@
 package sdk
 
 import (
+	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
@@ -23,8 +24,8 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"net"
 	"net/http"
-	"fmt"
 	"strconv"
+	"sync"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
@@ -39,6 +40,8 @@ type Client struct {
 
 	debug     bool
 	isRunning bool
+	// void "panic(write to close channel)" cause of addAsync() after Shutdown()
+	asyncChanLock *sync.RWMutex
 }
 
 func (client *Client) Init() (err error) {
@@ -47,6 +50,7 @@ func (client *Client) Init() (err error) {
 
 func (client *Client) InitWithOptions(regionId string, config *Config, credential auth.Credential) (err error) {
 	client.isRunning = true
+	client.asyncChanLock = new(sync.RWMutex)
 	client.regionId = regionId
 	client.config = config
 	if err != nil {
@@ -77,8 +81,10 @@ func (client *Client) EnableAsync(routinePoolSize, maxTaskQueueSize int) {
 		go func() {
 			for client.isRunning {
 				select {
-				case task := <-client.asyncTaskQueue:
-					task()
+				case task, notClosed := <-client.asyncTaskQueue:
+					if notClosed {
+						task()
+					}
 				}
 			}
 		}()
@@ -136,7 +142,7 @@ func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err e
 func (client *Client) InitClientConfig() (config *Config) {
 	if client.config != nil {
 		return client.config
-	}else{
+	} else {
 		return NewConfig()
 	}
 }
@@ -177,25 +183,15 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 
 	// signature
+	var finalSigner auth.Signer
 	if signer != nil {
-		err = auth.Sign(request, signer, regionId)
+		finalSigner = signer
 	} else {
-		err = auth.Sign(request, client.signer, regionId)
+		finalSigner = client.signer
 	}
-
+	httpRequest, err := buildHttpRequest(request, finalSigner, regionId)
 	if err != nil {
 		return
-	}
-
-	requestMethod := request.GetMethod()
-	requestUrl := request.GetUrl()
-	body := request.GetBodyReader()
-	httpRequest, err := http.NewRequest(requestMethod, requestUrl, body)
-	if err != nil {
-		return
-	}
-	for key, value := range request.GetHeaders() {
-		httpRequest.Header[key] = []string{value}
 	}
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
@@ -209,18 +205,45 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 				return
 			} else if retryTimes >= client.config.MaxRetryTime {
 				// timeout but reached the max retry times, return
-				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes + 1), strconv.Itoa(retryTimes + 1))
+				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1))
 				err = errors.NewClientError(errors.TimeoutErrorCode, timeoutErrorMsg, err)
 				return
 			}
 		}
 		//  if status code >= 500 or timeout, will trigger retry
 		if client.config.AutoRetry && (timeout || isServerError(httpResponse)) {
+			// rewrite signatureNonce and signature
+			httpRequest, err = buildHttpRequest(request, finalSigner, regionId)
+			if err != nil {
+				return
+			}
 			continue
 		}
 		break
 	}
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
+	return
+}
+
+func buildHttpRequest(request requests.AcsRequest, singer auth.Signer, regionId string) (httpRequest *http.Request, err error) {
+	err = auth.Sign(request, singer, regionId)
+	if err != nil {
+		return
+	}
+	requestMethod := request.GetMethod()
+	requestUrl := request.BuildUrl()
+	body := request.GetBodyReader()
+	httpRequest, err = http.NewRequest(requestMethod, requestUrl, body)
+	if err != nil {
+		return
+	}
+	for key, value := range request.GetHeaders() {
+		httpRequest.Header[key] = []string{value}
+	}
+	// host is a special case
+	if host, containsHost := request.GetHeaders()["Host"]; containsHost {
+		httpRequest.Host = host
+	}
 	return
 }
 
@@ -236,9 +259,18 @@ func isServerError(httpResponse *http.Response) bool {
 	return httpResponse.StatusCode >= http.StatusInternalServerError
 }
 
+/**
+only block when any one of the following occurs:
+1. the asyncTaskQueue is full, increase the queue size to avoid this
+2. Shutdown() in progressing, the client is being closed
+**/
 func (client *Client) AddAsyncTask(task func()) (err error) {
 	if client.asyncTaskQueue != nil {
-		client.asyncTaskQueue <- task
+		client.asyncChanLock.RLock()
+		defer client.asyncChanLock.RUnlock()
+		if client.isRunning {
+			client.asyncTaskQueue <- task
+		}
 	} else {
 		err = errors.NewClientError(errors.AsyncFunctionNotEnabledCode, errors.AsyncFunctionNotEnabledMessage, nil)
 	}
@@ -307,6 +339,9 @@ func (client *Client) ProcessCommonRequestWithSigner(request *requests.CommonReq
 
 func (client *Client) Shutdown() {
 	client.signer.Shutdown()
-	close(client.asyncTaskQueue)
+	// lock the addAsync()
+	client.asyncChanLock.Lock()
+	defer client.asyncChanLock.Unlock()
 	client.isRunning = false
+	close(client.asyncTaskQueue)
 }

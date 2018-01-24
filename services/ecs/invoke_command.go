@@ -33,8 +33,12 @@ func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-ch
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.InvokeCommand(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

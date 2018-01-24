@@ -33,8 +33,12 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveApp
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.UpdateLiveAppSnapshotConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

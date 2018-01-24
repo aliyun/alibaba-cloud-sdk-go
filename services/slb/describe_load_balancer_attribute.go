@@ -33,8 +33,12 @@ func (client *Client) DescribeLoadBalancerAttributeWithChan(request *DescribeLoa
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeLoadBalancerAttribute(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

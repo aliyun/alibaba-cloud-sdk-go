@@ -33,8 +33,12 @@ func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *Up
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.UpdateUser(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

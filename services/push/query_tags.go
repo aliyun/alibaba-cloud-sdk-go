@@ -33,8 +33,12 @@ func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *Quer
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryTags(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

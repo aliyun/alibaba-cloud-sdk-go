@@ -2,14 +2,14 @@ package integration
 
 import (
 	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/rds"
 	"github.com/stretchr/testify/assert"
 	"strconv"
 	"strings"
 	"testing"
 	"time"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 )
 
 const (
@@ -180,8 +180,8 @@ func deleteAllTestRdsInstance(t *testing.T, client *rds.Client) {
 		if strings.HasPrefix(instance.DBInstanceDescription, InstanceNamePrefix) {
 			createTime, err := strconv.ParseInt(instance.DBInstanceDescription[len(InstanceNamePrefix):], 10, 64)
 			assertErrorNil(t, err, "Parse instance create time failed: "+instance.DBInstanceDescription)
-			if (time.Now().Unix() - createTime) < (5 * 60) {
-				fmt.Printf("found undeleted rds instance(%s) but created in 5 minutes, try to delete next time\n", instance.DBInstanceDescription)
+			if (time.Now().Unix() - createTime) < (60 * 60) {
+				fmt.Printf("found undeleted rds instance(%s) but created in 60 minutes, try to delete next time\n", instance.DBInstanceDescription)
 				return
 			} else {
 				fmt.Printf("found rds test instance(%s), trying to delte it\n", instance.DBInstanceId)

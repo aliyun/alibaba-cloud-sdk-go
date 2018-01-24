@@ -33,8 +33,12 @@ func (client *Client) AddIpRangeWithChan(request *AddIpRangeRequest) (<-chan *Ad
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.AddIpRange(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

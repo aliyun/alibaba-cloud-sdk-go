@@ -33,8 +33,12 @@ func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListene
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.RemoveListenerWhiteListItem(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

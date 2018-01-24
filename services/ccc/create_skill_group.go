@@ -33,8 +33,12 @@ func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateSkillGroup(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

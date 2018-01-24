@@ -33,8 +33,12 @@ func (client *Client) ModifyCommonBandwidthPackageSpecWithChan(request *ModifyCo
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyCommonBandwidthPackageSpec(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

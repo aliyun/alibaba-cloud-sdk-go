@@ -33,8 +33,12 @@ func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceSt
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryUniqueDeviceStat(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

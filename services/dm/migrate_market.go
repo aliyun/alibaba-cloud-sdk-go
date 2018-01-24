@@ -33,8 +33,12 @@ func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-ch
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.MigrateMarket(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

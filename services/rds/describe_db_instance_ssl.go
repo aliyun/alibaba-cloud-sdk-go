@@ -33,8 +33,12 @@ func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceS
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeDBInstanceSSL(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

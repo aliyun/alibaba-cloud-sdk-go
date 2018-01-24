@@ -33,8 +33,12 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStre
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.SetLiveStreamsNotifyUrlConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

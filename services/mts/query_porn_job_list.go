@@ -33,8 +33,12 @@ func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryPornJobList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

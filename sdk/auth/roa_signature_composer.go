@@ -94,7 +94,7 @@ func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {
 	}
 
 	// append query params
-	stringToSignBuilder.WriteString(request.GetQueries())
+	stringToSignBuilder.WriteString(request.BuildQueries())
 	stringToSign = stringToSignBuilder.String()
 	return
 }

@@ -24,6 +24,10 @@ import (
 
 func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string) {
 	completeRpcSignParams(request, signer, regionId)
+	// remove while retry
+	if _, containsSign := request.GetQueryParams()["Signature"]; containsSign {
+		delete(request.GetQueryParams(), "Signature")
+	}
 	stringToSign := buildRpcStringToSign(request)
 	signature := signer.Sign(stringToSign, "&")
 	request.GetQueryParams()["Signature"] = signature

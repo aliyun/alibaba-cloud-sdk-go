@@ -33,8 +33,12 @@ func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstance
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyDBInstanceHAConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

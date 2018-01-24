@@ -33,8 +33,12 @@ func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateClusterToken(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

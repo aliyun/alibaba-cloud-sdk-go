@@ -33,8 +33,12 @@ func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRe
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateVpnConnection(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

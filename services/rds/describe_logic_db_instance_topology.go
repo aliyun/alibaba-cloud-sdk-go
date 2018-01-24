@@ -33,8 +33,12 @@ func (client *Client) DescribeLogicDBInstanceTopologyWithChan(request *DescribeL
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeLogicDBInstanceTopology(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

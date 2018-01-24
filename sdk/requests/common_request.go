@@ -55,6 +55,18 @@ func (request *CommonRequest) TransToAcsRequest() {
 
 }
 
+func (request *CommonRequest) BuildUrl() string {
+	if len(request.Port) > 0 {
+		return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
+	}
+
+	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.BuildQueries()
+}
+
+func (request *CommonRequest) BuildQueries() string {
+	return request.Ontology.BuildQueries()
+}
+
 func (request *CommonRequest) GetUrl() string {
 	if len(request.Port) > 0 {
 		return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
@@ -63,16 +75,16 @@ func (request *CommonRequest) GetUrl() string {
 	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.GetQueries()
 }
 
+func (request *CommonRequest) GetQueries() string {
+	return request.Ontology.GetQueries()
+}
+
 func (request *CommonRequest) GetBodyReader() io.Reader {
 	return request.Ontology.GetBodyReader()
 }
 
 func (request *CommonRequest) GetStyle() string {
 	return request.Ontology.GetStyle()
-}
-
-func (request *CommonRequest) GetQueries() string {
-	return request.Ontology.GetQueries()
 }
 
 func (request *CommonRequest) addPathParam(key, value string) {

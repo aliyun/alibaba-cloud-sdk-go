@@ -1,3 +1,9 @@
+2018-01-24 Version: 0.9.1
+1. improve: asyncWithChan avoid panic of "write on closed channel"
+2. improve: asyncWithChan support select case usage
+3. bug fix: repeated signature nonce while retry
+4. bug fix: calling request.GetUrl() ahead of client.DoAction() will cause problems
+
 2018-01-24 Version: 0.9.0
 1, Publish domain config interface, allow users to create or delete a domain protect config under DDoS Pro.
 2, Publish domain config query interface, allow users to query a list of domain config or a single domain config.
@@ -9,9 +15,11 @@
 8, Publish domain qps graph query interface.
 9, Publish ip attack events and traffic graph query interface.
 
+
 2018-01-23 Version: 0.8.3
 1, Tesla Dam API release.
 2, Add ActionDiskCheck, ActionDiskMask, ActionDiskRma, HostGets.
+
 
 2018-01-18 Version: 0.8.2
 1. Set default timeout to 10s

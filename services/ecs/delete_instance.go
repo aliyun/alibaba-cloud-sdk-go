@@ -33,8 +33,12 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteInstance(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

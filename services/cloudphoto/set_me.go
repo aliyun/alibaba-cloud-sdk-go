@@ -33,8 +33,12 @@ func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeRespons
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.SetMe(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

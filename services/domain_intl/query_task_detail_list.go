@@ -33,8 +33,12 @@ func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRe
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryTaskDetailList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

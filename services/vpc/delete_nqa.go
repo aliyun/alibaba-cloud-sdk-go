@@ -33,8 +33,12 @@ func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *Dele
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteNqa(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

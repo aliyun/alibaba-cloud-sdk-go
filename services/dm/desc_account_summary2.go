@@ -33,8 +33,12 @@ func (client *Client) DescAccountSummary2WithChan(request *DescAccountSummary2Re
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescAccountSummary2(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.MoveFacePhotos(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

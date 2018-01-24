@@ -33,8 +33,12 @@ func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDeta
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeClusterDetail(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

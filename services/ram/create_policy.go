@@ -33,8 +33,12 @@ func (client *Client) CreatePolicyWithChan(request *CreatePolicyRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreatePolicy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,12 @@ func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsR
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.AddTags(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

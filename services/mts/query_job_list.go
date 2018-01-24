@@ -33,8 +33,12 @@ func (client *Client) QueryJobListWithChan(request *QueryJobListRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.QueryJobList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err

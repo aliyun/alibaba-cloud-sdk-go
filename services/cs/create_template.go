@@ -33,8 +33,12 @@ func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateTemplate(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+
 	})
 	if err != nil {
 		errChan <- err
