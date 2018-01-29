@@ -38,7 +38,6 @@ func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *Ca
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +67,8 @@ func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callbac
 
 type CancelPushRequest struct {
 	*requests.RpcRequest
+	MessageId requests.Integer `position:"Query" name:"MessageId"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	MessageId string           `position:"Query" name:"MessageId"`
 }
 
 type CancelPushResponse struct {

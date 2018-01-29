@@ -38,7 +38,6 @@ func (client *Client) BindPhoneWithChan(request *BindPhoneRequest) (<-chan *Bind
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

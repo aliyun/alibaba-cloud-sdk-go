@@ -38,7 +38,6 @@ func (client *Client) QueryDeviceStatWithChan(request *QueryDeviceStatRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -69,8 +68,8 @@ func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatReques
 type QueryDeviceStatRequest struct {
 	*requests.RpcRequest
 	EndTime    string           `position:"Query" name:"EndTime"`
-	StartTime  string           `position:"Query" name:"StartTime"`
 	AppKey     requests.Integer `position:"Query" name:"AppKey"`
+	StartTime  string           `position:"Query" name:"StartTime"`
 	DeviceType string           `position:"Query" name:"DeviceType"`
 	QueryType  string           `position:"Query" name:"QueryType"`
 }

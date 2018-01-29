@@ -38,7 +38,6 @@ func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequ
 
 type PushMessageToiOSRequest struct {
 	*requests.RpcRequest
-	Body        string           `position:"Query" name:"Body"`
-	Title       string           `position:"Query" name:"Title"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 	TargetValue string           `position:"Query" name:"TargetValue"`
+	Title       string           `position:"Query" name:"Title"`
+	Body        string           `position:"Query" name:"Body"`
 	JobKey      string           `position:"Query" name:"JobKey"`
 	Target      string           `position:"Query" name:"Target"`
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type PushMessageToiOSResponse struct {

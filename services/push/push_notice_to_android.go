@@ -38,7 +38,6 @@ func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndro
 
 type PushNoticeToAndroidRequest struct {
 	*requests.RpcRequest
-	Body          string           `position:"Query" name:"Body"`
-	Title         string           `position:"Query" name:"Title"`
 	ExtParameters string           `position:"Query" name:"ExtParameters"`
+	AppKey        requests.Integer `position:"Query" name:"AppKey"`
 	TargetValue   string           `position:"Query" name:"TargetValue"`
+	Title         string           `position:"Query" name:"Title"`
+	Body          string           `position:"Query" name:"Body"`
 	JobKey        string           `position:"Query" name:"JobKey"`
 	Target        string           `position:"Query" name:"Target"`
-	AppKey        requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type PushNoticeToAndroidResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func
 
 type BindTagRequest struct {
 	*requests.RpcRequest
-	KeyType   string           `position:"Query" name:"KeyType"`
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	TagName   string           `position:"Query" name:"TagName"`
 	ClientKey string           `position:"Query" name:"ClientKey"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
 type BindTagResponse struct {

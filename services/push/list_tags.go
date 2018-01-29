@@ -38,7 +38,6 @@ func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

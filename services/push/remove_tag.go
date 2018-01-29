@@ -38,7 +38,6 @@ func (client *Client) RemoveTagWithChan(request *RemoveTagRequest) (<-chan *Remo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +67,8 @@ func (client *Client) RemoveTagWithCallback(request *RemoveTagRequest, callback 
 
 type RemoveTagRequest struct {
 	*requests.RpcRequest
-	AppKey  requests.Integer `position:"Query" name:"AppKey"`
 	TagName string           `position:"Query" name:"TagName"`
+	AppKey  requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type RemoveTagResponse struct {

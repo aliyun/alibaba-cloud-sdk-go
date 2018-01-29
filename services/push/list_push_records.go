@@ -38,7 +38,6 @@ func (client *Client) ListPushRecordsWithChan(request *ListPushRecordsRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsReques
 
 type ListPushRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime   string           `position:"Query" name:"EndTime"`
 	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	EndTime   string           `position:"Query" name:"EndTime"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	StartTime string           `position:"Query" name:"StartTime"`
 	Page      requests.Integer `position:"Query" name:"Page"`
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	PushType  string           `position:"Query" name:"PushType"`
 }
 

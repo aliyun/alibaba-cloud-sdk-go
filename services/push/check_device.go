@@ -38,7 +38,6 @@ func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +67,8 @@ func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailReques
 
 type QueryPushDetailRequest struct {
 	*requests.RpcRequest
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	MessageId string           `position:"Query" name:"MessageId"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type QueryPushDetailResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) BindAliasWithChan(request *BindAliasRequest) (<-chan *Bind
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

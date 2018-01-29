@@ -38,7 +38,6 @@ func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

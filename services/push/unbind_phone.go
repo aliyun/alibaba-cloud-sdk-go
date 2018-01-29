@@ -38,7 +38,6 @@ func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
