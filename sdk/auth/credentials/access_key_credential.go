@@ -19,7 +19,7 @@ func NewBaseCredential(accessKeyId, accessKeySecret string) *BaseCredential {
 	}
 }
 
-func (baseCred *BaseCredential) ToAccessKeyCredential() (*AccessKeyCredential) {
+func (baseCred *BaseCredential) ToAccessKeyCredential() *AccessKeyCredential {
 	return &AccessKeyCredential{
 		AccessKeyId:     baseCred.AccessKeyId,
 		AccessKeySecret: baseCred.AccessKeySecret,

@@ -12,7 +12,7 @@ func NewStsRoleNameOnEcsCredential(roleName string) *StsRoleNameOnEcsCredential 
 	}
 }
 
-func (oldCred *StsRoleNameOnEcsCredential) ToEcsRamRoleCredential() (*EcsRamRoleCredential) {
+func (oldCred *StsRoleNameOnEcsCredential) ToEcsRamRoleCredential() *EcsRamRoleCredential {
 	return &EcsRamRoleCredential{
 		RoleName: oldCred.RoleName,
 	}

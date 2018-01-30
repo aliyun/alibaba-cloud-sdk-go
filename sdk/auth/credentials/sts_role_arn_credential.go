@@ -28,7 +28,7 @@ func NewStsRoleArnCredential(accessKeyId, accessKeySecret, roleArn, roleSessionN
 	}
 }
 
-func (oldCred *StsRoleArnCredential) ToRamRoleArnCredential() (*RamRoleArnCredential) {
+func (oldCred *StsRoleArnCredential) ToRamRoleArnCredential() *RamRoleArnCredential {
 	return &RamRoleArnCredential{
 		AccessKeyId:           oldCred.AccessKeyId,
 		AccessKeySecret:       oldCred.AccessKeySecret,
