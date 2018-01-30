@@ -38,7 +38,6 @@ func (client *Client) UpdateTerrorismPipelineWithChan(request *UpdateTerrorismPi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) UpdateTerrorismPipelineWithCallback(request *UpdateTerrori
 
 type UpdateTerrorismPipelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
 	Name                 string           `position:"Query" name:"Name"`
 	State                string           `position:"Query" name:"State"`
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type UpdateTerrorismPipelineResponse struct {

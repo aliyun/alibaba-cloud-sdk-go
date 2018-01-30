@@ -38,7 +38,6 @@ func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

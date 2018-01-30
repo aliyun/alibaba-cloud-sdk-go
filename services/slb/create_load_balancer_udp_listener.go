@@ -38,7 +38,6 @@ func (client *Client) CreateLoadBalancerUDPListenerWithChan(request *CreateLoadB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

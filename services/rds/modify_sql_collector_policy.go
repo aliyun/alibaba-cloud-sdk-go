@@ -38,7 +38,6 @@ func (client *Client) ModifySQLCollectorPolicyWithChan(request *ModifySQLCollect
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

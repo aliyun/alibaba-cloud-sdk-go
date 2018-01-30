@@ -38,7 +38,6 @@ func (client *Client) GetAccountListWithChan(request *GetAccountListRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

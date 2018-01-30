@@ -38,7 +38,6 @@ func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonit
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskM
 
 type DescribeDiskMonitorDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Period               requests.Integer `position:"Query" name:"Period"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

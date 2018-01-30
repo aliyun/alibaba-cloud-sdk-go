@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainQoSRtWithChan(request *DescribeDomainQoSRtRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

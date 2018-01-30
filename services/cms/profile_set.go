@@ -33,8 +33,11 @@ func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *Pr
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ProfileSet(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,10 +67,10 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 
 type ProfileSetRequest struct {
 	*requests.RpcRequest
-	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
 	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
 	UserId                   requests.Integer `position:"Query" name:"UserId"`
+	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 }
 
 type ProfileSetResponse struct {

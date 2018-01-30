@@ -38,7 +38,6 @@ func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

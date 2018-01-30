@@ -38,7 +38,6 @@ func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

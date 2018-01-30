@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

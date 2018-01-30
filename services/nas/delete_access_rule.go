@@ -38,7 +38,6 @@ func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

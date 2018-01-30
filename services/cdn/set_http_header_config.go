@@ -38,7 +38,6 @@ func (client *Client) SetHttpHeaderConfigWithChan(request *SetHttpHeaderConfigRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

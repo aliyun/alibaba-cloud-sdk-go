@@ -38,7 +38,6 @@ func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVips
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWho
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

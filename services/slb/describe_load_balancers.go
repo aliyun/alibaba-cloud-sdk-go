@@ -38,7 +38,6 @@ func (client *Client) DescribeLoadBalancersWithChan(request *DescribeLoadBalance
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,26 +67,26 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
+	Tags                  string           `position:"Query" name:"Tags"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	AddressType           string           `position:"Query" name:"AddressType"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	InternetChargeType    string           `position:"Query" name:"InternetChargeType"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
+	ServerId              string           `position:"Query" name:"ServerId"`
 	ServerIntranetAddress string           `position:"Query" name:"ServerIntranetAddress"`
-	LoadBalancerName      string           `position:"Query" name:"LoadBalancerName"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	LoadBalancerName      string           `position:"Query" name:"LoadBalancerName"`
+	Address               string           `position:"Query" name:"Address"`
+	AccessKeyId           string           `position:"Query" name:"access_key_id"`
 	PayType               string           `position:"Query" name:"PayType"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	Tags                  string           `position:"Query" name:"Tags"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	InternetChargeType    string           `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ServerId              string           `position:"Query" name:"ServerId"`
-	Address               string           `position:"Query" name:"Address"`
-	AccessKeyId           string           `position:"Query" name:"access_key_id"`
 	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
 	VpcId                 string           `position:"Query" name:"VpcId"`
 }

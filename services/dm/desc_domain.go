@@ -38,7 +38,6 @@ func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *De
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRout
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,18 +67,18 @@ func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *Modify
 
 type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
-	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description              string           `position:"Query" name:"Description"`
-	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
-	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
 	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
-	Name                     string           `position:"Query" name:"Name"`
 	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
+	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
+	Description              string           `position:"Query" name:"Description"`
+	Name                     string           `position:"Query" name:"Name"`
 	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyRouterInterfaceAttributeResponse struct {

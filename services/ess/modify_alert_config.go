@@ -38,7 +38,6 @@ func (client *Client) ModifyAlertConfigWithChan(request *ModifyAlertConfigReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamIn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

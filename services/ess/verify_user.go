@@ -38,7 +38,6 @@ func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *Ve
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

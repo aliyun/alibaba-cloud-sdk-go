@@ -38,7 +38,6 @@ func (client *Client) ClearUserBlackListWithChan(request *ClearUserBlackListRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

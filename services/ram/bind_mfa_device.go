@@ -38,7 +38,6 @@ func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

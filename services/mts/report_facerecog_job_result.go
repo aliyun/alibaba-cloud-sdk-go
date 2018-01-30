@@ -38,7 +38,6 @@ func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacere
 
 type ReportFacerecogJobResultRequest struct {
 	*requests.RpcRequest
-	JobId                string           `position:"Query" name:"JobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Facerecog            string           `position:"Query" name:"Facerecog"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Details              string           `position:"Query" name:"Details"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportFacerecogJobResultResponse struct {

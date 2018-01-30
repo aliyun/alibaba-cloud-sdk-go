@@ -38,7 +38,6 @@ func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLines
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

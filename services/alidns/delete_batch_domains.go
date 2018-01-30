@@ -38,7 +38,6 @@ func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeInvocationsWithChan(request *DescribeInvocationsRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,17 +67,17 @@ func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocatio
 
 type DescribeInvocationsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InvokeStatus         string           `position:"Query" name:"InvokeStatus"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InvokeId             string           `position:"Query" name:"InvokeId"`
-	Timed                requests.Boolean `position:"Query" name:"Timed"`
-	CommandName          string           `position:"Query" name:"CommandName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommandName          string           `position:"Query" name:"CommandName"`
+	Timed                requests.Boolean `position:"Query" name:"Timed"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	CommandId            string           `position:"Query" name:"CommandId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InvokeStatus         string           `position:"Query" name:"InvokeStatus"`
 	CommandType          string           `position:"Query" name:"CommandType"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }

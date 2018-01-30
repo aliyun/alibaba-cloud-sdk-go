@@ -33,8 +33,11 @@ func (client *Client) ModifyDomainProxyWithChan(request *ModifyDomainProxyReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyDomainProxy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,8 +67,8 @@ func (client *Client) ModifyDomainProxyWithCallback(request *ModifyDomainProxyRe
 
 type ModifyDomainProxyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Domain          string           `position:"Query" name:"Domain"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
 }
 

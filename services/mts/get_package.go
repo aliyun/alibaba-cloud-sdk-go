@@ -38,7 +38,6 @@ func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *Ge
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callbac
 
 type GetPackageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Data                 string `position:"Query" name:"Data"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Data                 string `position:"Query" name:"Data"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }

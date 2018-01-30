@@ -38,7 +38,6 @@ func (client *Client) ModifyReadWriteSplittingConnectionWithChan(request *Modify
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

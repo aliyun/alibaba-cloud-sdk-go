@@ -38,7 +38,6 @@ func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantPr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

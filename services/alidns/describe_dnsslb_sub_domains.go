@@ -38,7 +38,6 @@ func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSu
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

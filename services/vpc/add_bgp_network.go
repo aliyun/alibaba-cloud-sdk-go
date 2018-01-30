@@ -38,7 +38,6 @@ func (client *Client) AddBgpNetworkWithChan(request *AddBgpNetworkRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

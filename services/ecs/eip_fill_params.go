@@ -38,7 +38,6 @@ func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, c
 
 type EipFillParamsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Data                 string           `position:"Query" name:"data"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Data                 string           `position:"Query" name:"data"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

@@ -33,8 +33,11 @@ func (client *Client) CreateNotifyPolicyWithChan(request *CreateNotifyPolicyRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateNotifyPolicy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,10 +67,10 @@ func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicy
 
 type CreateNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	PolicyType string           `position:"Query" name:"PolicyType"`
-	AlertName  string           `position:"Query" name:"AlertName"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	AlertName  string           `position:"Query" name:"AlertName"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	PolicyType string           `position:"Query" name:"PolicyType"`
 	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 

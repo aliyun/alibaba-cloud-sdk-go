@@ -38,7 +38,6 @@ func (client *Client) ListFacesWithChan(request *ListFacesRequest) (<-chan *List
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

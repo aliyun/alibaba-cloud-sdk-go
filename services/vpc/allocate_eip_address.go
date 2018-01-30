@@ -38,7 +38,6 @@ func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

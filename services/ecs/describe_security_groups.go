@@ -38,7 +38,6 @@ func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,30 +67,30 @@ func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecuri
 
 type DescribeSecurityGroupsRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
 	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
 	SecurityGroupIds     string           `position:"Query" name:"SecurityGroupIds"`
+	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
 }
 
 type DescribeSecurityGroupsResponse struct {

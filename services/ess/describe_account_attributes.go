@@ -38,7 +38,6 @@ func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccount
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

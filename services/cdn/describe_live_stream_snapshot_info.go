@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

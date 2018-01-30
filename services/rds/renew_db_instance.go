@@ -38,7 +38,6 @@ func (client *Client) RenewDBInstanceWithChan(request *RenewDBInstanceRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPoints
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
 	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
-	Type                 string                        `position:"Query" name:"Type"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer              `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
+	Type                 string                        `position:"Query" name:"Type"`
+	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 type DescribeAccessPointsFilter struct {

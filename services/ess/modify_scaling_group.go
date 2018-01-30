@@ -38,7 +38,6 @@ func (client *Client) ModifyScalingGroupWithChan(request *ModifyScalingGroupRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

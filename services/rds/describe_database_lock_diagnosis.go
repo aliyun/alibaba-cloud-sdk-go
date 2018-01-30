@@ -38,7 +38,6 @@ func (client *Client) DescribeDatabaseLockDiagnosisWithChan(request *DescribeDat
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

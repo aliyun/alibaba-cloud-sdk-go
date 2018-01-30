@@ -38,7 +38,6 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyIn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -69,13 +68,13 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *Modi
 type ModifyInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	Duration             requests.Integer `position:"Query" name:"Duration"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyInstanceAutoRenewAttributeResponse struct {

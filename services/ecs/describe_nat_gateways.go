@@ -38,7 +38,6 @@ func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewa
 
 type DescribeNatGatewaysRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 }
 
 type DescribeNatGatewaysResponse struct {

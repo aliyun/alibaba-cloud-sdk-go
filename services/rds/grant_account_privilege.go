@@ -38,7 +38,6 @@ func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivile
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

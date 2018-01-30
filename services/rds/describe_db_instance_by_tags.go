@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

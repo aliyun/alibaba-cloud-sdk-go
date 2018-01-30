@@ -38,7 +38,6 @@ func (client *Client) GetQuotaWithChan(request *GetQuotaRequest) (<-chan *GetQuo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

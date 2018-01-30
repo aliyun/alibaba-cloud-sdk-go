@@ -38,7 +38,6 @@ func (client *Client) SetUserAgentAcessRestrictionWithChan(request *SetUserAgent
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

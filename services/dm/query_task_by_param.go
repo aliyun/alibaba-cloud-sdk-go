@@ -38,7 +38,6 @@ func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

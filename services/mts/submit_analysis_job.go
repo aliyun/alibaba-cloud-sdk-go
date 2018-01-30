@@ -38,7 +38,6 @@ func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRe
 
 type SubmitAnalysisJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AnalysisConfig       string           `position:"Query" name:"AnalysisConfig"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Priority             string           `position:"Query" name:"Priority"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Priority             string           `position:"Query" name:"Priority"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	AnalysisConfig       string           `position:"Query" name:"AnalysisConfig"`
 }
 
 type SubmitAnalysisJobResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) ListContactFlowsWithChan(request *ListContactFlowsRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

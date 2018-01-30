@@ -38,7 +38,6 @@ func (client *Client) WhereInDimQueryWithChan(request *WhereInDimQueryRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

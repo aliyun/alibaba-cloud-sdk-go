@@ -38,7 +38,6 @@ func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

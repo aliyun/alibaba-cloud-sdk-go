@@ -38,7 +38,6 @@ func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacte
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

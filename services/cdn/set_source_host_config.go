@@ -38,7 +38,6 @@ func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

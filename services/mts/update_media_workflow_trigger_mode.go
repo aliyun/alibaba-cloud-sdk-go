@@ -38,7 +38,6 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMedi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *Update
 
 type UpdateMediaWorkflowTriggerModeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type UpdateMediaWorkflowTriggerModeResponse struct {

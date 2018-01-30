@@ -38,7 +38,6 @@ func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

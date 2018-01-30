@@ -38,7 +38,6 @@ func (client *Client) ModifyIntranetBandwidthKbWithChan(request *ModifyIntranetB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) ModifyIntranetBandwidthKbWithCallback(request *ModifyIntra
 
 type ModifyIntranetBandwidthKbRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IntranetMaxBandwidthOut requests.Integer `position:"Query" name:"IntranetMaxBandwidthOut"`
-	InstanceId              string           `position:"Query" name:"InstanceId"`
-	IntranetMaxBandwidthIn  requests.Integer `position:"Query" name:"IntranetMaxBandwidthIn"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	IntranetMaxBandwidthIn  requests.Integer `position:"Query" name:"IntranetMaxBandwidthIn"`
+	IntranetMaxBandwidthOut requests.Integer `position:"Query" name:"IntranetMaxBandwidthOut"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyIntranetBandwidthKbResponse struct {

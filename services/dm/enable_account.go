@@ -38,7 +38,6 @@ func (client *Client) EnableAccountWithChan(request *EnableAccountRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

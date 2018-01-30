@@ -38,7 +38,6 @@ func (client *Client) GetClusterProjectsWithChan(request *GetClusterProjectsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

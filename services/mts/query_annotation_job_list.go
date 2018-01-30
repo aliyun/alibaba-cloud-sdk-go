@@ -38,7 +38,6 @@ func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJob
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotatio
 
 type QueryAnnotationJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
 }
 
 type QueryAnnotationJobListResponse struct {

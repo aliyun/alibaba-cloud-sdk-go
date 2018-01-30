@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceDescriptionWithChan(request *ModifyDBInsta
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

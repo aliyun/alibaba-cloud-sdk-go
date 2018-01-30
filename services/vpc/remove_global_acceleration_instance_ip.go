@@ -38,7 +38,6 @@ func (client *Client) RemoveGlobalAccelerationInstanceIpWithChan(request *Remove
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

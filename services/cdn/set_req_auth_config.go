@@ -38,7 +38,6 @@ func (client *Client) SetReqAuthConfigWithChan(request *SetReqAuthConfigRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

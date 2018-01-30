@@ -38,7 +38,6 @@ func (client *Client) DeleteLoadBalancerWithChan(request *DeleteLoadBalancerRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

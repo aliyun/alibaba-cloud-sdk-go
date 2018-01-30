@@ -38,7 +38,6 @@ func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

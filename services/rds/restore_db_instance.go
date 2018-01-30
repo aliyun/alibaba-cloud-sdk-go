@@ -38,7 +38,6 @@ func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

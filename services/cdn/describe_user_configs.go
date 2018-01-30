@@ -38,7 +38,6 @@ func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

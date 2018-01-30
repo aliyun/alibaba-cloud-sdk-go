@@ -38,7 +38,6 @@ func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

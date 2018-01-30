@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamsBlockListWithChan(request *DescribeLive
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

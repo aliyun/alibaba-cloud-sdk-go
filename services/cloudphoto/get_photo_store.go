@@ -38,7 +38,6 @@ func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

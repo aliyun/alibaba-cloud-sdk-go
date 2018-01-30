@@ -38,7 +38,6 @@ func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

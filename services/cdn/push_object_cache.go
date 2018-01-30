@@ -38,7 +38,6 @@ func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

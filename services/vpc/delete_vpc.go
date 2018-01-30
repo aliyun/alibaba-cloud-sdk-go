@@ -38,7 +38,6 @@ func (client *Client) DeleteVpcWithChan(request *DeleteVpcRequest) (<-chan *Dele
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

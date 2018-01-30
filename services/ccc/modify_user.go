@@ -38,7 +38,6 @@ func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *Mo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

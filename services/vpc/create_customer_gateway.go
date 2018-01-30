@@ -38,7 +38,6 @@ func (client *Client) CreateCustomerGatewayWithChan(request *CreateCustomerGatew
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

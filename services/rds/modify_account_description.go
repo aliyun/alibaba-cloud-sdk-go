@@ -38,7 +38,6 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

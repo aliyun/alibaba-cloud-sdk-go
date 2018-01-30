@@ -38,7 +38,6 @@ func (client *Client) AllocateInstancePrivateConnectionWithChan(request *Allocat
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

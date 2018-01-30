@@ -38,7 +38,6 @@ func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

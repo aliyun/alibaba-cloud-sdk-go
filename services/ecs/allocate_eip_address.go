@@ -38,7 +38,6 @@ func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type AllocateEipAddressResponse struct {

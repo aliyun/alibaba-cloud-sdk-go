@@ -38,7 +38,6 @@ func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

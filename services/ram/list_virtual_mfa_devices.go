@@ -38,7 +38,6 @@ func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevic
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

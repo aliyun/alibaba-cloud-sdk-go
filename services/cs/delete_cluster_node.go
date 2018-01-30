@@ -38,7 +38,6 @@ func (client *Client) DeleteClusterNodeWithChan(request *DeleteClusterNodeReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

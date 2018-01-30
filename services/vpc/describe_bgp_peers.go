@@ -38,7 +38,6 @@ func (client *Client) DescribeBgpPeersWithChan(request *DescribeBgpPeersRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

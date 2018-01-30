@@ -38,7 +38,6 @@ func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

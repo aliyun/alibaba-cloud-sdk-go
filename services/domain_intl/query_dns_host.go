@@ -38,7 +38,6 @@ func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

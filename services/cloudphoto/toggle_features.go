@@ -38,7 +38,6 @@ func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

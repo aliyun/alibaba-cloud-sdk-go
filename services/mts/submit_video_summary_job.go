@@ -38,7 +38,6 @@ func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSumm
 
 type SubmitVideoSummaryJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VideoSummaryConfig   string           `position:"Query" name:"VideoSummaryConfig"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VideoSummaryConfig   string           `position:"Query" name:"VideoSummaryConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitVideoSummaryJobResponse struct {

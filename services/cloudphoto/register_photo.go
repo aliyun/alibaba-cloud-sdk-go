@@ -38,7 +38,6 @@ func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithChan(request *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

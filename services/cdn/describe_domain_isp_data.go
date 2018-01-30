@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

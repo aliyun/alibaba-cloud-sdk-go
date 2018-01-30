@@ -38,7 +38,6 @@ func (client *Client) ModifyEipAddressAttributeWithChan(request *ModifyEipAddres
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) ModifyEipAddressAttributeWithCallback(request *ModifyEipAd
 
 type ModifyEipAddressAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AllocationId         string           `position:"Query" name:"AllocationId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type ModifyEipAddressAttributeResponse struct {

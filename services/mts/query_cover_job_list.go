@@ -38,7 +38,6 @@ func (client *Client) QueryCoverJobListWithChan(request *QueryCoverJobListReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
 }
 
 type QueryCoverJobListResponse struct {

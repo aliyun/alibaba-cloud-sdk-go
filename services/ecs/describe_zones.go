@@ -38,7 +38,6 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
 }
 
 type DescribeZonesResponse struct {

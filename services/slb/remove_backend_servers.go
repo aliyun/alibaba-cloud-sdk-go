@@ -38,7 +38,6 @@ func (client *Client) RemoveBackendServersWithChan(request *RemoveBackendServers
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

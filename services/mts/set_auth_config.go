@@ -38,7 +38,6 @@ func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
-	Key1                 string `position:"Query" name:"Key1"`
-	Key2                 string `position:"Query" name:"Key2"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	Key2                 string `position:"Query" name:"Key2"`
+	Key1                 string `position:"Query" name:"Key1"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }

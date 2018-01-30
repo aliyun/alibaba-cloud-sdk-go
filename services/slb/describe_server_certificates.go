@@ -38,7 +38,6 @@ func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServer
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

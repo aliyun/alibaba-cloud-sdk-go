@@ -38,7 +38,6 @@ func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) QueryPornJobListWithCallback(request *QueryPornJobListRequ
 
 type QueryPornJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string           `position:"Query" name:"JobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

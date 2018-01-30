@@ -38,7 +38,6 @@ func (client *Client) SetLocationAccessRestrictionWithChan(request *SetLocationA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

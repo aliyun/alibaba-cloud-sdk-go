@@ -38,7 +38,6 @@ func (client *Client) DownloadRecordingWithChan(request *DownloadRecordingReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

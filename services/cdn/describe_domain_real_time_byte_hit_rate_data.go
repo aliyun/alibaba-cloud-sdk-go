@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainRealTimeByteHitRateDataWithChan(request *Des
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

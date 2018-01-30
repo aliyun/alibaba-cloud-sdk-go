@@ -38,7 +38,6 @@ func (client *Client) UpdateBatchDomainRecordsWithChan(request *UpdateBatchDomai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

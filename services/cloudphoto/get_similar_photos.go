@@ -38,7 +38,6 @@ func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

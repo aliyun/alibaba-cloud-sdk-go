@@ -38,7 +38,6 @@ func (client *Client) MergeFacesWithChan(request *MergeFacesRequest) (<-chan *Me
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

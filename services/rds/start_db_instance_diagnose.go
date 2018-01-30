@@ -38,7 +38,6 @@ func (client *Client) StartDBInstanceDiagnoseWithChan(request *StartDBInstanceDi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

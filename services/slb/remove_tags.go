@@ -38,7 +38,6 @@ func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *Re
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

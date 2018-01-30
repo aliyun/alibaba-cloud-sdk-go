@@ -33,8 +33,11 @@ func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSource
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeBackSourceCidr(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSo
 
 type DescribeBackSourceCidrRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Line            string           `position:"Query" name:"Line"`
 	Region          string           `position:"Query" name:"Region"`
+	Line            string           `position:"Query" name:"Line"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type DescribeBackSourceCidrResponse struct {

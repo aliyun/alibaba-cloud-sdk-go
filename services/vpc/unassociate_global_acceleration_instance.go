@@ -38,7 +38,6 @@ func (client *Client) UnassociateGlobalAccelerationInstanceWithChan(request *Una
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

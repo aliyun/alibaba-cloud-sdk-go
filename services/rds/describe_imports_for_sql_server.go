@@ -38,7 +38,6 @@ func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImpor
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

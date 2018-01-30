@@ -38,7 +38,6 @@ func (client *Client) DescribeClusterNodeInfoWithInstanceWithChan(request *Descr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

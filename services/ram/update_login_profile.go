@@ -38,7 +38,6 @@ func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

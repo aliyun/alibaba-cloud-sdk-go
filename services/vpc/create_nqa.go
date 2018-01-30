@@ -38,7 +38,6 @@ func (client *Client) CreateNqaWithChan(request *CreateNqaRequest) (<-chan *Crea
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

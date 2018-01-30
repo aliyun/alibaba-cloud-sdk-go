@@ -38,7 +38,6 @@ func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

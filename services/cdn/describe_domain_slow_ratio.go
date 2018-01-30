@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainSlowRatioWithChan(request *DescribeDomainSlo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

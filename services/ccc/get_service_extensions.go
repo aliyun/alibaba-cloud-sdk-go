@@ -38,7 +38,6 @@ func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensions
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

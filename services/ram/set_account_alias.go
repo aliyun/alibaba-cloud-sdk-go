@@ -38,7 +38,6 @@ func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

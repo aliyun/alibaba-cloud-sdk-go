@@ -38,7 +38,6 @@ func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegion
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

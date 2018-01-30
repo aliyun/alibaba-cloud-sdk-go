@@ -38,7 +38,6 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *Descri
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

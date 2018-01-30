@@ -38,7 +38,6 @@ func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

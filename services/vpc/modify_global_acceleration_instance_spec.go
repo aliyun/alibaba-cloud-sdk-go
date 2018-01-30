@@ -38,7 +38,6 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithChan(request *Modi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

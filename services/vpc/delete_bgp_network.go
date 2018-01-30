@@ -38,7 +38,6 @@ func (client *Client) DeleteBgpNetworkWithChan(request *DeleteBgpNetworkRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

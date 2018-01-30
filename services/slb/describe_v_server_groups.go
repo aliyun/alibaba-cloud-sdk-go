@@ -38,7 +38,6 @@ func (client *Client) DescribeVServerGroupsWithChan(request *DescribeVServerGrou
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

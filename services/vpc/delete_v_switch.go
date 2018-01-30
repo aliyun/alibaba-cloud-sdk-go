@@ -38,7 +38,6 @@ func (client *Client) DeleteVSwitchWithChan(request *DeleteVSwitchRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

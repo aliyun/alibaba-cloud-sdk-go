@@ -38,7 +38,6 @@ func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtual
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

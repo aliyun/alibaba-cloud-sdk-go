@@ -67,51 +67,51 @@ func (client *Client) PushWithCallback(request *PushRequest, callback func(respo
 
 type PushRequest struct {
 	*requests.RpcRequest
-	AndroidNotificationBarType     requests.Integer `position:"Query" name:"AndroidNotificationBarType"`
-	SmsSendPolicy                  requests.Integer `position:"Query" name:"SmsSendPolicy"`
-	AndroidExtParameters           string           `position:"Query" name:"AndroidExtParameters"`
-	IOSBadge                       requests.Integer `position:"Query" name:"iOSBadge"`
-	IOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
-	AndroidOpenType                string           `position:"Query" name:"AndroidOpenType"`
-	Title                          string           `position:"Query" name:"Title"`
-	Body                           string           `position:"Query" name:"Body"`
-	DeviceType                     string           `position:"Query" name:"DeviceType"`
-	PushTime                       string           `position:"Query" name:"PushTime"`
-	SmsDelaySecs                   requests.Integer `position:"Query" name:"SmsDelaySecs"`
-	SendSpeed                      requests.Integer `position:"Query" name:"SendSpeed"`
-	AndroidPopupActivity           string           `position:"Query" name:"AndroidPopupActivity"`
-	IOSRemindBody                  string           `position:"Query" name:"iOSRemindBody"`
-	BatchNumber                    string           `position:"Query" name:"BatchNumber"`
-	IOSExtParameters               string           `position:"Query" name:"iOSExtParameters"`
-	AndroidNotifyType              string           `position:"Query" name:"AndroidNotifyType"`
-	AndroidPopupTitle              string           `position:"Query" name:"AndroidPopupTitle"`
-	IOSMusic                       string           `position:"Query" name:"iOSMusic"`
-	IOSApnsEnv                     string           `position:"Query" name:"iOSApnsEnv"`
-	IOSMutableContent              requests.Boolean `position:"Query" name:"iOSMutableContent"`
-	AndroidNotificationBarPriority requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
-	ExpireTime                     string           `position:"Query" name:"ExpireTime"`
-	SmsTemplateName                string           `position:"Query" name:"SmsTemplateName"`
-	AndroidPopupBody               string           `position:"Query" name:"AndroidPopupBody"`
-	IOSNotificationCategory        string           `position:"Query" name:"iOSNotificationCategory"`
-	StoreOffline                   requests.Boolean `position:"Query" name:"StoreOffline"`
-	IOSSilentNotification          requests.Boolean `position:"Query" name:"iOSSilentNotification"`
-	SmsParams                      string           `position:"Query" name:"SmsParams"`
-	JobKey                         string           `position:"Query" name:"JobKey"`
-	Target                         string           `position:"Query" name:"Target"`
-	AndroidOpenUrl                 string           `position:"Query" name:"AndroidOpenUrl"`
-	AndroidNotificationChannel     string           `position:"Query" name:"AndroidNotificationChannel"`
-	AndroidRemind                  requests.Boolean `position:"Query" name:"AndroidRemind"`
-	AndroidActivity                string           `position:"Query" name:"AndroidActivity"`
-	AndroidXiaoMiNotifyBody        string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
-	IOSSubtitle                    string           `position:"Query" name:"iOSSubtitle"`
-	SmsSignName                    string           `position:"Query" name:"SmsSignName"`
-	IOSRemind                      requests.Boolean `position:"Query" name:"iOSRemind"`
-	AppKey                         requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue                    string           `position:"Query" name:"TargetValue"`
-	AndroidMusic                   string           `position:"Query" name:"AndroidMusic"`
-	AndroidXiaoMiActivity          string           `position:"Query" name:"AndroidXiaoMiActivity"`
 	AndroidXiaoMiNotifyTitle       string           `position:"Query" name:"AndroidXiaoMiNotifyTitle"`
+	AndroidNotificationBarPriority requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
+	Body                           string           `position:"Query" name:"Body"`
+	IOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
+	AndroidOpenUrl                 string           `position:"Query" name:"AndroidOpenUrl"`
+	TargetValue                    string           `position:"Query" name:"TargetValue"`
+	AndroidPopupBody               string           `position:"Query" name:"AndroidPopupBody"`
+	SendSpeed                      requests.Integer `position:"Query" name:"SendSpeed"`
+	AndroidPopupTitle              string           `position:"Query" name:"AndroidPopupTitle"`
+	AndroidExtParameters           string           `position:"Query" name:"AndroidExtParameters"`
+	AppKey                         requests.Integer `position:"Query" name:"AppKey"`
+	AndroidXiaoMiActivity          string           `position:"Query" name:"AndroidXiaoMiActivity"`
+	SmsDelaySecs                   requests.Integer `position:"Query" name:"SmsDelaySecs"`
+	IOSBadge                       requests.Integer `position:"Query" name:"iOSBadge"`
+	IOSExtParameters               string           `position:"Query" name:"iOSExtParameters"`
+	IOSRemind                      requests.Boolean `position:"Query" name:"iOSRemind"`
 	PushType                       string           `position:"Query" name:"PushType"`
+	IOSMusic                       string           `position:"Query" name:"iOSMusic"`
+	IOSRemindBody                  string           `position:"Query" name:"iOSRemindBody"`
+	PushTime                       string           `position:"Query" name:"PushTime"`
+	SmsSignName                    string           `position:"Query" name:"SmsSignName"`
+	Title                          string           `position:"Query" name:"Title"`
+	SmsTemplateName                string           `position:"Query" name:"SmsTemplateName"`
+	IOSSubtitle                    string           `position:"Query" name:"iOSSubtitle"`
+	JobKey                         string           `position:"Query" name:"JobKey"`
+	AndroidActivity                string           `position:"Query" name:"AndroidActivity"`
+	ExpireTime                     string           `position:"Query" name:"ExpireTime"`
+	SmsSendPolicy                  requests.Integer `position:"Query" name:"SmsSendPolicy"`
+	IOSSilentNotification          requests.Boolean `position:"Query" name:"iOSSilentNotification"`
+	AndroidPopupActivity           string           `position:"Query" name:"AndroidPopupActivity"`
+	AndroidNotificationBarType     requests.Integer `position:"Query" name:"AndroidNotificationBarType"`
+	AndroidOpenType                string           `position:"Query" name:"AndroidOpenType"`
+	AndroidNotifyType              string           `position:"Query" name:"AndroidNotifyType"`
+	BatchNumber                    string           `position:"Query" name:"BatchNumber"`
+	IOSNotificationCategory        string           `position:"Query" name:"iOSNotificationCategory"`
+	IOSApnsEnv                     string           `position:"Query" name:"iOSApnsEnv"`
+	SmsParams                      string           `position:"Query" name:"SmsParams"`
+	StoreOffline                   requests.Boolean `position:"Query" name:"StoreOffline"`
+	IOSMutableContent              requests.Boolean `position:"Query" name:"iOSMutableContent"`
+	AndroidXiaoMiNotifyBody        string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
+	AndroidRemind                  requests.Boolean `position:"Query" name:"AndroidRemind"`
+	AndroidMusic                   string           `position:"Query" name:"AndroidMusic"`
+	AndroidNotificationChannel     string           `position:"Query" name:"AndroidNotificationChannel"`
+	Target                         string           `position:"Query" name:"Target"`
+	DeviceType                     string           `position:"Query" name:"DeviceType"`
 }
 
 type PushResponse struct {

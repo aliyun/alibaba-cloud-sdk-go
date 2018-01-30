@@ -38,7 +38,6 @@ func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequ
 
 type BindOutputBucketRequest struct {
 	*requests.RpcRequest
-	Bucket               string           `position:"Query" name:"Bucket"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bucket               string           `position:"Query" name:"Bucket"`
 	RoleArn              string           `position:"Query" name:"RoleArn"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

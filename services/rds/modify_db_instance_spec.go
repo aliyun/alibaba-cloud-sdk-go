@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceSpecWithChan(request *ModifyDBInstanceSpec
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

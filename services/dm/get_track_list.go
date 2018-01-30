@@ -38,7 +38,6 @@ func (client *Client) GetTrackListWithChan(request *GetTrackListRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainCCAttackInfoWithChan(request *DescribeDomain
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

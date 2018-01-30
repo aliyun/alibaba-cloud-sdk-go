@@ -38,7 +38,6 @@ func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

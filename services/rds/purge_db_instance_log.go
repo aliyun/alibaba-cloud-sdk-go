@@ -38,7 +38,6 @@ func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

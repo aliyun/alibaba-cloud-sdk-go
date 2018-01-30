@@ -38,7 +38,6 @@ func (client *Client) GetTriggerHookWithChan(request *GetTriggerHookRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

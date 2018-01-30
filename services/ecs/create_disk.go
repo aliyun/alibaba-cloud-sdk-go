@@ -38,7 +38,6 @@ func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *Cr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,29 +67,29 @@ func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callbac
 
 type CreateDiskRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	DiskName             string           `position:"Query" name:"DiskName"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	DiskCategory         string           `position:"Query" name:"DiskCategory"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	Description          string           `position:"Query" name:"Description"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	DiskName             string           `position:"Query" name:"DiskName"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	DiskCategory         string           `position:"Query" name:"DiskCategory"`
 	Size                 requests.Integer `position:"Query" name:"Size"`
 	Encrypted            requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
 }
 
 type CreateDiskResponse struct {

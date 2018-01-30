@@ -38,7 +38,6 @@ func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, c
 
 type DetachKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

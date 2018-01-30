@@ -33,8 +33,11 @@ func (client *Client) DescribeDomainQpsWithChan(request *DescribeDomainQpsReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeDomainQps(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,10 +67,10 @@ func (client *Client) DescribeDomainQpsWithCallback(request *DescribeDomainQpsRe
 
 type DescribeDomainQpsRequest struct {
 	*requests.RpcRequest
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	Domain          string           `position:"Query" name:"Domain"`
 	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
+	Domain          string           `position:"Query" name:"Domain"`
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeDomainQpsResponse struct {

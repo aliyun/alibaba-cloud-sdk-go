@@ -38,7 +38,6 @@ func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

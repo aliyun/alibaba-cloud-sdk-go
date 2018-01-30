@@ -38,7 +38,6 @@ func (client *Client) ModifySecurityGroupAttributeWithChan(request *ModifySecuri
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySe
 
 type ModifySecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
 }
 
 type ModifySecurityGroupAttributeResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) GetThumbnailWithChan(request *GetThumbnailRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

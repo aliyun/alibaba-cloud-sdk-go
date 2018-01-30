@@ -38,7 +38,6 @@ func (client *Client) CreateScheduledTaskWithChan(request *CreateScheduledTaskRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

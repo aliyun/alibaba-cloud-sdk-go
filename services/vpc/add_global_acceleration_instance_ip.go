@@ -38,7 +38,6 @@ func (client *Client) AddGlobalAccelerationInstanceIpWithChan(request *AddGlobal
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

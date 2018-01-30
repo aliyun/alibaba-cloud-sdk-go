@@ -38,7 +38,6 @@ func (client *Client) CallbackClusterTokenWithChan(request *CallbackClusterToken
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

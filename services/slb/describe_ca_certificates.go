@@ -38,7 +38,6 @@ func (client *Client) DescribeCACertificatesWithChan(request *DescribeCACertific
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

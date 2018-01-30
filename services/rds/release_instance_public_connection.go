@@ -38,7 +38,6 @@ func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseIn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

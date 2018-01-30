@@ -38,7 +38,6 @@ func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, c
 
 type SubmitPornJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PornConfig           string           `position:"Query" name:"PornConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PornConfig           string           `position:"Query" name:"PornConfig"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitPornJobResponse struct {

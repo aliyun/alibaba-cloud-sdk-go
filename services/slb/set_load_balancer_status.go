@@ -38,7 +38,6 @@ func (client *Client) SetLoadBalancerStatusWithChan(request *SetLoadBalancerStat
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

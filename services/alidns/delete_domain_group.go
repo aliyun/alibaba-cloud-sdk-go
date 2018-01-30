@@ -38,7 +38,6 @@ func (client *Client) DeleteDomainGroupWithChan(request *DeleteDomainGroupReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

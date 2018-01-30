@@ -38,7 +38,6 @@ func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

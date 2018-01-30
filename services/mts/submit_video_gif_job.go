@@ -1,4 +1,4 @@
-package vpc
+package mts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
 //you may not use this file except in compliance with the License.
@@ -20,25 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) GrantInstanceToCbn(request *GrantInstanceToCbnRequest) (response *GrantInstanceToCbnResponse, err error) {
-	response = CreateGrantInstanceToCbnResponse()
+func (client *Client) SubmitVideoGifJob(request *SubmitVideoGifJobRequest) (response *SubmitVideoGifJobResponse, err error) {
+	response = CreateSubmitVideoGifJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) GrantInstanceToCbnWithChan(request *GrantInstanceToCbnRequest) (<-chan *GrantInstanceToCbnResponse, <-chan error) {
-	responseChan := make(chan *GrantInstanceToCbnResponse, 1)
+func (client *Client) SubmitVideoGifJobWithChan(request *SubmitVideoGifJobRequest) (<-chan *SubmitVideoGifJobResponse, <-chan error) {
+	responseChan := make(chan *SubmitVideoGifJobResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GrantInstanceToCbn(request)
+		response, err := client.SubmitVideoGifJob(request)
 		if err != nil {
 			errChan <- err
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -48,13 +47,13 @@ func (client *Client) GrantInstanceToCbnWithChan(request *GrantInstanceToCbnRequ
 	return responseChan, errChan
 }
 
-func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbnRequest, callback func(response *GrantInstanceToCbnResponse, err error)) <-chan int {
+func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRequest, callback func(response *SubmitVideoGifJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GrantInstanceToCbnResponse
+		var response *SubmitVideoGifJobResponse
 		var err error
 		defer close(result)
-		response, err = client.GrantInstanceToCbn(request)
+		response, err = client.SubmitVideoGifJob(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -66,34 +65,34 @@ func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbn
 	return result
 }
 
-type GrantInstanceToCbnRequest struct {
+type SubmitVideoGifJobRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CbnUid               string           `position:"Query" name:"CbnUid"`
+	VideoGifConfig       string           `position:"Query" name:"VideoGifConfig"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	CbnInstanceId        string           `position:"Query" name:"CbnInstanceId"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 }
 
-type GrantInstanceToCbnResponse struct {
+type SubmitVideoGifJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-func CreateGrantInstanceToCbnRequest() (request *GrantInstanceToCbnRequest) {
-	request = &GrantInstanceToCbnRequest{
+func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
+	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCbn", "vpc", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoGifJob", "mts", "openAPI")
 	return
 }
 
-func CreateGrantInstanceToCbnResponse() (response *GrantInstanceToCbnResponse) {
-	response = &GrantInstanceToCbnResponse{
+func CreateSubmitVideoGifJobResponse() (response *SubmitVideoGifJobResponse) {
+	response = &SubmitVideoGifJobResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

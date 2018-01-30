@@ -38,7 +38,6 @@ func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

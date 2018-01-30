@@ -38,7 +38,6 @@ func (client *Client) AddIpRangeWithChan(request *AddIpRangeRequest) (<-chan *Ad
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) AddIpRangeWithCallback(request *AddIpRangeRequest, callbac
 
 type AddIpRangeRequest struct {
 	*requests.RpcRequest
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

@@ -38,7 +38,6 @@ func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *List
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

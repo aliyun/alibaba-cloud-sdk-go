@@ -38,7 +38,6 @@ func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAtt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapsho
 
 type ModifySnapshotAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
 	Description          string           `position:"Query" name:"Description"`
 	SnapshotName         string           `position:"Query" name:"SnapshotName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

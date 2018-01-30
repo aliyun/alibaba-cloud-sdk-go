@@ -38,7 +38,6 @@ func (client *Client) GetProjectEventsWithChan(request *GetProjectEventsRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

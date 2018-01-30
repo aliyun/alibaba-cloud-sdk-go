@@ -38,7 +38,6 @@ func (client *Client) ListPhotoFacesWithChan(request *ListPhotoFacesRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeEipMonitorDataWithChan(request *DescribeEipMonitor
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

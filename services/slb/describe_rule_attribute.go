@@ -38,7 +38,6 @@ func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttribu
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

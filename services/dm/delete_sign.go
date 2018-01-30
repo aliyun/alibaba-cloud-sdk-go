@@ -38,7 +38,6 @@ func (client *Client) DeleteSignWithChan(request *DeleteSignRequest) (<-chan *De
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

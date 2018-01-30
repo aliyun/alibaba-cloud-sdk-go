@@ -38,7 +38,6 @@ func (client *Client) DescribeAccessRulesWithChan(request *DescribeAccessRulesRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

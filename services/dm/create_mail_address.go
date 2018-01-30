@@ -38,7 +38,6 @@ func (client *Client) CreateMailAddressWithChan(request *CreateMailAddressReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

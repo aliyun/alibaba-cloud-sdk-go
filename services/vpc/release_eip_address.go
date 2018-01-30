@@ -38,7 +38,6 @@ func (client *Client) ReleaseEipAddressWithChan(request *ReleaseEipAddressReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainRecordInfoWithChan(request *DescribeDomainRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

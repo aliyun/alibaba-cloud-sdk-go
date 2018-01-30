@@ -38,7 +38,6 @@ func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

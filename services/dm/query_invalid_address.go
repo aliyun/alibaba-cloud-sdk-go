@@ -38,7 +38,6 @@ func (client *Client) QueryInvalidAddressWithChan(request *QueryInvalidAddressRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhys
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

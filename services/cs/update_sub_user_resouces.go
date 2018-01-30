@@ -38,7 +38,6 @@ func (client *Client) UpdateSubUserResoucesWithChan(request *UpdateSubUserResouc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

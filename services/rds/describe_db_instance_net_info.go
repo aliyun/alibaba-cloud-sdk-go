@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInsta
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

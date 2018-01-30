@@ -38,7 +38,6 @@ func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

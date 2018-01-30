@@ -38,7 +38,6 @@ func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

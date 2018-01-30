@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeL
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

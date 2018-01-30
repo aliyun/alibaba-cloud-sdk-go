@@ -38,7 +38,6 @@ func (client *Client) DescribeMigrateTasksForSQLServerWithChan(request *Describe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

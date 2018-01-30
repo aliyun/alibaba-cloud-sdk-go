@@ -38,7 +38,6 @@ func (client *Client) DescribeForwardTableEntriesWithChan(request *DescribeForwa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

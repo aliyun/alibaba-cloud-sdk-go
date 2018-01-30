@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainUpstreamBpsOfEdgeWithChan(request *DescribeD
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

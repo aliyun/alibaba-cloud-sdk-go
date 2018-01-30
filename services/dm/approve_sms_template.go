@@ -38,7 +38,6 @@ func (client *Client) ApproveSmsTemplateWithChan(request *ApproveSmsTemplateRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryName
 
 type UpdateCategoryNameRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CateId               string           `position:"Query" name:"CateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CateName             string           `position:"Query" name:"CateName"`

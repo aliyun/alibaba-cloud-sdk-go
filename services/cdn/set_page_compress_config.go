@@ -38,7 +38,6 @@ func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConf
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshC
 
 type RefreshCdnDomainConfigsCacheRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	Domains              string `position:"Query" name:"Domains"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 

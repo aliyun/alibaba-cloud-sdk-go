@@ -38,7 +38,6 @@ func (client *Client) DescribeVSwitchesWithChan(request *DescribeVSwitchesReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

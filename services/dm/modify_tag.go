@@ -38,7 +38,6 @@ func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *Modi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

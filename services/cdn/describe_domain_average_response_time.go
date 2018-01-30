@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainAverageResponseTimeWithChan(request *Describ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

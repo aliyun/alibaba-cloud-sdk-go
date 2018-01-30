@@ -38,7 +38,6 @@ func (client *Client) QuerySignByParamWithChan(request *QuerySignByParamRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

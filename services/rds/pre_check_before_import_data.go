@@ -38,7 +38,6 @@ func (client *Client) PreCheckBeforeImportDataWithChan(request *PreCheckBeforeIm
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

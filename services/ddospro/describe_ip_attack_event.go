@@ -33,8 +33,11 @@ func (client *Client) DescribeIpAttackEventWithChan(request *DescribeIpAttackEve
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeIpAttackEvent(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,11 +67,11 @@ func (client *Client) DescribeIpAttackEventWithCallback(request *DescribeIpAttac
 
 type DescribeIpAttackEventRequest struct {
 	*requests.RpcRequest
-	Ip              string           `position:"Query" name:"Ip"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	Start           requests.Integer `position:"Query" name:"Start"`
 	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
+	Start           requests.Integer `position:"Query" name:"Start"`
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	Ip              string           `position:"Query" name:"Ip"`
 }
 
 type DescribeIpAttackEventResponse struct {

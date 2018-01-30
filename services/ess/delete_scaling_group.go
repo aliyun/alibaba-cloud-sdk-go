@@ -38,7 +38,6 @@ func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

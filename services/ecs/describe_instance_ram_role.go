@@ -38,7 +38,6 @@ func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	RamRoleName          string           `position:"Query" name:"RamRoleName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceRamRoleResponse struct {

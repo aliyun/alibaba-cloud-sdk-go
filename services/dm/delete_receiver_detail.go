@@ -38,7 +38,6 @@ func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetail
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

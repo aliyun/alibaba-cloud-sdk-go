@@ -38,7 +38,6 @@ func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

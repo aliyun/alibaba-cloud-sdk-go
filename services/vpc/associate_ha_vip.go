@@ -38,7 +38,6 @@ func (client *Client) AssociateHaVipWithChan(request *AssociateHaVipRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

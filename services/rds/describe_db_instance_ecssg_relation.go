@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceECSSGRelationWithChan(request *DescribeD
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

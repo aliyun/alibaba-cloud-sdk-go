@@ -38,7 +38,6 @@ func (client *Client) DescribeAccessGroupsWithChan(request *DescribeAccessGroups
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

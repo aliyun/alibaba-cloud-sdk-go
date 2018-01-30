@@ -38,7 +38,6 @@ func (client *Client) SetLoadBalancerHTTPSListenerAttributeWithChan(request *Set
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

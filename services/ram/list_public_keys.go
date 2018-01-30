@@ -38,7 +38,6 @@ func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

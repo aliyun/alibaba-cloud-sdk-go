@@ -38,7 +38,6 @@ func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQuery
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

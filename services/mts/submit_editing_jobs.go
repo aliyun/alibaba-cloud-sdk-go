@@ -38,7 +38,6 @@ func (client *Client) SubmitEditingJobsWithChan(request *SubmitEditingJobsReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRe
 
 type SubmitEditingJobsRequest struct {
 	*requests.RpcRequest
-	OutputBucket         string           `position:"Query" name:"OutputBucket"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	EditingJobOutputs    string           `position:"Query" name:"EditingJobOutputs"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OutputLocation       string           `position:"Query" name:"OutputLocation"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	EditingInputs        string           `position:"Query" name:"EditingInputs"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EditingInputs        string           `position:"Query" name:"EditingInputs"`
+	OutputBucket         string           `position:"Query" name:"OutputBucket"`
+	OutputLocation       string           `position:"Query" name:"OutputLocation"`
+	EditingJobOutputs    string           `position:"Query" name:"EditingJobOutputs"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitEditingJobsResponse struct {
@@ -305,10 +304,11 @@ type SubmitEditingJobsResponse struct {
 						Timeline struct {
 							TimelineConfig struct {
 								TimelineConfigVideo struct {
-									Width   string `json:"Width" xml:"Width"`
-									Height  string `json:"Height" xml:"Height"`
-									BgColor string `json:"BgColor" xml:"BgColor"`
-									Fps     string `json:"Fps" xml:"Fps"`
+									Width       string `json:"Width" xml:"Width"`
+									Height      string `json:"Height" xml:"Height"`
+									BgColor     string `json:"BgColor" xml:"BgColor"`
+									Fps         string `json:"Fps" xml:"Fps"`
+									RenderRatio string `json:"RenderRatio" xml:"RenderRatio"`
 								} `json:"TimelineConfigVideo" xml:"TimelineConfigVideo"`
 								TimelineConfigAudio struct {
 									Samplerate    string `json:"Samplerate" xml:"Samplerate"`

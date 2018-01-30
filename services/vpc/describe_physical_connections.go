@@ -38,7 +38,6 @@ func (client *Client) DescribePhysicalConnectionsWithChan(request *DescribePhysi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

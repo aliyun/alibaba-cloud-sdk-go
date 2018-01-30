@@ -38,7 +38,6 @@ func (client *Client) ModifyGuardDomainModeWithChan(request *ModifyGuardDomainMo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

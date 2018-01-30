@@ -38,7 +38,6 @@ func (client *Client) ListAlbumsWithChan(request *ListAlbumsRequest) (<-chan *Li
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *Dele
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

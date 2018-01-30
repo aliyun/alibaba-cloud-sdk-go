@@ -38,7 +38,6 @@ func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapsh
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSn
 
 type CancelAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DiskIds              string           `position:"Query" name:"diskIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

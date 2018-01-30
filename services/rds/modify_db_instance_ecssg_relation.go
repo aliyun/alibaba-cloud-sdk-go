@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceECSSGRelationWithChan(request *ModifyDBIns
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

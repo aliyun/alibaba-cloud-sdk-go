@@ -38,7 +38,6 @@ func (client *Client) SetAlbumCoverWithChan(request *SetAlbumCoverRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

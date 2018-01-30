@@ -38,7 +38,6 @@ func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
 	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

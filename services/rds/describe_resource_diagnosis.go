@@ -38,7 +38,6 @@ func (client *Client) DescribeResourceDiagnosisWithChan(request *DescribeResourc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

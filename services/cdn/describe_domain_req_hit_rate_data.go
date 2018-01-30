@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainReqHitRateDataWithChan(request *DescribeDoma
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

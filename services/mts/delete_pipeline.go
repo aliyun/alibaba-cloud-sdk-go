@@ -38,7 +38,6 @@ func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest,
 
 type DeletePipelineRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type DeletePipelineResponse struct {

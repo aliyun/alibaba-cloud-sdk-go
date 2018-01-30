@@ -38,7 +38,6 @@ func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeBinlogFilesWithChan(request *DescribeBinlogFilesRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

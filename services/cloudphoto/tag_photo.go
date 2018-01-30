@@ -38,7 +38,6 @@ func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPho
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

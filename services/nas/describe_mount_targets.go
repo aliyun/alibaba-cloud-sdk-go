@@ -38,7 +38,6 @@ func (client *Client) DescribeMountTargetsWithChan(request *DescribeMountTargets
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

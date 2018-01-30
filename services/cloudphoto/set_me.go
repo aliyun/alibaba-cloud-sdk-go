@@ -38,7 +38,6 @@ func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeRespons
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

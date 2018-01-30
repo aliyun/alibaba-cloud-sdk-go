@@ -38,7 +38,6 @@ func (client *Client) TerminateVirtualBorderRouterWithChan(request *TerminateVir
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

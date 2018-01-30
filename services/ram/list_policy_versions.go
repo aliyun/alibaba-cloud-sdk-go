@@ -38,7 +38,6 @@ func (client *Client) ListPolicyVersionsWithChan(request *ListPolicyVersionsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

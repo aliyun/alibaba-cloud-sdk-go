@@ -38,7 +38,6 @@ func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

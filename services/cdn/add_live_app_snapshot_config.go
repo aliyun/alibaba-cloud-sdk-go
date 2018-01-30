@@ -38,7 +38,6 @@ func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapsh
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

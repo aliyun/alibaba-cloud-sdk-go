@@ -38,7 +38,6 @@ func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

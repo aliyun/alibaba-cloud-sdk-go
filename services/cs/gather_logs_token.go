@@ -38,7 +38,6 @@ func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

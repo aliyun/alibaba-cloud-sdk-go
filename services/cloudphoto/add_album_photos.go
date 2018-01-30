@@ -38,7 +38,6 @@ func (client *Client) AddAlbumPhotosWithChan(request *AddAlbumPhotosRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

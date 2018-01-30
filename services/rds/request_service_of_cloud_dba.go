@@ -38,7 +38,6 @@ func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOf
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

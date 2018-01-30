@@ -38,7 +38,6 @@ func (client *Client) DeletePhotoStoreWithChan(request *DeletePhotoStoreRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

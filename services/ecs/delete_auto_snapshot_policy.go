@@ -38,7 +38,6 @@ func (client *Client) DeleteAutoSnapshotPolicyWithChan(request *DeleteAutoSnapsh
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) DeleteAutoSnapshotPolicyWithCallback(request *DeleteAutoSn
 
 type DeleteAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AutoSnapshotPolicyId string           `position:"Query" name:"autoSnapshotPolicyId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

@@ -38,7 +38,6 @@ func (client *Client) DescribeServiceContainersWithChan(request *DescribeService
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

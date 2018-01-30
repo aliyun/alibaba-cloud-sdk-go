@@ -38,7 +38,6 @@ func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailable
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

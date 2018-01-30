@@ -38,7 +38,6 @@ func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

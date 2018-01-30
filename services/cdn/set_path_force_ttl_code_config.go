@@ -38,7 +38,6 @@ func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtl
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

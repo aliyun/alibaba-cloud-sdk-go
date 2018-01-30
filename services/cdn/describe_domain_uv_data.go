@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainUvDataWithChan(request *DescribeDomainUvData
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

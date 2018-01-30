@@ -38,7 +38,6 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *Save
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

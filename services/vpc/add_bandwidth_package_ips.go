@@ -38,7 +38,6 @@ func (client *Client) AddBandwidthPackageIpsWithChan(request *AddBandwidthPackag
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

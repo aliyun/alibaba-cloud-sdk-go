@@ -38,7 +38,6 @@ func (client *Client) DescribeReplicaPerformanceWithChan(request *DescribeReplic
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

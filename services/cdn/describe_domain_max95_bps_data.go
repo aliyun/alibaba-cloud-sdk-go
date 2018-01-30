@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomain
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

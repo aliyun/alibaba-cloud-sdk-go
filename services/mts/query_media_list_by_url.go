@@ -38,7 +38,6 @@ func (client *Client) QueryMediaListByURLWithChan(request *QueryMediaListByURLRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) QueryMediaListByURLWithCallback(request *QueryMediaListByU
 
 type QueryMediaListByURLRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	IncludeSnapshotList  requests.Boolean `position:"Query" name:"IncludeSnapshotList"`
-	FileURLs             string           `position:"Query" name:"FileURLs"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
 	IncludeMediaInfo     requests.Boolean `position:"Query" name:"IncludeMediaInfo"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	FileURLs             string           `position:"Query" name:"FileURLs"`
+	IncludeSnapshotList  requests.Boolean `position:"Query" name:"IncludeSnapshotList"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryMediaListByURLResponse struct {

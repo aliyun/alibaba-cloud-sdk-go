@@ -38,7 +38,6 @@ func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGrou
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

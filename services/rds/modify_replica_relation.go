@@ -38,7 +38,6 @@ func (client *Client) ModifyReplicaRelationWithChan(request *ModifyReplicaRelati
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

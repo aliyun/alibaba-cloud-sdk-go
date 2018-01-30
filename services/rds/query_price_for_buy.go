@@ -38,7 +38,6 @@ func (client *Client) QueryPriceForBuyWithChan(request *QueryPriceForBuyRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

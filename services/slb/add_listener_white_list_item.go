@@ -38,7 +38,6 @@ func (client *Client) AddListenerWhiteListItemWithChan(request *AddListenerWhite
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

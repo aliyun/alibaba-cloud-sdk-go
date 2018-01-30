@@ -38,7 +38,6 @@ func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

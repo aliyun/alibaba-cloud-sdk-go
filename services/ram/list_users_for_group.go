@@ -38,7 +38,6 @@ func (client *Client) ListUsersForGroupWithChan(request *ListUsersForGroupReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobList
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJob
 
 type QuerySnapshotJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SnapshotJobIds       string           `position:"Query" name:"SnapshotJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -126,6 +125,7 @@ type QuerySnapshotJobListResponse struct {
 					Padding       string `json:"Padding" xml:"Padding"`
 					Color         string `json:"Color" xml:"Color"`
 					IsKeepCellPic string `json:"IsKeepCellPic" xml:"IsKeepCellPic"`
+					CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
 				} `json:"TileOut" xml:"TileOut"`
 			} `json:"SnapshotConfig" xml:"SnapshotConfig"`
 			MNSMessageResult struct {

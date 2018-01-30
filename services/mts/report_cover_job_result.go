@@ -38,7 +38,6 @@ func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResult
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -69,11 +68,11 @@ func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobRe
 type ReportCoverJobResultRequest struct {
 	*requests.RpcRequest
 	Result               string           `position:"Query" name:"Result"`
-	JobId                string           `position:"Query" name:"JobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportCoverJobResultResponse struct {

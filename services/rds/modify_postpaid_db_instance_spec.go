@@ -38,7 +38,6 @@ func (client *Client) ModifyPostpaidDBInstanceSpecWithChan(request *ModifyPostpa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

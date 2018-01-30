@@ -33,8 +33,11 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteNotifyPolicy(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 
 type DeleteNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	PolicyType string `position:"Query" name:"PolicyType"`
-	AlertName  string `position:"Query" name:"AlertName"`
 	Id         string `position:"Query" name:"Id"`
+	AlertName  string `position:"Query" name:"AlertName"`
+	PolicyType string `position:"Query" name:"PolicyType"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }
 

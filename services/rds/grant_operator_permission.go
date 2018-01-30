@@ -38,7 +38,6 @@ func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPerm
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

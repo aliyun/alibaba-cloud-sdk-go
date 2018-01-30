@@ -38,7 +38,6 @@ func (client *Client) DeleteIpfilterByEdmIdWithChan(request *DeleteIpfilterByEdm
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

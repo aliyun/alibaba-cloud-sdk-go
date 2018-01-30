@@ -38,7 +38,6 @@ func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterN
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

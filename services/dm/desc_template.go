@@ -38,7 +38,6 @@ func (client *Client) DescTemplateWithChan(request *DescTemplateRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

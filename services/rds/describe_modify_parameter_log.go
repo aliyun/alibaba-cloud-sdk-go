@@ -38,7 +38,6 @@ func (client *Client) DescribeModifyParameterLogWithChan(request *DescribeModify
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ImportDataForSQLServerWithChan(request *ImportDataForSQLSe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

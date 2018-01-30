@@ -38,7 +38,6 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

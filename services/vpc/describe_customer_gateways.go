@@ -38,7 +38,6 @@ func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomer
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

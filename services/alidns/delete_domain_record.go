@@ -38,7 +38,6 @@ func (client *Client) DeleteDomainRecordWithChan(request *DeleteDomainRecordRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

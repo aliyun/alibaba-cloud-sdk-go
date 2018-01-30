@@ -38,7 +38,6 @@ func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyPairFingerPrint   string           `position:"Query" name:"KeyPairFingerPrint"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	KeyPairFingerPrint   string           `position:"Query" name:"KeyPairFingerPrint"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeKeyPairsResponse struct {

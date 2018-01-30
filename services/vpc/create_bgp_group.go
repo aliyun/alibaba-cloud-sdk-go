@@ -38,7 +38,6 @@ func (client *Client) CreateBgpGroupWithChan(request *CreateBgpGroupRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

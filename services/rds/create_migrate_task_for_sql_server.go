@@ -38,7 +38,6 @@ func (client *Client) CreateMigrateTaskForSQLServerWithChan(request *CreateMigra
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

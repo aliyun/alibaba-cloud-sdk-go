@@ -38,7 +38,6 @@ func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAtt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

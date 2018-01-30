@@ -38,7 +38,6 @@ func (client *Client) DescribeClusterScaledNodeWithChan(request *DescribeCluster
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

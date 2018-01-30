@@ -38,7 +38,6 @@ func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

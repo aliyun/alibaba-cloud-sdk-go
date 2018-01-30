@@ -38,7 +38,6 @@ func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) DeleteRouteEntryWithCallback(request *DeleteRouteEntryRequ
 
 type DeleteRouteEntryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
-	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	NextHopList          *[]DeleteRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
 	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
+	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
 }
 
 type DeleteRouteEntryNextHopList struct {

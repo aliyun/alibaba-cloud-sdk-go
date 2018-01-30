@@ -38,7 +38,6 @@ func (client *Client) DescribeFilesForSQLServerWithChan(request *DescribeFilesFo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

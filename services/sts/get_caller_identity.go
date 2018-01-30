@@ -38,7 +38,6 @@ func (client *Client) GetCallerIdentityWithChan(request *GetCallerIdentityReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

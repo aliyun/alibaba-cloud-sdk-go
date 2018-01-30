@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainFlowDataWithChan(request *DescribeDomainFlow
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

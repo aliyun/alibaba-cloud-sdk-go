@@ -38,7 +38,6 @@ func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ModifyInstanceVpcAttributeWithChan(request *ModifyInstance
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -70,11 +69,11 @@ type ModifyInstanceVpcAttributeRequest struct {
 	*requests.RpcRequest
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyInstanceVpcAttributeResponse struct {

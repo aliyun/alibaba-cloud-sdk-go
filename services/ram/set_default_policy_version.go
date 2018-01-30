@@ -38,7 +38,6 @@ func (client *Client) SetDefaultPolicyVersionWithChan(request *SetDefaultPolicyV
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

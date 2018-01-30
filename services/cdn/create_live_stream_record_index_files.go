@@ -38,7 +38,6 @@ func (client *Client) CreateLiveStreamRecordIndexFilesWithChan(request *CreateLi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

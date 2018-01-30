@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *Sav
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

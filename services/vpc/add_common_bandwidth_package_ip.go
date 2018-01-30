@@ -38,7 +38,6 @@ func (client *Client) AddCommonBandwidthPackageIpWithChan(request *AddCommonBand
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

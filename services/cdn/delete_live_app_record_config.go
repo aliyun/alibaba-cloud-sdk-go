@@ -38,7 +38,6 @@ func (client *Client) DeleteLiveAppRecordConfigWithChan(request *DeleteLiveAppRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

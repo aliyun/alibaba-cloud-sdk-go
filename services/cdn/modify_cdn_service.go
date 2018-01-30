@@ -38,7 +38,6 @@ func (client *Client) ModifyCdnServiceWithChan(request *ModifyCdnServiceRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

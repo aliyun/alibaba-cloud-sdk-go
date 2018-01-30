@@ -38,7 +38,6 @@ func (client *Client) MigrateDomainToHttpsDeliveryWithChan(request *MigrateDomai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *Ge
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

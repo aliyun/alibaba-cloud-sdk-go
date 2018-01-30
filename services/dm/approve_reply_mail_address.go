@@ -38,7 +38,6 @@ func (client *Client) ApproveReplyMailAddressWithChan(request *ApproveReplyMailA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

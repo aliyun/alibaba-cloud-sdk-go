@@ -38,7 +38,6 @@ func (client *Client) GetSecurityPreferenceWithChan(request *GetSecurityPreferen
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

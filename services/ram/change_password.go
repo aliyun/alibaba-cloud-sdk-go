@@ -38,7 +38,6 @@ func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

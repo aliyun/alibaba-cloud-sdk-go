@@ -38,7 +38,6 @@ func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *Up
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

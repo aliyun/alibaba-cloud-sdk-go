@@ -38,7 +38,6 @@ func (client *Client) BatchDescribeDomainBpsDataWithChan(request *BatchDescribeD
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

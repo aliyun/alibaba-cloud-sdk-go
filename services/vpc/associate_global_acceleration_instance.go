@@ -38,7 +38,6 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithChan(request *Assoc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

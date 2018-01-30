@@ -38,7 +38,6 @@ func (client *Client) DescribeDnsProductInstancesWithChan(request *DescribeDnsPr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

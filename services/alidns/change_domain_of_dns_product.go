@@ -38,7 +38,6 @@ func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

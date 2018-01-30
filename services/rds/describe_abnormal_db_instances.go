@@ -38,7 +38,6 @@ func (client *Client) DescribeAbnormalDBInstancesWithChan(request *DescribeAbnor
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

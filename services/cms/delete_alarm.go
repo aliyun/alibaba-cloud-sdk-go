@@ -33,8 +33,11 @@ func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteAlarm(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,8 +67,8 @@ func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callb
 
 type DeleteAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Id             string `position:"Query" name:"Id"`
+	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 }
 
 type DeleteAlarmResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

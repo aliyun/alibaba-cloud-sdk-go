@@ -38,7 +38,6 @@ func (client *Client) GetPasswordPolicyWithChan(request *GetPasswordPolicyReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

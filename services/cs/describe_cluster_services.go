@@ -38,7 +38,6 @@ func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterSe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

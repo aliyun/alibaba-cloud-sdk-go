@@ -33,8 +33,11 @@ func (client *Client) ListMyGroupCategoriesWithChan(request *ListMyGroupCategori
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListMyGroupCategories(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err

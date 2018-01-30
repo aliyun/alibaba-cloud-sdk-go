@@ -38,7 +38,6 @@ func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, cal
 
 type SubmitTagJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	TagConfig            string           `position:"Query" name:"TagConfig"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagConfig            string           `position:"Query" name:"TagConfig"`
 }
 
 type SubmitTagJobResponse struct {

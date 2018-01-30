@@ -38,7 +38,6 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStre
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

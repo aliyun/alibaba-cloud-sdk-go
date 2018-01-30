@@ -38,7 +38,6 @@ func (client *Client) DeleteServerCertificateWithChan(request *DeleteServerCerti
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

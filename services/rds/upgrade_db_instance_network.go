@@ -38,7 +38,6 @@ func (client *Client) UpgradeDBInstanceNetworkWithChan(request *UpgradeDBInstanc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

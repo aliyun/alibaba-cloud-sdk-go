@@ -38,7 +38,6 @@ func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *De
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCu
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

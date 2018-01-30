@@ -38,7 +38,6 @@ func (client *Client) ApproveMailTemplateWithChan(request *ApproveMailTemplateRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

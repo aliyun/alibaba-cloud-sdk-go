@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomains
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

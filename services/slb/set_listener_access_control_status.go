@@ -38,7 +38,6 @@ func (client *Client) SetListenerAccessControlStatusWithChan(request *SetListene
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

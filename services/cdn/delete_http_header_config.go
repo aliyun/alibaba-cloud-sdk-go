@@ -38,7 +38,6 @@ func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

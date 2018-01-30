@@ -38,7 +38,6 @@ func (client *Client) DescribeVpnGatewaysWithChan(request *DescribeVpnGatewaysRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -88,18 +87,21 @@ type DescribeVpnGatewaysResponse struct {
 	PageSize    int    `json:"PageSize" xml:"PageSize"`
 	VpnGateways struct {
 		VpnGateway []struct {
-			VpnGatewayId   string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-			VpcId          string `json:"VpcId" xml:"VpcId"`
-			VSwitchId      string `json:"VSwitchId" xml:"VSwitchId"`
-			InternetIp     string `json:"InternetIp" xml:"InternetIp"`
-			CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
-			EndTime        int    `json:"EndTime" xml:"EndTime"`
-			Spec           string `json:"Spec" xml:"Spec"`
-			Name           string `json:"Name" xml:"Name"`
-			Description    string `json:"Description" xml:"Description"`
-			Status         string `json:"Status" xml:"Status"`
-			BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
-			ChargeType     string `json:"ChargeType" xml:"ChargeType"`
+			VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
+			VpcId             string `json:"VpcId" xml:"VpcId"`
+			VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
+			InternetIp        string `json:"InternetIp" xml:"InternetIp"`
+			CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
+			EndTime           int    `json:"EndTime" xml:"EndTime"`
+			Spec              string `json:"Spec" xml:"Spec"`
+			Name              string `json:"Name" xml:"Name"`
+			Description       string `json:"Description" xml:"Description"`
+			Status            string `json:"Status" xml:"Status"`
+			BusinessStatus    string `json:"BusinessStatus" xml:"BusinessStatus"`
+			ChargeType        string `json:"ChargeType" xml:"ChargeType"`
+			IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
+			SslVpn            string `json:"SslVpn" xml:"SslVpn"`
+			SslMaxConnections int    `json:"SslMaxConnections" xml:"SslMaxConnections"`
 		} `json:"VpnGateway" xml:"VpnGateway"`
 	} `json:"VpnGateways" xml:"VpnGateways"`
 }

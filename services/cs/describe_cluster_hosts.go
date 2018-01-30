@@ -38,7 +38,6 @@ func (client *Client) DescribeClusterHostsWithChan(request *DescribeClusterHosts
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

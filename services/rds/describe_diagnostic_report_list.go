@@ -38,7 +38,6 @@ func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiag
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

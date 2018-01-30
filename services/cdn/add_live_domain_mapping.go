@@ -38,7 +38,6 @@ func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMapping
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

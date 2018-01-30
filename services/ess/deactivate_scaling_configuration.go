@@ -38,7 +38,6 @@ func (client *Client) DeactivateScalingConfigurationWithChan(request *Deactivate
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

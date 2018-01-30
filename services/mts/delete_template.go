@@ -38,7 +38,6 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest,
 
 type DeleteTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
 }
 
 type DeleteTemplateResponse struct {

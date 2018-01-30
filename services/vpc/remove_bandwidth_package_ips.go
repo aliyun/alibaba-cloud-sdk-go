@@ -38,7 +38,6 @@ func (client *Client) RemoveBandwidthPackageIpsWithChan(request *RemoveBandwidth
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

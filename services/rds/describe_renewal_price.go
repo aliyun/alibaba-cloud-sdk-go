@@ -38,7 +38,6 @@ func (client *Client) DescribeRenewalPriceWithChan(request *DescribeRenewalPrice
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

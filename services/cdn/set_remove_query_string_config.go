@@ -38,7 +38,6 @@ func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQuery
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

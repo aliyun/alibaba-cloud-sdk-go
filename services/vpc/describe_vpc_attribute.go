@@ -38,7 +38,6 @@ func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttribute
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -89,19 +88,20 @@ type DescribeVpcAttributeResponse struct {
 	Description        string `json:"Description" xml:"Description"`
 	IsDefault          bool   `json:"IsDefault" xml:"IsDefault"`
 	ClassicLinkEnabled bool   `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
+	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	VSwitchIds         struct {
 		VSwitchId []string `json:"VSwitchId" xml:"VSwitchId"`
 	} `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs struct {
 		UserCidr []string `json:"UserCidr" xml:"UserCidr"`
 	} `json:"UserCidrs" xml:"UserCidrs"`
-	AssociatedCbns struct {
+	AssociatedCens struct {
 		AssociatedCbn []struct {
-			CbnStatus   string `json:"CbnStatus" xml:"CbnStatus"`
-			CbnId       string `json:"CbnId" xml:"CbnId"`
-			CbnOwnerUid int    `json:"CbnOwnerUid" xml:"CbnOwnerUid"`
+			CenStatus   string `json:"CenStatus" xml:"CenStatus"`
+			CenId       string `json:"CenId" xml:"CenId"`
+			CenOwnerUid int    `json:"CenOwnerUid" xml:"CenOwnerUid"`
 		} `json:"AssociatedCbn" xml:"AssociatedCbn"`
-	} `json:"AssociatedCbns" xml:"AssociatedCbns"`
+	} `json:"AssociatedCens" xml:"AssociatedCens"`
 	CloudResources struct {
 		CloudResourceSetType []struct {
 			ResourceType  string `json:"ResourceType" xml:"ResourceType"`

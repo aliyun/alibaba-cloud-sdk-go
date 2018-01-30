@@ -38,7 +38,6 @@ func (client *Client) DeleteVirtualBorderRouterWithChan(request *DeleteVirtualBo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

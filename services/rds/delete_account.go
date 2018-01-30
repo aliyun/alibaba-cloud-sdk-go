@@ -38,7 +38,6 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

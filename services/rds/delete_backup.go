@@ -38,7 +38,6 @@ func (client *Client) DeleteBackupWithChan(request *DeleteBackupRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

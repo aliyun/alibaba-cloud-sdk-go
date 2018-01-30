@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamBpsDataWithChan(request *DescribeLiveStr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

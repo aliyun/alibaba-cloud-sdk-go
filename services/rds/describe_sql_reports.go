@@ -38,7 +38,6 @@ func (client *Client) DescribeSQLReportsWithChan(request *DescribeSQLReportsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

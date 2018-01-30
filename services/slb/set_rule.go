@@ -38,7 +38,6 @@ func (client *Client) SetRuleWithChan(request *SetRuleRequest) (<-chan *SetRuleR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

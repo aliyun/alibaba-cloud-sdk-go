@@ -38,7 +38,6 @@ func (client *Client) DescribeImagesWithChan(request *DescribeImagesRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

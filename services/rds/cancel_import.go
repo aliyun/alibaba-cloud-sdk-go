@@ -38,7 +38,6 @@ func (client *Client) CancelImportWithChan(request *CancelImportRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

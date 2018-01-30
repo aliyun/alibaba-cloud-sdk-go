@@ -38,7 +38,6 @@ func (client *Client) SubmitMediaDetailJobWithChan(request *SubmitMediaDetailJob
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitMediaDetailJobWithCallback(request *SubmitMediaDetai
 
 type SubmitMediaDetailJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaDetailConfig    string           `position:"Query" name:"MediaDetailConfig"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaDetailConfig    string           `position:"Query" name:"MediaDetailConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitMediaDetailJobResponse struct {

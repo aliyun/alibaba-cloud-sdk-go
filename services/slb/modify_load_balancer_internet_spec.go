@@ -38,7 +38,6 @@ func (client *Client) ModifyLoadBalancerInternetSpecWithChan(request *ModifyLoad
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -70,14 +69,14 @@ type ModifyLoadBalancerInternetSpecRequest struct {
 	*requests.RpcRequest
 	Tags                 string           `position:"Query" name:"Tags"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 }
 
 type ModifyLoadBalancerInternetSpecResponse struct {

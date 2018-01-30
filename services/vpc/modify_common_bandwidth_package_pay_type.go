@@ -38,7 +38,6 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithChan(request *Modif
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

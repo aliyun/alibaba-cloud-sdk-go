@@ -38,7 +38,6 @@ func (client *Client) DescribeSQLInjectionInfosWithChan(request *DescribeSQLInje
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

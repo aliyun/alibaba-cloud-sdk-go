@@ -38,7 +38,6 @@ func (client *Client) DescribeMasterSlaveServerGroupsWithChan(request *DescribeM
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

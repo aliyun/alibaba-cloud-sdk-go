@@ -38,7 +38,6 @@ func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

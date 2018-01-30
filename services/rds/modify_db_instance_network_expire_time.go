@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceNetworkExpireTimeWithChan(request *ModifyD
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

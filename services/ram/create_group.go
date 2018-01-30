@@ -38,7 +38,6 @@ func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportData
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

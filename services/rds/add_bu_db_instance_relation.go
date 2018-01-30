@@ -38,7 +38,6 @@ func (client *Client) AddBuDBInstanceRelationWithChan(request *AddBuDBInstanceRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

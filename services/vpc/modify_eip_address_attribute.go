@@ -38,7 +38,6 @@ func (client *Client) ModifyEipAddressAttributeWithChan(request *ModifyEipAddres
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

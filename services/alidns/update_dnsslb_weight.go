@@ -38,7 +38,6 @@ func (client *Client) UpdateDNSSLBWeightWithChan(request *UpdateDNSSLBWeightRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

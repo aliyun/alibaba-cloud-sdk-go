@@ -38,7 +38,6 @@ func (client *Client) DescribeListenerAccessControlAttributeWithChan(request *De
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CalculateDBInstanceWeightWithChan(request *CalculateDBInst
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

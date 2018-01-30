@@ -38,7 +38,6 @@ func (client *Client) ReleaseReplicaWithChan(request *ReleaseReplicaRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

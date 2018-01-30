@@ -38,7 +38,6 @@ func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeployment
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,18 +67,18 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Strategy             string           `position:"Query" name:"Strategy"`
 	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Granularity          string           `position:"Query" name:"Granularity"`
 	Domain               string           `position:"Query" name:"Domain"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Strategy             string           `position:"Query" name:"Strategy"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDeploymentSetsResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) DescribeSlowLogsWithChan(request *DescribeSlowLogsRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

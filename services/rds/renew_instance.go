@@ -38,7 +38,6 @@ func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

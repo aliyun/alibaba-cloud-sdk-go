@@ -33,8 +33,11 @@ func (client *Client) ListAlarmHistoryWithChan(request *ListAlarmHistoryRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListAlarmHistory(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,12 +67,12 @@ func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequ
 
 type ListAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	Cursor         string           `position:"Query" name:"Cursor"`
-	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
-	Size           requests.Integer `position:"Query" name:"Size"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	Id             string           `position:"Query" name:"Id"`
+	Cursor         string           `position:"Query" name:"Cursor"`
 	StartTime      string           `position:"Query" name:"StartTime"`
+	Size           requests.Integer `position:"Query" name:"Size"`
+	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type ListAlarmHistoryResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) RemoveFacePhotosWithChan(request *RemoveFacePhotosRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

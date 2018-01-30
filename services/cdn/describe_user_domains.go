@@ -38,7 +38,6 @@ func (client *Client) DescribeUserDomainsWithChan(request *DescribeUserDomainsRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

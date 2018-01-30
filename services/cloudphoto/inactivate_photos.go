@@ -38,7 +38,6 @@ func (client *Client) InactivatePhotosWithChan(request *InactivatePhotosRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

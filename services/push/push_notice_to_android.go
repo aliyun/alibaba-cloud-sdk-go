@@ -67,13 +67,13 @@ func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndro
 
 type PushNoticeToAndroidRequest struct {
 	*requests.RpcRequest
-	ExtParameters string           `position:"Query" name:"ExtParameters"`
-	AppKey        requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue   string           `position:"Query" name:"TargetValue"`
-	Title         string           `position:"Query" name:"Title"`
 	Body          string           `position:"Query" name:"Body"`
+	Title         string           `position:"Query" name:"Title"`
+	ExtParameters string           `position:"Query" name:"ExtParameters"`
+	TargetValue   string           `position:"Query" name:"TargetValue"`
 	JobKey        string           `position:"Query" name:"JobKey"`
 	Target        string           `position:"Query" name:"Target"`
+	AppKey        requests.Integer `position:"Query" name:"AppKey"`
 }
 
 type PushNoticeToAndroidResponse struct {

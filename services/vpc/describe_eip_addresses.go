@@ -38,7 +38,6 @@ func (client *Client) DescribeEipAddressesWithChan(request *DescribeEipAddresses
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

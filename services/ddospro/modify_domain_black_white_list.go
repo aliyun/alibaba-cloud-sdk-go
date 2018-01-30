@@ -33,8 +33,11 @@ func (client *Client) ModifyDomainBlackWhiteListWithChan(request *ModifyDomainBl
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyDomainBlackWhiteList(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) ModifyDomainBlackWhiteListWithCallback(request *ModifyDoma
 
 type ModifyDomainBlackWhiteListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	White           *[]string        `position:"Query" name:"White"  type:"Repeated"`
 	Domain          string           `position:"Query" name:"Domain"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Black           *[]string        `position:"Query" name:"Black"  type:"Repeated"`
 }
 

@@ -38,7 +38,6 @@ func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

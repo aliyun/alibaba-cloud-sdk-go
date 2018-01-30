@@ -33,8 +33,11 @@ func (client *Client) DescribeAlarmHistoryWithChan(request *DescribeAlarmHistory
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeAlarmHistory(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,19 +67,19 @@ func (client *Client) DescribeAlarmHistoryWithCallback(request *DescribeAlarmHis
 
 type DescribeAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	AlertName  string           `position:"Query" name:"AlertName"`
-	GroupId    string           `position:"Query" name:"GroupId"`
 	EndTime    string           `position:"Query" name:"EndTime"`
-	RuleName   string           `position:"Query" name:"RuleName"`
-	StartTime  string           `position:"Query" name:"StartTime"`
-	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
-	OnlyCount  requests.Boolean `position:"Query" name:"OnlyCount"`
-	Namespace  string           `position:"Query" name:"Namespace"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	State      string           `position:"Query" name:"State"`
-	Page       requests.Integer `position:"Query" name:"Page"`
-	MetricName string           `position:"Query" name:"MetricName"`
+	StartTime  string           `position:"Query" name:"StartTime"`
 	Status     string           `position:"Query" name:"Status"`
+	RuleName   string           `position:"Query" name:"RuleName"`
+	State      string           `position:"Query" name:"State"`
+	Namespace  string           `position:"Query" name:"Namespace"`
+	MetricName string           `position:"Query" name:"MetricName"`
+	AlertName  string           `position:"Query" name:"AlertName"`
+	Page       requests.Integer `position:"Query" name:"Page"`
+	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	OnlyCount  requests.Boolean `position:"Query" name:"OnlyCount"`
 }
 
 type DescribeAlarmHistoryResponse struct {

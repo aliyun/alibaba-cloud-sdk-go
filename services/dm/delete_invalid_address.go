@@ -38,7 +38,6 @@ func (client *Client) DeleteInvalidAddressWithChan(request *DeleteInvalidAddress
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

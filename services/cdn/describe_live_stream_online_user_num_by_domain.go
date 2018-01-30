@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithChan(request *D
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

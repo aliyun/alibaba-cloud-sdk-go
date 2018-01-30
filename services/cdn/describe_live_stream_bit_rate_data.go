@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiv
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

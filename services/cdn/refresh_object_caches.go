@@ -38,7 +38,6 @@ func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

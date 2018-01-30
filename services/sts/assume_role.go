@@ -38,7 +38,6 @@ func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *As
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

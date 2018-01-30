@@ -38,7 +38,6 @@ func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRole
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

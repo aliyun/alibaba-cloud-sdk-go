@@ -38,7 +38,6 @@ func (client *Client) SetWaitingRoomConfigWithChan(request *SetWaitingRoomConfig
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

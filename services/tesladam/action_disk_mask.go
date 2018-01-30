@@ -33,8 +33,11 @@ func (client *Client) ActionDiskMaskWithChan(request *ActionDiskMaskRequest) (<-
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ActionDiskMask(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,8 +67,8 @@ func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest,
 
 type ActionDiskMaskRequest struct {
 	*requests.RpcRequest
-	Op        string `position:"Query" name:"Op"`
 	DiskMount string `position:"Query" name:"DiskMount"`
+	Op        string `position:"Query" name:"Op"`
 	Ip        string `position:"Query" name:"Ip"`
 }
 

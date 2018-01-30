@@ -38,7 +38,6 @@ func (client *Client) ModifyCommonBandwidthPackageSpecWithChan(request *ModifyCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

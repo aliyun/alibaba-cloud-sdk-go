@@ -38,7 +38,6 @@ func (client *Client) DeleteMasterSlaveServerGroupWithChan(request *DeleteMaster
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

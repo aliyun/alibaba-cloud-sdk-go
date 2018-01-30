@@ -38,7 +38,6 @@ func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

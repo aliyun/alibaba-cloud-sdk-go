@@ -38,7 +38,6 @@ func (client *Client) DescribeInstanceTypeFamiliesWithChan(request *DescribeInst
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *Describe
 
 type DescribeInstanceTypeFamiliesRequest struct {
 	*requests.RpcRequest
-	Generation           string           `position:"Query" name:"Generation"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Generation           string           `position:"Query" name:"Generation"`
 }
 
 type DescribeInstanceTypeFamiliesResponse struct {

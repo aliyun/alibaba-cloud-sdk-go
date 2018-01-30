@@ -38,7 +38,6 @@ func (client *Client) GetPrivateAccessUrlsWithChan(request *GetPrivateAccessUrls
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

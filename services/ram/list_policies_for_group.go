@@ -38,7 +38,6 @@ func (client *Client) ListPoliciesForGroupWithChan(request *ListPoliciesForGroup
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

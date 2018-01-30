@@ -38,7 +38,6 @@ func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -123,13 +122,13 @@ type DescribeVirtualBorderRoutersResponse struct {
 					VlanId                           string `json:"VlanId" xml:"VlanId"`
 				} `json:"AssociatedPhysicalConnection" xml:"AssociatedPhysicalConnection"`
 			} `json:"AssociatedPhysicalConnections" xml:"AssociatedPhysicalConnections"`
-			AssociatedCbns struct {
+			AssociatedCens struct {
 				AssociatedCbn []struct {
-					CbnStatus   string `json:"CbnStatus" xml:"CbnStatus"`
-					CbnOwnerId  string `json:"CbnOwnerId" xml:"CbnOwnerId"`
-					CbnOwnerUid int    `json:"CbnOwnerUid" xml:"CbnOwnerUid"`
+					CenStatus   string `json:"CenStatus" xml:"CenStatus"`
+					CenOwnerId  string `json:"CenOwnerId" xml:"CenOwnerId"`
+					CenOwnerUid int    `json:"CenOwnerUid" xml:"CenOwnerUid"`
 				} `json:"AssociatedCbn" xml:"AssociatedCbn"`
-			} `json:"AssociatedCbns" xml:"AssociatedCbns"`
+			} `json:"AssociatedCens" xml:"AssociatedCens"`
 		} `json:"VirtualBorderRouterType" xml:"VirtualBorderRouterType"`
 	} `json:"VirtualBorderRouterSet" xml:"VirtualBorderRouterSet"`
 }

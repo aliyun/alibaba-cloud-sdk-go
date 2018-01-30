@@ -38,7 +38,6 @@ func (client *Client) DescribeNqasWithChan(request *DescribeNqasRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

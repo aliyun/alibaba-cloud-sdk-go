@@ -38,7 +38,6 @@ func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

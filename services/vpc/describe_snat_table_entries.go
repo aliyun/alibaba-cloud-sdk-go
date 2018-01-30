@@ -38,7 +38,6 @@ func (client *Client) DescribeSnatTableEntriesWithChan(request *DescribeSnatTabl
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

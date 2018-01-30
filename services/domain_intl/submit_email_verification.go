@@ -38,7 +38,6 @@ func (client *Client) SubmitEmailVerificationWithChan(request *SubmitEmailVerifi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreateLoadBalancerHTTPListenerWithChan(request *CreateLoad
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

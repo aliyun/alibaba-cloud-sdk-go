@@ -38,7 +38,6 @@ func (client *Client) ModifyVRouterAttributeWithChan(request *ModifyVRouterAttri
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

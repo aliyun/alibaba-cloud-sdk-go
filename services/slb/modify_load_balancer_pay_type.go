@@ -38,7 +38,6 @@ func (client *Client) ModifyLoadBalancerPayTypeWithChan(request *ModifyLoadBalan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) QueryReceiverByParamWithChan(request *QueryReceiverByParam
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

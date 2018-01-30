@@ -38,7 +38,6 @@ func (client *Client) DescribeSQLDiagnosisWithChan(request *DescribeSQLDiagnosis
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

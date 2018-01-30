@@ -20,25 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) RevokeInstanceFromCbn(request *RevokeInstanceFromCbnRequest) (response *RevokeInstanceFromCbnResponse, err error) {
-	response = CreateRevokeInstanceFromCbnResponse()
+func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (response *DeleteSslVpnServerResponse, err error) {
+	response = CreateDeleteSslVpnServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) RevokeInstanceFromCbnWithChan(request *RevokeInstanceFromCbnRequest) (<-chan *RevokeInstanceFromCbnResponse, <-chan error) {
-	responseChan := make(chan *RevokeInstanceFromCbnResponse, 1)
+func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequest) (<-chan *DeleteSslVpnServerResponse, <-chan error) {
+	responseChan := make(chan *DeleteSslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RevokeInstanceFromCbn(request)
+		response, err := client.DeleteSslVpnServer(request)
 		if err != nil {
 			errChan <- err
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -48,13 +47,13 @@ func (client *Client) RevokeInstanceFromCbnWithChan(request *RevokeInstanceFromC
 	return responseChan, errChan
 }
 
-func (client *Client) RevokeInstanceFromCbnWithCallback(request *RevokeInstanceFromCbnRequest, callback func(response *RevokeInstanceFromCbnResponse, err error)) <-chan int {
+func (client *Client) DeleteSslVpnServerWithCallback(request *DeleteSslVpnServerRequest, callback func(response *DeleteSslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RevokeInstanceFromCbnResponse
+		var response *DeleteSslVpnServerResponse
 		var err error
 		defer close(result)
-		response, err = client.RevokeInstanceFromCbn(request)
+		response, err = client.DeleteSslVpnServer(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -66,34 +65,31 @@ func (client *Client) RevokeInstanceFromCbnWithCallback(request *RevokeInstanceF
 	return result
 }
 
-type RevokeInstanceFromCbnRequest struct {
+type DeleteSslVpnServerRequest struct {
 	*requests.RpcRequest
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CbnUid               string           `position:"Query" name:"CbnUid"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	CbnInstanceId        string           `position:"Query" name:"CbnInstanceId"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
 }
 
-type RevokeInstanceFromCbnResponse struct {
+type DeleteSslVpnServerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-func CreateRevokeInstanceFromCbnRequest() (request *RevokeInstanceFromCbnRequest) {
-	request = &RevokeInstanceFromCbnRequest{
+func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
+	request = &DeleteSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RevokeInstanceFromCbn", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSslVpnServer", "vpc", "openAPI")
 	return
 }
 
-func CreateRevokeInstanceFromCbnResponse() (response *RevokeInstanceFromCbnResponse) {
-	response = &RevokeInstanceFromCbnResponse{
+func CreateDeleteSslVpnServerResponse() (response *DeleteSslVpnServerResponse) {
+	response = &DeleteSslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

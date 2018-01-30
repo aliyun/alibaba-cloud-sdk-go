@@ -38,7 +38,6 @@ func (client *Client) DescribeRealtimeDiagnosesWithChan(request *DescribeRealtim
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

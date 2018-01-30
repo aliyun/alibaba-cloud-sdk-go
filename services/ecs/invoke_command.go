@@ -38,7 +38,6 @@ func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, c
 
 type InvokeCommandRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CommandId            string           `position:"Query" name:"CommandId"`
 	Frequency            string           `position:"Query" name:"Frequency"`
-	Timed                requests.Boolean `position:"Query" name:"Timed"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Timed                requests.Boolean `position:"Query" name:"Timed"`
+	CommandId            string           `position:"Query" name:"CommandId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }

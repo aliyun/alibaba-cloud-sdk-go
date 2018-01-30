@@ -38,7 +38,6 @@ func (client *Client) AddDomainGroupWithChan(request *AddDomainGroupRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

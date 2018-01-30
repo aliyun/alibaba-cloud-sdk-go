@@ -38,7 +38,6 @@ func (client *Client) SingleSendSmsWithChan(request *SingleSendSmsRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

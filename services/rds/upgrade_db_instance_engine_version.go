@@ -38,7 +38,6 @@ func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBI
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

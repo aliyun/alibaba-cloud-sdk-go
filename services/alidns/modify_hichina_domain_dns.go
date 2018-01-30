@@ -38,7 +38,6 @@ func (client *Client) ModifyHichinaDomainDNSWithChan(request *ModifyHichinaDomai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

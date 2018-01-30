@@ -38,7 +38,6 @@ func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTrans
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

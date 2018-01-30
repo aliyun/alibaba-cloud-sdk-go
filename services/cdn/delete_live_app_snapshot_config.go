@@ -38,7 +38,6 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveApp
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

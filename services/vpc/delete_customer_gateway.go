@@ -38,7 +38,6 @@ func (client *Client) DeleteCustomerGatewayWithChan(request *DeleteCustomerGatew
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

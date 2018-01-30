@@ -38,7 +38,6 @@ func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPoli
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

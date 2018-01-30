@@ -38,7 +38,6 @@ func (client *Client) CreateUploadPathForSQLServerWithChan(request *CreateUpload
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

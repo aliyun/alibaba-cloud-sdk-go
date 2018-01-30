@@ -41,3 +41,27 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
 	return
 }
+
+func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken)
+	return
+}
+
+func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	return
+}
+
+func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithEcsRamRole(regionId, roleName)
+	return
+}
+
+func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
+	return
+}

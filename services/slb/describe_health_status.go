@@ -38,7 +38,6 @@ func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatus
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

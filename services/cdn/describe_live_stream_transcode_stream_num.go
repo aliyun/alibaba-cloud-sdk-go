@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *Desc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

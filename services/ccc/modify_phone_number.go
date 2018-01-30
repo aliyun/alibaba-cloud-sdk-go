@@ -38,7 +38,6 @@ func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

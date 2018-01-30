@@ -38,7 +38,6 @@ func (client *Client) GetDownloadUrlWithChan(request *GetDownloadUrlRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

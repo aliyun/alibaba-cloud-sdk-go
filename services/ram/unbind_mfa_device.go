@@ -38,7 +38,6 @@ func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

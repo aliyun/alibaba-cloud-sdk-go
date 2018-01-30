@@ -38,7 +38,6 @@ func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

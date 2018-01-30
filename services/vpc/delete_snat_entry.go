@@ -38,7 +38,6 @@ func (client *Client) DeleteSnatEntryWithChan(request *DeleteSnatEntryRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

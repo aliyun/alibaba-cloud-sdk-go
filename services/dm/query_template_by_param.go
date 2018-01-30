@@ -38,7 +38,6 @@ func (client *Client) QueryTemplateByParamWithChan(request *QueryTemplateByParam
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

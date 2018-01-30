@@ -38,7 +38,6 @@ func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeO
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

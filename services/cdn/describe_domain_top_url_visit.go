@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainTopUrlVisitWithChan(request *DescribeDomainT
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

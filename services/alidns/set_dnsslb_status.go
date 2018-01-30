@@ -38,7 +38,6 @@ func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

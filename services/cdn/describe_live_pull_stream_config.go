@@ -38,7 +38,6 @@ func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLive
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

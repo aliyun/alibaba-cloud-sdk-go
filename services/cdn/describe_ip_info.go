@@ -38,7 +38,6 @@ func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

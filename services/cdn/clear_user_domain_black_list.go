@@ -38,7 +38,6 @@ func (client *Client) ClearUserDomainBlackListWithChan(request *ClearUserDomainB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
