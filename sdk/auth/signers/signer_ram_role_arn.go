@@ -31,11 +31,11 @@ const (
 	defaultDurationSeconds = 3600
 )
 
-type SignerStsAssumeRole struct {
+type RamRoleArnSigner struct {
 	*credentialUpdater
 	roleSessionName   string
 	sessionCredential *sessionCredential
-	credential        *credentials.StsRoleArnCredential
+	credential        *credentials.RamRoleArnCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
@@ -45,8 +45,8 @@ type sessionCredential struct {
 	securityToken   string
 }
 
-func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *SignerStsAssumeRole, err error) {
-	signer = &SignerStsAssumeRole{
+func NewRamRoleArnSigner(credential *credentials.RamRoleArnCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *RamRoleArnSigner, err error) {
+	signer = &RamRoleArnSigner{
 		credential: credential,
 		commonApi:  commonApi,
 	}
@@ -75,19 +75,19 @@ func NewSignerStsAssumeRole(credential *credentials.StsRoleArnCredential, common
 	return
 }
 
-func (*SignerStsAssumeRole) GetName() string {
+func (*RamRoleArnSigner) GetName() string {
 	return "HMAC-SHA1"
 }
 
-func (*SignerStsAssumeRole) GetType() string {
+func (*RamRoleArnSigner) GetType() string {
 	return ""
 }
 
-func (*SignerStsAssumeRole) GetVersion() string {
+func (*RamRoleArnSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *SignerStsAssumeRole) GetAccessKeyId() string {
+func (signer *RamRoleArnSigner) GetAccessKeyId() string {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		signer.updateCredential()
 	}
@@ -97,7 +97,7 @@ func (signer *SignerStsAssumeRole) GetAccessKeyId() string {
 	return signer.sessionCredential.accessKeyId
 }
 
-func (signer *SignerStsAssumeRole) GetExtraParam() map[string]string {
+func (signer *RamRoleArnSigner) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		signer.updateCredential()
 	}
@@ -107,12 +107,12 @@ func (signer *SignerStsAssumeRole) GetExtraParam() map[string]string {
 	return map[string]string{"SecurityToken": signer.sessionCredential.securityToken}
 }
 
-func (signer *SignerStsAssumeRole) Sign(stringToSign, secretSuffix string) string {
+func (signer *RamRoleArnSigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.sessionCredential.accessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
-func (signer *SignerStsAssumeRole) buildCommonRequest() (request *requests.CommonRequest, err error) {
+func (signer *RamRoleArnSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {
 	request = requests.NewCommonRequest()
 	request.Product = "Sts"
 	request.Version = "2015-04-01"
@@ -124,16 +124,16 @@ func (signer *SignerStsAssumeRole) buildCommonRequest() (request *requests.Commo
 	return
 }
 
-func (signerStsAssumeRole *SignerStsAssumeRole) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
-	credential := &credentials.BaseCredential{
+func (signerStsAssumeRole *RamRoleArnSigner) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
+	credential := &credentials.AccessKeyCredential{
 		AccessKeyId:     signerStsAssumeRole.credential.AccessKeyId,
 		AccessKeySecret: signerStsAssumeRole.credential.AccessKeySecret,
 	}
-	signerV1, err := NewSignerV1(credential)
+	signerV1, err := NewAccessKeySigner(credential)
 	return signerStsAssumeRole.commonApi(request, signerV1)
 }
 
-func (signer *SignerStsAssumeRole) refreshCredential(response *responses.CommonResponse) (err error) {
+func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
 		message := "refresh session token failed, message = " + response.GetHttpContentString()
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, message)
@@ -176,6 +176,6 @@ func (signer *SignerStsAssumeRole) refreshCredential(response *responses.CommonR
 	return
 }
 
-func (signer *SignerStsAssumeRole) Shutdown() {
+func (signer *RamRoleArnSigner) Shutdown() {
 
 }

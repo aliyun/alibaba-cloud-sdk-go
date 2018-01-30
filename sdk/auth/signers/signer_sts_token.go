@@ -18,41 +18,41 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
-type SignerV1 struct {
-	credential *credentials.BaseCredential
+type StsTokenSigner struct {
+	credential *credentials.StsTokenCredential
 }
 
-func (signer *SignerV1) GetExtraParam() map[string]string {
-	return nil
-}
-
-func NewSignerV1(credential *credentials.BaseCredential) (*SignerV1, error) {
-	return &SignerV1{
+func NewStsTokenSigner(credential *credentials.StsTokenCredential) (*StsTokenSigner, error) {
+	return &StsTokenSigner{
 		credential: credential,
 	}, nil
 }
 
-func (*SignerV1) GetName() string {
+func (*StsTokenSigner) GetName() string {
 	return "HMAC-SHA1"
 }
 
-func (*SignerV1) GetType() string {
+func (*StsTokenSigner) GetType() string {
 	return ""
 }
 
-func (*SignerV1) GetVersion() string {
+func (*StsTokenSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *SignerV1) GetAccessKeyId() string {
+func (signer *StsTokenSigner) GetAccessKeyId() string {
 	return signer.credential.AccessKeyId
 }
 
-func (signer *SignerV1) Sign(stringToSign, secretSuffix string) string {
+func (signer *StsTokenSigner) GetExtraParam() map[string]string {
+	return map[string]string{"SecurityToken": signer.credential.AccessKeyStsToken}
+}
+
+func (signer *StsTokenSigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.credential.AccessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
-func (signer *SignerV1) Shutdown() {
+func (signer *StsTokenSigner) Shutdown() {
 
 }

@@ -26,15 +26,15 @@ import (
 	"time"
 )
 
-type SignerEcsInstance struct {
+type EcsRamRoleSigner struct {
 	*credentialUpdater
 	sessionCredential *sessionCredential
-	credential        *credentials.StsRoleNameOnEcsCredential
+	credential        *credentials.EcsRamRoleCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
-func NewSignereEcsInstance(credential *credentials.StsRoleNameOnEcsCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerEcsInstance, err error) {
-	signer = &SignerEcsInstance{
+func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *EcsRamRoleSigner, err error) {
+	signer = &EcsRamRoleSigner{
 		credential: credential,
 		commonApi:  commonApi,
 	}
@@ -49,19 +49,19 @@ func NewSignereEcsInstance(credential *credentials.StsRoleNameOnEcsCredential, c
 	return
 }
 
-func (*SignerEcsInstance) GetName() string {
+func (*EcsRamRoleSigner) GetName() string {
 	return "HMAC-SHA1"
 }
 
-func (*SignerEcsInstance) GetType() string {
+func (*EcsRamRoleSigner) GetType() string {
 	return ""
 }
 
-func (*SignerEcsInstance) GetVersion() string {
+func (*EcsRamRoleSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *SignerEcsInstance) GetAccessKeyId() string {
+func (signer *EcsRamRoleSigner) GetAccessKeyId() string {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		signer.updateCredential()
 	}
@@ -71,7 +71,7 @@ func (signer *SignerEcsInstance) GetAccessKeyId() string {
 	return signer.sessionCredential.accessKeyId
 }
 
-func (signer *SignerEcsInstance) GetExtraParam() map[string]string {
+func (signer *EcsRamRoleSigner) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil {
 		return make(map[string]string)
 	}
@@ -81,17 +81,17 @@ func (signer *SignerEcsInstance) GetExtraParam() map[string]string {
 	return map[string]string{"SecurityToken": signer.sessionCredential.securityToken}
 }
 
-func (signer *SignerEcsInstance) Sign(stringToSign, secretSuffix string) string {
+func (signer *EcsRamRoleSigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.sessionCredential.accessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
-func (signer *SignerEcsInstance) buildCommonRequest() (request *requests.CommonRequest, err error) {
+func (signer *EcsRamRoleSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {
 	request = requests.NewCommonRequest()
 	return
 }
 
-func (signer *SignerEcsInstance) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
+func (signer *EcsRamRoleSigner) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
 	requestUrl := "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + signer.credential.RoleName
 	httpRequest, err := http.NewRequest(requests.GET, requestUrl, strings.NewReader(""))
 	if err != nil {
@@ -111,7 +111,7 @@ func (signer *SignerEcsInstance) refreshApi(request *requests.CommonRequest) (re
 	return
 }
 
-func (signer *SignerEcsInstance) refreshCredential(response *responses.CommonResponse) (err error) {
+func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
 		fmt.Println("refresh Ecs sts token err, httpStatus: " + string(response.GetHttpStatus()) + ", message = " + response.GetHttpContentString())
 		return
@@ -168,6 +168,6 @@ func (signer *SignerEcsInstance) refreshCredential(response *responses.CommonRes
 	return
 }
 
-func (signer *SignerEcsInstance) Shutdown() {
+func (signer *EcsRamRoleSigner) Shutdown() {
 
 }
