@@ -38,7 +38,6 @@ func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *Like
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

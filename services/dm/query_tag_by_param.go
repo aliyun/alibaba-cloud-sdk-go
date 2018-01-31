@@ -38,7 +38,6 @@ func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

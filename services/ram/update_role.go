@@ -38,7 +38,6 @@ func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *Up
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

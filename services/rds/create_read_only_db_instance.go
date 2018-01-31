@@ -38,7 +38,6 @@ func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

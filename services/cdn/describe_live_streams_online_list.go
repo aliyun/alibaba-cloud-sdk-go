@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiv
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

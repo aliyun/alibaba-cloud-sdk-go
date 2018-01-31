@@ -38,7 +38,6 @@ func (client *Client) ConnectRouterInterfaceWithChan(request *ConnectRouterInter
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

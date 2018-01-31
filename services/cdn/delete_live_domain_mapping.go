@@ -38,7 +38,6 @@ func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainM
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

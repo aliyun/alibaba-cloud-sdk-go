@@ -38,7 +38,6 @@ func (client *Client) SetFileTypeForceTtlCodeConfigWithChan(request *SetFileType
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

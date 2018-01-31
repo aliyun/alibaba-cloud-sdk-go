@@ -38,7 +38,6 @@ func (client *Client) QueryContactInfoWithChan(request *QueryContactInfoRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

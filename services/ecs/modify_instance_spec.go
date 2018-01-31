@@ -38,7 +38,6 @@ func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,21 +67,21 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken                      string           `position:"Query" name:"ClientToken"`
 	AllowMigrateAcrossZone           requests.Boolean `position:"Query" name:"AllowMigrateAcrossZone"`
-	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
 	InternetMaxBandwidthOut          requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
-	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
+	ClientToken                      string           `position:"Query" name:"ClientToken"`
 	SystemDiskCategory               string           `position:"Query" name:"SystemDisk.Category"`
-	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
-	Async                            requests.Boolean `position:"Query" name:"Async"`
-	InstanceId                       string           `position:"Query" name:"InstanceId"`
-	InstanceType                     string           `position:"Query" name:"InstanceType"`
 	TemporaryEndTime                 string           `position:"Query" name:"Temporary.EndTime"`
+	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	Async                            requests.Boolean `position:"Query" name:"Async"`
+	InstanceType                     string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
 	InternetMaxBandwidthIn           requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
+	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
+	InstanceId                       string           `position:"Query" name:"InstanceId"`
 }
 
 type ModifyInstanceSpecResponse struct {

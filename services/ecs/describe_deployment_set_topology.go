@@ -38,7 +38,6 @@ func (client *Client) DescribeDeploymentSetTopologyWithChan(request *DescribeDep
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *Describ
 
 type DescribeDeploymentSetTopologyRequest struct {
 	*requests.RpcRequest
-	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Granularity          string           `position:"Query" name:"Granularity"`
 	Domain               string           `position:"Query" name:"Domain"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDeploymentSetTopologyResponse struct {

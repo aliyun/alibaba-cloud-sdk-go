@@ -38,7 +38,6 @@ func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) MigrateToOtherZoneWithChan(request *MigrateToOtherZoneRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,6 +67,7 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

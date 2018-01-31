@@ -38,7 +38,6 @@ func (client *Client) SearchPhotosWithChan(request *SearchPhotosRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithChan(request *CreatePol
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -48,7 +48,7 @@ func TestEcsInstance(t *testing.T) {
 	startEcsInstance(t, ecsClient, instanceId)
 
 	// wait
-	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusRunning, 120)
+	waitForEcsInstance(t, ecsClient, instanceId, EcsInstanceStatusRunning, 240)
 
 	// stop
 	stopEcsInstance(t, ecsClient, instanceId)

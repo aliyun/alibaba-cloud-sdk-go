@@ -38,7 +38,6 @@ func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

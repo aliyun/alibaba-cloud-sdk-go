@@ -38,7 +38,6 @@ func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateName
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

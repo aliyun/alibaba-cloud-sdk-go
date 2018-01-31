@@ -38,7 +38,6 @@ func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfig
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

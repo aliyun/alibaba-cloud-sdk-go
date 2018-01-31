@@ -38,7 +38,6 @@ func (client *Client) ModifyNqaWithChan(request *ModifyNqaRequest) (<-chan *Modi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStrea
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobReques
 
 type SubmitCensorJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CensorConfig         string           `position:"Query" name:"CensorConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CensorConfig         string           `position:"Query" name:"CensorConfig"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitCensorJobResponse struct {

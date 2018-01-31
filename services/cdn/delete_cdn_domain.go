@@ -38,7 +38,6 @@ func (client *Client) DeleteCdnDomainWithChan(request *DeleteCdnDomainRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

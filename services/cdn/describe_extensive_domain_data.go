@@ -38,7 +38,6 @@ func (client *Client) DescribeExtensiveDomainDataWithChan(request *DescribeExten
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

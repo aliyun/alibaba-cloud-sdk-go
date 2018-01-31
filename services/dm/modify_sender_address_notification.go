@@ -38,7 +38,6 @@ func (client *Client) ModifySenderAddressNotificationWithChan(request *ModifySen
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

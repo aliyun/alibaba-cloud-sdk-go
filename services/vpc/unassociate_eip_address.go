@@ -38,7 +38,6 @@ func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddre
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

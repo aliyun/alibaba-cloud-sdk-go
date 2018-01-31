@@ -38,7 +38,6 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSin
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

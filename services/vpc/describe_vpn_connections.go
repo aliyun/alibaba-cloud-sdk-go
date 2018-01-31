@@ -38,7 +38,6 @@ func (client *Client) DescribeVpnConnectionsWithChan(request *DescribeVpnConnect
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

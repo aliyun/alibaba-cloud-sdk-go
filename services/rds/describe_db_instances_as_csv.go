@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

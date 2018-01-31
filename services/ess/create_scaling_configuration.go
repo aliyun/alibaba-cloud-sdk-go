@@ -38,7 +38,6 @@ func (client *Client) CreateScalingConfigurationWithChan(request *CreateScalingC
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

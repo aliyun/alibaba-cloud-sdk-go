@@ -100,7 +100,7 @@ func (client *Client) InitWithAccessKey(regionId, accessKeyId, accessKeySecret s
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
+func (client *Client) InitWithStsToken(regionId, accessKeyId, accessKeySecret, securityToken string) (err error) {
 	config := client.InitClientConfig()
 	credential := &credentials.StsTokenCredential{
 		AccessKeyId:       accessKeyId,
@@ -110,9 +110,9 @@ func (client *Client) InitWithSecurityToken(regionId, accessKeyId, accessKeySecr
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
+func (client *Client) InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsRoleArnCredential{
+	credential := &credentials.RamRoleArnCredential{
 		AccessKeyId:     accessKeyId,
 		AccessKeySecret: accessKeySecret,
 		RoleArn:         roleArn,
@@ -131,9 +131,9 @@ func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey strin
 	return client.InitWithOptions(regionId, config, credential)
 }
 
-func (client *Client) InitWithStsRoleNameOnEcs(regionId, roleName string) (err error) {
+func (client *Client) InitWithEcsRamRole(regionId, roleName string) (err error) {
 	config := client.InitClientConfig()
-	credential := &credentials.StsRoleNameOnEcsCredential{
+	credential := &credentials.EcsRamRoleCredential{
 		RoleName: roleName,
 	}
 	return client.InitWithOptions(regionId, config, credential)
@@ -295,9 +295,21 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 	return
 }
 
-func NewClientWithStsToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken string) (client *Client, err error) {
+func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken string) (client *Client, err error) {
 	client = &Client{}
-	err = client.InitWithSecurityToken(regionId, accessKeyId, accessKeySecret, accessKeyStsToken)
+	err = client.InitWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken)
+	return
+}
+
+func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	return
+}
+
+func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithEcsRamRole(regionId, roleName)
 	return
 }
 
@@ -307,16 +319,14 @@ func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, se
 	return
 }
 
-func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
-	client = &Client{}
-	err = client.InitWithStsRoleNameOnEcs(regionId, roleName)
-	return
+// Deprecated: Use NewClientWithRamRoleArn in this package instead.
+func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	return NewClientWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 }
 
-func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
-	client = &Client{}
-	err = client.InitWithStsRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
-	return
+// Deprecated: Use NewClientWithEcsRamRole in this package instead.
+func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
+	return NewClientWithEcsRamRole(regionId, roleName)
 }
 
 func (client *Client) ProcessCommonRequest(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {

@@ -38,7 +38,6 @@ func (client *Client) CreateSQLDiagnosisWithChan(request *CreateSQLDiagnosisRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

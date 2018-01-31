@@ -38,7 +38,6 @@ func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

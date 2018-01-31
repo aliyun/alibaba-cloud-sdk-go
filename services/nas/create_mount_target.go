@@ -38,7 +38,6 @@ func (client *Client) CreateMountTargetWithChan(request *CreateMountTargetReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

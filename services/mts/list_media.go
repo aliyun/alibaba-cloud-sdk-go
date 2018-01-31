@@ -38,7 +38,6 @@ func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *List
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback 
 
 type ListMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	To                   string           `position:"Query" name:"To"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	From                 string           `position:"Query" name:"From"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
-	From                 string           `position:"Query" name:"From"`
-	To                   string           `position:"Query" name:"To"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 }
 
 type ListMediaResponse struct {

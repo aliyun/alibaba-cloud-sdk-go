@@ -38,7 +38,6 @@ func (client *Client) CreatePhysicalConnectionWithChan(request *CreatePhysicalCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,22 +67,22 @@ func (client *Client) CreatePhysicalConnectionWithCallback(request *CreatePhysic
 
 type CreatePhysicalConnectionRequest struct {
 	*requests.RpcRequest
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	UserCidr                      string           `position:"Query" name:"UserCidr"`
 	AccessPointId                 string           `position:"Query" name:"AccessPointId"`
 	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
-	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
-	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PortType                      string           `position:"Query" name:"PortType"`
-	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
-	Description                   string           `position:"Query" name:"Description"`
-	Type                          string           `position:"Query" name:"Type"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	Type                          string           `position:"Query" name:"Type"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
 	LineOperator                  string           `position:"Query" name:"LineOperator"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description                   string           `position:"Query" name:"Description"`
+	PortType                      string           `position:"Query" name:"PortType"`
 	Name                          string           `position:"Query" name:"Name"`
-	UserCidr                      string           `position:"Query" name:"UserCidr"`
+	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreatePhysicalConnectionResponse struct {

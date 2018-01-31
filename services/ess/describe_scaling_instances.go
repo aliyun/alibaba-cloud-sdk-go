@@ -38,7 +38,6 @@ func (client *Client) DescribeScalingInstancesWithChan(request *DescribeScalingI
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

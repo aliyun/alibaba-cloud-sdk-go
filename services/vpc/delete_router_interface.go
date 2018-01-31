@@ -38,7 +38,6 @@ func (client *Client) DeleteRouterInterfaceWithChan(request *DeleteRouterInterfa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

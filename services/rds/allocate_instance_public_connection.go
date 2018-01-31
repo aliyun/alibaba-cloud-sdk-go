@@ -38,7 +38,6 @@ func (client *Client) AllocateInstancePublicConnectionWithChan(request *Allocate
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

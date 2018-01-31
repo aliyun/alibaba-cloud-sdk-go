@@ -38,7 +38,6 @@ func (client *Client) ImportDataFromDatabaseWithChan(request *ImportDataFromData
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

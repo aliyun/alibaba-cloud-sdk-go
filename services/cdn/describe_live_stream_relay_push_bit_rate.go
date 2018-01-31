@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithChan(request *Descri
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

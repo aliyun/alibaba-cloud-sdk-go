@@ -38,7 +38,6 @@ func (client *Client) SetVServerGroupAttributeWithChan(request *SetVServerGroupA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

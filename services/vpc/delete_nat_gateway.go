@@ -38,7 +38,6 @@ func (client *Client) DeleteNatGatewayWithChan(request *DeleteNatGatewayRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

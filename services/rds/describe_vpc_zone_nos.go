@@ -38,7 +38,6 @@ func (client *Client) DescribeVpcZoneNosWithChan(request *DescribeVpcZoneNosRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) AddVServerGroupBackendServersWithChan(request *AddVServerG
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

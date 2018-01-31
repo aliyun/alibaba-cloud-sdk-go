@@ -38,7 +38,6 @@ func (client *Client) ActivateRouterInterfaceWithChan(request *ActivateRouterInt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) ActivateRouterInterfaceWithCallback(request *ActivateRoute
 
 type ActivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ActivateRouterInterfaceResponse struct {

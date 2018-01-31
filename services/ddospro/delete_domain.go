@@ -33,8 +33,11 @@ func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteDomain(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,8 +67,8 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 
 type DeleteDomainRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Domain          string           `position:"Query" name:"Domain"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type DeleteDomainResponse struct {

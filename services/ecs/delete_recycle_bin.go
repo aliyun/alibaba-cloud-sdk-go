@@ -38,7 +38,6 @@ func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +67,8 @@ func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequ
 
 type DeleteRecycleBinRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceIds          string           `position:"Query" name:"resourceIds"`

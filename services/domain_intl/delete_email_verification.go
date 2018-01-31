@@ -38,7 +38,6 @@ func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerifi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

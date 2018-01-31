@@ -38,7 +38,6 @@ func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

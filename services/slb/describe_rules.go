@@ -38,7 +38,6 @@ func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

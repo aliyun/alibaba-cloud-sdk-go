@@ -38,7 +38,6 @@ func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCatego
 
 type UpdateMediaCategoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
 }
 
 type UpdateMediaCategoryResponse struct {

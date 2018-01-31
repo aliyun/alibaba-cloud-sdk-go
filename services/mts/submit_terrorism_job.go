@@ -38,7 +38,6 @@ func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJob
 
 type SubmitTerrorismJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
 }
 
 type SubmitTerrorismJobResponse struct {

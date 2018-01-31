@@ -38,7 +38,6 @@ func (client *Client) ResendEmailVerificationWithChan(request *ResendEmailVerifi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreateCommandWithChan(request *CreateCommandRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,16 +67,16 @@ func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, c
 
 type CreateCommandRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	WorkingDir           string           `position:"Query" name:"WorkingDir"`
-	Description          string           `position:"Query" name:"Description"`
 	Type                 string           `position:"Query" name:"Type"`
-	CommandContent       string           `position:"Query" name:"CommandContent"`
-	Timeout              requests.Integer `position:"Query" name:"Timeout"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Description          string           `position:"Query" name:"Description"`
 	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommandContent       string           `position:"Query" name:"CommandContent"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Timeout              requests.Integer `position:"Query" name:"Timeout"`
 }
 
 type CreateCommandResponse struct {

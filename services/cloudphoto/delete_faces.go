@@ -38,7 +38,6 @@ func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

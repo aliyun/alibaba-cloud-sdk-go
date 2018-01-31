@@ -38,7 +38,6 @@ func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

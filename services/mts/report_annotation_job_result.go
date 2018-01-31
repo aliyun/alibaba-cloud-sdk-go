@@ -38,7 +38,6 @@ func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotatio
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -69,12 +68,12 @@ func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnot
 type ReportAnnotationJobResultRequest struct {
 	*requests.RpcRequest
 	Annotation           string           `position:"Query" name:"Annotation"`
-	JobId                string           `position:"Query" name:"JobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Details              string           `position:"Query" name:"Details"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportAnnotationJobResultResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

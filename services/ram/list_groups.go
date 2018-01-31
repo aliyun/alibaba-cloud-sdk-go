@@ -38,7 +38,6 @@ func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *Li
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainUpstreamOfCenterWithChan(request *DescribeDo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

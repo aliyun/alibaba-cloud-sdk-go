@@ -38,7 +38,6 @@ func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

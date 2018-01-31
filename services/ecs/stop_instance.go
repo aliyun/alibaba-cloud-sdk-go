@@ -38,7 +38,6 @@ func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, cal
 
 type StopInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConfirmStop          requests.Boolean `position:"Query" name:"ConfirmStop"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	StoppedMode          string           `position:"Query" name:"StoppedMode"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StoppedMode          string           `position:"Query" name:"StoppedMode"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type StopInstanceResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMa
 
 type DeleteWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteWaterMarkTemplateResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) ListSkillGroupsWithChan(request *ListSkillGroupsRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

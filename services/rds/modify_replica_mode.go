@@ -38,7 +38,6 @@ func (client *Client) ModifyReplicaModeWithChan(request *ModifyReplicaModeReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

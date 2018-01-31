@@ -33,8 +33,11 @@ func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateAlarm(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,22 +67,22 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	Webhook            string           `position:"Query" name:"Webhook"`
-	ContactGroups      string           `position:"Query" name:"ContactGroups"`
 	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	Threshold          string           `position:"Query" name:"Threshold"`
-	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	Name               string           `position:"Query" name:"Name"`
-	Namespace          string           `position:"Query" name:"Namespace"`
-	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
-	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
-	MetricName         string           `position:"Query" name:"MetricName"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
 	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	Dimensions         string           `position:"Query" name:"Dimensions"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	Namespace          string           `position:"Query" name:"Namespace"`
 	Statistics         string           `position:"Query" name:"Statistics"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	MetricName         string           `position:"Query" name:"MetricName"`
+	Webhook            string           `position:"Query" name:"Webhook"`
+	Name               string           `position:"Query" name:"Name"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	Dimensions         string           `position:"Query" name:"Dimensions"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type CreateAlarmResponse struct {

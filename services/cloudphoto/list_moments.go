@@ -38,7 +38,6 @@ func (client *Client) ListMomentsWithChan(request *ListMomentsRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

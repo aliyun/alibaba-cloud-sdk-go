@@ -38,7 +38,6 @@ func (client *Client) QueryDomainListWithChan(request *QueryDomainListRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

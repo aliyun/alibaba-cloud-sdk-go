@@ -38,7 +38,6 @@ func (client *Client) StartMixStreamsServiceWithChan(request *StartMixStreamsSer
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

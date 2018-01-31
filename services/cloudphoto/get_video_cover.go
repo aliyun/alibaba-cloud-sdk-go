@@ -38,7 +38,6 @@ func (client *Client) GetVideoCoverWithChan(request *GetVideoCoverRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

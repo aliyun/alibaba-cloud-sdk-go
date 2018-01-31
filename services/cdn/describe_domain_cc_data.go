@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainCCDataWithChan(request *DescribeDomainCCData
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

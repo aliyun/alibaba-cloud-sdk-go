@@ -38,7 +38,6 @@ func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperat
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

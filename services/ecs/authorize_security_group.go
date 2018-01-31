@@ -38,7 +38,6 @@ func (client *Client) AuthorizeSecurityGroupWithChan(request *AuthorizeSecurityG
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,24 +67,24 @@ func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecur
 
 type AuthorizeSecurityGroupRequest struct {
 	*requests.RpcRequest
-	NicType                 string           `position:"Query" name:"NicType"`
+	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
+	PortRange               string           `position:"Query" name:"PortRange"`
+	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description             string           `position:"Query" name:"Description"`
+	Priority                string           `position:"Query" name:"Priority"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	SecurityGroupId         string           `position:"Query" name:"SecurityGroupId"`
-	Description             string           `position:"Query" name:"Description"`
-	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
-	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
-	Policy                  string           `position:"Query" name:"Policy"`
-	PortRange               string           `position:"Query" name:"PortRange"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	IpProtocol              string           `position:"Query" name:"IpProtocol"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	SourceCidrIp            string           `position:"Query" name:"SourceCidrIp"`
+	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Priority                string           `position:"Query" name:"Priority"`
-	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
+	IpProtocol              string           `position:"Query" name:"IpProtocol"`
 	SourceGroupId           string           `position:"Query" name:"SourceGroupId"`
+	NicType                 string           `position:"Query" name:"NicType"`
+	Policy                  string           `position:"Query" name:"Policy"`
+	SourceCidrIp            string           `position:"Query" name:"SourceCidrIp"`
 }
 
 type AuthorizeSecurityGroupResponse struct {

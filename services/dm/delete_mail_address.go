@@ -38,7 +38,6 @@ func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -33,8 +33,11 @@ func (client *Client) HostGetsWithChan(request *HostGetsRequest) (<-chan *HostGe
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.HostGets(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback fu
 
 type HostGetsRequest struct {
 	*requests.RpcRequest
-	Query     string           `position:"Query" name:"Query"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	Query     string           `position:"Query" name:"Query"`
 	QueryType string           `position:"Query" name:"QueryType"`
 }
 

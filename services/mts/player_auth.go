@@ -38,7 +38,6 @@ func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *Pl
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,8 +67,8 @@ func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callbac
 
 type PlayerAuthRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 }

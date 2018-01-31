@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvData
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

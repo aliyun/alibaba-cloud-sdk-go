@@ -33,8 +33,11 @@ func (client *Client) DeleteCustomMetricWithChan(request *DeleteCustomMetricRequ
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DeleteCustomMetric(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,10 +67,10 @@ func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetric
 
 type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
 	MetricName string `position:"Query" name:"MetricName"`
-	UUID       string `position:"Query" name:"UUID"`
 	Md5        string `position:"Query" name:"Md5"`
+	UUID       string `position:"Query" name:"UUID"`
+	GroupId    string `position:"Query" name:"GroupId"`
 }
 
 type DeleteCustomMetricResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) ModifyAccountNotificationWithChan(request *ModifyAccountNo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

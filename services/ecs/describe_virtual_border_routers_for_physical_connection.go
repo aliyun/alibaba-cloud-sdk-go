@@ -38,7 +38,6 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithChan(
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithCallb
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
-	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
 	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
+	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
+	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {

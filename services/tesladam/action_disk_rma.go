@@ -33,8 +33,11 @@ func (client *Client) ActionDiskRmaWithChan(request *ActionDiskRmaRequest) (<-ch
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ActionDiskRma(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -65,12 +68,12 @@ func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, c
 type ActionDiskRmaRequest struct {
 	*requests.RpcRequest
 	DiskName    string `position:"Query" name:"DiskName"`
-	ExecutionId string `position:"Query" name:"ExecutionId"`
 	DiskSlot    string `position:"Query" name:"DiskSlot"`
-	Hostname    string `position:"Query" name:"Hostname"`
 	DiskMount   string `position:"Query" name:"DiskMount"`
-	DiskReason  string `position:"Query" name:"DiskReason"`
+	ExecutionId string `position:"Query" name:"ExecutionId"`
+	Hostname    string `position:"Query" name:"Hostname"`
 	DiskSn      string `position:"Query" name:"DiskSn"`
+	DiskReason  string `position:"Query" name:"DiskReason"`
 }
 
 type ActionDiskRmaResponse struct {

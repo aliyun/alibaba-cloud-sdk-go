@@ -38,7 +38,6 @@ func (client *Client) RemovePhoneNumberWithChan(request *RemovePhoneNumberReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

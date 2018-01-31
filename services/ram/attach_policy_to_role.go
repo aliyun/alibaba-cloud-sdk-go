@@ -38,7 +38,6 @@ func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

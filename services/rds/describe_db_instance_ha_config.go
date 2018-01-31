@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceHAConfigWithChan(request *DescribeDBInst
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

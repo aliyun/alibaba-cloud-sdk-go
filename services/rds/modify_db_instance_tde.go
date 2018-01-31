@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

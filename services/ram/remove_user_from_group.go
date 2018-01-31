@@ -38,7 +38,6 @@ func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

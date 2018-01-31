@@ -38,7 +38,6 @@ func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoWithChan(request *SaveB
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

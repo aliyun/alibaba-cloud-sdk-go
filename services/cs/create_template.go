@@ -38,7 +38,6 @@ func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

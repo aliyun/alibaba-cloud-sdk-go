@@ -33,8 +33,11 @@ func (client *Client) EnableAlarmWithChan(request *EnableAlarmRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.EnableAlarm(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,8 +67,8 @@ func (client *Client) EnableAlarmWithCallback(request *EnableAlarmRequest, callb
 
 type EnableAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Id             string `position:"Query" name:"Id"`
+	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 }
 
 type EnableAlarmResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) UpdateDomainTrackNameWithChan(request *UpdateDomainTrackNa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

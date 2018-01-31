@@ -38,7 +38,6 @@ func (client *Client) QueryMediaInfoJobListWithChan(request *QueryMediaInfoJobLi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) QueryMediaInfoJobListWithCallback(request *QueryMediaInfoJ
 
 type QueryMediaInfoJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaInfoJobIds      string           `position:"Query" name:"MediaInfoJobIds"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaInfoJobIds      string           `position:"Query" name:"MediaInfoJobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

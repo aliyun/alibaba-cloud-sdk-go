@@ -38,7 +38,6 @@ func (client *Client) DeleteBandwidthPackageWithChan(request *DeleteBandwidthPac
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

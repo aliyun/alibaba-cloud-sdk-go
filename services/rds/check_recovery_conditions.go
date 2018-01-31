@@ -38,7 +38,6 @@ func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryCond
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

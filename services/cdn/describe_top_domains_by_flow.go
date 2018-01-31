@@ -38,7 +38,6 @@ func (client *Client) DescribeTopDomainsByFlowWithChan(request *DescribeTopDomai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificati
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

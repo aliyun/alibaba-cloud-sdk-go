@@ -38,7 +38,6 @@ func (client *Client) UpdateMediaPublishStateWithChan(request *UpdateMediaPublis
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) UpdateMediaPublishStateWithCallback(request *UpdateMediaPu
 
 type UpdateMediaPublishStateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 	Publish              requests.Boolean `position:"Query" name:"Publish"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
 }
 
 type UpdateMediaPublishStateResponse struct {

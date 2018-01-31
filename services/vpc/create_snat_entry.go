@@ -38,7 +38,6 @@ func (client *Client) CreateSnatEntryWithChan(request *CreateSnatEntryRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

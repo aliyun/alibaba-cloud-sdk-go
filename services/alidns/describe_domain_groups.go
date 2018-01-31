@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainGroupsWithChan(request *DescribeDomainGroups
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

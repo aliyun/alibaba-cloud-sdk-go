@@ -38,7 +38,6 @@ func (client *Client) ModifyCommandWithChan(request *ModifyCommandRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,16 +67,16 @@ func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, c
 
 type ModifyCommandRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	WorkingDir           string           `position:"Query" name:"WorkingDir"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CommandId            string           `position:"Query" name:"CommandId"`
 	CommandContent       string           `position:"Query" name:"CommandContent"`
-	Timeout              requests.Integer `position:"Query" name:"Timeout"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
+	Timeout              requests.Integer `position:"Query" name:"Timeout"`
 }
 
 type ModifyCommandResponse struct {

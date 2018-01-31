@@ -38,7 +38,6 @@ func (client *Client) ModifyClusterNameWithChan(request *ModifyClusterNameReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

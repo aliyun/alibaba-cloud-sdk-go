@@ -38,7 +38,6 @@ func (client *Client) GetIpfilterListWithChan(request *GetIpfilterListRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

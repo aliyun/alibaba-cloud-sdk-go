@@ -38,7 +38,6 @@ func (client *Client) SetRemoteReqAuthConfigWithChan(request *SetRemoteReqAuthCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithChan(request *SaveBa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

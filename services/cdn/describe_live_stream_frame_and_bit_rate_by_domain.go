@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithChan(request 
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

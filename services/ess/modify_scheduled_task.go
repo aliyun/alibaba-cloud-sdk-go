@@ -38,7 +38,6 @@ func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

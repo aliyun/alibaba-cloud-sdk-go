@@ -38,7 +38,6 @@ func (client *Client) CreateGlobalAccelerationInstanceWithChan(request *CreateGl
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

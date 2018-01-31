@@ -95,7 +95,6 @@ func (request *RoaRequest) BuildUrl() string {
 	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
 }
 
-
 func (request *RoaRequest) addPathParam(key, value string) {
 	request.PathParams[key] = value
 }

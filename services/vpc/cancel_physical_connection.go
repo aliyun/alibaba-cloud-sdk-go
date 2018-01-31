@@ -38,7 +38,6 @@ func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

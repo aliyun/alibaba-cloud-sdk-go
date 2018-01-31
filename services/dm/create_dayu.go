@@ -38,7 +38,6 @@ func (client *Client) CreateDayuWithChan(request *CreateDayuRequest) (<-chan *Cr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

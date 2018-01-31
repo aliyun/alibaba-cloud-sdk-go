@@ -38,7 +38,6 @@ func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

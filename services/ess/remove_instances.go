@@ -38,7 +38,6 @@ func (client *Client) RemoveInstancesWithChan(request *RemoveInstancesRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

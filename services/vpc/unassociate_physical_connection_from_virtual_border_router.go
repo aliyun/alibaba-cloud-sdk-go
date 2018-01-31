@@ -38,7 +38,6 @@ func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithCh
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

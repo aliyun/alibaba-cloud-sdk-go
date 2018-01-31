@@ -38,7 +38,6 @@ func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImports
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

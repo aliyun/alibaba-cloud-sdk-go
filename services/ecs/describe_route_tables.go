@@ -38,7 +38,6 @@ func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,17 +67,17 @@ func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTabl
 
 type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
-	RouterType           string           `position:"Query" name:"RouterType"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
-	VRouterId            string           `position:"Query" name:"VRouterId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	VRouterId            string           `position:"Query" name:"VRouterId"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeRouteTablesResponse struct {

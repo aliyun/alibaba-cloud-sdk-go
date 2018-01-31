@@ -38,7 +38,6 @@ func (client *Client) CreateSignWithChan(request *CreateSignRequest) (<-chan *Cr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

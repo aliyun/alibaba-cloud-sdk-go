@@ -38,7 +38,6 @@ func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTyp
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -91,6 +90,7 @@ type DescribeInstanceTypesResponse struct {
 			GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
 			InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
 			BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
+			EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
 		} `json:"InstanceType" xml:"InstanceType"`
 	} `json:"InstanceTypes" xml:"InstanceTypes"`
 }

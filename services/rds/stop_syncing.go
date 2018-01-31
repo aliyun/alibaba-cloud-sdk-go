@@ -38,7 +38,6 @@ func (client *Client) StopSyncingWithChan(request *StopSyncingRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

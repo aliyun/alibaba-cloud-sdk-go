@@ -38,7 +38,6 @@ func (client *Client) CreateMasterSlaveServerGroupWithChan(request *CreateMaster
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *Sav
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

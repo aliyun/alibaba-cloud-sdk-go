@@ -38,7 +38,6 @@ func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *Ge
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,13 @@ func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callbac
 
 type GetLicenseRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	Data                 string `position:"Query" name:"Data"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
+	Data                 string `position:"Query" name:"Data"`
+	MediaId              string `position:"Query" name:"MediaId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
 }
 
 type GetLicenseResponse struct {

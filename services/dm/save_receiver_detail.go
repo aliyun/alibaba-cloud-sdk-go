@@ -38,7 +38,6 @@ func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

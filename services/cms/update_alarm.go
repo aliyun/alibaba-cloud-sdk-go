@@ -33,8 +33,11 @@ func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.UpdateAlarm(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,20 +67,20 @@ func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callb
 
 type UpdateAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	Webhook            string           `position:"Query" name:"Webhook"`
-	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
 	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	Threshold          string           `position:"Query" name:"Threshold"`
 	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	Statistics         string           `position:"Query" name:"Statistics"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	Id                 string           `position:"Query" name:"Id"`
+	Webhook            string           `position:"Query" name:"Webhook"`
 	Name               string           `position:"Query" name:"Name"`
 	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
 	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
-	Id                 string           `position:"Query" name:"Id"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	Statistics         string           `position:"Query" name:"Statistics"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
 }
 
 type UpdateAlarmResponse struct {

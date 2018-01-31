@@ -33,8 +33,11 @@ func (client *Client) DescribeIpTrafficWithChan(request *DescribeIpTrafficReques
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.DescribeIpTraffic(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) DescribeIpTrafficWithCallback(request *DescribeIpTrafficRe
 
 type DescribeIpTrafficRequest struct {
 	*requests.RpcRequest
-	Ip              string           `position:"Query" name:"Ip"`
 	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	Ip              string           `position:"Query" name:"Ip"`
 }
 
 type DescribeIpTrafficResponse struct {

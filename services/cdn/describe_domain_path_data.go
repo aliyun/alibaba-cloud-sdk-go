@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainPathDataWithChan(request *DescribeDomainPath
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

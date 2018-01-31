@@ -38,7 +38,6 @@ func (client *Client) ListPhoneNumbersWithChan(request *ListPhoneNumbersRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

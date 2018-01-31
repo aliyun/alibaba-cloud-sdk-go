@@ -38,7 +38,6 @@ func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

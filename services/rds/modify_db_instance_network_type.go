@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInsta
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

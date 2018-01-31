@@ -38,7 +38,6 @@ func (client *Client) SenderStatisticsDetailByParamWithChan(request *SenderStati
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

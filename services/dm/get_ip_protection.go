@@ -38,7 +38,6 @@ func (client *Client) GetIpProtectionWithChan(request *GetIpProtectionRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

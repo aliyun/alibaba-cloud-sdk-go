@@ -38,7 +38,6 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *Sende
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

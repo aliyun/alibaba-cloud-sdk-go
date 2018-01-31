@@ -38,7 +38,6 @@ func (client *Client) ModifyNatGatewaySpecWithChan(request *ModifyNatGatewaySpec
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

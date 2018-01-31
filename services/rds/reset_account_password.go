@@ -38,7 +38,6 @@ func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPassword
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

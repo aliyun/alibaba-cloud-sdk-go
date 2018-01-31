@@ -38,7 +38,6 @@ func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGro
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

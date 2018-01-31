@@ -38,7 +38,6 @@ func (client *Client) CreateTransactionWithChan(request *CreateTransactionReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

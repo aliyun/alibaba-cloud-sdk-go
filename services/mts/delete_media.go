@@ -38,7 +38,6 @@ func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,11 +67,11 @@ func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callb
 
 type DeleteMediaRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaIds             string           `position:"Query" name:"MediaIds"`
 }
 
 type DeleteMediaResponse struct {

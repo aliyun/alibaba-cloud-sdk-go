@@ -38,7 +38,6 @@ func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,38 +67,39 @@ func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, cal
 
 type RunInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId             requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float                  `position:"Query" name:"SpotPriceLimit"`
-	HostName                    string                          `position:"Query" name:"HostName"`
-	Password                    string                          `position:"Query" name:"Password"`
-	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
-	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
-	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
-	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
-	InstanceName                string                          `position:"Query" name:"InstanceName"`
-	InternetChargeType          string                          `position:"Query" name:"InternetChargeType"`
-	ZoneId                      string                          `position:"Query" name:"ZoneId"`
-	InternetMaxBandwidthIn      requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
-	ImageId                     string                          `position:"Query" name:"ImageId"`
-	ClientToken                 string                          `position:"Query" name:"ClientToken"`
-	IoOptimized                 string                          `position:"Query" name:"IoOptimized"`
-	SecurityGroupId             string                          `position:"Query" name:"SecurityGroupId"`
-	InternetMaxBandwidthOut     requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
-	Description                 string                          `position:"Query" name:"Description"`
 	SystemDiskCategory          string                          `position:"Query" name:"SystemDisk.Category"`
-	UserData                    string                          `position:"Query" name:"UserData"`
+	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
+	ZoneId                      string                          `position:"Query" name:"ZoneId"`
+	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
+	Password                    string                          `position:"Query" name:"Password"`
 	InstanceType                string                          `position:"Query" name:"InstanceType"`
-	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
 	Amount                      requests.Integer                `position:"Query" name:"Amount"`
-	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
+	Description                 string                          `position:"Query" name:"Description"`
+	ResourceOwnerId             requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                string                          `position:"Query" name:"OwnerAccount"`
+	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
+	ClientToken                 string                          `position:"Query" name:"ClientToken"`
+	InternetChargeType          string                          `position:"Query" name:"InternetChargeType"`
+	SecurityGroupId             string                          `position:"Query" name:"SecurityGroupId"`
+	HostName                    string                          `position:"Query" name:"HostName"`
+	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
+	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
 	SystemDiskDiskName          string                          `position:"Query" name:"SystemDisk.DiskName"`
-	RamRoleName                 string                          `position:"Query" name:"RamRoleName"`
-	AutoReleaseTime             string                          `position:"Query" name:"AutoReleaseTime"`
-	DataDisk                    *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
+	IoOptimized                 string                          `position:"Query" name:"IoOptimized"`
+	InstanceName                string                          `position:"Query" name:"InstanceName"`
+	DryRun                      requests.Boolean                `position:"Query" name:"DryRun"`
+	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
+	UserData                    string                          `position:"Query" name:"UserData"`
+	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
 	SystemDiskSize              string                          `position:"Query" name:"SystemDisk.Size"`
+	DataDisk                    *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
+	InternetMaxBandwidthOut     requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
+	AutoReleaseTime             string                          `position:"Query" name:"AutoReleaseTime"`
+	ImageId                     string                          `position:"Query" name:"ImageId"`
+	RamRoleName                 string                          `position:"Query" name:"RamRoleName"`
+	InternetMaxBandwidthIn      requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
 	SystemDiskDescription       string                          `position:"Query" name:"SystemDisk.Description"`
 }
 

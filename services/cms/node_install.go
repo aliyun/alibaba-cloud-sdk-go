@@ -33,8 +33,11 @@ func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.NodeInstall(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 
 type NodeInstallRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	Force      requests.Boolean `position:"Query" name:"Force"`
 	UserId     string           `position:"Query" name:"UserId"`
+	Force      requests.Boolean `position:"Query" name:"Force"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 type NodeInstallResponse struct {

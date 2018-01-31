@@ -33,8 +33,11 @@ func (client *Client) ListDomainConfigWithChan(request *ListDomainConfigRequest)
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListDomainConfig(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,10 +67,10 @@ func (client *Client) ListDomainConfigWithCallback(request *ListDomainConfigRequ
 
 type ListDomainConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Domain          string           `position:"Query" name:"Domain"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	Domain          string           `position:"Query" name:"Domain"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type ListDomainConfigResponse struct {

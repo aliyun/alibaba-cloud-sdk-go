@@ -38,7 +38,6 @@ func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMed
 
 type RegisterMediaDetailPersonRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Images               string           `position:"Query" name:"Images"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Category             string           `position:"Query" name:"Category"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Images               string           `position:"Query" name:"Images"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PersonName           string           `position:"Query" name:"PersonName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RegisterMediaDetailPersonResponse struct {

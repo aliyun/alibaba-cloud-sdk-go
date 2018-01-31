@@ -38,7 +38,6 @@ func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

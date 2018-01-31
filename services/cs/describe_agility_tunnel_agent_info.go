@@ -38,7 +38,6 @@ func (client *Client) DescribeAgilityTunnelAgentInfoWithChan(request *DescribeAg
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

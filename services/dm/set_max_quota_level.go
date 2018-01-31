@@ -38,7 +38,6 @@ func (client *Client) SetMaxQuotaLevelWithChan(request *SetMaxQuotaLevelRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

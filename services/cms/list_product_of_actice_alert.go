@@ -33,8 +33,11 @@ func (client *Client) ListProductOfActiceAlertWithChan(request *ListProductOfAct
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListProductOfActiceAlert(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err

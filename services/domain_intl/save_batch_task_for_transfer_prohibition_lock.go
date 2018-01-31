@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForTransferProhibitionLockWithChan(request *S
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

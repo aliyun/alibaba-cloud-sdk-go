@@ -38,7 +38,6 @@ func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNam
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

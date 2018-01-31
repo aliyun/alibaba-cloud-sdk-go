@@ -38,7 +38,6 @@ func (client *Client) ModifyNatGatewayAttributeWithChan(request *ModifyNatGatewa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

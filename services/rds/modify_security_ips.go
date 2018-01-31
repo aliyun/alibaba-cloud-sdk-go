@@ -38,7 +38,6 @@ func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

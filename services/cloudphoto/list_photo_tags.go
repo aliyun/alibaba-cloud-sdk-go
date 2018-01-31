@@ -38,7 +38,6 @@ func (client *Client) ListPhotoTagsWithChan(request *ListPhotoTagsRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

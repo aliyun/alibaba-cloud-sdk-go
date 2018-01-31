@@ -38,7 +38,6 @@ func (client *Client) CreateDatabaseWithChan(request *CreateDatabaseRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

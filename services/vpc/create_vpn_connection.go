@@ -38,7 +38,6 @@ func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

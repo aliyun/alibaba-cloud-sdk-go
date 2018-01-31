@@ -38,7 +38,6 @@ func (client *Client) DescribeRouterInterfacesForGlobalWithChan(request *Describ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

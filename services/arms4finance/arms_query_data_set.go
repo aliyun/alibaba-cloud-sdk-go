@@ -38,7 +38,6 @@ func (client *Client) ARMSQueryDataSetWithChan(request *ARMSQueryDataSetRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

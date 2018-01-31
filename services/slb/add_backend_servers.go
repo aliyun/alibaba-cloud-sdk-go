@@ -38,7 +38,6 @@ func (client *Client) AddBackendServersWithChan(request *AddBackendServersReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

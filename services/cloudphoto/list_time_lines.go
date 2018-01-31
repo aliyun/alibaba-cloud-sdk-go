@@ -38,7 +38,6 @@ func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

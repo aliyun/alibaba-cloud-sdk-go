@@ -38,7 +38,6 @@ func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *Ca
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,10 +67,10 @@ func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callbac
 
 type CancelTaskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TaskId               string           `position:"Query" name:"TaskId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CancelTaskResponse struct {

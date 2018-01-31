@@ -38,7 +38,6 @@ func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitSnapshotJobResponse struct {
@@ -125,6 +124,7 @@ type SubmitSnapshotJobResponse struct {
 				Padding       string `json:"Padding" xml:"Padding"`
 				Color         string `json:"Color" xml:"Color"`
 				IsKeepCellPic string `json:"IsKeepCellPic" xml:"IsKeepCellPic"`
+				CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
 			} `json:"TileOut" xml:"TileOut"`
 		} `json:"SnapshotConfig" xml:"SnapshotConfig"`
 		MNSMessageResult struct {

@@ -38,7 +38,6 @@ func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRoute
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

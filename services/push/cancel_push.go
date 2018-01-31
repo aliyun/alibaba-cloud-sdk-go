@@ -67,8 +67,8 @@ func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callbac
 
 type CancelPushRequest struct {
 	*requests.RpcRequest
-	MessageId requests.Integer `position:"Query" name:"MessageId"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	MessageId requests.Integer `position:"Query" name:"MessageId"`
 }
 
 type CancelPushResponse struct {

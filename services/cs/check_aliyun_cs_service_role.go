@@ -38,7 +38,6 @@ func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSSer
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

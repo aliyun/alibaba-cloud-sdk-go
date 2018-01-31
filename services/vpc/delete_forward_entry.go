@@ -38,7 +38,6 @@ func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

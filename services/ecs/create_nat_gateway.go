@@ -38,7 +38,6 @@ func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string                              `position:"Query" name:"ClientToken"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
-	VpcId                string                              `position:"Query" name:"VpcId"`
-	Name                 string                              `position:"Query" name:"Name"`
-	Description          string                              `position:"Query" name:"Description"`
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
+	ClientToken          string                              `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	Description          string                              `position:"Query" name:"Description"`
+	Name                 string                              `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	VpcId                string                              `position:"Query" name:"VpcId"`
+	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 }
 
 type CreateNatGatewayBandwidthPackage struct {

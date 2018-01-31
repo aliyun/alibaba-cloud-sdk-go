@@ -38,7 +38,6 @@ func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGro
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

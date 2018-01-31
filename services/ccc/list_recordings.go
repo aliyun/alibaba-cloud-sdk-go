@@ -38,7 +38,6 @@ func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

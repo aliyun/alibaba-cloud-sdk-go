@@ -38,7 +38,6 @@ func (client *Client) CreatePhysicalConnectionNewWithChan(request *CreatePhysica
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

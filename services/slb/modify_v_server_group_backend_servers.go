@@ -38,7 +38,6 @@ func (client *Client) ModifyVServerGroupBackendServersWithChan(request *ModifyVS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

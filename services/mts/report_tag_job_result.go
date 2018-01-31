@@ -38,7 +38,6 @@ func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -69,12 +68,12 @@ func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResult
 type ReportTagJobResultRequest struct {
 	*requests.RpcRequest
 	Result               string           `position:"Query" name:"Result"`
-	JobId                string           `position:"Query" name:"JobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Tag                  string           `position:"Query" name:"Tag"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
 }
 
 type ReportTagJobResultResponse struct {

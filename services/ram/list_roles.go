@@ -38,7 +38,6 @@ func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *List
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

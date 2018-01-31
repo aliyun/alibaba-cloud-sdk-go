@@ -38,7 +38,6 @@ func (client *Client) CreateDiagnosticReportWithChan(request *CreateDiagnosticRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

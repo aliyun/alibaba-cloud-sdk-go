@@ -38,7 +38,6 @@ func (client *Client) DescribeVRoutersWithChan(request *DescribeVRoutersRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

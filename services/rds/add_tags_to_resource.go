@@ -38,7 +38,6 @@ func (client *Client) AddTagsToResourceWithChan(request *AddTagsToResourceReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

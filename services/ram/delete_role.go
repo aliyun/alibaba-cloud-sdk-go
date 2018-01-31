@@ -38,7 +38,6 @@ func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *De
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

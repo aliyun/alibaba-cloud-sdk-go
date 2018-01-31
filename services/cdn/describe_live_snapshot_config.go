@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

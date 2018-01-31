@@ -38,7 +38,6 @@ func (client *Client) AddUserToGroupWithChan(request *AddUserToGroupRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithChan(request *Descr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

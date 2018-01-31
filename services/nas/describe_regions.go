@@ -38,7 +38,6 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListene
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

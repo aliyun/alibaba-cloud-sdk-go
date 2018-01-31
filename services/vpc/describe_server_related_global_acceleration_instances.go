@@ -38,7 +38,6 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(r
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

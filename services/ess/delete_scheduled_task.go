@@ -38,7 +38,6 @@ func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

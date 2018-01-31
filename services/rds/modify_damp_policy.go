@@ -38,7 +38,6 @@ func (client *Client) ModifyDampPolicyWithChan(request *ModifyDampPolicyRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCust
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

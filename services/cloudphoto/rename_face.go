@@ -38,7 +38,6 @@ func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *Re
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

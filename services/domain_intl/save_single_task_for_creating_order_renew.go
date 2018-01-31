@@ -38,7 +38,6 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithChan(request *SaveS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

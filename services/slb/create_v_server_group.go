@@ -38,7 +38,6 @@ func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

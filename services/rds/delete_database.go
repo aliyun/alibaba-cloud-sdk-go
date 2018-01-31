@@ -38,7 +38,6 @@ func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

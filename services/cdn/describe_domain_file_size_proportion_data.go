@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithChan(request *Desc
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

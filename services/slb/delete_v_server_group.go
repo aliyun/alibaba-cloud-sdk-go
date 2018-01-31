@@ -38,7 +38,6 @@ func (client *Client) DeleteVServerGroupWithChan(request *DeleteVServerGroupRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

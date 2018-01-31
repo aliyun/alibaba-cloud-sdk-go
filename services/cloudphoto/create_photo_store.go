@@ -38,7 +38,6 @@ func (client *Client) CreatePhotoStoreWithChan(request *CreatePhotoStoreRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

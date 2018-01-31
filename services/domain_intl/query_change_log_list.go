@@ -38,7 +38,6 @@ func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

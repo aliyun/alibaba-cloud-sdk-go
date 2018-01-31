@@ -38,7 +38,6 @@ func (client *Client) SwitchDBInstanceHAWithChan(request *SwitchDBInstanceHARequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

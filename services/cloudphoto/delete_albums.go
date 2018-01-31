@@ -38,7 +38,6 @@ func (client *Client) DeleteAlbumsWithChan(request *DeleteAlbumsRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeNetworkInterfacesWithChan(request *DescribeNetwork
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,19 +67,19 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Type                 string           `position:"Query" name:"Type"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Type                 string           `position:"Query" name:"Type"`
 	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeNetworkInterfacesResponse struct {

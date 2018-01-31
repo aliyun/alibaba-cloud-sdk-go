@@ -38,7 +38,6 @@ func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

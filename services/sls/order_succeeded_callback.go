@@ -38,7 +38,6 @@ func (client *Client) OrderSucceededCallbackWithChan(request *OrderSucceededCall
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

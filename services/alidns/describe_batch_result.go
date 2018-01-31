@@ -38,7 +38,6 @@ func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCol
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

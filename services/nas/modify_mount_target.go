@@ -38,7 +38,6 @@ func (client *Client) ModifyMountTargetWithChan(request *ModifyMountTargetReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

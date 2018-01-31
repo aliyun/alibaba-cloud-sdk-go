@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBI
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

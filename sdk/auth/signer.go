@@ -36,25 +36,38 @@ type Signer interface {
 
 func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
 	switch instance := credential.(type) {
-	case *credentials.BaseCredential:
+	case *credentials.AccessKeyCredential:
 		{
-			signer, err = signers.NewSignerV1(instance)
+			signer, err = signers.NewAccessKeySigner(instance)
 		}
 	case *credentials.StsTokenCredential:
 		{
-			signer, err = signers.NewSignerSts(instance)
+			signer, err = signers.NewStsTokenSigner(instance)
 		}
-	case *credentials.StsRoleArnCredential:
+
+	case *credentials.RamRoleArnCredential:
 		{
-			signer, err = signers.NewSignerStsAssumeRole(instance, commonApi)
+			signer, err = signers.NewRamRoleArnSigner(instance, commonApi)
 		}
 	case *credentials.RsaKeyPairCredential:
 		{
 			signer, err = signers.NewSignerKeyPair(instance, commonApi)
 		}
-	case *credentials.StsRoleNameOnEcsCredential:
+	case *credentials.EcsRamRoleCredential:
 		{
-			signer, err = signers.NewSignereEcsInstance(instance, commonApi)
+			signer, err = signers.NewEcsRamRoleSigner(instance, commonApi)
+		}
+	case *credentials.BaseCredential: // deprecated user interface
+		{
+			signer, err = signers.NewAccessKeySigner(instance.ToAccessKeyCredential())
+		}
+	case *credentials.StsRoleArnCredential: // deprecated user interface
+		{
+			signer, err = signers.NewRamRoleArnSigner(instance.ToRamRoleArnCredential(), commonApi)
+		}
+	case *credentials.StsRoleNameOnEcsCredential: // deprecated user interface
+		{
+			signer, err = signers.NewEcsRamRoleSigner(instance.ToEcsRamRoleCredential(), commonApi)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnsupportedCredentialErrorMessage, reflect.TypeOf(credential))

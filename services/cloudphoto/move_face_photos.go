@@ -38,7 +38,6 @@ func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

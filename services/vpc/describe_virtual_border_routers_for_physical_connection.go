@@ -38,7 +38,6 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithChan(
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

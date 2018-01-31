@@ -38,7 +38,6 @@ func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

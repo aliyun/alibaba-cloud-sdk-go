@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceAttributeWithChan(request *DescribeDBIns
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

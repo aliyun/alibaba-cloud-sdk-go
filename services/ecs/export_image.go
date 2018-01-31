@@ -38,7 +38,6 @@ func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callb
 
 type ExportImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId              string           `position:"Query" name:"ImageId"`
+	ImageFormat          string           `position:"Query" name:"ImageFormat"`
+	RoleName             string           `position:"Query" name:"RoleName"`
 	OSSBucket            string           `position:"Query" name:"OSSBucket"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OSSPrefix            string           `position:"Query" name:"OSSPrefix"`
-	RoleName             string           `position:"Query" name:"RoleName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ImageFormat          string           `position:"Query" name:"ImageFormat"`
+	ImageId              string           `position:"Query" name:"ImageId"`
 }
 
 type ExportImageResponse struct {

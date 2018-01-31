@@ -38,7 +38,6 @@ func (client *Client) CreateCommonBandwidthPackageWithChan(request *CreateCommon
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

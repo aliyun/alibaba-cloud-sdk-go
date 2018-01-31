@@ -38,7 +38,6 @@ func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,27 +67,27 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
+	Tags                 string           `position:"Query" name:"Tags"`
 	AddressType          string           `position:"Query" name:"AddressType"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
 	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
 	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
-	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 }
 

@@ -38,7 +38,6 @@ func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

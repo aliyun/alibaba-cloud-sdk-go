@@ -38,7 +38,6 @@ func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

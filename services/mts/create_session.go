@@ -38,7 +38,6 @@ func (client *Client) CreateSessionWithChan(request *CreateSessionRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,18 +67,20 @@ func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, c
 
 type CreateSessionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 	EndUserId            string           `position:"Query" name:"EndUserId"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 }
 
 type CreateSessionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Session   string `json:"Session" xml:"Session"`
+	SessionId string `json:"SessionId" xml:"SessionId"`
+	Ticket    string `json:"Ticket" xml:"Ticket"`
 }
 
 func CreateCreateSessionRequest() (request *CreateSessionRequest) {

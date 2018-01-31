@@ -38,7 +38,6 @@ func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

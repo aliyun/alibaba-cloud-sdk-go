@@ -38,7 +38,6 @@ func (client *Client) DescribeApiVersionWithChan(request *DescribeApiVersionRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

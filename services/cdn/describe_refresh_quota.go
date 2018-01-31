@@ -38,7 +38,6 @@ func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuota
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

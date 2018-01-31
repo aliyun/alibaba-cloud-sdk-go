@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceIPArrayListWithChan(request *DescribeDBI
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttribute
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

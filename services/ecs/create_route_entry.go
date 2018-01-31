@@ -38,7 +38,6 @@ func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,16 +67,16 @@ func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequ
 
 type CreateRouteEntryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string                         `position:"Query" name:"ClientToken"`
-	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
-	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	NextHopType          string                         `position:"Query" name:"NextHopType"`
+	ClientToken          string                         `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
 	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
+	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
 }
 
 type CreateRouteEntryNextHopList struct {

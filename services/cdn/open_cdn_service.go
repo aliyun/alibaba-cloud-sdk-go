@@ -38,7 +38,6 @@ func (client *Client) OpenCdnServiceWithChan(request *OpenCdnServiceRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

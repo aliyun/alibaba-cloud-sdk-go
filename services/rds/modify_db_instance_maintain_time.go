@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithChan(request *ModifyDBInst
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

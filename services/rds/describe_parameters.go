@@ -38,7 +38,6 @@ func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

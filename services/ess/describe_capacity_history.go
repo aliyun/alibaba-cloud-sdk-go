@@ -38,7 +38,6 @@ func (client *Client) DescribeCapacityHistoryWithChan(request *DescribeCapacityH
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribePreCheckResultsWithChan(request *DescribePreCheckR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeReplicasWithChan(request *DescribeReplicasRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

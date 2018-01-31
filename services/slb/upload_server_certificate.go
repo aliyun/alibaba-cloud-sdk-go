@@ -38,7 +38,6 @@ func (client *Client) UploadServerCertificateWithChan(request *UploadServerCerti
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

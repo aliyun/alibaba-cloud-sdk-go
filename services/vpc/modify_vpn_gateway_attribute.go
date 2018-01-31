@@ -38,7 +38,6 @@ func (client *Client) ModifyVpnGatewayAttributeWithChan(request *ModifyVpnGatewa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

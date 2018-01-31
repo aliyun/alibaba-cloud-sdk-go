@@ -38,7 +38,6 @@ func (client *Client) EmailVerifiedWithChan(request *EmailVerifiedRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ListMediaWorkflowExecutionsWithChan(request *ListMediaWork
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) ListMediaWorkflowExecutionsWithCallback(request *ListMedia
 
 type ListMediaWorkflowExecutionsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InputFileURL         string           `position:"Query" name:"InputFileURL"`
-	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 type ListMediaWorkflowExecutionsResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

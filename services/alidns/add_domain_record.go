@@ -38,7 +38,6 @@ func (client *Client) AddDomainRecordWithChan(request *AddDomainRecordRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

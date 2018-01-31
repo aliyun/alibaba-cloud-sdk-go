@@ -38,7 +38,6 @@ func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

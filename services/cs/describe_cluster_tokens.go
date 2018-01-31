@@ -38,7 +38,6 @@ func (client *Client) DescribeClusterTokensWithChan(request *DescribeClusterToke
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

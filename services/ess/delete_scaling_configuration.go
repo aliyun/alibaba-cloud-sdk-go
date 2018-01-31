@@ -38,7 +38,6 @@ func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingC
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

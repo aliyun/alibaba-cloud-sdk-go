@@ -38,7 +38,6 @@ func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

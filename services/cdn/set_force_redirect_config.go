@@ -38,7 +38,6 @@ func (client *Client) SetForceRedirectConfigWithChan(request *SetForceRedirectCo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

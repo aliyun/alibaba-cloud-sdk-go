@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainRealTimeBpsDataWithChan(request *DescribeDom
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

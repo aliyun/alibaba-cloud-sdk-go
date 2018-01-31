@@ -38,7 +38,6 @@ func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,17 +67,17 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 
 type UpdateTemplateRequest struct {
 	*requests.RpcRequest
-	Container            string           `position:"Query" name:"Container"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MuxConfig            string           `position:"Query" name:"MuxConfig"`
-	Video                string           `position:"Query" name:"Video"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Audio                string           `position:"Query" name:"Audio"`
 	TemplateId           string           `position:"Query" name:"TemplateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	MuxConfig            string           `position:"Query" name:"MuxConfig"`
+	Container            string           `position:"Query" name:"Container"`
 	Name                 string           `position:"Query" name:"Name"`
 	TransConfig          string           `position:"Query" name:"TransConfig"`
-	Audio                string           `position:"Query" name:"Audio"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Video                string           `position:"Query" name:"Video"`
 }
 
 type UpdateTemplateResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) RemoveVServerGroupBackendServersWithChan(request *RemoveVS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

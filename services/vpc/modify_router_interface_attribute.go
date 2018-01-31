@@ -38,7 +38,6 @@ func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRout
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

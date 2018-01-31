@@ -38,7 +38,6 @@ func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeBackupsForSecurityWithChan(request *DescribeBackup
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

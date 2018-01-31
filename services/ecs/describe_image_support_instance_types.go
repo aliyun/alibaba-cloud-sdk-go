@@ -38,7 +38,6 @@ func (client *Client) DescribeImageSupportInstanceTypesWithChan(request *Describ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *Des
 
 type DescribeImageSupportInstanceTypesRequest struct {
 	*requests.RpcRequest
-	ActionType           string                                     `position:"Query" name:"ActionType"`
-	Filter               *[]DescribeImageSupportInstanceTypesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                           `position:"Query" name:"ResourceOwnerId"`
-	ImageId              string                                     `position:"Query" name:"ImageId"`
 	ResourceOwnerAccount string                                     `position:"Query" name:"ResourceOwnerAccount"`
+	ActionType           string                                     `position:"Query" name:"ActionType"`
+	ResourceOwnerId      requests.Integer                           `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer                           `position:"Query" name:"OwnerId"`
+	ImageId              string                                     `position:"Query" name:"ImageId"`
+	Filter               *[]DescribeImageSupportInstanceTypesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 type DescribeImageSupportInstanceTypesFilter struct {

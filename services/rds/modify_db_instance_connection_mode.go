@@ -38,7 +38,6 @@ func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBIn
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

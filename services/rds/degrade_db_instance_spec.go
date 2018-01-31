@@ -38,7 +38,6 @@ func (client *Client) DegradeDBInstanceSpecWithChan(request *DegradeDBInstanceSp
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

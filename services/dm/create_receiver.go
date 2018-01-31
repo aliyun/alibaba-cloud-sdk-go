@@ -38,7 +38,6 @@ func (client *Client) CreateReceiverWithChan(request *CreateReceiverRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

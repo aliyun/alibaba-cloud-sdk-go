@@ -38,7 +38,6 @@ func (client *Client) ListMomentPhotosWithChan(request *ListMomentPhotosRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

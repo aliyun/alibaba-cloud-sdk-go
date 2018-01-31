@@ -38,7 +38,6 @@ func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *Relea
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

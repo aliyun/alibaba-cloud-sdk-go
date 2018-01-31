@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveSt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

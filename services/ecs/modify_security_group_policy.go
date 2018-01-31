@@ -38,7 +38,6 @@ func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityG
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecur
 
 type ModifySecurityGroupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 }
 

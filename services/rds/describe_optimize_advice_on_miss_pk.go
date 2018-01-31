@@ -38,7 +38,6 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOp
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

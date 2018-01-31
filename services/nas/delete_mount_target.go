@@ -38,7 +38,6 @@ func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

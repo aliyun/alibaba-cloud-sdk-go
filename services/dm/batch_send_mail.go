@@ -38,7 +38,6 @@ func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

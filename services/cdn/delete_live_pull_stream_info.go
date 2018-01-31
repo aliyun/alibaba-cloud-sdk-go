@@ -38,7 +38,6 @@ func (client *Client) DeleteLivePullStreamInfoWithChan(request *DeleteLivePullSt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

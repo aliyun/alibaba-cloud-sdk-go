@@ -38,7 +38,6 @@ func (client *Client) DescribeCdnMonitorDataWithChan(request *DescribeCdnMonitor
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

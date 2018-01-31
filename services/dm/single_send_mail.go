@@ -38,7 +38,6 @@ func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

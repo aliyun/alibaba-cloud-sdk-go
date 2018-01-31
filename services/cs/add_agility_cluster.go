@@ -38,7 +38,6 @@ func (client *Client) AddAgilityClusterWithChan(request *AddAgilityClusterReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

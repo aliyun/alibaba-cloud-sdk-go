@@ -38,7 +38,6 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithChan(request *ModifyP
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

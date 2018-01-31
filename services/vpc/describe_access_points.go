@@ -38,7 +38,6 @@ func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPoints
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

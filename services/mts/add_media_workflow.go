@@ -38,7 +38,6 @@ func (client *Client) AddMediaWorkflowWithChan(request *AddMediaWorkflowRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequ
 
 type AddMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Topology             string           `position:"Query" name:"Topology"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	Name                 string           `position:"Query" name:"Name"`
+	Topology             string           `position:"Query" name:"Topology"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddMediaWorkflowResponse struct {

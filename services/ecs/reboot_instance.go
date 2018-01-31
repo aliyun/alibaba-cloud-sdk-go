@@ -38,7 +38,6 @@ func (client *Client) RebootInstanceWithChan(request *RebootInstanceRequest) (<-
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type RebootInstanceResponse struct {

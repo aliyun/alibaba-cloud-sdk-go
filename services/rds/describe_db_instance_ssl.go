@@ -38,7 +38,6 @@ func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

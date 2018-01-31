@@ -38,7 +38,6 @@ func (client *Client) SetBackendServersWithChan(request *SetBackendServersReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

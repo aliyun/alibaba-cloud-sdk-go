@@ -38,7 +38,6 @@ func (client *Client) ResetClusterNodeWithChan(request *ResetClusterNodeRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

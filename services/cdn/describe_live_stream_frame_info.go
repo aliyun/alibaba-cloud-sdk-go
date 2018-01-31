@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamFrameInfoWithChan(request *DescribeLiveS
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

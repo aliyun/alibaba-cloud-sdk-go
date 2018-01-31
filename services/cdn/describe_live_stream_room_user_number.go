@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamRoomUserNumberWithChan(request *Describe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

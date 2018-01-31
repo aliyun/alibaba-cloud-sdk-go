@@ -38,7 +38,6 @@ func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

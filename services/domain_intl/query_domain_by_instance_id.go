@@ -38,7 +38,6 @@ func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInst
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

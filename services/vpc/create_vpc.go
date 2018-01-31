@@ -38,7 +38,6 @@ func (client *Client) CreateVpcWithChan(request *CreateVpcRequest) (<-chan *Crea
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

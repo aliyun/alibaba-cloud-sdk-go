@@ -38,7 +38,6 @@ func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

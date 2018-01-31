@@ -38,7 +38,6 @@ func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGl
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

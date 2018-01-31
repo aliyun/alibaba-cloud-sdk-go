@@ -38,7 +38,6 @@ func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

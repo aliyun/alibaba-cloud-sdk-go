@@ -33,8 +33,11 @@ func (client *Client) ModifyCnameAutoStatusWithChan(request *ModifyCnameAutoStat
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ModifyCnameAutoStatus(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,9 +67,9 @@ func (client *Client) ModifyCnameAutoStatusWithCallback(request *ModifyCnameAuto
 
 type ModifyCnameAutoStatusRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Enable          requests.Boolean `position:"Query" name:"Enable"`
 	Domain          string           `position:"Query" name:"Domain"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type ModifyCnameAutoStatusResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) UpdateWaterMarkTemplateWithChan(request *UpdateWaterMarkTe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMa
 
 type UpdateWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
 	Config               string           `position:"Query" name:"Config"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateWaterMarkTemplateResponse struct {

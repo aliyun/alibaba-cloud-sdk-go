@@ -38,7 +38,6 @@ func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirt
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,12 +67,12 @@ func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *Describe
 
 type DescribeVirtualBorderRoutersRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeVirtualBorderRoutersFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
 	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
+	Filter               *[]DescribeVirtualBorderRoutersFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 type DescribeVirtualBorderRoutersFilter struct {

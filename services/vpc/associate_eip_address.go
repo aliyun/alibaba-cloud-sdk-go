@@ -38,7 +38,6 @@ func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

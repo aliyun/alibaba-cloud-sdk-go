@@ -38,7 +38,6 @@ func (client *Client) CreateAccessGroupWithChan(request *CreateAccessGroupReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

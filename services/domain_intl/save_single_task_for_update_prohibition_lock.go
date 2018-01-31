@@ -38,7 +38,6 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithChan(request *Sa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

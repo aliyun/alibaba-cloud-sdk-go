@@ -38,7 +38,6 @@ func (client *Client) SubmitJobsWithChan(request *SubmitJobsRequest) (<-chan *Su
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,15 +67,15 @@ func (client *Client) SubmitJobsWithCallback(request *SubmitJobsRequest, callbac
 
 type SubmitJobsRequest struct {
 	*requests.RpcRequest
-	Outputs              string           `position:"Query" name:"Outputs"`
 	Input                string           `position:"Query" name:"Input"`
-	OutputBucket         string           `position:"Query" name:"OutputBucket"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OutputLocation       string           `position:"Query" name:"OutputLocation"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OutputBucket         string           `position:"Query" name:"OutputBucket"`
+	OutputLocation       string           `position:"Query" name:"OutputLocation"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Outputs              string           `position:"Query" name:"Outputs"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitJobsResponse struct {

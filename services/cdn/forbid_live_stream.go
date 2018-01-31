@@ -38,7 +38,6 @@ func (client *Client) ForbidLiveStreamWithChan(request *ForbidLiveStreamRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

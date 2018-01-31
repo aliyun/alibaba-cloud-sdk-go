@@ -38,7 +38,6 @@ func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithChan(request *Sa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

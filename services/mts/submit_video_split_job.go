@@ -38,7 +38,6 @@ func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJ
 
 type SubmitVideoSplitJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	VideoSplitConfig     string           `position:"Query" name:"VideoSplitConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VideoSplitConfig     string           `position:"Query" name:"VideoSplitConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitVideoSplitJobResponse struct {

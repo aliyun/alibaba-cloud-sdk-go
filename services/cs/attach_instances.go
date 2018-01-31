@@ -38,7 +38,6 @@ func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

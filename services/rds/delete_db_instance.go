@@ -38,7 +38,6 @@ func (client *Client) DeleteDBInstanceWithChan(request *DeleteDBInstanceRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

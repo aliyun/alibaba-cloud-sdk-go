@@ -38,7 +38,6 @@ func (client *Client) DescribeOneMinuteDataWithChan(request *DescribeOneMinuteDa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

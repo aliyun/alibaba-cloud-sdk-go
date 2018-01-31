@@ -38,7 +38,6 @@ func (client *Client) ListJobWithChan(request *ListJobRequest) (<-chan *ListJobR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,16 +67,16 @@ func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func
 
 type ListJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
-	State                      string           `position:"Query" name:"State"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	State                      string           `position:"Query" name:"State"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 }
 
 type ListJobResponse struct {
@@ -218,7 +217,7 @@ type ListJobResponse struct {
 						ExtSubtitle []struct {
 							FontName string `json:"FontName" xml:"FontName"`
 							CharEnc  string `json:"CharEnc" xml:"CharEnc"`
-							Input3   struct {
+							Input1   struct {
 								Bucket   string `json:"Bucket" xml:"Bucket"`
 								Location string `json:"Location" xml:"Location"`
 								Object   string `json:"Object" xml:"Object"`
@@ -319,15 +318,15 @@ type ListJobResponse struct {
 					} `json:"Merge" xml:"Merge"`
 				} `json:"MergeList" xml:"MergeList"`
 				OpeningList struct {
-					Merge []struct {
+					Opening []struct {
 						OpenUrl string `json:"openUrl" xml:"openUrl"`
 						Start   string `json:"Start" xml:"Start"`
 						Width   string `json:"Width" xml:"Width"`
 						Height  string `json:"Height" xml:"Height"`
-					} `json:"Merge" xml:"Merge"`
+					} `json:"Opening" xml:"Opening"`
 				} `json:"OpeningList" xml:"OpeningList"`
 				TailSlateList struct {
-					Merge []struct {
+					TailSlate []struct {
 						TailUrl       string `json:"TailUrl" xml:"TailUrl"`
 						Start         string `json:"Start" xml:"Start"`
 						BlendDuration string `json:"BlendDuration" xml:"BlendDuration"`
@@ -335,7 +334,7 @@ type ListJobResponse struct {
 						Height        string `json:"Height" xml:"Height"`
 						IsMergeAudio  bool   `json:"IsMergeAudio" xml:"IsMergeAudio"`
 						BgColor       string `json:"BgColor" xml:"BgColor"`
-					} `json:"Merge" xml:"Merge"`
+					} `json:"TailSlate" xml:"TailSlate"`
 				} `json:"TailSlateList" xml:"TailSlateList"`
 			} `json:"Output" xml:"Output"`
 			MNSMessageResult struct {

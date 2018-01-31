@@ -38,7 +38,6 @@ func (client *Client) LoginDBInstancefromCloudDBAWithChan(request *LoginDBInstan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

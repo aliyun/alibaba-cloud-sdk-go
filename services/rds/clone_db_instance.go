@@ -38,7 +38,6 @@ func (client *Client) CloneDBInstanceWithChan(request *CloneDBInstanceRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDampPoliciesByCidWithChan(request *DescribeDampPol
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

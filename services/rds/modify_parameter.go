@@ -38,7 +38,6 @@ func (client *Client) ModifyParameterWithChan(request *ModifyParameterRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

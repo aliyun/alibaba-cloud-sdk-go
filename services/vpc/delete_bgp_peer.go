@@ -38,7 +38,6 @@ func (client *Client) DeleteBgpPeerWithChan(request *DeleteBgpPeerRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

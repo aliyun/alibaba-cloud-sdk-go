@@ -38,7 +38,6 @@ func (client *Client) CreateTempDBInstanceWithChan(request *CreateTempDBInstance
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

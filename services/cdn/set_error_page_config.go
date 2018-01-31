@@ -38,7 +38,6 @@ func (client *Client) SetErrorPageConfigWithChan(request *SetErrorPageConfigRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

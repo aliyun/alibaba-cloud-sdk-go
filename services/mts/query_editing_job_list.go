@@ -38,7 +38,6 @@ func (client *Client) QueryEditingJobListWithChan(request *QueryEditingJobListRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,9 +67,9 @@ func (client *Client) QueryEditingJobListWithCallback(request *QueryEditingJobLi
 
 type QueryEditingJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string           `position:"Query" name:"JobIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -300,10 +299,11 @@ type QueryEditingJobListResponse struct {
 					Timeline struct {
 						TimelineConfig struct {
 							TimelineConfigVideo struct {
-								Width   string `json:"Width" xml:"Width"`
-								Height  string `json:"Height" xml:"Height"`
-								BgColor string `json:"BgColor" xml:"BgColor"`
-								Fps     string `json:"Fps" xml:"Fps"`
+								Width       string `json:"Width" xml:"Width"`
+								Height      string `json:"Height" xml:"Height"`
+								BgColor     string `json:"BgColor" xml:"BgColor"`
+								Fps         string `json:"Fps" xml:"Fps"`
+								RenderRatio string `json:"RenderRatio" xml:"RenderRatio"`
 							} `json:"TimelineConfigVideo" xml:"TimelineConfigVideo"`
 							TimelineConfigAudio struct {
 								Samplerate    string `json:"Samplerate" xml:"Samplerate"`

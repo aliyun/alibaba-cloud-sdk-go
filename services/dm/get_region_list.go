@@ -38,7 +38,6 @@ func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeTasksWithChan(request *DescribeTasksRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,17 +67,17 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TaskIds              string           `position:"Query" name:"TaskIds"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	TaskStatus           string           `position:"Query" name:"TaskStatus"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TaskAction           string           `position:"Query" name:"TaskAction"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TaskIds              string           `position:"Query" name:"TaskIds"`
+	TaskStatus           string           `position:"Query" name:"TaskStatus"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeTasksResponse struct {

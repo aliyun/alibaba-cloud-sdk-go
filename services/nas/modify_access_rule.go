@@ -38,7 +38,6 @@ func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

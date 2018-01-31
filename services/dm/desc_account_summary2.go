@@ -38,7 +38,6 @@ func (client *Client) DescAccountSummary2WithChan(request *DescAccountSummary2Re
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

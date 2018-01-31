@@ -38,7 +38,6 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *Describe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

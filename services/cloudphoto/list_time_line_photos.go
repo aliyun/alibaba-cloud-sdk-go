@@ -38,7 +38,6 @@ func (client *Client) ListTimeLinePhotosWithChan(request *ListTimeLinePhotosRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

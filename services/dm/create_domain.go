@@ -38,7 +38,6 @@ func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

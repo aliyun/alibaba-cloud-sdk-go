@@ -38,7 +38,6 @@ func (client *Client) CallBackAgilityClusterWithChan(request *CallBackAgilityClu
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

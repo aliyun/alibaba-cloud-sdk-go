@@ -38,7 +38,6 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *Descr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DisableVpcClassicLinkWithChan(request *DisableVpcClassicLi
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

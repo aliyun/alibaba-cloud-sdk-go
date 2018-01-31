@@ -38,7 +38,6 @@ func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *Cr
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

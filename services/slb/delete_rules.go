@@ -38,7 +38,6 @@ func (client *Client) DeleteRulesWithChan(request *DeleteRulesRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

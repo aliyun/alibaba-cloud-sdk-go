@@ -38,7 +38,6 @@ func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

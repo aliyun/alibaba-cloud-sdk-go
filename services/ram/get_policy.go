@@ -38,7 +38,6 @@ func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetP
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

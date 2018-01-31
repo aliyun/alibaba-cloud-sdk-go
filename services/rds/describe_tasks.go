@@ -38,7 +38,6 @@ func (client *Client) DescribeTasksWithChan(request *DescribeTasksRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

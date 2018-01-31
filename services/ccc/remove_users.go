@@ -38,7 +38,6 @@ func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

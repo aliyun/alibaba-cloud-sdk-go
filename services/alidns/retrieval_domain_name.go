@@ -38,7 +38,6 @@ func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

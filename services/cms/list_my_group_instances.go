@@ -33,8 +33,11 @@ func (client *Client) ListMyGroupInstancesWithChan(request *ListMyGroupInstances
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.ListMyGroupInstances(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -65,10 +68,10 @@ func (client *Client) ListMyGroupInstancesWithCallback(request *ListMyGroupInsta
 type ListMyGroupInstancesRequest struct {
 	*requests.RpcRequest
 	Total      requests.Boolean `position:"Query" name:"Total"`
-	GroupId    requests.Integer `position:"Query" name:"GroupId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Category   string           `position:"Query" name:"Category"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	GroupId    requests.Integer `position:"Query" name:"GroupId"`
 }
 
 type ListMyGroupInstancesResponse struct {

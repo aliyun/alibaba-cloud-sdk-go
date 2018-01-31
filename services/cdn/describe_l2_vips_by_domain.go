@@ -38,7 +38,6 @@ func (client *Client) DescribeL2VipsByDomainWithChan(request *DescribeL2VipsByDo
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

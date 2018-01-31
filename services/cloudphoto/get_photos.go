@@ -38,7 +38,6 @@ func (client *Client) GetPhotosWithChan(request *GetPhotosRequest) (<-chan *GetP
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeInstancesFullStatusWithChan(request *DescribeInsta
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,21 +67,21 @@ func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeI
 
 type DescribeInstancesFullStatusRequest struct {
 	*requests.RpcRequest
-	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
-	InstanceId            *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
 	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
 	HealthStatus          string           `position:"Query" name:"HealthStatus"`
-	EventType             string           `position:"Query" name:"EventType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	Status                string           `position:"Query" name:"Status"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
+	EventType             string           `position:"Query" name:"EventType"`
+	InstanceId            *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 type DescribeInstancesFullStatusResponse struct {

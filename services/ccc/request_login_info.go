@@ -38,7 +38,6 @@ func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest)
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

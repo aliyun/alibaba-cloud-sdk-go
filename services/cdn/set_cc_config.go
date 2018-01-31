@@ -38,7 +38,6 @@ func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

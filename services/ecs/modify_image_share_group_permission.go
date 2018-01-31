@@ -38,7 +38,6 @@ func (client *Client) ModifyImageShareGroupPermissionWithChan(request *ModifyIma
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,13 +67,13 @@ func (client *Client) ModifyImageShareGroupPermissionWithCallback(request *Modif
 
 type ModifyImageShareGroupPermissionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId              string           `position:"Query" name:"ImageId"`
-	AddGroup1            string           `position:"Query" name:"AddGroup.1"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	RemoveGroup1         string           `position:"Query" name:"RemoveGroup.1"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AddGroup1            string           `position:"Query" name:"AddGroup.1"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
 }
 
 type ModifyImageShareGroupPermissionResponse struct {

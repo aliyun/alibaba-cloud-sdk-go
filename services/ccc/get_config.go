@@ -38,7 +38,6 @@ func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetC
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

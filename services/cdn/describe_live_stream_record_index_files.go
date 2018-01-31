@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *Descri
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

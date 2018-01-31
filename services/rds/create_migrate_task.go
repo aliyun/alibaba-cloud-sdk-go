@@ -38,7 +38,6 @@ func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskReques
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) ModifyLoadBalancerInstanceSpecWithChan(request *ModifyLoad
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

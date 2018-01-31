@@ -38,7 +38,6 @@ func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRe
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeBandwidthPackagesWithChan(request *DescribeBandwid
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) DescribeDomainQpsDataWithChan(request *DescribeDomainQpsDa
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

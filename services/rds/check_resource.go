@@ -38,7 +38,6 @@ func (client *Client) CheckResourceWithChan(request *CheckResourceRequest) (<-ch
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

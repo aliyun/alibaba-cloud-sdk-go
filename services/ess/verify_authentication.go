@@ -38,7 +38,6 @@ func (client *Client) VerifyAuthenticationWithChan(request *VerifyAuthentication
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

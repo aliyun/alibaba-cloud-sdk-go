@@ -38,7 +38,6 @@ func (client *Client) DescribeUserContainersWithChan(request *DescribeUserContai
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

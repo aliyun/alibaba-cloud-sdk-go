@@ -38,7 +38,6 @@ func (client *Client) DescribeLiveAppRecordConfigWithChan(request *DescribeLiveA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

@@ -38,7 +38,6 @@ func (client *Client) GetSenderAddressListWithChan(request *GetSenderAddressList
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

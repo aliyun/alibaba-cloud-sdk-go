@@ -38,7 +38,6 @@ func (client *Client) GetPhotosByMd5sWithChan(request *GetPhotosByMd5sRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

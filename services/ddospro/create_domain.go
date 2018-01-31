@@ -33,8 +33,11 @@ func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan
 		defer close(responseChan)
 		defer close(errChan)
 		response, err := client.CreateDomain(request)
-		responseChan <- response
-		errChan <- err
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
 	})
 	if err != nil {
 		errChan <- err
@@ -64,13 +67,13 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 
 type CreateDomainRequest struct {
 	*requests.RpcRequest
-	CcEnable        requests.Boolean `position:"Query" name:"CcEnable"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Domain          string           `position:"Query" name:"Domain"`
-	Ip              string           `position:"Query" name:"Ip"`
-	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
 	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
+	Domain          string           `position:"Query" name:"Domain"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Type            string           `position:"Query" name:"Type"`
+	CcEnable        requests.Boolean `position:"Query" name:"CcEnable"`
+	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
+	Ip              string           `position:"Query" name:"Ip"`
 }
 
 type CreateDomainResponse struct {

@@ -38,7 +38,6 @@ func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfig
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

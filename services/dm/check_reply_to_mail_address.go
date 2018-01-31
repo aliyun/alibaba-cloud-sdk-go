@@ -38,7 +38,6 @@ func (client *Client) CheckReplyToMailAddressWithChan(request *CheckReplyToMailA
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

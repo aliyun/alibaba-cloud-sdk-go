@@ -38,7 +38,6 @@ func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleR
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

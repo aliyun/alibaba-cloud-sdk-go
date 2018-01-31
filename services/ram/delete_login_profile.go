@@ -38,7 +38,6 @@ func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

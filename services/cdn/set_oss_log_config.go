@@ -38,7 +38,6 @@ func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

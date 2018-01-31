@@ -38,7 +38,6 @@ func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err

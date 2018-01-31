@@ -38,7 +38,6 @@ func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequ
 		} else {
 			responseChan <- response
 		}
-
 	})
 	if err != nil {
 		errChan <- err
@@ -68,14 +67,14 @@ func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJob
 
 type SubmitFacerecogJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 type SubmitFacerecogJobResponse struct {
