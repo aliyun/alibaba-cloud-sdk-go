@@ -118,8 +118,8 @@ func (signerKeyPair *SignerKeyPair) refreshApi(request *requests.CommonRequest) 
 
 func (signer *SignerKeyPair) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
-		message := "refresh session AccessKey failed, message = " + response.GetHttpContentString()
-		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, message)
+		message := "refresh session AccessKey failed"
+		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), message)
 		if signer.sessionCredential == nil {
 			panic(err)
 		}

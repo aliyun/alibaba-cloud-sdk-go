@@ -40,7 +40,7 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 		return
 	}
 	if !response.IsSuccess() {
-		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, response.GetHttpContentString())
+		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), "")
 		return
 	}
 	if _, isCommonResponse := response.(CommonResponse); isCommonResponse {
