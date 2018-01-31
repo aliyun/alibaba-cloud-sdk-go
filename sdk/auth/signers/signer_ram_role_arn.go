@@ -135,8 +135,8 @@ func (signerStsAssumeRole *RamRoleArnSigner) refreshApi(request *requests.Common
 
 func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
-		message := "refresh session token failed, message = " + response.GetHttpContentString()
-		err = errors.NewServerError(response.GetHttpStatus(), response.GetOriginHttpResponse().Status, message)
+		message := "refresh session token failed"
+		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), message)
 		if signer.sessionCredential == nil {
 			panic(err)
 		}

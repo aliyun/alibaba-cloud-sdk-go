@@ -73,6 +73,9 @@ type AcsRequest interface {
 	GetLocationServiceCode() string
 	GetLocationEndpointType() string
 
+	SetStringToSign(stringToSign string)
+	GetStringToSign() string
+
 	SetDomain(domain string)
 	SetContent(content []byte)
 	BuildUrl() string
@@ -107,6 +110,8 @@ type baseRequest struct {
 	locationEndpointType string
 
 	queries string
+
+	stringToSign string
 }
 
 func (request *baseRequest) GetQueryParams() map[string]string {
@@ -196,6 +201,14 @@ func (request *baseRequest) SetContentType(contentType string) {
 func (request *baseRequest) GetContentType() (contentType string, contains bool) {
 	contentType, contains = request.Headers["Content-Type"]
 	return
+}
+
+func (request *baseRequest) SetStringToSign(stringToSign string) {
+	request.stringToSign = stringToSign
+}
+
+func (request *baseRequest) GetStringToSign() string {
+	return request.stringToSign
 }
 
 func defaultBaseRequest() (request *baseRequest) {

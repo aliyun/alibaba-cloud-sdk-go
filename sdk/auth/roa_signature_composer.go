@@ -25,6 +25,7 @@ import (
 func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string) {
 	completeROASignParams(request, signer, regionId)
 	stringToSign := buildRoaStringToSign(request)
+	request.SetStringToSign(stringToSign)
 	signature := signer.Sign(stringToSign, "")
 	request.GetHeaders()["Authorization"] = "acs " + signer.GetAccessKeyId() + ":" + signature
 }
@@ -98,6 +99,8 @@ func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {
 	stringToSign = stringToSignBuilder.String()
 	return
 }
+
+
 
 func appendIfContain(sourceMap map[string]string, target *bytes.Buffer, key, separator string) {
 	if value, contain := sourceMap[key]; contain && len(value) > 0 {

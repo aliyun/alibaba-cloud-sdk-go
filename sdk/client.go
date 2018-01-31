@@ -222,6 +222,12 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		break
 	}
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
+	// wrap server errors
+	if serverErr, ok := err.(*errors.ServerError); ok {
+		var wrapInfo = map[string]string{}
+		wrapInfo["StringToSign"] = request.GetStringToSign()
+		err = errors.WrapServerError(serverErr, wrapInfo)
+	}
 	return
 }
 
