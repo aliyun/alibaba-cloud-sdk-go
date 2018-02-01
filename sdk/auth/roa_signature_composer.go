@@ -31,6 +31,8 @@ func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string)
 }
 
 func completeROASignParams(request requests.AcsRequest, signer Signer, regionId string) {
+	headerParams := request.GetHeaders()
+
 	// complete query params
 	queryParams := request.GetQueryParams()
 	if _, ok := queryParams["RegionId"]; !ok {
@@ -38,12 +40,16 @@ func completeROASignParams(request requests.AcsRequest, signer Signer, regionId 
 	}
 	if extraParam := signer.GetExtraParam(); extraParam != nil {
 		for key, value := range extraParam {
+			if key == "SecurityToken" {
+				headerParams["x-acs-security-token"] = value
+				continue
+			}
+
 			queryParams[key] = value
 		}
 	}
 
 	// complete header params
-	headerParams := request.GetHeaders()
 	headerParams["Date"] = utils.GetTimeInFormatRFC2616()
 	headerParams["x-acs-signature-method"] = signer.GetName()
 	headerParams["x-acs-signature-version"] = signer.GetVersion()
@@ -99,8 +105,6 @@ func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {
 	stringToSign = stringToSignBuilder.String()
 	return
 }
-
-
 
 func appendIfContain(sourceMap map[string]string, target *bytes.Buffer, key, separator string) {
 	if value, contain := sourceMap[key]; contain && len(value) > 0 {
