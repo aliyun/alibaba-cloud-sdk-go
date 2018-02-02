@@ -1,3 +1,6 @@
+2018-02-02 Version: 0.11.2
+1, this version is new of captcha management and nvc analyze
+
 2018-01-31 Version: 0.11.1
 1. Fixed bugs that could cause signature errors while a ROA request contains lots of special symbols
 2. Optimization of the serverError.Error() interface
