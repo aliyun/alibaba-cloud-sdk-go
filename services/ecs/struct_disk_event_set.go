@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DiskEventSet struct {
-	DiskEventType []DiskEventType `json:"DiskEventSet" xml:"DiskEventSet"`
+	DiskEventType []DiskEventType `json:"DiskEventType" xml:"DiskEventType"`
 }

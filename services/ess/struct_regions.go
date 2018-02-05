@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Regions struct {
-	Region []Region `json:"Regions" xml:"Regions"`
+	Region []Region `json:"Region" xml:"Region"`
 }

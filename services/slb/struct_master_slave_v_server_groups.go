@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MasterSlaveVServerGroups struct {
-	MasterSlaveVServerGroup []MasterSlaveVServerGroup `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
+	MasterSlaveVServerGroupInDescribeLoadBalancersRelatedEcs []MasterSlaveVServerGroupInDescribeLoadBalancersRelatedEcs `json:"MasterSlaveVServerGroup" xml:"MasterSlaveVServerGroup"`
 }

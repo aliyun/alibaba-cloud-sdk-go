@@ -16,10 +16,7 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Resource struct {
-	GroupId       int           `json:"GroupId" xml:"GroupId"`
-	GroupName     string        `json:"GroupName" xml:"GroupName"`
-	ServiceId     string        `json:"ServiceId" xml:"ServiceId"`
-	BindUrls      string        `json:"BindUrls" xml:"BindUrls"`
-	Type          string        `json:"Type" xml:"Type"`
-	ContactGroups ContactGroups `json:"ContactGroups" xml:"ContactGroups"`
+	Category   string `json:"Category" xml:"Category"`
+	AliUid     int    `json:"AliUid" xml:"AliUid"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 }

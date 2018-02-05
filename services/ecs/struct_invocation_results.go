@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InvocationResults struct {
-	InvocationResult []InvocationResult `json:"InvocationResults" xml:"InvocationResults"`
+	InvocationResult []InvocationResult `json:"InvocationResult" xml:"InvocationResult"`
 }

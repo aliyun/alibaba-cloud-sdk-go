@@ -16,7 +16,6 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AssociatedCbn struct {
-	CenStatus   string `json:"CenStatus" xml:"CenStatus"`
-	CenId       string `json:"CenId" xml:"CenId"`
 	CenOwnerUid int    `json:"CenOwnerUid" xml:"CenOwnerUid"`
+	CenStatus   string `json:"CenStatus" xml:"CenStatus"`
 }

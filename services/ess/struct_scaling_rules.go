@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ScalingRules struct {
-	ScalingRule []ScalingRule `json:"ScalingRules" xml:"ScalingRules"`
+	ScalingRule []ScalingRule `json:"ScalingRule" xml:"ScalingRule"`
 }

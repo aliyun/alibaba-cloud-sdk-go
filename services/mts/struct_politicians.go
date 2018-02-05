@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Politicians struct {
-	Politician []Politician `json:"Politicians" xml:"Politicians"`
+	Politician []Politician `json:"Politician" xml:"Politician"`
 }

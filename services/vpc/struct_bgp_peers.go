@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BgpPeers struct {
-	BgpPeer []BgpPeer `json:"BgpPeers" xml:"BgpPeers"`
+	BgpPeer []BgpPeer `json:"BgpPeer" xml:"BgpPeer"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Switchs struct {
-	Switch []Switch `json:"Switchs" xml:"Switchs"`
+	Switch []Switch `json:"Switch" xml:"Switch"`
 }

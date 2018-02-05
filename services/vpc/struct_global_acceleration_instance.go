@@ -16,21 +16,7 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type GlobalAccelerationInstance struct {
-	RegionId                     string            `json:"RegionId" xml:"RegionId"`
-	GlobalAccelerationInstanceId string            `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
-	IpAddress                    string            `json:"IpAddress" xml:"IpAddress"`
-	Status                       string            `json:"Status" xml:"Status"`
-	Bandwidth                    string            `json:"Bandwidth" xml:"Bandwidth"`
-	InternetChargeType           string            `json:"InternetChargeType" xml:"InternetChargeType"`
-	ChargeType                   string            `json:"ChargeType" xml:"ChargeType"`
-	BandwidthType                string            `json:"BandwidthType" xml:"BandwidthType"`
-	AccelerationLocation         string            `json:"AccelerationLocation" xml:"AccelerationLocation"`
-	ServiceLocation              string            `json:"ServiceLocation" xml:"ServiceLocation"`
-	Name                         string            `json:"Name" xml:"Name"`
-	Description                  string            `json:"Description" xml:"Description"`
-	ExpiredTime                  string            `json:"ExpiredTime" xml:"ExpiredTime"`
-	CreationTime                 string            `json:"CreationTime" xml:"CreationTime"`
-	OperationLocks               OperationLocks    `json:"OperationLocks" xml:"OperationLocks"`
-	BackendServers               BackendServers    `json:"BackendServers" xml:"BackendServers"`
-	PublicIpAddresses            PublicIpAddresses `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+	IpAddress                    string `json:"IpAddress" xml:"IpAddress"`
+	RegionId                     string `json:"RegionId" xml:"RegionId"`
+	GlobalAccelerationInstanceId string `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
 }

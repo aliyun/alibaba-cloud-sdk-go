@@ -16,5 +16,5 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Packages struct {
-	Package []Package `json:"Packages" xml:"Packages"`
+	Package []Package `json:"Package" xml:"Package"`
 }

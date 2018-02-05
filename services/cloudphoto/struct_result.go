@@ -16,8 +16,10 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Result struct {
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
-	FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+	AccessUrl string `json:"AccessUrl" xml:"AccessUrl"`
+	Message   string `json:"Message" xml:"Message"`
+	Id        int    `json:"Id" xml:"Id"`
+	PhotoId   int    `json:"PhotoId" xml:"PhotoId"`
+	State     string `json:"State" xml:"State"`
+	Code      string `json:"Code" xml:"Code"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Values struct {
-	NetworkValue []NetworkValue `json:"Values" xml:"Values"`
+	NetworkValue []NetworkValue `json:"NetworkValue" xml:"NetworkValue"`
 }

@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AsrTextList struct {
-	AsrText []AsrText `json:"AsrTextList" xml:"AsrTextList"`
+	AsrText []AsrText `json:"AsrText" xml:"AsrText"`
 }

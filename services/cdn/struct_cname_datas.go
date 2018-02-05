@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CnameDatas struct {
-	Data []Data `json:"CnameDatas" xml:"CnameDatas"`
+	DataInDescribeDomainCname []DataInDescribeDomainCname `json:"Data" xml:"Data"`
 }

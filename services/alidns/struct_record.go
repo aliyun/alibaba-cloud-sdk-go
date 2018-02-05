@@ -16,16 +16,15 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Record struct {
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	RecordId   string `json:"RecordId" xml:"RecordId"`
-	RR         string `json:"RR" xml:"RR"`
-	Type       string `json:"Type" xml:"Type"`
-	Value      string `json:"Value" xml:"Value"`
-	TTL        int    `json:"TTL" xml:"TTL"`
-	Priority   int    `json:"Priority" xml:"Priority"`
-	Line       string `json:"Line" xml:"Line"`
-	Status     string `json:"Status" xml:"Status"`
 	Locked     bool   `json:"Locked" xml:"Locked"`
+	Type       string `json:"Type" xml:"Type"`
+	Line       string `json:"Line" xml:"Line"`
+	RR         string `json:"RR" xml:"RR"`
+	Priority   int    `json:"Priority" xml:"Priority"`
+	RecordId   string `json:"RecordId" xml:"RecordId"`
+	Value      string `json:"Value" xml:"Value"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
 	Weight     int    `json:"Weight" xml:"Weight"`
-	Remark     string `json:"Remark" xml:"Remark"`
+	Status     string `json:"Status" xml:"Status"`
+	TTL        int    `json:"TTL" xml:"TTL"`
 }

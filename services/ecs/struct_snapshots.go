@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Snapshots struct {
-	Snapshot []Snapshot `json:"Snapshots" xml:"Snapshots"`
+	Snapshot []Snapshot `json:"Snapshot" xml:"Snapshot"`
 }

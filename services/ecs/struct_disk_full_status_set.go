@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DiskFullStatusSet struct {
-	DiskFullStatusType []DiskFullStatusType `json:"DiskFullStatusSet" xml:"DiskFullStatusSet"`
+	DiskFullStatusType []DiskFullStatusType `json:"DiskFullStatusType" xml:"DiskFullStatusType"`
 }

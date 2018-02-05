@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Users struct {
-	User []User `json:"Users" xml:"Users"`
+	User []User `json:"User" xml:"User"`
 }

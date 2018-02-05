@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TemplateList struct {
-	Template []Template `json:"TemplateList" xml:"TemplateList"`
+	Template []Template `json:"Template" xml:"Template"`
 }

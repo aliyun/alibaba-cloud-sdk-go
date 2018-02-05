@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataDisks struct {
-	DataDisk []DataDisk `json:"DataDisks" xml:"DataDisks"`
+	DataDisk []DataDisk `json:"DataDisk" xml:"DataDisk"`
 }

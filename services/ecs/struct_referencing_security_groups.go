@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ReferencingSecurityGroups struct {
-	ReferencingSecurityGroup []ReferencingSecurityGroup `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
+	ReferencingSecurityGroup []ReferencingSecurityGroup `json:"ReferencingSecurityGroup" xml:"ReferencingSecurityGroup"`
 }

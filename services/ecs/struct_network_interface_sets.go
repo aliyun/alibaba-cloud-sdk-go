@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NetworkInterfaceSets struct {
-	NetworkInterfaceSet []NetworkInterfaceSet `json:"NetworkInterfaceSets" xml:"NetworkInterfaceSets"`
+	NetworkInterfaceSet []NetworkInterfaceSet `json:"NetworkInterfaceSet" xml:"NetworkInterfaceSet"`
 }

@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Privileges struct {
-	Privilege []Privilege `json:"Privileges" xml:"Privileges"`
+	Privilege []Privilege `json:"Privilege" xml:"Privilege"`
 }

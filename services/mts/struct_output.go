@@ -42,4 +42,5 @@ type Output struct {
 	MergeList              MergeList              `json:"MergeList" xml:"MergeList"`
 	OpeningList            OpeningList            `json:"OpeningList" xml:"OpeningList"`
 	TailSlateList          TailSlateList          `json:"TailSlateList" xml:"TailSlateList"`
+	OutSubtitleList        OutSubtitleList        `json:"OutSubtitleList" xml:"OutSubtitleList"`
 }

@@ -16,9 +16,14 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataModule struct {
-	Timestamp  string  `json:"Timestamp" xml:"Timestamp"`
-	L1Bps      float64 `json:"L1Bps" xml:"L1Bps"`
-	L1InnerBps float64 `json:"L1InnerBps" xml:"L1InnerBps"`
-	L1OutBps   float64 `json:"L1OutBps" xml:"L1OutBps"`
-	DomainName string  `json:"DomainName" xml:"DomainName"`
+	DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
+	StaticValue          string `json:"StaticValue" xml:"StaticValue"`
+	TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
+	Value                string `json:"Value" xml:"Value"`
+	StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
+	DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
+	DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
+	OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
+	StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
+	DynamicDomesticValue string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
 }

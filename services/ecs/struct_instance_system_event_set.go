@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceSystemEventSet struct {
-	InstanceSystemEventType []InstanceSystemEventType `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`
+	InstanceSystemEventType []InstanceSystemEventType `json:"InstanceSystemEventType" xml:"InstanceSystemEventType"`
 }

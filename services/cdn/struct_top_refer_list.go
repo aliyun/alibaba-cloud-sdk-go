@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TopReferList struct {
-	ReferList []ReferList `json:"TopReferList" xml:"TopReferList"`
+	ReferList []ReferList `json:"ReferList" xml:"ReferList"`
 }

@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FacerecogJobList struct {
-	FacerecogJob []FacerecogJob `json:"FacerecogJobList" xml:"FacerecogJobList"`
+	FacerecogJob []FacerecogJob `json:"FacerecogJob" xml:"FacerecogJob"`
 }

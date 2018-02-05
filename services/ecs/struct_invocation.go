@@ -16,12 +16,8 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Invocation struct {
-	InvokeId        string          `json:"InvokeId" xml:"InvokeId"`
-	CommandId       string          `json:"CommandId" xml:"CommandId"`
-	CommandType     string          `json:"CommandType" xml:"CommandType"`
-	CommandName     string          `json:"CommandName" xml:"CommandName"`
-	Frequency       string          `json:"Frequency" xml:"Frequency"`
-	Timed           bool            `json:"Timed" xml:"Timed"`
-	InvokeStatus    string          `json:"InvokeStatus" xml:"InvokeStatus"`
-	InvokeInstances InvokeInstances `json:"InvokeInstances" xml:"InvokeInstances"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`
 }

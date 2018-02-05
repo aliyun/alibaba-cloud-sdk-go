@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type HitRateInterval struct {
-	DataModule []DataModule `json:"HitRateInterval" xml:"HitRateInterval"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

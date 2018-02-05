@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouterInterfaceSet struct {
-	RouterInterfaceType []RouterInterfaceType `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
+	RouterInterfaceTypeInDescribeRouterInterfaces []RouterInterfaceTypeInDescribeRouterInterfaces `json:"RouterInterfaceType" xml:"RouterInterfaceType"`
 }

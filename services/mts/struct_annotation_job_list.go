@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AnnotationJobList struct {
-	AnnotationJob []AnnotationJob `json:"AnnotationJobList" xml:"AnnotationJobList"`
+	AnnotationJob []AnnotationJob `json:"AnnotationJob" xml:"AnnotationJob"`
 }

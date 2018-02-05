@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Groups struct {
-	Group []Group `json:"Groups" xml:"Groups"`
+	Group []Group `json:"Group" xml:"Group"`
 }

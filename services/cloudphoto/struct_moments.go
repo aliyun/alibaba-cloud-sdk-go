@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Moments struct {
-	Moment []Moment `json:"Moments" xml:"Moments"`
+	Moment []Moment `json:"Moment" xml:"Moment"`
 }

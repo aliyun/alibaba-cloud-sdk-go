@@ -18,4 +18,5 @@ package mts
 type MuxConfig struct {
 	Segment Segment `json:"Segment" xml:"Segment"`
 	Gif     Gif     `json:"Gif" xml:"Gif"`
+	Webp    Webp    `json:"Webp" xml:"Webp"`
 }

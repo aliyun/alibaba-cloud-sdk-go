@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagInfos struct {
-	TagInfo []TagInfo `json:"TagInfos" xml:"TagInfos"`
+	TagInfo []TagInfo `json:"TagInfo" xml:"TagInfo"`
 }

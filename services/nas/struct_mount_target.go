@@ -17,9 +17,4 @@ package nas
 
 type MountTarget struct {
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	VswId             string `json:"VswId" xml:"VswId"`
-	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
-	Status            string `json:"Status" xml:"Status"`
 }

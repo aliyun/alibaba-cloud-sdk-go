@@ -19,8 +19,7 @@ type User struct {
 	UserId      string      `json:"UserId" xml:"UserId"`
 	RamId       string      `json:"RamId" xml:"RamId"`
 	InstanceId  string      `json:"InstanceId" xml:"InstanceId"`
-	Primary     bool        `json:"Primary" xml:"Primary"`
-	Detail      Detail      `json:"Detail" xml:"Detail"`
 	Roles       Roles       `json:"Roles" xml:"Roles"`
 	SkillLevels SkillLevels `json:"SkillLevels" xml:"SkillLevels"`
+	Detail      Detail      `json:"Detail" xml:"Detail"`
 }

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RecordContentInfoList struct {
-	RecordContentInfo []RecordContentInfo `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
+	RecordContentInfo []RecordContentInfo `json:"RecordContentInfo" xml:"RecordContentInfo"`
 }

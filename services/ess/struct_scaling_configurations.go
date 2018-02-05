@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ScalingConfigurations struct {
-	ScalingConfiguration []ScalingConfiguration `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
+	ScalingConfiguration []ScalingConfiguration `json:"ScalingConfiguration" xml:"ScalingConfiguration"`
 }

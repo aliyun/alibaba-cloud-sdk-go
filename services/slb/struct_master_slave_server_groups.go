@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MasterSlaveServerGroups struct {
-	MasterSlaveServerGroup []MasterSlaveServerGroup `json:"MasterSlaveServerGroups" xml:"MasterSlaveServerGroups"`
+	MasterSlaveServerGroup []MasterSlaveServerGroup `json:"MasterSlaveServerGroup" xml:"MasterSlaveServerGroup"`
 }

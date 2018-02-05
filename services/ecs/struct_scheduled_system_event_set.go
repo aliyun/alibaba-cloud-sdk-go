@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ScheduledSystemEventSet struct {
-	ScheduledSystemEventType []ScheduledSystemEventType `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
+	ScheduledSystemEventType []ScheduledSystemEventType `json:"ScheduledSystemEventType" xml:"ScheduledSystemEventType"`
 }

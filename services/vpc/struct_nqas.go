@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Nqas struct {
-	Nqa []Nqa `json:"Nqas" xml:"Nqas"`
+	Nqa []Nqa `json:"Nqa" xml:"Nqa"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AutoSnapshotPolicies struct {
-	AutoSnapshotPolicy []AutoSnapshotPolicy `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
+	AutoSnapshotPolicyInDescribeAutoSnapshotPolicyEx []AutoSnapshotPolicyInDescribeAutoSnapshotPolicyEx `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
 }

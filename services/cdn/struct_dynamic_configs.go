@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DynamicConfigs struct {
-	DynamicConfig []DynamicConfig `json:"DynamicConfigs" xml:"DynamicConfigs"`
+	DynamicConfig []DynamicConfig `json:"DynamicConfig" xml:"DynamicConfig"`
 }

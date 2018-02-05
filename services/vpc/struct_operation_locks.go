@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OperationLocks struct {
-	LockReason []LockReason `json:"OperationLocks" xml:"OperationLocks"`
+	LockReason []LockReason `json:"LockReason" xml:"LockReason"`
 }

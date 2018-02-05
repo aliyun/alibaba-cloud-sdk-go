@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LiveStreamSnapshotConfigList struct {
-	LiveStreamSnapshotConfig []LiveStreamSnapshotConfig `json:"LiveStreamSnapshotConfigList" xml:"LiveStreamSnapshotConfigList"`
+	LiveStreamSnapshotConfig []LiveStreamSnapshotConfig `json:"LiveStreamSnapshotConfig" xml:"LiveStreamSnapshotConfig"`
 }

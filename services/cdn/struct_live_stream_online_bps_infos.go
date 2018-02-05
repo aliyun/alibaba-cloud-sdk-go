@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LiveStreamOnlineBpsInfos struct {
-	LiveStreamOnlineBpsInfo []LiveStreamOnlineBpsInfo `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
+	LiveStreamOnlineBpsInfo []LiveStreamOnlineBpsInfo `json:"LiveStreamOnlineBpsInfo" xml:"LiveStreamOnlineBpsInfo"`
 }

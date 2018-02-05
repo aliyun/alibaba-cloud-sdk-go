@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EipMonitorDatas struct {
-	EipMonitorData []EipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
+	EipMonitorData []EipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
 }

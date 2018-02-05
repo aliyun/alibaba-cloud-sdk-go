@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainGroups struct {
-	DomainGroup []DomainGroup `json:"DomainGroups" xml:"DomainGroups"`
+	DomainGroup []DomainGroup `json:"DomainGroup" xml:"DomainGroup"`
 }

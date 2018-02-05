@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Images struct {
-	Image []Image `json:"Images" xml:"Images"`
+	Image []Image `json:"Image" xml:"Image"`
 }

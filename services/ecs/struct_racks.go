@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Racks struct {
-	Rack []Rack `json:"Racks" xml:"Racks"`
+	Rack []Rack `json:"Rack" xml:"Rack"`
 }

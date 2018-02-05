@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OperationProgressSet struct {
-	OperationProgress []OperationProgress `json:"OperationProgressSet" xml:"OperationProgressSet"`
+	OperationProgress []OperationProgress `json:"OperationProgress" xml:"OperationProgress"`
 }

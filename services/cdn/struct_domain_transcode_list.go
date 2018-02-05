@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainTranscodeList struct {
-	DomainTranscodeInfo []DomainTranscodeInfo `json:"DomainTranscodeList" xml:"DomainTranscodeList"`
+	DomainTranscodeInfo []DomainTranscodeInfo `json:"DomainTranscodeInfo" xml:"DomainTranscodeInfo"`
 }

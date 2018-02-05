@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ReadOnlyDBInstanceIds struct {
-	ReadOnlyDBInstanceId []ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
+	ReadOnlyDBInstanceId []ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Regions struct {
-	RDSRegion []RDSRegion `json:"Regions" xml:"Regions"`
+	RDSRegion []RDSRegion `json:"RDSRegion" xml:"RDSRegion"`
 }

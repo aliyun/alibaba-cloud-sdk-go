@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagSets struct {
-	TagSet []TagSet `json:"TagSets" xml:"TagSets"`
+	TagSet []TagSet `json:"TagSet" xml:"TagSet"`
 }

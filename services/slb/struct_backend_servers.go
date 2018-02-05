@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BackendServers struct {
-	BackendServer []BackendServer `json:"BackendServers" xml:"BackendServers"`
+	BackendServerInDescribeHealthStatus []BackendServerInDescribeHealthStatus `json:"BackendServer" xml:"BackendServer"`
 }

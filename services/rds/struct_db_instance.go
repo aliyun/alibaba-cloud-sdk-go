@@ -30,6 +30,7 @@ type DBInstance struct {
 	LockMode              string                `json:"LockMode" xml:"LockMode"`
 	DBInstanceClass       string                `json:"DBInstanceClass" xml:"DBInstanceClass"`
 	InstanceNetworkType   string                `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	VpcCloudInstanceId    string                `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	LockReason            string                `json:"LockReason" xml:"LockReason"`
 	ZoneId                string                `json:"ZoneId" xml:"ZoneId"`
 	MutriORsignle         bool                  `json:"MutriORsignle" xml:"MutriORsignle"`

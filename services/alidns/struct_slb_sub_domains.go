@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SlbSubDomains struct {
-	SlbSubDomain []SlbSubDomain `json:"SlbSubDomains" xml:"SlbSubDomains"`
+	SlbSubDomain []SlbSubDomain `json:"SlbSubDomain" xml:"SlbSubDomain"`
 }

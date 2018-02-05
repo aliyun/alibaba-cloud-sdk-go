@@ -16,8 +16,6 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PublicIpAddresse struct {
-	AllocationId    string `json:"AllocationId" xml:"AllocationId"`
-	IpAddress       string `json:"IpAddress" xml:"IpAddress"`
-	UsingStatus     string `json:"UsingStatus" xml:"UsingStatus"`
-	ApAccessEnabled bool   `json:"ApAccessEnabled" xml:"ApAccessEnabled"`
+	AllocationId string `json:"AllocationId" xml:"AllocationId"`
+	IpAddress    string `json:"IpAddress" xml:"IpAddress"`
 }

@@ -16,16 +16,10 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceType struct {
-	InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-	CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-	MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
-	InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-	LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-	LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
-	GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
-	GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
-	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
-	BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
-	EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
+	Generation         string `json:"Generation" xml:"Generation"`
+	InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	InstanceType       string `json:"InstanceType" xml:"InstanceType"`
+	SupportIoOptimized string `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
+	Cores              int    `json:"Cores" xml:"Cores"`
+	Memory             int    `json:"Memory" xml:"Memory"`
 }

@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CACertificates struct {
-	CACertificate []CACertificate `json:"CACertificates" xml:"CACertificates"`
+	CACertificate []CACertificate `json:"CACertificate" xml:"CACertificate"`
 }

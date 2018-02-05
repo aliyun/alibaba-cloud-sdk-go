@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MonitorDatas struct {
-	MonitorData []MonitorData `json:"MonitorDatas" xml:"MonitorDatas"`
+	MonitorData []MonitorData `json:"MonitorData" xml:"MonitorData"`
 }

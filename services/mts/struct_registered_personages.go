@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RegisteredPersonages struct {
-	RegisteredPersonage []RegisteredPersonage `json:"RegisteredPersonages" xml:"RegisteredPersonages"`
+	RegisteredPersonage []RegisteredPersonage `json:"RegisteredPersonage" xml:"RegisteredPersonage"`
 }

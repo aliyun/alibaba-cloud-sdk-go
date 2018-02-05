@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Tags struct {
-	Tag []Tag `json:"Tags" xml:"Tags"`
+	TagInDescribeTags []TagInDescribeTags `json:"Tag" xml:"Tag"`
 }

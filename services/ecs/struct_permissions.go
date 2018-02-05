@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Permissions struct {
-	Permission []Permission `json:"Permissions" xml:"Permissions"`
+	Permission []Permission `json:"Permission" xml:"Permission"`
 }

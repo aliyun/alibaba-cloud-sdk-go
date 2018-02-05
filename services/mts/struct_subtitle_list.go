@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SubtitleList struct {
-	Subtitle []Subtitle `json:"SubtitleList" xml:"SubtitleList"`
+	Subtitle []Subtitle `json:"Subtitle" xml:"Subtitle"`
 }

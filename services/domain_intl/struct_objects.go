@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Objects struct {
-	TaskInfoHistory []TaskInfoHistory `json:"Objects" xml:"Objects"`
+	TaskInfoHistory []TaskInfoHistory `json:"TaskInfoHistory" xml:"TaskInfoHistory"`
 }

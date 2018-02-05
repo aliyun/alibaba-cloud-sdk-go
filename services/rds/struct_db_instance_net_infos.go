@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DBInstanceNetInfos struct {
-	DBInstanceNetInfo []DBInstanceNetInfo `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
+	DBInstanceNetInfo []DBInstanceNetInfo `json:"DBInstanceNetInfo" xml:"DBInstanceNetInfo"`
 }

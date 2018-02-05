@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PornTopList struct {
-	Top []Top `json:"PornTopList" xml:"PornTopList"`
+	Top []Top `json:"Top" xml:"Top"`
 }

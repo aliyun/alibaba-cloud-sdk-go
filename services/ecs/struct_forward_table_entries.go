@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ForwardTableEntries struct {
-	ForwardTableEntry []ForwardTableEntry `json:"ForwardTableEntries" xml:"ForwardTableEntries"`
+	ForwardTableEntry []ForwardTableEntry `json:"ForwardTableEntry" xml:"ForwardTableEntry"`
 }

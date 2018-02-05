@@ -17,7 +17,6 @@ package mts
 
 type JobResult struct {
 	Success bool   `json:"Success" xml:"Success"`
-	Code    string `json:"Code" xml:"Code"`
 	Message string `json:"Message" xml:"Message"`
-	Job     Job    `json:"Job" xml:"Job"`
+	Code    string `json:"Code" xml:"Code"`
 }

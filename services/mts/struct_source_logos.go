@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SourceLogos struct {
-	SourceLogo []SourceLogo `json:"SourceLogos" xml:"SourceLogos"`
+	SourceLogo []SourceLogo `json:"SourceLogo" xml:"SourceLogo"`
 }

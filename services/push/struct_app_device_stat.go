@@ -16,7 +16,6 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AppDeviceStat struct {
-	Time       string `json:"Time" xml:"Time"`
-	Count      int    `json:"Count" xml:"Count"`
-	DeviceType string `json:"DeviceType" xml:"DeviceType"`
+	Time  string `json:"Time" xml:"Time"`
+	Count int    `json:"Count" xml:"Count"`
 }

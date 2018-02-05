@@ -16,11 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Database struct {
-	DBName           string   `json:"DBName" xml:"DBName"`
-	DBInstanceId     string   `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine           string   `json:"Engine" xml:"Engine"`
-	DBStatus         string   `json:"DBStatus" xml:"DBStatus"`
-	CharacterSetName string   `json:"CharacterSetName" xml:"CharacterSetName"`
-	DBDescription    string   `json:"DBDescription" xml:"DBDescription"`
-	Accounts         Accounts `json:"Accounts" xml:"Accounts"`
+	DBName string `json:"DBName" xml:"DBName"`
 }

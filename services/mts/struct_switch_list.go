@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SwitchList struct {
-	Switch []Switch `json:"SwitchList" xml:"SwitchList"`
+	Switch []Switch `json:"Switch" xml:"Switch"`
 }

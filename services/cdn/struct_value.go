@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Value struct {
-	RegionProportionData []RegionProportionData `json:"Value" xml:"Value"`
+	RegionProportionData []RegionProportionData `json:"RegionProportionData" xml:"RegionProportionData"`
 }

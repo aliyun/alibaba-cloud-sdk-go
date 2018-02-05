@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VSwitches struct {
-	VSwitch []VSwitch `json:"VSwitches" xml:"VSwitches"`
+	VSwitch []VSwitch `json:"VSwitch" xml:"VSwitch"`
 }

@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RegisteredTags struct {
-	RegisteredTag []RegisteredTag `json:"RegisteredTags" xml:"RegisteredTags"`
+	RegisteredTag []RegisteredTag `json:"RegisteredTag" xml:"RegisteredTag"`
 }

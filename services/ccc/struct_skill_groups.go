@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SkillGroups struct {
-	SkillGroup []SkillGroup `json:"SkillGroups" xml:"SkillGroups"`
+	SkillGroup []SkillGroup `json:"SkillGroup" xml:"SkillGroup"`
 }

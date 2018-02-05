@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Accounts struct {
-	Account []Account `json:"Accounts" xml:"Accounts"`
+	Account []Account `json:"Account" xml:"Account"`
 }

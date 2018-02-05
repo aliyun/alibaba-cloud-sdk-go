@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ServerCertificates struct {
-	ServerCertificate []ServerCertificate `json:"ServerCertificates" xml:"ServerCertificates"`
+	ServerCertificate []ServerCertificate `json:"ServerCertificate" xml:"ServerCertificate"`
 }

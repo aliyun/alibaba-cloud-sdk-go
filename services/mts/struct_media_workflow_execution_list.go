@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaWorkflowExecutionList struct {
-	MediaWorkflowExecution []MediaWorkflowExecution `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
+	MediaWorkflowExecution []MediaWorkflowExecution `json:"MediaWorkflowExecution" xml:"MediaWorkflowExecution"`
 }

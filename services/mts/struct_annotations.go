@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Annotations struct {
-	Annotation []Annotation `json:"Annotations" xml:"Annotations"`
+	Annotation []Annotation `json:"Annotation" xml:"Annotation"`
 }

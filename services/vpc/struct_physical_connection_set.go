@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PhysicalConnectionSet struct {
-	PhysicalConnectionType []PhysicalConnectionType `json:"PhysicalConnectionSet" xml:"PhysicalConnectionSet"`
+	PhysicalConnectionType []PhysicalConnectionType `json:"PhysicalConnectionType" xml:"PhysicalConnectionType"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Accounts struct {
-	AccountPrivilegeInfo []AccountPrivilegeInfo `json:"Accounts" xml:"Accounts"`
+	AccountPrivilegeInfo []AccountPrivilegeInfo `json:"AccountPrivilegeInfo" xml:"AccountPrivilegeInfo"`
 }

@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SslVpnClientCertKeys struct {
-	SslVpnClientCertKey []SslVpnClientCertKey `json:"SslVpnClientCertKeys" xml:"SslVpnClientCertKeys"`
+	SslVpnClientCertKey []SslVpnClientCertKey `json:"SslVpnClientCertKey" xml:"SslVpnClientCertKey"`
 }

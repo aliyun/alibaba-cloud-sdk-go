@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PushMessageInfos struct {
-	PushMessageInfo []PushMessageInfo `json:"PushMessageInfos" xml:"PushMessageInfos"`
+	PushMessageInfo []PushMessageInfo `json:"PushMessageInfo" xml:"PushMessageInfo"`
 }

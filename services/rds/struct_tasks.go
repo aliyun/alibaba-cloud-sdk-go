@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Tasks struct {
-	RealtimeDiagnoseTasks []RealtimeDiagnoseTasks `json:"Tasks" xml:"Tasks"`
+	RealtimeDiagnoseTasks []RealtimeDiagnoseTasks `json:"RealtimeDiagnoseTasks" xml:"RealtimeDiagnoseTasks"`
 }

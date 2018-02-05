@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CoverJobList struct {
-	CoverJob []CoverJob `json:"CoverJobList" xml:"CoverJobList"`
+	CoverJob []CoverJob `json:"CoverJob" xml:"CoverJob"`
 }

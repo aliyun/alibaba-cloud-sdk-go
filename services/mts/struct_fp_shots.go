@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FpShots struct {
-	FpShot []FpShot `json:"FpShots" xml:"FpShots"`
+	FpShot []FpShot `json:"FpShot" xml:"FpShot"`
 }

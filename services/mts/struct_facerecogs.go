@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Facerecogs struct {
-	Facerecog []Facerecog `json:"Facerecogs" xml:"Facerecogs"`
+	Facerecog []Facerecog `json:"Facerecog" xml:"Facerecog"`
 }

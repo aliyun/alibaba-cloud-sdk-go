@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CacheExpiredConfigs struct {
-	CacheExpiredConfig []CacheExpiredConfig `json:"CacheExpiredConfigs" xml:"CacheExpiredConfigs"`
+	CacheExpiredConfig []CacheExpiredConfig `json:"CacheExpiredConfig" xml:"CacheExpiredConfig"`
 }

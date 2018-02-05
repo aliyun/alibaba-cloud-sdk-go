@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagJobList struct {
-	TagJob []TagJob `json:"TagJobList" xml:"TagJobList"`
+	TagJob []TagJob `json:"TagJob" xml:"TagJob"`
 }

@@ -16,5 +16,5 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NotifyPolicyList struct {
-	NotifyPolicy []NotifyPolicy `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
+	NotifyPolicy []NotifyPolicy `json:"NotifyPolicy" xml:"NotifyPolicy"`
 }

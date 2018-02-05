@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PornCounterList struct {
-	Counter []Counter `json:"PornCounterList" xml:"PornCounterList"`
+	Counter []Counter `json:"Counter" xml:"Counter"`
 }

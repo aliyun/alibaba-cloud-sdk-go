@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VpnGateways struct {
-	VpnGateway []VpnGateway `json:"VpnGateways" xml:"VpnGateways"`
+	VpnGateway []VpnGateway `json:"VpnGateway" xml:"VpnGateway"`
 }

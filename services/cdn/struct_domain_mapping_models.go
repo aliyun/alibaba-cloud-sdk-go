@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainMappingModels struct {
-	DomainMappingModel []DomainMappingModel `json:"DomainMappingModels" xml:"DomainMappingModels"`
+	DomainMappingModel []DomainMappingModel `json:"DomainMappingModel" xml:"DomainMappingModel"`
 }

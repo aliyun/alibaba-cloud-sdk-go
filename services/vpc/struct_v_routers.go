@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VRouters struct {
-	VRouter []VRouter `json:"VRouters" xml:"VRouters"`
+	VRouter []VRouter `json:"VRouter" xml:"VRouter"`
 }

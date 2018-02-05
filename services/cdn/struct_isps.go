@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Isps struct {
-	Isp []Isp `json:"Isps" xml:"Isps"`
+	Isp []Isp `json:"Isp" xml:"Isp"`
 }

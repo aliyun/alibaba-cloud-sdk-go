@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ActivityList struct {
-	Activity []Activity `json:"ActivityList" xml:"ActivityList"`
+	Activity []Activity `json:"Activity" xml:"Activity"`
 }

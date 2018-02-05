@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Sensitives struct {
-	Sensitive []Sensitive `json:"Sensitives" xml:"Sensitives"`
+	Sensitive []Sensitive `json:"Sensitive" xml:"Sensitive"`
 }

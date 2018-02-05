@@ -16,7 +16,8 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Group struct {
-	GroupName string `json:"GroupName" xml:"GroupName"`
-	Comments  string `json:"Comments" xml:"Comments"`
-	JoinDate  string `json:"JoinDate" xml:"JoinDate"`
+	CreateDate string `json:"CreateDate" xml:"CreateDate"`
+	Comments   string `json:"Comments" xml:"Comments"`
+	GroupName  string `json:"GroupName" xml:"GroupName"`
+	UpdateDate string `json:"UpdateDate" xml:"UpdateDate"`
 }

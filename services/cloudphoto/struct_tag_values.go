@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagValues struct {
-	TagValue []TagValue `json:"TagValues" xml:"TagValues"`
+	TagValue []TagValue `json:"TagValue" xml:"TagValue"`
 }

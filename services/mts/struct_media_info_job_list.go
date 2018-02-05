@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaInfoJobList struct {
-	MediaInfoJob []MediaInfoJob `json:"MediaInfoJobList" xml:"MediaInfoJobList"`
+	MediaInfoJob []MediaInfoJob `json:"MediaInfoJob" xml:"MediaInfoJob"`
 }

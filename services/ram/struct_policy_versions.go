@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PolicyVersions struct {
-	PolicyVersion []PolicyVersion `json:"PolicyVersions" xml:"PolicyVersions"`
+	PolicyVersion []PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AttackIpDataList struct {
-	AttackIpDatas []AttackIpDatas `json:"AttackIpDataList" xml:"AttackIpDataList"`
+	AttackIpDatas []AttackIpDatas `json:"AttackIpDatas" xml:"AttackIpDatas"`
 }

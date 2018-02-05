@@ -16,5 +16,5 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FileSystems struct {
-	FileSystem []FileSystem `json:"FileSystems" xml:"FileSystems"`
+	FileSystem []FileSystem `json:"FileSystem" xml:"FileSystem"`
 }

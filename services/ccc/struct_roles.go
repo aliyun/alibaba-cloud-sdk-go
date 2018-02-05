@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Roles struct {
-	Role []Role `json:"Roles" xml:"Roles"`
+	RoleInListUsersOfSkillGroup []RoleInListUsersOfSkillGroup `json:"Role" xml:"Role"`
 }

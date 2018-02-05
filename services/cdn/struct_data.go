@@ -16,7 +16,4 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	More5s string `json:"More5s" xml:"More5s"`
-	Time   string `json:"Time" xml:"Time"`
-	More3s string `json:"More3s" xml:"More3s"`
 }

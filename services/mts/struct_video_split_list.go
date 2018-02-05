@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VideoSplitList struct {
-	VideoSplit []VideoSplit `json:"VideoSplitList" xml:"VideoSplitList"`
+	VideoSplit []VideoSplit `json:"VideoSplit" xml:"VideoSplit"`
 }

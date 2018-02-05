@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ClipList struct {
-	Clip []Clip `json:"ClipList" xml:"ClipList"`
+	Clip []Clip `json:"Clip" xml:"Clip"`
 }

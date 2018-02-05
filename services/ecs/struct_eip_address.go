@@ -16,17 +16,9 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EipAddress struct {
-	RegionId           string         `json:"RegionId" xml:"RegionId"`
-	IpAddress          string         `json:"IpAddress" xml:"IpAddress"`
-	AllocationId       string         `json:"AllocationId" xml:"AllocationId"`
-	Status             string         `json:"Status" xml:"Status"`
-	InstanceId         string         `json:"InstanceId" xml:"InstanceId"`
-	Bandwidth          string         `json:"Bandwidth" xml:"Bandwidth"`
-	EipBandwidth       string         `json:"EipBandwidth" xml:"EipBandwidth"`
-	InternetChargeType string         `json:"InternetChargeType" xml:"InternetChargeType"`
-	AllocationTime     string         `json:"AllocationTime" xml:"AllocationTime"`
-	InstanceType       string         `json:"InstanceType" xml:"InstanceType"`
-	ChargeType         string         `json:"ChargeType" xml:"ChargeType"`
-	ExpiredTime        string         `json:"ExpiredTime" xml:"ExpiredTime"`
-	OperationLocks     OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
+	AllocationId         string `json:"AllocationId" xml:"AllocationId"`
+	IpAddress            string `json:"IpAddress" xml:"IpAddress"`
+	Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
+	InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
+	IsSupportUnassociate bool   `json:"IsSupportUnassociate" xml:"IsSupportUnassociate"`
 }

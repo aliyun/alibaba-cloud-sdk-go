@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EipAddresses struct {
-	EipAddress []EipAddress `json:"EipAddresses" xml:"EipAddresses"`
+	EipAddressInDescribeEipAddresses []EipAddressInDescribeEipAddresses `json:"EipAddress" xml:"EipAddress"`
 }

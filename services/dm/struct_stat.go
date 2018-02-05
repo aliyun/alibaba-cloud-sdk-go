@@ -16,14 +16,8 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Stat struct {
-	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
-	RcptClickCount       string `json:"RcptClickCount" xml:"RcptClickCount"`
-	RcptClickRate        string `json:"RcptClickRate" xml:"RcptClickRate"`
-	RcptOpenCount        string `json:"RcptOpenCount" xml:"RcptOpenCount"`
-	RcptOpenRate         string `json:"RcptOpenRate" xml:"RcptOpenRate"`
-	RcptUniqueClickCount string `json:"RcptUniqueClickCount" xml:"RcptUniqueClickCount"`
-	RcptUniqueClickRate  string `json:"RcptUniqueClickRate" xml:"RcptUniqueClickRate"`
-	RcptUniqueOpenCount  string `json:"RcptUniqueOpenCount" xml:"RcptUniqueOpenCount"`
-	RcptUniqueOpenRate   string `json:"RcptUniqueOpenRate" xml:"RcptUniqueOpenRate"`
-	TotalNumber          string `json:"TotalNumber" xml:"TotalNumber"`
+	RequestCount string `json:"requestCount" xml:"requestCount"`
+	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	SuccessCount string `json:"successCount" xml:"successCount"`
+	FaildCount   string `json:"faildCount" xml:"faildCount"`
 }

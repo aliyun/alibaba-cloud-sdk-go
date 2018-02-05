@@ -76,6 +76,7 @@ type ModifyInstanceChargeTypeRequest struct {
 	IncludeDataDisks     requests.Boolean `position:"Query" name:"IncludeDataDisks"`
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }

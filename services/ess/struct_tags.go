@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Tags struct {
-	Tag []Tag `json:"Tags" xml:"Tags"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

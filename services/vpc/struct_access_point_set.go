@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AccessPointSet struct {
-	AccessPointType []AccessPointType `json:"AccessPointSet" xml:"AccessPointSet"`
+	AccessPointType []AccessPointType `json:"AccessPointType" xml:"AccessPointType"`
 }

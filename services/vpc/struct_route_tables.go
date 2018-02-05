@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouteTables struct {
-	RouteTable []RouteTable `json:"RouteTables" xml:"RouteTables"`
+	RouteTable []RouteTable `json:"RouteTable" xml:"RouteTable"`
 }

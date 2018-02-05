@@ -78,6 +78,7 @@ type DescAccountSummary2Response struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	MnsMigrating      int    `json:"MnsMigrating" xml:"MnsMigrating"`
 	MnsForceMigrating int    `json:"MnsForceMigrating" xml:"MnsForceMigrating"`
+	MnsBag            int    `json:"MnsBag" xml:"MnsBag"`
 }
 
 func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {

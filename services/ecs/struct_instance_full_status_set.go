@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceFullStatusSet struct {
-	InstanceFullStatusType []InstanceFullStatusType `json:"InstanceFullStatusSet" xml:"InstanceFullStatusSet"`
+	InstanceFullStatusType []InstanceFullStatusType `json:"InstanceFullStatusType" xml:"InstanceFullStatusType"`
 }

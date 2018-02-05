@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AbnormalItems struct {
-	AbnormalItem []AbnormalItem `json:"AbnormalItems" xml:"AbnormalItems"`
+	AbnormalItem []AbnormalItem `json:"AbnormalItem" xml:"AbnormalItem"`
 }

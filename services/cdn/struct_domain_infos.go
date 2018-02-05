@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainInfos struct {
-	DomainInfo []DomainInfo `json:"DomainInfos" xml:"DomainInfos"`
+	DomainInfo []DomainInfo `json:"domainInfo" xml:"domainInfo"`
 }

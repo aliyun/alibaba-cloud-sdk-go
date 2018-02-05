@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DatabasePrivileges struct {
-	DatabasePrivilege []DatabasePrivilege `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
+	DatabasePrivilege []DatabasePrivilege `json:"DatabasePrivilege" xml:"DatabasePrivilege"`
 }

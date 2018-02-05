@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagFaces struct {
-	TagFace []TagFace `json:"TagFaces" xml:"TagFaces"`
+	TagFace []TagFace `json:"TagFace" xml:"TagFace"`
 }

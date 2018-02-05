@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Replicas struct {
-	Items []Items `json:"Replicas" xml:"Replicas"`
+	ItemsInDescribeReplicas []ItemsInDescribeReplicas `json:"Items" xml:"Items"`
 }

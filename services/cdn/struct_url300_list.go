@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Url300List struct {
-	UrlList []UrlList `json:"Url300List" xml:"Url300List"`
+	UrlList []UrlList `json:"UrlList" xml:"UrlList"`
 }

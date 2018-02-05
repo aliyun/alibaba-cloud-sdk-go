@@ -16,9 +16,10 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LiveAppRecord struct {
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	StreamName string `json:"StreamName" xml:"StreamName"`
-	SourceUrl  string `json:"SourceUrl" xml:"SourceUrl"`
-	StartTime  string `json:"StartTime" xml:"StartTime"`
-	EndTime    string `json:"EndTime" xml:"EndTime"`
+	OssObjectPrefix string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
+	AppName         string `json:"AppName" xml:"AppName"`
+	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+	OssBucket       string `json:"OssBucket" xml:"OssBucket"`
+	OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
+	DomainName      string `json:"DomainName" xml:"DomainName"`
 }

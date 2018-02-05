@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaDetailRecgResults struct {
-	MediaDetailRecgResult []MediaDetailRecgResult `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
+	MediaDetailRecgResult []MediaDetailRecgResult `json:"MediaDetailRecgResult" xml:"MediaDetailRecgResult"`
 }

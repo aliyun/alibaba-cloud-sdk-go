@@ -16,10 +16,6 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MailDetail struct {
-	LastUpdateTime    string `json:"LastUpdateTime" xml:"LastUpdateTime"`
-	UtcLastUpdateTime string `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-	AccountName       string `json:"AccountName" xml:"AccountName"`
-	ToAddress         string `json:"ToAddress" xml:"ToAddress"`
-	Status            int    `json:"Status" xml:"Status"`
-	Message           string `json:"Message" xml:"Message"`
+	ToAddress      string `json:"ToAddress" xml:"ToAddress"`
+	LastUpdateTime string `json:"LastUpdateTime" xml:"LastUpdateTime"`
 }

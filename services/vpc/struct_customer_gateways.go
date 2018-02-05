@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CustomerGateways struct {
-	CustomerGateway []CustomerGateway `json:"CustomerGateways" xml:"CustomerGateways"`
+	CustomerGateway []CustomerGateway `json:"CustomerGateway" xml:"CustomerGateway"`
 }

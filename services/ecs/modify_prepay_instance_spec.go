@@ -72,6 +72,7 @@ type ModifyPrepayInstanceSpecRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	OperatorType         string           `position:"Query" name:"OperatorType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

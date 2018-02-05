@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Effects struct {
-	Effect []Effect `json:"Effects" xml:"Effects"`
+	Effect []Effect `json:"Effect" xml:"Effect"`
 }

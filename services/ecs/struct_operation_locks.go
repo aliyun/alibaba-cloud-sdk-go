@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OperationLocks struct {
-	LockReason []LockReason `json:"OperationLocks" xml:"OperationLocks"`
+	LockReasonInDescribeInstances []LockReasonInDescribeInstances `json:"LockReason" xml:"LockReason"`
 }

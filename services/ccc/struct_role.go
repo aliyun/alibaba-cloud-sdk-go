@@ -16,10 +16,8 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Role struct {
-	RoleId          string     `json:"RoleId" xml:"RoleId"`
-	InstanceId      string     `json:"InstanceId" xml:"InstanceId"`
-	RoleName        string     `json:"RoleName" xml:"RoleName"`
-	RoleDescription string     `json:"RoleDescription" xml:"RoleDescription"`
-	UserCount       int        `json:"UserCount" xml:"UserCount"`
-	Privileges      Privileges `json:"Privileges" xml:"Privileges"`
+	RoleId          string `json:"RoleId" xml:"RoleId"`
+	RoleDescription string `json:"RoleDescription" xml:"RoleDescription"`
+	RoleName        string `json:"RoleName" xml:"RoleName"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
 }

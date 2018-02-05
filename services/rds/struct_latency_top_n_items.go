@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LatencyTopNItems struct {
-	LatencyTopNItem []LatencyTopNItem `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+	LatencyTopNItem []LatencyTopNItem `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
 }

@@ -16,31 +16,29 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouterInterfaceType struct {
-	RouterInterfaceId               string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
-	OppositeRegionId                string `json:"OppositeRegionId" xml:"OppositeRegionId"`
-	Role                            string `json:"Role" xml:"Role"`
-	Spec                            string `json:"Spec" xml:"Spec"`
-	Name                            string `json:"Name" xml:"Name"`
-	Description                     string `json:"Description" xml:"Description"`
-	RouterId                        string `json:"RouterId" xml:"RouterId"`
-	RouterType                      string `json:"RouterType" xml:"RouterType"`
-	CreationTime                    string `json:"CreationTime" xml:"CreationTime"`
-	EndTime                         string `json:"EndTime" xml:"EndTime"`
-	ChargeType                      string `json:"ChargeType" xml:"ChargeType"`
-	Status                          string `json:"Status" xml:"Status"`
-	BusinessStatus                  string `json:"BusinessStatus" xml:"BusinessStatus"`
-	ConnectedTime                   string `json:"ConnectedTime" xml:"ConnectedTime"`
-	OppositeInterfaceId             string `json:"OppositeInterfaceId" xml:"OppositeInterfaceId"`
-	OppositeInterfaceSpec           string `json:"OppositeInterfaceSpec" xml:"OppositeInterfaceSpec"`
-	OppositeInterfaceStatus         string `json:"OppositeInterfaceStatus" xml:"OppositeInterfaceStatus"`
 	OppositeInterfaceBusinessStatus string `json:"OppositeInterfaceBusinessStatus" xml:"OppositeInterfaceBusinessStatus"`
-	OppositeRouterId                string `json:"OppositeRouterId" xml:"OppositeRouterId"`
-	OppositeRouterType              string `json:"OppositeRouterType" xml:"OppositeRouterType"`
-	OppositeInterfaceOwnerId        string `json:"OppositeInterfaceOwnerId" xml:"OppositeInterfaceOwnerId"`
-	AccessPointId                   string `json:"AccessPointId" xml:"AccessPointId"`
-	OppositeAccessPointId           string `json:"OppositeAccessPointId" xml:"OppositeAccessPointId"`
-	HealthCheckSourceIp             string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
+	OppositeInterfaceStatus         string `json:"OppositeInterfaceStatus" xml:"OppositeInterfaceStatus"`
+	Description                     string `json:"Description" xml:"Description"`
 	HealthCheckTargetIp             string `json:"HealthCheckTargetIp" xml:"HealthCheckTargetIp"`
-	OppositeVpcInstanceId           string `json:"OppositeVpcInstanceId" xml:"OppositeVpcInstanceId"`
+	OppositeInterfaceId             string `json:"OppositeInterfaceId" xml:"OppositeInterfaceId"`
+	OppositeRegionId                string `json:"OppositeRegionId" xml:"OppositeRegionId"`
+	HealthCheckSourceIp             string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
+	ConnectedTime                   string `json:"ConnectedTime" xml:"ConnectedTime"`
+	OppositeInterfaceSpec           string `json:"OppositeInterfaceSpec" xml:"OppositeInterfaceSpec"`
+	Status                          string `json:"Status" xml:"Status"`
+	CreationTime                    string `json:"CreationTime" xml:"CreationTime"`
+	RouterId                        string `json:"RouterId" xml:"RouterId"`
+	Name                            string `json:"Name" xml:"Name"`
+	RouterType                      string `json:"RouterType" xml:"RouterType"`
+	RouterInterfaceId               string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
+	OppositeAccessPointId           string `json:"OppositeAccessPointId" xml:"OppositeAccessPointId"`
+	Spec                            string `json:"Spec" xml:"Spec"`
+	AccessPointId                   string `json:"AccessPointId" xml:"AccessPointId"`
+	ChargeType                      string `json:"ChargeType" xml:"ChargeType"`
+	OppositeRouterId                string `json:"OppositeRouterId" xml:"OppositeRouterId"`
+	Role                            string `json:"Role" xml:"Role"`
 	VpcInstanceId                   string `json:"VpcInstanceId" xml:"VpcInstanceId"`
+	BusinessStatus                  string `json:"BusinessStatus" xml:"BusinessStatus"`
+	OppositeRouterType              string `json:"OppositeRouterType" xml:"OppositeRouterType"`
+	OppositeVpcInstanceId           string `json:"OppositeVpcInstanceId" xml:"OppositeVpcInstanceId"`
 }

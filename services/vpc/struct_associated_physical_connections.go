@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AssociatedPhysicalConnections struct {
-	AssociatedPhysicalConnection []AssociatedPhysicalConnection `json:"AssociatedPhysicalConnections" xml:"AssociatedPhysicalConnections"`
+	AssociatedPhysicalConnection []AssociatedPhysicalConnection `json:"AssociatedPhysicalConnection" xml:"AssociatedPhysicalConnection"`
 }

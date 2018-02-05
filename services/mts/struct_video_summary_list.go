@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VideoSummaryList struct {
-	VideoSummary []VideoSummary `json:"VideoSummaryList" xml:"VideoSummaryList"`
+	VideoSummary []VideoSummary `json:"VideoSummary" xml:"VideoSummary"`
 }

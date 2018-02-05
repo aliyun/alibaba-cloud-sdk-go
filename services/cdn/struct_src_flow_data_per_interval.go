@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SrcFlowDataPerInterval struct {
-	DataModule []DataModule `json:"SrcFlowDataPerInterval" xml:"SrcFlowDataPerInterval"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ConfigParameters struct {
-	DBInstanceParameter []DBInstanceParameter `json:"ConfigParameters" xml:"ConfigParameters"`
+	DBInstanceParameter []DBInstanceParameter `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MonitorData struct {
-	InstanceMonitorData []InstanceMonitorData `json:"MonitorData" xml:"MonitorData"`
+	InstanceMonitorData []InstanceMonitorData `json:"InstanceMonitorData" xml:"InstanceMonitorData"`
 }

@@ -16,5 +16,5 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Nodes struct {
-	Node []Node `json:"Nodes" xml:"Nodes"`
+	Node []Node `json:"Node" xml:"Node"`
 }

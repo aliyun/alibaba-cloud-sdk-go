@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type WaterMarkTemplateList struct {
-	WaterMarkTemplate []WaterMarkTemplate `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	WaterMarkTemplate []WaterMarkTemplate `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
 }

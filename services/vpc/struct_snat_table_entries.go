@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SnatTableEntries struct {
-	SnatTableEntry []SnatTableEntry `json:"SnatTableEntries" xml:"SnatTableEntries"`
+	SnatTableEntry []SnatTableEntry `json:"SnatTableEntry" xml:"SnatTableEntry"`
 }

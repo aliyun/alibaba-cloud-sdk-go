@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SecurityIPGroups struct {
-	SecurityIPGroup []SecurityIPGroup `json:"SecurityIPGroups" xml:"SecurityIPGroups"`
+	SecurityIPGroup []SecurityIPGroup `json:"securityIPGroup" xml:"securityIPGroup"`
 }

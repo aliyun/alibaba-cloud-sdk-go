@@ -16,8 +16,6 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type UsageData struct {
-	ExactDomain string `json:"ExactDomain" xml:"ExactDomain"`
-	TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
-	Acc         string `json:"Acc" xml:"Acc"`
-	Flow        string `json:"Flow" xml:"Flow"`
+	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+	Value     string `json:"Value" xml:"Value"`
 }

@@ -16,21 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LoadBalancer struct {
-	LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	LoadBalancerName   string `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerStatus string `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	Address            string `json:"Address" xml:"Address"`
-	AddressType        string `json:"AddressType" xml:"AddressType"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias      string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
-	MasterZoneId       string `json:"MasterZoneId" xml:"MasterZoneId"`
-	SlaveZoneId        string `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp    int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	PayType            string `json:"PayType" xml:"PayType"`
-	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 }

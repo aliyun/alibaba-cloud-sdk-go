@@ -16,9 +16,6 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Rule struct {
-	RuleId         string `json:"RuleId" xml:"RuleId"`
-	RuleName       string `json:"RuleName" xml:"RuleName"`
-	Domain         string `json:"Domain" xml:"Domain"`
-	Url            string `json:"Url" xml:"Url"`
-	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
+	RuleId   string `json:"RuleId" xml:"RuleId"`
+	RuleName string `json:"RuleName" xml:"RuleName"`
 }

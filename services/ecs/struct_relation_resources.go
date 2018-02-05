@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RelationResources struct {
-	RelationResource []RelationResource `json:"RelationResources" xml:"RelationResources"`
+	RelationResource []RelationResource `json:"relationResource" xml:"relationResource"`
 }

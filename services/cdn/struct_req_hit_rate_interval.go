@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ReqHitRateInterval struct {
-	DataModule []DataModule `json:"ReqHitRateInterval" xml:"ReqHitRateInterval"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

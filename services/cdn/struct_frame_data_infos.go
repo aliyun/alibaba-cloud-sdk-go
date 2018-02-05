@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FrameDataInfos struct {
-	FrameDataModel []FrameDataModel `json:"FrameDataInfos" xml:"FrameDataInfos"`
+	FrameDataModel []FrameDataModel `json:"FrameDataModel" xml:"FrameDataModel"`
 }

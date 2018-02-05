@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BgpGroups struct {
-	BgpGroup []BgpGroup `json:"BgpGroups" xml:"BgpGroups"`
+	BgpGroup []BgpGroup `json:"BgpGroup" xml:"BgpGroup"`
 }

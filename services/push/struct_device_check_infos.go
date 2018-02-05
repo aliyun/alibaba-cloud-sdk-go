@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DeviceCheckInfos struct {
-	DeviceCheckInfo []DeviceCheckInfo `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
+	DeviceCheckInfo []DeviceCheckInfo `json:"DeviceCheckInfo" xml:"DeviceCheckInfo"`
 }

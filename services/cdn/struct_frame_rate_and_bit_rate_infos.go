@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FrameRateAndBitRateInfos struct {
-	FrameRateAndBitRateInfo []FrameRateAndBitRateInfo `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	FrameRateAndBitRateInfo []FrameRateAndBitRateInfo `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
 }

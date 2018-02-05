@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VirtualBorderRouterSet struct {
-	VirtualBorderRouterType []VirtualBorderRouterType `json:"VirtualBorderRouterSet" xml:"VirtualBorderRouterSet"`
+	VirtualBorderRouterType []VirtualBorderRouterType `json:"VirtualBorderRouterType" xml:"VirtualBorderRouterType"`
 }

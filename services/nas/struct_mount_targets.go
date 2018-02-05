@@ -16,5 +16,5 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MountTargets struct {
-	MountTarget []MountTarget `json:"MountTargets" xml:"MountTargets"`
+	MountTargetInDescribeMountTargets []MountTargetInDescribeMountTargets `json:"MountTarget" xml:"MountTarget"`
 }

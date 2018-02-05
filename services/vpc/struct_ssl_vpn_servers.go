@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SslVpnServers struct {
-	SslVpnServer []SslVpnServer `json:"SslVpnServers" xml:"SslVpnServers"`
+	SslVpnServer []SslVpnServer `json:"SslVpnServer" xml:"SslVpnServer"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ReportList struct {
-	Report []Report `json:"ReportList" xml:"ReportList"`
+	Report []Report `json:"Report" xml:"Report"`
 }

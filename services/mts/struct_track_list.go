@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TrackList struct {
-	Track []Track `json:"TrackList" xml:"TrackList"`
+	Track []Track `json:"Track" xml:"Track"`
 }

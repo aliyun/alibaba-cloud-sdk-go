@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MergeList struct {
-	Merge []Merge `json:"MergeList" xml:"MergeList"`
+	Merge []Merge `json:"Merge" xml:"Merge"`
 }

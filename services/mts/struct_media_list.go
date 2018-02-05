@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaList struct {
-	Media []Media `json:"MediaList" xml:"MediaList"`
+	Media []Media `json:"Media" xml:"Media"`
 }

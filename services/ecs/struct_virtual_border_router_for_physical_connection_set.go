@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VirtualBorderRouterForPhysicalConnectionSet struct {
-	VirtualBorderRouterForPhysicalConnectionType []VirtualBorderRouterForPhysicalConnectionType `json:"VirtualBorderRouterForPhysicalConnectionSet" xml:"VirtualBorderRouterForPhysicalConnectionSet"`
+	VirtualBorderRouterForPhysicalConnectionType []VirtualBorderRouterForPhysicalConnectionType `json:"VirtualBorderRouterForPhysicalConnectionType" xml:"VirtualBorderRouterForPhysicalConnectionType"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Parameters struct {
-	TemplateRecord []TemplateRecord `json:"Parameters" xml:"Parameters"`
+	TemplateRecord []TemplateRecord `json:"TemplateRecord" xml:"TemplateRecord"`
 }

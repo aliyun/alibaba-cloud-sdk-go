@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OpeningList struct {
-	Opening []Opening `json:"OpeningList" xml:"OpeningList"`
+	Opening []Opening `json:"Opening" xml:"Opening"`
 }

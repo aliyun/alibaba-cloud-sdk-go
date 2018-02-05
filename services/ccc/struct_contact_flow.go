@@ -16,12 +16,9 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ContactFlow struct {
-	ContactFlowId          string       `json:"ContactFlowId" xml:"ContactFlowId"`
-	InstanceId             string       `json:"InstanceId" xml:"InstanceId"`
-	ContactFlowName        string       `json:"ContactFlowName" xml:"ContactFlowName"`
-	ContactFlowDescription string       `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-	Type                   string       `json:"Type" xml:"Type"`
-	AppliedVersion         string       `json:"AppliedVersion" xml:"AppliedVersion"`
-	Versions               Versions     `json:"Versions" xml:"Versions"`
-	PhoneNumbers           PhoneNumbers `json:"PhoneNumbers" xml:"PhoneNumbers"`
+	ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
+	ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
+	ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
+	Type                   string `json:"Type" xml:"Type"`
+	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
 }

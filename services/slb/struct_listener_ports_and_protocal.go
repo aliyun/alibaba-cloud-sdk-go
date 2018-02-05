@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ListenerPortsAndProtocal struct {
-	ListenerPortAndProtocal []ListenerPortAndProtocal `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
+	ListenerPortAndProtocal []ListenerPortAndProtocal `json:"ListenerPortAndProtocal" xml:"ListenerPortAndProtocal"`
 }

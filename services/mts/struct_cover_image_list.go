@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CoverImageList struct {
-	CoverImage []CoverImage `json:"CoverImageList" xml:"CoverImageList"`
+	CoverImage []CoverImage `json:"CoverImage" xml:"CoverImage"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouteEntrys struct {
-	RouteEntry []RouteEntry `json:"RouteEntrys" xml:"RouteEntrys"`
+	RouteEntry []RouteEntry `json:"RouteEntry" xml:"RouteEntry"`
 }

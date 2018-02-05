@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CloudResources struct {
-	CloudResourceSetType []CloudResourceSetType `json:"CloudResources" xml:"CloudResources"`
+	CloudResourceSetType []CloudResourceSetType `json:"CloudResourceSetType" xml:"CloudResourceSetType"`
 }

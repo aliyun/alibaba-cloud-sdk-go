@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BpsDatas struct {
-	DataModule []DataModule `json:"BpsDatas" xml:"BpsDatas"`
+	DataModuleInBatchDescribeDomainBpsData []DataModuleInBatchDescribeDomainBpsData `json:"DataModule" xml:"DataModule"`
 }

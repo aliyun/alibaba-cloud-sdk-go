@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ControlInfo struct {
-	LiveStreamControlInfo []LiveStreamControlInfo `json:"ControlInfo" xml:"ControlInfo"`
+	LiveStreamControlInfo []LiveStreamControlInfo `json:"LiveStreamControlInfo" xml:"LiveStreamControlInfo"`
 }

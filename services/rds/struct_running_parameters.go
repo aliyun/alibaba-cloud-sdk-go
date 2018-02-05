@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RunningParameters struct {
-	DBInstanceParameter []DBInstanceParameter `json:"RunningParameters" xml:"RunningParameters"`
+	DBInstanceParameter []DBInstanceParameter `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
 }

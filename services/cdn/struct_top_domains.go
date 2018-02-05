@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TopDomains struct {
-	TopDomain []TopDomain `json:"TopDomains" xml:"TopDomains"`
+	TopDomain []TopDomain `json:"TopDomain" xml:"TopDomain"`
 }

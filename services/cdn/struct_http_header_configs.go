@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type HttpHeaderConfigs struct {
-	HttpHeaderConfig []HttpHeaderConfig `json:"HttpHeaderConfigs" xml:"HttpHeaderConfigs"`
+	HttpHeaderConfig []HttpHeaderConfig `json:"HttpHeaderConfig" xml:"HttpHeaderConfig"`
 }

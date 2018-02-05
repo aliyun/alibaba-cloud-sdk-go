@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RecordLogs struct {
-	RecordLog []RecordLog `json:"RecordLogs" xml:"RecordLogs"`
+	RecordLog []RecordLog `json:"RecordLog" xml:"RecordLog"`
 }

@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainRecords struct {
-	Record []Record `json:"DomainRecords" xml:"DomainRecords"`
+	RecordInDescribeDomainRecords []RecordInDescribeDomainRecords `json:"Record" xml:"Record"`
 }

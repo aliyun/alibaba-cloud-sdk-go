@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AliasInfos struct {
-	AliasInfo []AliasInfo `json:"AliasInfos" xml:"AliasInfos"`
+	AliasInfo []AliasInfo `json:"AliasInfo" xml:"AliasInfo"`
 }

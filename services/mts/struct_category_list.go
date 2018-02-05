@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CategoryList struct {
-	Category []Category `json:"CategoryList" xml:"CategoryList"`
+	Category []Category `json:"Category" xml:"Category"`
 }

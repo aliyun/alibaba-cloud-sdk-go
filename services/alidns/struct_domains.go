@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Domains struct {
-	Domain []Domain `json:"Domains" xml:"Domains"`
+	Domain []Domain `json:"Domain" xml:"Domain"`
 }

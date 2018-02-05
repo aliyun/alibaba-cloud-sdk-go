@@ -16,7 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Face struct {
-	FaceId   int      `json:"FaceId" xml:"FaceId"`
-	FaceName string   `json:"FaceName" xml:"FaceName"`
-	Axis     []string `json:"Axis" xml:"Axis"`
+	Axis Axis `json:"Axis" xml:"Axis"`
 }

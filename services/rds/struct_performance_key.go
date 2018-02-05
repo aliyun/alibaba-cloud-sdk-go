@@ -16,8 +16,8 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PerformanceKey struct {
-	Key         string `json:"Key" xml:"Key"`
-	Unit        string `json:"Unit" xml:"Unit"`
-	ValueFormat string `json:"ValueFormat" xml:"ValueFormat"`
-	Values      Values `json:"Values" xml:"Values"`
+	Key               string            `json:"Key" xml:"Key"`
+	Unit              string            `json:"Unit" xml:"Unit"`
+	ValueFormat       string            `json:"ValueFormat" xml:"ValueFormat"`
+	PerformanceValues PerformanceValues `json:"PerformanceValues" xml:"PerformanceValues"`
 }

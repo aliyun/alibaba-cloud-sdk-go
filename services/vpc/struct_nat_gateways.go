@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NatGateways struct {
-	NatGateway []NatGateway `json:"NatGateways" xml:"NatGateways"`
+	NatGateway []NatGateway `json:"NatGateway" xml:"NatGateway"`
 }

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataPerInterval struct {
-	DataModule []DataModule `json:"DataPerInterval" xml:"DataPerInterval"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Faces struct {
-	Face []Face `json:"Faces" xml:"Faces"`
+	FaceInListPhotoFaces []FaceInListPhotoFaces `json:"Face" xml:"Face"`
 }

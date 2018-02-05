@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	EmailVerification []EmailVerification `json:"Data" xml:"Data"`
+	EmailVerification []EmailVerification `json:"EmailVerification" xml:"EmailVerification"`
 }

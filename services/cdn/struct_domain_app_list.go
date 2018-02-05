@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainAppList struct {
-	DomainAppInfo []DomainAppInfo `json:"DomainAppList" xml:"DomainAppList"`
+	DomainAppInfo []DomainAppInfo `json:"DomainAppInfo" xml:"DomainAppInfo"`
 }

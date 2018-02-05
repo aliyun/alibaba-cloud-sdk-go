@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Versions struct {
-	ContactFlowVersion []ContactFlowVersion `json:"Versions" xml:"Versions"`
+	ContactFlowVersion []ContactFlowVersion `json:"ContactFlowVersion" xml:"ContactFlowVersion"`
 }

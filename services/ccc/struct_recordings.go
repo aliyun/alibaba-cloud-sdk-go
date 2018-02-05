@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Recordings struct {
-	Recording []Recording `json:"Recordings" xml:"Recordings"`
+	Recording []Recording `json:"Recording" xml:"Recording"`
 }

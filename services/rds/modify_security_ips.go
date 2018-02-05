@@ -76,8 +76,8 @@ type ModifySecurityIpsRequest struct {
 	SecurityIps                string           `position:"Query" name:"SecurityIps"`
 	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
 	DBInstanceIPArrayAttribute string           `position:"Query" name:"DBInstanceIPArrayAttribute"`
-	WhitelistNetType           string           `position:"Query" name:"WhitelistNetType"`
-	SecurityGroupName          string           `position:"Query" name:"SecurityGroupName"`
+	WhitelistNetworkType       string           `position:"Query" name:"WhitelistNetworkType"`
+	SecurityGroupId            string           `position:"Query" name:"SecurityGroupId"`
 	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
 }
 

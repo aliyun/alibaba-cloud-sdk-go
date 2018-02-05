@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TailSlateList struct {
-	TailSlate []TailSlate `json:"TailSlateList" xml:"TailSlateList"`
+	TailSlate []TailSlate `json:"TailSlate" xml:"TailSlate"`
 }

@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SlaveZones struct {
-	SlaveZone []SlaveZone `json:"SlaveZones" xml:"SlaveZones"`
+	SlaveZone []SlaveZone `json:"SlaveZone" xml:"SlaveZone"`
 }

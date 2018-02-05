@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FailResults struct {
-	FailResult []FailResult `json:"FailResults" xml:"FailResults"`
+	FailResult []FailResult `json:"FailResult" xml:"FailResult"`
 }

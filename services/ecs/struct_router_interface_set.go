@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouterInterfaceSet struct {
-	RouterInterfaceType []RouterInterfaceType `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
+	RouterInterfaceType []RouterInterfaceType `json:"RouterInterfaceType" xml:"RouterInterfaceType"`
 }

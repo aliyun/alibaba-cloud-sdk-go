@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CCDataList struct {
-	CCDatas []CCDatas `json:"CCDataList" xml:"CCDataList"`
+	CCDatas []CCDatas `json:"CCDatas" xml:"CCDatas"`
 }

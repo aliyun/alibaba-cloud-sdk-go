@@ -16,12 +16,9 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MigrateTask struct {
-	DBName        string `json:"DBName" xml:"DBName"`
-	MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	EndTime       string `json:"EndTime" xml:"EndTime"`
-	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
-	Status        string `json:"Status" xml:"Status"`
-	IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-	Description   string `json:"Description" xml:"Description"`
+	DBName       string `json:"DBName" xml:"DBName"`
+	IsDBReplaced string `json:"IsDBReplaced" xml:"IsDBReplaced"`
+	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	Status       string `json:"Status" xml:"Status"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
 }

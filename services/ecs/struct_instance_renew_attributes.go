@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceRenewAttributes struct {
-	InstanceRenewAttribute []InstanceRenewAttribute `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
+	InstanceRenewAttribute []InstanceRenewAttribute `json:"InstanceRenewAttribute" xml:"InstanceRenewAttribute"`
 }

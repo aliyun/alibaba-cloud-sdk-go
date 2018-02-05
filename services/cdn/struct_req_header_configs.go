@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ReqHeaderConfigs struct {
-	ReqHeaderConfig []ReqHeaderConfig `json:"ReqHeaderConfigs" xml:"ReqHeaderConfigs"`
+	ReqHeaderConfig []ReqHeaderConfig `json:"ReqHeaderConfig" xml:"ReqHeaderConfig"`
 }

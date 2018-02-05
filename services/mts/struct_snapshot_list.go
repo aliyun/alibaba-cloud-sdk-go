@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SnapshotList struct {
-	Snapshot []Snapshot `json:"SnapshotList" xml:"SnapshotList"`
+	Snapshot []Snapshot `json:"Snapshot" xml:"Snapshot"`
 }

@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SnapshotJobList struct {
-	SnapshotJob []SnapshotJob `json:"SnapshotJobList" xml:"SnapshotJobList"`
+	SnapshotJob []SnapshotJob `json:"SnapshotJob" xml:"SnapshotJob"`
 }

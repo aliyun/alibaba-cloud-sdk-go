@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TagAnResults struct {
-	TagAnResult []TagAnResult `json:"TagAnResults" xml:"TagAnResults"`
+	TagAnResult []TagAnResult `json:"TagAnResult" xml:"TagAnResult"`
 }

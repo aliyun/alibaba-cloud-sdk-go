@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type GlobalAccelerationInstances struct {
-	GlobalAccelerationInstance []GlobalAccelerationInstance `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+	GlobalAccelerationInstanceInDescribeGlobalAccelerationInstances []GlobalAccelerationInstanceInDescribeGlobalAccelerationInstances `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
 }

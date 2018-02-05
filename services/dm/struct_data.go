@@ -16,5 +16,5 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	Domain []Domain `json:"data" xml:"data"`
+	Domain []Domain `json:"domain" xml:"domain"`
 }

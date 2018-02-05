@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MonitorDatas struct {
-	CDNMonitorData []CDNMonitorData `json:"MonitorDatas" xml:"MonitorDatas"`
+	CDNMonitorData []CDNMonitorData `json:"CDNMonitorData" xml:"CDNMonitorData"`
 }

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DBInstanceWeights struct {
-	DBInstanceWeight []DBInstanceWeight `json:"DBInstanceWeights" xml:"DBInstanceWeights"`
+	DBInstanceWeight []DBInstanceWeight `json:"DBInstanceWeight" xml:"DBInstanceWeight"`
 }

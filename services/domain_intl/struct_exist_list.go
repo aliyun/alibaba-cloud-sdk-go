@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ExistList struct {
-	SendResult []SendResult `json:"ExistList" xml:"ExistList"`
+	SendResult []SendResult `json:"SendResult" xml:"SendResult"`
 }

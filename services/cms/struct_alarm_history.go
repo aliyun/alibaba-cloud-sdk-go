@@ -16,27 +16,12 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AlarmHistory struct {
-	Id              string        `json:"Id" xml:"Id"`
-	AlertName       string        `json:"AlertName" xml:"AlertName"`
-	GroupId         string        `json:"GroupId" xml:"GroupId"`
-	Namespace       string        `json:"Namespace" xml:"Namespace"`
-	MetricName      string        `json:"MetricName" xml:"MetricName"`
-	Dimensions      string        `json:"Dimensions" xml:"Dimensions"`
-	Expression      string        `json:"Expression" xml:"Expression"`
-	EvaluationCount int           `json:"EvaluationCount" xml:"EvaluationCount"`
-	Value           string        `json:"Value" xml:"Value"`
-	AlertTime       int           `json:"AlertTime" xml:"AlertTime"`
-	LastTime        int           `json:"LastTime" xml:"LastTime"`
-	Level           string        `json:"Level" xml:"Level"`
-	PreLevel        string        `json:"PreLevel" xml:"PreLevel"`
-	RuleName        string        `json:"ruleName" xml:"ruleName"`
-	State           string        `json:"State" xml:"State"`
-	Status          int           `json:"Status" xml:"Status"`
-	UserId          string        `json:"UserId" xml:"UserId"`
-	Webhooks        string        `json:"Webhooks" xml:"Webhooks"`
-	ContactGroups   ContactGroups `json:"ContactGroups" xml:"ContactGroups"`
-	Contacts        Contacts      `json:"Contacts" xml:"Contacts"`
-	ContactALIIMs   ContactALIIMs `json:"ContactALIIMs" xml:"ContactALIIMs"`
-	ContactSmses    ContactSmses  `json:"ContactSmses" xml:"ContactSmses"`
-	ContactMails    ContactMails  `json:"ContactMails" xml:"ContactMails"`
+	LastTime        int    `json:"LastTime" xml:"LastTime"`
+	EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
+	State           string `json:"State" xml:"State"`
+	Namespace       string `json:"Namespace" xml:"Namespace"`
+	MetricName      string `json:"MetricName" xml:"MetricName"`
+	Id              string `json:"Id" xml:"Id"`
+	Status          int    `json:"Status" xml:"Status"`
+	Value           string `json:"Value" xml:"Value"`
 }

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type QpsDataInterval struct {
-	DataModule []DataModule `json:"QpsDataInterval" xml:"QpsDataInterval"`
+	DataModuleInDescribeDomainQpsData []DataModuleInDescribeDomainQpsData `json:"DataModule" xml:"DataModule"`
 }

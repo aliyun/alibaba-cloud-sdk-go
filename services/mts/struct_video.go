@@ -16,24 +16,25 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Video struct {
-	Crop       string     `json:"Crop" xml:"Crop"`
-	Gop        string     `json:"Gop" xml:"Gop"`
-	Bufsize    string     `json:"Bufsize" xml:"Bufsize"`
-	Remove     string     `json:"Remove" xml:"Remove"`
-	Height     string     `json:"Height" xml:"Height"`
-	Degrain    string     `json:"Degrain" xml:"Degrain"`
-	Crf        string     `json:"Crf" xml:"Crf"`
-	Width      string     `json:"Width" xml:"Width"`
-	MaxFps     string     `json:"MaxFps" xml:"MaxFps"`
-	Pad        string     `json:"Pad" xml:"Pad"`
-	Bitrate    string     `json:"Bitrate" xml:"Bitrate"`
-	Fps        string     `json:"Fps" xml:"Fps"`
-	Preset     string     `json:"Preset" xml:"Preset"`
-	ScanMode   string     `json:"ScanMode" xml:"ScanMode"`
-	Qscale     string     `json:"Qscale" xml:"Qscale"`
-	PixFmt     string     `json:"PixFmt" xml:"PixFmt"`
-	Profile    string     `json:"Profile" xml:"Profile"`
-	Codec      string     `json:"Codec" xml:"Codec"`
-	Maxrate    string     `json:"Maxrate" xml:"Maxrate"`
-	BitrateBnd BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
+	Crop         string     `json:"Crop" xml:"Crop"`
+	Gop          string     `json:"Gop" xml:"Gop"`
+	Bufsize      string     `json:"Bufsize" xml:"Bufsize"`
+	Remove       string     `json:"Remove" xml:"Remove"`
+	Height       string     `json:"Height" xml:"Height"`
+	Degrain      string     `json:"Degrain" xml:"Degrain"`
+	Crf          string     `json:"Crf" xml:"Crf"`
+	Width        string     `json:"Width" xml:"Width"`
+	MaxFps       string     `json:"MaxFps" xml:"MaxFps"`
+	Pad          string     `json:"Pad" xml:"Pad"`
+	Bitrate      string     `json:"Bitrate" xml:"Bitrate"`
+	ResoPriority string     `json:"ResoPriority" xml:"ResoPriority"`
+	Fps          string     `json:"Fps" xml:"Fps"`
+	Preset       string     `json:"Preset" xml:"Preset"`
+	ScanMode     string     `json:"ScanMode" xml:"ScanMode"`
+	Qscale       string     `json:"Qscale" xml:"Qscale"`
+	PixFmt       string     `json:"PixFmt" xml:"PixFmt"`
+	Profile      string     `json:"Profile" xml:"Profile"`
+	Codec        string     `json:"Codec" xml:"Codec"`
+	Maxrate      string     `json:"Maxrate" xml:"Maxrate"`
+	BitrateBnd   BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
 }

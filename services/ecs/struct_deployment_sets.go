@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DeploymentSets struct {
-	DeploymentSet []DeploymentSet `json:"DeploymentSets" xml:"DeploymentSets"`
+	DeploymentSet []DeploymentSet `json:"DeploymentSet" xml:"DeploymentSet"`
 }

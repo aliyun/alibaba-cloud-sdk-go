@@ -16,7 +16,13 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type User struct {
-	UserName    string `json:"UserName" xml:"UserName"`
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
-	JoinDate    string `json:"JoinDate" xml:"JoinDate"`
+	UserId        string `json:"UserId" xml:"UserId"`
+	UserName      string `json:"UserName" xml:"UserName"`
+	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
+	MobilePhone   string `json:"MobilePhone" xml:"MobilePhone"`
+	Email         string `json:"Email" xml:"Email"`
+	Comments      string `json:"Comments" xml:"Comments"`
+	CreateDate    string `json:"CreateDate" xml:"CreateDate"`
+	UpdateDate    string `json:"UpdateDate" xml:"UpdateDate"`
+	LastLoginDate string `json:"LastLoginDate" xml:"LastLoginDate"`
 }

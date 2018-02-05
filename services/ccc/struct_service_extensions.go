@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ServiceExtensions struct {
-	ServiceExtension []ServiceExtension `json:"ServiceExtensions" xml:"ServiceExtensions"`
+	ServiceExtension []ServiceExtension `json:"ServiceExtension" xml:"ServiceExtension"`
 }

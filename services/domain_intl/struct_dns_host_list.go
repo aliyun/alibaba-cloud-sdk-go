@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DnsHostList struct {
-	DnsHost []DnsHost `json:"DnsHostList" xml:"DnsHostList"`
+	DnsHost []DnsHost `json:"DnsHost" xml:"DnsHost"`
 }

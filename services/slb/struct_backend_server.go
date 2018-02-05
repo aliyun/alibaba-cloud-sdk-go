@@ -16,8 +16,9 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BackendServer struct {
-	ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
-	ServerId           string `json:"ServerId" xml:"ServerId"`
-	Port               int    `json:"Port" xml:"Port"`
-	ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
+	ServerId    string `json:"ServerId" xml:"ServerId"`
+	Port        int    `json:"Port" xml:"Port"`
+	Weight      string `json:"Weight" xml:"Weight"`
+	VmName      string `json:"VmName" xml:"VmName"`
+	NetworkType string `json:"NetworkType" xml:"NetworkType"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type HpcClusters struct {
-	HpcCluster []HpcCluster `json:"HpcClusters" xml:"HpcClusters"`
+	HpcCluster []HpcCluster `json:"HpcCluster" xml:"HpcCluster"`
 }

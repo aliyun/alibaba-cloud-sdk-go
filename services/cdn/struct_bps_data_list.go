@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BpsDataList struct {
-	BpsDataModel []BpsDataModel `json:"BpsDataList" xml:"BpsDataList"`
+	BpsDataModel []BpsDataModel `json:"BpsDataModel" xml:"BpsDataModel"`
 }

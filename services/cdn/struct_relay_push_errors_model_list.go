@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RelayPushErrorsModelList struct {
-	RelayPushErrorsModel []RelayPushErrorsModel `json:"RelayPushErrorsModelList" xml:"RelayPushErrorsModelList"`
+	RelayPushErrorsModel []RelayPushErrorsModel `json:"RelayPushErrorsModel" xml:"RelayPushErrorsModel"`
 }

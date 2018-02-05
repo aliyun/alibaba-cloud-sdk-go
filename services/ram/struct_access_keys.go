@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AccessKeys struct {
-	AccessKey []AccessKey `json:"AccessKeys" xml:"AccessKeys"`
+	AccessKey []AccessKey `json:"AccessKey" xml:"AccessKey"`
 }

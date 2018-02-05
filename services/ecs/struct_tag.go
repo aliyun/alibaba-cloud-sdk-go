@@ -16,7 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Tag struct {
-	TagKey            string            `json:"TagKey" xml:"TagKey"`
-	TagValue          string            `json:"TagValue" xml:"TagValue"`
-	ResourceTypeCount ResourceTypeCount `json:"ResourceTypeCount" xml:"ResourceTypeCount"`
+	TagValue string `json:"TagValue" xml:"TagValue"`
+	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

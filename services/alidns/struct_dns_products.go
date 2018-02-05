@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DnsProducts struct {
-	DnsProduct []DnsProduct `json:"DnsProducts" xml:"DnsProducts"`
+	DnsProduct []DnsProduct `json:"DnsProduct" xml:"DnsProduct"`
 }

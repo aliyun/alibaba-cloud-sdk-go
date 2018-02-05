@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SummaryAppInfos struct {
-	SummaryAppInfo []SummaryAppInfo `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
+	SummaryAppInfo []SummaryAppInfo `json:"SummaryAppInfo" xml:"SummaryAppInfo"`
 }

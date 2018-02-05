@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SkillLevels struct {
-	SkillLevel []SkillLevel `json:"SkillLevels" xml:"SkillLevels"`
+	SkillLevelInListSkillGroupsOfUser []SkillLevelInListSkillGroupsOfUser `json:"SkillLevel" xml:"SkillLevel"`
 }

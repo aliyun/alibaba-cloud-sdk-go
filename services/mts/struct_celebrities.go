@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Celebrities struct {
-	Celebrity []Celebrity `json:"Celebrities" xml:"Celebrities"`
+	Celebrity []Celebrity `json:"Celebrity" xml:"Celebrity"`
 }

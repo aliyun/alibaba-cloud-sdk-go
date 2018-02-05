@@ -16,9 +16,11 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Role struct {
-	RoleId      string `json:"RoleId" xml:"RoleId"`
-	RoleName    string `json:"RoleName" xml:"RoleName"`
-	Arn         string `json:"Arn" xml:"Arn"`
-	Description string `json:"Description" xml:"Description"`
-	AttachDate  string `json:"AttachDate" xml:"AttachDate"`
+	CreateDate               string `json:"CreateDate" xml:"CreateDate"`
+	AssumeRolePolicyDocument string `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
+	RoleId                   string `json:"RoleId" xml:"RoleId"`
+	RoleName                 string `json:"RoleName" xml:"RoleName"`
+	Description              string `json:"Description" xml:"Description"`
+	Arn                      string `json:"Arn" xml:"Arn"`
+	UpdateDate               string `json:"UpdateDate" xml:"UpdateDate"`
 }

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ShareGroups struct {
-	ShareGroup []ShareGroup `json:"ShareGroups" xml:"ShareGroups"`
+	ShareGroup []ShareGroup `json:"ShareGroup" xml:"ShareGroup"`
 }

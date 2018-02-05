@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PublicKeys struct {
-	PublicKey []PublicKey `json:"PublicKeys" xml:"PublicKeys"`
+	PublicKey []PublicKey `json:"PublicKey" xml:"PublicKey"`
 }

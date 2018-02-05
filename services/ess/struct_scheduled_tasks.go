@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ScheduledTasks struct {
-	ScheduledTask []ScheduledTask `json:"ScheduledTasks" xml:"ScheduledTasks"`
+	ScheduledTask []ScheduledTask `json:"ScheduledTask" xml:"ScheduledTask"`
 }

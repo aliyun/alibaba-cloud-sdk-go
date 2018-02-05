@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Zones struct {
-	Zone []Zone `json:"Zones" xml:"Zones"`
+	Zone []Zone `json:"Zone" xml:"Zone"`
 }

@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OutboundPhoneNumbers struct {
-	PhoneNumber []PhoneNumber `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
+	PhoneNumber []PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }

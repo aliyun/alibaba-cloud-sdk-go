@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NetworkDetail struct {
-	NetworkKey []NetworkKey `json:"NetworkDetail" xml:"NetworkDetail"`
+	NetworkKey []NetworkKey `json:"NetworkKey" xml:"NetworkKey"`
 }

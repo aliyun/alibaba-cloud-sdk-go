@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LiveAppRecordList struct {
-	LiveAppRecord []LiveAppRecord `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	LiveAppRecordInDescribeLivePullStreamConfig []LiveAppRecordInDescribeLivePullStreamConfig `json:"LiveAppRecord" xml:"LiveAppRecord"`
 }

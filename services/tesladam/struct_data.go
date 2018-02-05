@@ -16,5 +16,5 @@ package tesladam
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	Data []Data `json:"Data" xml:"Data"`
+	Data []Data `json:"data" xml:"data"`
 }

@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Results struct {
-	Result []Result `json:"Results" xml:"Results"`
+	ResultInGetFramedPhotoUrls []ResultInGetFramedPhotoUrls `json:"Result" xml:"Result"`
 }

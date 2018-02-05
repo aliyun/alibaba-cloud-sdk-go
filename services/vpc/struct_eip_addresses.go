@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EipAddresses struct {
-	EipAddress []EipAddress `json:"EipAddresses" xml:"EipAddresses"`
+	EipAddress []EipAddress `json:"EipAddress" xml:"EipAddress"`
 }

@@ -16,5 +16,5 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AccessGroups struct {
-	AccessGroup []AccessGroup `json:"AccessGroups" xml:"AccessGroups"`
+	AccessGroup []AccessGroup `json:"AccessGroup" xml:"AccessGroup"`
 }

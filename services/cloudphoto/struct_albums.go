@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Albums struct {
-	Album []Album `json:"Albums" xml:"Albums"`
+	AlbumInListAlbums []AlbumInListAlbums `json:"Album" xml:"Album"`
 }

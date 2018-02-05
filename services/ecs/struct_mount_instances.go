@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MountInstances struct {
-	MountInstance []MountInstance `json:"MountInstances" xml:"MountInstances"`
+	MountInstance []MountInstance `json:"MountInstance" xml:"MountInstance"`
 }

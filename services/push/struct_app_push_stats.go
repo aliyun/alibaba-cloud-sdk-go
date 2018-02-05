@@ -16,5 +16,5 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AppPushStats struct {
-	AppPushStat []AppPushStat `json:"AppPushStats" xml:"AppPushStats"`
+	AppPushStat []AppPushStat `json:"AppPushStat" xml:"AppPushStat"`
 }

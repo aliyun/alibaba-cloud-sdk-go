@@ -16,5 +16,5 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ConfigList struct {
-	Config []Config `json:"ConfigList" xml:"ConfigList"`
+	Config []Config `json:"Config" xml:"Config"`
 }

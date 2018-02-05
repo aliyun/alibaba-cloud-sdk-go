@@ -16,5 +16,5 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CategoryItems struct {
-	CategoryItem []CategoryItem `json:"CategoryItems" xml:"CategoryItems"`
+	CategoryItem []CategoryItem `json:"CategoryItem" xml:"CategoryItem"`
 }

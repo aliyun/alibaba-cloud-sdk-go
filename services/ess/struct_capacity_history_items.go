@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CapacityHistoryItems struct {
-	CapacityHistoryModel []CapacityHistoryModel `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
+	CapacityHistoryModel []CapacityHistoryModel `json:"CapacityHistoryModel" xml:"CapacityHistoryModel"`
 }
