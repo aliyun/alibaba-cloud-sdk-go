@@ -67,10 +67,10 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
+	AlbumName string `position:"Query" name:"AlbumName"`
+	StoreName string `position:"Query" name:"StoreName"`
 	Remark    string `position:"Query" name:"Remark"`
 	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
-	AlbumName string `position:"Query" name:"AlbumName"`
 }
 
 type CreateAlbumResponse struct {
@@ -79,35 +79,14 @@ type CreateAlbumResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Album     struct {
-		Id          int    `json:"Id" xml:"Id"`
-		Name        string `json:"Name" xml:"Name"`
-		State       string `json:"State" xml:"State"`
-		Remark      string `json:"Remark" xml:"Remark"`
-		PhotosCount int    `json:"PhotosCount" xml:"PhotosCount"`
-		Ctime       int    `json:"Ctime" xml:"Ctime"`
-		Mtime       int    `json:"Mtime" xml:"Mtime"`
-		Cover       struct {
-			Id      int    `json:"Id" xml:"Id"`
-			Title   string `json:"Title" xml:"Title"`
-			FileId  string `json:"FileId" xml:"FileId"`
-			State   string `json:"State" xml:"State"`
-			Md5     string `json:"Md5" xml:"Md5"`
-			IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
-			Width   int    `json:"Width" xml:"Width"`
-			Height  int    `json:"Height" xml:"Height"`
-			Ctime   int    `json:"Ctime" xml:"Ctime"`
-			Mtime   int    `json:"Mtime" xml:"Mtime"`
-			Remark  string `json:"Remark" xml:"Remark"`
-		} `json:"Cover" xml:"Cover"`
-	} `json:"Album" xml:"Album"`
+	Album     Album  `json:"Album" xml:"Album"`
 }
 
 func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	request = &CreateAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateAlbum", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateAlbum", "", "")
 	return
 }
 

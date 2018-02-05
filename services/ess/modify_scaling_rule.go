@@ -67,15 +67,15 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
-	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
-	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
+	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
 	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
+	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
 	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyScalingRuleResponse struct {
@@ -87,7 +87,7 @@ func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 	request = &ModifyScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "", "")
 	return
 }
 

@@ -67,15 +67,15 @@ func (client *Client) SetListenerAccessControlStatusWithCallback(request *SetLis
 
 type SetListenerAccessControlStatusRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	AccessControlStatus  string           `position:"Query" name:"AccessControlStatus"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	AccessControlStatus  string           `position:"Query" name:"AccessControlStatus"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type SetListenerAccessControlStatusResponse struct {
@@ -87,7 +87,7 @@ func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessCo
 	request = &SetListenerAccessControlStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetListenerAccessControlStatus", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetListenerAccessControlStatus", "", "")
 	return
 }
 

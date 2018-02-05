@@ -67,40 +67,29 @@ func (client *Client) ListVideoSummaryPipelineWithCallback(request *ListVideoSum
 
 type ListVideoSummaryPipelineRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	State                string           `position:"Query" name:"State"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ListVideoSummaryPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PipelineList struct {
-		Pipeline []struct {
-			Id           string `json:"Id" xml:"Id"`
-			Name         string `json:"Name" xml:"Name"`
-			State        string `json:"State" xml:"State"`
-			Priority     string `json:"Priority" xml:"Priority"`
-			NotifyConfig struct {
-				Topic     string `json:"Topic" xml:"Topic"`
-				QueueName string `json:"QueueName" xml:"QueueName"`
-			} `json:"NotifyConfig" xml:"NotifyConfig"`
-		} `json:"Pipeline" xml:"Pipeline"`
-	} `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateListVideoSummaryPipelineRequest() (request *ListVideoSummaryPipelineRequest) {
 	request = &ListVideoSummaryPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListVideoSummaryPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListVideoSummaryPipeline", "", "")
 	return
 }
 

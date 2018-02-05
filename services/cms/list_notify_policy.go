@@ -67,37 +67,28 @@ func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequ
 
 type ListNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	Id         string           `position:"Query" name:"Id"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	AlertName  string           `position:"Query" name:"AlertName"`
 	PolicyType string           `position:"Query" name:"PolicyType"`
+	Id         string           `position:"Query" name:"Id"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 
 type ListNotifyPolicyResponse struct {
 	*responses.BaseResponse
-	Code             string `json:"code" xml:"code"`
-	Message          string `json:"message" xml:"message"`
-	Success          string `json:"success" xml:"success"`
-	TraceId          string `json:"traceId" xml:"traceId"`
-	Total            int    `json:"total" xml:"total"`
-	NotifyPolicyList struct {
-		NotifyPolicy []struct {
-			AlertName  string `json:"AlertName" xml:"AlertName"`
-			Dimensions string `json:"Dimensions" xml:"Dimensions"`
-			Type       string `json:"Type" xml:"Type"`
-			Id         string `json:"Id" xml:"Id"`
-			StartTime  int    `json:"StartTime" xml:"StartTime"`
-			EndTime    int    `json:"EndTime" xml:"EndTime"`
-		} `json:"NotifyPolicy" xml:"NotifyPolicy"`
-	} `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
+	Code             string           `json:"code" xml:"code"`
+	Message          string           `json:"message" xml:"message"`
+	Success          string           `json:"success" xml:"success"`
+	TraceId          string           `json:"traceId" xml:"traceId"`
+	Total            int              `json:"total" xml:"total"`
+	NotifyPolicyList NotifyPolicyList `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
 }
 
 func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
 	request = &ListNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListNotifyPolicy", "", "")
 	return
 }
 

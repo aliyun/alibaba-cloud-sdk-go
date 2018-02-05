@@ -67,16 +67,16 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
 	PreferredBackupPeriod    string           `position:"Query" name:"PreferredBackupPeriod"`
 	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
 	BackupLog                string           `position:"Query" name:"BackupLog"`
+	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyBackupPolicyResponse struct {
@@ -88,7 +88,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "", "")
 	return
 }
 

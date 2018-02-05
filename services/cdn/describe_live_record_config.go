@@ -67,24 +67,15 @@ func (client *Client) DescribeLiveRecordConfigWithCallback(request *DescribeLive
 
 type DescribeLiveRecordConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
 type DescribeLiveRecordConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	LiveAppRecordList struct {
-		LiveAppRecord []struct {
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			AppName         string `json:"AppName" xml:"AppName"`
-			OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
-			OssBucket       string `json:"OssBucket" xml:"OssBucket"`
-			OssObjectPrefix string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"LiveAppRecord" xml:"LiveAppRecord"`
-	} `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigRequest) {

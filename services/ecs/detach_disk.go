@@ -67,12 +67,12 @@ func (client *Client) DetachDiskWithCallback(request *DetachDiskRequest, callbac
 
 type DetachDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DetachDiskResponse struct {
@@ -84,7 +84,7 @@ func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 	request = &DetachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachDisk", "", "")
 	return
 }
 

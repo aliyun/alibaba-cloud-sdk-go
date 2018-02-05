@@ -67,31 +67,25 @@ func (client *Client) DescribeReplicaInitializeProgressWithCallback(request *Des
 
 type DescribeReplicaInitializeProgressRequest struct {
 	*requests.RpcRequest
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 }
 
 type DescribeReplicaInitializeProgressResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     []struct {
-		ReplicaId   string `json:"ReplicaId" xml:"ReplicaId"`
-		Status      string `json:"Status" xml:"Status"`
-		Progress    string `json:"Progress" xml:"Progress"`
-		FinishTime  string `json:"FinishTime" xml:"FinishTime"`
-		CurrentStep string `json:"CurrentStep" xml:"CurrentStep"`
-	} `json:"Items" xml:"Items"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Items     []Items `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaInitializeProgressRequest) {
 	request = &DescribeReplicaInitializeProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaInitializeProgress", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaInitializeProgress", "", "")
 	return
 }
 

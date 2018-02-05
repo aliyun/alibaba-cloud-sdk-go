@@ -67,13 +67,13 @@ func (client *Client) AssociateHaVipWithCallback(request *AssociateHaVipRequest,
 
 type AssociateHaVipRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type AssociateHaVipResponse struct {
@@ -85,7 +85,7 @@ func CreateAssociateHaVipRequest() (request *AssociateHaVipRequest) {
 	request = &AssociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateHaVip", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateHaVip", "", "")
 	return
 }
 

@@ -67,14 +67,14 @@ func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callb
 
 type ExportImageRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	OSSBucket            string           `position:"Query" name:"OSSBucket"`
+	OSSPrefix            string           `position:"Query" name:"OSSPrefix"`
 	ImageFormat          string           `position:"Query" name:"ImageFormat"`
 	RoleName             string           `position:"Query" name:"RoleName"`
-	OSSBucket            string           `position:"Query" name:"OSSBucket"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OSSPrefix            string           `position:"Query" name:"OSSPrefix"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ImageId              string           `position:"Query" name:"ImageId"`
 }
 
 type ExportImageResponse struct {
@@ -88,7 +88,7 @@ func CreateExportImageRequest() (request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "", "")
 	return
 }
 

@@ -67,8 +67,8 @@ func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConf
 
 type DescribeAlertConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
@@ -84,7 +84,7 @@ func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	request = &DescribeAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlertConfig", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlertConfig", "", "")
 	return
 }
 

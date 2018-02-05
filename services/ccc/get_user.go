@@ -67,8 +67,8 @@ func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func
 
 type GetUserRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId     string `position:"Query" name:"UserId"`
 }
 
 type GetUserResponse struct {
@@ -78,38 +78,7 @@ type GetUserResponse struct {
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	User           struct {
-		UserId     string `json:"UserId" xml:"UserId"`
-		RamId      string `json:"RamId" xml:"RamId"`
-		InstanceId string `json:"InstanceId" xml:"InstanceId"`
-		Detail     struct {
-			LoginName   string `json:"LoginName" xml:"LoginName"`
-			DisplayName string `json:"DisplayName" xml:"DisplayName"`
-			Phone       string `json:"Phone" xml:"Phone"`
-			Email       string `json:"Email" xml:"Email"`
-			Department  string `json:"Department" xml:"Department"`
-		} `json:"Detail" xml:"Detail"`
-		Roles struct {
-			Role []struct {
-				RoleId          string `json:"RoleId" xml:"RoleId"`
-				InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-				RoleName        string `json:"RoleName" xml:"RoleName"`
-				RoleDescription string `json:"RoleDescription" xml:"RoleDescription"`
-			} `json:"Role" xml:"Role"`
-		} `json:"Roles" xml:"Roles"`
-		SkillLevels struct {
-			SkillLevel []struct {
-				SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
-				Level        int    `json:"Level" xml:"Level"`
-				Skill        struct {
-					SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
-					InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-					SkillGroupName        string `json:"SkillGroupName" xml:"SkillGroupName"`
-					SkillGroupDescription string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-				} `json:"Skill" xml:"Skill"`
-			} `json:"SkillLevel" xml:"SkillLevel"`
-		} `json:"SkillLevels" xml:"SkillLevels"`
-	} `json:"User" xml:"User"`
+	User           User   `json:"User" xml:"User"`
 }
 
 func CreateGetUserRequest() (request *GetUserRequest) {

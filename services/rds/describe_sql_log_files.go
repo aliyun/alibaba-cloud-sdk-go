@@ -67,14 +67,14 @@ func (client *Client) DescribeSQLLogFilesWithCallback(request *DescribeSQLLogFil
 
 type DescribeSQLLogFilesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	FileName             string           `position:"Query" name:"FileName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	FileName             string           `position:"Query" name:"FileName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSQLLogFilesResponse struct {
@@ -83,23 +83,14 @@ type DescribeSQLLogFilesResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		LogFile []struct {
-			FileID         string `json:"FileID" xml:"FileID"`
-			LogStatus      string `json:"LogStatus" xml:"LogStatus"`
-			LogDownloadURL string `json:"LogDownloadURL" xml:"LogDownloadURL"`
-			LogSize        string `json:"LogSize" xml:"LogSize"`
-			LogStartTime   string `json:"LogStartTime" xml:"LogStartTime"`
-			LogEndTime     string `json:"LogEndTime" xml:"LogEndTime"`
-		} `json:"LogFile" xml:"LogFile"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLLogFilesRequest() (request *DescribeSQLLogFilesRequest) {
 	request = &DescribeSQLLogFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogFiles", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogFiles", "", "")
 	return
 }
 

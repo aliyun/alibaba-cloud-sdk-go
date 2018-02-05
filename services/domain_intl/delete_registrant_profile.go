@@ -68,8 +68,8 @@ func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistr
 type DeleteRegistrantProfileRequest struct {
 	*requests.RpcRequest
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	Lang                string           `position:"Query" name:"Lang"`
+	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 }
 
 type DeleteRegistrantProfileResponse struct {

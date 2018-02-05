@@ -67,8 +67,8 @@ func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callb
 
 type DeleteAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string `position:"Query" name:"Id"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Id             string `position:"Query" name:"Id"`
 }
 
 type DeleteAlarmResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	request = &DeleteAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteAlarm", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteAlarm", "", "")
 	return
 }
 

@@ -67,13 +67,13 @@ func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *Import
 
 type ImportDatabaseBetweenInstancesRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DBInfo               string           `position:"Query" name:"DBInfo"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
+	DBInfo               string           `position:"Query" name:"DBInfo"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ImportDatabaseBetweenInstancesResponse struct {
@@ -86,7 +86,7 @@ func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetwe
 	request = &ImportDatabaseBetweenInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "", "")
 	return
 }
 

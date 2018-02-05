@@ -67,46 +67,33 @@ func (client *Client) DescribeVSwitchesWithCallback(request *DescribeVSwitchesRe
 
 type DescribeVSwitchesRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	VSwitchName          string           `position:"Query" name:"VSwitchName"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeVSwitchesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	VSwitches  struct {
-		VSwitch []struct {
-			VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
-			VpcId                   string `json:"VpcId" xml:"VpcId"`
-			Status                  string `json:"Status" xml:"Status"`
-			CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
-			ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
-			AvailableIpAddressCount int    `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
-			Description             string `json:"Description" xml:"Description"`
-			VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
-			CreationTime            string `json:"CreationTime" xml:"CreationTime"`
-			IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
-		} `json:"VSwitch" xml:"VSwitch"`
-	} `json:"VSwitches" xml:"VSwitches"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	VSwitches  VSwitches `json:"VSwitches" xml:"VSwitches"`
 }
 
 func CreateDescribeVSwitchesRequest() (request *DescribeVSwitchesRequest) {
 	request = &DescribeVSwitchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitches", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitches", "", "")
 	return
 }
 

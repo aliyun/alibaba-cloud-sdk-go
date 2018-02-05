@@ -67,39 +67,29 @@ func (client *Client) UpdateCoverPipelineWithCallback(request *UpdateCoverPipeli
 
 type UpdateCoverPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	Name                 string           `position:"Query" name:"Name"`
 	State                string           `position:"Query" name:"State"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	Role                 string           `position:"Query" name:"Role"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		State        string `json:"State" xml:"State"`
-		Priority     int    `json:"Priority" xml:"Priority"`
-		Role         string `json:"Role" xml:"Role"`
-		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
 	request = &UpdateCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCoverPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCoverPipeline", "", "")
 	return
 }
 

@@ -27,6 +27,10 @@ import (
 	"time"
 )
 
+// if you use go 1.10 or higher, you can hack this util by these to avoid "TimeZone.zip not found" on Windows
+var LoadLocationFromTZData func(name string, data []byte) (*time.Location, error) = nil
+var TZData []byte = nil
+
 func GetUUIDV4() (uuidHex string) {
 	uuidV4 := uuid.NewV4()
 	uuidHex = hex.EncodeToString(uuidV4.Bytes())
@@ -42,7 +46,13 @@ func GetMD5Base64(bytes []byte) (base64Value string) {
 }
 
 func GetTimeInFormatISO8601() (timeStr string) {
-	gmt, err := time.LoadLocation("GMT")
+	var gmt *time.Location
+	var err error
+	if LoadLocationFromTZData != nil && TZData != nil {
+		gmt, err = LoadLocationFromTZData("GMT", TZData)
+	} else {
+		gmt, err = time.LoadLocation("GMT")
+	}
 	if err != nil {
 		panic(err)
 	}
@@ -50,7 +60,13 @@ func GetTimeInFormatISO8601() (timeStr string) {
 }
 
 func GetTimeInFormatRFC2616() (timeStr string) {
-	gmt, err := time.LoadLocation("GMT")
+	var gmt *time.Location
+	var err error
+	if LoadLocationFromTZData != nil && TZData != nil {
+		gmt, err = LoadLocationFromTZData("GMT", TZData)
+	} else {
+		gmt, err = time.LoadLocation("GMT")
+	}
 	if err != nil {
 		panic(err)
 	}

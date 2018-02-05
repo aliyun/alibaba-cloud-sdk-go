@@ -67,16 +67,16 @@ func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanc
 
 type ModifyInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	HostName             string           `position:"Query" name:"HostName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Password             string           `position:"Query" name:"Password"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Password             string           `position:"Query" name:"Password"`
+	HostName             string           `position:"Query" name:"HostName"`
+	InstanceName         string           `position:"Query" name:"InstanceName"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserData             string           `position:"Query" name:"UserData"`
 	Recyclable           requests.Boolean `position:"Query" name:"Recyclable"`
 }
 
@@ -89,7 +89,7 @@ func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeReq
 	request = &ModifyInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttribute", "", "")
 	return
 }
 

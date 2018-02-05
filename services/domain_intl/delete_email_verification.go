@@ -67,24 +67,16 @@ func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVe
 
 type DeleteEmailVerificationRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
 	Email        string `position:"Query" name:"Email"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type DeleteEmailVerificationResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	SuccessList []struct {
-		Email   string `json:"Email" xml:"Email"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"SuccessList" xml:"SuccessList"`
-	FailList []struct {
-		Email   string `json:"Email" xml:"Email"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"FailList" xml:"FailList"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
+	SuccessList []SendResult `json:"SuccessList" xml:"SuccessList"`
+	FailList    []SendResult `json:"FailList" xml:"FailList"`
 }
 
 func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationRequest) {

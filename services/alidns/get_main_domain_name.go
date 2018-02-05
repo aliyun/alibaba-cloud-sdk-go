@@ -67,9 +67,9 @@ func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRe
 
 type GetMainDomainNameRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	InputString  string `position:"Query" name:"InputString"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type GetMainDomainNameResponse struct {

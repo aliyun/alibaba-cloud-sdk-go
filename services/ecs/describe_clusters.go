@@ -67,27 +67,23 @@ func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequ
 
 type DescribeClustersRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeClustersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Clusters  struct {
-		Cluster []struct {
-			ClusterId string `json:"ClusterId" xml:"ClusterId"`
-		} `json:"Cluster" xml:"Cluster"`
-	} `json:"Clusters" xml:"Clusters"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Clusters  Clusters `json:"Clusters" xml:"Clusters"`
 }
 
 func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClusters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClusters", "", "")
 	return
 }
 

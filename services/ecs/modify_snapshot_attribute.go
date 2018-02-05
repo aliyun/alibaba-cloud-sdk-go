@@ -67,13 +67,13 @@ func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapsho
 
 type ModifySnapshotAttributeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	Description          string           `position:"Query" name:"Description"`
-	SnapshotName         string           `position:"Query" name:"SnapshotName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	SnapshotName         string           `position:"Query" name:"SnapshotName"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type ModifySnapshotAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeReq
 	request = &ModifySnapshotAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotAttribute", "", "")
 	return
 }
 

@@ -67,16 +67,16 @@ func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callb
 
 type ImportImageRequest struct {
 	*requests.RpcRequest
+	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	ImageName            string                          `position:"Query" name:"ImageName"`
+	Description          string                          `position:"Query" name:"Description"`
+	Architecture         string                          `position:"Query" name:"Architecture"`
+	OSType               string                          `position:"Query" name:"OSType"`
 	Platform             string                          `position:"Query" name:"Platform"`
 	RoleName             string                          `position:"Query" name:"RoleName"`
-	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
-	OSType               string                          `position:"Query" name:"OSType"`
-	Description          string                          `position:"Query" name:"Description"`
-	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	Architecture         string                          `position:"Query" name:"Architecture"`
-	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
-	ImageName            string                          `position:"Query" name:"ImageName"`
 }
 
 type ImportImageDiskDeviceMapping struct {
@@ -100,7 +100,7 @@ func CreateImportImageRequest() (request *ImportImageRequest) {
 	request = &ImportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage", "", "")
 	return
 }
 

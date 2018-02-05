@@ -67,28 +67,15 @@ func (client *Client) DescribeDomainQoSRtWithCallback(request *DescribeDomainQoS
 
 type DescribeDomainQoSRtRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Ip            string           `position:"Query" name:"Ip"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainQoSRtResponse struct {
 	*responses.BaseResponse
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	StartTime  string `json:"StartTime" xml:"StartTime"`
-	EndTime    string `json:"EndTime" xml:"EndTime"`
-	Ip         string `json:"Ip" xml:"Ip"`
-	Content    struct {
-		Data []struct {
-			More5s string `json:"More5s" xml:"More5s"`
-			Time   string `json:"Time" xml:"Time"`
-			More3s string `json:"More3s" xml:"More3s"`
-		} `json:"Data" xml:"Data"`
-	} `json:"Content" xml:"Content"`
+	DomainName string  `json:"DomainName" xml:"DomainName"`
+	StartTime  string  `json:"StartTime" xml:"StartTime"`
+	EndTime    string  `json:"EndTime" xml:"EndTime"`
+	Ip         string  `json:"Ip" xml:"Ip"`
+	Content    Content `json:"Content" xml:"Content"`
 }
 
 func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {

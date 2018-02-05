@@ -67,40 +67,17 @@ func (client *Client) ListDomainConfigWithCallback(request *ListDomainConfigRequ
 
 type ListDomainConfigRequest struct {
 	*requests.RpcRequest
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	Domain          string           `position:"Query" name:"Domain"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 type ListDomainConfigResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Total      int    `json:"Total" xml:"Total"`
-	ConfigList struct {
-		Config []struct {
-			Domain    string `json:"Domain" xml:"Domain"`
-			Cname     string `json:"Cname" xml:"Cname"`
-			Instances struct {
-				Instance []struct {
-					InstanceRemark string `json:"InstanceRemark" xml:"InstanceRemark"`
-					InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-					Rules          struct {
-						Rule []struct {
-							Line          string `json:"Line" xml:"Line"`
-							Ip            string `json:"Ip" xml:"Ip"`
-							ProxyTypeList struct {
-								ProxyType []string `json:"ProxyType" xml:"ProxyType"`
-							} `json:"ProxyTypeList" xml:"ProxyTypeList"`
-							RealServers struct {
-								RealServer []string `json:"RealServer" xml:"RealServer"`
-							} `json:"RealServers" xml:"RealServers"`
-						} `json:"Rule" xml:"Rule"`
-					} `json:"Rules" xml:"Rules"`
-				} `json:"Instance" xml:"Instance"`
-			} `json:"Instances" xml:"Instances"`
-		} `json:"Config" xml:"Config"`
-	} `json:"ConfigList" xml:"ConfigList"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Total      int        `json:"Total" xml:"Total"`
+	ConfigList ConfigList `json:"ConfigList" xml:"ConfigList"`
 }
 
 func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {

@@ -67,58 +67,33 @@ func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTabl
 
 type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	VRouterId            string           `position:"Query" name:"VRouterId"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	RouterType           string           `position:"Query" name:"RouterType"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
-	RouteTableId         string           `position:"Query" name:"RouteTableId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VRouterId            string           `position:"Query" name:"VRouterId"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeRouteTablesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	RouteTables struct {
-		RouteTable []struct {
-			VRouterId      string `json:"VRouterId" xml:"VRouterId"`
-			RouteTableId   string `json:"RouteTableId" xml:"RouteTableId"`
-			RouteTableType string `json:"RouteTableType" xml:"RouteTableType"`
-			CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-			RouteEntrys    struct {
-				RouteEntry []struct {
-					RouteTableId         string `json:"RouteTableId" xml:"RouteTableId"`
-					DestinationCidrBlock string `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-					Type                 string `json:"Type" xml:"Type"`
-					Status               string `json:"Status" xml:"Status"`
-					InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-					NextHopType          string `json:"NextHopType" xml:"NextHopType"`
-					NextHops             struct {
-						NextHop []struct {
-							NextHopType string `json:"NextHopType" xml:"NextHopType"`
-							NextHopId   string `json:"NextHopId" xml:"NextHopId"`
-							Enabled     int    `json:"Enabled" xml:"Enabled"`
-							Weight      int    `json:"Weight" xml:"Weight"`
-						} `json:"NextHop" xml:"NextHop"`
-					} `json:"NextHops" xml:"NextHops"`
-				} `json:"RouteEntry" xml:"RouteEntry"`
-			} `json:"RouteEntrys" xml:"RouteEntrys"`
-		} `json:"RouteTable" xml:"RouteTable"`
-	} `json:"RouteTables" xml:"RouteTables"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	RouteTables RouteTables `json:"RouteTables" xml:"RouteTables"`
 }
 
 func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
 	request = &DescribeRouteTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "", "")
 	return
 }
 

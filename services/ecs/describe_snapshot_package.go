@@ -67,35 +67,28 @@ func (client *Client) DescribeSnapshotPackageWithCallback(request *DescribeSnaps
 
 type DescribeSnapshotPackageRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSnapshotPackageResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	SnapshotPackages struct {
-		SnapshotPackage []struct {
-			StartTime    string `json:"StartTime" xml:"StartTime"`
-			EndTime      string `json:"EndTime" xml:"EndTime"`
-			InitCapacity int    `json:"InitCapacity" xml:"InitCapacity"`
-			DisplayName  string `json:"DisplayName" xml:"DisplayName"`
-		} `json:"SnapshotPackage" xml:"SnapshotPackage"`
-	} `json:"SnapshotPackages" xml:"SnapshotPackages"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	SnapshotPackages SnapshotPackages `json:"SnapshotPackages" xml:"SnapshotPackages"`
 }
 
 func CreateDescribeSnapshotPackageRequest() (request *DescribeSnapshotPackageRequest) {
 	request = &DescribeSnapshotPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotPackage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotPackage", "", "")
 	return
 }
 

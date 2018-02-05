@@ -67,13 +67,13 @@ func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResult
 
 type ReportTagJobResultRequest struct {
 	*requests.RpcRequest
-	Result               string           `position:"Query" name:"Result"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	Result               string           `position:"Query" name:"Result"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportTagJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	request = &ReportTagJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTagJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTagJobResult", "", "")
 	return
 }
 

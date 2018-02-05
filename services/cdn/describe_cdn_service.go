@@ -73,17 +73,13 @@ type DescribeCdnServiceRequest struct {
 
 type DescribeCdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-	OpeningTime        string `json:"OpeningTime" xml:"OpeningTime"`
-	ChangingChargeType string `json:"ChangingChargeType" xml:"ChangingChargeType"`
-	ChangingAffectTime string `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
-	OperationLocks     struct {
-		LockReason []struct {
-			LockReason string `json:"LockReason" xml:"LockReason"`
-		} `json:"LockReason" xml:"LockReason"`
-	} `json:"OperationLocks" xml:"OperationLocks"`
+	RequestId          string         `json:"RequestId" xml:"RequestId"`
+	InstanceId         string         `json:"InstanceId" xml:"InstanceId"`
+	InternetChargeType string         `json:"InternetChargeType" xml:"InternetChargeType"`
+	OpeningTime        string         `json:"OpeningTime" xml:"OpeningTime"`
+	ChangingChargeType string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	ChangingAffectTime string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	OperationLocks     OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {

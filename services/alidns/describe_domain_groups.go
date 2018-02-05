@@ -67,26 +67,20 @@ func (client *Client) DescribeDomainGroupsWithCallback(request *DescribeDomainGr
 
 type DescribeDomainGroupsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	KeyWord      string           `position:"Query" name:"KeyWord"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeDomainGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	DomainGroups struct {
-		DomainGroup []struct {
-			GroupId     string `json:"GroupId" xml:"GroupId"`
-			GroupName   string `json:"GroupName" xml:"GroupName"`
-			DomainCount int    `json:"DomainCount" xml:"DomainCount"`
-		} `json:"DomainGroup" xml:"DomainGroup"`
-	} `json:"DomainGroups" xml:"DomainGroups"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	DomainGroups DomainGroups `json:"DomainGroups" xml:"DomainGroups"`
 }
 
 func CreateDescribeDomainGroupsRequest() (request *DescribeDomainGroupsRequest) {

@@ -67,37 +67,29 @@ func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCust
 
 type DescribeCustomerGatewaysRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeCustomerGatewaysResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	CustomerGateways struct {
-		CustomerGateway []struct {
-			CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-			Name              string `json:"Name" xml:"Name"`
-			IpAddress         string `json:"IpAddress" xml:"IpAddress"`
-			Description       string `json:"Description" xml:"Description"`
-			CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-		} `json:"CustomerGateway" xml:"CustomerGateway"`
-	} `json:"CustomerGateways" xml:"CustomerGateways"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	CustomerGateways CustomerGateways `json:"CustomerGateways" xml:"CustomerGateways"`
 }
 
 func CreateDescribeCustomerGatewaysRequest() (request *DescribeCustomerGatewaysRequest) {
 	request = &DescribeCustomerGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateways", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateways", "", "")
 	return
 }
 

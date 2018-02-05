@@ -67,13 +67,13 @@ func (client *Client) DeleteBgpNetworkWithCallback(request *DeleteBgpNetworkRequ
 
 type DeleteBgpNetworkRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DstCidrBlock         string           `position:"Query" name:"DstCidrBlock"`
 	RouterId             string           `position:"Query" name:"RouterId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteBgpNetworkResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteBgpNetworkRequest() (request *DeleteBgpNetworkRequest) {
 	request = &DeleteBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpNetwork", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpNetwork", "", "")
 	return
 }
 

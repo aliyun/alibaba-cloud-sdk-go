@@ -67,47 +67,22 @@ func (client *Client) DescribeInstanceHistoryEventsWithCallback(request *Describ
 
 type DescribeInstanceHistoryEventsRequest struct {
 	*requests.RpcRequest
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	EventCycleStatus      string           `position:"Query" name:"EventCycleStatus"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
-	EventType             string           `position:"Query" name:"EventType"`
-	InstanceId            string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInstanceHistoryEventsResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	TotalCount             int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber             int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize               int    `json:"PageSize" xml:"PageSize"`
-	InstanceSystemEventSet struct {
-		InstanceSystemEventType []struct {
-			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-			EventId          string `json:"EventId" xml:"EventId"`
-			EventPublishTime string `json:"EventPublishTime" xml:"EventPublishTime"`
-			NotBefore        string `json:"NotBefore" xml:"NotBefore"`
-			EventType        struct {
-				Code int    `json:"Code" xml:"Code"`
-				Name string `json:"Name" xml:"Name"`
-			} `json:"EventType" xml:"EventType"`
-		} `json:"InstanceSystemEventType" xml:"InstanceSystemEventType"`
-	} `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`
+	RequestId              string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount             int                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber             int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize               int                    `json:"PageSize" xml:"PageSize"`
+	InstanceSystemEventSet InstanceSystemEventSet `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`
 }
 
 func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHistoryEventsRequest) {
 	request = &DescribeInstanceHistoryEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "", "")
 	return
 }
 

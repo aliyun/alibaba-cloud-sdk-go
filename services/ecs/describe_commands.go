@@ -67,42 +67,22 @@ func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequ
 
 type DescribeCommandsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Type                 string           `position:"Query" name:"Type"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeCommandsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Commands   struct {
-		Command []struct {
-			CommandId      string `json:"CommandId" xml:"CommandId"`
-			Name           string `json:"Name" xml:"Name"`
-			Type           string `json:"Type" xml:"Type"`
-			Description    string `json:"Description" xml:"Description"`
-			CommandContent string `json:"CommandContent" xml:"CommandContent"`
-			WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
-			Timeout        int    `json:"Timeout" xml:"Timeout"`
-		} `json:"Command" xml:"Command"`
-	} `json:"Commands" xml:"Commands"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	Commands   Commands `json:"Commands" xml:"Commands"`
 }
 
 func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "", "")
 	return
 }
 

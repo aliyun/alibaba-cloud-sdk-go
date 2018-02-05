@@ -73,23 +73,18 @@ type DescribeRegionsRequest struct {
 
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	Regions    struct {
-		Region []struct {
-			RegionId  string `json:"RegionId" xml:"RegionId"`
-			LocalName string `json:"LocalName" xml:"LocalName"`
-		} `json:"Region" xml:"Region"`
-	} `json:"Regions" xml:"Regions"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	Regions    Regions `json:"Regions" xml:"Regions"`
 }
 
 func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeRegions", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeRegions", "", "")
 	return
 }
 

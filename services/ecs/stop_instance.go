@@ -67,14 +67,14 @@ func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, cal
 
 type StopInstanceRequest struct {
 	*requests.RpcRequest
-	ConfirmStop          requests.Boolean `position:"Query" name:"ConfirmStop"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	StoppedMode          string           `position:"Query" name:"StoppedMode"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ConfirmStop          requests.Boolean `position:"Query" name:"ConfirmStop"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	StoppedMode          string           `position:"Query" name:"StoppedMode"`
 }
 
 type StopInstanceResponse struct {
@@ -86,7 +86,7 @@ func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	request = &StopInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInstance", "", "")
 	return
 }
 

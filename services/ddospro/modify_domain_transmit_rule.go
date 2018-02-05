@@ -67,11 +67,11 @@ func (client *Client) ModifyDomainTransmitRuleWithCallback(request *ModifyDomain
 
 type ModifyDomainTransmitRuleRequest struct {
 	*requests.RpcRequest
-	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Type            string           `position:"Query" name:"Type"`
+	Domain          string           `position:"Query" name:"Domain"`
 	Ip              string           `position:"Query" name:"Ip"`
+	Type            string           `position:"Query" name:"Type"`
+	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
 }
 
 type ModifyDomainTransmitRuleResponse struct {

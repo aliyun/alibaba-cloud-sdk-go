@@ -67,25 +67,12 @@ func (client *Client) DescribeDomainRealTimeBpsDataWithCallback(request *Describ
 
 type DescribeDomainRealTimeBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string           `position:"Query" name:"EndTime"`
-	Version        string           `position:"Query" name:"Version"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainRealTimeBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      struct {
-		BpsModel []struct {
-			Bps       float64 `json:"Bps" xml:"Bps"`
-			TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"BpsModel" xml:"BpsModel"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTimeBpsDataRequest) {

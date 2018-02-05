@@ -67,10 +67,10 @@ func (client *Client) GetVideoCoverWithCallback(request *GetVideoCoverRequest, c
 
 type GetVideoCoverRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	ZoomType  string           `position:"Query" name:"ZoomType"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	ZoomType  string           `position:"Query" name:"ZoomType"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type GetVideoCoverResponse struct {
@@ -86,7 +86,7 @@ func CreateGetVideoCoverRequest() (request *GetVideoCoverRequest) {
 	request = &GetVideoCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetVideoCover", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetVideoCover", "", "")
 	return
 }
 

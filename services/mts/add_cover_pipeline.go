@@ -67,37 +67,27 @@ func (client *Client) AddCoverPipelineWithCallback(request *AddCoverPipelineRequ
 
 type AddCoverPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             string           `position:"Query" name:"Priority"`
-	Name                 string           `position:"Query" name:"Name"`
-	Role                 string           `position:"Query" name:"Role"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Priority             string           `position:"Query" name:"Priority"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	Role                 string           `position:"Query" name:"Role"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		Priority     string `json:"Priority" xml:"Priority"`
-		State        string `json:"State" xml:"State"`
-		Role         string `json:"Role" xml:"Role"`
-		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {
 	request = &AddCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddCoverPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddCoverPipeline", "", "")
 	return
 }
 

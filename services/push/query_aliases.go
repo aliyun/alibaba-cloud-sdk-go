@@ -73,12 +73,8 @@ type QueryAliasesRequest struct {
 
 type QueryAliasesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	AliasInfos struct {
-		AliasInfo []struct {
-			AliasName string `json:"AliasName" xml:"AliasName"`
-		} `json:"AliasInfo" xml:"AliasInfo"`
-	} `json:"AliasInfos" xml:"AliasInfos"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	AliasInfos AliasInfos `json:"AliasInfos" xml:"AliasInfos"`
 }
 
 func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {

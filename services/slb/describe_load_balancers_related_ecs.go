@@ -67,61 +67,28 @@ func (client *Client) DescribeLoadBalancersRelatedEcsWithCallback(request *Descr
 
 type DescribeLoadBalancersRelatedEcsRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 type DescribeLoadBalancersRelatedEcsResponse struct {
 	*responses.BaseResponse
-	Message       string `json:"Message" xml:"Message"`
-	Success       bool   `json:"Success" xml:"Success"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	LoadBalancers struct {
-		LoadBalancer []struct {
-			LoadBalancerId           string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-			Count                    int    `json:"Count" xml:"Count"`
-			MasterSlaveVServerGroups struct {
-				MasterSlaveVServerGroup []struct {
-					GroupId         string `json:"GroupId" xml:"GroupId"`
-					GroupName       string `json:"GroupName" xml:"GroupName"`
-					BackendServers1 struct {
-						BackendServer []struct {
-							VmName      string `json:"VmName" xml:"VmName"`
-							Weight      int    `json:"Weight" xml:"Weight"`
-							Port        int    `json:"Port" xml:"Port"`
-							NetworkType string `json:"NetworkType" xml:"NetworkType"`
-						} `json:"BackendServer" xml:"BackendServer"`
-					} `json:"BackendServers" xml:"BackendServers"`
-				} `json:"MasterSlaveVServerGroup" xml:"MasterSlaveVServerGroup"`
-			} `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
-			VServerGroups struct {
-				VServerGroup []struct {
-					GroupId         string `json:"GroupId" xml:"GroupId"`
-					GroupName       string `json:"GroupName" xml:"GroupName"`
-					BackendServers2 struct {
-						BackendServer []struct {
-							VmName      string `json:"VmName" xml:"VmName"`
-							Weight      int    `json:"Weight" xml:"Weight"`
-							Port        int    `json:"Port" xml:"Port"`
-							NetworkType string `json:"NetworkType" xml:"NetworkType"`
-						} `json:"BackendServer" xml:"BackendServer"`
-					} `json:"BackendServers" xml:"BackendServers"`
-				} `json:"VServerGroup" xml:"VServerGroup"`
-			} `json:"VServerGroups" xml:"VServerGroups"`
-		} `json:"LoadBalancer" xml:"LoadBalancer"`
-	} `json:"LoadBalancers" xml:"LoadBalancers"`
+	Message       string        `json:"Message" xml:"Message"`
+	Success       bool          `json:"Success" xml:"Success"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	LoadBalancers LoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
 func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalancersRelatedEcsRequest) {
 	request = &DescribeLoadBalancersRelatedEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "", "")
 	return
 }
 

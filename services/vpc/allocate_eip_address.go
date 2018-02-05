@@ -67,19 +67,19 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	Netmode              string           `position:"Query" name:"Netmode"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ISP                  string           `position:"Query" name:"ISP"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ISP                  string           `position:"Query" name:"ISP"`
+	Netmode              string           `position:"Query" name:"Netmode"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type AllocateEipAddressResponse struct {
@@ -94,7 +94,7 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	request = &AllocateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AllocateEipAddress", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AllocateEipAddress", "", "")
 	return
 }
 

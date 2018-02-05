@@ -67,14 +67,14 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Period               string           `position:"Query" name:"Period"`
 	AutoPay              string           `position:"Query" name:"AutoPay"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               string           `position:"Query" name:"Period"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RenewInstanceResponse struct {
@@ -87,7 +87,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "", "")
 	return
 }
 

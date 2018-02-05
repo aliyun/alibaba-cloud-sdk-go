@@ -67,10 +67,10 @@ func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callb
 
 type RenameAlbumRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	AlbumName string           `position:"Query" name:"AlbumName"`
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	AlbumName string           `position:"Query" name:"AlbumName"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type RenameAlbumResponse struct {
@@ -85,7 +85,7 @@ func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	request = &RenameAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RenameAlbum", "", "")
 	return
 }
 

@@ -67,12 +67,12 @@ func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroup
 
 type LeaveSecurityGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type LeaveSecurityGroupResponse struct {
@@ -84,7 +84,7 @@ func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	request = &LeaveSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "", "")
 	return
 }
 

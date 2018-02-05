@@ -74,30 +74,9 @@ type ListEntitiesForPolicyRequest struct {
 type ListEntitiesForPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Groups    struct {
-		Group []struct {
-			GroupName  string `json:"GroupName" xml:"GroupName"`
-			Comments   string `json:"Comments" xml:"Comments"`
-			AttachDate string `json:"AttachDate" xml:"AttachDate"`
-		} `json:"Group" xml:"Group"`
-	} `json:"Groups" xml:"Groups"`
-	Users struct {
-		User []struct {
-			UserId      string `json:"UserId" xml:"UserId"`
-			UserName    string `json:"UserName" xml:"UserName"`
-			DisplayName string `json:"DisplayName" xml:"DisplayName"`
-			AttachDate  string `json:"AttachDate" xml:"AttachDate"`
-		} `json:"User" xml:"User"`
-	} `json:"Users" xml:"Users"`
-	Roles struct {
-		Role []struct {
-			RoleId      string `json:"RoleId" xml:"RoleId"`
-			RoleName    string `json:"RoleName" xml:"RoleName"`
-			Arn         string `json:"Arn" xml:"Arn"`
-			Description string `json:"Description" xml:"Description"`
-			AttachDate  string `json:"AttachDate" xml:"AttachDate"`
-		} `json:"Role" xml:"Role"`
-	} `json:"Roles" xml:"Roles"`
+	Groups    Groups `json:"Groups" xml:"Groups"`
+	Users     Users  `json:"Users" xml:"Users"`
+	Roles     Roles  `json:"Roles" xml:"Roles"`
 }
 
 func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest) {

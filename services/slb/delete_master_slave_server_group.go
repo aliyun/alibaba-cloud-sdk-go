@@ -67,12 +67,12 @@ func (client *Client) DeleteMasterSlaveServerGroupWithCallback(request *DeleteMa
 
 type DeleteMasterSlaveServerGroupRequest struct {
 	*requests.RpcRequest
-	Tags                     string           `position:"Query" name:"Tags"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId              string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId              string           `position:"Query" name:"access_key_id"`
+	Tags                     string           `position:"Query" name:"Tags"`
 	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 }
 
@@ -85,7 +85,7 @@ func CreateDeleteMasterSlaveServerGroupRequest() (request *DeleteMasterSlaveServ
 	request = &DeleteMasterSlaveServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "", "")
 	return
 }
 

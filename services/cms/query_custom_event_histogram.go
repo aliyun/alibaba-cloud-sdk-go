@@ -81,7 +81,7 @@ func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogra
 	request = &QueryCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventHistogram", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventHistogram", "", "")
 	return
 }
 

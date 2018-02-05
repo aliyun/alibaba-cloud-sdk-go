@@ -67,10 +67,10 @@ func (client *Client) DeleteInvalidAddressWithCallback(request *DeleteInvalidAdd
 
 type DeleteInvalidAddressRequest struct {
 	*requests.RpcRequest
-	ToAddress            string           `position:"Query" name:"ToAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ToAddress            string           `position:"Query" name:"ToAddress"`
 }
 
 type DeleteInvalidAddressResponse struct {

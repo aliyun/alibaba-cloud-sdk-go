@@ -67,38 +67,29 @@ func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkfl
 
 type SearchMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	StateList            string           `position:"Query" name:"StateList"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SearchMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
-	MediaWorkflowList struct {
-		MediaWorkflow []struct {
-			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-			Name            string `json:"Name" xml:"Name"`
-			Topology        string `json:"Topology" xml:"Topology"`
-			TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
-			State           string `json:"State" xml:"State"`
-			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-		} `json:"MediaWorkflow" xml:"MediaWorkflow"`
-	} `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	MediaWorkflowList MediaWorkflowList `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
 	request = &SearchMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "", "")
 	return
 }
 

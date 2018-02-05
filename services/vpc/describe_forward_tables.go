@@ -67,47 +67,29 @@ func (client *Client) DescribeForwardTablesWithCallback(request *DescribeForward
 
 type DescribeForwardTablesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeForwardTablesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	ForwardTables struct {
-		ForwardTable []struct {
-			NatGatewayId   string `json:"NatGatewayId" xml:"NatGatewayId"`
-			ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
-			CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-			ForwardEntrys  struct {
-				ForwardEntry []struct {
-					ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
-					ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
-					ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
-					ExternalPort   string `json:"ExternalPort" xml:"ExternalPort"`
-					IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
-					InternalIp     string `json:"InternalIp" xml:"InternalIp"`
-					InternalPort   string `json:"InternalPort" xml:"InternalPort"`
-					Status         string `json:"Status" xml:"Status"`
-				} `json:"ForwardEntry" xml:"ForwardEntry"`
-			} `json:"ForwardEntrys" xml:"ForwardEntrys"`
-		} `json:"ForwardTable" xml:"ForwardTable"`
-	} `json:"ForwardTables" xml:"ForwardTables"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	ForwardTables ForwardTables `json:"ForwardTables" xml:"ForwardTables"`
 }
 
 func CreateDescribeForwardTablesRequest() (request *DescribeForwardTablesRequest) {
 	request = &DescribeForwardTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTables", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTables", "", "")
 	return
 }
 

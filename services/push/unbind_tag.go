@@ -67,10 +67,10 @@ func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback 
 
 type UnbindTagRequest struct {
 	*requests.RpcRequest
-	KeyType   string           `position:"Query" name:"KeyType"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	TagName   string           `position:"Query" name:"TagName"`
 	ClientKey string           `position:"Query" name:"ClientKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
+	TagName   string           `position:"Query" name:"TagName"`
 }
 
 type UnbindTagResponse struct {

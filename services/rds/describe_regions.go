@@ -67,29 +67,24 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Regions   struct {
-		RDSRegion []struct {
-			RegionId string `json:"RegionId" xml:"RegionId"`
-			ZoneId   string `json:"ZoneId" xml:"ZoneId"`
-		} `json:"RDSRegion" xml:"RDSRegion"`
-	} `json:"Regions" xml:"Regions"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
 func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegions", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegions", "", "")
 	return
 }
 

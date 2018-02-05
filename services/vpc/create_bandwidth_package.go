@@ -67,19 +67,19 @@ func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidt
 
 type CreateBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ISP                  string           `position:"Query" name:"ISP"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	IpCount              requests.Integer `position:"Query" name:"IpCount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	IpCount              requests.Integer `position:"Query" name:"IpCount"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	ISP                  string           `position:"Query" name:"ISP"`
 	Zone                 string           `position:"Query" name:"Zone"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 }
 
 type CreateBandwidthPackageResponse struct {
@@ -92,7 +92,7 @@ func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageReque
 	request = &CreateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBandwidthPackage", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBandwidthPackage", "", "")
 	return
 }
 

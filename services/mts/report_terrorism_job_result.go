@@ -67,13 +67,13 @@ func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerror
 
 type ReportTerrorismJobResultRequest struct {
 	*requests.RpcRequest
-	Detail               string           `position:"Query" name:"Detail"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Label                string           `position:"Query" name:"Label"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Label                string           `position:"Query" name:"Label"`
+	Detail               string           `position:"Query" name:"Detail"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportTerrorismJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultR
 	request = &ReportTerrorismJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTerrorismJobResult", "", "")
 	return
 }
 

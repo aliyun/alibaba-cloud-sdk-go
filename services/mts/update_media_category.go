@@ -67,12 +67,12 @@ func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCatego
 
 type UpdateMediaCategoryRequest struct {
 	*requests.RpcRequest
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type UpdateMediaCategoryResponse struct {
@@ -84,7 +84,7 @@ func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	request = &UpdateMediaCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "", "")
 	return
 }
 

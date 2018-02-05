@@ -67,13 +67,13 @@ func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacere
 
 type ReportFacerecogJobResultRequest struct {
 	*requests.RpcRequest
-	Facerecog            string           `position:"Query" name:"Facerecog"`
-	Details              string           `position:"Query" name:"Details"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Facerecog            string           `position:"Query" name:"Facerecog"`
+	Details              string           `position:"Query" name:"Details"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportFacerecogJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultR
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "", "")
 	return
 }
 

@@ -67,12 +67,12 @@ func (client *Client) DeleteVpnGatewayWithCallback(request *DeleteVpnGatewayRequ
 
 type DeleteVpnGatewayRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 }
 
 type DeleteVpnGatewayResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	request = &DeleteVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnGateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnGateway", "", "")
 	return
 }
 

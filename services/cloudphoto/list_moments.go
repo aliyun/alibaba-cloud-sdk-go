@@ -67,38 +67,30 @@ func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callb
 
 type ListMomentsRequest struct {
 	*requests.RpcRequest
-	Cursor    string           `position:"Query" name:"Cursor"`
 	Direction string           `position:"Query" name:"Direction"`
-	State     string           `position:"Query" name:"State"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	Size      requests.Integer `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	State     string           `position:"Query" name:"State"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type ListMomentsResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor string `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Moments    []struct {
-		Id           int    `json:"Id" xml:"Id"`
-		LocationName string `json:"LocationName" xml:"LocationName"`
-		PhotosCount  int    `json:"PhotosCount" xml:"PhotosCount"`
-		State        string `json:"State" xml:"State"`
-		TakenAt      int    `json:"TakenAt" xml:"TakenAt"`
-		Ctime        int    `json:"Ctime" xml:"Ctime"`
-		Mtime        int    `json:"Mtime" xml:"Mtime"`
-	} `json:"Moments" xml:"Moments"`
+	Code       string   `json:"Code" xml:"Code"`
+	Message    string   `json:"Message" xml:"Message"`
+	NextCursor string   `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	Action     string   `json:"Action" xml:"Action"`
+	Moments    []Moment `json:"Moments" xml:"Moments"`
 }
 
 func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	request = &ListMomentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListMoments", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListMoments", "", "")
 	return
 }
 

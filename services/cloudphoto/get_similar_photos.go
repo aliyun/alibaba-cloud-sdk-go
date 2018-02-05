@@ -67,43 +67,25 @@ func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequ
 
 type GetSimilarPhotosRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type GetSimilarPhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Photos    []struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		Location        string `json:"Location" xml:"Location"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Remark          string `json:"Remark" xml:"Remark"`
-		Size            int    `json:"Size" xml:"Size"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-		Like            int    `json:"Like" xml:"Like"`
-	} `json:"Photos" xml:"Photos"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
 func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 	request = &GetSimilarPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetSimilarPhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetSimilarPhotos", "", "")
 	return
 }
 

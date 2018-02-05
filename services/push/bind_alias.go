@@ -67,9 +67,9 @@ func (client *Client) BindAliasWithCallback(request *BindAliasRequest, callback 
 
 type BindAliasRequest struct {
 	*requests.RpcRequest
-	AliasName string           `position:"Query" name:"AliasName"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId  string           `position:"Query" name:"DeviceId"`
+	AliasName string           `position:"Query" name:"AliasName"`
 }
 
 type BindAliasResponse struct {

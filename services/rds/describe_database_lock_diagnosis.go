@@ -67,24 +67,22 @@ func (client *Client) DescribeDatabaseLockDiagnosisWithCallback(request *Describ
 
 type DescribeDatabaseLockDiagnosisRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	EndTime      string `position:"Query" name:"EndTime"`
 }
 
 type DescribeDatabaseLockDiagnosisResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DeadLockList struct {
-		DeadLock []string `json:"DeadLock" xml:"DeadLock"`
-	} `json:"DeadLockList" xml:"DeadLockList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	DeadLockList DeadLockList `json:"DeadLockList" xml:"DeadLockList"`
 }
 
 func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLockDiagnosisRequest) {
 	request = &DescribeDatabaseLockDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabaseLockDiagnosis", "", "")
 	return
 }
 

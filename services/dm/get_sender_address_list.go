@@ -67,15 +67,15 @@ func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddress
 
 type GetSenderAddressListRequest struct {
 	*requests.RpcRequest
-	Total                string           `position:"Query" name:"Total"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Keyword              string           `position:"Query" name:"Keyword"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNo               string           `position:"Query" name:"PageNo"`
-	Offset               string           `position:"Query" name:"Offset"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Total                string           `position:"Query" name:"Total"`
+	Offset               string           `position:"Query" name:"Offset"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	PageNo               string           `position:"Query" name:"PageNo"`
+	Keyword              string           `position:"Query" name:"Keyword"`
+	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
 }
 
 type GetSenderAddressListResponse struct {
@@ -84,15 +84,7 @@ type GetSenderAddressListResponse struct {
 	Total     int    `json:"Total" xml:"Total"`
 	PageNo    int    `json:"PageNo" xml:"PageNo"`
 	PageSize  int    `json:"PageSize" xml:"PageSize"`
-	Data      struct {
-		SenderAddressNotificationInfo []struct {
-			Region          string `json:"Region" xml:"Region"`
-			UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
-			Status          string `json:"Status" xml:"Status"`
-			SenderAddressId string `json:"SenderAddressId" xml:"SenderAddressId"`
-			SenderAddress   string `json:"SenderAddress" xml:"SenderAddress"`
-		} `json:"senderAddressNotificationInfo" xml:"senderAddressNotificationInfo"`
-	} `json:"data" xml:"data"`
+	Data      Data   `json:"data" xml:"data"`
 }
 
 func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) {

@@ -67,45 +67,25 @@ func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSyste
 
 type DescribeFileSystemsRequest struct {
 	*requests.RpcRequest
+	FileSystemId string           `position:"Query" name:"FileSystemId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	FileSystemId string           `position:"Query" name:"FileSystemId"`
 }
 
 type DescribeFileSystemsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	FileSystems struct {
-		FileSystem []struct {
-			FileSystemId string `json:"FileSystemId" xml:"FileSystemId"`
-			Destription  string `json:"Destription" xml:"Destription"`
-			CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			ProtocolType string `json:"ProtocolType" xml:"ProtocolType"`
-			StorageType  string `json:"StorageType" xml:"StorageType"`
-			MeteredSize  int    `json:"MeteredSize" xml:"MeteredSize"`
-			MountTargets struct {
-				MountTarget []struct {
-					MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-				} `json:"MountTarget" xml:"MountTarget"`
-			} `json:"MountTargets" xml:"MountTargets"`
-			Packages struct {
-				Package []struct {
-					PackageId string `json:"PackageId" xml:"PackageId"`
-				} `json:"Package" xml:"Package"`
-			} `json:"Packages" xml:"Packages"`
-		} `json:"FileSystem" xml:"FileSystem"`
-	} `json:"FileSystems" xml:"FileSystems"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	FileSystems FileSystems `json:"FileSystems" xml:"FileSystems"`
 }
 
 func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeFileSystems", "", "")
 	return
 }
 

@@ -67,35 +67,26 @@ func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineReques
 
 type AddPornPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddPornPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		Priority     int    `json:"Priority" xml:"Priority"`
-		State        string `json:"State" xml:"State"`
-		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 	request = &AddPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddPornPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddPornPipeline", "", "")
 	return
 }
 

@@ -67,11 +67,11 @@ func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callb
 
 type AssignUsersRequest struct {
 	*requests.RpcRequest
+	InstanceId   string    `position:"Query" name:"InstanceId"`
 	UserRamId    *[]string `position:"Query" name:"UserRamId"  type:"Repeated"`
-	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
 	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	InstanceId   string    `position:"Query" name:"InstanceId"`
+	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
 type AssignUsersResponse struct {

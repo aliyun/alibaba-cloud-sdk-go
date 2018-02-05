@@ -67,45 +67,24 @@ func (client *Client) ListActiveAlertRuleWithCallback(request *ListActiveAlertRu
 
 type ListActiveAlertRuleRequest struct {
 	*requests.RpcRequest
-	Product string `position:"Query" name:"Product"`
 	UserId  string `position:"Query" name:"UserId"`
+	Product string `position:"Query" name:"Product"`
 }
 
 type ListActiveAlertRuleResponse struct {
 	*responses.BaseResponse
-	Success    bool   `json:"Success" xml:"Success"`
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Datapoints struct {
-		Alarm []struct {
-			Uuid               string `json:"Uuid" xml:"Uuid"`
-			Name               string `json:"Name" xml:"Name"`
-			Namespace          string `json:"Namespace" xml:"Namespace"`
-			MetricName         string `json:"MetricName" xml:"MetricName"`
-			Period             string `json:"Period" xml:"Period"`
-			Statistics         string `json:"Statistics" xml:"Statistics"`
-			ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-			Threshold          string `json:"Threshold" xml:"Threshold"`
-			EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
-			StartTime          string `json:"StartTime" xml:"StartTime"`
-			EndTime            string `json:"EndTime" xml:"EndTime"`
-			SilenceTime        string `json:"SilenceTime" xml:"SilenceTime"`
-			NotifyType         string `json:"NotifyType" xml:"NotifyType"`
-			Enable             string `json:"Enable" xml:"Enable"`
-			State              string `json:"State" xml:"State"`
-			ContactGroups      string `json:"ContactGroups" xml:"ContactGroups"`
-			Webhook            string `json:"Webhook" xml:"Webhook"`
-			RuleName           string `json:"RuleName" xml:"RuleName"`
-		} `json:"Alarm" xml:"Alarm"`
-	} `json:"Datapoints" xml:"Datapoints"`
+	Success    bool       `json:"Success" xml:"Success"`
+	Code       string     `json:"Code" xml:"Code"`
+	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Datapoints Datapoints `json:"Datapoints" xml:"Datapoints"`
 }
 
 func CreateListActiveAlertRuleRequest() (request *ListActiveAlertRuleRequest) {
 	request = &ListActiveAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListActiveAlertRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListActiveAlertRule", "", "")
 	return
 }
 

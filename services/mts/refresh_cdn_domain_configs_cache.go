@@ -67,29 +67,25 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshC
 
 type RefreshCdnDomainConfigsCacheRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Domains              string `position:"Query" name:"Domains"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Domains              string `position:"Query" name:"Domains"`
 }
 
 type RefreshCdnDomainConfigsCacheResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	SucessDomains struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"SucessDomains" xml:"SucessDomains"`
-	FailedDomains struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"FailedDomains" xml:"FailedDomains"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	SucessDomains SucessDomains `json:"SucessDomains" xml:"SucessDomains"`
+	FailedDomains FailedDomains `json:"FailedDomains" xml:"FailedDomains"`
 }
 
 func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfigsCacheRequest) {
 	request = &RefreshCdnDomainConfigsCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "", "")
 	return
 }
 

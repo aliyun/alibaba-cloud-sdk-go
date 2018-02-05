@@ -67,32 +67,24 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	InstanceRenewAttributes struct {
-		InstanceRenewAttribute []struct {
-			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-			AutoRenewEnabled bool   `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
-			Duration         int    `json:"Duration" xml:"Duration"`
-			PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
-			RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
-		} `json:"InstanceRenewAttribute" xml:"InstanceRenewAttribute"`
-	} `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
+	RequestId               string                  `json:"RequestId" xml:"RequestId"`
+	InstanceRenewAttributes InstanceRenewAttributes `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }
 
 func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "", "")
 	return
 }
 

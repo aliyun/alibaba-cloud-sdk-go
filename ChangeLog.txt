@@ -1,3 +1,8 @@
+2018-01-31 Version: 0.11.1
+1. Fixed bugs that could cause signature errors while a ROA request contains lots of special symbols
+2. Optimization of the serverError.Error() interface
+3. When there is an error of "SignatureDoseNotMatch", it is now possible to tell user if the AccessKeySecret is wrong or caused by a sdk bug
+
 2018-01-29 Version: 0.11.0
 1, Support dep
 2, Add 4 usage of credentials for each services

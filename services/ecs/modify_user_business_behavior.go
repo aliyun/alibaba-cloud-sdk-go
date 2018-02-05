@@ -67,12 +67,6 @@ func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUser
 
 type ModifyUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	StatusValue          string           `position:"Query" name:"statusValue"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	StatusKey            string           `position:"Query" name:"statusKey"`
 }
 
 type ModifyUserBusinessBehaviorResponse struct {
@@ -84,7 +78,7 @@ func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehav
 	request = &ModifyUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserBusinessBehavior", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserBusinessBehavior", "", "")
 	return
 }
 

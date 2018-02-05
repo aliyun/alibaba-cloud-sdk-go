@@ -67,14 +67,14 @@ func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callb
 
 type CreateHaVipRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type CreateHaVipResponse struct {
@@ -87,7 +87,7 @@ func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	request = &CreateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHaVip", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHaVip", "", "")
 	return
 }
 

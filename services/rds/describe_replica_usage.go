@@ -67,41 +67,29 @@ func (client *Client) DescribeReplicaUsageWithCallback(request *DescribeReplicaU
 
 type DescribeReplicaUsageRequest struct {
 	*requests.RpcRequest
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
 }
 
 type DescribeReplicaUsageResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	ReplicaId       string `json:"ReplicaId" xml:"ReplicaId"`
-	PerformanceKeys struct {
-		PerformanceKey []struct {
-			Key               string `json:"Key" xml:"Key"`
-			Unit              string `json:"Unit" xml:"Unit"`
-			ValueFormat       string `json:"ValueFormat" xml:"ValueFormat"`
-			PerformanceValues struct {
-				PerformanceValue []struct {
-					Value string `json:"Value" xml:"Value"`
-					Date  string `json:"Date" xml:"Date"`
-				} `json:"PerformanceValue" xml:"PerformanceValue"`
-			} `json:"PerformanceValues" xml:"PerformanceValues"`
-		} `json:"PerformanceKey" xml:"PerformanceKey"`
-	} `json:"PerformanceKeys" xml:"PerformanceKeys"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	ReplicaId       string          `json:"ReplicaId" xml:"ReplicaId"`
+	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
 func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) {
 	request = &DescribeReplicaUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaUsage", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaUsage", "", "")
 	return
 }
 

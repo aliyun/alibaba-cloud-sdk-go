@@ -67,35 +67,21 @@ func (client *Client) DescribeSubDomainRecordsWithCallback(request *DescribeSubD
 
 type DescribeSubDomainRecordsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	SubDomain    string           `position:"Query" name:"SubDomain"`
-	Type         string           `position:"Query" name:"Type"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	SubDomain    string           `position:"Query" name:"SubDomain"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Type         string           `position:"Query" name:"Type"`
 }
 
 type DescribeSubDomainRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	DomainRecords struct {
-		Record []struct {
-			DomainName string `json:"DomainName" xml:"DomainName"`
-			RecordId   string `json:"RecordId" xml:"RecordId"`
-			RR         string `json:"RR" xml:"RR"`
-			Type       string `json:"Type" xml:"Type"`
-			Value      string `json:"Value" xml:"Value"`
-			TTL        int    `json:"TTL" xml:"TTL"`
-			Priority   int    `json:"Priority" xml:"Priority"`
-			Line       string `json:"Line" xml:"Line"`
-			Status     string `json:"Status" xml:"Status"`
-			Locked     bool   `json:"Locked" xml:"Locked"`
-			Weight     int    `json:"Weight" xml:"Weight"`
-		} `json:"Record" xml:"Record"`
-	} `json:"DomainRecords" xml:"DomainRecords"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	DomainRecords DomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
 func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsRequest) {

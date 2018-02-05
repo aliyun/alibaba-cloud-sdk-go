@@ -67,39 +67,30 @@ func (client *Client) DescribeSnatTableEntriesWithCallback(request *DescribeSnat
 
 type DescribeSnatTableEntriesRequest struct {
 	*requests.RpcRequest
-	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SnatTableId          string           `position:"Query" name:"SnatTableId"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeSnatTableEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	SnatTableEntries struct {
-		SnatTableEntry []struct {
-			SnatTableId     string `json:"SnatTableId" xml:"SnatTableId"`
-			SnatEntryId     string `json:"SnatEntryId" xml:"SnatEntryId"`
-			SourceVSwitchId string `json:"SourceVSwitchId" xml:"SourceVSwitchId"`
-			SourceCIDR      string `json:"SourceCIDR" xml:"SourceCIDR"`
-			SnatIp          string `json:"SnatIp" xml:"SnatIp"`
-			Status          string `json:"Status" xml:"Status"`
-		} `json:"SnatTableEntry" xml:"SnatTableEntry"`
-	} `json:"SnatTableEntries" xml:"SnatTableEntries"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	SnatTableEntries SnatTableEntries `json:"SnatTableEntries" xml:"SnatTableEntries"`
 }
 
 func CreateDescribeSnatTableEntriesRequest() (request *DescribeSnatTableEntriesRequest) {
 	request = &DescribeSnatTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSnatTableEntries", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSnatTableEntries", "", "")
 	return
 }
 

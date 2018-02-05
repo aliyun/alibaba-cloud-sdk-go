@@ -67,30 +67,25 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Regions   struct {
-		Region []struct {
-			RegionId  string `json:"RegionId" xml:"RegionId"`
-			LocalName string `json:"LocalName" xml:"LocalName"`
-		} `json:"Region" xml:"Region"`
-	} `json:"Regions" xml:"Regions"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
 func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRegions", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRegions", "", "")
 	return
 }
 

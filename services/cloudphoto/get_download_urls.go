@@ -67,32 +67,25 @@ func (client *Client) GetDownloadUrlsWithCallback(request *GetDownloadUrlsReques
 
 type GetDownloadUrlsRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type GetDownloadUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   struct {
-		Result []struct {
-			Code        string `json:"Code" xml:"Code"`
-			Message     string `json:"Message" xml:"Message"`
-			PhotoId     int    `json:"PhotoId" xml:"PhotoId"`
-			DownloadUrl string `json:"DownloadUrl" xml:"DownloadUrl"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Results   Results `json:"Results" xml:"Results"`
 }
 
 func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {
 	request = &GetDownloadUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrls", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrls", "", "")
 	return
 }
 

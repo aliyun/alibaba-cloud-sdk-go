@@ -67,43 +67,34 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TaskAction           string           `position:"Query" name:"TaskAction"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TaskIds              string           `position:"Query" name:"TaskIds"`
-	TaskStatus           string           `position:"Query" name:"TaskStatus"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	TaskIds              string           `position:"Query" name:"TaskIds"`
+	TaskAction           string           `position:"Query" name:"TaskAction"`
+	TaskStatus           string           `position:"Query" name:"TaskStatus"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TaskSet    struct {
-		Task []struct {
-			TaskId        string `json:"TaskId" xml:"TaskId"`
-			TaskAction    string `json:"TaskAction" xml:"TaskAction"`
-			TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
-			SupportCancel string `json:"SupportCancel" xml:"SupportCancel"`
-			CreationTime  string `json:"CreationTime" xml:"CreationTime"`
-			FinishedTime  string `json:"FinishedTime" xml:"FinishedTime"`
-		} `json:"Task" xml:"Task"`
-	} `json:"TaskSet" xml:"TaskSet"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	RegionId   string  `json:"RegionId" xml:"RegionId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	TaskSet    TaskSet `json:"TaskSet" xml:"TaskSet"`
 }
 
 func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "", "")
 	return
 }
 

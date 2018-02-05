@@ -67,10 +67,10 @@ func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, c
 
 type CreateKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 }
 
 type CreateKeyPairResponse struct {
@@ -85,7 +85,7 @@ func CreateCreateKeyPairRequest() (request *CreateKeyPairRequest) {
 	request = &CreateKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateKeyPair", "", "")
 	return
 }
 

@@ -67,11 +67,11 @@ func (client *Client) UpdateDomainTrackNameWithCallback(request *UpdateDomainTra
 
 type UpdateDomainTrackNameRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CnameTrackRecord     string           `position:"Query" name:"CnameTrackRecord"`
-	DomainId             requests.Integer `position:"Query" name:"DomainId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DomainId             requests.Integer `position:"Query" name:"DomainId"`
+	CnameTrackRecord     string           `position:"Query" name:"CnameTrackRecord"`
 }
 
 type UpdateDomainTrackNameResponse struct {

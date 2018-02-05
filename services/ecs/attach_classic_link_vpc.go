@@ -67,11 +67,11 @@ func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLin
 
 type AttachClassicLinkVpcRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 type AttachClassicLinkVpcResponse struct {
@@ -83,7 +83,7 @@ func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) 
 	request = &AttachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachClassicLinkVpc", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachClassicLinkVpc", "", "")
 	return
 }
 

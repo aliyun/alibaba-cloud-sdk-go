@@ -67,36 +67,25 @@ func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerifi
 
 type ListEmailVerificationRequest struct {
 	*requests.RpcRequest
-	PageSize           requests.Integer `position:"Query" name:"PageSize"`
-	VerificationStatus requests.Integer `position:"Query" name:"VerificationStatus"`
-	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
-	Email              string           `position:"Query" name:"Email"`
-	PageNum            requests.Integer `position:"Query" name:"PageNum"`
-	EndCreateTime      requests.Integer `position:"Query" name:"EndCreateTime"`
 	Lang               string           `position:"Query" name:"Lang"`
+	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
+	EndCreateTime      requests.Integer `position:"Query" name:"EndCreateTime"`
+	Email              string           `position:"Query" name:"Email"`
+	VerificationStatus requests.Integer `position:"Query" name:"VerificationStatus"`
+	PageNum            requests.Integer `position:"Query" name:"PageNum"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListEmailVerificationResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	PrePage        bool   `json:"PrePage" xml:"PrePage"`
-	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	Data           []struct {
-		GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
-		GmtModified         string `json:"GmtModified" xml:"GmtModified"`
-		Email               string `json:"Email" xml:"Email"`
-		UserId              string `json:"UserId" xml:"UserId"`
-		EmailVerificationNo string `json:"EmailVerificationNo" xml:"EmailVerificationNo"`
-		TokenSendTime       string `json:"TokenSendTime" xml:"TokenSendTime"`
-		VerificationStatus  int    `json:"VerificationStatus" xml:"VerificationStatus"`
-		VerificationTime    string `json:"VerificationTime" xml:"VerificationTime"`
-		SendIp              string `json:"SendIp" xml:"SendIp"`
-		ConfirmIp           string `json:"ConfirmIp" xml:"ConfirmIp"`
-	} `json:"Data" xml:"Data"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                 `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                 `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int                 `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int                 `json:"PageSize" xml:"PageSize"`
+	PrePage        bool                `json:"PrePage" xml:"PrePage"`
+	NextPage       bool                `json:"NextPage" xml:"NextPage"`
+	Data           []EmailVerification `json:"Data" xml:"Data"`
 }
 
 func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest) {

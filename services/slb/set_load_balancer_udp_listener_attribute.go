@@ -67,29 +67,29 @@ func (client *Client) SetLoadBalancerUDPListenerAttributeWithCallback(request *S
 
 type SetLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	VServerGroup              string           `position:"Query" name:"VServerGroup"`
-	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
-	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
-	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
-	Tags                      string           `position:"Query" name:"Tags"`
-	Scheduler                 string           `position:"Query" name:"Scheduler"`
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
-	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
+	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	Scheduler                 string           `position:"Query" name:"Scheduler"`
+	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
+	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
+	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
+	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
+	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
+	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
 	HealthCheckExp            string           `position:"Query" name:"healthCheckExp"`
 	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId               string           `position:"Query" name:"access_key_id"`
-	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
-	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
-	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
+	Tags                      string           `position:"Query" name:"Tags"`
+	VServerGroup              string           `position:"Query" name:"VServerGroup"`
+	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
+	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
 	MasterSlaveServerGroup    string           `position:"Query" name:"MasterSlaveServerGroup"`
-	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
-	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 }
 
 type SetLoadBalancerUDPListenerAttributeResponse struct {
@@ -101,7 +101,7 @@ func CreateSetLoadBalancerUDPListenerAttributeRequest() (request *SetLoadBalance
 	request = &SetLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "", "")
 	return
 }
 

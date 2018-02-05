@@ -67,10 +67,6 @@ func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPub
 
 type ConvertNatPublicIpToEipRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type ConvertNatPublicIpToEipResponse struct {
@@ -82,7 +78,7 @@ func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipReq
 	request = &ConvertNatPublicIpToEipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "", "")
 	return
 }
 

@@ -67,31 +67,24 @@ func (client *Client) CalculateDBInstanceWeightWithCallback(request *CalculateDB
 
 type CalculateDBInstanceWeightRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 type CalculateDBInstanceWeightResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		DBInstanceWeight []struct {
-			DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceType string `json:"DBInstanceType" xml:"DBInstanceType"`
-			Availability   string `json:"Availability" xml:"Availability"`
-			Weight         string `json:"Weight" xml:"Weight"`
-		} `json:"DBInstanceWeight" xml:"DBInstanceWeight"`
-	} `json:"Items" xml:"Items"`
+	Items     Items  `json:"Items" xml:"Items"`
 }
 
 func CreateCalculateDBInstanceWeightRequest() (request *CalculateDBInstanceWeightRequest) {
 	request = &CalculateDBInstanceWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CalculateDBInstanceWeight", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CalculateDBInstanceWeight", "", "")
 	return
 }
 

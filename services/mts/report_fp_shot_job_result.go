@@ -67,13 +67,13 @@ func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJob
 
 type ReportFpShotJobResultRequest struct {
 	*requests.RpcRequest
-	Result               string           `position:"Query" name:"Result"`
-	Details              string           `position:"Query" name:"Details"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Result               string           `position:"Query" name:"Result"`
+	Details              string           `position:"Query" name:"Details"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportFpShotJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest
 	request = &ReportFpShotJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "", "")
 	return
 }
 

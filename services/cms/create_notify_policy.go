@@ -67,11 +67,11 @@ func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicy
 
 type CreateNotifyPolicyRequest struct {
 	*requests.RpcRequest
+	Dimensions string           `position:"Query" name:"Dimensions"`
+	PolicyType string           `position:"Query" name:"PolicyType"`
+	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	AlertName  string           `position:"Query" name:"AlertName"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	PolicyType string           `position:"Query" name:"PolicyType"`
-	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 
 type CreateNotifyPolicyResponse struct {
@@ -87,7 +87,7 @@ func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
 	request = &CreateNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "CreateNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "CreateNotifyPolicy", "", "")
 	return
 }
 

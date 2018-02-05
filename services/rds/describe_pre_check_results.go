@@ -67,34 +67,27 @@ func (client *Client) DescribePreCheckResultsWithCallback(request *DescribePreCh
 
 type DescribePreCheckResultsRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PreCheckId           string           `position:"Query" name:"PreCheckId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PreCheckId           string           `position:"Query" name:"PreCheckId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribePreCheckResultsResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Items        struct {
-		PreCheckResult []struct {
-			PreCheckName   string `json:"PreCheckName" xml:"PreCheckName"`
-			PreCheckResult string `json:"PreCheckResult" xml:"PreCheckResult"`
-			FailReasion    string `json:"FailReasion" xml:"FailReasion"`
-			RepairMethod   string `json:"RepairMethod" xml:"RepairMethod"`
-		} `json:"PreCheckResult" xml:"PreCheckResult"`
-	} `json:"Items" xml:"Items"`
+	Items        Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribePreCheckResultsRequest() (request *DescribePreCheckResultsRequest) {
 	request = &DescribePreCheckResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePreCheckResults", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePreCheckResults", "", "")
 	return
 }
 

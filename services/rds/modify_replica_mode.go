@@ -67,14 +67,14 @@ func (client *Client) ModifyReplicaModeWithCallback(request *ModifyReplicaModeRe
 
 type ModifyReplicaModeRequest struct {
 	*requests.RpcRequest
-	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
+	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
 	DomainMode           string           `position:"Query" name:"DomainMode"`
 }
 
@@ -87,7 +87,7 @@ func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaMode", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaMode", "", "")
 	return
 }
 

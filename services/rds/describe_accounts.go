@@ -67,39 +67,25 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 
 type DescribeAccountsRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Accounts  struct {
-		DBInstanceAccount []struct {
-			DBInstanceId       string `json:"DBInstanceId" xml:"DBInstanceId"`
-			AccountName        string `json:"AccountName" xml:"AccountName"`
-			AccountStatus      string `json:"AccountStatus" xml:"AccountStatus"`
-			AccountType        string `json:"AccountType" xml:"AccountType"`
-			AccountDescription string `json:"AccountDescription" xml:"AccountDescription"`
-			DatabasePrivileges struct {
-				DatabasePrivilege []struct {
-					DBName           string `json:"DBName" xml:"DBName"`
-					AccountPrivilege string `json:"AccountPrivilege" xml:"AccountPrivilege"`
-				} `json:"DatabasePrivilege" xml:"DatabasePrivilege"`
-			} `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
-		} `json:"DBInstanceAccount" xml:"DBInstanceAccount"`
-	} `json:"Accounts" xml:"Accounts"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Accounts  Accounts `json:"Accounts" xml:"Accounts"`
 }
 
 func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAccounts", "", "")
 	return
 }
 

@@ -67,16 +67,16 @@ func (client *Client) ModifyLoadBalancerInternetSpecWithCallback(request *Modify
 
 type ModifyLoadBalancerInternetSpecRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 }
 
 type ModifyLoadBalancerInternetSpecResponse struct {
@@ -89,7 +89,7 @@ func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerI
 	request = &ModifyLoadBalancerInternetSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "", "")
 	return
 }
 

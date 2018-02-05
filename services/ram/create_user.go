@@ -67,25 +67,17 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 
 type CreateUserRequest struct {
 	*requests.RpcRequest
-	MobilePhone string `position:"Query" name:"MobilePhone"`
 	UserName    string `position:"Query" name:"UserName"`
+	DisplayName string `position:"Query" name:"DisplayName"`
+	MobilePhone string `position:"Query" name:"MobilePhone"`
 	Email       string `position:"Query" name:"Email"`
 	Comments    string `position:"Query" name:"Comments"`
-	DisplayName string `position:"Query" name:"DisplayName"`
 }
 
 type CreateUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	User      struct {
-		UserId      string `json:"UserId" xml:"UserId"`
-		UserName    string `json:"UserName" xml:"UserName"`
-		DisplayName string `json:"DisplayName" xml:"DisplayName"`
-		MobilePhone string `json:"MobilePhone" xml:"MobilePhone"`
-		Email       string `json:"Email" xml:"Email"`
-		Comments    string `json:"Comments" xml:"Comments"`
-		CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-	} `json:"User" xml:"User"`
+	User      User   `json:"User" xml:"User"`
 }
 
 func CreateCreateUserRequest() (request *CreateUserRequest) {

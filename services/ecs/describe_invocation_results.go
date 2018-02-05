@@ -67,44 +67,19 @@ func (client *Client) DescribeInvocationResultsWithCallback(request *DescribeInv
 
 type DescribeInvocationResultsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	InvokeId             string           `position:"Query" name:"InvokeId"`
-	InvokeRecordStatus   string           `position:"Query" name:"InvokeRecordStatus"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 type DescribeInvocationResultsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Invocation struct {
-		PageSize          int `json:"PageSize" xml:"PageSize"`
-		PageNumber        int `json:"PageNumber" xml:"PageNumber"`
-		TotalCount        int `json:"TotalCount" xml:"TotalCount"`
-		InvocationResults struct {
-			InvocationResult []struct {
-				CommandId          string `json:"CommandId" xml:"CommandId"`
-				InvokeId           string `json:"InvokeId" xml:"InvokeId"`
-				InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-				FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
-				Output             string `json:"Output" xml:"Output"`
-				InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
-				ExitCode           int    `json:"ExitCode" xml:"ExitCode"`
-			} `json:"InvocationResult" xml:"InvocationResult"`
-		} `json:"InvocationResults" xml:"InvocationResults"`
-	} `json:"Invocation" xml:"Invocation"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Invocation Invocation `json:"Invocation" xml:"Invocation"`
 }
 
 func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResultsRequest) {
 	request = &DescribeInvocationResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInvocationResults", "", "")
 	return
 }
 

@@ -67,57 +67,22 @@ func (client *Client) DescribeDisksFullStatusWithCallback(request *DescribeDisks
 
 type DescribeDisksFullStatusRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	EventTimeEnd         string           `position:"Query" name:"EventTime.End"`
-	EventId              *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HealthStatus         string           `position:"Query" name:"HealthStatus"`
-	EventTimeStart       string           `position:"Query" name:"EventTime.Start"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Status               string           `position:"Query" name:"Status"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DiskId               *[]string        `position:"Query" name:"DiskId"  type:"Repeated"`
-	EventType            string           `position:"Query" name:"EventType"`
 }
 
 type DescribeDisksFullStatusResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
-	DiskFullStatusSet struct {
-		DiskFullStatusType []struct {
-			DiskId string `json:"DiskId" xml:"DiskId"`
-			Status struct {
-				Code int    `json:"Code" xml:"Code"`
-				Name string `json:"Name" xml:"Name"`
-			} `json:"Status" xml:"Status"`
-			HealthStatus struct {
-				Code int    `json:"Code" xml:"Code"`
-				Name string `json:"Name" xml:"Name"`
-			} `json:"HealthStatus" xml:"HealthStatus"`
-			DiskEventSet struct {
-				DiskEventType []struct {
-					EventId   string `json:"EventId" xml:"EventId"`
-					EventTime string `json:"EventTime" xml:"EventTime"`
-					EventType struct {
-						Code int    `json:"Code" xml:"Code"`
-						Name string `json:"Name" xml:"Name"`
-					} `json:"EventType" xml:"EventType"`
-				} `json:"DiskEventType" xml:"DiskEventType"`
-			} `json:"DiskEventSet" xml:"DiskEventSet"`
-		} `json:"DiskFullStatusType" xml:"DiskFullStatusType"`
-	} `json:"DiskFullStatusSet" xml:"DiskFullStatusSet"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	DiskFullStatusSet DiskFullStatusSet `json:"DiskFullStatusSet" xml:"DiskFullStatusSet"`
 }
 
 func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusRequest) {
 	request = &DescribeDisksFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisksFullStatus", "", "")
 	return
 }
 

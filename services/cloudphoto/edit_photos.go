@@ -67,32 +67,28 @@ func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callbac
 
 type EditPhotosRequest struct {
 	*requests.RpcRequest
-	Title           string           `position:"Query" name:"Title"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
-	Remark          string           `position:"Query" name:"Remark"`
-	LibraryId       string           `position:"Query" name:"LibraryId"`
-	StoreName       string           `position:"Query" name:"StoreName"`
 	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	Title           string           `position:"Query" name:"Title"`
+	Remark          string           `position:"Query" name:"Remark"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	LibraryId       string           `position:"Query" name:"LibraryId"`
 }
 
 type EditPhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   []struct {
-		Id      int    `json:"Id" xml:"Id"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"Results" xml:"Results"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Action    string   `json:"Action" xml:"Action"`
+	Results   []Result `json:"Results" xml:"Results"`
 }
 
 func CreateEditPhotosRequest() (request *EditPhotosRequest) {
 	request = &EditPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotos", "", "")
 	return
 }
 

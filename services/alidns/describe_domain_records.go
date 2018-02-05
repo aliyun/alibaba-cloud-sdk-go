@@ -67,41 +67,26 @@ func (client *Client) DescribeDomainRecordsWithCallback(request *DescribeDomainR
 
 type DescribeDomainRecordsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	ValueKeyWord string           `position:"Query" name:"ValueKeyWord"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	Direction    string           `position:"Query" name:"Direction"`
-	KeyWord      string           `position:"Query" name:"KeyWord"`
-	OrderBy      string           `position:"Query" name:"OrderBy"`
-	TypeKeyWord  string           `position:"Query" name:"TypeKeyWord"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord      string           `position:"Query" name:"KeyWord"`
 	RRKeyWord    string           `position:"Query" name:"RRKeyWord"`
+	TypeKeyWord  string           `position:"Query" name:"TypeKeyWord"`
+	ValueKeyWord string           `position:"Query" name:"ValueKeyWord"`
+	OrderBy      string           `position:"Query" name:"OrderBy"`
+	Direction    string           `position:"Query" name:"Direction"`
 }
 
 type DescribeDomainRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	DomainRecords struct {
-		Record []struct {
-			DomainName string `json:"DomainName" xml:"DomainName"`
-			RecordId   string `json:"RecordId" xml:"RecordId"`
-			RR         string `json:"RR" xml:"RR"`
-			Type       string `json:"Type" xml:"Type"`
-			Value      string `json:"Value" xml:"Value"`
-			TTL        int    `json:"TTL" xml:"TTL"`
-			Priority   int    `json:"Priority" xml:"Priority"`
-			Line       string `json:"Line" xml:"Line"`
-			Status     string `json:"Status" xml:"Status"`
-			Locked     bool   `json:"Locked" xml:"Locked"`
-			Weight     int    `json:"Weight" xml:"Weight"`
-			Remark     string `json:"Remark" xml:"Remark"`
-		} `json:"Record" xml:"Record"`
-	} `json:"DomainRecords" xml:"DomainRecords"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	DomainRecords DomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
 func CreateDescribeDomainRecordsRequest() (request *DescribeDomainRecordsRequest) {

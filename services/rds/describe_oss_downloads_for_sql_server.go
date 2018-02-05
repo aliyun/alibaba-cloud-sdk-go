@@ -67,10 +67,10 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *Desc
 
 type DescribeOssDownloadsForSQLServerRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
 }
 
@@ -79,24 +79,14 @@ type DescribeOssDownloadsForSQLServerResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
 	MigrateIaskId  string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	Items          struct {
-		OssDownload []struct {
-			FileName   string `json:"FileName" xml:"FileName"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-			BakType    string `json:"BakType" xml:"BakType"`
-			FileSize   string `json:"FileSize" xml:"FileSize"`
-			Status     string `json:"Status" xml:"Status"`
-			IsAvail    string `json:"IsAvail" xml:"IsAvail"`
-			Desc       string `json:"Desc" xml:"Desc"`
-		} `json:"OssDownload" xml:"OssDownload"`
-	} `json:"Items" xml:"Items"`
+	Items          Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {
 	request = &DescribeOssDownloadsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "", "")
 	return
 }
 

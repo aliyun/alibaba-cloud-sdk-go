@@ -67,24 +67,6 @@ func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecur
 
 type RevokeSecurityGroupEgressRequest struct {
 	*requests.RpcRequest
-	PortRange             string           `position:"Query" name:"PortRange"`
-	DestCidrIp            string           `position:"Query" name:"DestCidrIp"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description           string           `position:"Query" name:"Description"`
-	Priority              string           `position:"Query" name:"Priority"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	DestGroupId           string           `position:"Query" name:"DestGroupId"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	SecurityGroupId       string           `position:"Query" name:"SecurityGroupId"`
-	SourcePortRange       string           `position:"Query" name:"SourcePortRange"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	IpProtocol            string           `position:"Query" name:"IpProtocol"`
-	DestGroupOwnerAccount string           `position:"Query" name:"DestGroupOwnerAccount"`
-	DestGroupOwnerId      requests.Integer `position:"Query" name:"DestGroupOwnerId"`
-	NicType               string           `position:"Query" name:"NicType"`
-	Policy                string           `position:"Query" name:"Policy"`
-	SourceCidrIp          string           `position:"Query" name:"SourceCidrIp"`
 }
 
 type RevokeSecurityGroupEgressResponse struct {
@@ -96,7 +78,7 @@ func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgres
 	request = &RevokeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "", "")
 	return
 }
 

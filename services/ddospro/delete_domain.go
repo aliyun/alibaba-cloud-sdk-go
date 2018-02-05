@@ -67,8 +67,8 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 
 type DeleteDomainRequest struct {
 	*requests.RpcRequest
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 }
 
 type DeleteDomainResponse struct {

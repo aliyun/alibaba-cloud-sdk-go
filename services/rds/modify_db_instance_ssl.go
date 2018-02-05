@@ -67,12 +67,12 @@ func (client *Client) ModifyDBInstanceSSLWithCallback(request *ModifyDBInstanceS
 
 type ModifyDBInstanceSSLRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDBInstanceSSLResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	request = &ModifyDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "", "")
 	return
 }
 

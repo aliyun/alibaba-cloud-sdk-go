@@ -67,11 +67,11 @@ func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest,
 
 type DeletePipelineRequest struct {
 	*requests.RpcRequest
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeletePipelineResponse struct {
@@ -84,7 +84,7 @@ func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
 	request = &DeletePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "", "")
 	return
 }
 

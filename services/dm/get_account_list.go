@@ -67,15 +67,15 @@ func (client *Client) GetAccountListWithCallback(request *GetAccountListRequest,
 
 type GetAccountListRequest struct {
 	*requests.RpcRequest
-	Total                string           `position:"Query" name:"Total"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Offset               string           `position:"Query" name:"Offset"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Total                string           `position:"Query" name:"Total"`
+	Offset               string           `position:"Query" name:"Offset"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 type GetAccountListResponse struct {
@@ -84,13 +84,7 @@ type GetAccountListResponse struct {
 	Total     int    `json:"Total" xml:"Total"`
 	PageNo    int    `json:"PageNo" xml:"PageNo"`
 	PageSize  int    `json:"PageSize" xml:"PageSize"`
-	Data      struct {
-		AccountNotificationInfo []struct {
-			Region     string `json:"Region" xml:"Region"`
-			UpdateTime string `json:"UpdateTime" xml:"UpdateTime"`
-			Status     string `json:"Status" xml:"Status"`
-		} `json:"accountNotificationInfo" xml:"accountNotificationInfo"`
-	} `json:"data" xml:"data"`
+	Data      Data   `json:"data" xml:"data"`
 }
 
 func CreateGetAccountListRequest() (request *GetAccountListRequest) {

@@ -67,24 +67,24 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	SnapshotName         string           `position:"Query" name:"SnapshotName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	SnapshotName         string           `position:"Query" name:"SnapshotName"`
 	Description          string           `position:"Query" name:"Description"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
 type CreateSnapshotResponse struct {
@@ -97,7 +97,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshot", "", "")
 	return
 }
 

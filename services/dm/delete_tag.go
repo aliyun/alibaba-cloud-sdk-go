@@ -67,10 +67,10 @@ func (client *Client) DeleteTagWithCallback(request *DeleteTagRequest, callback 
 
 type DeleteTagRequest struct {
 	*requests.RpcRequest
-	TagId                requests.Integer `position:"Query" name:"TagId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagId                requests.Integer `position:"Query" name:"TagId"`
 }
 
 type DeleteTagResponse struct {

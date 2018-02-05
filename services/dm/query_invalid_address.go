@@ -67,14 +67,14 @@ func (client *Client) QueryInvalidAddressWithCallback(request *QueryInvalidAddre
 
 type QueryInvalidAddressRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	NextStart            string           `position:"Query" name:"NextStart"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	KeyWord              string           `position:"Query" name:"KeyWord"`
 	Length               requests.Integer `position:"Query" name:"Length"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NextStart            string           `position:"Query" name:"NextStart"`
 }
 
 type QueryInvalidAddressResponse struct {
@@ -82,13 +82,7 @@ type QueryInvalidAddressResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	NextStart  int    `json:"NextStart" xml:"NextStart"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       struct {
-		MailDetail []struct {
-			LastUpdateTime    string `json:"LastUpdateTime" xml:"LastUpdateTime"`
-			UtcLastUpdateTime int    `json:"UtcLastUpdateTime" xml:"UtcLastUpdateTime"`
-			ToAddress         string `json:"ToAddress" xml:"ToAddress"`
-		} `json:"mailDetail" xml:"mailDetail"`
-	} `json:"data" xml:"data"`
+	Data       Data   `json:"data" xml:"data"`
 }
 
 func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {

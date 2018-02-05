@@ -67,31 +67,26 @@ func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccess
 
 type GetPrivateAccessUrlsRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	ZoomType  string    `position:"Query" name:"ZoomType"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	ZoomType  string    `position:"Query" name:"ZoomType"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type GetPrivateAccessUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   []struct {
-		Code      string `json:"Code" xml:"Code"`
-		Message   string `json:"Message" xml:"Message"`
-		PhotoId   int    `json:"PhotoId" xml:"PhotoId"`
-		AccessUrl string `json:"AccessUrl" xml:"AccessUrl"`
-	} `json:"Results" xml:"Results"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Action    string   `json:"Action" xml:"Action"`
+	Results   []Result `json:"Results" xml:"Results"`
 }
 
 func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) {
 	request = &GetPrivateAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "", "")
 	return
 }
 

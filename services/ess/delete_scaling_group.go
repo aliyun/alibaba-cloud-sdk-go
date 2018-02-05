@@ -67,11 +67,11 @@ func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroup
 
 type DeleteScalingGroupRequest struct {
 	*requests.RpcRequest
-	ForceDelete          requests.Boolean `position:"Query" name:"ForceDelete"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	ForceDelete          requests.Boolean `position:"Query" name:"ForceDelete"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteScalingGroupResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	request = &DeleteScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "", "")
 	return
 }
 

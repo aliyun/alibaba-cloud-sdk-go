@@ -67,8 +67,8 @@ func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequ
 
 type CreateFileSystemRequest struct {
 	*requests.RpcRequest
-	ProtocolType string `position:"Query" name:"ProtocolType"`
 	StorageType  string `position:"Query" name:"StorageType"`
+	ProtocolType string `position:"Query" name:"ProtocolType"`
 	Description  string `position:"Query" name:"Description"`
 }
 
@@ -82,7 +82,7 @@ func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
 	request = &CreateFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateFileSystem", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateFileSystem", "", "")
 	return
 }
 

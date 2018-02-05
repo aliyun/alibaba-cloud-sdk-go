@@ -67,13 +67,13 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type AllocateEipAddressResponse struct {
@@ -87,7 +87,7 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	request = &AllocateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocateEipAddress", "", "")
 	return
 }
 

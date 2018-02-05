@@ -72,14 +72,8 @@ type ListPublicKeysRequest struct {
 
 type ListPublicKeysResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PublicKeys struct {
-		PublicKey []struct {
-			PublicKeyId string `json:"PublicKeyId" xml:"PublicKeyId"`
-			Status      string `json:"Status" xml:"Status"`
-			CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-		} `json:"PublicKey" xml:"PublicKey"`
-	} `json:"PublicKeys" xml:"PublicKeys"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PublicKeys PublicKeys `json:"PublicKeys" xml:"PublicKeys"`
 }
 
 func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {

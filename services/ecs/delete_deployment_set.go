@@ -67,11 +67,11 @@ func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentS
 
 type DeleteDeploymentSetRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteDeploymentSetResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
 	request = &DeleteDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDeploymentSet", "", "")
 	return
 }
 

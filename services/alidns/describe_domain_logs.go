@@ -67,32 +67,23 @@ func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogs
 
 type DescribeDomainLogsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	StartDate    string           `position:"Query" name:"StartDate"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	KeyWord      string           `position:"Query" name:"KeyWord"`
 	GroupId      string           `position:"Query" name:"GroupId"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StartDate    string           `position:"Query" name:"StartDate"`
 	EndDate      string           `position:"Query" name:"endDate"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	DomainLogs struct {
-		DomainLog []struct {
-			ActionTime      string `json:"ActionTime" xml:"ActionTime"`
-			ActionTimestamp int    `json:"ActionTimestamp" xml:"ActionTimestamp"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			Action          string `json:"Action" xml:"Action"`
-			Message         string `json:"Message" xml:"Message"`
-			ClientIp        string `json:"ClientIp" xml:"ClientIp"`
-		} `json:"DomainLog" xml:"DomainLog"`
-	} `json:"DomainLogs" xml:"DomainLogs"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	DomainLogs DomainLogs `json:"DomainLogs" xml:"DomainLogs"`
 }
 
 func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {

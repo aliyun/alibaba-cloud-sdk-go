@@ -67,18 +67,18 @@ func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshT
 
 type DescribeRefreshTasksRequest struct {
 	*requests.RpcRequest
-	EndTime         string           `position:"Query" name:"EndTime"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	StartTime       string           `position:"Query" name:"StartTime"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	TaskId          string           `position:"Query" name:"TaskId"`
 	ObjectPath      string           `position:"Query" name:"ObjectPath"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	Status          string           `position:"Query" name:"Status"`
-	TaskId          string           `position:"Query" name:"TaskId"`
-	ObjectType      string           `position:"Query" name:"ObjectType"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	DomainName      string           `position:"Query" name:"DomainName"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	ObjectType      string           `position:"Query" name:"ObjectType"`
+	Status          string           `position:"Query" name:"Status"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type DescribeRefreshTasksResponse struct {
@@ -87,17 +87,7 @@ type DescribeRefreshTasksResponse struct {
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Tasks      struct {
-		CDNTask []struct {
-			TaskId       string `json:"TaskId" xml:"TaskId"`
-			ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
-			Process      string `json:"Process" xml:"Process"`
-			Status       string `json:"Status" xml:"Status"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Description  string `json:"Description" xml:"Description"`
-			ObjectType   string `json:"ObjectType" xml:"ObjectType"`
-		} `json:"CDNTask" xml:"CDNTask"`
-	} `json:"Tasks" xml:"Tasks"`
+	Tasks      Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
 func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {

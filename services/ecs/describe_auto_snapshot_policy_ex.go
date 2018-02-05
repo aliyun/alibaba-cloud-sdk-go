@@ -67,42 +67,29 @@ func (client *Client) DescribeAutoSnapshotPolicyExWithCallback(request *Describe
 
 type DescribeAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	AutoSnapshotPolicyId string           `position:"Query" name:"AutoSnapshotPolicyId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AutoSnapshotPolicyId string           `position:"Query" name:"AutoSnapshotPolicyId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeAutoSnapshotPolicyExResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
-	AutoSnapshotPolicies struct {
-		AutoSnapshotPolicy []struct {
-			AutoSnapshotPolicyId   string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-			RegionId               string `json:"RegionId" xml:"RegionId"`
-			AutoSnapshotPolicyName string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
-			TimePoints             string `json:"TimePoints" xml:"TimePoints"`
-			RepeatWeekdays         string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-			RetentionDays          int    `json:"RetentionDays" xml:"RetentionDays"`
-			DiskNums               int    `json:"DiskNums" xml:"DiskNums"`
-			VolumeNums             int    `json:"VolumeNums" xml:"VolumeNums"`
-			CreationTime           string `json:"CreationTime" xml:"CreationTime"`
-			Status                 string `json:"Status" xml:"Status"`
-		} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
-	} `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	AutoSnapshotPolicies AutoSnapshotPolicies `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
 }
 
 func CreateDescribeAutoSnapshotPolicyExRequest() (request *DescribeAutoSnapshotPolicyExRequest) {
 	request = &DescribeAutoSnapshotPolicyExRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "", "")
 	return
 }
 

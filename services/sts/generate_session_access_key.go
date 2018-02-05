@@ -72,12 +72,8 @@ type GenerateSessionAccessKeyRequest struct {
 
 type GenerateSessionAccessKeyResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	SessionAccessKey struct {
-		SessionAccessKeyId     string `json:"SessionAccessKeyId" xml:"SessionAccessKeyId"`
-		SessionAccessKeySecret string `json:"SessionAccessKeySecret" xml:"SessionAccessKeySecret"`
-		Expiration             string `json:"Expiration" xml:"Expiration"`
-	} `json:"SessionAccessKey" xml:"SessionAccessKey"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	SessionAccessKey SessionAccessKey `json:"SessionAccessKey" xml:"SessionAccessKey"`
 }
 
 func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyRequest) {

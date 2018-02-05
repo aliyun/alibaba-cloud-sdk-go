@@ -67,14 +67,14 @@ func (client *Client) ModifyVpnGatewayAttributeWithCallback(request *ModifyVpnGa
 
 type ModifyVpnGatewayAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type ModifyVpnGatewayAttributeResponse struct {
@@ -98,7 +98,7 @@ func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttribut
 	request = &ModifyVpnGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnGatewayAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnGatewayAttribute", "", "")
 	return
 }
 

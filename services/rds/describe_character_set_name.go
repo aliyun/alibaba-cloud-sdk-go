@@ -67,27 +67,25 @@ func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeChar
 
 type DescribeCharacterSetNameRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Engine               string           `position:"Query" name:"Engine"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Engine               string           `position:"Query" name:"Engine"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeCharacterSetNameResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	Engine                string `json:"Engine" xml:"Engine"`
-	CharacterSetNameItems struct {
-		CharacterSetName []string `json:"CharacterSetName" xml:"CharacterSetName"`
-	} `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	Engine                string                `json:"Engine" xml:"Engine"`
+	CharacterSetNameItems CharacterSetNameItems `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
 }
 
 func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameRequest) {
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "", "")
 	return
 }
 

@@ -67,19 +67,19 @@ func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTa
 
 type ModifyScheduledTaskRequest struct {
 	*requests.RpcRequest
-	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
-	LaunchTime           string           `position:"Query" name:"LaunchTime"`
-	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
-	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
-	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
-	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	Description          string           `position:"Query" name:"Description"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	LaunchTime           string           `position:"Query" name:"LaunchTime"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -92,7 +92,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScheduledTask", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScheduledTask", "", "")
 	return
 }
 

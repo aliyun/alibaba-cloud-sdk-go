@@ -67,8 +67,8 @@ func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAcc
 
 type DescribeAccountAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 }
 
 type DescribeAccountAttributesResponse struct {
@@ -88,7 +88,7 @@ func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttribute
 	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "", "")
 	return
 }
 

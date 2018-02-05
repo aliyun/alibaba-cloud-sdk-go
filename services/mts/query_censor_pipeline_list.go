@@ -67,38 +67,25 @@ func (client *Client) QueryCensorPipelineListWithCallback(request *QueryCensorPi
 
 type QueryCensorPipelineListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string           `position:"Query" name:"PipelineIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PipelineIds          string           `position:"Query" name:"PipelineIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryCensorPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList struct {
-		Pipeline []struct {
-			Id           string `json:"Id" xml:"Id"`
-			Name         string `json:"Name" xml:"Name"`
-			State        string `json:"State" xml:"State"`
-			Priority     string `json:"Priority" xml:"Priority"`
-			NotifyConfig struct {
-				Topic string `json:"Topic" xml:"Topic"`
-				Queue string `json:"Queue" xml:"Queue"`
-			} `json:"NotifyConfig" xml:"NotifyConfig"`
-		} `json:"Pipeline" xml:"Pipeline"`
-	} `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListRequest) {
 	request = &QueryCensorPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "", "")
 	return
 }
 

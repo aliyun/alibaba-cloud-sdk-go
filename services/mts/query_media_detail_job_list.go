@@ -67,95 +67,25 @@ func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDet
 
 type QueryMediaDetailJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryMediaDetailJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			MediaDetailConfig struct {
-				Scenario   string `json:"Scenario" xml:"Scenario"`
-				DetailType string `json:"DetailType" xml:"DetailType"`
-				OutputFile struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-				} `json:"OutputFile" xml:"OutputFile"`
-			} `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
-			MediaDetailResult struct {
-				Status string `json:"Status" xml:"Status"`
-				Tags   struct {
-					String []string `json:"String" xml:"String"`
-				} `json:"Tags" xml:"Tags"`
-				MediaDetailRecgResults struct {
-					MediaDetailRecgResult []struct {
-						ImageUrl  string `json:"ImageUrl" xml:"ImageUrl"`
-						Time      string `json:"Time" xml:"Time"`
-						OcrText   string `json:"OcrText" xml:"OcrText"`
-						FrameTags struct {
-							String []string `json:"String" xml:"String"`
-						} `json:"FrameTags" xml:"FrameTags"`
-						Celebrities struct {
-							Celebrity []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Celebrity" xml:"Celebrity"`
-						} `json:"Celebrities" xml:"Celebrities"`
-						Sensitives struct {
-							Sensitive []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Sensitive" xml:"Sensitive"`
-						} `json:"Sensitives" xml:"Sensitives"`
-						Politicians struct {
-							Politician []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Politician" xml:"Politician"`
-						} `json:"Politicians" xml:"Politicians"`
-						FrameTagInfos struct {
-							FrameTagInfo []struct {
-								Tag      string `json:"Tag" xml:"Tag"`
-								Score    string `json:"Score" xml:"Score"`
-								Category string `json:"Category" xml:"Category"`
-							} `json:"FrameTagInfo" xml:"FrameTagInfo"`
-						} `json:"FrameTagInfos" xml:"FrameTagInfos"`
-					} `json:"MediaDetailRecgResult" xml:"MediaDetailRecgResult"`
-				} `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
-			} `json:"MediaDetailResult" xml:"MediaDetailResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {
 	request = &QueryMediaDetailJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaDetailJobList", "", "")
 	return
 }
 

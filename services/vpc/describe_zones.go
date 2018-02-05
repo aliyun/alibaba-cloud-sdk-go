@@ -67,28 +67,23 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     struct {
-		Zone []struct {
-			ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-			LocalName string `json:"LocalName" xml:"LocalName"`
-		} `json:"Zone" xml:"Zone"`
-	} `json:"Zones" xml:"Zones"`
+	Zones     Zones  `json:"Zones" xml:"Zones"`
 }
 
 func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeZones", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeZones", "", "")
 	return
 }
 

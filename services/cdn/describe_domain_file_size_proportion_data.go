@@ -67,31 +67,21 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *
 
 type DescribeDomainFileSizeProportionDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeDomainFileSizeProportionDataResponse struct {
 	*responses.BaseResponse
-	RequestId                      string `json:"RequestId" xml:"RequestId"`
-	DomainName                     string `json:"DomainName" xml:"DomainName"`
-	DataInterval                   string `json:"DataInterval" xml:"DataInterval"`
-	StartTime                      string `json:"StartTime" xml:"StartTime"`
-	EndTime                        string `json:"EndTime" xml:"EndTime"`
-	FileSizeProportionDataInterval struct {
-		UsageData []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     struct {
-				FileSizeProportionData []struct {
-					FileSize   string `json:"FileSize" xml:"FileSize"`
-					Proportion string `json:"Proportion" xml:"Proportion"`
-				} `json:"FileSizeProportionData" xml:"FileSizeProportionData"`
-			} `json:"Value" xml:"Value"`
-		} `json:"UsageData" xml:"UsageData"`
-	} `json:"FileSizeProportionDataInterval" xml:"FileSizeProportionDataInterval"`
+	RequestId                      string                         `json:"RequestId" xml:"RequestId"`
+	DomainName                     string                         `json:"DomainName" xml:"DomainName"`
+	DataInterval                   string                         `json:"DataInterval" xml:"DataInterval"`
+	StartTime                      string                         `json:"StartTime" xml:"StartTime"`
+	EndTime                        string                         `json:"EndTime" xml:"EndTime"`
+	FileSizeProportionDataInterval FileSizeProportionDataInterval `json:"FileSizeProportionDataInterval" xml:"FileSizeProportionDataInterval"`
 }
 
 func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomainFileSizeProportionDataRequest) {

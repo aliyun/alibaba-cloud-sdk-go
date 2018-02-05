@@ -67,63 +67,25 @@ func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListReques
 
 type QueryTagJobListRequest struct {
 	*requests.RpcRequest
-	TagJobIds            string           `position:"Query" name:"TagJobIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TagJobIds            string           `position:"Query" name:"TagJobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryTagJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	TagJobList struct {
-		TagJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoTagResult struct {
-				Details      string `json:"Details" xml:"Details"`
-				TagAnResults struct {
-					TagAnResult []struct {
-						Label string `json:"Label" xml:"Label"`
-						Score string `json:"Score" xml:"Score"`
-					} `json:"TagAnResult" xml:"TagAnResult"`
-				} `json:"TagAnResults" xml:"TagAnResults"`
-				TagFrResults struct {
-					TagFrResult []struct {
-						Time     string `json:"Time" xml:"Time"`
-						TagFaces struct {
-							TagFace []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"TagFace" xml:"TagFace"`
-						} `json:"TagFaces" xml:"TagFaces"`
-					} `json:"TagFrResult" xml:"TagFrResult"`
-				} `json:"TagFrResults" xml:"TagFrResults"`
-			} `json:"VideoTagResult" xml:"VideoTagResult"`
-		} `json:"TagJob" xml:"TagJob"`
-	} `json:"TagJobList" xml:"TagJobList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
+	TagJobList  TagJobList  `json:"TagJobList" xml:"TagJobList"`
 }
 
 func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "", "")
 	return
 }
 

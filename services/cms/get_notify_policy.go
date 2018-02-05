@@ -67,9 +67,9 @@ func (client *Client) GetNotifyPolicyWithCallback(request *GetNotifyPolicyReques
 
 type GetNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	Id         string `position:"Query" name:"Id"`
 	AlertName  string `position:"Query" name:"AlertName"`
 	PolicyType string `position:"Query" name:"PolicyType"`
+	Id         string `position:"Query" name:"Id"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }
 
@@ -79,21 +79,14 @@ type GetNotifyPolicyResponse struct {
 	Message string `json:"message" xml:"message"`
 	Success string `json:"success" xml:"success"`
 	TraceId string `json:"traceId" xml:"traceId"`
-	Result  struct {
-		AlertName  string `json:"AlertName" xml:"AlertName"`
-		Dimensions string `json:"Dimensions" xml:"Dimensions"`
-		Type       string `json:"Type" xml:"Type"`
-		Id         string `json:"Id" xml:"Id"`
-		StartTime  int    `json:"StartTime" xml:"StartTime"`
-		EndTime    int    `json:"EndTime" xml:"EndTime"`
-	} `json:"Result" xml:"Result"`
+	Result  Result `json:"Result" xml:"Result"`
 }
 
 func CreateGetNotifyPolicyRequest() (request *GetNotifyPolicyRequest) {
 	request = &GetNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "GetNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "GetNotifyPolicy", "", "")
 	return
 }
 

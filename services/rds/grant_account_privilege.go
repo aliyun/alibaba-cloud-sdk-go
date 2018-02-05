@@ -67,14 +67,14 @@ func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPri
 
 type GrantAccountPrivilegeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type GrantAccountPrivilegeResponse struct {
@@ -86,7 +86,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GrantAccountPrivilege", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GrantAccountPrivilege", "", "")
 	return
 }
 

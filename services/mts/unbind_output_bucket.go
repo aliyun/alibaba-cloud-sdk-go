@@ -67,11 +67,11 @@ func (client *Client) UnbindOutputBucketWithCallback(request *UnbindOutputBucket
 
 type UnbindOutputBucketRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bucket               string           `position:"Query" name:"Bucket"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Bucket               string           `position:"Query" name:"Bucket"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type UnbindOutputBucketResponse struct {
@@ -83,7 +83,7 @@ func CreateUnbindOutputBucketRequest() (request *UnbindOutputBucketRequest) {
 	request = &UnbindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindOutputBucket", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindOutputBucket", "", "")
 	return
 }
 

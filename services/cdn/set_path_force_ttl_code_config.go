@@ -67,12 +67,6 @@ func (client *Client) SetPathForceTtlCodeConfigWithCallback(request *SetPathForc
 
 type SetPathForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
-	CodeString    string           `position:"Query" name:"CodeString"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Path          string           `position:"Query" name:"Path"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetPathForceTtlCodeConfigResponse struct {

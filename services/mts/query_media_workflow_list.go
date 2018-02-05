@@ -67,36 +67,25 @@ func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWork
 
 type QueryMediaWorkflowListRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MediaWorkflowIds     string           `position:"Query" name:"MediaWorkflowIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryMediaWorkflowListResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	NonExistMediaWorkflowIds struct {
-		MediaWorkflowId []string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	} `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
-	MediaWorkflowList struct {
-		MediaWorkflow []struct {
-			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-			Name            string `json:"Name" xml:"Name"`
-			Topology        string `json:"Topology" xml:"Topology"`
-			TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
-			State           string `json:"State" xml:"State"`
-			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-		} `json:"MediaWorkflow" xml:"MediaWorkflow"`
-	} `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	NonExistMediaWorkflowIds NonExistMediaWorkflowIds `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
+	MediaWorkflowList        MediaWorkflowList        `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListRequest) {
 	request = &QueryMediaWorkflowListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "", "")
 	return
 }
 

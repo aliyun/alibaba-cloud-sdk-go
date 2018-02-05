@@ -67,9 +67,9 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type ListPhotoFacesResponse struct {
@@ -78,18 +78,14 @@ type ListPhotoFacesResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Faces     []struct {
-		FaceId   int      `json:"FaceId" xml:"FaceId"`
-		FaceName string   `json:"FaceName" xml:"FaceName"`
-		Axis     []string `json:"Axis" xml:"Axis"`
-	} `json:"Faces" xml:"Faces"`
+	Faces     []Face `json:"Faces" xml:"Faces"`
 }
 
 func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
 	request = &ListPhotoFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoFaces", "", "")
 	return
 }
 

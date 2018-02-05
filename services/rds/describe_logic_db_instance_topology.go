@@ -67,9 +67,9 @@ func (client *Client) DescribeLogicDBInstanceTopologyWithCallback(request *Descr
 
 type DescribeLogicDBInstanceTopologyRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeLogicDBInstanceTopologyResponse struct {
@@ -82,26 +82,14 @@ type DescribeLogicDBInstanceTopologyResponse struct {
 	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	Engine                string `json:"Engine" xml:"Engine"`
 	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
-	Items                 struct {
-		LogicDBInstanceParameter []struct {
-			DBInstanceID          int    `json:"DBInstanceID" xml:"DBInstanceID"`
-			DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
-			DBInstanceStatus      int    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-			DBInstanceConnType    string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			Engine                string `json:"Engine" xml:"Engine"`
-			EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
-			CharacterType         string `json:"CharacterType" xml:"CharacterType"`
-		} `json:"LogicDBInstanceParameter" xml:"LogicDBInstanceParameter"`
-	} `json:"Items" xml:"Items"`
+	Items                 Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBInstanceTopologyRequest) {
 	request = &DescribeLogicDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogicDBInstanceTopology", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogicDBInstanceTopology", "", "")
 	return
 }
 

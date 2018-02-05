@@ -67,16 +67,16 @@ func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequ
 
 type CreateRouteEntryRequest struct {
 	*requests.RpcRequest
-	NextHopType          string                         `position:"Query" name:"NextHopType"`
-	ClientToken          string                         `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
-	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
 	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	ClientToken          string                         `position:"Query" name:"ClientToken"`
+	NextHopType          string                         `position:"Query" name:"NextHopType"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
 }
 
 type CreateRouteEntryNextHopList struct {
@@ -93,7 +93,7 @@ func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	request = &CreateRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "", "")
 	return
 }
 

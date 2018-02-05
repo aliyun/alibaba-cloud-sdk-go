@@ -76,25 +76,14 @@ type DeleteMyGroupsResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Group        struct {
-		GroupId       int    `json:"GroupId" xml:"GroupId"`
-		GroupName     string `json:"GroupName" xml:"GroupName"`
-		ServiceId     string `json:"ServiceId" xml:"ServiceId"`
-		BindUrls      string `json:"BindUrls" xml:"BindUrls"`
-		Type          string `json:"Type" xml:"Type"`
-		ContactGroups struct {
-			ContactGroup []struct {
-				Name string `json:"Name" xml:"Name"`
-			} `json:"ContactGroup" xml:"ContactGroup"`
-		} `json:"ContactGroups" xml:"ContactGroups"`
-	} `json:"Group" xml:"Group"`
+	Group        Group  `json:"Group" xml:"Group"`
 }
 
 func CreateDeleteMyGroupsRequest() (request *DeleteMyGroupsRequest) {
 	request = &DeleteMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroups", "", "")
 	return
 }
 

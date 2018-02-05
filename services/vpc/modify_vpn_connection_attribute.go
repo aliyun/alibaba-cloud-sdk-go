@@ -67,56 +67,41 @@ func (client *Client) ModifyVpnConnectionAttributeWithCallback(request *ModifyVp
 
 type ModifyVpnConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
-	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
 	IkeConfig            string           `position:"Query" name:"IkeConfig"`
+	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 }
 
 type ModifyVpnConnectionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
-	IkeConfig         struct {
-		Psk         string `json:"Psk" xml:"Psk"`
-		IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-		IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-		IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-		IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-		IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-		IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
-		LocalId     string `json:"LocalId" xml:"LocalId"`
-		RemoteId    string `json:"RemoteId" xml:"RemoteId"`
-	} `json:"IkeConfig" xml:"IkeConfig"`
-	IpsecConfig struct {
-		IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-		IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-		IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-		IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
-	} `json:"IpsecConfig" xml:"IpsecConfig"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId   string      `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId string      `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId      string      `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name              string      `json:"Name" xml:"Name"`
+	Description       string      `json:"Description" xml:"Description"`
+	LocalSubnet       string      `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet      string      `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime        int         `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately bool        `json:"EffectImmediately" xml:"EffectImmediately"`
+	IkeConfig         IkeConfig   `json:"IkeConfig" xml:"IkeConfig"`
+	IpsecConfig       IpsecConfig `json:"IpsecConfig" xml:"IpsecConfig"`
 }
 
 func CreateModifyVpnConnectionAttributeRequest() (request *ModifyVpnConnectionAttributeRequest) {
 	request = &ModifyVpnConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "", "")
 	return
 }
 

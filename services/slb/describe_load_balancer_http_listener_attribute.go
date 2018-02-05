@@ -67,14 +67,14 @@ func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithCallback(requ
 
 type DescribeLoadBalancerHTTPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
@@ -103,16 +103,16 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	MaxConnection          int    `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
 	Gzip                   string `json:"Gzip" xml:"Gzip"`
-	XForwardedForSLBIP     string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
-	XForwardedForSLBID     string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	XForwardedForProto     string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+	XForwardedFor_SLBIP    string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	XForwardedFor_SLBID    string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
+	XForwardedFor_proto    string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
 }
 
 func CreateDescribeLoadBalancerHTTPListenerAttributeRequest() (request *DescribeLoadBalancerHTTPListenerAttributeRequest) {
 	request = &DescribeLoadBalancerHTTPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute", "", "")
 	return
 }
 

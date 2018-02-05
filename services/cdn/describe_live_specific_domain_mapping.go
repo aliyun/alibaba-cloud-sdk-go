@@ -67,21 +67,16 @@ func (client *Client) DescribeLiveSpecificDomainMappingWithCallback(request *Des
 
 type DescribeLiveSpecificDomainMappingRequest struct {
 	*requests.RpcRequest
-	PullDomain    string           `position:"Query" name:"PullDomain"`
-	PushDomain    string           `position:"Query" name:"PushDomain"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PushDomain    string           `position:"Query" name:"PushDomain"`
+	PullDomain    string           `position:"Query" name:"PullDomain"`
 }
 
 type DescribeLiveSpecificDomainMappingResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DomainMappingModels struct {
-		DomainMappingModel []struct {
-			PushDomain string `json:"PushDomain" xml:"PushDomain"`
-			PullDomain string `json:"PullDomain" xml:"PullDomain"`
-		} `json:"DomainMappingModel" xml:"DomainMappingModel"`
-	} `json:"DomainMappingModels" xml:"DomainMappingModels"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	DomainMappingModels DomainMappingModels `json:"DomainMappingModels" xml:"DomainMappingModels"`
 }
 
 func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpecificDomainMappingRequest) {

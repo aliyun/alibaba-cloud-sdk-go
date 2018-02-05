@@ -67,16 +67,16 @@ func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntry
 
 type CreateForwardEntryRequest struct {
 	*requests.RpcRequest
-	IpProtocol           string           `position:"Query" name:"IpProtocol"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InternalIp           string           `position:"Query" name:"InternalIp"`
-	ExternalIp           string           `position:"Query" name:"ExternalIp"`
-	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ExternalPort         string           `position:"Query" name:"ExternalPort"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	ExternalIp           string           `position:"Query" name:"ExternalIp"`
+	ExternalPort         string           `position:"Query" name:"ExternalPort"`
+	InternalIp           string           `position:"Query" name:"InternalIp"`
 	InternalPort         string           `position:"Query" name:"InternalPort"`
+	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 }
 
 type CreateForwardEntryResponse struct {
@@ -89,7 +89,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateForwardEntry", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateForwardEntry", "", "")
 	return
 }
 

@@ -67,160 +67,71 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	PublicIpAddresses    string           `position:"Query" name:"PublicIpAddresses"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
-	EipAddresses         string           `position:"Query" name:"EipAddresses"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
-	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PrivateIpAddresses   string           `position:"Query" name:"PrivateIpAddresses"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	Status               string           `position:"Query" name:"Status"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	IoOptimized          requests.Boolean `position:"Query" name:"IoOptimized"`
-	LockReason           string           `position:"Query" name:"LockReason"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Filter4Key           string           `position:"Query" name:"Filter.4.Key"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DeviceAvailable      requests.Boolean `position:"Query" name:"DeviceAvailable"`
-	Filter4Value         string           `position:"Query" name:"Filter.4.Value"`
-	Filter3Value         string           `position:"Query" name:"Filter.3.Value"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	InnerIpAddresses     string           `position:"Query" name:"InnerIpAddresses"`
-	Filter3Key           string           `position:"Query" name:"Filter.3.Key"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	RdmaIpAddresses      string           `position:"Query" name:"RdmaIpAddresses"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ImageId              string           `position:"Query" name:"ImageId"`
-	HpcClusterId         string           `position:"Query" name:"HpcClusterId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InnerIpAddresses     string           `position:"Query" name:"InnerIpAddresses"`
+	PrivateIpAddresses   string           `position:"Query" name:"PrivateIpAddresses"`
+	PublicIpAddresses    string           `position:"Query" name:"PublicIpAddresses"`
+	EipAddresses         string           `position:"Query" name:"EipAddresses"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	InstanceName         string           `position:"Query" name:"InstanceName"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	Status               string           `position:"Query" name:"Status"`
+	LockReason           string           `position:"Query" name:"LockReason"`
+	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
+	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
+	Filter3Key           string           `position:"Query" name:"Filter.3.Key"`
+	Filter4Key           string           `position:"Query" name:"Filter.4.Key"`
+	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
+	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
+	Filter3Value         string           `position:"Query" name:"Filter.3.Value"`
+	Filter4Value         string           `position:"Query" name:"Filter.4.Value"`
+	DeviceAvailable      requests.Boolean `position:"Query" name:"DeviceAvailable"`
+	IoOptimized          requests.Boolean `position:"Query" name:"IoOptimized"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	HpcClusterId         string           `position:"Query" name:"HpcClusterId"`
+	RdmaIpAddresses      string           `position:"Query" name:"RdmaIpAddresses"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 }
 
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Instances  struct {
-		Instance []struct {
-			InstanceId              string  `json:"InstanceId" xml:"InstanceId"`
-			InstanceName            string  `json:"InstanceName" xml:"InstanceName"`
-			Description             string  `json:"Description" xml:"Description"`
-			ImageId                 string  `json:"ImageId" xml:"ImageId"`
-			OSName                  string  `json:"OSName" xml:"OSName"`
-			OSType                  string  `json:"OSType" xml:"OSType"`
-			RegionId                string  `json:"RegionId" xml:"RegionId"`
-			ZoneId                  string  `json:"ZoneId" xml:"ZoneId"`
-			ClusterId               string  `json:"ClusterId" xml:"ClusterId"`
-			InstanceType            string  `json:"InstanceType" xml:"InstanceType"`
-			Cpu                     int     `json:"Cpu" xml:"Cpu"`
-			Memory                  int     `json:"Memory" xml:"Memory"`
-			HostName                string  `json:"HostName" xml:"HostName"`
-			Status                  string  `json:"Status" xml:"Status"`
-			SerialNumber            string  `json:"SerialNumber" xml:"SerialNumber"`
-			InternetChargeType      string  `json:"InternetChargeType" xml:"InternetChargeType"`
-			InternetMaxBandwidthIn  int     `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-			InternetMaxBandwidthOut int     `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-			VlanId                  string  `json:"VlanId" xml:"VlanId"`
-			CreationTime            string  `json:"CreationTime" xml:"CreationTime"`
-			StartTime               string  `json:"StartTime" xml:"StartTime"`
-			InstanceNetworkType     string  `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-			InstanceChargeType      string  `json:"InstanceChargeType" xml:"InstanceChargeType"`
-			SaleCycle               string  `json:"SaleCycle" xml:"SaleCycle"`
-			ExpiredTime             string  `json:"ExpiredTime" xml:"ExpiredTime"`
-			AutoReleaseTime         string  `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-			IoOptimized             bool    `json:"IoOptimized" xml:"IoOptimized"`
-			DeviceAvailable         bool    `json:"DeviceAvailable" xml:"DeviceAvailable"`
-			InstanceTypeFamily      string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-			LocalStorageCapacity    int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-			LocalStorageAmount      int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-			GPUAmount               int     `json:"GPUAmount" xml:"GPUAmount"`
-			GPUSpec                 string  `json:"GPUSpec" xml:"GPUSpec"`
-			SpotStrategy            string  `json:"SpotStrategy" xml:"SpotStrategy"`
-			SpotPriceLimit          float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-			ResourceGroupId         string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			KeyPairName             string  `json:"KeyPairName" xml:"KeyPairName"`
-			Recyclable              bool    `json:"Recyclable" xml:"Recyclable"`
-			HpcClusterId            string  `json:"HpcClusterId" xml:"HpcClusterId"`
-			StoppedMode             string  `json:"StoppedMode" xml:"StoppedMode"`
-			SecurityGroupIds        struct {
-				SecurityGroupId []string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			} `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-			PublicIpAddress struct {
-				IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-			} `json:"PublicIpAddress" xml:"PublicIpAddress"`
-			InnerIpAddress struct {
-				IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-			} `json:"InnerIpAddress" xml:"InnerIpAddress"`
-			RdmaIpAddress struct {
-				IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-			} `json:"RdmaIpAddress" xml:"RdmaIpAddress"`
-			VpcAttributes struct {
-				VpcId            string `json:"VpcId" xml:"VpcId"`
-				VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-				NatIpAddress     string `json:"NatIpAddress" xml:"NatIpAddress"`
-				PrivateIpAddress struct {
-					IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-				} `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-			} `json:"VpcAttributes" xml:"VpcAttributes"`
-			EipAddress struct {
-				AllocationId         string `json:"AllocationId" xml:"AllocationId"`
-				IpAddress            string `json:"IpAddress" xml:"IpAddress"`
-				Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
-				InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
-				IsSupportUnassociate bool   `json:"IsSupportUnassociate" xml:"IsSupportUnassociate"`
-			} `json:"EipAddress" xml:"EipAddress"`
-			NetworkInterfaces struct {
-				NetworkInterface []struct {
-					NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-					MacAddress         string `json:"MacAddress" xml:"MacAddress"`
-					PrimaryIpAddress   string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
-				} `json:"NetworkInterface" xml:"NetworkInterface"`
-			} `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
-			OperationLocks struct {
-				LockReason []struct {
-					LockReason string `json:"LockReason" xml:"LockReason"`
-					LockMsg    string `json:"LockMsg" xml:"LockMsg"`
-				} `json:"LockReason" xml:"LockReason"`
-			} `json:"OperationLocks" xml:"OperationLocks"`
-			Tags struct {
-				Tag []struct {
-					TagKey   string `json:"TagKey" xml:"TagKey"`
-					TagValue string `json:"TagValue" xml:"TagValue"`
-				} `json:"Tag" xml:"Tag"`
-			} `json:"Tags" xml:"Tags"`
-		} `json:"Instance" xml:"Instance"`
-	} `json:"Instances" xml:"Instances"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 
 func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstances", "", "")
 	return
 }
 

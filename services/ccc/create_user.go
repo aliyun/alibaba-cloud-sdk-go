@@ -67,14 +67,14 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 
 type CreateUserRequest struct {
 	*requests.RpcRequest
-	LoginName    string    `position:"Query" name:"LoginName"`
-	Phone        string    `position:"Query" name:"Phone"`
-	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
-	Email        string    `position:"Query" name:"Email"`
-	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
 	InstanceId   string    `position:"Query" name:"InstanceId"`
+	LoginName    string    `position:"Query" name:"LoginName"`
 	DisplayName  string    `position:"Query" name:"DisplayName"`
+	Phone        string    `position:"Query" name:"Phone"`
+	Email        string    `position:"Query" name:"Email"`
+	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
 type CreateUserResponse struct {

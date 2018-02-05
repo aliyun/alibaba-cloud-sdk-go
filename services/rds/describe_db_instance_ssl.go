@@ -67,11 +67,11 @@ func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInsta
 
 type DescribeDBInstanceSSLRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceSSLResponse struct {
@@ -87,7 +87,7 @@ func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "", "")
 	return
 }
 

@@ -67,52 +67,31 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 
 type PlayInfoRequest struct {
 	*requests.RpcRequest
-	AuthInfo             string           `position:"Query" name:"AuthInfo"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	PlayDomain           string           `position:"Query" name:"PlayDomain"`
-	Rand                 string           `position:"Query" name:"Rand"`
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
-	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 	Formats              string           `position:"Query" name:"Formats"`
+	AuthInfo             string           `position:"Query" name:"AuthInfo"`
+	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	Rand                 string           `position:"Query" name:"Rand"`
+	PlayDomain           string           `position:"Query" name:"PlayDomain"`
+	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
 }
 
 type PlayInfoResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	NotFoundCDNDomain struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
-	PlayInfoList struct {
-		PlayInfo []struct {
-			Url            string `json:"Url" xml:"Url"`
-			Duration       string `json:"duration" xml:"duration"`
-			Size           string `json:"size" xml:"size"`
-			Width          string `json:"width" xml:"width"`
-			Height         string `json:"height" xml:"height"`
-			Bitrate        string `json:"bitrate" xml:"bitrate"`
-			Fps            string `json:"fps" xml:"fps"`
-			Format         string `json:"format" xml:"format"`
-			Definition     string `json:"definition" xml:"definition"`
-			Encryption     string `json:"encryption" xml:"encryption"`
-			Rand           string `json:"rand" xml:"rand"`
-			Plaintext      string `json:"plaintext" xml:"plaintext"`
-			Complexity     string `json:"complexity" xml:"complexity"`
-			ActivityName   string `json:"activityName" xml:"activityName"`
-			EncryptionType string `json:"encryptionType" xml:"encryptionType"`
-			DownloadType   string `json:"downloadType" xml:"downloadType"`
-		} `json:"PlayInfo" xml:"PlayInfo"`
-	} `json:"PlayInfoList" xml:"PlayInfoList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	NotFoundCDNDomain NotFoundCDNDomain `json:"NotFoundCDNDomain" xml:"NotFoundCDNDomain"`
+	PlayInfoList      PlayInfoList      `json:"PlayInfoList" xml:"PlayInfoList"`
 }
 
 func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	request = &PlayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "", "")
 	return
 }
 

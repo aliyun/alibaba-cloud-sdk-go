@@ -67,33 +67,26 @@ func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrls
 
 type GetFramedPhotoUrlsRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	FrameId   string    `position:"Query" name:"FrameId"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	FrameId   string    `position:"Query" name:"FrameId"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type GetFramedPhotoUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   struct {
-		Result []struct {
-			Code           string `json:"Code" xml:"Code"`
-			Message        string `json:"Message" xml:"Message"`
-			PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
-			FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Results   Results `json:"Results" xml:"Results"`
 }
 
 func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	request = &GetFramedPhotoUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "", "")
 	return
 }
 

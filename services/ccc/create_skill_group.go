@@ -67,12 +67,12 @@ func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequ
 
 type CreateSkillGroupRequest struct {
 	*requests.RpcRequest
-	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	Description           string    `position:"Query" name:"Description"`
-	Name                  string    `position:"Query" name:"Name"`
-	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
 	InstanceId            string    `position:"Query" name:"InstanceId"`
+	Name                  string    `position:"Query" name:"Name"`
+	Description           string    `position:"Query" name:"Description"`
+	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
+	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
 type CreateSkillGroupResponse struct {

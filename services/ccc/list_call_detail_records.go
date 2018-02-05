@@ -67,72 +67,23 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
 	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
 	StartTime   requests.Integer `position:"Query" name:"StartTime"`
+	StopTime    requests.Integer `position:"Query" name:"StopTime"`
 	Criteria    string           `position:"Query" name:"Criteria"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
-	StopTime    requests.Integer `position:"Query" name:"StopTime"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListCallDetailRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Success           bool   `json:"Success" xml:"Success"`
-	Code              string `json:"Code" xml:"Code"`
-	Message           string `json:"Message" xml:"Message"`
-	HttpStatusCode    int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	CallDetailRecords struct {
-		TotalCount int `json:"TotalCount" xml:"TotalCount"`
-		PageNumber int `json:"PageNumber" xml:"PageNumber"`
-		PageSize   int `json:"PageSize" xml:"PageSize"`
-		List       struct {
-			CallDetailRecord []struct {
-				ContactId          string `json:"ContactId" xml:"ContactId"`
-				StartTime          int    `json:"StartTime" xml:"StartTime"`
-				Duration           int    `json:"Duration" xml:"Duration"`
-				ContactType        string `json:"ContactType" xml:"ContactType"`
-				ContactDisposition string `json:"ContactDisposition" xml:"ContactDisposition"`
-				CallingNumber      string `json:"CallingNumber" xml:"CallingNumber"`
-				CalledNumber       string `json:"CalledNumber" xml:"CalledNumber"`
-				AgentNames         string `json:"AgentNames" xml:"AgentNames"`
-				SkillGroupNames    string `json:"SkillGroupNames" xml:"SkillGroupNames"`
-				InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-				Agents             struct {
-					CallDetailAgent []struct {
-						ContactId      string `json:"ContactId" xml:"ContactId"`
-						AgentId        string `json:"AgentId" xml:"AgentId"`
-						AgentName      string `json:"AgentName" xml:"AgentName"`
-						SkillGroupName string `json:"SkillGroupName" xml:"SkillGroupName"`
-						QueueTime      int    `json:"QueueTime" xml:"QueueTime"`
-						RingTime       int    `json:"RingTime" xml:"RingTime"`
-						StartTime      int    `json:"StartTime" xml:"StartTime"`
-						TalkTime       int    `json:"TalkTime" xml:"TalkTime"`
-						HoldTime       int    `json:"HoldTime" xml:"HoldTime"`
-						WorkTime       int    `json:"WorkTime" xml:"WorkTime"`
-					} `json:"CallDetailAgent" xml:"CallDetailAgent"`
-				} `json:"Agents" xml:"Agents"`
-				Recordings struct {
-					Recording []struct {
-						ContactId       string `json:"ContactId" xml:"ContactId"`
-						ContactType     string `json:"ContactType" xml:"ContactType"`
-						AgentId         string `json:"AgentId" xml:"AgentId"`
-						AgentName       string `json:"AgentName" xml:"AgentName"`
-						CallingNumber   string `json:"CallingNumber" xml:"CallingNumber"`
-						CalledNumber    string `json:"CalledNumber" xml:"CalledNumber"`
-						StartTime       int    `json:"StartTime" xml:"StartTime"`
-						Duration        int    `json:"Duration" xml:"Duration"`
-						FileName        string `json:"FileName" xml:"FileName"`
-						FilePath        string `json:"FilePath" xml:"FilePath"`
-						FileDescription string `json:"FileDescription" xml:"FileDescription"`
-						Channel         string `json:"Channel" xml:"Channel"`
-						InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-					} `json:"Recording" xml:"Recording"`
-				} `json:"Recordings" xml:"Recordings"`
-			} `json:"CallDetailRecord" xml:"CallDetailRecord"`
-		} `json:"List" xml:"List"`
-	} `json:"CallDetailRecords" xml:"CallDetailRecords"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	Success           bool              `json:"Success" xml:"Success"`
+	Code              string            `json:"Code" xml:"Code"`
+	Message           string            `json:"Message" xml:"Message"`
+	HttpStatusCode    int               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	CallDetailRecords CallDetailRecords `json:"CallDetailRecords" xml:"CallDetailRecords"`
 }
 
 func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest) {

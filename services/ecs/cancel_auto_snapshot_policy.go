@@ -67,10 +67,10 @@ func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSn
 
 type CancelAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	DiskIds              string           `position:"Query" name:"diskIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DiskIds              string           `position:"Query" name:"diskIds"`
 }
 
 type CancelAutoSnapshotPolicyResponse struct {
@@ -82,7 +82,7 @@ func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyR
 	request = &CancelAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "", "")
 	return
 }
 

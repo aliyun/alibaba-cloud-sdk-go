@@ -67,28 +67,28 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	AddressType          string           `position:"Query" name:"AddressType"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
-	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
-	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AddressType          string           `position:"Query" name:"AddressType"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
+	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
+	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 }
 
 type CreateLoadBalancerResponse struct {
@@ -108,7 +108,7 @@ func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	request = &CreateLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancer", "", "")
 	return
 }
 

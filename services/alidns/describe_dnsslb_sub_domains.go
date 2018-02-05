@@ -67,27 +67,20 @@ func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSS
 
 type DescribeDNSSLBSubDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeDNSSLBSubDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	SlbSubDomains struct {
-		SlbSubDomain []struct {
-			SubDomain   string `json:"SubDomain" xml:"SubDomain"`
-			RecordCount int    `json:"RecordCount" xml:"RecordCount"`
-			Open        bool   `json:"Open" xml:"Open"`
-			Type        string `json:"Type" xml:"Type"`
-		} `json:"SlbSubDomain" xml:"SlbSubDomain"`
-	} `json:"SlbSubDomains" xml:"SlbSubDomains"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	SlbSubDomains SlbSubDomains `json:"SlbSubDomains" xml:"SlbSubDomains"`
 }
 
 func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsRequest) {

@@ -67,27 +67,21 @@ func (client *Client) DescribeLiveStreamRoomUserNumberWithCallback(request *Desc
 
 type DescribeLiveStreamRoomUserNumberRequest struct {
 	*requests.RpcRequest
-	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
 }
 
 type DescribeLiveStreamRoomUserNumberResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int    `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  struct {
-		LiveStreamOnlineUserNumInfo []struct {
-			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
-			UserNumber int    `json:"UserNumber" xml:"UserNumber"`
-			Time       string `json:"Time" xml:"Time"`
-		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
-	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string         `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int            `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	OnlineUserInfo  OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamRoomUserNumberRequest() (request *DescribeLiveStreamRoomUserNumberRequest) {

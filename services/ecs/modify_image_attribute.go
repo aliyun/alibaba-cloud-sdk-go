@@ -67,13 +67,13 @@ func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttri
 
 type ModifyImageAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
 	ImageName            string           `position:"Query" name:"ImageName"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyImageAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) 
 	request = &ModifyImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageAttribute", "", "")
 	return
 }
 

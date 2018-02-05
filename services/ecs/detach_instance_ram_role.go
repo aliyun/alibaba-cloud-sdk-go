@@ -67,40 +67,27 @@ func (client *Client) DetachInstanceRamRoleWithCallback(request *DetachInstanceR
 
 type DetachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	RamRoleName          string           `position:"Query" name:"RamRoleName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 type DetachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	TotalCount                   int    `json:"TotalCount" xml:"TotalCount"`
-	FailCount                    int    `json:"FailCount" xml:"FailCount"`
-	RamRoleName                  string `json:"RamRoleName" xml:"RamRoleName"`
-	DetachInstanceRamRoleResults struct {
-		DetachInstanceRamRoleResult []struct {
-			InstanceId          string `json:"InstanceId" xml:"InstanceId"`
-			Success             bool   `json:"Success" xml:"Success"`
-			Code                string `json:"Code" xml:"Code"`
-			Message             string `json:"Message" xml:"Message"`
-			InstanceRamRoleSets struct {
-				InstanceRamRoleSet []struct {
-					InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-					RamRoleName string `json:"RamRoleName" xml:"RamRoleName"`
-				} `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
-			} `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
-		} `json:"DetachInstanceRamRoleResult" xml:"DetachInstanceRamRoleResult"`
-	} `json:"DetachInstanceRamRoleResults" xml:"DetachInstanceRamRoleResults"`
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount                   int                          `json:"TotalCount" xml:"TotalCount"`
+	FailCount                    int                          `json:"FailCount" xml:"FailCount"`
+	RamRoleName                  string                       `json:"RamRoleName" xml:"RamRoleName"`
+	DetachInstanceRamRoleResults DetachInstanceRamRoleResults `json:"DetachInstanceRamRoleResults" xml:"DetachInstanceRamRoleResults"`
 }
 
 func CreateDetachInstanceRamRoleRequest() (request *DetachInstanceRamRoleRequest) {
 	request = &DetachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachInstanceRamRole", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachInstanceRamRole", "", "")
 	return
 }
 

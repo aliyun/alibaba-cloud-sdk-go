@@ -67,36 +67,30 @@ func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGr
 
 type SetVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VServerGroupName     string           `position:"Query" name:"VServerGroupName"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	VServerGroupName     string           `position:"Query" name:"VServerGroupName"`
 	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
 type SetVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	VServerGroupId   string `json:"VServerGroupId" xml:"VServerGroupId"`
-	VServerGroupName string `json:"VServerGroupName" xml:"VServerGroupName"`
-	BackendServers   struct {
-		BackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Port     int    `json:"Port" xml:"Port"`
-			Weight   int    `json:"Weight" xml:"Weight"`
-		} `json:"BackendServer" xml:"BackendServer"`
-	} `json:"BackendServers" xml:"BackendServers"`
+	RequestId        string         `json:"RequestId" xml:"RequestId"`
+	VServerGroupId   string         `json:"VServerGroupId" xml:"VServerGroupId"`
+	VServerGroupName string         `json:"VServerGroupName" xml:"VServerGroupName"`
+	BackendServers   BackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeRequest) {
 	request = &SetVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetVServerGroupAttribute", "", "")
 	return
 }
 

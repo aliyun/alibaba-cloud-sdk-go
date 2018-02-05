@@ -67,33 +67,26 @@ func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequ
 
 type AddMediaWorkflowRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Name                 string           `position:"Query" name:"Name"`
 	Topology             string           `position:"Query" name:"Topology"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TriggerMode          string           `position:"Query" name:"TriggerMode"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AddMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-		Name            string `json:"Name" xml:"Name"`
-		Topology        string `json:"Topology" xml:"Topology"`
-		TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
-		State           string `json:"State" xml:"State"`
-		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
 func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {
 	request = &AddMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaWorkflow", "", "")
 	return
 }
 

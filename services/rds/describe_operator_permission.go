@@ -67,11 +67,11 @@ func (client *Client) DescribeOperatorPermissionWithCallback(request *DescribeOp
 
 type DescribeOperatorPermissionRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeOperatorPermissionResponse struct {
@@ -86,7 +86,7 @@ func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermiss
 	request = &DescribeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOperatorPermission", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOperatorPermission", "", "")
 	return
 }
 

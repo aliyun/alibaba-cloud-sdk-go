@@ -67,34 +67,27 @@ func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceR
 
 type AttachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	RamRoleName          string           `position:"Query" name:"RamRoleName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 type AttachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	TotalCount                   int    `json:"TotalCount" xml:"TotalCount"`
-	FailCount                    int    `json:"FailCount" xml:"FailCount"`
-	RamRoleName                  string `json:"RamRoleName" xml:"RamRoleName"`
-	AttachInstanceRamRoleResults struct {
-		AttachInstanceRamRoleResult []struct {
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Success    bool   `json:"Success" xml:"Success"`
-			Code       string `json:"Code" xml:"Code"`
-			Message    string `json:"Message" xml:"Message"`
-		} `json:"AttachInstanceRamRoleResult" xml:"AttachInstanceRamRoleResult"`
-	} `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount                   int                          `json:"TotalCount" xml:"TotalCount"`
+	FailCount                    int                          `json:"FailCount" xml:"FailCount"`
+	RamRoleName                  string                       `json:"RamRoleName" xml:"RamRoleName"`
+	AttachInstanceRamRoleResults AttachInstanceRamRoleResults `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
 }
 
 func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest) {
 	request = &AttachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachInstanceRamRole", "", "")
 	return
 }
 

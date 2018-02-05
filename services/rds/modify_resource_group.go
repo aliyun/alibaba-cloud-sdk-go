@@ -67,13 +67,13 @@ func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGro
 
 type ModifyResourceGroupRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type ModifyResourceGroupResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyResourceGroup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyResourceGroup", "", "")
 	return
 }
 

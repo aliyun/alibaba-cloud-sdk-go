@@ -67,41 +67,30 @@ func (client *Client) DescribeReplicasWithCallback(request *DescribeReplicasRequ
 
 type DescribeReplicasRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeReplicasResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Replicas         []struct {
-		ReplicaId          string `json:"ReplicaId" xml:"ReplicaId"`
-		ReplicaDescription string `json:"ReplicaDescription" xml:"ReplicaDescription"`
-		ReplicaStatus      string `json:"ReplicaStatus" xml:"ReplicaStatus"`
-		ReplicaMode        string `json:"ReplicaMode" xml:"ReplicaMode"`
-		DomainMode         string `json:"DomainMode" xml:"DomainMode"`
-		DBInstances        []struct {
-			DBInstanceId  string `json:"DBInstanceId" xml:"DBInstanceId"`
-			Role          string `json:"Role" xml:"Role"`
-			ReadWriteType string `json:"ReadWriteType" xml:"ReadWriteType"`
-		} `json:"DBInstances" xml:"DBInstances"`
-	} `json:"Replicas" xml:"Replicas"`
+	RequestId        string  `json:"RequestId" xml:"RequestId"`
+	PageNumber       string  `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Replicas         []Items `json:"Replicas" xml:"Replicas"`
 }
 
 func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicas", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicas", "", "")
 	return
 }
 

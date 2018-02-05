@@ -67,37 +67,27 @@ func (client *Client) DescribeDBInstanceHAConfigWithCallback(request *DescribeDB
 
 type DescribeDBInstanceHAConfigRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceHAConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	SyncMode          string `json:"SyncMode" xml:"SyncMode"`
-	HAMode            string `json:"HAMode" xml:"HAMode"`
-	HostInstanceInfos struct {
-		NodeInfo []struct {
-			NodeId       string `json:"NodeId" xml:"NodeId"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			LogSyncTime  string `json:"LogSyncTime" xml:"LogSyncTime"`
-			DataSyncTime string `json:"DataSyncTime" xml:"DataSyncTime"`
-			NodeType     string `json:"NodeType" xml:"NodeType"`
-			ZoneId       string `json:"ZoneId" xml:"ZoneId"`
-			SyncStatus   string `json:"SyncStatus" xml:"SyncStatus"`
-		} `json:"NodeInfo" xml:"NodeInfo"`
-	} `json:"HostInstanceInfos" xml:"HostInstanceInfos"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string            `json:"DBInstanceId" xml:"DBInstanceId"`
+	SyncMode          string            `json:"SyncMode" xml:"SyncMode"`
+	HAMode            string            `json:"HAMode" xml:"HAMode"`
+	HostInstanceInfos HostInstanceInfos `json:"HostInstanceInfos" xml:"HostInstanceInfos"`
 }
 
 func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHAConfigRequest) {
 	request = &DescribeDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "", "")
 	return
 }
 

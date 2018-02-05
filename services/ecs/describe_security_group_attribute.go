@@ -67,51 +67,32 @@ func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *Descri
 
 type DescribeSecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Direction            string           `position:"Query" name:"Direction"`
-	NicType              string           `position:"Query" name:"NicType"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	NicType              string           `position:"Query" name:"NicType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Direction            string           `position:"Query" name:"Direction"`
 }
 
 type DescribeSecurityGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	SecurityGroupId   string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	Description       string `json:"Description" xml:"Description"`
-	SecurityGroupName string `json:"SecurityGroupName" xml:"SecurityGroupName"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	InnerAccessPolicy string `json:"InnerAccessPolicy" xml:"InnerAccessPolicy"`
-	Permissions       struct {
-		Permission []struct {
-			IpProtocol              string `json:"IpProtocol" xml:"IpProtocol"`
-			PortRange               string `json:"PortRange" xml:"PortRange"`
-			SourceGroupId           string `json:"SourceGroupId" xml:"SourceGroupId"`
-			SourceGroupName         string `json:"SourceGroupName" xml:"SourceGroupName"`
-			SourceCidrIp            string `json:"SourceCidrIp" xml:"SourceCidrIp"`
-			Policy                  string `json:"Policy" xml:"Policy"`
-			NicType                 string `json:"NicType" xml:"NicType"`
-			SourceGroupOwnerAccount string `json:"SourceGroupOwnerAccount" xml:"SourceGroupOwnerAccount"`
-			DestGroupId             string `json:"DestGroupId" xml:"DestGroupId"`
-			DestGroupName           string `json:"DestGroupName" xml:"DestGroupName"`
-			DestCidrIp              string `json:"DestCidrIp" xml:"DestCidrIp"`
-			DestGroupOwnerAccount   string `json:"DestGroupOwnerAccount" xml:"DestGroupOwnerAccount"`
-			Priority                string `json:"Priority" xml:"Priority"`
-			Direction               string `json:"Direction" xml:"Direction"`
-			Description             string `json:"Description" xml:"Description"`
-			CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"Permission" xml:"Permission"`
-	} `json:"Permissions" xml:"Permissions"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	RegionId          string      `json:"RegionId" xml:"RegionId"`
+	SecurityGroupId   string      `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	Description       string      `json:"Description" xml:"Description"`
+	SecurityGroupName string      `json:"SecurityGroupName" xml:"SecurityGroupName"`
+	VpcId             string      `json:"VpcId" xml:"VpcId"`
+	InnerAccessPolicy string      `json:"InnerAccessPolicy" xml:"InnerAccessPolicy"`
+	Permissions       Permissions `json:"Permissions" xml:"Permissions"`
 }
 
 func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGroupAttributeRequest) {
 	request = &DescribeSecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "", "")
 	return
 }
 

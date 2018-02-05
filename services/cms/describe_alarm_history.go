@@ -67,72 +67,36 @@ func (client *Client) DescribeAlarmHistoryWithCallback(request *DescribeAlarmHis
 
 type DescribeAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime    string           `position:"Query" name:"EndTime"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	StartTime  string           `position:"Query" name:"StartTime"`
-	Status     string           `position:"Query" name:"Status"`
+	AlertName  string           `position:"Query" name:"AlertName"`
 	RuleName   string           `position:"Query" name:"RuleName"`
-	State      string           `position:"Query" name:"State"`
 	Namespace  string           `position:"Query" name:"Namespace"`
 	MetricName string           `position:"Query" name:"MetricName"`
-	AlertName  string           `position:"Query" name:"AlertName"`
-	Page       requests.Integer `position:"Query" name:"Page"`
-	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
 	GroupId    string           `position:"Query" name:"GroupId"`
+	Status     string           `position:"Query" name:"Status"`
+	State      string           `position:"Query" name:"State"`
+	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
 	OnlyCount  requests.Boolean `position:"Query" name:"OnlyCount"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Page       requests.Integer `position:"Query" name:"Page"`
 }
 
 type DescribeAlarmHistoryResponse struct {
 	*responses.BaseResponse
-	Success          bool   `json:"Success" xml:"Success"`
-	Code             string `json:"Code" xml:"Code"`
-	Message          string `json:"Message" xml:"Message"`
-	Total            string `json:"Total" xml:"Total"`
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	AlarmHistoryList struct {
-		AlarmHistory []struct {
-			Id              string `json:"Id" xml:"Id"`
-			AlertName       string `json:"AlertName" xml:"AlertName"`
-			GroupId         string `json:"GroupId" xml:"GroupId"`
-			Namespace       string `json:"Namespace" xml:"Namespace"`
-			MetricName      string `json:"MetricName" xml:"MetricName"`
-			Dimensions      string `json:"Dimensions" xml:"Dimensions"`
-			Expression      string `json:"Expression" xml:"Expression"`
-			EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
-			Value           string `json:"Value" xml:"Value"`
-			AlertTime       int    `json:"AlertTime" xml:"AlertTime"`
-			LastTime        int    `json:"LastTime" xml:"LastTime"`
-			Level           string `json:"Level" xml:"Level"`
-			PreLevel        string `json:"PreLevel" xml:"PreLevel"`
-			RuleName        string `json:"ruleName" xml:"ruleName"`
-			State           string `json:"State" xml:"State"`
-			Status          int    `json:"Status" xml:"Status"`
-			UserId          string `json:"UserId" xml:"UserId"`
-			Webhooks        string `json:"Webhooks" xml:"Webhooks"`
-			ContactGroups   struct {
-				ContactGroup []string `json:"ContactGroup" xml:"ContactGroup"`
-			} `json:"ContactGroups" xml:"ContactGroups"`
-			Contacts struct {
-				Contact []string `json:"Contact" xml:"Contact"`
-			} `json:"Contacts" xml:"Contacts"`
-			ContactALIIMs struct {
-				ContactALIIM []string `json:"ContactALIIM" xml:"ContactALIIM"`
-			} `json:"ContactALIIMs" xml:"ContactALIIMs"`
-			ContactSmses struct {
-				ContactSms []string `json:"ContactSms" xml:"ContactSms"`
-			} `json:"ContactSmses" xml:"ContactSmses"`
-			ContactMails struct {
-				ContactMail []string `json:"ContactMail" xml:"ContactMail"`
-			} `json:"ContactMails" xml:"ContactMails"`
-		} `json:"AlarmHistory" xml:"AlarmHistory"`
-	} `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
+	Success          bool             `json:"Success" xml:"Success"`
+	Code             string           `json:"Code" xml:"Code"`
+	Message          string           `json:"Message" xml:"Message"`
+	Total            string           `json:"Total" xml:"Total"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	AlarmHistoryList AlarmHistoryList `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
 func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) {
 	request = &DescribeAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DescribeAlarmHistory", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DescribeAlarmHistory", "", "")
 	return
 }
 

@@ -67,35 +67,27 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		TagInfos []struct {
-			TagKey        string `json:"TagKey" xml:"TagKey"`
-			TagValue      string `json:"TagValue" xml:"TagValue"`
-			DBInstanceIds struct {
-				DBInstanceIds []string `json:"DBInstanceIds" xml:"DBInstanceIds"`
-			} `json:"DBInstanceIds" xml:"DBInstanceIds"`
-		} `json:"TagInfos" xml:"TagInfos"`
-	} `json:"Items" xml:"Items"`
+	Items     Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "", "")
 	return
 }
 

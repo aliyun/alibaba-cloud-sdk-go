@@ -67,14 +67,14 @@ func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest,
 
 type SubmitCoverJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
-	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	CoverConfig          string           `position:"Query" name:"CoverConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	CoverConfig          string           `position:"Query" name:"CoverConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitCoverJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "", "")
 	return
 }
 

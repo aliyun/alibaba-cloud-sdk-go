@@ -67,14 +67,14 @@ func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailLi
 
 type QueryTaskDetailListRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	TaskNo       string           `position:"Query" name:"TaskNo"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	TaskNo       string           `position:"Query" name:"TaskNo"`
+	DomainName   string           `position:"Query" name:"DomainName"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
+	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type QueryTaskDetailListResponse struct {
@@ -86,20 +86,7 @@ type QueryTaskDetailListResponse struct {
 	PageSize       int    `json:"PageSize" xml:"PageSize"`
 	PrePage        bool   `json:"PrePage" xml:"PrePage"`
 	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	Data           struct {
-		TaskDetail []struct {
-			TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-			TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-			TaskType     string `json:"TaskType" xml:"TaskType"`
-			InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-			DomainName   string `json:"DomainName" xml:"DomainName"`
-			TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-			UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-			CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-			TryCount     int    `json:"TryCount" xml:"TryCount"`
-			ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-		} `json:"TaskDetail" xml:"TaskDetail"`
-	} `json:"Data" xml:"Data"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {

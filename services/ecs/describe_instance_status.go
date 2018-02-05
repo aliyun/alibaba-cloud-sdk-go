@@ -67,35 +67,30 @@ func (client *Client) DescribeInstanceStatusWithCallback(request *DescribeInstan
 
 type DescribeInstanceStatusRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceStatusResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	InstanceStatuses struct {
-		InstanceStatus []struct {
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Status     string `json:"Status" xml:"Status"`
-		} `json:"InstanceStatus" xml:"InstanceStatus"`
-	} `json:"InstanceStatuses" xml:"InstanceStatuses"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	InstanceStatuses InstanceStatuses `json:"InstanceStatuses" xml:"InstanceStatuses"`
 }
 
 func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusRequest) {
 	request = &DescribeInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceStatus", "", "")
 	return
 }
 

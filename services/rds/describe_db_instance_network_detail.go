@@ -67,47 +67,36 @@ func (client *Client) DescribeDBInstanceNetworkDetailWithCallback(request *Descr
 
 type DescribeDBInstanceNetworkDetailRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
-	StartPoint   string `position:"Query" name:"StartPoint"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	EndTime      string `position:"Query" name:"EndTime"`
+	StartPoint   string `position:"Query" name:"StartPoint"`
 	EndPoint     string `position:"Query" name:"EndPoint"`
 }
 
 type DescribeDBInstanceNetworkDetailResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	StartTime         string `json:"StartTime" xml:"StartTime"`
-	EndTime           string `json:"EndTime" xml:"EndTime"`
-	NewConnection     string `json:"NewConnection" xml:"NewConnection"`
-	ActiveConnection  string `json:"ActiveConnection" xml:"ActiveConnection"`
-	AbortedConnection string `json:"AbortedConnection" xml:"AbortedConnection"`
-	NetworkRequest    string `json:"NetworkRequest" xml:"NetworkRequest"`
-	NetworkTrafficIn  string `json:"NetworkTrafficIn" xml:"NetworkTrafficIn"`
-	NetworkTrafficOut string `json:"NetworkTrafficOut" xml:"NetworkTrafficOut"`
-	NetworkLatency    string `json:"NetworkLatency" xml:"NetworkLatency"`
-	BackendLatency    string `json:"BackendLatency" xml:"BackendLatency"`
-	NetworkErrors     string `json:"NetworkErrors" xml:"NetworkErrors"`
-	NetworkDetail     struct {
-		NetworkKey []struct {
-			Key    string `json:"Key" xml:"Key"`
-			Unit   string `json:"Unit" xml:"Unit"`
-			Values struct {
-				NetworkValue []struct {
-					Value    string `json:"Value" xml:"Value"`
-					DateTime string `json:"DateTime" xml:"DateTime"`
-				} `json:"NetworkValue" xml:"NetworkValue"`
-			} `json:"Values" xml:"Values"`
-		} `json:"NetworkKey" xml:"NetworkKey"`
-	} `json:"NetworkDetail" xml:"NetworkDetail"`
+	RequestId         string        `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string        `json:"DBInstanceId" xml:"DBInstanceId"`
+	StartTime         string        `json:"StartTime" xml:"StartTime"`
+	EndTime           string        `json:"EndTime" xml:"EndTime"`
+	NewConnection     string        `json:"NewConnection" xml:"NewConnection"`
+	ActiveConnection  string        `json:"ActiveConnection" xml:"ActiveConnection"`
+	AbortedConnection string        `json:"AbortedConnection" xml:"AbortedConnection"`
+	NetworkRequest    string        `json:"NetworkRequest" xml:"NetworkRequest"`
+	NetworkTrafficIn  string        `json:"NetworkTrafficIn" xml:"NetworkTrafficIn"`
+	NetworkTrafficOut string        `json:"NetworkTrafficOut" xml:"NetworkTrafficOut"`
+	NetworkLatency    string        `json:"NetworkLatency" xml:"NetworkLatency"`
+	BackendLatency    string        `json:"BackendLatency" xml:"BackendLatency"`
+	NetworkErrors     string        `json:"NetworkErrors" xml:"NetworkErrors"`
+	NetworkDetail     NetworkDetail `json:"NetworkDetail" xml:"NetworkDetail"`
 }
 
 func CreateDescribeDBInstanceNetworkDetailRequest() (request *DescribeDBInstanceNetworkDetailRequest) {
 	request = &DescribeDBInstanceNetworkDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "", "")
 	return
 }
 

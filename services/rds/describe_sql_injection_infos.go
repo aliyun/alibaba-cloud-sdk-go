@@ -67,15 +67,15 @@ func (client *Client) DescribeSQLInjectionInfosWithCallback(request *DescribeSQL
 
 type DescribeSQLInjectionInfosRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeSQLInjectionInfosResponse struct {
@@ -85,24 +85,14 @@ type DescribeSQLInjectionInfosResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		SQLInjectionInfo []struct {
-			DBName         string `json:"DBName" xml:"DBName"`
-			SQLText        string `json:"SQLText" xml:"SQLText"`
-			LatencyTime    string `json:"LatencyTime" xml:"LatencyTime"`
-			HostAddress    string `json:"HostAddress" xml:"HostAddress"`
-			ExecuteTime    string `json:"ExecuteTime" xml:"ExecuteTime"`
-			AccountName    string `json:"AccountName" xml:"AccountName"`
-			EffectRowCount string `json:"EffectRowCount" xml:"EffectRowCount"`
-		} `json:"SQLInjectionInfo" xml:"SQLInjectionInfo"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfosRequest) {
 	request = &DescribeSQLInjectionInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLInjectionInfos", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLInjectionInfos", "", "")
 	return
 }
 

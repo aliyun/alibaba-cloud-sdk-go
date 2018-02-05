@@ -67,10 +67,10 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 
 type CreateDomainRequest struct {
 	*requests.RpcRequest
-	DomainName           string           `position:"Query" name:"DomainName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName           string           `position:"Query" name:"DomainName"`
 }
 
 type CreateDomainResponse struct {

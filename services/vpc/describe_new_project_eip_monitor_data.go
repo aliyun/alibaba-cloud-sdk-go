@@ -67,36 +67,27 @@ func (client *Client) DescribeNewProjectEipMonitorDataWithCallback(request *Desc
 
 type DescribeNewProjectEipMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeNewProjectEipMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	EipMonitorDatas struct {
-		EipMonitorData []struct {
-			EipRX        int    `json:"EipRX" xml:"EipRX"`
-			EipTX        int    `json:"EipTX" xml:"EipTX"`
-			EipFlow      int    `json:"EipFlow" xml:"EipFlow"`
-			EipBandwidth int    `json:"EipBandwidth" xml:"EipBandwidth"`
-			EipPackets   int    `json:"EipPackets" xml:"EipPackets"`
-			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"EipMonitorData" xml:"EipMonitorData"`
-	} `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	EipMonitorDatas EipMonitorDatas `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
 func CreateDescribeNewProjectEipMonitorDataRequest() (request *DescribeNewProjectEipMonitorDataRequest) {
 	request = &DescribeNewProjectEipMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNewProjectEipMonitorData", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNewProjectEipMonitorData", "", "")
 	return
 }
 

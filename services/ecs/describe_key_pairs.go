@@ -67,34 +67,29 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	KeyPairFingerPrint   string           `position:"Query" name:"KeyPairFingerPrint"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	KeyPairFingerPrint   string           `position:"Query" name:"KeyPairFingerPrint"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeKeyPairsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	KeyPairs   struct {
-		KeyPair []struct {
-			KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
-			KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
-		} `json:"KeyPair" xml:"KeyPair"`
-	} `json:"KeyPairs" xml:"KeyPairs"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	KeyPairs   KeyPairs `json:"KeyPairs" xml:"KeyPairs"`
 }
 
 func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	request = &DescribeKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeKeyPairs", "", "")
 	return
 }
 

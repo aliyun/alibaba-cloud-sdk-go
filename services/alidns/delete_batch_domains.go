@@ -67,9 +67,9 @@ func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomains
 
 type DeleteBatchDomainsRequest struct {
 	*requests.RpcRequest
-	Domains      string `position:"Query" name:"Domains"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Domains      string `position:"Query" name:"Domains"`
 }
 
 type DeleteBatchDomainsResponse struct {

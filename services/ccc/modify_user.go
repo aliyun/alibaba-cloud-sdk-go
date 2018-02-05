@@ -67,14 +67,14 @@ func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callbac
 
 type ModifyUserRequest struct {
 	*requests.RpcRequest
-	Phone        string    `position:"Query" name:"Phone"`
-	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
-	Email        string    `position:"Query" name:"Email"`
-	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	UserId       string    `position:"Query" name:"UserId"`
 	InstanceId   string    `position:"Query" name:"InstanceId"`
+	UserId       string    `position:"Query" name:"UserId"`
 	DisplayName  string    `position:"Query" name:"DisplayName"`
+	Phone        string    `position:"Query" name:"Phone"`
+	Email        string    `position:"Query" name:"Email"`
+	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
+	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
 type ModifyUserResponse struct {

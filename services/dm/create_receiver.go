@@ -67,12 +67,12 @@ func (client *Client) CreateReceiverWithCallback(request *CreateReceiverRequest,
 
 type CreateReceiverRequest struct {
 	*requests.RpcRequest
-	Desc                 string           `position:"Query" name:"Desc"`
-	ReceiversAlias       string           `position:"Query" name:"ReceiversAlias"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ReceiversName        string           `position:"Query" name:"ReceiversName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ReceiversName        string           `position:"Query" name:"ReceiversName"`
+	ReceiversAlias       string           `position:"Query" name:"ReceiversAlias"`
+	Desc                 string           `position:"Query" name:"Desc"`
 }
 
 type CreateReceiverResponse struct {

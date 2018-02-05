@@ -67,26 +67,21 @@ func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUv
 
 type DescribeDomainUvDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeDomainUvDataResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	DataInterval   string `json:"DataInterval" xml:"DataInterval"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	EndTime        string `json:"EndTime" xml:"EndTime"`
-	UvDataInterval struct {
-		UsageData []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"UsageData" xml:"UsageData"`
-	} `json:"UvDataInterval" xml:"UvDataInterval"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	DomainName     string         `json:"DomainName" xml:"DomainName"`
+	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
+	StartTime      string         `json:"StartTime" xml:"StartTime"`
+	EndTime        string         `json:"EndTime" xml:"EndTime"`
+	UvDataInterval UvDataInterval `json:"UvDataInterval" xml:"UvDataInterval"`
 }
 
 func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) {

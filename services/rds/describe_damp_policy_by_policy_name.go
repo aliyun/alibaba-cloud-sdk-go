@@ -67,13 +67,13 @@ func (client *Client) DescribeDampPolicyByPolicyNameWithCallback(request *Descri
 
 type DescribeDampPolicyByPolicyNameRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PolicyName           string           `position:"Query" name:"PolicyName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
 }
 
 type DescribeDampPolicyByPolicyNameResponse struct {
@@ -90,7 +90,7 @@ func CreateDescribeDampPolicyByPolicyNameRequest() (request *DescribeDampPolicyB
 	request = &DescribeDampPolicyByPolicyNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "", "")
 	return
 }
 

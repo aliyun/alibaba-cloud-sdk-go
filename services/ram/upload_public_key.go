@@ -73,13 +73,8 @@ type UploadPublicKeyRequest struct {
 
 type UploadPublicKeyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PublicKey struct {
-		PublicKeyId   string `json:"PublicKeyId" xml:"PublicKeyId"`
-		PublicKeySpec string `json:"PublicKeySpec" xml:"PublicKeySpec"`
-		Status        string `json:"Status" xml:"Status"`
-		CreateDate    string `json:"CreateDate" xml:"CreateDate"`
-	} `json:"PublicKey" xml:"PublicKey"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PublicKey PublicKey `json:"PublicKey" xml:"PublicKey"`
 }
 
 func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {

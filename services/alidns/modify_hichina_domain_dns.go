@@ -67,20 +67,16 @@ func (client *Client) ModifyHichinaDomainDNSWithCallback(request *ModifyHichinaD
 
 type ModifyHichinaDomainDNSRequest struct {
 	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	DomainName   string `position:"Query" name:"DomainName"`
 }
 
 type ModifyHichinaDomainDNSResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	OriginalDnsServers struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"OriginalDnsServers" xml:"OriginalDnsServers"`
-	NewDnsServers struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"NewDnsServers" xml:"NewDnsServers"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	OriginalDnsServers OriginalDnsServers `json:"OriginalDnsServers" xml:"OriginalDnsServers"`
+	NewDnsServers      NewDnsServers      `json:"NewDnsServers" xml:"NewDnsServers"`
 }
 
 func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSRequest) {

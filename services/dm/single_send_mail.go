@@ -67,21 +67,21 @@ func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest,
 
 type SingleSendMailRequest struct {
 	*requests.RpcRequest
-	AddressType          requests.Integer `position:"Query" name:"AddressType"`
-	AccountName          string           `position:"Query" name:"AccountName"`
-	TextBody             string           `position:"Query" name:"TextBody"`
-	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
-	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
-	Subject              string           `position:"Query" name:"Subject"`
-	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FromAlias            string           `position:"Query" name:"FromAlias"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ToAddress            string           `position:"Query" name:"ToAddress"`
-	ClickTrace           string           `position:"Query" name:"ClickTrace"`
-	HtmlBody             string           `position:"Query" name:"HtmlBody"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	AddressType          requests.Integer `position:"Query" name:"AddressType"`
 	TagName              string           `position:"Query" name:"TagName"`
+	ReplyToAddress       requests.Boolean `position:"Query" name:"ReplyToAddress"`
+	ToAddress            string           `position:"Query" name:"ToAddress"`
+	Subject              string           `position:"Query" name:"Subject"`
+	HtmlBody             string           `position:"Query" name:"HtmlBody"`
+	TextBody             string           `position:"Query" name:"TextBody"`
+	FromAlias            string           `position:"Query" name:"FromAlias"`
+	ReplyAddress         string           `position:"Query" name:"ReplyAddress"`
+	ReplyAddressAlias    string           `position:"Query" name:"ReplyAddressAlias"`
+	ClickTrace           string           `position:"Query" name:"ClickTrace"`
 }
 
 type SingleSendMailResponse struct {

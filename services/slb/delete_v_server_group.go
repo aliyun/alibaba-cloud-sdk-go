@@ -67,13 +67,13 @@ func (client *Client) DeleteVServerGroupWithCallback(request *DeleteVServerGroup
 
 type DeleteVServerGroupRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 }
 
 type DeleteVServerGroupResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteVServerGroupRequest() (request *DeleteVServerGroupRequest) {
 	request = &DeleteVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteVServerGroup", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteVServerGroup", "", "")
 	return
 }
 

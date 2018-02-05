@@ -67,19 +67,19 @@ func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, c
 
 type RegisterPhotoRequest struct {
 	*requests.RpcRequest
+	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
+	Location   string           `position:"Query" name:"Location"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
+	Latitude   requests.Float   `position:"Query" name:"Latitude"`
+	Longitude  requests.Float   `position:"Query" name:"Longitude"`
+	Width      requests.Integer `position:"Query" name:"Width"`
+	Height     requests.Integer `position:"Query" name:"Height"`
+	IsVideo    string           `position:"Query" name:"IsVideo"`
+	Md5        string           `position:"Query" name:"Md5"`
+	Size       requests.Integer `position:"Query" name:"Size"`
 	PhotoTitle string           `position:"Query" name:"PhotoTitle"`
 	Remark     string           `position:"Query" name:"Remark"`
-	Location   string           `position:"Query" name:"Location"`
-	Width      requests.Integer `position:"Query" name:"Width"`
-	IsVideo    string           `position:"Query" name:"IsVideo"`
-	LibraryId  string           `position:"Query" name:"LibraryId"`
-	Size       requests.Integer `position:"Query" name:"Size"`
-	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
-	Height     requests.Integer `position:"Query" name:"Height"`
-	Md5        string           `position:"Query" name:"Md5"`
-	StoreName  string           `position:"Query" name:"StoreName"`
-	Longitude  requests.Float   `position:"Query" name:"Longitude"`
-	Latitude   requests.Float   `position:"Query" name:"Latitude"`
 }
 
 type RegisterPhotoResponse struct {
@@ -88,30 +88,14 @@ type RegisterPhotoResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Photo     struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		Location        string `json:"Location" xml:"Location"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Size            int    `json:"Size" xml:"Size"`
-		Remark          string `json:"Remark" xml:"Remark"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photo" xml:"Photo"`
+	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
 func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 	request = &RegisterPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterPhoto", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "RegisterPhoto", "", "")
 	return
 }
 

@@ -67,51 +67,25 @@ func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotatio
 
 type QueryAnnotationJobListRequest struct {
 	*requests.RpcRequest
-	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AnnotationJobIds     string           `position:"Query" name:"AnnotationJobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type QueryAnnotationJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	AnnotationJobList struct {
-		AnnotationJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoAnnotationResult struct {
-				Details     string `json:"Details" xml:"Details"`
-				Annotations struct {
-					Annotation []struct {
-						Label string `json:"Label" xml:"Label"`
-						Score string `json:"Score" xml:"Score"`
-					} `json:"Annotation" xml:"Annotation"`
-				} `json:"Annotations" xml:"Annotations"`
-			} `json:"VideoAnnotationResult" xml:"VideoAnnotationResult"`
-		} `json:"AnnotationJob" xml:"AnnotationJob"`
-	} `json:"AnnotationJobList" xml:"AnnotationJobList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	NonExistIds       NonExistIds       `json:"NonExistIds" xml:"NonExistIds"`
+	AnnotationJobList AnnotationJobList `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
 func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {
 	request = &QueryAnnotationJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAnnotationJobList", "", "")
 	return
 }
 

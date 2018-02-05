@@ -67,12 +67,12 @@ func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *Relea
 
 type ReleaseInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReleaseInstancePublicConnectionResponse struct {
@@ -84,7 +84,7 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "", "")
 	return
 }
 

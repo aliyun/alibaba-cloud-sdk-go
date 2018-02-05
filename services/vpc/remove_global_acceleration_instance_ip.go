@@ -67,12 +67,12 @@ func (client *Client) RemoveGlobalAccelerationInstanceIpWithCallback(request *Re
 
 type RemoveGlobalAccelerationInstanceIpRequest struct {
 	*requests.RpcRequest
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
-	IpInstanceId                 string           `position:"Query" name:"IpInstanceId"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	IpInstanceId                 string           `position:"Query" name:"IpInstanceId"`
 }
 
 type RemoveGlobalAccelerationInstanceIpResponse struct {
@@ -84,7 +84,7 @@ func CreateRemoveGlobalAccelerationInstanceIpRequest() (request *RemoveGlobalAcc
 	request = &RemoveGlobalAccelerationInstanceIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveGlobalAccelerationInstanceIp", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveGlobalAccelerationInstanceIp", "", "")
 	return
 }
 

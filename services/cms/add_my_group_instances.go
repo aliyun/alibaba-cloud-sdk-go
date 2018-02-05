@@ -83,7 +83,7 @@ func CreateAddMyGroupInstancesRequest() (request *AddMyGroupInstancesRequest) {
 	request = &AddMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "AddMyGroupInstances", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "AddMyGroupInstances", "", "")
 	return
 }
 

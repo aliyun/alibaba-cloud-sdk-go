@@ -67,10 +67,10 @@ func (client *Client) ModifyMountTargetWithCallback(request *ModifyMountTargetRe
 
 type ModifyMountTargetRequest struct {
 	*requests.RpcRequest
-	AccessGroupName   string `position:"Query" name:"AccessGroupName"`
-	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
-	Status            string `position:"Query" name:"Status"`
 	FileSystemId      string `position:"Query" name:"FileSystemId"`
+	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
+	AccessGroupName   string `position:"Query" name:"AccessGroupName"`
+	Status            string `position:"Query" name:"Status"`
 }
 
 type ModifyMountTargetResponse struct {
@@ -82,7 +82,7 @@ func CreateModifyMountTargetRequest() (request *ModifyMountTargetRequest) {
 	request = &ModifyMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyMountTarget", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyMountTarget", "", "")
 	return
 }
 

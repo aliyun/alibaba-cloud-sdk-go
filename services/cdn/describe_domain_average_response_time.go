@@ -67,28 +67,23 @@ func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *Des
 
 type DescribeDomainAverageResponseTimeRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Interval      string           `position:"Query" name:"Interval"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 	TimeMerge     string           `position:"Query" name:"TimeMerge"`
+	Interval      string           `position:"Query" name:"Interval"`
 }
 
 type DescribeDomainAverageResponseTimeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	DataInterval     string `json:"DataInterval" xml:"DataInterval"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	AvgRTPerInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"AvgRTPerInterval" xml:"AvgRTPerInterval"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	DomainName       string           `json:"DomainName" xml:"DomainName"`
+	DataInterval     string           `json:"DataInterval" xml:"DataInterval"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
+	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	AvgRTPerInterval AvgRTPerInterval `json:"AvgRTPerInterval" xml:"AvgRTPerInterval"`
 }
 
 func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAverageResponseTimeRequest) {

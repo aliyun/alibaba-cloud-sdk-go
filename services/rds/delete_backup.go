@@ -67,12 +67,12 @@ func (client *Client) DeleteBackupWithCallback(request *DeleteBackupRequest, cal
 
 type DeleteBackupRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             string           `position:"Query" name:"BackupId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteBackupResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteBackupRequest() (request *DeleteBackupRequest) {
 	request = &DeleteBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteBackup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteBackup", "", "")
 	return
 }
 

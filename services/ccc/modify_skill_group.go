@@ -67,13 +67,13 @@ func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequ
 
 type ModifySkillGroupRequest struct {
 	*requests.RpcRequest
-	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
-	Description           string    `position:"Query" name:"Description"`
+	InstanceId            string    `position:"Query" name:"InstanceId"`
 	SkillGroupId          string    `position:"Query" name:"SkillGroupId"`
 	Name                  string    `position:"Query" name:"Name"`
-	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+	Description           string    `position:"Query" name:"Description"`
 	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
-	InstanceId            string    `position:"Query" name:"InstanceId"`
+	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
+	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
 type ModifySkillGroupResponse struct {

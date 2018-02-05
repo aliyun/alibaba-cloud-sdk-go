@@ -67,36 +67,25 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     struct {
-		Zone []struct {
-			ZoneId     string `json:"ZoneId" xml:"ZoneId"`
-			LocalName  string `json:"LocalName" xml:"LocalName"`
-			SlaveZones struct {
-				SlaveZone []struct {
-					ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-					LocalName string `json:"LocalName" xml:"LocalName"`
-				} `json:"SlaveZone" xml:"SlaveZone"`
-			} `json:"SlaveZones" xml:"SlaveZones"`
-		} `json:"Zone" xml:"Zone"`
-	} `json:"Zones" xml:"Zones"`
+	Zones     Zones  `json:"Zones" xml:"Zones"`
 }
 
 func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeZones", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeZones", "", "")
 	return
 }
 

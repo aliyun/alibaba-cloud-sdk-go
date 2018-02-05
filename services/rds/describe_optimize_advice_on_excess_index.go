@@ -67,13 +67,13 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *D
 
 type DescribeOptimizeAdviceOnExcessIndexRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeOptimizeAdviceOnExcessIndexResponse struct {
@@ -82,20 +82,14 @@ type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
 	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             struct {
-		AdviceOnExcessIndex []struct {
-			DBName     string `json:"DBName" xml:"DBName"`
-			TableName  string `json:"TableName" xml:"TableName"`
-			IndexCount int    `json:"IndexCount" xml:"IndexCount"`
-		} `json:"AdviceOnExcessIndex" xml:"AdviceOnExcessIndex"`
-	} `json:"Items" xml:"Items"`
+	Items             Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimizeAdviceOnExcessIndexRequest) {
 	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnExcessIndex", "", "")
 	return
 }
 

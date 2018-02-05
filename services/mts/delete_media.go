@@ -67,11 +67,11 @@ func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callb
 
 type DeleteMediaRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MediaIds             string           `position:"Query" name:"MediaIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteMediaResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	request = &DeleteMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMedia", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMedia", "", "")
 	return
 }
 

@@ -67,32 +67,26 @@ func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callbac
 
 type MergeFacesRequest struct {
 	*requests.RpcRequest
-	LibraryId    string           `position:"Query" name:"LibraryId"`
-	StoreName    string           `position:"Query" name:"StoreName"`
 	FaceId       *[]string        `position:"Query" name:"FaceId"  type:"Repeated"`
 	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
+	StoreName    string           `position:"Query" name:"StoreName"`
+	LibraryId    string           `position:"Query" name:"LibraryId"`
 }
 
 type MergeFacesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   struct {
-		Result []struct {
-			Id      int    `json:"Id" xml:"Id"`
-			Code    string `json:"Code" xml:"Code"`
-			Message string `json:"Message" xml:"Message"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Results   Results `json:"Results" xml:"Results"`
 }
 
 func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MergeFaces", "", "")
 	return
 }
 

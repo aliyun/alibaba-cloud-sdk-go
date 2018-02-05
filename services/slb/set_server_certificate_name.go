@@ -67,14 +67,14 @@ func (client *Client) SetServerCertificateNameWithCallback(request *SetServerCer
 
 type SetServerCertificateNameRequest struct {
 	*requests.RpcRequest
-	Tags                  string           `position:"Query" name:"Tags"`
-	ServerCertificateName string           `position:"Query" name:"ServerCertificateName"`
-	ServerCertificateId   string           `position:"Query" name:"ServerCertificateId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId           string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificateId   string           `position:"Query" name:"ServerCertificateId"`
+	ServerCertificateName string           `position:"Query" name:"ServerCertificateName"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId           string           `position:"Query" name:"access_key_id"`
+	Tags                  string           `position:"Query" name:"Tags"`
 }
 
 type SetServerCertificateNameResponse struct {
@@ -86,7 +86,7 @@ func CreateSetServerCertificateNameRequest() (request *SetServerCertificateNameR
 	request = &SetServerCertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetServerCertificateName", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetServerCertificateName", "", "")
 	return
 }
 

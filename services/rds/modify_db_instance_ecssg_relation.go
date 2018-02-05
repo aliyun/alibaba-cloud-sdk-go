@@ -67,31 +67,25 @@ func (client *Client) ModifyDBInstanceECSSGRelationWithCallback(request *ModifyD
 
 type ModifyDBInstanceECSSGRelationRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	EcsSecurityGroupId   string           `position:"Query" name:"EcsSecurityGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	EcsSecurityGroupId   string           `position:"Query" name:"EcsSecurityGroupId"`
 }
 
 type ModifyDBInstanceECSSGRelationResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	Items          struct {
-		RdsEcsSecurityGroupRel []struct {
-			RegionId        string `json:"RegionId" xml:"RegionId"`
-			SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			NetType         string `json:"NetType" xml:"NetType"`
-		} `json:"RdsEcsSecurityGroupRel" xml:"RdsEcsSecurityGroupRel"`
-	} `json:"Items" xml:"Items"`
+	Items          Items  `json:"Items" xml:"Items"`
 }
 
 func CreateModifyDBInstanceECSSGRelationRequest() (request *ModifyDBInstanceECSSGRelationRequest) {
 	request = &ModifyDBInstanceECSSGRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceECSSGRelation", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceECSSGRelation", "", "")
 	return
 }
 

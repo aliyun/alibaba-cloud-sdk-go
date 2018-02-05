@@ -67,12 +67,12 @@ func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddre
 
 type AssociateEipAddressRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 }
 
@@ -85,7 +85,7 @@ func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
 	request = &AssociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateEipAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateEipAddress", "", "")
 	return
 }
 

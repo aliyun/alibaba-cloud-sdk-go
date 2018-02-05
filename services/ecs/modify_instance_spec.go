@@ -67,21 +67,21 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
-	AllowMigrateAcrossZone           requests.Boolean `position:"Query" name:"AllowMigrateAcrossZone"`
-	InternetMaxBandwidthOut          requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	ClientToken                      string           `position:"Query" name:"ClientToken"`
-	SystemDiskCategory               string           `position:"Query" name:"SystemDisk.Category"`
-	TemporaryEndTime                 string           `position:"Query" name:"Temporary.EndTime"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
-	Async                            requests.Boolean `position:"Query" name:"Async"`
-	InstanceType                     string           `position:"Query" name:"InstanceType"`
 	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
-	InternetMaxBandwidthIn           requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
 	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
-	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
 	InstanceId                       string           `position:"Query" name:"InstanceId"`
+	InstanceType                     string           `position:"Query" name:"InstanceType"`
+	InternetMaxBandwidthOut          requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	InternetMaxBandwidthIn           requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
+	TemporaryEndTime                 string           `position:"Query" name:"Temporary.EndTime"`
+	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
+	Async                            requests.Boolean `position:"Query" name:"Async"`
+	AllowMigrateAcrossZone           requests.Boolean `position:"Query" name:"AllowMigrateAcrossZone"`
+	SystemDiskCategory               string           `position:"Query" name:"SystemDisk.Category"`
+	ClientToken                      string           `position:"Query" name:"ClientToken"`
 }
 
 type ModifyInstanceSpecResponse struct {
@@ -93,7 +93,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	request = &ModifyInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceSpec", "", "")
 	return
 }
 

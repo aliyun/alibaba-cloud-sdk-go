@@ -67,12 +67,12 @@ func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequ
 
 type SetDynamicConfigRequest struct {
 	*requests.RpcRequest
-	DomainName          string           `position:"Query" name:"DomainName"`
-	StaticUri           string           `position:"Query" name:"StaticUri"`
-	DynamicOrigin       string           `position:"Query" name:"DynamicOrigin"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
-	StaticType          string           `position:"Query" name:"StaticType"`
 	SecurityToken       string           `position:"Query" name:"SecurityToken"`
+	DomainName          string           `position:"Query" name:"DomainName"`
+	DynamicOrigin       string           `position:"Query" name:"DynamicOrigin"`
+	StaticType          string           `position:"Query" name:"StaticType"`
+	StaticUri           string           `position:"Query" name:"StaticUri"`
 	StaticPath          string           `position:"Query" name:"StaticPath"`
 	DynamicCacheControl string           `position:"Query" name:"DynamicCacheControl"`
 }

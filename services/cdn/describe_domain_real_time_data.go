@@ -67,27 +67,22 @@ func (client *Client) DescribeDomainRealTimeDataWithCallback(request *DescribeDo
 
 type DescribeDomainRealTimeDataRequest struct {
 	*requests.RpcRequest
-	Field         string           `position:"Query" name:"Field"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Field         string           `position:"Query" name:"Field"`
 }
 
 type DescribeDomainRealTimeDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	DomainName      string `json:"DomainName" xml:"DomainName"`
-	Field           string `json:"Field" xml:"Field"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	DataPerInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"DataPerInterval" xml:"DataPerInterval"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	DomainName      string          `json:"DomainName" xml:"DomainName"`
+	Field           string          `json:"Field" xml:"Field"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	DataPerInterval DataPerInterval `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
 func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeDataRequest) {

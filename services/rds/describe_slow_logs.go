@@ -67,16 +67,16 @@ func (client *Client) DescribeSlowLogsWithCallback(request *DescribeSlowLogsRequ
 
 type DescribeSlowLogsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	DBName               string           `position:"Query" name:"DBName"`
 	SortKey              string           `position:"Query" name:"SortKey"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -89,37 +89,14 @@ type DescribeSlowLogsResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		SQLSlowLog []struct {
-			SlowLogId                     int    `json:"SlowLogId" xml:"SlowLogId"`
-			SQLId                         int    `json:"SQLId" xml:"SQLId"`
-			DBName                        string `json:"DBName" xml:"DBName"`
-			SQLText                       string `json:"SQLText" xml:"SQLText"`
-			MySQLTotalExecutionCounts     int    `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-			MySQLTotalExecutionTimes      int    `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-			TotalLockTimes                int    `json:"TotalLockTimes" xml:"TotalLockTimes"`
-			MaxLockTime                   int    `json:"MaxLockTime" xml:"MaxLockTime"`
-			ParseTotalRowCounts           int    `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-			ParseMaxRowCount              int    `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-			ReturnTotalRowCounts          int    `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-			ReturnMaxRowCount             int    `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
-			CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
-			SQLServerTotalExecutionCounts int    `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-			SQLServerTotalExecutionTimes  int    `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-			TotalLogicalReadCounts        int    `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-			TotalPhysicalReadCounts       int    `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
-			ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
-			MaxExecutionTime              int    `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-			AvgExecutionTime              int    `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
-		} `json:"SQLSlowLog" xml:"SQLSlowLog"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSlowLogsRequest() (request *DescribeSlowLogsRequest) {
 	request = &DescribeSlowLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "", "")
 	return
 }
 

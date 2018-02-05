@@ -67,13 +67,13 @@ func (client *Client) EipFillProductWithCallback(request *EipFillProductRequest,
 
 type EipFillProductRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Data                 string           `position:"Query" name:"data"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type EipFillProductResponse struct {
@@ -89,7 +89,7 @@ func CreateEipFillProductRequest() (request *EipFillProductRequest) {
 	request = &EipFillProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillProduct", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillProduct", "", "")
 	return
 }
 

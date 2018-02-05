@@ -67,56 +67,43 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
-	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
-	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
-	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
-	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
-	ResourceType            string           `position:"Query" name:"ResourceType"`
-	PriceUnit               string           `position:"Query" name:"PriceUnit"`
-	Period                  requests.Integer `position:"Query" name:"Period"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ImageId                 string           `position:"Query" name:"ImageId"`
-	IoOptimized             string           `position:"Query" name:"IoOptimized"`
-	InstanceType            string           `position:"Query" name:"InstanceType"`
-	Amount                  requests.Integer `position:"Query" name:"Amount"`
-	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
-	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceType            string           `position:"Query" name:"ResourceType"`
+	ImageId                 string           `position:"Query" name:"ImageId"`
+	InstanceType            string           `position:"Query" name:"InstanceType"`
+	IoOptimized             string           `position:"Query" name:"IoOptimized"`
 	InstanceNetworkType     string           `position:"Query" name:"InstanceNetworkType"`
+	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
+	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
+	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
+	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
+	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
+	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
+	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
+	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
+	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
+	Period                  requests.Integer `position:"Query" name:"Period"`
+	PriceUnit               string           `position:"Query" name:"PriceUnit"`
+	Amount                  requests.Integer `position:"Query" name:"Amount"`
 }
 
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Price struct {
-			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-			Currency      string  `json:"Currency" xml:"Currency"`
-		} `json:"Price" xml:"Price"`
-		Rules struct {
-			Rule []struct {
-				RuleId      int    `json:"RuleId" xml:"RuleId"`
-				Description string `json:"Description" xml:"Description"`
-			} `json:"Rule" xml:"Rule"`
-		} `json:"Rules" xml:"Rules"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
 }
 
 func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrice", "", "")
 	return
 }
 

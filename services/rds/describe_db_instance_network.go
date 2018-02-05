@@ -67,35 +67,25 @@ func (client *Client) DescribeDBInstanceNetworkWithCallback(request *DescribeDBI
 
 type DescribeDBInstanceNetworkRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	EndTime      string `position:"Query" name:"EndTime"`
 }
 
 type DescribeDBInstanceNetworkResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Topology     struct {
-		TopologyItem []struct {
-			StartPoint        string `json:"StartPoint" xml:"StartPoint"`
-			EndPoint          string `json:"EndPoint" xml:"EndPoint"`
-			NetworkTrafficIn  string `json:"NetworkTrafficIn" xml:"NetworkTrafficIn"`
-			NetworkTrafficOut string `json:"NetworkTrafficOut" xml:"NetworkTrafficOut"`
-			NetworkLatency    string `json:"NetworkLatency" xml:"NetworkLatency"`
-			BackendLatency    string `json:"BackendLatency" xml:"BackendLatency"`
-			NetworkErrors     string `json:"NetworkErrors" xml:"NetworkErrors"`
-		} `json:"TopologyItem" xml:"TopologyItem"`
-	} `json:"Topology" xml:"Topology"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string   `json:"DBInstanceId" xml:"DBInstanceId"`
+	StartTime    string   `json:"StartTime" xml:"StartTime"`
+	EndTime      string   `json:"EndTime" xml:"EndTime"`
+	Topology     Topology `json:"Topology" xml:"Topology"`
 }
 
 func CreateDescribeDBInstanceNetworkRequest() (request *DescribeDBInstanceNetworkRequest) {
 	request = &DescribeDBInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetwork", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetwork", "", "")
 	return
 }
 

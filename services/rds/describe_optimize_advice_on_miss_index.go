@@ -67,13 +67,13 @@ func (client *Client) DescribeOptimizeAdviceOnMissIndexWithCallback(request *Des
 
 type DescribeOptimizeAdviceOnMissIndexRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeOptimizeAdviceOnMissIndexResponse struct {
@@ -83,21 +83,14 @@ type DescribeOptimizeAdviceOnMissIndexResponse struct {
 	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
 	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             struct {
-		AdviceOnMissIndex []struct {
-			DBName      string `json:"DBName" xml:"DBName"`
-			TableName   string `json:"TableName" xml:"TableName"`
-			QueryColumn string `json:"QueryColumn" xml:"QueryColumn"`
-			SQLText     string `json:"SQLText" xml:"SQLText"`
-		} `json:"AdviceOnMissIndex" xml:"AdviceOnMissIndex"`
-	} `json:"Items" xml:"Items"`
+	Items             Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnMissIndexRequest() (request *DescribeOptimizeAdviceOnMissIndexRequest) {
 	request = &DescribeOptimizeAdviceOnMissIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissIndex", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissIndex", "", "")
 	return
 }
 

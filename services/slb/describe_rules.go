@@ -67,35 +67,27 @@ func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, c
 
 type DescribeRulesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
 }
 
 type DescribeRulesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Rules     struct {
-		Rule []struct {
-			RuleId         string `json:"RuleId" xml:"RuleId"`
-			RuleName       string `json:"RuleName" xml:"RuleName"`
-			Domain         string `json:"Domain" xml:"Domain"`
-			Url            string `json:"Url" xml:"Url"`
-			VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
-		} `json:"Rule" xml:"Rule"`
-	} `json:"Rules" xml:"Rules"`
+	Rules     Rules  `json:"Rules" xml:"Rules"`
 }
 
 func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRules", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRules", "", "")
 	return
 }
 

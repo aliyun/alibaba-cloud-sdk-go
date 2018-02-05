@@ -67,76 +67,19 @@ func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, cal
 
 type RunInstancesRequest struct {
 	*requests.RpcRequest
-	SpotPriceLimit              requests.Float                  `position:"Query" name:"SpotPriceLimit"`
-	SystemDiskCategory          string                          `position:"Query" name:"SystemDisk.Category"`
-	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
-	ZoneId                      string                          `position:"Query" name:"ZoneId"`
-	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
-	Password                    string                          `position:"Query" name:"Password"`
-	InstanceType                string                          `position:"Query" name:"InstanceType"`
-	Amount                      requests.Integer                `position:"Query" name:"Amount"`
-	Description                 string                          `position:"Query" name:"Description"`
-	ResourceOwnerId             requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                string                          `position:"Query" name:"OwnerAccount"`
-	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
-	ClientToken                 string                          `position:"Query" name:"ClientToken"`
-	InternetChargeType          string                          `position:"Query" name:"InternetChargeType"`
-	SecurityGroupId             string                          `position:"Query" name:"SecurityGroupId"`
-	HostName                    string                          `position:"Query" name:"HostName"`
-	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
-	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
-	SystemDiskDiskName          string                          `position:"Query" name:"SystemDisk.DiskName"`
-	IoOptimized                 string                          `position:"Query" name:"IoOptimized"`
-	InstanceName                string                          `position:"Query" name:"InstanceName"`
-	DryRun                      requests.Boolean                `position:"Query" name:"DryRun"`
-	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
-	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
-	UserData                    string                          `position:"Query" name:"UserData"`
-	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
-	SystemDiskSize              string                          `position:"Query" name:"SystemDisk.Size"`
-	DataDisk                    *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
-	InternetMaxBandwidthOut     requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
-	AutoReleaseTime             string                          `position:"Query" name:"AutoReleaseTime"`
-	ImageId                     string                          `position:"Query" name:"ImageId"`
-	RamRoleName                 string                          `position:"Query" name:"RamRoleName"`
-	InternetMaxBandwidthIn      requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
-	SystemDiskDescription       string                          `position:"Query" name:"SystemDisk.Description"`
-}
-
-type RunInstancesTag struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
-}
-type RunInstancesNetworkInterface struct {
-	PrimaryIpAddress     string `name:"PrimaryIpAddress"`
-	VSwitchId            string `name:"VSwitchId"`
-	SecurityGroupId      string `name:"SecurityGroupId"`
-	NetworkInterfaceName string `name:"NetworkInterfaceName"`
-	Description          string `name:"Description"`
-}
-type RunInstancesDataDisk struct {
-	Size               string `name:"Size"`
-	SnapshotId         string `name:"SnapshotId"`
-	Category           string `name:"Category"`
-	Encrypted          string `name:"Encrypted"`
-	DiskName           string `name:"DiskName"`
-	Description        string `name:"Description"`
-	DeleteWithInstance string `name:"DeleteWithInstance"`
 }
 
 type RunInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	InstanceIdSets struct {
-		InstanceIdSet []string `json:"InstanceIdSet" xml:"InstanceIdSet"`
-	} `json:"InstanceIdSets" xml:"InstanceIdSets"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	InstanceIdSets InstanceIdSets `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 
 func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
 	return
 }
 

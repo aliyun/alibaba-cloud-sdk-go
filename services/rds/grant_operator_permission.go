@@ -67,13 +67,13 @@ func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperator
 
 type GrantOperatorPermissionRequest struct {
 	*requests.RpcRequest
-	ExpiredTime          string           `position:"Query" name:"ExpiredTime"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Privileges           string           `position:"Query" name:"Privileges"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ExpiredTime          string           `position:"Query" name:"ExpiredTime"`
+	Privileges           string           `position:"Query" name:"Privileges"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type GrantOperatorPermissionResponse struct {
@@ -85,7 +85,7 @@ func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionReq
 	request = &GrantOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "", "")
 	return
 }
 

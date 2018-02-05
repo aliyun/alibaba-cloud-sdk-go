@@ -67,15 +67,15 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
-	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
-	ClientToken          string                              `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string                              `position:"Query" name:"Description"`
-	Name                 string                              `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string                              `position:"Query" name:"VpcId"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
+	VpcId                string                              `position:"Query" name:"VpcId"`
+	Name                 string                              `position:"Query" name:"Name"`
+	Description          string                              `position:"Query" name:"Description"`
+	ClientToken          string                              `position:"Query" name:"ClientToken"`
+	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
 }
 
 type CreateNatGatewayBandwidthPackage struct {
@@ -86,21 +86,17 @@ type CreateNatGatewayBandwidthPackage struct {
 
 type CreateNatGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	NatGatewayId    string `json:"NatGatewayId" xml:"NatGatewayId"`
-	ForwardTableIds struct {
-		ForwardTableId []string `json:"ForwardTableId" xml:"ForwardTableId"`
-	} `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	BandwidthPackageIds struct {
-		BandwidthPackageId []string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	} `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	NatGatewayId        string              `json:"NatGatewayId" xml:"NatGatewayId"`
+	ForwardTableIds     ForwardTableIds     `json:"ForwardTableIds" xml:"ForwardTableIds"`
+	BandwidthPackageIds BandwidthPackageIds `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }
 
 func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 	request = &CreateNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "", "")
 	return
 }
 

@@ -67,10 +67,10 @@ func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequ
 
 type CreatePhotoStoreRequest struct {
 	*requests.RpcRequest
+	StoreName    string           `position:"Query" name:"StoreName"`
 	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
 	BucketName   string           `position:"Query" name:"BucketName"`
 	Remark       string           `position:"Query" name:"Remark"`
-	StoreName    string           `position:"Query" name:"StoreName"`
 }
 
 type CreatePhotoStoreResponse struct {
@@ -85,7 +85,7 @@ func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {
 	request = &CreatePhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhotoStore", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhotoStore", "", "")
 	return
 }
 

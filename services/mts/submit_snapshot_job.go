@@ -67,79 +67,27 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
-	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type SubmitSnapshotJobResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	SnapshotJob struct {
-		Id           string `json:"Id" xml:"Id"`
-		UserData     string `json:"UserData" xml:"UserData"`
-		PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-		State        string `json:"State" xml:"State"`
-		Code         string `json:"Code" xml:"Code"`
-		Count        string `json:"Count" xml:"Count"`
-		TileCount    string `json:"TileCount" xml:"TileCount"`
-		Message      string `json:"Message" xml:"Message"`
-		CreationTime string `json:"CreationTime" xml:"CreationTime"`
-		Input        struct {
-			Bucket   string `json:"Bucket" xml:"Bucket"`
-			Location string `json:"Location" xml:"Location"`
-			Object   string `json:"Object" xml:"Object"`
-			RoleArn  string `json:"RoleArn" xml:"RoleArn"`
-		} `json:"Input" xml:"Input"`
-		SnapshotConfig struct {
-			Time       string `json:"Time" xml:"Time"`
-			Interval   string `json:"Interval" xml:"Interval"`
-			Num        string `json:"Num" xml:"Num"`
-			Width      string `json:"Width" xml:"Width"`
-			Height     string `json:"Height" xml:"Height"`
-			FrameType  string `json:"FrameType" xml:"FrameType"`
-			OutputFile struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-				RoleArn  string `json:"RoleArn" xml:"RoleArn"`
-			} `json:"OutputFile" xml:"OutputFile"`
-			TileOutputFile struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-				RoleArn  string `json:"RoleArn" xml:"RoleArn"`
-			} `json:"TileOutputFile" xml:"TileOutputFile"`
-			TileOut struct {
-				Lines         string `json:"Lines" xml:"Lines"`
-				Columns       string `json:"Columns" xml:"Columns"`
-				CellWidth     string `json:"CellWidth" xml:"CellWidth"`
-				CellHeight    string `json:"CellHeight" xml:"CellHeight"`
-				Margin        string `json:"Margin" xml:"Margin"`
-				Padding       string `json:"Padding" xml:"Padding"`
-				Color         string `json:"Color" xml:"Color"`
-				IsKeepCellPic string `json:"IsKeepCellPic" xml:"IsKeepCellPic"`
-				CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
-			} `json:"TileOut" xml:"TileOut"`
-		} `json:"SnapshotConfig" xml:"SnapshotConfig"`
-		MNSMessageResult struct {
-			MessageId    string `json:"MessageId" xml:"MessageId"`
-			ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-			ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-		} `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	} `json:"SnapshotJob" xml:"SnapshotJob"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	SnapshotJob SnapshotJob `json:"SnapshotJob" xml:"SnapshotJob"`
 }
 
 func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSnapshotJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSnapshotJob", "", "")
 	return
 }
 

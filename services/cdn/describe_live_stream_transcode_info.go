@@ -67,24 +67,15 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *Descr
 
 type DescribeLiveStreamTranscodeInfoRequest struct {
 	*requests.RpcRequest
-	DomainTranscodeName string           `position:"Query" name:"DomainTranscodeName"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken       string           `position:"Query" name:"SecurityToken"`
+	DomainTranscodeName string           `position:"Query" name:"DomainTranscodeName"`
 }
 
 type DescribeLiveStreamTranscodeInfoResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DomainTranscodeList struct {
-		DomainTranscodeInfo []struct {
-			TranscodeApp      string `json:"TranscodeApp" xml:"TranscodeApp"`
-			TranscodeId       string `json:"TranscodeId" xml:"TranscodeId"`
-			TranscodeName     string `json:"TranscodeName" xml:"TranscodeName"`
-			TranscodeRecord   string `json:"TranscodeRecord" xml:"TranscodeRecord"`
-			TranscodeSnapshot string `json:"TranscodeSnapshot" xml:"TranscodeSnapshot"`
-			TranscodeTemplate string `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
-		} `json:"DomainTranscodeInfo" xml:"DomainTranscodeInfo"`
-	} `json:"DomainTranscodeList" xml:"DomainTranscodeList"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	DomainTranscodeList DomainTranscodeList `json:"DomainTranscodeList" xml:"DomainTranscodeList"`
 }
 
 func CreateDescribeLiveStreamTranscodeInfoRequest() (request *DescribeLiveStreamTranscodeInfoRequest) {

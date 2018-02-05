@@ -67,14 +67,14 @@ func (client *Client) ModifyPostpaidDBInstanceSpecWithCallback(request *ModifyPo
 
 type ModifyPostpaidDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyPostpaidDBInstanceSpecResponse struct {
@@ -86,7 +86,7 @@ func CreateModifyPostpaidDBInstanceSpecRequest() (request *ModifyPostpaidDBInsta
 	request = &ModifyPostpaidDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyPostpaidDBInstanceSpec", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyPostpaidDBInstanceSpec", "", "")
 	return
 }
 

@@ -67,17 +67,17 @@ func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroup
 
 type ModifyScalingGroupRequest struct {
 	*requests.RpcRequest
-	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
-	MinSize                      requests.Integer `position:"Query" name:"MinSize"`
-	ScalingGroupName             string           `position:"Query" name:"ScalingGroupName"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
-	MaxSize                      requests.Integer `position:"Query" name:"MaxSize"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
+	ScalingGroupName             string           `position:"Query" name:"ScalingGroupName"`
+	MinSize                      requests.Integer `position:"Query" name:"MinSize"`
+	MaxSize                      requests.Integer `position:"Query" name:"MaxSize"`
+	DefaultCooldown              requests.Integer `position:"Query" name:"DefaultCooldown"`
 	RemovalPolicy1               string           `position:"Query" name:"RemovalPolicy.1"`
 	RemovalPolicy2               string           `position:"Query" name:"RemovalPolicy.2"`
-	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DefaultCooldown              requests.Integer `position:"Query" name:"DefaultCooldown"`
+	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -90,7 +90,7 @@ func CreateModifyScalingGroupRequest() (request *ModifyScalingGroupRequest) {
 	request = &ModifyScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingGroup", "", "")
 	return
 }
 

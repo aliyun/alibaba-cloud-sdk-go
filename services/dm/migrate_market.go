@@ -67,11 +67,11 @@ func (client *Client) MigrateMarketWithCallback(request *MigrateMarketRequest, c
 
 type MigrateMarketRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FromType             requests.Integer `position:"Query" name:"FromType"`
 	Version              string           `position:"Query" name:"Version"`
+	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
 type MigrateMarketResponse struct {

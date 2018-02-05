@@ -67,36 +67,28 @@ func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapac
 
 type DescribeCapacityHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeCapacityHistoryResponse struct {
 	*responses.BaseResponse
-	TotalCount           int `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int `json:"PageSize" xml:"PageSize"`
-	CapacityHistoryItems struct {
-		CapacityHistoryModel []struct {
-			ScalingGroupId      string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			TotalCapacity       int    `json:"TotalCapacity" xml:"TotalCapacity"`
-			AttachedCapacity    int    `json:"AttachedCapacity" xml:"AttachedCapacity"`
-			AutoCreatedCapacity int    `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
-			Timestamp           string `json:"Timestamp" xml:"Timestamp"`
-		} `json:"CapacityHistoryModel" xml:"CapacityHistoryModel"`
-	} `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	CapacityHistoryItems CapacityHistoryItems `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
 }
 
 func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryRequest) {
 	request = &DescribeCapacityHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeCapacityHistory", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeCapacityHistory", "", "")
 	return
 }
 

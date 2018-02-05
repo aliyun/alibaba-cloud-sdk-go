@@ -67,31 +67,23 @@ func (client *Client) DescribeRecordLogsWithCallback(request *DescribeRecordLogs
 
 type DescribeRecordLogsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	StartDate    string           `position:"Query" name:"StartDate"`
+	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	KeyWord      string           `position:"Query" name:"KeyWord"`
+	StartDate    string           `position:"Query" name:"StartDate"`
 	EndDate      string           `position:"Query" name:"endDate"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
 }
 
 type DescribeRecordLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	RecordLogs struct {
-		RecordLog []struct {
-			ActionTime      string `json:"ActionTime" xml:"ActionTime"`
-			ActionTimestamp int    `json:"ActionTimestamp" xml:"ActionTimestamp"`
-			Action          string `json:"Action" xml:"Action"`
-			Message         string `json:"Message" xml:"Message"`
-			ClientIp        string `json:"ClientIp" xml:"ClientIp"`
-		} `json:"RecordLog" xml:"RecordLog"`
-	} `json:"RecordLogs" xml:"RecordLogs"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	RecordLogs RecordLogs `json:"RecordLogs" xml:"RecordLogs"`
 }
 
 func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {

@@ -67,13 +67,13 @@ func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callbac
 
 type GetLicenseRequest struct {
 	*requests.RpcRequest
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
 	Data                 string `position:"Query" name:"Data"`
 	MediaId              string `position:"Query" name:"MediaId"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 type GetLicenseResponse struct {
@@ -86,7 +86,7 @@ func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "", "")
 	return
 }
 

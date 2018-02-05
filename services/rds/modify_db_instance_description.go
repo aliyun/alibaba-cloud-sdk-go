@@ -67,13 +67,13 @@ func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBI
 
 type ModifyDBInstanceDescriptionRequest struct {
 	*requests.RpcRequest
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDBInstanceDescriptionResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescri
 	request = &ModifyDBInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDescription", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDescription", "", "")
 	return
 }
 

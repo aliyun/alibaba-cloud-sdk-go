@@ -67,11 +67,11 @@ func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatistics
 
 type QuerySmsStatisticsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
@@ -79,14 +79,7 @@ type QuerySmsStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       struct {
-		Stat []struct {
-			CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-			RequestCount string `json:"requestCount" xml:"requestCount"`
-			SuccessCount string `json:"successCount" xml:"successCount"`
-			FaildCount   string `json:"faildCount" xml:"faildCount"`
-		} `json:"stat" xml:"stat"`
-	} `json:"data" xml:"data"`
+	Data       Data   `json:"data" xml:"data"`
 }
 
 func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {

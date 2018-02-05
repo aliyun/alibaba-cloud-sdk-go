@@ -67,26 +67,20 @@ func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsS
 
 type StopMixStreamsServiceRequest struct {
 	*requests.RpcRequest
-	MixStreamName  string           `position:"Query" name:"MixStreamName"`
-	MainDomainName string           `position:"Query" name:"MainDomainName"`
-	MixAppName     string           `position:"Query" name:"MixAppName"`
-	MainStreamName string           `position:"Query" name:"MainStreamName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	MixDomainName  string           `position:"Query" name:"MixDomainName"`
+	MainDomainName string           `position:"Query" name:"MainDomainName"`
 	MainAppName    string           `position:"Query" name:"MainAppName"`
+	MainStreamName string           `position:"Query" name:"MainStreamName"`
+	MixDomainName  string           `position:"Query" name:"MixDomainName"`
+	MixAppName     string           `position:"Query" name:"MixAppName"`
+	MixStreamName  string           `position:"Query" name:"MixStreamName"`
 }
 
 type StopMixStreamsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	MixStreamsInfoList struct {
-		MixStreamsInfo []struct {
-			DomainName string `json:"DomainName" xml:"DomainName"`
-			AppName    string `json:"AppName" xml:"AppName"`
-			StreamName string `json:"StreamName" xml:"StreamName"`
-		} `json:"MixStreamsInfo" xml:"MixStreamsInfo"`
-	} `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	MixStreamsInfoList MixStreamsInfoList `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
 func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {

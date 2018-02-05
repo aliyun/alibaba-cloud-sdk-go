@@ -67,11 +67,11 @@ func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConf
 
 type SetSourceHostConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	BackSrcDomain string           `position:"Query" name:"BackSrcDomain"`
-	Enable        string           `position:"Query" name:"Enable"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Enable        string           `position:"Query" name:"Enable"`
+	BackSrcDomain string           `position:"Query" name:"BackSrcDomain"`
 }
 
 type SetSourceHostConfigResponse struct {

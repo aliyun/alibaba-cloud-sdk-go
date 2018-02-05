@@ -68,8 +68,8 @@ func (client *Client) UpdateAccessKeyWithCallback(request *UpdateAccessKeyReques
 type UpdateAccessKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
-	Status          string `position:"Query" name:"Status"`
 	UserAccessKeyId string `position:"Query" name:"UserAccessKeyId"`
+	Status          string `position:"Query" name:"Status"`
 }
 
 type UpdateAccessKeyResponse struct {

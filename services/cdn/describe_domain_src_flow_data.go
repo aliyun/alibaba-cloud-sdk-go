@@ -67,30 +67,16 @@ func (client *Client) DescribeDomainSrcFlowDataWithCallback(request *DescribeDom
 
 type DescribeDomainSrcFlowDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	TimeMerge     string           `position:"Query" name:"TimeMerge"`
 }
 
 type DescribeDomainSrcFlowDataResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	DomainName             string `json:"DomainName" xml:"DomainName"`
-	StartTime              string `json:"StartTime" xml:"StartTime"`
-	EndTime                string `json:"EndTime" xml:"EndTime"`
-	DataInterval           string `json:"DataInterval" xml:"DataInterval"`
-	SrcFlowDataPerInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"SrcFlowDataPerInterval" xml:"SrcFlowDataPerInterval"`
+	RequestId              string                 `json:"RequestId" xml:"RequestId"`
+	DomainName             string                 `json:"DomainName" xml:"DomainName"`
+	StartTime              string                 `json:"StartTime" xml:"StartTime"`
+	EndTime                string                 `json:"EndTime" xml:"EndTime"`
+	DataInterval           string                 `json:"DataInterval" xml:"DataInterval"`
+	SrcFlowDataPerInterval SrcFlowDataPerInterval `json:"SrcFlowDataPerInterval" xml:"SrcFlowDataPerInterval"`
 }
 
 func CreateDescribeDomainSrcFlowDataRequest() (request *DescribeDomainSrcFlowDataRequest) {

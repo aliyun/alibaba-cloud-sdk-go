@@ -67,18 +67,18 @@ func (client *Client) QueryMetricListWithCallback(request *QueryMetricListReques
 
 type QueryMetricListRequest struct {
 	*requests.RpcRequest
-	EndTime         string           `position:"Query" name:"EndTime"`
-	StartTime       string           `position:"Query" name:"StartTime"`
-	Cursor          string           `position:"Query" name:"Cursor"`
-	Express         string           `position:"Query" name:"Express"`
-	Period          string           `position:"Query" name:"Period"`
-	Project         string           `position:"Query" name:"Project"`
-	Page            string           `position:"Query" name:"Page"`
-	Metric          string           `position:"Query" name:"Metric"`
-	Length          string           `position:"Query" name:"Length"`
-	Dimensions      string           `position:"Query" name:"Dimensions"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
+	Project         string           `position:"Query" name:"Project"`
+	Metric          string           `position:"Query" name:"Metric"`
+	Period          string           `position:"Query" name:"Period"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	Dimensions      string           `position:"Query" name:"Dimensions"`
+	Page            string           `position:"Query" name:"Page"`
+	Cursor          string           `position:"Query" name:"Cursor"`
+	Length          string           `position:"Query" name:"Length"`
+	Express         string           `position:"Query" name:"Express"`
 }
 
 type QueryMetricListResponse struct {
@@ -96,7 +96,7 @@ func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricList", "", "")
 	return
 }
 

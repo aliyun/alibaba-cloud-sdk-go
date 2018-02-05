@@ -72,45 +72,12 @@ type ListContactFlowsRequest struct {
 
 type ListContactFlowsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ContactFlows   struct {
-		ContactFlow []struct {
-			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
-			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
-			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-			Type                   string `json:"Type" xml:"Type"`
-			AppliedVersion         string `json:"AppliedVersion" xml:"AppliedVersion"`
-			Versions               struct {
-				ContactFlowVersion []struct {
-					ContactFlowVersionId          string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
-					Version                       string `json:"Version" xml:"Version"`
-					ContactFlowVersionDescription string `json:"ContactFlowVersionDescription" xml:"ContactFlowVersionDescription"`
-					LastModified                  string `json:"LastModified" xml:"LastModified"`
-					LastModifiedBy                string `json:"LastModifiedBy" xml:"LastModifiedBy"`
-					LockedBy                      string `json:"LockedBy" xml:"LockedBy"`
-					Status                        string `json:"Status" xml:"Status"`
-				} `json:"ContactFlowVersion" xml:"ContactFlowVersion"`
-			} `json:"Versions" xml:"Versions"`
-			PhoneNumbers struct {
-				PhoneNumber []struct {
-					PhoneNumberId          string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-					InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-					Number                 string `json:"Number" xml:"Number"`
-					PhoneNumberDescription string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-					TestOnly               bool   `json:"TestOnly" xml:"TestOnly"`
-					RemainingTime          int    `json:"RemainingTime" xml:"RemainingTime"`
-					AllowOutbound          bool   `json:"AllowOutbound" xml:"AllowOutbound"`
-					Usage                  string `json:"Usage" xml:"Usage"`
-					Trunks                 int    `json:"Trunks" xml:"Trunks"`
-				} `json:"PhoneNumber" xml:"PhoneNumber"`
-			} `json:"PhoneNumbers" xml:"PhoneNumbers"`
-		} `json:"ContactFlow" xml:"ContactFlow"`
-	} `json:"ContactFlows" xml:"ContactFlows"`
+	RequestId      string       `json:"RequestId" xml:"RequestId"`
+	Success        bool         `json:"Success" xml:"Success"`
+	Code           string       `json:"Code" xml:"Code"`
+	Message        string       `json:"Message" xml:"Message"`
+	HttpStatusCode int          `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ContactFlows   ContactFlows `json:"ContactFlows" xml:"ContactFlows"`
 }
 
 func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {

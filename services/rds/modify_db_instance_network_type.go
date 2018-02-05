@@ -67,19 +67,19 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBI
 
 type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
-	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
+	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount                 string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId                      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
+	RetainClassic                        string           `position:"Query" name:"RetainClassic"`
+	ClassicExpiredDays                   string           `position:"Query" name:"ClassicExpiredDays"`
+	InstanceNetworkType                  string           `position:"Query" name:"InstanceNetworkType"`
+	ReadWriteSplittingClassicExpiredDays requests.Integer `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
+	VPCId                                string           `position:"Query" name:"VPCId"`
 	VSwitchId                            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
-	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
-	ReadWriteSplittingClassicExpiredDays requests.Integer `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
-	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
-	RetainClassic                        string           `position:"Query" name:"RetainClassic"`
-	ResourceOwnerAccount                 string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClassicExpiredDays                   string           `position:"Query" name:"ClassicExpiredDays"`
-	ResourceOwnerId                      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
 	OwnerAccount                         string           `position:"Query" name:"OwnerAccount"`
-	VPCId                                string           `position:"Query" name:"VPCId"`
-	InstanceNetworkType                  string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 type ModifyDBInstanceNetworkTypeResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetwor
 	request = &ModifyDBInstanceNetworkTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "", "")
 	return
 }
 

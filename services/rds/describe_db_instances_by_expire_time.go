@@ -67,15 +67,15 @@ func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *Descr
 
 type DescribeDBInstancesByExpireTimeRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	Expired              requests.Boolean `position:"Query" name:"Expired"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ExpirePeriod         requests.Integer `position:"Query" name:"ExpirePeriod"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	ExpirePeriod         requests.Integer `position:"Query" name:"ExpirePeriod"`
+	Expired              requests.Boolean `position:"Query" name:"Expired"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -85,22 +85,14 @@ type DescribeDBInstancesByExpireTimeResponse struct {
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		DBInstanceExpireTime []struct {
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
-			DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			LockMode              string `json:"LockMode" xml:"LockMode"`
-		} `json:"DBInstanceExpireTime" xml:"DBInstanceExpireTime"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstancesByExpireTimeRequest) {
 	request = &DescribeDBInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "", "")
 	return
 }
 

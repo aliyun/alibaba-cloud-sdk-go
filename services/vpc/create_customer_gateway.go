@@ -67,14 +67,14 @@ func (client *Client) CreateCustomerGatewayWithCallback(request *CreateCustomerG
 
 type CreateCustomerGatewayRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type CreateCustomerGatewayResponse struct {
@@ -91,7 +91,7 @@ func CreateCreateCustomerGatewayRequest() (request *CreateCustomerGatewayRequest
 	request = &CreateCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCustomerGateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCustomerGateway", "", "")
 	return
 }
 

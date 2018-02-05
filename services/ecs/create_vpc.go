@@ -67,15 +67,15 @@ func (client *Client) CreateVpcWithCallback(request *CreateVpcRequest, callback 
 
 type CreateVpcRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	VpcName              string           `position:"Query" name:"VpcName"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CidrBlock            string           `position:"Query" name:"CidrBlock"`
+	VpcName              string           `position:"Query" name:"VpcName"`
+	Description          string           `position:"Query" name:"Description"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type CreateVpcResponse struct {
@@ -90,7 +90,7 @@ func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 	request = &CreateVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVpc", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVpc", "", "")
 	return
 }
 

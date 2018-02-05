@@ -67,9 +67,9 @@ func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheReques
 
 type PushObjectCacheRequest struct {
 	*requests.RpcRequest
-	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 }
 
 type PushObjectCacheResponse struct {

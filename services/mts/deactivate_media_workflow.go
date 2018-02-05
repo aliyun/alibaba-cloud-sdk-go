@@ -67,30 +67,24 @@ func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMed
 
 type DeactivateMediaWorkflowRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeactivateMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-		Name            string `json:"Name" xml:"Name"`
-		Topology        string `json:"Topology" xml:"Topology"`
-		State           string `json:"State" xml:"State"`
-		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
 func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {
 	request = &DeactivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeactivateMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeactivateMediaWorkflow", "", "")
 	return
 }
 

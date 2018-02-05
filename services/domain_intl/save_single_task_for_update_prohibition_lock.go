@@ -67,10 +67,10 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithCallback(request
 
 type SaveSingleTaskForUpdateProhibitionLockRequest struct {
 	*requests.RpcRequest
-	DomainName   string           `position:"Query" name:"DomainName"`
-	Status       requests.Boolean `position:"Query" name:"Status"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	Status       requests.Boolean `position:"Query" name:"Status"`
 }
 
 type SaveSingleTaskForUpdateProhibitionLockResponse struct {

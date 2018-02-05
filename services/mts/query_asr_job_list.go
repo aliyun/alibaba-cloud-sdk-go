@@ -67,57 +67,25 @@ func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListReques
 
 type QueryAsrJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryAsrJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			AsrConfig struct {
-				Scene string `json:"Scene" xml:"Scene"`
-			} `json:"AsrConfig" xml:"AsrConfig"`
-			AsrResult struct {
-				Duration    string `json:"Duration" xml:"Duration"`
-				AsrTextList struct {
-					AsrText []struct {
-						StartTime  int    `json:"StartTime" xml:"StartTime"`
-						EndTime    string `json:"EndTime" xml:"EndTime"`
-						ChannelId  string `json:"ChannelId" xml:"ChannelId"`
-						SpeechRate string `json:"SpeechRate" xml:"SpeechRate"`
-						Text       string `json:"Text" xml:"Text"`
-					} `json:"AsrText" xml:"AsrText"`
-				} `json:"AsrTextList" xml:"AsrTextList"`
-			} `json:"AsrResult" xml:"AsrResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	request = &QueryAsrJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "", "")
 	return
 }
 

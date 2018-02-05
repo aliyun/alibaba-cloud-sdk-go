@@ -67,18 +67,18 @@ func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFrom
 
 type ImportDataFromDatabaseRequest struct {
 	*requests.RpcRequest
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
-	ImportDataType         string           `position:"Query" name:"ImportDataType"`
-	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
-	IsLockTable            string           `position:"Query" name:"IsLockTable"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
 	SourceDatabasePort     string           `position:"Query" name:"SourceDatabasePort"`
+	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
+	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
+	ImportDataType         string           `position:"Query" name:"ImportDataType"`
+	IsLockTable            string           `position:"Query" name:"IsLockTable"`
+	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ImportDataFromDatabaseResponse struct {
@@ -91,7 +91,7 @@ func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseReque
 	request = &ImportDataFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataFromDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataFromDatabase", "", "")
 	return
 }
 

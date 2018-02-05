@@ -67,13 +67,13 @@ func (client *Client) CreateNqaWithCallback(request *CreateNqaRequest, callback 
 
 type CreateNqaRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DestinationIp        string           `position:"Query" name:"DestinationIp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DestinationIp        string           `position:"Query" name:"DestinationIp"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateNqaResponse struct {
@@ -86,7 +86,7 @@ func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	request = &CreateNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNqa", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNqa", "", "")
 	return
 }
 

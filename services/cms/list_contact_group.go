@@ -67,29 +67,27 @@ func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequ
 
 type ListContactGroupRequest struct {
 	*requests.RpcRequest
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListContactGroupResponse struct {
 	*responses.BaseResponse
-	Success       bool   `json:"Success" xml:"Success"`
-	Code          string `json:"Code" xml:"Code"`
-	Message       string `json:"Message" xml:"Message"`
-	NextToken     int    `json:"NextToken" xml:"NextToken"`
-	Total         int    `json:"Total" xml:"Total"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	ContactGroups struct {
-		ContactGroup []string `json:"ContactGroup" xml:"ContactGroup"`
-	} `json:"ContactGroups" xml:"ContactGroups"`
+	Success       bool          `json:"Success" xml:"Success"`
+	Code          string        `json:"Code" xml:"Code"`
+	Message       string        `json:"Message" xml:"Message"`
+	NextToken     int           `json:"NextToken" xml:"NextToken"`
+	Total         int           `json:"Total" xml:"Total"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	ContactGroups ContactGroups `json:"ContactGroups" xml:"ContactGroups"`
 }
 
 func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	request = &ListContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListContactGroup", "", "")
 	return
 }
 

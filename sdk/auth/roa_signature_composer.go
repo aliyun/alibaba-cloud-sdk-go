@@ -100,8 +100,6 @@ func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {
 	return
 }
 
-
-
 func appendIfContain(sourceMap map[string]string, target *bytes.Buffer, key, separator string) {
 	if value, contain := sourceMap[key]; contain && len(value) > 0 {
 		target.WriteString(sourceMap[key])

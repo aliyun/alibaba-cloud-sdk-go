@@ -67,32 +67,25 @@ func (client *Client) DescribeDBInstanceIPArrayListWithCallback(request *Describ
 
 type DescribeDBInstanceIPArrayListRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	WhitelistNetType     string           `position:"Query" name:"WhitelistNetType"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	WhitelistNetType     string           `position:"Query" name:"WhitelistNetType"`
 }
 
 type DescribeDBInstanceIPArrayListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		DBInstanceIPArray []struct {
-			DBInstanceIPArrayName      string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
-			DBInstanceIPArrayAttribute string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
-			SecurityIPList             string `json:"SecurityIPList" xml:"SecurityIPList"`
-			WhitelistNetType           string `json:"WhitelistNetType" xml:"WhitelistNetType"`
-		} `json:"DBInstanceIPArray" xml:"DBInstanceIPArray"`
-	} `json:"Items" xml:"Items"`
+	Items     Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIPArrayListRequest) {
 	request = &DescribeDBInstanceIPArrayListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "", "")
 	return
 }
 

@@ -67,26 +67,26 @@ func (client *Client) DescribeAbnormalDBInstancesWithCallback(request *DescribeA
 
 type DescribeAbnormalDBInstancesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeAbnormalDBInstancesResponse struct {
@@ -95,32 +95,14 @@ type DescribeAbnormalDBInstancesResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		InstanceResult []struct {
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			AbnormalItems         struct {
-				AbnormalItem []struct {
-					CheckTime      string `json:"CheckTime" xml:"CheckTime"`
-					CheckItem      string `json:"CheckItem" xml:"CheckItem"`
-					AbnormalReason string `json:"AbnormalReason" xml:"AbnormalReason"`
-					AbnormalValue  string `json:"AbnormalValue" xml:"AbnormalValue"`
-					AbnormalDetail string `json:"AbnormalDetail" xml:"AbnormalDetail"`
-					AdviceKey      string `json:"AdviceKey" xml:"AdviceKey"`
-					AdviseValue    struct {
-						String []string `json:"String" xml:"String"`
-					} `json:"AdviseValue" xml:"AdviseValue"`
-				} `json:"AbnormalItem" xml:"AbnormalItem"`
-			} `json:"AbnormalItems" xml:"AbnormalItems"`
-		} `json:"InstanceResult" xml:"InstanceResult"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeAbnormalDBInstancesRequest() (request *DescribeAbnormalDBInstancesRequest) {
 	request = &DescribeAbnormalDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAbnormalDBInstances", "", "")
 	return
 }
 

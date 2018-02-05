@@ -67,25 +67,25 @@ func (client *Client) CloneDBInstanceWithCallback(request *CloneDBInstanceReques
 
 type CloneDBInstanceRequest struct {
 	*requests.RpcRequest
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	Period                string           `position:"Query" name:"Period"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	BackupId              string           `position:"Query" name:"BackupId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	PayType               string           `position:"Query" name:"PayType"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	BackupId              string           `position:"Query" name:"BackupId"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	Period                string           `position:"Query" name:"Period"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type CloneDBInstanceResponse struct {
@@ -101,7 +101,7 @@ func CreateCloneDBInstanceRequest() (request *CloneDBInstanceRequest) {
 	request = &CloneDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstance", "", "")
 	return
 }
 

@@ -67,9 +67,9 @@ func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest,
 
 type ToggleFeaturesRequest struct {
 	*requests.RpcRequest
+	StoreName        string    `position:"Query" name:"StoreName"`
 	EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
 	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
-	StoreName        string    `position:"Query" name:"StoreName"`
 }
 
 type ToggleFeaturesResponse struct {
@@ -84,7 +84,7 @@ func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
 	request = &ToggleFeaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ToggleFeatures", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ToggleFeatures", "", "")
 	return
 }
 

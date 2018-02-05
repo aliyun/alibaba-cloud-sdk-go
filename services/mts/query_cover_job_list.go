@@ -67,56 +67,25 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryCoverJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	CoverJobList struct {
-		CoverJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			CoverConfig struct {
-				OutputFile struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-				} `json:"OutputFile" xml:"OutputFile"`
-			} `json:"CoverConfig" xml:"CoverConfig"`
-			CoverImageList struct {
-				CoverImage []struct {
-					Score string `json:"Score" xml:"Score"`
-					Url   string `json:"Url" xml:"Url"`
-					Time  string `json:"Time" xml:"Time"`
-				} `json:"CoverImage" xml:"CoverImage"`
-			} `json:"CoverImageList" xml:"CoverImageList"`
-		} `json:"CoverJob" xml:"CoverJob"`
-	} `json:"CoverJobList" xml:"CoverJobList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
+	CoverJobList CoverJobList `json:"CoverJobList" xml:"CoverJobList"`
 }
 
 func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
 	request = &QueryCoverJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCoverJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCoverJobList", "", "")
 	return
 }
 

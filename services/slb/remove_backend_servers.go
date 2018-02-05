@@ -67,33 +67,28 @@ func (client *Client) RemoveBackendServersWithCallback(request *RemoveBackendSer
 
 type RemoveBackendServersRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	BackendServers       string           `position:"Query" name:"BackendServers"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type RemoveBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	BackendServers struct {
-		BackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Weight   int    `json:"Weight" xml:"Weight"`
-		} `json:"BackendServer" xml:"BackendServer"`
-	} `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId string         `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) {
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "", "")
 	return
 }
 

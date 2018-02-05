@@ -67,42 +67,26 @@ func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sReques
 
 type GetPhotosByMd5sRequest struct {
 	*requests.RpcRequest
-	State     string    `position:"Query" name:"State"`
 	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
-	LibraryId string    `position:"Query" name:"LibraryId"`
+	State     string    `position:"Query" name:"State"`
 	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type GetPhotosByMd5sResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Photos    []struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		Location        string `json:"Location" xml:"Location"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Remark          string `json:"Remark" xml:"Remark"`
-		Size            int    `json:"Size" xml:"Size"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photos" xml:"Photos"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
 func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "", "")
 	return
 }
 

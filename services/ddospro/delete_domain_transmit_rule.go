@@ -67,8 +67,8 @@ func (client *Client) DeleteDomainTransmitRuleWithCallback(request *DeleteDomain
 
 type DeleteDomainTransmitRuleRequest struct {
 	*requests.RpcRequest
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 	Ip              string           `position:"Query" name:"Ip"`
 }
 

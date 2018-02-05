@@ -67,71 +67,35 @@ func (client *Client) DescribeGlobalAccelerationInstancesWithCallback(request *D
 
 type DescribeGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
-	Status                       string           `position:"Query" name:"Status"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	IpAddress                    string           `position:"Query" name:"IpAddress"`
-	ServerId                     string           `position:"Query" name:"ServerId"`
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
-	BandwidthType                string           `position:"Query" name:"BandwidthType"`
-	Name                         string           `position:"Query" name:"Name"`
-	ServiceLocation              string           `position:"Query" name:"ServiceLocation"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	IpAddress                    string           `position:"Query" name:"IpAddress"`
+	Name                         string           `position:"Query" name:"Name"`
+	Status                       string           `position:"Query" name:"Status"`
+	BandwidthType                string           `position:"Query" name:"BandwidthType"`
+	ServiceLocation              string           `position:"Query" name:"ServiceLocation"`
+	ServerId                     string           `position:"Query" name:"ServerId"`
+	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId                   string `json:"RequestId" xml:"RequestId"`
-	TotalCount                  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber                  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize                    int    `json:"PageSize" xml:"PageSize"`
-	GlobalAccelerationInstances struct {
-		GlobalAccelerationInstance []struct {
-			RegionId                     string `json:"RegionId" xml:"RegionId"`
-			GlobalAccelerationInstanceId string `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
-			IpAddress                    string `json:"IpAddress" xml:"IpAddress"`
-			Status                       string `json:"Status" xml:"Status"`
-			Bandwidth                    string `json:"Bandwidth" xml:"Bandwidth"`
-			InternetChargeType           string `json:"InternetChargeType" xml:"InternetChargeType"`
-			ChargeType                   string `json:"ChargeType" xml:"ChargeType"`
-			BandwidthType                string `json:"BandwidthType" xml:"BandwidthType"`
-			AccelerationLocation         string `json:"AccelerationLocation" xml:"AccelerationLocation"`
-			ServiceLocation              string `json:"ServiceLocation" xml:"ServiceLocation"`
-			Name                         string `json:"Name" xml:"Name"`
-			Description                  string `json:"Description" xml:"Description"`
-			ExpiredTime                  string `json:"ExpiredTime" xml:"ExpiredTime"`
-			CreationTime                 string `json:"CreationTime" xml:"CreationTime"`
-			OperationLocks               struct {
-				LockReason []struct {
-					LockReason string `json:"LockReason" xml:"LockReason"`
-				} `json:"LockReason" xml:"LockReason"`
-			} `json:"OperationLocks" xml:"OperationLocks"`
-			BackendServers struct {
-				BackendServer []struct {
-					RegionId        string `json:"RegionId" xml:"RegionId"`
-					ServerId        string `json:"ServerId" xml:"ServerId"`
-					ServerIpAddress string `json:"ServerIpAddress" xml:"ServerIpAddress"`
-					ServerType      string `json:"ServerType" xml:"ServerType"`
-				} `json:"BackendServer" xml:"BackendServer"`
-			} `json:"BackendServers" xml:"BackendServers"`
-			PublicIpAddresses struct {
-				PublicIpAddress []struct {
-					AllocationId string `json:"AllocationId" xml:"AllocationId"`
-					IpAddress    string `json:"IpAddress" xml:"IpAddress"`
-				} `json:"PublicIpAddress" xml:"PublicIpAddress"`
-			} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
-		} `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
-	} `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
+	TotalCount                  int                         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber                  int                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
+	GlobalAccelerationInstances GlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
 func CreateDescribeGlobalAccelerationInstancesRequest() (request *DescribeGlobalAccelerationInstancesRequest) {
 	request = &DescribeGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "", "")
 	return
 }
 

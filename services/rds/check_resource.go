@@ -67,37 +67,31 @@ func (client *Client) CheckResourceWithCallback(request *CheckResourceRequest, c
 
 type CheckResourceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	Engine               string           `position:"Query" name:"Engine"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	DBInstanceUseType    string           `position:"Query" name:"DBInstanceUseType"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	SpecifyCount         string           `position:"Query" name:"SpecifyCount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Engine               string           `position:"Query" name:"Engine"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	DBInstanceUseType    string           `position:"Query" name:"DBInstanceUseType"`
+	SpecifyCount         string           `position:"Query" name:"SpecifyCount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CheckResourceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	SpecifyCount string `json:"SpecifyCount" xml:"SpecifyCount"`
-	Resources    struct {
-		Resource []struct {
-			DBInstanceAvailable string `json:"DBInstanceAvailable" xml:"DBInstanceAvailable"`
-			Engine              string `json:"Engine" xml:"Engine"`
-			EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
-		} `json:"Resource" xml:"Resource"`
-	} `json:"Resources" xml:"Resources"`
+	RequestId    string    `json:"RequestId" xml:"RequestId"`
+	SpecifyCount string    `json:"SpecifyCount" xml:"SpecifyCount"`
+	Resources    Resources `json:"Resources" xml:"Resources"`
 }
 
 func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	request = &CheckResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckResource", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckResource", "", "")
 	return
 }
 

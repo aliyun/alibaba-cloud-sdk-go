@@ -67,11 +67,11 @@ func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRe
 
 type NodeProcessCreateRequest struct {
 	*requests.RpcRequest
-	ProcessName string `position:"Query" name:"ProcessName"`
-	Name        string `position:"Query" name:"Name"`
-	Command     string `position:"Query" name:"Command"`
-	ProcessUser string `position:"Query" name:"ProcessUser"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
+	Name        string `position:"Query" name:"Name"`
+	ProcessName string `position:"Query" name:"ProcessName"`
+	ProcessUser string `position:"Query" name:"ProcessUser"`
+	Command     string `position:"Query" name:"Command"`
 }
 
 type NodeProcessCreateResponse struct {
@@ -86,7 +86,7 @@ func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	request = &NodeProcessCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessCreate", "", "")
 	return
 }
 

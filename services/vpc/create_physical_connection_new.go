@@ -67,21 +67,21 @@ func (client *Client) CreatePhysicalConnectionNewWithCallback(request *CreatePhy
 
 type CreatePhysicalConnectionNewRequest struct {
 	*requests.RpcRequest
-	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	InterfaceName                 string           `position:"Query" name:"InterfaceName"`
 	AccessPointId                 string           `position:"Query" name:"AccessPointId"`
-	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	Type                          string           `position:"Query" name:"Type"`
-	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
 	LineOperator                  string           `position:"Query" name:"LineOperator"`
-	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description                   string           `position:"Query" name:"Description"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	PortType                      string           `position:"Query" name:"PortType"`
+	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
+	Description                   string           `position:"Query" name:"Description"`
 	Name                          string           `position:"Query" name:"Name"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
 	DeviceName                    string           `position:"Query" name:"DeviceName"`
+	InterfaceName                 string           `position:"Query" name:"InterfaceName"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 }
@@ -96,7 +96,7 @@ func CreateCreatePhysicalConnectionNewRequest() (request *CreatePhysicalConnecti
 	request = &CreatePhysicalConnectionNewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnectionNew", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnectionNew", "", "")
 	return
 }
 

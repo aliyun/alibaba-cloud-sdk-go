@@ -67,12 +67,12 @@ func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callb
 
 type BindIpRangeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type BindIpRangeResponse struct {
@@ -84,7 +84,7 @@ func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 	request = &BindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "BindIpRange", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "BindIpRange", "", "")
 	return
 }
 

@@ -67,47 +67,36 @@ func (client *Client) DescribeRouteTableListWithCallback(request *DescribeRouteT
 
 type DescribeRouteTableListRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	RouterType           string           `position:"Query" name:"RouterType"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeRouteTableListResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Code            string `json:"Code" xml:"Code"`
-	Message         string `json:"Message" xml:"Message"`
-	Success         bool   `json:"Success" xml:"Success"`
-	PageSize        int    `json:"PageSize" xml:"PageSize"`
-	PageNumber      int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount      int    `json:"TotalCount" xml:"TotalCount"`
-	RouterTableList struct {
-		RouterTableListType []struct {
-			VpcId          string `json:"VpcId" xml:"VpcId"`
-			RouterType     string `json:"RouterType" xml:"RouterType"`
-			RouterId       string `json:"RouterId" xml:"RouterId"`
-			RouteTableId   string `json:"RouteTableId" xml:"RouteTableId"`
-			RouteTableName string `json:"RouteTableName" xml:"RouteTableName"`
-			RouteTableType string `json:"RouteTableType" xml:"RouteTableType"`
-			Description    string `json:"Description" xml:"Description"`
-			CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-		} `json:"RouterTableListType" xml:"RouterTableListType"`
-	} `json:"RouterTableList" xml:"RouterTableList"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	Code            string          `json:"Code" xml:"Code"`
+	Message         string          `json:"Message" xml:"Message"`
+	Success         bool            `json:"Success" xml:"Success"`
+	PageSize        int             `json:"PageSize" xml:"PageSize"`
+	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
+	RouterTableList RouterTableList `json:"RouterTableList" xml:"RouterTableList"`
 }
 
 func CreateDescribeRouteTableListRequest() (request *DescribeRouteTableListRequest) {
 	request = &DescribeRouteTableListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTableList", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteTableList", "", "")
 	return
 }
 

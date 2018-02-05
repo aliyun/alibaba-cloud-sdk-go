@@ -67,11 +67,11 @@ func (client *Client) DescribeSslVpnClientCertWithCallback(request *DescribeSslV
 
 type DescribeSslVpnClientCertRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SslVpnClientCertId   string           `position:"Query" name:"SslVpnClientCertId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SslVpnClientCertId   string           `position:"Query" name:"SslVpnClientCertId"`
 }
 
 type DescribeSslVpnClientCertResponse struct {
@@ -94,7 +94,7 @@ func CreateDescribeSslVpnClientCertRequest() (request *DescribeSslVpnClientCertR
 	request = &DescribeSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "", "")
 	return
 }
 

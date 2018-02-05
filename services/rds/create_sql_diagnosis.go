@@ -67,9 +67,9 @@ func (client *Client) CreateSQLDiagnosisWithCallback(request *CreateSQLDiagnosis
 
 type CreateSQLDiagnosisRequest struct {
 	*requests.RpcRequest
-	EndTime      string `position:"Query" name:"EndTime"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	EndTime      string `position:"Query" name:"EndTime"`
 }
 
 type CreateSQLDiagnosisResponse struct {
@@ -82,7 +82,7 @@ func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 	request = &CreateSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateSQLDiagnosis", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateSQLDiagnosis", "", "")
 	return
 }
 

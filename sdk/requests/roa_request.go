@@ -18,9 +18,9 @@ import (
 	"bytes"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"io"
+	"net/url"
 	"sort"
 	"strings"
-	"net/url"
 )
 
 type RoaRequest struct {
@@ -83,9 +83,9 @@ func (request *RoaRequest) buildQueries(needParamEncode bool) string {
 		urlBuilder.WriteString(queryKey)
 		if value := queryParams[queryKey]; len(value) > 0 {
 			urlBuilder.WriteString("=")
-			if needParamEncode{
+			if needParamEncode {
 				urlBuilder.WriteString(url.QueryEscape(value))
-			}else{
+			} else {
 				urlBuilder.WriteString(value)
 			}
 		}
@@ -99,7 +99,7 @@ func (request *RoaRequest) buildQueries(needParamEncode bool) string {
 	return request.queries
 }
 
-func popStandardUrlencode(stringToSign string)(result string){
+func popStandardUrlencode(stringToSign string) (result string) {
 	result = strings.Replace(stringToSign, "+", "%20", -1)
 	result = strings.Replace(result, "*", "%2A", -1)
 	result = strings.Replace(result, "%7E", "~", -1)

@@ -67,64 +67,37 @@ func (client *Client) QueryPriceForBuyWithCallback(request *QueryPriceForBuyRequ
 
 type QueryPriceForBuyRequest struct {
 	*requests.RpcRequest
-	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
-	UsedTime             string           `position:"Query" name:"UsedTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	Engine               string           `position:"Query" name:"Engine"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	OrderType            string           `position:"Query" name:"OrderType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CommodityCode        string           `position:"Query" name:"CommodityCode"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PayType              string           `position:"Query" name:"PayType"`
-	Quantity             requests.Integer `position:"Query" name:"Quantity"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
 	TimeType             string           `position:"Query" name:"TimeType"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 type QueryPriceForBuyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Currency      string  `json:"Currency" xml:"Currency"`
-		OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-		TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-		DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-		RuleIds       struct {
-			RuleId []string `json:"RuleId" xml:"RuleId"`
-		} `json:"RuleIds" xml:"RuleIds"`
-		ActivityInfo struct {
-			CheckErrMsg string `json:"CheckErrMsg" xml:"CheckErrMsg"`
-			ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
-			Success     string `json:"Success" xml:"Success"`
-		} `json:"ActivityInfo" xml:"ActivityInfo"`
-		Coupons struct {
-			Coupon []struct {
-				CouponNo    string `json:"CouponNo" xml:"CouponNo"`
-				Name        string `json:"Name" xml:"Name"`
-				Description string `json:"Description" xml:"Description"`
-				IsSelected  string `json:"IsSelected" xml:"IsSelected"`
-			} `json:"Coupon" xml:"Coupon"`
-		} `json:"Coupons" xml:"Coupons"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
-	Rules struct {
-		Rule []struct {
-			RuleId      int    `json:"RuleId" xml:"RuleId"`
-			Name        string `json:"Name" xml:"Name"`
-			Description string `json:"Description" xml:"Description"`
-		} `json:"Rule" xml:"Rule"`
-	} `json:"Rules" xml:"Rules"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     Rules     `json:"Rules" xml:"Rules"`
 }
 
 func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {
 	request = &QueryPriceForBuyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForBuy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "QueryPriceForBuy", "", "")
 	return
 }
 

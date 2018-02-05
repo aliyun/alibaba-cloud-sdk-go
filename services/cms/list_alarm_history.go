@@ -67,44 +67,29 @@ func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequ
 
 type ListAlarmHistoryRequest struct {
 	*requests.RpcRequest
-	EndTime        string           `position:"Query" name:"EndTime"`
-	Id             string           `position:"Query" name:"Id"`
-	Cursor         string           `position:"Query" name:"Cursor"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	Size           requests.Integer `position:"Query" name:"Size"`
 	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
+	Id             string           `position:"Query" name:"Id"`
+	Size           requests.Integer `position:"Query" name:"Size"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	Cursor         string           `position:"Query" name:"Cursor"`
 }
 
 type ListAlarmHistoryResponse struct {
 	*responses.BaseResponse
-	Success          bool   `json:"Success" xml:"Success"`
-	Code             string `json:"Code" xml:"Code"`
-	Message          string `json:"Message" xml:"Message"`
-	Cursor           string `json:"Cursor" xml:"Cursor"`
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	AlarmHistoryList struct {
-		AlarmHistory []struct {
-			Id              string `json:"Id" xml:"Id"`
-			Name            string `json:"Name" xml:"Name"`
-			Namespace       string `json:"Namespace" xml:"Namespace"`
-			MetricName      string `json:"MetricName" xml:"MetricName"`
-			Dimension       string `json:"Dimension" xml:"Dimension"`
-			EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
-			Value           string `json:"Value" xml:"Value"`
-			AlarmTime       int    `json:"AlarmTime" xml:"AlarmTime"`
-			LastTime        int    `json:"LastTime" xml:"LastTime"`
-			State           string `json:"State" xml:"State"`
-			Status          int    `json:"Status" xml:"Status"`
-			ContactGroups   string `json:"ContactGroups" xml:"ContactGroups"`
-		} `json:"AlarmHistory" xml:"AlarmHistory"`
-	} `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
+	Success          bool             `json:"Success" xml:"Success"`
+	Code             string           `json:"Code" xml:"Code"`
+	Message          string           `json:"Message" xml:"Message"`
+	Cursor           string           `json:"Cursor" xml:"Cursor"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	AlarmHistoryList AlarmHistoryList `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
 func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	request = &ListAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListAlarmHistory", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListAlarmHistory", "", "")
 	return
 }
 

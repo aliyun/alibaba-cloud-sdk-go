@@ -67,12 +67,12 @@ func (client *Client) ResetDiskWithCallback(request *ResetDiskRequest, callback 
 
 type ResetDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ResetDiskResponse struct {
@@ -84,7 +84,7 @@ func CreateResetDiskRequest() (request *ResetDiskRequest) {
 	request = &ResetDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ResetDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ResetDisk", "", "")
 	return
 }
 

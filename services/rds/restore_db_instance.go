@@ -67,13 +67,13 @@ func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRe
 
 type RestoreDBInstanceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             string           `position:"Query" name:"BackupId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type RestoreDBInstanceResponse struct {
@@ -85,7 +85,7 @@ func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	request = &RestoreDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreDBInstance", "", "")
 	return
 }
 

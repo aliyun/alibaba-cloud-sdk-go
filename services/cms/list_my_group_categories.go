@@ -72,26 +72,18 @@ type ListMyGroupCategoriesRequest struct {
 
 type ListMyGroupCategoriesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Category     struct {
-		GroupId       int `json:"GroupId" xml:"GroupId"`
-		CategoryItems struct {
-			CategoryItem []struct {
-				Category string `json:"Category" xml:"Category"`
-				Count    int    `json:"Count" xml:"Count"`
-			} `json:"CategoryItem" xml:"CategoryItem"`
-		} `json:"CategoryItems" xml:"CategoryItems"`
-	} `json:"Category" xml:"Category"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	Success      bool     `json:"Success" xml:"Success"`
+	ErrorCode    int      `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	Category     Category `json:"Category" xml:"Category"`
 }
 
 func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest) {
 	request = &ListMyGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupCategories", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupCategories", "", "")
 	return
 }
 

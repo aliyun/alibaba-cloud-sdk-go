@@ -67,10 +67,10 @@ func (client *Client) DeleteLiveAppRecordConfigWithCallback(request *DeleteLiveA
 
 type DeleteLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
 }
 
 type DeleteLiveAppRecordConfigResponse struct {

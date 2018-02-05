@@ -67,12 +67,12 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 
 type DeleteImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                requests.Boolean `position:"Query" name:"Force"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
+	Force                requests.Boolean `position:"Query" name:"Force"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteImageResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 	request = &DeleteImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImage", "", "")
 	return
 }
 

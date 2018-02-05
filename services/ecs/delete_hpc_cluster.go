@@ -67,12 +67,6 @@ func (client *Client) DeleteHpcClusterWithCallback(request *DeleteHpcClusterRequ
 
 type DeleteHpcClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	HpcClusterId         string           `position:"Query" name:"HpcClusterId"`
 }
 
 type DeleteHpcClusterResponse struct {
@@ -84,7 +78,7 @@ func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	request = &DeleteHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteHpcCluster", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteHpcCluster", "", "")
 	return
 }
 

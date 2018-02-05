@@ -67,11 +67,11 @@ func (client *Client) RevokeOperatorPermissionWithCallback(request *RevokeOperat
 
 type RevokeOperatorPermissionRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type RevokeOperatorPermissionResponse struct {
@@ -83,7 +83,7 @@ func CreateRevokeOperatorPermissionRequest() (request *RevokeOperatorPermissionR
 	request = &RevokeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeOperatorPermission", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeOperatorPermission", "", "")
 	return
 }
 

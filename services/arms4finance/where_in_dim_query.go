@@ -67,16 +67,16 @@ func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryReques
 
 type WhereInDimQueryRequest struct {
 	*requests.RpcRequest
-	MaxTime       requests.Integer             `position:"Query" name:"MaxTime"`
-	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
-	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
+	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
 	DateStr       string                       `position:"Query" name:"DateStr"`
-	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
+	MinTime       requests.Integer             `position:"Query" name:"MinTime"`
+	MaxTime       requests.Integer             `position:"Query" name:"MaxTime"`
 	Dimensions    *[]WhereInDimQueryDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
 	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
+	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
 	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
-	MinTime       requests.Integer             `position:"Query" name:"MinTime"`
+	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 }
 
 type WhereInDimQueryDimensions struct {

@@ -67,54 +67,39 @@ func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttri
 
 type DescribeVpcAttributeRequest struct {
 	*requests.RpcRequest
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeVpcAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	Status             string `json:"Status" xml:"Status"`
-	VpcName            string `json:"VpcName" xml:"VpcName"`
-	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock          string `json:"CidrBlock" xml:"CidrBlock"`
-	VRouterId          string `json:"VRouterId" xml:"VRouterId"`
-	Description        string `json:"Description" xml:"Description"`
-	IsDefault          bool   `json:"IsDefault" xml:"IsDefault"`
-	ClassicLinkEnabled bool   `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
-	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	VSwitchIds         struct {
-		VSwitchId []string `json:"VSwitchId" xml:"VSwitchId"`
-	} `json:"VSwitchIds" xml:"VSwitchIds"`
-	UserCidrs struct {
-		UserCidr []string `json:"UserCidr" xml:"UserCidr"`
-	} `json:"UserCidrs" xml:"UserCidrs"`
-	AssociatedCens struct {
-		AssociatedCbn []struct {
-			CenStatus   string `json:"CenStatus" xml:"CenStatus"`
-			CenId       string `json:"CenId" xml:"CenId"`
-			CenOwnerUid int    `json:"CenOwnerUid" xml:"CenOwnerUid"`
-		} `json:"AssociatedCbn" xml:"AssociatedCbn"`
-	} `json:"AssociatedCens" xml:"AssociatedCens"`
-	CloudResources struct {
-		CloudResourceSetType []struct {
-			ResourceType  string `json:"ResourceType" xml:"ResourceType"`
-			ResourceCount int    `json:"ResourceCount" xml:"ResourceCount"`
-		} `json:"CloudResourceSetType" xml:"CloudResourceSetType"`
-	} `json:"CloudResources" xml:"CloudResources"`
+	RequestId          string         `json:"RequestId" xml:"RequestId"`
+	VpcId              string         `json:"VpcId" xml:"VpcId"`
+	RegionId           string         `json:"RegionId" xml:"RegionId"`
+	Status             string         `json:"Status" xml:"Status"`
+	VpcName            string         `json:"VpcName" xml:"VpcName"`
+	CreationTime       string         `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock          string         `json:"CidrBlock" xml:"CidrBlock"`
+	VRouterId          string         `json:"VRouterId" xml:"VRouterId"`
+	Description        string         `json:"Description" xml:"Description"`
+	IsDefault          bool           `json:"IsDefault" xml:"IsDefault"`
+	ClassicLinkEnabled bool           `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
+	ResourceGroupId    string         `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	VSwitchIds         VSwitchIds     `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs          UserCidrs      `json:"UserCidrs" xml:"UserCidrs"`
+	AssociatedCens     AssociatedCens `json:"AssociatedCens" xml:"AssociatedCens"`
+	CloudResources     CloudResources `json:"CloudResources" xml:"CloudResources"`
 }
 
 func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) {
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "", "")
 	return
 }
 

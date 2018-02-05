@@ -67,12 +67,12 @@ func (client *Client) GetMyGroupsWithCallback(request *GetMyGroupsRequest, callb
 
 type GetMyGroupsRequest struct {
 	*requests.RpcRequest
-	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
-	BindUrl             string           `position:"Query" name:"BindUrl"`
-	GroupName           string           `position:"Query" name:"GroupName"`
 	GroupId             requests.Integer `position:"Query" name:"GroupId"`
 	Type                string           `position:"Query" name:"Type"`
+	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
+	BindUrl             string           `position:"Query" name:"BindUrl"`
+	GroupName           string           `position:"Query" name:"GroupName"`
 }
 
 type GetMyGroupsResponse struct {
@@ -81,25 +81,14 @@ type GetMyGroupsResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Group        struct {
-		GroupId       int    `json:"GroupId" xml:"GroupId"`
-		GroupName     string `json:"GroupName" xml:"GroupName"`
-		ServiceId     int    `json:"ServiceId" xml:"ServiceId"`
-		BindUrl       string `json:"BindUrl" xml:"BindUrl"`
-		Type          string `json:"Type" xml:"Type"`
-		ContactGroups struct {
-			ContactGroup []struct {
-				Name string `json:"Name" xml:"Name"`
-			} `json:"ContactGroup" xml:"ContactGroup"`
-		} `json:"ContactGroups" xml:"ContactGroups"`
-	} `json:"Group" xml:"Group"`
+	Group        Group  `json:"Group" xml:"Group"`
 }
 
 func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 	request = &GetMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "GetMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "GetMyGroups", "", "")
 	return
 }
 

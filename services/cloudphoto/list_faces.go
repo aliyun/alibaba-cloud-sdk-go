@@ -67,13 +67,13 @@ func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback 
 
 type ListFacesRequest struct {
 	*requests.RpcRequest
-	Cursor      string           `position:"Query" name:"Cursor"`
 	Direction   string           `position:"Query" name:"Direction"`
-	State       string           `position:"Query" name:"State"`
-	LibraryId   string           `position:"Query" name:"LibraryId"`
-	StoreName   string           `position:"Query" name:"StoreName"`
-	HasFaceName string           `position:"Query" name:"HasFaceName"`
 	Size        requests.Integer `position:"Query" name:"Size"`
+	Cursor      string           `position:"Query" name:"Cursor"`
+	State       string           `position:"Query" name:"State"`
+	StoreName   string           `position:"Query" name:"StoreName"`
+	LibraryId   string           `position:"Query" name:"LibraryId"`
+	HasFaceName string           `position:"Query" name:"HasFaceName"`
 }
 
 type ListFacesResponse struct {
@@ -84,36 +84,14 @@ type ListFacesResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Action     string `json:"Action" xml:"Action"`
-	Faces      []struct {
-		Id          int      `json:"Id" xml:"Id"`
-		Name        string   `json:"Name" xml:"Name"`
-		PhotosCount int      `json:"PhotosCount" xml:"PhotosCount"`
-		State       string   `json:"State" xml:"State"`
-		IsMe        bool     `json:"IsMe" xml:"IsMe"`
-		Ctime       int      `json:"Ctime" xml:"Ctime"`
-		Mtime       int      `json:"Mtime" xml:"Mtime"`
-		Axis        []string `json:"Axis" xml:"Axis"`
-		Cover       struct {
-			Id      int    `json:"Id" xml:"Id"`
-			Title   string `json:"Title" xml:"Title"`
-			FileId  string `json:"FileId" xml:"FileId"`
-			State   string `json:"State" xml:"State"`
-			Md5     string `json:"Md5" xml:"Md5"`
-			IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
-			Width   int    `json:"Width" xml:"Width"`
-			Height  int    `json:"Height" xml:"Height"`
-			Ctime   int    `json:"Ctime" xml:"Ctime"`
-			Mtime   int    `json:"Mtime" xml:"Mtime"`
-			Remark  string `json:"Remark" xml:"Remark"`
-		} `json:"Cover" xml:"Cover"`
-	} `json:"Faces" xml:"Faces"`
+	Faces      []Face `json:"Faces" xml:"Faces"`
 }
 
 func CreateListFacesRequest() (request *ListFacesRequest) {
 	request = &ListFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListFaces", "", "")
 	return
 }
 

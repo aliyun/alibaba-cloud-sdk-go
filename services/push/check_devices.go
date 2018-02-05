@@ -73,13 +73,8 @@ type CheckDevicesRequest struct {
 
 type CheckDevicesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DeviceCheckInfos struct {
-		DeviceCheckInfo []struct {
-			DeviceId  string `json:"DeviceId" xml:"DeviceId"`
-			Available bool   `json:"Available" xml:"Available"`
-		} `json:"DeviceCheckInfo" xml:"DeviceCheckInfo"`
-	} `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	DeviceCheckInfos DeviceCheckInfos `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
 }
 
 func CreateCheckDevicesRequest() (request *CheckDevicesRequest) {

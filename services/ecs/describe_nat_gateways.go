@@ -67,49 +67,30 @@ func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewa
 
 type DescribeNatGatewaysRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeNatGatewaysResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	NatGateways struct {
-		NatGateway []struct {
-			NatGatewayId       string `json:"NatGatewayId" xml:"NatGatewayId"`
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			Name               string `json:"Name" xml:"Name"`
-			Description        string `json:"Description" xml:"Description"`
-			VpcId              string `json:"VpcId" xml:"VpcId"`
-			Spec               string `json:"Spec" xml:"Spec"`
-			InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-			BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
-			CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-			Status             string `json:"Status" xml:"Status"`
-			ForwardTableIds    struct {
-				ForwardTableId []string `json:"ForwardTableId" xml:"ForwardTableId"`
-			} `json:"ForwardTableIds" xml:"ForwardTableIds"`
-			BandwidthPackageIds struct {
-				BandwidthPackageId []string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-			} `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
-		} `json:"NatGateway" xml:"NatGateway"`
-	} `json:"NatGateways" xml:"NatGateways"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	NatGateways NatGateways `json:"NatGateways" xml:"NatGateways"`
 }
 
 func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
 	request = &DescribeNatGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNatGateways", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNatGateways", "", "")
 	return
 }
 

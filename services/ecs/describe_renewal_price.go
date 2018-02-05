@@ -67,40 +67,27 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	PriceUnit            string           `position:"Query" name:"PriceUnit"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	PriceUnit            string           `position:"Query" name:"PriceUnit"`
 }
 
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Price struct {
-			OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-			DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-			TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-			Currency      string  `json:"Currency" xml:"Currency"`
-		} `json:"Price" xml:"Price"`
-		Rules struct {
-			Rule []struct {
-				RuleId      int    `json:"RuleId" xml:"RuleId"`
-				Description string `json:"Description" xml:"Description"`
-			} `json:"Rule" xml:"Rule"`
-		} `json:"Rules" xml:"Rules"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
 }
 
 func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "", "")
 	return
 }
 

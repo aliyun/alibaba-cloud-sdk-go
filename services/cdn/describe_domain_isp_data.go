@@ -67,11 +67,11 @@ func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainI
 
 type DescribeDomainISPDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeDomainISPDataResponse struct {
@@ -81,24 +81,7 @@ type DescribeDomainISPDataResponse struct {
 	DataInterval string `json:"DataInterval" xml:"DataInterval"`
 	StartTime    string `json:"StartTime" xml:"StartTime"`
 	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Value        struct {
-		ISPProportionData []struct {
-			ISP             string `json:"ISP" xml:"ISP"`
-			Proportion      string `json:"Proportion" xml:"Proportion"`
-			IspEname        string `json:"IspEname" xml:"IspEname"`
-			AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
-			AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
-			Bps             string `json:"Bps" xml:"Bps"`
-			ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
-			Qps             string `json:"Qps" xml:"Qps"`
-			ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-			ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
-			AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-			TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-			BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
-			TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
-		} `json:"ISPProportionData" xml:"ISPProportionData"`
-	} `json:"Value" xml:"Value"`
+	Value        Value  `json:"Value" xml:"Value"`
 }
 
 func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest) {

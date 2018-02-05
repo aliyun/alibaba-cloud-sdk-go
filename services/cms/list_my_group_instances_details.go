@@ -67,53 +67,30 @@ func (client *Client) ListMyGroupInstancesDetailsWithCallback(request *ListMyGro
 
 type ListMyGroupInstancesDetailsRequest struct {
 	*requests.RpcRequest
-	Total      requests.Boolean `position:"Query" name:"Total"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Category   string           `position:"Query" name:"Category"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Total      requests.Boolean `position:"Query" name:"Total"`
 	GroupId    requests.Integer `position:"Query" name:"GroupId"`
+	Category   string           `position:"Query" name:"Category"`
 }
 
 type ListMyGroupInstancesDetailsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	Total        int    `json:"Total" xml:"Total"`
-	Resources    struct {
-		Resource []struct {
-			AliUid       int    `json:"AliUid" xml:"AliUid"`
-			InstanceName string `json:"InstanceName" xml:"InstanceName"`
-			InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-			Desc         string `json:"Desc" xml:"Desc"`
-			NetworkType  string `json:"NetworkType" xml:"NetworkType"`
-			Category     string `json:"Category" xml:"Category"`
-			Region       struct {
-				RegionId         string `json:"RegionId" xml:"RegionId"`
-				AvailabilityZone string `json:"AvailabilityZone" xml:"AvailabilityZone"`
-			} `json:"Region" xml:"Region"`
-			Vpc struct {
-				VpcInstanceId     string `json:"VpcInstanceId" xml:"VpcInstanceId"`
-				VswitchInstanceId string `json:"VswitchInstanceId" xml:"VswitchInstanceId"`
-			} `json:"Vpc" xml:"Vpc"`
-			Tags struct {
-				Tag []struct {
-					Key   string `json:"Key" xml:"Key"`
-					Value string `json:"Value" xml:"Value"`
-				} `json:"Tag" xml:"Tag"`
-			} `json:"Tags" xml:"Tags"`
-		} `json:"Resource" xml:"Resource"`
-	} `json:"Resources" xml:"Resources"`
+	RequestId    string    `json:"RequestId" xml:"RequestId"`
+	Success      bool      `json:"Success" xml:"Success"`
+	ErrorCode    int       `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string    `json:"ErrorMessage" xml:"ErrorMessage"`
+	PageNumber   int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int       `json:"PageSize" xml:"PageSize"`
+	Total        int       `json:"Total" xml:"Total"`
+	Resources    Resources `json:"Resources" xml:"Resources"`
 }
 
 func CreateListMyGroupInstancesDetailsRequest() (request *ListMyGroupInstancesDetailsRequest) {
 	request = &ListMyGroupInstancesDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupInstancesDetails", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupInstancesDetails", "", "")
 	return
 }
 

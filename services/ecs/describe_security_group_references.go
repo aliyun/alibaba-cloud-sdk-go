@@ -67,34 +67,24 @@ func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *Descr
 
 type DescribeSecurityGroupReferencesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeSecurityGroupReferencesResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	SecurityGroupReferences struct {
-		SecurityGroupReference []struct {
-			SecurityGroupId           string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			ReferencingSecurityGroups struct {
-				ReferencingSecurityGroup []struct {
-					AliUid          string `json:"AliUid" xml:"AliUid"`
-					SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-				} `json:"ReferencingSecurityGroup" xml:"ReferencingSecurityGroup"`
-			} `json:"ReferencingSecurityGroups" xml:"ReferencingSecurityGroups"`
-		} `json:"SecurityGroupReference" xml:"SecurityGroupReference"`
-	} `json:"SecurityGroupReferences" xml:"SecurityGroupReferences"`
+	RequestId               string                  `json:"RequestId" xml:"RequestId"`
+	SecurityGroupReferences SecurityGroupReferences `json:"SecurityGroupReferences" xml:"SecurityGroupReferences"`
 }
 
 func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGroupReferencesRequest) {
 	request = &DescribeSecurityGroupReferencesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "", "")
 	return
 }
 

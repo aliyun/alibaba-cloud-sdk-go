@@ -67,19 +67,19 @@ func (client *Client) CreateSslVpnServerWithCallback(request *CreateSslVpnServer
 
 type CreateSslVpnServerRequest struct {
 	*requests.RpcRequest
-	Port                 requests.Integer `position:"Query" name:"Port"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
 	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Proto                string           `position:"Query" name:"Proto"`
-	Compress             requests.Boolean `position:"Query" name:"Compress"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	Cipher               string           `position:"Query" name:"Cipher"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Port                 requests.Integer `position:"Query" name:"Port"`
+	Compress             requests.Boolean `position:"Query" name:"Compress"`
 }
 
 type CreateSslVpnServerResponse struct {
@@ -93,7 +93,7 @@ func CreateCreateSslVpnServerRequest() (request *CreateSslVpnServerRequest) {
 	request = &CreateSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnServer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnServer", "", "")
 	return
 }
 

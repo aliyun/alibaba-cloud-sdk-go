@@ -67,11 +67,11 @@ func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callbac
 
 type GetPackageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Data                 string `position:"Query" name:"Data"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Data                 string `position:"Query" name:"Data"`
 }
 
 type GetPackageResponse struct {
@@ -84,7 +84,7 @@ func CreateGetPackageRequest() (request *GetPackageRequest) {
 	request = &GetPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "GetPackage", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "GetPackage", "", "")
 	return
 }
 

@@ -67,21 +67,15 @@ func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeL
 
 type DescribeLiveStreamLimitInfoRequest struct {
 	*requests.RpcRequest
-	LimitDomain   string           `position:"Query" name:"LimitDomain"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	LimitDomain   string           `position:"Query" name:"LimitDomain"`
 }
 
 type DescribeLiveStreamLimitInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	UserLimitLists struct {
-		UserLimitMode []struct {
-			LimitDomain       string `json:"LimitDomain" xml:"LimitDomain"`
-			LimitNum          string `json:"LimitNum" xml:"LimitNum"`
-			LimitTranscodeNum string `json:"LimitTranscodeNum" xml:"LimitTranscodeNum"`
-		} `json:"UserLimitMode" xml:"UserLimitMode"`
-	} `json:"UserLimitLists" xml:"UserLimitLists"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	UserLimitLists UserLimitLists `json:"UserLimitLists" xml:"UserLimitLists"`
 }
 
 func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimitInfoRequest) {

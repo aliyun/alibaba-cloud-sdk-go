@@ -67,28 +67,21 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *Descri
 
 type DescribeLiveStreamSnapshotInfoRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Limit         requests.Integer `position:"Query" name:"Limit"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	Limit         requests.Integer `position:"Query" name:"Limit"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamSnapshotInfoResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
-	NextStartTime              string `json:"NextStartTime" xml:"NextStartTime"`
-	LiveStreamSnapshotInfoList struct {
-		LiveStreamSnapshotInfo []struct {
-			OssEndpoint string `json:"OssEndpoint" xml:"OssEndpoint"`
-			OssBucket   string `json:"OssBucket" xml:"OssBucket"`
-			OssObject   string `json:"OssObject" xml:"OssObject"`
-			CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"LiveStreamSnapshotInfo" xml:"LiveStreamSnapshotInfo"`
-	} `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
+	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
+	NextStartTime              string                     `json:"NextStartTime" xml:"NextStartTime"`
+	LiveStreamSnapshotInfoList LiveStreamSnapshotInfoList `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
 }
 
 func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamSnapshotInfoRequest) {

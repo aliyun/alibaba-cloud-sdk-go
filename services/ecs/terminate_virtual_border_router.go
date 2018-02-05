@@ -67,13 +67,13 @@ func (client *Client) TerminateVirtualBorderRouterWithCallback(request *Terminat
 
 type TerminateVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type TerminateVirtualBorderRouterResponse struct {
@@ -85,7 +85,7 @@ func CreateTerminateVirtualBorderRouterRequest() (request *TerminateVirtualBorde
 	request = &TerminateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "TerminateVirtualBorderRouter", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "TerminateVirtualBorderRouter", "", "")
 	return
 }
 

@@ -67,9 +67,9 @@ func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUser
 
 type AttachPolicyToUserRequest struct {
 	*requests.RpcRequest
-	UserName   string `position:"Query" name:"UserName"`
 	PolicyType string `position:"Query" name:"PolicyType"`
 	PolicyName string `position:"Query" name:"PolicyName"`
+	UserName   string `position:"Query" name:"UserName"`
 }
 
 type AttachPolicyToUserResponse struct {

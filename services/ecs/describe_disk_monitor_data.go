@@ -67,41 +67,28 @@ func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskM
 
 type DescribeDiskMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Period               requests.Integer `position:"Query" name:"Period"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDiskMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	MonitorData struct {
-		DiskMonitorData []struct {
-			DiskId       string `json:"DiskId" xml:"DiskId"`
-			IOPSRead     int    `json:"IOPSRead" xml:"IOPSRead"`
-			IOPSWrite    int    `json:"IOPSWrite" xml:"IOPSWrite"`
-			IOPSTotal    int    `json:"IOPSTotal" xml:"IOPSTotal"`
-			BPSRead      int    `json:"BPSRead" xml:"BPSRead"`
-			BPSWrite     int    `json:"BPSWrite" xml:"BPSWrite"`
-			BPSTotal     int    `json:"BPSTotal" xml:"BPSTotal"`
-			LatencyRead  int    `json:"LatencyRead" xml:"LatencyRead"`
-			LatencyWrite int    `json:"LatencyWrite" xml:"LatencyWrite"`
-			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"DiskMonitorData" xml:"DiskMonitorData"`
-	} `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {
 	request = &DescribeDiskMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiskMonitorData", "", "")
 	return
 }
 

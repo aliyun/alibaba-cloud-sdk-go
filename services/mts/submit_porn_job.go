@@ -67,14 +67,14 @@ func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, c
 
 type SubmitPornJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PornConfig           string           `position:"Query" name:"PornConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitPornJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	request = &SubmitPornJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitPornJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitPornJob", "", "")
 	return
 }
 

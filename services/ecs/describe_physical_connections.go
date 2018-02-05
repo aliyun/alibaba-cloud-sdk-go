@@ -67,15 +67,15 @@ func (client *Client) DescribePhysicalConnectionsWithCallback(request *DescribeP
 
 type DescribePhysicalConnectionsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
-	ClientToken          string                               `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer                     `position:"Query" name:"PageNumber"`
-	UserCidr             string                               `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer                     `position:"Query" name:"PageSize"`
 	Filter               *[]DescribePhysicalConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	OwnerId              requests.Integer                     `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                               `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                     `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string                               `position:"Query" name:"ClientToken"`
+	OwnerAccount         string                               `position:"Query" name:"OwnerAccount"`
+	UserCidr             string                               `position:"Query" name:"UserCidr"`
 }
 
 type DescribePhysicalConnectionsFilter struct {
@@ -85,39 +85,18 @@ type DescribePhysicalConnectionsFilter struct {
 
 type DescribePhysicalConnectionsResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int    `json:"PageSize" xml:"PageSize"`
-	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
-	PhysicalConnectionSet struct {
-		PhysicalConnectionType []struct {
-			PhysicalConnectionId          string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
-			AccessPointId                 string `json:"AccessPointId" xml:"AccessPointId"`
-			Type                          string `json:"Type" xml:"Type"`
-			Status                        string `json:"Status" xml:"Status"`
-			BusinessStatus                string `json:"BusinessStatus" xml:"BusinessStatus"`
-			CreationTime                  string `json:"CreationTime" xml:"CreationTime"`
-			EnabledTime                   string `json:"EnabledTime" xml:"EnabledTime"`
-			LineOperator                  string `json:"LineOperator" xml:"LineOperator"`
-			Spec                          string `json:"Spec" xml:"Spec"`
-			PeerLocation                  string `json:"PeerLocation" xml:"PeerLocation"`
-			PortType                      string `json:"PortType" xml:"PortType"`
-			RedundantPhysicalConnectionId string `json:"RedundantPhysicalConnectionId" xml:"RedundantPhysicalConnectionId"`
-			Name                          string `json:"Name" xml:"Name"`
-			Description                   string `json:"Description" xml:"Description"`
-			AdLocation                    string `json:"AdLocation" xml:"AdLocation"`
-			PortNumber                    string `json:"PortNumber" xml:"PortNumber"`
-			CircuitCode                   string `json:"CircuitCode" xml:"CircuitCode"`
-			Bandwidth                     int    `json:"Bandwidth" xml:"Bandwidth"`
-		} `json:"PhysicalConnectionType" xml:"PhysicalConnectionType"`
-	} `json:"PhysicalConnectionSet" xml:"PhysicalConnectionSet"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                   `json:"PageSize" xml:"PageSize"`
+	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
+	PhysicalConnectionSet PhysicalConnectionSet `json:"PhysicalConnectionSet" xml:"PhysicalConnectionSet"`
 }
 
 func CreateDescribePhysicalConnectionsRequest() (request *DescribePhysicalConnectionsRequest) {
 	request = &DescribePhysicalConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePhysicalConnections", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePhysicalConnections", "", "")
 	return
 }
 

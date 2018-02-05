@@ -67,18 +67,18 @@ func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *Modify
 
 type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
-	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
-	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
-	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
-	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
-	Description              string           `position:"Query" name:"Description"`
-	Name                     string           `position:"Query" name:"Name"`
-	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
-	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
+	Name                     string           `position:"Query" name:"Name"`
+	Description              string           `position:"Query" name:"Description"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
+	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
+	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
+	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
 }
 
 type ModifyRouterInterfaceAttributeResponse struct {
@@ -90,7 +90,7 @@ func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfa
 	request = &ModifyRouterInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "", "")
 	return
 }
 

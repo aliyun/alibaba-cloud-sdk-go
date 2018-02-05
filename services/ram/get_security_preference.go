@@ -71,24 +71,8 @@ type GetSecurityPreferenceRequest struct {
 
 type GetSecurityPreferenceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	SecurityPreference struct {
-		LoginProfilePreference struct {
-			EnableSaveMFATicket       bool   `json:"EnableSaveMFATicket" xml:"EnableSaveMFATicket"`
-			AllowUserToChangePassword bool   `json:"AllowUserToChangePassword" xml:"AllowUserToChangePassword"`
-			LoginSessionDuration      int    `json:"LoginSessionDuration" xml:"LoginSessionDuration"`
-			LoginNetworkMasks         string `json:"LoginNetworkMasks" xml:"LoginNetworkMasks"`
-		} `json:"LoginProfilePreference" xml:"LoginProfilePreference"`
-		AccessKeyPreference struct {
-			AllowUserToManageAccessKeys bool `json:"AllowUserToManageAccessKeys" xml:"AllowUserToManageAccessKeys"`
-		} `json:"AccessKeyPreference" xml:"AccessKeyPreference"`
-		PublicKeyPreference struct {
-			AllowUserToManagePublicKeys bool `json:"AllowUserToManagePublicKeys" xml:"AllowUserToManagePublicKeys"`
-		} `json:"PublicKeyPreference" xml:"PublicKeyPreference"`
-		MFAPreference struct {
-			AllowUserToManageMFADevices bool `json:"AllowUserToManageMFADevices" xml:"AllowUserToManageMFADevices"`
-		} `json:"MFAPreference" xml:"MFAPreference"`
-	} `json:"SecurityPreference" xml:"SecurityPreference"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
 func CreateGetSecurityPreferenceRequest() (request *GetSecurityPreferenceRequest) {

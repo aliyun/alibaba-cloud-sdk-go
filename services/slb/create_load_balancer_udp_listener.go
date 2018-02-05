@@ -67,28 +67,28 @@ func (client *Client) CreateLoadBalancerUDPListenerWithCallback(request *CreateL
 
 type CreateLoadBalancerUDPListenerRequest struct {
 	*requests.RpcRequest
-	Tags                      string           `position:"Query" name:"Tags"`
-	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
-	Scheduler                 string           `position:"Query" name:"Scheduler"`
-	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
-	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
-	HealthCheckInterval       requests.Integer `position:"Query" name:"healthCheckInterval"`
-	HealthCheckExp            string           `position:"Query" name:"healthCheckExp"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
-	AccessKeyId               string           `position:"Query" name:"access_key_id"`
-	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
-	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
-	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
-	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
-	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
-	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
+	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
+	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
+	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	Scheduler                 string           `position:"Query" name:"Scheduler"`
 	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
+	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
+	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
+	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
+	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
+	HealthCheckInterval       requests.Integer `position:"Query" name:"healthCheckInterval"`
+	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
+	HealthCheckExp            string           `position:"Query" name:"healthCheckExp"`
+	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId               string           `position:"Query" name:"access_key_id"`
+	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
+	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
+	Tags                      string           `position:"Query" name:"Tags"`
 }
 
 type CreateLoadBalancerUDPListenerResponse struct {
@@ -100,7 +100,7 @@ func CreateCreateLoadBalancerUDPListenerRequest() (request *CreateLoadBalancerUD
 	request = &CreateLoadBalancerUDPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "", "")
 	return
 }
 

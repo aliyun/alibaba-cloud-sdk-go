@@ -67,42 +67,18 @@ func (client *Client) ListSkillGroupsOfUserWithCallback(request *ListSkillGroups
 
 type ListSkillGroupsOfUserRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId     string `position:"Query" name:"UserId"`
 }
 
 type ListSkillGroupsOfUserResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillLevels    struct {
-		SkillLevel []struct {
-			SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
-			Level        int    `json:"Level" xml:"Level"`
-			Skill        struct {
-				SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
-				InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-				SkillGroupName        string `json:"SkillGroupName" xml:"SkillGroupName"`
-				SkillGroupDescription string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-				OutboundPhoneNumbers  struct {
-					PhoneNumber []struct {
-						PhoneNumberId          string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-						InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-						Number                 string `json:"Number" xml:"Number"`
-						PhoneNumberDescription string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-						TestOnly               bool   `json:"TestOnly" xml:"TestOnly"`
-						RemainingTime          int    `json:"RemainingTime" xml:"RemainingTime"`
-						AllowOutbound          bool   `json:"AllowOutbound" xml:"AllowOutbound"`
-						Usage                  string `json:"Usage" xml:"Usage"`
-						Trunks                 int    `json:"Trunks" xml:"Trunks"`
-					} `json:"PhoneNumber" xml:"PhoneNumber"`
-				} `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
-			} `json:"Skill" xml:"Skill"`
-		} `json:"SkillLevel" xml:"SkillLevel"`
-	} `json:"SkillLevels" xml:"SkillLevels"`
+	RequestId      string      `json:"RequestId" xml:"RequestId"`
+	Success        bool        `json:"Success" xml:"Success"`
+	Code           string      `json:"Code" xml:"Code"`
+	Message        string      `json:"Message" xml:"Message"`
+	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillLevels    SkillLevels `json:"SkillLevels" xml:"SkillLevels"`
 }
 
 func CreateListSkillGroupsOfUserRequest() (request *ListSkillGroupsOfUserRequest) {

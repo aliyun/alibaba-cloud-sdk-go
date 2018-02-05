@@ -67,48 +67,31 @@ func (client *Client) DescribeSslVpnServersWithCallback(request *DescribeSslVpnS
 
 type DescribeSslVpnServersRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Name                 string           `position:"Query" name:"Name"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeSslVpnServersResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	SslVpnServers struct {
-		SslVpnServer []struct {
-			RegionId       string `json:"RegionId" xml:"RegionId"`
-			SslVpnServerId string `json:"SslVpnServerId" xml:"SslVpnServerId"`
-			VpnGatewayId   string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-			Name           string `json:"Name" xml:"Name"`
-			LocalSubnet    string `json:"LocalSubnet" xml:"LocalSubnet"`
-			ClientIpPool   string `json:"ClientIpPool" xml:"ClientIpPool"`
-			CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
-			Cipher         string `json:"Cipher" xml:"Cipher"`
-			Proto          string `json:"Proto" xml:"Proto"`
-			Port           int    `json:"Port" xml:"Port"`
-			Compress       bool   `json:"Compress" xml:"Compress"`
-			Connections    int    `json:"Connections" xml:"Connections"`
-			MaxConnections int    `json:"MaxConnections" xml:"MaxConnections"`
-			InternetIp     string `json:"InternetIp" xml:"InternetIp"`
-		} `json:"SslVpnServer" xml:"SslVpnServer"`
-	} `json:"SslVpnServers" xml:"SslVpnServers"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	SslVpnServers SslVpnServers `json:"SslVpnServers" xml:"SslVpnServers"`
 }
 
 func CreateDescribeSslVpnServersRequest() (request *DescribeSslVpnServersRequest) {
 	request = &DescribeSslVpnServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnServers", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnServers", "", "")
 	return
 }
 

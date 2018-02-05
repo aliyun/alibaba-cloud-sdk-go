@@ -67,24 +67,6 @@ func (client *Client) ModifySecurityGroupRuleWithCallback(request *ModifySecurit
 
 type ModifySecurityGroupRuleRequest struct {
 	*requests.RpcRequest
-	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
-	PortRange               string           `position:"Query" name:"PortRange"`
-	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description             string           `position:"Query" name:"Description"`
-	Priority                string           `position:"Query" name:"Priority"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
-	SecurityGroupId         string           `position:"Query" name:"SecurityGroupId"`
-	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	IpProtocol              string           `position:"Query" name:"IpProtocol"`
-	SourceGroupId           string           `position:"Query" name:"SourceGroupId"`
-	NicType                 string           `position:"Query" name:"NicType"`
-	Policy                  string           `position:"Query" name:"Policy"`
-	SourceCidrIp            string           `position:"Query" name:"SourceCidrIp"`
 }
 
 type ModifySecurityGroupRuleResponse struct {
@@ -96,7 +78,7 @@ func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleReq
 	request = &ModifySecurityGroupRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupRule", "", "")
 	return
 }
 

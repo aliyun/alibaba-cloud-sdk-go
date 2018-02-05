@@ -67,13 +67,13 @@ func (client *Client) QueryTemplateByParamWithCallback(request *QueryTemplateByP
 
 type QueryTemplateByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Status               requests.Integer `position:"Query" name:"Status"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	Status               requests.Integer `position:"Query" name:"Status"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
@@ -83,20 +83,7 @@ type QueryTemplateByParamResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Template []struct {
-			TemplateId      string `json:"TemplateId" xml:"TemplateId"`
-			TemplateName    string `json:"TemplateName" xml:"TemplateName"`
-			TemplateComment string `json:"TemplateComment" xml:"TemplateComment"`
-			TemplateStatus  string `json:"TemplateStatus" xml:"TemplateStatus"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreatetime   int    `json:"UtcCreatetime" xml:"UtcCreatetime"`
-			TemplateType    int    `json:"TemplateType" xml:"TemplateType"`
-			SmsTemplateCode int    `json:"SmsTemplateCode" xml:"SmsTemplateCode"`
-			Smsrejectinfo   int    `json:"Smsrejectinfo" xml:"Smsrejectinfo"`
-			SmsStatus       int    `json:"SmsStatus" xml:"SmsStatus"`
-		} `json:"template" xml:"template"`
-	} `json:"data" xml:"data"`
+	Data       Data   `json:"data" xml:"data"`
 }
 
 func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) {

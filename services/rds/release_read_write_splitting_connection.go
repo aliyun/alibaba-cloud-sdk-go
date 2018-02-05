@@ -67,11 +67,11 @@ func (client *Client) ReleaseReadWriteSplittingConnectionWithCallback(request *R
 
 type ReleaseReadWriteSplittingConnectionRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 type ReleaseReadWriteSplittingConnectionResponse struct {
@@ -83,7 +83,7 @@ func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWri
 	request = &ReleaseReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "", "")
 	return
 }
 

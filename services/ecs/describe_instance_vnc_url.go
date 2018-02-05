@@ -67,11 +67,11 @@ func (client *Client) DescribeInstanceVncUrlWithCallback(request *DescribeInstan
 
 type DescribeInstanceVncUrlRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeInstanceVncUrlResponse struct {
@@ -84,7 +84,7 @@ func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlReque
 	request = &DescribeInstanceVncUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "", "")
 	return
 }
 

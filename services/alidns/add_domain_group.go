@@ -67,9 +67,9 @@ func (client *Client) AddDomainGroupWithCallback(request *AddDomainGroupRequest,
 
 type AddDomainGroupRequest struct {
 	*requests.RpcRequest
-	GroupName    string `position:"Query" name:"GroupName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	GroupName    string `position:"Query" name:"GroupName"`
 }
 
 type AddDomainGroupResponse struct {

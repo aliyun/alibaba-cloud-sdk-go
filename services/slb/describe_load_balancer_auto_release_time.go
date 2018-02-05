@@ -67,13 +67,13 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithCallback(request *D
 
 type DescribeLoadBalancerAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 type DescribeLoadBalancerAutoReleaseTimeResponse struct {
@@ -86,7 +86,7 @@ func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBa
 	request = &DescribeLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAutoReleaseTime", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAutoReleaseTime", "", "")
 	return
 }
 

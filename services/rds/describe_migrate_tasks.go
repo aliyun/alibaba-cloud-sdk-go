@@ -67,14 +67,14 @@ func (client *Client) DescribeMigrateTasksWithCallback(request *DescribeMigrateT
 
 type DescribeMigrateTasksRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeMigrateTasksResponse struct {
@@ -84,25 +84,14 @@ type DescribeMigrateTasksResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		MigrateTask []struct {
-			DBName        string `json:"DBName" xml:"DBName"`
-			MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			EndTime       string `json:"EndTime" xml:"EndTime"`
-			BackupMode    string `json:"BackupMode" xml:"BackupMode"`
-			Status        string `json:"Status" xml:"Status"`
-			IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-			Description   string `json:"Description" xml:"Description"`
-		} `json:"MigrateTask" xml:"MigrateTask"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) {
 	request = &DescribeMigrateTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasks", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasks", "", "")
 	return
 }
 

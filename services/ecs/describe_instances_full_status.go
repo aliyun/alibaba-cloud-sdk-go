@@ -67,64 +67,22 @@ func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeI
 
 type DescribeInstancesFullStatusRequest struct {
 	*requests.RpcRequest
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
-	HealthStatus          string           `position:"Query" name:"HealthStatus"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	Status                string           `position:"Query" name:"Status"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
-	EventType             string           `position:"Query" name:"EventType"`
-	InstanceId            *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 type DescribeInstancesFullStatusResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int    `json:"PageSize" xml:"PageSize"`
-	InstanceFullStatusSet struct {
-		InstanceFullStatusType []struct {
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Status     struct {
-				Code int    `json:"Code" xml:"Code"`
-				Name string `json:"Name" xml:"Name"`
-			} `json:"Status" xml:"Status"`
-			HealthStatus struct {
-				Code int    `json:"Code" xml:"Code"`
-				Name string `json:"Name" xml:"Name"`
-			} `json:"HealthStatus" xml:"HealthStatus"`
-			ScheduledSystemEventSet struct {
-				ScheduledSystemEventType []struct {
-					EventId          string `json:"EventId" xml:"EventId"`
-					EventPublishTime string `json:"EventPublishTime" xml:"EventPublishTime"`
-					NotBefore        string `json:"NotBefore" xml:"NotBefore"`
-					EventCycleStatus struct {
-						Code int    `json:"Code" xml:"Code"`
-						Name string `json:"Name" xml:"Name"`
-					} `json:"EventCycleStatus" xml:"EventCycleStatus"`
-					EventType struct {
-						Code int    `json:"Code" xml:"Code"`
-						Name string `json:"Name" xml:"Name"`
-					} `json:"EventType" xml:"EventType"`
-				} `json:"ScheduledSystemEventType" xml:"ScheduledSystemEventType"`
-			} `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
-		} `json:"InstanceFullStatusType" xml:"InstanceFullStatusType"`
-	} `json:"InstanceFullStatusSet" xml:"InstanceFullStatusSet"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                   `json:"PageSize" xml:"PageSize"`
+	InstanceFullStatusSet InstanceFullStatusSet `json:"InstanceFullStatusSet" xml:"InstanceFullStatusSet"`
 }
 
 func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullStatusRequest) {
 	request = &DescribeInstancesFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "", "")
 	return
 }
 

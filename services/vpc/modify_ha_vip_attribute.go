@@ -67,13 +67,13 @@ func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttri
 
 type ModifyHaVipAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type ModifyHaVipAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) 
 	request = &ModifyHaVipAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyHaVipAttribute", "", "")
 	return
 }
 

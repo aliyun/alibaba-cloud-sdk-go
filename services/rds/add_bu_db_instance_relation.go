@@ -67,11 +67,11 @@ func (client *Client) AddBuDBInstanceRelationWithCallback(request *AddBuDBInstan
 
 type AddBuDBInstanceRelationRequest struct {
 	*requests.RpcRequest
-	BusinessUnit         string           `position:"Query" name:"BusinessUnit"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BusinessUnit         string           `position:"Query" name:"BusinessUnit"`
 }
 
 type AddBuDBInstanceRelationResponse struct {
@@ -85,7 +85,7 @@ func CreateAddBuDBInstanceRelationRequest() (request *AddBuDBInstanceRelationReq
 	request = &AddBuDBInstanceRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "AddBuDBInstanceRelation", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "AddBuDBInstanceRelation", "", "")
 	return
 }
 

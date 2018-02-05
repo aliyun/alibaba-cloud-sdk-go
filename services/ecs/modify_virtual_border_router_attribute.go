@@ -67,20 +67,20 @@ func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *Mo
 
 type ModifyVirtualBorderRouterAttributeRequest struct {
 	*requests.RpcRequest
+	VbrId                string           `position:"Query" name:"VbrId"`
 	VlanId               requests.Integer `position:"Query" name:"VlanId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
 	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
-	Name                 string           `position:"Query" name:"Name"`
 	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
+	Description          string           `position:"Query" name:"Description"`
+	Name                 string           `position:"Query" name:"Name"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VbrId                string           `position:"Query" name:"VbrId"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type ModifyVirtualBorderRouterAttributeResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBo
 	request = &ModifyVirtualBorderRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "", "")
 	return
 }
 

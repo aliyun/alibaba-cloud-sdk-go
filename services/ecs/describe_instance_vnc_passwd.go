@@ -67,11 +67,11 @@ func (client *Client) DescribeInstanceVncPasswdWithCallback(request *DescribeIns
 
 type DescribeInstanceVncPasswdRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeInstanceVncPasswdResponse struct {
@@ -84,7 +84,7 @@ func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPassw
 	request = &DescribeInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "", "")
 	return
 }
 

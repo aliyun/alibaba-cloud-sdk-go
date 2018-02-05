@@ -72,21 +72,15 @@ type DescribeSQLDiagnosisListRequest struct {
 
 type DescribeSQLDiagnosisListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	SQLDiagList []struct {
-		SQLDiagId string `json:"SQLDiagId" xml:"SQLDiagId"`
-		StartTime string `json:"StartTime" xml:"StartTime"`
-		EndTime   string `json:"EndTime" xml:"EndTime"`
-		Status    int    `json:"Status" xml:"Status"`
-		Progress  int    `json:"Progress" xml:"Progress"`
-	} `json:"SQLDiagList" xml:"SQLDiagList"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
+	SQLDiagList []SQLDiag `json:"SQLDiagList" xml:"SQLDiagList"`
 }
 
 func CreateDescribeSQLDiagnosisListRequest() (request *DescribeSQLDiagnosisListRequest) {
 	request = &DescribeSQLDiagnosisListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLDiagnosisList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLDiagnosisList", "", "")
 	return
 }
 

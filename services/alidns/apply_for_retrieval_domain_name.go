@@ -67,9 +67,9 @@ func (client *Client) ApplyForRetrievalDomainNameWithCallback(request *ApplyForR
 
 type ApplyForRetrievalDomainNameRequest struct {
 	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	DomainName   string `position:"Query" name:"DomainName"`
 }
 
 type ApplyForRetrievalDomainNameResponse struct {

@@ -67,16 +67,16 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Status               string           `position:"Query" name:"Status"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TaskAction           string           `position:"Query" name:"TaskAction"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Status               string           `position:"Query" name:"Status"`
+	TaskAction           string           `position:"Query" name:"TaskAction"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -86,28 +86,14 @@ type DescribeTasksResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		TaskProgressInfo []struct {
-			DBName             string `json:"DBName" xml:"DBName"`
-			BeginTime          string `json:"BeginTime" xml:"BeginTime"`
-			ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
-			FinishTime         string `json:"FinishTime" xml:"FinishTime"`
-			TaskAction         string `json:"TaskAction" xml:"TaskAction"`
-			TaskId             string `json:"TaskId" xml:"TaskId"`
-			Progress           string `json:"Progress" xml:"Progress"`
-			ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
-			Status             string `json:"Status" xml:"Status"`
-			TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-			TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
-		} `json:"TaskProgressInfo" xml:"TaskProgressInfo"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTasks", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTasks", "", "")
 	return
 }
 

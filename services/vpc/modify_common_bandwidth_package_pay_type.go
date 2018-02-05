@@ -67,19 +67,19 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *M
 
 type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	*requests.RpcRequest
-	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
-	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	ResourceBid          string           `position:"Query" name:"ResourceBid"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 }
 
 type ModifyCommonBandwidthPackagePayTypeResponse struct {
@@ -94,7 +94,7 @@ func CreateModifyCommonBandwidthPackagePayTypeRequest() (request *ModifyCommonBa
 	request = &ModifyCommonBandwidthPackagePayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "", "")
 	return
 }
 

@@ -67,32 +67,21 @@ func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsReques
 
 type ListPushRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime   string           `position:"Query" name:"EndTime"`
-	PageSize  requests.Integer `position:"Query" name:"PageSize"`
-	StartTime string           `position:"Query" name:"StartTime"`
-	Page      requests.Integer `position:"Query" name:"Page"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	PushType  string           `position:"Query" name:"PushType"`
+	StartTime string           `position:"Query" name:"StartTime"`
+	EndTime   string           `position:"Query" name:"EndTime"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListPushRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Total            int    `json:"Total" xml:"Total"`
-	Page             int    `json:"Page" xml:"Page"`
-	PageSize         int    `json:"PageSize" xml:"PageSize"`
-	PushMessageInfos struct {
-		PushMessageInfo []struct {
-			AppKey     int    `json:"AppKey" xml:"AppKey"`
-			AppName    string `json:"AppName" xml:"AppName"`
-			MessageId  string `json:"MessageId" xml:"MessageId"`
-			Type       string `json:"Type" xml:"Type"`
-			DeviceType string `json:"DeviceType" xml:"DeviceType"`
-			PushTime   string `json:"PushTime" xml:"PushTime"`
-			Title      string `json:"Title" xml:"Title"`
-			Body       string `json:"Body" xml:"Body"`
-		} `json:"PushMessageInfo" xml:"PushMessageInfo"`
-	} `json:"PushMessageInfos" xml:"PushMessageInfos"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	Total            int              `json:"Total" xml:"Total"`
+	Page             int              `json:"Page" xml:"Page"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	PushMessageInfos PushMessageInfos `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
 func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {

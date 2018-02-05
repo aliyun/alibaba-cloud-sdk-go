@@ -67,59 +67,30 @@ func (client *Client) DescribeVpnConnectionsWithCallback(request *DescribeVpnCon
 
 type DescribeVpnConnectionsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeVpnConnectionsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	VpnConnections struct {
-		VpnConnection []struct {
-			VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-			CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-			VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-			Name              string `json:"Name" xml:"Name"`
-			LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-			RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-			CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-			EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
-			Status            string `json:"Status" xml:"Status"`
-			IkeConfig         struct {
-				Psk         string `json:"Psk" xml:"Psk"`
-				IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-				IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-				IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-				IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-				IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-				IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
-				LocalId     string `json:"LocalId" xml:"LocalId"`
-				RemoteId    string `json:"RemoteId" xml:"RemoteId"`
-			} `json:"IkeConfig" xml:"IkeConfig"`
-			IpsecConfig struct {
-				IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-				IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-				IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-				IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
-			} `json:"IpsecConfig" xml:"IpsecConfig"`
-		} `json:"VpnConnection" xml:"VpnConnection"`
-	} `json:"VpnConnections" xml:"VpnConnections"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	VpnConnections VpnConnections `json:"VpnConnections" xml:"VpnConnections"`
 }
 
 func CreateDescribeVpnConnectionsRequest() (request *DescribeVpnConnectionsRequest) {
 	request = &DescribeVpnConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnections", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnections", "", "")
 	return
 }
 

@@ -67,9 +67,9 @@ func (client *Client) CopyDatabaseWithCallback(request *CopyDatabaseRequest, cal
 
 type CopyDatabaseRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CopyDatabaseResponse struct {
@@ -83,7 +83,7 @@ func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	request = &CopyDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CopyDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CopyDatabase", "", "")
 	return
 }
 

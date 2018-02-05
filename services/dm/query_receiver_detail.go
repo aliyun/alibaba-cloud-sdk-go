@@ -67,13 +67,13 @@ func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDeta
 
 type QueryReceiverDetailRequest struct {
 	*requests.RpcRequest
-	NextStart            string           `position:"Query" name:"NextStart"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ReceiverId           string           `position:"Query" name:"ReceiverId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	NextStart            string           `position:"Query" name:"NextStart"`
 }
 
 type QueryReceiverDetailResponse struct {
@@ -82,14 +82,7 @@ type QueryReceiverDetailResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	NextStart  string `json:"NextStart" xml:"NextStart"`
 	DataSchema string `json:"DataSchema" xml:"DataSchema"`
-	Data       struct {
-		Detail []struct {
-			Email         string `json:"Email" xml:"Email"`
-			Data          string `json:"Data" xml:"Data"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
-		} `json:"detail" xml:"detail"`
-	} `json:"data" xml:"data"`
+	Data       Data   `json:"data" xml:"data"`
 }
 
 func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {

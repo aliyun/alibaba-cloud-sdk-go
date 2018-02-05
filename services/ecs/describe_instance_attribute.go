@@ -67,74 +67,52 @@ func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeIns
 
 type DescribeInstanceAttributeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName            string `json:"InstanceName" xml:"InstanceName"`
-	ImageId                 string `json:"ImageId" xml:"ImageId"`
-	RegionId                string `json:"RegionId" xml:"RegionId"`
-	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
-	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
-	InstanceType            string `json:"InstanceType" xml:"InstanceType"`
-	Cpu                     int    `json:"Cpu" xml:"Cpu"`
-	Memory                  int    `json:"Memory" xml:"Memory"`
-	HostName                string `json:"HostName" xml:"HostName"`
-	Status                  string `json:"Status" xml:"Status"`
-	InternetChargeType      string `json:"InternetChargeType" xml:"InternetChargeType"`
-	InternetMaxBandwidthIn  int    `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut int    `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-	VlanId                  string `json:"VlanId" xml:"VlanId"`
-	SerialNumber            string `json:"SerialNumber" xml:"SerialNumber"`
-	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
-	Description             string `json:"Description" xml:"Description"`
-	InstanceNetworkType     string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	IoOptimized             string `json:"IoOptimized" xml:"IoOptimized"`
-	InstanceChargeType      string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	ExpiredTime             string `json:"ExpiredTime" xml:"ExpiredTime"`
-	StoppedMode             string `json:"StoppedMode" xml:"StoppedMode"`
-	SecurityGroupIds        struct {
-		SecurityGroupId []string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	} `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	PublicIpAddress struct {
-		IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-	} `json:"PublicIpAddress" xml:"PublicIpAddress"`
-	InnerIpAddress struct {
-		IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-	} `json:"InnerIpAddress" xml:"InnerIpAddress"`
-	VpcAttributes struct {
-		VpcId            string `json:"VpcId" xml:"VpcId"`
-		VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-		NatIpAddress     string `json:"NatIpAddress" xml:"NatIpAddress"`
-		PrivateIpAddress struct {
-			IpAddress []string `json:"IpAddress" xml:"IpAddress"`
-		} `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-	} `json:"VpcAttributes" xml:"VpcAttributes"`
-	EipAddress struct {
-		AllocationId       string `json:"AllocationId" xml:"AllocationId"`
-		IpAddress          string `json:"IpAddress" xml:"IpAddress"`
-		Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
-		InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-	} `json:"EipAddress" xml:"EipAddress"`
-	OperationLocks struct {
-		LockReason []struct {
-			LockReason string `json:"LockReason" xml:"LockReason"`
-		} `json:"LockReason" xml:"LockReason"`
-	} `json:"OperationLocks" xml:"OperationLocks"`
+	RequestId               string           `json:"RequestId" xml:"RequestId"`
+	InstanceId              string           `json:"InstanceId" xml:"InstanceId"`
+	InstanceName            string           `json:"InstanceName" xml:"InstanceName"`
+	ImageId                 string           `json:"ImageId" xml:"ImageId"`
+	RegionId                string           `json:"RegionId" xml:"RegionId"`
+	ZoneId                  string           `json:"ZoneId" xml:"ZoneId"`
+	ClusterId               string           `json:"ClusterId" xml:"ClusterId"`
+	InstanceType            string           `json:"InstanceType" xml:"InstanceType"`
+	Cpu                     int              `json:"Cpu" xml:"Cpu"`
+	Memory                  int              `json:"Memory" xml:"Memory"`
+	HostName                string           `json:"HostName" xml:"HostName"`
+	Status                  string           `json:"Status" xml:"Status"`
+	InternetChargeType      string           `json:"InternetChargeType" xml:"InternetChargeType"`
+	InternetMaxBandwidthIn  int              `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	InternetMaxBandwidthOut int              `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	VlanId                  string           `json:"VlanId" xml:"VlanId"`
+	SerialNumber            string           `json:"SerialNumber" xml:"SerialNumber"`
+	CreationTime            string           `json:"CreationTime" xml:"CreationTime"`
+	Description             string           `json:"Description" xml:"Description"`
+	InstanceNetworkType     string           `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	IoOptimized             string           `json:"IoOptimized" xml:"IoOptimized"`
+	InstanceChargeType      string           `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ExpiredTime             string           `json:"ExpiredTime" xml:"ExpiredTime"`
+	StoppedMode             string           `json:"StoppedMode" xml:"StoppedMode"`
+	SecurityGroupIds        SecurityGroupIds `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	PublicIpAddress         PublicIpAddress  `json:"PublicIpAddress" xml:"PublicIpAddress"`
+	InnerIpAddress          InnerIpAddress   `json:"InnerIpAddress" xml:"InnerIpAddress"`
+	VpcAttributes           VpcAttributes    `json:"VpcAttributes" xml:"VpcAttributes"`
+	EipAddress              EipAddress       `json:"EipAddress" xml:"EipAddress"`
+	OperationLocks          OperationLocks   `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttributeRequest) {
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttribute", "", "")
 	return
 }
 

@@ -67,13 +67,13 @@ func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequ
 
 type QueryTaskByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Status               requests.Integer `position:"Query" name:"Status"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	Status               requests.Integer `position:"Query" name:"Status"`
 }
 
 type QueryTaskByParamResponse struct {
@@ -82,19 +82,7 @@ type QueryTaskByParamResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Task []struct {
-			TaskId        string `json:"TaskId" xml:"TaskId"`
-			ReceiversName string `json:"ReceiversName" xml:"ReceiversName"`
-			TemplateName  string `json:"TemplateName" xml:"TemplateName"`
-			TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			AddressType   string `json:"AddressType" xml:"AddressType"`
-			TagName       string `json:"TagName" xml:"TagName"`
-			RequestCount  string `json:"RequestCount" xml:"RequestCount"`
-		} `json:"task" xml:"task"`
-	} `json:"data" xml:"data"`
+	Data       Data   `json:"data" xml:"data"`
 }
 
 func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {

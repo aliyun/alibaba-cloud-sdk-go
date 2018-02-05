@@ -67,22 +67,19 @@ func (client *Client) DownloadRecordingWithCallback(request *DownloadRecordingRe
 
 type DownloadRecordingRequest struct {
 	*requests.RpcRequest
+	InstanceId string `position:"Query" name:"InstanceId"`
 	FileName   string `position:"Query" name:"FileName"`
 	Channel    string `position:"Query" name:"Channel"`
-	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 type DownloadRecordingResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	Success            bool   `json:"Success" xml:"Success"`
-	Code               string `json:"Code" xml:"Code"`
-	Message            string `json:"Message" xml:"Message"`
-	HttpStatusCode     int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	MediaDownloadParam struct {
-		SignatureUrl string `json:"SignatureUrl" xml:"SignatureUrl"`
-		FileName     string `json:"FileName" xml:"FileName"`
-	} `json:"MediaDownloadParam" xml:"MediaDownloadParam"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	Success            bool               `json:"Success" xml:"Success"`
+	Code               string             `json:"Code" xml:"Code"`
+	Message            string             `json:"Message" xml:"Message"`
+	HttpStatusCode     int                `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	MediaDownloadParam MediaDownloadParam `json:"MediaDownloadParam" xml:"MediaDownloadParam"`
 }
 
 func CreateDownloadRecordingRequest() (request *DownloadRecordingRequest) {

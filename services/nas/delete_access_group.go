@@ -79,7 +79,7 @@ func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
 	request = &DeleteAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessGroup", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteAccessGroup", "", "")
 	return
 }
 

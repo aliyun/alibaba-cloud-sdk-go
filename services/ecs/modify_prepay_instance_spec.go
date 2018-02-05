@@ -67,14 +67,14 @@ func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepay
 
 type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyPrepayInstanceSpecResponse struct {
@@ -87,7 +87,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "", "")
 	return
 }
 

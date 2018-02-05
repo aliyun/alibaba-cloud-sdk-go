@@ -73,13 +73,7 @@ type ListGroupsForUserRequest struct {
 type ListGroupsForUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Groups    struct {
-		Group []struct {
-			GroupName string `json:"GroupName" xml:"GroupName"`
-			Comments  string `json:"Comments" xml:"Comments"`
-			JoinDate  string `json:"JoinDate" xml:"JoinDate"`
-		} `json:"Group" xml:"Group"`
-	} `json:"Groups" xml:"Groups"`
+	Groups    Groups `json:"Groups" xml:"Groups"`
 }
 
 func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {

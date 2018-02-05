@@ -67,56 +67,28 @@ func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBI
 
 type DescribeDBInstanceNetInfoRequest struct {
 	*requests.RpcRequest
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
 	Flag                     string           `position:"Query" name:"Flag"`
-	ClientToken              string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBInstanceNetRWSplitType string           `position:"Query" name:"DBInstanceNetRWSplitType"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	InstanceNetworkType string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	DBInstanceNetInfos  struct {
-		DBInstanceNetInfo []struct {
-			Upgradeable          string `json:"Upgradeable" xml:"Upgradeable"`
-			ExpiredTime          string `json:"ExpiredTime" xml:"ExpiredTime"`
-			ConnectionString     string `json:"ConnectionString" xml:"ConnectionString"`
-			IPAddress            string `json:"IPAddress" xml:"IPAddress"`
-			IPType               string `json:"IPType" xml:"IPType"`
-			Port                 string `json:"Port" xml:"Port"`
-			VPCId                string `json:"VPCId" xml:"VPCId"`
-			VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
-			ConnectionStringType string `json:"ConnectionStringType" xml:"ConnectionStringType"`
-			MaxDelayTime         string `json:"MaxDelayTime" xml:"MaxDelayTime"`
-			DistributionType     string `json:"DistributionType" xml:"DistributionType"`
-			SecurityIPGroups     struct {
-				SecurityIPGroup []struct {
-					SecurityIPGroupName string `json:"SecurityIPGroupName" xml:"SecurityIPGroupName"`
-					SecurityIPs         string `json:"SecurityIPs" xml:"SecurityIPs"`
-				} `json:"securityIPGroup" xml:"securityIPGroup"`
-			} `json:"SecurityIPGroups" xml:"SecurityIPGroups"`
-			DBInstanceWeights struct {
-				DBInstanceWeight []struct {
-					DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
-					DBInstanceType string `json:"DBInstanceType" xml:"DBInstanceType"`
-					Availability   string `json:"Availability" xml:"Availability"`
-					Weight         string `json:"Weight" xml:"Weight"`
-				} `json:"DBInstanceWeight" xml:"DBInstanceWeight"`
-			} `json:"DBInstanceWeights" xml:"DBInstanceWeights"`
-		} `json:"DBInstanceNetInfo" xml:"DBInstanceNetInfo"`
-	} `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
+	RequestId           string             `json:"RequestId" xml:"RequestId"`
+	InstanceNetworkType string             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 
 func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInfoRequest) {
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "", "")
 	return
 }
 

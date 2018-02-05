@@ -67,62 +67,35 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	UsedTime             string           `position:"Query" name:"UsedTime"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	OrderType            string           `position:"Query" name:"OrderType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string           `position:"Query" name:"PayType"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
-	Quantity             requests.Integer `position:"Query" name:"Quantity"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PromotionCode        string           `position:"Query" name:"PromotionCode"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PayType              string           `position:"Query" name:"PayType"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
 	TimeType             string           `position:"Query" name:"TimeType"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	OrderType            string           `position:"Query" name:"OrderType"`
+	PromotionCode        string           `position:"Query" name:"PromotionCode"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PriceInfo struct {
-		Currency      string  `json:"Currency" xml:"Currency"`
-		OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-		TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
-		DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-		RuleIds       struct {
-			RuleId []string `json:"RuleId" xml:"RuleId"`
-		} `json:"RuleIds" xml:"RuleIds"`
-		ActivityInfo struct {
-			CheckErrMsg string `json:"CheckErrMsg" xml:"CheckErrMsg"`
-			ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
-			Success     string `json:"Success" xml:"Success"`
-		} `json:"ActivityInfo" xml:"ActivityInfo"`
-		Coupons struct {
-			Coupon []struct {
-				CouponNo    string `json:"CouponNo" xml:"CouponNo"`
-				Name        string `json:"Name" xml:"Name"`
-				Description string `json:"Description" xml:"Description"`
-				IsSelected  string `json:"IsSelected" xml:"IsSelected"`
-			} `json:"Coupon" xml:"Coupon"`
-		} `json:"Coupons" xml:"Coupons"`
-	} `json:"PriceInfo" xml:"PriceInfo"`
-	Rules struct {
-		Rule []struct {
-			RuleId      int    `json:"RuleId" xml:"RuleId"`
-			Name        string `json:"Name" xml:"Name"`
-			Description string `json:"Description" xml:"Description"`
-		} `json:"Rule" xml:"Rule"`
-	} `json:"Rules" xml:"Rules"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     Rules     `json:"Rules" xml:"Rules"`
 }
 
 func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRenewalPrice", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRenewalPrice", "", "")
 	return
 }
 

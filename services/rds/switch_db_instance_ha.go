@@ -67,15 +67,15 @@ func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHA
 
 type SwitchDBInstanceHARequest struct {
 	*requests.RpcRequest
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
-	Operation            string           `position:"Query" name:"Operation"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string           `position:"Query" name:"Force"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	Operation            string           `position:"Query" name:"Operation"`
+	Force                string           `position:"Query" name:"Force"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 }
 
 type SwitchDBInstanceHAResponse struct {
@@ -87,7 +87,7 @@ func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
 	request = &SwitchDBInstanceHARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceHA", "", "")
 	return
 }
 

@@ -67,16 +67,6 @@ func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, c
 
 type CreateCommandRequest struct {
 	*requests.RpcRequest
-	WorkingDir           string           `position:"Query" name:"WorkingDir"`
-	Type                 string           `position:"Query" name:"Type"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CommandContent       string           `position:"Query" name:"CommandContent"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Timeout              requests.Integer `position:"Query" name:"Timeout"`
 }
 
 type CreateCommandResponse struct {
@@ -89,7 +79,7 @@ func CreateCreateCommandRequest() (request *CreateCommandRequest) {
 	request = &CreateCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCommand", "", "")
 	return
 }
 

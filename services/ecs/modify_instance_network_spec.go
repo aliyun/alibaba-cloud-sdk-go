@@ -67,19 +67,19 @@ func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInsta
 
 type ModifyInstanceNetworkSpecRequest struct {
 	*requests.RpcRequest
-	EndTime                 string           `position:"Query" name:"EndTime"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	StartTime               string           `position:"Query" name:"StartTime"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
 	InternetMaxBandwidthIn  requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
 	NetworkChargeType       string           `position:"Query" name:"NetworkChargeType"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	AllocatePublicIp        requests.Boolean `position:"Query" name:"AllocatePublicIp"`
-	InstanceId              string           `position:"Query" name:"InstanceId"`
+	StartTime               string           `position:"Query" name:"StartTime"`
+	EndTime                 string           `position:"Query" name:"EndTime"`
+	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
+	ClientToken             string           `position:"Query" name:"ClientToken"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyInstanceNetworkSpecResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "", "")
 	return
 }
 

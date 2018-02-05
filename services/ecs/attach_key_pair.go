@@ -67,34 +67,27 @@ func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, c
 
 type AttachKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 type AttachKeyPairResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  string `json:"TotalCount" xml:"TotalCount"`
-	FailCount   string `json:"FailCount" xml:"FailCount"`
-	KeyPairName string `json:"KeyPairName" xml:"KeyPairName"`
-	Results     struct {
-		Result []struct {
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Success    string `json:"Success" xml:"Success"`
-			Code       string `json:"Code" xml:"Code"`
-			Message    string `json:"Message" xml:"Message"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	RequestId   string  `json:"RequestId" xml:"RequestId"`
+	TotalCount  string  `json:"TotalCount" xml:"TotalCount"`
+	FailCount   string  `json:"FailCount" xml:"FailCount"`
+	KeyPairName string  `json:"KeyPairName" xml:"KeyPairName"`
+	Results     Results `json:"Results" xml:"Results"`
 }
 
 func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
 	request = &AttachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "", "")
 	return
 }
 

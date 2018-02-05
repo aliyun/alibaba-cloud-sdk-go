@@ -67,13 +67,13 @@ func (client *Client) AddBandwidthPackageIpsWithCallback(request *AddBandwidthPa
 
 type AddBandwidthPackageIpsRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	IpCount              string           `position:"Query" name:"IpCount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	IpCount              string           `position:"Query" name:"IpCount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type AddBandwidthPackageIpsResponse struct {
@@ -85,7 +85,7 @@ func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsReque
 	request = &AddBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBandwidthPackageIps", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AddBandwidthPackageIps", "", "")
 	return
 }
 

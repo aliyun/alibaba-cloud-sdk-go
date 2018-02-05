@@ -67,11 +67,11 @@ func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, c
 
 type ActionDiskRmaRequest struct {
 	*requests.RpcRequest
-	DiskName    string `position:"Query" name:"DiskName"`
-	DiskSlot    string `position:"Query" name:"DiskSlot"`
+	Hostname    string `position:"Query" name:"Hostname"`
 	DiskMount   string `position:"Query" name:"DiskMount"`
 	ExecutionId string `position:"Query" name:"ExecutionId"`
-	Hostname    string `position:"Query" name:"Hostname"`
+	DiskSlot    string `position:"Query" name:"DiskSlot"`
+	DiskName    string `position:"Query" name:"DiskName"`
 	DiskSn      string `position:"Query" name:"DiskSn"`
 	DiskReason  string `position:"Query" name:"DiskReason"`
 }

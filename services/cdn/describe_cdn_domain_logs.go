@@ -67,34 +67,23 @@ func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDoma
 
 type DescribeCdnDomainLogsRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	LogDay        string           `position:"Query" name:"LogDay"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	LogDay        string           `position:"Query" name:"LogDay"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeCdnDomainLogsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	DomainLogModel struct {
-		DomainName       string `json:"DomainName" xml:"DomainName"`
-		DomainLogDetails struct {
-			DomainLogDetail []struct {
-				LogName   string `json:"LogName" xml:"LogName"`
-				LogPath   string `json:"LogPath" xml:"LogPath"`
-				LogSize   int    `json:"LogSize" xml:"LogSize"`
-				StartTime string `json:"StartTime" xml:"StartTime"`
-				EndTime   string `json:"EndTime" xml:"EndTime"`
-			} `json:"DomainLogDetail" xml:"DomainLogDetail"`
-		} `json:"DomainLogDetails" xml:"DomainLogDetails"`
-	} `json:"DomainLogModel" xml:"DomainLogModel"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	DomainLogModel DomainLogModel `json:"DomainLogModel" xml:"DomainLogModel"`
 }
 
 func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest) {

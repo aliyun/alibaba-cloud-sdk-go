@@ -67,16 +67,16 @@ func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLog
 
 type StartArchiveSQLLogRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	User                 string           `position:"Query" name:"User"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	Database             string           `position:"Query" name:"Database"`
+	User                 string           `position:"Query" name:"User"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type StartArchiveSQLLogResponse struct {
@@ -88,7 +88,7 @@ func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 	request = &StartArchiveSQLLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "StartArchiveSQLLog", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "StartArchiveSQLLog", "", "")
 	return
 }
 

@@ -68,8 +68,8 @@ func (client *Client) SetQuotaWithCallback(request *SetQuotaRequest, callback fu
 type SetQuotaRequest struct {
 	*requests.RpcRequest
 	TotalQuota requests.Integer `position:"Query" name:"TotalQuota"`
-	LibraryId  string           `position:"Query" name:"LibraryId"`
 	StoreName  string           `position:"Query" name:"StoreName"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
 }
 
 type SetQuotaResponse struct {
@@ -84,7 +84,7 @@ func CreateSetQuotaRequest() (request *SetQuotaRequest) {
 	request = &SetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetQuota", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetQuota", "", "")
 	return
 }
 

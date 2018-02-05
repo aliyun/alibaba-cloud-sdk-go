@@ -68,26 +68,17 @@ func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callbac
 type UpdateUserRequest struct {
 	*requests.RpcRequest
 	UserName       string `position:"Query" name:"UserName"`
+	NewUserName    string `position:"Query" name:"NewUserName"`
 	NewDisplayName string `position:"Query" name:"NewDisplayName"`
 	NewMobilePhone string `position:"Query" name:"NewMobilePhone"`
-	NewComments    string `position:"Query" name:"NewComments"`
 	NewEmail       string `position:"Query" name:"NewEmail"`
-	NewUserName    string `position:"Query" name:"NewUserName"`
+	NewComments    string `position:"Query" name:"NewComments"`
 }
 
 type UpdateUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	User      struct {
-		UserId      string `json:"UserId" xml:"UserId"`
-		UserName    string `json:"UserName" xml:"UserName"`
-		DisplayName string `json:"DisplayName" xml:"DisplayName"`
-		MobilePhone string `json:"MobilePhone" xml:"MobilePhone"`
-		Email       string `json:"Email" xml:"Email"`
-		Comments    string `json:"Comments" xml:"Comments"`
-		CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate  string `json:"UpdateDate" xml:"UpdateDate"`
-	} `json:"User" xml:"User"`
+	User      User   `json:"User" xml:"User"`
 }
 
 func CreateUpdateUserRequest() (request *UpdateUserRequest) {

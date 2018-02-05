@@ -67,8 +67,8 @@ func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckReques
 
 type ActionDiskCheckRequest struct {
 	*requests.RpcRequest
-	DiskMount string `position:"Query" name:"DiskMount"`
 	Ip        string `position:"Query" name:"Ip"`
+	DiskMount string `position:"Query" name:"DiskMount"`
 }
 
 type ActionDiskCheckResponse struct {

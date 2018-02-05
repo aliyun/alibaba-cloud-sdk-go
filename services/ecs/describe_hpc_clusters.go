@@ -67,36 +67,22 @@ func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcCluste
 
 type DescribeHpcClustersRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	HpcClusterIds        string           `position:"Query" name:"HpcClusterIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeHpcClustersResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	HpcClusters struct {
-		HpcCluster []struct {
-			HpcClusterId string `json:"HpcClusterId" xml:"HpcClusterId"`
-			Name         string `json:"Name" xml:"Name"`
-			Description  string `json:"Description" xml:"Description"`
-		} `json:"HpcCluster" xml:"HpcCluster"`
-	} `json:"HpcClusters" xml:"HpcClusters"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	HpcClusters HpcClusters `json:"HpcClusters" xml:"HpcClusters"`
 }
 
 func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	request = &DescribeHpcClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHpcClusters", "", "")
 	return
 }
 

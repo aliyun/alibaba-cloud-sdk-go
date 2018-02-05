@@ -67,9 +67,9 @@ func (client *Client) DescribeDomainQpsWithCallback(request *DescribeDomainQpsRe
 
 type DescribeDomainQpsRequest struct {
 	*requests.RpcRequest
-	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
 	Domain          string           `position:"Query" name:"Domain"`
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
@@ -79,14 +79,7 @@ type DescribeDomainQpsResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		Total     []string `json:"Total" xml:"Total"`
-		Attacks   []string `json:"Attacks" xml:"Attacks"`
-		TimeScope struct {
-			Interval int `json:"Interval" xml:"Interval"`
-			Start    int `json:"Start" xml:"Start"`
-		} `json:"TimeScope" xml:"TimeScope"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainQpsRequest() (request *DescribeDomainQpsRequest) {

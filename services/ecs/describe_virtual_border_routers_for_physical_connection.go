@@ -67,13 +67,13 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithCallb
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
+	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
 	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
 	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
-	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
 }
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {
@@ -83,29 +83,18 @@ type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {
 
 type DescribeVirtualBorderRoutersForPhysicalConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId                                   string `json:"RequestId" xml:"RequestId"`
-	PageNumber                                  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize                                    int    `json:"PageSize" xml:"PageSize"`
-	TotalCount                                  int    `json:"TotalCount" xml:"TotalCount"`
-	VirtualBorderRouterForPhysicalConnectionSet struct {
-		VirtualBorderRouterForPhysicalConnectionType []struct {
-			VbrId           string `json:"VbrId" xml:"VbrId"`
-			VbrOwnerUid     int    `json:"VbrOwnerUid" xml:"VbrOwnerUid"`
-			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-			ActivationTime  string `json:"ActivationTime" xml:"ActivationTime"`
-			TerminationTime string `json:"TerminationTime" xml:"TerminationTime"`
-			RecoveryTime    string `json:"RecoveryTime" xml:"RecoveryTime"`
-			VlanId          int    `json:"VlanId" xml:"VlanId"`
-			CircuitCode     string `json:"CircuitCode" xml:"CircuitCode"`
-		} `json:"VirtualBorderRouterForPhysicalConnectionType" xml:"VirtualBorderRouterForPhysicalConnectionType"`
-	} `json:"VirtualBorderRouterForPhysicalConnectionSet" xml:"VirtualBorderRouterForPhysicalConnectionSet"`
+	RequestId                                   string                                      `json:"RequestId" xml:"RequestId"`
+	PageNumber                                  int                                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize                                    int                                         `json:"PageSize" xml:"PageSize"`
+	TotalCount                                  int                                         `json:"TotalCount" xml:"TotalCount"`
+	VirtualBorderRouterForPhysicalConnectionSet VirtualBorderRouterForPhysicalConnectionSet `json:"VirtualBorderRouterForPhysicalConnectionSet" xml:"VirtualBorderRouterForPhysicalConnectionSet"`
 }
 
 func CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest() (request *DescribeVirtualBorderRoutersForPhysicalConnectionRequest) {
 	request = &DescribeVirtualBorderRoutersForPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "", "")
 	return
 }
 

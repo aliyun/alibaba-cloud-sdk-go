@@ -67,8 +67,8 @@ func (client *Client) ModifyDomainProxyWithCallback(request *ModifyDomainProxyRe
 
 type ModifyDomainProxyRequest struct {
 	*requests.RpcRequest
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
 }
 

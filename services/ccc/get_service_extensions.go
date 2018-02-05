@@ -67,23 +67,18 @@ func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtens
 
 type GetServiceExtensionsRequest struct {
 	*requests.RpcRequest
-	ServiceType string `position:"Query" name:"ServiceType"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
+	ServiceType string `position:"Query" name:"ServiceType"`
 }
 
 type GetServiceExtensionsResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Success           bool   `json:"Success" xml:"Success"`
-	Code              string `json:"Code" xml:"Code"`
-	Message           string `json:"Message" xml:"Message"`
-	HttpStatusCode    int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ServiceExtensions struct {
-		ServiceExtension []struct {
-			Name   string `json:"Name" xml:"Name"`
-			Number string `json:"Number" xml:"Number"`
-		} `json:"ServiceExtension" xml:"ServiceExtension"`
-	} `json:"ServiceExtensions" xml:"ServiceExtensions"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	Success           bool              `json:"Success" xml:"Success"`
+	Code              string            `json:"Code" xml:"Code"`
+	Message           string            `json:"Message" xml:"Message"`
+	HttpStatusCode    int               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ServiceExtensions ServiceExtensions `json:"ServiceExtensions" xml:"ServiceExtensions"`
 }
 
 func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) {

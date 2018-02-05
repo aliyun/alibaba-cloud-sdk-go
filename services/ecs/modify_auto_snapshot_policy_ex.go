@@ -67,14 +67,14 @@ func (client *Client) ModifyAutoSnapshotPolicyExWithCallback(request *ModifyAuto
 
 type ModifyAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
-	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
-	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	TimePoints             string           `position:"Query" name:"timePoints"`
-	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
-	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
+	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
+	TimePoints             string           `position:"Query" name:"timePoints"`
+	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
+	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
 }
 
 type ModifyAutoSnapshotPolicyExResponse struct {
@@ -86,7 +86,7 @@ func CreateModifyAutoSnapshotPolicyExRequest() (request *ModifyAutoSnapshotPolic
 	request = &ModifyAutoSnapshotPolicyExRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "", "")
 	return
 }
 

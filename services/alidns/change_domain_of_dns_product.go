@@ -67,11 +67,11 @@ func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomain
 
 type ChangeDomainOfDnsProductRequest struct {
 	*requests.RpcRequest
+	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 	NewDomain    string           `position:"Query" name:"NewDomain"`
 	Force        requests.Boolean `position:"Query" name:"Force"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 type ChangeDomainOfDnsProductResponse struct {

@@ -67,36 +67,25 @@ func (client *Client) DescribeDomainHttpCodeDataWithCallback(request *DescribeDo
 
 type DescribeDomainHttpCodeDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string           `position:"Query" name:"EndTime"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	Interval       string           `position:"Query" name:"Interval"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	EndTime        string           `position:"Query" name:"EndTime"`
 	TimeMerge      string           `position:"Query" name:"TimeMerge"`
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	Interval       string           `position:"Query" name:"Interval"`
 }
 
 type DescribeDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	HttpCodeData struct {
-		UsageData []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     struct {
-				CodeProportionData []struct {
-					Code       string `json:"Code" xml:"Code"`
-					Proportion string `json:"Proportion" xml:"Proportion"`
-					Count      string `json:"Count" xml:"Count"`
-				} `json:"CodeProportionData" xml:"CodeProportionData"`
-			} `json:"Value" xml:"Value"`
-		} `json:"UsageData" xml:"UsageData"`
-	} `json:"HttpCodeData" xml:"HttpCodeData"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	DomainName   string       `json:"DomainName" xml:"DomainName"`
+	DataInterval string       `json:"DataInterval" xml:"DataInterval"`
+	StartTime    string       `json:"StartTime" xml:"StartTime"`
+	EndTime      string       `json:"EndTime" xml:"EndTime"`
+	HttpCodeData HttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
 }
 
 func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeDataRequest) {

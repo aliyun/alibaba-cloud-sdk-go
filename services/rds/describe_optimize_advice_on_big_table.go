@@ -67,13 +67,13 @@ func (client *Client) DescribeOptimizeAdviceOnBigTableWithCallback(request *Desc
 
 type DescribeOptimizeAdviceOnBigTableRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeOptimizeAdviceOnBigTableResponse struct {
@@ -82,22 +82,14 @@ type DescribeOptimizeAdviceOnBigTableResponse struct {
 	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
 	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             struct {
-		AdviceOnBigTable []struct {
-			DBName    string `json:"DBName" xml:"DBName"`
-			TableName string `json:"TableName" xml:"TableName"`
-			TableSize int    `json:"TableSize" xml:"TableSize"`
-			DataSize  int    `json:"DataSize" xml:"DataSize"`
-			IndexSize int    `json:"IndexSize" xml:"IndexSize"`
-		} `json:"AdviceOnBigTable" xml:"AdviceOnBigTable"`
-	} `json:"Items" xml:"Items"`
+	Items             Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnBigTableRequest() (request *DescribeOptimizeAdviceOnBigTableRequest) {
 	request = &DescribeOptimizeAdviceOnBigTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnBigTable", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnBigTable", "", "")
 	return
 }
 

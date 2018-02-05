@@ -72,12 +72,8 @@ type ListTagsRequest struct {
 
 type ListTagsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TagInfos  struct {
-		TagInfo []struct {
-			TagName string `json:"TagName" xml:"TagName"`
-		} `json:"TagInfo" xml:"TagInfo"`
-	} `json:"TagInfos" xml:"TagInfos"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	TagInfos  TagInfos `json:"TagInfos" xml:"TagInfos"`
 }
 
 func CreateListTagsRequest() (request *ListTagsRequest) {

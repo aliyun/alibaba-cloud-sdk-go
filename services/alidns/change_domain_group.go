@@ -67,10 +67,10 @@ func (client *Client) ChangeDomainGroupWithCallback(request *ChangeDomainGroupRe
 
 type ChangeDomainGroupRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
 	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type ChangeDomainGroupResponse struct {

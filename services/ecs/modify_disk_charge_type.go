@@ -67,14 +67,14 @@ func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskCharge
 
 type ModifyDiskChargeTypeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DiskIds              string           `position:"Query" name:"DiskIds"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DiskIds              string           `position:"Query" name:"DiskIds"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDiskChargeTypeResponse struct {
@@ -87,7 +87,7 @@ func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) 
 	request = &ModifyDiskChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskChargeType", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDiskChargeType", "", "")
 	return
 }
 

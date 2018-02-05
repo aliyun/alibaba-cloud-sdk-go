@@ -67,9 +67,9 @@ func (client *Client) DeleteDomainGroupWithCallback(request *DeleteDomainGroupRe
 
 type DeleteDomainGroupRequest struct {
 	*requests.RpcRequest
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	GroupId      string `position:"Query" name:"GroupId"`
 }
 
 type DeleteDomainGroupResponse struct {

@@ -67,50 +67,25 @@ func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSu
 
 type QueryVideoSummaryJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryVideoSummaryJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoSummaryResult struct {
-				VideoSummaryList struct {
-					VideoSummary []struct {
-						StartTime string `json:"StartTime" xml:"StartTime"`
-						EndTime   string `json:"EndTime" xml:"EndTime"`
-					} `json:"VideoSummary" xml:"VideoSummary"`
-				} `json:"VideoSummaryList" xml:"VideoSummaryList"`
-			} `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {
 	request = &QueryVideoSummaryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "", "")
 	return
 }
 

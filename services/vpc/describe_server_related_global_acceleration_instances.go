@@ -67,32 +67,25 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallba
 
 type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
-	ServerType           string           `position:"Query" name:"ServerType"`
-	ServerId             string           `position:"Query" name:"ServerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerId             string           `position:"Query" name:"ServerId"`
+	ServerType           string           `position:"Query" name:"ServerType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId                   string `json:"RequestId" xml:"RequestId"`
-	GlobalAccelerationInstances struct {
-		GlobalAccelerationInstance []struct {
-			RegionId                     string `json:"RegionId" xml:"RegionId"`
-			GlobalAccelerationInstanceId string `json:"GlobalAccelerationInstanceId" xml:"GlobalAccelerationInstanceId"`
-			IpAddress                    string `json:"IpAddress" xml:"IpAddress"`
-			ServerIpAddress              string `json:"ServerIpAddress" xml:"ServerIpAddress"`
-		} `json:"GlobalAccelerationInstance" xml:"GlobalAccelerationInstance"`
-	} `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
+	GlobalAccelerationInstances GlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
 func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
 	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "", "")
 	return
 }
 

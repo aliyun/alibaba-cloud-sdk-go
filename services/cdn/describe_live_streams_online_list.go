@@ -67,24 +67,16 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
 }
 
 type DescribeLiveStreamsOnlineListResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	OnlineInfo struct {
-		LiveStreamOnlineInfo []struct {
-			DomainName  string `json:"DomainName" xml:"DomainName"`
-			AppName     string `json:"AppName" xml:"AppName"`
-			StreamName  string `json:"StreamName" xml:"StreamName"`
-			PublishTime string `json:"PublishTime" xml:"PublishTime"`
-			PublishUrl  string `json:"PublishUrl" xml:"PublishUrl"`
-		} `json:"LiveStreamOnlineInfo" xml:"LiveStreamOnlineInfo"`
-	} `json:"OnlineInfo" xml:"OnlineInfo"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	OnlineInfo OnlineInfo `json:"OnlineInfo" xml:"OnlineInfo"`
 }
 
 func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {

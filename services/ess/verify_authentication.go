@@ -67,10 +67,10 @@ func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthentica
 
 type VerifyAuthenticationRequest struct {
 	*requests.RpcRequest
-	Uid                  requests.Integer `position:"Query" name:"Uid"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Uid                  requests.Integer `position:"Query" name:"Uid"`
 }
 
 type VerifyAuthenticationResponse struct {
@@ -82,7 +82,7 @@ func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) 
 	request = &VerifyAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyAuthentication", "", "")
 	return
 }
 

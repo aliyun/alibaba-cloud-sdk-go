@@ -67,11 +67,11 @@ func (client *Client) DeleteCategoryWithCallback(request *DeleteCategoryRequest,
 
 type DeleteCategoryRequest struct {
 	*requests.RpcRequest
-	CateId               requests.Integer `position:"Query" name:"CateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteCategoryResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {
 	request = &DeleteCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "", "")
 	return
 }
 

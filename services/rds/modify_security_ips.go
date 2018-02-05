@@ -67,18 +67,18 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
-	SecurityGroupName          string           `position:"Query" name:"SecurityGroupName"`
-	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
-	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
-	ClientToken                string           `position:"Query" name:"ClientToken"`
-	WhitelistNetType           string           `position:"Query" name:"WhitelistNetType"`
-	SecurityIps                string           `position:"Query" name:"SecurityIps"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceIPArrayAttribute string           `position:"Query" name:"DBInstanceIPArrayAttribute"`
+	ClientToken                string           `position:"Query" name:"ClientToken"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
+	SecurityIps                string           `position:"Query" name:"SecurityIps"`
+	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
+	DBInstanceIPArrayAttribute string           `position:"Query" name:"DBInstanceIPArrayAttribute"`
+	WhitelistNetType           string           `position:"Query" name:"WhitelistNetType"`
+	SecurityGroupName          string           `position:"Query" name:"SecurityGroupName"`
+	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
 }
 
 type ModifySecurityIpsResponse struct {
@@ -91,7 +91,7 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySecurityIps", "", "")
 	return
 }
 

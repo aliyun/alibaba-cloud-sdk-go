@@ -67,50 +67,30 @@ func (client *Client) ListAlbumsWithCallback(request *ListAlbumsRequest, callbac
 
 type ListAlbumsRequest struct {
 	*requests.RpcRequest
-	Cursor    string           `position:"Query" name:"Cursor"`
 	Direction string           `position:"Query" name:"Direction"`
-	State     string           `position:"Query" name:"State"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	Size      requests.Integer `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	State     string           `position:"Query" name:"State"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type ListAlbumsResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor string `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Albums     []struct {
-		Id          int    `json:"Id" xml:"Id"`
-		Name        string `json:"Name" xml:"Name"`
-		State       string `json:"State" xml:"State"`
-		PhotosCount int    `json:"PhotosCount" xml:"PhotosCount"`
-		Ctime       int    `json:"Ctime" xml:"Ctime"`
-		Mtime       int    `json:"Mtime" xml:"Mtime"`
-		Cover       struct {
-			Id      int    `json:"Id" xml:"Id"`
-			Title   string `json:"Title" xml:"Title"`
-			FileId  string `json:"FileId" xml:"FileId"`
-			State   string `json:"State" xml:"State"`
-			Md5     string `json:"Md5" xml:"Md5"`
-			IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
-			Remark  string `json:"Remark" xml:"Remark"`
-			Width   int    `json:"Width" xml:"Width"`
-			Height  int    `json:"Height" xml:"Height"`
-			Ctime   int    `json:"Ctime" xml:"Ctime"`
-			Mtime   int    `json:"Mtime" xml:"Mtime"`
-		} `json:"Cover" xml:"Cover"`
-	} `json:"Albums" xml:"Albums"`
+	Code       string  `json:"Code" xml:"Code"`
+	Message    string  `json:"Message" xml:"Message"`
+	NextCursor string  `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	Action     string  `json:"Action" xml:"Action"`
+	Albums     []Album `json:"Albums" xml:"Albums"`
 }
 
 func CreateListAlbumsRequest() (request *ListAlbumsRequest) {
 	request = &ListAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListAlbums", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListAlbums", "", "")
 	return
 }
 

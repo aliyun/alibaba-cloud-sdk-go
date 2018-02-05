@@ -67,10 +67,10 @@ func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetric
 
 type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
+	GroupId    string `position:"Query" name:"GroupId"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Md5        string `position:"Query" name:"Md5"`
 	UUID       string `position:"Query" name:"UUID"`
-	GroupId    string `position:"Query" name:"GroupId"`
 }
 
 type DeleteCustomMetricResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
 	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteCustomMetric", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteCustomMetric", "", "")
 	return
 }
 

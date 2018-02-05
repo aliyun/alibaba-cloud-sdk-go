@@ -67,14 +67,14 @@ func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJob
 
 type SubmitTerrorismJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitTerrorismJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	request = &SubmitTerrorismJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "", "")
 	return
 }
 

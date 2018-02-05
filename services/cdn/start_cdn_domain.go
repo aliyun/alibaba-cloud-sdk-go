@@ -67,9 +67,9 @@ func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest,
 
 type StartCdnDomainRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
 type StartCdnDomainResponse struct {

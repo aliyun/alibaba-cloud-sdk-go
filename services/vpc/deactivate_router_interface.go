@@ -67,10 +67,10 @@ func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateR
 
 type DeactivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 
 type DeactivateRouterInterfaceResponse struct {
@@ -82,7 +82,7 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactivateRouterInterface", "", "")
 	return
 }
 

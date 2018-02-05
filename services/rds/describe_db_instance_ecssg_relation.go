@@ -67,30 +67,24 @@ func (client *Client) DescribeDBInstanceECSSGRelationWithCallback(request *Descr
 
 type DescribeDBInstanceECSSGRelationRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 type DescribeDBInstanceECSSGRelationResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	Items          struct {
-		RdsEcsSecurityGroupRel []struct {
-			RegionId        string `json:"RegionId" xml:"RegionId"`
-			SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			NetType         string `json:"NetType" xml:"NetType"`
-		} `json:"RdsEcsSecurityGroupRel" xml:"RdsEcsSecurityGroupRel"`
-	} `json:"Items" xml:"Items"`
+	Items          Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstanceECSSGRelationRequest() (request *DescribeDBInstanceECSSGRelationRequest) {
 	request = &DescribeDBInstanceECSSGRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceECSSGRelation", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceECSSGRelation", "", "")
 	return
 }
 

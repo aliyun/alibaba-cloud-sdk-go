@@ -67,10 +67,10 @@ func (client *Client) DescribeDBInstanceExtendAttributeWithCallback(request *Des
 
 type DescribeDBInstanceExtendAttributeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 type DescribeDBInstanceExtendAttributeResponse struct {
@@ -91,7 +91,7 @@ func CreateDescribeDBInstanceExtendAttributeRequest() (request *DescribeDBInstan
 	request = &DescribeDBInstanceExtendAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceExtendAttribute", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceExtendAttribute", "", "")
 	return
 }
 

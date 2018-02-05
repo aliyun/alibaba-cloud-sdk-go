@@ -67,14 +67,14 @@ func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRe
 
 type CreateScalingRuleRequest struct {
 	*requests.RpcRequest
-	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
-	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
+	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
+	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
+	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateScalingRuleResponse struct {
@@ -88,7 +88,7 @@ func CreateCreateScalingRuleRequest() (request *CreateScalingRuleRequest) {
 	request = &CreateScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingRule", "", "")
 	return
 }
 

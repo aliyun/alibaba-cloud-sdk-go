@@ -67,11 +67,11 @@ func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *Des
 
 type DescribeInstancePhysicalAttributeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeInstancePhysicalAttributeResponse struct {
@@ -87,7 +87,7 @@ func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstance
 	request = &DescribeInstancePhysicalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "", "")
 	return
 }
 

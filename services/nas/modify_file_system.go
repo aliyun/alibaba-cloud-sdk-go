@@ -67,8 +67,8 @@ func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequ
 
 type ModifyFileSystemRequest struct {
 	*requests.RpcRequest
-	Description  string `position:"Query" name:"Description"`
 	FileSystemId string `position:"Query" name:"FileSystemId"`
+	Description  string `position:"Query" name:"Description"`
 }
 
 type ModifyFileSystemResponse struct {
@@ -80,7 +80,7 @@ func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	request = &ModifyFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "", "")
 	return
 }
 

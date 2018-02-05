@@ -67,11 +67,11 @@ func (client *Client) CreateMountTargetWithCallback(request *CreateMountTargetRe
 
 type CreateMountTargetRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string `position:"Query" name:"AccessGroupName"`
-	VSwitchId       string `position:"Query" name:"VSwitchId"`
 	FileSystemId    string `position:"Query" name:"FileSystemId"`
-	VpcId           string `position:"Query" name:"VpcId"`
+	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	NetworkType     string `position:"Query" name:"NetworkType"`
+	VpcId           string `position:"Query" name:"VpcId"`
+	VSwitchId       string `position:"Query" name:"VSwitchId"`
 }
 
 type CreateMountTargetResponse struct {
@@ -84,7 +84,7 @@ func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	request = &CreateMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateMountTarget", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateMountTarget", "", "")
 	return
 }
 

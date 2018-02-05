@@ -67,10 +67,10 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 
 type DeleteNotifyPolicyRequest struct {
 	*requests.RpcRequest
+	Dimensions string `position:"Query" name:"Dimensions"`
+	PolicyType string `position:"Query" name:"PolicyType"`
 	Id         string `position:"Query" name:"Id"`
 	AlertName  string `position:"Query" name:"AlertName"`
-	PolicyType string `position:"Query" name:"PolicyType"`
-	Dimensions string `position:"Query" name:"Dimensions"`
 }
 
 type DeleteNotifyPolicyResponse struct {
@@ -86,7 +86,7 @@ func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	request = &DeleteNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteNotifyPolicy", "", "")
 	return
 }
 

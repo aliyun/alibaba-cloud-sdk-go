@@ -67,11 +67,11 @@ func (client *Client) DeleteSubDomainRecordsWithCallback(request *DeleteSubDomai
 
 type DeleteSubDomainRecordsRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
 	RR           string `position:"Query" name:"RR"`
 	Type         string `position:"Query" name:"Type"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type DeleteSubDomainRecordsResponse struct {

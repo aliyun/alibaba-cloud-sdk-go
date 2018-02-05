@@ -67,29 +67,25 @@ func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callb
 
 type DeleteFacesRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	FaceId    *[]string `position:"Query" name:"FaceId"  type:"Repeated"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type DeleteFacesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   []struct {
-		Id      int    `json:"Id" xml:"Id"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"Results" xml:"Results"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Action    string   `json:"Action" xml:"Action"`
+	Results   []Result `json:"Results" xml:"Results"`
 }
 
 func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteFaces", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteFaces", "", "")
 	return
 }
 

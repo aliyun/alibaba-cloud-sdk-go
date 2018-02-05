@@ -67,33 +67,33 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	Limit         requests.Integer                `position:"Query" name:"Limit"`
-	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
-	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
 	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
-	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
-	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
+	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
+	DateStr       requests.Integer                `position:"Query" name:"DateStr"`
 	MinTime       requests.Integer                `position:"Query" name:"MinTime"`
 	MaxTime       requests.Integer                `position:"Query" name:"MaxTime"`
-	IsDrillDown   requests.Boolean                `position:"Query" name:"IsDrillDown"`
-	DateStr       requests.Integer                `position:"Query" name:"DateStr"`
 	Dimensions    *[]ARMSQueryDataSetDimensions   `position:"Query" name:"Dimensions"  type:"Repeated"`
-	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
 	Measures      *[]string                       `position:"Query" name:"Measures"  type:"Repeated"`
+	IsDrillDown   requests.Boolean                `position:"Query" name:"IsDrillDown"`
+	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
+	Limit         requests.Integer                `position:"Query" name:"Limit"`
+	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
 	HungryMode    requests.Boolean                `position:"Query" name:"HungryMode"`
+	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
+	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
 }
 
+type ARMSQueryDataSetDimensions struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+	Type  string `name:"Type"`
+}
 type ARMSQueryDataSetRequiredDims struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 	Type  string `name:"Type"`
 }
 type ARMSQueryDataSetOptionalDims struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
-	Type  string `name:"Type"`
-}
-type ARMSQueryDataSetDimensions struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 	Type  string `name:"Type"`

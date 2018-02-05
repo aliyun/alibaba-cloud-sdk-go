@@ -74,11 +74,7 @@ type CreateGroupRequest struct {
 type CreateGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Group     struct {
-		GroupName  string `json:"GroupName" xml:"GroupName"`
-		Comments   string `json:"Comments" xml:"Comments"`
-		CreateDate string `json:"CreateDate" xml:"CreateDate"`
-	} `json:"Group" xml:"Group"`
+	Group     Group  `json:"Group" xml:"Group"`
 }
 
 func CreateCreateGroupRequest() (request *CreateGroupRequest) {

@@ -67,10 +67,10 @@ func (client *Client) UpdateDomainGroupWithCallback(request *UpdateDomainGroupRe
 
 type UpdateDomainGroupRequest struct {
 	*requests.RpcRequest
-	GroupName    string `position:"Query" name:"GroupName"`
-	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	GroupId      string `position:"Query" name:"GroupId"`
+	GroupName    string `position:"Query" name:"GroupName"`
 }
 
 type UpdateDomainGroupResponse struct {

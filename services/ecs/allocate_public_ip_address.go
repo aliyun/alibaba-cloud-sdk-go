@@ -67,13 +67,13 @@ func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePubli
 
 type AllocatePublicIpAddressRequest struct {
 	*requests.RpcRequest
-	VlanId               string           `position:"Query" name:"VlanId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	VlanId               string           `position:"Query" name:"VlanId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AllocatePublicIpAddressResponse struct {
@@ -86,7 +86,7 @@ func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressReq
 	request = &AllocatePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AllocatePublicIpAddress", "", "")
 	return
 }
 

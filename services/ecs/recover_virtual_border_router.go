@@ -67,13 +67,13 @@ func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVir
 
 type RecoverVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type RecoverVirtualBorderRouterResponse struct {
@@ -85,7 +85,7 @@ func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRou
 	request = &RecoverVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "", "")
 	return
 }
 

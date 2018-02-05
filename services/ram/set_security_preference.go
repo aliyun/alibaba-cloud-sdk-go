@@ -67,35 +67,19 @@ func (client *Client) SetSecurityPreferenceWithCallback(request *SetSecurityPref
 
 type SetSecurityPreferenceRequest struct {
 	*requests.RpcRequest
-	LoginSessionDuration        requests.Integer `position:"Query" name:"LoginSessionDuration"`
-	AllowUserToManageAccessKeys requests.Boolean `position:"Query" name:"AllowUserToManageAccessKeys"`
-	LoginNetworkMasks           string           `position:"Query" name:"LoginNetworkMasks"`
+	EnableSaveMFATicket         requests.Boolean `position:"Query" name:"EnableSaveMFATicket"`
 	AllowUserToChangePassword   requests.Boolean `position:"Query" name:"AllowUserToChangePassword"`
+	AllowUserToManageAccessKeys requests.Boolean `position:"Query" name:"AllowUserToManageAccessKeys"`
 	AllowUserToManagePublicKeys requests.Boolean `position:"Query" name:"AllowUserToManagePublicKeys"`
 	AllowUserToManageMFADevices requests.Boolean `position:"Query" name:"AllowUserToManageMFADevices"`
-	EnableSaveMFATicket         requests.Boolean `position:"Query" name:"EnableSaveMFATicket"`
+	LoginSessionDuration        requests.Integer `position:"Query" name:"LoginSessionDuration"`
+	LoginNetworkMasks           string           `position:"Query" name:"LoginNetworkMasks"`
 }
 
 type SetSecurityPreferenceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	SecurityPreference struct {
-		LoginProfilePreference struct {
-			EnableSaveMFATicket       bool   `json:"EnableSaveMFATicket" xml:"EnableSaveMFATicket"`
-			AllowUserToChangePassword bool   `json:"AllowUserToChangePassword" xml:"AllowUserToChangePassword"`
-			LoginSessionDuration      int    `json:"LoginSessionDuration" xml:"LoginSessionDuration"`
-			LoginNetworkMasks         string `json:"LoginNetworkMasks" xml:"LoginNetworkMasks"`
-		} `json:"LoginProfilePreference" xml:"LoginProfilePreference"`
-		AccessKeyPreference struct {
-			AllowUserToManageAccessKeys bool `json:"AllowUserToManageAccessKeys" xml:"AllowUserToManageAccessKeys"`
-		} `json:"AccessKeyPreference" xml:"AccessKeyPreference"`
-		PublicKeyPreference struct {
-			AllowUserToManagePublicKeys bool `json:"AllowUserToManagePublicKeys" xml:"AllowUserToManagePublicKeys"`
-		} `json:"PublicKeyPreference" xml:"PublicKeyPreference"`
-		MFAPreference struct {
-			AllowUserToManageMFADevices bool `json:"AllowUserToManageMFADevices" xml:"AllowUserToManageMFADevices"`
-		} `json:"MFAPreference" xml:"MFAPreference"`
-	} `json:"SecurityPreference" xml:"SecurityPreference"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
 func CreateSetSecurityPreferenceRequest() (request *SetSecurityPreferenceRequest) {

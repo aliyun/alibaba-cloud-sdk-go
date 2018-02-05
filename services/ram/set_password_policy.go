@@ -67,31 +67,21 @@ func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRe
 
 type SetPasswordPolicyRequest struct {
 	*requests.RpcRequest
-	MaxLoginAttemps            requests.Integer `position:"Query" name:"MaxLoginAttemps"`
-	RequireUppercaseCharacters requests.Boolean `position:"Query" name:"RequireUppercaseCharacters"`
 	MinimumPasswordLength      requests.Integer `position:"Query" name:"MinimumPasswordLength"`
-	MaxPasswordAge             requests.Integer `position:"Query" name:"MaxPasswordAge"`
-	RequireNumbers             requests.Boolean `position:"Query" name:"RequireNumbers"`
 	RequireLowercaseCharacters requests.Boolean `position:"Query" name:"RequireLowercaseCharacters"`
-	PasswordReusePrevention    requests.Integer `position:"Query" name:"PasswordReusePrevention"`
-	HardExpiry                 requests.Boolean `position:"Query" name:"HardExpiry"`
+	RequireUppercaseCharacters requests.Boolean `position:"Query" name:"RequireUppercaseCharacters"`
+	RequireNumbers             requests.Boolean `position:"Query" name:"RequireNumbers"`
 	RequireSymbols             requests.Boolean `position:"Query" name:"RequireSymbols"`
+	HardExpiry                 requests.Boolean `position:"Query" name:"HardExpiry"`
+	MaxPasswordAge             requests.Integer `position:"Query" name:"MaxPasswordAge"`
+	PasswordReusePrevention    requests.Integer `position:"Query" name:"PasswordReusePrevention"`
+	MaxLoginAttemps            requests.Integer `position:"Query" name:"MaxLoginAttemps"`
 }
 
 type SetPasswordPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	PasswordPolicy struct {
-		MinimumPasswordLength      int  `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
-		RequireLowercaseCharacters bool `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
-		RequireUppercaseCharacters bool `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
-		RequireNumbers             bool `json:"RequireNumbers" xml:"RequireNumbers"`
-		RequireSymbols             bool `json:"RequireSymbols" xml:"RequireSymbols"`
-		HardExpiry                 bool `json:"HardExpiry" xml:"HardExpiry"`
-		MaxPasswordAge             int  `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
-		PasswordReusePrevention    int  `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
-		MaxLoginAttemps            int  `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
-	} `json:"PasswordPolicy" xml:"PasswordPolicy"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
 func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {

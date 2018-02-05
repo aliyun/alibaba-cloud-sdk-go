@@ -67,10 +67,10 @@ func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTa
 
 type DeleteScheduledTaskRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteScheduledTaskResponse struct {
@@ -82,7 +82,7 @@ func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	request = &DeleteScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "", "")
 	return
 }
 

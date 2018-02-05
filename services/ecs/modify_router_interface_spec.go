@@ -67,14 +67,14 @@ func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRoute
 
 type ModifyRouterInterfaceSpecRequest struct {
 	*requests.RpcRequest
-	Spec                 string           `position:"Query" name:"Spec"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Spec                 string           `position:"Query" name:"Spec"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type ModifyRouterInterfaceSpecResponse struct {
@@ -87,7 +87,7 @@ func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpe
 	request = &ModifyRouterInterfaceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "", "")
 	return
 }
 

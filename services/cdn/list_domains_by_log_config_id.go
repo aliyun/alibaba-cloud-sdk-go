@@ -67,18 +67,12 @@ func (client *Client) ListDomainsByLogConfigIdWithCallback(request *ListDomainsB
 
 type ListDomainsByLogConfigIdRequest struct {
 	*requests.RpcRequest
-	ConfigId      string           `position:"Query" name:"ConfigId"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type ListDomainsByLogConfigIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Domains   struct {
-		Domain []string `json:"Domain" xml:"Domain"`
-	} `json:"Domains" xml:"Domains"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Domains   Domains `json:"Domains" xml:"Domains"`
 }
 
 func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdRequest) {

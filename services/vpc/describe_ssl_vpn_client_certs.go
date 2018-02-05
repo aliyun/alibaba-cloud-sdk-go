@@ -67,40 +67,30 @@ func (client *Client) DescribeSslVpnClientCertsWithCallback(request *DescribeSsl
 
 type DescribeSslVpnClientCertsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeSslVpnClientCertsResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber           int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
-	SslVpnClientCertKeys struct {
-		SslVpnClientCertKey []struct {
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			SslVpnClientCertId string `json:"SslVpnClientCertId" xml:"SslVpnClientCertId"`
-			Name               string `json:"Name" xml:"Name"`
-			SslVpnServerId     string `json:"SslVpnServerId" xml:"SslVpnServerId"`
-			CreateTime         int    `json:"CreateTime" xml:"CreateTime"`
-			EndTime            int    `json:"EndTime" xml:"EndTime"`
-			Status             string `json:"Status" xml:"Status"`
-		} `json:"SslVpnClientCertKey" xml:"SslVpnClientCertKey"`
-	} `json:"SslVpnClientCertKeys" xml:"SslVpnClientCertKeys"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	SslVpnClientCertKeys SslVpnClientCertKeys `json:"SslVpnClientCertKeys" xml:"SslVpnClientCertKeys"`
 }
 
 func CreateDescribeSslVpnClientCertsRequest() (request *DescribeSslVpnClientCertsRequest) {
 	request = &DescribeSslVpnClientCertsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnClientCerts", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSslVpnClientCerts", "", "")
 	return
 }
 

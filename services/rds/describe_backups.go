@@ -67,18 +67,18 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	BackupStatus         string           `position:"Query" name:"BackupStatus"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackupLocation       string           `position:"Query" name:"BackupLocation"`
-	BackupId             string           `position:"Query" name:"BackupId"`
-	BackupMode           string           `position:"Query" name:"BackupMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BackupId             string           `position:"Query" name:"BackupId"`
+	BackupLocation       string           `position:"Query" name:"BackupLocation"`
+	BackupStatus         string           `position:"Query" name:"BackupStatus"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -89,35 +89,14 @@ type DescribeBackupsResponse struct {
 	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  string `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalBackupSize  int    `json:"TotalBackupSize" xml:"TotalBackupSize"`
-	Items            struct {
-		Backup []struct {
-			BackupId                  string `json:"BackupId" xml:"BackupId"`
-			DBInstanceId              string `json:"DBInstanceId" xml:"DBInstanceId"`
-			BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
-			BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
-			BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
-			BackupType                string `json:"BackupType" xml:"BackupType"`
-			BackupMode                string `json:"BackupMode" xml:"BackupMode"`
-			BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
-			BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-			BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
-			BackupLocation            string `json:"BackupLocation" xml:"BackupLocation"`
-			BackupExtractionStatus    string `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
-			BackupScale               string `json:"BackupScale" xml:"BackupScale"`
-			BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
-			TotalBackupSize           int    `json:"TotalBackupSize" xml:"TotalBackupSize"`
-			BackupSize                int    `json:"BackupSize" xml:"BackupSize"`
-			HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
-			StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
-		} `json:"Backup" xml:"Backup"`
-	} `json:"Items" xml:"Items"`
+	Items            Items  `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "", "")
 	return
 }
 

@@ -67,21 +67,15 @@ func (client *Client) CreatePolicyWithCallback(request *CreatePolicyRequest, cal
 
 type CreatePolicyRequest struct {
 	*requests.RpcRequest
+	PolicyName     string `position:"Query" name:"PolicyName"`
 	Description    string `position:"Query" name:"Description"`
 	PolicyDocument string `position:"Query" name:"PolicyDocument"`
-	PolicyName     string `position:"Query" name:"PolicyName"`
 }
 
 type CreatePolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Policy    struct {
-		PolicyName     string `json:"PolicyName" xml:"PolicyName"`
-		PolicyType     string `json:"PolicyType" xml:"PolicyType"`
-		Description    string `json:"Description" xml:"Description"`
-		DefaultVersion string `json:"DefaultVersion" xml:"DefaultVersion"`
-		CreateDate     string `json:"CreateDate" xml:"CreateDate"`
-	} `json:"Policy" xml:"Policy"`
+	Policy    Policy `json:"Policy" xml:"Policy"`
 }
 
 func CreateCreatePolicyRequest() (request *CreatePolicyRequest) {

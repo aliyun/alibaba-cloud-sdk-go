@@ -67,13 +67,13 @@ func (client *Client) DeleteServerCertificateWithCallback(request *DeleteServerC
 
 type DeleteServerCertificateRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DeleteServerCertificateResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteServerCertificateRequest() (request *DeleteServerCertificateReq
 	request = &DeleteServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteServerCertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteServerCertificate", "", "")
 	return
 }
 

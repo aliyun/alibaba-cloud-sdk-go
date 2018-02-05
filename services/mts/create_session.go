@@ -67,13 +67,13 @@ func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, c
 
 type CreateSessionRequest struct {
 	*requests.RpcRequest
-	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	EndUserId            string           `position:"Query" name:"EndUserId"`
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndUserId            string           `position:"Query" name:"EndUserId"`
+	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 }
 
 type CreateSessionResponse struct {
@@ -87,7 +87,7 @@ func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	request = &CreateSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "", "")
 	return
 }
 

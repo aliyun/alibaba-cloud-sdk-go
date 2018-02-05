@@ -67,21 +67,21 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
-	Region          string           `position:"Query" name:"Region"`
-	CheckUrl        string           `position:"Query" name:"CheckUrl"`
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	Scope           string           `position:"Query" name:"Scope"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	CdnType         string           `position:"Query" name:"CdnType"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceType      string           `position:"Query" name:"SourceType"`
 	Sources         string           `position:"Query" name:"Sources"`
 	SourcePort      requests.Integer `position:"Query" name:"SourcePort"`
-	Priorities      string           `position:"Query" name:"Priorities"`
-	DomainName      string           `position:"Query" name:"DomainName"`
+	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	Region          string           `position:"Query" name:"Region"`
 	LiveType        string           `position:"Query" name:"LiveType"`
-	CdnType         string           `position:"Query" name:"CdnType"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	SourceType      string           `position:"Query" name:"SourceType"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	Scope           string           `position:"Query" name:"Scope"`
+	Priorities      string           `position:"Query" name:"Priorities"`
 }
 
 type AddCdnDomainResponse struct {

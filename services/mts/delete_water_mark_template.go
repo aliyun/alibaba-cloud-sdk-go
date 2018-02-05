@@ -67,11 +67,11 @@ func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMa
 
 type DeleteWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteWaterMarkTemplateResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateReq
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "", "")
 	return
 }
 

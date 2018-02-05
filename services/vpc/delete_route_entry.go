@@ -67,14 +67,14 @@ func (client *Client) DeleteRouteEntryWithCallback(request *DeleteRouteEntryRequ
 
 type DeleteRouteEntryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	NextHopList          *[]DeleteRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
-	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
 	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	NextHopList          *[]DeleteRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
 }
 
 type DeleteRouteEntryNextHopList struct {
@@ -91,7 +91,7 @@ func CreateDeleteRouteEntryRequest() (request *DeleteRouteEntryRequest) {
 	request = &DeleteRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteRouteEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteRouteEntry", "", "")
 	return
 }
 

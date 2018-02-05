@@ -72,21 +72,15 @@ type DescribeDiagnosticReportListRequest struct {
 
 type DescribeDiagnosticReportListResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	ReportList []struct {
-		DiagnosticTime string `json:"DiagnosticTime" xml:"DiagnosticTime"`
-		Score          int    `json:"Score" xml:"Score"`
-		StartTime      string `json:"StartTime" xml:"StartTime"`
-		EndTime        string `json:"EndTime" xml:"EndTime"`
-		DownloadURL    string `json:"DownloadURL" xml:"DownloadURL"`
-	} `json:"ReportList" xml:"ReportList"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	ReportList []Report `json:"ReportList" xml:"ReportList"`
 }
 
 func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticReportListRequest) {
 	request = &DescribeDiagnosticReportListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDiagnosticReportList", "", "")
 	return
 }
 

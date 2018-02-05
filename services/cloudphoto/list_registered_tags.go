@@ -73,24 +73,18 @@ type ListRegisteredTagsRequest struct {
 
 type ListRegisteredTagsResponse struct {
 	*responses.BaseResponse
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Action         string `json:"Action" xml:"Action"`
-	RegisteredTags []struct {
-		TagKey    string `json:"TagKey" xml:"TagKey"`
-		TagValues []struct {
-			Lang string `json:"Lang" xml:"Lang"`
-			Text string `json:"Text" xml:"Text"`
-		} `json:"TagValues" xml:"TagValues"`
-	} `json:"RegisteredTags" xml:"RegisteredTags"`
+	Code           string          `json:"Code" xml:"Code"`
+	Message        string          `json:"Message" xml:"Message"`
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Action         string          `json:"Action" xml:"Action"`
+	RegisteredTags []RegisteredTag `json:"RegisteredTags" xml:"RegisteredTags"`
 }
 
 func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
 	request = &ListRegisteredTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListRegisteredTags", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListRegisteredTags", "", "")
 	return
 }
 

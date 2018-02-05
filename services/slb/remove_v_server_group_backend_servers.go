@@ -67,34 +67,28 @@ func (client *Client) RemoveVServerGroupBackendServersWithCallback(request *Remo
 
 type RemoveVServerGroupBackendServersRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
 type RemoveVServerGroupBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
-	BackendServers struct {
-		BackendServer []struct {
-			ServerId string `json:"ServerId" xml:"ServerId"`
-			Port     int    `json:"Port" xml:"Port"`
-			Weight   int    `json:"Weight" xml:"Weight"`
-		} `json:"BackendServer" xml:"BackendServer"`
-	} `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	VServerGroupId string         `json:"VServerGroupId" xml:"VServerGroupId"`
+	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGroupBackendServersRequest) {
 	request = &RemoveVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "", "")
 	return
 }
 

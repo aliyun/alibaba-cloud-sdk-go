@@ -67,9 +67,9 @@ func (client *Client) DescAccountSummary2WithCallback(request *DescAccountSummar
 
 type DescAccountSummary2Request struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 

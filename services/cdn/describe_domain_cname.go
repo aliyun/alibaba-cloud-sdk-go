@@ -67,22 +67,12 @@ func (client *Client) DescribeDomainCnameWithCallback(request *DescribeDomainCna
 
 type DescribeDomainCnameRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainCnameResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	CnameDatas struct {
-		Data []struct {
-			Domain string `json:"Domain" xml:"Domain"`
-			Cname  string `json:"Cname" xml:"Cname"`
-			Status int    `json:"Status" xml:"Status"`
-		} `json:"Data" xml:"Data"`
-	} `json:"CnameDatas" xml:"CnameDatas"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	CnameDatas CnameDatas `json:"CnameDatas" xml:"CnameDatas"`
 }
 
 func CreateDescribeDomainCnameRequest() (request *DescribeDomainCnameRequest) {
