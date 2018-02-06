@@ -67,13 +67,13 @@ func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *Descri
 
 type DescribeSecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Direction            string           `position:"Query" name:"Direction"`
 	NicType              string           `position:"Query" name:"NicType"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Direction            string           `position:"Query" name:"Direction"`
 }
 
 type DescribeSecurityGroupAttributeResponse struct {

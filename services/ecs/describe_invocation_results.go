@@ -67,16 +67,16 @@ func (client *Client) DescribeInvocationResultsWithCallback(request *DescribeInv
 
 type DescribeInvocationResultsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InvokeId             string           `position:"Query" name:"InvokeId"`
-	InvokeRecordStatus   string           `position:"Query" name:"InvokeRecordStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	CommandId            string           `position:"Query" name:"CommandId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	InvokeRecordStatus   string           `position:"Query" name:"InvokeRecordStatus"`
 }
 
 type DescribeInvocationResultsResponse struct {

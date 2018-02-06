@@ -67,12 +67,12 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
 }
 
 type RebootInstanceResponse struct {

@@ -67,24 +67,24 @@ func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGro
 
 type RevokeSecurityGroupRequest struct {
 	*requests.RpcRequest
-	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
-	PortRange               string           `position:"Query" name:"PortRange"`
-	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description             string           `position:"Query" name:"Description"`
-	Priority                string           `position:"Query" name:"Priority"`
+	NicType                 string           `position:"Query" name:"NicType"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
+	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	SecurityGroupId         string           `position:"Query" name:"SecurityGroupId"`
-	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	IpProtocol              string           `position:"Query" name:"IpProtocol"`
-	SourceGroupId           string           `position:"Query" name:"SourceGroupId"`
-	NicType                 string           `position:"Query" name:"NicType"`
+	Description             string           `position:"Query" name:"Description"`
+	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
+	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
 	Policy                  string           `position:"Query" name:"Policy"`
+	PortRange               string           `position:"Query" name:"PortRange"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpProtocol              string           `position:"Query" name:"IpProtocol"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	SourceCidrIp            string           `position:"Query" name:"SourceCidrIp"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	Priority                string           `position:"Query" name:"Priority"`
+	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
+	SourceGroupId           string           `position:"Query" name:"SourceGroupId"`
 }
 
 type RevokeSecurityGroupResponse struct {

@@ -1,3 +1,7 @@
+2018-02-06 Version: 0.11.3
+1, ModifyInstanceChargeType add instanceChargeType param, support prepay instance to postpay instance.
+2, ModifyPrepayInstanceSpec add operatorType param, support downgrade prepay ecs.
+
 2018-02-02 Version: 0.11.2
 1, this version is new of captcha management and nvc analyze
 

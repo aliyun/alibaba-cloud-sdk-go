@@ -67,11 +67,11 @@ func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, c
 
 type DeleteCommandRequest struct {
 	*requests.RpcRequest
-	CommandId            string           `position:"Query" name:"CommandId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteCommandResponse struct {

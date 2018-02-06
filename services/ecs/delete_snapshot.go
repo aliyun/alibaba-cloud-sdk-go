@@ -67,11 +67,11 @@ func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest,
 
 type DeleteSnapshotRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	Force                requests.Boolean `position:"Query" name:"Force"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Force                requests.Boolean `position:"Query" name:"Force"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

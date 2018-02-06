@@ -67,13 +67,13 @@ func (client *Client) DescribeClassicLinkInstancesWithCallback(request *Describe
 
 type DescribeClassicLinkInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize             string           `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 type DescribeClassicLinkInstancesResponse struct {
