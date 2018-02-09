@@ -79,10 +79,10 @@ type QueryInvalidAddressRequest struct {
 
 type QueryInvalidAddressResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	NextStart  int    `json:"NextStart" xml:"NextStart"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                    `json:"RequestId" xml:"RequestId"`
+	NextStart  int                       `json:"NextStart" xml:"NextStart"`
+	TotalCount int                       `json:"TotalCount" xml:"TotalCount"`
+	Data       DataInQueryInvalidAddress `json:"data" xml:"data"`
 }
 
 func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {

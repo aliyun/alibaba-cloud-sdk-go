@@ -81,11 +81,11 @@ type DescribeImportsForSQLServerRequest struct {
 
 type DescribeImportsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCounts int    `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    int    `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
-	Items             Items  `json:"Items" xml:"Items"`
+	RequestId         string                             `json:"RequestId" xml:"RequestId"`
+	TotalRecordCounts int                                `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+	PageNumber        int                                `json:"PageNumber" xml:"PageNumber"`
+	SQLItemsCounts    int                                `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
+	Items             ItemsInDescribeImportsForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {

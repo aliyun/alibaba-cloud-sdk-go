@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DnsList struct {
-	Dns []string `json:"DnsList" xml:"DnsList"`
+	Dns []string `json:"Dns" xml:"Dns"`
 }

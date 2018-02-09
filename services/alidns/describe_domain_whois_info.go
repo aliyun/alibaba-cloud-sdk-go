@@ -75,14 +75,14 @@ type DescribeDomainWhoisInfoRequest struct {
 
 type DescribeDomainWhoisInfoResponse struct {
 	*responses.BaseResponse
-	RequestId        string     `json:"RequestId" xml:"RequestId"`
-	RegistrantName   string     `json:"RegistrantName" xml:"RegistrantName"`
-	RegistrantEmail  string     `json:"RegistrantEmail" xml:"RegistrantEmail"`
-	Registrar        string     `json:"Registrar" xml:"Registrar"`
-	RegistrationDate string     `json:"RegistrationDate" xml:"RegistrationDate"`
-	ExpirationDate   string     `json:"ExpirationDate" xml:"ExpirationDate"`
-	StatusList       StatusList `json:"StatusList" xml:"StatusList"`
-	DnsServers       DnsServers `json:"DnsServers" xml:"DnsServers"`
+	RequestId        string                              `json:"RequestId" xml:"RequestId"`
+	RegistrantName   string                              `json:"RegistrantName" xml:"RegistrantName"`
+	RegistrantEmail  string                              `json:"RegistrantEmail" xml:"RegistrantEmail"`
+	Registrar        string                              `json:"Registrar" xml:"Registrar"`
+	RegistrationDate string                              `json:"RegistrationDate" xml:"RegistrationDate"`
+	ExpirationDate   string                              `json:"ExpirationDate" xml:"ExpirationDate"`
+	StatusList       StatusList                          `json:"StatusList" xml:"StatusList"`
+	DnsServers       DnsServersInDescribeDomainWhoisInfo `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {

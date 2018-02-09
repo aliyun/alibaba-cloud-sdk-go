@@ -75,11 +75,11 @@ type GetFramedPhotoUrlsRequest struct {
 
 type GetFramedPhotoUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string  `json:"Code" xml:"Code"`
-	Message   string  `json:"Message" xml:"Message"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Action    string  `json:"Action" xml:"Action"`
-	Results   Results `json:"Results" xml:"Results"`
+	Code      string                      `json:"Code" xml:"Code"`
+	Message   string                      `json:"Message" xml:"Message"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Action    string                      `json:"Action" xml:"Action"`
+	Results   ResultsInGetFramedPhotoUrls `json:"Results" xml:"Results"`
 }
 
 func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {

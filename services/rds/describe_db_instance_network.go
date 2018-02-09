@@ -74,11 +74,11 @@ type DescribeDBInstanceNetworkRequest struct {
 
 type DescribeDBInstanceNetworkResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string   `json:"DBInstanceId" xml:"DBInstanceId"`
-	StartTime    string   `json:"StartTime" xml:"StartTime"`
-	EndTime      string   `json:"EndTime" xml:"EndTime"`
-	Topology     Topology `json:"Topology" xml:"Topology"`
+	RequestId    string                              `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string                              `json:"DBInstanceId" xml:"DBInstanceId"`
+	StartTime    string                              `json:"StartTime" xml:"StartTime"`
+	EndTime      string                              `json:"EndTime" xml:"EndTime"`
+	Topology     TopologyInDescribeDBInstanceNetwork `json:"Topology" xml:"Topology"`
 }
 
 func CreateDescribeDBInstanceNetworkRequest() (request *DescribeDBInstanceNetworkRequest) {

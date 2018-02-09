@@ -76,9 +76,9 @@ type QueryVideoSummaryJobListRequest struct {
 
 type QueryVideoSummaryJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
-	JobList     JobList     `json:"JobList" xml:"JobList"`
+	RequestId   string                                `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryVideoSummaryJobList `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobListInQueryVideoSummaryJobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {

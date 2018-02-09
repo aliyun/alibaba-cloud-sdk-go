@@ -78,11 +78,11 @@ type QueryReceiverDetailRequest struct {
 
 type QueryReceiverDetailResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	NextStart  string `json:"NextStart" xml:"NextStart"`
-	DataSchema string `json:"DataSchema" xml:"DataSchema"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                    `json:"RequestId" xml:"RequestId"`
+	TotalCount int                       `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string                    `json:"NextStart" xml:"NextStart"`
+	DataSchema string                    `json:"DataSchema" xml:"DataSchema"`
+	Data       DataInQueryReceiverDetail `json:"data" xml:"data"`
 }
 
 func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {

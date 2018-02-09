@@ -78,8 +78,8 @@ type DescribeVpcZoneNosRequest struct {
 
 type DescribeVpcZoneNosResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeVpcZoneNos `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {

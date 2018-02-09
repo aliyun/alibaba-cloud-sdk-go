@@ -81,11 +81,11 @@ type DescribeDBInstancesByExpireTimeRequest struct {
 
 type DescribeDBInstancesByExpireTimeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                                    `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                    `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                    `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeDBInstancesByExpireTime `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstancesByExpireTimeRequest) {

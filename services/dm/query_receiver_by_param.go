@@ -78,11 +78,11 @@ type QueryReceiverByParamRequest struct {
 
 type QueryReceiverByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	NextStart  string `json:"NextStart" xml:"NextStart"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                     `json:"RequestId" xml:"RequestId"`
+	TotalCount int                        `json:"TotalCount" xml:"TotalCount"`
+	NextStart  string                     `json:"NextStart" xml:"NextStart"`
+	PageSize   int                        `json:"PageSize" xml:"PageSize"`
+	Data       DataInQueryReceiverByParam `json:"data" xml:"data"`
 }
 
 func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) {

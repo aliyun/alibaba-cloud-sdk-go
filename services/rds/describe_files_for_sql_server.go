@@ -80,12 +80,12 @@ type DescribeFilesForSQLServerRequest struct {
 
 type DescribeFilesForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                           `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string                           `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordCount int                              `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                              `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                              `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeFilesForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeFilesForSQLServerRequest() (request *DescribeFilesForSQLServerRequest) {

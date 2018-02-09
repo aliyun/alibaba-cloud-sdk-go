@@ -76,8 +76,8 @@ type DescribeDomainDownstreamBpsOfEdgeRequest struct {
 
 type DescribeDomainDownstreamBpsOfEdgeResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	BpsDatas  BpsDatas `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string                                      `json:"RequestId" xml:"RequestId"`
+	BpsDatas  BpsDatasInDescribeDomainDownstreamBpsOfEdge `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateDescribeDomainDownstreamBpsOfEdgeRequest() (request *DescribeDomainDownstreamBpsOfEdgeRequest) {

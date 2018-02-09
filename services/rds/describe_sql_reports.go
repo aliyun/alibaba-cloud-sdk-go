@@ -80,11 +80,11 @@ type DescribeSQLReportsRequest struct {
 
 type DescribeSQLReportsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                    `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                       `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                       `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                       `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSQLReports `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {

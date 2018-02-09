@@ -82,13 +82,13 @@ type GetTrackListRequest struct {
 
 type GetTrackListResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	Total                int    `json:"Total" xml:"Total"`
-	PageNo               int    `json:"PageNo" xml:"PageNo"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
-	OffsetCreateTime     string `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
-	OffsetCreateTimeDesc string `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
-	Data                 Data   `json:"data" xml:"data"`
+	RequestId            string             `json:"RequestId" xml:"RequestId"`
+	Total                int                `json:"Total" xml:"Total"`
+	PageNo               int                `json:"PageNo" xml:"PageNo"`
+	PageSize             int                `json:"PageSize" xml:"PageSize"`
+	OffsetCreateTime     string             `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string             `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
+	Data                 DataInGetTrackList `json:"data" xml:"data"`
 }
 
 func CreateGetTrackListRequest() (request *GetTrackListRequest) {

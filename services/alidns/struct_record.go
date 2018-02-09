@@ -20,6 +20,7 @@ type Record struct {
 	Type       string `json:"Type" xml:"Type"`
 	Line       string `json:"Line" xml:"Line"`
 	RR         string `json:"RR" xml:"RR"`
+	Remark     string `json:"Remark" xml:"Remark"`
 	Priority   int    `json:"Priority" xml:"Priority"`
 	RecordId   string `json:"RecordId" xml:"RecordId"`
 	Value      string `json:"Value" xml:"Value"`

@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FrameTags struct {
-	String []string `json:"FrameTags" xml:"FrameTags"`
+	String []string `json:"String" xml:"String"`
 }

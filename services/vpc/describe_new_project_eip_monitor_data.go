@@ -79,8 +79,8 @@ type DescribeNewProjectEipMonitorDataRequest struct {
 
 type DescribeNewProjectEipMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	EipMonitorDatas EipMonitorDatas `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
+	RequestId       string                                            `json:"RequestId" xml:"RequestId"`
+	EipMonitorDatas EipMonitorDatasInDescribeNewProjectEipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
 func CreateDescribeNewProjectEipMonitorDataRequest() (request *DescribeNewProjectEipMonitorDataRequest) {

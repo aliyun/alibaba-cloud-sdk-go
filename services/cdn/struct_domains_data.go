@@ -16,7 +16,7 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainsData struct {
-	Source      string      `json:"Source" xml:"Source"`
-	Domains     Domains     `json:"Domains" xml:"Domains"`
-	DomainInfos DomainInfos `json:"DomainInfos" xml:"DomainInfos"`
+	Source      string                           `json:"Source" xml:"Source"`
+	Domains     DomainsInDescribeDomainsBySource `json:"Domains" xml:"Domains"`
+	DomainInfos DomainInfos                      `json:"DomainInfos" xml:"DomainInfos"`
 }

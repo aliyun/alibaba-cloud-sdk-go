@@ -16,12 +16,12 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Item struct {
-	AutoRenew        string           `json:"AutoRenew" xml:"AutoRenew"`
-	ReportTime       string           `json:"ReportTime" xml:"ReportTime"`
-	RegionId         string           `json:"RegionId" xml:"RegionId"`
-	Duration         int              `json:"Duration" xml:"Duration"`
-	DBInstanceId     string           `json:"DBInstanceId" xml:"DBInstanceId"`
-	Status           string           `json:"Status" xml:"Status"`
-	LatencyTopNItems LatencyTopNItems `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
-	QPSTopNItems     QPSTopNItems     `json:"QPSTopNItems" xml:"QPSTopNItems"`
+	AutoRenew        string                               `json:"AutoRenew" xml:"AutoRenew"`
+	ReportTime       string                               `json:"ReportTime" xml:"ReportTime"`
+	RegionId         string                               `json:"RegionId" xml:"RegionId"`
+	Duration         int                                  `json:"Duration" xml:"Duration"`
+	DBInstanceId     string                               `json:"DBInstanceId" xml:"DBInstanceId"`
+	Status           string                               `json:"Status" xml:"Status"`
+	LatencyTopNItems LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+	QPSTopNItems     QPSTopNItemsInDescribeSQLReports     `json:"QPSTopNItems" xml:"QPSTopNItems"`
 }

@@ -16,8 +16,8 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SecurityPreference struct {
-	PublicKeyPreference    PublicKeyPreference    `json:"PublicKeyPreference" xml:"PublicKeyPreference"`
 	LoginProfilePreference LoginProfilePreference `json:"LoginProfilePreference" xml:"LoginProfilePreference"`
-	AccessKeyPreference    AccessKeyPreference    `json:"AccessKeyPreference" xml:"AccessKeyPreference"`
+	PublicKeyPreference    PublicKeyPreference    `json:"PublicKeyPreference" xml:"PublicKeyPreference"`
 	MFAPreference          MFAPreference          `json:"MFAPreference" xml:"MFAPreference"`
+	AccessKeyPreference    AccessKeyPreference    `json:"AccessKeyPreference" xml:"AccessKeyPreference"`
 }

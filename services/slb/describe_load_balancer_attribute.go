@@ -78,33 +78,33 @@ type DescribeLoadBalancerAttributeRequest struct {
 
 type DescribeLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId           string                   `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ResourceGroupId          string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	LoadBalancerName         string                   `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerStatus       string                   `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	RegionId                 string                   `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias            string                   `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	Address                  string                   `json:"Address" xml:"Address"`
-	AddressType              string                   `json:"AddressType" xml:"AddressType"`
-	VpcId                    string                   `json:"VpcId" xml:"VpcId"`
-	VSwitchId                string                   `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkType              string                   `json:"NetworkType" xml:"NetworkType"`
-	InternetChargeType       string                   `json:"InternetChargeType" xml:"InternetChargeType"`
-	AutoReleaseTime          int                      `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
-	Bandwidth                int                      `json:"Bandwidth" xml:"Bandwidth"`
-	LoadBalancerSpec         string                   `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
-	CreateTime               string                   `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp          int                      `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	EndTime                  string                   `json:"EndTime" xml:"EndTime"`
-	EndTimeStamp             int                      `json:"EndTimeStamp" xml:"EndTimeStamp"`
-	PayType                  string                   `json:"PayType" xml:"PayType"`
-	MasterZoneId             string                   `json:"MasterZoneId" xml:"MasterZoneId"`
-	SlaveZoneId              string                   `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	ListenerPorts            ListenerPorts            `json:"ListenerPorts" xml:"ListenerPorts"`
-	ListenerPortsAndProtocal ListenerPortsAndProtocal `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
-	ListenerPortsAndProtocol ListenerPortsAndProtocol `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
-	BackendServers           BackendServers           `json:"BackendServers" xml:"BackendServers"`
+	RequestId                string                                        `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId           string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId          string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerName         string                                        `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	LoadBalancerStatus       string                                        `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	RegionId                 string                                        `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias            string                                        `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	Address                  string                                        `json:"Address" xml:"Address"`
+	AddressType              string                                        `json:"AddressType" xml:"AddressType"`
+	VpcId                    string                                        `json:"VpcId" xml:"VpcId"`
+	VSwitchId                string                                        `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkType              string                                        `json:"NetworkType" xml:"NetworkType"`
+	InternetChargeType       string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
+	AutoReleaseTime          int                                           `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	Bandwidth                int                                           `json:"Bandwidth" xml:"Bandwidth"`
+	LoadBalancerSpec         string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
+	CreateTime               string                                        `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp          int                                           `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	EndTime                  string                                        `json:"EndTime" xml:"EndTime"`
+	EndTimeStamp             int                                           `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	PayType                  string                                        `json:"PayType" xml:"PayType"`
+	MasterZoneId             string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
+	SlaveZoneId              string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	ListenerPorts            ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
+	ListenerPortsAndProtocal ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
+	ListenerPortsAndProtocol ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
+	BackendServers           BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancerAttributeRequest) {

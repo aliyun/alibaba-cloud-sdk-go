@@ -78,8 +78,8 @@ type DescribeLiveStreamBitRateDataRequest struct {
 
 type DescribeLiveStreamBitRateDataResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	FrameRateAndBitRateInfos FrameRateAndBitRateInfos `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	RequestId                string                                                  `json:"RequestId" xml:"RequestId"`
+	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamBitRateData `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBitRateDataRequest) {

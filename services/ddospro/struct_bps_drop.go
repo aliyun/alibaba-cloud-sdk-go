@@ -16,5 +16,5 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BpsDrop struct {
-	BpsDropItem []string `json:"BpsDrop" xml:"BpsDrop"`
+	BpsDropItem []string `json:"BpsDropItem" xml:"BpsDropItem"`
 }

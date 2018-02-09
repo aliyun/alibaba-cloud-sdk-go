@@ -76,10 +76,10 @@ type DescribeOssDownloadsForSQLServerRequest struct {
 
 type DescribeOssDownloadsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	MigrateIaskId  string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	Items          Items  `json:"Items" xml:"Items"`
+	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceName string                                  `json:"DBInstanceName" xml:"DBInstanceName"`
+	MigrateIaskId  string                                  `json:"MigrateIaskId" xml:"MigrateIaskId"`
+	Items          ItemsInDescribeOssDownloadsForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {

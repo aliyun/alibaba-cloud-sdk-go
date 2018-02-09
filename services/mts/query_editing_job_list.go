@@ -76,9 +76,9 @@ type QueryEditingJobListRequest struct {
 
 type QueryEditingJobListResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	NonExistJobIds NonExistJobIds `json:"NonExistJobIds" xml:"NonExistJobIds"`
-	JobList        JobList        `json:"JobList" xml:"JobList"`
+	RequestId      string                              `json:"RequestId" xml:"RequestId"`
+	NonExistJobIds NonExistJobIdsInQueryEditingJobList `json:"NonExistJobIds" xml:"NonExistJobIds"`
+	JobList        JobListInQueryEditingJobList        `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {

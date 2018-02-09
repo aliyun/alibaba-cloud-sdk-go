@@ -78,15 +78,15 @@ type DescribeExtensiveDomainDataRequest struct {
 
 type DescribeExtensiveDomainDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	ExtensiveDomain string          `json:"ExtensiveDomain" xml:"ExtensiveDomain"`
-	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
-	PageNumber      string          `json:"PageNumber" xml:"PageNumber"`
-	TotalCount      string          `json:"TotalCount" xml:"TotalCount"`
-	PageSize        string          `json:"PageSize" xml:"PageSize"`
-	DataPerInterval DataPerInterval `json:"DataPerInterval" xml:"DataPerInterval"`
+	RequestId       string                                       `json:"RequestId" xml:"RequestId"`
+	ExtensiveDomain string                                       `json:"ExtensiveDomain" xml:"ExtensiveDomain"`
+	DataInterval    string                                       `json:"DataInterval" xml:"DataInterval"`
+	StartTime       string                                       `json:"StartTime" xml:"StartTime"`
+	EndTime         string                                       `json:"EndTime" xml:"EndTime"`
+	PageNumber      string                                       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      string                                       `json:"TotalCount" xml:"TotalCount"`
+	PageSize        string                                       `json:"PageSize" xml:"PageSize"`
+	DataPerInterval DataPerIntervalInDescribeExtensiveDomainData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
 func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomainDataRequest) {

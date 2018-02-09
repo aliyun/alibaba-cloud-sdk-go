@@ -86,9 +86,9 @@ type DescribeRenewalPriceRequest struct {
 
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
-	Rules     Rules     `json:"Rules" xml:"Rules"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo                   `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     RulesInDescribeRenewalPrice `json:"Rules" xml:"Rules"`
 }
 
 func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {

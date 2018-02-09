@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type HttpCodeData struct {
-	UsageDataInDescribeDomainHttpCodeData []UsageDataInDescribeDomainHttpCodeData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDomainHttpCodeData `json:"UsageData" xml:"UsageData"`
 }

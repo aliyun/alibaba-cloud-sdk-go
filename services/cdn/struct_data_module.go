@@ -16,12 +16,18 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataModule struct {
+	AccDomesticValue     string `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	L2Value              string `json:"L2Value" xml:"L2Value"`
+	OverseasL2Value      string `json:"OverseasL2Value" xml:"OverseasL2Value"`
 	DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
 	StaticValue          string `json:"StaticValue" xml:"StaticValue"`
 	TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
 	Value                string `json:"Value" xml:"Value"`
 	StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
 	DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
+	AccValue             string `json:"AccValue" xml:"AccValue"`
+	AccOverseasValue     string `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	DomesticL2Value      string `json:"DomesticL2Value" xml:"DomesticL2Value"`
 	DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
 	OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
 	StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`

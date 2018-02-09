@@ -78,9 +78,9 @@ type DescribePreCheckResultsRequest struct {
 
 type DescribePreCheckResultsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Items        Items  `json:"Items" xml:"Items"`
+	RequestId    string                         `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string                         `json:"DBInstanceId" xml:"DBInstanceId"`
+	Items        ItemsInDescribePreCheckResults `json:"Items" xml:"Items"`
 }
 
 func CreateDescribePreCheckResultsRequest() (request *DescribePreCheckResultsRequest) {

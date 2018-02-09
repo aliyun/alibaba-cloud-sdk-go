@@ -16,8 +16,5 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Detail struct {
-	Email         string `json:"Email" xml:"Email"`
-	Data          string `json:"Data" xml:"Data"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	UtcCreateTime int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
+	Email string `json:"Email" xml:"Email"`
 }

@@ -16,8 +16,8 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CallDetailRecords struct {
-	TotalCount int  `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int  `json:"PageSize" xml:"PageSize"`
-	List       List `json:"List" xml:"List"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	List       ListInListCallDetailRecords `json:"List" xml:"List"`
 }

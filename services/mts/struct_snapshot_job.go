@@ -25,7 +25,7 @@ type SnapshotJob struct {
 	Code             string           `json:"Code" xml:"Code"`
 	UserData         string           `json:"UserData" xml:"UserData"`
 	Count            string           `json:"Count" xml:"Count"`
-	Input            Input            `json:"Input" xml:"Input"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	SnapshotConfig   SnapshotConfig   `json:"SnapshotConfig" xml:"SnapshotConfig"`
+	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	Input            Input            `json:"Input" xml:"Input"`
 }

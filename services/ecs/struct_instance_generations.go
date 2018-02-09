@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceGenerations struct {
-	SupportedInstanceGeneration []string `json:"InstanceGenerations" xml:"InstanceGenerations"`
+	SupportedInstanceGeneration []string `json:"supportedInstanceGeneration" xml:"supportedInstanceGeneration"`
 }

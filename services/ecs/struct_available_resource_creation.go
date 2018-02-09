@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AvailableResourceCreation struct {
-	ResourceTypes []string `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
+	ResourceTypes []string `json:"ResourceTypes" xml:"ResourceTypes"`
 }

@@ -77,11 +77,11 @@ type DescribeLiveStreamFrameAndBitRateByDomainRequest struct {
 
 type DescribeLiveStreamFrameAndBitRateByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	Count                    int                      `json:"Count" xml:"Count"`
-	PageNumber               int                      `json:"pageNumber" xml:"pageNumber"`
-	PageSize                 int                      `json:"pageSize" xml:"pageSize"`
-	FrameRateAndBitRateInfos FrameRateAndBitRateInfos `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	RequestId                string                                                              `json:"RequestId" xml:"RequestId"`
+	Count                    int                                                                 `json:"Count" xml:"Count"`
+	PageNumber               int                                                                 `json:"pageNumber" xml:"pageNumber"`
+	PageSize                 int                                                                 `json:"pageSize" xml:"pageSize"`
+	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamFrameAndBitRateByDomain `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *DescribeLiveStreamFrameAndBitRateByDomainRequest) {

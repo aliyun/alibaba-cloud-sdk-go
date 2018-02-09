@@ -78,11 +78,11 @@ type SearchMediaWorkflowRequest struct {
 
 type SearchMediaWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
-	MediaWorkflowList MediaWorkflowList `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
+	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
+	TotalCount        int                                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int                                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int                                    `json:"PageSize" xml:"PageSize"`
+	MediaWorkflowList MediaWorkflowListInSearchMediaWorkflow `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {

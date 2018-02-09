@@ -84,11 +84,11 @@ type DescribeGlobalAccelerationInstancesRequest struct {
 
 type DescribeGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
-	TotalCount                  int                         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber                  int                         `json:"PageNumber" xml:"PageNumber"`
-	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
-	GlobalAccelerationInstances GlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+	RequestId                   string                                                           `json:"RequestId" xml:"RequestId"`
+	TotalCount                  int                                                              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber                  int                                                              `json:"PageNumber" xml:"PageNumber"`
+	PageSize                    int                                                              `json:"PageSize" xml:"PageSize"`
+	GlobalAccelerationInstances GlobalAccelerationInstancesInDescribeGlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
 func CreateDescribeGlobalAccelerationInstancesRequest() (request *DescribeGlobalAccelerationInstancesRequest) {

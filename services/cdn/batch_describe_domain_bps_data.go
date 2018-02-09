@@ -71,11 +71,11 @@ type BatchDescribeDomainBpsDataRequest struct {
 
 type BatchDescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	BpsDatas   BpsDatas `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId  string                               `json:"RequestId" xml:"RequestId"`
+	PageNumber int                                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                                  `json:"PageSize" xml:"PageSize"`
+	TotalCount int                                  `json:"TotalCount" xml:"TotalCount"`
+	BpsDatas   BpsDatasInBatchDescribeDomainBpsData `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {

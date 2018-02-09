@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type UserCidrs struct {
-	UserCidr []string `json:"UserCidrs" xml:"UserCidrs"`
+	UserCidr []string `json:"UserCidr" xml:"UserCidr"`
 }

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ConfigIds struct {
-	ConfigId []string `json:"ConfigIds" xml:"ConfigIds"`
+	ConfigId []string `json:"ConfigId" xml:"ConfigId"`
 }

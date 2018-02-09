@@ -80,11 +80,11 @@ type DescribeDBInstanceByTagsRequest struct {
 
 type DescribeDBInstanceByTagsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                          `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                             `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                             `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                             `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	Items            ItemsInDescribeDBInstanceByTags `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsRequest) {

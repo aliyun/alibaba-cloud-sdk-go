@@ -76,14 +76,14 @@ type ListMyGroupInstancesRequest struct {
 
 type ListMyGroupInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string    `json:"RequestId" xml:"RequestId"`
-	Success      bool      `json:"Success" xml:"Success"`
-	ErrorCode    int       `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string    `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageNumber   int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int       `json:"PageSize" xml:"PageSize"`
-	Total        int       `json:"Total" xml:"Total"`
-	Resources    Resources `json:"Resources" xml:"Resources"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	Success      bool                            `json:"Success" xml:"Success"`
+	ErrorCode    int                             `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                          `json:"ErrorMessage" xml:"ErrorMessage"`
+	PageNumber   int                             `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                             `json:"PageSize" xml:"PageSize"`
+	Total        int                             `json:"Total" xml:"Total"`
+	Resources    ResourcesInListMyGroupInstances `json:"Resources" xml:"Resources"`
 }
 
 func CreateListMyGroupInstancesRequest() (request *ListMyGroupInstancesRequest) {

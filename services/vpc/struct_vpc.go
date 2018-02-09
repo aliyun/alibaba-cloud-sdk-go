@@ -16,17 +16,17 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Vpc struct {
-	VpcId          string         `json:"VpcId" xml:"VpcId"`
-	RegionId       string         `json:"RegionId" xml:"RegionId"`
-	Status         string         `json:"Status" xml:"Status"`
-	VpcName        string         `json:"VpcName" xml:"VpcName"`
-	CreationTime   string         `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock      string         `json:"CidrBlock" xml:"CidrBlock"`
-	VRouterId      string         `json:"VRouterId" xml:"VRouterId"`
-	Description    string         `json:"Description" xml:"Description"`
-	IsDefault      bool           `json:"IsDefault" xml:"IsDefault"`
-	VSwitchIds     VSwitchIds     `json:"VSwitchIds" xml:"VSwitchIds"`
-	UserCidrs      UserCidrs      `json:"UserCidrs" xml:"UserCidrs"`
-	NatGatewayIds  NatGatewayIds  `json:"NatGatewayIds" xml:"NatGatewayIds"`
-	RouterTableIds RouterTableIds `json:"RouterTableIds" xml:"RouterTableIds"`
+	VpcId          string                   `json:"VpcId" xml:"VpcId"`
+	RegionId       string                   `json:"RegionId" xml:"RegionId"`
+	Status         string                   `json:"Status" xml:"Status"`
+	VpcName        string                   `json:"VpcName" xml:"VpcName"`
+	CreationTime   string                   `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock      string                   `json:"CidrBlock" xml:"CidrBlock"`
+	VRouterId      string                   `json:"VRouterId" xml:"VRouterId"`
+	Description    string                   `json:"Description" xml:"Description"`
+	IsDefault      bool                     `json:"IsDefault" xml:"IsDefault"`
+	VSwitchIds     VSwitchIdsInDescribeVpcs `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs      UserCidrsInDescribeVpcs  `json:"UserCidrs" xml:"UserCidrs"`
+	NatGatewayIds  NatGatewayIds            `json:"NatGatewayIds" xml:"NatGatewayIds"`
+	RouterTableIds RouterTableIds           `json:"RouterTableIds" xml:"RouterTableIds"`
 }

@@ -78,10 +78,10 @@ type DescribeVServerGroupAttributeRequest struct {
 
 type DescribeVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string         `json:"RequestId" xml:"RequestId"`
-	VServerGroupId   string         `json:"VServerGroupId" xml:"VServerGroupId"`
-	VServerGroupName string         `json:"VServerGroupName" xml:"VServerGroupName"`
-	BackendServers   BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId        string                                        `json:"RequestId" xml:"RequestId"`
+	VServerGroupId   string                                        `json:"VServerGroupId" xml:"VServerGroupId"`
+	VServerGroupName string                                        `json:"VServerGroupName" xml:"VServerGroupName"`
+	BackendServers   BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroupAttributeRequest) {

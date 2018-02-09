@@ -72,8 +72,8 @@ type ListPoliciesForRoleRequest struct {
 
 type ListPoliciesForRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Policies  Policies `json:"Policies" xml:"Policies"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Policies  PoliciesInListPoliciesForRole `json:"Policies" xml:"Policies"`
 }
 
 func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {

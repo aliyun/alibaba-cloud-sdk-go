@@ -84,11 +84,11 @@ type DescribeUserDomainsRequest struct {
 
 type DescribeUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
-	Domains    Domains `json:"Domains" xml:"Domains"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	Domains    DomainsInDescribeUserDomains `json:"Domains" xml:"Domains"`
 }
 
 func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {

@@ -76,9 +76,9 @@ type QueryJobListRequest struct {
 
 type QueryJobListResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	NonExistJobIds NonExistJobIds `json:"NonExistJobIds" xml:"NonExistJobIds"`
-	JobList        JobList        `json:"JobList" xml:"JobList"`
+	RequestId      string                       `json:"RequestId" xml:"RequestId"`
+	NonExistJobIds NonExistJobIdsInQueryJobList `json:"NonExistJobIds" xml:"NonExistJobIds"`
+	JobList        JobListInQueryJobList        `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryJobListRequest() (request *QueryJobListRequest) {

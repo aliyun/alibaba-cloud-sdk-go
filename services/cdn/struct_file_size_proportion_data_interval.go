@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FileSizeProportionDataInterval struct {
-	UsageDataInDescribeDomainFileSizeProportionData []UsageDataInDescribeDomainFileSizeProportionData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDomainFileSizeProportionData `json:"UsageData" xml:"UsageData"`
 }

@@ -16,9 +16,9 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Skill struct {
-	SkillGroupId          string               `json:"SkillGroupId" xml:"SkillGroupId"`
-	InstanceId            string               `json:"InstanceId" xml:"InstanceId"`
-	SkillGroupName        string               `json:"SkillGroupName" xml:"SkillGroupName"`
-	SkillGroupDescription string               `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-	OutboundPhoneNumbers  OutboundPhoneNumbers `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
+	SkillGroupName        string                                      `json:"SkillGroupName" xml:"SkillGroupName"`
+	InstanceId            string                                      `json:"InstanceId" xml:"InstanceId"`
+	SkillGroupDescription string                                      `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+	SkillGroupId          string                                      `json:"SkillGroupId" xml:"SkillGroupId"`
+	OutboundPhoneNumbers  OutboundPhoneNumbersInListSkillGroupsOfUser `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
 }

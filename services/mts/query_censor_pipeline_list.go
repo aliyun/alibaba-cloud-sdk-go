@@ -76,9 +76,9 @@ type QueryCensorPipelineListRequest struct {
 
 type QueryCensorPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                                `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIdsInQueryCensorPipelineList  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineListInQueryCensorPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListRequest) {

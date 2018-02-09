@@ -84,12 +84,12 @@ type DescribeAlarmHistoryRequest struct {
 
 type DescribeAlarmHistoryResponse struct {
 	*responses.BaseResponse
-	Success          bool             `json:"Success" xml:"Success"`
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	Total            string           `json:"Total" xml:"Total"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	AlarmHistoryList AlarmHistoryList `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
+	Success          bool                                   `json:"Success" xml:"Success"`
+	Code             string                                 `json:"Code" xml:"Code"`
+	Message          string                                 `json:"Message" xml:"Message"`
+	Total            string                                 `json:"Total" xml:"Total"`
+	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
+	AlarmHistoryList AlarmHistoryListInDescribeAlarmHistory `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
 func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) {

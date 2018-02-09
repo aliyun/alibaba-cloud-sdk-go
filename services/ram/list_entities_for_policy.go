@@ -73,10 +73,10 @@ type ListEntitiesForPolicyRequest struct {
 
 type ListEntitiesForPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Groups    Groups `json:"Groups" xml:"Groups"`
-	Users     Users  `json:"Users" xml:"Users"`
-	Roles     Roles  `json:"Roles" xml:"Roles"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Groups    GroupsInListEntitiesForPolicy `json:"Groups" xml:"Groups"`
+	Users     UsersInListEntitiesForPolicy  `json:"Users" xml:"Users"`
+	Roles     RolesInListEntitiesForPolicy  `json:"Roles" xml:"Roles"`
 }
 
 func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest) {

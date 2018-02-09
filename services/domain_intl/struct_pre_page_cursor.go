@@ -16,14 +16,17 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PrePageCursor struct {
-	TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-	TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-	TaskType     string `json:"TaskType" xml:"TaskType"`
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-	UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-	TryCount     int    `json:"TryCount" xml:"TryCount"`
-	ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
+	Clientip       string `json:"Clientip" xml:"Clientip"`
+	TaskDetailNo   string `json:"TaskDetailNo" xml:"TaskDetailNo"`
+	UpdateTime     string `json:"UpdateTime" xml:"UpdateTime"`
+	TaskType       string `json:"TaskType" xml:"TaskType"`
+	TaskNum        int    `json:"TaskNum" xml:"TaskNum"`
+	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
+	TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
+	CreateTimeLong int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
+	ErrorMsg       string `json:"ErrorMsg" xml:"ErrorMsg"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+	TaskNo         string `json:"TaskNo" xml:"TaskNo"`
+	TryCount       int    `json:"TryCount" xml:"TryCount"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
 }

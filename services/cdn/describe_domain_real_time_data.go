@@ -77,12 +77,12 @@ type DescribeDomainRealTimeDataRequest struct {
 
 type DescribeDomainRealTimeDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	DomainName      string          `json:"DomainName" xml:"DomainName"`
-	Field           string          `json:"Field" xml:"Field"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
-	DataPerInterval DataPerInterval `json:"DataPerInterval" xml:"DataPerInterval"`
+	RequestId       string                                      `json:"RequestId" xml:"RequestId"`
+	DomainName      string                                      `json:"DomainName" xml:"DomainName"`
+	Field           string                                      `json:"Field" xml:"Field"`
+	StartTime       string                                      `json:"StartTime" xml:"StartTime"`
+	EndTime         string                                      `json:"EndTime" xml:"EndTime"`
+	DataPerInterval DataPerIntervalInDescribeDomainRealTimeData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
 func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeDataRequest) {

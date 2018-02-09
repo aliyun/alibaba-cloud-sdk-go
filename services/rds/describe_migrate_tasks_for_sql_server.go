@@ -79,15 +79,15 @@ type DescribeMigrateTasksForSQLServerRequest struct {
 
 type DescribeMigrateTasksForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID     string `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName   string `json:"DBInstanceName" xml:"DBInstanceName"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceID     string                                  `json:"DBInstanceID" xml:"DBInstanceID"`
+	DBInstanceName   string                                  `json:"DBInstanceName" xml:"DBInstanceName"`
+	StartTime        string                                  `json:"StartTime" xml:"StartTime"`
+	EndTime          string                                  `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeMigrateTasksForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeMigrateTasksForSQLServerRequest() (request *DescribeMigrateTasksForSQLServerRequest) {

@@ -16,13 +16,13 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Properties struct {
-	Width       string      `json:"Width" xml:"Width"`
-	Height      string      `json:"Height" xml:"Height"`
-	Bitrate     string      `json:"Bitrate" xml:"Bitrate"`
-	Duration    string      `json:"Duration" xml:"Duration"`
 	Fps         string      `json:"Fps" xml:"Fps"`
+	Height      string      `json:"Height" xml:"Height"`
+	Duration    string      `json:"Duration" xml:"Duration"`
+	Width       string      `json:"Width" xml:"Width"`
 	FileSize    string      `json:"FileSize" xml:"FileSize"`
 	FileFormat  string      `json:"FileFormat" xml:"FileFormat"`
+	Bitrate     string      `json:"Bitrate" xml:"Bitrate"`
 	Streams     Streams     `json:"Streams" xml:"Streams"`
 	Format      Format      `json:"Format" xml:"Format"`
 	SourceLogos SourceLogos `json:"SourceLogos" xml:"SourceLogos"`

@@ -79,9 +79,9 @@ type ListMediaRequest struct {
 
 type ListMediaResponse struct {
 	*responses.BaseResponse
-	RequestId     string    `json:"RequestId" xml:"RequestId"`
-	NextPageToken string    `json:"NextPageToken" xml:"NextPageToken"`
-	MediaList     MediaList `json:"MediaList" xml:"MediaList"`
+	RequestId     string               `json:"RequestId" xml:"RequestId"`
+	NextPageToken string               `json:"NextPageToken" xml:"NextPageToken"`
+	MediaList     MediaListInListMedia `json:"MediaList" xml:"MediaList"`
 }
 
 func CreateListMediaRequest() (request *ListMediaRequest) {

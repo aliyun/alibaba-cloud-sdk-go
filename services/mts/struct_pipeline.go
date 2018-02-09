@@ -16,12 +16,10 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Pipeline struct {
-	Speed        string       `json:"Speed" xml:"Speed"`
-	SpeedLevel   int          `json:"SpeedLevel" xml:"SpeedLevel"`
-	Name         string       `json:"Name" xml:"Name"`
-	State        string       `json:"State" xml:"State"`
-	Priority     string       `json:"Priority" xml:"Priority"`
 	Id           string       `json:"Id" xml:"Id"`
 	Role         string       `json:"Role" xml:"Role"`
+	Name         string       `json:"Name" xml:"Name"`
+	State        string       `json:"State" xml:"State"`
+	Priority     int          `json:"Priority" xml:"Priority"`
 	NotifyConfig NotifyConfig `json:"NotifyConfig" xml:"NotifyConfig"`
 }

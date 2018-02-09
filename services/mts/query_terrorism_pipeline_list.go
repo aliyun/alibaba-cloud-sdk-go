@@ -76,9 +76,9 @@ type QueryTerrorismPipelineListRequest struct {
 
 type QueryTerrorismPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                                   `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIdsInQueryTerrorismPipelineList  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineListInQueryTerrorismPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineListRequest) {

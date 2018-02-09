@@ -78,10 +78,10 @@ type QuerySignByParamRequest struct {
 
 type QuerySignByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	Data       DataInQuerySignByParam `json:"data" xml:"data"`
 }
 
 func CreateQuerySignByParamRequest() (request *QuerySignByParamRequest) {

@@ -82,12 +82,12 @@ type DescribeSlowLogRecordsRequest struct {
 
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	Engine           string                        `json:"Engine" xml:"Engine"`
+	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsRequest) {

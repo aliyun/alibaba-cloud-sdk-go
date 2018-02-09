@@ -16,6 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Rack struct {
-	RackId string `json:"RackId" xml:"RackId"`
-	Hosts  Hosts  `json:"Hosts" xml:"Hosts"`
+	RackId string                               `json:"RackId" xml:"RackId"`
+	Hosts  HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
 }

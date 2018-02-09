@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AvailableInstanceTypes struct {
-	InstanceTypes []string `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
+	InstanceTypes []string `json:"InstanceTypes" xml:"InstanceTypes"`
 }

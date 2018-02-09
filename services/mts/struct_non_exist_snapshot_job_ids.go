@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NonExistSnapshotJobIds struct {
-	String []string `json:"NonExistSnapshotJobIds" xml:"NonExistSnapshotJobIds"`
+	String []string `json:"String" xml:"String"`
 }

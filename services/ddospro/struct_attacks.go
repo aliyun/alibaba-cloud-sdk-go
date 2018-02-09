@@ -16,5 +16,5 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Attacks struct {
-	Attack []string `json:"Attacks" xml:"Attacks"`
+	Attack []string `json:"Attack" xml:"Attack"`
 }

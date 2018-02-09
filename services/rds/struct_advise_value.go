@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AdviseValue struct {
-	String []string `json:"AdviseValue" xml:"AdviseValue"`
+	String []string `json:"String" xml:"String"`
 }

@@ -79,9 +79,9 @@ type SetBackendServersRequest struct {
 
 type SetBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId string         `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                            `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId string                            `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	BackendServers BackendServersInSetBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateSetBackendServersRequest() (request *SetBackendServersRequest) {

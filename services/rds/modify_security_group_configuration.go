@@ -76,9 +76,9 @@ type ModifySecurityGroupConfigurationRequest struct {
 
 type ModifySecurityGroupConfigurationResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	Items          Items  `json:"Items" xml:"Items"`
+	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceName string                                  `json:"DBInstanceName" xml:"DBInstanceName"`
+	Items          ItemsInModifySecurityGroupConfiguration `json:"Items" xml:"Items"`
 }
 
 func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGroupConfigurationRequest) {

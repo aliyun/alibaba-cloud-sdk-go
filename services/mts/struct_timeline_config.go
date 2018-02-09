@@ -16,6 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TimelineConfig struct {
-	TimelineConfigVideo TimelineConfigVideo `json:"TimelineConfigVideo" xml:"TimelineConfigVideo"`
 	TimelineConfigAudio TimelineConfigAudio `json:"TimelineConfigAudio" xml:"TimelineConfigAudio"`
+	TimelineConfigVideo TimelineConfigVideo `json:"TimelineConfigVideo" xml:"TimelineConfigVideo"`
 }

@@ -78,12 +78,12 @@ type DescribeOptimizeAdviceOnStorageRequest struct {
 
 type DescribeOptimizeAdviceOnStorageResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             Items  `json:"Items" xml:"Items"`
+	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string                                 `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordsCount int                                    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int                                    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int                                    `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             ItemsInDescribeOptimizeAdviceOnStorage `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {

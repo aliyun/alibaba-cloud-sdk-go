@@ -74,8 +74,8 @@ type QueryTagsRequest struct {
 
 type QueryTagsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	TagInfos  TagInfos `json:"TagInfos" xml:"TagInfos"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	TagInfos  TagInfosInQueryTags `json:"TagInfos" xml:"TagInfos"`
 }
 
 func CreateQueryTagsRequest() (request *QueryTagsRequest) {

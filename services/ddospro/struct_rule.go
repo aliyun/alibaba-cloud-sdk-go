@@ -16,8 +16,8 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Rule struct {
-	Ip            string        `json:"Ip" xml:"Ip"`
-	Line          string        `json:"Line" xml:"Line"`
-	RealServers   RealServers   `json:"RealServers" xml:"RealServers"`
-	ProxyTypeList ProxyTypeList `json:"ProxyTypeList" xml:"ProxyTypeList"`
+	Ip            string                              `json:"Ip" xml:"Ip"`
+	Line          string                              `json:"Line" xml:"Line"`
+	RealServers   RealServersInDescribeDomainConfig   `json:"RealServers" xml:"RealServers"`
+	ProxyTypeList ProxyTypeListInDescribeDomainConfig `json:"ProxyTypeList" xml:"ProxyTypeList"`
 }

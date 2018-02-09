@@ -78,10 +78,10 @@ type DescribeMasterSlaveServerGroupAttributeRequest struct {
 
 type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                    `json:"RequestId" xml:"RequestId"`
-	MasterSlaveServerGroupId   string                    `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-	MasterSlaveServerGroupName string                    `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
-	MasterSlaveBackendServers  MasterSlaveBackendServers `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
+	RequestId                  string                                                             `json:"RequestId" xml:"RequestId"`
+	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	MasterSlaveServerGroupName string                                                             `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
+	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
 func CreateDescribeMasterSlaveServerGroupAttributeRequest() (request *DescribeMasterSlaveServerGroupAttributeRequest) {

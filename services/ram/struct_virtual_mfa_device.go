@@ -16,7 +16,9 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VirtualMFADevice struct {
+	ActivateDate     string `json:"ActivateDate" xml:"ActivateDate"`
 	SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-	Base32StringSeed string `json:"Base32StringSeed" xml:"Base32StringSeed"`
 	QRCodePNG        string `json:"QRCodePNG" xml:"QRCodePNG"`
+	Base32StringSeed string `json:"Base32StringSeed" xml:"Base32StringSeed"`
+	User             User   `json:"User" xml:"User"`
 }

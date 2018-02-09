@@ -82,11 +82,11 @@ type DescribeRouterInterfacesFilter struct {
 
 type DescribeRouterInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
-	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
-	RouterInterfaceSet RouterInterfaceSet `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
+	RequestId          string                                       `json:"RequestId" xml:"RequestId"`
+	PageNumber         int                                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize           int                                          `json:"PageSize" xml:"PageSize"`
+	TotalCount         int                                          `json:"TotalCount" xml:"TotalCount"`
+	RouterInterfaceSet RouterInterfaceSetInDescribeRouterInterfaces `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
 }
 
 func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesRequest) {

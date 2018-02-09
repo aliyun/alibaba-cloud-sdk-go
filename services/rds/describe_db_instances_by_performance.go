@@ -93,11 +93,11 @@ type DescribeDBInstancesByPerformanceRequest struct {
 
 type DescribeDBInstancesByPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeDBInstancesByPerformance `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesByPerformanceRequest() (request *DescribeDBInstancesByPerformanceRequest) {

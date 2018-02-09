@@ -78,8 +78,8 @@ type DescribeVServerGroupsRequest struct {
 
 type DescribeVServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	VServerGroups VServerGroups `json:"VServerGroups" xml:"VServerGroups"`
+	RequestId     string                               `json:"RequestId" xml:"RequestId"`
+	VServerGroups VServerGroupsInDescribeVServerGroups `json:"VServerGroups" xml:"VServerGroups"`
 }
 
 func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest) {

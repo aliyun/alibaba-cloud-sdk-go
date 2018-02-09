@@ -75,8 +75,8 @@ type DescribeDBInstancesAsCsvRequest struct {
 
 type DescribeDBInstancesAsCsvResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeDBInstancesAsCsv `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvRequest) {

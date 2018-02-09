@@ -71,8 +71,8 @@ type DescribeDomainRealTimeBpsDataRequest struct {
 
 type DescribeDomainRealTimeBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	Data      DataInDescribeDomainRealTimeBpsData `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTimeBpsDataRequest) {

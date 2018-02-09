@@ -16,15 +16,15 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type JobInQueryJobList struct {
-	JobId            string           `json:"JobId" xml:"JobId"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	Percent          int              `json:"Percent" xml:"Percent"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	FinishTime       string           `json:"FinishTime" xml:"FinishTime"`
-	Input            Input            `json:"Input" xml:"Input"`
-	Output           Output           `json:"Output" xml:"Output"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	JobId            string               `json:"JobId" xml:"JobId"`
+	State            string               `json:"State" xml:"State"`
+	Code             string               `json:"Code" xml:"Code"`
+	Message          string               `json:"Message" xml:"Message"`
+	Percent          int                  `json:"Percent" xml:"Percent"`
+	PipelineId       string               `json:"PipelineId" xml:"PipelineId"`
+	CreationTime     string               `json:"CreationTime" xml:"CreationTime"`
+	FinishTime       string               `json:"FinishTime" xml:"FinishTime"`
+	Input            Input                `json:"Input" xml:"Input"`
+	Output           OutputInQueryJobList `json:"Output" xml:"Output"`
+	MNSMessageResult MNSMessageResult     `json:"MNSMessageResult" xml:"MNSMessageResult"`
 }

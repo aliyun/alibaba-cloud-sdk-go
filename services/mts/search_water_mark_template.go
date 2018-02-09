@@ -78,11 +78,11 @@ type SearchWaterMarkTemplateRequest struct {
 
 type SearchWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int                   `json:"PageSize" xml:"PageSize"`
-	WaterMarkTemplateList WaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	RequestId             string                                         `json:"RequestId" xml:"RequestId"`
+	TotalCount            int                                            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int                                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                                            `json:"PageSize" xml:"PageSize"`
+	WaterMarkTemplateList WaterMarkTemplateListInSearchWaterMarkTemplate `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {

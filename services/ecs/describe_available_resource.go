@@ -71,8 +71,8 @@ type DescribeAvailableResourceRequest struct {
 
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	AvailableZones AvailableZones `json:"AvailableZones" xml:"AvailableZones"`
+	RequestId      string                                    `json:"RequestId" xml:"RequestId"`
+	AvailableZones AvailableZonesInDescribeAvailableResource `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourceRequest) {

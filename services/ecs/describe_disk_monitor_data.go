@@ -79,9 +79,9 @@ type DescribeDiskMonitorDataRequest struct {
 
 type DescribeDiskMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string                               `json:"RequestId" xml:"RequestId"`
+	TotalCount  int                                  `json:"TotalCount" xml:"TotalCount"`
+	MonitorData MonitorDataInDescribeDiskMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {

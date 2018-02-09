@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceTypes struct {
-	InstanceType []string `json:"InstanceTypes" xml:"InstanceTypes"`
+	InstanceType []string `json:"InstanceType" xml:"InstanceType"`
 }

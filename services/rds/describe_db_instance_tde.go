@@ -76,9 +76,9 @@ type DescribeDBInstanceTDERequest struct {
 
 type DescribeDBInstanceTDEResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	TDEStatus string    `json:"TDEStatus" xml:"TDEStatus"`
-	Databases Databases `json:"Databases" xml:"Databases"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	TDEStatus string                           `json:"TDEStatus" xml:"TDEStatus"`
+	Databases DatabasesInDescribeDBInstanceTDE `json:"Databases" xml:"Databases"`
 }
 
 func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {

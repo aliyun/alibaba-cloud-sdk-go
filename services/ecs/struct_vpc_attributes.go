@@ -16,8 +16,8 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VpcAttributes struct {
-	NatIpAddress     string           `json:"NatIpAddress" xml:"NatIpAddress"`
-	VpcId            string           `json:"VpcId" xml:"VpcId"`
-	VSwitchId        string           `json:"VSwitchId" xml:"VSwitchId"`
-	PrivateIpAddress PrivateIpAddress `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	NatIpAddress     string                              `json:"NatIpAddress" xml:"NatIpAddress"`
+	VpcId            string                              `json:"VpcId" xml:"VpcId"`
+	VSwitchId        string                              `json:"VSwitchId" xml:"VSwitchId"`
+	PrivateIpAddress PrivateIpAddressInDescribeInstances `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 }

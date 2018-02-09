@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AvailableDiskCategories struct {
-	DiskCategories []string `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
+	DiskCategories []string `json:"DiskCategories" xml:"DiskCategories"`
 }

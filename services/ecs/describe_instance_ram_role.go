@@ -78,10 +78,10 @@ type DescribeInstanceRamRoleRequest struct {
 
 type DescribeInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	RegionId            string              `json:"RegionId" xml:"RegionId"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	InstanceRamRoleSets InstanceRamRoleSets `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
+	RequestId           string                                       `json:"RequestId" xml:"RequestId"`
+	RegionId            string                                       `json:"RegionId" xml:"RegionId"`
+	TotalCount          int                                          `json:"TotalCount" xml:"TotalCount"`
+	InstanceRamRoleSets InstanceRamRoleSetsInDescribeInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 
 func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {

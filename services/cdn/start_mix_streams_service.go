@@ -81,8 +81,8 @@ type StartMixStreamsServiceRequest struct {
 
 type StartMixStreamsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	MixStreamsInfoList MixStreamsInfoList `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
+	RequestId          string                                     `json:"RequestId" xml:"RequestId"`
+	MixStreamsInfoList MixStreamsInfoListInStartMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
 func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceRequest) {

@@ -84,12 +84,12 @@ type DescribeBackupsRequest struct {
 
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount string `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  string `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int    `json:"TotalBackupSize" xml:"TotalBackupSize"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                 `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalBackupSize  int                    `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {

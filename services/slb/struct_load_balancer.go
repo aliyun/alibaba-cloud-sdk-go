@@ -16,5 +16,25 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LoadBalancer struct {
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ResourceGroupId          string                                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	VpcId                    string                                                    `json:"VpcId" xml:"VpcId"`
+	LoadBalancerName         string                                                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	RegionIdAlias            string                                                    `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	PayType                  string                                                    `json:"PayType" xml:"PayType"`
+	SlaveZoneId              string                                                    `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	InternetChargeType       string                                                    `json:"InternetChargeType" xml:"InternetChargeType"`
+	Address                  string                                                    `json:"Address" xml:"Address"`
+	Count                    int                                                       `json:"Count" xml:"Count"`
+	CreateTime               string                                                    `json:"CreateTime" xml:"CreateTime"`
+	LoadBalancerStatus       string                                                    `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	LoadBalancerId           string                                                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	CreateTimeStamp          int                                                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RegionId                 string                                                    `json:"RegionId" xml:"RegionId"`
+	MasterZoneId             string                                                    `json:"MasterZoneId" xml:"MasterZoneId"`
+	NetworkType              string                                                    `json:"NetworkType" xml:"NetworkType"`
+	VSwitchId                string                                                    `json:"VSwitchId" xml:"VSwitchId"`
+	AddressType              string                                                    `json:"AddressType" xml:"AddressType"`
+	VServerGroups            VServerGroupsInDescribeLoadBalancersRelatedEcs            `json:"VServerGroups" xml:"VServerGroups"`
+	BackendServers           BackendServersInDescribeLoadBalancersRelatedEcs           `json:"BackendServers" xml:"BackendServers"`
+	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeLoadBalancersRelatedEcs `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
 }

@@ -77,14 +77,14 @@ type QueryTaskListRequest struct {
 
 type QueryTaskListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	PrePage        bool   `json:"PrePage" xml:"PrePage"`
-	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                 `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                 `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int                 `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int                 `json:"PageSize" xml:"PageSize"`
+	PrePage        bool                `json:"PrePage" xml:"PrePage"`
+	NextPage       bool                `json:"NextPage" xml:"NextPage"`
+	Data           DataInQueryTaskList `json:"Data" xml:"Data"`
 }
 
 func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {

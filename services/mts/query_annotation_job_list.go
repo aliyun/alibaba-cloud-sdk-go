@@ -76,9 +76,9 @@ type QueryAnnotationJobListRequest struct {
 
 type QueryAnnotationJobListResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	NonExistIds       NonExistIds       `json:"NonExistIds" xml:"NonExistIds"`
-	AnnotationJobList AnnotationJobList `json:"AnnotationJobList" xml:"AnnotationJobList"`
+	RequestId         string                              `json:"RequestId" xml:"RequestId"`
+	NonExistIds       NonExistIdsInQueryAnnotationJobList `json:"NonExistIds" xml:"NonExistIds"`
+	AnnotationJobList AnnotationJobList                   `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
 func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {

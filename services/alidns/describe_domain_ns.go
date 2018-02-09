@@ -74,11 +74,11 @@ type DescribeDomainNsRequest struct {
 
 type DescribeDomainNsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	AllAliDns        bool             `json:"AllAliDns" xml:"AllAliDns"`
-	IncludeAliDns    bool             `json:"IncludeAliDns" xml:"IncludeAliDns"`
-	DnsServers       DnsServers       `json:"DnsServers" xml:"DnsServers"`
-	ExpectDnsServers ExpectDnsServers `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
+	RequestId        string                       `json:"RequestId" xml:"RequestId"`
+	AllAliDns        bool                         `json:"AllAliDns" xml:"AllAliDns"`
+	IncludeAliDns    bool                         `json:"IncludeAliDns" xml:"IncludeAliDns"`
+	DnsServers       DnsServersInDescribeDomainNs `json:"DnsServers" xml:"DnsServers"`
+	ExpectDnsServers ExpectDnsServers             `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
 }
 
 func CreateDescribeDomainNsRequest() (request *DescribeDomainNsRequest) {

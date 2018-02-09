@@ -16,7 +16,15 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Resource struct {
-	Category   string `json:"Category" xml:"Category"`
-	AliUid     int    `json:"AliUid" xml:"AliUid"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	Category     string `json:"Category" xml:"Category"`
+	Desc         string `json:"Desc" xml:"Desc"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	AliUid       int    `json:"AliUid" xml:"AliUid"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	Id           int    `json:"Id" xml:"Id"`
+	NetworkType  string `json:"NetworkType" xml:"NetworkType"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	Vpc          Vpc    `json:"Vpc" xml:"Vpc"`
+	Region       Region `json:"Region" xml:"Region"`
+	Tags         Tags   `json:"Tags" xml:"Tags"`
 }

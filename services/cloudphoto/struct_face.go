@@ -16,5 +16,15 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Face struct {
-	Axis Axis `json:"Axis" xml:"Axis"`
+	Mtime       int      `json:"Mtime" xml:"Mtime"`
+	IsMe        bool     `json:"IsMe" xml:"IsMe"`
+	Ctime       int      `json:"Ctime" xml:"Ctime"`
+	Name        string   `json:"Name" xml:"Name"`
+	FaceId      int      `json:"FaceId" xml:"FaceId"`
+	Id          int      `json:"Id" xml:"Id"`
+	State       string   `json:"State" xml:"State"`
+	PhotosCount int      `json:"PhotosCount" xml:"PhotosCount"`
+	FaceName    string   `json:"FaceName" xml:"FaceName"`
+	Axis        []string `json:"Axis" xml:"Axis"`
+	Cover       Cover    `json:"Cover" xml:"Cover"`
 }

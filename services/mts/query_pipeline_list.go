@@ -76,9 +76,9 @@ type QueryPipelineListRequest struct {
 
 type QueryPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistPids NonExistPids `json:"NonExistPids" xml:"NonExistPids"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	NonExistPids NonExistPids                    `json:"NonExistPids" xml:"NonExistPids"`
+	PipelineList PipelineListInQueryPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {

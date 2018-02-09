@@ -78,8 +78,8 @@ type DescribeZonesRequest struct {
 
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     Zones  `json:"Zones" xml:"Zones"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Zones     ZonesInDescribeZones `json:"Zones" xml:"Zones"`
 }
 
 func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {

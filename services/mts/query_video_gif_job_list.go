@@ -76,9 +76,9 @@ type QueryVideoGifJobListRequest struct {
 
 type QueryVideoGifJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
-	JobList     JobList     `json:"JobList" xml:"JobList"`
+	RequestId   string                            `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryVideoGifJobList `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobListInQueryVideoGifJobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) {

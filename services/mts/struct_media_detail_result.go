@@ -16,7 +16,7 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaDetailResult struct {
-	Status                 string                 `json:"Status" xml:"Status"`
-	Tags                   Tags                   `json:"Tags" xml:"Tags"`
-	MediaDetailRecgResults MediaDetailRecgResults `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
+	Status                 string                        `json:"Status" xml:"Status"`
+	Tags                   TagsInQueryMediaDetailJobList `json:"Tags" xml:"Tags"`
+	MediaDetailRecgResults MediaDetailRecgResults        `json:"MediaDetailRecgResults" xml:"MediaDetailRecgResults"`
 }

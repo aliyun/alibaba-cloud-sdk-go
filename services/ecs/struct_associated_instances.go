@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AssociatedInstances struct {
-	AssociatedInstance []string `json:"AssociatedInstances" xml:"AssociatedInstances"`
+	AssociatedInstance []string `json:"associatedInstance" xml:"associatedInstance"`
 }

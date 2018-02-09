@@ -16,14 +16,14 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DomainBaseDetailModel struct {
-	Cname        string  `json:"Cname" xml:"Cname"`
-	CdnType      string  `json:"CdnType" xml:"CdnType"`
-	DomainStatus string  `json:"DomainStatus" xml:"DomainStatus"`
-	SourceType   string  `json:"SourceType" xml:"SourceType"`
-	Region       string  `json:"Region" xml:"Region"`
-	DomainName   string  `json:"DomainName" xml:"DomainName"`
-	Remark       string  `json:"Remark" xml:"Remark"`
-	GmtModified  string  `json:"GmtModified" xml:"GmtModified"`
-	GmtCreated   string  `json:"GmtCreated" xml:"GmtCreated"`
-	Sources      Sources `json:"Sources" xml:"Sources"`
+	Cname        string                               `json:"Cname" xml:"Cname"`
+	CdnType      string                               `json:"CdnType" xml:"CdnType"`
+	DomainStatus string                               `json:"DomainStatus" xml:"DomainStatus"`
+	SourceType   string                               `json:"SourceType" xml:"SourceType"`
+	Region       string                               `json:"Region" xml:"Region"`
+	DomainName   string                               `json:"DomainName" xml:"DomainName"`
+	Remark       string                               `json:"Remark" xml:"Remark"`
+	GmtModified  string                               `json:"GmtModified" xml:"GmtModified"`
+	GmtCreated   string                               `json:"GmtCreated" xml:"GmtCreated"`
+	Sources      SourcesInDescribeCdnDomainBaseDetail `json:"Sources" xml:"Sources"`
 }

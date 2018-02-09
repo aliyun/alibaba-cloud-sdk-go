@@ -76,8 +76,8 @@ type DescribeDomainUpstreamOfCenterRequest struct {
 
 type DescribeDomainUpstreamOfCenterResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	BpsDatas  BpsDatas `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string                                   `json:"RequestId" xml:"RequestId"`
+	BpsDatas  BpsDatasInDescribeDomainUpstreamOfCenter `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateDescribeDomainUpstreamOfCenterRequest() (request *DescribeDomainUpstreamOfCenterRequest) {

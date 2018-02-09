@@ -80,8 +80,8 @@ type UpdateVideoSummaryPipelineRequest struct {
 
 type UpdateVideoSummaryPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
+	RequestId string                               `json:"RequestId" xml:"RequestId"`
+	Pipeline  PipelineInUpdateVideoSummaryPipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateUpdateVideoSummaryPipelineRequest() (request *UpdateVideoSummaryPipelineRequest) {

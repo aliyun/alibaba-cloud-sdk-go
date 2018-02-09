@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type LoadBalancerIds struct {
-	LoadBalancerId []string `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
+	LoadBalancerId []string `json:"LoadBalancerId" xml:"LoadBalancerId"`
 }

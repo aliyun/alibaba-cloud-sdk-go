@@ -79,8 +79,8 @@ type DescribeEipMonitorDataRequest struct {
 
 type DescribeEipMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	EipMonitorDatas EipMonitorDatas `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
+	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
+	EipMonitorDatas EipMonitorDatasInDescribeEipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
 func CreateDescribeEipMonitorDataRequest() (request *DescribeEipMonitorDataRequest) {

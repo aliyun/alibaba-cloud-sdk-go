@@ -78,12 +78,12 @@ type DescribeLiveStreamOnlineUserNumByDomainRequest struct {
 
 type DescribeLiveStreamOnlineUserNumByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId       string         `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int            `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	Count           int            `json:"Count" xml:"Count"`
-	PageNumber      int            `json:"pageNumber" xml:"pageNumber"`
-	PageSize        int            `json:"pageSize" xml:"pageSize"`
-	OnlineUserInfo  OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string                                                  `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int                                                     `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	Count           int                                                     `json:"Count" xml:"Count"`
+	PageNumber      int                                                     `json:"pageNumber" xml:"pageNumber"`
+	PageSize        int                                                     `json:"pageSize" xml:"pageSize"`
+	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLiveStreamOnlineUserNumByDomainRequest) {

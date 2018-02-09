@@ -79,8 +79,8 @@ type DescribeInstanceMonitorDataRequest struct {
 
 type DescribeInstanceMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string                                   `json:"RequestId" xml:"RequestId"`
+	MonitorData MonitorDataInDescribeInstanceMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonitorDataRequest) {

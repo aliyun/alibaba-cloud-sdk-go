@@ -16,15 +16,15 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Clip struct {
-	SourceType    string      `json:"SourceType" xml:"SourceType"`
-	Type          string      `json:"Type" xml:"Type"`
-	Id            string      `json:"Id" xml:"Id"`
-	SourceStrmMap string      `json:"SourceStrmMap" xml:"SourceStrmMap"`
-	ClipID        string      `json:"clipID" xml:"clipID"`
-	In            string      `json:"In" xml:"In"`
-	SourceID      string      `json:"SourceID" xml:"SourceID"`
-	Out           string      `json:"Out" xml:"Out"`
-	Effects       Effects     `json:"Effects" xml:"Effects"`
-	ClipsConfig   ClipsConfig `json:"ClipsConfig" xml:"ClipsConfig"`
-	TimeSpan      TimeSpan    `json:"TimeSpan" xml:"TimeSpan"`
+	SourceType    string                       `json:"SourceType" xml:"SourceType"`
+	Type          string                       `json:"Type" xml:"Type"`
+	Id            string                       `json:"Id" xml:"Id"`
+	SourceStrmMap string                       `json:"SourceStrmMap" xml:"SourceStrmMap"`
+	ClipID        string                       `json:"clipID" xml:"clipID"`
+	In            string                       `json:"In" xml:"In"`
+	SourceID      string                       `json:"SourceID" xml:"SourceID"`
+	Out           string                       `json:"Out" xml:"Out"`
+	TimeSpan      TimeSpan                     `json:"TimeSpan" xml:"TimeSpan"`
+	ClipsConfig   ClipsConfig                  `json:"ClipsConfig" xml:"ClipsConfig"`
+	Effects       EffectsInQueryEditingJobList `json:"Effects" xml:"Effects"`
 }

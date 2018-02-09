@@ -74,8 +74,8 @@ type DescribeLiveRecordConfigRequest struct {
 
 type DescribeLiveRecordConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string                                      `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList LiveAppRecordListInDescribeLiveRecordConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigRequest) {

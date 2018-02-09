@@ -78,8 +78,8 @@ type DescribeSnapshotMonitorDataRequest struct {
 
 type DescribeSnapshotMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string                                   `json:"RequestId" xml:"RequestId"`
+	MonitorData MonitorDataInDescribeSnapshotMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {

@@ -79,12 +79,12 @@ type ListRecordingsRequest struct {
 
 type ListRecordingsResponse struct {
 	*responses.BaseResponse
-	RequestId      string     `json:"RequestId" xml:"RequestId"`
-	Success        bool       `json:"Success" xml:"Success"`
-	Code           string     `json:"Code" xml:"Code"`
-	Message        string     `json:"Message" xml:"Message"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Recordings     Recordings `json:"Recordings" xml:"Recordings"`
+	RequestId      string                     `json:"RequestId" xml:"RequestId"`
+	Success        bool                       `json:"Success" xml:"Success"`
+	Code           string                     `json:"Code" xml:"Code"`
+	Message        string                     `json:"Message" xml:"Message"`
+	HttpStatusCode int                        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Recordings     RecordingsInListRecordings `json:"Recordings" xml:"Recordings"`
 }
 
 func CreateListRecordingsRequest() (request *ListRecordingsRequest) {

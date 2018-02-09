@@ -77,8 +77,8 @@ type DescribeDBInstanceAttributeRequest struct {
 
 type DescribeDBInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                             `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeDBInstanceAttribute `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstanceAttributeRequest() (request *DescribeDBInstanceAttributeRequest) {

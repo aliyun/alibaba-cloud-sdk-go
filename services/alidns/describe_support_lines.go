@@ -73,8 +73,8 @@ type DescribeSupportLinesRequest struct {
 
 type DescribeSupportLinesResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	RecordLines RecordLines `json:"RecordLines" xml:"RecordLines"`
+	RequestId   string                            `json:"RequestId" xml:"RequestId"`
+	RecordLines RecordLinesInDescribeSupportLines `json:"RecordLines" xml:"RecordLines"`
 }
 
 func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {

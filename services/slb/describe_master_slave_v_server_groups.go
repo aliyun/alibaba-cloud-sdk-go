@@ -78,8 +78,8 @@ type DescribeMasterSlaveVServerGroupsRequest struct {
 
 type DescribeMasterSlaveVServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	MasterSlaveVServerGroups MasterSlaveVServerGroups `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
+	RequestId                string                                                     `json:"RequestId" xml:"RequestId"`
+	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeMasterSlaveVServerGroups `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
 }
 
 func CreateDescribeMasterSlaveVServerGroupsRequest() (request *DescribeMasterSlaveVServerGroupsRequest) {

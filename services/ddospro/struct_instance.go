@@ -16,7 +16,7 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Instance struct {
-	InstanceRemark string `json:"InstanceRemark" xml:"InstanceRemark"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	Rules          Rules  `json:"Rules" xml:"Rules"`
+	InstanceRemark string                      `json:"InstanceRemark" xml:"InstanceRemark"`
+	InstanceId     string                      `json:"InstanceId" xml:"InstanceId"`
+	Rules          RulesInDescribeDomainConfig `json:"Rules" xml:"Rules"`
 }

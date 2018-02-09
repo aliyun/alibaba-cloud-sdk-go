@@ -16,9 +16,9 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RecommendInstanceType struct {
-	RegionNo      string       `json:"RegionNo" xml:"RegionNo"`
-	CommodityCode string       `json:"CommodityCode" xml:"CommodityCode"`
-	Scene         string       `json:"Scene" xml:"Scene"`
-	InstanceType  InstanceType `json:"InstanceType" xml:"InstanceType"`
-	Zones         Zones        `json:"Zones" xml:"Zones"`
+	RegionNo      string                               `json:"RegionNo" xml:"RegionNo"`
+	CommodityCode string                               `json:"CommodityCode" xml:"CommodityCode"`
+	Scene         string                               `json:"Scene" xml:"Scene"`
+	InstanceType  InstanceType                         `json:"InstanceType" xml:"InstanceType"`
+	Zones         ZonesInDescribeRecommendInstanceType `json:"Zones" xml:"Zones"`
 }

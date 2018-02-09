@@ -74,12 +74,12 @@ type ListUsersRequest struct {
 
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Users          Users  `json:"Users" xml:"Users"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        bool             `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode int              `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Users          UsersInListUsers `json:"Users" xml:"Users"`
 }
 
 func CreateListUsersRequest() (request *ListUsersRequest) {

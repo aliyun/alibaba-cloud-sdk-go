@@ -16,8 +16,8 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AccessKey struct {
+	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
 	AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
 	AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
 	Status          string `json:"Status" xml:"Status"`
-	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
 }

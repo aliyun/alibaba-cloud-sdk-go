@@ -16,13 +16,13 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FileSystem struct {
-	FileSystemId string       `json:"FileSystemId" xml:"FileSystemId"`
-	Destription  string       `json:"Destription" xml:"Destription"`
-	CreateTime   string       `json:"CreateTime" xml:"CreateTime"`
-	RegionId     string       `json:"RegionId" xml:"RegionId"`
-	ProtocolType string       `json:"ProtocolType" xml:"ProtocolType"`
-	StorageType  string       `json:"StorageType" xml:"StorageType"`
-	MeteredSize  int          `json:"MeteredSize" xml:"MeteredSize"`
-	MountTargets MountTargets `json:"MountTargets" xml:"MountTargets"`
-	Packages     Packages     `json:"Packages" xml:"Packages"`
+	FileSystemId string                            `json:"FileSystemId" xml:"FileSystemId"`
+	Destription  string                            `json:"Destription" xml:"Destription"`
+	CreateTime   string                            `json:"CreateTime" xml:"CreateTime"`
+	RegionId     string                            `json:"RegionId" xml:"RegionId"`
+	ProtocolType string                            `json:"ProtocolType" xml:"ProtocolType"`
+	StorageType  string                            `json:"StorageType" xml:"StorageType"`
+	MeteredSize  int                               `json:"MeteredSize" xml:"MeteredSize"`
+	MountTargets MountTargetsInDescribeFileSystems `json:"MountTargets" xml:"MountTargets"`
+	Packages     Packages                          `json:"Packages" xml:"Packages"`
 }

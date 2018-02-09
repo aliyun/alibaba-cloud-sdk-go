@@ -16,10 +16,13 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Result struct {
-	AccessUrl string `json:"AccessUrl" xml:"AccessUrl"`
-	Message   string `json:"Message" xml:"Message"`
-	Id        int    `json:"Id" xml:"Id"`
-	PhotoId   int    `json:"PhotoId" xml:"PhotoId"`
-	State     string `json:"State" xml:"State"`
-	Code      string `json:"Code" xml:"Code"`
+	AccessUrl      string `json:"AccessUrl" xml:"AccessUrl"`
+	Message        string `json:"Message" xml:"Message"`
+	ThumbnailUrl   string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
+	Id             int    `json:"Id" xml:"Id"`
+	PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
+	State          string `json:"State" xml:"State"`
+	Code           string `json:"Code" xml:"Code"`
+	DownloadUrl    string `json:"DownloadUrl" xml:"DownloadUrl"`
+	FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
 }

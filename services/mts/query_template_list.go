@@ -76,9 +76,9 @@ type QueryTemplateListRequest struct {
 
 type QueryTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistTids NonExistTids `json:"NonExistTids" xml:"NonExistTids"`
-	TemplateList TemplateList `json:"TemplateList" xml:"TemplateList"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	NonExistTids NonExistTids                    `json:"NonExistTids" xml:"NonExistTids"`
+	TemplateList TemplateListInQueryTemplateList `json:"TemplateList" xml:"TemplateList"`
 }
 
 func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {

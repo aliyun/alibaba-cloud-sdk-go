@@ -79,9 +79,9 @@ type QueryMediaListByURLRequest struct {
 
 type QueryMediaListByURLResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	NonExistFileURLs NonExistFileURLs `json:"NonExistFileURLs" xml:"NonExistFileURLs"`
-	MediaList        MediaList        `json:"MediaList" xml:"MediaList"`
+	RequestId        string                         `json:"RequestId" xml:"RequestId"`
+	NonExistFileURLs NonExistFileURLs               `json:"NonExistFileURLs" xml:"NonExistFileURLs"`
+	MediaList        MediaListInQueryMediaListByURL `json:"MediaList" xml:"MediaList"`
 }
 
 func CreateQueryMediaListByURLRequest() (request *QueryMediaListByURLRequest) {

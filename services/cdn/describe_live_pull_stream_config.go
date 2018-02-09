@@ -74,8 +74,8 @@ type DescribeLivePullStreamConfigRequest struct {
 
 type DescribeLivePullStreamConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string                                          `json:"RequestId" xml:"RequestId"`
+	LiveAppRecordList LiveAppRecordListInDescribeLivePullStreamConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {

@@ -78,8 +78,8 @@ type DescribeDatabasesRequest struct {
 
 type DescribeDatabasesResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Databases Databases `json:"Databases" xml:"Databases"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Databases DatabasesInDescribeDatabases `json:"Databases" xml:"Databases"`
 }
 
 func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {

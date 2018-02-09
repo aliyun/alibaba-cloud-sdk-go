@@ -80,11 +80,11 @@ type GetAccountListRequest struct {
 
 type GetAccountListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Total     int    `json:"Total" xml:"Total"`
-	PageNo    int    `json:"PageNo" xml:"PageNo"`
-	PageSize  int    `json:"PageSize" xml:"PageSize"`
-	Data      Data   `json:"data" xml:"data"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Total     int                  `json:"Total" xml:"Total"`
+	PageNo    int                  `json:"PageNo" xml:"PageNo"`
+	PageSize  int                  `json:"PageSize" xml:"PageSize"`
+	Data      DataInGetAccountList `json:"data" xml:"data"`
 }
 
 func CreateGetAccountListRequest() (request *GetAccountListRequest) {

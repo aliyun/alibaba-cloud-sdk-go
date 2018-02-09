@@ -78,11 +78,11 @@ type ListCensorPipelineRequest struct {
 
 type ListCensorPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                           `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                              `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                              `json:"PageSize" xml:"PageSize"`
+	PipelineList PipelineListInListCensorPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateListCensorPipelineRequest() (request *ListCensorPipelineRequest) {

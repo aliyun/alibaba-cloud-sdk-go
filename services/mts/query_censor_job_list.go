@@ -76,9 +76,9 @@ type QueryCensorJobListRequest struct {
 
 type QueryCensorJobListResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	NonExistIds   NonExistIds   `json:"NonExistIds" xml:"NonExistIds"`
-	CensorJobList CensorJobList `json:"CensorJobList" xml:"CensorJobList"`
+	RequestId     string                          `json:"RequestId" xml:"RequestId"`
+	NonExistIds   NonExistIdsInQueryCensorJobList `json:"NonExistIds" xml:"NonExistIds"`
+	CensorJobList CensorJobList                   `json:"CensorJobList" xml:"CensorJobList"`
 }
 
 func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {

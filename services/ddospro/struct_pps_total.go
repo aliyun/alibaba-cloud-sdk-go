@@ -16,5 +16,5 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PpsTotal struct {
-	PpsTotalItem []string `json:"PpsTotal" xml:"PpsTotal"`
+	PpsTotalItem []string `json:"PpsTotalItem" xml:"PpsTotalItem"`
 }

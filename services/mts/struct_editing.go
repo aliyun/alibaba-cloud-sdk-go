@@ -16,6 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Editing struct {
-	Timeline Timeline `json:"Timeline" xml:"Timeline"`
-	ClipList ClipList `json:"ClipList" xml:"ClipList"`
+	Timeline Timeline                      `json:"Timeline" xml:"Timeline"`
+	ClipList ClipListInQueryEditingJobList `json:"ClipList" xml:"ClipList"`
 }

@@ -82,8 +82,8 @@ type UpdateTemplateRequest struct {
 
 type UpdateTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Template  Template `json:"Template" xml:"Template"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Template  TemplateInUpdateTemplate `json:"Template" xml:"Template"`
 }
 
 func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {

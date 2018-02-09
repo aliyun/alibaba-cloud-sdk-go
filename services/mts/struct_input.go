@@ -16,6 +16,10 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Input struct {
-	Start    string `json:"Start" xml:"Start"`
-	Duration string `json:"Duration" xml:"Duration"`
+	Location  string    `json:"Location" xml:"Location"`
+	RoleArn   string    `json:"RoleArn" xml:"RoleArn"`
+	Bucket    string    `json:"Bucket" xml:"Bucket"`
+	UserData  string    `json:"UserData" xml:"UserData"`
+	Object    string    `json:"Object" xml:"Object"`
+	InputFile InputFile `json:"InputFile" xml:"InputFile"`
 }

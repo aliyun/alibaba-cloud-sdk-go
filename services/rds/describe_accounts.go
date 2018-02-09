@@ -77,8 +77,8 @@ type DescribeAccountsRequest struct {
 
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Accounts  Accounts `json:"Accounts" xml:"Accounts"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Accounts  AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }
 
 func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {

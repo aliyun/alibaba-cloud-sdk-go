@@ -80,9 +80,9 @@ type ListMediaWorkflowExecutionsRequest struct {
 
 type ListMediaWorkflowExecutionsResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
-	NextPageToken              string                     `json:"NextPageToken" xml:"NextPageToken"`
-	MediaWorkflowExecutionList MediaWorkflowExecutionList `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
+	RequestId                  string                                                  `json:"RequestId" xml:"RequestId"`
+	NextPageToken              string                                                  `json:"NextPageToken" xml:"NextPageToken"`
+	MediaWorkflowExecutionList MediaWorkflowExecutionListInListMediaWorkflowExecutions `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
 }
 
 func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecutionsRequest) {

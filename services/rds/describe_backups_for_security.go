@@ -86,12 +86,12 @@ type DescribeBackupsForSecurityRequest struct {
 
 type DescribeBackupsForSecurityResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount string `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  string `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int    `json:"TotalBackupSize" xml:"TotalBackupSize"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount string                            `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       string                            `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  string                            `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalBackupSize  int                               `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	Items            ItemsInDescribeBackupsForSecurity `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupsForSecurityRequest() (request *DescribeBackupsForSecurityRequest) {

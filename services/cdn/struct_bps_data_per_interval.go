@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BpsDataPerInterval struct {
-	DataModuleInDescribeDomainBpsData []DataModuleInDescribeDomainBpsData `json:"DataModule" xml:"DataModule"`
+	DataModule []DataModule `json:"DataModule" xml:"DataModule"`
 }

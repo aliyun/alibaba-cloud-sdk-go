@@ -16,9 +16,11 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BackendServer struct {
-	ServerId    string `json:"ServerId" xml:"ServerId"`
-	Port        int    `json:"Port" xml:"Port"`
-	Weight      string `json:"Weight" xml:"Weight"`
-	VmName      string `json:"VmName" xml:"VmName"`
-	NetworkType string `json:"NetworkType" xml:"NetworkType"`
+	ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
+	ServerId           string `json:"ServerId" xml:"ServerId"`
+	Port               int    `json:"Port" xml:"Port"`
+	ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
+	VmName             string `json:"VmName" xml:"VmName"`
+	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	Weight             int    `json:"Weight" xml:"Weight"`
 }

@@ -71,8 +71,8 @@ type DescribeInvocationResultsRequest struct {
 
 type DescribeInvocationResultsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Invocation Invocation `json:"Invocation" xml:"Invocation"`
+	RequestId  string                                `json:"RequestId" xml:"RequestId"`
+	Invocation InvocationInDescribeInvocationResults `json:"Invocation" xml:"Invocation"`
 }
 
 func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResultsRequest) {

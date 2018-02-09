@@ -77,11 +77,11 @@ type DescribeSubDomainRecordsRequest struct {
 
 type DescribeSubDomainRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
-	DomainRecords DomainRecords `json:"DomainRecords" xml:"DomainRecords"`
+	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
+	TotalCount    int                                     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int                                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int                                     `json:"PageSize" xml:"PageSize"`
+	DomainRecords DomainRecordsInDescribeSubDomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
 func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsRequest) {

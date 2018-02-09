@@ -79,8 +79,8 @@ type DescribeRulesRequest struct {
 
 type DescribeRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Rules     Rules  `json:"Rules" xml:"Rules"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Rules     RulesInDescribeRules `json:"Rules" xml:"Rules"`
 }
 
 func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {

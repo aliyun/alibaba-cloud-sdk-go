@@ -16,8 +16,8 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type JobResultInSubmitJobs struct {
-	Success bool   `json:"Success" xml:"Success"`
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Job     Job    `json:"Job" xml:"Job"`
+	Success bool            `json:"Success" xml:"Success"`
+	Code    string          `json:"Code" xml:"Code"`
+	Message string          `json:"Message" xml:"Message"`
+	Job     JobInSubmitJobs `json:"Job" xml:"Job"`
 }

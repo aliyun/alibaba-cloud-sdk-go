@@ -17,4 +17,5 @@ package ecs
 
 type LockReason struct {
 	LockReason string `json:"LockReason" xml:"LockReason"`
+	LockMsg    string `json:"LockMsg" xml:"LockMsg"`
 }

@@ -21,6 +21,7 @@ type Role struct {
 	RoleId                   string `json:"RoleId" xml:"RoleId"`
 	RoleName                 string `json:"RoleName" xml:"RoleName"`
 	Description              string `json:"Description" xml:"Description"`
+	AttachDate               string `json:"AttachDate" xml:"AttachDate"`
 	Arn                      string `json:"Arn" xml:"Arn"`
 	UpdateDate               string `json:"UpdateDate" xml:"UpdateDate"`
 }

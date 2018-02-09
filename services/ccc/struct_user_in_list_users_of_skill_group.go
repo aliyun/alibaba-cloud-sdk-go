@@ -16,10 +16,10 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type UserInListUsersOfSkillGroup struct {
-	UserId      string      `json:"UserId" xml:"UserId"`
-	RamId       string      `json:"RamId" xml:"RamId"`
-	InstanceId  string      `json:"InstanceId" xml:"InstanceId"`
-	Detail      Detail      `json:"Detail" xml:"Detail"`
-	Roles       Roles       `json:"Roles" xml:"Roles"`
-	SkillLevels SkillLevels `json:"SkillLevels" xml:"SkillLevels"`
+	UserId      string                             `json:"UserId" xml:"UserId"`
+	RamId       string                             `json:"RamId" xml:"RamId"`
+	InstanceId  string                             `json:"InstanceId" xml:"InstanceId"`
+	Detail      Detail                             `json:"Detail" xml:"Detail"`
+	Roles       RolesInListUsersOfSkillGroup       `json:"Roles" xml:"Roles"`
+	SkillLevels SkillLevelsInListUsersOfSkillGroup `json:"SkillLevels" xml:"SkillLevels"`
 }

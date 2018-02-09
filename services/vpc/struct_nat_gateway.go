@@ -16,18 +16,18 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NatGateway struct {
-	NatGatewayId        string              `json:"NatGatewayId" xml:"NatGatewayId"`
-	RegionId            string              `json:"RegionId" xml:"RegionId"`
-	Name                string              `json:"Name" xml:"Name"`
-	Description         string              `json:"Description" xml:"Description"`
-	VpcId               string              `json:"VpcId" xml:"VpcId"`
-	Spec                string              `json:"Spec" xml:"Spec"`
-	InstanceChargeType  string              `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	BusinessStatus      string              `json:"BusinessStatus" xml:"BusinessStatus"`
-	CreationTime        string              `json:"CreationTime" xml:"CreationTime"`
-	Status              string              `json:"Status" xml:"Status"`
-	ForwardTableIds     ForwardTableIds     `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	SnatTableIds        SnatTableIds        `json:"SnatTableIds" xml:"SnatTableIds"`
-	BandwidthPackageIds BandwidthPackageIds `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
-	IpLists             IpLists             `json:"IpLists" xml:"IpLists"`
+	NatGatewayId        string                                   `json:"NatGatewayId" xml:"NatGatewayId"`
+	RegionId            string                                   `json:"RegionId" xml:"RegionId"`
+	Name                string                                   `json:"Name" xml:"Name"`
+	Description         string                                   `json:"Description" xml:"Description"`
+	VpcId               string                                   `json:"VpcId" xml:"VpcId"`
+	Spec                string                                   `json:"Spec" xml:"Spec"`
+	InstanceChargeType  string                                   `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	BusinessStatus      string                                   `json:"BusinessStatus" xml:"BusinessStatus"`
+	CreationTime        string                                   `json:"CreationTime" xml:"CreationTime"`
+	Status              string                                   `json:"Status" xml:"Status"`
+	ForwardTableIds     ForwardTableIdsInDescribeNatGateways     `json:"ForwardTableIds" xml:"ForwardTableIds"`
+	SnatTableIds        SnatTableIdsInDescribeNatGateways        `json:"SnatTableIds" xml:"SnatTableIds"`
+	BandwidthPackageIds BandwidthPackageIdsInDescribeNatGateways `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+	IpLists             IpLists                                  `json:"IpLists" xml:"IpLists"`
 }

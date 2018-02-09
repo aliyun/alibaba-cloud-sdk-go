@@ -80,11 +80,11 @@ type DescribeInstanceAutoRenewAttributeRequest struct {
 
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                                    `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                                       `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                       `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                       `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeInstanceAutoRenewAttribute `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {

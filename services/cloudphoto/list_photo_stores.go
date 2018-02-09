@@ -71,11 +71,11 @@ type ListPhotoStoresRequest struct {
 
 type ListPhotoStoresResponse struct {
 	*responses.BaseResponse
-	Code        string       `json:"Code" xml:"Code"`
-	Message     string       `json:"Message" xml:"Message"`
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
-	Action      string       `json:"Action" xml:"Action"`
-	PhotoStores []PhotoStore `json:"PhotoStores" xml:"PhotoStores"`
+	Code        string                        `json:"Code" xml:"Code"`
+	Message     string                        `json:"Message" xml:"Message"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
+	Action      string                        `json:"Action" xml:"Action"`
+	PhotoStores []PhotoStoreInListPhotoStores `json:"PhotoStores" xml:"PhotoStores"`
 }
 
 func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {

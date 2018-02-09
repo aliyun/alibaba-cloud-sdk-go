@@ -16,8 +16,8 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Track struct {
-	Type  string `json:"Type" xml:"Type"`
-	Id    string `json:"Id" xml:"Id"`
-	Order string `json:"Order" xml:"Order"`
-	Clips Clips  `json:"Clips" xml:"Clips"`
+	Type  string                     `json:"Type" xml:"Type"`
+	Id    string                     `json:"Id" xml:"Id"`
+	Order string                     `json:"Order" xml:"Order"`
+	Clips ClipsInQueryEditingJobList `json:"Clips" xml:"Clips"`
 }

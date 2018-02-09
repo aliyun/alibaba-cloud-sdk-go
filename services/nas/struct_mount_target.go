@@ -16,5 +16,10 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MountTarget struct {
+	VpcId             string `json:"VpcId" xml:"VpcId"`
+	VswId             string `json:"VswId" xml:"VswId"`
+	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
+	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
+	Status            string `json:"Status" xml:"Status"`
 }

@@ -77,9 +77,9 @@ type QuerySmsStatisticsRequest struct {
 
 type QuerySmsStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
+	Data       DataInQuerySmsStatistics `json:"data" xml:"data"`
 }
 
 func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {

@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OriginalDnsServers struct {
-	DnsServer []string `json:"OriginalDnsServers" xml:"OriginalDnsServers"`
+	DnsServer []string `json:"DnsServer" xml:"DnsServer"`
 }

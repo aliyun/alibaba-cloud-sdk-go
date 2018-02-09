@@ -76,11 +76,11 @@ type DetachKeyPairRequest struct {
 
 type DetachKeyPairResponse struct {
 	*responses.BaseResponse
-	RequestId   string  `json:"RequestId" xml:"RequestId"`
-	TotalCount  string  `json:"TotalCount" xml:"TotalCount"`
-	FailCount   string  `json:"FailCount" xml:"FailCount"`
-	KeyPairName string  `json:"KeyPairName" xml:"KeyPairName"`
-	Results     Results `json:"Results" xml:"Results"`
+	RequestId   string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount  string                 `json:"TotalCount" xml:"TotalCount"`
+	FailCount   string                 `json:"FailCount" xml:"FailCount"`
+	KeyPairName string                 `json:"KeyPairName" xml:"KeyPairName"`
+	Results     ResultsInDetachKeyPair `json:"Results" xml:"Results"`
 }
 
 func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {

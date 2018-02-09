@@ -73,12 +73,12 @@ type ListPhoneNumbersRequest struct {
 
 type ListPhoneNumbersResponse struct {
 	*responses.BaseResponse
-	RequestId      string       `json:"RequestId" xml:"RequestId"`
-	Success        bool         `json:"Success" xml:"Success"`
-	Code           string       `json:"Code" xml:"Code"`
-	Message        string       `json:"Message" xml:"Message"`
-	HttpStatusCode int          `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PhoneNumbers   PhoneNumbers `json:"PhoneNumbers" xml:"PhoneNumbers"`
+	RequestId      string                         `json:"RequestId" xml:"RequestId"`
+	Success        bool                           `json:"Success" xml:"Success"`
+	Code           string                         `json:"Code" xml:"Code"`
+	Message        string                         `json:"Message" xml:"Message"`
+	HttpStatusCode int                            `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	PhoneNumbers   PhoneNumbersInListPhoneNumbers `json:"PhoneNumbers" xml:"PhoneNumbers"`
 }
 
 func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {

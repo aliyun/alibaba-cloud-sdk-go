@@ -16,10 +16,21 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type InstanceType struct {
-	Generation         string `json:"Generation" xml:"Generation"`
-	InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-	InstanceType       string `json:"InstanceType" xml:"InstanceType"`
-	SupportIoOptimized string `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
-	Cores              int    `json:"Cores" xml:"Cores"`
-	Memory             int    `json:"Memory" xml:"Memory"`
+	InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	SupportIoOptimized   string  `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
+	Cores                int     `json:"Cores" xml:"Cores"`
+	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
+	GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
+	Memory               int     `json:"Memory" xml:"Memory"`
+	LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+	EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
+	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	Generation           string  `json:"Generation" xml:"Generation"`
+	CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+	MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
+	InstanceType         string  `json:"InstanceType" xml:"InstanceType"`
+	InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
+	BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
+	GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
+	LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 }

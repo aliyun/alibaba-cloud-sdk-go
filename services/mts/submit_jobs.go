@@ -80,8 +80,8 @@ type SubmitJobsRequest struct {
 
 type SubmitJobsResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	JobResultList JobResultList `json:"JobResultList" xml:"JobResultList"`
+	RequestId     string                    `json:"RequestId" xml:"RequestId"`
+	JobResultList JobResultListInSubmitJobs `json:"JobResultList" xml:"JobResultList"`
 }
 
 func CreateSubmitJobsRequest() (request *SubmitJobsRequest) {

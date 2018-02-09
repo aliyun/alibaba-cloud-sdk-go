@@ -76,9 +76,9 @@ type QueryVideoSummaryPipelineListRequest struct {
 
 type QueryVideoSummaryPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                                      `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIdsInQueryVideoSummaryPipelineList  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineListInQueryVideoSummaryPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryVideoSummaryPipelineListRequest() (request *QueryVideoSummaryPipelineListRequest) {

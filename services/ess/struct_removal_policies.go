@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RemovalPolicies struct {
-	RemovalPolicy []string `json:"RemovalPolicies" xml:"RemovalPolicies"`
+	RemovalPolicy []string `json:"RemovalPolicy" xml:"RemovalPolicy"`
 }

@@ -76,9 +76,9 @@ type QueryFacerecogJobListRequest struct {
 
 type QueryFacerecogJobListResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	NonExistIds      NonExistIds      `json:"NonExistIds" xml:"NonExistIds"`
-	FacerecogJobList FacerecogJobList `json:"FacerecogJobList" xml:"FacerecogJobList"`
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	NonExistIds      NonExistIdsInQueryFacerecogJobList `json:"NonExistIds" xml:"NonExistIds"`
+	FacerecogJobList FacerecogJobList                   `json:"FacerecogJobList" xml:"FacerecogJobList"`
 }
 
 func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {

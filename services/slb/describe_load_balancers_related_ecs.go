@@ -78,10 +78,10 @@ type DescribeLoadBalancersRelatedEcsRequest struct {
 
 type DescribeLoadBalancersRelatedEcsResponse struct {
 	*responses.BaseResponse
-	Message       string        `json:"Message" xml:"Message"`
-	Success       bool          `json:"Success" xml:"Success"`
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	LoadBalancers LoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
+	Message       string                                         `json:"Message" xml:"Message"`
+	Success       bool                                           `json:"Success" xml:"Success"`
+	RequestId     string                                         `json:"RequestId" xml:"RequestId"`
+	LoadBalancers LoadBalancersInDescribeLoadBalancersRelatedEcs `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
 func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalancersRelatedEcsRequest) {

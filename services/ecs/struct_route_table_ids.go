@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RouteTableIds struct {
-	RouteTableId []string `json:"RouteTableIds" xml:"RouteTableIds"`
+	RouteTableId []string `json:"RouteTableId" xml:"RouteTableId"`
 }

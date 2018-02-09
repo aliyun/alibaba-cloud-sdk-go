@@ -76,9 +76,9 @@ type QueryTerrorismJobListRequest struct {
 
 type QueryTerrorismJobListResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	NonExistIds      NonExistIds      `json:"NonExistIds" xml:"NonExistIds"`
-	TerrorismJobList TerrorismJobList `json:"TerrorismJobList" xml:"TerrorismJobList"`
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	NonExistIds      NonExistIdsInQueryTerrorismJobList `json:"NonExistIds" xml:"NonExistIds"`
+	TerrorismJobList TerrorismJobList                   `json:"TerrorismJobList" xml:"TerrorismJobList"`
 }
 
 func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest) {

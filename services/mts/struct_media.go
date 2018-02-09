@@ -16,24 +16,24 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Media struct {
-	CreationTime string       `json:"CreationTime" xml:"CreationTime"`
-	Size         string       `json:"Size" xml:"Size"`
-	Height       string       `json:"Height" xml:"Height"`
-	PublishState string       `json:"PublishState" xml:"PublishState"`
-	CoverURL     string       `json:"CoverURL" xml:"CoverURL"`
-	Description  string       `json:"Description" xml:"Description"`
-	CateId       int          `json:"CateId" xml:"CateId"`
-	Width        string       `json:"Width" xml:"Width"`
-	Title        string       `json:"Title" xml:"Title"`
-	Bitrate      string       `json:"Bitrate" xml:"Bitrate"`
-	MediaId      string       `json:"MediaId" xml:"MediaId"`
-	Fps          string       `json:"Fps" xml:"Fps"`
-	Duration     string       `json:"Duration" xml:"Duration"`
-	Format       string       `json:"Format" xml:"Format"`
-	RunIdList    RunIdList    `json:"RunIdList" xml:"RunIdList"`
-	MediaInfo    MediaInfo    `json:"MediaInfo" xml:"MediaInfo"`
-	Tags         Tags         `json:"Tags" xml:"Tags"`
-	SnapshotList SnapshotList `json:"SnapshotList" xml:"SnapshotList"`
-	File         File         `json:"File" xml:"File"`
-	PlayList     PlayList     `json:"PlayList" xml:"PlayList"`
+	CreationTime string                            `json:"CreationTime" xml:"CreationTime"`
+	Size         string                            `json:"Size" xml:"Size"`
+	Height       string                            `json:"Height" xml:"Height"`
+	PublishState string                            `json:"PublishState" xml:"PublishState"`
+	CoverURL     string                            `json:"CoverURL" xml:"CoverURL"`
+	Description  string                            `json:"Description" xml:"Description"`
+	CateId       int                               `json:"CateId" xml:"CateId"`
+	Width        string                            `json:"Width" xml:"Width"`
+	Title        string                            `json:"Title" xml:"Title"`
+	Bitrate      string                            `json:"Bitrate" xml:"Bitrate"`
+	MediaId      string                            `json:"MediaId" xml:"MediaId"`
+	Fps          string                            `json:"Fps" xml:"Fps"`
+	Duration     string                            `json:"Duration" xml:"Duration"`
+	Format       string                            `json:"Format" xml:"Format"`
+	Tags         TagsInListMedia                   `json:"Tags" xml:"Tags"`
+	RunIdList    RunIdListInListMedia              `json:"RunIdList" xml:"RunIdList"`
+	File         File                              `json:"File" xml:"File"`
+	MediaInfo    MediaInfo                         `json:"MediaInfo" xml:"MediaInfo"`
+	SnapshotList SnapshotListInQueryMediaListByURL `json:"SnapshotList" xml:"SnapshotList"`
+	PlayList     PlayListInQueryMediaListByURL     `json:"PlayList" xml:"PlayList"`
 }

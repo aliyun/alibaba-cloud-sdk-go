@@ -16,14 +16,14 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaInfoJob struct {
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Message          string           `json:"Message" xml:"Message"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
-	UserData         string           `json:"UserData" xml:"UserData"`
-	JobId            string           `json:"JobId" xml:"JobId"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	Input            Input            `json:"Input" xml:"Input"`
-	Properties       Properties       `json:"Properties" xml:"Properties"`
+	CreationTime     string                            `json:"CreationTime" xml:"CreationTime"`
+	Message          string                            `json:"Message" xml:"Message"`
+	PipelineId       string                            `json:"PipelineId" xml:"PipelineId"`
+	State            string                            `json:"State" xml:"State"`
+	Code             string                            `json:"Code" xml:"Code"`
+	UserData         string                            `json:"UserData" xml:"UserData"`
+	JobId            string                            `json:"JobId" xml:"JobId"`
+	MNSMessageResult MNSMessageResult                  `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	Input            Input                             `json:"Input" xml:"Input"`
+	Properties       PropertiesInQueryMediaInfoJobList `json:"Properties" xml:"Properties"`
 }

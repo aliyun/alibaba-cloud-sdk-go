@@ -16,26 +16,26 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Image struct {
-	Progress             string             `json:"Progress" xml:"Progress"`
-	ImageId              string             `json:"ImageId" xml:"ImageId"`
-	ImageName            string             `json:"ImageName" xml:"ImageName"`
-	ImageVersion         string             `json:"ImageVersion" xml:"ImageVersion"`
-	Description          string             `json:"Description" xml:"Description"`
-	Size                 int                `json:"Size" xml:"Size"`
-	ImageOwnerAlias      string             `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	IsSupportIoOptimized bool               `json:"IsSupportIoOptimized" xml:"IsSupportIoOptimized"`
-	IsSupportCloudinit   bool               `json:"IsSupportCloudinit" xml:"IsSupportCloudinit"`
-	OSName               string             `json:"OSName" xml:"OSName"`
-	Architecture         string             `json:"Architecture" xml:"Architecture"`
-	Status               string             `json:"Status" xml:"Status"`
-	ProductCode          string             `json:"ProductCode" xml:"ProductCode"`
-	IsSubscribed         bool               `json:"IsSubscribed" xml:"IsSubscribed"`
-	CreationTime         string             `json:"CreationTime" xml:"CreationTime"`
-	IsSelfShared         string             `json:"IsSelfShared" xml:"IsSelfShared"`
-	OSType               string             `json:"OSType" xml:"OSType"`
-	Platform             string             `json:"Platform" xml:"Platform"`
-	Usage                string             `json:"Usage" xml:"Usage"`
-	IsCopied             bool               `json:"IsCopied" xml:"IsCopied"`
-	DiskDeviceMappings   DiskDeviceMappings `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
-	Tags                 Tags               `json:"Tags" xml:"Tags"`
+	Progress             string               `json:"Progress" xml:"Progress"`
+	ImageId              string               `json:"ImageId" xml:"ImageId"`
+	ImageName            string               `json:"ImageName" xml:"ImageName"`
+	ImageVersion         string               `json:"ImageVersion" xml:"ImageVersion"`
+	Description          string               `json:"Description" xml:"Description"`
+	Size                 int                  `json:"Size" xml:"Size"`
+	ImageOwnerAlias      string               `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	IsSupportIoOptimized bool                 `json:"IsSupportIoOptimized" xml:"IsSupportIoOptimized"`
+	IsSupportCloudinit   bool                 `json:"IsSupportCloudinit" xml:"IsSupportCloudinit"`
+	OSName               string               `json:"OSName" xml:"OSName"`
+	Architecture         string               `json:"Architecture" xml:"Architecture"`
+	Status               string               `json:"Status" xml:"Status"`
+	ProductCode          string               `json:"ProductCode" xml:"ProductCode"`
+	IsSubscribed         bool                 `json:"IsSubscribed" xml:"IsSubscribed"`
+	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
+	IsSelfShared         string               `json:"IsSelfShared" xml:"IsSelfShared"`
+	OSType               string               `json:"OSType" xml:"OSType"`
+	Platform             string               `json:"Platform" xml:"Platform"`
+	Usage                string               `json:"Usage" xml:"Usage"`
+	IsCopied             bool                 `json:"IsCopied" xml:"IsCopied"`
+	DiskDeviceMappings   DiskDeviceMappings   `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
+	Tags                 TagsInDescribeImages `json:"Tags" xml:"Tags"`
 }

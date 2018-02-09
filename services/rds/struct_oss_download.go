@@ -16,8 +16,14 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type OssDownload struct {
-	FileSize   string `json:"FileSize" xml:"FileSize"`
-	FileName   string `json:"FileName" xml:"FileName"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
-	Status     string `json:"Status" xml:"Status"`
+	Desc        string `json:"Desc" xml:"Desc"`
+	IsAvailable string `json:"IsAvailable" xml:"IsAvailable"`
+	BackupMode  string `json:"BackupMode" xml:"BackupMode"`
+	BakType     string `json:"BakType" xml:"BakType"`
+	Description string `json:"Description" xml:"Description"`
+	FileSize    string `json:"FileSize" xml:"FileSize"`
+	IsAvail     string `json:"IsAvail" xml:"IsAvail"`
+	FileName    string `json:"FileName" xml:"FileName"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	Status      string `json:"Status" xml:"Status"`
 }

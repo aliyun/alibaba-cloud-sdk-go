@@ -79,12 +79,12 @@ type DescribeDBInstancePerformanceRequest struct {
 
 type DescribeDBInstancePerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	DBInstanceId    string          `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine          string          `json:"Engine" xml:"Engine"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
-	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
+	RequestId       string                                         `json:"RequestId" xml:"RequestId"`
+	DBInstanceId    string                                         `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine          string                                         `json:"Engine" xml:"Engine"`
+	StartTime       string                                         `json:"StartTime" xml:"StartTime"`
+	EndTime         string                                         `json:"EndTime" xml:"EndTime"`
+	PerformanceKeys PerformanceKeysInDescribeDBInstancePerformance `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
 func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePerformanceRequest) {

@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Invocations struct {
-	InvocationInDescribeInvocations []InvocationInDescribeInvocations `json:"Invocation" xml:"Invocation"`
+	Invocation []InvocationInDescribeInvocations `json:"Invocation" xml:"Invocation"`
 }

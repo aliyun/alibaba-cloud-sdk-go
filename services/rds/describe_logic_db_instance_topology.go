@@ -74,15 +74,15 @@ type DescribeLogicDBInstanceTopologyRequest struct {
 
 type DescribeLogicDBInstanceTopologyResponse struct {
 	*responses.BaseResponse
-	DBInstanceId          int    `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
-	DBInstanceStatus      int    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-	DBInstanceConnType    string `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
-	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	Engine                string `json:"Engine" xml:"Engine"`
-	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
-	Items                 Items  `json:"Items" xml:"Items"`
+	DBInstanceId          int                                    `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBInstanceName        string                                 `json:"DBInstanceName" xml:"DBInstanceName"`
+	DBInstanceStatus      int                                    `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	DBInstanceStatusDesc  string                                 `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
+	DBInstanceConnType    string                                 `json:"DBInstanceConnType" xml:"DBInstanceConnType"`
+	DBInstanceDescription string                                 `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	Engine                string                                 `json:"Engine" xml:"Engine"`
+	EngineVersion         string                                 `json:"EngineVersion" xml:"EngineVersion"`
+	Items                 ItemsInDescribeLogicDBInstanceTopology `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBInstanceTopologyRequest) {

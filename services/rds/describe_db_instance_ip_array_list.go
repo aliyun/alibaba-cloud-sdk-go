@@ -77,8 +77,8 @@ type DescribeDBInstanceIPArrayListRequest struct {
 
 type DescribeDBInstanceIPArrayListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                               `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeDBInstanceIPArrayList `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIPArrayListRequest) {

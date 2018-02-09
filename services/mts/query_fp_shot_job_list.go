@@ -76,9 +76,9 @@ type QueryFpShotJobListRequest struct {
 
 type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	NonExistIds   NonExistIds   `json:"NonExistIds" xml:"NonExistIds"`
-	FpShotJobList FpShotJobList `json:"FpShotJobList" xml:"FpShotJobList"`
+	RequestId     string                          `json:"RequestId" xml:"RequestId"`
+	NonExistIds   NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
+	FpShotJobList FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 
 func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {

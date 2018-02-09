@@ -16,6 +16,6 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type UsageDataInDescribeDomainFileSizeProportionData struct {
-	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-	Value     Value  `json:"Value" xml:"Value"`
+	TimeStamp string                                      `json:"TimeStamp" xml:"TimeStamp"`
+	Value     ValueInDescribeDomainFileSizeProportionData `json:"Value" xml:"Value"`
 }

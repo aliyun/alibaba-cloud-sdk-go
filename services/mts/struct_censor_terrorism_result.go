@@ -16,10 +16,10 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CensorTerrorismResult struct {
-	Label                string               `json:"Label" xml:"Label"`
-	Suggestion           string               `json:"Suggestion" xml:"Suggestion"`
-	AverageScore         string               `json:"AverageScore" xml:"AverageScore"`
-	MaxScore             string               `json:"MaxScore" xml:"MaxScore"`
-	TerrorismTopList     TerrorismTopList     `json:"TerrorismTopList" xml:"TerrorismTopList"`
-	TerrorismCounterList TerrorismCounterList `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
+	Label                string                                      `json:"Label" xml:"Label"`
+	Suggestion           string                                      `json:"Suggestion" xml:"Suggestion"`
+	AverageScore         string                                      `json:"AverageScore" xml:"AverageScore"`
+	MaxScore             string                                      `json:"MaxScore" xml:"MaxScore"`
+	TerrorismTopList     TerrorismTopListInQueryTerrorismJobList     `json:"TerrorismTopList" xml:"TerrorismTopList"`
+	TerrorismCounterList TerrorismCounterListInQueryTerrorismJobList `json:"TerrorismCounterList" xml:"TerrorismCounterList"`
 }

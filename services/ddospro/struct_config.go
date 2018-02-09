@@ -16,7 +16,7 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Config struct {
-	Cname     string    `json:"Cname" xml:"Cname"`
-	Domain    string    `json:"Domain" xml:"Domain"`
-	Instances Instances `json:"Instances" xml:"Instances"`
+	Cname     string                          `json:"Cname" xml:"Cname"`
+	Domain    string                          `json:"Domain" xml:"Domain"`
+	Instances InstancesInDescribeDomainConfig `json:"Instances" xml:"Instances"`
 }

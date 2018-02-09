@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ExpectDnsServers struct {
-	ExpectDnsServer []string `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
+	ExpectDnsServer []string `json:"ExpectDnsServer" xml:"ExpectDnsServer"`
 }

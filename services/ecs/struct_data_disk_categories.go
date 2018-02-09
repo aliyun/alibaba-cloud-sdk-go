@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataDiskCategories struct {
-	SupportedDataDiskCategory []string `json:"DataDiskCategories" xml:"DataDiskCategories"`
+	SupportedDataDiskCategory []string `json:"supportedDataDiskCategory" xml:"supportedDataDiskCategory"`
 }

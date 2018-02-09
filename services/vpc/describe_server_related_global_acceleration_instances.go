@@ -77,8 +77,8 @@ type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
 
 type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
-	GlobalAccelerationInstances GlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
+	RequestId                   string                                                                        `json:"RequestId" xml:"RequestId"`
+	GlobalAccelerationInstances GlobalAccelerationInstancesInDescribeServerRelatedGlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
 func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {

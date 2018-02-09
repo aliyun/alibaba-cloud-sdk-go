@@ -93,11 +93,11 @@ type DescribeLoadBalancersRequest struct {
 
 type DescribeLoadBalancersResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
-	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
-	LoadBalancers LoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
+	RequestId     string                               `json:"RequestId" xml:"RequestId"`
+	PageNumber    int                                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int                                  `json:"PageSize" xml:"PageSize"`
+	TotalCount    int                                  `json:"TotalCount" xml:"TotalCount"`
+	LoadBalancers LoadBalancersInDescribeLoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
 func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest) {

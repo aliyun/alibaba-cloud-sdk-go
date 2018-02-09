@@ -16,5 +16,5 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Contacts struct {
-	Contact []string `json:"Contacts" xml:"Contacts"`
+	Contact []string `json:"Contact" xml:"Contact"`
 }

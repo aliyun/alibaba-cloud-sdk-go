@@ -73,10 +73,10 @@ type ListRolesRequest struct {
 
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
-	Roles       Roles  `json:"Roles" xml:"Roles"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool             `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string           `json:"Marker" xml:"Marker"`
+	Roles       RolesInListRoles `json:"Roles" xml:"Roles"`
 }
 
 func CreateListRolesRequest() (request *ListRolesRequest) {

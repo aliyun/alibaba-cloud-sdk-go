@@ -16,10 +16,10 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CensorPornResult struct {
-	Label           string          `json:"Label" xml:"Label"`
-	Suggestion      string          `json:"Suggestion" xml:"Suggestion"`
-	AverageScore    string          `json:"AverageScore" xml:"AverageScore"`
-	MaxScore        string          `json:"MaxScore" xml:"MaxScore"`
-	PornTopList     PornTopList     `json:"PornTopList" xml:"PornTopList"`
-	PornCounterList PornCounterList `json:"PornCounterList" xml:"PornCounterList"`
+	Label           string                              `json:"Label" xml:"Label"`
+	Suggestion      string                              `json:"Suggestion" xml:"Suggestion"`
+	AverageScore    string                              `json:"AverageScore" xml:"AverageScore"`
+	MaxScore        string                              `json:"MaxScore" xml:"MaxScore"`
+	PornCounterList PornCounterListInQueryCensorJobList `json:"PornCounterList" xml:"PornCounterList"`
+	PornTopList     PornTopListInQueryCensorJobList     `json:"PornTopList" xml:"PornTopList"`
 }

@@ -74,10 +74,10 @@ type ListPoliciesRequest struct {
 
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool     `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string   `json:"Marker" xml:"Marker"`
-	Policies    Policies `json:"Policies" xml:"Policies"`
+	RequestId   string                 `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool                   `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string                 `json:"Marker" xml:"Marker"`
+	Policies    PoliciesInListPolicies `json:"Policies" xml:"Policies"`
 }
 
 func CreateListPoliciesRequest() (request *ListPoliciesRequest) {

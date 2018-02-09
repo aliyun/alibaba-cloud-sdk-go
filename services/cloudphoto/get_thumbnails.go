@@ -75,11 +75,11 @@ type GetThumbnailsRequest struct {
 
 type GetThumbnailsResponse struct {
 	*responses.BaseResponse
-	Code      string  `json:"Code" xml:"Code"`
-	Message   string  `json:"Message" xml:"Message"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Action    string  `json:"Action" xml:"Action"`
-	Results   Results `json:"Results" xml:"Results"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Action    string                 `json:"Action" xml:"Action"`
+	Results   ResultsInGetThumbnails `json:"Results" xml:"Results"`
 }
 
 func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {

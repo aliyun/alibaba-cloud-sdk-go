@@ -74,11 +74,11 @@ type GetDownloadUrlsRequest struct {
 
 type GetDownloadUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string  `json:"Code" xml:"Code"`
-	Message   string  `json:"Message" xml:"Message"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Action    string  `json:"Action" xml:"Action"`
-	Results   Results `json:"Results" xml:"Results"`
+	Code      string                   `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Action    string                   `json:"Action" xml:"Action"`
+	Results   ResultsInGetDownloadUrls `json:"Results" xml:"Results"`
 }
 
 func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {

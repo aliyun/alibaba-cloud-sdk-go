@@ -16,6 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaInfo struct {
-	Format  Format  `json:"Format" xml:"Format"`
-	Streams Streams `json:"Streams" xml:"Streams"`
+	Streams StreamsInQueryMediaListByURL `json:"Streams" xml:"Streams"`
+	Format  Format                       `json:"Format" xml:"Format"`
 }

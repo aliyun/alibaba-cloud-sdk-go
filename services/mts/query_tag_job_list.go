@@ -76,9 +76,9 @@ type QueryTagJobListRequest struct {
 
 type QueryTagJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
-	TagJobList  TagJobList  `json:"TagJobList" xml:"TagJobList"`
+	RequestId   string                       `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryTagJobList `json:"NonExistIds" xml:"NonExistIds"`
+	TagJobList  TagJobList                   `json:"TagJobList" xml:"TagJobList"`
 }
 
 func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {

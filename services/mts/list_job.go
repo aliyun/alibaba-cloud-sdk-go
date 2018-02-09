@@ -81,9 +81,9 @@ type ListJobRequest struct {
 
 type ListJobResponse struct {
 	*responses.BaseResponse
-	RequestId     string  `json:"RequestId" xml:"RequestId"`
-	NextPageToken string  `json:"NextPageToken" xml:"NextPageToken"`
-	JobList       JobList `json:"JobList" xml:"JobList"`
+	RequestId     string           `json:"RequestId" xml:"RequestId"`
+	NextPageToken string           `json:"NextPageToken" xml:"NextPageToken"`
+	JobList       JobListInListJob `json:"JobList" xml:"JobList"`
 }
 
 func CreateListJobRequest() (request *ListJobRequest) {

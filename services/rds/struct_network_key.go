@@ -16,7 +16,7 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NetworkKey struct {
-	Key    string `json:"Key" xml:"Key"`
-	Unit   string `json:"Unit" xml:"Unit"`
-	Values Values `json:"Values" xml:"Values"`
+	Key    string                                  `json:"Key" xml:"Key"`
+	Unit   string                                  `json:"Unit" xml:"Unit"`
+	Values ValuesInDescribeDBInstanceNetworkDetail `json:"Values" xml:"Values"`
 }

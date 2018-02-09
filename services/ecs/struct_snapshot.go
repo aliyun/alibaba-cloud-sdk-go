@@ -16,19 +16,19 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Snapshot struct {
-	SnapshotId        string `json:"SnapshotId" xml:"SnapshotId"`
-	SnapshotName      string `json:"SnapshotName" xml:"SnapshotName"`
-	Progress          string `json:"Progress" xml:"Progress"`
-	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-	SourceDiskId      string `json:"SourceDiskId" xml:"SourceDiskId"`
-	SourceDiskType    string `json:"SourceDiskType" xml:"SourceDiskType"`
-	RetentionDays     int    `json:"RetentionDays" xml:"RetentionDays"`
-	Encrypted         bool   `json:"Encrypted" xml:"Encrypted"`
-	SourceDiskSize    string `json:"SourceDiskSize" xml:"SourceDiskSize"`
-	Description       string `json:"Description" xml:"Description"`
-	CreationTime      string `json:"CreationTime" xml:"CreationTime"`
-	Status            string `json:"Status" xml:"Status"`
-	Usage             string `json:"Usage" xml:"Usage"`
-	SourceStorageType string `json:"SourceStorageType" xml:"SourceStorageType"`
-	Tags              Tags   `json:"Tags" xml:"Tags"`
+	SnapshotId        string                  `json:"SnapshotId" xml:"SnapshotId"`
+	SnapshotName      string                  `json:"SnapshotName" xml:"SnapshotName"`
+	Progress          string                  `json:"Progress" xml:"Progress"`
+	ProductCode       string                  `json:"ProductCode" xml:"ProductCode"`
+	SourceDiskId      string                  `json:"SourceDiskId" xml:"SourceDiskId"`
+	SourceDiskType    string                  `json:"SourceDiskType" xml:"SourceDiskType"`
+	RetentionDays     int                     `json:"RetentionDays" xml:"RetentionDays"`
+	Encrypted         bool                    `json:"Encrypted" xml:"Encrypted"`
+	SourceDiskSize    string                  `json:"SourceDiskSize" xml:"SourceDiskSize"`
+	Description       string                  `json:"Description" xml:"Description"`
+	CreationTime      string                  `json:"CreationTime" xml:"CreationTime"`
+	Status            string                  `json:"Status" xml:"Status"`
+	Usage             string                  `json:"Usage" xml:"Usage"`
+	SourceStorageType string                  `json:"SourceStorageType" xml:"SourceStorageType"`
+	Tags              TagsInDescribeSnapshots `json:"Tags" xml:"Tags"`
 }

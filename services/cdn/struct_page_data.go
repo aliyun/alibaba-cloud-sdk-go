@@ -16,16 +16,16 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PageData struct {
-	DomainName      string  `json:"DomainName" xml:"DomainName"`
-	Cname           string  `json:"Cname" xml:"Cname"`
-	CdnType         string  `json:"CdnType" xml:"CdnType"`
-	DomainStatus    string  `json:"DomainStatus" xml:"DomainStatus"`
-	GmtCreated      string  `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string  `json:"GmtModified" xml:"GmtModified"`
-	Description     string  `json:"Description" xml:"Description"`
-	SourceType      string  `json:"SourceType" xml:"SourceType"`
-	SslProtocol     string  `json:"SslProtocol" xml:"SslProtocol"`
-	ResourceGroupId string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Sandbox         string  `json:"Sandbox" xml:"Sandbox"`
-	Sources         Sources `json:"Sources" xml:"Sources"`
+	DomainName      string                       `json:"DomainName" xml:"DomainName"`
+	Cname           string                       `json:"Cname" xml:"Cname"`
+	CdnType         string                       `json:"CdnType" xml:"CdnType"`
+	DomainStatus    string                       `json:"DomainStatus" xml:"DomainStatus"`
+	GmtCreated      string                       `json:"GmtCreated" xml:"GmtCreated"`
+	GmtModified     string                       `json:"GmtModified" xml:"GmtModified"`
+	Description     string                       `json:"Description" xml:"Description"`
+	SourceType      string                       `json:"SourceType" xml:"SourceType"`
+	SslProtocol     string                       `json:"SslProtocol" xml:"SslProtocol"`
+	ResourceGroupId string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Sandbox         string                       `json:"Sandbox" xml:"Sandbox"`
+	Sources         SourcesInDescribeUserDomains `json:"Sources" xml:"Sources"`
 }

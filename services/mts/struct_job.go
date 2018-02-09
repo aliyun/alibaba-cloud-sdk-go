@@ -16,15 +16,26 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Job struct {
-	JobId            string           `json:"JobId" xml:"JobId"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
-	Message          string           `json:"Message" xml:"Message"`
-	Percent          int              `json:"Percent" xml:"Percent"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	FinishTime       string           `json:"FinishTime" xml:"FinishTime"`
-	Input            Input            `json:"Input" xml:"Input"`
-	Output           Output           `json:"Output" xml:"Output"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	CreationTime       string                             `json:"CreationTime" xml:"CreationTime"`
+	PipelineId         string                             `json:"PipelineId" xml:"PipelineId"`
+	Message            string                             `json:"Message" xml:"Message"`
+	State              string                             `json:"State" xml:"State"`
+	Code               string                             `json:"Code" xml:"Code"`
+	UserData           string                             `json:"UserData" xml:"UserData"`
+	FinishTime         string                             `json:"FinishTime" xml:"FinishTime"`
+	Id                 string                             `json:"Id" xml:"Id"`
+	Percent            int                                `json:"Percent" xml:"Percent"`
+	JobId              string                             `json:"JobId" xml:"JobId"`
+	MediaDetailResult  MediaDetailResult                  `json:"MediaDetailResult" xml:"MediaDetailResult"`
+	VideoGifResult     VideoGifResult                     `json:"VideoGifResult" xml:"VideoGifResult"`
+	AsrConfig          AsrConfig                          `json:"AsrConfig" xml:"AsrConfig"`
+	MNSMessageResult   MNSMessageResult                   `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	AsrResult          AsrResult                          `json:"AsrResult" xml:"AsrResult"`
+	Input              Input                              `json:"Input" xml:"Input"`
+	MediaDetailConfig  MediaDetailConfig                  `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
+	VideoSummaryResult VideoSummaryResult                 `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
+	EditingConfig      EditingConfig                      `json:"EditingConfig" xml:"EditingConfig"`
+	Output             Output                             `json:"Output" xml:"Output"`
+	VideoSplitResult   VideoSplitResult                   `json:"VideoSplitResult" xml:"VideoSplitResult"`
+	EditingInputs      EditingInputsInQueryEditingJobList `json:"EditingInputs" xml:"EditingInputs"`
 }

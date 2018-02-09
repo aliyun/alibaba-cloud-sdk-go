@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type IOPS struct {
-	Detail []string `json:"IOPS" xml:"IOPS"`
+	Detail []string `json:"Detail" xml:"Detail"`
 }

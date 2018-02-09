@@ -16,11 +16,11 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PriceInfo struct {
-	Currency      string       `json:"Currency" xml:"Currency"`
-	OriginalPrice float64      `json:"OriginalPrice" xml:"OriginalPrice"`
-	DiscountPrice float64      `json:"DiscountPrice" xml:"DiscountPrice"`
-	TradePrice    float64      `json:"TradePrice" xml:"TradePrice"`
-	RuleIds       RuleIds      `json:"RuleIds" xml:"RuleIds"`
-	Coupons       Coupons      `json:"Coupons" xml:"Coupons"`
-	ActivityInfo  ActivityInfo `json:"ActivityInfo" xml:"ActivityInfo"`
+	Currency      string                    `json:"Currency" xml:"Currency"`
+	OriginalPrice float64                   `json:"OriginalPrice" xml:"OriginalPrice"`
+	DiscountPrice float64                   `json:"DiscountPrice" xml:"DiscountPrice"`
+	TradePrice    float64                   `json:"TradePrice" xml:"TradePrice"`
+	RuleIds       RuleIdsInQueryPriceForBuy `json:"RuleIds" xml:"RuleIds"`
+	ActivityInfo  ActivityInfo              `json:"ActivityInfo" xml:"ActivityInfo"`
+	Coupons       CouponsInQueryPriceForBuy `json:"Coupons" xml:"Coupons"`
 }

@@ -16,8 +16,8 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Timeline struct {
-	Start          string         `json:"Start" xml:"Start"`
-	Duration       string         `json:"Duration" xml:"Duration"`
-	TrackList      TrackList      `json:"TrackList" xml:"TrackList"`
-	TimelineConfig TimelineConfig `json:"TimelineConfig" xml:"TimelineConfig"`
+	Start          string                         `json:"Start" xml:"Start"`
+	Duration       string                         `json:"Duration" xml:"Duration"`
+	TimelineConfig TimelineConfig                 `json:"TimelineConfig" xml:"TimelineConfig"`
+	TrackList      TrackListInQueryEditingJobList `json:"TrackList" xml:"TrackList"`
 }

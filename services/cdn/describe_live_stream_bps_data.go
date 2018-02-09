@@ -78,8 +78,8 @@ type DescribeLiveStreamBpsDataRequest struct {
 
 type DescribeLiveStreamBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	BpsDatas  BpsDatas `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	BpsDatas  BpsDatasInDescribeLiveStreamBpsData `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDataRequest) {

@@ -71,8 +71,8 @@ type ListDomainsByLogConfigIdRequest struct {
 
 type ListDomainsByLogConfigIdResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Domains   Domains `json:"Domains" xml:"Domains"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Domains   DomainsInListDomainsByLogConfigId `json:"Domains" xml:"Domains"`
 }
 
 func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdRequest) {

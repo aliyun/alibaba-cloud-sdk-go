@@ -79,14 +79,14 @@ type ListMyGroupsRequest struct {
 
 type ListMyGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string    `json:"RequestId" xml:"RequestId"`
-	Success      bool      `json:"Success" xml:"Success"`
-	ErrorCode    int       `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string    `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageNumber   int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int       `json:"PageSize" xml:"PageSize"`
-	Total        int       `json:"Total" xml:"Total"`
-	Resources    Resources `json:"Resources" xml:"Resources"`
+	RequestId    string                  `json:"RequestId" xml:"RequestId"`
+	Success      bool                    `json:"Success" xml:"Success"`
+	ErrorCode    int                     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	PageNumber   int                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                     `json:"PageSize" xml:"PageSize"`
+	Total        int                     `json:"Total" xml:"Total"`
+	Resources    ResourcesInListMyGroups `json:"Resources" xml:"Resources"`
 }
 
 func CreateListMyGroupsRequest() (request *ListMyGroupsRequest) {

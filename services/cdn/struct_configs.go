@@ -16,6 +16,6 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Configs struct {
-	OssLogConfig       OssLogConfig       `json:"OssLogConfig" xml:"OssLogConfig"`
-	GreenManagerConfig GreenManagerConfig `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
+	OssLogConfig       OssLogConfig                            `json:"OssLogConfig" xml:"OssLogConfig"`
+	GreenManagerConfig GreenManagerConfigInDescribeUserConfigs `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
 }

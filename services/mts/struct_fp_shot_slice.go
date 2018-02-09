@@ -16,6 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FpShotSlice struct {
-	Input       Input       `json:"Input" xml:"Input"`
-	Duplication Duplication `json:"Duplication" xml:"Duplication"`
+	Input       InputInQueryFpShotJobList `json:"Input" xml:"Input"`
+	Duplication Duplication               `json:"Duplication" xml:"Duplication"`
 }

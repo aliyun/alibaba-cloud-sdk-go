@@ -79,8 +79,8 @@ type AddCoverPipelineRequest struct {
 
 type AddCoverPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Pipeline  PipelineInAddCoverPipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {

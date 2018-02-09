@@ -78,9 +78,9 @@ type SenderStatisticsByTagNameAndBatchIDRequest struct {
 
 type SenderStatisticsByTagNameAndBatchIDResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                                    `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                       `json:"TotalCount" xml:"TotalCount"`
+	Data       DataInSenderStatisticsByTagNameAndBatchID `json:"data" xml:"data"`
 }
 
 func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {

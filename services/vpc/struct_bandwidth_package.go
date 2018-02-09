@@ -16,19 +16,19 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type BandwidthPackage struct {
-	BandwidthPackageId string            `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	RegionId           string            `json:"RegionId" xml:"RegionId"`
-	Name               string            `json:"Name" xml:"Name"`
-	Description        string            `json:"Description" xml:"Description"`
-	ZoneId             string            `json:"ZoneId" xml:"ZoneId"`
-	NatGatewayId       string            `json:"NatGatewayId" xml:"NatGatewayId"`
-	Bandwidth          string            `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceChargeType string            `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InternetChargeType string            `json:"InternetChargeType" xml:"InternetChargeType"`
-	BusinessStatus     string            `json:"BusinessStatus" xml:"BusinessStatus"`
-	IpCount            string            `json:"IpCount" xml:"IpCount"`
-	CreationTime       string            `json:"CreationTime" xml:"CreationTime"`
-	Status             string            `json:"Status" xml:"Status"`
-	ISP                string            `json:"ISP" xml:"ISP"`
-	PublicIpAddresses  PublicIpAddresses `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+	BandwidthPackageId string                                       `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	RegionId           string                                       `json:"RegionId" xml:"RegionId"`
+	Name               string                                       `json:"Name" xml:"Name"`
+	Description        string                                       `json:"Description" xml:"Description"`
+	ZoneId             string                                       `json:"ZoneId" xml:"ZoneId"`
+	NatGatewayId       string                                       `json:"NatGatewayId" xml:"NatGatewayId"`
+	Bandwidth          string                                       `json:"Bandwidth" xml:"Bandwidth"`
+	InstanceChargeType string                                       `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	InternetChargeType string                                       `json:"InternetChargeType" xml:"InternetChargeType"`
+	BusinessStatus     string                                       `json:"BusinessStatus" xml:"BusinessStatus"`
+	IpCount            string                                       `json:"IpCount" xml:"IpCount"`
+	CreationTime       string                                       `json:"CreationTime" xml:"CreationTime"`
+	Status             string                                       `json:"Status" xml:"Status"`
+	ISP                string                                       `json:"ISP" xml:"ISP"`
+	PublicIpAddresses  PublicIpAddressesInDescribeBandwidthPackages `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 }

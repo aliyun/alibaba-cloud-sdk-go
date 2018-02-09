@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NonExistRunIds struct {
-	RunId []string `json:"NonExistRunIds" xml:"NonExistRunIds"`
+	RunId []string `json:"RunId" xml:"RunId"`
 }

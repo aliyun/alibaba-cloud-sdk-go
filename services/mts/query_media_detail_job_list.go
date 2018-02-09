@@ -76,9 +76,9 @@ type QueryMediaDetailJobListRequest struct {
 
 type QueryMediaDetailJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
-	JobList     JobList     `json:"JobList" xml:"JobList"`
+	RequestId   string                               `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryMediaDetailJobList `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobListInQueryMediaDetailJobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {

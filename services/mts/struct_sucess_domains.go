@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SucessDomains struct {
-	String []string `json:"SucessDomains" xml:"SucessDomains"`
+	String []string `json:"String" xml:"String"`
 }

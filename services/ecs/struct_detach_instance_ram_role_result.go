@@ -16,9 +16,9 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DetachInstanceRamRoleResult struct {
-	InstanceId          string              `json:"InstanceId" xml:"InstanceId"`
-	Success             bool                `json:"Success" xml:"Success"`
-	Code                string              `json:"Code" xml:"Code"`
-	Message             string              `json:"Message" xml:"Message"`
-	InstanceRamRoleSets InstanceRamRoleSets `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
+	InstanceId          string                                     `json:"InstanceId" xml:"InstanceId"`
+	Success             bool                                       `json:"Success" xml:"Success"`
+	Code                string                                     `json:"Code" xml:"Code"`
+	Message             string                                     `json:"Message" xml:"Message"`
+	InstanceRamRoleSets InstanceRamRoleSetsInDetachInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }

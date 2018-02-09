@@ -77,22 +77,22 @@ type DescribeVpcAttributeRequest struct {
 
 type DescribeVpcAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId          string         `json:"RequestId" xml:"RequestId"`
-	VpcId              string         `json:"VpcId" xml:"VpcId"`
-	RegionId           string         `json:"RegionId" xml:"RegionId"`
-	Status             string         `json:"Status" xml:"Status"`
-	VpcName            string         `json:"VpcName" xml:"VpcName"`
-	CreationTime       string         `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock          string         `json:"CidrBlock" xml:"CidrBlock"`
-	VRouterId          string         `json:"VRouterId" xml:"VRouterId"`
-	Description        string         `json:"Description" xml:"Description"`
-	IsDefault          bool           `json:"IsDefault" xml:"IsDefault"`
-	ClassicLinkEnabled bool           `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
-	ResourceGroupId    string         `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	VSwitchIds         VSwitchIds     `json:"VSwitchIds" xml:"VSwitchIds"`
-	UserCidrs          UserCidrs      `json:"UserCidrs" xml:"UserCidrs"`
-	AssociatedCens     AssociatedCens `json:"AssociatedCens" xml:"AssociatedCens"`
-	CloudResources     CloudResources `json:"CloudResources" xml:"CloudResources"`
+	RequestId          string                               `json:"RequestId" xml:"RequestId"`
+	VpcId              string                               `json:"VpcId" xml:"VpcId"`
+	RegionId           string                               `json:"RegionId" xml:"RegionId"`
+	Status             string                               `json:"Status" xml:"Status"`
+	VpcName            string                               `json:"VpcName" xml:"VpcName"`
+	CreationTime       string                               `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock          string                               `json:"CidrBlock" xml:"CidrBlock"`
+	VRouterId          string                               `json:"VRouterId" xml:"VRouterId"`
+	Description        string                               `json:"Description" xml:"Description"`
+	IsDefault          bool                                 `json:"IsDefault" xml:"IsDefault"`
+	ClassicLinkEnabled bool                                 `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
+	ResourceGroupId    string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	VSwitchIds         VSwitchIdsInDescribeVpcAttribute     `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs          UserCidrsInDescribeVpcAttribute      `json:"UserCidrs" xml:"UserCidrs"`
+	AssociatedCens     AssociatedCensInDescribeVpcAttribute `json:"AssociatedCens" xml:"AssociatedCens"`
+	CloudResources     CloudResourcesInDescribeVpcAttribute `json:"CloudResources" xml:"CloudResources"`
 }
 
 func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) {

@@ -16,10 +16,7 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ItemsInDescribeReplicas struct {
-	ReplicaId          string  `json:"ReplicaId" xml:"ReplicaId"`
-	ReplicaDescription string  `json:"ReplicaDescription" xml:"ReplicaDescription"`
-	ReplicaStatus      string  `json:"ReplicaStatus" xml:"ReplicaStatus"`
-	ReplicaMode        string  `json:"ReplicaMode" xml:"ReplicaMode"`
-	DomainMode         string  `json:"DomainMode" xml:"DomainMode"`
-	DBInstances        []Items `json:"DBInstances" xml:"DBInstances"`
+	DBInstanceId  string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Role          string `json:"Role" xml:"Role"`
+	ReadWriteType string `json:"ReadWriteType" xml:"ReadWriteType"`
 }

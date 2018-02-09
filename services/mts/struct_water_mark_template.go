@@ -25,6 +25,6 @@ type WaterMarkTemplate struct {
 	State      string     `json:"State" xml:"State"`
 	Dx         string     `json:"Dx" xml:"Dx"`
 	ReferPos   string     `json:"ReferPos" xml:"ReferPos"`
-	Timeline   Timeline   `json:"Timeline" xml:"Timeline"`
 	RatioRefer RatioRefer `json:"RatioRefer" xml:"RatioRefer"`
+	Timeline   Timeline   `json:"Timeline" xml:"Timeline"`
 }

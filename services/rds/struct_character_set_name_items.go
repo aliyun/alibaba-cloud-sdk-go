@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type CharacterSetNameItems struct {
-	CharacterSetName []string `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
+	CharacterSetName []string `json:"CharacterSetName" xml:"CharacterSetName"`
 }

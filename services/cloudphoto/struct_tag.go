@@ -20,4 +20,5 @@ type Tag struct {
 	ParentTag string `json:"ParentTag" xml:"ParentTag"`
 	Name      string `json:"Name" xml:"Name"`
 	Id        int    `json:"Id" xml:"Id"`
+	Cover     Cover  `json:"Cover" xml:"Cover"`
 }

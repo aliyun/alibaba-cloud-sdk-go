@@ -82,10 +82,10 @@ type DescribeImageSupportInstanceTypesFilter struct {
 
 type DescribeImageSupportInstanceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	RegionId      string        `json:"RegionId" xml:"RegionId"`
-	ImageId       string        `json:"ImageId" xml:"ImageId"`
-	InstanceTypes InstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
+	RequestId     string                                           `json:"RequestId" xml:"RequestId"`
+	RegionId      string                                           `json:"RegionId" xml:"RegionId"`
+	ImageId       string                                           `json:"ImageId" xml:"ImageId"`
+	InstanceTypes InstanceTypesInDescribeImageSupportInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
 func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSupportInstanceTypesRequest) {

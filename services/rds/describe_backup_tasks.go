@@ -81,8 +81,8 @@ type DescribeBackupTasksRequest struct {
 
 type DescribeBackupTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeBackupTasks `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {

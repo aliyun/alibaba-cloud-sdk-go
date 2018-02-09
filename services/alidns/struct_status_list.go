@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type StatusList struct {
-	Status []string `json:"StatusList" xml:"StatusList"`
+	Status []string `json:"Status" xml:"Status"`
 }

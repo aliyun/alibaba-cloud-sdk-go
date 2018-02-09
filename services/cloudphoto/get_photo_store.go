@@ -72,11 +72,11 @@ type GetPhotoStoreRequest struct {
 
 type GetPhotoStoreResponse struct {
 	*responses.BaseResponse
-	Code       string     `json:"Code" xml:"Code"`
-	Message    string     `json:"Message" xml:"Message"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Action     string     `json:"Action" xml:"Action"`
-	PhotoStore PhotoStore `json:"PhotoStore" xml:"PhotoStore"`
+	Code       string                    `json:"Code" xml:"Code"`
+	Message    string                    `json:"Message" xml:"Message"`
+	RequestId  string                    `json:"RequestId" xml:"RequestId"`
+	Action     string                    `json:"Action" xml:"Action"`
+	PhotoStore PhotoStoreInGetPhotoStore `json:"PhotoStore" xml:"PhotoStore"`
 }
 
 func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {

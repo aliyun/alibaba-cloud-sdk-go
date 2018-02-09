@@ -76,9 +76,9 @@ type QueryWaterMarkTemplateListRequest struct {
 
 type QueryWaterMarkTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	NonExistWids          NonExistWids          `json:"NonExistWids" xml:"NonExistWids"`
-	WaterMarkTemplateList WaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	RequestId             string                                            `json:"RequestId" xml:"RequestId"`
+	NonExistWids          NonExistWids                                      `json:"NonExistWids" xml:"NonExistWids"`
+	WaterMarkTemplateList WaterMarkTemplateListInQueryWaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {

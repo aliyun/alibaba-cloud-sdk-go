@@ -18,6 +18,8 @@ package ram
 type Group struct {
 	CreateDate string `json:"CreateDate" xml:"CreateDate"`
 	Comments   string `json:"Comments" xml:"Comments"`
+	AttachDate string `json:"AttachDate" xml:"AttachDate"`
 	GroupName  string `json:"GroupName" xml:"GroupName"`
+	JoinDate   string `json:"JoinDate" xml:"JoinDate"`
 	UpdateDate string `json:"UpdateDate" xml:"UpdateDate"`
 }

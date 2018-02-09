@@ -76,9 +76,9 @@ type QueryPornJobListRequest struct {
 
 type QueryPornJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	NonExistIds NonExistIds `json:"NonExistIds" xml:"NonExistIds"`
-	PornJobList PornJobList `json:"PornJobList" xml:"PornJobList"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryPornJobList `json:"NonExistIds" xml:"NonExistIds"`
+	PornJobList PornJobList                   `json:"PornJobList" xml:"PornJobList"`
 }
 
 func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {

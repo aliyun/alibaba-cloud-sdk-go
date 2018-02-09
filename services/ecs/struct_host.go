@@ -16,6 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Host struct {
-	HostId      string      `json:"HostId" xml:"HostId"`
-	InstanceIds InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
+	HostId      string                                     `json:"HostId" xml:"HostId"`
+	InstanceIds InstanceIdsInDescribeDeploymentSetTopology `json:"InstanceIds" xml:"InstanceIds"`
 }

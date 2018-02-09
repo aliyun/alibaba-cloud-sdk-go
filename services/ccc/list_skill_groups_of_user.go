@@ -73,12 +73,12 @@ type ListSkillGroupsOfUserRequest struct {
 
 type ListSkillGroupsOfUserResponse struct {
 	*responses.BaseResponse
-	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	Success        bool        `json:"Success" xml:"Success"`
-	Code           string      `json:"Code" xml:"Code"`
-	Message        string      `json:"Message" xml:"Message"`
-	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillLevels    SkillLevels `json:"SkillLevels" xml:"SkillLevels"`
+	RequestId      string                             `json:"RequestId" xml:"RequestId"`
+	Success        bool                               `json:"Success" xml:"Success"`
+	Code           string                             `json:"Code" xml:"Code"`
+	Message        string                             `json:"Message" xml:"Message"`
+	HttpStatusCode int                                `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillLevels    SkillLevelsInListSkillGroupsOfUser `json:"SkillLevels" xml:"SkillLevels"`
 }
 
 func CreateListSkillGroupsOfUserRequest() (request *ListSkillGroupsOfUserRequest) {

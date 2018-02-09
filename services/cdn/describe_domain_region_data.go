@@ -76,12 +76,12 @@ type DescribeDomainRegionDataRequest struct {
 
 type DescribeDomainRegionDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Value        Value  `json:"Value" xml:"Value"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	DomainName   string                          `json:"DomainName" xml:"DomainName"`
+	DataInterval string                          `json:"DataInterval" xml:"DataInterval"`
+	StartTime    string                          `json:"StartTime" xml:"StartTime"`
+	EndTime      string                          `json:"EndTime" xml:"EndTime"`
+	Value        ValueInDescribeDomainRegionData `json:"Value" xml:"Value"`
 }
 
 func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataRequest) {

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Connection struct {
-	Detail []string `json:"Connection" xml:"Connection"`
+	Detail []string `json:"Detail" xml:"Detail"`
 }

@@ -78,11 +78,11 @@ type ListVideoSummaryPipelineRequest struct {
 
 type ListVideoSummaryPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                                 `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                                    `json:"PageSize" xml:"PageSize"`
+	PipelineList PipelineListInListVideoSummaryPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateListVideoSummaryPipelineRequest() (request *ListVideoSummaryPipelineRequest) {

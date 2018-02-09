@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type FailedDomains struct {
-	String []string `json:"FailedDomains" xml:"FailedDomains"`
+	String []string `json:"String" xml:"String"`
 }

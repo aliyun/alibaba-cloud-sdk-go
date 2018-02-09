@@ -16,5 +16,14 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Items struct {
-	InstanceResult []InstanceResult `json:"InstanceResult" xml:"InstanceResult"`
+	ReplicaId          string                    `json:"ReplicaId" xml:"ReplicaId"`
+	FinishTime         string                    `json:"FinishTime" xml:"FinishTime"`
+	Progress           string                    `json:"Progress" xml:"Progress"`
+	ReplicaStatus      string                    `json:"ReplicaStatus" xml:"ReplicaStatus"`
+	ReplicaDescription string                    `json:"ReplicaDescription" xml:"ReplicaDescription"`
+	DomainMode         string                    `json:"DomainMode" xml:"DomainMode"`
+	ReplicaMode        string                    `json:"ReplicaMode" xml:"ReplicaMode"`
+	CurrentStep        string                    `json:"CurrentStep" xml:"CurrentStep"`
+	Status             string                    `json:"Status" xml:"Status"`
+	DBInstances        []ItemsInDescribeReplicas `json:"DBInstances" xml:"DBInstances"`
 }

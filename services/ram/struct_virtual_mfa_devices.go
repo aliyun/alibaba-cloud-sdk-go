@@ -16,5 +16,5 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VirtualMFADevices struct {
-	VirtualMFADeviceInListVirtualMFADevices []VirtualMFADeviceInListVirtualMFADevices `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
+	VirtualMFADevice []VirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
 }

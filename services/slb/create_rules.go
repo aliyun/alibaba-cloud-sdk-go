@@ -80,8 +80,8 @@ type CreateRulesRequest struct {
 
 type CreateRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Rules     Rules  `json:"Rules" xml:"Rules"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Rules     RulesInCreateRules `json:"Rules" xml:"Rules"`
 }
 
 func CreateCreateRulesRequest() (request *CreateRulesRequest) {

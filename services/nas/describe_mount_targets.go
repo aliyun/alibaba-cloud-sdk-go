@@ -75,11 +75,11 @@ type DescribeMountTargetsRequest struct {
 
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	MountTargets MountTargets `json:"MountTargets" xml:"MountTargets"`
+	RequestId    string                             `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                                `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int                                `json:"PageSize" xml:"PageSize"`
+	PageNumber   int                                `json:"PageNumber" xml:"PageNumber"`
+	MountTargets MountTargetsInDescribeMountTargets `json:"MountTargets" xml:"MountTargets"`
 }
 
 func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) {

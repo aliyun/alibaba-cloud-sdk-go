@@ -76,9 +76,9 @@ type QueryCoverPipelineListRequest struct {
 
 type QueryCoverPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                               `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIdsInQueryCoverPipelineList  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineListInQueryCoverPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListRequest) {

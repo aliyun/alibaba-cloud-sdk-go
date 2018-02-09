@@ -76,9 +76,9 @@ type QueryMediaWorkflowListRequest struct {
 
 type QueryMediaWorkflowListResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	NonExistMediaWorkflowIds NonExistMediaWorkflowIds `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
-	MediaWorkflowList        MediaWorkflowList        `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
+	RequestId                string                                    `json:"RequestId" xml:"RequestId"`
+	NonExistMediaWorkflowIds NonExistMediaWorkflowIds                  `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
+	MediaWorkflowList        MediaWorkflowListInQueryMediaWorkflowList `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
 func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListRequest) {

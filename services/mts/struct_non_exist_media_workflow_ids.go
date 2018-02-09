@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NonExistMediaWorkflowIds struct {
-	MediaWorkflowId []string `json:"NonExistMediaWorkflowIds" xml:"NonExistMediaWorkflowIds"`
+	MediaWorkflowId []string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
 }

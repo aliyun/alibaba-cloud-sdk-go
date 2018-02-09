@@ -71,8 +71,8 @@ type DescribeDomainRealTimeQpsDataRequest struct {
 
 type DescribeDomainRealTimeQpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	Data      DataInDescribeDomainRealTimeQpsData `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeQpsDataRequest() (request *DescribeDomainRealTimeQpsDataRequest) {

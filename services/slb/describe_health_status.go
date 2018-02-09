@@ -79,8 +79,8 @@ type DescribeHealthStatusRequest struct {
 
 type DescribeHealthStatusResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
+	BackendServers BackendServersInDescribeHealthStatus `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {

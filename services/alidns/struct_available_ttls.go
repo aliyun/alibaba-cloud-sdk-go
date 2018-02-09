@@ -16,5 +16,5 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AvailableTtls struct {
-	AvailableTtl []string `json:"AvailableTtls" xml:"AvailableTtls"`
+	AvailableTtl []string `json:"AvailableTtl" xml:"AvailableTtl"`
 }

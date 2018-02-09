@@ -74,13 +74,13 @@ type ListContactGroupRequest struct {
 
 type ListContactGroupResponse struct {
 	*responses.BaseResponse
-	Success       bool          `json:"Success" xml:"Success"`
-	Code          string        `json:"Code" xml:"Code"`
-	Message       string        `json:"Message" xml:"Message"`
-	NextToken     int           `json:"NextToken" xml:"NextToken"`
-	Total         int           `json:"Total" xml:"Total"`
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	ContactGroups ContactGroups `json:"ContactGroups" xml:"ContactGroups"`
+	Success       bool                            `json:"Success" xml:"Success"`
+	Code          string                          `json:"Code" xml:"Code"`
+	Message       string                          `json:"Message" xml:"Message"`
+	NextToken     int                             `json:"NextToken" xml:"NextToken"`
+	Total         int                             `json:"Total" xml:"Total"`
+	RequestId     string                          `json:"RequestId" xml:"RequestId"`
+	ContactGroups ContactGroupsInListContactGroup `json:"ContactGroups" xml:"ContactGroups"`
 }
 
 func CreateListContactGroupRequest() (request *ListContactGroupRequest) {

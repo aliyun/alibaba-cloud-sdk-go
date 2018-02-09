@@ -79,9 +79,9 @@ type RemoveBackendServersRequest struct {
 
 type RemoveBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	LoadBalancerId string         `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
+	LoadBalancerId string                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	BackendServers BackendServersInRemoveBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) {

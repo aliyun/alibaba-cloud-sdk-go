@@ -89,11 +89,11 @@ type CreateNatGatewayBandwidthPackage struct {
 
 type CreateNatGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	NatGatewayId        string              `json:"NatGatewayId" xml:"NatGatewayId"`
-	ForwardTableIds     ForwardTableIds     `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	SnatTableIds        SnatTableIds        `json:"SnatTableIds" xml:"SnatTableIds"`
-	BandwidthPackageIds BandwidthPackageIds `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+	RequestId           string                                `json:"RequestId" xml:"RequestId"`
+	NatGatewayId        string                                `json:"NatGatewayId" xml:"NatGatewayId"`
+	ForwardTableIds     ForwardTableIdsInCreateNatGateway     `json:"ForwardTableIds" xml:"ForwardTableIds"`
+	SnatTableIds        SnatTableIdsInCreateNatGateway        `json:"SnatTableIds" xml:"SnatTableIds"`
+	BandwidthPackageIds BandwidthPackageIdsInCreateNatGateway `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }
 
 func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {

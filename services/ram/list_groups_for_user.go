@@ -72,8 +72,8 @@ type ListGroupsForUserRequest struct {
 
 type ListGroupsForUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Groups    Groups `json:"Groups" xml:"Groups"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Groups    GroupsInListGroupsForUser `json:"Groups" xml:"Groups"`
 }
 
 func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {

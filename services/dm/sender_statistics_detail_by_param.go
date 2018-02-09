@@ -82,9 +82,9 @@ type SenderStatisticsDetailByParamRequest struct {
 
 type SenderStatisticsDetailByParamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	NextStart int    `json:"NextStart" xml:"NextStart"`
-	Data      Data   `json:"data" xml:"data"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	NextStart int                                 `json:"NextStart" xml:"NextStart"`
+	Data      DataInSenderStatisticsDetailByParam `json:"data" xml:"data"`
 }
 
 func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDetailByParamRequest) {

@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type StreamUrls struct {
-	StreamUrl []string `json:"StreamUrls" xml:"StreamUrls"`
+	StreamUrl []string `json:"StreamUrl" xml:"StreamUrl"`
 }

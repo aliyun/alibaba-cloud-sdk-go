@@ -76,8 +76,8 @@ type DescribeInstanceTypeFamiliesRequest struct {
 
 type DescribeInstanceTypeFamiliesResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	InstanceTypeFamilies InstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
+	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
+	InstanceTypeFamilies InstanceTypeFamiliesInDescribeInstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 
 func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeFamiliesRequest) {

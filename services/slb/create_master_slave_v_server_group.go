@@ -80,9 +80,9 @@ type CreateMasterSlaveVServerGroupRequest struct {
 
 type CreateMasterSlaveVServerGroupResponse struct {
 	*responses.BaseResponse
-	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
-	MasterSlaveVServerGroupId string                    `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
-	MasterSlaveBackendServers MasterSlaveBackendServers `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
+	RequestId                 string                                                   `json:"RequestId" xml:"RequestId"`
+	MasterSlaveVServerGroupId string                                                   `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
+	MasterSlaveBackendServers MasterSlaveBackendServersInCreateMasterSlaveVServerGroup `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
 func CreateCreateMasterSlaveVServerGroupRequest() (request *CreateMasterSlaveVServerGroupRequest) {

@@ -88,9 +88,9 @@ type DescribePriceRequest struct {
 
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
-	Rules     Rules     `json:"Rules" xml:"Rules"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo            `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     RulesInDescribePrice `json:"Rules" xml:"Rules"`
 }
 
 func CreateDescribePriceRequest() (request *DescribePriceRequest) {

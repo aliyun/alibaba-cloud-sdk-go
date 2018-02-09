@@ -76,8 +76,8 @@ type CalculateDBInstanceWeightRequest struct {
 
 type CalculateDBInstanceWeightResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     Items  `json:"Items" xml:"Items"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInCalculateDBInstanceWeight `json:"Items" xml:"Items"`
 }
 
 func CreateCalculateDBInstanceWeightRequest() (request *CalculateDBInstanceWeightRequest) {

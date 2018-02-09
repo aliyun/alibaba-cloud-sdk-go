@@ -16,29 +16,29 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EditingConfig struct {
-	WaterMarkConfigUrl     string                 `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-	VideoStreamMap         string                 `json:"VideoStreamMap" xml:"VideoStreamMap"`
-	UserData               string                 `json:"UserData" xml:"UserData"`
-	TemplateId             string                 `json:"TemplateId" xml:"TemplateId"`
-	Priority               string                 `json:"Priority" xml:"Priority"`
-	AudioStreamMap         string                 `json:"AudioStreamMap" xml:"AudioStreamMap"`
-	MergeConfigUrl         string                 `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
-	Rotate                 string                 `json:"Rotate" xml:"Rotate"`
-	DeWatermark            string                 `json:"DeWatermark" xml:"DeWatermark"`
-	M3U8NonStandardSupport M3U8NonStandardSupport `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
-	TransConfig            TransConfig            `json:"TransConfig" xml:"TransConfig"`
-	Properties             Properties             `json:"Properties" xml:"Properties"`
-	MergeList              MergeList              `json:"MergeList" xml:"MergeList"`
-	WaterMarkList          WaterMarkList          `json:"WaterMarkList" xml:"WaterMarkList"`
-	Video                  Video                  `json:"Video" xml:"Video"`
-	Audio                  Audio                  `json:"Audio" xml:"Audio"`
-	Editing                Editing                `json:"Editing" xml:"Editing"`
-	Container              Container              `json:"Container" xml:"Container"`
-	SubtitleConfig         SubtitleConfig         `json:"SubtitleConfig" xml:"SubtitleConfig"`
-	OutputFile             OutputFile             `json:"OutputFile" xml:"OutputFile"`
-	MuxConfig              MuxConfig              `json:"MuxConfig" xml:"MuxConfig"`
-	DigiWaterMark          DigiWaterMark          `json:"DigiWaterMark" xml:"DigiWaterMark"`
-	Clip                   Clip                   `json:"Clip" xml:"Clip"`
-	Encryption             Encryption             `json:"Encryption" xml:"Encryption"`
-	SuperReso              SuperReso              `json:"SuperReso" xml:"SuperReso"`
+	UserData               string                             `json:"UserData" xml:"UserData"`
+	Priority               string                             `json:"Priority" xml:"Priority"`
+	TemplateId             string                             `json:"TemplateId" xml:"TemplateId"`
+	MergeConfigUrl         string                             `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
+	Rotate                 string                             `json:"Rotate" xml:"Rotate"`
+	DeWatermark            string                             `json:"DeWatermark" xml:"DeWatermark"`
+	WaterMarkConfigUrl     string                             `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
+	VideoStreamMap         string                             `json:"VideoStreamMap" xml:"VideoStreamMap"`
+	AudioStreamMap         string                             `json:"AudioStreamMap" xml:"AudioStreamMap"`
+	Editing                Editing                            `json:"Editing" xml:"Editing"`
+	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
+	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
+	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
+	Container              Container                          `json:"Container" xml:"Container"`
+	Properties             Properties                         `json:"Properties" xml:"Properties"`
+	Clip                   Clip                               `json:"Clip" xml:"Clip"`
+	SuperReso              SuperReso                          `json:"SuperReso" xml:"SuperReso"`
+	Audio                  Audio                              `json:"Audio" xml:"Audio"`
+	SubtitleConfig         SubtitleConfig                     `json:"SubtitleConfig" xml:"SubtitleConfig"`
+	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
+	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
+	Video                  Video                              `json:"Video" xml:"Video"`
+	M3U8NonStandardSupport M3U8NonStandardSupport             `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
+	MergeList              MergeListInQueryEditingJobList     `json:"MergeList" xml:"MergeList"`
+	WaterMarkList          WaterMarkListInQueryEditingJobList `json:"WaterMarkList" xml:"WaterMarkList"`
 }

@@ -16,12 +16,12 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SkillGroup struct {
-	SkillGroupId          string               `json:"SkillGroupId" xml:"SkillGroupId"`
-	InstanceId            string               `json:"InstanceId" xml:"InstanceId"`
-	SkillGroupName        string               `json:"SkillGroupName" xml:"SkillGroupName"`
-	AccSkillGroupName     string               `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
-	AccQueueName          string               `json:"AccQueueName" xml:"AccQueueName"`
-	SkillGroupDescription string               `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-	UserCount             int                  `json:"UserCount" xml:"UserCount"`
-	OutboundPhoneNumbers  OutboundPhoneNumbers `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
+	SkillGroupId          string                                `json:"SkillGroupId" xml:"SkillGroupId"`
+	InstanceId            string                                `json:"InstanceId" xml:"InstanceId"`
+	SkillGroupName        string                                `json:"SkillGroupName" xml:"SkillGroupName"`
+	AccSkillGroupName     string                                `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
+	AccQueueName          string                                `json:"AccQueueName" xml:"AccQueueName"`
+	SkillGroupDescription string                                `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+	UserCount             int                                   `json:"UserCount" xml:"UserCount"`
+	OutboundPhoneNumbers  OutboundPhoneNumbersInListSkillGroups `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
 }

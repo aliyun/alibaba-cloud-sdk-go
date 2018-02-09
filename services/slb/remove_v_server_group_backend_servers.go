@@ -79,9 +79,9 @@ type RemoveVServerGroupBackendServersRequest struct {
 
 type RemoveVServerGroupBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	VServerGroupId string         `json:"VServerGroupId" xml:"VServerGroupId"`
-	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                                           `json:"RequestId" xml:"RequestId"`
+	VServerGroupId string                                           `json:"VServerGroupId" xml:"VServerGroupId"`
+	BackendServers BackendServersInRemoveVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGroupBackendServersRequest) {

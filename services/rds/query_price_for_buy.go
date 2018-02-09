@@ -88,9 +88,9 @@ type QueryPriceForBuyRequest struct {
 
 type QueryPriceForBuyResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
-	Rules     Rules     `json:"Rules" xml:"Rules"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo               `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     RulesInQueryPriceForBuy `json:"Rules" xml:"Rules"`
 }
 
 func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {

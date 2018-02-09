@@ -78,11 +78,11 @@ type SearchTemplateRequest struct {
 
 type SearchTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	TemplateList TemplateList `json:"TemplateList" xml:"TemplateList"`
+	RequestId    string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                          `json:"PageSize" xml:"PageSize"`
+	TemplateList TemplateListInSearchTemplate `json:"TemplateList" xml:"TemplateList"`
 }
 
 func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {

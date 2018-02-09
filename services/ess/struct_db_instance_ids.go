@@ -16,5 +16,5 @@ package ess
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DBInstanceIds struct {
-	DBInstanceId []string `json:"DBInstanceIds" xml:"DBInstanceIds"`
+	DBInstanceId []string `json:"DBInstanceId" xml:"DBInstanceId"`
 }

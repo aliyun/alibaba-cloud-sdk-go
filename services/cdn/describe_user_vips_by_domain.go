@@ -75,9 +75,9 @@ type DescribeUserVipsByDomainRequest struct {
 
 type DescribeUserVipsByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainName int    `json:"DomainName" xml:"DomainName"`
-	Vips       Vips   `json:"Vips" xml:"Vips"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
+	DomainName int                            `json:"DomainName" xml:"DomainName"`
+	Vips       VipsInDescribeUserVipsByDomain `json:"Vips" xml:"Vips"`
 }
 
 func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {

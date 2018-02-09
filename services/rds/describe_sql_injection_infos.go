@@ -80,12 +80,12 @@ type DescribeSQLInjectionInfosRequest struct {
 
 type DescribeSQLInjectionInfosResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                           `json:"RequestId" xml:"RequestId"`
+	Engine           string                           `json:"Engine" xml:"Engine"`
+	TotalRecordCount int                              `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                              `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                              `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSQLInjectionInfos `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfosRequest) {

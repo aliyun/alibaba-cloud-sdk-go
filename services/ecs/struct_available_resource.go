@@ -16,6 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AvailableResource struct {
-	Type               string             `json:"Type" xml:"Type"`
-	SupportedResources SupportedResources `json:"SupportedResources" xml:"SupportedResources"`
+	Type               string                                            `json:"Type" xml:"Type"`
+	SupportedResources SupportedResourcesInDescribeResourcesModification `json:"SupportedResources" xml:"SupportedResources"`
 }

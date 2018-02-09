@@ -75,11 +75,11 @@ type CreateAlbumRequest struct {
 
 type CreateAlbumResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Album     Album  `json:"Album" xml:"Album"`
+	Code      string             `json:"Code" xml:"Code"`
+	Message   string             `json:"Message" xml:"Message"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Action    string             `json:"Action" xml:"Action"`
+	Album     AlbumInCreateAlbum `json:"Album" xml:"Album"`
 }
 
 func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {

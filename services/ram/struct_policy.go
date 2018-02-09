@@ -16,12 +16,13 @@ package ram
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Policy struct {
-	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
-	PolicyType      string `json:"PolicyType" xml:"PolicyType"`
-	Description     string `json:"Description" xml:"Description"`
-	DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
-	PolicyDocument  string `json:"PolicyDocument" xml:"PolicyDocument"`
 	CreateDate      string `json:"CreateDate" xml:"CreateDate"`
-	UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
+	PolicyType      string `json:"PolicyType" xml:"PolicyType"`
+	PolicyDocument  string `json:"PolicyDocument" xml:"PolicyDocument"`
+	Description     string `json:"Description" xml:"Description"`
 	AttachmentCount int    `json:"AttachmentCount" xml:"AttachmentCount"`
+	AttachDate      string `json:"AttachDate" xml:"AttachDate"`
+	DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
+	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
+	UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
 }

@@ -79,9 +79,9 @@ type AddVServerGroupBackendServersRequest struct {
 
 type AddVServerGroupBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	VServerGroupId string         `json:"VServerGroupId" xml:"VServerGroupId"`
-	BackendServers BackendServers `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                                        `json:"RequestId" xml:"RequestId"`
+	VServerGroupId string                                        `json:"VServerGroupId" xml:"VServerGroupId"`
+	BackendServers BackendServersInAddVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateAddVServerGroupBackendServersRequest() (request *AddVServerGroupBackendServersRequest) {

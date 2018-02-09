@@ -85,11 +85,11 @@ type SearchMediaRequest struct {
 
 type SearchMediaResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalNum   int       `json:"TotalNum" xml:"TotalNum"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	MediaList  MediaList `json:"MediaList" xml:"MediaList"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	TotalNum   int                    `json:"TotalNum" xml:"TotalNum"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 
 func CreateSearchMediaRequest() (request *SearchMediaRequest) {

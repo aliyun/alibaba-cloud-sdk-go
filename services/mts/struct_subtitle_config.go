@@ -16,6 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SubtitleConfig struct {
-	ExtSubtitleList ExtSubtitleList `json:"ExtSubtitleList" xml:"ExtSubtitleList"`
-	SubtitleList    SubtitleList    `json:"SubtitleList" xml:"SubtitleList"`
+	ExtSubtitleList ExtSubtitleListInQueryEditingJobList `json:"ExtSubtitleList" xml:"ExtSubtitleList"`
+	SubtitleList    SubtitleListInQueryEditingJobList    `json:"SubtitleList" xml:"SubtitleList"`
 }

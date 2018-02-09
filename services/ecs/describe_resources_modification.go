@@ -71,8 +71,8 @@ type DescribeResourcesModificationRequest struct {
 
 type DescribeResourcesModificationResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	AvailableZones AvailableZones `json:"AvailableZones" xml:"AvailableZones"`
+	RequestId      string                                        `json:"RequestId" xml:"RequestId"`
+	AvailableZones AvailableZonesInDescribeResourcesModification `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesModificationRequest) {

@@ -80,14 +80,14 @@ type DescribeModifyParameterLogRequest struct {
 
 type DescribeModifyParameterLogResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	Engine           string                            `json:"Engine" xml:"Engine"`
+	DBInstanceId     string                            `json:"DBInstanceId" xml:"DBInstanceId"`
+	EngineVersion    string                            `json:"EngineVersion" xml:"EngineVersion"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeModifyParameterLog `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeModifyParameterLogRequest() (request *DescribeModifyParameterLogRequest) {

@@ -16,6 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Switch struct {
-	SwitchId string `json:"SwitchId" xml:"SwitchId"`
-	Hosts    Hosts  `json:"Hosts" xml:"Hosts"`
+	SwitchId string                               `json:"SwitchId" xml:"SwitchId"`
+	Hosts    HostsInDescribeDeploymentSetTopology `json:"Hosts" xml:"Hosts"`
 }

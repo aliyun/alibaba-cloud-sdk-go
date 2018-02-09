@@ -16,6 +16,11 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Zone struct {
-	ZoneNo       string       `json:"ZoneNo" xml:"ZoneNo"`
-	NetworkTypes NetworkTypes `json:"NetworkTypes" xml:"NetworkTypes"`
+	ZoneId                    string                            `json:"ZoneId" xml:"ZoneId"`
+	LocalName                 string                            `json:"LocalName" xml:"LocalName"`
+	AvailableResourceCreation AvailableResourceCreation         `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
+	AvailableDiskCategories   AvailableDiskCategories           `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
+	AvailableInstanceTypes    AvailableInstanceTypes            `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
+	AvailableVolumeCategories AvailableVolumeCategories         `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
+	AvailableResources        AvailableResourcesInDescribeZones `json:"AvailableResources" xml:"AvailableResources"`
 }

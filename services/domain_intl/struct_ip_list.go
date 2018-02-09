@@ -16,5 +16,5 @@ package domain_intl
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type IpList struct {
-	Ip []string `json:"IpList" xml:"IpList"`
+	Ip []string `json:"ip" xml:"ip"`
 }

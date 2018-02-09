@@ -16,5 +16,5 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AlarmList struct {
-	AlarmInListAlarm []AlarmInListAlarm `json:"Alarm" xml:"Alarm"`
+	Alarm []AlarmInListAlarm `json:"Alarm" xml:"Alarm"`
 }

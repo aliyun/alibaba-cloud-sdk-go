@@ -76,8 +76,8 @@ type QueryDeviceStatRequest struct {
 
 type QueryDeviceStatResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	AppDeviceStats AppDeviceStats `json:"AppDeviceStats" xml:"AppDeviceStats"`
+	RequestId      string                          `json:"RequestId" xml:"RequestId"`
+	AppDeviceStats AppDeviceStatsInQueryDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
 func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {

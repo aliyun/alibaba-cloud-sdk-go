@@ -16,12 +16,12 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type MediaWorkflowExecution struct {
-	CreationTime    string       `json:"CreationTime" xml:"CreationTime"`
-	MediaId         string       `json:"MediaId" xml:"MediaId"`
-	RunId           string       `json:"RunId" xml:"RunId"`
-	Name            string       `json:"Name" xml:"Name"`
-	State           string       `json:"State" xml:"State"`
-	MediaWorkflowId string       `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	Input           Input        `json:"Input" xml:"Input"`
-	ActivityList    ActivityList `json:"ActivityList" xml:"ActivityList"`
+	CreationTime    string                                        `json:"CreationTime" xml:"CreationTime"`
+	MediaId         string                                        `json:"MediaId" xml:"MediaId"`
+	RunId           string                                        `json:"RunId" xml:"RunId"`
+	Name            string                                        `json:"Name" xml:"Name"`
+	State           string                                        `json:"State" xml:"State"`
+	MediaWorkflowId string                                        `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+	Input           Input                                         `json:"Input" xml:"Input"`
+	ActivityList    ActivityListInQueryMediaWorkflowExecutionList `json:"ActivityList" xml:"ActivityList"`
 }

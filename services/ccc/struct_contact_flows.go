@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ContactFlows struct {
-	ContactFlowInListContactFlows []ContactFlowInListContactFlows `json:"ContactFlow" xml:"ContactFlow"`
+	ContactFlow []ContactFlow `json:"ContactFlow" xml:"ContactFlow"`
 }

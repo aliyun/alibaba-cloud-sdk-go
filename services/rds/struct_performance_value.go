@@ -16,5 +16,6 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PerformanceValue struct {
-	PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
+	Date  string `json:"Date" xml:"Date"`
+	Value string `json:"Value" xml:"Value"`
 }

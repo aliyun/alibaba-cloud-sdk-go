@@ -79,9 +79,9 @@ type DescribeLiveStreamOnlineUserNumRequest struct {
 
 type DescribeLiveStreamOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId       string         `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int            `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string                                          `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int                                             `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNum `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStreamOnlineUserNumRequest) {

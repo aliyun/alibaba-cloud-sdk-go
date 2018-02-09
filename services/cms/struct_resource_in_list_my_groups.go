@@ -16,10 +16,10 @@ package cms
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ResourceInListMyGroups struct {
-	GroupId       int           `json:"GroupId" xml:"GroupId"`
-	GroupName     string        `json:"GroupName" xml:"GroupName"`
-	ServiceId     string        `json:"ServiceId" xml:"ServiceId"`
-	BindUrls      string        `json:"BindUrls" xml:"BindUrls"`
-	Type          string        `json:"Type" xml:"Type"`
-	ContactGroups ContactGroups `json:"ContactGroups" xml:"ContactGroups"`
+	GroupId       int                         `json:"GroupId" xml:"GroupId"`
+	GroupName     string                      `json:"GroupName" xml:"GroupName"`
+	ServiceId     string                      `json:"ServiceId" xml:"ServiceId"`
+	BindUrls      string                      `json:"BindUrls" xml:"BindUrls"`
+	Type          string                      `json:"Type" xml:"Type"`
+	ContactGroups ContactGroupsInListMyGroups `json:"ContactGroups" xml:"ContactGroups"`
 }

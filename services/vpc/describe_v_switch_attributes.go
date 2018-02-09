@@ -76,18 +76,18 @@ type DescribeVSwitchAttributesRequest struct {
 
 type DescribeVSwitchAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId               string         `json:"RequestId" xml:"RequestId"`
-	VSwitchId               string         `json:"VSwitchId" xml:"VSwitchId"`
-	VpcId                   string         `json:"VpcId" xml:"VpcId"`
-	Status                  string         `json:"Status" xml:"Status"`
-	CidrBlock               string         `json:"CidrBlock" xml:"CidrBlock"`
-	ZoneId                  string         `json:"ZoneId" xml:"ZoneId"`
-	AvailableIpAddressCount int            `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
-	Description             string         `json:"Description" xml:"Description"`
-	VSwitchName             string         `json:"VSwitchName" xml:"VSwitchName"`
-	CreationTime            string         `json:"CreationTime" xml:"CreationTime"`
-	IsDefault               bool           `json:"IsDefault" xml:"IsDefault"`
-	CloudResources          CloudResources `json:"CloudResources" xml:"CloudResources"`
+	RequestId               string                                    `json:"RequestId" xml:"RequestId"`
+	VSwitchId               string                                    `json:"VSwitchId" xml:"VSwitchId"`
+	VpcId                   string                                    `json:"VpcId" xml:"VpcId"`
+	Status                  string                                    `json:"Status" xml:"Status"`
+	CidrBlock               string                                    `json:"CidrBlock" xml:"CidrBlock"`
+	ZoneId                  string                                    `json:"ZoneId" xml:"ZoneId"`
+	AvailableIpAddressCount int                                       `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+	Description             string                                    `json:"Description" xml:"Description"`
+	VSwitchName             string                                    `json:"VSwitchName" xml:"VSwitchName"`
+	CreationTime            string                                    `json:"CreationTime" xml:"CreationTime"`
+	IsDefault               bool                                      `json:"IsDefault" xml:"IsDefault"`
+	CloudResources          CloudResourcesInDescribeVSwitchAttributes `json:"CloudResources" xml:"CloudResources"`
 }
 
 func CreateDescribeVSwitchAttributesRequest() (request *DescribeVSwitchAttributesRequest) {

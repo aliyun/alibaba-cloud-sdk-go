@@ -78,11 +78,11 @@ type QueryTaskByParamRequest struct {
 
 type QueryTaskByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       Data   `json:"data" xml:"data"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	Data       DataInQueryTaskByParam `json:"data" xml:"data"`
 }
 
 func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {

@@ -75,24 +75,24 @@ type DescribeDomainInfoRequest struct {
 
 type DescribeDomainInfoResponse struct {
 	*responses.BaseResponse
-	RequestId          string        `json:"RequestId" xml:"RequestId"`
-	DomainId           string        `json:"DomainId" xml:"DomainId"`
-	DomainName         string        `json:"DomainName" xml:"DomainName"`
-	PunyCode           string        `json:"PunyCode" xml:"PunyCode"`
-	AliDomain          bool          `json:"AliDomain" xml:"AliDomain"`
-	Remark             string        `json:"Remark" xml:"Remark"`
-	GroupId            string        `json:"GroupId" xml:"GroupId"`
-	GroupName          string        `json:"GroupName" xml:"GroupName"`
-	InstanceId         string        `json:"InstanceId" xml:"InstanceId"`
-	VersionCode        string        `json:"VersionCode" xml:"VersionCode"`
-	VersionName        string        `json:"VersionName" xml:"VersionName"`
-	MinTtl             int           `json:"MinTtl" xml:"MinTtl"`
-	RecordLineTreeJson string        `json:"RecordLineTreeJson" xml:"RecordLineTreeJson"`
-	LineType           string        `json:"LineType" xml:"LineType"`
-	RegionLines        bool          `json:"RegionLines" xml:"RegionLines"`
-	DnsServers         DnsServers    `json:"DnsServers" xml:"DnsServers"`
-	AvailableTtls      AvailableTtls `json:"AvailableTtls" xml:"AvailableTtls"`
-	RecordLines        RecordLines   `json:"RecordLines" xml:"RecordLines"`
+	RequestId          string                          `json:"RequestId" xml:"RequestId"`
+	DomainId           string                          `json:"DomainId" xml:"DomainId"`
+	DomainName         string                          `json:"DomainName" xml:"DomainName"`
+	PunyCode           string                          `json:"PunyCode" xml:"PunyCode"`
+	AliDomain          bool                            `json:"AliDomain" xml:"AliDomain"`
+	Remark             string                          `json:"Remark" xml:"Remark"`
+	GroupId            string                          `json:"GroupId" xml:"GroupId"`
+	GroupName          string                          `json:"GroupName" xml:"GroupName"`
+	InstanceId         string                          `json:"InstanceId" xml:"InstanceId"`
+	VersionCode        string                          `json:"VersionCode" xml:"VersionCode"`
+	VersionName        string                          `json:"VersionName" xml:"VersionName"`
+	MinTtl             int                             `json:"MinTtl" xml:"MinTtl"`
+	RecordLineTreeJson string                          `json:"RecordLineTreeJson" xml:"RecordLineTreeJson"`
+	LineType           string                          `json:"LineType" xml:"LineType"`
+	RegionLines        bool                            `json:"RegionLines" xml:"RegionLines"`
+	DnsServers         DnsServersInDescribeDomainInfo  `json:"DnsServers" xml:"DnsServers"`
+	AvailableTtls      AvailableTtls                   `json:"AvailableTtls" xml:"AvailableTtls"`
+	RecordLines        RecordLinesInDescribeDomainInfo `json:"RecordLines" xml:"RecordLines"`
 }
 
 func CreateDescribeDomainInfoRequest() (request *DescribeDomainInfoRequest) {

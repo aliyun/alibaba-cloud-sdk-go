@@ -72,12 +72,12 @@ type ListRolesRequest struct {
 
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Roles          Roles  `json:"Roles" xml:"Roles"`
+	RequestId      string           `json:"RequestId" xml:"RequestId"`
+	Success        bool             `json:"Success" xml:"Success"`
+	Code           string           `json:"Code" xml:"Code"`
+	Message        string           `json:"Message" xml:"Message"`
+	HttpStatusCode int              `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Roles          RolesInListRoles `json:"Roles" xml:"Roles"`
 }
 
 func CreateListRolesRequest() (request *ListRolesRequest) {

@@ -88,11 +88,11 @@ type DescribeTagsRequest struct {
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Tags       Tags   `json:"Tags" xml:"Tags"`
+	RequestId  string             `json:"RequestId" xml:"RequestId"`
+	PageSize   int                `json:"PageSize" xml:"PageSize"`
+	PageNumber int                `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                `json:"TotalCount" xml:"TotalCount"`
+	Tags       TagsInDescribeTags `json:"Tags" xml:"Tags"`
 }
 
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {

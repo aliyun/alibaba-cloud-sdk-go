@@ -71,8 +71,8 @@ type DescribeDomainRealTimeByteHitRateDataRequest struct {
 
 type DescribeDomainRealTimeByteHitRateDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                                      `json:"RequestId" xml:"RequestId"`
+	Data      DataInDescribeDomainRealTimeByteHitRateData `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeByteHitRateDataRequest() (request *DescribeDomainRealTimeByteHitRateDataRequest) {

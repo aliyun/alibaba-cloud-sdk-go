@@ -16,19 +16,19 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type NetworkInterfaceSet struct {
-	NetworkInterfaceId   string             `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-	Status               string             `json:"Status" xml:"Status"`
-	Type                 string             `json:"Type" xml:"Type"`
-	VpcId                string             `json:"VpcId" xml:"VpcId"`
-	VSwitchId            string             `json:"VSwitchId" xml:"VSwitchId"`
-	ZoneId               string             `json:"ZoneId" xml:"ZoneId"`
-	PrivateIpAddress     string             `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-	MacAddress           string             `json:"MacAddress" xml:"MacAddress"`
-	NetworkInterfaceName string             `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
-	Description          string             `json:"Description" xml:"Description"`
-	InstanceId           string             `json:"InstanceId" xml:"InstanceId"`
-	CreationTime         string             `json:"CreationTime" xml:"CreationTime"`
-	SecurityGroupIds     SecurityGroupIds   `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	AssociatedPublicIp   AssociatedPublicIp `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
-	PrivateIpSets        PrivateIpSets      `json:"PrivateIpSets" xml:"PrivateIpSets"`
+	NetworkInterfaceId   string                                      `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	Status               string                                      `json:"Status" xml:"Status"`
+	Type                 string                                      `json:"Type" xml:"Type"`
+	VpcId                string                                      `json:"VpcId" xml:"VpcId"`
+	VSwitchId            string                                      `json:"VSwitchId" xml:"VSwitchId"`
+	ZoneId               string                                      `json:"ZoneId" xml:"ZoneId"`
+	PrivateIpAddress     string                                      `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	MacAddress           string                                      `json:"MacAddress" xml:"MacAddress"`
+	NetworkInterfaceName string                                      `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	Description          string                                      `json:"Description" xml:"Description"`
+	InstanceId           string                                      `json:"InstanceId" xml:"InstanceId"`
+	CreationTime         string                                      `json:"CreationTime" xml:"CreationTime"`
+	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	AssociatedPublicIp   AssociatedPublicIp                          `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
+	PrivateIpSets        PrivateIpSets                               `json:"PrivateIpSets" xml:"PrivateIpSets"`
 }

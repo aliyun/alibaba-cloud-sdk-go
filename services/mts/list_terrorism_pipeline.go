@@ -78,11 +78,11 @@ type ListTerrorismPipelineRequest struct {
 
 type ListTerrorismPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                              `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                                 `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                                 `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                                 `json:"PageSize" xml:"PageSize"`
+	PipelineList PipelineListInListTerrorismPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateListTerrorismPipelineRequest() (request *ListTerrorismPipelineRequest) {

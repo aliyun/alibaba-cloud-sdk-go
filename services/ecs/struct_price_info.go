@@ -16,6 +16,6 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PriceInfo struct {
-	Rules Rules `json:"Rules" xml:"Rules"`
-	Price Price `json:"Price" xml:"Price"`
+	Price Price                       `json:"Price" xml:"Price"`
+	Rules RulesInDescribeRenewalPrice `json:"Rules" xml:"Rules"`
 }

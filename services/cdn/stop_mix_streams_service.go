@@ -79,8 +79,8 @@ type StopMixStreamsServiceRequest struct {
 
 type StopMixStreamsServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	MixStreamsInfoList MixStreamsInfoList `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
+	RequestId          string                                    `json:"RequestId" xml:"RequestId"`
+	MixStreamsInfoList MixStreamsInfoListInStopMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
 func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {

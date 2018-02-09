@@ -16,11 +16,11 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ResourcesInfo struct {
-	IoOptimized          bool                 `json:"IoOptimized" xml:"IoOptimized"`
-	SystemDiskCategories SystemDiskCategories `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
-	DataDiskCategories   DataDiskCategories   `json:"DataDiskCategories" xml:"DataDiskCategories"`
-	NetworkTypes         NetworkTypes         `json:"NetworkTypes" xml:"NetworkTypes"`
-	InstanceTypes        InstanceTypes        `json:"InstanceTypes" xml:"InstanceTypes"`
-	InstanceTypeFamilies InstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
-	InstanceGenerations  InstanceGenerations  `json:"InstanceGenerations" xml:"InstanceGenerations"`
+	IoOptimized          bool                                `json:"IoOptimized" xml:"IoOptimized"`
+	SystemDiskCategories SystemDiskCategories                `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
+	DataDiskCategories   DataDiskCategories                  `json:"DataDiskCategories" xml:"DataDiskCategories"`
+	NetworkTypes         NetworkTypesInDescribeZones         `json:"NetworkTypes" xml:"NetworkTypes"`
+	InstanceTypes        InstanceTypesInDescribeZones        `json:"InstanceTypes" xml:"InstanceTypes"`
+	InstanceTypeFamilies InstanceTypeFamiliesInDescribeZones `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
+	InstanceGenerations  InstanceGenerations                 `json:"InstanceGenerations" xml:"InstanceGenerations"`
 }

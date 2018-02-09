@@ -76,9 +76,9 @@ type QueryPornPipelineListRequest struct {
 
 type QueryPornPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIds  `json:"NonExistIds" xml:"NonExistIds"`
-	PipelineList PipelineList `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                              `json:"RequestId" xml:"RequestId"`
+	NonExistIds  NonExistIdsInQueryPornPipelineList  `json:"NonExistIds" xml:"NonExistIds"`
+	PipelineList PipelineListInQueryPornPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest) {

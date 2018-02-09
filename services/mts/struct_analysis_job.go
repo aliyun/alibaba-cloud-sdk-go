@@ -16,17 +16,17 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AnalysisJob struct {
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Message          string           `json:"Message" xml:"Message"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
-	UserData         string           `json:"UserData" xml:"UserData"`
-	Priority         string           `json:"Priority" xml:"Priority"`
-	Id               string           `json:"Id" xml:"Id"`
-	Percent          int              `json:"Percent" xml:"Percent"`
-	TemplateList     TemplateList     `json:"TemplateList" xml:"TemplateList"`
-	AnalysisConfig   AnalysisConfig   `json:"AnalysisConfig" xml:"AnalysisConfig"`
-	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	InputFile        InputFile        `json:"InputFile" xml:"InputFile"`
+	CreationTime     string                             `json:"CreationTime" xml:"CreationTime"`
+	Message          string                             `json:"Message" xml:"Message"`
+	PipelineId       string                             `json:"PipelineId" xml:"PipelineId"`
+	State            string                             `json:"State" xml:"State"`
+	Code             string                             `json:"Code" xml:"Code"`
+	UserData         string                             `json:"UserData" xml:"UserData"`
+	Priority         string                             `json:"Priority" xml:"Priority"`
+	Id               string                             `json:"Id" xml:"Id"`
+	Percent          int                                `json:"Percent" xml:"Percent"`
+	MNSMessageResult MNSMessageResult                   `json:"MNSMessageResult" xml:"MNSMessageResult"`
+	InputFile        InputFile                          `json:"InputFile" xml:"InputFile"`
+	AnalysisConfig   AnalysisConfig                     `json:"AnalysisConfig" xml:"AnalysisConfig"`
+	TemplateList     TemplateListInQueryAnalysisJobList `json:"TemplateList" xml:"TemplateList"`
 }

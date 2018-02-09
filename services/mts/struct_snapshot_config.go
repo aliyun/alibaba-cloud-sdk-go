@@ -22,7 +22,7 @@ type SnapshotConfig struct {
 	Num            string         `json:"Num" xml:"Num"`
 	Time           string         `json:"Time" xml:"Time"`
 	Interval       string         `json:"Interval" xml:"Interval"`
-	TileOutputFile TileOutputFile `json:"TileOutputFile" xml:"TileOutputFile"`
 	OutputFile     OutputFile     `json:"OutputFile" xml:"OutputFile"`
+	TileOutputFile TileOutputFile `json:"TileOutputFile" xml:"TileOutputFile"`
 	TileOut        TileOut        `json:"TileOut" xml:"TileOut"`
 }

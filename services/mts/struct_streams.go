@@ -16,7 +16,7 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Streams struct {
-	SubtitleStreamList SubtitleStreamList `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
-	VideoStreamList    VideoStreamList    `json:"VideoStreamList" xml:"VideoStreamList"`
-	AudioStreamList    AudioStreamList    `json:"AudioStreamList" xml:"AudioStreamList"`
+	AudioStreamList    AudioStreamListInQueryEditingJobList    `json:"AudioStreamList" xml:"AudioStreamList"`
+	SubtitleStreamList SubtitleStreamListInQueryEditingJobList `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
+	VideoStreamList    VideoStreamListInQueryEditingJobList    `json:"VideoStreamList" xml:"VideoStreamList"`
 }

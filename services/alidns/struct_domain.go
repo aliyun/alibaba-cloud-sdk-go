@@ -16,19 +16,19 @@ package alidns
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Domain struct {
-	DomainId        string     `json:"DomainId" xml:"DomainId"`
-	DomainName      string     `json:"DomainName" xml:"DomainName"`
-	PunyCode        string     `json:"PunyCode" xml:"PunyCode"`
-	AliDomain       bool       `json:"AliDomain" xml:"AliDomain"`
-	RecordCount     int        `json:"RecordCount" xml:"RecordCount"`
-	RegistrantEmail string     `json:"RegistrantEmail" xml:"RegistrantEmail"`
-	Remark          string     `json:"Remark" xml:"Remark"`
-	GroupId         string     `json:"GroupId" xml:"GroupId"`
-	GroupName       string     `json:"GroupName" xml:"GroupName"`
-	InstanceId      string     `json:"InstanceId" xml:"InstanceId"`
-	VersionCode     string     `json:"VersionCode" xml:"VersionCode"`
-	VersionName     string     `json:"VersionName" xml:"VersionName"`
-	InstanceEndTime string     `json:"InstanceEndTime" xml:"InstanceEndTime"`
-	InstanceExpired bool       `json:"InstanceExpired" xml:"InstanceExpired"`
-	DnsServers      DnsServers `json:"DnsServers" xml:"DnsServers"`
+	DomainId        string                      `json:"DomainId" xml:"DomainId"`
+	DomainName      string                      `json:"DomainName" xml:"DomainName"`
+	PunyCode        string                      `json:"PunyCode" xml:"PunyCode"`
+	AliDomain       bool                        `json:"AliDomain" xml:"AliDomain"`
+	RecordCount     int                         `json:"RecordCount" xml:"RecordCount"`
+	RegistrantEmail string                      `json:"RegistrantEmail" xml:"RegistrantEmail"`
+	Remark          string                      `json:"Remark" xml:"Remark"`
+	GroupId         string                      `json:"GroupId" xml:"GroupId"`
+	GroupName       string                      `json:"GroupName" xml:"GroupName"`
+	InstanceId      string                      `json:"InstanceId" xml:"InstanceId"`
+	VersionCode     string                      `json:"VersionCode" xml:"VersionCode"`
+	VersionName     string                      `json:"VersionName" xml:"VersionName"`
+	InstanceEndTime string                      `json:"InstanceEndTime" xml:"InstanceEndTime"`
+	InstanceExpired bool                        `json:"InstanceExpired" xml:"InstanceExpired"`
+	DnsServers      DnsServersInDescribeDomains `json:"DnsServers" xml:"DnsServers"`
 }

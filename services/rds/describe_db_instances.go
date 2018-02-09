@@ -99,11 +99,11 @@ type DescribeDBInstancesRequest struct {
 
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            Items  `json:"Items" xml:"Items"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeDBInstances `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {

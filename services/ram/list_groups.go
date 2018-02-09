@@ -73,10 +73,10 @@ type ListGroupsRequest struct {
 
 type ListGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
-	Groups      Groups `json:"Groups" xml:"Groups"`
+	RequestId   string             `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool               `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string             `json:"Marker" xml:"Marker"`
+	Groups      GroupsInListGroups `json:"Groups" xml:"Groups"`
 }
 
 func CreateListGroupsRequest() (request *ListGroupsRequest) {

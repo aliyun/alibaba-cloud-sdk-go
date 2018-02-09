@@ -78,15 +78,15 @@ type QueryChangeLogListRequest struct {
 
 type QueryChangeLogListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	PrePage        bool   `json:"PrePage" xml:"PrePage"`
-	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	ResultLimit    bool   `json:"ResultLimit" xml:"ResultLimit"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                      `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                      `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int                      `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int                      `json:"PageSize" xml:"PageSize"`
+	PrePage        bool                     `json:"PrePage" xml:"PrePage"`
+	NextPage       bool                     `json:"NextPage" xml:"NextPage"`
+	ResultLimit    bool                     `json:"ResultLimit" xml:"ResultLimit"`
+	Data           DataInQueryChangeLogList `json:"Data" xml:"Data"`
 }
 
 func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {

@@ -17,6 +17,6 @@ package mts
 
 type EditingInput struct {
 	Id          string      `json:"Id" xml:"Id"`
-	InputFile   InputFile   `json:"InputFile" xml:"InputFile"`
 	InputConfig InputConfig `json:"InputConfig" xml:"InputConfig"`
+	InputFile   InputFile   `json:"InputFile" xml:"InputFile"`
 }

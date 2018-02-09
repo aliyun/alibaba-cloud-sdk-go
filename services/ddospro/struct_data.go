@@ -16,9 +16,11 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	PpsDrop   []string  `json:"PpsDrop" xml:"PpsDrop"`
 	PpsTotal  []string  `json:"PpsTotal" xml:"PpsTotal"`
-	BpsDrop   []string  `json:"BpsDrop" xml:"BpsDrop"`
 	BpsTotal  []string  `json:"BpsTotal" xml:"BpsTotal"`
+	BpsDrop   []string  `json:"BpsDrop" xml:"BpsDrop"`
+	Attacks   []string  `json:"Attacks" xml:"Attacks"`
+	PpsDrop   []string  `json:"PpsDrop" xml:"PpsDrop"`
+	Total     []string  `json:"Total" xml:"Total"`
 	TimeScope TimeScope `json:"TimeScope" xml:"TimeScope"`
 }

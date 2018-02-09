@@ -77,11 +77,11 @@ type GetMyGroupsRequest struct {
 
 type GetMyGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Group        Group  `json:"Group" xml:"Group"`
+	RequestId    string             `json:"RequestId" xml:"RequestId"`
+	Success      bool               `json:"Success" xml:"Success"`
+	ErrorCode    int                `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string             `json:"ErrorMessage" xml:"ErrorMessage"`
+	Group        GroupInGetMyGroups `json:"Group" xml:"Group"`
 }
 
 func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
