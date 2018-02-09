@@ -67,16 +67,16 @@ func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequ
 
 type DescribeCommandsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Type                 string           `position:"Query" name:"Type"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Description          string           `position:"Query" name:"Description"`
+	Type                 string           `position:"Query" name:"Type"`
 	CommandId            string           `position:"Query" name:"CommandId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 type DescribeCommandsResponse struct {

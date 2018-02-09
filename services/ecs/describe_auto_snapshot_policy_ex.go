@@ -67,13 +67,13 @@ func (client *Client) DescribeAutoSnapshotPolicyExWithCallback(request *Describe
 
 type DescribeAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	AutoSnapshotPolicyId string           `position:"Query" name:"AutoSnapshotPolicyId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoSnapshotPolicyId string           `position:"Query" name:"AutoSnapshotPolicyId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeAutoSnapshotPolicyExResponse struct {

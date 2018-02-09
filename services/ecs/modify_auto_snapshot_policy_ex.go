@@ -67,14 +67,14 @@ func (client *Client) ModifyAutoSnapshotPolicyExWithCallback(request *ModifyAuto
 
 type ModifyAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
+	TimePoints             string           `position:"Query" name:"timePoints"`
+	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
 	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	TimePoints             string           `position:"Query" name:"timePoints"`
-	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
-	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyAutoSnapshotPolicyExResponse struct {

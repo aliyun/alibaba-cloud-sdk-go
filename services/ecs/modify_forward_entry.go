@@ -67,17 +67,17 @@ func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntry
 
 type ModifyForwardEntryRequest struct {
 	*requests.RpcRequest
-	InternalIp           string           `position:"Query" name:"InternalIp"`
-	ExternalIp           string           `position:"Query" name:"ExternalIp"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	IpProtocol           string           `position:"Query" name:"IpProtocol"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ExternalPort         string           `position:"Query" name:"ExternalPort"`
+	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InternalIp           string           `position:"Query" name:"InternalIp"`
+	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
 	InternalPort         string           `position:"Query" name:"InternalPort"`
+	ExternalIp           string           `position:"Query" name:"ExternalIp"`
+	ExternalPort         string           `position:"Query" name:"ExternalPort"`
 }
 
 type ModifyForwardEntryResponse struct {

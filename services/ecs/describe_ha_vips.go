@@ -67,13 +67,13 @@ func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest,
 
 type DescribeHaVipsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	Filter               *[]DescribeHaVipsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 }
 
 type DescribeHaVipsFilter struct {

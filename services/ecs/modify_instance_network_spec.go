@@ -67,19 +67,19 @@ func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInsta
 
 type ModifyInstanceNetworkSpecRequest struct {
 	*requests.RpcRequest
-	EndTime                 string           `position:"Query" name:"EndTime"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	StartTime               string           `position:"Query" name:"StartTime"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
-	InternetMaxBandwidthIn  requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
-	NetworkChargeType       string           `position:"Query" name:"NetworkChargeType"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken             string           `position:"Query" name:"ClientToken"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	AllocatePublicIp        requests.Boolean `position:"Query" name:"AllocatePublicIp"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	EndTime                 string           `position:"Query" name:"EndTime"`
+	StartTime               string           `position:"Query" name:"StartTime"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId              string           `position:"Query" name:"InstanceId"`
+	NetworkChargeType       string           `position:"Query" name:"NetworkChargeType"`
+	InternetMaxBandwidthIn  requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
+	AllocatePublicIp        requests.Boolean `position:"Query" name:"AllocatePublicIp"`
 }
 
 type ModifyInstanceNetworkSpecResponse struct {

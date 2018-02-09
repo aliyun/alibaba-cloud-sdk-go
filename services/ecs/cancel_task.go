@@ -67,10 +67,10 @@ func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callbac
 
 type CancelTaskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TaskId               string           `position:"Query" name:"TaskId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
 type CancelTaskResponse struct {

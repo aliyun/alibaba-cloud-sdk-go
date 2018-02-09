@@ -67,18 +67,18 @@ func (client *Client) ModifyAutoSnapshotPolicyWithCallback(request *ModifyAutoSn
 
 type ModifyAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
+	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
+	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DataDiskPolicyRetentionDays       requests.Integer `position:"Query" name:"DataDiskPolicyRetentionDays"`
-	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
 	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
+	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
 	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
-	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
-	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
+	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
 	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
-	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
+	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
 }
 
 type ModifyAutoSnapshotPolicyResponse struct {

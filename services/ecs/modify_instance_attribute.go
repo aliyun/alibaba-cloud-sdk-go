@@ -68,16 +68,16 @@ func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanc
 type ModifyInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	HostName             string           `position:"Query" name:"HostName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Password             string           `position:"Query" name:"Password"`
+	HostName             string           `position:"Query" name:"HostName"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	InstanceName         string           `position:"Query" name:"InstanceName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Recyclable           requests.Boolean `position:"Query" name:"Recyclable"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyInstanceAttributeResponse struct {

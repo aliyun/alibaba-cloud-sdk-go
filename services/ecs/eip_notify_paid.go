@@ -67,12 +67,12 @@ func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, c
 
 type EipNotifyPaidRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Data                 string           `position:"Query" name:"data"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Data                 string           `position:"Query" name:"data"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

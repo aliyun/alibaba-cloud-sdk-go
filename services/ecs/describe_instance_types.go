@@ -67,10 +67,10 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
-	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

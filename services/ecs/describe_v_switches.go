@@ -67,16 +67,16 @@ func (client *Client) DescribeVSwitchesWithCallback(request *DescribeVSwitchesRe
 
 type DescribeVSwitchesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeVSwitchesResponse struct {
