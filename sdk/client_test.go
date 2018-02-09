@@ -512,6 +512,31 @@ func TestRpcGetForRoleArn(t *testing.T) {
 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
 }
 
+func TestRoaGetForRoleArn(t *testing.T) {
+	request := getFtTestRoaRequest()
+	request.Method = requests.GET
+
+	response := &responses.BaseResponse{}
+	err := clientRoleArn.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	var responseBean MockResponse
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+
+	err = clientRoleArn.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
+	assert.NotNil(t, response.GetHttpContentString())
+
+	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+
+	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
+}
+
 //测试Sts的时候要先获取一套stsToken和ak，由于有时效性，所以先把代码注释掉，测试的时候先获取stsToken完成后再调用
 //func TestRpcGetForSts(t *testing.T) {
 //	request := getFtTestRpcRequest()
