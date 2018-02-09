@@ -19,5 +19,5 @@ type DBInstanceIPArray struct {
 	DBInstanceIPArrayName      string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
 	DBInstanceIPArrayAttribute string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
 	SecurityIPList             string `json:"SecurityIPList" xml:"SecurityIPList"`
-	WhitelistNetType           string `json:"WhitelistNetType" xml:"WhitelistNetType"`
+	WhitelistNetworkType       string `json:"WhitelistNetworkType" xml:"WhitelistNetworkType"`
 }

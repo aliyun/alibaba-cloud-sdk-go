@@ -19,6 +19,7 @@ type CallDetailRecord struct {
 	ContactId          string                            `json:"ContactId" xml:"ContactId"`
 	StartTime          int                               `json:"StartTime" xml:"StartTime"`
 	Duration           int                               `json:"Duration" xml:"Duration"`
+	Satisfaction       int                               `json:"Satisfaction" xml:"Satisfaction"`
 	ContactType        string                            `json:"ContactType" xml:"ContactType"`
 	ContactDisposition string                            `json:"ContactDisposition" xml:"ContactDisposition"`
 	CallingNumber      string                            `json:"CallingNumber" xml:"CallingNumber"`
@@ -26,6 +27,7 @@ type CallDetailRecord struct {
 	AgentNames         string                            `json:"AgentNames" xml:"AgentNames"`
 	SkillGroupNames    string                            `json:"SkillGroupNames" xml:"SkillGroupNames"`
 	InstanceId         string                            `json:"InstanceId" xml:"InstanceId"`
+	ExtraAttr          string                            `json:"ExtraAttr" xml:"ExtraAttr"`
 	Agents             Agents                            `json:"Agents" xml:"Agents"`
 	Recordings         RecordingsInListCallDetailRecords `json:"Recordings" xml:"Recordings"`
 }

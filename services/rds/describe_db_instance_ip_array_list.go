@@ -72,7 +72,7 @@ type DescribeDBInstanceIPArrayListRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	WhitelistNetType     string           `position:"Query" name:"WhitelistNetType"`
+	WhitelistNetworkType string           `position:"Query" name:"WhitelistNetworkType"`
 }
 
 type DescribeDBInstanceIPArrayListResponse struct {

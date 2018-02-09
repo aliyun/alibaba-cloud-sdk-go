@@ -16,12 +16,12 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PushMessageInfo struct {
-	AppKey     int    `json:"AppKey" xml:"AppKey"`
-	AppName    string `json:"AppName" xml:"AppName"`
-	MessageId  string `json:"MessageId" xml:"MessageId"`
-	Type       string `json:"Type" xml:"Type"`
-	DeviceType string `json:"DeviceType" xml:"DeviceType"`
-	PushTime   string `json:"PushTime" xml:"PushTime"`
-	Title      string `json:"Title" xml:"Title"`
 	Body       string `json:"Body" xml:"Body"`
+	Type       string `json:"Type" xml:"Type"`
+	PushTime   string `json:"PushTime" xml:"PushTime"`
+	MessageId  string `json:"MessageId" xml:"MessageId"`
+	AppName    string `json:"AppName" xml:"AppName"`
+	Title      string `json:"Title" xml:"Title"`
+	DeviceType string `json:"DeviceType" xml:"DeviceType"`
+	AppKey     int    `json:"AppKey" xml:"AppKey"`
 }

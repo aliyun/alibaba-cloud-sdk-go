@@ -16,5 +16,6 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VideoSummaryResult struct {
+	OutputFile       OutputFile       `json:"OutputFile" xml:"OutputFile"`
 	VideoSummaryList VideoSummaryList `json:"VideoSummaryList" xml:"VideoSummaryList"`
 }

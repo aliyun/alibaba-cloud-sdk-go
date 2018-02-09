@@ -78,16 +78,18 @@ type AllocateEipAddressRequest struct {
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type AllocateEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	AllocationId string `json:"AllocationId" xml:"AllocationId"`
-	EipAddress   string `json:"EipAddress" xml:"EipAddress"`
-	OrderId      int    `json:"OrderId" xml:"OrderId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	AllocationId    string `json:"AllocationId" xml:"AllocationId"`
+	EipAddress      string `json:"EipAddress" xml:"EipAddress"`
+	OrderId         int    `json:"OrderId" xml:"OrderId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {

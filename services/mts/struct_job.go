@@ -33,9 +33,9 @@ type Job struct {
 	AsrResult          AsrResult                          `json:"AsrResult" xml:"AsrResult"`
 	Input              Input                              `json:"Input" xml:"Input"`
 	MediaDetailConfig  MediaDetailConfig                  `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
-	VideoSummaryResult VideoSummaryResult                 `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
 	EditingConfig      EditingConfig                      `json:"EditingConfig" xml:"EditingConfig"`
 	Output             Output                             `json:"Output" xml:"Output"`
+	VideoSummaryResult VideoSummaryResult                 `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
 	VideoSplitResult   VideoSplitResult                   `json:"VideoSplitResult" xml:"VideoSplitResult"`
 	EditingInputs      EditingInputsInQueryEditingJobList `json:"EditingInputs" xml:"EditingInputs"`
 }

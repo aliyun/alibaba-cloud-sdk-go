@@ -16,5 +16,5 @@ package vpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type AssociatedCensInDescribeVpcAttribute struct {
-	AssociatedCbn []AssociatedCbn `json:"AssociatedCbn" xml:"AssociatedCbn"`
+	AssociatedCen []AssociatedCen `json:"AssociatedCen" xml:"AssociatedCen"`
 }

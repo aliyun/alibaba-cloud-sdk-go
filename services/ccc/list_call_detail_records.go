@@ -67,13 +67,16 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
-	StartTime   requests.Integer `position:"Query" name:"StartTime"`
-	StopTime    requests.Integer `position:"Query" name:"StopTime"`
-	Criteria    string           `position:"Query" name:"Criteria"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	InstanceId         string           `position:"Query" name:"InstanceId"`
+	PhoneNumber        string           `position:"Query" name:"PhoneNumber"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	StopTime           requests.Integer `position:"Query" name:"StopTime"`
+	Criteria           string           `position:"Query" name:"Criteria"`
+	ContactType        string           `position:"Query" name:"ContactType"`
+	ContactDisposition string           `position:"Query" name:"ContactDisposition"`
+	WithRecording      requests.Boolean `position:"Query" name:"WithRecording"`
+	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListCallDetailRecordsResponse struct {

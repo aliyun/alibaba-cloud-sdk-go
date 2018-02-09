@@ -71,10 +71,13 @@ type GetCallerIdentityRequest struct {
 
 type GetCallerIdentityResponse struct {
 	*responses.BaseResponse
-	AccountId string `json:"AccountId" xml:"AccountId"`
-	UserId    string `json:"UserId" xml:"UserId"`
-	Arn       string `json:"Arn" xml:"Arn"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	AccountId    string `json:"AccountId" xml:"AccountId"`
+	UserId       string `json:"UserId" xml:"UserId"`
+	RoleId       string `json:"RoleId" xml:"RoleId"`
+	Arn          string `json:"Arn" xml:"Arn"`
+	IdentityType string `json:"IdentityType" xml:"IdentityType"`
+	PrincipalId  string `json:"PrincipalId" xml:"PrincipalId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {

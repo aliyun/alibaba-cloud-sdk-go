@@ -17,6 +17,7 @@ package ecs
 
 type InstanceType struct {
 	InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	InstanceBandwidthRx  int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
 	SupportIoOptimized   string  `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
 	Cores                int     `json:"Cores" xml:"Cores"`
 	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
@@ -27,6 +28,7 @@ type InstanceType struct {
 	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	Generation           string  `json:"Generation" xml:"Generation"`
 	CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+	InstanceBandwidthTx  int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 	MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
 	InstanceType         string  `json:"InstanceType" xml:"InstanceType"`
 	InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`

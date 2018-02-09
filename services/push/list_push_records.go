@@ -77,11 +77,11 @@ type ListPushRecordsRequest struct {
 
 type ListPushRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	Total            int              `json:"Total" xml:"Total"`
-	Page             int              `json:"Page" xml:"Page"`
-	PageSize         int              `json:"PageSize" xml:"PageSize"`
-	PushMessageInfos PushMessageInfos `json:"PushMessageInfos" xml:"PushMessageInfos"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	Total            int                               `json:"Total" xml:"Total"`
+	Page             int                               `json:"Page" xml:"Page"`
+	PageSize         int                               `json:"PageSize" xml:"PageSize"`
+	PushMessageInfos PushMessageInfosInListPushRecords `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
 func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {

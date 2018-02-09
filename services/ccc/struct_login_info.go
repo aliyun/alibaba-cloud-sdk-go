@@ -18,6 +18,7 @@ package ccc
 type LoginInfo struct {
 	UserName       string `json:"UserName" xml:"UserName"`
 	DisplayName    string `json:"DisplayName" xml:"DisplayName"`
+	PhoneNumber    string `json:"PhoneNumber" xml:"PhoneNumber"`
 	Region         string `json:"Region" xml:"Region"`
 	WebRtcUrl      string `json:"WebRtcUrl" xml:"WebRtcUrl"`
 	AgentServerUrl string `json:"AgentServerUrl" xml:"AgentServerUrl"`

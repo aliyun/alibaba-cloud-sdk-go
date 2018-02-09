@@ -20,6 +20,7 @@ type DBInstanceAttribute struct {
 	ReplicateId                       string                                             `json:"ReplicateId" xml:"ReplicateId"`
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
 	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
+	VpcCloudInstanceId                string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	InstanceNetworkType               string                                             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
 	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
@@ -46,9 +47,9 @@ type DBInstanceAttribute struct {
 	DBInstanceType                    string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
 	VSwitchId                         string                                             `json:"VSwitchId" xml:"VSwitchId"`
 	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
-	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	Category                          string                                             `json:"Category" xml:"Category"`
+	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
 	IncrementSourceDBInstanceId       string                                             `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
 	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
 	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
@@ -60,7 +61,6 @@ type DBInstanceAttribute struct {
 	Engine                            string                                             `json:"Engine" xml:"Engine"`
 	ReadDelayTime                     string                                             `json:"ReadDelayTime" xml:"ReadDelayTime"`
 	TempUpgradeRecoveryMaxIOPS        string                                             `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
-	VpcCloudInstanceId                int                                                `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	DBMaxQuantity                     int                                                `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
 	MasterInstanceId                  string                                             `json:"MasterInstanceId" xml:"MasterInstanceId"`
 	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
@@ -69,7 +69,6 @@ type DBInstanceAttribute struct {
 	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
 	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
 	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
-	DBInstanceName                    string                                             `json:"DBInstanceName" xml:"DBInstanceName"`
 	RegionId                          string                                             `json:"RegionId" xml:"RegionId"`
 	AdvancedFeatures                  string                                             `json:"AdvancedFeatures" xml:"AdvancedFeatures"`
 	DBInstanceClassType               string                                             `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
