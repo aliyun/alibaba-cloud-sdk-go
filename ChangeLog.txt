@@ -1,5 +1,21 @@
-2018-02-05 Version: pre-release
-1, Optimize the nested structs in all response
+2018-02-12 Version: 1.0.0-beta
+1. Optimize the nested structs in all response, this will bring the following incompatibilities:
+    * Api response struct changes, conclude:
+        * ecs.DescribeNetworkInterfaces
+        * ecs.DescribeDeploymentSetTopology
+        * rds.DescribeDBInstanceIPArrayList
+        * slb.DescribeLoadBalancersRelatedEcs
+        * vpc.DescribeVpcAttribute
+        * vpc.DescribeVirtualBorderRouters
+        * mts.RegisterMediaDetailPerson
+        * mts.QueryEditingJobList
+        * mts.SubmitEditingJobs
+        * mts.QueryMediaListByURL
+        * mts.ListJob
+        * mts.QueryMediaList
+        * mts.QueryJobList
+        * mts.SubmitJobs
+
 
 2018-02-09 Version: 0.12.0
 1, Aliyun E-HPC service SDK, initial version.

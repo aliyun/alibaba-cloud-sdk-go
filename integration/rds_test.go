@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	RdsInstanceDefaultTimeout = 120
+	RdsInstanceDefaultTimeout = 240
 	RdsDefaultWaitForInterval = 60
 
 	RdsInstanceStatusRunning = "Running"
@@ -36,7 +36,7 @@ func TestRdsInstance(t *testing.T) {
 
 	dbInstanceId := createDBInstance(t, rdsClient)
 
-	waitForRdsInstance(t, rdsClient, dbInstanceId, RdsInstanceStatusRunning, 1200)
+	waitForRdsInstance(t, rdsClient, dbInstanceId, RdsInstanceStatusRunning, 2400)
 
 	//createAccount(t, rdsClient, dbInstanceId)
 
