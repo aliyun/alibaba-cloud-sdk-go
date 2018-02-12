@@ -105,9 +105,9 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	MaxConnection          int    `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
 	Gzip                   string `json:"Gzip" xml:"Gzip"`
-	XForwardedFor_SLBIP    string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
-	XForwardedFor_SLBID    string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	XForwardedFor_proto    string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+	XForwardedForSLBIP     string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	XForwardedForSLBID     string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
+	XForwardedForProto     string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
 }
 
 func CreateDescribeLoadBalancerHTTPSListenerAttributeRequest() (request *DescribeLoadBalancerHTTPSListenerAttributeRequest) {

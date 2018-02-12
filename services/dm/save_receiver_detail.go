@@ -76,10 +76,10 @@ type SaveReceiverDetailRequest struct {
 
 type SaveReceiverDetailResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	SuccessCount int    `json:"SuccessCount" xml:"SuccessCount"`
-	ErrorCount   int    `json:"ErrorCount" xml:"ErrorCount"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                   `json:"RequestId" xml:"RequestId"`
+	SuccessCount int                      `json:"SuccessCount" xml:"SuccessCount"`
+	ErrorCount   int                      `json:"ErrorCount" xml:"ErrorCount"`
+	Data         DataInSaveReceiverDetail `json:"Data" xml:"Data"`
 }
 
 func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {

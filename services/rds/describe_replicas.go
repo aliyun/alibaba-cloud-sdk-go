@@ -79,11 +79,11 @@ type DescribeReplicasRequest struct {
 
 type DescribeReplicasResponse struct {
 	*responses.BaseResponse
-	RequestId        string  `json:"RequestId" xml:"RequestId"`
-	PageNumber       string  `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int     `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int     `json:"PageRecordCount" xml:"PageRecordCount"`
-	Replicas         []Items `json:"Replicas" xml:"Replicas"`
+	RequestId        string                              `json:"RequestId" xml:"RequestId"`
+	PageNumber       string                              `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	Replicas         []ItemsInDescribeReplicasInReplicas `json:"Replicas" xml:"Replicas"`
 }
 
 func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {

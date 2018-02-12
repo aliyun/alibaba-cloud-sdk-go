@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PerformanceKeyInDescribeReplicaUsage struct {
-	PerformanceKey []PerformanceKey `json:"PerformanceKey" xml:"PerformanceKey"`
+	PerformanceKeyItem []PerformanceKeyItem `json:"PerformanceKeyItem" xml:"PerformanceKeyItem"`
 }

@@ -31,8 +31,8 @@ type HttpsStatisticsInfo struct {
 	HttpsByteHitRate   float64 `json:"HttpsByteHitRate" xml:"HttpsByteHitRate"`
 	HttpsReqHitRate    float64 `json:"HttpsReqHitRate" xml:"HttpsReqHitRate"`
 	L1HttpsHitRate     float64 `json:"L1HttpsHitRate" xml:"L1HttpsHitRate"`
-	L1HttpsInner_acc   float64 `json:"L1HttpsInner_acc" xml:"L1HttpsInner_acc"`
-	L1HttpsOut_acc     float64 `json:"L1HttpsOut_acc" xml:"L1HttpsOut_acc"`
+	L1HttpsInnerAcc    float64 `json:"L1HttpsInner_acc" xml:"L1HttpsInner_acc"`
+	L1HttpsOutAcc      float64 `json:"L1HttpsOut_acc" xml:"L1HttpsOut_acc"`
 	L1HttpsTacc        float64 `json:"L1HttpsTacc" xml:"L1HttpsTacc"`
 	L1DyHttpsBps       float64 `json:"L1DyHttpsBps" xml:"L1DyHttpsBps"`
 	L1DyHttpsInnerBps  float64 `json:"L1DyHttpsInnerBps" xml:"L1DyHttpsInnerBps"`

@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ItemsInDescribeReplicaInitializeProgress struct {
-	Items []Items `json:"Items" xml:"Items"`
+	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
 }

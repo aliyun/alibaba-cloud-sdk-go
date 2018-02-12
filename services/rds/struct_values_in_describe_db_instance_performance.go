@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ValuesInDescribeDBInstancePerformance struct {
-	PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
+	PerformanceValue []PerformanceValueInDescribeDBInstancePerformance `json:"PerformanceValue" xml:"PerformanceValue"`
 }

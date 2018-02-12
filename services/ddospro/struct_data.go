@@ -16,13 +16,29 @@ package ddospro
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	RemainingTime int       `json:"RemainingTime" xml:"RemainingTime"`
-	TotalTime     int       `json:"TotalTime" xml:"TotalTime"`
-	PpsTotal      []string  `json:"PpsTotal" xml:"PpsTotal"`
-	BpsTotal      []string  `json:"BpsTotal" xml:"BpsTotal"`
-	BpsDrop       []string  `json:"BpsDrop" xml:"BpsDrop"`
-	Attacks       []string  `json:"Attacks" xml:"Attacks"`
-	PpsDrop       []string  `json:"PpsDrop" xml:"PpsDrop"`
-	Total         []string  `json:"Total" xml:"Total"`
-	TimeScope     TimeScope `json:"TimeScope" xml:"TimeScope"`
+	Cycle             int       `json:"Cycle" xml:"Cycle"`
+	CycleResidue      int       `json:"CycleResidue" xml:"CycleResidue"`
+	LastBlockTime     int       `json:"LastBlockTime" xml:"LastBlockTime"`
+	HoleThresholdMbps int       `json:"HoleThresholdMbps" xml:"HoleThresholdMbps"`
+	CcMode            string    `json:"CcMode" xml:"CcMode"`
+	ExpectionOpenTime int       `json:"ExpectionOpenTime" xml:"ExpectionOpenTime"`
+	Status            bool      `json:"Status" xml:"Status"`
+	LastCloseTime     int       `json:"LastCloseTime" xml:"LastCloseTime"`
+	RemainingTime     int       `json:"RemainingTime" xml:"RemainingTime"`
+	BlockZone         string    `json:"BlockZone" xml:"BlockZone"`
+	BlockTime         int       `json:"BlockTime" xml:"BlockTime"`
+	TotalClose        int       `json:"TotalClose" xml:"TotalClose"`
+	Region            string    `json:"Region" xml:"Region"`
+	TotalTime         int       `json:"TotalTime" xml:"TotalTime"`
+	CycleTime         int       `json:"CycleTime" xml:"CycleTime"`
+	DdosStatus        int       `json:"DdosStatus" xml:"DdosStatus"`
+	Vip               string    `json:"Vip" xml:"Vip"`
+	UnblockTime       int       `json:"UnblockTime" xml:"UnblockTime"`
+	BpsDrop           []string  `json:"BpsDrop" xml:"BpsDrop"`
+	Attacks           []string  `json:"Attacks" xml:"Attacks"`
+	PpsDrop           []string  `json:"PpsDrop" xml:"PpsDrop"`
+	PpsTotal          []string  `json:"PpsTotal" xml:"PpsTotal"`
+	BpsTotal          []string  `json:"BpsTotal" xml:"BpsTotal"`
+	Total             []string  `json:"Total" xml:"Total"`
+	TimeScope         TimeScope `json:"TimeScope" xml:"TimeScope"`
 }

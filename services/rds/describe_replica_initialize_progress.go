@@ -77,8 +77,8 @@ type DescribeReplicaInitializeProgressRequest struct {
 
 type DescribeReplicaInitializeProgressResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Items     []Items `json:"Items" xml:"Items"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
+	Items     []ItemsItem `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaInitializeProgressRequest) {

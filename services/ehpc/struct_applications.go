@@ -16,5 +16,5 @@ package ehpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Applications struct {
-	ApplicationInfo []ApplicationInfo `json:"ApplicationInfo" xml:"ApplicationInfo"`
+	ApplicationInfo []ApplicationInfoInListSoftwares `json:"ApplicationInfo" xml:"ApplicationInfo"`
 }

@@ -75,9 +75,9 @@ type HostGetsRequest struct {
 
 type HostGetsResponse struct {
 	*responses.BaseResponse
-	Status  bool   `json:"Status" xml:"Status"`
-	Message string `json:"Message" xml:"Message"`
-	Data    []Data `json:"Data" xml:"Data"`
+	Status  bool             `json:"Status" xml:"Status"`
+	Message string           `json:"Message" xml:"Message"`
+	Data    []DataInHostGets `json:"Data" xml:"Data"`
 }
 
 func CreateHostGetsRequest() (request *HostGetsRequest) {
