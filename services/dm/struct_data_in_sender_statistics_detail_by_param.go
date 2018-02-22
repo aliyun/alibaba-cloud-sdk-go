@@ -16,5 +16,5 @@ package dm
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataInSenderStatisticsDetailByParam struct {
-	MailDetail []MailDetailInSenderStatisticsDetailByParam `json:"mailDetail" xml:"mailDetail"`
+	MailDetail []MailDetail `json:"mailDetail" xml:"mailDetail"`
 }

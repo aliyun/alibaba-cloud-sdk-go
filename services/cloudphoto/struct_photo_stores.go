@@ -16,5 +16,5 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PhotoStores struct {
-	PhotoStore []PhotoStoreInListPhotoStores `json:"PhotoStore" xml:"PhotoStore"`
+	PhotoStore []PhotoStore `json:"PhotoStore" xml:"PhotoStore"`
 }

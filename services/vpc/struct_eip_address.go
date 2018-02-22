@@ -33,6 +33,7 @@ type EipAddress struct {
 	Descritpion          string                               `json:"Descritpion" xml:"Descritpion"`
 	BandwidthPackageId   string                               `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 	BandwidthPackageType string                               `json:"BandwidthPackageType" xml:"BandwidthPackageType"`
+	ResourceGroupId      string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AvailableRegions     AvailableRegions                     `json:"AvailableRegions" xml:"AvailableRegions"`
 	OperationLocks       OperationLocksInDescribeEipAddresses `json:"OperationLocks" xml:"OperationLocks"`
 }

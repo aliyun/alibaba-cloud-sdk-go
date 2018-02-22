@@ -16,6 +16,10 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type UsageData struct {
+	Acc       int    `json:"Acc" xml:"Acc"`
+	Time      string `json:"Time" xml:"Time"`
+	Traffic   int    `json:"Traffic" xml:"Traffic"`
+	Path      string `json:"Path" xml:"Path"`
 	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 	Value     string `json:"Value" xml:"Value"`
 }

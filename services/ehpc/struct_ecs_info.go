@@ -16,7 +16,7 @@ package ehpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type EcsInfo struct {
-	Manager ManagerInDescribeCluster `json:"Manager" xml:"Manager"`
-	Compute ComputeInDescribeCluster `json:"Compute" xml:"Compute"`
-	Login   LoginInDescribeCluster   `json:"Login" xml:"Login"`
+	Manager Manager `json:"Manager" xml:"Manager"`
+	Compute Compute `json:"Compute" xml:"Compute"`
+	Login   Login   `json:"Login" xml:"Login"`
 }

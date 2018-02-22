@@ -79,9 +79,9 @@ type DescribeOplogRequest struct {
 
 type DescribeOplogResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Total     int                   `json:"Total" xml:"Total"`
-	OplogList []DataInDescribeOplog `json:"OplogList" xml:"OplogList"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Total     int    `json:"Total" xml:"Total"`
+	OplogList []Data `json:"OplogList" xml:"OplogList"`
 }
 
 func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {

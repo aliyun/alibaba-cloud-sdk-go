@@ -16,29 +16,29 @@ package ehpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ClusterInfo struct {
-	Id               string                           `json:"Id" xml:"Id"`
-	RegionId         string                           `json:"RegionId" xml:"RegionId"`
-	Name             string                           `json:"Name" xml:"Name"`
-	Description      string                           `json:"Description" xml:"Description"`
-	Status           string                           `json:"Status" xml:"Status"`
-	OsTag            string                           `json:"OsTag" xml:"OsTag"`
-	AccountType      string                           `json:"AccountType" xml:"AccountType"`
-	SchedulerType    string                           `json:"SchedulerType" xml:"SchedulerType"`
-	CreateTime       string                           `json:"CreateTime" xml:"CreateTime"`
-	SecurityGroupId  string                           `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	VSwitchId        string                           `json:"VSwitchId" xml:"VSwitchId"`
-	VolumeType       string                           `json:"VolumeType" xml:"VolumeType"`
-	VolumeId         string                           `json:"VolumeId" xml:"VolumeId"`
-	VolumeProtocol   string                           `json:"VolumeProtocol" xml:"VolumeProtocol"`
-	VolumeMountpoint string                           `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
-	RemoteDirectory  string                           `json:"RemoteDirectory" xml:"RemoteDirectory"`
-	HaEnable         bool                             `json:"HaEnable" xml:"HaEnable"`
-	EcsChargeType    string                           `json:"EcsChargeType" xml:"EcsChargeType"`
-	KeyPairName      string                           `json:"KeyPairName" xml:"KeyPairName"`
-	SccClusterId     string                           `json:"SccClusterId" xml:"SccClusterId"`
-	ClientVersion    string                           `json:"ClientVersion" xml:"ClientVersion"`
-	ImageOwnerAlias  string                           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	ImageId          string                           `json:"ImageId" xml:"ImageId"`
-	EcsInfo          EcsInfo                          `json:"EcsInfo" xml:"EcsInfo"`
-	ApplicationInfo  ApplicationInfoInDescribeCluster `json:"ApplicationInfo" xml:"ApplicationInfo"`
+	Id               string                        `json:"Id" xml:"Id"`
+	RegionId         string                        `json:"RegionId" xml:"RegionId"`
+	Name             string                        `json:"Name" xml:"Name"`
+	Description      string                        `json:"Description" xml:"Description"`
+	Status           string                        `json:"Status" xml:"Status"`
+	OsTag            string                        `json:"OsTag" xml:"OsTag"`
+	AccountType      string                        `json:"AccountType" xml:"AccountType"`
+	SchedulerType    string                        `json:"SchedulerType" xml:"SchedulerType"`
+	CreateTime       string                        `json:"CreateTime" xml:"CreateTime"`
+	SecurityGroupId  string                        `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	VSwitchId        string                        `json:"VSwitchId" xml:"VSwitchId"`
+	VolumeType       string                        `json:"VolumeType" xml:"VolumeType"`
+	VolumeId         string                        `json:"VolumeId" xml:"VolumeId"`
+	VolumeProtocol   string                        `json:"VolumeProtocol" xml:"VolumeProtocol"`
+	VolumeMountpoint string                        `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
+	RemoteDirectory  string                        `json:"RemoteDirectory" xml:"RemoteDirectory"`
+	HaEnable         bool                          `json:"HaEnable" xml:"HaEnable"`
+	EcsChargeType    string                        `json:"EcsChargeType" xml:"EcsChargeType"`
+	KeyPairName      string                        `json:"KeyPairName" xml:"KeyPairName"`
+	SccClusterId     string                        `json:"SccClusterId" xml:"SccClusterId"`
+	ClientVersion    string                        `json:"ClientVersion" xml:"ClientVersion"`
+	ImageOwnerAlias  string                        `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	ImageId          string                        `json:"ImageId" xml:"ImageId"`
+	EcsInfo          EcsInfo                       `json:"EcsInfo" xml:"EcsInfo"`
+	Applications     ApplicationsInDescribeCluster `json:"Applications" xml:"Applications"`
 }

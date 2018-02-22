@@ -16,12 +16,5 @@ package tesladam
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DataInHostGets struct {
-	Hostname         string `json:"Hostname" xml:"Hostname"`
-	Ip               string `json:"Ip" xml:"Ip"`
-	AppCode          string `json:"AppCode" xml:"AppCode"`
-	ClusterCode      string `json:"ClusterCode" xml:"ClusterCode"`
-	SshStatus        int    `json:"SshStatus" xml:"SshStatus"`
-	HeartStatus      int    `json:"heartStatus" xml:"heartStatus"`
-	HealthScoreLast  int    `json:"HealthScoreLast" xml:"HealthScoreLast"`
-	HealthReasonLast string `json:"HealthReasonLast" xml:"HealthReasonLast"`
+	Data []Data `json:"data" xml:"data"`
 }

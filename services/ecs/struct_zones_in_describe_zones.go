@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ZonesInDescribeZones struct {
-	Zone []ZoneInDescribeZones `json:"Zone" xml:"Zone"`
+	Zone []Zone `json:"Zone" xml:"Zone"`
 }

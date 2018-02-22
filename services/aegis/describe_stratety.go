@@ -73,9 +73,9 @@ type DescribeStratetyRequest struct {
 
 type DescribeStratetyResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"RequestId" xml:"RequestId"`
-	Count      int                      `json:"Count" xml:"Count"`
-	Strategies []DataInDescribeStratety `json:"Strategies" xml:"Strategies"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Count      int    `json:"Count" xml:"Count"`
+	Strategies []Data `json:"Strategies" xml:"Strategies"`
 }
 
 func CreateDescribeStratetyRequest() (request *DescribeStratetyRequest) {

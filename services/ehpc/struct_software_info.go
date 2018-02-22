@@ -16,11 +16,11 @@ package ehpc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type SoftwareInfo struct {
-	EhpcVersion      string       `json:"EhpcVersion" xml:"EhpcVersion"`
-	OsTag            string       `json:"OsTag" xml:"OsTag"`
-	SchedulerType    string       `json:"SchedulerType" xml:"SchedulerType"`
-	SchedulerVersion string       `json:"SchedulerVersion" xml:"SchedulerVersion"`
-	AccountType      string       `json:"AccountType" xml:"AccountType"`
-	AccountVersion   string       `json:"AccountVersion" xml:"AccountVersion"`
-	Applications     Applications `json:"Applications" xml:"Applications"`
+	EhpcVersion      string                      `json:"EhpcVersion" xml:"EhpcVersion"`
+	OsTag            string                      `json:"OsTag" xml:"OsTag"`
+	SchedulerType    string                      `json:"SchedulerType" xml:"SchedulerType"`
+	SchedulerVersion string                      `json:"SchedulerVersion" xml:"SchedulerVersion"`
+	AccountType      string                      `json:"AccountType" xml:"AccountType"`
+	AccountVersion   string                      `json:"AccountVersion" xml:"AccountVersion"`
+	Applications     ApplicationsInListSoftwares `json:"Applications" xml:"Applications"`
 }

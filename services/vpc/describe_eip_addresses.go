@@ -73,6 +73,7 @@ type DescribeEipAddressesRequest struct {
 	Status                 string           `position:"Query" name:"Status"`
 	EipAddress             string           `position:"Query" name:"EipAddress"`
 	AllocationId           string           `position:"Query" name:"AllocationId"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
 	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`

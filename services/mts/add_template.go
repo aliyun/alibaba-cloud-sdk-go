@@ -81,8 +81,8 @@ type AddTemplateRequest struct {
 
 type AddTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Template  TemplateInAddTemplate `json:"Template" xml:"Template"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Template  Template `json:"Template" xml:"Template"`
 }
 
 func CreateAddTemplateRequest() (request *AddTemplateRequest) {

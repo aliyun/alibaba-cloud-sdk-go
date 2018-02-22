@@ -73,11 +73,11 @@ type GetCrackStatisticsRequest struct {
 
 type GetCrackStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"requestId" xml:"requestId"`
-	Code      string                   `json:"Code" xml:"Code"`
-	Success   bool                     `json:"Success" xml:"Success"`
-	Message   string                   `json:"Message" xml:"Message"`
-	Data      DataInGetCrackStatistics `json:"Data" xml:"Data"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {

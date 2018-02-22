@@ -16,5 +16,5 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Strategies struct {
-	Data []DataInDescribeStratety `json:"Data" xml:"Data"`
+	Data []Data `json:"Data" xml:"Data"`
 }

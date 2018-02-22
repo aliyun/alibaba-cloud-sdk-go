@@ -73,8 +73,8 @@ type DescribeDomainBlackWhiteListRequest struct {
 
 type DescribeDomainBlackWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId string                             `json:"RequestId" xml:"RequestId"`
-	Data      DataInDescribeDomainBlackWhiteList `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWhiteListRequest) {

@@ -77,13 +77,13 @@ type ListAlbumsRequest struct {
 
 type ListAlbumsResponse struct {
 	*responses.BaseResponse
-	Code       string              `json:"Code" xml:"Code"`
-	Message    string              `json:"Message" xml:"Message"`
-	NextCursor string              `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int                 `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string              `json:"RequestId" xml:"RequestId"`
-	Action     string              `json:"Action" xml:"Action"`
-	Albums     []AlbumInListAlbums `json:"Albums" xml:"Albums"`
+	Code       string  `json:"Code" xml:"Code"`
+	Message    string  `json:"Message" xml:"Message"`
+	NextCursor string  `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	Action     string  `json:"Action" xml:"Action"`
+	Albums     []Album `json:"Albums" xml:"Albums"`
 }
 
 func CreateListAlbumsRequest() (request *ListAlbumsRequest) {

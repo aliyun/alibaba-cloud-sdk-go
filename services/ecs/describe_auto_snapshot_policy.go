@@ -75,10 +75,10 @@ type DescribeAutoSnapshotPolicyRequest struct {
 
 type DescribeAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                                         `json:"RequestId" xml:"RequestId"`
-	AutoSnapshotOccupation     int                                            `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-	AutoSnapshotPolicy         AutoSnapshotPolicyInDescribeAutoSnapshotPolicy `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
-	AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus                     `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
+	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation     int                        `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	AutoSnapshotPolicy         AutoSnapshotPolicy         `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
+	AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
 }
 
 func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPolicyRequest) {

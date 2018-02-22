@@ -16,5 +16,5 @@ package slb
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VServerGroupsInDescribeLoadBalancersRelatedEcs struct {
-	VServerGroup []VServerGroupInDescribeLoadBalancersRelatedEcs `json:"VServerGroup" xml:"VServerGroup"`
+	VServerGroup []VServerGroup `json:"VServerGroup" xml:"VServerGroup"`
 }

@@ -73,6 +73,7 @@ type DescribeVpcsRequest struct {
 	VpcId                string           `position:"Query" name:"VpcId"`
 	VpcName              string           `position:"Query" name:"VpcName"`
 	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

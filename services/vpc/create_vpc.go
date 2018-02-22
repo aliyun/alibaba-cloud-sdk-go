@@ -73,6 +73,7 @@ type CreateVpcRequest struct {
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	VpcName              string           `position:"Query" name:"VpcName"`
 	Description          string           `position:"Query" name:"Description"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
@@ -80,10 +81,11 @@ type CreateVpcRequest struct {
 
 type CreateVpcResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	VpcId        string `json:"VpcId" xml:"VpcId"`
-	VRouterId    string `json:"VRouterId" xml:"VRouterId"`
-	RouteTableId string `json:"RouteTableId" xml:"RouteTableId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	VpcId           string `json:"VpcId" xml:"VpcId"`
+	VRouterId       string `json:"VRouterId" xml:"VRouterId"`
+	RouteTableId    string `json:"RouteTableId" xml:"RouteTableId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 func CreateCreateVpcRequest() (request *CreateVpcRequest) {

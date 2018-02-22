@@ -16,5 +16,5 @@ package rds
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type DBInstances struct {
-	Items []ItemsInDescribeReplicasInDBInstances `json:"Items" xml:"Items"`
+	Items []Items `json:"Items" xml:"Items"`
 }

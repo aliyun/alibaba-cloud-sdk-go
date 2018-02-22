@@ -16,5 +16,5 @@ package ecs
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ZonesInDescribeRecommendInstanceType struct {
-	Zone []ZoneInDescribeRecommendInstanceType `json:"zone" xml:"zone"`
+	Zone []Zone `json:"zone" xml:"zone"`
 }

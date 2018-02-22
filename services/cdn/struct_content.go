@@ -16,5 +16,5 @@ package cdn
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Content struct {
-	Data []DataInDescribeDomainQoSRt `json:"Data" xml:"Data"`
+	Data []Data `json:"Data" xml:"Data"`
 }
