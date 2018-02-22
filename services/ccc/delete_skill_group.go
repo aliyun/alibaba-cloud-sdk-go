@@ -67,8 +67,8 @@ func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequ
 
 type DeleteSkillGroupRequest struct {
 	*requests.RpcRequest
-	SkillGroupId string `position:"Query" name:"SkillGroupId"`
 	InstanceId   string `position:"Query" name:"InstanceId"`
+	SkillGroupId string `position:"Query" name:"SkillGroupId"`
 }
 
 type DeleteSkillGroupResponse struct {

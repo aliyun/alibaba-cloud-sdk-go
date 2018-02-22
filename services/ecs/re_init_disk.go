@@ -67,15 +67,15 @@ func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callbac
 
 type ReInitDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Password                    string           `position:"Query" name:"Password"`
-	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
-	AutoStartInstance           requests.Boolean `position:"Query" name:"AutoStartInstance"`
-	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
-	DiskId                      string           `position:"Query" name:"DiskId"`
-	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId                      string           `position:"Query" name:"DiskId"`
+	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	Password                    string           `position:"Query" name:"Password"`
+	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
+	AutoStartInstance           requests.Boolean `position:"Query" name:"AutoStartInstance"`
+	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 }
 
 type ReInitDiskResponse struct {
@@ -87,7 +87,7 @@ func CreateReInitDiskRequest() (request *ReInitDiskRequest) {
 	request = &ReInitDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReInitDisk", "", "")
 	return
 }
 

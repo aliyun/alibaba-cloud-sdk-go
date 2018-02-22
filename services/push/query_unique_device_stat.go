@@ -67,21 +67,16 @@ func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDevi
 
 type QueryUniqueDeviceStatRequest struct {
 	*requests.RpcRequest
-	EndTime     string           `position:"Query" name:"EndTime"`
-	StartTime   string           `position:"Query" name:"StartTime"`
-	Granularity string           `position:"Query" name:"Granularity"`
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	EndTime     string           `position:"Query" name:"EndTime"`
+	Granularity string           `position:"Query" name:"Granularity"`
 }
 
 type QueryUniqueDeviceStatResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	AppDeviceStats struct {
-		AppDeviceStat []struct {
-			Time  string `json:"Time" xml:"Time"`
-			Count int    `json:"Count" xml:"Count"`
-		} `json:"AppDeviceStat" xml:"AppDeviceStat"`
-	} `json:"AppDeviceStats" xml:"AppDeviceStats"`
+	RequestId      string                                `json:"RequestId" xml:"RequestId"`
+	AppDeviceStats AppDeviceStatsInQueryUniqueDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
 func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest) {

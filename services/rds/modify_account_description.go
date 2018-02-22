@@ -67,13 +67,13 @@ func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccoun
 
 type ModifyAccountDescriptionRequest struct {
 	*requests.RpcRequest
-	AccountDescription   string           `position:"Query" name:"AccountDescription"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyAccountDescriptionResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyAccountDescription", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyAccountDescription", "", "")
 	return
 }
 

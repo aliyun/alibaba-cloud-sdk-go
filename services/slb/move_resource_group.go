@@ -67,16 +67,16 @@ func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRe
 
 type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
 	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type MoveResourceGroupResponse struct {
@@ -88,7 +88,7 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "", "")
 	return
 }
 

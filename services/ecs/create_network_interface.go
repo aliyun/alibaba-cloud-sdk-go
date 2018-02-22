@@ -67,16 +67,6 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Description          string           `position:"Query" name:"Description"`
-	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
 }
 
 type CreateNetworkInterfaceResponse struct {
@@ -89,7 +79,7 @@ func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceReque
 	request = &CreateNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "", "")
 	return
 }
 

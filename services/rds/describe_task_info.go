@@ -67,13 +67,13 @@ func (client *Client) DescribeTaskInfoWithCallback(request *DescribeTaskInfoRequ
 
 type DescribeTaskInfoRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TaskId               requests.Integer `position:"Query" name:"TaskId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	TaskId               requests.Integer `position:"Query" name:"TaskId"`
 }
 
 type DescribeTaskInfoResponse struct {
@@ -97,7 +97,7 @@ func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 	request = &DescribeTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTaskInfo", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTaskInfo", "", "")
 	return
 }
 

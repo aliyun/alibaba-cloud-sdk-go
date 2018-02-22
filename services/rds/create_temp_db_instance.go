@@ -67,13 +67,13 @@ func (client *Client) CreateTempDBInstanceWithCallback(request *CreateTempDBInst
 
 type CreateTempDBInstanceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             requests.Integer `position:"Query" name:"BackupId"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateTempDBInstanceResponse struct {
@@ -86,7 +86,7 @@ func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) 
 	request = &CreateTempDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstance", "", "")
 	return
 }
 

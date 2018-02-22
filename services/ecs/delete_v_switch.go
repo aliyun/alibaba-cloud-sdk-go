@@ -67,11 +67,11 @@ func (client *Client) DeleteVSwitchWithCallback(request *DeleteVSwitchRequest, c
 
 type DeleteVSwitchRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteVSwitchResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteVSwitchRequest() (request *DeleteVSwitchRequest) {
 	request = &DeleteVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVSwitch", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteVSwitch", "", "")
 	return
 }
 

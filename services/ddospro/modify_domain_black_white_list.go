@@ -67,10 +67,10 @@ func (client *Client) ModifyDomainBlackWhiteListWithCallback(request *ModifyDoma
 
 type ModifyDomainBlackWhiteListRequest struct {
 	*requests.RpcRequest
-	White           *[]string        `position:"Query" name:"White"  type:"Repeated"`
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 	Black           *[]string        `position:"Query" name:"Black"  type:"Repeated"`
+	White           *[]string        `position:"Query" name:"White"  type:"Repeated"`
 }
 
 type ModifyDomainBlackWhiteListResponse struct {

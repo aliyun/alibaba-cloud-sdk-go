@@ -67,17 +67,17 @@ func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest,
 
 type ModifyTemplateRequest struct {
 	*requests.RpcRequest
-	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
-	SmsContent           string           `position:"Query" name:"SmsContent"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Remark               string           `position:"Query" name:"Remark"`
-	SmsType              requests.Integer `position:"Query" name:"SmsType"`
-	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
-	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
+	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
+	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
 	TemplateText         string           `position:"Query" name:"TemplateText"`
+	SmsType              requests.Integer `position:"Query" name:"SmsType"`
+	SmsContent           string           `position:"Query" name:"SmsContent"`
+	Remark               string           `position:"Query" name:"Remark"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 

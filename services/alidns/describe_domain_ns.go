@@ -67,22 +67,18 @@ func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequ
 
 type DescribeDomainNsRequest struct {
 	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	DomainName   string `position:"Query" name:"DomainName"`
 }
 
 type DescribeDomainNsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	AllAliDns     bool   `json:"AllAliDns" xml:"AllAliDns"`
-	IncludeAliDns bool   `json:"IncludeAliDns" xml:"IncludeAliDns"`
-	DnsServers    struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
-	ExpectDnsServers struct {
-		ExpectDnsServer []string `json:"ExpectDnsServer" xml:"ExpectDnsServer"`
-	} `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
+	RequestId        string                       `json:"RequestId" xml:"RequestId"`
+	AllAliDns        bool                         `json:"AllAliDns" xml:"AllAliDns"`
+	IncludeAliDns    bool                         `json:"IncludeAliDns" xml:"IncludeAliDns"`
+	DnsServers       DnsServersInDescribeDomainNs `json:"DnsServers" xml:"DnsServers"`
+	ExpectDnsServers ExpectDnsServers             `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
 }
 
 func CreateDescribeDomainNsRequest() (request *DescribeDomainNsRequest) {

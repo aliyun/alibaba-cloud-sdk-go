@@ -67,8 +67,8 @@ func (client *Client) LoginDBInstancefromCloudDBAWithCallback(request *LoginDBIn
 
 type LoginDBInstancefromCloudDBARequest struct {
 	*requests.RpcRequest
-	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
+	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
 	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
@@ -83,7 +83,7 @@ func CreateLoginDBInstancefromCloudDBARequest() (request *LoginDBInstancefromClo
 	request = &LoginDBInstancefromCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "LoginDBInstancefromCloudDBA", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "LoginDBInstancefromCloudDBA", "", "")
 	return
 }
 

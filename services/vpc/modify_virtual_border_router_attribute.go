@@ -67,20 +67,20 @@ func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *Mo
 
 type ModifyVirtualBorderRouterAttributeRequest struct {
 	*requests.RpcRequest
+	VbrId                         string           `position:"Query" name:"VbrId"`
 	VlanId                        requests.Integer `position:"Query" name:"VlanId"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
+	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
+	PeeringSubnetMask             string           `position:"Query" name:"PeeringSubnetMask"`
+	Description                   string           `position:"Query" name:"Description"`
+	Name                          string           `position:"Query" name:"Name"`
 	AssociatedPhysicalConnections string           `position:"Query" name:"AssociatedPhysicalConnections"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
-	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
-	Description                   string           `position:"Query" name:"Description"`
-	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
-	Name                          string           `position:"Query" name:"Name"`
-	PeeringSubnetMask             string           `position:"Query" name:"PeeringSubnetMask"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
-	VbrId                         string           `position:"Query" name:"VbrId"`
 }
 
 type ModifyVirtualBorderRouterAttributeResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBo
 	request = &ModifyVirtualBorderRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "", "")
 	return
 }
 

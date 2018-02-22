@@ -67,33 +67,26 @@ func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, c
 
 type GetThumbnailsRequest struct {
 	*requests.RpcRequest
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	StoreName string    `position:"Query" name:"StoreName"`
-	ZoomType  string    `position:"Query" name:"ZoomType"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	ZoomType  string    `position:"Query" name:"ZoomType"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 type GetThumbnailsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   struct {
-		Result []struct {
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			PhotoId      int    `json:"PhotoId" xml:"PhotoId"`
-			ThumbnailUrl string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Action    string                 `json:"Action" xml:"Action"`
+	Results   ResultsInGetThumbnails `json:"Results" xml:"Results"`
 }
 
 func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {
 	request = &GetThumbnailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetThumbnails", "", "")
 	return
 }
 

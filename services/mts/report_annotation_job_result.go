@@ -67,13 +67,13 @@ func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnot
 
 type ReportAnnotationJobResultRequest struct {
 	*requests.RpcRequest
-	Annotation           string           `position:"Query" name:"Annotation"`
-	Details              string           `position:"Query" name:"Details"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Annotation           string           `position:"Query" name:"Annotation"`
+	Details              string           `position:"Query" name:"Details"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportAnnotationJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResul
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "", "")
 	return
 }
 

@@ -67,44 +67,25 @@ func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistra
 
 type QueryRegistrantProfilesRequest struct {
 	*requests.RpcRequest
-	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
+	UserClientIp             string           `position:"Query" name:"UserClientIp"`
+	Lang                     string           `position:"Query" name:"Lang"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
-	UserClientIp             string           `position:"Query" name:"UserClientIp"`
-	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
-	Lang                     string           `position:"Query" name:"Lang"`
+	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type QueryRegistrantProfilesResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum       int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum     int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum       int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize           int    `json:"PageSize" xml:"PageSize"`
-	PrePage            bool   `json:"PrePage" xml:"PrePage"`
-	NextPage           bool   `json:"NextPage" xml:"NextPage"`
-	RegistrantProfiles struct {
-		RegistrantProfile []struct {
-			RegistrantProfileId      int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
-			CreateTime               string `json:"CreateTime" xml:"CreateTime"`
-			UpdateTime               string `json:"UpdateTime" xml:"UpdateTime"`
-			DefaultRegistrantProfile bool   `json:"DefaultRegistrantProfile" xml:"DefaultRegistrantProfile"`
-			RegistrantName           string `json:"RegistrantName" xml:"RegistrantName"`
-			RegistrantOrganization   string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-			Country                  string `json:"Country" xml:"Country"`
-			Province                 string `json:"Province" xml:"Province"`
-			City                     string `json:"City" xml:"City"`
-			Address                  string `json:"Address" xml:"Address"`
-			Email                    string `json:"Email" xml:"Email"`
-			PostalCode               string `json:"PostalCode" xml:"PostalCode"`
-			TelArea                  string `json:"TelArea" xml:"TelArea"`
-			Telephone                string `json:"Telephone" xml:"Telephone"`
-			TelExt                   string `json:"TelExt" xml:"TelExt"`
-			EmailVerificationStatus  int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
-		} `json:"RegistrantProfile" xml:"RegistrantProfile"`
-	} `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	TotalItemNum       int                `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum     int                `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum       int                `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize           int                `json:"PageSize" xml:"PageSize"`
+	PrePage            bool               `json:"PrePage" xml:"PrePage"`
+	NextPage           bool               `json:"NextPage" xml:"NextPage"`
+	RegistrantProfiles RegistrantProfiles `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
 }
 
 func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesRequest) {

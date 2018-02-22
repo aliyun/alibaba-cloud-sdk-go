@@ -68,8 +68,8 @@ func (client *Client) DetachPolicyFromGroupWithCallback(request *DetachPolicyFro
 type DetachPolicyFromGroupRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
-	GroupName  string `position:"Query" name:"GroupName"`
 	PolicyName string `position:"Query" name:"PolicyName"`
+	GroupName  string `position:"Query" name:"GroupName"`
 }
 
 type DetachPolicyFromGroupResponse struct {

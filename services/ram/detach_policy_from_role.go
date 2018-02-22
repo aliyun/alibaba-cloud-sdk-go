@@ -67,9 +67,9 @@ func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFrom
 
 type DetachPolicyFromRoleRequest struct {
 	*requests.RpcRequest
-	RoleName   string `position:"Query" name:"RoleName"`
 	PolicyType string `position:"Query" name:"PolicyType"`
 	PolicyName string `position:"Query" name:"PolicyName"`
+	RoleName   string `position:"Query" name:"RoleName"`
 }
 
 type DetachPolicyFromRoleResponse struct {

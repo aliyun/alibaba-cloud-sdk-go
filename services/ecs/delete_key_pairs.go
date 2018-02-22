@@ -67,10 +67,10 @@ func (client *Client) DeleteKeyPairsWithCallback(request *DeleteKeyPairsRequest,
 
 type DeleteKeyPairsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyPairNames         string           `position:"Query" name:"KeyPairNames"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairNames         string           `position:"Query" name:"KeyPairNames"`
 }
 
 type DeleteKeyPairsResponse struct {
@@ -82,7 +82,7 @@ func CreateDeleteKeyPairsRequest() (request *DeleteKeyPairsRequest) {
 	request = &DeleteKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteKeyPairs", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteKeyPairs", "", "")
 	return
 }
 

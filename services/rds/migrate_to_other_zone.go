@@ -67,14 +67,14 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 }
 
 type MigrateToOtherZoneResponse struct {
@@ -86,7 +86,7 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateToOtherZone", "", "")
 	return
 }
 

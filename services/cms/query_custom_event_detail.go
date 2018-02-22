@@ -81,7 +81,7 @@ func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailReque
 	request = &QueryCustomEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventDetail", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventDetail", "", "")
 	return
 }
 

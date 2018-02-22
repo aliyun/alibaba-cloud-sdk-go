@@ -67,37 +67,22 @@ func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddr
 
 type QueryMailAddressByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
 	Sendtype             string           `position:"Query" name:"Sendtype"`
 }
 
 type QueryMailAddressByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		MailAddress []struct {
-			MailAddressId string `json:"MailAddressId" xml:"MailAddressId"`
-			AccountName   string `json:"AccountName" xml:"AccountName"`
-			ReplyAddress  string `json:"ReplyAddress" xml:"ReplyAddress"`
-			Sendtype      string `json:"Sendtype" xml:"Sendtype"`
-			AccountStatus string `json:"AccountStatus" xml:"AccountStatus"`
-			ReplyStatus   string `json:"ReplyStatus" xml:"ReplyStatus"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			DailyCount    string `json:"DailyCount" xml:"DailyCount"`
-			MonthCount    string `json:"MonthCount" xml:"MonthCount"`
-			DailyReqCount string `json:"DailyReqCount" xml:"DailyReqCount"`
-			MonthReqCount string `json:"MonthReqCount" xml:"MonthReqCount"`
-			DomainStatus  string `json:"DomainStatus" xml:"DomainStatus"`
-		} `json:"mailAddress" xml:"mailAddress"`
-	} `json:"data" xml:"data"`
+	RequestId  string                        `json:"RequestId" xml:"RequestId"`
+	TotalCount int                           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                           `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                           `json:"PageSize" xml:"PageSize"`
+	Data       DataInQueryMailAddressByParam `json:"data" xml:"data"`
 }
 
 func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamRequest) {

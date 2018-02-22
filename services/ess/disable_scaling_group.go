@@ -67,11 +67,11 @@ func (client *Client) DisableScalingGroupWithCallback(request *DisableScalingGro
 
 type DisableScalingGroupRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DisableScalingGroupResponse struct {
@@ -83,7 +83,7 @@ func CreateDisableScalingGroupRequest() (request *DisableScalingGroupRequest) {
 	request = &DisableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DisableScalingGroup", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DisableScalingGroup", "", "")
 	return
 }
 

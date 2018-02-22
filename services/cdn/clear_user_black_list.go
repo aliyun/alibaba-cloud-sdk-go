@@ -67,8 +67,8 @@ func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackList
 
 type ClearUserBlackListRequest struct {
 	*requests.RpcRequest
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 

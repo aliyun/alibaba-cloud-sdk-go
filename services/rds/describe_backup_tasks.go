@@ -67,37 +67,29 @@ func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTas
 
 type DescribeBackupTasksRequest struct {
 	*requests.RpcRequest
-	BackupMode           string           `position:"Query" name:"BackupMode"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	Flag                 string           `position:"Query" name:"Flag"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Flag                 string           `position:"Query" name:"Flag"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackupJobStatus      string           `position:"Query" name:"BackupJobStatus"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupJobId          string           `position:"Query" name:"BackupJobId"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
+	BackupJobStatus      string           `position:"Query" name:"BackupJobStatus"`
 }
 
 type DescribeBackupTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		BackupJob []struct {
-			BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
-			JobMode              string `json:"JobMode" xml:"JobMode"`
-			Process              string `json:"Process" xml:"Process"`
-			TaskAction           string `json:"TaskAction" xml:"TaskAction"`
-			BackupjobId          string `json:"BackupjobId" xml:"BackupjobId"`
-		} `json:"BackupJob" xml:"BackupJob"`
-	} `json:"Items" xml:"Items"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeBackupTasks `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
 	request = &DescribeBackupTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupTasks", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupTasks", "", "")
 	return
 }
 

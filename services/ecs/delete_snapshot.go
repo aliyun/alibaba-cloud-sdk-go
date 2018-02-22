@@ -67,12 +67,12 @@ func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest,
 
 type DeleteSnapshotRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Force                requests.Boolean `position:"Query" name:"Force"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteSnapshotResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
 	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshot", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshot", "", "")
 	return
 }
 

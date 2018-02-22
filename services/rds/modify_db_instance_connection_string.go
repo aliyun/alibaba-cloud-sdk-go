@@ -67,14 +67,14 @@ func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *Modi
 
 type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
-	Port                    string           `position:"Query" name:"Port"`
-	ConnectionStringPrefix  string           `position:"Query" name:"ConnectionStringPrefix"`
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
+	ConnectionStringPrefix  string           `position:"Query" name:"ConnectionStringPrefix"`
+	Port                    string           `position:"Query" name:"Port"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDBInstanceConnectionStringResponse struct {
@@ -86,7 +86,7 @@ func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceC
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "", "")
 	return
 }
 

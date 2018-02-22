@@ -67,9 +67,9 @@ func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback fu
 
 type AddUsersRequest struct {
 	*requests.RpcRequest
-	ReleaseInstance requests.Boolean `position:"Query" name:"ReleaseInstance"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	User            *[]AddUsersUser  `position:"Query" name:"User"  type:"Repeated"`
+	ReleaseInstance requests.Boolean `position:"Query" name:"ReleaseInstance"`
 }
 
 type AddUsersUser struct {
@@ -87,7 +87,7 @@ func CreateAddUsersRequest() (request *AddUsersRequest) {
 	request = &AddUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "AddUsers", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "AddUsers", "", "")
 	return
 }
 

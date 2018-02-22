@@ -67,9 +67,9 @@ func (client *Client) DescribeIpTrafficWithCallback(request *DescribeIpTrafficRe
 
 type DescribeIpTrafficRequest struct {
 	*requests.RpcRequest
-	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
-	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
 	Ip              string           `position:"Query" name:"Ip"`
+	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
 }
 
 type DescribeIpTrafficResponse struct {
@@ -78,16 +78,7 @@ type DescribeIpTrafficResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		PpsDrop   []string `json:"PpsDrop" xml:"PpsDrop"`
-		PpsTotal  []string `json:"PpsTotal" xml:"PpsTotal"`
-		BpsDrop   []string `json:"BpsDrop" xml:"BpsDrop"`
-		BpsTotal  []string `json:"BpsTotal" xml:"BpsTotal"`
-		TimeScope struct {
-			Interval int `json:"Interval" xml:"Interval"`
-			Start    int `json:"Start" xml:"Start"`
-		} `json:"TimeScope" xml:"TimeScope"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {

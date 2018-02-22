@@ -67,10 +67,10 @@ func (client *Client) DescribeUserDataWithCallback(request *DescribeUserDataRequ
 
 type DescribeUserDataRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeUserDataResponse struct {
@@ -85,7 +85,7 @@ func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 	request = &DescribeUserDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserData", "", "")
 	return
 }
 

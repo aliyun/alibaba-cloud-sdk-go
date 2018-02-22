@@ -67,9 +67,9 @@ func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateR
 
 type DeactivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 
@@ -82,7 +82,7 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeactivateRouterInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeactivateRouterInterface", "", "")
 	return
 }
 

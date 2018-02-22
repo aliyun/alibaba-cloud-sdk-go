@@ -67,12 +67,12 @@ func (client *Client) DeleteSnatEntryWithCallback(request *DeleteSnatEntryReques
 
 type DeleteSnatEntryRequest struct {
 	*requests.RpcRequest
-	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SnatTableId          string           `position:"Query" name:"SnatTableId"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
 }
 
 type DeleteSnatEntryResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
 	request = &DeleteSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSnatEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSnatEntry", "", "")
 	return
 }
 

@@ -67,10 +67,10 @@ func (client *Client) ApproveTemplateWithCallback(request *ApproveTemplateReques
 
 type ApproveTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 

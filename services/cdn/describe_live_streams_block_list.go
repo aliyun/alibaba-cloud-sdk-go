@@ -67,18 +67,16 @@ func (client *Client) DescribeLiveStreamsBlockListWithCallback(request *Describe
 
 type DescribeLiveStreamsBlockListRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
 type DescribeLiveStreamsBlockListResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	StreamUrls struct {
-		StreamUrl []string `json:"StreamUrl" xml:"StreamUrl"`
-	} `json:"StreamUrls" xml:"StreamUrls"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	DomainName string     `json:"DomainName" xml:"DomainName"`
+	StreamUrls StreamUrls `json:"StreamUrls" xml:"StreamUrls"`
 }
 
 func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBlockListRequest) {

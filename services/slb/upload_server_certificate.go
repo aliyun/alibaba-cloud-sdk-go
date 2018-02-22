@@ -67,18 +67,18 @@ func (client *Client) UploadServerCertificateWithCallback(request *UploadServerC
 
 type UploadServerCertificateRequest struct {
 	*requests.RpcRequest
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
+	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
+	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
+	PrivateKey              string           `position:"Query" name:"PrivateKey"`
+	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId             string           `position:"Query" name:"access_key_id"`
 	Tags                    string           `position:"Query" name:"Tags"`
 	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
-	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
-	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
-	AccessKeyId             string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	PrivateKey              string           `position:"Query" name:"PrivateKey"`
 }
 
 type UploadServerCertificateResponse struct {
@@ -101,7 +101,7 @@ func CreateUploadServerCertificateRequest() (request *UploadServerCertificateReq
 	request = &UploadServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "", "")
 	return
 }
 

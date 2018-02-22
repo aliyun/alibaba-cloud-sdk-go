@@ -67,14 +67,14 @@ func (client *Client) SubmitAsrJobWithCallback(request *SubmitAsrJobRequest, cal
 
 type SubmitAsrJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
-	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 	AsrConfig            string           `position:"Query" name:"AsrConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type SubmitAsrJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "", "")
 	return
 }
 

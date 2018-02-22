@@ -72,60 +72,15 @@ type DescribeClusterRequest struct {
 
 type DescribeClusterResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	ClusterInfo struct {
-		Id               string `json:"Id" xml:"Id"`
-		RegionId         string `json:"RegionId" xml:"RegionId"`
-		Name             string `json:"Name" xml:"Name"`
-		Description      string `json:"Description" xml:"Description"`
-		Status           string `json:"Status" xml:"Status"`
-		OsTag            string `json:"OsTag" xml:"OsTag"`
-		AccountType      string `json:"AccountType" xml:"AccountType"`
-		SchedulerType    string `json:"SchedulerType" xml:"SchedulerType"`
-		CreateTime       string `json:"CreateTime" xml:"CreateTime"`
-		SecurityGroupId  string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-		VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-		VolumeType       string `json:"VolumeType" xml:"VolumeType"`
-		VolumeId         string `json:"VolumeId" xml:"VolumeId"`
-		VolumeProtocol   string `json:"VolumeProtocol" xml:"VolumeProtocol"`
-		VolumeMountpoint string `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
-		RemoteDirectory  string `json:"RemoteDirectory" xml:"RemoteDirectory"`
-		HaEnable         bool   `json:"HaEnable" xml:"HaEnable"`
-		EcsChargeType    string `json:"EcsChargeType" xml:"EcsChargeType"`
-		KeyPairName      string `json:"KeyPairName" xml:"KeyPairName"`
-		SccClusterId     string `json:"SccClusterId" xml:"SccClusterId"`
-		ClientVersion    string `json:"ClientVersion" xml:"ClientVersion"`
-		ImageOwnerAlias  string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-		ImageId          string `json:"ImageId" xml:"ImageId"`
-		EcsInfo          struct {
-			Manager struct {
-				Count        int    `json:"Count" xml:"Count"`
-				InstanceType string `json:"InstanceType" xml:"InstanceType"`
-			} `json:"Manager" xml:"Manager"`
-			Compute struct {
-				Count        int    `json:"Count" xml:"Count"`
-				InstanceType string `json:"InstanceType" xml:"InstanceType"`
-			} `json:"Compute" xml:"Compute"`
-			Login struct {
-				Count        int    `json:"Count" xml:"Count"`
-				InstanceType string `json:"InstanceType" xml:"InstanceType"`
-			} `json:"Login" xml:"Login"`
-		} `json:"EcsInfo" xml:"EcsInfo"`
-		ApplicationInfo struct {
-			ApplicationInfoItem []struct {
-				Tag     string `json:"Tag" xml:"Tag"`
-				Name    string `json:"Name" xml:"Name"`
-				Version string `json:"Version" xml:"Version"`
-			} `json:"ApplicationInfoItem" xml:"ApplicationInfoItem"`
-		} `json:"ApplicationInfo" xml:"ApplicationInfo"`
-	} `json:"ClusterInfo" xml:"ClusterInfo"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	ClusterInfo ClusterInfo `json:"ClusterInfo" xml:"ClusterInfo"`
 }
 
 func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
 	request = &DescribeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DescribeCluster", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "DescribeCluster", "", "")
 	return
 }
 

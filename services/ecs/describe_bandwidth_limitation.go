@@ -67,35 +67,19 @@ func (client *Client) DescribeBandwidthLimitationWithCallback(request *DescribeB
 
 type DescribeBandwidthLimitationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OperationType        string           `position:"Query" name:"OperationType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 }
 
 type DescribeBandwidthLimitationResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Bandwidths struct {
-		Bandwidth []struct {
-			InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-			Min                int    `json:"Min" xml:"Min"`
-			Max                int    `json:"Max" xml:"Max"`
-			Unit               string `json:"Unit" xml:"Unit"`
-		} `json:"Bandwidth" xml:"Bandwidth"`
-	} `json:"Bandwidths" xml:"Bandwidths"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Bandwidths Bandwidths `json:"Bandwidths" xml:"Bandwidths"`
 }
 
 func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimitationRequest) {
 	request = &DescribeBandwidthLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "", "")
 	return
 }
 

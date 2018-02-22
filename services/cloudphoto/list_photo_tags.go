@@ -67,10 +67,10 @@ func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, c
 
 type ListPhotoTagsRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	Lang      string           `position:"Query" name:"Lang"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	Lang      string           `position:"Query" name:"Lang"`
 }
 
 type ListPhotoTagsResponse struct {
@@ -79,19 +79,14 @@ type ListPhotoTagsResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Tags      []struct {
-		Id        int    `json:"Id" xml:"Id"`
-		IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
-		Name      string `json:"Name" xml:"Name"`
-		ParentTag string `json:"ParentTag" xml:"ParentTag"`
-	} `json:"Tags" xml:"Tags"`
+	Tags      []Tag  `json:"Tags" xml:"Tags"`
 }
 
 func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
 	request = &ListPhotoTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "", "")
 	return
 }
 

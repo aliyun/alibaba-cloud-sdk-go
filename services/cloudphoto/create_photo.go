@@ -67,15 +67,15 @@ func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callb
 
 type CreatePhotoRequest struct {
 	*requests.RpcRequest
-	Staging         string           `position:"Query" name:"Staging"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
-	PhotoTitle      string           `position:"Query" name:"PhotoTitle"`
-	Remark          string           `position:"Query" name:"Remark"`
-	UploadType      string           `position:"Query" name:"UploadType"`
-	LibraryId       string           `position:"Query" name:"LibraryId"`
-	StoreName       string           `position:"Query" name:"StoreName"`
 	FileId          string           `position:"Query" name:"FileId"`
 	SessionId       string           `position:"Query" name:"SessionId"`
+	UploadType      string           `position:"Query" name:"UploadType"`
+	PhotoTitle      string           `position:"Query" name:"PhotoTitle"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	Remark          string           `position:"Query" name:"Remark"`
+	LibraryId       string           `position:"Query" name:"LibraryId"`
+	Staging         string           `position:"Query" name:"Staging"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 }
 
 type CreatePhotoResponse struct {
@@ -84,30 +84,14 @@ type CreatePhotoResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Photo     struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		Location        string `json:"Location" xml:"Location"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Size            int    `json:"Size" xml:"Size"`
-		Remark          string `json:"Remark" xml:"Remark"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photo" xml:"Photo"`
+	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
 func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	request = &CreatePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhoto", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhoto", "", "")
 	return
 }
 

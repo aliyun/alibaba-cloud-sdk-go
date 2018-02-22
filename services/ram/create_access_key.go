@@ -72,13 +72,8 @@ type CreateAccessKeyRequest struct {
 
 type CreateAccessKeyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	AccessKey struct {
-		AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
-		AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-		Status          string `json:"Status" xml:"Status"`
-		CreateDate      string `json:"CreateDate" xml:"CreateDate"`
-	} `json:"AccessKey" xml:"AccessKey"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
 func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {

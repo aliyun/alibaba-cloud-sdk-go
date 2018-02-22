@@ -67,12 +67,6 @@ func (client *Client) StopInvocationWithCallback(request *StopInvocationRequest,
 
 type StopInvocationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InvokeId             string           `position:"Query" name:"InvokeId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 type StopInvocationResponse struct {
@@ -84,7 +78,7 @@ func CreateStopInvocationRequest() (request *StopInvocationRequest) {
 	request = &StopInvocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInvocation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInvocation", "", "")
 	return
 }
 

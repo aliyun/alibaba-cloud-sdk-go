@@ -67,24 +67,6 @@ func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecur
 
 type AuthorizeSecurityGroupRequest struct {
 	*requests.RpcRequest
-	NicType                 string           `position:"Query" name:"NicType"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourcePortRange         string           `position:"Query" name:"SourcePortRange"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
-	SecurityGroupId         string           `position:"Query" name:"SecurityGroupId"`
-	Description             string           `position:"Query" name:"Description"`
-	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
-	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
-	Policy                  string           `position:"Query" name:"Policy"`
-	PortRange               string           `position:"Query" name:"PortRange"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	IpProtocol              string           `position:"Query" name:"IpProtocol"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	SourceCidrIp            string           `position:"Query" name:"SourceCidrIp"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Priority                string           `position:"Query" name:"Priority"`
-	DestCidrIp              string           `position:"Query" name:"DestCidrIp"`
-	SourceGroupId           string           `position:"Query" name:"SourceGroupId"`
 }
 
 type AuthorizeSecurityGroupResponse struct {
@@ -96,7 +78,7 @@ func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupReque
 	request = &AuthorizeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AuthorizeSecurityGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AuthorizeSecurityGroup", "", "")
 	return
 }
 

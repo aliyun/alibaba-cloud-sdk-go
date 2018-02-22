@@ -67,63 +67,29 @@ func (client *Client) ListMediaWorkflowExecutionsWithCallback(request *ListMedia
 
 type ListMediaWorkflowExecutionsRequest struct {
 	*requests.RpcRequest
-	InputFileURL         string           `position:"Query" name:"InputFileURL"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	MediaWorkflowName    string           `position:"Query" name:"MediaWorkflowName"`
+	InputFileURL         string           `position:"Query" name:"InputFileURL"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ListMediaWorkflowExecutionsResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
-	NextPageToken              string `json:"NextPageToken" xml:"NextPageToken"`
-	MediaWorkflowExecutionList struct {
-		MediaWorkflowExecution []struct {
-			RunId           string `json:"RunId" xml:"RunId"`
-			MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-			Name            string `json:"Name" xml:"Name"`
-			State           string `json:"State" xml:"State"`
-			MediaId         string `json:"MediaId" xml:"MediaId"`
-			CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-			Input           struct {
-				UserData  string `json:"UserData" xml:"UserData"`
-				InputFile struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-				} `json:"InputFile" xml:"InputFile"`
-			} `json:"Input" xml:"Input"`
-			ActivityList struct {
-				Activity []struct {
-					Name             string `json:"Name" xml:"Name"`
-					Type             string `json:"Type" xml:"Type"`
-					JobId            string `json:"JobId" xml:"JobId"`
-					State            string `json:"State" xml:"State"`
-					Code             string `json:"Code" xml:"Code"`
-					Message          string `json:"Message" xml:"Message"`
-					StartTime        string `json:"StartTime" xml:"StartTime"`
-					EndTime          string `json:"EndTime" xml:"EndTime"`
-					MNSMessageResult struct {
-						MessageId    string `json:"MessageId" xml:"MessageId"`
-						ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-						ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-					} `json:"MNSMessageResult" xml:"MNSMessageResult"`
-				} `json:"Activity" xml:"Activity"`
-			} `json:"ActivityList" xml:"ActivityList"`
-		} `json:"MediaWorkflowExecution" xml:"MediaWorkflowExecution"`
-	} `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
+	RequestId                  string                                                  `json:"RequestId" xml:"RequestId"`
+	NextPageToken              string                                                  `json:"NextPageToken" xml:"NextPageToken"`
+	MediaWorkflowExecutionList MediaWorkflowExecutionListInListMediaWorkflowExecutions `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
 }
 
 func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecutionsRequest) {
 	request = &ListMediaWorkflowExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "", "")
 	return
 }
 

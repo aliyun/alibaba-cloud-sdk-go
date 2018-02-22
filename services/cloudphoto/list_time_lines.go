@@ -67,55 +67,32 @@ func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, c
 
 type ListTimeLinesRequest struct {
 	*requests.RpcRequest
-	FilterBy      string           `position:"Query" name:"FilterBy"`
-	Cursor        requests.Integer `position:"Query" name:"Cursor"`
-	Order         string           `position:"Query" name:"Order"`
 	Direction     string           `position:"Query" name:"Direction"`
-	TimeLineCount requests.Integer `position:"Query" name:"TimeLineCount"`
-	LibraryId     string           `position:"Query" name:"LibraryId"`
-	StoreName     string           `position:"Query" name:"StoreName"`
-	TimeLineUnit  string           `position:"Query" name:"TimeLineUnit"`
 	PhotoSize     requests.Integer `position:"Query" name:"PhotoSize"`
+	Cursor        requests.Integer `position:"Query" name:"Cursor"`
+	TimeLineCount requests.Integer `position:"Query" name:"TimeLineCount"`
+	TimeLineUnit  string           `position:"Query" name:"TimeLineUnit"`
+	FilterBy      string           `position:"Query" name:"FilterBy"`
+	Order         string           `position:"Query" name:"Order"`
+	StoreName     string           `position:"Query" name:"StoreName"`
+	LibraryId     string           `position:"Query" name:"LibraryId"`
 }
 
 type ListTimeLinesResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor int    `json:"NextCursor" xml:"NextCursor"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	TimeLines  []struct {
-		StartTime   int `json:"StartTime" xml:"StartTime"`
-		EndTime     int `json:"EndTime" xml:"EndTime"`
-		TotalCount  int `json:"TotalCount" xml:"TotalCount"`
-		PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
-		Photos      []struct {
-			Id              int    `json:"Id" xml:"Id"`
-			Title           string `json:"Title" xml:"Title"`
-			Location        string `json:"Location" xml:"Location"`
-			FileId          string `json:"FileId" xml:"FileId"`
-			State           string `json:"State" xml:"State"`
-			Md5             string `json:"Md5" xml:"Md5"`
-			IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-			Remark          string `json:"Remark" xml:"Remark"`
-			Size            int    `json:"Size" xml:"Size"`
-			Width           int    `json:"Width" xml:"Width"`
-			Height          int    `json:"Height" xml:"Height"`
-			Ctime           int    `json:"Ctime" xml:"Ctime"`
-			Mtime           int    `json:"Mtime" xml:"Mtime"`
-			TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-			ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-			Like            int    `json:"Like" xml:"Like"`
-		} `json:"Photos" xml:"Photos"`
-	} `json:"TimeLines" xml:"TimeLines"`
+	Code       string     `json:"Code" xml:"Code"`
+	Message    string     `json:"Message" xml:"Message"`
+	NextCursor int        `json:"NextCursor" xml:"NextCursor"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Action     string     `json:"Action" xml:"Action"`
+	TimeLines  []TimeLine `json:"TimeLines" xml:"TimeLines"`
 }
 
 func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 	request = &ListTimeLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLines", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTimeLines", "", "")
 	return
 }
 

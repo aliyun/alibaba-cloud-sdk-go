@@ -67,11 +67,6 @@ func (client *Client) CancelAgreementWithCallback(request *CancelAgreementReques
 
 type CancelAgreementRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AgreementType        string           `position:"Query" name:"AgreementType"`
 }
 
 type CancelAgreementResponse struct {
@@ -83,7 +78,7 @@ func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 	request = &CancelAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAgreement", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelAgreement", "", "")
 	return
 }
 

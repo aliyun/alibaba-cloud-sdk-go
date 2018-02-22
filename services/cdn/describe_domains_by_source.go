@@ -74,25 +74,9 @@ type DescribeDomainsBySourceRequest struct {
 
 type DescribeDomainsBySourceResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Sources     string `json:"Sources" xml:"Sources"`
-	DomainsList struct {
-		DomainsData []struct {
-			Source  string `json:"Source" xml:"Source"`
-			Domains struct {
-				DomainNames []string `json:"domainNames" xml:"domainNames"`
-			} `json:"Domains" xml:"Domains"`
-			DomainInfos struct {
-				DomainInfo []struct {
-					DomainName  string `json:"DomainName" xml:"DomainName"`
-					DomainCname string `json:"DomainCname" xml:"DomainCname"`
-					CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-					UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
-					Status      string `json:"Status" xml:"Status"`
-				} `json:"domainInfo" xml:"domainInfo"`
-			} `json:"DomainInfos" xml:"DomainInfos"`
-		} `json:"DomainsData" xml:"DomainsData"`
-	} `json:"DomainsList" xml:"DomainsList"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Sources     string      `json:"Sources" xml:"Sources"`
+	DomainsList DomainsList `json:"DomainsList" xml:"DomainsList"`
 }
 
 func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {

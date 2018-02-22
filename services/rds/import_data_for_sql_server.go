@@ -67,12 +67,12 @@ func (client *Client) ImportDataForSQLServerWithCallback(request *ImportDataForS
 
 type ImportDataForSQLServerRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	FileName             string           `position:"Query" name:"FileName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	FileName             string           `position:"Query" name:"FileName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ImportDataForSQLServerResponse struct {
@@ -85,7 +85,7 @@ func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerReque
 	request = &ImportDataForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataForSQLServer", "", "")
 	return
 }
 

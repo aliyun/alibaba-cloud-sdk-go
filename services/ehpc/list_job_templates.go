@@ -68,38 +68,24 @@ func (client *Client) ListJobTemplatesWithCallback(request *ListJobTemplatesRequ
 type ListJobTemplatesRequest struct {
 	*requests.RpcRequest
 	Name       string           `position:"Query" name:"Name"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListJobTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Templates  struct {
-		JobTemplates []struct {
-			Id                 string `json:"Id" xml:"Id"`
-			Name               string `json:"Name" xml:"Name"`
-			CommandLine        string `json:"CommandLine" xml:"CommandLine"`
-			RunasUser          string `json:"RunasUser" xml:"RunasUser"`
-			Priority           int    `json:"Priority" xml:"Priority"`
-			Package            string `json:"Package" xml:"Package"`
-			StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
-			StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
-			ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
-			ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
-			Variables          string `json:"Variables" xml:"Variables"`
-		} `json:"JobTemplates" xml:"JobTemplates"`
-	} `json:"Templates" xml:"Templates"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	Templates  Templates `json:"Templates" xml:"Templates"`
 }
 
 func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	request = &ListJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobTemplates", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobTemplates", "", "")
 	return
 }
 

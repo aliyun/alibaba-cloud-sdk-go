@@ -73,30 +73,14 @@ type ListPreferredEcsTypesRequest struct {
 type ListPreferredEcsTypesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Series    struct {
-		SeriesInfo []struct {
-			SeriesId   string `json:"SeriesId" xml:"SeriesId"`
-			SeriesName string `json:"SeriesName" xml:"SeriesName"`
-			Roles      struct {
-				Manager struct {
-					InstanceTypeId []string `json:"InstanceTypeId" xml:"InstanceTypeId"`
-				} `json:"Manager" xml:"Manager"`
-				Compute struct {
-					InstanceTypeId []string `json:"InstanceTypeId" xml:"InstanceTypeId"`
-				} `json:"Compute" xml:"Compute"`
-				Login struct {
-					InstanceTypeId []string `json:"InstanceTypeId" xml:"InstanceTypeId"`
-				} `json:"Login" xml:"Login"`
-			} `json:"Roles" xml:"Roles"`
-		} `json:"SeriesInfo" xml:"SeriesInfo"`
-	} `json:"Series" xml:"Series"`
+	Series    Series `json:"Series" xml:"Series"`
 }
 
 func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest) {
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "", "")
 	return
 }
 

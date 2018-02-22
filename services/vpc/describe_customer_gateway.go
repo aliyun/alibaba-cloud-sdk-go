@@ -67,11 +67,11 @@ func (client *Client) DescribeCustomerGatewayWithCallback(request *DescribeCusto
 
 type DescribeCustomerGatewayRequest struct {
 	*requests.RpcRequest
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeCustomerGatewayResponse struct {
@@ -88,7 +88,7 @@ func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayReq
 	request = &DescribeCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeCustomerGateway", "", "")
 	return
 }
 

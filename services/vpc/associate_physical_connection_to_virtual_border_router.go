@@ -67,18 +67,18 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithCallba
 
 type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	VlanId               string           `position:"Query" name:"VlanId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VbrId                string           `position:"Query" name:"VbrId"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VlanId               string           `position:"Query" name:"VlanId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
 	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
 	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VbrId                string           `position:"Query" name:"VbrId"`
 }
 
 type AssociatePhysicalConnectionToVirtualBorderRouterResponse struct {
@@ -90,7 +90,7 @@ func CreateAssociatePhysicalConnectionToVirtualBorderRouterRequest() (request *A
 	request = &AssociatePhysicalConnectionToVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "", "")
 	return
 }
 

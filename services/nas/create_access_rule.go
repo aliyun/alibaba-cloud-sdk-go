@@ -68,10 +68,10 @@ func (client *Client) CreateAccessRuleWithCallback(request *CreateAccessRuleRequ
 type CreateAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
-	Priority        requests.Integer `position:"Query" name:"Priority"`
+	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
 	RWAccessType    string           `position:"Query" name:"RWAccessType"`
 	UserAccessType  string           `position:"Query" name:"UserAccessType"`
-	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
 }
 
 type CreateAccessRuleResponse struct {
@@ -84,7 +84,7 @@ func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	request = &CreateAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateAccessRule", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateAccessRule", "", "")
 	return
 }
 

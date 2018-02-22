@@ -67,21 +67,21 @@ func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantP
 
 type SaveRegistrantProfileRequest struct {
 	*requests.RpcRequest
-	PostalCode               string           `position:"Query" name:"PostalCode"`
-	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
-	RegistrantName           string           `position:"Query" name:"RegistrantName"`
-	TelArea                  string           `position:"Query" name:"TelArea"`
+	Country                  string           `position:"Query" name:"Country"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
 	Lang                     string           `position:"Query" name:"Lang"`
-	TelExt                   string           `position:"Query" name:"TelExt"`
-	Country                  string           `position:"Query" name:"Country"`
+	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 	City                     string           `position:"Query" name:"City"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	RegistrantName           string           `position:"Query" name:"RegistrantName"`
+	Province                 string           `position:"Query" name:"Province"`
 	Address                  string           `position:"Query" name:"Address"`
 	Email                    string           `position:"Query" name:"Email"`
-	Province                 string           `position:"Query" name:"Province"`
+	PostalCode               string           `position:"Query" name:"PostalCode"`
+	TelArea                  string           `position:"Query" name:"TelArea"`
 	Telephone                string           `position:"Query" name:"Telephone"`
-	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	TelExt                   string           `position:"Query" name:"TelExt"`
 }
 
 type SaveRegistrantProfileResponse struct {

@@ -67,10 +67,10 @@ func (client *Client) ActivateRouterInterfaceWithCallback(request *ActivateRoute
 
 type ActivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 
 type ActivateRouterInterfaceResponse struct {
@@ -82,7 +82,7 @@ func CreateActivateRouterInterfaceRequest() (request *ActivateRouterInterfaceReq
 	request = &ActivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ActivateRouterInterface", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ActivateRouterInterface", "", "")
 	return
 }
 

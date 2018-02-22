@@ -67,34 +67,21 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
-	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
+	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
 }
 
 type ListCustomImagesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Images    struct {
-		ImageInfo []struct {
-			ImageId         string `json:"ImageId" xml:"ImageId"`
-			ImageName       string `json:"ImageName" xml:"ImageName"`
-			ImageOwnerAlias string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-			Description     string `json:"Description" xml:"Description"`
-			BaseOsTag       struct {
-				OsTag        string `json:"OsTag" xml:"OsTag"`
-				Platform     string `json:"Platform" xml:"Platform"`
-				Version      string `json:"Version" xml:"Version"`
-				Architecture string `json:"Architecture" xml:"Architecture"`
-			} `json:"BaseOsTag" xml:"BaseOsTag"`
-		} `json:"ImageInfo" xml:"ImageInfo"`
-	} `json:"Images" xml:"Images"`
+	Images    Images `json:"Images" xml:"Images"`
 }
 
 func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCustomImages", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCustomImages", "", "")
 	return
 }
 

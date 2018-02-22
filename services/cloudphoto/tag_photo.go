@@ -67,9 +67,9 @@ func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback fu
 
 type TagPhotoRequest struct {
 	*requests.RpcRequest
-	TagKey     *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
-	LibraryId  string           `position:"Query" name:"LibraryId"`
 	StoreName  string           `position:"Query" name:"StoreName"`
+	LibraryId  string           `position:"Query" name:"LibraryId"`
+	TagKey     *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	Confidence *[]string        `position:"Query" name:"Confidence"  type:"Repeated"`
 	PhotoId    requests.Integer `position:"Query" name:"PhotoId"`
 }
@@ -86,7 +86,7 @@ func CreateTagPhotoRequest() (request *TagPhotoRequest) {
 	request = &TagPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "TagPhoto", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "TagPhoto", "", "")
 	return
 }
 

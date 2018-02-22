@@ -67,29 +67,24 @@ func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *Describe
 
 type DescribeInstanceTypeFamiliesRequest struct {
 	*requests.RpcRequest
-	Generation           string           `position:"Query" name:"Generation"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Generation           string           `position:"Query" name:"Generation"`
 }
 
 type DescribeInstanceTypeFamiliesResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	InstanceTypeFamilies struct {
-		InstanceTypeFamily []struct {
-			InstanceTypeFamilyId string `json:"InstanceTypeFamilyId" xml:"InstanceTypeFamilyId"`
-			Generation           string `json:"Generation" xml:"Generation"`
-		} `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-	} `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
+	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
+	InstanceTypeFamilies InstanceTypeFamiliesInDescribeInstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 
 func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeFamiliesRequest) {
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "", "")
 	return
 }
 

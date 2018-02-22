@@ -67,31 +67,31 @@ func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImag
 
 type ModifyImageSharePermissionRequest struct {
 	*requests.RpcRequest
-	AddAccount1          string           `position:"Query" name:"AddAccount.1"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
-	AddAccount9          string           `position:"Query" name:"AddAccount.9"`
-	AddAccount8          string           `position:"Query" name:"AddAccount.8"`
-	AddAccount7          string           `position:"Query" name:"AddAccount.7"`
-	AddAccount6          string           `position:"Query" name:"AddAccount.6"`
-	AddAccount5          string           `position:"Query" name:"AddAccount.5"`
-	AddAccount10         string           `position:"Query" name:"AddAccount.10"`
-	AddAccount4          string           `position:"Query" name:"AddAccount.4"`
-	AddAccount3          string           `position:"Query" name:"AddAccount.3"`
+	AddAccount1          string           `position:"Query" name:"AddAccount.1"`
 	AddAccount2          string           `position:"Query" name:"AddAccount.2"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AddAccount3          string           `position:"Query" name:"AddAccount.3"`
+	AddAccount4          string           `position:"Query" name:"AddAccount.4"`
+	AddAccount5          string           `position:"Query" name:"AddAccount.5"`
+	AddAccount6          string           `position:"Query" name:"AddAccount.6"`
+	AddAccount7          string           `position:"Query" name:"AddAccount.7"`
+	AddAccount8          string           `position:"Query" name:"AddAccount.8"`
+	AddAccount9          string           `position:"Query" name:"AddAccount.9"`
+	AddAccount10         string           `position:"Query" name:"AddAccount.10"`
 	RemoveAccount1       string           `position:"Query" name:"RemoveAccount.1"`
 	RemoveAccount2       string           `position:"Query" name:"RemoveAccount.2"`
 	RemoveAccount3       string           `position:"Query" name:"RemoveAccount.3"`
 	RemoveAccount4       string           `position:"Query" name:"RemoveAccount.4"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RemoveAccount9       string           `position:"Query" name:"RemoveAccount.9"`
 	RemoveAccount5       string           `position:"Query" name:"RemoveAccount.5"`
 	RemoveAccount6       string           `position:"Query" name:"RemoveAccount.6"`
 	RemoveAccount7       string           `position:"Query" name:"RemoveAccount.7"`
 	RemoveAccount8       string           `position:"Query" name:"RemoveAccount.8"`
+	RemoveAccount9       string           `position:"Query" name:"RemoveAccount.9"`
 	RemoveAccount10      string           `position:"Query" name:"RemoveAccount.10"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyImageSharePermissionResponse struct {
@@ -103,7 +103,7 @@ func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermiss
 	request = &ModifyImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "", "")
 	return
 }
 

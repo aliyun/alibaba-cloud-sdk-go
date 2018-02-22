@@ -67,13 +67,13 @@ func (client *Client) StartDBInstanceDiagnoseWithCallback(request *StartDBInstan
 
 type StartDBInstanceDiagnoseRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type StartDBInstanceDiagnoseResponse struct {
@@ -87,7 +87,7 @@ func CreateStartDBInstanceDiagnoseRequest() (request *StartDBInstanceDiagnoseReq
 	request = &StartDBInstanceDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "StartDBInstanceDiagnose", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "StartDBInstanceDiagnose", "", "")
 	return
 }
 

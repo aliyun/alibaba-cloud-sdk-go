@@ -67,40 +67,32 @@ func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeI
 
 type DescribeImportsForSQLServerRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ImportId             requests.Integer `position:"Query" name:"ImportId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	ImportId             requests.Integer `position:"Query" name:"ImportId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeImportsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCounts int    `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	SQLItemsCounts    int    `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
-	Items             struct {
-		SQLServerImport []struct {
-			ImportId     int    `json:"ImportId" xml:"ImportId"`
-			FileName     string `json:"FileName" xml:"FileName"`
-			DBName       string `json:"DBName" xml:"DBName"`
-			ImportStatus string `json:"ImportStatus" xml:"ImportStatus"`
-			StartTime    string `json:"StartTime" xml:"StartTime"`
-		} `json:"SQLServerImport" xml:"SQLServerImport"`
-	} `json:"Items" xml:"Items"`
+	RequestId         string                             `json:"RequestId" xml:"RequestId"`
+	TotalRecordCounts int                                `json:"TotalRecordCounts" xml:"TotalRecordCounts"`
+	PageNumber        int                                `json:"PageNumber" xml:"PageNumber"`
+	SQLItemsCounts    int                                `json:"SQLItemsCounts" xml:"SQLItemsCounts"`
+	Items             ItemsInDescribeImportsForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {
 	request = &DescribeImportsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "", "")
 	return
 }
 

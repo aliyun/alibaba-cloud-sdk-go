@@ -67,11 +67,11 @@ func (client *Client) SetLocationAccessRestrictionWithCallback(request *SetLocat
 
 type SetLocationAccessRestrictionRequest struct {
 	*requests.RpcRequest
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	Location      string           `position:"Query" name:"Location"`
 	Type          string           `position:"Query" name:"Type"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type SetLocationAccessRestrictionResponse struct {

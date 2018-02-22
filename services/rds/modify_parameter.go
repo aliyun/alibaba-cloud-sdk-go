@@ -67,14 +67,14 @@ func (client *Client) ModifyParameterWithCallback(request *ModifyParameterReques
 
 type ModifyParameterRequest struct {
 	*requests.RpcRequest
-	Forcerestart         requests.Boolean `position:"Query" name:"Forcerestart"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Parameters           string           `position:"Query" name:"Parameters"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Parameters           string           `position:"Query" name:"Parameters"`
+	Forcerestart         requests.Boolean `position:"Query" name:"Forcerestart"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyParameterResponse struct {
@@ -86,7 +86,7 @@ func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyParameter", "", "")
 	return
 }
 

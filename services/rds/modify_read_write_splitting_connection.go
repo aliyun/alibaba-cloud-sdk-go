@@ -67,16 +67,16 @@ func (client *Client) ModifyReadWriteSplittingConnectionWithCallback(request *Mo
 
 type ModifyReadWriteSplittingConnectionRequest struct {
 	*requests.RpcRequest
-	MaxDelayTime           string           `position:"Query" name:"MaxDelayTime"`
-	Port                   string           `position:"Query" name:"Port"`
-	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
-	Weight                 string           `position:"Query" name:"Weight"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	DistributionType       string           `position:"Query" name:"DistributionType"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	Port                   string           `position:"Query" name:"Port"`
+	MaxDelayTime           string           `position:"Query" name:"MaxDelayTime"`
+	DistributionType       string           `position:"Query" name:"DistributionType"`
+	Weight                 string           `position:"Query" name:"Weight"`
 }
 
 type ModifyReadWriteSplittingConnectionResponse struct {
@@ -88,7 +88,7 @@ func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWrite
 	request = &ModifyReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "", "")
 	return
 }
 

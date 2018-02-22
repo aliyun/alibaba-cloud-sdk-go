@@ -67,10 +67,6 @@ func (client *Client) DescribeDomainCustomLogConfigWithCallback(request *Describ
 
 type DescribeDomainCustomLogConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainCustomLogConfigResponse struct {

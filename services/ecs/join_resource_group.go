@@ -67,13 +67,13 @@ func (client *Client) JoinResourceGroupWithCallback(request *JoinResourceGroupRe
 
 type JoinResourceGroupRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type JoinResourceGroupResponse struct {
@@ -85,7 +85,7 @@ func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 	request = &JoinResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "JoinResourceGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "JoinResourceGroup", "", "")
 	return
 }
 

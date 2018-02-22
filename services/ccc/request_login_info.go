@@ -72,22 +72,12 @@ type RequestLoginInfoRequest struct {
 
 type RequestLoginInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	LoginInfo      struct {
-		UserName       string `json:"UserName" xml:"UserName"`
-		DisplayName    string `json:"DisplayName" xml:"DisplayName"`
-		Region         string `json:"Region" xml:"Region"`
-		WebRtcUrl      string `json:"WebRtcUrl" xml:"WebRtcUrl"`
-		AgentServerUrl string `json:"AgentServerUrl" xml:"AgentServerUrl"`
-		Extension      string `json:"Extension" xml:"Extension"`
-		TenantId       string `json:"TenantId" xml:"TenantId"`
-		Signature      string `json:"Signature" xml:"Signature"`
-		SignData       string `json:"SignData" xml:"SignData"`
-	} `json:"LoginInfo" xml:"LoginInfo"`
+	RequestId      string    `json:"RequestId" xml:"RequestId"`
+	Success        bool      `json:"Success" xml:"Success"`
+	Code           string    `json:"Code" xml:"Code"`
+	Message        string    `json:"Message" xml:"Message"`
+	HttpStatusCode int       `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	LoginInfo      LoginInfo `json:"LoginInfo" xml:"LoginInfo"`
 }
 
 func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {

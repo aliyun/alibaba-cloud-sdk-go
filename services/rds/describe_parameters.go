@@ -67,40 +67,28 @@ func (client *Client) DescribeParametersWithCallback(request *DescribeParameters
 
 type DescribeParametersRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeParametersResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
-	ConfigParameters struct {
-		DBInstanceParameter []struct {
-			ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-			ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-			ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-		} `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
-	} `json:"ConfigParameters" xml:"ConfigParameters"`
-	RunningParameters struct {
-		DBInstanceParameter []struct {
-			ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-			ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-			ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-		} `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
-	} `json:"RunningParameters" xml:"RunningParameters"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	Engine            string            `json:"Engine" xml:"Engine"`
+	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
+	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
+	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 }
 
 func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameters", "", "")
 	return
 }
 

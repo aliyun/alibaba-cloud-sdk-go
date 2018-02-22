@@ -67,13 +67,13 @@ func (client *Client) CreateSslVpnClientCertWithCallback(request *CreateSslVpnCl
 
 type CreateSslVpnClientCertRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 type CreateSslVpnClientCertResponse struct {
@@ -87,7 +87,7 @@ func CreateCreateSslVpnClientCertRequest() (request *CreateSslVpnClientCertReque
 	request = &CreateSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnClientCert", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnClientCert", "", "")
 	return
 }
 

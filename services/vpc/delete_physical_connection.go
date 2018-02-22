@@ -67,13 +67,13 @@ func (client *Client) DeletePhysicalConnectionWithCallback(request *DeletePhysic
 
 type DeletePhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type DeletePhysicalConnectionResponse struct {
@@ -85,7 +85,7 @@ func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionR
 	request = &DeletePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeletePhysicalConnection", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeletePhysicalConnection", "", "")
 	return
 }
 

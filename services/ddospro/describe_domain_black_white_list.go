@@ -67,17 +67,14 @@ func (client *Client) DescribeDomainBlackWhiteListWithCallback(request *Describe
 
 type DescribeDomainBlackWhiteListRequest struct {
 	*requests.RpcRequest
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 }
 
 type DescribeDomainBlackWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      struct {
-		BlackList string `json:"BlackList" xml:"BlackList"`
-		WhiteList string `json:"WhiteList" xml:"WhiteList"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWhiteListRequest) {

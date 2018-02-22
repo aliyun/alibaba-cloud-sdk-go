@@ -67,12 +67,12 @@ func (client *Client) ModifyCommonBandwidthPackageSpecWithCallback(request *Modi
 
 type ModifyCommonBandwidthPackageSpecRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type ModifyCommonBandwidthPackageSpecResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyCommonBandwidthPackageSpecRequest() (request *ModifyCommonBandw
 	request = &ModifyCommonBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageSpec", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageSpec", "", "")
 	return
 }
 

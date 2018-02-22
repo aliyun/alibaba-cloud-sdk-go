@@ -67,12 +67,12 @@ func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRe
 
 type UnbindInputBucketRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Bucket               string           `position:"Query" name:"Bucket"`
 	RoleArn              string           `position:"Query" name:"RoleArn"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UnbindInputBucketResponse struct {
@@ -84,7 +84,7 @@ func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	request = &UnbindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindInputBucket", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindInputBucket", "", "")
 	return
 }
 

@@ -67,62 +67,24 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 
 type ListClustersRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListClustersResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Clusters   struct {
-		ClusterInfoSimple []struct {
-			Id              string `json:"Id" xml:"Id"`
-			RegionId        string `json:"RegionId" xml:"RegionId"`
-			ZoneId          string `json:"ZoneId" xml:"ZoneId"`
-			Name            string `json:"Name" xml:"Name"`
-			Description     string `json:"Description" xml:"Description"`
-			Status          string `json:"Status" xml:"Status"`
-			OsTag           string `json:"OsTag" xml:"OsTag"`
-			AccountType     string `json:"AccountType" xml:"AccountType"`
-			SchedulerType   string `json:"SchedulerType" xml:"SchedulerType"`
-			Count           int    `json:"Count" xml:"Count"`
-			InstanceType    string `json:"InstanceType" xml:"InstanceType"`
-			LoginNodes      string `json:"LoginNodes" xml:"LoginNodes"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			ImageOwnerAlias string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-			ImageId         string `json:"ImageId" xml:"ImageId"`
-			Managers        struct {
-				Total          int `json:"Total" xml:"Total"`
-				NormalCount    int `json:"NormalCount" xml:"NormalCount"`
-				ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
-			} `json:"Managers" xml:"Managers"`
-			Computes struct {
-				Total          int `json:"Total" xml:"Total"`
-				NormalCount    int `json:"NormalCount" xml:"NormalCount"`
-				ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
-			} `json:"Computes" xml:"Computes"`
-			TotalResources struct {
-				Cpu    int `json:"Cpu" xml:"Cpu"`
-				Memory int `json:"Memory" xml:"Memory"`
-				Gpu    int `json:"Gpu" xml:"Gpu"`
-			} `json:"TotalResources" xml:"TotalResources"`
-			UsedResources struct {
-				Cpu    int `json:"Cpu" xml:"Cpu"`
-				Memory int `json:"Memory" xml:"Memory"`
-				Gpu    int `json:"Gpu" xml:"Gpu"`
-			} `json:"UsedResources" xml:"UsedResources"`
-		} `json:"ClusterInfoSimple" xml:"ClusterInfoSimple"`
-	} `json:"Clusters" xml:"Clusters"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
 }
 
 func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusters", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusters", "", "")
 	return
 }
 

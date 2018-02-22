@@ -67,17 +67,17 @@ func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGrou
 
 type ModifyBgpGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AuthKey              string           `position:"Query" name:"AuthKey"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
+	AuthKey              string           `position:"Query" name:"AuthKey"`
+	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyBgpGroupAttributeResponse struct {
@@ -89,7 +89,7 @@ func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeReq
 	request = &ModifyBgpGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "", "")
 	return
 }
 

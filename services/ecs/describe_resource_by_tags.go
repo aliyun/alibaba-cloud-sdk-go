@@ -67,44 +67,38 @@ func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResour
 
 type DescribeResourceByTagsRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
 type DescribeResourceByTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Resources  struct {
-		Resource []struct {
-			ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-			ResourceType string `json:"ResourceType" xml:"ResourceType"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-		} `json:"Resource" xml:"Resource"`
-	} `json:"Resources" xml:"Resources"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	Resources  Resources `json:"Resources" xml:"Resources"`
 }
 
 func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsRequest) {
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "", "")
 	return
 }
 

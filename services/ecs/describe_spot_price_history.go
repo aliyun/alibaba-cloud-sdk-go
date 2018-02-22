@@ -67,43 +67,21 @@ func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpot
 
 type DescribeSpotPriceHistoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IoOptimized          string           `position:"Query" name:"IoOptimized"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	Offset               requests.Integer `position:"Query" name:"Offset"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	OSType               string           `position:"Query" name:"OSType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 type DescribeSpotPriceHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	NextOffset int    `json:"NextOffset" xml:"NextOffset"`
-	Currency   string `json:"Currency" xml:"Currency"`
-	SpotPrices struct {
-		SpotPriceType []struct {
-			ZoneId       string  `json:"ZoneId" xml:"ZoneId"`
-			InstanceType string  `json:"InstanceType" xml:"InstanceType"`
-			IoOptimized  string  `json:"IoOptimized" xml:"IoOptimized"`
-			Timestamp    string  `json:"Timestamp" xml:"Timestamp"`
-			NetworkType  string  `json:"NetworkType" xml:"NetworkType"`
-			SpotPrice    float64 `json:"SpotPrice" xml:"SpotPrice"`
-			OriginPrice  float64 `json:"OriginPrice" xml:"OriginPrice"`
-		} `json:"SpotPriceType" xml:"SpotPriceType"`
-	} `json:"SpotPrices" xml:"SpotPrices"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	NextOffset int        `json:"NextOffset" xml:"NextOffset"`
+	Currency   string     `json:"Currency" xml:"Currency"`
+	SpotPrices SpotPrices `json:"SpotPrices" xml:"SpotPrices"`
 }
 
 func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryRequest) {
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "", "")
 	return
 }
 

@@ -67,53 +67,44 @@ func (client *Client) DescribeDBInstancesByPerformanceWithCallback(request *Desc
 
 type DescribeDBInstancesByPerformanceRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
-	SortKey              string           `position:"Query" name:"SortKey"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SortMethod           string           `position:"Query" name:"SortMethod"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	SortKey              string           `position:"Query" name:"SortKey"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDBInstancesByPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		DBInstancePerformance []struct {
-			CPUUsage              string `json:"CPUUsage" xml:"CPUUsage"`
-			IOPSUsage             string `json:"IOPSUsage" xml:"IOPSUsage"`
-			DiskUsage             string `json:"DiskUsage" xml:"DiskUsage"`
-			SessionUsage          string `json:"SessionUsage" xml:"SessionUsage"`
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-		} `json:"DBInstancePerformance" xml:"DBInstancePerformance"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeDBInstancesByPerformance `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesByPerformanceRequest() (request *DescribeDBInstancesByPerformanceRequest) {
 	request = &DescribeDBInstancesByPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "", "")
 	return
 }
 

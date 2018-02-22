@@ -67,14 +67,14 @@ func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callbac
 
 type AttachDiskRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DiskId               string           `position:"Query" name:"DiskId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Device               string           `position:"Query" name:"Device"`
 	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AttachDiskResponse struct {
@@ -86,7 +86,7 @@ func CreateAttachDiskRequest() (request *AttachDiskRequest) {
 	request = &AttachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "", "")
 	return
 }
 

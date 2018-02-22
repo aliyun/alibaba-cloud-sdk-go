@@ -67,9 +67,9 @@ func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callbac
 
 type VerifyUserRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type VerifyUserResponse struct {
@@ -80,7 +80,7 @@ func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	request = &VerifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "", "")
 	return
 }
 

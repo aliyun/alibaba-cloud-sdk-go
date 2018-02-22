@@ -67,8 +67,8 @@ func (client *Client) EnableAlarmWithCallback(request *EnableAlarmRequest, callb
 
 type EnableAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string `position:"Query" name:"Id"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Id             string `position:"Query" name:"Id"`
 }
 
 type EnableAlarmResponse struct {
@@ -83,7 +83,7 @@ func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
 	request = &EnableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "EnableAlarm", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "EnableAlarm", "", "")
 	return
 }
 

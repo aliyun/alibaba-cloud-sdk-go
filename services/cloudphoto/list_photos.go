@@ -67,47 +67,30 @@ func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callbac
 
 type ListPhotosRequest struct {
 	*requests.RpcRequest
-	Cursor    string           `position:"Query" name:"Cursor"`
 	Direction string           `position:"Query" name:"Direction"`
-	State     string           `position:"Query" name:"State"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	Size      requests.Integer `position:"Query" name:"Size"`
+	Cursor    string           `position:"Query" name:"Cursor"`
+	State     string           `position:"Query" name:"State"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type ListPhotosResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	NextCursor string `json:"NextCursor" xml:"NextCursor"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Photos     []struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		Location        string `json:"Location" xml:"Location"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Remark          string `json:"Remark" xml:"Remark"`
-		Size            int    `json:"Size" xml:"Size"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photos" xml:"Photos"`
+	Code       string  `json:"Code" xml:"Code"`
+	Message    string  `json:"Message" xml:"Message"`
+	NextCursor string  `json:"NextCursor" xml:"NextCursor"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	Action     string  `json:"Action" xml:"Action"`
+	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
 func CreateListPhotosRequest() (request *ListPhotosRequest) {
 	request = &ListPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotos", "", "")
 	return
 }
 

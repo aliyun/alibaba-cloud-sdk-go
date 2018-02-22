@@ -67,39 +67,28 @@ func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRe
 
 type CreateTransactionRequest struct {
 	*requests.RpcRequest
-	Md5       string           `position:"Query" name:"Md5"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	Force     string           `position:"Query" name:"Force"`
-	Ext       string           `position:"Query" name:"Ext"`
 	Size      requests.Integer `position:"Query" name:"Size"`
+	Ext       string           `position:"Query" name:"Ext"`
+	Force     string           `position:"Query" name:"Force"`
+	Md5       string           `position:"Query" name:"Md5"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type CreateTransactionResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code" xml:"Code"`
-	Message     string `json:"Message" xml:"Message"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Action      string `json:"Action" xml:"Action"`
-	Transaction struct {
-		Upload struct {
-			Bucket          string `json:"Bucket" xml:"Bucket"`
-			FileId          string `json:"FileId" xml:"FileId"`
-			OssEndpoint     string `json:"OssEndpoint" xml:"OssEndpoint"`
-			ObjectKey       string `json:"ObjectKey" xml:"ObjectKey"`
-			SessionId       string `json:"SessionId" xml:"SessionId"`
-			AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
-			AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-			StsToken        string `json:"StsToken" xml:"StsToken"`
-		} `json:"Upload" xml:"Upload"`
-	} `json:"Transaction" xml:"Transaction"`
+	Code        string      `json:"Code" xml:"Code"`
+	Message     string      `json:"Message" xml:"Message"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Action      string      `json:"Action" xml:"Action"`
+	Transaction Transaction `json:"Transaction" xml:"Transaction"`
 }
 
 func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	request = &CreateTransactionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreateTransaction", "", "")
 	return
 }
 

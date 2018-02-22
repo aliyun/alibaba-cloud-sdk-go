@@ -67,9 +67,9 @@ func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsReques
 
 type ListClusterLogsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListClusterLogsResponse struct {
@@ -79,21 +79,14 @@ type ListClusterLogsResponse struct {
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
-	Logs       struct {
-		LogInfo []struct {
-			Operation  string `json:"Operation" xml:"Operation"`
-			Level      string `json:"Level" xml:"Level"`
-			Message    string `json:"Message" xml:"Message"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"LogInfo" xml:"LogInfo"`
-	} `json:"Logs" xml:"Logs"`
+	Logs       Logs   `json:"Logs" xml:"Logs"`
 }
 
 func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	request = &ListClusterLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusterLogs", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListClusterLogs", "", "")
 	return
 }
 

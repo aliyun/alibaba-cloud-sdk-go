@@ -67,95 +67,29 @@ func (client *Client) AddTemplateWithCallback(request *AddTemplateRequest, callb
 
 type AddTemplateRequest struct {
 	*requests.RpcRequest
-	Audio                string           `position:"Query" name:"Audio"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MuxConfig            string           `position:"Query" name:"MuxConfig"`
-	Container            string           `position:"Query" name:"Container"`
-	Name                 string           `position:"Query" name:"Name"`
-	TransConfig          string           `position:"Query" name:"TransConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Container            string           `position:"Query" name:"Container"`
 	Video                string           `position:"Query" name:"Video"`
+	Audio                string           `position:"Query" name:"Audio"`
+	TransConfig          string           `position:"Query" name:"TransConfig"`
+	MuxConfig            string           `position:"Query" name:"MuxConfig"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Template  struct {
-		Id        string `json:"Id" xml:"Id"`
-		Name      string `json:"Name" xml:"Name"`
-		State     string `json:"State" xml:"State"`
-		Container struct {
-			Format string `json:"Format" xml:"Format"`
-		} `json:"Container" xml:"Container"`
-		Video struct {
-			Codec      string `json:"Codec" xml:"Codec"`
-			Profile    string `json:"Profile" xml:"Profile"`
-			Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-			Crf        string `json:"Crf" xml:"Crf"`
-			Width      string `json:"Width" xml:"Width"`
-			Height     string `json:"Height" xml:"Height"`
-			Fps        string `json:"Fps" xml:"Fps"`
-			Gop        string `json:"Gop" xml:"Gop"`
-			Preset     string `json:"Preset" xml:"Preset"`
-			ScanMode   string `json:"ScanMode" xml:"ScanMode"`
-			Bufsize    string `json:"Bufsize" xml:"Bufsize"`
-			Maxrate    string `json:"Maxrate" xml:"Maxrate"`
-			PixFmt     string `json:"PixFmt" xml:"PixFmt"`
-			Degrain    string `json:"Degrain" xml:"Degrain"`
-			Qscale     string `json:"Qscale" xml:"Qscale"`
-			Remove     string `json:"Remove" xml:"Remove"`
-			Crop       string `json:"Crop" xml:"Crop"`
-			Pad        string `json:"Pad" xml:"Pad"`
-			MaxFps     string `json:"MaxFps" xml:"MaxFps"`
-			BitrateBnd struct {
-				Max string `json:"Max" xml:"Max"`
-				Min string `json:"Min" xml:"Min"`
-			} `json:"BitrateBnd" xml:"BitrateBnd"`
-		} `json:"Video" xml:"Video"`
-		Audio struct {
-			Codec      string `json:"Codec" xml:"Codec"`
-			Profile    string `json:"Profile" xml:"Profile"`
-			Samplerate string `json:"Samplerate" xml:"Samplerate"`
-			Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-			Channels   string `json:"Channels" xml:"Channels"`
-			Qscale     string `json:"Qscale" xml:"Qscale"`
-			Remove     string `json:"Remove" xml:"Remove"`
-			Volume     struct {
-				Level  string `json:"Level" xml:"Level"`
-				Method string `json:"Method" xml:"Method"`
-			} `json:"Volume" xml:"Volume"`
-		} `json:"Audio" xml:"Audio"`
-		TransConfig struct {
-			TransMode               string `json:"TransMode" xml:"TransMode"`
-			IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
-			IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
-			IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
-			IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
-			AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
-			IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
-			IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
-		} `json:"TransConfig" xml:"TransConfig"`
-		MuxConfig struct {
-			Segment struct {
-				Duration string `json:"Duration" xml:"Duration"`
-			} `json:"Segment" xml:"Segment"`
-			Gif struct {
-				Loop            string `json:"Loop" xml:"Loop"`
-				FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
-				IsCustomPalette string `json:"IsCustomPalette" xml:"IsCustomPalette"`
-				DitherMode      string `json:"DitherMode" xml:"DitherMode"`
-			} `json:"Gif" xml:"Gif"`
-		} `json:"MuxConfig" xml:"MuxConfig"`
-	} `json:"Template" xml:"Template"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Template  Template `json:"Template" xml:"Template"`
 }
 
 func CreateAddTemplateRequest() (request *AddTemplateRequest) {
 	request = &AddTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddTemplate", "", "")
 	return
 }
 

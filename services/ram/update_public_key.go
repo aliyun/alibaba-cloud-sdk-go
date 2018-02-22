@@ -68,8 +68,8 @@ func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyReques
 type UpdatePublicKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
-	Status          string `position:"Query" name:"Status"`
 	UserPublicKeyId string `position:"Query" name:"UserPublicKeyId"`
+	Status          string `position:"Query" name:"Status"`
 }
 
 type UpdatePublicKeyResponse struct {

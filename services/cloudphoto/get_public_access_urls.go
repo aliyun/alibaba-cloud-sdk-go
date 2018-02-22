@@ -67,32 +67,27 @@ func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUr
 
 type GetPublicAccessUrlsRequest struct {
 	*requests.RpcRequest
-	LibraryId  string    `position:"Query" name:"LibraryId"`
-	StoreName  string    `position:"Query" name:"StoreName"`
+	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	ZoomType   string    `position:"Query" name:"ZoomType"`
 	DomainType string    `position:"Query" name:"DomainType"`
-	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName  string    `position:"Query" name:"StoreName"`
+	LibraryId  string    `position:"Query" name:"LibraryId"`
 }
 
 type GetPublicAccessUrlsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   []struct {
-		Code      string `json:"Code" xml:"Code"`
-		Message   string `json:"Message" xml:"Message"`
-		PhotoId   int    `json:"PhotoId" xml:"PhotoId"`
-		AccessUrl string `json:"AccessUrl" xml:"AccessUrl"`
-	} `json:"Results" xml:"Results"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Action    string   `json:"Action" xml:"Action"`
+	Results   []Result `json:"Results" xml:"Results"`
 }
 
 func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "", "")
 	return
 }
 

@@ -67,37 +67,32 @@ func (client *Client) DescribeIpRangesWithCallback(request *DescribeIpRangesRequ
 
 type DescribeIpRangesRequest struct {
 	*requests.RpcRequest
-	NicType              string           `position:"Query" name:"NicType"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClusterId            string           `position:"Query" name:"ClusterId"`
+	NicType              string           `position:"Query" name:"NicType"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeIpRangesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	ClusterId  string `json:"ClusterId" xml:"ClusterId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	IpRanges   struct {
-		IpRange []struct {
-			IpAddress string `json:"IpAddress" xml:"IpAddress"`
-			NicType   string `json:"NicType" xml:"NicType"`
-		} `json:"IpRange" xml:"IpRange"`
-	} `json:"IpRanges" xml:"IpRanges"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	RegionId   string   `json:"RegionId" xml:"RegionId"`
+	ClusterId  string   `json:"ClusterId" xml:"ClusterId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	IpRanges   IpRanges `json:"IpRanges" xml:"IpRanges"`
 }
 
 func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 	request = &DescribeIpRangesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIpRanges", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIpRanges", "", "")
 	return
 }
 

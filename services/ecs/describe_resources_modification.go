@@ -67,48 +67,19 @@ func (client *Client) DescribeResourcesModificationWithCallback(request *Describ
 
 type DescribeResourcesModificationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OperationType        string           `position:"Query" name:"OperationType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DestinationResource  string           `position:"Query" name:"DestinationResource"`
 }
 
 type DescribeResourcesModificationResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	AvailableZones struct {
-		AvailableZone []struct {
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			ZoneId             string `json:"ZoneId" xml:"ZoneId"`
-			Status             string `json:"Status" xml:"Status"`
-			AvailableResources struct {
-				AvailableResource []struct {
-					Type               string `json:"Type" xml:"Type"`
-					SupportedResources struct {
-						SupportedResource []struct {
-							Value  string `json:"Value" xml:"Value"`
-							Status string `json:"Status" xml:"Status"`
-							Min    int    `json:"Min" xml:"Min"`
-							Max    int    `json:"Max" xml:"Max"`
-							Unit   string `json:"Unit" xml:"Unit"`
-						} `json:"SupportedResource" xml:"SupportedResource"`
-					} `json:"SupportedResources" xml:"SupportedResources"`
-				} `json:"AvailableResource" xml:"AvailableResource"`
-			} `json:"AvailableResources" xml:"AvailableResources"`
-		} `json:"AvailableZone" xml:"AvailableZone"`
-	} `json:"AvailableZones" xml:"AvailableZones"`
+	RequestId      string                                        `json:"RequestId" xml:"RequestId"`
+	AvailableZones AvailableZonesInDescribeResourcesModification `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesModificationRequest) {
 	request = &DescribeResourcesModificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourcesModification", "", "")
 	return
 }
 

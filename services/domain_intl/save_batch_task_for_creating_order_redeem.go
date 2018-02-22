@@ -67,9 +67,9 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *S
 
 type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
-	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 	UserClientIp     string                                                 `position:"Query" name:"UserClientIp"`
 	Lang             string                                                 `position:"Query" name:"Lang"`
+	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 }
 
 type SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam struct {

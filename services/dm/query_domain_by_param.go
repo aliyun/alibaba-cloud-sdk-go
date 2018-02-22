@@ -67,36 +67,22 @@ func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParam
 
 type QueryDomainByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Status               requests.Integer `position:"Query" name:"Status"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	Status               requests.Integer `position:"Query" name:"Status"`
 }
 
 type QueryDomainByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Domain []struct {
-			DomainId        string `json:"DomainId" xml:"DomainId"`
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
-			DomainRecord    string `json:"DomainRecord" xml:"DomainRecord"`
-			ConfirmStatus   string `json:"ConfirmStatus" xml:"ConfirmStatus"`
-			SpfAuthStatus   string `json:"SpfAuthStatus" xml:"SpfAuthStatus"`
-			MxAuthStatus    string `json:"MxAuthStatus" xml:"MxAuthStatus"`
-			CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-			UtcCreateTime   int    `json:"UtcCreateTime" xml:"UtcCreateTime"`
-			CnameAuthStatus string `json:"CnameAuthStatus" xml:"CnameAuthStatus"`
-			IcpStatus       string `json:"IcpStatus" xml:"IcpStatus"`
-		} `json:"domain" xml:"domain"`
-	} `json:"data" xml:"data"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                      `json:"PageSize" xml:"PageSize"`
+	Data       DataInQueryDomainByParam `json:"data" xml:"data"`
 }
 
 func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {

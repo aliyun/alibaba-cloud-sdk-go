@@ -67,8 +67,8 @@ func (client *Client) DescribeDomainRecordInfoWithCallback(request *DescribeDoma
 
 type DescribeDomainRecordInfoRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	RecordId     string `position:"Query" name:"RecordId"`
 }
 

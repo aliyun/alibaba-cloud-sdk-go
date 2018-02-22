@@ -67,8 +67,8 @@ func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRe
 
 type DeleteMountTargetRequest struct {
 	*requests.RpcRequest
-	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
 	FileSystemId      string `position:"Query" name:"FileSystemId"`
+	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
 }
 
 type DeleteMountTargetResponse struct {
@@ -80,7 +80,7 @@ func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	request = &DeleteMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteMountTarget", "", "")
 	return
 }
 

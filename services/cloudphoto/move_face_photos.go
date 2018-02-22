@@ -68,30 +68,26 @@ func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest,
 type MoveFacePhotosRequest struct {
 	*requests.RpcRequest
 	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
-	LibraryId    string           `position:"Query" name:"LibraryId"`
-	StoreName    string           `position:"Query" name:"StoreName"`
-	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
 	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
+	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
+	StoreName    string           `position:"Query" name:"StoreName"`
+	LibraryId    string           `position:"Query" name:"LibraryId"`
 }
 
 type MoveFacePhotosResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Results   []struct {
-		Id      int    `json:"Id" xml:"Id"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"Results" xml:"Results"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Action    string   `json:"Action" xml:"Action"`
+	Results   []Result `json:"Results" xml:"Results"`
 }
 
 func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "", "")
 	return
 }
 

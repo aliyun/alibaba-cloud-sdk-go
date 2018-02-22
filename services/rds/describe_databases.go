@@ -67,41 +67,26 @@ func (client *Client) DescribeDatabasesWithCallback(request *DescribeDatabasesRe
 
 type DescribeDatabasesRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
 	DBStatus             string           `position:"Query" name:"DBStatus"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDatabasesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Databases struct {
-		Database []struct {
-			DBName           string `json:"DBName" xml:"DBName"`
-			DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-			Engine           string `json:"Engine" xml:"Engine"`
-			DBStatus         string `json:"DBStatus" xml:"DBStatus"`
-			CharacterSetName string `json:"CharacterSetName" xml:"CharacterSetName"`
-			DBDescription    string `json:"DBDescription" xml:"DBDescription"`
-			Accounts         struct {
-				AccountPrivilegeInfo []struct {
-					Account          string `json:"Account" xml:"Account"`
-					AccountPrivilege string `json:"AccountPrivilege" xml:"AccountPrivilege"`
-				} `json:"AccountPrivilegeInfo" xml:"AccountPrivilegeInfo"`
-			} `json:"Accounts" xml:"Accounts"`
-		} `json:"Database" xml:"Database"`
-	} `json:"Databases" xml:"Databases"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Databases DatabasesInDescribeDatabases `json:"Databases" xml:"Databases"`
 }
 
 func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDatabases", "", "")
 	return
 }
 

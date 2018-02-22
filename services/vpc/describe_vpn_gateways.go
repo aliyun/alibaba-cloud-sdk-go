@@ -67,50 +67,32 @@ func (client *Client) DescribeVpnGatewaysWithCallback(request *DescribeVpnGatewa
 
 type DescribeVpnGatewaysRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Status               string           `position:"Query" name:"Status"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	BusinessStatus       string           `position:"Query" name:"BusinessStatus"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	Status               string           `position:"Query" name:"Status"`
+	BusinessStatus       string           `position:"Query" name:"BusinessStatus"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeVpnGatewaysResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	VpnGateways struct {
-		VpnGateway []struct {
-			VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-			VpcId             string `json:"VpcId" xml:"VpcId"`
-			VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
-			InternetIp        string `json:"InternetIp" xml:"InternetIp"`
-			CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-			EndTime           int    `json:"EndTime" xml:"EndTime"`
-			Spec              string `json:"Spec" xml:"Spec"`
-			Name              string `json:"Name" xml:"Name"`
-			Description       string `json:"Description" xml:"Description"`
-			Status            string `json:"Status" xml:"Status"`
-			BusinessStatus    string `json:"BusinessStatus" xml:"BusinessStatus"`
-			ChargeType        string `json:"ChargeType" xml:"ChargeType"`
-			IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
-			SslVpn            string `json:"SslVpn" xml:"SslVpn"`
-			SslMaxConnections int    `json:"SslMaxConnections" xml:"SslMaxConnections"`
-		} `json:"VpnGateway" xml:"VpnGateway"`
-	} `json:"VpnGateways" xml:"VpnGateways"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	VpnGateways VpnGateways `json:"VpnGateways" xml:"VpnGateways"`
 }
 
 func CreateDescribeVpnGatewaysRequest() (request *DescribeVpnGatewaysRequest) {
 	request = &DescribeVpnGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateways", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateways", "", "")
 	return
 }
 

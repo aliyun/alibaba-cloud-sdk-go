@@ -67,24 +67,19 @@ func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResu
 
 type DescribeBatchResultRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	TraceId      string `position:"Query" name:"TraceId"`
 }
 
 type DescribeBatchResultResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TraceId       string `json:"TraceId" xml:"TraceId"`
-	Status        int    `json:"Status" xml:"Status"`
-	BatchCount    int    `json:"BatchCount" xml:"BatchCount"`
-	SuccessNumber int    `json:"SuccessNumber" xml:"SuccessNumber"`
-	FailResults   struct {
-		FailResult []struct {
-			BatchIndex string `json:"BatchIndex" xml:"BatchIndex"`
-			ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
-		} `json:"FailResult" xml:"FailResult"`
-	} `json:"FailResults" xml:"FailResults"`
+	RequestId     string      `json:"RequestId" xml:"RequestId"`
+	TraceId       string      `json:"TraceId" xml:"TraceId"`
+	Status        int         `json:"Status" xml:"Status"`
+	BatchCount    int         `json:"BatchCount" xml:"BatchCount"`
+	SuccessNumber int         `json:"SuccessNumber" xml:"SuccessNumber"`
+	FailResults   FailResults `json:"FailResults" xml:"FailResults"`
 }
 
 func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {

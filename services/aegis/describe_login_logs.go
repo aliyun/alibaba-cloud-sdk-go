@@ -67,8 +67,8 @@ func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRe
 
 type DescribeLoginLogsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }

@@ -67,32 +67,25 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *Update
 
 type UpdateMediaWorkflowTriggerModeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TriggerMode          string           `position:"Query" name:"TriggerMode"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type UpdateMediaWorkflowTriggerModeResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	MediaWorkflow struct {
-		MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-		Name            string `json:"Name" xml:"Name"`
-		Topology        string `json:"Topology" xml:"Topology"`
-		TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
-		State           string `json:"State" xml:"State"`
-		CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	} `json:"MediaWorkflow" xml:"MediaWorkflow"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
 func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflowTriggerModeRequest) {
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "", "")
 	return
 }
 

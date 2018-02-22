@@ -67,17 +67,15 @@ func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSo
 
 type DescribeBackSourceCidrRequest struct {
 	*requests.RpcRequest
-	Region          string           `position:"Query" name:"Region"`
-	Line            string           `position:"Query" name:"Line"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Line            string           `position:"Query" name:"Line"`
+	Region          string           `position:"Query" name:"Region"`
 }
 
 type DescribeBackSourceCidrResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	CidrList  struct {
-		Cidr []string `json:"Cidr" xml:"Cidr"`
-	} `json:"CidrList" xml:"CidrList"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	CidrList  CidrList `json:"CidrList" xml:"CidrList"`
 }
 
 func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrRequest) {

@@ -67,21 +67,14 @@ func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportL
 
 type DescribeSupportLinesRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
 type DescribeSupportLinesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RecordLines struct {
-		RecordLine []struct {
-			LineCode        string `json:"LineCode" xml:"LineCode"`
-			FatherCode      string `json:"FatherCode" xml:"FatherCode"`
-			LineName        string `json:"LineName" xml:"LineName"`
-			LineDisplayName string `json:"LineDisplayName" xml:"LineDisplayName"`
-		} `json:"RecordLine" xml:"RecordLine"`
-	} `json:"RecordLines" xml:"RecordLines"`
+	RequestId   string                            `json:"RequestId" xml:"RequestId"`
+	RecordLines RecordLinesInDescribeSupportLines `json:"RecordLines" xml:"RecordLines"`
 }
 
 func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {

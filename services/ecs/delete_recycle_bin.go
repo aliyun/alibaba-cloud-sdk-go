@@ -67,11 +67,11 @@ func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequ
 
 type DeleteRecycleBinRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceIds          string           `position:"Query" name:"resourceIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteRecycleBinResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	request = &DeleteRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "", "")
 	return
 }
 

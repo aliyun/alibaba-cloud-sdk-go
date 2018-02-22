@@ -67,51 +67,25 @@ func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSpli
 
 type QueryVideoSplitJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryVideoSplitJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	JobList struct {
-		Job []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoSplitResult struct {
-				VideoSplitList struct {
-					VideoSplit []struct {
-						StartTime string `json:"StartTime" xml:"StartTime"`
-						EndTime   string `json:"EndTime" xml:"EndTime"`
-						Path      string `json:"Path" xml:"Path"`
-					} `json:"VideoSplit" xml:"VideoSplit"`
-				} `json:"VideoSplitList" xml:"VideoSplitList"`
-			} `json:"VideoSplitResult" xml:"VideoSplitResult"`
-		} `json:"Job" xml:"Job"`
-	} `json:"JobList" xml:"JobList"`
+	RequestId   string                              `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryVideoSplitJobList `json:"NonExistIds" xml:"NonExistIds"`
+	JobList     JobListInQueryVideoSplitJobList     `json:"JobList" xml:"JobList"`
 }
 
 func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListRequest) {
 	request = &QueryVideoSplitJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSplitJobList", "", "")
 	return
 }
 

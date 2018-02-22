@@ -67,19 +67,19 @@ func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnecti
 
 type CreateVpnConnectionRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
-	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
-	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
 	IkeConfig            string           `position:"Query" name:"IkeConfig"`
+	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 }
 
 type CreateVpnConnectionResponse struct {
@@ -94,7 +94,7 @@ func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	request = &CreateVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "", "")
 	return
 }
 

@@ -67,14 +67,14 @@ func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJob
 
 type SubmitFacerecogJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
-	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Input                string           `position:"Query" name:"Input"`
+	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type SubmitFacerecogJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "", "")
 	return
 }
 

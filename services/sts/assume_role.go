@@ -67,25 +67,17 @@ func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callbac
 
 type AssumeRoleRequest struct {
 	*requests.RpcRequest
-	RoleArn         string           `position:"Query" name:"RoleArn"`
-	Policy          string           `position:"Query" name:"Policy"`
 	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
+	Policy          string           `position:"Query" name:"Policy"`
+	RoleArn         string           `position:"Query" name:"RoleArn"`
 	RoleSessionName string           `position:"Query" name:"RoleSessionName"`
 }
 
 type AssumeRoleResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Credentials struct {
-		SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
-		AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-		AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
-		Expiration      string `json:"Expiration" xml:"Expiration"`
-	} `json:"Credentials" xml:"Credentials"`
-	AssumedRoleUser struct {
-		Arn           string `json:"Arn" xml:"Arn"`
-		AssumedRoleId string `json:"AssumedRoleId" xml:"AssumedRoleId"`
-	} `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	Credentials     Credentials     `json:"Credentials" xml:"Credentials"`
+	AssumedRoleUser AssumedRoleUser `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
 }
 
 func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {

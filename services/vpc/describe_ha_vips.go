@@ -67,12 +67,12 @@ func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest,
 
 type DescribeHaVipsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	Filter               *[]DescribeHaVipsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
@@ -87,32 +87,14 @@ type DescribeHaVipsResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	HaVips     struct {
-		HaVip []struct {
-			HaVipId             string `json:"HaVipId" xml:"HaVipId"`
-			RegionId            string `json:"RegionId" xml:"RegionId"`
-			VpcId               string `json:"VpcId" xml:"VpcId"`
-			VSwitchId           string `json:"VSwitchId" xml:"VSwitchId"`
-			IpAddress           string `json:"IpAddress" xml:"IpAddress"`
-			Status              string `json:"Status" xml:"Status"`
-			MasterInstanceId    string `json:"MasterInstanceId" xml:"MasterInstanceId"`
-			Description         string `json:"Description" xml:"Description"`
-			CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-			AssociatedInstances struct {
-				AssociatedInstance []string `json:"associatedInstance" xml:"associatedInstance"`
-			} `json:"AssociatedInstances" xml:"AssociatedInstances"`
-			AssociatedEipAddresses struct {
-				AssociatedEipAddresse []string `json:"associatedEipAddresse" xml:"associatedEipAddresse"`
-			} `json:"AssociatedEipAddresses" xml:"AssociatedEipAddresses"`
-		} `json:"HaVip" xml:"HaVip"`
-	} `json:"HaVips" xml:"HaVips"`
+	HaVips     HaVips `json:"HaVips" xml:"HaVips"`
 }
 
 func CreateDescribeHaVipsRequest() (request *DescribeHaVipsRequest) {
 	request = &DescribeHaVipsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeHaVips", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeHaVips", "", "")
 	return
 }
 

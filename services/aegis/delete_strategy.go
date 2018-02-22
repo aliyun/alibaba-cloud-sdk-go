@@ -67,8 +67,8 @@ func (client *Client) DeleteStrategyWithCallback(request *DeleteStrategyRequest,
 
 type DeleteStrategyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 

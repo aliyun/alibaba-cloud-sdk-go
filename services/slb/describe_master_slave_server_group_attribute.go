@@ -67,35 +67,28 @@ func (client *Client) DescribeMasterSlaveServerGroupAttributeWithCallback(reques
 
 type DescribeMasterSlaveServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	Tags                     string           `position:"Query" name:"Tags"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId              string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId              string           `position:"Query" name:"access_key_id"`
+	Tags                     string           `position:"Query" name:"Tags"`
 	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 }
 
 type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                  string `json:"RequestId" xml:"RequestId"`
-	MasterSlaveServerGroupId   string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-	MasterSlaveServerGroupName string `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
-	MasterSlaveBackendServers  struct {
-		MasterSlaveBackendServer []struct {
-			ServerId   string `json:"ServerId" xml:"ServerId"`
-			Port       int    `json:"Port" xml:"Port"`
-			Weight     int    `json:"Weight" xml:"Weight"`
-			ServerType string `json:"ServerType" xml:"ServerType"`
-		} `json:"MasterSlaveBackendServer" xml:"MasterSlaveBackendServer"`
-	} `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
+	RequestId                  string                                                             `json:"RequestId" xml:"RequestId"`
+	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	MasterSlaveServerGroupName string                                                             `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
+	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
 func CreateDescribeMasterSlaveServerGroupAttributeRequest() (request *DescribeMasterSlaveServerGroupAttributeRequest) {
 	request = &DescribeMasterSlaveServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute", "", "")
 	return
 }
 

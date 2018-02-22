@@ -67,8 +67,8 @@ func (client *Client) GetQuotaWithCallback(request *GetQuotaRequest, callback fu
 
 type GetQuotaRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
 type GetQuotaResponse struct {
@@ -77,20 +77,14 @@ type GetQuotaResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Quota     struct {
-		TotalQuota  int `json:"TotalQuota" xml:"TotalQuota"`
-		FacesCount  int `json:"FacesCount" xml:"FacesCount"`
-		PhotosCount int `json:"PhotosCount" xml:"PhotosCount"`
-		UsedQuota   int `json:"UsedQuota" xml:"UsedQuota"`
-		VideosCount int `json:"VideosCount" xml:"VideosCount"`
-	} `json:"Quota" xml:"Quota"`
+	Quota     Quota  `json:"Quota" xml:"Quota"`
 }
 
 func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	request = &GetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetQuota", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetQuota", "", "")
 	return
 }
 

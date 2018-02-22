@@ -67,10 +67,10 @@ func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest,
 
 type SetRangeConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Enable        string           `position:"Query" name:"Enable"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	Enable        string           `position:"Query" name:"Enable"`
 }
 
 type SetRangeConfigResponse struct {

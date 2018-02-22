@@ -67,53 +67,32 @@ func (client *Client) DescribeDomainBpsDataWithCallback(request *DescribeDomainB
 
 type DescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string           `position:"Query" name:"EndTime"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	DomainName     string           `position:"Query" name:"DomainName"`
 	StartTime      string           `position:"Query" name:"StartTime"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	Interval       string           `position:"Query" name:"Interval"`
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	DomainType     string           `position:"Query" name:"DomainType"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
+	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 }
 
 type DescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	DomainName         string `json:"DomainName" xml:"DomainName"`
-	DataInterval       string `json:"DataInterval" xml:"DataInterval"`
-	StartTime          string `json:"StartTime" xml:"StartTime"`
-	EndTime            string `json:"EndTime" xml:"EndTime"`
-	LocationNameEn     string `json:"LocationNameEn" xml:"LocationNameEn"`
-	IspNameEn          string `json:"IspNameEn" xml:"IspNameEn"`
-	LocationName       string `json:"LocationName" xml:"LocationName"`
-	IspName            string `json:"IspName" xml:"IspName"`
-	BpsDataPerInterval struct {
-		DataModule []struct {
-			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-			Value                string `json:"Value" xml:"Value"`
-			DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
-			OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
-			DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
-			DynamicDomesticValue string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-			DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-			StaticValue          string `json:"StaticValue" xml:"StaticValue"`
-			StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
-			StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
-			L2Value              string `json:"L2Value" xml:"L2Value"`
-			DomesticL2Value      string `json:"DomesticL2Value" xml:"DomesticL2Value"`
-			OverseasL2Value      string `json:"OverseasL2Value" xml:"OverseasL2Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
-	SupplyBpsDatas struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	DomainName         string             `json:"DomainName" xml:"DomainName"`
+	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	LocationNameEn     string             `json:"LocationNameEn" xml:"LocationNameEn"`
+	IspNameEn          string             `json:"IspNameEn" xml:"IspNameEn"`
+	LocationName       string             `json:"LocationName" xml:"LocationName"`
+	IspName            string             `json:"IspName" xml:"IspName"`
+	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
+	SupplyBpsDatas     SupplyBpsDatas     `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
 }
 
 func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest) {

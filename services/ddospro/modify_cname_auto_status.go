@@ -67,9 +67,9 @@ func (client *Client) ModifyCnameAutoStatusWithCallback(request *ModifyCnameAuto
 
 type ModifyCnameAutoStatusRequest struct {
 	*requests.RpcRequest
-	Enable          requests.Boolean `position:"Query" name:"Enable"`
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	Enable          requests.Boolean `position:"Query" name:"Enable"`
 }
 
 type ModifyCnameAutoStatusResponse struct {

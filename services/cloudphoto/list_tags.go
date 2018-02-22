@@ -67,9 +67,9 @@ func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback fu
 
 type ListTagsRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
-	StoreName string `position:"Query" name:"StoreName"`
 	Lang      string `position:"Query" name:"Lang"`
+	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
 type ListTagsResponse struct {
@@ -78,32 +78,14 @@ type ListTagsResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Action    string `json:"Action" xml:"Action"`
-	Tags      []struct {
-		Id        int    `json:"Id" xml:"Id"`
-		Name      string `json:"Name" xml:"Name"`
-		IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
-		ParentTag string `json:"ParentTag" xml:"ParentTag"`
-		Cover     struct {
-			Id      int    `json:"Id" xml:"Id"`
-			Title   string `json:"Title" xml:"Title"`
-			FileId  string `json:"FileId" xml:"FileId"`
-			State   string `json:"State" xml:"State"`
-			Md5     string `json:"Md5" xml:"Md5"`
-			IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
-			Remark  string `json:"Remark" xml:"Remark"`
-			Width   int    `json:"Width" xml:"Width"`
-			Height  int    `json:"Height" xml:"Height"`
-			Ctime   int    `json:"Ctime" xml:"Ctime"`
-			Mtime   int    `json:"Mtime" xml:"Mtime"`
-		} `json:"Cover" xml:"Cover"`
-	} `json:"Tags" xml:"Tags"`
+	Tags      []Tag  `json:"Tags" xml:"Tags"`
 }
 
 func CreateListTagsRequest() (request *ListTagsRequest) {
 	request = &ListTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTags", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListTags", "", "")
 	return
 }
 

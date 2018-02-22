@@ -67,36 +67,31 @@ func (client *Client) DescribeErrorLogsWithCallback(request *DescribeErrorLogsRe
 
 type DescribeErrorLogsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeErrorLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		ErrorLog []struct {
-			ErrorInfo  string `json:"ErrorInfo" xml:"ErrorInfo"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"ErrorLog" xml:"ErrorLog"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                   `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                      `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                      `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeErrorLogs `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
 	request = &DescribeErrorLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeErrorLogs", "", "")
 	return
 }
 

@@ -67,54 +67,29 @@ func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callb
 
 type UpdateMediaRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	Title                string           `position:"Query" name:"Title"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	CoverURL             string           `position:"Query" name:"CoverURL"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	Title                string           `position:"Query" name:"Title"`
+	Description          string           `position:"Query" name:"Description"`
+	CoverURL             string           `position:"Query" name:"CoverURL"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type UpdateMediaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Media     struct {
-		MediaId      string `json:"MediaId" xml:"MediaId"`
-		Title        string `json:"Title" xml:"Title"`
-		Description  string `json:"Description" xml:"Description"`
-		CoverURL     string `json:"CoverURL" xml:"CoverURL"`
-		CateId       int    `json:"CateId" xml:"CateId"`
-		Duration     string `json:"Duration" xml:"Duration"`
-		Format       string `json:"Format" xml:"Format"`
-		Size         string `json:"Size" xml:"Size"`
-		Bitrate      string `json:"Bitrate" xml:"Bitrate"`
-		Width        string `json:"Width" xml:"Width"`
-		Height       string `json:"Height" xml:"Height"`
-		Fps          string `json:"Fps" xml:"Fps"`
-		PublishState string `json:"PublishState" xml:"PublishState"`
-		CreationTime string `json:"CreationTime" xml:"CreationTime"`
-		Tags         struct {
-			Tag []string `json:"Tag" xml:"Tag"`
-		} `json:"Tags" xml:"Tags"`
-		RunIdList struct {
-			RunId []string `json:"RunId" xml:"RunId"`
-		} `json:"RunIdList" xml:"RunIdList"`
-		File struct {
-			URL   string `json:"URL" xml:"URL"`
-			State string `json:"State" xml:"State"`
-		} `json:"File" xml:"File"`
-	} `json:"Media" xml:"Media"`
+	Media     Media  `json:"Media" xml:"Media"`
 }
 
 func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
 	request = &UpdateMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "", "")
 	return
 }
 

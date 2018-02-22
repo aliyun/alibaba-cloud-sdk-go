@@ -67,11 +67,11 @@ func (client *Client) ReleaseEipAddressWithCallback(request *ReleaseEipAddressRe
 
 type ReleaseEipAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AllocationId         string           `position:"Query" name:"AllocationId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReleaseEipAddressResponse struct {
@@ -83,7 +83,7 @@ func CreateReleaseEipAddressRequest() (request *ReleaseEipAddressRequest) {
 	request = &ReleaseEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseEipAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleaseEipAddress", "", "")
 	return
 }
 

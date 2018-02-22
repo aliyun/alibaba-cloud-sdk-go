@@ -68,11 +68,11 @@ func (client *Client) GetEntityListWithCallback(request *GetEntityListRequest, c
 type GetEntityListRequest struct {
 	*requests.RpcRequest
 	GroupId     requests.Integer `position:"Query" name:"GroupId"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Remark      string           `position:"Query" name:"Remark"`
 	EventType   string           `position:"Query" name:"EventType"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	RegionNo    string           `position:"Query" name:"RegionNo"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type GetEntityListResponse struct {
@@ -81,29 +81,7 @@ type GetEntityListResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		PageInfo struct {
-			CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
-			PageSize    int `json:"PageSize" xml:"PageSize"`
-			TotalCount  int `json:"TotalCount" xml:"TotalCount"`
-			Count       int `json:"Count" xml:"Count"`
-		} `json:"PageInfo" xml:"PageInfo"`
-		List struct {
-			Entity []struct {
-				Uuid         string `json:"Uuid" xml:"Uuid"`
-				GroupId      int    `json:"GroupId" xml:"GroupId"`
-				Ip           string `json:"Ip" xml:"Ip"`
-				InstanceName string `json:"InstanceName" xml:"InstanceName"`
-				InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-				Region       string `json:"Region" xml:"Region"`
-				Os           string `json:"Os" xml:"Os"`
-				Flag         string `json:"Flag" xml:"Flag"`
-				BuyVersion   string `json:"BuyVersion" xml:"BuyVersion"`
-				AegisOnline  bool   `json:"AegisOnline" xml:"AegisOnline"`
-				AegisVersion string `json:"aegisVersion" xml:"aegisVersion"`
-			} `json:"Entity" xml:"Entity"`
-		} `json:"List" xml:"List"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetEntityListRequest() (request *GetEntityListRequest) {

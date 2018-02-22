@@ -72,21 +72,14 @@ type ListImagesRequest struct {
 type ListImagesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	OsTags    struct {
-		OsInfo []struct {
-			OsTag        string `json:"OsTag" xml:"OsTag"`
-			Platform     string `json:"Platform" xml:"Platform"`
-			Version      string `json:"Version" xml:"Version"`
-			Architecture string `json:"Architecture" xml:"Architecture"`
-		} `json:"OsInfo" xml:"OsInfo"`
-	} `json:"OsTags" xml:"OsTags"`
+	OsTags    OsTags `json:"OsTags" xml:"OsTags"`
 }
 
 func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListImages", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListImages", "", "")
 	return
 }
 

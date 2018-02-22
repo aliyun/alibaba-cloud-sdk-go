@@ -67,14 +67,6 @@ func (client *Client) ModifyNetworkInterfaceAttributeWithCallback(request *Modif
 
 type ModifyNetworkInterfaceAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
-	Description          string           `position:"Query" name:"Description"`
-	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 type ModifyNetworkInterfaceAttributeResponse struct {
@@ -86,7 +78,7 @@ func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInter
 	request = &ModifyNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "", "")
 	return
 }
 

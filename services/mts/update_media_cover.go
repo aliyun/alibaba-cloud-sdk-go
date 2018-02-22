@@ -67,12 +67,12 @@ func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequ
 
 type UpdateMediaCoverRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`
 	CoverURL             string           `position:"Query" name:"CoverURL"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpdateMediaCoverResponse struct {
@@ -84,7 +84,7 @@ func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	request = &UpdateMediaCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCover", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCover", "", "")
 	return
 }
 

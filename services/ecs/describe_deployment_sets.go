@@ -67,46 +67,35 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
 	Granularity          string           `position:"Query" name:"Granularity"`
 	Domain               string           `position:"Query" name:"Domain"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Strategy             string           `position:"Query" name:"Strategy"`
 }
 
 type DescribeDeploymentSetsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	DeploymentSets struct {
-		DeploymentSet []struct {
-			DeploymentSetId          string `json:"DeploymentSetId" xml:"DeploymentSetId"`
-			DeploymentSetDescription string `json:"DeploymentSetDescription" xml:"DeploymentSetDescription"`
-			DeploymentSetName        string `json:"DeploymentSetName" xml:"DeploymentSetName"`
-			Strategy                 string `json:"Strategy" xml:"Strategy"`
-			Domain                   string `json:"Domain" xml:"Domain"`
-			Granularity              string `json:"Granularity" xml:"Granularity"`
-			InstanceAmount           int    `json:"InstanceAmount" xml:"InstanceAmount"`
-			CreationTime             string `json:"CreationTime" xml:"CreationTime"`
-		} `json:"DeploymentSet" xml:"DeploymentSet"`
-	} `json:"DeploymentSets" xml:"DeploymentSets"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	RegionId       string         `json:"RegionId" xml:"RegionId"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	DeploymentSets DeploymentSets `json:"DeploymentSets" xml:"DeploymentSets"`
 }
 
 func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsRequest) {
 	request = &DescribeDeploymentSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSets", "", "")
 	return
 }
 

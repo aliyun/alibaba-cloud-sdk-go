@@ -67,10 +67,10 @@ func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListCo
 
 type SetIpBlackListConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	BlockIps      string           `position:"Query" name:"BlockIps"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	BlockIps      string           `position:"Query" name:"BlockIps"`
 }
 
 type SetIpBlackListConfigResponse struct {

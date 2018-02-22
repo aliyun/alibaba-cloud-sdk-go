@@ -67,12 +67,12 @@ func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *Des
 
 type DescribeImageSupportInstanceTypesRequest struct {
 	*requests.RpcRequest
-	ActionType           string                                     `position:"Query" name:"ActionType"`
-	Filter               *[]DescribeImageSupportInstanceTypesFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	OwnerId              requests.Integer                           `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                                     `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer                           `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string                                     `position:"Query" name:"ImageId"`
-	ResourceOwnerAccount string                                     `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer                           `position:"Query" name:"OwnerId"`
+	ActionType           string                                     `position:"Query" name:"ActionType"`
+	Filter               *[]DescribeImageSupportInstanceTypesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 type DescribeImageSupportInstanceTypesFilter struct {
@@ -82,24 +82,17 @@ type DescribeImageSupportInstanceTypesFilter struct {
 
 type DescribeImageSupportInstanceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	ImageId       string `json:"ImageId" xml:"ImageId"`
-	InstanceTypes struct {
-		InstanceType []struct {
-			InstanceTypeId     string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-			CpuCoreCount       int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-			MemorySize         float64 `json:"MemorySize" xml:"MemorySize"`
-			InstanceTypeFamily string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-		} `json:"InstanceType" xml:"InstanceType"`
-	} `json:"InstanceTypes" xml:"InstanceTypes"`
+	RequestId     string                                           `json:"RequestId" xml:"RequestId"`
+	RegionId      string                                           `json:"RegionId" xml:"RegionId"`
+	ImageId       string                                           `json:"ImageId" xml:"ImageId"`
+	InstanceTypes InstanceTypesInDescribeImageSupportInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
 func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSupportInstanceTypesRequest) {
 	request = &DescribeImageSupportInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "", "")
 	return
 }
 

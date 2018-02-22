@@ -67,72 +67,25 @@ func (client *Client) QueryPornJobListWithCallback(request *QueryPornJobListRequ
 
 type QueryPornJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryPornJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	PornJobList struct {
-		PornJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			PornConfig struct {
-				Interval   string `json:"Interval" xml:"Interval"`
-				BizType    string `json:"BizType" xml:"BizType"`
-				OutputFile struct {
-					Bucket   string `json:"Bucket" xml:"Bucket"`
-					Location string `json:"Location" xml:"Location"`
-					Object   string `json:"Object" xml:"Object"`
-				} `json:"OutputFile" xml:"OutputFile"`
-			} `json:"PornConfig" xml:"PornConfig"`
-			CensorPornResult struct {
-				Label           string `json:"Label" xml:"Label"`
-				Suggestion      string `json:"Suggestion" xml:"Suggestion"`
-				MaxScore        string `json:"MaxScore" xml:"MaxScore"`
-				AverageScore    string `json:"AverageScore" xml:"AverageScore"`
-				PornCounterList struct {
-					Counter []struct {
-						Count int    `json:"Count" xml:"Count"`
-						Label string `json:"Label" xml:"Label"`
-					} `json:"Counter" xml:"Counter"`
-				} `json:"PornCounterList" xml:"PornCounterList"`
-				PornTopList struct {
-					Top []struct {
-						Label     string `json:"Label" xml:"Label"`
-						Score     string `json:"Score" xml:"Score"`
-						Timestamp string `json:"Timestamp" xml:"Timestamp"`
-						Index     string `json:"Index" xml:"Index"`
-						Object    string `json:"Object" xml:"Object"`
-					} `json:"Top" xml:"Top"`
-				} `json:"PornTopList" xml:"PornTopList"`
-			} `json:"CensorPornResult" xml:"CensorPornResult"`
-		} `json:"PornJob" xml:"PornJob"`
-	} `json:"PornJobList" xml:"PornJobList"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
+	NonExistIds NonExistIdsInQueryPornJobList `json:"NonExistIds" xml:"NonExistIds"`
+	PornJobList PornJobList                   `json:"PornJobList" xml:"PornJobList"`
 }
 
 func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
 	request = &QueryPornJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornJobList", "", "")
 	return
 }
 

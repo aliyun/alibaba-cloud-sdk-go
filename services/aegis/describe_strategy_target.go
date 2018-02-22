@@ -67,8 +67,8 @@ func (client *Client) DescribeStrategyTargetWithCallback(request *DescribeStrate
 
 type DescribeStrategyTargetRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Type            string           `position:"Query" name:"Type"`
 	Config          string           `position:"Query" name:"Config"`
 	Target          string           `position:"Query" name:"Target"`
@@ -76,13 +76,9 @@ type DescribeStrategyTargetRequest struct {
 
 type DescribeStrategyTargetResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Count           int    `json:"Count" xml:"Count"`
-	StrategyTargets []struct {
-		Flag       string `json:"Flag" xml:"Flag"`
-		Target     string `json:"Target" xml:"Target"`
-		TargetType string `json:"TargetType" xml:"TargetType"`
-	} `json:"StrategyTargets" xml:"StrategyTargets"`
+	RequestId       string       `json:"RequestId" xml:"RequestId"`
+	Count           int          `json:"Count" xml:"Count"`
+	StrategyTargets []StringItem `json:"StrategyTargets" xml:"StrategyTargets"`
 }
 
 func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetRequest) {

@@ -67,21 +67,17 @@ func (client *Client) DescribeLiveStreamPushErrorsWithCallback(request *Describe
 
 type DescribeLiveStreamPushErrorsRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamPushErrorsResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	PushErrorsModelList struct {
-		PushErrorsModel []struct {
-			ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-		} `json:"PushErrorsModel" xml:"PushErrorsModel"`
-	} `json:"PushErrorsModelList" xml:"PushErrorsModelList"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	PushErrorsModelList PushErrorsModelList `json:"PushErrorsModelList" xml:"PushErrorsModelList"`
 }
 
 func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPushErrorsRequest) {

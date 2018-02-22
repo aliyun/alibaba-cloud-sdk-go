@@ -67,20 +67,15 @@ func (client *Client) UpdateGroupWithCallback(request *UpdateGroupRequest, callb
 
 type UpdateGroupRequest struct {
 	*requests.RpcRequest
-	NewComments  string `position:"Query" name:"NewComments"`
-	NewGroupName string `position:"Query" name:"NewGroupName"`
 	GroupName    string `position:"Query" name:"GroupName"`
+	NewGroupName string `position:"Query" name:"NewGroupName"`
+	NewComments  string `position:"Query" name:"NewComments"`
 }
 
 type UpdateGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Group     struct {
-		GroupName  string `json:"GroupName" xml:"GroupName"`
-		Comments   string `json:"Comments" xml:"Comments"`
-		CreateDate string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate string `json:"UpdateDate" xml:"UpdateDate"`
-	} `json:"Group" xml:"Group"`
+	Group     Group  `json:"Group" xml:"Group"`
 }
 
 func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {

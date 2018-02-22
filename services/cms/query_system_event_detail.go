@@ -81,7 +81,7 @@ func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailReque
 	request = &QuerySystemEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventDetail", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventDetail", "", "")
 	return
 }
 

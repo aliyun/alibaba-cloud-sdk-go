@@ -67,32 +67,26 @@ func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNos
 
 type DescribeVpcZoneNosRequest struct {
 	*requests.RpcRequest
-	Region               string           `position:"Query" name:"Region"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Region               string           `position:"Query" name:"Region"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 type DescribeVpcZoneNosResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Items     struct {
-		VpcZoneId []struct {
-			ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-			Region    string `json:"Region" xml:"Region"`
-			SubDomain string `json:"SubDomain" xml:"SubDomain"`
-		} `json:"VpcZoneId" xml:"VpcZoneId"`
-	} `json:"Items" xml:"Items"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeVpcZoneNos `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
 	request = &DescribeVpcZoneNosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "", "")
 	return
 }
 

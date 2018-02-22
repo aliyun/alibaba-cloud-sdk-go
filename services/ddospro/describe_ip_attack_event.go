@@ -67,10 +67,10 @@ func (client *Client) DescribeIpAttackEventWithCallback(request *DescribeIpAttac
 
 type DescribeIpAttackEventRequest struct {
 	*requests.RpcRequest
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
-	Start           requests.Integer `position:"Query" name:"Start"`
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
+	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	Start           requests.Integer `position:"Query" name:"Start"`
 	Ip              string           `position:"Query" name:"Ip"`
 }
 
@@ -80,18 +80,7 @@ type DescribeIpAttackEventResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		PageInfo struct {
-			Total int `json:"Total" xml:"Total"`
-		} `json:"PageInfo" xml:"PageInfo"`
-		List []struct {
-			AttackType      string `json:"AttackType" xml:"AttackType"`
-			Duration        string `json:"Duration" xml:"Duration"`
-			StartTimeMillis int    `json:"StartTimeMillis" xml:"StartTimeMillis"`
-			EndTimeMillis   int    `json:"EndTimeMillis" xml:"EndTimeMillis"`
-			EventType       int    `json:"eventType" xml:"eventType"`
-		} `json:"List" xml:"List"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest) {

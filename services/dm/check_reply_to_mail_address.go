@@ -67,12 +67,12 @@ func (client *Client) CheckReplyToMailAddressWithCallback(request *CheckReplyToM
 
 type CheckReplyToMailAddressRequest struct {
 	*requests.RpcRequest
-	Region               string           `position:"Query" name:"Region"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Lang                 string           `position:"Query" name:"Lang"`
+	Region               string           `position:"Query" name:"Region"`
+	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
 }
 
 type CheckReplyToMailAddressResponse struct {

@@ -67,14 +67,14 @@ func (client *Client) SingleSendSmsWithCallback(request *SingleSendSmsRequest, c
 
 type SingleSendSmsRequest struct {
 	*requests.RpcRequest
-	TemplateCode         string           `position:"Query" name:"TemplateCode"`
-	SignName             string           `position:"Query" name:"SignName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RecNum               string           `position:"Query" name:"RecNum"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Version              string           `position:"Query" name:"Version"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SignName             string           `position:"Query" name:"SignName"`
+	TemplateCode         string           `position:"Query" name:"TemplateCode"`
+	RecNum               string           `position:"Query" name:"RecNum"`
 	ParamString          string           `position:"Query" name:"ParamString"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 type SingleSendSmsResponse struct {

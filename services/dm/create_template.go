@@ -67,17 +67,17 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 
 type CreateTemplateRequest struct {
 	*requests.RpcRequest
-	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
-	SmsContent           string           `position:"Query" name:"SmsContent"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Remark               string           `position:"Query" name:"Remark"`
-	TemplateType         requests.Integer `position:"Query" name:"TemplateType"`
-	SmsType              requests.Integer `position:"Query" name:"SmsType"`
-	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TemplateType         requests.Integer `position:"Query" name:"TemplateType"`
+	TemplateName         string           `position:"Query" name:"TemplateName"`
+	TemplateSubject      string           `position:"Query" name:"TemplateSubject"`
+	TemplateNickName     string           `position:"Query" name:"TemplateNickName"`
 	TemplateText         string           `position:"Query" name:"TemplateText"`
+	SmsType              requests.Integer `position:"Query" name:"SmsType"`
+	SmsContent           string           `position:"Query" name:"SmsContent"`
+	Remark               string           `position:"Query" name:"Remark"`
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 

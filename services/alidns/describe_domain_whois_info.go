@@ -67,26 +67,22 @@ func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomai
 
 type DescribeDomainWhoisInfoRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
 	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type DescribeDomainWhoisInfoResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	RegistrantName   string `json:"RegistrantName" xml:"RegistrantName"`
-	RegistrantEmail  string `json:"RegistrantEmail" xml:"RegistrantEmail"`
-	Registrar        string `json:"Registrar" xml:"Registrar"`
-	RegistrationDate string `json:"RegistrationDate" xml:"RegistrationDate"`
-	ExpirationDate   string `json:"ExpirationDate" xml:"ExpirationDate"`
-	StatusList       struct {
-		Status []string `json:"Status" xml:"Status"`
-	} `json:"StatusList" xml:"StatusList"`
-	DnsServers struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
+	RequestId        string                              `json:"RequestId" xml:"RequestId"`
+	RegistrantName   string                              `json:"RegistrantName" xml:"RegistrantName"`
+	RegistrantEmail  string                              `json:"RegistrantEmail" xml:"RegistrantEmail"`
+	Registrar        string                              `json:"Registrar" xml:"Registrar"`
+	RegistrationDate string                              `json:"RegistrationDate" xml:"RegistrationDate"`
+	ExpirationDate   string                              `json:"ExpirationDate" xml:"ExpirationDate"`
+	StatusList       StatusList                          `json:"StatusList" xml:"StatusList"`
+	DnsServers       DnsServersInDescribeDomainWhoisInfo `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {

@@ -67,31 +67,24 @@ func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callbac
 
 type PlayerAuthRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
 type PlayerAuthResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	LogURL     string `json:"LogURL" xml:"LogURL"`
-	SwitchList struct {
-		Switch []struct {
-			State        string `json:"State" xml:"State"`
-			FunctionId   string `json:"FunctionId" xml:"FunctionId"`
-			SwitchId     string `json:"SwitchId" xml:"SwitchId"`
-			FunctionName string `json:"FunctionName" xml:"FunctionName"`
-		} `json:"Switch" xml:"Switch"`
-	} `json:"SwitchList" xml:"SwitchList"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	LogURL     string     `json:"LogURL" xml:"LogURL"`
+	SwitchList SwitchList `json:"SwitchList" xml:"SwitchList"`
 }
 
 func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "", "")
 	return
 }
 

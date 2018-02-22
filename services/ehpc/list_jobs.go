@@ -67,11 +67,11 @@ func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback fu
 
 type ListJobsRequest struct {
 	*requests.RpcRequest
-	Owner      string           `position:"Query" name:"Owner"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
+	Owner      string           `position:"Query" name:"Owner"`
 	State      string           `position:"Query" name:"State"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListJobsResponse struct {
@@ -80,33 +80,14 @@ type ListJobsResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Jobs       struct {
-		JobInfo []struct {
-			Id             string `json:"Id" xml:"Id"`
-			Name           string `json:"Name" xml:"Name"`
-			Owner          string `json:"Owner" xml:"Owner"`
-			Priority       int    `json:"Priority" xml:"Priority"`
-			State          string `json:"State" xml:"State"`
-			SubmitTime     string `json:"SubmitTime" xml:"SubmitTime"`
-			StartTime      string `json:"StartTime" xml:"StartTime"`
-			LastModifyTime string `json:"LastModifyTime" xml:"LastModifyTime"`
-			Stdout         string `json:"Stdout" xml:"Stdout"`
-			Stderr         string `json:"Stderr" xml:"Stderr"`
-			Comment        string `json:"Comment" xml:"Comment"`
-			ArrayRequest   string `json:"ArrayRequest" xml:"ArrayRequest"`
-			Resources      struct {
-				Nodes int `json:"Nodes" xml:"Nodes"`
-				Cores int `json:"Cores" xml:"Cores"`
-			} `json:"Resources" xml:"Resources"`
-		} `json:"JobInfo" xml:"JobInfo"`
-	} `json:"Jobs" xml:"Jobs"`
+	Jobs       Jobs   `json:"Jobs" xml:"Jobs"`
 }
 
 func CreateListJobsRequest() (request *ListJobsRequest) {
 	request = &ListJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobs", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobs", "", "")
 	return
 }
 

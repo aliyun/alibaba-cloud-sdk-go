@@ -67,11 +67,11 @@ func (client *Client) UnassociateGlobalAccelerationInstanceWithCallback(request 
 
 type UnassociateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceType                 string           `position:"Query" name:"InstanceType"`
 }
 
@@ -84,7 +84,7 @@ func CreateUnassociateGlobalAccelerationInstanceRequest() (request *UnassociateG
 	request = &UnassociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "", "")
 	return
 }
 

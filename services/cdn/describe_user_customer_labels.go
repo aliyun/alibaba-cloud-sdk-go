@@ -67,9 +67,9 @@ func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUs
 
 type DescribeUserCustomerLabelsRequest struct {
 	*requests.RpcRequest
-	Uid           requests.Integer `position:"Query" name:"Uid"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Uid           requests.Integer `position:"Query" name:"Uid"`
 }
 
 type DescribeUserCustomerLabelsResponse struct {

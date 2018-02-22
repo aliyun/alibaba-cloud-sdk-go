@@ -67,31 +67,21 @@ func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopD
 
 type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
-	Limit         requests.Integer `position:"Query" name:"Limit"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Limit         requests.Integer `position:"Query" name:"Limit"`
 }
 
 type DescribeTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	StartTime         string `json:"StartTime" xml:"StartTime"`
-	EndTime           string `json:"EndTime" xml:"EndTime"`
-	DomainCount       int    `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount int    `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
-	TopDomains        struct {
-		TopDomain []struct {
-			DomainName     string `json:"DomainName" xml:"DomainName"`
-			Rank           int    `json:"Rank" xml:"Rank"`
-			TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
-			TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
-			MaxBps         int    `json:"MaxBps" xml:"MaxBps"`
-			MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
-			TotalAccess    int    `json:"TotalAccess" xml:"TotalAccess"`
-		} `json:"TopDomain" xml:"TopDomain"`
-	} `json:"TopDomains" xml:"TopDomains"`
+	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	StartTime         string     `json:"StartTime" xml:"StartTime"`
+	EndTime           string     `json:"EndTime" xml:"EndTime"`
+	DomainCount       int        `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int        `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
 func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowRequest) {

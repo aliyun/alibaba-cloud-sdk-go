@@ -67,34 +67,27 @@ func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, c
 
 type DetachKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 type DetachKeyPairResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  string `json:"TotalCount" xml:"TotalCount"`
-	FailCount   string `json:"FailCount" xml:"FailCount"`
-	KeyPairName string `json:"KeyPairName" xml:"KeyPairName"`
-	Results     struct {
-		Result []struct {
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Success    string `json:"Success" xml:"Success"`
-			Code       string `json:"Code" xml:"Code"`
-			Message    string `json:"Message" xml:"Message"`
-		} `json:"Result" xml:"Result"`
-	} `json:"Results" xml:"Results"`
+	RequestId   string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount  string                 `json:"TotalCount" xml:"TotalCount"`
+	FailCount   string                 `json:"FailCount" xml:"FailCount"`
+	KeyPairName string                 `json:"KeyPairName" xml:"KeyPairName"`
+	Results     ResultsInDetachKeyPair `json:"Results" xml:"Results"`
 }
 
 func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachKeyPair", "", "")
 	return
 }
 

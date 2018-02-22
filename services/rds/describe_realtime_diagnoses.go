@@ -67,15 +67,15 @@ func (client *Client) DescribeRealtimeDiagnosesWithCallback(request *DescribeRea
 
 type DescribeRealtimeDiagnosesRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeRealtimeDiagnosesResponse struct {
@@ -85,21 +85,14 @@ type DescribeRealtimeDiagnosesResponse struct {
 	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Tasks            struct {
-		RealtimeDiagnoseTasks []struct {
-			CreateTime  string `json:"CreateTime" xml:"CreateTime"`
-			TaskId      string `json:"TaskId" xml:"TaskId"`
-			HealthScore string `json:"HealthScore" xml:"HealthScore"`
-			Status      string `json:"Status" xml:"Status"`
-		} `json:"RealtimeDiagnoseTasks" xml:"RealtimeDiagnoseTasks"`
-	} `json:"Tasks" xml:"Tasks"`
+	Tasks            Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
 func CreateDescribeRealtimeDiagnosesRequest() (request *DescribeRealtimeDiagnosesRequest) {
 	request = &DescribeRealtimeDiagnosesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRealtimeDiagnoses", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRealtimeDiagnoses", "", "")
 	return
 }
 

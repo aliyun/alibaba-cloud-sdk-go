@@ -67,13 +67,13 @@ func (client *Client) DeleteRulesWithCallback(request *DeleteRulesRequest, callb
 
 type DeleteRulesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	RuleIds              string           `position:"Query" name:"RuleIds"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	RuleIds              string           `position:"Query" name:"RuleIds"`
 }
 
 type DeleteRulesResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteRulesRequest() (request *DeleteRulesRequest) {
 	request = &DeleteRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteRules", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteRules", "", "")
 	return
 }
 

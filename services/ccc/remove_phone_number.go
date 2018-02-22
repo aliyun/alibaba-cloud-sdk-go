@@ -67,8 +67,8 @@ func (client *Client) RemovePhoneNumberWithCallback(request *RemovePhoneNumberRe
 
 type RemovePhoneNumberRequest struct {
 	*requests.RpcRequest
-	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
 	InstanceId    string `position:"Query" name:"InstanceId"`
+	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
 }
 
 type RemovePhoneNumberResponse struct {

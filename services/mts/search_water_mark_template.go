@@ -67,51 +67,29 @@ func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMa
 
 type SearchWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	State                string           `position:"Query" name:"State"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SearchWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int    `json:"PageSize" xml:"PageSize"`
-	WaterMarkTemplateList struct {
-		WaterMarkTemplate []struct {
-			Id       string `json:"Id" xml:"Id"`
-			Name     string `json:"Name" xml:"Name"`
-			Width    string `json:"Width" xml:"Width"`
-			Height   string `json:"Height" xml:"Height"`
-			Dx       string `json:"Dx" xml:"Dx"`
-			Dy       string `json:"Dy" xml:"Dy"`
-			ReferPos string `json:"ReferPos" xml:"ReferPos"`
-			Type     string `json:"Type" xml:"Type"`
-			State    string `json:"State" xml:"State"`
-			Timeline struct {
-				Start    string `json:"Start" xml:"Start"`
-				Duration string `json:"Duration" xml:"Duration"`
-			} `json:"Timeline" xml:"Timeline"`
-			RatioRefer struct {
-				Dx     string `json:"Dx" xml:"Dx"`
-				Dy     string `json:"Dy" xml:"Dy"`
-				Width  string `json:"Width" xml:"Width"`
-				Height string `json:"Height" xml:"Height"`
-			} `json:"RatioRefer" xml:"RatioRefer"`
-		} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
-	} `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	RequestId             string                                         `json:"RequestId" xml:"RequestId"`
+	TotalCount            int                                            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int                                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                                            `json:"PageSize" xml:"PageSize"`
+	WaterMarkTemplateList WaterMarkTemplateListInSearchWaterMarkTemplate `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {
 	request = &SearchWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "", "")
 	return
 }
 

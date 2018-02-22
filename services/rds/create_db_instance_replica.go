@@ -67,32 +67,32 @@ func (client *Client) CreateDBInstanceReplicaWithCallback(request *CreateDBInsta
 
 type CreateDBInstanceReplicaRequest struct {
 	*requests.RpcRequest
-	ReplicaMode           string           `position:"Query" name:"ReplicaMode"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceDBInstanceId    string           `position:"Query" name:"SourceDBInstanceId"`
+	Engine                string           `position:"Query" name:"Engine"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string           `position:"Query" name:"PayType"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	Engine                string           `position:"Query" name:"Engine"`
-	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
-	Period                string           `position:"Query" name:"Period"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	DomainMode            string           `position:"Query" name:"DomainMode"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
-	SourceDBInstanceId    string           `position:"Query" name:"SourceDBInstanceId"`
-	ReplicaDescription    string           `position:"Query" name:"ReplicaDescription"`
+	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	PayType               string           `position:"Query" name:"PayType"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	ReplicaDescription    string           `position:"Query" name:"ReplicaDescription"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	Period                string           `position:"Query" name:"Period"`
+	ReplicaMode           string           `position:"Query" name:"ReplicaMode"`
+	DomainMode            string           `position:"Query" name:"DomainMode"`
 }
 
 type CreateDBInstanceReplicaResponse struct {
@@ -108,7 +108,7 @@ func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaReq
 	request = &CreateDBInstanceReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "", "")
 	return
 }
 

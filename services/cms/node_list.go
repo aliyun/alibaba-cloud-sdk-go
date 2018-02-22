@@ -67,14 +67,14 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 
 type NodeListRequest struct {
 	*requests.RpcRequest
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Status        string           `position:"Query" name:"Status"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceIds   string           `position:"Query" name:"InstanceIds"`
-	KeyWord       string           `position:"Query" name:"KeyWord"`
-	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
 	UserId        requests.Integer `position:"Query" name:"UserId"`
 	HostName      string           `position:"Query" name:"HostName"`
+	KeyWord       string           `position:"Query" name:"KeyWord"`
+	InstanceIds   string           `position:"Query" name:"InstanceIds"`
+	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Status        string           `position:"Query" name:"Status"`
 }
 
 type NodeListResponse struct {
@@ -87,30 +87,14 @@ type NodeListResponse struct {
 	PageSize     int    `json:"PageSize" xml:"PageSize"`
 	PageTotal    int    `json:"PageTotal" xml:"PageTotal"`
 	Total        int    `json:"Total" xml:"Total"`
-	Nodes        struct {
-		Node []struct {
-			InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-			SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-			HostName         string `json:"HostName" xml:"HostName"`
-			AliUid           int    `json:"AliUid" xml:"AliUid"`
-			OperatingSystem  string `json:"OperatingSystem" xml:"OperatingSystem"`
-			IpGroup          string `json:"IpGroup" xml:"IpGroup"`
-			Region           string `json:"Region" xml:"Region"`
-			TianjimonVersion string `json:"TianjimonVersion" xml:"TianjimonVersion"`
-			EipAddress       string `json:"EipAddress" xml:"EipAddress"`
-			EipId            string `json:"EipId" xml:"EipId"`
-			AliyunHost       bool   `json:"AliyunHost" xml:"AliyunHost"`
-			NatIp            string `json:"NatIp" xml:"NatIp"`
-			NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-		} `json:"Node" xml:"Node"`
-	} `json:"Nodes" xml:"Nodes"`
+	Nodes        Nodes  `json:"Nodes" xml:"Nodes"`
 }
 
 func CreateNodeListRequest() (request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "", "")
 	return
 }
 

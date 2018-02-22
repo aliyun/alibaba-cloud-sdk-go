@@ -67,29 +67,29 @@ func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callbac
 
 type CreateDiskRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId           string           `position:"Query" name:"SnapshotId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	DiskName             string           `position:"Query" name:"DiskName"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	DiskCategory         string           `position:"Query" name:"DiskCategory"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Size                 requests.Integer `position:"Query" name:"Size"`
-	Encrypted            requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	DiskName             string           `position:"Query" name:"DiskName"`
+	Size                 requests.Integer `position:"Query" name:"Size"`
+	DiskCategory         string           `position:"Query" name:"DiskCategory"`
+	Description          string           `position:"Query" name:"Description"`
+	Encrypted            requests.Boolean `position:"Query" name:"Encrypted"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type CreateDiskResponse struct {
@@ -102,7 +102,7 @@ func CreateCreateDiskRequest() (request *CreateDiskRequest) {
 	request = &CreateDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDisk", "", "")
 	return
 }
 

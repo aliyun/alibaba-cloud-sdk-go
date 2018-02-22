@@ -67,13 +67,13 @@ func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDe
 
 type ModifyDeploymentSetAttributeRequest struct {
 	*requests.RpcRequest
-	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
 	Description          string           `position:"Query" name:"Description"`
 	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDeploymentSetAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAt
 	request = &ModifyDeploymentSetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "", "")
 	return
 }
 

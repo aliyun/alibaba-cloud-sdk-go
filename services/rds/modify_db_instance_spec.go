@@ -67,16 +67,16 @@ func (client *Client) ModifyDBInstanceSpecWithCallback(request *ModifyDBInstance
 
 type ModifyDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PayType              string           `position:"Query" name:"PayType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PayType              string           `position:"Query" name:"PayType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 }
 
 type ModifyDBInstanceSpecResponse struct {
@@ -88,7 +88,7 @@ func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) 
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "", "")
 	return
 }
 

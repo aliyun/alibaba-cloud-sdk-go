@@ -67,25 +67,15 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
-	Config        string           `position:"Query" name:"Config"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Config        string           `position:"Query" name:"Config"`
 }
 
 type DescribeUserConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Configs   struct {
-		OssLogConfig struct {
-			Enable string `json:"Enable" xml:"Enable"`
-			Bucket string `json:"Bucket" xml:"Bucket"`
-			Prefix string `json:"Prefix" xml:"Prefix"`
-		} `json:"OssLogConfig" xml:"OssLogConfig"`
-		GreenManagerConfig struct {
-			Quota string `json:"Quota" xml:"Quota"`
-			Ratio string `json:"Ratio" xml:"Ratio"`
-		} `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
-	} `json:"Configs" xml:"Configs"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Configs   Configs `json:"Configs" xml:"Configs"`
 }
 
 func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {

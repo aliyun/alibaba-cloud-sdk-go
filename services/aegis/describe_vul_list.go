@@ -67,27 +67,27 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Product         string           `position:"Query" name:"Product"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	Level           string           `position:"Query" name:"Level"`
-	Resource        string           `position:"Query" name:"Resource"`
-	OrderBy         string           `position:"Query" name:"OrderBy"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	Type            string           `position:"Query" name:"Type"`
-	LastTsEnd       requests.Integer `position:"Query" name:"LastTsEnd"`
-	BatchName       string           `position:"Query" name:"BatchName"`
-	PatchId         requests.Integer `position:"Query" name:"PatchId"`
-	AliasName       string           `position:"Query" name:"AliasName"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Name            string           `position:"Query" name:"Name"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	Lang            string           `position:"Query" name:"Lang"`
-	LastTsStart     requests.Integer `position:"Query" name:"LastTsStart"`
-	Necessity       string           `position:"Query" name:"Necessity"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Type            string           `position:"Query" name:"Type"`
 	Uuids           string           `position:"Query" name:"Uuids"`
+	Name            string           `position:"Query" name:"Name"`
+	PatchId         requests.Integer `position:"Query" name:"PatchId"`
+	Level           string           `position:"Query" name:"Level"`
+	Product         string           `position:"Query" name:"Product"`
+	LastTsStart     requests.Integer `position:"Query" name:"LastTsStart"`
+	LastTsEnd       requests.Integer `position:"Query" name:"LastTsEnd"`
+	StatusList      string           `position:"Query" name:"StatusList"`
+	OrderBy         string           `position:"Query" name:"OrderBy"`
 	Direction       string           `position:"Query" name:"Direction"`
+	AliasName       string           `position:"Query" name:"AliasName"`
+	BatchName       string           `position:"Query" name:"BatchName"`
+	Resource        string           `position:"Query" name:"Resource"`
+	Necessity       string           `position:"Query" name:"Necessity"`
+	Dealed          string           `position:"Query" name:"Dealed"`
+	Lang            string           `position:"Query" name:"Lang"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeVulListResponse struct {

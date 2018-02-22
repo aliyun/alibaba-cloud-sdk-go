@@ -67,31 +67,15 @@ func (client *Client) DescribeStratetyDetailWithCallback(request *DescribeStrate
 
 type DescribeStratetyDetailRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
 type DescribeStratetyDetailResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Strategy  struct {
-		CycleDays                        int    `json:"CycleDays" xml:"CycleDays"`
-		Name                             string `json:"Name" xml:"Name"`
-		Id                               int    `json:"Id" xml:"Id"`
-		CycleStartTime                   int    `json:"CycleStartTime" xml:"CycleStartTime"`
-		Type                             int    `json:"Type" xml:"Type"`
-		RiskTypeWhiteListQueryResultList []struct {
-			TypeName string `json:"TypeName" xml:"TypeName"`
-			Alias    string `json:"Alias" xml:"Alias"`
-			On       bool   `json:"On" xml:"On"`
-			SubTypes []struct {
-				TypeName string `json:"TypeName" xml:"TypeName"`
-				Alias    string `json:"Alias" xml:"Alias"`
-				On       bool   `json:"On" xml:"On"`
-			} `json:"SubTypes" xml:"SubTypes"`
-		} `json:"RiskTypeWhiteListQueryResultList" xml:"RiskTypeWhiteListQueryResultList"`
-	} `json:"Strategy" xml:"Strategy"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Strategy  Strategy `json:"Strategy" xml:"Strategy"`
 }
 
 func CreateDescribeStratetyDetailRequest() (request *DescribeStratetyDetailRequest) {

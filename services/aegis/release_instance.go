@@ -67,8 +67,8 @@ func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceReques
 
 type ReleaseInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 type ReleaseInstanceResponse struct {

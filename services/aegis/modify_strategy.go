@@ -67,12 +67,12 @@ func (client *Client) ModifyStrategyWithCallback(request *ModifyStrategyRequest,
 
 type ModifyStrategyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskSubTypeName string           `position:"Query" name:"RiskSubTypeName"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	CycleStartTime  string           `position:"Query" name:"CycleStartTime"`
-	Name            string           `position:"Query" name:"Name"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CycleDays       string           `position:"Query" name:"CycleDays"`
+	Name            string           `position:"Query" name:"Name"`
+	CycleStartTime  string           `position:"Query" name:"CycleStartTime"`
+	RiskSubTypeName string           `position:"Query" name:"RiskSubTypeName"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
@@ -82,9 +82,7 @@ type ModifyStrategyResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Result         struct {
-		StrategyId int `json:"StrategyId" xml:"StrategyId"`
-	} `json:"Result" xml:"Result"`
+	Result         Result `json:"Result" xml:"Result"`
 }
 
 func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {

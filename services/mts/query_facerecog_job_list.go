@@ -67,56 +67,25 @@ func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJ
 
 type QueryFacerecogJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	FacerecogJobIds      string           `position:"Query" name:"FacerecogJobIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	FacerecogJobIds      string           `position:"Query" name:"FacerecogJobIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryFacerecogJobListResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	NonExistIds struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistIds" xml:"NonExistIds"`
-	FacerecogJobList struct {
-		FacerecogJob []struct {
-			Id           string `json:"Id" xml:"Id"`
-			UserData     string `json:"UserData" xml:"UserData"`
-			PipelineId   string `json:"PipelineId" xml:"PipelineId"`
-			State        string `json:"State" xml:"State"`
-			Code         string `json:"Code" xml:"Code"`
-			Message      string `json:"Message" xml:"Message"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Input        struct {
-				Bucket   string `json:"Bucket" xml:"Bucket"`
-				Location string `json:"Location" xml:"Location"`
-				Object   string `json:"Object" xml:"Object"`
-			} `json:"Input" xml:"Input"`
-			VideoFacerecogResult struct {
-				Facerecogs struct {
-					Facerecog []struct {
-						Time  string `json:"Time" xml:"Time"`
-						Faces struct {
-							Face []struct {
-								Name   string `json:"Name" xml:"Name"`
-								Score  string `json:"Score" xml:"Score"`
-								Target string `json:"Target" xml:"Target"`
-							} `json:"Face" xml:"Face"`
-						} `json:"Faces" xml:"Faces"`
-					} `json:"Facerecog" xml:"Facerecog"`
-				} `json:"Facerecogs" xml:"Facerecogs"`
-			} `json:"VideoFacerecogResult" xml:"VideoFacerecogResult"`
-		} `json:"FacerecogJob" xml:"FacerecogJob"`
-	} `json:"FacerecogJobList" xml:"FacerecogJobList"`
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
+	NonExistIds      NonExistIdsInQueryFacerecogJobList `json:"NonExistIds" xml:"NonExistIds"`
+	FacerecogJobList FacerecogJobList                   `json:"FacerecogJobList" xml:"FacerecogJobList"`
 }
 
 func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "", "")
 	return
 }
 

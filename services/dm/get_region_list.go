@@ -67,29 +67,24 @@ func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, c
 
 type GetRegionListRequest struct {
 	*requests.RpcRequest
-	Total                string           `position:"Query" name:"Total"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Offset               string           `position:"Query" name:"Offset"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Total                string           `position:"Query" name:"Total"`
+	Offset               string           `position:"Query" name:"Offset"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 type GetRegionListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Total     int    `json:"Total" xml:"Total"`
-	PageNo    int    `json:"PageNo" xml:"PageNo"`
-	PageSize  int    `json:"PageSize" xml:"PageSize"`
-	Data      struct {
-		RegionList []struct {
-			Region     string `json:"Region" xml:"Region"`
-			RegionDesc string `json:"RegionDesc" xml:"RegionDesc"`
-		} `json:"regionList" xml:"regionList"`
-	} `json:"data" xml:"data"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Total     int                 `json:"Total" xml:"Total"`
+	PageNo    int                 `json:"PageNo" xml:"PageNo"`
+	PageSize  int                 `json:"PageSize" xml:"PageSize"`
+	Data      DataInGetRegionList `json:"data" xml:"data"`
 }
 
 func CreateGetRegionListRequest() (request *GetRegionListRequest) {

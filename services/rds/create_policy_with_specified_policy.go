@@ -67,12 +67,12 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithCallback(request *Creat
 
 type CreatePolicyWithSpecifiedPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	PolicyId             string           `position:"Query" name:"PolicyId"`
 }
 
@@ -85,7 +85,7 @@ func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSp
 	request = &CreatePolicyWithSpecifiedPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy", "", "")
 	return
 }
 

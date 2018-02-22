@@ -67,34 +67,19 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *De
 
 type DescribeLiveStreamRecordIndexFilesRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	RecordIndexInfoList struct {
-		RecordIndexInfo []struct {
-			RecordId   string  `json:"RecordId" xml:"RecordId"`
-			RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
-			DomainName string  `json:"DomainName" xml:"DomainName"`
-			AppName    string  `json:"AppName" xml:"AppName"`
-			StreamName string  `json:"StreamName" xml:"StreamName"`
-			OssObject  string  `json:"OssObject" xml:"OssObject"`
-			StartTime  string  `json:"StartTime" xml:"StartTime"`
-			EndTime    string  `json:"EndTime" xml:"EndTime"`
-			Duration   float64 `json:"Duration" xml:"Duration"`
-			Height     int     `json:"Height" xml:"Height"`
-			Width      int     `json:"Width" xml:"Width"`
-			CreateTime string  `json:"CreateTime" xml:"CreateTime"`
-		} `json:"RecordIndexInfo" xml:"RecordIndexInfo"`
-	} `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	RecordIndexInfoList RecordIndexInfoList `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
 }
 
 func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStreamRecordIndexFilesRequest) {

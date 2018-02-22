@@ -71,18 +71,8 @@ type ListVirtualMFADevicesRequest struct {
 
 type ListVirtualMFADevicesResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VirtualMFADevices struct {
-		VirtualMFADevice []struct {
-			SerialNumber string `json:"SerialNumber" xml:"SerialNumber"`
-			ActivateDate string `json:"ActivateDate" xml:"ActivateDate"`
-			User         struct {
-				UserId      string `json:"UserId" xml:"UserId"`
-				UserName    string `json:"UserName" xml:"UserName"`
-				DisplayName string `json:"DisplayName" xml:"DisplayName"`
-			} `json:"User" xml:"User"`
-		} `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
-	} `json:"VirtualMFADevices" xml:"VirtualMFADevices"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	VirtualMFADevices VirtualMFADevices `json:"VirtualMFADevices" xml:"VirtualMFADevices"`
 }
 
 func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest) {

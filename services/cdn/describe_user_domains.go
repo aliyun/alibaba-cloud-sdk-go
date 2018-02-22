@@ -67,45 +67,28 @@ func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomai
 
 type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	CdnType          string           `position:"Query" name:"CdnType"`
-	FuncId           string           `position:"Query" name:"FuncId"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	Sources          string           `position:"Query" name:"Sources"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	DomainName       string           `position:"Query" name:"DomainName"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
+	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	Sources          string           `position:"Query" name:"Sources"`
+	CdnType          string           `position:"Query" name:"CdnType"`
+	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	FuncId           string           `position:"Query" name:"FuncId"`
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 }
 
 type DescribeUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Domains    struct {
-		PageData []struct {
-			DomainName      string `json:"DomainName" xml:"DomainName"`
-			Cname           string `json:"Cname" xml:"Cname"`
-			CdnType         string `json:"CdnType" xml:"CdnType"`
-			DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
-			GmtCreated      string `json:"GmtCreated" xml:"GmtCreated"`
-			GmtModified     string `json:"GmtModified" xml:"GmtModified"`
-			Description     string `json:"Description" xml:"Description"`
-			SourceType      string `json:"SourceType" xml:"SourceType"`
-			SslProtocol     string `json:"SslProtocol" xml:"SslProtocol"`
-			ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			Sandbox         string `json:"Sandbox" xml:"Sandbox"`
-			Sources         struct {
-				Source []string `json:"Source" xml:"Source"`
-			} `json:"Sources" xml:"Sources"`
-		} `json:"PageData" xml:"PageData"`
-	} `json:"Domains" xml:"Domains"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	Domains    DomainsInDescribeUserDomains `json:"Domains" xml:"Domains"`
 }
 
 func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {

@@ -67,11 +67,11 @@ func (client *Client) DeleteHaVipWithCallback(request *DeleteHaVipRequest, callb
 
 type DeleteHaVipRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
 }
 
@@ -84,7 +84,7 @@ func CreateDeleteHaVipRequest() (request *DeleteHaVipRequest) {
 	request = &DeleteHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteHaVip", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteHaVip", "", "")
 	return
 }
 

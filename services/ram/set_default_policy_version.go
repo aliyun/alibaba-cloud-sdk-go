@@ -67,8 +67,8 @@ func (client *Client) SetDefaultPolicyVersionWithCallback(request *SetDefaultPol
 
 type SetDefaultPolicyVersionRequest struct {
 	*requests.RpcRequest
-	VersionId  string `position:"Query" name:"VersionId"`
 	PolicyName string `position:"Query" name:"PolicyName"`
+	VersionId  string `position:"Query" name:"VersionId"`
 }
 
 type SetDefaultPolicyVersionResponse struct {

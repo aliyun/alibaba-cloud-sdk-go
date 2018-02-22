@@ -67,24 +67,19 @@ func (client *Client) DescribeLiveStreamNumberListWithCallback(request *Describe
 
 type DescribeLiveStreamNumberListRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamNumberListResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DomainName        string `json:"DomainName" xml:"DomainName"`
-	StreamNumberInfos struct {
-		StreamNumberInfo []struct {
-			Number int    `json:"Number" xml:"Number"`
-			Time   string `json:"Time" xml:"Time"`
-		} `json:"StreamNumberInfo" xml:"StreamNumberInfo"`
-	} `json:"StreamNumberInfos" xml:"StreamNumberInfos"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	DomainName        string            `json:"DomainName" xml:"DomainName"`
+	StreamNumberInfos StreamNumberInfos `json:"StreamNumberInfos" xml:"StreamNumberInfos"`
 }
 
 func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNumberListRequest) {

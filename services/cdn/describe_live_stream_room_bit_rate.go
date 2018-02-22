@@ -67,27 +67,19 @@ func (client *Client) DescribeLiveStreamRoomBitRateWithCallback(request *Describ
 
 type DescribeLiveStreamRoomBitRateRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamRoomBitRateResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	FrameRateAndBitRateInfos struct {
-		FrameRateAndBitRateInfo []struct {
-			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
-			VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
-			AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
-			BitRate        float64 `json:"BitRate" xml:"BitRate"`
-			Time           string  `json:"Time" xml:"Time"`
-		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
-	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	RequestId                string                                                  `json:"RequestId" xml:"RequestId"`
+	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamRoomBitRate `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamRoomBitRateRequest() (request *DescribeLiveStreamRoomBitRateRequest) {

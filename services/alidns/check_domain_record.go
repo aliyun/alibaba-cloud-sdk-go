@@ -67,12 +67,12 @@ func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRe
 
 type CheckDomainRecordRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
-	Value        string `position:"Query" name:"Value"`
 	RR           string `position:"Query" name:"RR"`
 	Type         string `position:"Query" name:"Type"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	Value        string `position:"Query" name:"Value"`
 }
 
 type CheckDomainRecordResponse struct {

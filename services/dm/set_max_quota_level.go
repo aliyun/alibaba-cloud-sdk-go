@@ -67,10 +67,10 @@ func (client *Client) SetMaxQuotaLevelWithCallback(request *SetMaxQuotaLevelRequ
 
 type SetMaxQuotaLevelRequest struct {
 	*requests.RpcRequest
-	MaxQuotaLevel        string           `position:"Query" name:"MaxQuotaLevel"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MaxQuotaLevel        string           `position:"Query" name:"MaxQuotaLevel"`
 }
 
 type SetMaxQuotaLevelResponse struct {

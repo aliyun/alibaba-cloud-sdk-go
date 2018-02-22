@@ -67,12 +67,12 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	Key2                 string `position:"Query" name:"Key2"`
-	Key1                 string `position:"Query" name:"Key1"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	Key1                 string `position:"Query" name:"Key1"`
+	Key2                 string `position:"Query" name:"Key2"`
 }
 
 type SetAuthConfigResponse struct {
@@ -86,7 +86,7 @@ func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
 	request = &SetAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SetAuthConfig", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SetAuthConfig", "", "")
 	return
 }
 

@@ -67,23 +67,23 @@ func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOn
 
 type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	PayType               string           `position:"Query" name:"PayType"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	PayType               string           `position:"Query" name:"PayType"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type CreateReadOnlyDBInstanceResponse struct {
@@ -99,7 +99,7 @@ func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceR
 	request = &CreateReadOnlyDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "", "")
 	return
 }
 

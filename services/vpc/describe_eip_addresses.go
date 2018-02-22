@@ -67,67 +67,40 @@ func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddre
 
 type DescribeEipAddressesRequest struct {
 	*requests.RpcRequest
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
-	EipAddress             string           `position:"Query" name:"EipAddress"`
-	Status                 string           `position:"Query" name:"Status"`
-	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
-	Filter2Key             string           `position:"Query" name:"Filter.2.Key"`
-	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	AllocationId           string           `position:"Query" name:"AllocationId"`
-	LockReason             string           `position:"Query" name:"LockReason"`
-	Filter2Value           string           `position:"Query" name:"Filter.2.Value"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
-	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`
-	Filter1Key             string           `position:"Query" name:"Filter.1.Key"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ChargeType             string           `position:"Query" name:"ChargeType"`
+	Status                 string           `position:"Query" name:"Status"`
+	EipAddress             string           `position:"Query" name:"EipAddress"`
+	AllocationId           string           `position:"Query" name:"AllocationId"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	Filter1Key             string           `position:"Query" name:"Filter.1.Key"`
+	Filter2Key             string           `position:"Query" name:"Filter.2.Key"`
+	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`
+	Filter2Value           string           `position:"Query" name:"Filter.2.Value"`
+	LockReason             string           `position:"Query" name:"LockReason"`
+	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`
+	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
+	ChargeType             string           `position:"Query" name:"ChargeType"`
 }
 
 type DescribeEipAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	EipAddresses struct {
-		EipAddress []struct {
-			RegionId             string `json:"RegionId" xml:"RegionId"`
-			IpAddress            string `json:"IpAddress" xml:"IpAddress"`
-			AllocationId         string `json:"AllocationId" xml:"AllocationId"`
-			Status               string `json:"Status" xml:"Status"`
-			InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-			Bandwidth            string `json:"Bandwidth" xml:"Bandwidth"`
-			EipBandwidth         string `json:"EipBandwidth" xml:"EipBandwidth"`
-			InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
-			AllocationTime       string `json:"AllocationTime" xml:"AllocationTime"`
-			InstanceType         string `json:"InstanceType" xml:"InstanceType"`
-			InstanceRegionId     string `json:"InstanceRegionId" xml:"InstanceRegionId"`
-			ChargeType           string `json:"ChargeType" xml:"ChargeType"`
-			ExpiredTime          string `json:"ExpiredTime" xml:"ExpiredTime"`
-			Name                 string `json:"Name" xml:"Name"`
-			Descritpion          string `json:"Descritpion" xml:"Descritpion"`
-			BandwidthPackageId   string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-			BandwidthPackageType string `json:"BandwidthPackageType" xml:"BandwidthPackageType"`
-			AvailableRegions     struct {
-				AvailableRegion []string `json:"AvailableRegion" xml:"AvailableRegion"`
-			} `json:"AvailableRegions" xml:"AvailableRegions"`
-			OperationLocks struct {
-				LockReason []struct {
-					LockReason string `json:"LockReason" xml:"LockReason"`
-				} `json:"LockReason" xml:"LockReason"`
-			} `json:"OperationLocks" xml:"OperationLocks"`
-		} `json:"EipAddress" xml:"EipAddress"`
-	} `json:"EipAddresses" xml:"EipAddresses"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	EipAddresses EipAddresses `json:"EipAddresses" xml:"EipAddresses"`
 }
 
 func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) {
 	request = &DescribeEipAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipAddresses", "", "")
 	return
 }
 

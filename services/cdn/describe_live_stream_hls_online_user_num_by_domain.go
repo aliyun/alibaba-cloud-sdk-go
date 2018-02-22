@@ -67,29 +67,23 @@ func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithCallback(req
 
 type DescribeLiveStreamHlsOnlineUserNumByDomainRequest struct {
 	*requests.RpcRequest
-	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int    `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	Count           int    `json:"Count" xml:"Count"`
-	PageNumber      int    `json:"pageNumber" xml:"pageNumber"`
-	PageSize        int    `json:"pageSize" xml:"pageSize"`
-	OnlineUserInfo  struct {
-		LiveStreamOnlineUserNumInfo []struct {
-			StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
-			UserNumber int    `json:"UserNumber" xml:"UserNumber"`
-			Time       string `json:"Time" xml:"Time"`
-		} `json:"LiveStreamOnlineUserNumInfo" xml:"LiveStreamOnlineUserNumInfo"`
-	} `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string                                                     `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int                                                        `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	Count           int                                                        `json:"Count" xml:"Count"`
+	PageNumber      int                                                        `json:"pageNumber" xml:"pageNumber"`
+	PageSize        int                                                        `json:"pageSize" xml:"pageSize"`
+	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamHlsOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {

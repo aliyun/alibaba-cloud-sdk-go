@@ -67,13 +67,13 @@ func (client *Client) DeleteLoadBalancerWithCallback(request *DeleteLoadBalancer
 
 type DeleteLoadBalancerRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DeleteLoadBalancerResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteLoadBalancerRequest() (request *DeleteLoadBalancerRequest) {
 	request = &DeleteLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteLoadBalancer", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteLoadBalancer", "", "")
 	return
 }
 

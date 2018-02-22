@@ -67,31 +67,29 @@ func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysReques
 
 type DescribeTagKeysRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
 }
 
 type DescribeTagKeysResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	TagKeys    struct {
-		TagKey []string `json:"TagKey" xml:"TagKey"`
-	} `json:"TagKeys" xml:"TagKeys"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	TagKeys    TagKeys `json:"TagKeys" xml:"TagKeys"`
 }
 
 func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 	request = &DescribeTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTagKeys", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTagKeys", "", "")
 	return
 }
 

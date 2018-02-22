@@ -67,11 +67,11 @@ func (client *Client) ApplyAutoSnapshotPolicyWithCallback(request *ApplyAutoSnap
 
 type ApplyAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AutoSnapshotPolicyId string           `position:"Query" name:"autoSnapshotPolicyId"`
 	DiskIds              string           `position:"Query" name:"diskIds"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ApplyAutoSnapshotPolicyResponse struct {
@@ -83,7 +83,7 @@ func CreateApplyAutoSnapshotPolicyRequest() (request *ApplyAutoSnapshotPolicyReq
 	request = &ApplyAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "", "")
 	return
 }
 

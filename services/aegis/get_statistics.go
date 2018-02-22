@@ -67,8 +67,8 @@ func (client *Client) GetStatisticsWithCallback(request *GetStatisticsRequest, c
 
 type GetStatisticsRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
 	StartTime string `position:"Query" name:"StartTime"`
+	EndTime   string `position:"Query" name:"EndTime"`
 }
 
 type GetStatisticsResponse struct {
@@ -77,12 +77,7 @@ type GetStatisticsResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		Account int `json:"Account" xml:"Account"`
-		Health  int `json:"Health" xml:"Health"`
-		Patch   int `json:"Patch" xml:"Patch"`
-		Trojan  int `json:"Trojan" xml:"Trojan"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetStatisticsRequest() (request *GetStatisticsRequest) {

@@ -67,35 +67,26 @@ func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTar
 
 type DescribeMountTargetsRequest struct {
 	*requests.RpcRequest
-	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	MountTargetDomain string           `position:"Query" name:"MountTargetDomain"`
-	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 	FileSystemId      string           `position:"Query" name:"FileSystemId"`
+	MountTargetDomain string           `position:"Query" name:"MountTargetDomain"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	MountTargets struct {
-		MountTarget []struct {
-			MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-			NetworkType       string `json:"NetworkType" xml:"NetworkType"`
-			VpcId             string `json:"VpcId" xml:"VpcId"`
-			VswId             string `json:"VswId" xml:"VswId"`
-			AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
-			Status            string `json:"Status" xml:"Status"`
-		} `json:"MountTarget" xml:"MountTarget"`
-	} `json:"MountTargets" xml:"MountTargets"`
+	RequestId    string                             `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                                `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int                                `json:"PageSize" xml:"PageSize"`
+	PageNumber   int                                `json:"PageNumber" xml:"PageNumber"`
+	MountTargets MountTargetsInDescribeMountTargets `json:"MountTargets" xml:"MountTargets"`
 }
 
 func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) {
 	request = &DescribeMountTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeMountTargets", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeMountTargets", "", "")
 	return
 }
 

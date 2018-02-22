@@ -67,25 +67,25 @@ func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback 
 
 type CopyImageRequest struct {
 	*requests.RpcRequest
-	Tag4Value              string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId                string           `position:"Query" name:"ImageId"`
-	Tag2Key                string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key                string           `position:"Query" name:"Tag.5.Key"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
+	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
+	ImageId                string           `position:"Query" name:"ImageId"`
 	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Tag3Key                string           `position:"Query" name:"Tag.3.Key"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value              string           `position:"Query" name:"Tag.5.Value"`
 	Tag1Key                string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value              string           `position:"Query" name:"Tag.1.Value"`
-	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag2Value              string           `position:"Query" name:"Tag.2.Value"`
+	Tag2Key                string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key                string           `position:"Query" name:"Tag.3.Key"`
 	Tag4Key                string           `position:"Query" name:"Tag.4.Key"`
-	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
+	Tag5Key                string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value              string           `position:"Query" name:"Tag.1.Value"`
+	Tag2Value              string           `position:"Query" name:"Tag.2.Value"`
 	Tag3Value              string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value              string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value              string           `position:"Query" name:"Tag.5.Value"`
+	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 }
 
 type CopyImageResponse struct {
@@ -98,7 +98,7 @@ func CreateCopyImageRequest() (request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CopyImage", "", "")
 	return
 }
 

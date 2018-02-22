@@ -67,11 +67,11 @@ func (client *Client) ModifyAccountNotificationWithCallback(request *ModifyAccou
 
 type ModifyAccountNotificationRequest struct {
 	*requests.RpcRequest
-	Region               string           `position:"Query" name:"Region"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Status               string           `position:"Query" name:"Status"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Region               string           `position:"Query" name:"Region"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 type ModifyAccountNotificationResponse struct {

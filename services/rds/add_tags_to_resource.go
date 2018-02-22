@@ -67,24 +67,24 @@ func (client *Client) AddTagsToResourceWithCallback(request *AddTagsToResourceRe
 
 type AddTagsToResourceRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddTagsToResourceResponse struct {
@@ -96,7 +96,7 @@ func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
 	request = &AddTagsToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "AddTagsToResource", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "AddTagsToResource", "", "")
 	return
 }
 

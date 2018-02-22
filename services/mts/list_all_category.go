@@ -67,30 +67,23 @@ func (client *Client) ListAllCategoryWithCallback(request *ListAllCategoryReques
 
 type ListAllCategoryRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ListAllCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	CategoryList struct {
-		Category []struct {
-			CateId   string `json:"CateId" xml:"CateId"`
-			CateName string `json:"CateName" xml:"CateName"`
-			ParentId string `json:"ParentId" xml:"ParentId"`
-			Level    string `json:"Level" xml:"Level"`
-		} `json:"Category" xml:"Category"`
-	} `json:"CategoryList" xml:"CategoryList"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	CategoryList CategoryList `json:"CategoryList" xml:"CategoryList"`
 }
 
 func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "", "")
 	return
 }
 

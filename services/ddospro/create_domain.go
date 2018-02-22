@@ -67,13 +67,13 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 
 type CreateDomainRequest struct {
 	*requests.RpcRequest
-	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	Ip              string           `position:"Query" name:"Ip"`
 	Type            string           `position:"Query" name:"Type"`
 	CcEnable        requests.Boolean `position:"Query" name:"CcEnable"`
+	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
 	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
-	Ip              string           `position:"Query" name:"Ip"`
 }
 
 type CreateDomainResponse struct {

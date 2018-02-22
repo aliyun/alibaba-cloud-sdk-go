@@ -67,16 +67,6 @@ func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, c
 
 type ModifyCommandRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	WorkingDir           string           `position:"Query" name:"WorkingDir"`
-	Description          string           `position:"Query" name:"Description"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	CommandContent       string           `position:"Query" name:"CommandContent"`
-	Timeout              requests.Integer `position:"Query" name:"Timeout"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
 }
 
 type ModifyCommandResponse struct {
@@ -88,7 +78,7 @@ func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
 	request = &ModifyCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyCommand", "", "")
 	return
 }
 

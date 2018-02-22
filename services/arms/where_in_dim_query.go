@@ -67,19 +67,19 @@ func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryReques
 
 type WhereInDimQueryRequest struct {
 	*requests.RpcRequest
-	Limit         requests.Integer             `position:"Query" name:"Limit"`
-	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
 	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
-	ReduceTail    requests.Boolean             `position:"Query" name:"ReduceTail"`
+	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
+	DateStr       string                       `position:"Query" name:"DateStr"`
 	MinTime       requests.Integer             `position:"Query" name:"MinTime"`
 	MaxTime       requests.Integer             `position:"Query" name:"MaxTime"`
-	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
-	DateStr       string                       `position:"Query" name:"DateStr"`
-	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
 	Dimensions    *[]WhereInDimQueryDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
 	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
-	OrderByKey    string                       `position:"Query" name:"OrderByKey"`
+	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
 	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
+	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
+	OrderByKey    string                       `position:"Query" name:"OrderByKey"`
+	Limit         requests.Integer             `position:"Query" name:"Limit"`
+	ReduceTail    requests.Boolean             `position:"Query" name:"ReduceTail"`
 }
 
 type WhereInDimQueryDimensions struct {

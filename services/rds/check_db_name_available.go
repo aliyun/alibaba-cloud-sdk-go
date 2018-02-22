@@ -67,13 +67,13 @@ func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvail
 
 type CheckDBNameAvailableRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CheckDBNameAvailableResponse struct {
@@ -85,7 +85,7 @@ func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) 
 	request = &CheckDBNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBNameAvailable", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBNameAvailable", "", "")
 	return
 }
 

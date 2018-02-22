@@ -67,46 +67,33 @@ func (client *Client) ListMyGroupsWithCallback(request *ListMyGroupsRequest, cal
 
 type ListMyGroupsRequest struct {
 	*requests.RpcRequest
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	Keyword             string           `position:"Query" name:"Keyword"`
-	GroupName           string           `position:"Query" name:"GroupName"`
-	BindUrls            string           `position:"Query" name:"BindUrls"`
 	Type                string           `position:"Query" name:"Type"`
+	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
+	BindUrls            string           `position:"Query" name:"BindUrls"`
+	GroupName           string           `position:"Query" name:"GroupName"`
 }
 
 type ListMyGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	Total        int    `json:"Total" xml:"Total"`
-	Resources    struct {
-		Resource []struct {
-			GroupId       int    `json:"GroupId" xml:"GroupId"`
-			GroupName     string `json:"GroupName" xml:"GroupName"`
-			ServiceId     string `json:"ServiceId" xml:"ServiceId"`
-			BindUrls      string `json:"BindUrls" xml:"BindUrls"`
-			Type          string `json:"Type" xml:"Type"`
-			ContactGroups struct {
-				ContactGroup []struct {
-					Name string `json:"Name" xml:"Name"`
-				} `json:"ContactGroup" xml:"ContactGroup"`
-			} `json:"ContactGroups" xml:"ContactGroups"`
-		} `json:"Resource" xml:"Resource"`
-	} `json:"Resources" xml:"Resources"`
+	RequestId    string                  `json:"RequestId" xml:"RequestId"`
+	Success      bool                    `json:"Success" xml:"Success"`
+	ErrorCode    int                     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	PageNumber   int                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                     `json:"PageSize" xml:"PageSize"`
+	Total        int                     `json:"Total" xml:"Total"`
+	Resources    ResourcesInListMyGroups `json:"Resources" xml:"Resources"`
 }
 
 func CreateListMyGroupsRequest() (request *ListMyGroupsRequest) {
 	request = &ListMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroups", "", "")
 	return
 }
 

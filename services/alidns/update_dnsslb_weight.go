@@ -67,10 +67,10 @@ func (client *Client) UpdateDNSSLBWeightWithCallback(request *UpdateDNSSLBWeight
 
 type UpdateDNSSLBWeightRequest struct {
 	*requests.RpcRequest
-	Weight       requests.Integer `position:"Query" name:"Weight"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	RecordId     string           `position:"Query" name:"RecordId"`
+	Weight       requests.Integer `position:"Query" name:"Weight"`
 }
 
 type UpdateDNSSLBWeightResponse struct {

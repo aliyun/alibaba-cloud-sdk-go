@@ -67,19 +67,19 @@ func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInsta
 
 type ModifyInstanceNetworkSpecRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
+	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	InternetMaxBandwidthIn  requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
+	NetworkChargeType       string           `position:"Query" name:"NetworkChargeType"`
+	AllocatePublicIp        requests.Boolean `position:"Query" name:"AllocatePublicIp"`
+	StartTime               string           `position:"Query" name:"StartTime"`
+	EndTime                 string           `position:"Query" name:"EndTime"`
+	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	EndTime                 string           `position:"Query" name:"EndTime"`
-	StartTime               string           `position:"Query" name:"StartTime"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId              string           `position:"Query" name:"InstanceId"`
-	NetworkChargeType       string           `position:"Query" name:"NetworkChargeType"`
-	InternetMaxBandwidthIn  requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
-	AllocatePublicIp        requests.Boolean `position:"Query" name:"AllocatePublicIp"`
 }
 
 type ModifyInstanceNetworkSpecResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "", "")
 	return
 }
 

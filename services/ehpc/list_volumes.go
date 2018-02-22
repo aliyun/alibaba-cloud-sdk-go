@@ -67,35 +67,24 @@ func (client *Client) ListVolumesWithCallback(request *ListVolumesRequest, callb
 
 type ListVolumesRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListVolumesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Volumes    struct {
-		VolumeInfo []struct {
-			RegionId         string `json:"RegionId" xml:"RegionId"`
-			ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-			ClusterName      string `json:"ClusterName" xml:"ClusterName"`
-			VolumeId         string `json:"VolumeId" xml:"VolumeId"`
-			VolumeType       string `json:"VolumeType" xml:"VolumeType"`
-			VolumeProtocol   string `json:"VolumeProtocol" xml:"VolumeProtocol"`
-			VolumeMountpoint string `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
-			RemoteDirectory  string `json:"RemoteDirectory" xml:"RemoteDirectory"`
-		} `json:"VolumeInfo" xml:"VolumeInfo"`
-	} `json:"Volumes" xml:"Volumes"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	Volumes    Volumes `json:"Volumes" xml:"Volumes"`
 }
 
 func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListVolumes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListVolumes", "", "")
 	return
 }
 

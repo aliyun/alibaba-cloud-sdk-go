@@ -67,14 +67,14 @@ func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSumm
 
 type SubmitVideoSummaryJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoSummaryConfig   string           `position:"Query" name:"VideoSummaryConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitVideoSummaryJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest
 	request = &SubmitVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSummaryJob", "", "")
 	return
 }
 

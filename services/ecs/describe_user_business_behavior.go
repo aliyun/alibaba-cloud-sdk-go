@@ -67,11 +67,6 @@ func (client *Client) DescribeUserBusinessBehaviorWithCallback(request *Describe
 
 type DescribeUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	StatusKey            string           `position:"Query" name:"statusKey"`
 }
 
 type DescribeUserBusinessBehaviorResponse struct {
@@ -84,7 +79,7 @@ func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessB
 	request = &DescribeUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "", "")
 	return
 }
 

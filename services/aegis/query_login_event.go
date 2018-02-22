@@ -67,11 +67,11 @@ func (client *Client) QueryLoginEventWithCallback(request *QueryLoginEventReques
 
 type QueryLoginEventRequest struct {
 	*requests.RpcRequest
-	EndTime     string           `position:"Query" name:"EndTime"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	StartTime   string           `position:"Query" name:"StartTime"`
 	Uuid        string           `position:"Query" name:"Uuid"`
 	Status      requests.Integer `position:"Query" name:"Status"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	EndTime     string           `position:"Query" name:"EndTime"`
 }
 
 type QueryLoginEventResponse struct {
@@ -80,33 +80,7 @@ type QueryLoginEventResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		PageInfo struct {
-			CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
-			PageSize    int `json:"PageSize" xml:"PageSize"`
-			TotalCount  int `json:"TotalCount" xml:"TotalCount"`
-			Count       int `json:"Count" xml:"Count"`
-		} `json:"PageInfo" xml:"PageInfo"`
-		List struct {
-			Entity []struct {
-				Uuid          string `json:"Uuid" xml:"Uuid"`
-				LoginTime     string `json:"LoginTime" xml:"LoginTime"`
-				LoginType     int    `json:"LoginType" xml:"LoginType"`
-				LoginTypeName string `json:"LoginTypeName" xml:"LoginTypeName"`
-				BuyVersion    string `json:"BuyVersion" xml:"BuyVersion"`
-				LoginSourceIp string `json:"LoginSourceIp" xml:"LoginSourceIp"`
-				GroupId       int    `json:"GroupId" xml:"GroupId"`
-				InstanceName  string `json:"InstanceName" xml:"InstanceName"`
-				InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-				Ip            string `json:"Ip" xml:"Ip"`
-				Region        string `json:"Region" xml:"Region"`
-				Status        int    `json:"Status" xml:"Status"`
-				StatusName    string `json:"StatusName" xml:"StatusName"`
-				Location      string `json:"Location" xml:"Location"`
-				UserName      string `json:"UserName" xml:"UserName"`
-			} `json:"Entity" xml:"Entity"`
-		} `json:"List" xml:"List"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {

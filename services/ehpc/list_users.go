@@ -67,9 +67,9 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListUsersResponse struct {
@@ -78,20 +78,14 @@ type ListUsersResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Users      struct {
-		UserInfo []struct {
-			Name    string `json:"Name" xml:"Name"`
-			Group   string `json:"Group" xml:"Group"`
-			AddTime string `json:"AddTime" xml:"AddTime"`
-		} `json:"UserInfo" xml:"UserInfo"`
-	} `json:"Users" xml:"Users"`
+	Users      Users  `json:"Users" xml:"Users"`
 }
 
 func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListUsers", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListUsers", "", "")
 	return
 }
 

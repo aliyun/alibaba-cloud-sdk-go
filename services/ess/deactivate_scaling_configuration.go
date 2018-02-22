@@ -67,10 +67,10 @@ func (client *Client) DeactivateScalingConfigurationWithCallback(request *Deacti
 
 type DeactivateScalingConfigurationRequest struct {
 	*requests.RpcRequest
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeactivateScalingConfigurationResponse struct {
@@ -82,7 +82,7 @@ func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingCo
 	request = &DeactivateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeactivateScalingConfiguration", "", "")
 	return
 }
 

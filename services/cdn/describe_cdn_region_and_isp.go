@@ -73,19 +73,9 @@ type DescribeCdnRegionAndIspRequest struct {
 
 type DescribeCdnRegionAndIspResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Regions   struct {
-		Region []struct {
-			NameZh string `json:"NameZh" xml:"NameZh"`
-			NameEn string `json:"NameEn" xml:"NameEn"`
-		} `json:"Region" xml:"Region"`
-	} `json:"Regions" xml:"Regions"`
-	Isps struct {
-		Isp []struct {
-			NameZh string `json:"NameZh" xml:"NameZh"`
-			NameEn string `json:"NameEn" xml:"NameEn"`
-		} `json:"Isp" xml:"Isp"`
-	} `json:"Isps" xml:"Isps"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
+	Isps      Isps    `json:"Isps" xml:"Isps"`
 }
 
 func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {

@@ -67,11 +67,6 @@ func (client *Client) SignAgreementWithCallback(request *SignAgreementRequest, c
 
 type SignAgreementRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AgreementType        string           `position:"Query" name:"AgreementType"`
 }
 
 type SignAgreementResponse struct {
@@ -83,7 +78,7 @@ func CreateSignAgreementRequest() (request *SignAgreementRequest) {
 	request = &SignAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "SignAgreement", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "SignAgreement", "", "")
 	return
 }
 

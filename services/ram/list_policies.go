@@ -67,27 +67,17 @@ func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, cal
 
 type ListPoliciesRequest struct {
 	*requests.RpcRequest
-	Marker     string           `position:"Query" name:"Marker"`
 	PolicyType string           `position:"Query" name:"PolicyType"`
+	Marker     string           `position:"Query" name:"Marker"`
 	MaxItems   requests.Integer `position:"Query" name:"MaxItems"`
 }
 
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
-	Policies    struct {
-		Policy []struct {
-			PolicyName      string `json:"PolicyName" xml:"PolicyName"`
-			PolicyType      string `json:"PolicyType" xml:"PolicyType"`
-			Description     string `json:"Description" xml:"Description"`
-			DefaultVersion  string `json:"DefaultVersion" xml:"DefaultVersion"`
-			CreateDate      string `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate      string `json:"UpdateDate" xml:"UpdateDate"`
-			AttachmentCount int    `json:"AttachmentCount" xml:"AttachmentCount"`
-		} `json:"Policy" xml:"Policy"`
-	} `json:"Policies" xml:"Policies"`
+	RequestId   string                 `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool                   `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string                 `json:"Marker" xml:"Marker"`
+	Policies    PoliciesInListPolicies `json:"Policies" xml:"Policies"`
 }
 
 func CreateListPoliciesRequest() (request *ListPoliciesRequest) {

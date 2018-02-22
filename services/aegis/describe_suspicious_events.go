@@ -67,8 +67,8 @@ func (client *Client) DescribeSuspiciousEventsWithCallback(request *DescribeSusp
 
 type DescribeSuspiciousEventsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type DescribeSuspiciousEventsResponse struct {

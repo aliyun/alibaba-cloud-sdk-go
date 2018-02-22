@@ -67,21 +67,21 @@ func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRe
 
 type ReplaceSystemDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId                     string           `position:"Query" name:"ImageId"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId                  string           `position:"Query" name:"InstanceId"`
+	ImageId                     string           `position:"Query" name:"ImageId"`
+	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
 	ClientToken                 string           `position:"Query" name:"ClientToken"`
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
-	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
-	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
-	Platform                    string           `position:"Query" name:"Platform"`
-	Password                    string           `position:"Query" name:"Password"`
-	InstanceId                  string           `position:"Query" name:"InstanceId"`
-	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
-	DiskId                      string           `position:"Query" name:"DiskId"`
 	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
+	Password                    string           `position:"Query" name:"Password"`
+	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
+	DiskId                      string           `position:"Query" name:"DiskId"`
+	Platform                    string           `position:"Query" name:"Platform"`
 	Architecture                string           `position:"Query" name:"Architecture"`
+	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 }
 
 type ReplaceSystemDiskResponse struct {
@@ -94,7 +94,7 @@ func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
 	request = &ReplaceSystemDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ReplaceSystemDisk", "", "")
 	return
 }
 

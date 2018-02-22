@@ -67,14 +67,14 @@ func (client *Client) CheckRecoveryConditionsWithCallback(request *CheckRecovery
 
 type CheckRecoveryConditionsRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	BackupFile           string           `position:"Query" name:"BackupFile"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             string           `position:"Query" name:"BackupId"`
+	BackupFile           string           `position:"Query" name:"BackupFile"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CheckRecoveryConditionsResponse struct {
@@ -88,7 +88,7 @@ func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsReq
 	request = &CheckRecoveryConditionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckRecoveryConditions", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckRecoveryConditions", "", "")
 	return
 }
 

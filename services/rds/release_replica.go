@@ -67,12 +67,12 @@ func (client *Client) ReleaseReplicaWithCallback(request *ReleaseReplicaRequest,
 
 type ReleaseReplicaRequest struct {
 	*requests.RpcRequest
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 }
 
 type ReleaseReplicaResponse struct {
@@ -84,7 +84,7 @@ func CreateReleaseReplicaRequest() (request *ReleaseReplicaRequest) {
 	request = &ReleaseReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReplica", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReplica", "", "")
 	return
 }
 

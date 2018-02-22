@@ -67,11 +67,11 @@ func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeI
 
 type DescribeIntranetAttributeKbRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeIntranetAttributeKbResponse struct {
@@ -88,7 +88,7 @@ func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttrib
 	request = &DescribeIntranetAttributeKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "", "")
 	return
 }
 

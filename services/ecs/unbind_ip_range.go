@@ -67,12 +67,12 @@ func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, c
 
 type UnbindIpRangeRequest struct {
 	*requests.RpcRequest
-	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UnbindIpRangeResponse struct {
@@ -84,7 +84,7 @@ func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 	request = &UnbindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnbindIpRange", "", "")
 	return
 }
 

@@ -67,14 +67,14 @@ func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRe
 
 type SubmitVideoGifJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoGifConfig       string           `position:"Query" name:"VideoGifConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitVideoGifJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoGifJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoGifJob", "", "")
 	return
 }
 

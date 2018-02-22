@@ -67,38 +67,32 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	DistinctKey          requests.Boolean `position:"Query" name:"DistinctKey"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	TagSets    struct {
-		TagSet []struct {
-			TagKey        string `json:"TagKey" xml:"TagKey"`
-			TagValue      string `json:"TagValue" xml:"TagValue"`
-			InstanceCount int    `json:"InstanceCount" xml:"InstanceCount"`
-		} `json:"TagSet" xml:"TagSet"`
-	} `json:"TagSets" xml:"TagSets"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	TagSets    TagSets `json:"TagSets" xml:"TagSets"`
 }
 
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeTags", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeTags", "", "")
 	return
 }
 

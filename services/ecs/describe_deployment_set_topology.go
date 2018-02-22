@@ -67,53 +67,29 @@ func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *Describ
 
 type DescribeDeploymentSetTopologyRequest struct {
 	*requests.RpcRequest
-	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	Strategy             string           `position:"Query" name:"Strategy"`
+	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
 	Granularity          string           `position:"Query" name:"Granularity"`
 	Domain               string           `position:"Query" name:"Domain"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Strategy             string           `position:"Query" name:"Strategy"`
 }
 
 type DescribeDeploymentSetTopologyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Switchs   struct {
-		Switch []struct {
-			SwitchId string `json:"SwitchId" xml:"SwitchId"`
-			Hosts    struct {
-				Host []struct {
-					HostId      string `json:"HostId" xml:"HostId"`
-					InstanceIds struct {
-						InstanceId []string `json:"InstanceId" xml:"InstanceId"`
-					} `json:"InstanceIds" xml:"InstanceIds"`
-				} `json:"Host" xml:"Host"`
-			} `json:"Hosts" xml:"Hosts"`
-		} `json:"Switch" xml:"Switch"`
-	} `json:"Switchs" xml:"Switchs"`
-	Racks struct {
-		Rack []struct {
-			RackId string `json:"RackId" xml:"RackId"`
-			Hosts1 struct {
-				Host []struct {
-					HostId       string `json:"HostId" xml:"HostId"`
-					InstanceIds3 struct {
-						InstanceId []string `json:"InstanceId" xml:"InstanceId"`
-					} `json:"InstanceIds" xml:"InstanceIds"`
-				} `json:"Host" xml:"Host"`
-			} `json:"Hosts" xml:"Hosts"`
-		} `json:"Rack" xml:"Rack"`
-	} `json:"Racks" xml:"Racks"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Switchs   Switchs `json:"Switchs" xml:"Switchs"`
+	Racks     Racks   `json:"Racks" xml:"Racks"`
 }
 
 func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSetTopologyRequest) {
 	request = &DescribeDeploymentSetTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "", "")
 	return
 }
 

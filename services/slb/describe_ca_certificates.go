@@ -67,36 +67,26 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type DescribeCACertificatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	CACertificates struct {
-		CACertificate []struct {
-			RegionId          string `json:"RegionId" xml:"RegionId"`
-			CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
-			CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
-			Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-			ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-		} `json:"CACertificate" xml:"CACertificate"`
-	} `json:"CACertificates" xml:"CACertificates"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	CACertificates CACertificates `json:"CACertificates" xml:"CACertificates"`
 }
 
 func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesRequest) {
 	request = &DescribeCACertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeCACertificates", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeCACertificates", "", "")
 	return
 }
 

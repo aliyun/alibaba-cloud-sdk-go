@@ -67,13 +67,13 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithCallback(request *ModifyDB
 
 type ModifyDBInstanceMaintainTimeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MaintainTime         string           `position:"Query" name:"MaintainTime"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	MaintainTime         string           `position:"Query" name:"MaintainTime"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDBInstanceMaintainTimeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaint
 	request = &ModifyDBInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "", "")
 	return
 }
 

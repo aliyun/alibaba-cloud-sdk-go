@@ -67,10 +67,10 @@ func (client *Client) DeleteScalingConfigurationWithCallback(request *DeleteScal
 
 type DeleteScalingConfigurationRequest struct {
 	*requests.RpcRequest
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteScalingConfigurationResponse struct {
@@ -82,7 +82,7 @@ func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurat
 	request = &DeleteScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingConfiguration", "", "")
 	return
 }
 

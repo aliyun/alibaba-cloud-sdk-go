@@ -67,31 +67,26 @@ func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeS
 
 type DescribeSnapshotMonitorDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSnapshotMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	MonitorData struct {
-		DataPoint []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Size      int    `json:"Size" xml:"Size"`
-		} `json:"DataPoint" xml:"DataPoint"`
-	} `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string                                   `json:"RequestId" xml:"RequestId"`
+	MonitorData MonitorDataInDescribeSnapshotMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotMonitorData", "", "")
 	return
 }
 

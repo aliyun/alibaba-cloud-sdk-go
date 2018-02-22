@@ -67,9 +67,9 @@ func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRe
 
 type NodeProcessDeleteRequest struct {
 	*requests.RpcRequest
-	Id         string `position:"Query" name:"Id"`
-	Name       string `position:"Query" name:"Name"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Name       string `position:"Query" name:"Name"`
+	Id         string `position:"Query" name:"Id"`
 }
 
 type NodeProcessDeleteResponse struct {
@@ -84,7 +84,7 @@ func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	request = &NodeProcessDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessDelete", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessDelete", "", "")
 	return
 }
 

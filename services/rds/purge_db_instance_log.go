@@ -67,12 +67,12 @@ func (client *Client) PurgeDBInstanceLogWithCallback(request *PurgeDBInstanceLog
 
 type PurgeDBInstanceLogRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type PurgeDBInstanceLogResponse struct {
@@ -84,7 +84,7 @@ func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	request = &PurgeDBInstanceLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "PurgeDBInstanceLog", "", "")
 	return
 }
 

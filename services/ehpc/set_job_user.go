@@ -67,9 +67,9 @@ func (client *Client) SetJobUserWithCallback(request *SetJobUserRequest, callbac
 
 type SetJobUserRequest struct {
 	*requests.RpcRequest
-	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
-	RunasUser         string `position:"Query" name:"RunasUser"`
 	ClusterId         string `position:"Query" name:"ClusterId"`
+	RunasUser         string `position:"Query" name:"RunasUser"`
+	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
 }
 
 type SetJobUserResponse struct {
@@ -81,7 +81,7 @@ func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "SetJobUser", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "SetJobUser", "", "")
 	return
 }
 

@@ -67,19 +67,15 @@ func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback 
 
 type QueryTagsRequest struct {
 	*requests.RpcRequest
-	KeyType   string           `position:"Query" name:"KeyType"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	ClientKey string           `position:"Query" name:"ClientKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
 type QueryTagsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TagInfos  struct {
-		TagInfo []struct {
-			TagName string `json:"TagName" xml:"TagName"`
-		} `json:"TagInfo" xml:"TagInfo"`
-	} `json:"TagInfos" xml:"TagInfos"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	TagInfos  TagInfosInQueryTags `json:"TagInfos" xml:"TagInfos"`
 }
 
 func CreateQueryTagsRequest() (request *QueryTagsRequest) {

@@ -67,14 +67,6 @@ func (client *Client) ModifyHpcClusterAttributeWithCallback(request *ModifyHpcCl
 
 type ModifyHpcClusterAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HpcClusterId         string           `position:"Query" name:"HpcClusterId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
 }
 
 type ModifyHpcClusterAttributeResponse struct {
@@ -86,7 +78,7 @@ func CreateModifyHpcClusterAttributeRequest() (request *ModifyHpcClusterAttribut
 	request = &ModifyHpcClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "", "")
 	return
 }
 

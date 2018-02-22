@@ -67,11 +67,11 @@ func (client *Client) DescribeDBInstanceUserWithCallback(request *DescribeDBInst
 
 type DescribeDBInstanceUserRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 }
 
 type DescribeDBInstanceUserResponse struct {
@@ -85,7 +85,7 @@ func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserReque
 	request = &DescribeDBInstanceUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "", "")
 	return
 }
 

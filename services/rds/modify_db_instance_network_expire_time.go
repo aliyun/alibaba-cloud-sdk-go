@@ -67,13 +67,13 @@ func (client *Client) ModifyDBInstanceNetworkExpireTimeWithCallback(request *Mod
 
 type ModifyDBInstanceNetworkExpireTimeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ModifyDBInstanceNetworkExpireTimeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyDBInstanceNetworkExpireTimeRequest() (request *ModifyDBInstance
 	request = &ModifyDBInstanceNetworkExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "", "")
 	return
 }
 

@@ -67,14 +67,14 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 
 type CreateDatabaseRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBDescription        string           `position:"Query" name:"DBDescription"`
-	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
 	CharacterSetName     string           `position:"Query" name:"CharacterSetName"`
+	DBDescription        string           `position:"Query" name:"DBDescription"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateDatabaseResponse struct {
@@ -86,7 +86,7 @@ func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
 	request = &CreateDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabase", "", "")
 	return
 }
 

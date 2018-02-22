@@ -67,39 +67,24 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeInstanceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	InstanceTypes struct {
-		InstanceType []struct {
-			InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
-			CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-			MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
-			InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-			LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-			LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-			LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
-			GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
-			GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
-			InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
-			BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
-			EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
-		} `json:"InstanceType" xml:"InstanceType"`
-	} `json:"InstanceTypes" xml:"InstanceTypes"`
+	RequestId     string                               `json:"RequestId" xml:"RequestId"`
+	InstanceTypes InstanceTypesInDescribeInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
 func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest) {
 	request = &DescribeInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypes", "", "")
 	return
 }
 

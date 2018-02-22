@@ -67,33 +67,28 @@ func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callb
 
 type CreateRulesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	RuleList             string           `position:"Query" name:"RuleList"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	RuleList             string           `position:"Query" name:"RuleList"`
 }
 
 type CreateRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Rules     struct {
-		Rule []struct {
-			RuleId   string `json:"RuleId" xml:"RuleId"`
-			RuleName string `json:"RuleName" xml:"RuleName"`
-		} `json:"Rule" xml:"Rule"`
-	} `json:"Rules" xml:"Rules"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Rules     RulesInCreateRules `json:"Rules" xml:"Rules"`
 }
 
 func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	request = &CreateRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateRules", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateRules", "", "")
 	return
 }
 

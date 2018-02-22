@@ -67,45 +67,43 @@ func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDn
 
 type DescribeDnsProductInstanceRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
 type DescribeDnsProductInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-	VersionCode           string `json:"VersionCode" xml:"VersionCode"`
-	VersionName           string `json:"VersionName" xml:"VersionName"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	StartTimestamp        int    `json:"StartTimestamp" xml:"StartTimestamp"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
-	EndTimestamp          int    `json:"EndTimestamp" xml:"EndTimestamp"`
-	Domain                string `json:"Domain" xml:"Domain"`
-	BindCount             int    `json:"BindCount" xml:"BindCount"`
-	BindUsedCount         int    `json:"BindUsedCount" xml:"BindUsedCount"`
-	TTLMinValue           int    `json:"TTLMinValue" xml:"TTLMinValue"`
-	SubDomainLevel        int    `json:"SubDomainLevel" xml:"SubDomainLevel"`
-	DnsSLBCount           int    `json:"DnsSLBCount" xml:"DnsSLBCount"`
-	URLForwardCount       int    `json:"URLForwardCount" xml:"URLForwardCount"`
-	DDosDefendFlow        int    `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
-	DDosDefendQuery       int    `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
-	OverseaDDosDefendFlow int    `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
-	SearchEngineLines     string `json:"SearchEngineLines" xml:"SearchEngineLines"`
-	ISPLines              string `json:"ISPLines" xml:"ISPLines"`
-	ISPRegionLines        string `json:"ISPRegionLines" xml:"ISPRegionLines"`
-	OverseaLine           string `json:"OverseaLine" xml:"OverseaLine"`
-	MonitorNodeCount      int    `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
-	MonitorFrequency      int    `json:"MonitorFrequency" xml:"MonitorFrequency"`
-	MonitorTaskCount      int    `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
-	RegionLines           bool   `json:"RegionLines" xml:"RegionLines"`
-	Gslb                  bool   `json:"Gslb" xml:"Gslb"`
-	InClean               bool   `json:"InClean" xml:"InClean"`
-	InBlackHole           bool   `json:"InBlackHole" xml:"InBlackHole"`
-	DnsServers            struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
+	RequestId             string                                 `json:"RequestId" xml:"RequestId"`
+	InstanceId            string                                 `json:"InstanceId" xml:"InstanceId"`
+	VersionCode           string                                 `json:"VersionCode" xml:"VersionCode"`
+	VersionName           string                                 `json:"VersionName" xml:"VersionName"`
+	StartTime             string                                 `json:"StartTime" xml:"StartTime"`
+	StartTimestamp        int                                    `json:"StartTimestamp" xml:"StartTimestamp"`
+	EndTime               string                                 `json:"EndTime" xml:"EndTime"`
+	EndTimestamp          int                                    `json:"EndTimestamp" xml:"EndTimestamp"`
+	Domain                string                                 `json:"Domain" xml:"Domain"`
+	BindCount             int                                    `json:"BindCount" xml:"BindCount"`
+	BindUsedCount         int                                    `json:"BindUsedCount" xml:"BindUsedCount"`
+	TTLMinValue           int                                    `json:"TTLMinValue" xml:"TTLMinValue"`
+	SubDomainLevel        int                                    `json:"SubDomainLevel" xml:"SubDomainLevel"`
+	DnsSLBCount           int                                    `json:"DnsSLBCount" xml:"DnsSLBCount"`
+	URLForwardCount       int                                    `json:"URLForwardCount" xml:"URLForwardCount"`
+	DDosDefendFlow        int                                    `json:"DDosDefendFlow" xml:"DDosDefendFlow"`
+	DDosDefendQuery       int                                    `json:"DDosDefendQuery" xml:"DDosDefendQuery"`
+	OverseaDDosDefendFlow int                                    `json:"OverseaDDosDefendFlow" xml:"OverseaDDosDefendFlow"`
+	SearchEngineLines     string                                 `json:"SearchEngineLines" xml:"SearchEngineLines"`
+	ISPLines              string                                 `json:"ISPLines" xml:"ISPLines"`
+	ISPRegionLines        string                                 `json:"ISPRegionLines" xml:"ISPRegionLines"`
+	OverseaLine           string                                 `json:"OverseaLine" xml:"OverseaLine"`
+	MonitorNodeCount      int                                    `json:"MonitorNodeCount" xml:"MonitorNodeCount"`
+	MonitorFrequency      int                                    `json:"MonitorFrequency" xml:"MonitorFrequency"`
+	MonitorTaskCount      int                                    `json:"MonitorTaskCount" xml:"MonitorTaskCount"`
+	RegionLines           bool                                   `json:"RegionLines" xml:"RegionLines"`
+	Gslb                  bool                                   `json:"Gslb" xml:"Gslb"`
+	InClean               bool                                   `json:"InClean" xml:"InClean"`
+	InBlackHole           bool                                   `json:"InBlackHole" xml:"InBlackHole"`
+	DnsServers            DnsServersInDescribeDnsProductInstance `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInstanceRequest) {

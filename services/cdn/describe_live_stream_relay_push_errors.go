@@ -67,21 +67,17 @@ func (client *Client) DescribeLiveStreamRelayPushErrorsWithCallback(request *Des
 
 type DescribeLiveStreamRelayPushErrorsRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	RelayDomain   string           `position:"Query" name:"RelayDomain"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	RelayDomain   string           `position:"Query" name:"RelayDomain"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamRelayPushErrorsResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	RelayPushErrorsModelList struct {
-		RelayPushErrorsModel []struct {
-			ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-		} `json:"RelayPushErrorsModel" xml:"RelayPushErrorsModel"`
-	} `json:"RelayPushErrorsModelList" xml:"RelayPushErrorsModelList"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	RelayPushErrorsModelList RelayPushErrorsModelList `json:"RelayPushErrorsModelList" xml:"RelayPushErrorsModelList"`
 }
 
 func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStreamRelayPushErrorsRequest) {

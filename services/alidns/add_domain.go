@@ -67,23 +67,21 @@ func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback 
 
 type AddDomainRequest struct {
 	*requests.RpcRequest
+	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
 	GroupId      string `position:"Query" name:"GroupId"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
 }
 
 type AddDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainId   string `json:"DomainId" xml:"DomainId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	PunyCode   string `json:"PunyCode" xml:"PunyCode"`
-	GroupId    string `json:"GroupId" xml:"GroupId"`
-	GroupName  string `json:"GroupName" xml:"GroupName"`
-	DnsServers struct {
-		DnsServer []string `json:"DnsServer" xml:"DnsServer"`
-	} `json:"DnsServers" xml:"DnsServers"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	DomainId   string                `json:"DomainId" xml:"DomainId"`
+	DomainName string                `json:"DomainName" xml:"DomainName"`
+	PunyCode   string                `json:"PunyCode" xml:"PunyCode"`
+	GroupId    string                `json:"GroupId" xml:"GroupId"`
+	GroupName  string                `json:"GroupName" xml:"GroupName"`
+	DnsServers DnsServersInAddDomain `json:"DnsServers" xml:"DnsServers"`
 }
 
 func CreateAddDomainRequest() (request *AddDomainRequest) {

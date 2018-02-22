@@ -67,10 +67,10 @@ func (client *Client) GetUserDomainBlackListWithCallback(request *GetUserDomainB
 
 type GetUserDomainBlackListRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
 type GetUserDomainBlackListResponse struct {

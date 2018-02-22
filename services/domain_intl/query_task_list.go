@@ -67,33 +67,24 @@ func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, c
 
 type QueryTaskListRequest struct {
 	*requests.RpcRequest
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	BeginCreateTime requests.Integer `position:"Query" name:"BeginCreateTime"`
-	PageNum         requests.Integer `position:"Query" name:"PageNum"`
-	EndCreateTime   requests.Integer `position:"Query" name:"EndCreateTime"`
 	UserClientIp    string           `position:"Query" name:"UserClientIp"`
 	Lang            string           `position:"Query" name:"Lang"`
+	BeginCreateTime requests.Integer `position:"Query" name:"BeginCreateTime"`
+	EndCreateTime   requests.Integer `position:"Query" name:"EndCreateTime"`
+	PageNum         requests.Integer `position:"Query" name:"PageNum"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type QueryTaskListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	PrePage        bool   `json:"PrePage" xml:"PrePage"`
-	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	Data           struct {
-		TaskInfo []struct {
-			TaskType   string `json:"TaskType" xml:"TaskType"`
-			TaskNum    int    `json:"TaskNum" xml:"TaskNum"`
-			TaskStatus string `json:"TaskStatus" xml:"TaskStatus"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-			Clientip   string `json:"Clientip" xml:"Clientip"`
-			TaskNo     string `json:"TaskNo" xml:"TaskNo"`
-		} `json:"TaskInfo" xml:"TaskInfo"`
-	} `json:"Data" xml:"Data"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                 `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                 `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int                 `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int                 `json:"PageSize" xml:"PageSize"`
+	PrePage        bool                `json:"PrePage" xml:"PrePage"`
+	NextPage       bool                `json:"NextPage" xml:"NextPage"`
+	Data           DataInQueryTaskList `json:"Data" xml:"Data"`
 }
 
 func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {

@@ -67,13 +67,13 @@ func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipA
 
 type UnassociateEipAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
-	AllocationId         string           `position:"Query" name:"AllocationId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UnassociateEipAddressResponse struct {
@@ -85,7 +85,7 @@ func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest
 	request = &UnassociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateEipAddress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateEipAddress", "", "")
 	return
 }
 

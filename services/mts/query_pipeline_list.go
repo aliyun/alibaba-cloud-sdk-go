@@ -67,40 +67,25 @@ func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRe
 
 type QueryPipelineListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string           `position:"Query" name:"PipelineIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PipelineIds          string           `position:"Query" name:"PipelineIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryPipelineListResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	NonExistPids struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistPids" xml:"NonExistPids"`
-	PipelineList struct {
-		Pipeline []struct {
-			Id           string `json:"Id" xml:"Id"`
-			Name         string `json:"Name" xml:"Name"`
-			State        string `json:"State" xml:"State"`
-			Speed        string `json:"Speed" xml:"Speed"`
-			SpeedLevel   int    `json:"SpeedLevel" xml:"SpeedLevel"`
-			Role         string `json:"Role" xml:"Role"`
-			NotifyConfig struct {
-				Topic     string `json:"Topic" xml:"Topic"`
-				QueueName string `json:"QueueName" xml:"QueueName"`
-			} `json:"NotifyConfig" xml:"NotifyConfig"`
-		} `json:"Pipeline" xml:"Pipeline"`
-	} `json:"PipelineList" xml:"PipelineList"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	NonExistPids NonExistPids                    `json:"NonExistPids" xml:"NonExistPids"`
+	PipelineList PipelineListInQueryPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
 func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	request = &QueryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "", "")
 	return
 }
 

@@ -67,25 +67,12 @@ func (client *Client) DescribeDomainRealTimeQpsDataWithCallback(request *Describ
 
 type DescribeDomainRealTimeQpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime        string           `position:"Query" name:"EndTime"`
-	Version        string           `position:"Query" name:"Version"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainRealTimeQpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      struct {
-		QpsModel []struct {
-			Qps       float64 `json:"Qps" xml:"Qps"`
-			TimeStamp string  `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"QpsModel" xml:"QpsModel"`
-	} `json:"Data" xml:"Data"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	Data      DataInDescribeDomainRealTimeQpsData `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeDomainRealTimeQpsDataRequest() (request *DescribeDomainRealTimeQpsDataRequest) {

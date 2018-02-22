@@ -67,12 +67,12 @@ func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callbac
 
 type DecryptKeyRequest struct {
 	*requests.RpcRequest
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	CiphertextBlob       string `position:"Query" name:"CiphertextBlob"`
 	Rand                 string `position:"Query" name:"Rand"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 type DecryptKeyResponse struct {
@@ -86,7 +86,7 @@ func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	request = &DecryptKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DecryptKey", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DecryptKey", "", "")
 	return
 }
 

@@ -67,39 +67,28 @@ func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callb
 
 type AddPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Speed                string           `position:"Query" name:"Speed"`
-	Name                 string           `position:"Query" name:"Name"`
-	Role                 string           `position:"Query" name:"Role"`
-	SpeedLevel           requests.Integer `position:"Query" name:"SpeedLevel"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Speed                string           `position:"Query" name:"Speed"`
+	SpeedLevel           requests.Integer `position:"Query" name:"SpeedLevel"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	Role                 string           `position:"Query" name:"Role"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		State        string `json:"State" xml:"State"`
-		Speed        string `json:"Speed" xml:"Speed"`
-		SpeedLevel   int    `json:"SpeedLevel" xml:"SpeedLevel"`
-		Role         string `json:"Role" xml:"Role"`
-		NotifyConfig struct {
-			Topic     string `json:"Topic" xml:"Topic"`
-			QueueName string `json:"QueueName" xml:"QueueName"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "", "")
 	return
 }
 

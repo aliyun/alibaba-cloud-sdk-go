@@ -67,42 +67,34 @@ func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImp
 
 type DescibeImportsFromDatabaseRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ImportId             requests.Integer `position:"Query" name:"ImportId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Engine               string           `position:"Query" name:"Engine"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Engine               string           `position:"Query" name:"Engine"`
+	ImportId             requests.Integer `position:"Query" name:"ImportId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescibeImportsFromDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		ImportResultFromDB []struct {
-			ImportId                    int    `json:"ImportId" xml:"ImportId"`
-			ImportDataType              string `json:"ImportDataType" xml:"ImportDataType"`
-			ImportDataStatus            string `json:"ImportDataStatus" xml:"ImportDataStatus"`
-			ImportDataStatusDescription string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
-			IncrementalImportingTime    string `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
-		} `json:"ImportResultFromDB" xml:"ImportResultFromDB"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescibeImportsFromDatabase `json:"Items" xml:"Items"`
 }
 
 func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatabaseRequest) {
 	request = &DescibeImportsFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescibeImportsFromDatabase", "", "")
 	return
 }
 

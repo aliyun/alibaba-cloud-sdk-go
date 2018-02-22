@@ -67,14 +67,14 @@ func (client *Client) UploadCACertificateWithCallback(request *UploadCACertifica
 
 type UploadCACertificateRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	CACertificateName    string           `position:"Query" name:"CACertificateName"`
-	CACertificate        string           `position:"Query" name:"CACertificate"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	CACertificate        string           `position:"Query" name:"CACertificate"`
+	CACertificateName    string           `position:"Query" name:"CACertificateName"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type UploadCACertificateResponse struct {
@@ -92,7 +92,7 @@ func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	request = &UploadCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "", "")
 	return
 }
 

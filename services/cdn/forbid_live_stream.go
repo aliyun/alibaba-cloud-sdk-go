@@ -67,13 +67,13 @@ func (client *Client) ForbidLiveStreamWithCallback(request *ForbidLiveStreamRequ
 
 type ForbidLiveStreamRequest struct {
 	*requests.RpcRequest
-	StreamName     string           `position:"Query" name:"StreamName"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	AppName        string           `position:"Query" name:"AppName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	ResumeTime     string           `position:"Query" name:"ResumeTime"`
+	DomainName     string           `position:"Query" name:"DomainName"`
 	LiveStreamType string           `position:"Query" name:"LiveStreamType"`
+	AppName        string           `position:"Query" name:"AppName"`
+	StreamName     string           `position:"Query" name:"StreamName"`
+	ResumeTime     string           `position:"Query" name:"ResumeTime"`
 }
 
 type ForbidLiveStreamResponse struct {

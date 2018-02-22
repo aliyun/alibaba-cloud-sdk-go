@@ -67,17 +67,14 @@ func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, cal
 
 type QueryDnsHostRequest struct {
 	*requests.RpcRequest
-	Lang       string `position:"Query" name:"Lang"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Lang       string `position:"Query" name:"Lang"`
 }
 
 type QueryDnsHostResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DnsHostList []struct {
-		DnsName string   `json:"DnsName" xml:"DnsName"`
-		IpList  []string `json:"IpList" xml:"IpList"`
-	} `json:"DnsHostList" xml:"DnsHostList"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
+	DnsHostList []DnsHost `json:"DnsHostList" xml:"DnsHostList"`
 }
 
 func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {

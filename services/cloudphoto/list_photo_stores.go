@@ -71,32 +71,18 @@ type ListPhotoStoresRequest struct {
 
 type ListPhotoStoresResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code" xml:"Code"`
-	Message     string `json:"Message" xml:"Message"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Action      string `json:"Action" xml:"Action"`
-	PhotoStores []struct {
-		Id               int    `json:"Id" xml:"Id"`
-		Name             string `json:"Name" xml:"Name"`
-		Remark           string `json:"Remark" xml:"Remark"`
-		AutoCleanEnabled bool   `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-		AutoCleanDays    int    `json:"AutoCleanDays" xml:"AutoCleanDays"`
-		DefaultQuota     int    `json:"DefaultQuota" xml:"DefaultQuota"`
-		Ctime            int    `json:"Ctime" xml:"Ctime"`
-		Mtime            int    `json:"Mtime" xml:"Mtime"`
-		Buckets          []struct {
-			Name   string `json:"Name" xml:"Name"`
-			Region string `json:"Region" xml:"Region"`
-			State  string `json:"State" xml:"State"`
-		} `json:"Buckets" xml:"Buckets"`
-	} `json:"PhotoStores" xml:"PhotoStores"`
+	Code        string       `json:"Code" xml:"Code"`
+	Message     string       `json:"Message" xml:"Message"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
+	Action      string       `json:"Action" xml:"Action"`
+	PhotoStores []PhotoStore `json:"PhotoStores" xml:"PhotoStores"`
 }
 
 func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
 	request = &ListPhotoStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoStores", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoStores", "", "")
 	return
 }
 

@@ -67,12 +67,12 @@ func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest,
 
 type UpdateMyGroupsRequest struct {
 	*requests.RpcRequest
-	GroupName     string           `position:"Query" name:"GroupName"`
 	GroupId       string           `position:"Query" name:"GroupId"`
-	Type          string           `position:"Query" name:"Type"`
-	BindUrls      string           `position:"Query" name:"BindUrls"`
-	ContactGroups string           `position:"Query" name:"ContactGroups"`
+	GroupName     string           `position:"Query" name:"GroupName"`
 	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
+	BindUrls      string           `position:"Query" name:"BindUrls"`
+	Type          string           `position:"Query" name:"Type"`
+	ContactGroups string           `position:"Query" name:"ContactGroups"`
 }
 
 type UpdateMyGroupsResponse struct {
@@ -87,7 +87,7 @@ func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
 	request = &UpdateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateMyGroups", "", "")
 	return
 }
 

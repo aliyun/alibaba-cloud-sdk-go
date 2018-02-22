@@ -67,69 +67,24 @@ func (client *Client) DescribeDomainHttpsDataWithCallback(request *DescribeDomai
 
 type DescribeDomainHttpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Cls           string           `position:"Query" name:"Cls"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainType    string           `position:"Query" name:"DomainType"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	DomainType    string           `position:"Query" name:"DomainType"`
 	TimeMerge     string           `position:"Query" name:"TimeMerge"`
+	Interval      string           `position:"Query" name:"Interval"`
+	Cls           string           `position:"Query" name:"Cls"`
+	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
 }
 
 type DescribeDomainHttpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	DomainNames          string `json:"DomainNames" xml:"DomainNames"`
-	DataInterval         string `json:"DataInterval" xml:"DataInterval"`
-	HttpsStatisticsInfos struct {
-		HttpsStatisticsInfo []struct {
-			Time               string  `json:"Time" xml:"Time"`
-			L1HttpsBps         float64 `json:"L1HttpsBps" xml:"L1HttpsBps"`
-			L1HttpsInnerBps    float64 `json:"L1HttpsInnerBps" xml:"L1HttpsInnerBps"`
-			L1HttpsOutBps      float64 `json:"L1HttpsOutBps" xml:"L1HttpsOutBps"`
-			L1HttpsQps         int     `json:"L1HttpsQps" xml:"L1HttpsQps"`
-			L1HttpsInnerQps    int     `json:"L1HttpsInnerQps" xml:"L1HttpsInnerQps"`
-			L1HttpsOutQps      int     `json:"L1HttpsOutQps" xml:"L1HttpsOutQps"`
-			L1HttpsTtraf       int     `json:"L1HttpsTtraf" xml:"L1HttpsTtraf"`
-			HttpsSrcBps        int     `json:"HttpsSrcBps" xml:"HttpsSrcBps"`
-			HttpsSrcTraf       int     `json:"HttpsSrcTraf" xml:"HttpsSrcTraf"`
-			L1HttpsInnerTraf   int     `json:"L1HttpsInnerTraf" xml:"L1HttpsInnerTraf"`
-			L1HttpsOutTraf     int     `json:"L1HttpsOutTraf" xml:"L1HttpsOutTraf"`
-			HttpsByteHitRate   float64 `json:"HttpsByteHitRate" xml:"HttpsByteHitRate"`
-			HttpsReqHitRate    float64 `json:"HttpsReqHitRate" xml:"HttpsReqHitRate"`
-			L1HttpsHitRate     float64 `json:"L1HttpsHitRate" xml:"L1HttpsHitRate"`
-			L1HttpsInnerAcc    float64 `json:"L1HttpsInner_acc" xml:"L1HttpsInner_acc"`
-			L1HttpsOutAcc      float64 `json:"L1HttpsOut_acc" xml:"L1HttpsOut_acc"`
-			L1HttpsTacc        float64 `json:"L1HttpsTacc" xml:"L1HttpsTacc"`
-			L1DyHttpsBps       float64 `json:"L1DyHttpsBps" xml:"L1DyHttpsBps"`
-			L1DyHttpsInnerBps  float64 `json:"L1DyHttpsInnerBps" xml:"L1DyHttpsInnerBps"`
-			L1DyHttpsOutBps    float64 `json:"L1DyHttpsOutBps" xml:"L1DyHttpsOutBps"`
-			L1StHttpsBps       float64 `json:"L1StHttpsBps" xml:"L1StHttpsBps"`
-			L1StHttpsInnerBps  float64 `json:"L1StHttpsInnerBps" xml:"L1StHttpsInnerBps"`
-			L1StHttpsOutBps    float64 `json:"L1StHttpsOutBps" xml:"L1StHttpsOutBps"`
-			L1DyHttpsTraf      float64 `json:"l1DyHttpsTraf" xml:"l1DyHttpsTraf"`
-			L1DyHttpsInnerTraf float64 `json:"L1DyHttpsInnerTraf" xml:"L1DyHttpsInnerTraf"`
-			L1DyHttpsOutTraf   float64 `json:"L1DyHttpsOutTraf" xml:"L1DyHttpsOutTraf"`
-			L1StHttpsTraf      float64 `json:"L1StHttpsTraf" xml:"L1StHttpsTraf"`
-			L1StHttpsInnerTraf float64 `json:"L1StHttpsInnerTraf" xml:"L1StHttpsInnerTraf"`
-			L1StHttpsOutTraf   float64 `json:"L1StHttpsOutTraf" xml:"L1StHttpsOutTraf"`
-			L1DyHttpsQps       float64 `json:"L1DyHttpsQps" xml:"L1DyHttpsQps"`
-			L1DyHttpsInnerQps  float64 `json:"L1DyHttpsInnerQps" xml:"L1DyHttpsInnerQps"`
-			L1DyHttpsOutQps    float64 `json:"L1DyHttpsOutQps" xml:"L1DyHttpsOutQps"`
-			L1StHttpsQps       float64 `json:"L1StHttpsQps" xml:"L1StHttpsQps"`
-			L1StHttpsInnerQps  float64 `json:"L1StHttpsInnerQps" xml:"L1StHttpsInnerQps"`
-			L1StHttpsOutQps    float64 `json:"L1StHttpsOutQps" xml:"L1StHttpsOutQps"`
-			L1DyHttpsAcc       float64 `json:"L1DyHttpsAcc" xml:"L1DyHttpsAcc"`
-			L1DyHttpsInnerAcc  float64 `json:"L1DyHttpsInnerAcc" xml:"L1DyHttpsInnerAcc"`
-			L1DyHttpsOutAcc    float64 `json:"L1DyHttpsOutAcc" xml:"L1DyHttpsOutAcc"`
-			L1StHttpsAcc       float64 `json:"L1StHttpsAcc" xml:"L1StHttpsAcc"`
-			L1StHttpsInnerAcc  float64 `json:"L1StHttpsInnerAcc" xml:"L1StHttpsInnerAcc"`
-			L1StHttpsOutAcc    float64 `json:"L1StHttpsOutAcc" xml:"L1StHttpsOutAcc"`
-		} `json:"HttpsStatisticsInfo" xml:"HttpsStatisticsInfo"`
-	} `json:"HttpsStatisticsInfos" xml:"HttpsStatisticsInfos"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	DomainNames          string               `json:"DomainNames" xml:"DomainNames"`
+	DataInterval         string               `json:"DataInterval" xml:"DataInterval"`
+	HttpsStatisticsInfos HttpsStatisticsInfos `json:"HttpsStatisticsInfos" xml:"HttpsStatisticsInfos"`
 }
 
 func CreateDescribeDomainHttpsDataRequest() (request *DescribeDomainHttpsDataRequest) {

@@ -68,27 +68,13 @@ func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsg
 type QueryPushStatByMsgRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	MessageId string           `position:"Query" name:"MessageId"`
+	MessageId requests.Integer `position:"Query" name:"MessageId"`
 }
 
 type QueryPushStatByMsgResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PushStats struct {
-		PushStat []struct {
-			MessageId              string `json:"MessageId" xml:"MessageId"`
-			AcceptCount            int    `json:"AcceptCount" xml:"AcceptCount"`
-			SentCount              int    `json:"SentCount" xml:"SentCount"`
-			ReceivedCount          int    `json:"ReceivedCount" xml:"ReceivedCount"`
-			OpenedCount            int    `json:"OpenedCount" xml:"OpenedCount"`
-			DeletedCount           int    `json:"DeletedCount" xml:"DeletedCount"`
-			SmsSentCount           int    `json:"SmsSentCount" xml:"SmsSentCount"`
-			SmsSkipCount           int    `json:"SmsSkipCount" xml:"SmsSkipCount"`
-			SmsFailedCount         int    `json:"SmsFailedCount" xml:"SmsFailedCount"`
-			SmsReceiveSuccessCount int    `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
-			SmsReceiveFailedCount  int    `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
-		} `json:"PushStat" xml:"PushStat"`
-	} `json:"PushStats" xml:"PushStats"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	PushStats PushStats `json:"PushStats" xml:"PushStats"`
 }
 
 func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {

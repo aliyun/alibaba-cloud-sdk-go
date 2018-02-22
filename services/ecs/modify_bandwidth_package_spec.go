@@ -67,12 +67,12 @@ func (client *Client) ModifyBandwidthPackageSpecWithCallback(request *ModifyBand
 
 type ModifyBandwidthPackageSpecRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 }
 
 type ModifyBandwidthPackageSpecResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyBandwidthPackageSpecRequest() (request *ModifyBandwidthPackageS
 	request = &ModifyBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "", "")
 	return
 }
 

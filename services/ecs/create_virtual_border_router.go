@@ -67,21 +67,21 @@ func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtu
 
 type CreateVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CircuitCode          string           `position:"Query" name:"CircuitCode"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
 	VlanId               requests.Integer `position:"Query" name:"VlanId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CircuitCode          string           `position:"Query" name:"CircuitCode"`
+	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
 	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
 	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	Description          string           `position:"Query" name:"Description"`
 	Name                 string           `position:"Query" name:"Name"`
-	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
 }
 
 type CreateVirtualBorderRouterResponse struct {
@@ -94,7 +94,7 @@ func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRoute
 	request = &CreateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "", "")
 	return
 }
 

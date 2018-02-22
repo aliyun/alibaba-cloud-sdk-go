@@ -67,22 +67,22 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	Namespace          string           `position:"Query" name:"Namespace"`
-	Statistics         string           `position:"Query" name:"Statistics"`
-	Threshold          string           `position:"Query" name:"Threshold"`
-	MetricName         string           `position:"Query" name:"MetricName"`
-	Webhook            string           `position:"Query" name:"Webhook"`
 	Name               string           `position:"Query" name:"Name"`
-	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
-	Dimensions         string           `position:"Query" name:"Dimensions"`
-	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
-	ContactGroups      string           `position:"Query" name:"ContactGroups"`
 	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
+	Namespace          string           `position:"Query" name:"Namespace"`
+	MetricName         string           `position:"Query" name:"MetricName"`
+	Dimensions         string           `position:"Query" name:"Dimensions"`
+	Period             requests.Integer `position:"Query" name:"Period"`
+	Statistics         string           `position:"Query" name:"Statistics"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Webhook            string           `position:"Query" name:"Webhook"`
 }
 
 type CreateAlarmResponse struct {
@@ -98,7 +98,7 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	request = &CreateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "CreateAlarm", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "CreateAlarm", "", "")
 	return
 }
 

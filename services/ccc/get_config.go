@@ -67,23 +67,20 @@ func (client *Client) GetConfigWithCallback(request *GetConfigRequest, callback 
 
 type GetConfigRequest struct {
 	*requests.RpcRequest
-	ObjectType string `position:"Query" name:"ObjectType"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 	Name       string `position:"Query" name:"Name"`
 	ObjectId   string `position:"Query" name:"ObjectId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	ObjectType string `position:"Query" name:"ObjectType"`
 }
 
 type GetConfigResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	ConfigItem     struct {
-		Name  string `json:"Name" xml:"Name"`
-		Value string `json:"Value" xml:"Value"`
-	} `json:"ConfigItem" xml:"ConfigItem"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Success        bool       `json:"Success" xml:"Success"`
+	Code           string     `json:"Code" xml:"Code"`
+	Message        string     `json:"Message" xml:"Message"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ConfigItem     ConfigItem `json:"ConfigItem" xml:"ConfigItem"`
 }
 
 func CreateGetConfigRequest() (request *GetConfigRequest) {

@@ -67,8 +67,8 @@ func (client *Client) DescribeCnameAutoStatusWithCallback(request *DescribeCname
 
 type DescribeCnameAutoStatusRequest struct {
 	*requests.RpcRequest
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
 }
 
 type DescribeCnameAutoStatusResponse struct {

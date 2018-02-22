@@ -67,14 +67,14 @@ func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *Modify
 
 type ModifyCustomerGatewayAttributeRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 }
 
 type ModifyCustomerGatewayAttributeResponse struct {
@@ -91,7 +91,7 @@ func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatew
 	request = &ModifyCustomerGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyCustomerGatewayAttribute", "", "")
 	return
 }
 

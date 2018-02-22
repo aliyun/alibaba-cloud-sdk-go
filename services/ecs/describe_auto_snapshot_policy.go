@@ -67,37 +67,25 @@ func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAu
 
 type DescribeAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
-	AutoSnapshotPolicy     struct {
-		SystemDiskPolicyEnabled           string `json:"SystemDiskPolicyEnabled" xml:"SystemDiskPolicyEnabled"`
-		SystemDiskPolicyTimePeriod        string `json:"SystemDiskPolicyTimePeriod" xml:"SystemDiskPolicyTimePeriod"`
-		SystemDiskPolicyRetentionDays     string `json:"SystemDiskPolicyRetentionDays" xml:"SystemDiskPolicyRetentionDays"`
-		SystemDiskPolicyRetentionLastWeek string `json:"SystemDiskPolicyRetentionLastWeek" xml:"SystemDiskPolicyRetentionLastWeek"`
-		DataDiskPolicyEnabled             string `json:"DataDiskPolicyEnabled" xml:"DataDiskPolicyEnabled"`
-		DataDiskPolicyTimePeriod          string `json:"DataDiskPolicyTimePeriod" xml:"DataDiskPolicyTimePeriod"`
-		DataDiskPolicyRetentionDays       string `json:"DataDiskPolicyRetentionDays" xml:"DataDiskPolicyRetentionDays"`
-		DataDiskPolicyRetentionLastWeek   string `json:"DataDiskPolicyRetentionLastWeek" xml:"DataDiskPolicyRetentionLastWeek"`
-	} `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
-	AutoSnapshotExcutionStatus struct {
-		SystemDiskExcutionStatus string `json:"SystemDiskExcutionStatus" xml:"SystemDiskExcutionStatus"`
-		DataDiskExcutionStatus   string `json:"DataDiskExcutionStatus" xml:"DataDiskExcutionStatus"`
-	} `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
+	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
+	AutoSnapshotOccupation     int                        `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
+	AutoSnapshotPolicy         AutoSnapshotPolicy         `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
+	AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
 }
 
 func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPolicyRequest) {
 	request = &DescribeAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicy", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicy", "", "")
 	return
 }
 

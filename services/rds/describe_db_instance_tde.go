@@ -67,30 +67,25 @@ func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInsta
 
 type DescribeDBInstanceTDERequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeDBInstanceTDEResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
-	Databases struct {
-		Database []struct {
-			DBName    string `json:"DBName" xml:"DBName"`
-			TDEStatus string `json:"TDEStatus" xml:"TDEStatus"`
-		} `json:"Database" xml:"Database"`
-	} `json:"Databases" xml:"Databases"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	TDEStatus string                           `json:"TDEStatus" xml:"TDEStatus"`
+	Databases DatabasesInDescribeDBInstanceTDE `json:"Databases" xml:"Databases"`
 }
 
 func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "", "")
 	return
 }
 

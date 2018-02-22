@@ -67,38 +67,27 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(re
 
 type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	MonitorDatas struct {
-		MonitorData []struct {
-			RX                   int    `json:"RX" xml:"RX"`
-			TX                   int    `json:"TX" xml:"TX"`
-			ReceivedBandwidth    int    `json:"ReceivedBandwidth" xml:"ReceivedBandwidth"`
-			TransportedBandwidth int    `json:"TransportedBandwidth" xml:"TransportedBandwidth"`
-			Flow                 int    `json:"Flow" xml:"Flow"`
-			Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
-			Packets              int    `json:"Packets" xml:"Packets"`
-			TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"MonitorData" xml:"MonitorData"`
-	} `json:"MonitorDatas" xml:"MonitorDatas"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	MonitorDatas MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
 func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
 	request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "", "")
 	return
 }
 

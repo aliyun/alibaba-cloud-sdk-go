@@ -71,18 +71,8 @@ type GetPasswordPolicyRequest struct {
 
 type GetPasswordPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	PasswordPolicy struct {
-		MinimumPasswordLength      int  `json:"MinimumPasswordLength" xml:"MinimumPasswordLength"`
-		RequireLowercaseCharacters bool `json:"RequireLowercaseCharacters" xml:"RequireLowercaseCharacters"`
-		RequireUppercaseCharacters bool `json:"RequireUppercaseCharacters" xml:"RequireUppercaseCharacters"`
-		RequireNumbers             bool `json:"RequireNumbers" xml:"RequireNumbers"`
-		RequireSymbols             bool `json:"RequireSymbols" xml:"RequireSymbols"`
-		HardExpiry                 bool `json:"HardExpiry" xml:"HardExpiry"`
-		MaxPasswordAge             int  `json:"MaxPasswordAge" xml:"MaxPasswordAge"`
-		PasswordReusePrevention    int  `json:"PasswordReusePrevention" xml:"PasswordReusePrevention"`
-		MaxLoginAttemps            int  `json:"MaxLoginAttemps" xml:"MaxLoginAttemps"`
-	} `json:"PasswordPolicy" xml:"PasswordPolicy"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
 func CreateGetPasswordPolicyRequest() (request *GetPasswordPolicyRequest) {

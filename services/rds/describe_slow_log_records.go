@@ -67,45 +67,34 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string           `position:"Query" name:"DBName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	DBName               string           `position:"Query" name:"DBName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		SQLSlowRecord []struct {
-			HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-			DBName             string `json:"DBName" xml:"DBName"`
-			SQLText            string `json:"SQLText" xml:"SQLText"`
-			QueryTimes         int    `json:"QueryTimes" xml:"QueryTimes"`
-			LockTimes          int    `json:"LockTimes" xml:"LockTimes"`
-			ParseRowCounts     int    `json:"ParseRowCounts" xml:"ParseRowCounts"`
-			ReturnRowCounts    int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-			ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
-		} `json:"SQLSlowRecord" xml:"SQLSlowRecord"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	Engine           string                        `json:"Engine" xml:"Engine"`
+	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsRequest) {
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogRecords", "", "")
 	return
 }
 

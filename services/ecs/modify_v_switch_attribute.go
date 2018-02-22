@@ -67,13 +67,13 @@ func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchA
 
 type ModifyVSwitchAttributeRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VSwitchName          string           `position:"Query" name:"VSwitchName"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	VSwitchName          string           `position:"Query" name:"VSwitchName"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyVSwitchAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyVSwitchAttributeRequest() (request *ModifyVSwitchAttributeReque
 	request = &ModifyVSwitchAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVSwitchAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVSwitchAttribute", "", "")
 	return
 }
 

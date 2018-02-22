@@ -67,13 +67,13 @@ func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMedi
 
 type ReportMediaDetailJobResultRequest struct {
 	*requests.RpcRequest
-	Results              string           `position:"Query" name:"Results"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	Results              string           `position:"Query" name:"Results"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportMediaDetailJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobRes
 	request = &ReportMediaDetailJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportMediaDetailJobResult", "", "")
 	return
 }
 

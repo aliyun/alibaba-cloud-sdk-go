@@ -67,34 +67,27 @@ func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthSt
 
 type DescribeHealthStatusRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type DescribeHealthStatusResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	BackendServers struct {
-		BackendServer []struct {
-			ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
-			ServerId           string `json:"ServerId" xml:"ServerId"`
-			Port               int    `json:"Port" xml:"Port"`
-			ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
-		} `json:"BackendServer" xml:"BackendServer"`
-	} `json:"BackendServers" xml:"BackendServers"`
+	RequestId      string                               `json:"RequestId" xml:"RequestId"`
+	BackendServers BackendServersInDescribeHealthStatus `json:"BackendServers" xml:"BackendServers"`
 }
 
 func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {
 	request = &DescribeHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeHealthStatus", "", "")
 	return
 }
 

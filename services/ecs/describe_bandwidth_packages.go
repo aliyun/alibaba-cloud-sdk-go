@@ -67,52 +67,30 @@ func (client *Client) DescribeBandwidthPackagesWithCallback(request *DescribeBan
 
 type DescribeBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeBandwidthPackagesResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalCount        int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
-	BandwidthPackages struct {
-		BandwidthPackage []struct {
-			BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			Name               string `json:"Name" xml:"Name"`
-			Description        string `json:"Description" xml:"Description"`
-			ZoneId             string `json:"ZoneId" xml:"ZoneId"`
-			NatGatewayId       string `json:"NatGatewayId" xml:"NatGatewayId"`
-			Bandwidth          string `json:"Bandwidth" xml:"Bandwidth"`
-			InstanceChargeType string `json:"InstanceChargeType" xml:"InstanceChargeType"`
-			InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-			BusinessStatus     string `json:"BusinessStatus" xml:"BusinessStatus"`
-			IpCount            string `json:"IpCount" xml:"IpCount"`
-			CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-			Status             string `json:"Status" xml:"Status"`
-			PublicIpAddresses  struct {
-				PublicIpAddresse []struct {
-					AllocationId string `json:"AllocationId" xml:"AllocationId"`
-					IpAddress    string `json:"IpAddress" xml:"IpAddress"`
-				} `json:"PublicIpAddresse" xml:"PublicIpAddresse"`
-			} `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
-		} `json:"BandwidthPackage" xml:"BandwidthPackage"`
-	} `json:"BandwidthPackages" xml:"BandwidthPackages"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	BandwidthPackages BandwidthPackages `json:"BandwidthPackages" xml:"BandwidthPackages"`
 }
 
 func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackagesRequest) {
 	request = &DescribeBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthPackages", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthPackages", "", "")
 	return
 }
 

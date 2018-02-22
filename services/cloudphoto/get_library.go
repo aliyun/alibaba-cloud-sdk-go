@@ -67,39 +67,24 @@ func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callbac
 
 type GetLibraryRequest struct {
 	*requests.RpcRequest
-	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
+	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
 type GetLibraryResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Action    string `json:"Action" xml:"Action"`
-	Library   struct {
-		Quota struct {
-			TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
-			TotalTrashQuota int `json:"TotalTrashQuota" xml:"TotalTrashQuota"`
-			FacesCount      int `json:"FacesCount" xml:"FacesCount"`
-			PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
-			UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
-			VideosCount     int `json:"VideosCount" xml:"VideosCount"`
-			ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
-			InactiveSize    int `json:"InactiveSize" xml:"InactiveSize"`
-		} `json:"Quota" xml:"Quota"`
-		AutoCleanConfig struct {
-			AutoCleanEnabled bool `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-			AutoCleanDays    int  `json:"AutoCleanDays" xml:"AutoCleanDays"`
-		} `json:"AutoCleanConfig" xml:"AutoCleanConfig"`
-	} `json:"Library" xml:"Library"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Library   Library `json:"Library" xml:"Library"`
 }
 
 func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetLibrary", "", "")
 	return
 }
 

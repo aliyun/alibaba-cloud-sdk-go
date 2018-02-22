@@ -67,63 +67,36 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 
 type SearchMediaRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	From                 string           `position:"Query" name:"From"`
 	To                   string           `position:"Query" name:"To"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
+	Title                string           `position:"Query" name:"Title"`
+	Description          string           `position:"Query" name:"Description"`
+	Tag                  string           `position:"Query" name:"Tag"`
 	CateId               string           `position:"Query" name:"CateId"`
 	SortBy               string           `position:"Query" name:"SortBy"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
-	From                 string           `position:"Query" name:"From"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Title                string           `position:"Query" name:"Title"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type SearchMediaResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalNum   int    `json:"TotalNum" xml:"TotalNum"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	MediaList  struct {
-		Media []struct {
-			MediaId      string `json:"MediaId" xml:"MediaId"`
-			Title        string `json:"Title" xml:"Title"`
-			Description  string `json:"Description" xml:"Description"`
-			CoverURL     string `json:"CoverURL" xml:"CoverURL"`
-			CateId       int    `json:"CateId" xml:"CateId"`
-			Duration     string `json:"Duration" xml:"Duration"`
-			Format       string `json:"Format" xml:"Format"`
-			Size         string `json:"Size" xml:"Size"`
-			Bitrate      string `json:"Bitrate" xml:"Bitrate"`
-			Width        string `json:"Width" xml:"Width"`
-			Height       string `json:"Height" xml:"Height"`
-			Fps          string `json:"Fps" xml:"Fps"`
-			PublishState string `json:"PublishState" xml:"PublishState"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			Tags         struct {
-				Tag []string `json:"Tag" xml:"Tag"`
-			} `json:"Tags" xml:"Tags"`
-			RunIdList struct {
-				RunId []string `json:"RunId" xml:"RunId"`
-			} `json:"RunIdList" xml:"RunIdList"`
-			File struct {
-				URL   string `json:"URL" xml:"URL"`
-				State string `json:"State" xml:"State"`
-			} `json:"File" xml:"File"`
-		} `json:"Media" xml:"Media"`
-	} `json:"MediaList" xml:"MediaList"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	TotalNum   int                    `json:"TotalNum" xml:"TotalNum"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 
 func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMedia", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMedia", "", "")
 	return
 }
 

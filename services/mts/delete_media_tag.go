@@ -67,12 +67,12 @@ func (client *Client) DeleteMediaTagWithCallback(request *DeleteMediaTagRequest,
 
 type DeleteMediaTagRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteMediaTagResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
 	request = &DeleteMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaTag", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaTag", "", "")
 	return
 }
 

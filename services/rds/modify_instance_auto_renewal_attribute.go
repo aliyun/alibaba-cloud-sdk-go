@@ -67,14 +67,14 @@ func (client *Client) ModifyInstanceAutoRenewalAttributeWithCallback(request *Mo
 
 type ModifyInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
-	Duration             string           `position:"Query" name:"Duration"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoRenew            string           `position:"Query" name:"AutoRenew"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Duration             string           `position:"Query" name:"Duration"`
+	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 }
 
 type ModifyInstanceAutoRenewalAttributeResponse struct {
@@ -86,7 +86,7 @@ func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceA
 	request = &ModifyInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "", "")
 	return
 }
 

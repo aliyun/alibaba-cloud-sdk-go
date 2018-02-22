@@ -13,7 +13,7 @@ func (*SignatureDostNotMatchWrapper) tryWrap(error *ServerError, wrapInfo map[st
 	if error.errorCode == SignatureDostNotMatchErrorCode && clientStringToSign != "" {
 		message := error.message
 		if strings.HasPrefix(message, MessagePrefix) {
-			serverStringToSign := message[len(MessagePrefix):len(message)]
+			serverStringToSign := message[len(MessagePrefix):]
 			if clientStringToSign == serverStringToSign {
 				// user secret is error
 				error.recommend = "Please check you AccessKeySecret"

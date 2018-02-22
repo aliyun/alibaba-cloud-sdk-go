@@ -67,13 +67,13 @@ func (client *Client) AllocateInstancePublicConnectionWithCallback(request *Allo
 
 type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
-	Port                   string           `position:"Query" name:"Port"`
-	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	Port                   string           `position:"Query" name:"Port"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type AllocateInstancePublicConnectionResponse struct {
@@ -85,7 +85,7 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstancePublicConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateInstancePublicConnection", "", "")
 	return
 }
 

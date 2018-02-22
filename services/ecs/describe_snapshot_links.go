@@ -67,43 +67,31 @@ func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapsho
 
 type DescribeSnapshotLinksRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	DiskIds              string           `position:"Query" name:"DiskIds"`
 	SnapshotLinkIds      string           `position:"Query" name:"SnapshotLinkIds"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeSnapshotLinksResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int    `json:"PageSize" xml:"PageSize"`
-	SnapshotLinks struct {
-		SnapshotLink []struct {
-			SnapshotLinkId string `json:"SnapshotLinkId" xml:"SnapshotLinkId"`
-			RegionId       string `json:"RegionId" xml:"RegionId"`
-			InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-			InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-			SourceDiskId   string `json:"SourceDiskId" xml:"SourceDiskId"`
-			SourceDiskSize int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
-			SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
-			TotalSize      int    `json:"TotalSize" xml:"TotalSize"`
-			TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-		} `json:"SnapshotLink" xml:"SnapshotLink"`
-	} `json:"SnapshotLinks" xml:"SnapshotLinks"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	SnapshotLinks SnapshotLinks `json:"SnapshotLinks" xml:"SnapshotLinks"`
 }
 
 func CreateDescribeSnapshotLinksRequest() (request *DescribeSnapshotLinksRequest) {
 	request = &DescribeSnapshotLinksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "", "")
 	return
 }
 

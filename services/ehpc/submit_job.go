@@ -67,18 +67,18 @@ func (client *Client) SubmitJobWithCallback(request *SubmitJobRequest, callback 
 
 type SubmitJobRequest struct {
 	*requests.RpcRequest
-	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
-	Variables          string           `position:"Query" name:"Variables"`
-	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
-	RunasUser          string           `position:"Query" name:"RunasUser"`
 	ClusterId          string           `position:"Query" name:"ClusterId"`
-	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
-	Priority           requests.Integer `position:"Query" name:"Priority"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
-	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
-	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Name               string           `position:"Query" name:"Name"`
+	RunasUser          string           `position:"Query" name:"RunasUser"`
+	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
+	Priority           requests.Integer `position:"Query" name:"Priority"`
+	PackagePath        string           `position:"Query" name:"PackagePath"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
+	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	Variables          string           `position:"Query" name:"Variables"`
 }
 
 type SubmitJobResponse struct {
@@ -91,7 +91,7 @@ func CreateSubmitJobRequest() (request *SubmitJobRequest) {
 	request = &SubmitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "SubmitJob", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "SubmitJob", "", "")
 	return
 }
 

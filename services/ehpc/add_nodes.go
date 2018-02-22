@@ -67,27 +67,25 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 
 type AddNodesRequest struct {
 	*requests.RpcRequest
+	ClusterId             string           `position:"Query" name:"ClusterId"`
+	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
 	ImageId               string           `position:"Query" name:"ImageId"`
 	Count                 requests.Integer `position:"Query" name:"Count"`
-	ClusterId             string           `position:"Query" name:"ClusterId"`
 	ComputeSpotStrategy   string           `position:"Query" name:"ComputeSpotStrategy"`
 	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
-	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
 }
 
 type AddNodesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	InstanceIds struct {
-		InstanceId []string `json:"InstanceId" xml:"InstanceId"`
-	} `json:"InstanceIds" xml:"InstanceIds"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	InstanceIds InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
 }
 
 func CreateAddNodesRequest() (request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "AddNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "AddNodes", "", "")
 	return
 }
 

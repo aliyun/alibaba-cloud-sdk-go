@@ -67,13 +67,13 @@ func (client *Client) DeletePhysicalConnectionWithCallback(request *DeletePhysic
 
 type DeletePhysicalConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeletePhysicalConnectionResponse struct {
@@ -85,7 +85,7 @@ func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionR
 	request = &DeletePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePhysicalConnection", "", "")
 	return
 }
 

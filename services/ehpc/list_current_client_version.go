@@ -79,7 +79,7 @@ func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionR
 	request = &ListCurrentClientVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCurrentClientVersion", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCurrentClientVersion", "", "")
 	return
 }
 

@@ -67,8 +67,8 @@ func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, cal
 
 type DisableAlarmRequest struct {
 	*requests.RpcRequest
-	Id             string `position:"Query" name:"Id"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Id             string `position:"Query" name:"Id"`
 }
 
 type DisableAlarmResponse struct {
@@ -83,7 +83,7 @@ func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 	request = &DisableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DisableAlarm", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DisableAlarm", "", "")
 	return
 }
 

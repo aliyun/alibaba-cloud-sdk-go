@@ -73,21 +73,10 @@ type ListUsersRequest struct {
 
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
-	Users       struct {
-		User []struct {
-			UserId      string `json:"UserId" xml:"UserId"`
-			UserName    string `json:"UserName" xml:"UserName"`
-			DisplayName string `json:"DisplayName" xml:"DisplayName"`
-			MobilePhone string `json:"MobilePhone" xml:"MobilePhone"`
-			Email       string `json:"Email" xml:"Email"`
-			Comments    string `json:"Comments" xml:"Comments"`
-			CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate  string `json:"UpdateDate" xml:"UpdateDate"`
-		} `json:"User" xml:"User"`
-	} `json:"Users" xml:"Users"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool             `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string           `json:"Marker" xml:"Marker"`
+	Users       UsersInListUsers `json:"Users" xml:"Users"`
 }
 
 func CreateListUsersRequest() (request *ListUsersRequest) {

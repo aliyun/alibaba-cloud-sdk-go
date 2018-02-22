@@ -67,14 +67,14 @@ func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJ
 
 type SubmitVideoSplitJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoSplitConfig     string           `position:"Query" name:"VideoSplitConfig"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type SubmitVideoSplitJobResponse struct {
@@ -87,7 +87,7 @@ func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	request = &SubmitVideoSplitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "", "")
 	return
 }
 

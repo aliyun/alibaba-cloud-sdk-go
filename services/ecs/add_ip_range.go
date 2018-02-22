@@ -67,12 +67,12 @@ func (client *Client) AddIpRangeWithCallback(request *AddIpRangeRequest, callbac
 
 type AddIpRangeRequest struct {
 	*requests.RpcRequest
-	IpAddress            string           `position:"Query" name:"IpAddress"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddIpRangeResponse struct {
@@ -84,7 +84,7 @@ func CreateAddIpRangeRequest() (request *AddIpRangeRequest) {
 	request = &AddIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AddIpRange", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AddIpRange", "", "")
 	return
 }
 

@@ -68,8 +68,8 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 type NodeInstallRequest struct {
 	*requests.RpcRequest
 	UserId     string           `position:"Query" name:"UserId"`
-	Force      requests.Boolean `position:"Query" name:"Force"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
+	Force      requests.Boolean `position:"Query" name:"Force"`
 }
 
 type NodeInstallResponse struct {
@@ -84,7 +84,7 @@ func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 	request = &NodeInstallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeInstall", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "NodeInstall", "", "")
 	return
 }
 

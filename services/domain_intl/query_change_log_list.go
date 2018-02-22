@@ -67,35 +67,26 @@ func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogList
 
 type QueryChangeLogListRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	StartDate    requests.Integer `position:"Query" name:"StartDate"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	EndDate      requests.Integer `position:"Query" name:"EndDate"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StartDate    requests.Integer `position:"Query" name:"StartDate"`
+	EndDate      requests.Integer `position:"Query" name:"EndDate"`
 }
 
 type QueryChangeLogListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int    `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int    `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int    `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	PrePage        bool   `json:"PrePage" xml:"PrePage"`
-	NextPage       bool   `json:"NextPage" xml:"NextPage"`
-	ResultLimit    bool   `json:"ResultLimit" xml:"ResultLimit"`
-	Data           struct {
-		ChangeLog []struct {
-			DomainName         string `json:"DomainName" xml:"DomainName"`
-			Result             string `json:"Result" xml:"Result"`
-			Operation          string `json:"Operation" xml:"Operation"`
-			OperationIPAddress string `json:"OperationIPAddress" xml:"OperationIPAddress"`
-			Details            string `json:"Details" xml:"Details"`
-			Time               string `json:"Time" xml:"Time"`
-		} `json:"ChangeLog" xml:"ChangeLog"`
-	} `json:"Data" xml:"Data"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                      `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                      `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalPageNum   int                      `json:"TotalPageNum" xml:"TotalPageNum"`
+	PageSize       int                      `json:"PageSize" xml:"PageSize"`
+	PrePage        bool                     `json:"PrePage" xml:"PrePage"`
+	NextPage       bool                     `json:"NextPage" xml:"NextPage"`
+	ResultLimit    bool                     `json:"ResultLimit" xml:"ResultLimit"`
+	Data           DataInQueryChangeLogList `json:"Data" xml:"Data"`
 }
 
 func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {

@@ -68,12 +68,12 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
 	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
 	Type                 string                        `position:"Query" name:"Type"`
 	PageNumber           requests.Integer              `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 }
 
 type DescribeAccessPointsFilter struct {
@@ -83,29 +83,18 @@ type DescribeAccessPointsFilter struct {
 
 type DescribeAccessPointsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	PageNumber     int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int    `json:"PageSize" xml:"PageSize"`
-	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
-	AccessPointSet struct {
-		AccessPointType []struct {
-			AccessPointId    string `json:"AccessPointId" xml:"AccessPointId"`
-			Status           string `json:"Status" xml:"Status"`
-			Type             string `json:"Type" xml:"Type"`
-			AttachedRegionNo string `json:"AttachedRegionNo" xml:"AttachedRegionNo"`
-			Location         string `json:"Location" xml:"Location"`
-			HostOperator     string `json:"HostOperator" xml:"HostOperator"`
-			Name             string `json:"Name" xml:"Name"`
-			Description      string `json:"Description" xml:"Description"`
-		} `json:"AccessPointType" xml:"AccessPointType"`
-	} `json:"AccessPointSet" xml:"AccessPointSet"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	AccessPointSet AccessPointSet `json:"AccessPointSet" xml:"AccessPointSet"`
 }
 
 func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) {
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAccessPoints", "", "")
 	return
 }
 

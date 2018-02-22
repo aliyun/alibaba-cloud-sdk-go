@@ -67,41 +67,27 @@ func (client *Client) DescribeServerCertificatesWithCallback(request *DescribeSe
 
 type DescribeServerCertificatesRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 type DescribeServerCertificatesResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	ServerCertificates struct {
-		ServerCertificate []struct {
-			ServerCertificateId     string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-			Fingerprint             string `json:"Fingerprint" xml:"Fingerprint"`
-			ServerCertificateName   string `json:"ServerCertificateName" xml:"ServerCertificateName"`
-			RegionId                string `json:"RegionId" xml:"RegionId"`
-			RegionIdAlias           string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-			AliCloudCertificateId   string `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-			AliCloudCertificateName string `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-			IsAliCloudCertificate   int    `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-			ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-			CreateTimeStamp         int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-		} `json:"ServerCertificate" xml:"ServerCertificate"`
-	} `json:"ServerCertificates" xml:"ServerCertificates"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	ServerCertificates ServerCertificates `json:"ServerCertificates" xml:"ServerCertificates"`
 }
 
 func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertificatesRequest) {
 	request = &DescribeServerCertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeServerCertificates", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeServerCertificates", "", "")
 	return
 }
 

@@ -68,15 +68,15 @@ func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callb
 type ImportImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
-	ImageName            string                          `position:"Query" name:"ImageName"`
-	RoleName             string                          `position:"Query" name:"RoleName"`
-	Description          string                          `position:"Query" name:"Description"`
-	OSType               string                          `position:"Query" name:"OSType"`
 	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
-	Platform             string                          `position:"Query" name:"Platform"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	ImageName            string                          `position:"Query" name:"ImageName"`
+	Description          string                          `position:"Query" name:"Description"`
 	Architecture         string                          `position:"Query" name:"Architecture"`
+	OSType               string                          `position:"Query" name:"OSType"`
+	Platform             string                          `position:"Query" name:"Platform"`
+	RoleName             string                          `position:"Query" name:"RoleName"`
 }
 
 type ImportImageDiskDeviceMapping struct {
@@ -100,7 +100,7 @@ func CreateImportImageRequest() (request *ImportImageRequest) {
 	request = &ImportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportImage", "", "")
 	return
 }
 

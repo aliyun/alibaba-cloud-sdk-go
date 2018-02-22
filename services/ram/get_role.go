@@ -73,15 +73,7 @@ type GetRoleRequest struct {
 type GetRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Role      struct {
-		RoleId                   string `json:"RoleId" xml:"RoleId"`
-		RoleName                 string `json:"RoleName" xml:"RoleName"`
-		Arn                      string `json:"Arn" xml:"Arn"`
-		Description              string `json:"Description" xml:"Description"`
-		AssumeRolePolicyDocument string `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
-		CreateDate               string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate               string `json:"UpdateDate" xml:"UpdateDate"`
-	} `json:"Role" xml:"Role"`
+	Role      Role   `json:"Role" xml:"Role"`
 }
 
 func CreateGetRoleRequest() (request *GetRoleRequest) {

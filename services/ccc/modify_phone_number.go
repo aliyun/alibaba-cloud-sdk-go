@@ -67,37 +67,20 @@ func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRe
 
 type ModifyPhoneNumberRequest struct {
 	*requests.RpcRequest
+	InstanceId    string `position:"Query" name:"InstanceId"`
 	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
 	Usage         string `position:"Query" name:"Usage"`
 	ContactFlowId string `position:"Query" name:"ContactFlowId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
 }
 
 type ModifyPhoneNumberResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	PhoneNumber    struct {
-		PhoneNumberId          string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-		InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-		Number                 string `json:"Number" xml:"Number"`
-		PhoneNumberDescription string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-		TestOnly               bool   `json:"TestOnly" xml:"TestOnly"`
-		RemainingTime          int    `json:"RemainingTime" xml:"RemainingTime"`
-		AllowOutbound          bool   `json:"AllowOutbound" xml:"AllowOutbound"`
-		Usage                  string `json:"Usage" xml:"Usage"`
-		Trunks                 int    `json:"Trunks" xml:"Trunks"`
-		ContactFlow            struct {
-			ContactFlowId          string `json:"ContactFlowId" xml:"ContactFlowId"`
-			InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-			ContactFlowName        string `json:"ContactFlowName" xml:"ContactFlowName"`
-			ContactFlowDescription string `json:"ContactFlowDescription" xml:"ContactFlowDescription"`
-			Type                   string `json:"Type" xml:"Type"`
-		} `json:"ContactFlow" xml:"ContactFlow"`
-	} `json:"PhoneNumber" xml:"PhoneNumber"`
+	RequestId      string      `json:"RequestId" xml:"RequestId"`
+	Success        bool        `json:"Success" xml:"Success"`
+	Code           string      `json:"Code" xml:"Code"`
+	Message        string      `json:"Message" xml:"Message"`
+	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
 func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {

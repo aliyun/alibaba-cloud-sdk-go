@@ -67,9 +67,9 @@ func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(res
 
 type SetMeRequest struct {
 	*requests.RpcRequest
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type SetMeResponse struct {
@@ -84,7 +84,7 @@ func CreateSetMeRequest() (request *SetMeRequest) {
 	request = &SetMeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetMe", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetMe", "", "")
 	return
 }
 

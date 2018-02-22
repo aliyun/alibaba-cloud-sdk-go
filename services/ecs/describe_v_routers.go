@@ -67,41 +67,29 @@ func (client *Client) DescribeVRoutersWithCallback(request *DescribeVRoutersRequ
 
 type DescribeVRoutersRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeVRoutersResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	VRouters   struct {
-		VRouter []struct {
-			RegionId      string `json:"RegionId" xml:"RegionId"`
-			VpcId         string `json:"VpcId" xml:"VpcId"`
-			VRouterName   string `json:"VRouterName" xml:"VRouterName"`
-			Description   string `json:"Description" xml:"Description"`
-			VRouterId     string `json:"VRouterId" xml:"VRouterId"`
-			CreationTime  string `json:"CreationTime" xml:"CreationTime"`
-			RouteTableIds struct {
-				RouteTableId []string `json:"RouteTableId" xml:"RouteTableId"`
-			} `json:"RouteTableIds" xml:"RouteTableIds"`
-		} `json:"VRouter" xml:"VRouter"`
-	} `json:"VRouters" xml:"VRouters"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	VRouters   VRouters `json:"VRouters" xml:"VRouters"`
 }
 
 func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	request = &DescribeVRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVRouters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVRouters", "", "")
 	return
 }
 

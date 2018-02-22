@@ -67,13 +67,13 @@ func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInst
 
 type ModifyDBInstanceHAConfigRequest struct {
 	*requests.RpcRequest
-	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HAMode               string           `position:"Query" name:"HAMode"`
-	SyncMode             string           `position:"Query" name:"SyncMode"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SyncMode             string           `position:"Query" name:"SyncMode"`
+	HAMode               string           `position:"Query" name:"HAMode"`
+	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDBInstanceHAConfigResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigR
 	request = &ModifyDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "", "")
 	return
 }
 

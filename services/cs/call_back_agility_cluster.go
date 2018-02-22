@@ -67,8 +67,8 @@ func (client *Client) CallBackAgilityClusterWithCallback(request *CallBackAgilit
 
 type CallBackAgilityClusterRequest struct {
 	*requests.RoaRequest
-	ReqOnce string `position:"Path" name:"ReqOnce"`
 	Token   string `position:"Path" name:"Token"`
+	ReqOnce string `position:"Path" name:"ReqOnce"`
 }
 
 type CallBackAgilityClusterResponse struct {

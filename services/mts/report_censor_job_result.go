@@ -67,13 +67,13 @@ func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJob
 
 type ReportCensorJobResultRequest struct {
 	*requests.RpcRequest
-	Detail               string           `position:"Query" name:"Detail"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Label                string           `position:"Query" name:"Label"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	Label                string           `position:"Query" name:"Label"`
+	Detail               string           `position:"Query" name:"Detail"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ReportCensorJobResultResponse struct {
@@ -86,7 +86,7 @@ func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest
 	request = &ReportCensorJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCensorJobResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCensorJobResult", "", "")
 	return
 }
 

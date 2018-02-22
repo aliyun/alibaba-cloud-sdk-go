@@ -67,10 +67,10 @@ func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, cal
 
 type CategoryTreeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CategoryTreeResponse struct {
@@ -83,7 +83,7 @@ func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "", "")
 	return
 }
 

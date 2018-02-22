@@ -67,13 +67,13 @@ func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callbac
 
 type RemoveTagsRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 type RemoveTagsResponse struct {
@@ -85,7 +85,7 @@ func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
 	request = &RemoveTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveTags", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveTags", "", "")
 	return
 }
 

@@ -67,12 +67,12 @@ func (client *Client) UpgradeDBInstanceNetworkWithCallback(request *UpgradeDBIns
 
 type UpgradeDBInstanceNetworkRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type UpgradeDBInstanceNetworkResponse struct {
@@ -85,7 +85,7 @@ func CreateUpgradeDBInstanceNetworkRequest() (request *UpgradeDBInstanceNetworkR
 	request = &UpgradeDBInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetwork", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetwork", "", "")
 	return
 }
 

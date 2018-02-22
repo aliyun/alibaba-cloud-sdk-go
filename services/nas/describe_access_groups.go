@@ -74,26 +74,18 @@ type DescribeAccessGroupsRequest struct {
 
 type DescribeAccessGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	AccessGroups struct {
-		AccessGroup []struct {
-			AccessGroupName  string `json:"AccessGroupName" xml:"AccessGroupName"`
-			AccessGroupType  string `json:"AccessGroupType" xml:"AccessGroupType"`
-			RuleCount        int    `json:"RuleCount" xml:"RuleCount"`
-			MountTargetCount int    `json:"MountTargetCount" xml:"MountTargetCount"`
-			Description      string `json:"Description" xml:"Description"`
-		} `json:"AccessGroup" xml:"AccessGroup"`
-	} `json:"AccessGroups" xml:"AccessGroups"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	AccessGroups AccessGroups `json:"AccessGroups" xml:"AccessGroups"`
 }
 
 func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) {
 	request = &DescribeAccessGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAccessGroups", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAccessGroups", "", "")
 	return
 }
 

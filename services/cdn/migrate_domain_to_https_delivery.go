@@ -67,11 +67,11 @@ func (client *Client) MigrateDomainToHttpsDeliveryWithCallback(request *MigrateD
 
 type MigrateDomainToHttpsDeliveryRequest struct {
 	*requests.RpcRequest
-	ServerCertificate string           `position:"Query" name:"ServerCertificate"`
-	DomainName        string           `position:"Query" name:"DomainName"`
-	OwnerAccount      string           `position:"Query" name:"OwnerAccount"`
 	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount      string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken     string           `position:"Query" name:"SecurityToken"`
+	DomainName        string           `position:"Query" name:"DomainName"`
+	ServerCertificate string           `position:"Query" name:"ServerCertificate"`
 	PrivateKey        string           `position:"Query" name:"PrivateKey"`
 }
 

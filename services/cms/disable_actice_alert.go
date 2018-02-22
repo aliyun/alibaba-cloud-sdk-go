@@ -83,7 +83,7 @@ func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
 	request = &DisableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DisableActiceAlert", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DisableActiceAlert", "", "")
 	return
 }
 

@@ -67,28 +67,15 @@ func (client *Client) DescribeCdnDomainBaseDetailWithCallback(request *DescribeC
 
 type DescribeCdnDomainBaseDetailRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
 type DescribeCdnDomainBaseDetailResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DomainBaseDetailModel struct {
-		Cname        string `json:"Cname" xml:"Cname"`
-		CdnType      string `json:"CdnType" xml:"CdnType"`
-		DomainStatus string `json:"DomainStatus" xml:"DomainStatus"`
-		SourceType   string `json:"SourceType" xml:"SourceType"`
-		Region       string `json:"Region" xml:"Region"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		Remark       string `json:"Remark" xml:"Remark"`
-		GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-		GmtCreated   string `json:"GmtCreated" xml:"GmtCreated"`
-		Sources      struct {
-			Source []string `json:"Source" xml:"Source"`
-		} `json:"Sources" xml:"Sources"`
-	} `json:"DomainBaseDetailModel" xml:"DomainBaseDetailModel"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	DomainBaseDetailModel DomainBaseDetailModel `json:"DomainBaseDetailModel" xml:"DomainBaseDetailModel"`
 }
 
 func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseDetailRequest) {

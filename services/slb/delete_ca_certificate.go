@@ -67,12 +67,12 @@ func (client *Client) DeleteCACertificateWithCallback(request *DeleteCACertifica
 
 type DeleteCACertificateRequest struct {
 	*requests.RpcRequest
-	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	CACertificateId      string           `position:"Query" name:"CACertificateId"`
 }
 
 type DeleteCACertificateResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	request = &DeleteCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteCACertificate", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteCACertificate", "", "")
 	return
 }
 

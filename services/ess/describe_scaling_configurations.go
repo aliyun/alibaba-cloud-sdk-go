@@ -67,91 +67,49 @@ func (client *Client) DescribeScalingConfigurationsWithCallback(request *Describ
 
 type DescribeScalingConfigurationsRequest struct {
 	*requests.RpcRequest
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber                 requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize                   requests.Integer `position:"Query" name:"PageSize"`
+	ScalingGroupId             string           `position:"Query" name:"ScalingGroupId"`
+	ScalingConfigurationId1    string           `position:"Query" name:"ScalingConfigurationId.1"`
 	ScalingConfigurationId2    string           `position:"Query" name:"ScalingConfigurationId.2"`
 	ScalingConfigurationId3    string           `position:"Query" name:"ScalingConfigurationId.3"`
-	ScalingConfigurationId1    string           `position:"Query" name:"ScalingConfigurationId.1"`
-	ScalingConfigurationId9    string           `position:"Query" name:"ScalingConfigurationId.9"`
-	ScalingConfigurationId8    string           `position:"Query" name:"ScalingConfigurationId.8"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingConfigurationId7    string           `position:"Query" name:"ScalingConfigurationId.7"`
-	ScalingConfigurationName3  string           `position:"Query" name:"ScalingConfigurationName.3"`
-	ScalingConfigurationId6    string           `position:"Query" name:"ScalingConfigurationId.6"`
-	ScalingConfigurationName2  string           `position:"Query" name:"ScalingConfigurationName.2"`
-	ScalingConfigurationId5    string           `position:"Query" name:"ScalingConfigurationId.5"`
-	ScalingConfigurationName1  string           `position:"Query" name:"ScalingConfigurationName.1"`
 	ScalingConfigurationId4    string           `position:"Query" name:"ScalingConfigurationId.4"`
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	ScalingConfigurationName10 string           `position:"Query" name:"ScalingConfigurationName.10"`
-	PageNumber                 requests.Integer `position:"Query" name:"PageNumber"`
+	ScalingConfigurationId5    string           `position:"Query" name:"ScalingConfigurationId.5"`
+	ScalingConfigurationId6    string           `position:"Query" name:"ScalingConfigurationId.6"`
+	ScalingConfigurationId7    string           `position:"Query" name:"ScalingConfigurationId.7"`
+	ScalingConfigurationId8    string           `position:"Query" name:"ScalingConfigurationId.8"`
+	ScalingConfigurationId9    string           `position:"Query" name:"ScalingConfigurationId.9"`
+	ScalingConfigurationId10   string           `position:"Query" name:"ScalingConfigurationId.10"`
+	ScalingConfigurationName1  string           `position:"Query" name:"ScalingConfigurationName.1"`
+	ScalingConfigurationName2  string           `position:"Query" name:"ScalingConfigurationName.2"`
+	ScalingConfigurationName3  string           `position:"Query" name:"ScalingConfigurationName.3"`
 	ScalingConfigurationName4  string           `position:"Query" name:"ScalingConfigurationName.4"`
 	ScalingConfigurationName5  string           `position:"Query" name:"ScalingConfigurationName.5"`
 	ScalingConfigurationName6  string           `position:"Query" name:"ScalingConfigurationName.6"`
 	ScalingConfigurationName7  string           `position:"Query" name:"ScalingConfigurationName.7"`
 	ScalingConfigurationName8  string           `position:"Query" name:"ScalingConfigurationName.8"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingConfigurationName9  string           `position:"Query" name:"ScalingConfigurationName.9"`
-	ScalingGroupId             string           `position:"Query" name:"ScalingGroupId"`
-	ScalingConfigurationId10   string           `position:"Query" name:"ScalingConfigurationId.10"`
+	ScalingConfigurationName10 string           `position:"Query" name:"ScalingConfigurationName.10"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeScalingConfigurationsResponse struct {
 	*responses.BaseResponse
-	TotalCount            int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber            int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize              int    `json:"PageSize" xml:"PageSize"`
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	ScalingConfigurations struct {
-		ScalingConfiguration []struct {
-			ScalingConfigurationId      string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-			ScalingConfigurationName    string `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
-			ScalingGroupId              string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-			InstanceName                string `json:"InstanceName" xml:"InstanceName"`
-			ImageId                     string `json:"ImageId" xml:"ImageId"`
-			InstanceType                string `json:"InstanceType" xml:"InstanceType"`
-			InstanceGeneration          string `json:"InstanceGeneration" xml:"InstanceGeneration"`
-			SecurityGroupId             string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-			IoOptimized                 string `json:"IoOptimized" xml:"IoOptimized"`
-			InternetChargeType          string `json:"InternetChargeType" xml:"InternetChargeType"`
-			InternetMaxBandwidthIn      int    `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-			InternetMaxBandwidthOut     int    `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-			SystemDiskCategory          string `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
-			SystemDiskSize              int    `json:"SystemDiskSize" xml:"SystemDiskSize"`
-			LifecycleState              string `json:"LifecycleState" xml:"LifecycleState"`
-			CreationTime                string `json:"CreationTime" xml:"CreationTime"`
-			LoadBalancerWeight          int    `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
-			UserData                    string `json:"UserData" xml:"UserData"`
-			KeyPairName                 string `json:"KeyPairName" xml:"KeyPairName"`
-			RamRoleName                 string `json:"RamRoleName" xml:"RamRoleName"`
-			DeploymentSetId             string `json:"DeploymentSetId" xml:"DeploymentSetId"`
-			SecurityEnhancementStrategy string `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
-			InstanceTypes               struct {
-				InstanceType []string `json:"InstanceType" xml:"InstanceType"`
-			} `json:"InstanceTypes" xml:"InstanceTypes"`
-			DataDisks struct {
-				DataDisk []struct {
-					Size       int    `json:"Size" xml:"Size"`
-					Category   string `json:"Category" xml:"Category"`
-					SnapshotId string `json:"SnapshotId" xml:"SnapshotId"`
-					Device     string `json:"Device" xml:"Device"`
-				} `json:"DataDisk" xml:"DataDisk"`
-			} `json:"DataDisks" xml:"DataDisks"`
-			Tags struct {
-				Tag []struct {
-					Key   string `json:"Key" xml:"Key"`
-					Value string `json:"Value" xml:"Value"`
-				} `json:"Tag" xml:"Tag"`
-			} `json:"Tags" xml:"Tags"`
-		} `json:"ScalingConfiguration" xml:"ScalingConfiguration"`
-	} `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
+	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize              int                   `json:"PageSize" xml:"PageSize"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	ScalingConfigurations ScalingConfigurations `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
 }
 
 func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfigurationsRequest) {
 	request = &DescribeScalingConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingConfigurations", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingConfigurations", "", "")
 	return
 }
 

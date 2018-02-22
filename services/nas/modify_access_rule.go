@@ -69,10 +69,10 @@ type ModifyAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
 	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
-	Priority        requests.Integer `position:"Query" name:"Priority"`
+	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
 	RWAccessType    string           `position:"Query" name:"RWAccessType"`
 	UserAccessType  string           `position:"Query" name:"UserAccessType"`
-	SourceCidrIp    string           `position:"Query" name:"SourceCidrIp"`
+	Priority        requests.Integer `position:"Query" name:"Priority"`
 }
 
 type ModifyAccessRuleResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
 	request = &ModifyAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessRule", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyAccessRule", "", "")
 	return
 }
 

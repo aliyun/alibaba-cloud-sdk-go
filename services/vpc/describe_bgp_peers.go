@@ -67,51 +67,32 @@ func (client *Client) DescribeBgpPeersWithCallback(request *DescribeBgpPeersRequ
 
 type DescribeBgpPeersRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterId             string           `position:"Query" name:"RouterId"`
 	BgpPeerId            string           `position:"Query" name:"BgpPeerId"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeBgpPeersResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	BgpPeers   struct {
-		BgpPeer []struct {
-			Name          string `json:"Name" xml:"Name"`
-			Description   string `json:"Description" xml:"Description"`
-			BgpPeerId     string `json:"BgpPeerId" xml:"BgpPeerId"`
-			BgpGroupId    string `json:"BgpGroupId" xml:"BgpGroupId"`
-			PeerIpAddress string `json:"PeerIpAddress" xml:"PeerIpAddress"`
-			PeerAsn       string `json:"PeerAsn" xml:"PeerAsn"`
-			AuthKey       string `json:"AuthKey" xml:"AuthKey"`
-			RouterId      string `json:"RouterId" xml:"RouterId"`
-			BgpStatus     string `json:"BgpStatus" xml:"BgpStatus"`
-			Status        string `json:"Status" xml:"Status"`
-			Keepalive     string `json:"Keepalive" xml:"Keepalive"`
-			LocalAsn      string `json:"LocalAsn" xml:"LocalAsn"`
-			Hold          string `json:"Hold" xml:"Hold"`
-			IsFake        string `json:"IsFake" xml:"IsFake"`
-			RouteLimit    string `json:"RouteLimit" xml:"RouteLimit"`
-			RegionId      string `json:"RegionId" xml:"RegionId"`
-		} `json:"BgpPeer" xml:"BgpPeer"`
-	} `json:"BgpPeers" xml:"BgpPeers"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	BgpPeers   BgpPeers `json:"BgpPeers" xml:"BgpPeers"`
 }
 
 func CreateDescribeBgpPeersRequest() (request *DescribeBgpPeersRequest) {
 	request = &DescribeBgpPeersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpPeers", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpPeers", "", "")
 	return
 }
 

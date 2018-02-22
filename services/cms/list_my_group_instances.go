@@ -67,38 +67,30 @@ func (client *Client) ListMyGroupInstancesWithCallback(request *ListMyGroupInsta
 
 type ListMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	Total      requests.Boolean `position:"Query" name:"Total"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Category   string           `position:"Query" name:"Category"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Total      requests.Boolean `position:"Query" name:"Total"`
 	GroupId    requests.Integer `position:"Query" name:"GroupId"`
+	Category   string           `position:"Query" name:"Category"`
 }
 
 type ListMyGroupInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageNumber   int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	Total        int    `json:"Total" xml:"Total"`
-	Resources    struct {
-		Resource []struct {
-			Id         int    `json:"Id" xml:"Id"`
-			AliUid     int    `json:"AliUid" xml:"AliUid"`
-			RegionId   string `json:"RegionId" xml:"RegionId"`
-			InstanceId string `json:"InstanceId" xml:"InstanceId"`
-			Category   string `json:"Category" xml:"Category"`
-		} `json:"Resource" xml:"Resource"`
-	} `json:"Resources" xml:"Resources"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	Success      bool                            `json:"Success" xml:"Success"`
+	ErrorCode    int                             `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                          `json:"ErrorMessage" xml:"ErrorMessage"`
+	PageNumber   int                             `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                             `json:"PageSize" xml:"PageSize"`
+	Total        int                             `json:"Total" xml:"Total"`
+	Resources    ResourcesInListMyGroupInstances `json:"Resources" xml:"Resources"`
 }
 
 func CreateListMyGroupInstancesRequest() (request *ListMyGroupInstancesRequest) {
 	request = &ListMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupInstances", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupInstances", "", "")
 	return
 }
 

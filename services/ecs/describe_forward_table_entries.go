@@ -67,41 +67,30 @@ func (client *Client) DescribeForwardTableEntriesWithCallback(request *DescribeF
 
 type DescribeForwardTableEntriesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeForwardTableEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber          int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize            int    `json:"PageSize" xml:"PageSize"`
-	ForwardTableEntries struct {
-		ForwardTableEntry []struct {
-			ForwardTableId string `json:"ForwardTableId" xml:"ForwardTableId"`
-			ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
-			ExternalIp     string `json:"ExternalIp" xml:"ExternalIp"`
-			ExternalPort   string `json:"ExternalPort" xml:"ExternalPort"`
-			IpProtocol     string `json:"IpProtocol" xml:"IpProtocol"`
-			InternalIp     string `json:"InternalIp" xml:"InternalIp"`
-			InternalPort   string `json:"InternalPort" xml:"InternalPort"`
-			Status         string `json:"Status" xml:"Status"`
-		} `json:"ForwardTableEntry" xml:"ForwardTableEntry"`
-	} `json:"ForwardTableEntries" xml:"ForwardTableEntries"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
+	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
+	PageSize            int                 `json:"PageSize" xml:"PageSize"`
+	ForwardTableEntries ForwardTableEntries `json:"ForwardTableEntries" xml:"ForwardTableEntries"`
 }
 
 func CreateDescribeForwardTableEntriesRequest() (request *DescribeForwardTableEntriesRequest) {
 	request = &DescribeForwardTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeForwardTableEntries", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeForwardTableEntries", "", "")
 	return
 }
 

@@ -67,10 +67,10 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 
 type ProfileSetRequest struct {
 	*requests.RpcRequest
-	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
-	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
 	UserId                   requests.Integer `position:"Query" name:"UserId"`
+	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
 	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
+	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
 }
 
 type ProfileSetResponse struct {
@@ -85,7 +85,7 @@ func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	request = &ProfileSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ProfileSet", "", "")
 	return
 }
 

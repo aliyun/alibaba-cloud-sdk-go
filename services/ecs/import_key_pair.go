@@ -67,11 +67,11 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
 }
 
 type ImportKeyPairResponse struct {
@@ -85,7 +85,7 @@ func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	request = &ImportKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ImportKeyPair", "", "")
 	return
 }
 

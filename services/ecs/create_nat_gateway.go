@@ -67,14 +67,14 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string                              `position:"Query" name:"ClientToken"`
+	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
 	VpcId                string                              `position:"Query" name:"VpcId"`
 	Name                 string                              `position:"Query" name:"Name"`
 	Description          string                              `position:"Query" name:"Description"`
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
+	ClientToken          string                              `position:"Query" name:"ClientToken"`
 	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
 }
 
@@ -86,21 +86,17 @@ type CreateNatGatewayBandwidthPackage struct {
 
 type CreateNatGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	NatGatewayId    string `json:"NatGatewayId" xml:"NatGatewayId"`
-	ForwardTableIds struct {
-		ForwardTableId []string `json:"ForwardTableId" xml:"ForwardTableId"`
-	} `json:"ForwardTableIds" xml:"ForwardTableIds"`
-	BandwidthPackageIds struct {
-		BandwidthPackageId []string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	} `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
+	RequestId           string                                `json:"RequestId" xml:"RequestId"`
+	NatGatewayId        string                                `json:"NatGatewayId" xml:"NatGatewayId"`
+	ForwardTableIds     ForwardTableIdsInCreateNatGateway     `json:"ForwardTableIds" xml:"ForwardTableIds"`
+	BandwidthPackageIds BandwidthPackageIdsInCreateNatGateway `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }
 
 func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 	request = &CreateNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "", "")
 	return
 }
 

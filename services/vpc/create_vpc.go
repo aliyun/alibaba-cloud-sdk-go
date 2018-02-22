@@ -67,30 +67,32 @@ func (client *Client) CreateVpcWithCallback(request *CreateVpcRequest, callback 
 
 type CreateVpcRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	VpcName              string           `position:"Query" name:"VpcName"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CidrBlock            string           `position:"Query" name:"CidrBlock"`
+	VpcName              string           `position:"Query" name:"VpcName"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type CreateVpcResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	VpcId        string `json:"VpcId" xml:"VpcId"`
-	VRouterId    string `json:"VRouterId" xml:"VRouterId"`
-	RouteTableId string `json:"RouteTableId" xml:"RouteTableId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	VpcId           string `json:"VpcId" xml:"VpcId"`
+	VRouterId       string `json:"VRouterId" xml:"VRouterId"`
+	RouteTableId    string `json:"RouteTableId" xml:"RouteTableId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 	request = &CreateVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpc", "", "")
 	return
 }
 

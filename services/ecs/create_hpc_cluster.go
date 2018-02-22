@@ -67,13 +67,6 @@ func (client *Client) CreateHpcClusterWithCallback(request *CreateHpcClusterRequ
 
 type CreateHpcClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
 }
 
 type CreateHpcClusterResponse struct {
@@ -86,7 +79,7 @@ func CreateCreateHpcClusterRequest() (request *CreateHpcClusterRequest) {
 	request = &CreateHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHpcCluster", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateHpcCluster", "", "")
 	return
 }
 

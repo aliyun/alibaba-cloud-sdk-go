@@ -67,15 +67,16 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	VpcName              string           `position:"Query" name:"VpcName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	VpcName              string           `position:"Query" name:"VpcName"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeVpcsResponse struct {
@@ -84,38 +85,14 @@ type DescribeVpcsResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Vpcs       struct {
-		Vpc []struct {
-			VpcId        string `json:"VpcId" xml:"VpcId"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			Status       string `json:"Status" xml:"Status"`
-			VpcName      string `json:"VpcName" xml:"VpcName"`
-			CreationTime string `json:"CreationTime" xml:"CreationTime"`
-			CidrBlock    string `json:"CidrBlock" xml:"CidrBlock"`
-			VRouterId    string `json:"VRouterId" xml:"VRouterId"`
-			Description  string `json:"Description" xml:"Description"`
-			IsDefault    bool   `json:"IsDefault" xml:"IsDefault"`
-			VSwitchIds   struct {
-				VSwitchId []string `json:"VSwitchId" xml:"VSwitchId"`
-			} `json:"VSwitchIds" xml:"VSwitchIds"`
-			UserCidrs struct {
-				UserCidr []string `json:"UserCidr" xml:"UserCidr"`
-			} `json:"UserCidrs" xml:"UserCidrs"`
-			NatGatewayIds struct {
-				NatGatewayIds []string `json:"NatGatewayIds" xml:"NatGatewayIds"`
-			} `json:"NatGatewayIds" xml:"NatGatewayIds"`
-			RouterTableIds struct {
-				RouterTableIds []string `json:"RouterTableIds" xml:"RouterTableIds"`
-			} `json:"RouterTableIds" xml:"RouterTableIds"`
-		} `json:"Vpc" xml:"Vpc"`
-	} `json:"Vpcs" xml:"Vpcs"`
+	Vpcs       Vpcs   `json:"Vpcs" xml:"Vpcs"`
 }
 
 func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcs", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcs", "", "")
 	return
 }
 

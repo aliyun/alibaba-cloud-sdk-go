@@ -67,84 +67,50 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	SearchKey            string           `position:"Query" name:"SearchKey"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Engine               string           `position:"Query" name:"Engine"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	Engine               string           `position:"Query" name:"Engine"`
+	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
+	SearchKey            string           `position:"Query" name:"SearchKey"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeDBInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		DBInstance []struct {
-			InsId                 int    `json:"InsId" xml:"InsId"`
-			DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-			DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-			PayType               string `json:"PayType" xml:"PayType"`
-			DBInstanceType        string `json:"DBInstanceType" xml:"DBInstanceType"`
-			RegionId              string `json:"RegionId" xml:"RegionId"`
-			ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
-			DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-			Engine                string `json:"Engine" xml:"Engine"`
-			DBInstanceNetType     string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-			ConnectionMode        string `json:"ConnectionMode" xml:"ConnectionMode"`
-			LockMode              string `json:"LockMode" xml:"LockMode"`
-			DBInstanceClass       string `json:"DBInstanceClass" xml:"DBInstanceClass"`
-			InstanceNetworkType   string `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-			LockReason            string `json:"LockReason" xml:"LockReason"`
-			ZoneId                string `json:"ZoneId" xml:"ZoneId"`
-			MutriORsignle         bool   `json:"MutriORsignle" xml:"MutriORsignle"`
-			CreateTime            string `json:"CreateTime" xml:"CreateTime"`
-			EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
-			GuardDBInstanceId     string `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
-			TempDBInstanceId      string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
-			MasterInstanceId      string `json:"MasterInstanceId" xml:"MasterInstanceId"`
-			VpcId                 string `json:"VpcId" xml:"VpcId"`
-			VSwitchId             string `json:"VSwitchId" xml:"VSwitchId"`
-			ReplicateId           string `json:"ReplicateId" xml:"ReplicateId"`
-			ResourceGroupId       string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			ReadOnlyDBInstanceIds struct {
-				ReadOnlyDBInstanceId []struct {
-					DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-				} `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
-			} `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
-		} `json:"DBInstance" xml:"DBInstance"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeDBInstances `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "", "")
 	return
 }
 

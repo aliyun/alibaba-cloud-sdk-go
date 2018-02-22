@@ -67,8 +67,8 @@ func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, c
 
 type PutMetricDataRequest struct {
 	*requests.RpcRequest
-	Body           string `position:"Query" name:"Body"`
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
+	Body           string `position:"Query" name:"Body"`
 }
 
 type PutMetricDataResponse struct {
@@ -83,7 +83,7 @@ func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	request = &PutMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "PutMetricData", "", "")
 	return
 }
 

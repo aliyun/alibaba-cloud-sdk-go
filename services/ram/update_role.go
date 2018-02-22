@@ -67,22 +67,14 @@ func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callbac
 
 type UpdateRoleRequest struct {
 	*requests.RpcRequest
-	NewAssumeRolePolicyDocument string `position:"Query" name:"NewAssumeRolePolicyDocument"`
 	RoleName                    string `position:"Query" name:"RoleName"`
+	NewAssumeRolePolicyDocument string `position:"Query" name:"NewAssumeRolePolicyDocument"`
 }
 
 type UpdateRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Role      struct {
-		RoleId                   string `json:"RoleId" xml:"RoleId"`
-		RoleName                 string `json:"RoleName" xml:"RoleName"`
-		Arn                      string `json:"Arn" xml:"Arn"`
-		Description              string `json:"Description" xml:"Description"`
-		AssumeRolePolicyDocument string `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
-		CreateDate               string `json:"CreateDate" xml:"CreateDate"`
-		UpdateDate               string `json:"UpdateDate" xml:"UpdateDate"`
-	} `json:"Role" xml:"Role"`
+	Role      Role   `json:"Role" xml:"Role"`
 }
 
 func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {

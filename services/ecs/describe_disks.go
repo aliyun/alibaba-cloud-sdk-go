@@ -67,47 +67,47 @@ func (client *Client) DescribeDisksWithCallback(request *DescribeDisksRequest, c
 
 type DescribeDisksRequest struct {
 	*requests.RpcRequest
-	Tag4Value                     string           `position:"Query" name:"Tag.4.Value"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ZoneId                        string           `position:"Query" name:"ZoneId"`
+	DiskIds                       string           `position:"Query" name:"DiskIds"`
+	InstanceId                    string           `position:"Query" name:"InstanceId"`
+	DiskType                      string           `position:"Query" name:"DiskType"`
+	Category                      string           `position:"Query" name:"Category"`
+	Status                        string           `position:"Query" name:"Status"`
 	SnapshotId                    string           `position:"Query" name:"SnapshotId"`
-	Tag2Key                       string           `position:"Query" name:"Tag.2.Key"`
-	Filter2Value                  string           `position:"Query" name:"Filter.2.Value"`
-	AutoSnapshotPolicyId          string           `position:"Query" name:"AutoSnapshotPolicyId"`
-	Tag3Key                       string           `position:"Query" name:"Tag.3.Key"`
-	PageNumber                    requests.Integer `position:"Query" name:"PageNumber"`
-	DiskName                      string           `position:"Query" name:"DiskName"`
-	Tag1Value                     string           `position:"Query" name:"Tag.1.Value"`
+	Portable                      requests.Boolean `position:"Query" name:"Portable"`
+	DeleteWithInstance            requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 	DeleteAutoSnapshot            requests.Boolean `position:"Query" name:"DeleteAutoSnapshot"`
-	ResourceGroupId               string           `position:"Query" name:"ResourceGroupId"`
+	PageNumber                    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                      requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	DiskName                      string           `position:"Query" name:"DiskName"`
+	AutoSnapshotPolicyId          string           `position:"Query" name:"AutoSnapshotPolicyId"`
+	EnableAutoSnapshot            requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
+	EnableAutomatedSnapshotPolicy requests.Boolean `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
 	DiskChargeType                string           `position:"Query" name:"DiskChargeType"`
 	LockReason                    string           `position:"Query" name:"LockReason"`
 	Filter1Key                    string           `position:"Query" name:"Filter.1.Key"`
-	PageSize                      requests.Integer `position:"Query" name:"PageSize"`
-	DiskIds                       string           `position:"Query" name:"DiskIds"`
-	DeleteWithInstance            requests.Boolean `position:"Query" name:"DeleteWithInstance"`
-	Tag3Value                     string           `position:"Query" name:"Tag.3.Value"`
-	EnableAutoSnapshot            requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
-	DryRun                        requests.Boolean `position:"Query" name:"DryRun"`
-	Tag5Key                       string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
-	Filter1Value                  string           `position:"Query" name:"Filter.1.Value"`
-	Portable                      requests.Boolean `position:"Query" name:"Portable"`
-	EnableAutomatedSnapshotPolicy requests.Boolean `position:"Query" name:"EnableAutomatedSnapshotPolicy"`
 	Filter2Key                    string           `position:"Query" name:"Filter.2.Key"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	DiskType                      string           `position:"Query" name:"DiskType"`
-	Tag5Value                     string           `position:"Query" name:"Tag.5.Value"`
+	Filter1Value                  string           `position:"Query" name:"Filter.1.Value"`
+	Filter2Value                  string           `position:"Query" name:"Filter.2.Value"`
 	Tag1Key                       string           `position:"Query" name:"Tag.1.Key"`
-	AdditionalAttributes          *[]string        `position:"Query" name:"AdditionalAttributes"  type:"Repeated"`
-	EnableShared                  requests.Boolean `position:"Query" name:"EnableShared"`
-	InstanceId                    string           `position:"Query" name:"InstanceId"`
-	Encrypted                     requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag2Value                     string           `position:"Query" name:"Tag.2.Value"`
-	ZoneId                        string           `position:"Query" name:"ZoneId"`
+	Tag2Key                       string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key                       string           `position:"Query" name:"Tag.3.Key"`
 	Tag4Key                       string           `position:"Query" name:"Tag.4.Key"`
-	Category                      string           `position:"Query" name:"Category"`
-	Status                        string           `position:"Query" name:"Status"`
+	Tag5Key                       string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value                     string           `position:"Query" name:"Tag.1.Value"`
+	Tag2Value                     string           `position:"Query" name:"Tag.2.Value"`
+	Tag3Value                     string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value                     string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value                     string           `position:"Query" name:"Tag.5.Value"`
+	ResourceGroupId               string           `position:"Query" name:"ResourceGroupId"`
+	EnableShared                  requests.Boolean `position:"Query" name:"EnableShared"`
+	Encrypted                     requests.Boolean `position:"Query" name:"Encrypted"`
+	AdditionalAttributes          *[]string        `position:"Query" name:"AdditionalAttributes"  type:"Repeated"`
+	DryRun                        requests.Boolean `position:"Query" name:"DryRun"`
 }
 
 type DescribeDisksResponse struct {
@@ -116,66 +116,14 @@ type DescribeDisksResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Disks      struct {
-		Disk []struct {
-			DiskId                        string `json:"DiskId" xml:"DiskId"`
-			RegionId                      string `json:"RegionId" xml:"RegionId"`
-			ZoneId                        string `json:"ZoneId" xml:"ZoneId"`
-			DiskName                      string `json:"DiskName" xml:"DiskName"`
-			Description                   string `json:"Description" xml:"Description"`
-			Type                          string `json:"Type" xml:"Type"`
-			Category                      string `json:"Category" xml:"Category"`
-			Size                          int    `json:"Size" xml:"Size"`
-			ImageId                       string `json:"ImageId" xml:"ImageId"`
-			SourceSnapshotId              string `json:"SourceSnapshotId" xml:"SourceSnapshotId"`
-			AutoSnapshotPolicyId          string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
-			ProductCode                   string `json:"ProductCode" xml:"ProductCode"`
-			Portable                      bool   `json:"Portable" xml:"Portable"`
-			Status                        string `json:"Status" xml:"Status"`
-			InstanceId                    string `json:"InstanceId" xml:"InstanceId"`
-			Device                        string `json:"Device" xml:"Device"`
-			DeleteWithInstance            bool   `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
-			DeleteAutoSnapshot            bool   `json:"DeleteAutoSnapshot" xml:"DeleteAutoSnapshot"`
-			EnableAutoSnapshot            bool   `json:"EnableAutoSnapshot" xml:"EnableAutoSnapshot"`
-			EnableAutomatedSnapshotPolicy bool   `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
-			CreationTime                  string `json:"CreationTime" xml:"CreationTime"`
-			AttachedTime                  string `json:"AttachedTime" xml:"AttachedTime"`
-			DetachedTime                  string `json:"DetachedTime" xml:"DetachedTime"`
-			DiskChargeType                string `json:"DiskChargeType" xml:"DiskChargeType"`
-			ExpiredTime                   string `json:"ExpiredTime" xml:"ExpiredTime"`
-			ResourceGroupId               string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-			Encrypted                     bool   `json:"Encrypted" xml:"Encrypted"`
-			MountInstanceNum              int    `json:"MountInstanceNum" xml:"MountInstanceNum"`
-			IOPS                          int    `json:"IOPS" xml:"IOPS"`
-			IOPSRead                      int    `json:"IOPSRead" xml:"IOPSRead"`
-			IOPSWrite                     int    `json:"IOPSWrite" xml:"IOPSWrite"`
-			OperationLocks                struct {
-				OperationLock []struct {
-					LockReason string `json:"LockReason" xml:"LockReason"`
-				} `json:"OperationLock" xml:"OperationLock"`
-			} `json:"OperationLocks" xml:"OperationLocks"`
-			MountInstances struct {
-				MountInstance []struct {
-					InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-					Device       string `json:"Device" xml:"Device"`
-					AttachedTime string `json:"AttachedTime" xml:"AttachedTime"`
-				} `json:"MountInstance" xml:"MountInstance"`
-			} `json:"MountInstances" xml:"MountInstances"`
-			Tags struct {
-				Tag []struct {
-					TagKey   string `json:"TagKey" xml:"TagKey"`
-					TagValue string `json:"TagValue" xml:"TagValue"`
-				} `json:"Tag" xml:"Tag"`
-			} `json:"Tags" xml:"Tags"`
-		} `json:"Disk" xml:"Disk"`
-	} `json:"Disks" xml:"Disks"`
+	Disks      Disks  `json:"Disks" xml:"Disks"`
 }
 
 func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	request = &DescribeDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisks", "", "")
 	return
 }
 

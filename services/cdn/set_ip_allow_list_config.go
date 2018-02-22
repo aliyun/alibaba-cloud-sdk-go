@@ -67,10 +67,10 @@ func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListCo
 
 type SetIpAllowListConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AllowIps      string           `position:"Query" name:"AllowIps"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AllowIps      string           `position:"Query" name:"AllowIps"`
 }
 
 type SetIpAllowListConfigResponse struct {

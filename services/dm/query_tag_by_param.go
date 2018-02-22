@@ -67,26 +67,21 @@ func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamReques
 
 type QueryTagByParamRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
 }
 
 type QueryTagByParamResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Tag []struct {
-			TagId   string `json:"TagId" xml:"TagId"`
-			TagName string `json:"TagName" xml:"TagName"`
-		} `json:"tag" xml:"tag"`
-	} `json:"data" xml:"data"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
+	Data       DataInQueryTagByParam `json:"data" xml:"data"`
 }
 
 func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {

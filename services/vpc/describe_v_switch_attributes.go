@@ -67,39 +67,34 @@ func (client *Client) DescribeVSwitchAttributesWithCallback(request *DescribeVSw
 
 type DescribeVSwitchAttributesRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeVSwitchAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
-	VpcId                   string `json:"VpcId" xml:"VpcId"`
-	Status                  string `json:"Status" xml:"Status"`
-	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
-	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
-	AvailableIpAddressCount int    `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
-	Description             string `json:"Description" xml:"Description"`
-	VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
-	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
-	IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
-	CloudResources          struct {
-		CloudResourceSetType []struct {
-			ResourceType  string `json:"ResourceType" xml:"ResourceType"`
-			ResourceCount int    `json:"ResourceCount" xml:"ResourceCount"`
-		} `json:"CloudResourceSetType" xml:"CloudResourceSetType"`
-	} `json:"CloudResources" xml:"CloudResources"`
+	RequestId               string                                    `json:"RequestId" xml:"RequestId"`
+	VSwitchId               string                                    `json:"VSwitchId" xml:"VSwitchId"`
+	VpcId                   string                                    `json:"VpcId" xml:"VpcId"`
+	Status                  string                                    `json:"Status" xml:"Status"`
+	CidrBlock               string                                    `json:"CidrBlock" xml:"CidrBlock"`
+	ZoneId                  string                                    `json:"ZoneId" xml:"ZoneId"`
+	AvailableIpAddressCount int                                       `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+	Description             string                                    `json:"Description" xml:"Description"`
+	VSwitchName             string                                    `json:"VSwitchName" xml:"VSwitchName"`
+	CreationTime            string                                    `json:"CreationTime" xml:"CreationTime"`
+	IsDefault               bool                                      `json:"IsDefault" xml:"IsDefault"`
+	CloudResources          CloudResourcesInDescribeVSwitchAttributes `json:"CloudResources" xml:"CloudResources"`
 }
 
 func CreateDescribeVSwitchAttributesRequest() (request *DescribeVSwitchAttributesRequest) {
 	request = &DescribeVSwitchAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "", "")
 	return
 }
 

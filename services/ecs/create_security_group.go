@@ -67,24 +67,24 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description          string           `position:"Query" name:"Description"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
 type CreateSecurityGroupResponse struct {
@@ -97,7 +97,7 @@ func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	request = &CreateSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSecurityGroup", "", "")
 	return
 }
 

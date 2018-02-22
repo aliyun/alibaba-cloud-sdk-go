@@ -67,15 +67,15 @@ func (client *Client) AddDomainRecordWithCallback(request *AddDomainRecordReques
 
 type AddDomainRecordRequest struct {
 	*requests.RpcRequest
-	DomainName   string           `position:"Query" name:"DomainName"`
-	Priority     requests.Integer `position:"Query" name:"Priority"`
-	Value        string           `position:"Query" name:"Value"`
-	RR           string           `position:"Query" name:"RR"`
-	Line         string           `position:"Query" name:"Line"`
-	TTL          requests.Integer `position:"Query" name:"TTL"`
-	Type         string           `position:"Query" name:"Type"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	RR           string           `position:"Query" name:"RR"`
+	Type         string           `position:"Query" name:"Type"`
+	Value        string           `position:"Query" name:"Value"`
+	TTL          requests.Integer `position:"Query" name:"TTL"`
+	Priority     requests.Integer `position:"Query" name:"Priority"`
+	Line         string           `position:"Query" name:"Line"`
 }
 
 type AddDomainRecordResponse struct {

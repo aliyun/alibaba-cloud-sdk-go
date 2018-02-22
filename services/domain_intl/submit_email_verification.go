@@ -67,30 +67,18 @@ func (client *Client) SubmitEmailVerificationWithCallback(request *SubmitEmailVe
 
 type SubmitEmailVerificationRequest struct {
 	*requests.RpcRequest
-	Email        string           `position:"Query" name:"Email"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	SendIfExist  requests.Boolean `position:"Query" name:"SendIfExist"`
 	Lang         string           `position:"Query" name:"Lang"`
+	Email        string           `position:"Query" name:"Email"`
+	SendIfExist  requests.Boolean `position:"Query" name:"SendIfExist"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 }
 
 type SubmitEmailVerificationResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	SuccessList []struct {
-		Email   string `json:"Email" xml:"Email"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"SuccessList" xml:"SuccessList"`
-	FailList []struct {
-		Email   string `json:"Email" xml:"Email"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"FailList" xml:"FailList"`
-	ExistList []struct {
-		Email   string `json:"Email" xml:"Email"`
-		Code    string `json:"Code" xml:"Code"`
-		Message string `json:"Message" xml:"Message"`
-	} `json:"ExistList" xml:"ExistList"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
+	SuccessList []SendResult `json:"SuccessList" xml:"SuccessList"`
+	FailList    []SendResult `json:"FailList" xml:"FailList"`
+	ExistList   []SendResult `json:"ExistList" xml:"ExistList"`
 }
 
 func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationRequest) {

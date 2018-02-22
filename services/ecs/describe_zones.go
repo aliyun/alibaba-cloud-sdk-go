@@ -67,66 +67,26 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 }
 
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     struct {
-		Zone []struct {
-			ZoneId                    string `json:"ZoneId" xml:"ZoneId"`
-			LocalName                 string `json:"LocalName" xml:"LocalName"`
-			AvailableResourceCreation struct {
-				ResourceTypes []string `json:"ResourceTypes" xml:"ResourceTypes"`
-			} `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
-			AvailableDiskCategories struct {
-				DiskCategories []string `json:"DiskCategories" xml:"DiskCategories"`
-			} `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
-			AvailableInstanceTypes struct {
-				InstanceTypes []string `json:"InstanceTypes" xml:"InstanceTypes"`
-			} `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
-			AvailableVolumeCategories struct {
-				VolumeCategories []string `json:"VolumeCategories" xml:"VolumeCategories"`
-			} `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
-			AvailableResources struct {
-				ResourcesInfo []struct {
-					IoOptimized          bool `json:"IoOptimized" xml:"IoOptimized"`
-					SystemDiskCategories struct {
-						SupportedSystemDiskCategory []string `json:"supportedSystemDiskCategory" xml:"supportedSystemDiskCategory"`
-					} `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
-					DataDiskCategories struct {
-						SupportedDataDiskCategory []string `json:"supportedDataDiskCategory" xml:"supportedDataDiskCategory"`
-					} `json:"DataDiskCategories" xml:"DataDiskCategories"`
-					NetworkTypes struct {
-						SupportedNetworkCategory []string `json:"supportedNetworkCategory" xml:"supportedNetworkCategory"`
-					} `json:"NetworkTypes" xml:"NetworkTypes"`
-					InstanceTypes struct {
-						SupportedInstanceType []string `json:"supportedInstanceType" xml:"supportedInstanceType"`
-					} `json:"InstanceTypes" xml:"InstanceTypes"`
-					InstanceTypeFamilies struct {
-						SupportedInstanceTypeFamily []string `json:"supportedInstanceTypeFamily" xml:"supportedInstanceTypeFamily"`
-					} `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
-					InstanceGenerations struct {
-						SupportedInstanceGeneration []string `json:"supportedInstanceGeneration" xml:"supportedInstanceGeneration"`
-					} `json:"InstanceGenerations" xml:"InstanceGenerations"`
-				} `json:"ResourcesInfo" xml:"ResourcesInfo"`
-			} `json:"AvailableResources" xml:"AvailableResources"`
-		} `json:"Zone" xml:"Zone"`
-	} `json:"Zones" xml:"Zones"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Zones     ZonesInDescribeZones `json:"Zones" xml:"Zones"`
 }
 
 func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeZones", "", "")
 	return
 }
 

@@ -67,12 +67,12 @@ func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetr
 
 type QueryCustomMetricListRequest struct {
 	*requests.RpcRequest
+	GroupId    string `position:"Query" name:"GroupId"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Dimension  string `position:"Query" name:"Dimension"`
-	Page       string `position:"Query" name:"Page"`
 	Md5        string `position:"Query" name:"Md5"`
 	UUID       string `position:"Query" name:"UUID"`
-	GroupId    string `position:"Query" name:"GroupId"`
+	Page       string `position:"Query" name:"Page"`
 	Size       string `position:"Query" name:"Size"`
 }
 
@@ -88,7 +88,7 @@ func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest
 	request = &QueryCustomMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomMetricList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomMetricList", "", "")
 	return
 }
 

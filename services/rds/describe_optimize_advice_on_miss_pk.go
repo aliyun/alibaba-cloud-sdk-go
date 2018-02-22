@@ -67,34 +67,29 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *Descri
 
 type DescribeOptimizeAdviceOnMissPKRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeOptimizeAdviceOnMissPKResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             struct {
-		AdviceOnMissPK []struct {
-			DBName    string `json:"DBName" xml:"DBName"`
-			TableName string `json:"TableName" xml:"TableName"`
-		} `json:"AdviceOnMissPK" xml:"AdviceOnMissPK"`
-	} `json:"Items" xml:"Items"`
+	RequestId         string                                `json:"RequestId" xml:"RequestId"`
+	TotalRecordsCount int                                   `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int                                   `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int                                   `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             ItemsInDescribeOptimizeAdviceOnMissPK `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdviceOnMissPKRequest) {
 	request = &DescribeOptimizeAdviceOnMissPKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "", "")
 	return
 }
 

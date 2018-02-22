@@ -67,30 +67,19 @@ func (client *Client) DescribeLiveStreamFrameInfoWithCallback(request *DescribeL
 
 type DescribeLiveStreamFrameInfoRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamFrameInfoResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	FrameDataInfos struct {
-		FrameDataModel []struct {
-			Time       string  `json:"Time" xml:"Time"`
-			Stream     string  `json:"Stream" xml:"Stream"`
-			ClientAddr string  `json:"ClientAddr" xml:"ClientAddr"`
-			Server     string  `json:"Server" xml:"Server"`
-			AudioRate  float64 `json:"AudioRate" xml:"AudioRate"`
-			AudioByte  float64 `json:"AudioByte" xml:"AudioByte"`
-			FrameRate  float64 `json:"FrameRate" xml:"FrameRate"`
-			FrameByte  float64 `json:"FrameByte" xml:"FrameByte"`
-		} `json:"FrameDataModel" xml:"FrameDataModel"`
-	} `json:"FrameDataInfos" xml:"FrameDataInfos"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	FrameDataInfos FrameDataInfos `json:"FrameDataInfos" xml:"FrameDataInfos"`
 }
 
 func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFrameInfoRequest) {

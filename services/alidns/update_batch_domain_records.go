@@ -67,9 +67,9 @@ func (client *Client) UpdateBatchDomainRecordsWithCallback(request *UpdateBatchD
 
 type UpdateBatchDomainRecordsRequest struct {
 	*requests.RpcRequest
-	Records      string `position:"Query" name:"Records"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Records      string `position:"Query" name:"Records"`
 }
 
 type UpdateBatchDomainRecordsResponse struct {

@@ -67,10 +67,10 @@ func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRe
 
 type DeleteClusterNodeRequest struct {
 	*requests.RoaRequest
-	ReleaseInstance string `position:"Query" name:"releaseInstance"`
 	ClusterId       string `position:"Path" name:"ClusterId"`
-	Force           string `position:"Query" name:"force"`
 	Ip              string `position:"Path" name:"Ip"`
+	Force           string `position:"Query" name:"force"`
+	ReleaseInstance string `position:"Query" name:"releaseInstance"`
 }
 
 type DeleteClusterNodeResponse struct {

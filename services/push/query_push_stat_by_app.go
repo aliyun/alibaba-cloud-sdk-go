@@ -67,30 +67,16 @@ func (client *Client) QueryPushStatByAppWithCallback(request *QueryPushStatByApp
 
 type QueryPushStatByAppRequest struct {
 	*requests.RpcRequest
-	EndTime     string           `position:"Query" name:"EndTime"`
-	StartTime   string           `position:"Query" name:"StartTime"`
-	Granularity string           `position:"Query" name:"Granularity"`
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	EndTime     string           `position:"Query" name:"EndTime"`
+	Granularity string           `position:"Query" name:"Granularity"`
 }
 
 type QueryPushStatByAppResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	AppPushStats struct {
-		AppPushStat []struct {
-			Time                   string `json:"Time" xml:"Time"`
-			AcceptCount            int    `json:"AcceptCount" xml:"AcceptCount"`
-			SentCount              int    `json:"SentCount" xml:"SentCount"`
-			ReceivedCount          int    `json:"ReceivedCount" xml:"ReceivedCount"`
-			OpenedCount            int    `json:"OpenedCount" xml:"OpenedCount"`
-			DeletedCount           int    `json:"DeletedCount" xml:"DeletedCount"`
-			SmsSentCount           int    `json:"SmsSentCount" xml:"SmsSentCount"`
-			SmsSkipCount           int    `json:"SmsSkipCount" xml:"SmsSkipCount"`
-			SmsFailedCount         int    `json:"SmsFailedCount" xml:"SmsFailedCount"`
-			SmsReceiveSuccessCount int    `json:"SmsReceiveSuccessCount" xml:"SmsReceiveSuccessCount"`
-			SmsReceiveFailedCount  int    `json:"SmsReceiveFailedCount" xml:"SmsReceiveFailedCount"`
-		} `json:"AppPushStat" xml:"AppPushStat"`
-	} `json:"AppPushStats" xml:"AppPushStats"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	AppPushStats AppPushStats `json:"AppPushStats" xml:"AppPushStats"`
 }
 
 func CreateQueryPushStatByAppRequest() (request *QueryPushStatByAppRequest) {

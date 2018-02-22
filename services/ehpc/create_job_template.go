@@ -67,16 +67,16 @@ func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRe
 
 type CreateJobTemplateRequest struct {
 	*requests.RpcRequest
-	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
-	Variables          string           `position:"Query" name:"Variables"`
-	RunasUser          string           `position:"Query" name:"RunasUser"`
-	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
-	Priority           requests.Integer `position:"Query" name:"Priority"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
-	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
-	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Name               string           `position:"Query" name:"Name"`
+	RunasUser          string           `position:"Query" name:"RunasUser"`
+	Priority           requests.Integer `position:"Query" name:"Priority"`
+	PackagePath        string           `position:"Query" name:"PackagePath"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
+	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	Variables          string           `position:"Query" name:"Variables"`
 }
 
 type CreateJobTemplateResponse struct {
@@ -89,7 +89,7 @@ func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
 	request = &CreateJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateJobTemplate", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateJobTemplate", "", "")
 	return
 }
 

@@ -72,12 +72,8 @@ type CreateVirtualMFADeviceRequest struct {
 
 type CreateVirtualMFADeviceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	VirtualMFADevice struct {
-		SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-		Base32StringSeed string `json:"Base32StringSeed" xml:"Base32StringSeed"`
-		QRCodePNG        string `json:"QRCodePNG" xml:"QRCodePNG"`
-	} `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	VirtualMFADevice VirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
 }
 
 func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceRequest) {

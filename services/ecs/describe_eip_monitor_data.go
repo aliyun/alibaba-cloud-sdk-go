@@ -67,36 +67,27 @@ func (client *Client) DescribeEipMonitorDataWithCallback(request *DescribeEipMon
 
 type DescribeEipMonitorDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeEipMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	EipMonitorDatas struct {
-		EipMonitorData []struct {
-			EipRX        int    `json:"EipRX" xml:"EipRX"`
-			EipTX        int    `json:"EipTX" xml:"EipTX"`
-			EipFlow      int    `json:"EipFlow" xml:"EipFlow"`
-			EipBandwidth int    `json:"EipBandwidth" xml:"EipBandwidth"`
-			EipPackets   int    `json:"EipPackets" xml:"EipPackets"`
-			TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
-		} `json:"EipMonitorData" xml:"EipMonitorData"`
-	} `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
+	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
+	EipMonitorDatas EipMonitorDatasInDescribeEipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
 func CreateDescribeEipMonitorDataRequest() (request *DescribeEipMonitorDataRequest) {
 	request = &DescribeEipMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeEipMonitorData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeEipMonitorData", "", "")
 	return
 }
 

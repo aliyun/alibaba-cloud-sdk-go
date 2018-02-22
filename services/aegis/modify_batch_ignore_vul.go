@@ -67,9 +67,9 @@ func (client *Client) ModifyBatchIgnoreVulWithCallback(request *ModifyBatchIgnor
 
 type ModifyBatchIgnoreVulRequest struct {
 	*requests.RpcRequest
-	Reason          string           `position:"Query" name:"Reason"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Reason          string           `position:"Query" name:"Reason"`
 	Info            string           `position:"Query" name:"Info"`
 }
 

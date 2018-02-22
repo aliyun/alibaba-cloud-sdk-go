@@ -67,29 +67,22 @@ func (client *Client) DescribeLiveStreamOnlineBpsWithCallback(request *DescribeL
 
 type DescribeLiveStreamOnlineBpsRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeLiveStreamOnlineBpsResponse struct {
 	*responses.BaseResponse
-	RequestId                string  `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber          int     `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	FlvBps                   float64 `json:"FlvBps" xml:"FlvBps"`
-	HlsBps                   float64 `json:"HlsBps" xml:"HlsBps"`
-	LiveStreamOnlineBpsInfos struct {
-		LiveStreamOnlineBpsInfo []struct {
-			StreamUrl string  `json:"StreamUrl" xml:"StreamUrl"`
-			UpBps     float64 `json:"UpBps" xml:"UpBps"`
-			DownBps   float64 `json:"DownBps" xml:"DownBps"`
-			Time      string  `json:"Time" xml:"Time"`
-		} `json:"LiveStreamOnlineBpsInfo" xml:"LiveStreamOnlineBpsInfo"`
-	} `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber          int                      `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	FlvBps                   float64                  `json:"FlvBps" xml:"FlvBps"`
+	HlsBps                   float64                  `json:"HlsBps" xml:"HlsBps"`
+	LiveStreamOnlineBpsInfos LiveStreamOnlineBpsInfos `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
 }
 
 func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnlineBpsRequest) {

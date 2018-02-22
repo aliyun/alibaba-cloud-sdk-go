@@ -71,20 +71,15 @@ type ListRegionsRequest struct {
 
 type ListRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Regions   struct {
-		RegionInfo []struct {
-			RegionId  string `json:"RegionId" xml:"RegionId"`
-			LocalName string `json:"LocalName" xml:"LocalName"`
-		} `json:"RegionInfo" xml:"RegionInfo"`
-	} `json:"Regions" xml:"Regions"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
 func CreateListRegionsRequest() (request *ListRegionsRequest) {
 	request = &ListRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListRegions", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListRegions", "", "")
 	return
 }
 

@@ -67,55 +67,23 @@ func (client *Client) QueryTaskInfoHistoryWithCallback(request *QueryTaskInfoHis
 
 type QueryTaskInfoHistoryRequest struct {
 	*requests.RpcRequest
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	BeginCreateTime  requests.Integer `position:"Query" name:"BeginCreateTime"`
-	TaskNoCursor     string           `position:"Query" name:"TaskNoCursor"`
-	EndCreateTime    requests.Integer `position:"Query" name:"EndCreateTime"`
 	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	Lang             string           `position:"Query" name:"Lang"`
+	BeginCreateTime  requests.Integer `position:"Query" name:"BeginCreateTime"`
+	EndCreateTime    requests.Integer `position:"Query" name:"EndCreateTime"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	CreateTimeCursor requests.Integer `position:"Query" name:"CreateTimeCursor"`
+	TaskNoCursor     string           `position:"Query" name:"TaskNoCursor"`
 }
 
 type QueryTaskInfoHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
-	CurrentPageCursor struct {
-		TaskType       string `json:"TaskType" xml:"TaskType"`
-		TaskNum        int    `json:"TaskNum" xml:"TaskNum"`
-		TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
-		CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-		Clientip       string `json:"Clientip" xml:"Clientip"`
-		TaskNo         string `json:"TaskNo" xml:"TaskNo"`
-		CreateTimeLong int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
-	} `json:"CurrentPageCursor" xml:"CurrentPageCursor"`
-	NextPageCursor struct {
-		TaskType       string `json:"TaskType" xml:"TaskType"`
-		TaskNum        int    `json:"TaskNum" xml:"TaskNum"`
-		TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
-		CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-		Clientip       string `json:"Clientip" xml:"Clientip"`
-		TaskNo         string `json:"TaskNo" xml:"TaskNo"`
-		CreateTimeLong int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
-	} `json:"NextPageCursor" xml:"NextPageCursor"`
-	PrePageCursor struct {
-		TaskType       string `json:"TaskType" xml:"TaskType"`
-		TaskNum        int    `json:"TaskNum" xml:"TaskNum"`
-		TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
-		CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-		Clientip       string `json:"Clientip" xml:"Clientip"`
-		TaskNo         string `json:"TaskNo" xml:"TaskNo"`
-		CreateTimeLong int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
-	} `json:"PrePageCursor" xml:"PrePageCursor"`
-	Objects []struct {
-		TaskType       string `json:"TaskType" xml:"TaskType"`
-		TaskNum        int    `json:"TaskNum" xml:"TaskNum"`
-		TaskStatus     string `json:"TaskStatus" xml:"TaskStatus"`
-		CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-		Clientip       string `json:"Clientip" xml:"Clientip"`
-		TaskNo         string `json:"TaskNo" xml:"TaskNo"`
-		CreateTimeLong int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
-	} `json:"Objects" xml:"Objects"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	CurrentPageCursor CurrentPageCursor `json:"CurrentPageCursor" xml:"CurrentPageCursor"`
+	NextPageCursor    NextPageCursor    `json:"NextPageCursor" xml:"NextPageCursor"`
+	PrePageCursor     PrePageCursor     `json:"PrePageCursor" xml:"PrePageCursor"`
+	Objects           []TaskInfoHistory `json:"Objects" xml:"Objects"`
 }
 
 func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) {

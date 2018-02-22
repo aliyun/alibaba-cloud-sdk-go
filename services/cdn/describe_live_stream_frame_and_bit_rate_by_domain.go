@@ -67,29 +67,21 @@ func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithCallback(requ
 
 type DescribeLiveStreamFrameAndBitRateByDomainRequest struct {
 	*requests.RpcRequest
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeLiveStreamFrameAndBitRateByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	Count                    int    `json:"Count" xml:"Count"`
-	PageNumber               int    `json:"pageNumber" xml:"pageNumber"`
-	PageSize                 int    `json:"pageSize" xml:"pageSize"`
-	FrameRateAndBitRateInfos struct {
-		FrameRateAndBitRateInfo []struct {
-			StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
-			VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
-			AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
-			BitRate        float64 `json:"BitRate" xml:"BitRate"`
-			Time           string  `json:"Time" xml:"Time"`
-		} `json:"FrameRateAndBitRateInfo" xml:"FrameRateAndBitRateInfo"`
-	} `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
+	RequestId                string                                                              `json:"RequestId" xml:"RequestId"`
+	Count                    int                                                                 `json:"Count" xml:"Count"`
+	PageNumber               int                                                                 `json:"pageNumber" xml:"pageNumber"`
+	PageSize                 int                                                                 `json:"pageSize" xml:"pageSize"`
+	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamFrameAndBitRateByDomain `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
 func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *DescribeLiveStreamFrameAndBitRateByDomainRequest) {

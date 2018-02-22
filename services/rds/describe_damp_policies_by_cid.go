@@ -67,30 +67,25 @@ func (client *Client) DescribeDampPoliciesByCidWithCallback(request *DescribeDam
 
 type DescribeDampPoliciesByCidRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 type DescribeDampPoliciesByCidResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Policies  struct {
-		Policy []struct {
-			PolicyName string `json:"PolicyName" xml:"PolicyName"`
-			Comment    string `json:"Comment" xml:"Comment"`
-		} `json:"Policy" xml:"Policy"`
-	} `json:"Policies" xml:"Policies"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Policies  Policies `json:"Policies" xml:"Policies"`
 }
 
 func CreateDescribeDampPoliciesByCidRequest() (request *DescribeDampPoliciesByCidRequest) {
 	request = &DescribeDampPoliciesByCidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPoliciesByCid", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPoliciesByCid", "", "")
 	return
 }
 

@@ -67,37 +67,30 @@ func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *Descr
 
 type DescribeOptimizeAdviceOnStorageRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeOptimizeAdviceOnStorageResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordsCount int    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
-	PageNumber        int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount   int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items             struct {
-		AdviceOnStorage []struct {
-			DBName        string `json:"DBName" xml:"DBName"`
-			TableName     string `json:"TableName" xml:"TableName"`
-			CurrentEngine string `json:"CurrentEngine" xml:"CurrentEngine"`
-			AdviseEngine  string `json:"AdviseEngine" xml:"AdviseEngine"`
-		} `json:"AdviceOnStorage" xml:"AdviceOnStorage"`
-	} `json:"Items" xml:"Items"`
+	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string                                 `json:"DBInstanceId" xml:"DBInstanceId"`
+	TotalRecordsCount int                                    `json:"TotalRecordsCount" xml:"TotalRecordsCount"`
+	PageNumber        int                                    `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount   int                                    `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items             ItemsInDescribeOptimizeAdviceOnStorage `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {
 	request = &DescribeOptimizeAdviceOnStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnStorage", "", "")
 	return
 }
 

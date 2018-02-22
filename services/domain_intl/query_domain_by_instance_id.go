@@ -74,23 +74,21 @@ type QueryDomainByInstanceIdRequest struct {
 
 type QueryDomainByInstanceIdResponse struct {
 	*responses.BaseResponse
-	UserId                      string `json:"UserId" xml:"UserId"`
-	DomainName                  string `json:"DomainName" xml:"DomainName"`
-	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
-	RegistrationDate            string `json:"RegistrationDate" xml:"RegistrationDate"`
-	ExpirationDate              string `json:"ExpirationDate" xml:"ExpirationDate"`
-	RegistrantOrganization      string `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-	RegistrantName              string `json:"RegistrantName" xml:"RegistrantName"`
-	Email                       string `json:"Email" xml:"Email"`
-	UpdateProhibitionLock       string `json:"UpdateProhibitionLock" xml:"UpdateProhibitionLock"`
-	TransferProhibitionLock     string `json:"TransferProhibitionLock" xml:"TransferProhibitionLock"`
-	DomainNameProxyService      bool   `json:"DomainNameProxyService" xml:"DomainNameProxyService"`
-	Premium                     bool   `json:"Premium" xml:"Premium"`
-	EmailVerificationStatus     int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
-	EmailVerificationClientHold bool   `json:"EmailVerificationClientHold" xml:"EmailVerificationClientHold"`
-	DnsList                     struct {
-		Dns []string `json:"Dns" xml:"Dns"`
-	} `json:"DnsList" xml:"DnsList"`
+	UserId                      string  `json:"UserId" xml:"UserId"`
+	DomainName                  string  `json:"DomainName" xml:"DomainName"`
+	InstanceId                  string  `json:"InstanceId" xml:"InstanceId"`
+	RegistrationDate            string  `json:"RegistrationDate" xml:"RegistrationDate"`
+	ExpirationDate              string  `json:"ExpirationDate" xml:"ExpirationDate"`
+	RegistrantOrganization      string  `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
+	RegistrantName              string  `json:"RegistrantName" xml:"RegistrantName"`
+	Email                       string  `json:"Email" xml:"Email"`
+	UpdateProhibitionLock       string  `json:"UpdateProhibitionLock" xml:"UpdateProhibitionLock"`
+	TransferProhibitionLock     string  `json:"TransferProhibitionLock" xml:"TransferProhibitionLock"`
+	DomainNameProxyService      bool    `json:"DomainNameProxyService" xml:"DomainNameProxyService"`
+	Premium                     bool    `json:"Premium" xml:"Premium"`
+	EmailVerificationStatus     int     `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
+	EmailVerificationClientHold bool    `json:"EmailVerificationClientHold" xml:"EmailVerificationClientHold"`
+	DnsList                     DnsList `json:"DnsList" xml:"DnsList"`
 }
 
 func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdRequest) {

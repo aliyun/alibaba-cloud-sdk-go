@@ -67,30 +67,25 @@ func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callb
 
 type AddCategoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ParentId             requests.Integer `position:"Query" name:"ParentId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CateName             string           `position:"Query" name:"CateName"`
+	ParentId             requests.Integer `position:"Query" name:"ParentId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddCategoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Category  struct {
-		CateId   string `json:"CateId" xml:"CateId"`
-		CateName string `json:"CateName" xml:"CateName"`
-		ParentId string `json:"ParentId" xml:"ParentId"`
-		Level    string `json:"Level" xml:"Level"`
-	} `json:"Category" xml:"Category"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Category  Category `json:"Category" xml:"Category"`
 }
 
 func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddCategory", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddCategory", "", "")
 	return
 }
 

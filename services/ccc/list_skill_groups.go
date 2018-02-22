@@ -72,35 +72,12 @@ type ListSkillGroupsRequest struct {
 
 type ListSkillGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillGroups    struct {
-		SkillGroup []struct {
-			SkillGroupId          string `json:"SkillGroupId" xml:"SkillGroupId"`
-			InstanceId            string `json:"InstanceId" xml:"InstanceId"`
-			SkillGroupName        string `json:"SkillGroupName" xml:"SkillGroupName"`
-			AccSkillGroupName     string `json:"AccSkillGroupName" xml:"AccSkillGroupName"`
-			AccQueueName          string `json:"AccQueueName" xml:"AccQueueName"`
-			SkillGroupDescription string `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
-			UserCount             int    `json:"UserCount" xml:"UserCount"`
-			OutboundPhoneNumbers  struct {
-				PhoneNumber []struct {
-					PhoneNumberId          string `json:"PhoneNumberId" xml:"PhoneNumberId"`
-					InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-					Number                 string `json:"Number" xml:"Number"`
-					PhoneNumberDescription string `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-					TestOnly               bool   `json:"TestOnly" xml:"TestOnly"`
-					RemainingTime          int    `json:"RemainingTime" xml:"RemainingTime"`
-					AllowOutbound          bool   `json:"AllowOutbound" xml:"AllowOutbound"`
-					Usage                  string `json:"Usage" xml:"Usage"`
-					Trunks                 int    `json:"Trunks" xml:"Trunks"`
-				} `json:"PhoneNumber" xml:"PhoneNumber"`
-			} `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
-		} `json:"SkillGroup" xml:"SkillGroup"`
-	} `json:"SkillGroups" xml:"SkillGroups"`
+	RequestId      string      `json:"RequestId" xml:"RequestId"`
+	Success        bool        `json:"Success" xml:"Success"`
+	Code           string      `json:"Code" xml:"Code"`
+	Message        string      `json:"Message" xml:"Message"`
+	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillGroups    SkillGroups `json:"SkillGroups" xml:"SkillGroups"`
 }
 
 func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {

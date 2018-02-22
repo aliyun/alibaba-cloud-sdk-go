@@ -67,51 +67,26 @@ func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRe
 
 type ListNodesNoPagingRequest struct {
 	*requests.RpcRequest
-	HostName     string           `position:"Query" name:"HostName"`
-	Role         string           `position:"Query" name:"Role"`
 	ClusterId    string           `position:"Query" name:"ClusterId"`
+	Role         string           `position:"Query" name:"Role"`
+	HostName     string           `position:"Query" name:"HostName"`
 	OnlyDetached requests.Boolean `position:"Query" name:"OnlyDetached"`
 }
 
 type ListNodesNoPagingResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Nodes      struct {
-		NodeInfo []struct {
-			Id              string `json:"Id" xml:"Id"`
-			RegionId        string `json:"RegionId" xml:"RegionId"`
-			Status          string `json:"Status" xml:"Status"`
-			CreatedByEhpc   bool   `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
-			Role            string `json:"Role" xml:"Role"`
-			AddTime         string `json:"AddTime" xml:"AddTime"`
-			Expired         bool   `json:"Expired" xml:"Expired"`
-			ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
-			SpotStrategy    string `json:"SpotStrategy" xml:"SpotStrategy"`
-			LockReason      string `json:"LockReason" xml:"LockReason"`
-			ImageOwnerAlias string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-			ImageId         string `json:"ImageId" xml:"ImageId"`
-			TotalResources  struct {
-				Cpu    int `json:"Cpu" xml:"Cpu"`
-				Memory int `json:"Memory" xml:"Memory"`
-				Gpu    int `json:"Gpu" xml:"Gpu"`
-			} `json:"TotalResources" xml:"TotalResources"`
-			UsedResources struct {
-				Cpu    int `json:"Cpu" xml:"Cpu"`
-				Memory int `json:"Memory" xml:"Memory"`
-				Gpu    int `json:"Gpu" xml:"Gpu"`
-			} `json:"UsedResources" xml:"UsedResources"`
-		} `json:"NodeInfo" xml:"NodeInfo"`
-	} `json:"Nodes" xml:"Nodes"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                      `json:"PageSize" xml:"PageSize"`
+	Nodes      NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
 }
 
 func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListNodesNoPaging", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListNodesNoPaging", "", "")
 	return
 }
 

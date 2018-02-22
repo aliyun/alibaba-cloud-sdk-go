@@ -67,13 +67,13 @@ func (client *Client) ModifyNatGatewaySpecWithCallback(request *ModifyNatGateway
 
 type ModifyNatGatewaySpecRequest struct {
 	*requests.RpcRequest
-	Spec                 string           `position:"Query" name:"Spec"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	Spec                 string           `position:"Query" name:"Spec"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type ModifyNatGatewaySpecResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyNatGatewaySpecRequest() (request *ModifyNatGatewaySpecRequest) 
 	request = &ModifyNatGatewaySpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNatGatewaySpec", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNatGatewaySpec", "", "")
 	return
 }
 

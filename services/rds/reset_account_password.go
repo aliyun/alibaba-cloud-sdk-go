@@ -67,13 +67,13 @@ func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPass
 
 type ResetAccountPasswordRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	AccountPassword      string           `position:"Query" name:"AccountPassword"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ResetAccountPasswordResponse struct {
@@ -85,7 +85,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccountPassword", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccountPassword", "", "")
 	return
 }
 

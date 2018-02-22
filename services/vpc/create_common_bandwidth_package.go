@@ -67,16 +67,16 @@ func (client *Client) CreateCommonBandwidthPackageWithCallback(request *CreateCo
 
 type CreateCommonBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Ratio                requests.Integer `position:"Query" name:"Ratio"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	Ratio                requests.Integer `position:"Query" name:"Ratio"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 }
 
 type CreateCommonBandwidthPackageResponse struct {
@@ -89,7 +89,7 @@ func CreateCreateCommonBandwidthPackageRequest() (request *CreateCommonBandwidth
 	request = &CreateCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCommonBandwidthPackage", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCommonBandwidthPackage", "", "")
 	return
 }
 

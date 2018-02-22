@@ -67,14 +67,14 @@ func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func
 
 type SetRuleRequest struct {
 	*requests.RpcRequest
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	RuleId               string           `position:"Query" name:"RuleId"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 }
 
 type SetRuleResponse struct {
@@ -86,7 +86,7 @@ func CreateSetRuleRequest() (request *SetRuleRequest) {
 	request = &SetRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetRule", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetRule", "", "")
 	return
 }
 

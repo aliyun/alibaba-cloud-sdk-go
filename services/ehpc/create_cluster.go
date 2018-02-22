@@ -67,37 +67,37 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 
 type CreateClusterRequest struct {
 	*requests.RpcRequest
-	SccClusterId                string                      `position:"Query" name:"SccClusterId"`
-	ImageId                     string                      `position:"Query" name:"ImageId"`
-	EcsOrderManagerInstanceType string                      `position:"Query" name:"EcsOrder.Manager.InstanceType"`
-	EhpcVersion                 string                      `position:"Query" name:"EhpcVersion"`
-	AccountType                 string                      `position:"Query" name:"AccountType"`
-	SecurityGroupId             string                      `position:"Query" name:"SecurityGroupId"`
-	Description                 string                      `position:"Query" name:"Description"`
-	KeyPairName                 string                      `position:"Query" name:"KeyPairName"`
-	SecurityGroupName           string                      `position:"Query" name:"SecurityGroupName"`
-	EcsOrderComputeInstanceType string                      `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	ImageOwnerAlias             string                      `position:"Query" name:"ImageOwnerAlias"`
-	VolumeType                  string                      `position:"Query" name:"VolumeType"`
-	EcsOrderManagerCount        requests.Integer            `position:"Query" name:"EcsOrder.Manager.Count"`
-	Password                    string                      `position:"Query" name:"Password"`
-	EcsOrderLoginCount          requests.Integer            `position:"Query" name:"EcsOrder.Login.Count"`
-	ComputeSpotPriceLimit       string                      `position:"Query" name:"ComputeSpotPriceLimit"`
-	VolumeProtocol              string                      `position:"Query" name:"VolumeProtocol"`
-	OsTag                       string                      `position:"Query" name:"OsTag"`
-	RemoteDirectory             string                      `position:"Query" name:"RemoteDirectory"`
-	EcsOrderComputeCount        requests.Integer            `position:"Query" name:"EcsOrder.Compute.Count"`
-	ComputeSpotStrategy         string                      `position:"Query" name:"ComputeSpotStrategy"`
-	VSwitchId                   string                      `position:"Query" name:"VSwitchId"`
-	Application                 *[]CreateClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
-	EcsChargeType               string                      `position:"Query" name:"EcsChargeType"`
-	HaEnable                    requests.Boolean            `position:"Query" name:"HaEnable"`
-	Name                        string                      `position:"Query" name:"Name"`
-	SchedulerType               string                      `position:"Query" name:"SchedulerType"`
-	VolumeId                    string                      `position:"Query" name:"VolumeId"`
-	VolumeMountpoint            string                      `position:"Query" name:"VolumeMountpoint"`
-	EcsOrderLoginInstanceType   string                      `position:"Query" name:"EcsOrder.Login.InstanceType"`
 	ZoneId                      string                      `position:"Query" name:"ZoneId"`
+	Name                        string                      `position:"Query" name:"Name"`
+	Description                 string                      `position:"Query" name:"Description"`
+	EhpcVersion                 string                      `position:"Query" name:"EhpcVersion"`
+	OsTag                       string                      `position:"Query" name:"OsTag"`
+	AccountType                 string                      `position:"Query" name:"AccountType"`
+	SchedulerType               string                      `position:"Query" name:"SchedulerType"`
+	SecurityGroupId             string                      `position:"Query" name:"SecurityGroupId"`
+	SecurityGroupName           string                      `position:"Query" name:"SecurityGroupName"`
+	VSwitchId                   string                      `position:"Query" name:"VSwitchId"`
+	VolumeType                  string                      `position:"Query" name:"VolumeType"`
+	VolumeId                    string                      `position:"Query" name:"VolumeId"`
+	VolumeProtocol              string                      `position:"Query" name:"VolumeProtocol"`
+	VolumeMountpoint            string                      `position:"Query" name:"VolumeMountpoint"`
+	RemoteDirectory             string                      `position:"Query" name:"RemoteDirectory"`
+	HaEnable                    requests.Boolean            `position:"Query" name:"HaEnable"`
+	EcsChargeType               string                      `position:"Query" name:"EcsChargeType"`
+	Password                    string                      `position:"Query" name:"Password"`
+	KeyPairName                 string                      `position:"Query" name:"KeyPairName"`
+	ImageOwnerAlias             string                      `position:"Query" name:"ImageOwnerAlias"`
+	ImageId                     string                      `position:"Query" name:"ImageId"`
+	EcsOrderManagerCount        requests.Integer            `position:"Query" name:"EcsOrder.Manager.Count"`
+	EcsOrderManagerInstanceType string                      `position:"Query" name:"EcsOrder.Manager.InstanceType"`
+	EcsOrderComputeCount        requests.Integer            `position:"Query" name:"EcsOrder.Compute.Count"`
+	EcsOrderComputeInstanceType string                      `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	EcsOrderLoginCount          requests.Integer            `position:"Query" name:"EcsOrder.Login.Count"`
+	EcsOrderLoginInstanceType   string                      `position:"Query" name:"EcsOrder.Login.InstanceType"`
+	SccClusterId                string                      `position:"Query" name:"SccClusterId"`
+	ComputeSpotStrategy         string                      `position:"Query" name:"ComputeSpotStrategy"`
+	ComputeSpotPriceLimit       string                      `position:"Query" name:"ComputeSpotPriceLimit"`
+	Application                 *[]CreateClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
 }
 
 type CreateClusterApplication struct {
@@ -114,7 +114,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateCluster", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateCluster", "", "")
 	return
 }
 

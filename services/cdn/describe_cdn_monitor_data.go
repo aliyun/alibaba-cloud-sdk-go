@@ -67,31 +67,22 @@ func (client *Client) DescribeCdnMonitorDataWithCallback(request *DescribeCdnMon
 
 type DescribeCdnMonitorDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Interval      string           `position:"Query" name:"Interval"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Interval      string           `position:"Query" name:"Interval"`
 }
 
 type DescribeCdnMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	DomainName      string `json:"DomainName" xml:"DomainName"`
-	MonitorInterval int    `json:"MonitorInterval" xml:"MonitorInterval"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	MonitorDatas    struct {
-		CDNMonitorData []struct {
-			TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`
-			QueryPerSecond    string `json:"QueryPerSecond" xml:"QueryPerSecond"`
-			BytesPerSecond    string `json:"BytesPerSecond" xml:"BytesPerSecond"`
-			BytesHitRate      string `json:"BytesHitRate" xml:"BytesHitRate"`
-			RequestHitRate    string `json:"RequestHitRate" xml:"RequestHitRate"`
-			AverageObjectSize string `json:"AverageObjectSize" xml:"AverageObjectSize"`
-		} `json:"CDNMonitorData" xml:"CDNMonitorData"`
-	} `json:"MonitorDatas" xml:"MonitorDatas"`
+	RequestId       string       `json:"RequestId" xml:"RequestId"`
+	DomainName      string       `json:"DomainName" xml:"DomainName"`
+	MonitorInterval int          `json:"MonitorInterval" xml:"MonitorInterval"`
+	StartTime       string       `json:"StartTime" xml:"StartTime"`
+	EndTime         string       `json:"EndTime" xml:"EndTime"`
+	MonitorDatas    MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
 func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataRequest) {

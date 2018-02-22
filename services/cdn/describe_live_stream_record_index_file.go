@@ -67,31 +67,18 @@ func (client *Client) DescribeLiveStreamRecordIndexFileWithCallback(request *Des
 
 type DescribeLiveStreamRecordIndexFileRequest struct {
 	*requests.RpcRequest
-	StreamName    string           `position:"Query" name:"StreamName"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	AppName       string           `position:"Query" name:"AppName"`
+	StreamName    string           `position:"Query" name:"StreamName"`
 	RecordId      string           `position:"Query" name:"RecordId"`
 }
 
 type DescribeLiveStreamRecordIndexFileResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	RecordIndexInfo struct {
-		RecordId   string  `json:"RecordId" xml:"RecordId"`
-		RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
-		DomainName string  `json:"DomainName" xml:"DomainName"`
-		AppName    string  `json:"AppName" xml:"AppName"`
-		StreamName string  `json:"StreamName" xml:"StreamName"`
-		OssObject  string  `json:"OssObject" xml:"OssObject"`
-		StartTime  string  `json:"StartTime" xml:"StartTime"`
-		EndTime    string  `json:"EndTime" xml:"EndTime"`
-		Duration   float64 `json:"Duration" xml:"Duration"`
-		Height     int     `json:"Height" xml:"Height"`
-		Width      int     `json:"Width" xml:"Width"`
-		CreateTime string  `json:"CreateTime" xml:"CreateTime"`
-	} `json:"RecordIndexInfo" xml:"RecordIndexInfo"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	RecordIndexInfo RecordIndexInfo `json:"RecordIndexInfo" xml:"RecordIndexInfo"`
 }
 
 func CreateDescribeLiveStreamRecordIndexFileRequest() (request *DescribeLiveStreamRecordIndexFileRequest) {

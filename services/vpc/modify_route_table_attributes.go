@@ -67,17 +67,17 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
-	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceBid          string           `position:"Query" name:"ResourceBid"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 }
 
 type ModifyRouteTableAttributesResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttribu
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "", "")
 	return
 }
 

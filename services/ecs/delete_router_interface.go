@@ -67,13 +67,13 @@ func (client *Client) DeleteRouterInterfaceWithCallback(request *DeleteRouterInt
 
 type DeleteRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DeleteRouterInterfaceResponse struct {
@@ -85,7 +85,7 @@ func CreateDeleteRouterInterfaceRequest() (request *DeleteRouterInterfaceRequest
 	request = &DeleteRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRouterInterface", "", "")
 	return
 }
 

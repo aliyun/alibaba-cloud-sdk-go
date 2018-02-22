@@ -67,68 +67,24 @@ func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetai
 
 type QueryTaskDetailHistoryRequest struct {
 	*requests.RpcRequest
-	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	Lang               string           `position:"Query" name:"Lang"`
+	UserClientIp       string           `position:"Query" name:"UserClientIp"`
 	TaskNo             string           `position:"Query" name:"TaskNo"`
 	DomainName         string           `position:"Query" name:"DomainName"`
-	TaskStatus         requests.Integer `position:"Query" name:"TaskStatus"`
 	DomainNameCursor   string           `position:"Query" name:"DomainNameCursor"`
-	UserClientIp       string           `position:"Query" name:"UserClientIp"`
-	Lang               string           `position:"Query" name:"Lang"`
+	TaskStatus         requests.Integer `position:"Query" name:"TaskStatus"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	TaskDetailNoCursor string           `position:"Query" name:"TaskDetailNoCursor"`
 }
 
 type QueryTaskDetailHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	PageSize          int    `json:"PageSize" xml:"PageSize"`
-	CurrentPageCursor struct {
-		TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-		TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-		TaskType     string `json:"TaskType" xml:"TaskType"`
-		InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-		UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-		CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-		TryCount     int    `json:"TryCount" xml:"TryCount"`
-		ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-	} `json:"CurrentPageCursor" xml:"CurrentPageCursor"`
-	NextPageCursor struct {
-		TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-		TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-		TaskType     string `json:"TaskType" xml:"TaskType"`
-		InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-		UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-		CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-		TryCount     int    `json:"TryCount" xml:"TryCount"`
-		ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-	} `json:"NextPageCursor" xml:"NextPageCursor"`
-	PrePageCursor struct {
-		TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-		TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-		TaskType     string `json:"TaskType" xml:"TaskType"`
-		InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-		UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-		CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-		TryCount     int    `json:"TryCount" xml:"TryCount"`
-		ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-	} `json:"PrePageCursor" xml:"PrePageCursor"`
-	Objects []struct {
-		TaskNo       string `json:"TaskNo" xml:"TaskNo"`
-		TaskDetailNo string `json:"TaskDetailNo" xml:"TaskDetailNo"`
-		TaskType     string `json:"TaskType" xml:"TaskType"`
-		InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-		DomainName   string `json:"DomainName" xml:"DomainName"`
-		TaskStatus   string `json:"TaskStatus" xml:"TaskStatus"`
-		UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-		CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-		TryCount     int    `json:"TryCount" xml:"TryCount"`
-		ErrorMsg     string `json:"ErrorMsg" xml:"ErrorMsg"`
-	} `json:"Objects" xml:"Objects"`
+	RequestId         string              `json:"RequestId" xml:"RequestId"`
+	PageSize          int                 `json:"PageSize" xml:"PageSize"`
+	CurrentPageCursor CurrentPageCursor   `json:"CurrentPageCursor" xml:"CurrentPageCursor"`
+	NextPageCursor    NextPageCursor      `json:"NextPageCursor" xml:"NextPageCursor"`
+	PrePageCursor     PrePageCursor       `json:"PrePageCursor" xml:"PrePageCursor"`
+	Objects           []TaskDetailHistory `json:"Objects" xml:"Objects"`
 }
 
 func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryRequest) {

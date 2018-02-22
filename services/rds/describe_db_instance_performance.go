@@ -67,43 +67,31 @@ func (client *Client) DescribeDBInstancePerformanceWithCallback(request *Describ
 
 type DescribeDBInstancePerformanceRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	Key                  string           `position:"Query" name:"Key"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 }
 
 type DescribeDBInstancePerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId    string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine          string `json:"Engine" xml:"Engine"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	EndTime         string `json:"EndTime" xml:"EndTime"`
-	PerformanceKeys struct {
-		PerformanceKey []struct {
-			Key         string `json:"Key" xml:"Key"`
-			Unit        string `json:"Unit" xml:"Unit"`
-			ValueFormat string `json:"ValueFormat" xml:"ValueFormat"`
-			Values      struct {
-				PerformanceValue []struct {
-					Value string `json:"Value" xml:"Value"`
-					Date  string `json:"Date" xml:"Date"`
-				} `json:"PerformanceValue" xml:"PerformanceValue"`
-			} `json:"Values" xml:"Values"`
-		} `json:"PerformanceKey" xml:"PerformanceKey"`
-	} `json:"PerformanceKeys" xml:"PerformanceKeys"`
+	RequestId       string                                         `json:"RequestId" xml:"RequestId"`
+	DBInstanceId    string                                         `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine          string                                         `json:"Engine" xml:"Engine"`
+	StartTime       string                                         `json:"StartTime" xml:"StartTime"`
+	EndTime         string                                         `json:"EndTime" xml:"EndTime"`
+	PerformanceKeys PerformanceKeysInDescribeDBInstancePerformance `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
 func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePerformanceRequest) {
 	request = &DescribeDBInstancePerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePerformance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePerformance", "", "")
 	return
 }
 

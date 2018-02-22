@@ -67,9 +67,9 @@ func (client *Client) DeleteNodesWithCallback(request *DeleteNodesRequest, callb
 
 type DeleteNodesRequest struct {
 	*requests.RpcRequest
-	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
-	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 	ClusterId       string                 `position:"Query" name:"ClusterId"`
+	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
+	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
 }
 
 type DeleteNodesInstance struct {
@@ -85,7 +85,7 @@ func CreateDeleteNodesRequest() (request *DeleteNodesRequest) {
 	request = &DeleteNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteNodes", "", "")
 	return
 }
 

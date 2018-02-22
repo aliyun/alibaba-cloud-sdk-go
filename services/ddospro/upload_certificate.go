@@ -67,9 +67,9 @@ func (client *Client) UploadCertificateWithCallback(request *UploadCertificateRe
 
 type UploadCertificateRequest struct {
 	*requests.RpcRequest
-	Cert            string           `position:"Query" name:"Cert"`
-	Domain          string           `position:"Query" name:"Domain"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	Cert            string           `position:"Query" name:"Cert"`
 	Key             string           `position:"Query" name:"Key"`
 }
 

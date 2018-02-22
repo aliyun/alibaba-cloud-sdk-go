@@ -67,15 +67,15 @@ func (client *Client) DescribeNqasWithCallback(request *DescribeNqasRequest, cal
 
 type DescribeNqasRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	NqaId                string           `position:"Query" name:"NqaId"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	NqaId                string           `position:"Query" name:"NqaId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeNqasResponse struct {
@@ -84,22 +84,14 @@ type DescribeNqasResponse struct {
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Nqas       struct {
-		Nqa []struct {
-			NqaId         string `json:"NqaId" xml:"NqaId"`
-			RegionId      string `json:"RegionId" xml:"RegionId"`
-			Status        string `json:"Status" xml:"Status"`
-			RouterId      string `json:"RouterId" xml:"RouterId"`
-			DestinationIp string `json:"DestinationIp" xml:"DestinationIp"`
-		} `json:"Nqa" xml:"Nqa"`
-	} `json:"Nqas" xml:"Nqas"`
+	Nqas       Nqas   `json:"Nqas" xml:"Nqas"`
 }
 
 func CreateDescribeNqasRequest() (request *DescribeNqasRequest) {
 	request = &DescribeNqasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNqas", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNqas", "", "")
 	return
 }
 

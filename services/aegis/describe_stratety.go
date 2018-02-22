@@ -67,28 +67,15 @@ func (client *Client) DescribeStratetyWithCallback(request *DescribeStratetyRequ
 
 type DescribeStratetyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
 type DescribeStratetyResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Count      int    `json:"Count" xml:"Count"`
-	Strategies []struct {
-		CycleDays      int    `json:"CycleDays" xml:"CycleDays"`
-		Id             int    `json:"Id" xml:"Id"`
-		CycleStartTime int    `json:"CycleStartTime" xml:"CycleStartTime"`
-		Type           int    `json:"Type" xml:"Type"`
-		Name           string `json:"Name" xml:"Name"`
-		RiskCount      int    `json:"RiskCount" xml:"RiskCount"`
-		EcsCount       int    `json:"EcsCount" xml:"EcsCount"`
-		ConfigTargets  []struct {
-			Flag       string `json:"Flag" xml:"Flag"`
-			TargetType string `json:"TargetType" xml:"TargetType"`
-			Target     string `json:"Target" xml:"Target"`
-		} `json:"ConfigTargets" xml:"ConfigTargets"`
-	} `json:"Strategies" xml:"Strategies"`
+	Strategies []Data `json:"Strategies" xml:"Strategies"`
 }
 
 func CreateDescribeStratetyRequest() (request *DescribeStratetyRequest) {

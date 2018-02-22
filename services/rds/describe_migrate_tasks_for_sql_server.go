@@ -67,45 +67,34 @@ func (client *Client) DescribeMigrateTasksForSQLServerWithCallback(request *Desc
 
 type DescribeMigrateTasksForSQLServerRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeMigrateTasksForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID     string `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName   string `json:"DBInstanceName" xml:"DBInstanceName"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		MigrateTask []struct {
-			DBName        string `json:"DBName" xml:"DBName"`
-			MigrateIaskId string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-			CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-			EndTime       string `json:"EndTime" xml:"EndTime"`
-			TaskType      string `json:"TaskType" xml:"TaskType"`
-			Status        string `json:"Status" xml:"Status"`
-			IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-			Desc          string `json:"Desc" xml:"Desc"`
-		} `json:"MigrateTask" xml:"MigrateTask"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceID     string                                  `json:"DBInstanceID" xml:"DBInstanceID"`
+	DBInstanceName   string                                  `json:"DBInstanceName" xml:"DBInstanceName"`
+	StartTime        string                                  `json:"StartTime" xml:"StartTime"`
+	EndTime          string                                  `json:"EndTime" xml:"EndTime"`
+	TotalRecordCount int                                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                                     `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeMigrateTasksForSQLServer `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeMigrateTasksForSQLServerRequest() (request *DescribeMigrateTasksForSQLServerRequest) {
 	request = &DescribeMigrateTasksForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer", "", "")
 	return
 }
 

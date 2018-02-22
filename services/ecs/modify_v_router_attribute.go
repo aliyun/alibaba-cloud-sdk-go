@@ -67,13 +67,13 @@ func (client *Client) ModifyVRouterAttributeWithCallback(request *ModifyVRouterA
 
 type ModifyVRouterAttributeRequest struct {
 	*requests.RpcRequest
-	VRouterName          string           `position:"Query" name:"VRouterName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VRouterName          string           `position:"Query" name:"VRouterName"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyVRouterAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyVRouterAttributeRequest() (request *ModifyVRouterAttributeReque
 	request = &ModifyVRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVRouterAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVRouterAttribute", "", "")
 	return
 }
 

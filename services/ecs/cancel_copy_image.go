@@ -67,11 +67,11 @@ func (client *Client) CancelCopyImageWithCallback(request *CancelCopyImageReques
 
 type CancelCopyImageRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type CancelCopyImageResponse struct {
@@ -83,7 +83,7 @@ func CreateCancelCopyImageRequest() (request *CancelCopyImageRequest) {
 	request = &CancelCopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelCopyImage", "", "")
 	return
 }
 

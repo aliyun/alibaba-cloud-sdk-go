@@ -67,11 +67,6 @@ func (client *Client) DeleteNetworkInterfaceWithCallback(request *DeleteNetworkI
 
 type DeleteNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 type DeleteNetworkInterfaceResponse struct {
@@ -83,7 +78,7 @@ func CreateDeleteNetworkInterfaceRequest() (request *DeleteNetworkInterfaceReque
 	request = &DeleteNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteNetworkInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteNetworkInterface", "", "")
 	return
 }
 

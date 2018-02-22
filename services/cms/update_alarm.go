@@ -67,20 +67,20 @@ func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callb
 
 type UpdateAlarmRequest struct {
 	*requests.RpcRequest
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
+	Id                 string           `position:"Query" name:"Id"`
+	Name               string           `position:"Query" name:"Name"`
 	Period             requests.Integer `position:"Query" name:"Period"`
 	Statistics         string           `position:"Query" name:"Statistics"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
 	Threshold          string           `position:"Query" name:"Threshold"`
-	Id                 string           `position:"Query" name:"Id"`
-	Webhook            string           `position:"Query" name:"Webhook"`
-	Name               string           `position:"Query" name:"Name"`
-	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
-	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
 	ContactGroups      string           `position:"Query" name:"ContactGroups"`
-	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	Webhook            string           `position:"Query" name:"Webhook"`
 }
 
 type UpdateAlarmResponse struct {
@@ -95,7 +95,7 @@ func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 	request = &UpdateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateAlarm", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateAlarm", "", "")
 	return
 }
 

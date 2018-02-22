@@ -67,12 +67,12 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithCallback(request *
 
 type ModifyGlobalAccelerationInstanceSpecRequest struct {
 	*requests.RpcRequest
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	Bandwidth                    string           `position:"Query" name:"Bandwidth"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyGlobalAccelerationInstanceSpecResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyGlobalAccelerationInstanceSpecRequest() (request *ModifyGlobalA
 	request = &ModifyGlobalAccelerationInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec", "", "")
 	return
 }
 

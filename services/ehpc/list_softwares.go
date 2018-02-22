@@ -72,32 +72,15 @@ type ListSoftwaresRequest struct {
 
 type ListSoftwaresResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Softwares struct {
-		SoftwareInfo []struct {
-			EhpcVersion      string `json:"EhpcVersion" xml:"EhpcVersion"`
-			OsTag            string `json:"OsTag" xml:"OsTag"`
-			SchedulerType    string `json:"SchedulerType" xml:"SchedulerType"`
-			SchedulerVersion string `json:"SchedulerVersion" xml:"SchedulerVersion"`
-			AccountType      string `json:"AccountType" xml:"AccountType"`
-			AccountVersion   string `json:"AccountVersion" xml:"AccountVersion"`
-			Applications     struct {
-				ApplicationInfo []struct {
-					Tag      string `json:"Tag" xml:"Tag"`
-					Name     string `json:"Name" xml:"Name"`
-					Version  string `json:"Version" xml:"Version"`
-					Required bool   `json:"Required" xml:"Required"`
-				} `json:"ApplicationInfo" xml:"ApplicationInfo"`
-			} `json:"Applications" xml:"Applications"`
-		} `json:"SoftwareInfo" xml:"SoftwareInfo"`
-	} `json:"Softwares" xml:"Softwares"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Softwares Softwares `json:"Softwares" xml:"Softwares"`
 }
 
 func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	request = &ListSoftwaresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListSoftwares", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListSoftwares", "", "")
 	return
 }
 

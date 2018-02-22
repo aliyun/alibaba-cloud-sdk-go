@@ -67,9 +67,9 @@ func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callbac
 
 type CancelTaskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
@@ -82,7 +82,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CancelTask", "", "")
 	return
 }
 

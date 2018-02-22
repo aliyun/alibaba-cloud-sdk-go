@@ -67,49 +67,34 @@ func (client *Client) DescribeVpnConnectionWithCallback(request *DescribeVpnConn
 
 type DescribeVpnConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
 type DescribeVpnConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string `json:"Name" xml:"Name"`
-	LocalSubnet       string `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool   `json:"EffectImmediately" xml:"EffectImmediately"`
-	Status            string `json:"Status" xml:"Status"`
-	IkeConfig         struct {
-		Psk         string `json:"Psk" xml:"Psk"`
-		IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-		IkeMode     string `json:"IkeMode" xml:"IkeMode"`
-		IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-		IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
-		IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-		IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
-		LocalId     string `json:"LocalId" xml:"LocalId"`
-		RemoteId    string `json:"RemoteId" xml:"RemoteId"`
-	} `json:"IkeConfig" xml:"IkeConfig"`
-	IpsecConfig struct {
-		IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-		IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
-		IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
-		IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
-	} `json:"IpsecConfig" xml:"IpsecConfig"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId   string      `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId string      `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId      string      `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name              string      `json:"Name" xml:"Name"`
+	LocalSubnet       string      `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet      string      `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime        int         `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately bool        `json:"EffectImmediately" xml:"EffectImmediately"`
+	Status            string      `json:"Status" xml:"Status"`
+	IkeConfig         IkeConfig   `json:"IkeConfig" xml:"IkeConfig"`
+	IpsecConfig       IpsecConfig `json:"IpsecConfig" xml:"IpsecConfig"`
 }
 
 func CreateDescribeVpnConnectionRequest() (request *DescribeVpnConnectionRequest) {
 	request = &DescribeVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnection", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnConnection", "", "")
 	return
 }
 

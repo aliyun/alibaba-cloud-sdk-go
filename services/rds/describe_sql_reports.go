@@ -67,48 +67,31 @@ func (client *Client) DescribeSQLReportsWithCallback(request *DescribeSQLReports
 
 type DescribeSQLReportsRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeSQLReportsResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		Item []struct {
-			ReportTime       string `json:"ReportTime" xml:"ReportTime"`
-			LatencyTopNItems struct {
-				LatencyTopNItem []struct {
-					SQLText         string `json:"SQLText" xml:"SQLText"`
-					AvgLatency      int    `json:"AvgLatency" xml:"AvgLatency"`
-					SQLExecuteTimes int    `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
-				} `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
-			} `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
-			QPSTopNItems struct {
-				QPSTopNItem []struct {
-					SQLText         string `json:"SQLText" xml:"SQLText"`
-					SQLExecuteTimes int    `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
-				} `json:"QPSTopNItem" xml:"QPSTopNItem"`
-			} `json:"QPSTopNItems" xml:"QPSTopNItems"`
-		} `json:"Item" xml:"Item"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                    `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                       `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                       `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                       `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeSQLReports `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {
 	request = &DescribeSQLReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLReports", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLReports", "", "")
 	return
 }
 

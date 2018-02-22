@@ -67,8 +67,8 @@ func (client *Client) DescribeWebshellWithCallback(request *DescribeWebshellRequ
 
 type DescribeWebshellRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	GroupId         requests.Integer `position:"Query" name:"GroupId"`
 	Remark          string           `position:"Query" name:"Remark"`
 }

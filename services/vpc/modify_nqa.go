@@ -67,13 +67,13 @@ func (client *Client) ModifyNqaWithCallback(request *ModifyNqaRequest, callback 
 
 type ModifyNqaRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DestinationIp        string           `position:"Query" name:"DestinationIp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	NqaId                string           `position:"Query" name:"NqaId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DestinationIp        string           `position:"Query" name:"DestinationIp"`
+	NqaId                string           `position:"Query" name:"NqaId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyNqaResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyNqaRequest() (request *ModifyNqaRequest) {
 	request = &ModifyNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNqa", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNqa", "", "")
 	return
 }
 

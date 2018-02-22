@@ -67,12 +67,12 @@ func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequ
 
 type PushMessageToiOSRequest struct {
 	*requests.RpcRequest
-	Body        string           `position:"Query" name:"Body"`
-	Title       string           `position:"Query" name:"Title"`
-	TargetValue string           `position:"Query" name:"TargetValue"`
-	JobKey      string           `position:"Query" name:"JobKey"`
-	Target      string           `position:"Query" name:"Target"`
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	Target      string           `position:"Query" name:"Target"`
+	TargetValue string           `position:"Query" name:"TargetValue"`
+	Title       string           `position:"Query" name:"Title"`
+	Body        string           `position:"Query" name:"Body"`
+	JobKey      string           `position:"Query" name:"JobKey"`
 }
 
 type PushMessageToiOSResponse struct {

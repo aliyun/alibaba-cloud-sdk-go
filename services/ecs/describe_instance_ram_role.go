@@ -67,33 +67,28 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	RamRoleName          string           `position:"Query" name:"RamRoleName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	RamRoleName          string           `position:"Query" name:"RamRoleName"`
 }
 
 type DescribeInstanceRamRoleResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
-	InstanceRamRoleSets struct {
-		InstanceRamRoleSet []struct {
-			InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-			RamRoleName string `json:"RamRoleName" xml:"RamRoleName"`
-		} `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
-	} `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
+	RequestId           string                                       `json:"RequestId" xml:"RequestId"`
+	RegionId            string                                       `json:"RegionId" xml:"RegionId"`
+	TotalCount          int                                          `json:"TotalCount" xml:"TotalCount"`
+	InstanceRamRoleSets InstanceRamRoleSetsInDescribeInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 
 func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {
 	request = &DescribeInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceRamRole", "", "")
 	return
 }
 

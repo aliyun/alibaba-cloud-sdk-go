@@ -67,20 +67,20 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithCallback(request *Mod
 
 type ModifyPhysicalConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
 	PhysicalConnectionId          string           `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
 	LineOperator                  string           `position:"Query" name:"LineOperator"`
-	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description                   string           `position:"Query" name:"Description"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	PortType                      string           `position:"Query" name:"PortType"`
+	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
+	Description                   string           `position:"Query" name:"Description"`
 	Name                          string           `position:"Query" name:"Name"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
 }
 
 type ModifyPhysicalConnectionAttributeResponse struct {
@@ -92,7 +92,7 @@ func CreateModifyPhysicalConnectionAttributeRequest() (request *ModifyPhysicalCo
 	request = &ModifyPhysicalConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "", "")
 	return
 }
 

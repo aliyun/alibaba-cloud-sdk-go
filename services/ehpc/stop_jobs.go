@@ -67,8 +67,8 @@ func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback fu
 
 type StopJobsRequest struct {
 	*requests.RpcRequest
-	Jobs      string `position:"Query" name:"Jobs"`
 	ClusterId string `position:"Query" name:"ClusterId"`
+	Jobs      string `position:"Query" name:"Jobs"`
 }
 
 type StopJobsResponse struct {
@@ -80,7 +80,7 @@ func CreateStopJobsRequest() (request *StopJobsRequest) {
 	request = &StopJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "StopJobs", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "StopJobs", "", "")
 	return
 }
 

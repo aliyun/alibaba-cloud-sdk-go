@@ -77,10 +77,7 @@ type RefreshTokenResponse struct {
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Token          struct {
-		Signature string `json:"Signature" xml:"Signature"`
-		SignData  string `json:"SignData" xml:"SignData"`
-	} `json:"Token" xml:"Token"`
+	Token          Token  `json:"Token" xml:"Token"`
 }
 
 func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {

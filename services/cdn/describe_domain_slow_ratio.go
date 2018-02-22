@@ -67,36 +67,17 @@ func (client *Client) DescribeDomainSlowRatioWithCallback(request *DescribeDomai
 
 type DescribeDomainSlowRatioRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 type DescribeDomainSlowRatioResponse struct {
 	*responses.BaseResponse
-	EndTime                  string `json:"EndTime" xml:"EndTime"`
-	DataInterval             int    `json:"DataInterval" xml:"DataInterval"`
-	PageNumber               int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize                 int    `json:"PageSize" xml:"PageSize"`
-	TotalCount               int    `json:"TotalCount" xml:"TotalCount"`
-	StartTime                string `json:"StartTime" xml:"StartTime"`
-	SlowRatioDataPerInterval struct {
-		SlowRatioData []struct {
-			TotalUsers   int     `json:"TotalUsers" xml:"TotalUsers"`
-			SlowUsers    int     `json:"SlowUsers" xml:"SlowUsers"`
-			SlowRatio    float64 `json:"SlowRatio" xml:"SlowRatio"`
-			RegionNameZh string  `json:"RegionNameZh" xml:"RegionNameZh"`
-			RegionNameEn string  `json:"RegionNameEn" xml:"RegionNameEn"`
-			IspNameZh    string  `json:"IspNameZh" xml:"IspNameZh"`
-			IspNameEn    string  `json:"IspNameEn" xml:"IspNameEn"`
-			Time         string  `json:"Time" xml:"Time"`
-		} `json:"SlowRatioData" xml:"SlowRatioData"`
-	} `json:"SlowRatioDataPerInterval" xml:"SlowRatioDataPerInterval"`
+	EndTime                  string                   `json:"EndTime" xml:"EndTime"`
+	DataInterval             int                      `json:"DataInterval" xml:"DataInterval"`
+	PageNumber               int                      `json:"PageNumber" xml:"PageNumber"`
+	PageSize                 int                      `json:"PageSize" xml:"PageSize"`
+	TotalCount               int                      `json:"TotalCount" xml:"TotalCount"`
+	StartTime                string                   `json:"StartTime" xml:"StartTime"`
+	SlowRatioDataPerInterval SlowRatioDataPerInterval `json:"SlowRatioDataPerInterval" xml:"SlowRatioDataPerInterval"`
 }
 
 func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioRequest) {

@@ -67,14 +67,14 @@ func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequ
 
 type UnassociateHaVipRequest struct {
 	*requests.RpcRequest
-	HaVipId              string           `position:"Query" name:"HaVipId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Force                string           `position:"Query" name:"Force"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	HaVipId              string           `position:"Query" name:"HaVipId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Force                string           `position:"Query" name:"Force"`
 }
 
 type UnassociateHaVipResponse struct {
@@ -86,7 +86,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateHaVip", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateHaVip", "", "")
 	return
 }
 

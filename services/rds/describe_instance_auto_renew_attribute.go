@@ -67,39 +67,31 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		Item []struct {
-			DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-			RegionId     string `json:"RegionId" xml:"RegionId"`
-			Duration     int    `json:"Duration" xml:"Duration"`
-			Status       string `json:"Status" xml:"Status"`
-			AutoRenew    string `json:"AutoRenew" xml:"AutoRenew"`
-		} `json:"Item" xml:"Item"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                                    `json:"RequestId" xml:"RequestId"`
+	PageNumber       int                                       `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int                                       `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                       `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeInstanceAutoRenewAttribute `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceAutoRenewAttribute", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceAutoRenewAttribute", "", "")
 	return
 }
 

@@ -67,40 +67,32 @@ func (client *Client) DescribeImageSharePermissionWithCallback(request *Describe
 
 type DescribeImageSharePermissionRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeImageSharePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RegionId    string `json:"RegionId" xml:"RegionId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	ImageId     string `json:"ImageId" xml:"ImageId"`
-	ShareGroups struct {
-		ShareGroup []struct {
-			Group string `json:"Group" xml:"Group"`
-		} `json:"ShareGroup" xml:"ShareGroup"`
-	} `json:"ShareGroups" xml:"ShareGroups"`
-	Accounts struct {
-		Account []struct {
-			AliyunId string `json:"AliyunId" xml:"AliyunId"`
-		} `json:"Account" xml:"Account"`
-	} `json:"Accounts" xml:"Accounts"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	RegionId    string      `json:"RegionId" xml:"RegionId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	ImageId     string      `json:"ImageId" xml:"ImageId"`
+	ShareGroups ShareGroups `json:"ShareGroups" xml:"ShareGroups"`
+	Accounts    Accounts    `json:"Accounts" xml:"Accounts"`
 }
 
 func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePermissionRequest) {
 	request = &DescribeImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageSharePermission", "", "")
 	return
 }
 

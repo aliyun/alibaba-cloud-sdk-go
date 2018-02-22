@@ -67,14 +67,14 @@ func (client *Client) DegradeDBInstanceSpecWithCallback(request *DegradeDBInstan
 
 type DegradeDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DegradeDBInstanceSpecResponse struct {
@@ -86,7 +86,7 @@ func CreateDegradeDBInstanceSpecRequest() (request *DegradeDBInstanceSpecRequest
 	request = &DegradeDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DegradeDBInstanceSpec", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DegradeDBInstanceSpec", "", "")
 	return
 }
 

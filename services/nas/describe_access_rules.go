@@ -68,33 +68,25 @@ func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRul
 type DescribeAccessRulesRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 type DescribeAccessRulesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	PageNumber  int    `json:"PageNumber" xml:"PageNumber"`
-	AccessRules struct {
-		AccessRule []struct {
-			SourceCidrIp string `json:"SourceCidrIp" xml:"SourceCidrIp"`
-			Priority     int    `json:"Priority" xml:"Priority"`
-			AccessRuleId string `json:"AccessRuleId" xml:"AccessRuleId"`
-			RWAccess     string `json:"RWAccess" xml:"RWAccess"`
-			UserAccess   string `json:"UserAccess" xml:"UserAccess"`
-		} `json:"AccessRule" xml:"AccessRule"`
-	} `json:"AccessRules" xml:"AccessRules"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	AccessRules AccessRules `json:"AccessRules" xml:"AccessRules"`
 }
 
 func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 	request = &DescribeAccessRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAccessRules", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeAccessRules", "", "")
 	return
 }
 

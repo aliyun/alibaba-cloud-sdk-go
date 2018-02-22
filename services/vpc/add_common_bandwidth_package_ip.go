@@ -67,12 +67,12 @@ func (client *Client) AddCommonBandwidthPackageIpWithCallback(request *AddCommon
 
 type AddCommonBandwidthPackageIpRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
 }
 
 type AddCommonBandwidthPackageIpResponse struct {
@@ -84,7 +84,7 @@ func CreateAddCommonBandwidthPackageIpRequest() (request *AddCommonBandwidthPack
 	request = &AddCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AddCommonBandwidthPackageIp", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AddCommonBandwidthPackageIp", "", "")
 	return
 }
 

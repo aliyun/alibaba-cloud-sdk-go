@@ -67,8 +67,8 @@ func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callb
 
 type RemoveUsersRequest struct {
 	*requests.RpcRequest
-	UserId     *[]string `position:"Query" name:"UserId"  type:"Repeated"`
 	InstanceId string    `position:"Query" name:"InstanceId"`
+	UserId     *[]string `position:"Query" name:"UserId"  type:"Repeated"`
 }
 
 type RemoveUsersResponse struct {

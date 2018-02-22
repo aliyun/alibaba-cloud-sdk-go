@@ -67,11 +67,11 @@ func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest,
 
 type DeleteTemplateRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DeleteTemplateResponse struct {
@@ -84,7 +84,7 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteTemplate", "", "")
 	return
 }
 

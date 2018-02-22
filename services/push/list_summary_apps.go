@@ -71,13 +71,8 @@ type ListSummaryAppsRequest struct {
 
 type ListSummaryAppsResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	SummaryAppInfos struct {
-		SummaryAppInfo []struct {
-			AppName string `json:"AppName" xml:"AppName"`
-			AppKey  int    `json:"AppKey" xml:"AppKey"`
-		} `json:"SummaryAppInfo" xml:"SummaryAppInfo"`
-	} `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	SummaryAppInfos SummaryAppInfos `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
 }
 
 func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {

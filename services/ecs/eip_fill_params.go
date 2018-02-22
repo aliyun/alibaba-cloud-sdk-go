@@ -67,13 +67,13 @@ func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, c
 
 type EipFillParamsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Data                 string           `position:"Query" name:"data"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserCidr             string           `position:"Query" name:"UserCidr"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type EipFillParamsResponse struct {
@@ -89,7 +89,7 @@ func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
 	request = &EipFillParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillParams", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillParams", "", "")
 	return
 }
 

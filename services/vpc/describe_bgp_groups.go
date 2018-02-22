@@ -67,47 +67,31 @@ func (client *Client) DescribeBgpGroupsWithCallback(request *DescribeBgpGroupsRe
 
 type DescribeBgpGroupsRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	RouterId             string           `position:"Query" name:"RouterId"`
 	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeBgpGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	BgpGroups  struct {
-		BgpGroup []struct {
-			Name        string `json:"Name" xml:"Name"`
-			Description string `json:"Description" xml:"Description"`
-			BgpGroupId  string `json:"BgpGroupId" xml:"BgpGroupId"`
-			PeerAsn     string `json:"PeerAsn" xml:"PeerAsn"`
-			AuthKey     string `json:"AuthKey" xml:"AuthKey"`
-			RouterId    string `json:"RouterId" xml:"RouterId"`
-			Status      string `json:"Status" xml:"Status"`
-			Keepalive   string `json:"Keepalive" xml:"Keepalive"`
-			LocalAsn    string `json:"LocalAsn" xml:"LocalAsn"`
-			Hold        string `json:"Hold" xml:"Hold"`
-			IsFake      string `json:"IsFake" xml:"IsFake"`
-			RouteLimit  string `json:"RouteLimit" xml:"RouteLimit"`
-			RegionId    string `json:"RegionId" xml:"RegionId"`
-		} `json:"BgpGroup" xml:"BgpGroup"`
-	} `json:"BgpGroups" xml:"BgpGroups"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	BgpGroups  BgpGroups `json:"BgpGroups" xml:"BgpGroups"`
 }
 
 func CreateDescribeBgpGroupsRequest() (request *DescribeBgpGroupsRequest) {
 	request = &DescribeBgpGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpGroups", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBgpGroups", "", "")
 	return
 }
 

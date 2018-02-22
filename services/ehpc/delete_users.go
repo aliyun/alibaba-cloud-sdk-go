@@ -84,7 +84,7 @@ func CreateDeleteUsersRequest() (request *DeleteUsersRequest) {
 	request = &DeleteUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteUsers", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteUsers", "", "")
 	return
 }
 

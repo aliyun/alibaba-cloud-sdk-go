@@ -67,17 +67,17 @@ func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *Crea
 
 type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	BandwidthType        string           `position:"Query" name:"BandwidthType"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	ServiceLocation      string           `position:"Query" name:"ServiceLocation"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServiceLocation      string           `position:"Query" name:"ServiceLocation"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	BandwidthType        string           `position:"Query" name:"BandwidthType"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 type CreateGlobalAccelerationInstanceResponse struct {
@@ -91,7 +91,7 @@ func CreateCreateGlobalAccelerationInstanceRequest() (request *CreateGlobalAccel
 	request = &CreateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "", "")
 	return
 }
 

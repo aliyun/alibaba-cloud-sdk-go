@@ -67,11 +67,11 @@ func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRout
 
 type DescribeRouterInterfacesRequest struct {
 	*requests.RpcRequest
-	PageSize             requests.Integer                  `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string                            `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           requests.Integer                  `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer                  `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                            `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer                  `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer                  `position:"Query" name:"PageSize"`
 	Filter               *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
@@ -82,48 +82,18 @@ type DescribeRouterInterfacesFilter struct {
 
 type DescribeRouterInterfacesResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	PageNumber         int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize           int    `json:"PageSize" xml:"PageSize"`
-	TotalCount         int    `json:"TotalCount" xml:"TotalCount"`
-	RouterInterfaceSet struct {
-		RouterInterfaceType []struct {
-			RouterInterfaceId               string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
-			OppositeRegionId                string `json:"OppositeRegionId" xml:"OppositeRegionId"`
-			Role                            string `json:"Role" xml:"Role"`
-			Spec                            string `json:"Spec" xml:"Spec"`
-			Name                            string `json:"Name" xml:"Name"`
-			Description                     string `json:"Description" xml:"Description"`
-			RouterId                        string `json:"RouterId" xml:"RouterId"`
-			RouterType                      string `json:"RouterType" xml:"RouterType"`
-			CreationTime                    string `json:"CreationTime" xml:"CreationTime"`
-			EndTime                         string `json:"EndTime" xml:"EndTime"`
-			ChargeType                      string `json:"ChargeType" xml:"ChargeType"`
-			Status                          string `json:"Status" xml:"Status"`
-			BusinessStatus                  string `json:"BusinessStatus" xml:"BusinessStatus"`
-			ConnectedTime                   string `json:"ConnectedTime" xml:"ConnectedTime"`
-			OppositeInterfaceId             string `json:"OppositeInterfaceId" xml:"OppositeInterfaceId"`
-			OppositeInterfaceSpec           string `json:"OppositeInterfaceSpec" xml:"OppositeInterfaceSpec"`
-			OppositeInterfaceStatus         string `json:"OppositeInterfaceStatus" xml:"OppositeInterfaceStatus"`
-			OppositeInterfaceBusinessStatus string `json:"OppositeInterfaceBusinessStatus" xml:"OppositeInterfaceBusinessStatus"`
-			OppositeRouterId                string `json:"OppositeRouterId" xml:"OppositeRouterId"`
-			OppositeRouterType              string `json:"OppositeRouterType" xml:"OppositeRouterType"`
-			OppositeInterfaceOwnerId        string `json:"OppositeInterfaceOwnerId" xml:"OppositeInterfaceOwnerId"`
-			AccessPointId                   string `json:"AccessPointId" xml:"AccessPointId"`
-			OppositeAccessPointId           string `json:"OppositeAccessPointId" xml:"OppositeAccessPointId"`
-			HealthCheckSourceIp             string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
-			HealthCheckTargetIp             string `json:"HealthCheckTargetIp" xml:"HealthCheckTargetIp"`
-			OppositeVpcInstanceId           string `json:"OppositeVpcInstanceId" xml:"OppositeVpcInstanceId"`
-			VpcInstanceId                   string `json:"VpcInstanceId" xml:"VpcInstanceId"`
-		} `json:"RouterInterfaceType" xml:"RouterInterfaceType"`
-	} `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
+	RequestId          string                                       `json:"RequestId" xml:"RequestId"`
+	PageNumber         int                                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize           int                                          `json:"PageSize" xml:"PageSize"`
+	TotalCount         int                                          `json:"TotalCount" xml:"TotalCount"`
+	RouterInterfaceSet RouterInterfaceSetInDescribeRouterInterfaces `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
 }
 
 func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesRequest) {
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouterInterfaces", "", "")
 	return
 }
 

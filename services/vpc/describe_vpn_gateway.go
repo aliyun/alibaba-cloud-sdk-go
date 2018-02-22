@@ -67,11 +67,11 @@ func (client *Client) DescribeVpnGatewayWithCallback(request *DescribeVpnGateway
 
 type DescribeVpnGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 }
 
 type DescribeVpnGatewayResponse struct {
@@ -98,7 +98,7 @@ func CreateDescribeVpnGatewayRequest() (request *DescribeVpnGatewayRequest) {
 	request = &DescribeVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "", "")
 	return
 }
 

@@ -67,46 +67,34 @@ func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAtt
 
 type DescribeTaskAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
 type DescribeTaskAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	TaskId               string `json:"TaskId" xml:"TaskId"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
-	TaskStatus           string `json:"TaskStatus" xml:"TaskStatus"`
-	TaskProcess          string `json:"TaskProcess" xml:"TaskProcess"`
-	SupportCancel        string `json:"SupportCancel" xml:"SupportCancel"`
-	TotalCount           int    `json:"TotalCount" xml:"TotalCount"`
-	SuccessCount         int    `json:"SuccessCount" xml:"SuccessCount"`
-	FailedCount          int    `json:"FailedCount" xml:"FailedCount"`
-	CreationTime         string `json:"CreationTime" xml:"CreationTime"`
-	FinishedTime         string `json:"FinishedTime" xml:"FinishedTime"`
-	OperationProgressSet struct {
-		OperationProgress []struct {
-			OperationStatus string `json:"OperationStatus" xml:"OperationStatus"`
-			ErrorCode       string `json:"ErrorCode" xml:"ErrorCode"`
-			ErrorMsg        string `json:"ErrorMsg" xml:"ErrorMsg"`
-			RelatedItemSet  struct {
-				RelatedItem []struct {
-					Name  string `json:"Name" xml:"Name"`
-					Value string `json:"Value" xml:"Value"`
-				} `json:"RelatedItem" xml:"RelatedItem"`
-			} `json:"RelatedItemSet" xml:"RelatedItemSet"`
-		} `json:"OperationProgress" xml:"OperationProgress"`
-	} `json:"OperationProgressSet" xml:"OperationProgressSet"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	TaskId               string               `json:"TaskId" xml:"TaskId"`
+	RegionId             string               `json:"RegionId" xml:"RegionId"`
+	TaskAction           string               `json:"TaskAction" xml:"TaskAction"`
+	TaskStatus           string               `json:"TaskStatus" xml:"TaskStatus"`
+	TaskProcess          string               `json:"TaskProcess" xml:"TaskProcess"`
+	SupportCancel        string               `json:"SupportCancel" xml:"SupportCancel"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	SuccessCount         int                  `json:"SuccessCount" xml:"SuccessCount"`
+	FailedCount          int                  `json:"FailedCount" xml:"FailedCount"`
+	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
+	FinishedTime         string               `json:"FinishedTime" xml:"FinishedTime"`
+	OperationProgressSet OperationProgressSet `json:"OperationProgressSet" xml:"OperationProgressSet"`
 }
 
 func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest) {
 	request = &DescribeTaskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTaskAttribute", "", "")
 	return
 }
 

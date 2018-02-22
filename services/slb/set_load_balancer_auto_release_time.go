@@ -67,14 +67,14 @@ func (client *Client) SetLoadBalancerAutoReleaseTimeWithCallback(request *SetLoa
 
 type SetLoadBalancerAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
-	Tags                 string           `position:"Query" name:"Tags"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	AutoReleaseTime      requests.Integer `position:"Query" name:"AutoReleaseTime"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	AutoReleaseTime      requests.Integer `position:"Query" name:"AutoReleaseTime"`
 }
 
 type SetLoadBalancerAutoReleaseTimeResponse struct {
@@ -86,7 +86,7 @@ func CreateSetLoadBalancerAutoReleaseTimeRequest() (request *SetLoadBalancerAuto
 	request = &SetLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerAutoReleaseTime", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerAutoReleaseTime", "", "")
 	return
 }
 

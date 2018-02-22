@@ -67,24 +67,18 @@ func (client *Client) GetIpfilterListWithCallback(request *GetIpfilterListReques
 
 type GetIpfilterListRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type GetIpfilterListResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Data       struct {
-		Ipfilters []struct {
-			Id         string `json:"Id" xml:"Id"`
-			IpAddress  string `json:"IpAddress" xml:"IpAddress"`
-			CreateTime string `json:"CreateTime" xml:"CreateTime"`
-		} `json:"ipfilters" xml:"ipfilters"`
-	} `json:"data" xml:"data"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	TotalCount int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                   `json:"PageSize" xml:"PageSize"`
+	Data       DataInGetIpfilterList `json:"data" xml:"data"`
 }
 
 func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {

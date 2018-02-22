@@ -67,35 +67,26 @@ func (client *Client) AddAsrPipelineWithCallback(request *AddAsrPipelineRequest,
 
 type AddAsrPipelineRequest struct {
 	*requests.RpcRequest
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
-	Name                 string           `position:"Query" name:"Name"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type AddAsrPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Pipeline  struct {
-		Id           string `json:"Id" xml:"Id"`
-		Name         string `json:"Name" xml:"Name"`
-		Priority     int    `json:"Priority" xml:"Priority"`
-		State        string `json:"State" xml:"State"`
-		NotifyConfig struct {
-			Topic string `json:"Topic" xml:"Topic"`
-			Queue string `json:"Queue" xml:"Queue"`
-		} `json:"NotifyConfig" xml:"NotifyConfig"`
-	} `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddAsrPipelineRequest() (request *AddAsrPipelineRequest) {
 	request = &AddAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddAsrPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddAsrPipeline", "", "")
 	return
 }
 

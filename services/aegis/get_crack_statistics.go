@@ -67,8 +67,8 @@ func (client *Client) GetCrackStatisticsWithCallback(request *GetCrackStatistics
 
 type GetCrackStatisticsRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
 	StartTime string `position:"Query" name:"StartTime"`
+	EndTime   string `position:"Query" name:"EndTime"`
 }
 
 type GetCrackStatisticsResponse struct {
@@ -77,9 +77,7 @@ type GetCrackStatisticsResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		Intercepted int `json:"Intercepted" xml:"Intercepted"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {

@@ -67,8 +67,8 @@ func (client *Client) GetAccountStatisticsWithCallback(request *GetAccountStatis
 
 type GetAccountStatisticsRequest struct {
 	*requests.RpcRequest
-	EndTime   string `position:"Query" name:"EndTime"`
 	StartTime string `position:"Query" name:"StartTime"`
+	EndTime   string `position:"Query" name:"EndTime"`
 }
 
 type GetAccountStatisticsResponse struct {
@@ -77,10 +77,7 @@ type GetAccountStatisticsResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		RemoteLogin  int `json:"RemoteLogin" xml:"RemoteLogin"`
-		CrackSuccess int `json:"CrackSuccess" xml:"CrackSuccess"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetAccountStatisticsRequest() (request *GetAccountStatisticsRequest) {

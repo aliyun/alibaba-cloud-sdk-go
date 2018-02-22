@@ -67,9 +67,9 @@ func (client *Client) DescribeScalingActivityDetailWithCallback(request *Describ
 
 type DescribeScalingActivityDetailRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingActivityId    string           `position:"Query" name:"ScalingActivityId"`
 }
 
@@ -83,7 +83,7 @@ func CreateDescribeScalingActivityDetailRequest() (request *DescribeScalingActiv
 	request = &DescribeScalingActivityDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivityDetail", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivityDetail", "", "")
 	return
 }
 

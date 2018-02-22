@@ -67,12 +67,12 @@ func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryName
 
 type UpdateCategoryNameRequest struct {
 	*requests.RpcRequest
-	CateId               string           `position:"Query" name:"CateId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CateId               string           `position:"Query" name:"CateId"`
 	CateName             string           `position:"Query" name:"CateName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type UpdateCategoryNameResponse struct {
@@ -84,7 +84,7 @@ func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	request = &UpdateCategoryNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "", "")
 	return
 }
 

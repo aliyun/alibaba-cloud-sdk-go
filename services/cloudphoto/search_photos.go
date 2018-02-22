@@ -68,42 +68,27 @@ func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, cal
 type SearchPhotosRequest struct {
 	*requests.RpcRequest
 	Page      requests.Integer `position:"Query" name:"Page"`
-	Keyword   string           `position:"Query" name:"Keyword"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	Size      requests.Integer `position:"Query" name:"Size"`
+	Keyword   string           `position:"Query" name:"Keyword"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 type SearchPhotosResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Action     string `json:"Action" xml:"Action"`
-	Photos     []struct {
-		Id              int    `json:"Id" xml:"Id"`
-		Title           string `json:"Title" xml:"Title"`
-		FileId          string `json:"FileId" xml:"FileId"`
-		Location        string `json:"Location" xml:"Location"`
-		State           string `json:"State" xml:"State"`
-		Md5             string `json:"Md5" xml:"Md5"`
-		IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
-		Size            int    `json:"Size" xml:"Size"`
-		Width           int    `json:"Width" xml:"Width"`
-		Height          int    `json:"Height" xml:"Height"`
-		Ctime           int    `json:"Ctime" xml:"Ctime"`
-		Mtime           int    `json:"Mtime" xml:"Mtime"`
-		TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-		ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
-	} `json:"Photos" xml:"Photos"`
+	Code       string  `json:"Code" xml:"Code"`
+	Message    string  `json:"Message" xml:"Message"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	Action     string  `json:"Action" xml:"Action"`
+	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
 func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "", "")
 	return
 }
 

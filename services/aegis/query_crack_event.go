@@ -67,11 +67,11 @@ func (client *Client) QueryCrackEventWithCallback(request *QueryCrackEventReques
 
 type QueryCrackEventRequest struct {
 	*requests.RpcRequest
-	EndTime     string           `position:"Query" name:"EndTime"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	StartTime   string           `position:"Query" name:"StartTime"`
 	Uuid        string           `position:"Query" name:"Uuid"`
 	Status      requests.Integer `position:"Query" name:"Status"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	StartTime   string           `position:"Query" name:"StartTime"`
+	EndTime     string           `position:"Query" name:"EndTime"`
 }
 
 type QueryCrackEventResponse struct {
@@ -80,35 +80,7 @@ type QueryCrackEventResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      struct {
-		PageInfo struct {
-			CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
-			PageSize    int `json:"PageSize" xml:"PageSize"`
-			TotalCount  int `json:"TotalCount" xml:"TotalCount"`
-			Count       int `json:"Count" xml:"Count"`
-		} `json:"PageInfo" xml:"PageInfo"`
-		List struct {
-			Entity []struct {
-				Uuid           string `json:"Uuid" xml:"Uuid"`
-				AttackTime     string `json:"AttackTime" xml:"AttackTime"`
-				AttackType     int    `json:"AttackType" xml:"AttackType"`
-				AttackTypeName string `json:"AttackTypeName" xml:"AttackTypeName"`
-				BuyVersion     string `json:"BuyVersion" xml:"BuyVersion"`
-				CrackSourceIp  string `json:"CrackSourceIp" xml:"CrackSourceIp"`
-				CrackTimes     int    `json:"CrackTimes" xml:"CrackTimes"`
-				GroupId        int    `json:"GroupId" xml:"GroupId"`
-				InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-				InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-				Ip             string `json:"Ip" xml:"Ip"`
-				Region         string `json:"Region" xml:"Region"`
-				Status         int    `json:"Status" xml:"Status"`
-				StatusName     string `json:"StatusName" xml:"StatusName"`
-				Location       string `json:"Location" xml:"Location"`
-				InWhite        int    `json:"InWhite" xml:"InWhite"`
-				UserName       string `json:"UserName" xml:"UserName"`
-			} `json:"Entity" xml:"Entity"`
-		} `json:"List" xml:"List"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {

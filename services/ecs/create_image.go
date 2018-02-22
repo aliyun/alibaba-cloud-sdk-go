@@ -68,28 +68,28 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 type CreateImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]CreateImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	Tag4Value            string                          `position:"Query" name:"Tag.4.Value"`
+	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	SnapshotId           string                          `position:"Query" name:"SnapshotId"`
-	Tag2Key              string                          `position:"Query" name:"Tag.2.Key"`
-	ClientToken          string                          `position:"Query" name:"ClientToken"`
-	Description          string                          `position:"Query" name:"Description"`
-	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
-	Platform             string                          `position:"Query" name:"Platform"`
-	Tag1Value            string                          `position:"Query" name:"Tag.1.Value"`
-	ImageName            string                          `position:"Query" name:"ImageName"`
-	Tag3Value            string                          `position:"Query" name:"Tag.3.Value"`
-	Architecture         string                          `position:"Query" name:"Architecture"`
-	Tag5Key              string                          `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
-	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string                          `position:"Query" name:"Tag.1.Key"`
 	InstanceId           string                          `position:"Query" name:"InstanceId"`
-	Tag2Value            string                          `position:"Query" name:"Tag.2.Value"`
+	ImageName            string                          `position:"Query" name:"ImageName"`
 	ImageVersion         string                          `position:"Query" name:"ImageVersion"`
+	Description          string                          `position:"Query" name:"Description"`
+	Platform             string                          `position:"Query" name:"Platform"`
+	Architecture         string                          `position:"Query" name:"Architecture"`
+	ClientToken          string                          `position:"Query" name:"ClientToken"`
+	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
+	Tag1Key              string                          `position:"Query" name:"Tag.1.Key"`
+	Tag2Key              string                          `position:"Query" name:"Tag.2.Key"`
+	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
 	Tag4Key              string                          `position:"Query" name:"Tag.4.Key"`
+	Tag5Key              string                          `position:"Query" name:"Tag.5.Key"`
+	Tag1Value            string                          `position:"Query" name:"Tag.1.Value"`
+	Tag2Value            string                          `position:"Query" name:"Tag.2.Value"`
+	Tag3Value            string                          `position:"Query" name:"Tag.3.Value"`
+	Tag4Value            string                          `position:"Query" name:"Tag.4.Value"`
+	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
 }
 
 type CreateImageDiskDeviceMapping struct {
@@ -109,7 +109,7 @@ func CreateCreateImageRequest() (request *CreateImageRequest) {
 	request = &CreateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "", "")
 	return
 }
 

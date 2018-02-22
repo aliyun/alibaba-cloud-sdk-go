@@ -67,28 +67,23 @@ func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucket
 
 type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type ListAllMediaBucketResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	MediaBucketList struct {
-		MediaBucket []struct {
-			Bucket string `json:"Bucket" xml:"Bucket"`
-			Type   string `json:"Type" xml:"Type"`
-		} `json:"MediaBucket" xml:"MediaBucket"`
-	} `json:"MediaBucketList" xml:"MediaBucketList"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	MediaBucketList MediaBucketList `json:"MediaBucketList" xml:"MediaBucketList"`
 }
 
 func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	request = &ListAllMediaBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllMediaBucket", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllMediaBucket", "", "")
 	return
 }
 

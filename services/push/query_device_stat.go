@@ -67,23 +67,17 @@ func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatReques
 
 type QueryDeviceStatRequest struct {
 	*requests.RpcRequest
-	EndTime    string           `position:"Query" name:"EndTime"`
-	StartTime  string           `position:"Query" name:"StartTime"`
 	AppKey     requests.Integer `position:"Query" name:"AppKey"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	DeviceType string           `position:"Query" name:"DeviceType"`
 	QueryType  string           `position:"Query" name:"QueryType"`
 }
 
 type QueryDeviceStatResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	AppDeviceStats struct {
-		AppDeviceStat []struct {
-			Time       string `json:"Time" xml:"Time"`
-			Count      int    `json:"Count" xml:"Count"`
-			DeviceType string `json:"DeviceType" xml:"DeviceType"`
-		} `json:"AppDeviceStat" xml:"AppDeviceStat"`
-	} `json:"AppDeviceStats" xml:"AppDeviceStats"`
+	RequestId      string                          `json:"RequestId" xml:"RequestId"`
+	AppDeviceStats AppDeviceStatsInQueryDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
 func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {

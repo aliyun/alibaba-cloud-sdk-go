@@ -73,19 +73,8 @@ type QueryDeviceInfoRequest struct {
 
 type QueryDeviceInfoResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DeviceInfo struct {
-		DeviceId       string `json:"DeviceId" xml:"DeviceId"`
-		DeviceType     string `json:"DeviceType" xml:"DeviceType"`
-		Account        string `json:"Account" xml:"Account"`
-		DeviceToken    string `json:"DeviceToken" xml:"DeviceToken"`
-		Tags           string `json:"Tags" xml:"Tags"`
-		Alias          string `json:"Alias" xml:"Alias"`
-		LastOnlineTime string `json:"LastOnlineTime" xml:"LastOnlineTime"`
-		Online         bool   `json:"Online" xml:"Online"`
-		PhoneNumber    string `json:"PhoneNumber" xml:"PhoneNumber"`
-		PushEnabled    bool   `json:"PushEnabled" xml:"PushEnabled"`
-	} `json:"DeviceInfo" xml:"DeviceInfo"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	DeviceInfo DeviceInfo `json:"DeviceInfo" xml:"DeviceInfo"`
 }
 
 func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {

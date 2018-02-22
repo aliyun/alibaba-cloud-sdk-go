@@ -67,12 +67,12 @@ func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *Modify
 
 type ModifyDBInstanceConnectionModeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyDBInstanceConnectionModeResponse struct {
@@ -84,7 +84,7 @@ func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceCon
 	request = &ModifyDBInstanceConnectionModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "", "")
 	return
 }
 

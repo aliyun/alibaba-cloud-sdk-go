@@ -67,38 +67,29 @@ func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribePa
 
 type DescribeParameterTemplatesRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Engine               string           `position:"Query" name:"Engine"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Engine               string           `position:"Query" name:"Engine"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Engine         string `json:"Engine" xml:"Engine"`
-	EngineVersion  string `json:"EngineVersion" xml:"EngineVersion"`
-	ParameterCount string `json:"ParameterCount" xml:"ParameterCount"`
-	Parameters     struct {
-		TemplateRecord []struct {
-			ParameterName        string `json:"ParameterName" xml:"ParameterName"`
-			ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
-			ForceModify          string `json:"ForceModify" xml:"ForceModify"`
-			ForceRestart         string `json:"ForceRestart" xml:"ForceRestart"`
-			CheckingCode         string `json:"CheckingCode" xml:"CheckingCode"`
-			ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
-		} `json:"TemplateRecord" xml:"TemplateRecord"`
-	} `json:"Parameters" xml:"Parameters"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Engine         string     `json:"Engine" xml:"Engine"`
+	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
+	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
+	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
 }
 
 func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTemplatesRequest) {
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterTemplates", "", "")
 	return
 }
 

@@ -67,11 +67,11 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
-	Duration     requests.Integer `position:"Query" name:"Duration"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	ClientToken  string           `position:"Query" name:"ClientToken"`
-	VmNumber     string           `position:"Query" name:"VmNumber"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken  string           `position:"Query" name:"ClientToken"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
+	VmNumber     string           `position:"Query" name:"VmNumber"`
+	Duration     requests.Integer `position:"Query" name:"Duration"`
 	PricingCycle string           `position:"Query" name:"PricingCycle"`
 }
 

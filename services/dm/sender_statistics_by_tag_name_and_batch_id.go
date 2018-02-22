@@ -67,30 +67,20 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *S
 
 type SenderStatisticsByTagNameAndBatchIDRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	TagName              string           `position:"Query" name:"TagName"`
 }
 
 type SenderStatisticsByTagNameAndBatchIDResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Data       struct {
-		Stat []struct {
-			CreateTime         string `json:"CreateTime" xml:"CreateTime"`
-			RequestCount       string `json:"requestCount" xml:"requestCount"`
-			SuccessCount       string `json:"successCount" xml:"successCount"`
-			FaildCount         string `json:"faildCount" xml:"faildCount"`
-			UnavailableCount   string `json:"unavailableCount" xml:"unavailableCount"`
-			SucceededPercent   string `json:"succeededPercent" xml:"succeededPercent"`
-			UnavailablePercent string `json:"unavailablePercent" xml:"unavailablePercent"`
-		} `json:"stat" xml:"stat"`
-	} `json:"data" xml:"data"`
+	RequestId  string                                    `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                       `json:"TotalCount" xml:"TotalCount"`
+	Data       DataInSenderStatisticsByTagNameAndBatchID `json:"data" xml:"data"`
 }
 
 func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {

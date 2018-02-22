@@ -67,8 +67,8 @@ func (client *Client) DeleteMyGroupInstancesWithCallback(request *DeleteMyGroupI
 
 type DeleteMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	GroupId     requests.Integer `position:"Query" name:"GroupId"`
+	InstanceIds string           `position:"Query" name:"InstanceIds"`
 }
 
 type DeleteMyGroupInstancesResponse struct {
@@ -83,7 +83,7 @@ func CreateDeleteMyGroupInstancesRequest() (request *DeleteMyGroupInstancesReque
 	request = &DeleteMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroupInstances", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroupInstances", "", "")
 	return
 }
 

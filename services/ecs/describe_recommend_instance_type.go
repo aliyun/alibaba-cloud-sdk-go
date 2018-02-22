@@ -67,52 +67,30 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Channel              string           `position:"Query" name:"channel"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Operator             string           `position:"Query" name:"operator"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Token                string           `position:"Query" name:"token"`
-	Scene                string           `position:"Query" name:"Scene"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 	ProxyId              string           `position:"Query" name:"proxyId"`
+	Channel              string           `position:"Query" name:"channel"`
+	Operator             string           `position:"Query" name:"operator"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	Scene                string           `position:"Query" name:"Scene"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
 }
 
 type DescribeRecommendInstanceTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      struct {
-		RecommendInstanceType []struct {
-			RegionNo      string `json:"RegionNo" xml:"RegionNo"`
-			CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
-			Scene         string `json:"Scene" xml:"Scene"`
-			InstanceType  struct {
-				Generation         string `json:"Generation" xml:"Generation"`
-				InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-				InstanceType       string `json:"InstanceType" xml:"InstanceType"`
-				SupportIoOptimized string `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
-				Cores              int    `json:"Cores" xml:"Cores"`
-				Memory             int    `json:"Memory" xml:"Memory"`
-			} `json:"InstanceType" xml:"InstanceType"`
-			Zones struct {
-				Zone []struct {
-					ZoneNo       string `json:"ZoneNo" xml:"ZoneNo"`
-					NetworkTypes struct {
-						NetworkType []string `json:"NetworkType" xml:"NetworkType"`
-					} `json:"NetworkTypes" xml:"NetworkTypes"`
-				} `json:"zone" xml:"zone"`
-			} `json:"Zones" xml:"Zones"`
-		} `json:"RecommendInstanceType" xml:"RecommendInstanceType"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendInstanceTypeRequest) {
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "", "")
 	return
 }
 

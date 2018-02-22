@@ -67,14 +67,14 @@ func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRe
 
 type CreateMigrateTaskRequest struct {
 	*requests.RpcRequest
-	BackupMode           string           `position:"Query" name:"BackupMode"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBName               string           `position:"Query" name:"DBName"`
-	OSSUrls              string           `position:"Query" name:"OSSUrls"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
 	IsOnlineDB           string           `position:"Query" name:"IsOnlineDB"`
+	OSSUrls              string           `position:"Query" name:"OSSUrls"`
 }
 
 type CreateMigrateTaskResponse struct {
@@ -91,7 +91,7 @@ func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
 	request = &CreateMigrateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateMigrateTask", "", "")
 	return
 }
 

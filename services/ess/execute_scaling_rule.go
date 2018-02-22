@@ -67,12 +67,12 @@ func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRule
 
 type ExecuteScalingRuleRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingRuleAri       string           `position:"Query" name:"ScalingRuleAri"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ExecuteScalingRuleResponse struct {
@@ -85,7 +85,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "", "")
 	return
 }
 

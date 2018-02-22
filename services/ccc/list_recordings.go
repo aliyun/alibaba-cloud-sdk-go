@@ -67,45 +67,24 @@ func (client *Client) ListRecordingsWithCallback(request *ListRecordingsRequest,
 
 type ListRecordingsRequest struct {
 	*requests.RpcRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
 	StartTime   requests.Integer `position:"Query" name:"StartTime"`
+	StopTime    requests.Integer `position:"Query" name:"StopTime"`
+	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
+	AgentId     string           `position:"Query" name:"AgentId"`
 	Criteria    string           `position:"Query" name:"Criteria"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
-	StopTime    requests.Integer `position:"Query" name:"StopTime"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	AgentId     string           `position:"Query" name:"AgentId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type ListRecordingsResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Recordings     struct {
-		TotalCount int `json:"TotalCount" xml:"TotalCount"`
-		PageNumber int `json:"PageNumber" xml:"PageNumber"`
-		PageSize   int `json:"PageSize" xml:"PageSize"`
-		List       struct {
-			Recording []struct {
-				ContactId       string `json:"ContactId" xml:"ContactId"`
-				ContactType     string `json:"ContactType" xml:"ContactType"`
-				AgentId         string `json:"AgentId" xml:"AgentId"`
-				AgentName       string `json:"AgentName" xml:"AgentName"`
-				CallingNumber   string `json:"CallingNumber" xml:"CallingNumber"`
-				CalledNumber    string `json:"CalledNumber" xml:"CalledNumber"`
-				StartTime       int    `json:"StartTime" xml:"StartTime"`
-				Duration        int    `json:"Duration" xml:"Duration"`
-				FileName        string `json:"FileName" xml:"FileName"`
-				FilePath        string `json:"FilePath" xml:"FilePath"`
-				FileDescription string `json:"FileDescription" xml:"FileDescription"`
-				Channel         string `json:"Channel" xml:"Channel"`
-				InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-			} `json:"Recording" xml:"Recording"`
-		} `json:"List" xml:"List"`
-	} `json:"Recordings" xml:"Recordings"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Success        bool       `json:"Success" xml:"Success"`
+	Code           string     `json:"Code" xml:"Code"`
+	Message        string     `json:"Message" xml:"Message"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Recordings     Recordings `json:"Recordings" xml:"Recordings"`
 }
 
 func CreateListRecordingsRequest() (request *ListRecordingsRequest) {

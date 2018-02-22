@@ -67,13 +67,13 @@ func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySe
 
 type ModifySecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifySecurityGroupAttributeResponse struct {
@@ -85,7 +85,7 @@ func CreateModifySecurityGroupAttributeRequest() (request *ModifySecurityGroupAt
 	request = &ModifySecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "", "")
 	return
 }
 

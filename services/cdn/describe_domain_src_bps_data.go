@@ -67,30 +67,16 @@ func (client *Client) DescribeDomainSrcBpsDataWithCallback(request *DescribeDoma
 
 type DescribeDomainSrcBpsDataRequest struct {
 	*requests.RpcRequest
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
-	Version       string           `position:"Query" name:"Version"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	TimeMerge     string           `position:"Query" name:"TimeMerge"`
 }
 
 type DescribeDomainSrcBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DomainName            string `json:"DomainName" xml:"DomainName"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
-	DataInterval          string `json:"DataInterval" xml:"DataInterval"`
-	SrcBpsDataPerInterval struct {
-		DataModule []struct {
-			TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-			Value     string `json:"Value" xml:"Value"`
-		} `json:"DataModule" xml:"DataModule"`
-	} `json:"SrcBpsDataPerInterval" xml:"SrcBpsDataPerInterval"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	DomainName            string                `json:"DomainName" xml:"DomainName"`
+	StartTime             string                `json:"StartTime" xml:"StartTime"`
+	EndTime               string                `json:"EndTime" xml:"EndTime"`
+	DataInterval          string                `json:"DataInterval" xml:"DataInterval"`
+	SrcBpsDataPerInterval SrcBpsDataPerInterval `json:"SrcBpsDataPerInterval" xml:"SrcBpsDataPerInterval"`
 }
 
 func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataRequest) {

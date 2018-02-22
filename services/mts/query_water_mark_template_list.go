@@ -67,49 +67,25 @@ func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWater
 
 type QueryWaterMarkTemplateListRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	WaterMarkTemplateIds string           `position:"Query" name:"WaterMarkTemplateIds"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type QueryWaterMarkTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	NonExistWids struct {
-		String []string `json:"String" xml:"String"`
-	} `json:"NonExistWids" xml:"NonExistWids"`
-	WaterMarkTemplateList struct {
-		WaterMarkTemplate []struct {
-			Id       string `json:"Id" xml:"Id"`
-			Name     string `json:"Name" xml:"Name"`
-			Width    string `json:"Width" xml:"Width"`
-			Height   string `json:"Height" xml:"Height"`
-			Dx       string `json:"Dx" xml:"Dx"`
-			Dy       string `json:"Dy" xml:"Dy"`
-			ReferPos string `json:"ReferPos" xml:"ReferPos"`
-			Type     string `json:"Type" xml:"Type"`
-			State    string `json:"State" xml:"State"`
-			Timeline struct {
-				Start    string `json:"Start" xml:"Start"`
-				Duration string `json:"Duration" xml:"Duration"`
-			} `json:"Timeline" xml:"Timeline"`
-			RatioRefer struct {
-				Dx     string `json:"Dx" xml:"Dx"`
-				Dy     string `json:"Dy" xml:"Dy"`
-				Width  string `json:"Width" xml:"Width"`
-				Height string `json:"Height" xml:"Height"`
-			} `json:"RatioRefer" xml:"RatioRefer"`
-		} `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
-	} `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
+	RequestId             string                                            `json:"RequestId" xml:"RequestId"`
+	NonExistWids          NonExistWids                                      `json:"NonExistWids" xml:"NonExistWids"`
+	WaterMarkTemplateList WaterMarkTemplateListInQueryWaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
 func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "", "")
 	return
 }
 

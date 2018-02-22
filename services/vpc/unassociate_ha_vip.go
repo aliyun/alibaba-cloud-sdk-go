@@ -67,14 +67,14 @@ func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequ
 
 type UnassociateHaVipRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                string           `position:"Query" name:"Force"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Force                string           `position:"Query" name:"Force"`
 }
 
 type UnassociateHaVipResponse struct {
@@ -86,7 +86,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateHaVip", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateHaVip", "", "")
 	return
 }
 

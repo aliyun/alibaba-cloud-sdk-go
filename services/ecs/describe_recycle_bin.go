@@ -67,42 +67,28 @@ func (client *Client) DescribeRecycleBinWithCallback(request *DescribeRecycleBin
 
 type DescribeRecycleBinRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Status               string           `position:"Query" name:"Status"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type DescribeRecycleBinResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TotalCount       int    `json:"TotalCount" xml:"TotalCount"`
-	RecycleBinModels struct {
-		RecycleBinModel []struct {
-			ResourceId        string `json:"ResourceId" xml:"ResourceId"`
-			RegionId          string `json:"RegionId" xml:"RegionId"`
-			ResourceType      string `json:"ResourceType" xml:"ResourceType"`
-			CreationTime      string `json:"CreationTime" xml:"CreationTime"`
-			Status            string `json:"Status" xml:"Status"`
-			RelationResources struct {
-				RelationResource []struct {
-					RelationResourceId   string `json:"RelationResourceId" xml:"RelationResourceId"`
-					RelationResourceType string `json:"RelationResourceType" xml:"RelationResourceType"`
-				} `json:"relationResource" xml:"relationResource"`
-			} `json:"RelationResources" xml:"RelationResources"`
-		} `json:"RecycleBinModel" xml:"RecycleBinModel"`
-	} `json:"RecycleBinModels" xml:"RecycleBinModels"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	TotalCount       int              `json:"TotalCount" xml:"TotalCount"`
+	RecycleBinModels RecycleBinModels `json:"RecycleBinModels" xml:"RecycleBinModels"`
 }
 
 func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	request = &DescribeRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecycleBin", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecycleBin", "", "")
 	return
 }
 

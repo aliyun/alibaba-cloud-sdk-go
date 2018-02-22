@@ -67,13 +67,13 @@ func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecur
 
 type ModifySecurityGroupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 }
 
 type ModifySecurityGroupPolicyResponse struct {
@@ -85,7 +85,7 @@ func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolic
 	request = &ModifySecurityGroupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "", "")
 	return
 }
 

@@ -67,52 +67,19 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IoOptimized          string           `position:"Query" name:"IoOptimized"`
-	DataDiskCategory     string           `position:"Query" name:"DataDiskCategory"`
-	SystemDiskCategory   string           `position:"Query" name:"SystemDiskCategory"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	NetworkCategory      string           `position:"Query" name:"NetworkCategory"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
-	DestinationResource  string           `position:"Query" name:"DestinationResource"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	AvailableZones struct {
-		AvailableZone []struct {
-			RegionId           string `json:"RegionId" xml:"RegionId"`
-			ZoneId             string `json:"ZoneId" xml:"ZoneId"`
-			Status             string `json:"Status" xml:"Status"`
-			AvailableResources struct {
-				AvailableResource []struct {
-					Type               string `json:"Type" xml:"Type"`
-					SupportedResources struct {
-						SupportedResource []struct {
-							Value  string `json:"Value" xml:"Value"`
-							Status string `json:"Status" xml:"Status"`
-							Min    int    `json:"Min" xml:"Min"`
-							Max    int    `json:"Max" xml:"Max"`
-							Unit   string `json:"Unit" xml:"Unit"`
-						} `json:"SupportedResource" xml:"SupportedResource"`
-					} `json:"SupportedResources" xml:"SupportedResources"`
-				} `json:"AvailableResource" xml:"AvailableResource"`
-			} `json:"AvailableResources" xml:"AvailableResources"`
-		} `json:"AvailableZone" xml:"AvailableZone"`
-	} `json:"AvailableZones" xml:"AvailableZones"`
+	RequestId      string                                    `json:"RequestId" xml:"RequestId"`
+	AvailableZones AvailableZonesInDescribeAvailableResource `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourceRequest) {
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAvailableResource", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAvailableResource", "", "")
 	return
 }
 

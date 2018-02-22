@@ -67,42 +67,34 @@ func (client *Client) DescribeModifyParameterLogWithCallback(request *DescribeMo
 
 type DescribeModifyParameterLogRequest struct {
 	*requests.RpcRequest
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 type DescribeModifyParameterLogResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Engine           string `json:"Engine" xml:"Engine"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	EngineVersion    string `json:"EngineVersion" xml:"EngineVersion"`
-	TotalRecordCount int    `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int    `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int    `json:"PageRecordCount" xml:"PageRecordCount"`
-	Items            struct {
-		ParameterChangeLog []struct {
-			ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
-			OldParameterValue string `json:"OldParameterValue" xml:"OldParameterValue"`
-			NewParameterValue string `json:"NewParameterValue" xml:"NewParameterValue"`
-			ParameterName     string `json:"ParameterName" xml:"ParameterName"`
-			Status            string `json:"Status" xml:"Status"`
-		} `json:"ParameterChangeLog" xml:"ParameterChangeLog"`
-	} `json:"Items" xml:"Items"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
+	Engine           string                            `json:"Engine" xml:"Engine"`
+	DBInstanceId     string                            `json:"DBInstanceId" xml:"DBInstanceId"`
+	EngineVersion    string                            `json:"EngineVersion" xml:"EngineVersion"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	Items            ItemsInDescribeModifyParameterLog `json:"Items" xml:"Items"`
 }
 
 func CreateDescribeModifyParameterLogRequest() (request *DescribeModifyParameterLogRequest) {
 	request = &DescribeModifyParameterLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeModifyParameterLog", "", "")
 	return
 }
 

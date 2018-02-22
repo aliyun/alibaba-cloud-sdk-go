@@ -72,10 +72,8 @@ type GetUserMFAInfoRequest struct {
 
 type GetUserMFAInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	MFADevice struct {
-		SerialNumber string `json:"SerialNumber" xml:"SerialNumber"`
-	} `json:"MFADevice" xml:"MFADevice"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
 func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {

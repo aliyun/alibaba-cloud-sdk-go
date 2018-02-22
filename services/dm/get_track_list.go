@@ -67,41 +67,28 @@ func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, cal
 
 type GetTrackListRequest struct {
 	*requests.RpcRequest
-	Total                string           `position:"Query" name:"Total"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
-	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Offset               string           `position:"Query" name:"Offset"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Total                string           `position:"Query" name:"Total"`
+	Offset               string           `position:"Query" name:"Offset"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	OffsetCreateTime     string           `position:"Query" name:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string           `position:"Query" name:"OffsetCreateTimeDesc"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 type GetTrackListResponse struct {
 	*responses.BaseResponse
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	Total                int    `json:"Total" xml:"Total"`
-	PageNo               int    `json:"PageNo" xml:"PageNo"`
-	PageSize             int    `json:"PageSize" xml:"PageSize"`
-	OffsetCreateTime     string `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
-	OffsetCreateTimeDesc string `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
-	Data                 struct {
-		Stat []struct {
-			CreateTime           string `json:"CreateTime" xml:"CreateTime"`
-			RcptClickCount       string `json:"RcptClickCount" xml:"RcptClickCount"`
-			RcptClickRate        string `json:"RcptClickRate" xml:"RcptClickRate"`
-			RcptOpenCount        string `json:"RcptOpenCount" xml:"RcptOpenCount"`
-			RcptOpenRate         string `json:"RcptOpenRate" xml:"RcptOpenRate"`
-			RcptUniqueClickCount string `json:"RcptUniqueClickCount" xml:"RcptUniqueClickCount"`
-			RcptUniqueClickRate  string `json:"RcptUniqueClickRate" xml:"RcptUniqueClickRate"`
-			RcptUniqueOpenCount  string `json:"RcptUniqueOpenCount" xml:"RcptUniqueOpenCount"`
-			RcptUniqueOpenRate   string `json:"RcptUniqueOpenRate" xml:"RcptUniqueOpenRate"`
-			TotalNumber          string `json:"TotalNumber" xml:"TotalNumber"`
-		} `json:"stat" xml:"stat"`
-	} `json:"data" xml:"data"`
+	RequestId            string             `json:"RequestId" xml:"RequestId"`
+	Total                int                `json:"Total" xml:"Total"`
+	PageNo               int                `json:"PageNo" xml:"PageNo"`
+	PageSize             int                `json:"PageSize" xml:"PageSize"`
+	OffsetCreateTime     string             `json:"OffsetCreateTime" xml:"OffsetCreateTime"`
+	OffsetCreateTimeDesc string             `json:"OffsetCreateTimeDesc" xml:"OffsetCreateTimeDesc"`
+	Data                 DataInGetTrackList `json:"data" xml:"data"`
 }
 
 func CreateGetTrackListRequest() (request *GetTrackListRequest) {

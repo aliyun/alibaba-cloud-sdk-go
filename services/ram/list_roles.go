@@ -73,19 +73,10 @@ type ListRolesRequest struct {
 
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	IsTruncated bool   `json:"IsTruncated" xml:"IsTruncated"`
-	Marker      string `json:"Marker" xml:"Marker"`
-	Roles       struct {
-		Role []struct {
-			RoleId      string `json:"RoleId" xml:"RoleId"`
-			RoleName    string `json:"RoleName" xml:"RoleName"`
-			Arn         string `json:"Arn" xml:"Arn"`
-			Description string `json:"Description" xml:"Description"`
-			CreateDate  string `json:"CreateDate" xml:"CreateDate"`
-			UpdateDate  string `json:"UpdateDate" xml:"UpdateDate"`
-		} `json:"Role" xml:"Role"`
-	} `json:"Roles" xml:"Roles"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	IsTruncated bool             `json:"IsTruncated" xml:"IsTruncated"`
+	Marker      string           `json:"Marker" xml:"Marker"`
+	Roles       RolesInListRoles `json:"Roles" xml:"Roles"`
 }
 
 func CreateListRolesRequest() (request *ListRolesRequest) {

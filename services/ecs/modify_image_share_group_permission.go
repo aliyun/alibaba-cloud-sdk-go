@@ -67,13 +67,13 @@ func (client *Client) ModifyImageShareGroupPermissionWithCallback(request *Modif
 
 type ModifyImageShareGroupPermissionRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
 	AddGroup1            string           `position:"Query" name:"AddGroup.1"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	RemoveGroup1         string           `position:"Query" name:"RemoveGroup.1"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type ModifyImageShareGroupPermissionResponse struct {
@@ -85,7 +85,7 @@ func CreateModifyImageShareGroupPermissionRequest() (request *ModifyImageShareGr
 	request = &ModifyImageShareGroupPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "", "")
 	return
 }
 

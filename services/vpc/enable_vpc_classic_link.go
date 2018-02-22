@@ -67,12 +67,12 @@ func (client *Client) EnableVpcClassicLinkWithCallback(request *EnableVpcClassic
 
 type EnableVpcClassicLinkRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type EnableVpcClassicLinkResponse struct {
@@ -84,7 +84,7 @@ func CreateEnableVpcClassicLinkRequest() (request *EnableVpcClassicLinkRequest) 
 	request = &EnableVpcClassicLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "EnableVpcClassicLink", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "EnableVpcClassicLink", "", "")
 	return
 }
 

@@ -67,17 +67,17 @@ func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTa
 
 type CreateScheduledTaskRequest struct {
 	*requests.RpcRequest
-	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
-	LaunchTime           string           `position:"Query" name:"LaunchTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
-	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
-	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
-	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	Description          string           `position:"Query" name:"Description"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	LaunchTime           string           `position:"Query" name:"LaunchTime"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
@@ -91,7 +91,7 @@ func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScheduledTask", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScheduledTask", "", "")
 	return
 }
 

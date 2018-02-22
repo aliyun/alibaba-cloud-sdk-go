@@ -67,17 +67,17 @@ func (client *Client) CreateBgpGroupWithCallback(request *CreateBgpGroupRequest,
 
 type CreateBgpGroupRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AuthKey              string           `position:"Query" name:"AuthKey"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Name                 string           `position:"Query" name:"Name"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Description          string           `position:"Query" name:"Description"`
 	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
+	AuthKey              string           `position:"Query" name:"AuthKey"`
+	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type CreateBgpGroupResponse struct {
@@ -90,7 +90,7 @@ func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
 	request = &CreateBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpGroup", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpGroup", "", "")
 	return
 }
 

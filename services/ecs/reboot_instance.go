@@ -67,12 +67,12 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 type RebootInstanceResponse struct {
@@ -84,7 +84,7 @@ func CreateRebootInstanceRequest() (request *RebootInstanceRequest) {
 	request = &RebootInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RebootInstance", "", "")
 	return
 }
 

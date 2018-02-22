@@ -67,11 +67,11 @@ func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitation
 
 type DescribeLimitationRequest struct {
 	*requests.RpcRequest
-	Limitation           string           `position:"Query" name:"Limitation"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Limitation           string           `position:"Query" name:"Limitation"`
 }
 
 type DescribeLimitationResponse struct {
@@ -85,7 +85,7 @@ func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	request = &DescribeLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLimitation", "", "")
 	return
 }
 
