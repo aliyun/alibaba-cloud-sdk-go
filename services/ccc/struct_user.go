@@ -16,11 +16,11 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type User struct {
-	UserId      string               `json:"UserId" xml:"UserId"`
-	RamId       string               `json:"RamId" xml:"RamId"`
-	Primary     bool                 `json:"Primary" xml:"Primary"`
-	InstanceId  string               `json:"InstanceId" xml:"InstanceId"`
-	Detail      Detail               `json:"Detail" xml:"Detail"`
-	SkillLevels SkillLevelsInGetUser `json:"SkillLevels" xml:"SkillLevels"`
-	Roles       RolesInGetUser       `json:"Roles" xml:"Roles"`
+	UserId      string                       `json:"UserId" xml:"UserId"`
+	RamId       string                       `json:"RamId" xml:"RamId"`
+	Primary     bool                         `json:"Primary" xml:"Primary"`
+	InstanceId  string                       `json:"InstanceId" xml:"InstanceId"`
+	Detail      Detail                       `json:"Detail" xml:"Detail"`
+	SkillLevels SkillLevelsInGetUser         `json:"SkillLevels" xml:"SkillLevels"`
+	Roles       RolesInListUsersOfSkillGroup `json:"Roles" xml:"Roles"`
 }

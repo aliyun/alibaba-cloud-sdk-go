@@ -20,6 +20,7 @@ type Album struct {
 	Ctime       int    `json:"Ctime" xml:"Ctime"`
 	Name        string `json:"Name" xml:"Name"`
 	Id          int    `json:"Id" xml:"Id"`
+	Remark      string `json:"Remark" xml:"Remark"`
 	PhotosCount int    `json:"PhotosCount" xml:"PhotosCount"`
 	State       string `json:"State" xml:"State"`
 	Cover       Cover  `json:"Cover" xml:"Cover"`

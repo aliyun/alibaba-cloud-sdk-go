@@ -75,12 +75,12 @@ type ListUsersOfSkillGroupRequest struct {
 
 type ListUsersOfSkillGroupResponse struct {
 	*responses.BaseResponse
-	RequestId      string                       `json:"RequestId" xml:"RequestId"`
-	Success        bool                         `json:"Success" xml:"Success"`
-	Code           string                       `json:"Code" xml:"Code"`
-	Message        string                       `json:"Message" xml:"Message"`
-	HttpStatusCode int                          `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Users          UsersInListUsersOfSkillGroup `json:"Users" xml:"Users"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Users          Users  `json:"Users" xml:"Users"`
 }
 
 func CreateListUsersOfSkillGroupRequest() (request *ListUsersOfSkillGroupRequest) {

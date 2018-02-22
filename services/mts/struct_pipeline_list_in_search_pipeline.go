@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type PipelineListInSearchPipeline struct {
-	Pipeline []PipelineInSearchPipeline `json:"Pipeline" xml:"Pipeline"`
+	Pipeline []Pipeline `json:"Pipeline" xml:"Pipeline"`
 }

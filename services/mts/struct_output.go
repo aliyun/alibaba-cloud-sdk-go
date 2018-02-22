@@ -28,10 +28,10 @@ type Output struct {
 	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
 	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
 	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
+	Properties             Properties               `json:"Properties" xml:"Properties"`
 	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
 	Video                  Video                    `json:"Video" xml:"Video"`
 	Container              Container                `json:"Container" xml:"Container"`
-	Properties             Properties               `json:"Properties" xml:"Properties"`
 	Clip                   Clip                     `json:"Clip" xml:"Clip"`
 	SuperReso              SuperReso                `json:"SuperReso" xml:"SuperReso"`
 	Audio                  Audio                    `json:"Audio" xml:"Audio"`

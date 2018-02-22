@@ -16,6 +16,8 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Pipeline struct {
+	Speed        string       `json:"Speed" xml:"Speed"`
+	SpeedLevel   int          `json:"SpeedLevel" xml:"SpeedLevel"`
 	Id           string       `json:"Id" xml:"Id"`
 	Role         string       `json:"Role" xml:"Role"`
 	Name         string       `json:"Name" xml:"Name"`

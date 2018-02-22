@@ -16,8 +16,8 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Users struct {
-	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int             `json:"PageSize" xml:"PageSize"`
-	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
-	List       ListInListUsers `json:"List" xml:"List"`
+	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	List       ListInListUsersOfSkillGroup `json:"List" xml:"List"`
 }

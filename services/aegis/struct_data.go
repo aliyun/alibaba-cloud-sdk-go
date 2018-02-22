@@ -31,6 +31,6 @@ type Data struct {
 	Type           int                   `json:"Type" xml:"Type"`
 	Trojan         int                   `json:"Trojan" xml:"Trojan"`
 	PageInfo       PageInfo              `json:"PageInfo" xml:"PageInfo"`
+	List           ListInQueryCrackEvent `json:"List" xml:"List"`
 	ConfigTargets  ConfigTargets         `json:"ConfigTargets" xml:"ConfigTargets"`
-	List           ListInQueryLoginEvent `json:"List" xml:"List"`
 }

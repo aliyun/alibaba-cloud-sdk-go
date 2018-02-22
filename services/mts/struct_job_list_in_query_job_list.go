@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type JobListInQueryJobList struct {
-	Job []JobInQueryJobList `json:"Job" xml:"Job"`
+	Job []Job `json:"Job" xml:"Job"`
 }

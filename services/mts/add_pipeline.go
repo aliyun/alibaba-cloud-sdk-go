@@ -80,8 +80,8 @@ type AddPipelineRequest struct {
 
 type AddPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Pipeline  PipelineInAddPipeline `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateAddPipelineRequest() (request *AddPipelineRequest) {

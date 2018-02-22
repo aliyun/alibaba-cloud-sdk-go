@@ -16,5 +16,5 @@ package ccc
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type ListInListUsersOfSkillGroup struct {
-	User []UserInListUsersOfSkillGroup `json:"User" xml:"User"`
+	User []User `json:"User" xml:"User"`
 }

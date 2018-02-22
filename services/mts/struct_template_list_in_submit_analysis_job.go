@@ -16,5 +16,5 @@ package mts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type TemplateListInSubmitAnalysisJob struct {
-	Template []TemplateInSubmitAnalysisJob `json:"Template" xml:"Template"`
+	Template []Template `json:"Template" xml:"Template"`
 }

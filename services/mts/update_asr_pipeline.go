@@ -80,8 +80,8 @@ type UpdateAsrPipelineRequest struct {
 
 type UpdateAsrPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Pipeline  PipelineInUpdateAsrPipeline `json:"Pipeline" xml:"Pipeline"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
 func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {

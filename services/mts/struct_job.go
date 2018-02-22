@@ -32,9 +32,9 @@ type Job struct {
 	MNSMessageResult   MNSMessageResult                   `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	AsrResult          AsrResult                          `json:"AsrResult" xml:"AsrResult"`
 	Input              Input                              `json:"Input" xml:"Input"`
+	Output             Output                             `json:"Output" xml:"Output"`
 	MediaDetailConfig  MediaDetailConfig                  `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
 	EditingConfig      EditingConfig                      `json:"EditingConfig" xml:"EditingConfig"`
-	Output             Output                             `json:"Output" xml:"Output"`
 	VideoSummaryResult VideoSummaryResult                 `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
 	VideoSplitResult   VideoSplitResult                   `json:"VideoSplitResult" xml:"VideoSplitResult"`
 	EditingInputs      EditingInputsInQueryEditingJobList `json:"EditingInputs" xml:"EditingInputs"`
