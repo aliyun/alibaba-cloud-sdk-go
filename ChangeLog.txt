@@ -1,9 +1,10 @@
-2018-02-12 Version: 1.0.0-beta
+2018-02-12 Version: 1.0.0
 1. Optimize the nested structs in all response, this will bring the following incompatibilities:
     * Api response struct changes, conclude:
         * ecs.DescribeNetworkInterfaces
         * ecs.DescribeDeploymentSetTopology
         * rds.DescribeDBInstanceIPArrayList
+        * rds.DescribeDBInstancesAsCsv
         * slb.DescribeLoadBalancersRelatedEcs
         * vpc.DescribeVpcAttribute
         * vpc.DescribeVirtualBorderRouters
@@ -15,6 +16,9 @@
         * mts.QueryMediaList
         * mts.QueryJobList
         * mts.SubmitJobs
+        * ehpc.DescribeCluster
+        * aegis.GetEntityList
+        * aegis.DescribeStratety
 
 
 2018-02-09 Version: 0.12.0
