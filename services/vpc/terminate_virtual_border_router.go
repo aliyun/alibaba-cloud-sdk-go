@@ -84,7 +84,7 @@ func CreateTerminateVirtualBorderRouterRequest() (request *TerminateVirtualBorde
 	request = &TerminateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "TerminateVirtualBorderRouter", "vpc", "openAPI")
 	return
 }
 

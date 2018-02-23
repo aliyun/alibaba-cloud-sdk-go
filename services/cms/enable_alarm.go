@@ -83,7 +83,7 @@ func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
 	request = &EnableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "EnableAlarm", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "EnableAlarm", "cms", "openAPI")
 	return
 }
 

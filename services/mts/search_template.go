@@ -89,7 +89,7 @@ func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {
 	request = &SearchTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchTemplate", "mts", "openAPI")
 	return
 }
 

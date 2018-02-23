@@ -92,7 +92,7 @@ func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerforma
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaPerformance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicaPerformance", "rds", "openAPI")
 	return
 }
 

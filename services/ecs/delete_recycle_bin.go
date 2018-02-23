@@ -83,7 +83,7 @@ func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	request = &DeleteRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteRecycleBin", "ecs", "openAPI")
 	return
 }
 

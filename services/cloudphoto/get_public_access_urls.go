@@ -87,7 +87,7 @@ func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI")
 	return
 }
 

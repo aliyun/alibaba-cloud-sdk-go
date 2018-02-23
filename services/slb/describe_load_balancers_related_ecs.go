@@ -88,7 +88,7 @@ func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalanc
 	request = &DescribeLoadBalancersRelatedEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb", "openAPI")
 	return
 }
 

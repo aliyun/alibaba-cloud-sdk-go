@@ -84,7 +84,7 @@ func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdReq
 	request = &ModifyInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "ecs", "openAPI")
 	return
 }
 

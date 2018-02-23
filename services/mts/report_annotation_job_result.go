@@ -86,7 +86,7 @@ func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResul
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts", "openAPI")
 	return
 }
 

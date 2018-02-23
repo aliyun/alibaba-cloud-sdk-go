@@ -84,7 +84,7 @@ func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	request = &GetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetQuota", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetQuota", "cloudphoto", "openAPI")
 	return
 }
 

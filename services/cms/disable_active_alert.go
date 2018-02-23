@@ -83,7 +83,7 @@ func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
 	request = &DisableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DisableActiveAlert", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DisableActiveAlert", "cms", "openAPI")
 	return
 }
 

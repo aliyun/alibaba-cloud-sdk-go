@@ -100,7 +100,7 @@ func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) 
 	request = &DescribeEipAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipAddresses", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc", "openAPI")
 	return
 }
 

@@ -88,7 +88,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
 	return
 }
 

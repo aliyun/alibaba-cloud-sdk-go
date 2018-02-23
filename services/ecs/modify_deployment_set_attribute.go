@@ -85,7 +85,7 @@ func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAt
 	request = &ModifyDeploymentSetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs", "openAPI")
 	return
 }
 

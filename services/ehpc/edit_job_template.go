@@ -90,7 +90,7 @@ func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	request = &EditJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "EditJobTemplate", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "EditJobTemplate", "ehs", "openAPI")
 	return
 }
 

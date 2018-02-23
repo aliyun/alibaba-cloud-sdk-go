@@ -92,7 +92,7 @@ func CreateModifyPhysicalConnectionAttributeRequest() (request *ModifyPhysicalCo
 	request = &ModifyPhysicalConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "vpc", "openAPI")
 	return
 }
 

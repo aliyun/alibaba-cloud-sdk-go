@@ -85,7 +85,7 @@ func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	request = &SetFaceCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SetFaceCover", "cloudphoto", "openAPI")
 	return
 }
 

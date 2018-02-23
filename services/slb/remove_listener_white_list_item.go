@@ -87,7 +87,7 @@ func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteLis
 	request = &RemoveListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveListenerWhiteListItem", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveListenerWhiteListItem", "slb", "openAPI")
 	return
 }
 

@@ -78,7 +78,7 @@ func CreateStopInvocationRequest() (request *StopInvocationRequest) {
 	request = &StopInvocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInvocation", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StopInvocation", "ecs", "openAPI")
 	return
 }
 

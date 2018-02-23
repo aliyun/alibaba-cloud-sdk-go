@@ -83,7 +83,7 @@ func CreateDeleteMyGroupInstancesRequest() (request *DeleteMyGroupInstancesReque
 	request = &DeleteMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroupInstances", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroupInstances", "cms", "openAPI")
 	return
 }
 

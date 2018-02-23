@@ -87,7 +87,7 @@ func CreateAddUsersRequest() (request *AddUsersRequest) {
 	request = &AddUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "AddUsers", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "AddUsers", "ehs", "openAPI")
 	return
 }
 

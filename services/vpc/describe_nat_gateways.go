@@ -91,7 +91,7 @@ func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
 	request = &DescribeNatGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNatGateways", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeNatGateways", "vpc", "openAPI")
 	return
 }
 

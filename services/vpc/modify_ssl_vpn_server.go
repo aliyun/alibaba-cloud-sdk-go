@@ -105,7 +105,7 @@ func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc", "openAPI")
 	return
 }
 

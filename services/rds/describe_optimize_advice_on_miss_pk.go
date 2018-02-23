@@ -89,7 +89,7 @@ func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdv
 	request = &DescribeOptimizeAdviceOnMissPKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOptimizeAdviceOnMissPK", "rds", "openAPI")
 	return
 }
 

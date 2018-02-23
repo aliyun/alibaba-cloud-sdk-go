@@ -91,7 +91,7 @@ func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	request = &CreatePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhoto", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "CreatePhoto", "cloudphoto", "openAPI")
 	return
 }
 

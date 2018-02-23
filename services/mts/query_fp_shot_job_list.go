@@ -85,7 +85,7 @@ func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
 	request = &QueryFpShotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpShotJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpShotJobList", "mts", "openAPI")
 	return
 }
 

@@ -83,7 +83,7 @@ func CreateDeleteMyGroupsRequest() (request *DeleteMyGroupsRequest) {
 	request = &DeleteMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroups", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "DeleteMyGroups", "cms", "openAPI")
 	return
 }
 

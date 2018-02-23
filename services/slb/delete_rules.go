@@ -85,7 +85,7 @@ func CreateDeleteRulesRequest() (request *DeleteRulesRequest) {
 	request = &DeleteRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteRules", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteRules", "slb", "openAPI")
 	return
 }
 

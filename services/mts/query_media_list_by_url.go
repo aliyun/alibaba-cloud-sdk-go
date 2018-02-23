@@ -88,7 +88,7 @@ func CreateQueryMediaListByURLRequest() (request *QueryMediaListByURLRequest) {
 	request = &QueryMediaListByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaListByURL", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaListByURL", "mts", "openAPI")
 	return
 }
 

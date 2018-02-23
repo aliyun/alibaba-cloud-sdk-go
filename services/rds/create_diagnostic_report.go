@@ -82,7 +82,7 @@ func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportReque
 	request = &CreateDiagnosticReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDiagnosticReport", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDiagnosticReport", "rds", "openAPI")
 	return
 }
 

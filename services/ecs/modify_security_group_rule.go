@@ -78,7 +78,7 @@ func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleReq
 	request = &ModifySecurityGroupRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupRule", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs", "openAPI")
 	return
 }
 

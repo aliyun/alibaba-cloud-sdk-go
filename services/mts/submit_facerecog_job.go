@@ -87,7 +87,7 @@ func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "mts", "openAPI")
 	return
 }
 

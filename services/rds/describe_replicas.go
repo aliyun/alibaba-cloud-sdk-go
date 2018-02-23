@@ -90,7 +90,7 @@ func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicas", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReplicas", "rds", "openAPI")
 	return
 }
 

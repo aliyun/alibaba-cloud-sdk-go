@@ -89,7 +89,7 @@ func CreateCreateMasterSlaveVServerGroupRequest() (request *CreateMasterSlaveVSe
 	request = &CreateMasterSlaveVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateMasterSlaveVServerGroup", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateMasterSlaveVServerGroup", "slb", "openAPI")
 	return
 }
 

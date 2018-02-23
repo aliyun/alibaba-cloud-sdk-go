@@ -88,7 +88,7 @@ func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	request = &UpdateAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateAsrPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateAsrPipeline", "mts", "openAPI")
 	return
 }
 

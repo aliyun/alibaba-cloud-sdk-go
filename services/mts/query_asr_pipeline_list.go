@@ -85,7 +85,7 @@ func CreateQueryAsrPipelineListRequest() (request *QueryAsrPipelineListRequest) 
 	request = &QueryAsrPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrPipelineList", "mts", "openAPI")
 	return
 }
 

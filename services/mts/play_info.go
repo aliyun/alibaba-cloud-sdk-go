@@ -91,7 +91,7 @@ func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	request = &PlayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI")
 	return
 }
 

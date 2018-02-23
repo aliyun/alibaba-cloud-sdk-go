@@ -101,7 +101,7 @@ func CreateSetLoadBalancerUDPListenerAttributeRequest() (request *SetLoadBalance
 	request = &SetLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "slb", "openAPI")
 	return
 }
 

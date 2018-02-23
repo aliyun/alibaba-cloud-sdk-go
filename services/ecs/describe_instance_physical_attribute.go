@@ -87,7 +87,7 @@ func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstance
 	request = &DescribeInstancePhysicalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "ecs", "openAPI")
 	return
 }
 

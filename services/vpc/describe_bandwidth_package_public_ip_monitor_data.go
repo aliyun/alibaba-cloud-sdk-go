@@ -87,7 +87,7 @@ func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *Descri
 	request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeBandwidthPackagePublicIpMonitorData", "vpc", "openAPI")
 	return
 }
 

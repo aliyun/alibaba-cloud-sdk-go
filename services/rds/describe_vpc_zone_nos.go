@@ -86,7 +86,7 @@ func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
 	request = &DescribeVpcZoneNosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeVpcZoneNos", "rds", "openAPI")
 	return
 }
 

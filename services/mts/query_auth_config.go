@@ -84,7 +84,7 @@ func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	request = &QueryAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAuthConfig", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAuthConfig", "mts", "openAPI")
 	return
 }
 

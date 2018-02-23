@@ -83,7 +83,7 @@ func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	request = &DeleteMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMedia", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMedia", "mts", "openAPI")
 	return
 }
 

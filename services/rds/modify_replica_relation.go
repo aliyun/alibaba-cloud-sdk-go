@@ -84,7 +84,7 @@ func CreateModifyReplicaRelationRequest() (request *ModifyReplicaRelationRequest
 	request = &ModifyReplicaRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaRelation", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReplicaRelation", "rds", "openAPI")
 	return
 }
 

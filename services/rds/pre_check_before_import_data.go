@@ -91,7 +91,7 @@ func CreatePreCheckBeforeImportDataRequest() (request *PreCheckBeforeImportDataR
 	request = &PreCheckBeforeImportDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "PreCheckBeforeImportData", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "PreCheckBeforeImportData", "rds", "openAPI")
 	return
 }
 

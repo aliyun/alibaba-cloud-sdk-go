@@ -86,7 +86,7 @@ func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) 
 	request = &CreateTempDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateTempDBInstance", "rds", "openAPI")
 	return
 }
 

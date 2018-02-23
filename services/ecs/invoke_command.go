@@ -79,7 +79,7 @@ func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	request = &InvokeCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "InvokeCommand", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI")
 	return
 }
 

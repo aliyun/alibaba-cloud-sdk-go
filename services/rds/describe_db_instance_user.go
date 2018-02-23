@@ -85,7 +85,7 @@ func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserReque
 	request = &DescribeDBInstanceUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceUser", "rds", "openAPI")
 	return
 }
 

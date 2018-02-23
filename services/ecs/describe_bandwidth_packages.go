@@ -90,7 +90,7 @@ func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackage
 	request = &DescribeBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthPackages", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthPackages", "ecs", "openAPI")
 	return
 }
 

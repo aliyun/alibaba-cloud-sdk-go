@@ -87,7 +87,7 @@ func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) 
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRenewalPrice", "ecs", "openAPI")
 	return
 }
 

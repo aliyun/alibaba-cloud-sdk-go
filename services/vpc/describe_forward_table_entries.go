@@ -90,7 +90,7 @@ func CreateDescribeForwardTableEntriesRequest() (request *DescribeForwardTableEn
 	request = &DescribeForwardTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTableEntries", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeForwardTableEntries", "vpc", "openAPI")
 	return
 }
 

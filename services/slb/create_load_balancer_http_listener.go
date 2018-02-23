@@ -109,7 +109,7 @@ func CreateCreateLoadBalancerHTTPListenerRequest() (request *CreateLoadBalancerH
 	request = &CreateLoadBalancerHTTPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerHTTPListener", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "CreateLoadBalancerHTTPListener", "slb", "openAPI")
 	return
 }
 

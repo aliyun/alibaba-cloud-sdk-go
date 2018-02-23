@@ -88,7 +88,7 @@ func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) 
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveBackendServers", "slb", "openAPI")
 	return
 }
 

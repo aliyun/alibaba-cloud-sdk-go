@@ -88,7 +88,7 @@ func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "SearchPhotos", "cloudphoto", "openAPI")
 	return
 }
 

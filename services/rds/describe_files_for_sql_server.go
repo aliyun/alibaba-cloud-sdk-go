@@ -92,7 +92,7 @@ func CreateDescribeFilesForSQLServerRequest() (request *DescribeFilesForSQLServe
 	request = &DescribeFilesForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeFilesForSQLServer", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeFilesForSQLServer", "rds", "openAPI")
 	return
 }
 

@@ -86,7 +86,7 @@ func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogs
 	request = &DeleteAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteAccessLogsDownloadAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteAccessLogsDownloadAttribute", "slb", "openAPI")
 	return
 }
 

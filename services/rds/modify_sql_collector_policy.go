@@ -86,7 +86,7 @@ func CreateModifySQLCollectorPolicyRequest() (request *ModifySQLCollectorPolicyR
 	request = &ModifySQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds", "openAPI")
 	return
 }
 

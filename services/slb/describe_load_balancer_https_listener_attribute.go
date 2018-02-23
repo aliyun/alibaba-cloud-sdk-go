@@ -114,7 +114,7 @@ func CreateDescribeLoadBalancerHTTPSListenerAttributeRequest() (request *Describ
 	request = &DescribeLoadBalancerHTTPSListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPSListenerAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPSListenerAttribute", "slb", "openAPI")
 	return
 }
 
