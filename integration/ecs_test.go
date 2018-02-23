@@ -119,7 +119,7 @@ func deleteEcsInstance(t *testing.T, client *ecs.Client, instanceId string) {
 func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 	fmt.Print("list all ecs instances...")
 	request := ecs.CreateDescribeInstancesRequest()
-	request.PageSize = requests.NewInteger(10)
+	request.PageSize = requests.NewInteger(30)
 	request.PageNumber = requests.NewInteger(1)
 	response, err := client.DescribeInstances(request)
 	assertErrorNil(t, err, "Failed to list all ecs instances ")
@@ -132,7 +132,7 @@ func deleteAllTestEcsInstance(t *testing.T, client *ecs.Client) {
 			assertErrorNil(t, err, "Parse instance create time failed: "+instanceInfo.InstanceName)
 			if (time.Now().Unix() - createTime) < (60 * 60) {
 				fmt.Printf("found undeleted ecs instance(%s) but created in 60 minutes, try to delete next time\n", instanceInfo.InstanceName)
-				return
+				continue
 			} else {
 				fmt.Printf("found undeleted ecs instance(%s), status=%s, try to delete it.\n",
 					instanceInfo.Status, instanceInfo.InstanceId)
