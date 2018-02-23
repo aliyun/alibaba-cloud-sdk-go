@@ -84,7 +84,7 @@ func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	request = &LikePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "LikePhoto", "cloudphoto", "openAPI")
 	return
 }
 

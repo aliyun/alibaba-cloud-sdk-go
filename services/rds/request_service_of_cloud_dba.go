@@ -83,7 +83,7 @@ func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBAR
 	request = &RequestServiceOfCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBA", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RequestServiceOfCloudDBA", "rds", "openAPI")
 	return
 }
 

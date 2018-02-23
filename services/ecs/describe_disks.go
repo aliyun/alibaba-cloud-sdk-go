@@ -123,7 +123,7 @@ func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	request = &DescribeDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisks", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDisks", "ecs", "openAPI")
 	return
 }
 

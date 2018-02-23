@@ -80,7 +80,7 @@ func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	request = &ModifyFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ModifyFileSystem", "nas", "openAPI")
 	return
 }
 

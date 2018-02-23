@@ -81,7 +81,7 @@ func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogra
 	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventHistogram", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventHistogram", "cms", "openAPI")
 	return
 }
 

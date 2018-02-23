@@ -86,7 +86,7 @@ func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
 	request = &ListPhotoTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListPhotoTags", "cloudphoto", "openAPI")
 	return
 }
 

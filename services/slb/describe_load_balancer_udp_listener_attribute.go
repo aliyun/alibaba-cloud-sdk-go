@@ -103,7 +103,7 @@ func CreateDescribeLoadBalancerUDPListenerAttributeRequest() (request *DescribeL
 	request = &DescribeLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerUDPListenerAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerUDPListenerAttribute", "slb", "openAPI")
 	return
 }
 

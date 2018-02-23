@@ -83,7 +83,7 @@ func CreateLoginDBInstancefromCloudDBARequest() (request *LoginDBInstancefromClo
 	request = &LoginDBInstancefromCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "LoginDBInstancefromCloudDBA", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "LoginDBInstancefromCloudDBA", "rds", "openAPI")
 	return
 }
 

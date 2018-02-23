@@ -128,7 +128,7 @@ func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest
 	request = &DescribeScalingGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingGroups", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingGroups", "ess", "openAPI")
 	return
 }
 

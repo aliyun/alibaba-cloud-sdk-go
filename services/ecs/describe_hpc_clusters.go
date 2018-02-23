@@ -82,7 +82,7 @@ func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	request = &DescribeHpcClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHpcClusters", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs", "openAPI")
 	return
 }
 

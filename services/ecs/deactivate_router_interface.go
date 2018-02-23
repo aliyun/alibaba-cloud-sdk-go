@@ -82,7 +82,7 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeactivateRouterInterface", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeactivateRouterInterface", "ecs", "openAPI")
 	return
 }
 

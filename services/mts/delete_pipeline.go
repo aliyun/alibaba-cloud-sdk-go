@@ -84,7 +84,7 @@ func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
 	request = &DeletePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "mts", "openAPI")
 	return
 }
 

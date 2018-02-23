@@ -87,7 +87,7 @@ func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "mts", "openAPI")
 	return
 }
 

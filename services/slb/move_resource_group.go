@@ -88,7 +88,7 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "MoveResourceGroup", "slb", "openAPI")
 	return
 }
 

@@ -82,7 +82,7 @@ func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
 	request = &EnableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "EnableActiveAlert", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "EnableActiveAlert", "cms", "openAPI")
 	return
 }
 

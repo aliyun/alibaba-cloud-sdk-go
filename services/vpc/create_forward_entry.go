@@ -89,7 +89,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "vpc", "openAPI")
 	return
 }
 

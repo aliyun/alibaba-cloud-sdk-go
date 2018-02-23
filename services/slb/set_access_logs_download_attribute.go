@@ -86,7 +86,7 @@ func CreateSetAccessLogsDownloadAttributeRequest() (request *SetAccessLogsDownlo
 	request = &SetAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetAccessLogsDownloadAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetAccessLogsDownloadAttribute", "slb", "openAPI")
 	return
 }
 

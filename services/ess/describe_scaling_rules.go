@@ -119,7 +119,7 @@ func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) 
 	request = &DescribeScalingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingRules", "ess", "openAPI")
 	return
 }
 

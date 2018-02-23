@@ -88,7 +88,7 @@ func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGrou
 	request = &RemoveVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveVServerGroupBackendServers", "slb", "openAPI")
 	return
 }
 

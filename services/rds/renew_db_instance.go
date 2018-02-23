@@ -85,7 +85,7 @@ func CreateRenewDBInstanceRequest() (request *RenewDBInstanceRequest) {
 	request = &RenewDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RenewDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RenewDBInstance", "rds", "openAPI")
 	return
 }
 

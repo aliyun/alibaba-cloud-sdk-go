@@ -89,7 +89,7 @@ func CreateEipFillProductRequest() (request *EipFillProductRequest) {
 	request = &EipFillProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillProduct", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillProduct", "ecs", "openAPI")
 	return
 }
 

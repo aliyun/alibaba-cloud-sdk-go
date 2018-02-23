@@ -87,7 +87,7 @@ func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "MoveFacePhotos", "cloudphoto", "openAPI")
 	return
 }
 

@@ -83,7 +83,7 @@ func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccel
 	request = &DeleteGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteGlobalAccelerationInstance", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteGlobalAccelerationInstance", "vpc", "openAPI")
 	return
 }
 

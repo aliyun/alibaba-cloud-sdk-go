@@ -85,7 +85,7 @@ func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {
 	request = &GetDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrl", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetDownloadUrl", "cloudphoto", "openAPI")
 	return
 }
 

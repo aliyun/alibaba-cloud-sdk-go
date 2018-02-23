@@ -88,7 +88,7 @@ func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttrib
 	request = &DescribeIntranetAttributeKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "ecs", "openAPI")
 	return
 }
 

@@ -80,7 +80,7 @@ func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageReque
 	request = &DescribeSnapshotsUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs", "openAPI")
 	return
 }
 

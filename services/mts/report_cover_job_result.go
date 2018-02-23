@@ -85,7 +85,7 @@ func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) 
 	request = &ReportCoverJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "mts", "openAPI")
 	return
 }
 

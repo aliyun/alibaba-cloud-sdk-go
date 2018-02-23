@@ -81,7 +81,7 @@ func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesReq
 	request = &ModifyClusterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ModifyClusterAttributes", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ModifyClusterAttributes", "ehs", "openAPI")
 	return
 }
 

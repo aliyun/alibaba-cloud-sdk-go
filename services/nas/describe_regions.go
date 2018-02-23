@@ -84,7 +84,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeRegions", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeRegions", "nas", "openAPI")
 	return
 }
 

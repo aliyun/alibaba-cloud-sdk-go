@@ -87,7 +87,7 @@ func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
 	request = &EditPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotoStore", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI")
 	return
 }
 

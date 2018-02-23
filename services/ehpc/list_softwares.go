@@ -80,7 +80,7 @@ func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	request = &ListSoftwaresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListSoftwares", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListSoftwares", "ehs", "openAPI")
 	return
 }
 

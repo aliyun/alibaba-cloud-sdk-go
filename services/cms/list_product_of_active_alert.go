@@ -83,7 +83,7 @@ func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertR
 	request = &ListProductOfActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListProductOfActiveAlert", "", "")
+	request.InitWithApiInfo("Cms", "2017-03-01", "ListProductOfActiveAlert", "cms", "openAPI")
 	return
 }
 

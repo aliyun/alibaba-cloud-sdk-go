@@ -80,7 +80,7 @@ func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "ehs", "openAPI")
 	return
 }
 

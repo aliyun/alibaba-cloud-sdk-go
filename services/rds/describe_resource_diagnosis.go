@@ -88,7 +88,7 @@ func CreateDescribeResourceDiagnosisRequest() (request *DescribeResourceDiagnosi
 	request = &DescribeResourceDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceDiagnosis", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceDiagnosis", "rds", "openAPI")
 	return
 }
 

@@ -85,7 +85,7 @@ func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeReque
 	request = &RevokeAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeAccountPrivilege", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds", "openAPI")
 	return
 }
 

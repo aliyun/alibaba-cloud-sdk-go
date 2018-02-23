@@ -82,7 +82,7 @@ func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullS
 	request = &DescribeInstancesFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstancesFullStatus", "ecs", "openAPI")
 	return
 }
 

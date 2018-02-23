@@ -85,7 +85,7 @@ func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) 
 	request = &SetCACertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "SetCACertificateName", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetCACertificateName", "slb", "openAPI")
 	return
 }
 

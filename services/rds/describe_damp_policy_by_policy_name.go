@@ -90,7 +90,7 @@ func CreateDescribeDampPolicyByPolicyNameRequest() (request *DescribeDampPolicyB
 	request = &DescribeDampPolicyByPolicyNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "rds", "openAPI")
 	return
 }
 

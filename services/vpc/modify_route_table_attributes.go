@@ -92,7 +92,7 @@ func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttribu
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc", "openAPI")
 	return
 }
 

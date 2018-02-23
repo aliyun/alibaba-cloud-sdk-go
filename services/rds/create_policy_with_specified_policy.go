@@ -85,7 +85,7 @@ func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSp
 	request = &CreatePolicyWithSpecifiedPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy", "rds", "openAPI")
 	return
 }
 

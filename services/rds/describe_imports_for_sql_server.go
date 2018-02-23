@@ -92,7 +92,7 @@ func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLS
 	request = &DescribeImportsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds", "openAPI")
 	return
 }
 

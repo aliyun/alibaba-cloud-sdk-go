@@ -84,7 +84,7 @@ func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	request = &CreateMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "CreateMountTarget", "", "")
+	request.InitWithApiInfo("NAS", "2017-06-26", "CreateMountTarget", "nas", "openAPI")
 	return
 }
 

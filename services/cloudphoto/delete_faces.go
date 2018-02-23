@@ -85,7 +85,7 @@ func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteFaces", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteFaces", "cloudphoto", "openAPI")
 	return
 }
 

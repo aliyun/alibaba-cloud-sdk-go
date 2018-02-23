@@ -85,7 +85,7 @@ func CreateDeleteBgpNetworkRequest() (request *DeleteBgpNetworkRequest) {
 	request = &DeleteBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpNetwork", "", "")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpNetwork", "vpc", "openAPI")
 	return
 }
 

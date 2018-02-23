@@ -85,7 +85,7 @@ func CreateModifyInstanceVpcAttributeRequest() (request *ModifyInstanceVpcAttrib
 	request = &ModifyInstanceVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs", "openAPI")
 	return
 }
 

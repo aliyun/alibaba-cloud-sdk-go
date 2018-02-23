@@ -84,7 +84,7 @@ func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	request = &UnbindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindInputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindInputBucket", "mts", "openAPI")
 	return
 }
 

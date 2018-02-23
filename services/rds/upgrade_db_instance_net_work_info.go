@@ -83,7 +83,7 @@ func CreateUpgradeDBInstanceNetWorkInfoRequest() (request *UpgradeDBInstanceNetW
 	request = &UpgradeDBInstanceNetWorkInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetWorkInfo", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceNetWorkInfo", "rds", "openAPI")
 	return
 }
 

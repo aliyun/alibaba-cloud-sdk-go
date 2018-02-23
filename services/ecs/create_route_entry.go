@@ -93,7 +93,7 @@ func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	request = &CreateRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "ecs", "openAPI")
 	return
 }
 

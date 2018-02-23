@@ -88,7 +88,7 @@ func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	request = &DescribeRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecycleBin", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRecycleBin", "ecs", "openAPI")
 	return
 }
 

@@ -78,7 +78,7 @@ func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehav
 	request = &ModifyUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserBusinessBehavior", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyUserBusinessBehavior", "ecs", "openAPI")
 	return
 }
 

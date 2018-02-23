@@ -85,7 +85,7 @@ func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflow
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts", "openAPI")
 	return
 }
 

@@ -81,7 +81,7 @@ func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCustomImages", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "ListCustomImages", "ehs", "openAPI")
 	return
 }
 

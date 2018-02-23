@@ -89,7 +89,7 @@ func CreateModifyVServerGroupBackendServersRequest() (request *ModifyVServerGrou
 	request = &ModifyVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb", "openAPI")
 	return
 }
 

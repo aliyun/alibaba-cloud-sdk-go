@@ -90,7 +90,7 @@ func CreateListAlbumsRequest() (request *ListAlbumsRequest) {
 	request = &ListAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListAlbums", "", "")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "ListAlbums", "cloudphoto", "openAPI")
 	return
 }
 

@@ -80,7 +80,7 @@ func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
 	request = &DescribeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DescribeCluster", "", "")
+	request.InitWithApiInfo("EHPC", "2017-07-14", "DescribeCluster", "ehs", "openAPI")
 	return
 }
 

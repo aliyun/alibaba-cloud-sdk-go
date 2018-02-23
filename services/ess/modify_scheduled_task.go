@@ -92,7 +92,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScheduledTask", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScheduledTask", "ess", "openAPI")
 	return
 }
 

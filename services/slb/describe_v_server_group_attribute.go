@@ -88,7 +88,7 @@ func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroup
 	request = &DescribeVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "", "")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeVServerGroupAttribute", "slb", "openAPI")
 	return
 }
 
