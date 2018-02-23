@@ -182,7 +182,6 @@ func deleteAllTestRdsInstance(t *testing.T, client *rds.Client) {
 			assertErrorNil(t, err, "Parse instance create time failed: "+instance.DBInstanceDescription)
 			if (time.Now().Unix() - createTime) < (60 * 60) {
 				fmt.Printf("found undeleted rds instance(%s) but created in 60 minutes, try to delete next time\n", instance.DBInstanceDescription)
-				return
 			} else {
 				fmt.Printf("found rds test instance(%s), trying to delte it\n", instance.DBInstanceId)
 				deleteDBInstance(t, client, instance.DBInstanceId)

@@ -136,7 +136,6 @@ func deleteAllTestSlbInstance(t *testing.T, client *slb.Client) {
 			assertErrorNil(t, err, "Parse instance create time failed: "+slbInstanceInfo.LoadBalancerName)
 			if (time.Now().Unix() - createTime) < (60 * 60) {
 				fmt.Printf("found undeleted slb instance(%s) but created in 60 minutes, try to delete next time\n", slbInstanceInfo.LoadBalancerName)
-				return
 			} else {
 				fmt.Printf("found undeleted slb instance(%s), status=%s, try to delete it.\n",
 					slbInstanceInfo.LoadBalancerId, slbInstanceInfo.LoadBalancerStatus)
