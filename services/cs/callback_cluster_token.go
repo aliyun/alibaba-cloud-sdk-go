@@ -67,8 +67,8 @@ func (client *Client) CallbackClusterTokenWithCallback(request *CallbackClusterT
 
 type CallbackClusterTokenRequest struct {
 	*requests.RoaRequest
-	Token   string `position:"Path" name:"Token"`
 	ReqOnce string `position:"Path" name:"ReqOnce"`
+	Token   string `position:"Path" name:"Token"`
 }
 
 type CallbackClusterTokenResponse struct {

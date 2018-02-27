@@ -67,8 +67,8 @@ func (client *Client) DescribeClusterNodeInfoWithInstanceWithCallback(request *D
 
 type DescribeClusterNodeInfoWithInstanceRequest struct {
 	*requests.RoaRequest
-	Token      string `position:"Path" name:"Token"`
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Token      string `position:"Path" name:"Token"`
 }
 
 type DescribeClusterNodeInfoWithInstanceResponse struct {

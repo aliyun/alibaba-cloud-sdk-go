@@ -67,8 +67,8 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 
 type DescribeImagesRequest struct {
 	*requests.RoaRequest
-	DockerVersion string `position:"Query" name:"DockerVersion"`
 	ImageName     string `position:"Query" name:"ImageName"`
+	DockerVersion string `position:"Query" name:"DockerVersion"`
 }
 
 type DescribeImagesResponse struct {

@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DownloadClusterNodeCerts(request *DownloadClusterNodeCertsRequest) (response *DownloadClusterNodeCertsResponse, err error) {
-	response = CreateDownloadClusterNodeCertsResponse()
+func (client *Client) UpgradeClusterComponents(request *UpgradeClusterComponentsRequest) (response *UpgradeClusterComponentsResponse, err error) {
+	response = CreateUpgradeClusterComponentsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterNodeCertsRequest) (<-chan *DownloadClusterNodeCertsResponse, <-chan error) {
-	responseChan := make(chan *DownloadClusterNodeCertsResponse, 1)
+func (client *Client) UpgradeClusterComponentsWithChan(request *UpgradeClusterComponentsRequest) (<-chan *UpgradeClusterComponentsResponse, <-chan error) {
+	responseChan := make(chan *UpgradeClusterComponentsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DownloadClusterNodeCerts(request)
+		response, err := client.UpgradeClusterComponents(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -47,13 +47,13 @@ func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterN
 	return responseChan, errChan
 }
 
-func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClusterNodeCertsRequest, callback func(response *DownloadClusterNodeCertsResponse, err error)) <-chan int {
+func (client *Client) UpgradeClusterComponentsWithCallback(request *UpgradeClusterComponentsRequest, callback func(response *UpgradeClusterComponentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DownloadClusterNodeCertsResponse
+		var response *UpgradeClusterComponentsResponse
 		var err error
 		defer close(result)
-		response, err = client.DownloadClusterNodeCerts(request)
+		response, err = client.UpgradeClusterComponents(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -65,27 +65,27 @@ func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClus
 	return result
 }
 
-type DownloadClusterNodeCertsRequest struct {
+type UpgradeClusterComponentsRequest struct {
 	*requests.RoaRequest
-	NodeId string `position:"Path" name:"NodeId"`
-	Token  string `position:"Path" name:"Token"`
+	ComponentId string `position:"Path" name:"ComponentId"`
+	ClusterId   string `position:"Path" name:"ClusterId"`
 }
 
-type DownloadClusterNodeCertsResponse struct {
+type UpgradeClusterComponentsResponse struct {
 	*responses.BaseResponse
 }
 
-func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsRequest) {
-	request = &DownloadClusterNodeCertsRequest{
+func CreateUpgradeClusterComponentsRequest() (request *UpgradeClusterComponentsRequest) {
+	request = &UpgradeClusterComponentsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("CS", "2015-12-15", "UpgradeClusterComponents", "/clusters/[ClusterId]/components/[ComponentId]/upgrade", "", "")
+	request.Method = requests.POST
 	return
 }
 
-func CreateDownloadClusterNodeCertsResponse() (response *DownloadClusterNodeCertsResponse) {
-	response = &DownloadClusterNodeCertsResponse{
+func CreateUpgradeClusterComponentsResponse() (response *UpgradeClusterComponentsResponse) {
+	response = &UpgradeClusterComponentsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

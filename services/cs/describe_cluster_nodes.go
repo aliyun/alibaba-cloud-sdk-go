@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DownloadClusterNodeCerts(request *DownloadClusterNodeCertsRequest) (response *DownloadClusterNodeCertsResponse, err error) {
-	response = CreateDownloadClusterNodeCertsResponse()
+func (client *Client) DescribeClusterNodes(request *DescribeClusterNodesRequest) (response *DescribeClusterNodesResponse, err error) {
+	response = CreateDescribeClusterNodesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterNodeCertsRequest) (<-chan *DownloadClusterNodeCertsResponse, <-chan error) {
-	responseChan := make(chan *DownloadClusterNodeCertsResponse, 1)
+func (client *Client) DescribeClusterNodesWithChan(request *DescribeClusterNodesRequest) (<-chan *DescribeClusterNodesResponse, <-chan error) {
+	responseChan := make(chan *DescribeClusterNodesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DownloadClusterNodeCerts(request)
+		response, err := client.DescribeClusterNodes(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -47,13 +47,13 @@ func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterN
 	return responseChan, errChan
 }
 
-func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClusterNodeCertsRequest, callback func(response *DownloadClusterNodeCertsResponse, err error)) <-chan int {
+func (client *Client) DescribeClusterNodesWithCallback(request *DescribeClusterNodesRequest, callback func(response *DescribeClusterNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DownloadClusterNodeCertsResponse
+		var response *DescribeClusterNodesResponse
 		var err error
 		defer close(result)
-		response, err = client.DownloadClusterNodeCerts(request)
+		response, err = client.DescribeClusterNodes(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -65,27 +65,28 @@ func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClus
 	return result
 }
 
-type DownloadClusterNodeCertsRequest struct {
+type DescribeClusterNodesRequest struct {
 	*requests.RoaRequest
-	NodeId string `position:"Path" name:"NodeId"`
-	Token  string `position:"Path" name:"Token"`
+	PageSize   string `position:"Query" name:"pageSize"`
+	ClusterId  string `position:"Path" name:"ClusterId"`
+	PageNumber string `position:"Query" name:"pageNumber"`
 }
 
-type DownloadClusterNodeCertsResponse struct {
+type DescribeClusterNodesResponse struct {
 	*responses.BaseResponse
 }
 
-func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsRequest) {
-	request = &DownloadClusterNodeCertsRequest{
+func CreateDescribeClusterNodesRequest() (request *DescribeClusterNodesRequest) {
+	request = &DescribeClusterNodesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterNodes", "/clusters/[ClusterId]/nodes", "", "")
 	request.Method = requests.GET
 	return
 }
 
-func CreateDownloadClusterNodeCertsResponse() (response *DownloadClusterNodeCertsResponse) {
-	response = &DownloadClusterNodeCertsResponse{
+func CreateDescribeClusterNodesResponse() (response *DescribeClusterNodesResponse) {
+	response = &DescribeClusterNodesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

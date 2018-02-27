@@ -67,8 +67,8 @@ func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequ
 
 type ResetClusterNodeRequest struct {
 	*requests.RoaRequest
-	ClusterId  string `position:"Path" name:"ClusterId"`
 	InstanceId string `position:"Path" name:"InstanceId"`
+	ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
 type ResetClusterNodeResponse struct {
