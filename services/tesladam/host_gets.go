@@ -67,17 +67,26 @@ func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback fu
 
 type HostGetsRequest struct {
 	*requests.RpcRequest
-	QueryType string           `position:"Query" name:"QueryType"`
 	Query     string           `position:"Query" name:"Query"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	QueryType string           `position:"Query" name:"QueryType"`
 }
 
 type HostGetsResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
 	Message string `json:"Message" xml:"Message"`
-	Data    []Data `json:"Data" xml:"Data"`
+	Data    []struct {
+		Hostname         string `json:"Hostname" xml:"Hostname"`
+		Ip               string `json:"Ip" xml:"Ip"`
+		AppCode          string `json:"AppCode" xml:"AppCode"`
+		ClusterCode      string `json:"ClusterCode" xml:"ClusterCode"`
+		SshStatus        int    `json:"SshStatus" xml:"SshStatus"`
+		HeartStatus      int    `json:"heartStatus" xml:"heartStatus"`
+		HealthScoreLast  int    `json:"HealthScoreLast" xml:"HealthScoreLast"`
+		HealthReasonLast string `json:"HealthReasonLast" xml:"HealthReasonLast"`
+	} `json:"Data" xml:"Data"`
 }
 
 func CreateHostGetsRequest() (request *HostGetsRequest) {

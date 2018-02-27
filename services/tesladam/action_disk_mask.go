@@ -67,9 +67,9 @@ func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest,
 
 type ActionDiskMaskRequest struct {
 	*requests.RpcRequest
-	Ip        string `position:"Query" name:"Ip"`
-	DiskMount string `position:"Query" name:"DiskMount"`
 	Op        string `position:"Query" name:"Op"`
+	DiskMount string `position:"Query" name:"DiskMount"`
+	Ip        string `position:"Query" name:"Ip"`
 }
 
 type ActionDiskMaskResponse struct {
