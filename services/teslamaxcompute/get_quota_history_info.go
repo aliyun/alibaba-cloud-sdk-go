@@ -69,41 +69,17 @@ type GetQuotaHistoryInfoRequest struct {
 	*requests.RpcRequest
 	Cluster   string           `position:"Query" name:"Cluster"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
-	StartTime requests.Integer `position:"Query" name:"StartTime"`
-	Region    string           `position:"Query" name:"Region"`
 	QuotaName string           `position:"Query" name:"QuotaName"`
+	Region    string           `position:"Query" name:"Region"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 type GetQuotaHistoryInfoResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      []struct {
-		Times int `json:"Times" xml:"Times"`
-		Point struct {
-			CpuMaxQuota struct {
-				Min int `json:"Min" xml:"Min"`
-				Max int `json:"Max" xml:"Max"`
-				Avg int `json:"Avg" xml:"Avg"`
-			} `json:"CpuMaxQuota" xml:"CpuMaxQuota"`
-			CpuMinQuota struct {
-				Min int `json:"Min" xml:"Min"`
-				Max int `json:"Max" xml:"Max"`
-				Avg int `json:"Avg" xml:"Avg"`
-			} `json:"CpuMinQuota" xml:"CpuMinQuota"`
-			MemUsed struct {
-				Min int `json:"Min" xml:"Min"`
-				Max int `json:"Max" xml:"Max"`
-				Avg int `json:"Avg" xml:"Avg"`
-			} `json:"MemUsed" xml:"MemUsed"`
-			CpuUsed struct {
-				Min int `json:"Min" xml:"Min"`
-				Max int `json:"Max" xml:"Max"`
-				Avg int `json:"Avg" xml:"Avg"`
-			} `json:"CpuUsed" xml:"CpuUsed"`
-		} `json:"Point" xml:"Point"`
-	} `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 func CreateGetQuotaHistoryInfoRequest() (request *GetQuotaHistoryInfoRequest) {

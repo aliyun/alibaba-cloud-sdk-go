@@ -74,23 +74,7 @@ type QueryTopologyResponse struct {
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    struct {
-		LastUpdate string `json:"LastUpdate" xml:"LastUpdate"`
-		Regions    struct {
-			Region       string `json:"Region" xml:"Region"`
-			RegionEnName string `json:"RegionEnName" xml:"RegionEnName"`
-			RegionCnName string `json:"RegionCnName" xml:"RegionCnName"`
-			Clusters     struct {
-				Cluster      string `json:"Cluster" xml:"Cluster"`
-				ProductLine  string `json:"ProductLine" xml:"ProductLine"`
-				ProductClass string `json:"ProductClass" xml:"ProductClass"`
-				NetCode      string `json:"NetCode" xml:"NetCode"`
-				Business     string `json:"Business" xml:"Business"`
-				MachineRoom  string `json:"MachineRoom" xml:"MachineRoom"`
-				NetArch      string `json:"NetArch" xml:"NetArch"`
-			} `json:"Clusters" xml:"Clusters"`
-		} `json:"Regions" xml:"Regions"`
-	} `json:"Result" xml:"Result"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 func CreateQueryTopologyRequest() (request *QueryTopologyRequest) {

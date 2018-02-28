@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) GetClusterInstance(request *GetClusterInstanceRequest) (response *GetClusterInstanceResponse, err error) {
-	response = CreateGetClusterInstanceResponse()
+func (client *Client) QueryResourceInventory(request *QueryResourceInventoryRequest) (response *QueryResourceInventoryResponse, err error) {
+	response = CreateQueryResourceInventoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) GetClusterInstanceWithChan(request *GetClusterInstanceRequest) (<-chan *GetClusterInstanceResponse, <-chan error) {
-	responseChan := make(chan *GetClusterInstanceResponse, 1)
+func (client *Client) QueryResourceInventoryWithChan(request *QueryResourceInventoryRequest) (<-chan *QueryResourceInventoryResponse, <-chan error) {
+	responseChan := make(chan *QueryResourceInventoryResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetClusterInstance(request)
+		response, err := client.QueryResourceInventory(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -47,13 +47,13 @@ func (client *Client) GetClusterInstanceWithChan(request *GetClusterInstanceRequ
 	return responseChan, errChan
 }
 
-func (client *Client) GetClusterInstanceWithCallback(request *GetClusterInstanceRequest, callback func(response *GetClusterInstanceResponse, err error)) <-chan int {
+func (client *Client) QueryResourceInventoryWithCallback(request *QueryResourceInventoryRequest, callback func(response *QueryResourceInventoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetClusterInstanceResponse
+		var response *QueryResourceInventoryResponse
 		var err error
 		defer close(result)
-		response, err = client.GetClusterInstance(request)
+		response, err = client.QueryResourceInventory(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -65,16 +65,11 @@ func (client *Client) GetClusterInstanceWithCallback(request *GetClusterInstance
 	return result
 }
 
-type GetClusterInstanceRequest struct {
+type QueryResourceInventoryRequest struct {
 	*requests.RpcRequest
-	Cluster  string           `position:"Query" name:"Cluster"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Status   string           `position:"Query" name:"Status"`
-	Region   string           `position:"Query" name:"Region"`
 }
 
-type GetClusterInstanceResponse struct {
+type QueryResourceInventoryResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
@@ -82,16 +77,16 @@ type GetClusterInstanceResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-func CreateGetClusterInstanceRequest() (request *GetClusterInstanceRequest) {
-	request = &GetClusterInstanceRequest{
+func CreateQueryResourceInventoryRequest() (request *QueryResourceInventoryRequest) {
+	request = &QueryResourceInventoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetClusterInstance", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "", "")
 	return
 }
 
-func CreateGetClusterInstanceResponse() (response *GetClusterInstanceResponse) {
-	response = &GetClusterInstanceResponse{
+func CreateQueryResourceInventoryResponse() (response *QueryResourceInventoryResponse) {
+	response = &QueryResourceInventoryResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

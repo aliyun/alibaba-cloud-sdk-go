@@ -67,19 +67,16 @@ func (client *Client) GetInstancesStatusCountWithCallback(request *GetInstancesS
 
 type GetInstancesStatusCountRequest struct {
 	*requests.RpcRequest
-	Cluster string `position:"Query" name:"Cluster"`
 	Region  string `position:"Query" name:"Region"`
+	Cluster string `position:"Query" name:"Cluster"`
 }
 
 type GetInstancesStatusCountResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      []struct {
-		Status string `json:"Status" xml:"Status"`
-		Size   int    `json:"Size" xml:"Size"`
-	} `json:"Data" xml:"Data"`
+	Code      int        `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 func CreateGetInstancesStatusCountRequest() (request *GetInstancesStatusCountRequest) {

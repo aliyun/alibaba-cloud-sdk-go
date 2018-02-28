@@ -67,11 +67,11 @@ func (client *Client) GetUserInstanceWithCallback(request *GetUserInstanceReques
 
 type GetUserInstanceRequest struct {
 	*requests.RpcRequest
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
-	Region   string           `position:"Query" name:"Region"`
 	User     string           `position:"Query" name:"User"`
+	PageNum  requests.Integer `position:"Query" name:"PageNum"`
+	PageSize requests.Integer `position:"Query" name:"PageSize"`
 	Status   string           `position:"Query" name:"Status"`
+	Region   string           `position:"Query" name:"Region"`
 }
 
 type GetUserInstanceResponse struct {
@@ -79,32 +79,7 @@ type GetUserInstanceResponse struct {
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      struct {
-		Total  int `json:"Total" xml:"Total"`
-		Detail []struct {
-			Project         string  `json:"Project" xml:"Project"`
-			InstanceId      string  `json:"InstanceId" xml:"InstanceId"`
-			Status          string  `json:"Status" xml:"Status"`
-			UserAccount     string  `json:"UserAccount" xml:"UserAccount"`
-			NickName        string  `json:"NickName" xml:"NickName"`
-			Cluster         string  `json:"Cluster" xml:"Cluster"`
-			RunTime         string  `json:"RunTime" xml:"RunTime"`
-			CpuUsed         int     `json:"CpuUsed" xml:"CpuUsed"`
-			CpuRequest      int     `json:"CpuRequest" xml:"CpuRequest"`
-			CpuUsedTotal    int     `json:"CpuUsedTotal" xml:"CpuUsedTotal"`
-			CpuUsedRatioMax float64 `json:"CpuUsedRatioMax" xml:"CpuUsedRatioMax"`
-			CpuUsedRatioMin float64 `json:"CpuUsedRatioMin" xml:"CpuUsedRatioMin"`
-			MemUsed         int     `json:"MemUsed" xml:"MemUsed"`
-			MemRequest      int     `json:"MemRequest" xml:"MemRequest"`
-			MemUsedTotal    int     `json:"MemUsedTotal" xml:"MemUsedTotal"`
-			MemUsedRatioMax float64 `json:"MemUsedRatioMax" xml:"MemUsedRatioMax"`
-			MemUsedRatioMin float64 `json:"MemUsedRatioMin" xml:"MemUsedRatioMin"`
-			TaskType        string  `json:"TaskType" xml:"TaskType"`
-			SkynetId        string  `json:"SkynetId" xml:"SkynetId"`
-			QuotaName       string  `json:"QuotaName" xml:"QuotaName"`
-			QuotaId         int     `json:"QuotaId" xml:"QuotaId"`
-		} `json:"Detail" xml:"Detail"`
-	} `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 func CreateGetUserInstanceRequest() (request *GetUserInstanceRequest) {
