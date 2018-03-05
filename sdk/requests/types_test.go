@@ -16,6 +16,17 @@ func TestNewInteger(t *testing.T) {
 	assert.Equal(t, expected, integer)
 }
 
+func TestNewInteger64(t *testing.T) {
+	long := NewInteger64(123123123123123123)
+	assert.True(t, long.hasValue())
+	value, err := long.getValue64()
+	assert.Nil(t, err)
+	assert.Equal(t, int64(123123123123123123), value)
+	var expected Integer
+	expected = "123123123123123123"
+	assert.Equal(t, expected, long)
+}
+
 func TestNewBoolean(t *testing.T) {
 	boolean := NewBoolean(false)
 	assert.True(t, boolean.hasValue())

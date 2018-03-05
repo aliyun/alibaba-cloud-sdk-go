@@ -4,8 +4,8 @@ import "strconv"
 
 type Integer string
 
-func NewInteger(n int) Integer {
-	return Integer(strconv.Itoa(n))
+func NewInteger(integer int) Integer {
+	return Integer(strconv.Itoa(integer))
 }
 
 func (integer Integer) hasValue() bool {
@@ -14,6 +14,14 @@ func (integer Integer) hasValue() bool {
 
 func (integer Integer) getValue() (int, error) {
 	return strconv.Atoi(string(integer))
+}
+
+func NewInteger64(integer int64) Integer {
+	return Integer(strconv.FormatInt(integer, 10))
+}
+
+func (integer Integer) getValue64() (int64, error) {
+	return strconv.ParseInt(string(integer), 10, 0)
 }
 
 type Boolean string
