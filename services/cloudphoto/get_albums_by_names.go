@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeletePhotos(request *DeletePhotosRequest) (response *DeletePhotosResponse, err error) {
-	response = CreateDeletePhotosResponse()
+func (client *Client) GetAlbumsByNames(request *GetAlbumsByNamesRequest) (response *GetAlbumsByNamesResponse, err error) {
+	response = CreateGetAlbumsByNamesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan *DeletePhotosResponse, <-chan error) {
-	responseChan := make(chan *DeletePhotosResponse, 1)
+func (client *Client) GetAlbumsByNamesWithChan(request *GetAlbumsByNamesRequest) (<-chan *GetAlbumsByNamesResponse, <-chan error) {
+	responseChan := make(chan *GetAlbumsByNamesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeletePhotos(request)
+		response, err := client.GetAlbumsByNames(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -47,13 +47,13 @@ func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, callback func(response *DeletePhotosResponse, err error)) <-chan int {
+func (client *Client) GetAlbumsByNamesWithCallback(request *GetAlbumsByNamesRequest, callback func(response *GetAlbumsByNamesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeletePhotosResponse
+		var response *GetAlbumsByNamesResponse
 		var err error
 		defer close(result)
-		response, err = client.DeletePhotos(request)
+		response, err = client.GetAlbumsByNames(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -65,32 +65,32 @@ func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, cal
 	return result
 }
 
-type DeletePhotosRequest struct {
+type GetAlbumsByNamesRequest struct {
 	*requests.RpcRequest
+	Name      *[]string `position:"Query" name:"Name"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 
-type DeletePhotosResponse struct {
+type GetAlbumsByNamesResponse struct {
 	*responses.BaseResponse
-	Code      string   `json:"Code" xml:"Code"`
-	Message   string   `json:"Message" xml:"Message"`
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Action    string   `json:"Action" xml:"Action"`
-	Results   []Result `json:"Results" xml:"Results"`
+	Code      string  `json:"Code" xml:"Code"`
+	Message   string  `json:"Message" xml:"Message"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Action    string  `json:"Action" xml:"Action"`
+	Albums    []Album `json:"Albums" xml:"Albums"`
 }
 
-func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
-	request = &DeletePhotosRequest{
+func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
+	request = &GetAlbumsByNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeletePhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "GetAlbumsByNames", "cloudphoto", "openAPI")
 	return
 }
 
-func CreateDeletePhotosResponse() (response *DeletePhotosResponse) {
-	response = &DeletePhotosResponse{
+func CreateGetAlbumsByNamesResponse() (response *GetAlbumsByNamesResponse) {
+	response = &GetAlbumsByNamesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

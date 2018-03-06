@@ -20,19 +20,19 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-func (client *Client) DeletePhotos(request *DeletePhotosRequest) (response *DeletePhotosResponse, err error) {
-	response = CreateDeletePhotosResponse()
+func (client *Client) DeleteEvent(request *DeleteEventRequest) (response *DeleteEventResponse, err error) {
+	response = CreateDeleteEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan *DeletePhotosResponse, <-chan error) {
-	responseChan := make(chan *DeletePhotosResponse, 1)
+func (client *Client) DeleteEventWithChan(request *DeleteEventRequest) (<-chan *DeleteEventResponse, <-chan error) {
+	responseChan := make(chan *DeleteEventResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeletePhotos(request)
+		response, err := client.DeleteEvent(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -47,13 +47,13 @@ func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan
 	return responseChan, errChan
 }
 
-func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, callback func(response *DeletePhotosResponse, err error)) <-chan int {
+func (client *Client) DeleteEventWithCallback(request *DeleteEventRequest, callback func(response *DeleteEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeletePhotosResponse
+		var response *DeleteEventResponse
 		var err error
 		defer close(result)
-		response, err = client.DeletePhotos(request)
+		response, err = client.DeleteEvent(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -65,32 +65,31 @@ func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, cal
 	return result
 }
 
-type DeletePhotosRequest struct {
+type DeleteEventRequest struct {
 	*requests.RpcRequest
-	StoreName string    `position:"Query" name:"StoreName"`
-	LibraryId string    `position:"Query" name:"LibraryId"`
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	EventId   requests.Integer `position:"Query" name:"EventId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
-type DeletePhotosResponse struct {
+type DeleteEventResponse struct {
 	*responses.BaseResponse
-	Code      string   `json:"Code" xml:"Code"`
-	Message   string   `json:"Message" xml:"Message"`
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Action    string   `json:"Action" xml:"Action"`
-	Results   []Result `json:"Results" xml:"Results"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Action    string `json:"Action" xml:"Action"`
 }
 
-func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
-	request = &DeletePhotosRequest{
+func CreateDeleteEventRequest() (request *DeleteEventRequest) {
+	request = &DeleteEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeletePhotos", "cloudphoto", "openAPI")
+	request.InitWithApiInfo("CloudPhoto", "2017-07-11", "DeleteEvent", "cloudphoto", "openAPI")
 	return
 }
 
-func CreateDeletePhotosResponse() (response *DeletePhotosResponse) {
-	response = &DeletePhotosResponse{
+func CreateDeleteEventResponse() (response *DeleteEventResponse) {
+	response = &DeleteEventResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

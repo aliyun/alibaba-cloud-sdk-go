@@ -17,12 +17,14 @@ package cloudphoto
 
 type Result struct {
 	AccessUrl      string `json:"AccessUrl" xml:"AccessUrl"`
+	FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+	IdStr          string `json:"IdStr" xml:"IdStr"`
 	Message        string `json:"Message" xml:"Message"`
-	ThumbnailUrl   string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
-	Id             int    `json:"Id" xml:"Id"`
-	PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
+	PhotoIdStr     string `json:"PhotoIdStr" xml:"PhotoIdStr"`
 	State          string `json:"State" xml:"State"`
 	Code           string `json:"Code" xml:"Code"`
+	Id             int    `json:"Id" xml:"Id"`
+	ThumbnailUrl   string `json:"ThumbnailUrl" xml:"ThumbnailUrl"`
 	DownloadUrl    string `json:"DownloadUrl" xml:"DownloadUrl"`
-	FramedPhotoUrl string `json:"FramedPhotoUrl" xml:"FramedPhotoUrl"`
+	PhotoId        int    `json:"PhotoId" xml:"PhotoId"`
 }
