@@ -70,6 +70,7 @@ type EditEventRequest struct {
 	StoreName        string           `position:"Query" name:"StoreName"`
 	LibraryId        string           `position:"Query" name:"LibraryId"`
 	EventId          string           `position:"Query" name:"EventId"`
+	Identity         string           `position:"Query" name:"Identity"`
 	Title            string           `position:"Query" name:"Title"`
 	StartAt          requests.Integer `position:"Query" name:"StartAt"`
 	EndAt            requests.Integer `position:"Query" name:"EndAt"`
