@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
 func (client *Client) ReportAnnotationJobResult(request *ReportAnnotationJobResultRequest) (response *ReportAnnotationJobResultResponse, err error) {
 	response = CreateReportAnnotationJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotationJobResultRequest) (<-chan *ReportAnnotationJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportAnnotationJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotatio
 	return responseChan, errChan
 }
 
+// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnotationJobResultRequest, callback func(response *ReportAnnotationJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportAnnotationJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportAnnotationJobResult API
 func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResultRequest) {
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResul
 	return
 }
 
+// create a response to parse from ReportAnnotationJobResult response
 func CreateReportAnnotationJobResultResponse() (response *ReportAnnotationJobResultResponse) {
 	response = &ReportAnnotationJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

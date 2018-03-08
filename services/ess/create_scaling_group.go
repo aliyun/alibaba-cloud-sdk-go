@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateScalingGroup api with *CreateScalingGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
 func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (response *CreateScalingGroupResponse, err error) {
 	response = CreateCreateScalingGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateScalingGroup api with *CreateScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequest) (<-chan *CreateScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequ
 	return responseChan, errChan
 }
 
+// invoke CreateScalingGroup api with *CreateScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroupRequest, callback func(response *CreateScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type CreateScalingGroupResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateScalingGroup API
 func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateScalingGroup response
 func CreateCreateScalingGroupResponse() (response *CreateScalingGroupResponse) {
 	response = &CreateScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

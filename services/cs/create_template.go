@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateTemplate api with *CreateTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/cs/createtemplate.html
 func (client *Client) CreateTemplate(request *CreateTemplateRequest) (response *CreateTemplateResponse, err error) {
 	response = CreateCreateTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateTemplate api with *CreateTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-chan *CreateTemplateResponse, <-chan error) {
 	responseChan := make(chan *CreateTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke CreateTemplate api with *CreateTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest, callback func(response *CreateTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type CreateTemplateResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke CreateTemplate API
 func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	return
 }
 
+// create a response to parse from CreateTemplate response
 func CreateCreateTemplateResponse() (response *CreateTemplateResponse) {
 	response = &CreateTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

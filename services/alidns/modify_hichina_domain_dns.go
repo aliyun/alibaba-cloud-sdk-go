@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
 func (client *Client) ModifyHichinaDomainDNS(request *ModifyHichinaDomainDNSRequest) (response *ModifyHichinaDomainDNSResponse, err error) {
 	response = CreateModifyHichinaDomainDNSResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHichinaDomainDNSWithChan(request *ModifyHichinaDomainDNSRequest) (<-chan *ModifyHichinaDomainDNSResponse, <-chan error) {
 	responseChan := make(chan *ModifyHichinaDomainDNSResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyHichinaDomainDNSWithChan(request *ModifyHichinaDomai
 	return responseChan, errChan
 }
 
+// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHichinaDomainDNSWithCallback(request *ModifyHichinaDomainDNSRequest, callback func(response *ModifyHichinaDomainDNSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ModifyHichinaDomainDNSResponse struct {
 	NewDnsServers      NewDnsServers      `json:"NewDnsServers" xml:"NewDnsServers"`
 }
 
+// create a request to invoke ModifyHichinaDomainDNS API
 func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSRequest) {
 	request = &ModifyHichinaDomainDNSRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSReque
 	return
 }
 
+// create a response to parse from ModifyHichinaDomainDNS response
 func CreateModifyHichinaDomainDNSResponse() (response *ModifyHichinaDomainDNSResponse) {
 	response = &ModifyHichinaDomainDNSResponse{
 		BaseResponse: &responses.BaseResponse{},

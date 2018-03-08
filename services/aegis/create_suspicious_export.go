@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSuspiciousExport api with *CreateSuspiciousExportRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/createsuspiciousexport.html
 func (client *Client) CreateSuspiciousExport(request *CreateSuspiciousExportRequest) (response *CreateSuspiciousExportResponse, err error) {
 	response = CreateCreateSuspiciousExportResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSuspiciousExport api with *CreateSuspiciousExportRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/createsuspiciousexport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSuspiciousExportWithChan(request *CreateSuspiciousExportRequest) (<-chan *CreateSuspiciousExportResponse, <-chan error) {
 	responseChan := make(chan *CreateSuspiciousExportResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSuspiciousExportWithChan(request *CreateSuspiciousEx
 	return responseChan, errChan
 }
 
+// invoke CreateSuspiciousExport api with *CreateSuspiciousExportRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/createsuspiciousexport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSuspiciousExportWithCallback(request *CreateSuspiciousExportRequest, callback func(response *CreateSuspiciousExportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type CreateSuspiciousExportResponse struct {
 	FileName  string `json:"FileName" xml:"FileName"`
 }
 
+// create a request to invoke CreateSuspiciousExport API
 func CreateCreateSuspiciousExportRequest() (request *CreateSuspiciousExportRequest) {
 	request = &CreateSuspiciousExportRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateCreateSuspiciousExportRequest() (request *CreateSuspiciousExportReque
 	return
 }
 
+// create a response to parse from CreateSuspiciousExport response
 func CreateCreateSuspiciousExportResponse() (response *CreateSuspiciousExportResponse) {
 	response = &CreateSuspiciousExportResponse{
 		BaseResponse: &responses.BaseResponse{},

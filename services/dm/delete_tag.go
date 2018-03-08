@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteTag api with *DeleteTagRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deletetag.html
 func (client *Client) DeleteTag(request *DeleteTagRequest) (response *DeleteTagResponse, err error) {
 	response = CreateDeleteTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteTag api with *DeleteTagRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletetag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *DeleteTagResponse, <-chan error) {
 	responseChan := make(chan *DeleteTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
+// invoke DeleteTag api with *DeleteTagRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletetag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithCallback(request *DeleteTagRequest, callback func(response *DeleteTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteTagResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteTag API
 func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 	request = &DeleteTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 	return
 }
 
+// create a response to parse from DeleteTag response
 func CreateDeleteTagResponse() (response *DeleteTagResponse) {
 	response = &DeleteTagResponse{
 		BaseResponse: &responses.BaseResponse{},

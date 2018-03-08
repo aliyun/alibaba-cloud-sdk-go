@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteReceiver api with *DeleteReceiverRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiver.html
 func (client *Client) DeleteReceiver(request *DeleteReceiverRequest) (response *DeleteReceiverResponse, err error) {
 	response = CreateDeleteReceiverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteReceiver api with *DeleteReceiverRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverWithChan(request *DeleteReceiverRequest) (<-chan *DeleteReceiverResponse, <-chan error) {
 	responseChan := make(chan *DeleteReceiverResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteReceiverWithChan(request *DeleteReceiverRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DeleteReceiver api with *DeleteReceiverRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverWithCallback(request *DeleteReceiverRequest, callback func(response *DeleteReceiverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteReceiverResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteReceiver API
 func CreateDeleteReceiverRequest() (request *DeleteReceiverRequest) {
 	request = &DeleteReceiverRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteReceiverRequest() (request *DeleteReceiverRequest) {
 	return
 }
 
+// create a response to parse from DeleteReceiver response
 func CreateDeleteReceiverResponse() (response *DeleteReceiverResponse) {
 	response = &DeleteReceiverResponse{
 		BaseResponse: &responses.BaseResponse{},

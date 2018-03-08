@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateRouteEntry api with *CreateRouteEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createrouteentry.html
 func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (response *CreateRouteEntryResponse, err error) {
 	response = CreateCreateRouteEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateRouteEntry api with *CreateRouteEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createrouteentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest) (<-chan *CreateRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateRouteEntry api with *CreateRouteEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createrouteentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequest, callback func(response *CreateRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type CreateRouteEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateRouteEntry API
 func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	request = &CreateRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	return
 }
 
+// create a response to parse from CreateRouteEntry response
 func CreateCreateRouteEntryResponse() (response *CreateRouteEntryResponse) {
 	response = &CreateRouteEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

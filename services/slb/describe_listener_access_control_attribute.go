@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
 func (client *Client) DescribeListenerAccessControlAttribute(request *DescribeListenerAccessControlAttributeRequest) (response *DescribeListenerAccessControlAttributeResponse, err error) {
 	response = CreateDescribeListenerAccessControlAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeListenerAccessControlAttributeWithChan(request *DescribeListenerAccessControlAttributeRequest) (<-chan *DescribeListenerAccessControlAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeListenerAccessControlAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeListenerAccessControlAttributeWithChan(request *De
 	return responseChan, errChan
 }
 
+// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeListenerAccessControlAttributeWithCallback(request *DescribeListenerAccessControlAttributeRequest, callback func(response *DescribeListenerAccessControlAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeListenerAccessControlAttributeResponse struct {
 	SourceItems         string `json:"SourceItems" xml:"SourceItems"`
 }
 
+// create a request to invoke DescribeListenerAccessControlAttribute API
 func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeListenerAccessControlAttributeRequest) {
 	request = &DescribeListenerAccessControlAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeLis
 	return
 }
 
+// create a response to parse from DescribeListenerAccessControlAttribute response
 func CreateDescribeListenerAccessControlAttributeResponse() (response *DescribeListenerAccessControlAttributeResponse) {
 	response = &DescribeListenerAccessControlAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
 func (client *Client) DescribeDomainsBySource(request *DescribeDomainsBySourceRequest) (response *DescribeDomainsBySourceResponse, err error) {
 	response = CreateDescribeDomainsBySourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsBySourceWithChan(request *DescribeDomainsBySourceRequest) (<-chan *DescribeDomainsBySourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsBySourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainsBySourceWithChan(request *DescribeDomainsBy
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomainsBySourceRequest, callback func(response *DescribeDomainsBySourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DescribeDomainsBySourceResponse struct {
 	DomainsList DomainsList `json:"DomainsList" xml:"DomainsList"`
 }
 
+// create a request to invoke DescribeDomainsBySource API
 func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {
 	request = &DescribeDomainsBySourceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceReq
 	return
 }
 
+// create a response to parse from DescribeDomainsBySource response
 func CreateDescribeDomainsBySourceResponse() (response *DescribeDomainsBySourceResponse) {
 	response = &DescribeDomainsBySourceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PutCustomMetric api with *PutCustomMetricRequest synchronously
+// api document: https://help.aliyun.com/api/cms/putcustommetric.html
 func (client *Client) PutCustomMetric(request *PutCustomMetricRequest) (response *PutCustomMetricResponse, err error) {
 	response = CreatePutCustomMetricResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PutCustomMetric api with *PutCustomMetricRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putcustommetric.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomMetricWithChan(request *PutCustomMetricRequest) (<-chan *PutCustomMetricResponse, <-chan error) {
 	responseChan := make(chan *PutCustomMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PutCustomMetricWithChan(request *PutCustomMetricRequest) (
 	return responseChan, errChan
 }
 
+// invoke PutCustomMetric api with *PutCustomMetricRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putcustommetric.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomMetricWithCallback(request *PutCustomMetricRequest, callback func(response *PutCustomMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type PutCustomMetricResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke PutCustomMetric API
 func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
 	request = &PutCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
 	return
 }
 
+// create a response to parse from PutCustomMetric response
 func CreatePutCustomMetricResponse() (response *PutCustomMetricResponse) {
 	response = &PutCustomMetricResponse{
 		BaseResponse: &responses.BaseResponse{},

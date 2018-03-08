@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListSoftwares api with *ListSoftwaresRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
 func (client *Client) ListSoftwares(request *ListSoftwaresRequest) (response *ListSoftwaresResponse, err error) {
 	response = CreateListSoftwaresResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListSoftwares api with *ListSoftwaresRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSoftwaresWithChan(request *ListSoftwaresRequest) (<-chan *ListSoftwaresResponse, <-chan error) {
 	responseChan := make(chan *ListSoftwaresResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListSoftwaresWithChan(request *ListSoftwaresRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ListSoftwares api with *ListSoftwaresRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listsoftwares.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSoftwaresWithCallback(request *ListSoftwaresRequest, callback func(response *ListSoftwaresResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListSoftwaresResponse struct {
 	Softwares Softwares `json:"Softwares" xml:"Softwares"`
 }
 
+// create a request to invoke ListSoftwares API
 func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	request = &ListSoftwaresRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	return
 }
 
+// create a response to parse from ListSoftwares response
 func CreateListSoftwaresResponse() (response *ListSoftwaresResponse) {
 	response = &ListSoftwaresResponse{
 		BaseResponse: &responses.BaseResponse{},

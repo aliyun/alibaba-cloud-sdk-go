@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReleaseReadWriteSplittingConnection api with *ReleaseReadWriteSplittingConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
 func (client *Client) ReleaseReadWriteSplittingConnection(request *ReleaseReadWriteSplittingConnectionRequest) (response *ReleaseReadWriteSplittingConnectionResponse, err error) {
 	response = CreateReleaseReadWriteSplittingConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReleaseReadWriteSplittingConnection api with *ReleaseReadWriteSplittingConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *ReleaseReadWriteSplittingConnectionRequest) (<-chan *ReleaseReadWriteSplittingConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseReadWriteSplittingConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReleaseReadWriteSplittingConnectionWithChan(request *Relea
 	return responseChan, errChan
 }
 
+// invoke ReleaseReadWriteSplittingConnection api with *ReleaseReadWriteSplittingConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/releasereadwritesplittingconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseReadWriteSplittingConnectionWithCallback(request *ReleaseReadWriteSplittingConnectionRequest, callback func(response *ReleaseReadWriteSplittingConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ReleaseReadWriteSplittingConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReleaseReadWriteSplittingConnection API
 func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWriteSplittingConnectionRequest) {
 	request = &ReleaseReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWri
 	return
 }
 
+// create a response to parse from ReleaseReadWriteSplittingConnection response
 func CreateReleaseReadWriteSplittingConnectionResponse() (response *ReleaseReadWriteSplittingConnectionResponse) {
 	response = &ReleaseReadWriteSplittingConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

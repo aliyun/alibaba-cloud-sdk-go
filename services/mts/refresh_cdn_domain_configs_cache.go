@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest synchronously
+// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
 func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConfigsCacheRequest) (response *RefreshCdnDomainConfigsCacheResponse, err error) {
 	response = CreateRefreshCdnDomainConfigsCacheResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDomainConfigsCacheRequest) (<-chan *RefreshCdnDomainConfigsCacheResponse, <-chan error) {
 	responseChan := make(chan *RefreshCdnDomainConfigsCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDo
 	return responseChan, errChan
 }
 
+// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshCdnDomainConfigsCacheRequest, callback func(response *RefreshCdnDomainConfigsCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RefreshCdnDomainConfigsCacheResponse struct {
 	FailedDomains FailedDomains `json:"FailedDomains" xml:"FailedDomains"`
 }
 
+// create a request to invoke RefreshCdnDomainConfigsCache API
 func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfigsCacheRequest) {
 	request = &RefreshCdnDomainConfigsCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfi
 	return
 }
 
+// create a response to parse from RefreshCdnDomainConfigsCache response
 func CreateRefreshCdnDomainConfigsCacheResponse() (response *RefreshCdnDomainConfigsCacheResponse) {
 	response = &RefreshCdnDomainConfigsCacheResponse{
 		BaseResponse: &responses.BaseResponse{},

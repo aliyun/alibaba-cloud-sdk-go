@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteNqa api with *DeleteNqaRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletenqa.html
 func (client *Client) DeleteNqa(request *DeleteNqaRequest) (response *DeleteNqaResponse, err error) {
 	response = CreateDeleteNqaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteNqa api with *DeleteNqaRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletenqa.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *DeleteNqaResponse, <-chan error) {
 	responseChan := make(chan *DeleteNqaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
+// invoke DeleteNqa api with *DeleteNqaRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletenqa.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback func(response *DeleteNqaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteNqaResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteNqa API
 func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
 	request = &DeleteNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
 	return
 }
 
+// create a response to parse from DeleteNqa response
 func CreateDeleteNqaResponse() (response *DeleteNqaResponse) {
 	response = &DeleteNqaResponse{
 		BaseResponse: &responses.BaseResponse{},

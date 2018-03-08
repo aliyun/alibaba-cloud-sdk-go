@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
 func (client *Client) DescribeIpAttackEvent(request *DescribeIpAttackEventRequest) (response *DescribeIpAttackEventResponse, err error) {
 	response = CreateDescribeIpAttackEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpAttackEventWithChan(request *DescribeIpAttackEventRequest) (<-chan *DescribeIpAttackEventResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpAttackEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeIpAttackEventWithChan(request *DescribeIpAttackEve
 	return responseChan, errChan
 }
 
+// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpAttackEventWithCallback(request *DescribeIpAttackEventRequest, callback func(response *DescribeIpAttackEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeIpAttackEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeIpAttackEvent API
 func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest) {
 	request = &DescribeIpAttackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest
 	return
 }
 
+// create a response to parse from DescribeIpAttackEvent response
 func CreateDescribeIpAttackEventResponse() (response *DescribeIpAttackEventResponse) {
 	response = &DescribeIpAttackEventResponse{
 		BaseResponse: &responses.BaseResponse{},

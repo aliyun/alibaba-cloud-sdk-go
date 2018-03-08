@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
 func (client *Client) AttachPolicyToGroup(request *AttachPolicyToGroupRequest) (response *AttachPolicyToGroupResponse, err error) {
 	response = CreateAttachPolicyToGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRequest) (<-chan *AttachPolicyToGroupResponse, <-chan error) {
 	responseChan := make(chan *AttachPolicyToGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRe
 	return responseChan, errChan
 }
 
+// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithCallback(request *AttachPolicyToGroupRequest, callback func(response *AttachPolicyToGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type AttachPolicyToGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AttachPolicyToGroup API
 func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 	request = &AttachPolicyToGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 	return
 }
 
+// create a response to parse from AttachPolicyToGroup response
 func CreateAttachPolicyToGroupResponse() (response *AttachPolicyToGroupResponse) {
 	response = &AttachPolicyToGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

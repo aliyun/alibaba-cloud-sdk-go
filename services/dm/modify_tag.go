@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyTag api with *ModifyTagRequest synchronously
+// api document: https://help.aliyun.com/api/dm/modifytag.html
 func (client *Client) ModifyTag(request *ModifyTagRequest) (response *ModifyTagResponse, err error) {
 	response = CreateModifyTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyTag api with *ModifyTagRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifytag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *ModifyTagResponse, <-chan error) {
 	responseChan := make(chan *ModifyTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *Modi
 	return responseChan, errChan
 }
 
+// invoke ModifyTag api with *ModifyTagRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifytag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback func(response *ModifyTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ModifyTagResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyTag API
 func CreateModifyTagRequest() (request *ModifyTagRequest) {
 	request = &ModifyTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateModifyTagRequest() (request *ModifyTagRequest) {
 	return
 }
 
+// create a response to parse from ModifyTag response
 func CreateModifyTagResponse() (response *ModifyTagResponse) {
 	response = &ModifyTagResponse{
 		BaseResponse: &responses.BaseResponse{},

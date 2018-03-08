@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
 func (client *Client) DescribeOneMinuteData(request *DescribeOneMinuteDataRequest) (response *DescribeOneMinuteDataResponse, err error) {
 	response = CreateDescribeOneMinuteDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOneMinuteDataWithChan(request *DescribeOneMinuteDataRequest) (<-chan *DescribeOneMinuteDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeOneMinuteDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOneMinuteDataWithChan(request *DescribeOneMinuteDa
 	return responseChan, errChan
 }
 
+// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOneMinuteDataWithCallback(request *DescribeOneMinuteDataRequest, callback func(response *DescribeOneMinuteDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeOneMinuteDataResponse struct {
 	Qps       string `json:"Qps" xml:"Qps"`
 }
 
+// create a request to invoke DescribeOneMinuteData API
 func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest) {
 	request = &DescribeOneMinuteDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest
 	return
 }
 
+// create a response to parse from DescribeOneMinuteData response
 func CreateDescribeOneMinuteDataResponse() (response *DescribeOneMinuteDataResponse) {
 	response = &DescribeOneMinuteDataResponse{
 		BaseResponse: &responses.BaseResponse{},

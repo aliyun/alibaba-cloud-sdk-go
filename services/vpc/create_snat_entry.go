@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSnatEntry api with *CreateSnatEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createsnatentry.html
 func (client *Client) CreateSnatEntry(request *CreateSnatEntryRequest) (response *CreateSnatEntryResponse, err error) {
 	response = CreateCreateSnatEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSnatEntry api with *CreateSnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createsnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnatEntryWithChan(request *CreateSnatEntryRequest) (<-chan *CreateSnatEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateSnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSnatEntryWithChan(request *CreateSnatEntryRequest) (
 	return responseChan, errChan
 }
 
+// invoke CreateSnatEntry api with *CreateSnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createsnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnatEntryWithCallback(request *CreateSnatEntryRequest, callback func(response *CreateSnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateSnatEntryResponse struct {
 	SnatEntryId string `json:"SnatEntryId" xml:"SnatEntryId"`
 }
 
+// create a request to invoke CreateSnatEntry API
 func CreateCreateSnatEntryRequest() (request *CreateSnatEntryRequest) {
 	request = &CreateSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateSnatEntryRequest() (request *CreateSnatEntryRequest) {
 	return
 }
 
+// create a response to parse from CreateSnatEntry response
 func CreateCreateSnatEntryResponse() (response *CreateSnatEntryResponse) {
 	response = &CreateSnatEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBgpGroups api with *DescribeBgpGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describebgpgroups.html
 func (client *Client) DescribeBgpGroups(request *DescribeBgpGroupsRequest) (response *DescribeBgpGroupsResponse, err error) {
 	response = CreateDescribeBgpGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBgpGroups api with *DescribeBgpGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describebgpgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpGroupsWithChan(request *DescribeBgpGroupsRequest) (<-chan *DescribeBgpGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBgpGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBgpGroupsWithChan(request *DescribeBgpGroupsReques
 	return responseChan, errChan
 }
 
+// invoke DescribeBgpGroups api with *DescribeBgpGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describebgpgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpGroupsWithCallback(request *DescribeBgpGroupsRequest, callback func(response *DescribeBgpGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeBgpGroupsResponse struct {
 	BgpGroups  BgpGroups `json:"BgpGroups" xml:"BgpGroups"`
 }
 
+// create a request to invoke DescribeBgpGroups API
 func CreateDescribeBgpGroupsRequest() (request *DescribeBgpGroupsRequest) {
 	request = &DescribeBgpGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeBgpGroupsRequest() (request *DescribeBgpGroupsRequest) {
 	return
 }
 
+// create a response to parse from DescribeBgpGroups response
 func CreateDescribeBgpGroupsResponse() (response *DescribeBgpGroupsResponse) {
 	response = &DescribeBgpGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

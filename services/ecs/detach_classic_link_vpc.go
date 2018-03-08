@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
 func (client *Client) DetachClassicLinkVpc(request *DetachClassicLinkVpcRequest) (response *DetachClassicLinkVpcResponse, err error) {
 	response = CreateDetachClassicLinkVpcResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpcRequest) (<-chan *DetachClassicLinkVpcResponse, <-chan error) {
 	responseChan := make(chan *DetachClassicLinkVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpc
 	return responseChan, errChan
 }
 
+// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithCallback(request *DetachClassicLinkVpcRequest, callback func(response *DetachClassicLinkVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DetachClassicLinkVpcResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DetachClassicLinkVpc API
 func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) {
 	request = &DetachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) 
 	return
 }
 
+// create a response to parse from DetachClassicLinkVpc response
 func CreateDetachClassicLinkVpcResponse() (response *DetachClassicLinkVpcResponse) {
 	response = &DetachClassicLinkVpcResponse{
 		BaseResponse: &responses.BaseResponse{},

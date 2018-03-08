@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
 func (client *Client) DeleteDomainTransmitRule(request *DeleteDomainTransmitRuleRequest) (response *DeleteDomainTransmitRuleResponse, err error) {
 	response = CreateDeleteDomainTransmitRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainTransmitRuleWithChan(request *DeleteDomainTransmitRuleRequest) (<-chan *DeleteDomainTransmitRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteDomainTransmitRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDomainTransmitRuleWithChan(request *DeleteDomainTran
 	return responseChan, errChan
 }
 
+// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainTransmitRuleWithCallback(request *DeleteDomainTransmitRuleRequest, callback func(response *DeleteDomainTransmitRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DeleteDomainTransmitRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteDomainTransmitRule API
 func CreateDeleteDomainTransmitRuleRequest() (request *DeleteDomainTransmitRuleRequest) {
 	request = &DeleteDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDeleteDomainTransmitRuleRequest() (request *DeleteDomainTransmitRuleR
 	return
 }
 
+// create a response to parse from DeleteDomainTransmitRule response
 func CreateDeleteDomainTransmitRuleResponse() (response *DeleteDomainTransmitRuleResponse) {
 	response = &DeleteDomainTransmitRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

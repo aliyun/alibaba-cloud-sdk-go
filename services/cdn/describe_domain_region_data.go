@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
 func (client *Client) DescribeDomainRegionData(request *DescribeDomainRegionDataRequest) (response *DescribeDomainRegionDataResponse, err error) {
 	response = CreateDescribeDomainRegionDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRegionDataRequest) (<-chan *DescribeDomainRegionDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRegionDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRe
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDomainRegionDataRequest, callback func(response *DescribeDomainRegionDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainRegionDataResponse struct {
 	Value        ValueInDescribeDomainRegionData `json:"Value" xml:"Value"`
 }
 
+// create a request to invoke DescribeDomainRegionData API
 func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataRequest) {
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataR
 	return
 }
 
+// create a response to parse from DescribeDomainRegionData response
 func CreateDescribeDomainRegionDataResponse() (response *DescribeDomainRegionDataResponse) {
 	response = &DescribeDomainRegionDataResponse{
 		BaseResponse: &responses.BaseResponse{},

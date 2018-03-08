@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomain(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) (response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, err error) {
 	response = CreateDescribeLiveStreamHlsOnlineUserNumByDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithChan(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) (<-chan *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithChan(request
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithCallback(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest, callback func(response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamHlsOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
+// create a request to invoke DescribeLiveStreamHlsOnlineUserNumByDomain API
 func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {
 	request = &DescribeLiveStreamHlsOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *Describ
 	return
 }
 
+// create a response to parse from DescribeLiveStreamHlsOnlineUserNumByDomain response
 func CreateDescribeLiveStreamHlsOnlineUserNumByDomainResponse() (response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse) {
 	response = &DescribeLiveStreamHlsOnlineUserNumByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

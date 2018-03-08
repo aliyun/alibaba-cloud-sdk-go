@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
 func (client *Client) DescribeIntranetAttributeKb(request *DescribeIntranetAttributeKbRequest) (response *DescribeIntranetAttributeKbResponse, err error) {
 	response = CreateDescribeIntranetAttributeKbResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeKbWithChan(request *DescribeIntranetAttributeKbRequest) (<-chan *DescribeIntranetAttributeKbResponse, <-chan error) {
 	responseChan := make(chan *DescribeIntranetAttributeKbResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeIntranetAttributeKbWithChan(request *DescribeIntra
 	return responseChan, errChan
 }
 
+// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeIntranetAttributeKbRequest, callback func(response *DescribeIntranetAttributeKbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeIntranetAttributeKbResponse struct {
 	IntranetMaxBandwidthOut int    `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
 }
 
+// create a request to invoke DescribeIntranetAttributeKb API
 func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttributeKbRequest) {
 	request = &DescribeIntranetAttributeKbRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttrib
 	return
 }
 
+// create a response to parse from DescribeIntranetAttributeKb response
 func CreateDescribeIntranetAttributeKbResponse() (response *DescribeIntranetAttributeKbResponse) {
 	response = &DescribeIntranetAttributeKbResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetDownloadUrl api with *GetDownloadUrlRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
 func (client *Client) GetDownloadUrl(request *GetDownloadUrlRequest) (response *GetDownloadUrlResponse, err error) {
 	response = CreateGetDownloadUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetDownloadUrl api with *GetDownloadUrlRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlWithChan(request *GetDownloadUrlRequest) (<-chan *GetDownloadUrlResponse, <-chan error) {
 	responseChan := make(chan *GetDownloadUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetDownloadUrlWithChan(request *GetDownloadUrlRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke GetDownloadUrl api with *GetDownloadUrlRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlWithCallback(request *GetDownloadUrlRequest, callback func(response *GetDownloadUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetDownloadUrlResponse struct {
 	Action      string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke GetDownloadUrl API
 func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {
 	request = &GetDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {
 	return
 }
 
+// create a response to parse from GetDownloadUrl response
 func CreateGetDownloadUrlResponse() (response *GetDownloadUrlResponse) {
 	response = &GetDownloadUrlResponse{
 		BaseResponse: &responses.BaseResponse{},

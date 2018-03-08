@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListActiveAlertRule api with *ListActiveAlertRuleRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listactivealertrule.html
 func (client *Client) ListActiveAlertRule(request *ListActiveAlertRuleRequest) (response *ListActiveAlertRuleResponse, err error) {
 	response = CreateListActiveAlertRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListActiveAlertRule api with *ListActiveAlertRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listactivealertrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListActiveAlertRuleWithChan(request *ListActiveAlertRuleRequest) (<-chan *ListActiveAlertRuleResponse, <-chan error) {
 	responseChan := make(chan *ListActiveAlertRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListActiveAlertRuleWithChan(request *ListActiveAlertRuleRe
 	return responseChan, errChan
 }
 
+// invoke ListActiveAlertRule api with *ListActiveAlertRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listactivealertrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListActiveAlertRuleWithCallback(request *ListActiveAlertRuleRequest, callback func(response *ListActiveAlertRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListActiveAlertRuleResponse struct {
 	Datapoints Datapoints `json:"Datapoints" xml:"Datapoints"`
 }
 
+// create a request to invoke ListActiveAlertRule API
 func CreateListActiveAlertRuleRequest() (request *ListActiveAlertRuleRequest) {
 	request = &ListActiveAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListActiveAlertRuleRequest() (request *ListActiveAlertRuleRequest) {
 	return
 }
 
+// create a response to parse from ListActiveAlertRule response
 func CreateListActiveAlertRuleResponse() (response *ListActiveAlertRuleResponse) {
 	response = &ListActiveAlertRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

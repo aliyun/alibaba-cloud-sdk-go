@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResetAccount api with *ResetAccountRequest synchronously
+// api document: https://help.aliyun.com/api/rds/resetaccount.html
 func (client *Client) ResetAccount(request *ResetAccountRequest) (response *ResetAccountResponse, err error) {
 	response = CreateResetAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResetAccount api with *ResetAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan *ResetAccountResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ResetAccount api with *ResetAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithCallback(request *ResetAccountRequest, callback func(response *ResetAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ResetAccountResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResetAccount API
 func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	return
 }
 
+// create a response to parse from ResetAccount response
 func CreateResetAccountResponse() (response *ResetAccountResponse) {
 	response = &ResetAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

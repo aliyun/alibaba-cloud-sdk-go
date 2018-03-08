@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyClusterName api with *ModifyClusterNameRequest synchronously
+// api document: https://help.aliyun.com/api/cs/modifyclustername.html
 func (client *Client) ModifyClusterName(request *ModifyClusterNameRequest) (response *ModifyClusterNameResponse, err error) {
 	response = CreateModifyClusterNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyClusterName api with *ModifyClusterNameRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/modifyclustername.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterNameWithChan(request *ModifyClusterNameRequest) (<-chan *ModifyClusterNameResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyClusterNameWithChan(request *ModifyClusterNameReques
 	return responseChan, errChan
 }
 
+// invoke ModifyClusterName api with *ModifyClusterNameRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/modifyclustername.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterNameWithCallback(request *ModifyClusterNameRequest, callback func(response *ModifyClusterNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type ModifyClusterNameResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke ModifyClusterName API
 func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 	request = &ModifyClusterNameRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 	return
 }
 
+// create a response to parse from ModifyClusterName response
 func CreateModifyClusterNameResponse() (response *ModifyClusterNameResponse) {
 	response = &ModifyClusterNameResponse{
 		BaseResponse: &responses.BaseResponse{},

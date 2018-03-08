@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVulList api with *DescribeVulListRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describevullist.html
 func (client *Client) DescribeVulList(request *DescribeVulListRequest) (response *DescribeVulListResponse, err error) {
 	response = CreateDescribeVulListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVulList api with *DescribeVulListRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describevullist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulListWithChan(request *DescribeVulListRequest) (<-chan *DescribeVulListResponse, <-chan error) {
 	responseChan := make(chan *DescribeVulListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVulListWithChan(request *DescribeVulListRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeVulList api with *DescribeVulListRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describevullist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulListWithCallback(request *DescribeVulListRequest, callback func(response *DescribeVulListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,39 +75,28 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Type            string           `position:"Query" name:"Type"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	Name            string           `position:"Query" name:"Name"`
-	PatchId         requests.Integer `position:"Query" name:"PatchId"`
-	Level           string           `position:"Query" name:"Level"`
-	Product         string           `position:"Query" name:"Product"`
-	LastTsStart     requests.Integer `position:"Query" name:"LastTsStart"`
-	LastTsEnd       requests.Integer `position:"Query" name:"LastTsEnd"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	OrderBy         string           `position:"Query" name:"OrderBy"`
-	Direction       string           `position:"Query" name:"Direction"`
-	AliasName       string           `position:"Query" name:"AliasName"`
-	BatchName       string           `position:"Query" name:"BatchName"`
-	Resource        string           `position:"Query" name:"Resource"`
-	Necessity       string           `position:"Query" name:"Necessity"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	Lang            string           `position:"Query" name:"Lang"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Type        string           `position:"Query" name:"Type"`
+	Uuids       string           `position:"Query" name:"Uuids"`
+	Name        string           `position:"Query" name:"Name"`
+	Level       string           `position:"Query" name:"Level"`
+	StatusList  string           `position:"Query" name:"StatusList"`
+	Necessity   string           `position:"Query" name:"Necessity"`
+	Dealed      string           `position:"Query" name:"Dealed"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeVulListResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	Count       int      `json:"Count" xml:"Count"`
-	PageSize    int      `json:"PageSize" xml:"PageSize"`
-	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
-	VulRecords  []string `json:"VulRecords" xml:"VulRecords"`
+	RequestId   string           `json:"RequestId" xml:"RequestId"`
+	PageSize    int              `json:"PageSize" xml:"PageSize"`
+	CurrentPage int              `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int              `json:"TotalCount" xml:"TotalCount"`
+	VulRecords  []VulRecordsItem `json:"VulRecords" xml:"VulRecords"`
 }
 
+// create a request to invoke DescribeVulList API
 func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	request = &DescribeVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -108,6 +105,7 @@ func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	return
 }
 
+// create a response to parse from DescribeVulList response
 func CreateDescribeVulListResponse() (response *DescribeVulListResponse) {
 	response = &DescribeVulListResponse{
 		BaseResponse: &responses.BaseResponse{},

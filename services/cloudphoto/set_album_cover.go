@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetAlbumCover api with *SetAlbumCoverRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
 func (client *Client) SetAlbumCover(request *SetAlbumCoverRequest) (response *SetAlbumCoverResponse, err error) {
 	response = CreateSetAlbumCoverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetAlbumCover api with *SetAlbumCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAlbumCoverWithChan(request *SetAlbumCoverRequest) (<-chan *SetAlbumCoverResponse, <-chan error) {
 	responseChan := make(chan *SetAlbumCoverResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetAlbumCoverWithChan(request *SetAlbumCoverRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke SetAlbumCover api with *SetAlbumCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAlbumCoverWithCallback(request *SetAlbumCoverRequest, callback func(response *SetAlbumCoverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type SetAlbumCoverResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke SetAlbumCover API
 func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
 	request = &SetAlbumCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
 	return
 }
 
+// create a response to parse from SetAlbumCover response
 func CreateSetAlbumCoverResponse() (response *SetAlbumCoverResponse) {
 	response = &SetAlbumCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

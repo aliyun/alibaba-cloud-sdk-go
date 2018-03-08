@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
 func (client *Client) DescribeDomainMax95BpsData(request *DescribeDomainMax95BpsDataRequest) (response *DescribeDomainMax95BpsDataResponse, err error) {
 	response = CreateDescribeDomainMax95BpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomainMax95BpsDataRequest) (<-chan *DescribeDomainMax95BpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainMax95BpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDomainMax95BpsDataRequest, callback func(response *DescribeDomainMax95BpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeDomainMax95BpsDataResponse struct {
 	OverseasMax95Bps string `json:"OverseasMax95Bps" xml:"OverseasMax95Bps"`
 }
 
+// create a request to invoke DescribeDomainMax95BpsData API
 func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsDataRequest) {
 	request = &DescribeDomainMax95BpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsD
 	return
 }
 
+// create a response to parse from DescribeDomainMax95BpsData response
 func CreateDescribeDomainMax95BpsDataResponse() (response *DescribeDomainMax95BpsDataResponse) {
 	response = &DescribeDomainMax95BpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

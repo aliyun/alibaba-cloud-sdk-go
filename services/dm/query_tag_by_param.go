@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTagByParam api with *QueryTagByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querytagbyparam.html
 func (client *Client) QueryTagByParam(request *QueryTagByParamRequest) (response *QueryTagByParamResponse, err error) {
 	response = CreateQueryTagByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTagByParam api with *QueryTagByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytagbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (<-chan *QueryTagByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryTagByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryTagByParam api with *QueryTagByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytagbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamRequest, callback func(response *QueryTagByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type QueryTagByParamResponse struct {
 	Data       DataInQueryTagByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryTagByParam API
 func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
 	request = &QueryTagByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
 	return
 }
 
+// create a response to parse from QueryTagByParam response
 func CreateQueryTagByParamResponse() (response *QueryTagByParamResponse) {
 	response = &QueryTagByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

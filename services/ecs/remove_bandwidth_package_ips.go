@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/removebandwidthpackageips.html
 func (client *Client) RemoveBandwidthPackageIps(request *RemoveBandwidthPackageIpsRequest) (response *RemoveBandwidthPackageIpsResponse, err error) {
 	response = CreateRemoveBandwidthPackageIpsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/removebandwidthpackageips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBandwidthPackageIpsWithChan(request *RemoveBandwidthPackageIpsRequest) (<-chan *RemoveBandwidthPackageIpsResponse, <-chan error) {
 	responseChan := make(chan *RemoveBandwidthPackageIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveBandwidthPackageIpsWithChan(request *RemoveBandwidth
 	return responseChan, errChan
 }
 
+// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/removebandwidthpackageips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBandwidthPackageIpsWithCallback(request *RemoveBandwidthPackageIpsRequest, callback func(response *RemoveBandwidthPackageIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RemoveBandwidthPackageIpsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RemoveBandwidthPackageIps API
 func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIpsRequest) {
 	request = &RemoveBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIp
 	return
 }
 
+// create a response to parse from RemoveBandwidthPackageIps response
 func CreateRemoveBandwidthPackageIpsResponse() (response *RemoveBandwidthPackageIpsResponse) {
 	response = &RemoveBandwidthPackageIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

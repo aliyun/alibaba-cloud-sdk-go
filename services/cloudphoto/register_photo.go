@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RegisterPhoto api with *RegisterPhotoRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
 func (client *Client) RegisterPhoto(request *RegisterPhotoRequest) (response *RegisterPhotoResponse, err error) {
 	response = CreateRegisterPhotoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RegisterPhoto api with *RegisterPhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-chan *RegisterPhotoResponse, <-chan error) {
 	responseChan := make(chan *RegisterPhotoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke RegisterPhoto api with *RegisterPhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, callback func(response *RegisterPhotoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type RegisterPhotoResponse struct {
 	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
+// create a request to invoke RegisterPhoto API
 func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 	request = &RegisterPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 	return
 }
 
+// create a response to parse from RegisterPhoto response
 func CreateRegisterPhotoResponse() (response *RegisterPhotoResponse) {
 	response = &RegisterPhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ToggleFeatures api with *ToggleFeaturesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
 func (client *Client) ToggleFeatures(request *ToggleFeaturesRequest) (response *ToggleFeaturesResponse, err error) {
 	response = CreateToggleFeaturesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ToggleFeatures api with *ToggleFeaturesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-chan *ToggleFeaturesResponse, <-chan error) {
 	responseChan := make(chan *ToggleFeaturesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ToggleFeatures api with *ToggleFeaturesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest, callback func(response *ToggleFeaturesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ToggleFeaturesResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke ToggleFeatures API
 func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
 	request = &ToggleFeaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
 	return
 }
 
+// create a response to parse from ToggleFeatures response
 func CreateToggleFeaturesResponse() (response *ToggleFeaturesResponse) {
 	response = &ToggleFeaturesResponse{
 		BaseResponse: &responses.BaseResponse{},

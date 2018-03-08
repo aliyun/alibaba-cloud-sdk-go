@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
 func (client *Client) DescribeDeploymentSets(request *DescribeDeploymentSetsRequest) (response *DescribeDeploymentSetsResponse, err error) {
 	response = CreateDescribeDeploymentSetsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeploymentSetsRequest) (<-chan *DescribeDeploymentSetsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeploymentSetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeployment
 	return responseChan, errChan
 }
 
+// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploymentSetsRequest, callback func(response *DescribeDeploymentSetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type DescribeDeploymentSetsResponse struct {
 	DeploymentSets DeploymentSets `json:"DeploymentSets" xml:"DeploymentSets"`
 }
 
+// create a request to invoke DescribeDeploymentSets API
 func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsRequest) {
 	request = &DescribeDeploymentSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsReque
 	return
 }
 
+// create a response to parse from DescribeDeploymentSets response
 func CreateDescribeDeploymentSetsResponse() (response *DescribeDeploymentSetsResponse) {
 	response = &DescribeDeploymentSetsResponse{
 		BaseResponse: &responses.BaseResponse{},

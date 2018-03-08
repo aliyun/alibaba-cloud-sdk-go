@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
 func (client *Client) AttachNetworkInterface(request *AttachNetworkInterfaceRequest) (response *AttachNetworkInterfaceResponse, err error) {
 	response = CreateAttachNetworkInterfaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInterfaceRequest) (<-chan *AttachNetworkInterfaceResponse, <-chan error) {
 	responseChan := make(chan *AttachNetworkInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInter
 	return responseChan, errChan
 }
 
+// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithCallback(request *AttachNetworkInterfaceRequest, callback func(response *AttachNetworkInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type AttachNetworkInterfaceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AttachNetworkInterface API
 func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceRequest) {
 	request = &AttachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceReque
 	return
 }
 
+// create a response to parse from AttachNetworkInterface response
 func CreateAttachNetworkInterfaceResponse() (response *AttachNetworkInterfaceResponse) {
 	response = &AttachNetworkInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

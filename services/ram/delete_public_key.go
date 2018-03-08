@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePublicKey api with *DeletePublicKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deletepublickey.html
 func (client *Client) DeletePublicKey(request *DeletePublicKeyRequest) (response *DeletePublicKeyResponse, err error) {
 	response = CreateDeletePublicKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePublicKey api with *DeletePublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (<-chan *DeletePublicKeyResponse, <-chan error) {
 	responseChan := make(chan *DeletePublicKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeletePublicKey api with *DeletePublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePublicKeyWithCallback(request *DeletePublicKeyRequest, callback func(response *DeletePublicKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeletePublicKeyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeletePublicKey API
 func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
 	request = &DeletePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
 	return
 }
 
+// create a response to parse from DeletePublicKey response
 func CreateDeletePublicKeyResponse() (response *DeletePublicKeyResponse) {
 	response = &DeletePublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

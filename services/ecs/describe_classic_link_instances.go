@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
 func (client *Client) DescribeClassicLinkInstances(request *DescribeClassicLinkInstancesRequest) (response *DescribeClassicLinkInstancesResponse, err error) {
 	response = CreateDescribeClassicLinkInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClassicLinkInstancesRequest) (<-chan *DescribeClassicLinkInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeClassicLinkInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClas
 	return responseChan, errChan
 }
 
+// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithCallback(request *DescribeClassicLinkInstancesRequest, callback func(response *DescribeClassicLinkInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeClassicLinkInstancesResponse struct {
 	Links      Links  `json:"Links" xml:"Links"`
 }
 
+// create a request to invoke DescribeClassicLinkInstances API
 func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkInstancesRequest) {
 	request = &DescribeClassicLinkInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkIn
 	return
 }
 
+// create a response to parse from DescribeClassicLinkInstances response
 func CreateDescribeClassicLinkInstancesResponse() (response *DescribeClassicLinkInstancesResponse) {
 	response = &DescribeClassicLinkInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

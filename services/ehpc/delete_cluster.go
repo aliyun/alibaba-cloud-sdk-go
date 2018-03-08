@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCluster api with *DeleteClusterRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/deletecluster.html
 func (client *Client) DeleteCluster(request *DeleteClusterRequest) (response *DeleteClusterResponse, err error) {
 	response = CreateDeleteClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCluster api with *DeleteClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/deletecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-chan *DeleteClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DeleteCluster api with *DeleteClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/deletecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, callback func(response *DeleteClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeleteClusterResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCluster API
 func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	return
 }
 
+// create a response to parse from DeleteCluster response
 func CreateDeleteClusterResponse() (response *DeleteClusterResponse) {
 	response = &DeleteClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

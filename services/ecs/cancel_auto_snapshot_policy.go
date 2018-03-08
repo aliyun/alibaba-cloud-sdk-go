@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
 func (client *Client) CancelAutoSnapshotPolicy(request *CancelAutoSnapshotPolicyRequest) (response *CancelAutoSnapshotPolicyResponse, err error) {
 	response = CreateCancelAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapshotPolicyRequest) (<-chan *CancelAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *CancelAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapsh
 	return responseChan, errChan
 }
 
+// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSnapshotPolicyRequest, callback func(response *CancelAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CancelAutoSnapshotPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CancelAutoSnapshotPolicy API
 func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyRequest) {
 	request = &CancelAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyR
 	return
 }
 
+// create a response to parse from CancelAutoSnapshotPolicy response
 func CreateCancelAutoSnapshotPolicyResponse() (response *CancelAutoSnapshotPolicyResponse) {
 	response = &CancelAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

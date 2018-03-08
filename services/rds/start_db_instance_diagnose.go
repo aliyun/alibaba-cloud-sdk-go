@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StartDBInstanceDiagnose api with *StartDBInstanceDiagnoseRequest synchronously
+// api document: https://help.aliyun.com/api/rds/startdbinstancediagnose.html
 func (client *Client) StartDBInstanceDiagnose(request *StartDBInstanceDiagnoseRequest) (response *StartDBInstanceDiagnoseResponse, err error) {
 	response = CreateStartDBInstanceDiagnoseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StartDBInstanceDiagnose api with *StartDBInstanceDiagnoseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/startdbinstancediagnose.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDBInstanceDiagnoseWithChan(request *StartDBInstanceDiagnoseRequest) (<-chan *StartDBInstanceDiagnoseResponse, <-chan error) {
 	responseChan := make(chan *StartDBInstanceDiagnoseResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StartDBInstanceDiagnoseWithChan(request *StartDBInstanceDi
 	return responseChan, errChan
 }
 
+// invoke StartDBInstanceDiagnose api with *StartDBInstanceDiagnoseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/startdbinstancediagnose.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDBInstanceDiagnoseWithCallback(request *StartDBInstanceDiagnoseRequest, callback func(response *StartDBInstanceDiagnoseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type StartDBInstanceDiagnoseResponse struct {
 	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
 }
 
+// create a request to invoke StartDBInstanceDiagnose API
 func CreateStartDBInstanceDiagnoseRequest() (request *StartDBInstanceDiagnoseRequest) {
 	request = &StartDBInstanceDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateStartDBInstanceDiagnoseRequest() (request *StartDBInstanceDiagnoseReq
 	return
 }
 
+// create a response to parse from StartDBInstanceDiagnose response
 func CreateStartDBInstanceDiagnoseResponse() (response *StartDBInstanceDiagnoseResponse) {
 	response = &StartDBInstanceDiagnoseResponse{
 		BaseResponse: &responses.BaseResponse{},

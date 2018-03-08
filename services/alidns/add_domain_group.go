@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddDomainGroup api with *AddDomainGroupRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
 func (client *Client) AddDomainGroup(request *AddDomainGroupRequest) (response *AddDomainGroupResponse, err error) {
 	response = CreateAddDomainGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddDomainGroup api with *AddDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainGroupWithChan(request *AddDomainGroupRequest) (<-chan *AddDomainGroupResponse, <-chan error) {
 	responseChan := make(chan *AddDomainGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddDomainGroupWithChan(request *AddDomainGroupRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke AddDomainGroup api with *AddDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainGroupWithCallback(request *AddDomainGroupRequest, callback func(response *AddDomainGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type AddDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
+// create a request to invoke AddDomainGroup API
 func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
 	request = &AddDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
 	return
 }
 
+// create a response to parse from AddDomainGroup response
 func CreateAddDomainGroupResponse() (response *AddDomainGroupResponse) {
 	response = &AddDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

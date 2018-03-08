@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
 func (client *Client) SetRemoteReqAuthConfig(request *SetRemoteReqAuthConfigRequest) (response *SetRemoteReqAuthConfigResponse, err error) {
 	response = CreateSetRemoteReqAuthConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoteReqAuthConfigWithChan(request *SetRemoteReqAuthConfigRequest) (<-chan *SetRemoteReqAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRemoteReqAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetRemoteReqAuthConfigWithChan(request *SetRemoteReqAuthCo
 	return responseChan, errChan
 }
 
+// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoteReqAuthConfigWithCallback(request *SetRemoteReqAuthConfigRequest, callback func(response *SetRemoteReqAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SetRemoteReqAuthConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetRemoteReqAuthConfig API
 func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigRequest) {
 	request = &SetRemoteReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigReque
 	return
 }
 
+// create a response to parse from SetRemoteReqAuthConfig response
 func CreateSetRemoteReqAuthConfigResponse() (response *SetRemoteReqAuthConfigResponse) {
 	response = &SetRemoteReqAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

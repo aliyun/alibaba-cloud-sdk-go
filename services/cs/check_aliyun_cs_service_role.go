@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest synchronously
+// api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
 func (client *Client) CheckAliyunCSServiceRole(request *CheckAliyunCSServiceRoleRequest) (response *CheckAliyunCSServiceRoleResponse, err error) {
 	response = CreateCheckAliyunCSServiceRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSServiceRoleRequest) (<-chan *CheckAliyunCSServiceRoleResponse, <-chan error) {
 	responseChan := make(chan *CheckAliyunCSServiceRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSSer
 	return responseChan, errChan
 }
 
+// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunCSServiceRoleWithCallback(request *CheckAliyunCSServiceRoleRequest, callback func(response *CheckAliyunCSServiceRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type CheckAliyunCSServiceRoleResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke CheckAliyunCSServiceRole API
 func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleRequest) {
 	request = &CheckAliyunCSServiceRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleR
 	return
 }
 
+// create a response to parse from CheckAliyunCSServiceRole response
 func CreateCheckAliyunCSServiceRoleResponse() (response *CheckAliyunCSServiceRoleResponse) {
 	response = &CheckAliyunCSServiceRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

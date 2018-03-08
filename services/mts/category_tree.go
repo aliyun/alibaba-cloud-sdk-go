@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CategoryTree api with *CategoryTreeRequest synchronously
+// api document: https://help.aliyun.com/api/mts/categorytree.html
 func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *CategoryTreeResponse, err error) {
 	response = CreateCategoryTreeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CategoryTree api with *CategoryTreeRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/categorytree.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan *CategoryTreeResponse, <-chan error) {
 	responseChan := make(chan *CategoryTreeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke CategoryTree api with *CategoryTreeRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/categorytree.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, callback func(response *CategoryTreeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type CategoryTreeResponse struct {
 	CategoryTree string `json:"CategoryTree" xml:"CategoryTree"`
 }
 
+// create a request to invoke CategoryTree API
 func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	return
 }
 
+// create a response to parse from CategoryTree response
 func CreateCategoryTreeResponse() (response *CategoryTreeResponse) {
 	response = &CategoryTreeResponse{
 		BaseResponse: &responses.BaseResponse{},

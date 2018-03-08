@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
 func (client *Client) ModifyUserBusinessBehavior(request *ModifyUserBusinessBehaviorRequest) (response *ModifyUserBusinessBehaviorResponse, err error) {
 	response = CreateModifyUserBusinessBehaviorResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserBusinessBehaviorWithChan(request *ModifyUserBusinessBehaviorRequest) (<-chan *ModifyUserBusinessBehaviorResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserBusinessBehaviorResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyUserBusinessBehaviorWithChan(request *ModifyUserBusi
 	return responseChan, errChan
 }
 
+// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUserBusinessBehaviorRequest, callback func(response *ModifyUserBusinessBehaviorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ModifyUserBusinessBehaviorResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyUserBusinessBehavior API
 func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehaviorRequest) {
 	request = &ModifyUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehav
 	return
 }
 
+// create a response to parse from ModifyUserBusinessBehavior response
 func CreateModifyUserBusinessBehaviorResponse() (response *ModifyUserBusinessBehaviorResponse) {
 	response = &ModifyUserBusinessBehaviorResponse{
 		BaseResponse: &responses.BaseResponse{},

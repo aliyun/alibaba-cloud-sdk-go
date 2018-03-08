@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForCreatingOrderActivate api with *SaveSingleTaskForCreatingOrderActivateRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderactivate.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivate(request *SaveSingleTaskForCreatingOrderActivateRequest) (response *SaveSingleTaskForCreatingOrderActivateResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderActivateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForCreatingOrderActivate api with *SaveSingleTaskForCreatingOrderActivateRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderactivate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivateWithChan(request *SaveSingleTaskForCreatingOrderActivateRequest) (<-chan *SaveSingleTaskForCreatingOrderActivateResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingOrderActivateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForCreatingOrderActivateWithChan(request *Sa
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForCreatingOrderActivate api with *SaveSingleTaskForCreatingOrderActivateRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderactivate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderActivateWithCallback(request *SaveSingleTaskForCreatingOrderActivateRequest, callback func(response *SaveSingleTaskForCreatingOrderActivateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SaveSingleTaskForCreatingOrderActivateResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForCreatingOrderActivate API
 func CreateSaveSingleTaskForCreatingOrderActivateRequest() (request *SaveSingleTaskForCreatingOrderActivateRequest) {
 	request = &SaveSingleTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSaveSingleTaskForCreatingOrderActivateRequest() (request *SaveSingleT
 	return
 }
 
+// create a response to parse from SaveSingleTaskForCreatingOrderActivate response
 func CreateSaveSingleTaskForCreatingOrderActivateResponse() (response *SaveSingleTaskForCreatingOrderActivateResponse) {
 	response = &SaveSingleTaskForCreatingOrderActivateResponse{
 		BaseResponse: &responses.BaseResponse{},

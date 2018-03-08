@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescAccountSummary api with *DescAccountSummaryRequest synchronously
+// api document: https://help.aliyun.com/api/dm/descaccountsummary.html
 func (client *Client) DescAccountSummary(request *DescAccountSummaryRequest) (response *DescAccountSummaryResponse, err error) {
 	response = CreateDescAccountSummaryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescAccountSummary api with *DescAccountSummaryRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/descaccountsummary.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescAccountSummaryWithChan(request *DescAccountSummaryRequest) (<-chan *DescAccountSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescAccountSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescAccountSummaryWithChan(request *DescAccountSummaryRequ
 	return responseChan, errChan
 }
 
+// invoke DescAccountSummary api with *DescAccountSummaryRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/descaccountsummary.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescAccountSummaryWithCallback(request *DescAccountSummaryRequest, callback func(response *DescAccountSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescAccountSummaryResponse struct {
 	EnableTimes   int    `json:"EnableTimes" xml:"EnableTimes"`
 }
 
+// create a request to invoke DescAccountSummary API
 func CreateDescAccountSummaryRequest() (request *DescAccountSummaryRequest) {
 	request = &DescAccountSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescAccountSummaryRequest() (request *DescAccountSummaryRequest) {
 	return
 }
 
+// create a response to parse from DescAccountSummary response
 func CreateDescAccountSummaryResponse() (response *DescAccountSummaryResponse) {
 	response = &DescAccountSummaryResponse{
 		BaseResponse: &responses.BaseResponse{},

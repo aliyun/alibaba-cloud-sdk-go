@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVpcZoneNos api with *DescribeVpcZoneNosRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describevpczonenos.html
 func (client *Client) DescribeVpcZoneNos(request *DescribeVpcZoneNosRequest) (response *DescribeVpcZoneNosResponse, err error) {
 	response = CreateDescribeVpcZoneNosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVpcZoneNos api with *DescribeVpcZoneNosRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describevpczonenos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcZoneNosWithChan(request *DescribeVpcZoneNosRequest) (<-chan *DescribeVpcZoneNosResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpcZoneNosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVpcZoneNosWithChan(request *DescribeVpcZoneNosRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeVpcZoneNos api with *DescribeVpcZoneNosRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describevpczonenos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNosRequest, callback func(response *DescribeVpcZoneNosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeVpcZoneNosResponse struct {
 	Items     ItemsInDescribeVpcZoneNos `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeVpcZoneNos API
 func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
 	request = &DescribeVpcZoneNosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
 	return
 }
 
+// create a response to parse from DescribeVpcZoneNos response
 func CreateDescribeVpcZoneNosResponse() (response *DescribeVpcZoneNosResponse) {
 	response = &DescribeVpcZoneNosResponse{
 		BaseResponse: &responses.BaseResponse{},

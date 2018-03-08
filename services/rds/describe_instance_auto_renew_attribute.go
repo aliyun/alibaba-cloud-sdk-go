@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeinstanceautorenewattribute.html
 func (client *Client) DescribeInstanceAutoRenewAttribute(request *DescribeInstanceAutoRenewAttributeRequest) (response *DescribeInstanceAutoRenewAttributeResponse, err error) {
 	response = CreateDescribeInstanceAutoRenewAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeinstanceautorenewattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *DescribeInstanceAutoRenewAttributeRequest) (<-chan *DescribeInstanceAutoRenewAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceAutoRenewAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *Descri
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeinstanceautorenewattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *DescribeInstanceAutoRenewAttributeRequest, callback func(response *DescribeInstanceAutoRenewAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeInstanceAutoRenewAttributeResponse struct {
 	Items            ItemsInDescribeInstanceAutoRenewAttribute `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeInstanceAutoRenewAttribute API
 func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanc
 	return
 }
 
+// create a response to parse from DescribeInstanceAutoRenewAttribute response
 func CreateDescribeInstanceAutoRenewAttributeResponse() (response *DescribeInstanceAutoRenewAttributeResponse) {
 	response = &DescribeInstanceAutoRenewAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

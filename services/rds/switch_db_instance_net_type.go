@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SwitchDBInstanceNetType api with *SwitchDBInstanceNetTypeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
 func (client *Client) SwitchDBInstanceNetType(request *SwitchDBInstanceNetTypeRequest) (response *SwitchDBInstanceNetTypeResponse, err error) {
 	response = CreateSwitchDBInstanceNetTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SwitchDBInstanceNetType api with *SwitchDBInstanceNetTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceNetTypeRequest) (<-chan *SwitchDBInstanceNetTypeResponse, <-chan error) {
 	responseChan := make(chan *SwitchDBInstanceNetTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SwitchDBInstanceNetTypeWithChan(request *SwitchDBInstanceN
 	return responseChan, errChan
 }
 
+// invoke SwitchDBInstanceNetType api with *SwitchDBInstanceNetTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstancenettype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceNetTypeWithCallback(request *SwitchDBInstanceNetTypeRequest, callback func(response *SwitchDBInstanceNetTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SwitchDBInstanceNetTypeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SwitchDBInstanceNetType API
 func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeRequest) {
 	request = &SwitchDBInstanceNetTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeReq
 	return
 }
 
+// create a response to parse from SwitchDBInstanceNetType response
 func CreateSwitchDBInstanceNetTypeResponse() (response *SwitchDBInstanceNetTypeResponse) {
 	response = &SwitchDBInstanceNetTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
 func (client *Client) QueryCoverPipelineList(request *QueryCoverPipelineListRequest) (response *QueryCoverPipelineListResponse, err error) {
 	response = CreateQueryCoverPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipelineListRequest) (<-chan *QueryCoverPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryCoverPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipeline
 	return responseChan, errChan
 }
 
+// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipelineListRequest, callback func(response *QueryCoverPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryCoverPipelineListResponse struct {
 	PipelineList PipelineListInQueryCoverPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryCoverPipelineList API
 func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListRequest) {
 	request = &QueryCoverPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListReque
 	return
 }
 
+// create a response to parse from QueryCoverPipelineList response
 func CreateQueryCoverPipelineListResponse() (response *QueryCoverPipelineListResponse) {
 	response = &QueryCoverPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

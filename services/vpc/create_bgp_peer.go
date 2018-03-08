@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateBgpPeer api with *CreateBgpPeerRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
 func (client *Client) CreateBgpPeer(request *CreateBgpPeerRequest) (response *CreateBgpPeerResponse, err error) {
 	response = CreateCreateBgpPeerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateBgpPeer api with *CreateBgpPeerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-chan *CreateBgpPeerResponse, <-chan error) {
 	responseChan := make(chan *CreateBgpPeerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke CreateBgpPeer api with *CreateBgpPeerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, callback func(response *CreateBgpPeerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateBgpPeerResponse struct {
 	BgpPeerId string `json:"BgpPeerId" xml:"BgpPeerId"`
 }
 
+// create a request to invoke CreateBgpPeer API
 func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
 	request = &CreateBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
 	return
 }
 
+// create a response to parse from CreateBgpPeer response
 func CreateCreateBgpPeerResponse() (response *CreateBgpPeerResponse) {
 	response = &CreateBgpPeerResponse{
 		BaseResponse: &responses.BaseResponse{},

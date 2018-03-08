@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
 func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticReportListRequest) (response *DescribeDiagnosticReportListResponse, err error) {
 	response = CreateDescribeDiagnosticReportListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiagnosticReportListRequest) (<-chan *DescribeDiagnosticReportListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDiagnosticReportListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiag
 	return responseChan, errChan
 }
 
+// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithCallback(request *DescribeDiagnosticReportListRequest, callback func(response *DescribeDiagnosticReportListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DescribeDiagnosticReportListResponse struct {
 	ReportList []Report `json:"ReportList" xml:"ReportList"`
 }
 
+// create a request to invoke DescribeDiagnosticReportList API
 func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticReportListRequest) {
 	request = &DescribeDiagnosticReportListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticRep
 	return
 }
 
+// create a response to parse from DescribeDiagnosticReportList response
 func CreateDescribeDiagnosticReportListResponse() (response *DescribeDiagnosticReportListResponse) {
 	response = &DescribeDiagnosticReportListResponse{
 		BaseResponse: &responses.BaseResponse{},

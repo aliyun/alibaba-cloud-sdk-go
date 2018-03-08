@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
 func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
 	response = CreateDeleteNotifyPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *DeleteNotifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DeleteNotifyPolicyResponse struct {
 	Result  int    `json:"result" xml:"result"`
 }
 
+// create a request to invoke DeleteNotifyPolicy API
 func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	request = &DeleteNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	return
 }
 
+// create a response to parse from DeleteNotifyPolicy response
 func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
 	response = &DeleteNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

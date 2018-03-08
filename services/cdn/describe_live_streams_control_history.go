@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
 func (client *Client) DescribeLiveStreamsControlHistory(request *DescribeLiveStreamsControlHistoryRequest) (response *DescribeLiveStreamsControlHistoryResponse, err error) {
 	response = CreateDescribeLiveStreamsControlHistoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsControlHistoryWithChan(request *DescribeLiveStreamsControlHistoryRequest) (<-chan *DescribeLiveStreamsControlHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsControlHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamsControlHistoryWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsControlHistoryWithCallback(request *DescribeLiveStreamsControlHistoryRequest, callback func(response *DescribeLiveStreamsControlHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeLiveStreamsControlHistoryResponse struct {
 	ControlInfo ControlInfo `json:"ControlInfo" xml:"ControlInfo"`
 }
 
+// create a request to invoke DescribeLiveStreamsControlHistory API
 func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStreamsControlHistoryRequest) {
 	request = &DescribeLiveStreamsControlHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStre
 	return
 }
 
+// create a response to parse from DescribeLiveStreamsControlHistory response
 func CreateDescribeLiveStreamsControlHistoryResponse() (response *DescribeLiveStreamsControlHistoryResponse) {
 	response = &DescribeLiveStreamsControlHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

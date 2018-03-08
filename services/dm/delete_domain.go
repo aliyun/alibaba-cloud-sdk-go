@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDomain api with *DeleteDomainRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deletedomain.html
 func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *DeleteDomainResponse, err error) {
 	response = CreateDeleteDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDomain api with *DeleteDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletedomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan *DeleteDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DeleteDomain api with *DeleteDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletedomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, callback func(response *DeleteDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteDomainResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteDomain API
 func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 	request = &DeleteDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 	return
 }
 
+// create a response to parse from DeleteDomain response
 func CreateDeleteDomainResponse() (response *DeleteDomainResponse) {
 	response = &DeleteDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

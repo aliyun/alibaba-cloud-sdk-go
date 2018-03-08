@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetConfig api with *GetConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/getconfig.html
 func (client *Client) GetConfig(request *GetConfigRequest) (response *GetConfigResponse, err error) {
 	response = CreateGetConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetConfig api with *GetConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/getconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetConfigResponse, <-chan error) {
 	responseChan := make(chan *GetConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetC
 	return responseChan, errChan
 }
 
+// invoke GetConfig api with *GetConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/getconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithCallback(request *GetConfigRequest, callback func(response *GetConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type GetConfigResponse struct {
 	ConfigItem     ConfigItem `json:"ConfigItem" xml:"ConfigItem"`
 }
 
+// create a request to invoke GetConfig API
 func CreateGetConfigRequest() (request *GetConfigRequest) {
 	request = &GetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateGetConfigRequest() (request *GetConfigRequest) {
 	return
 }
 
+// create a response to parse from GetConfig response
 func CreateGetConfigResponse() (response *GetConfigResponse) {
 	response = &GetConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

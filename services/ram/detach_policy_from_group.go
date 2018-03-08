@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
 func (client *Client) DetachPolicyFromGroup(request *DetachPolicyFromGroupRequest) (response *DetachPolicyFromGroupResponse, err error) {
 	response = CreateDetachPolicyFromGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGroupRequest) (<-chan *DetachPolicyFromGroupResponse, <-chan error) {
 	responseChan := make(chan *DetachPolicyFromGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGro
 	return responseChan, errChan
 }
 
+// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithCallback(request *DetachPolicyFromGroupRequest, callback func(response *DetachPolicyFromGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DetachPolicyFromGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DetachPolicyFromGroup API
 func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest) {
 	request = &DetachPolicyFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest
 	return
 }
 
+// create a response to parse from DetachPolicyFromGroup response
 func CreateDetachPolicyFromGroupResponse() (response *DetachPolicyFromGroupResponse) {
 	response = &DetachPolicyFromGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

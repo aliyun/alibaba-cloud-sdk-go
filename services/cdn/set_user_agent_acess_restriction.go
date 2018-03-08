@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetUserAgentAcessRestriction api with *SetUserAgentAcessRestrictionRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setuseragentacessrestriction.html
 func (client *Client) SetUserAgentAcessRestriction(request *SetUserAgentAcessRestrictionRequest) (response *SetUserAgentAcessRestrictionResponse, err error) {
 	response = CreateSetUserAgentAcessRestrictionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetUserAgentAcessRestriction api with *SetUserAgentAcessRestrictionRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setuseragentacessrestriction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserAgentAcessRestrictionWithChan(request *SetUserAgentAcessRestrictionRequest) (<-chan *SetUserAgentAcessRestrictionResponse, <-chan error) {
 	responseChan := make(chan *SetUserAgentAcessRestrictionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetUserAgentAcessRestrictionWithChan(request *SetUserAgent
 	return responseChan, errChan
 }
 
+// invoke SetUserAgentAcessRestriction api with *SetUserAgentAcessRestrictionRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setuseragentacessrestriction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserAgentAcessRestrictionWithCallback(request *SetUserAgentAcessRestrictionRequest, callback func(response *SetUserAgentAcessRestrictionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetUserAgentAcessRestrictionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetUserAgentAcessRestriction API
 func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRestrictionRequest) {
 	request = &SetUserAgentAcessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRest
 	return
 }
 
+// create a response to parse from SetUserAgentAcessRestriction response
 func CreateSetUserAgentAcessRestrictionResponse() (response *SetUserAgentAcessRestrictionResponse) {
 	response = &SetUserAgentAcessRestrictionResponse{
 		BaseResponse: &responses.BaseResponse{},

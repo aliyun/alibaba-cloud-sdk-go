@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PlayInfo api with *PlayInfoRequest synchronously
+// api document: https://help.aliyun.com/api/mts/playinfo.html
 func (client *Client) PlayInfo(request *PlayInfoRequest) (response *PlayInfoResponse, err error) {
 	response = CreatePlayInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PlayInfo api with *PlayInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/playinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayInfoWithChan(request *PlayInfoRequest) (<-chan *PlayInfoResponse, <-chan error) {
 	responseChan := make(chan *PlayInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PlayInfoWithChan(request *PlayInfoRequest) (<-chan *PlayIn
 	return responseChan, errChan
 }
 
+// invoke PlayInfo api with *PlayInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/playinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback func(response *PlayInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type PlayInfoResponse struct {
 	PlayInfoList      PlayInfoList      `json:"PlayInfoList" xml:"PlayInfoList"`
 }
 
+// create a request to invoke PlayInfo API
 func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	request = &PlayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	return
 }
 
+// create a response to parse from PlayInfo response
 func CreatePlayInfoResponse() (response *PlayInfoResponse) {
 	response = &PlayInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

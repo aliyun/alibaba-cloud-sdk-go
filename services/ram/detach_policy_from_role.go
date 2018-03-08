@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
 func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest) (response *DetachPolicyFromRoleResponse, err error) {
 	response = CreateDetachPolicyFromRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRoleRequest) (<-chan *DetachPolicyFromRoleResponse, <-chan error) {
 	responseChan := make(chan *DetachPolicyFromRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRole
 	return responseChan, errChan
 }
 
+// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFromRoleRequest, callback func(response *DetachPolicyFromRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DetachPolicyFromRoleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DetachPolicyFromRole API
 func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) {
 	request = &DetachPolicyFromRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) 
 	return
 }
 
+// create a response to parse from DetachPolicyFromRole response
 func CreateDetachPolicyFromRoleResponse() (response *DetachPolicyFromRoleResponse) {
 	response = &DetachPolicyFromRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

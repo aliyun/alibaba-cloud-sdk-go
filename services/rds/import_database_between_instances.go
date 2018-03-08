@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
 func (client *Client) ImportDatabaseBetweenInstances(request *ImportDatabaseBetweenInstancesRequest) (response *ImportDatabaseBetweenInstancesResponse, err error) {
 	response = CreateImportDatabaseBetweenInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportDatabaseBetweenInstancesRequest) (<-chan *ImportDatabaseBetweenInstancesResponse, <-chan error) {
 	responseChan := make(chan *ImportDatabaseBetweenInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportData
 	return responseChan, errChan
 }
 
+// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *ImportDatabaseBetweenInstancesRequest, callback func(response *ImportDatabaseBetweenInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ImportDatabaseBetweenInstancesResponse struct {
 	ImportId  string `json:"ImportId" xml:"ImportId"`
 }
 
+// create a request to invoke ImportDatabaseBetweenInstances API
 func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetweenInstancesRequest) {
 	request = &ImportDatabaseBetweenInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetwe
 	return
 }
 
+// create a response to parse from ImportDatabaseBetweenInstances response
 func CreateImportDatabaseBetweenInstancesResponse() (response *ImportDatabaseBetweenInstancesResponse) {
 	response = &ImportDatabaseBetweenInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

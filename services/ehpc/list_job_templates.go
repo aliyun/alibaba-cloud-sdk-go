@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListJobTemplates api with *ListJobTemplatesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
 func (client *Client) ListJobTemplates(request *ListJobTemplatesRequest) (response *ListJobTemplatesResponse, err error) {
 	response = CreateListJobTemplatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListJobTemplates api with *ListJobTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobTemplatesWithChan(request *ListJobTemplatesRequest) (<-chan *ListJobTemplatesResponse, <-chan error) {
 	responseChan := make(chan *ListJobTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListJobTemplatesWithChan(request *ListJobTemplatesRequest)
 	return responseChan, errChan
 }
 
+// invoke ListJobTemplates api with *ListJobTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobTemplatesWithCallback(request *ListJobTemplatesRequest, callback func(response *ListJobTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ListJobTemplatesResponse struct {
 	Templates  Templates `json:"Templates" xml:"Templates"`
 }
 
+// create a request to invoke ListJobTemplates API
 func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	request = &ListJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	return
 }
 
+// create a response to parse from ListJobTemplates response
 func CreateListJobTemplatesResponse() (response *ListJobTemplatesResponse) {
 	response = &ListJobTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

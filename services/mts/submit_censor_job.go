@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitCensorJob api with *SubmitCensorJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitcensorjob.html
 func (client *Client) SubmitCensorJob(request *SubmitCensorJobRequest) (response *SubmitCensorJobResponse, err error) {
 	response = CreateSubmitCensorJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitCensorJob api with *SubmitCensorJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitcensorjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (<-chan *SubmitCensorJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitCensorJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (
 	return responseChan, errChan
 }
 
+// invoke SubmitCensorJob api with *SubmitCensorJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitcensorjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobRequest, callback func(response *SubmitCensorJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitCensorJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitCensorJob API
 func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
 	request = &SubmitCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitCensorJob response
 func CreateSubmitCensorJobResponse() (response *SubmitCensorJobResponse) {
 	response = &SubmitCensorJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
 func (client *Client) SetRemoveQueryStringConfig(request *SetRemoveQueryStringConfigRequest) (response *SetRemoveQueryStringConfigResponse, err error) {
 	response = CreateSetRemoveQueryStringConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQueryStringConfigRequest) (<-chan *SetRemoveQueryStringConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRemoveQueryStringConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQuery
 	return responseChan, errChan
 }
 
+// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithCallback(request *SetRemoveQueryStringConfigRequest, callback func(response *SetRemoveQueryStringConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetRemoveQueryStringConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetRemoveQueryStringConfig API
 func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringConfigRequest) {
 	request = &SetRemoveQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringCon
 	return
 }
 
+// create a response to parse from SetRemoveQueryStringConfig response
 func CreateSetRemoveQueryStringConfigResponse() (response *SetRemoveQueryStringConfigResponse) {
 	response = &SetRemoveQueryStringConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

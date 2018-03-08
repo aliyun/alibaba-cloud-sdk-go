@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RenameAlbum api with *RenameAlbumRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
 func (client *Client) RenameAlbum(request *RenameAlbumRequest) (response *RenameAlbumResponse, err error) {
 	response = CreateRenameAlbumResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RenameAlbum api with *RenameAlbumRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameAlbumWithChan(request *RenameAlbumRequest) (<-chan *RenameAlbumResponse, <-chan error) {
 	responseChan := make(chan *RenameAlbumResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RenameAlbumWithChan(request *RenameAlbumRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke RenameAlbum api with *RenameAlbumRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callback func(response *RenameAlbumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RenameAlbumResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke RenameAlbum API
 func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	request = &RenameAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	return
 }
 
+// create a response to parse from RenameAlbum response
 func CreateRenameAlbumResponse() (response *RenameAlbumResponse) {
 	response = &RenameAlbumResponse{
 		BaseResponse: &responses.BaseResponse{},

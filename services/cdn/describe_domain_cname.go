@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainCname api with *DescribeDomainCnameRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincname.html
 func (client *Client) DescribeDomainCname(request *DescribeDomainCnameRequest) (response *DescribeDomainCnameResponse, err error) {
 	response = CreateDescribeDomainCnameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainCname api with *DescribeDomainCnameRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCnameWithChan(request *DescribeDomainCnameRequest) (<-chan *DescribeDomainCnameResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainCnameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainCnameWithChan(request *DescribeDomainCnameRe
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainCname api with *DescribeDomainCnameRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCnameWithCallback(request *DescribeDomainCnameRequest, callback func(response *DescribeDomainCnameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeDomainCnameResponse struct {
 	CnameDatas CnameDatas `json:"CnameDatas" xml:"CnameDatas"`
 }
 
+// create a request to invoke DescribeDomainCname API
 func CreateDescribeDomainCnameRequest() (request *DescribeDomainCnameRequest) {
 	request = &DescribeDomainCnameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeDomainCnameRequest() (request *DescribeDomainCnameRequest) {
 	return
 }
 
+// create a response to parse from DescribeDomainCname response
 func CreateDescribeDomainCnameResponse() (response *DescribeDomainCnameResponse) {
 	response = &DescribeDomainCnameResponse{
 		BaseResponse: &responses.BaseResponse{},

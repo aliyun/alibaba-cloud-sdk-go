@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
 func (client *Client) ModifyBgpGroupAttribute(request *ModifyBgpGroupAttributeRequest) (response *ModifyBgpGroupAttributeResponse, err error) {
 	response = CreateModifyBgpGroupAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAttributeRequest) (<-chan *ModifyBgpGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyBgpGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAtt
 	return responseChan, errChan
 }
 
+// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGroupAttributeRequest, callback func(response *ModifyBgpGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyBgpGroupAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyBgpGroupAttribute API
 func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeRequest) {
 	request = &ModifyBgpGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeReq
 	return
 }
 
+// create a response to parse from ModifyBgpGroupAttribute response
 func CreateModifyBgpGroupAttributeResponse() (response *ModifyBgpGroupAttributeResponse) {
 	response = &ModifyBgpGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

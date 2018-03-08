@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetRule api with *SetRuleRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setrule.html
 func (client *Client) SetRule(request *SetRuleRequest) (response *SetRuleResponse, err error) {
 	response = CreateSetRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetRule api with *SetRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRuleWithChan(request *SetRuleRequest) (<-chan *SetRuleResponse, <-chan error) {
 	responseChan := make(chan *SetRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetRuleWithChan(request *SetRuleRequest) (<-chan *SetRuleR
 	return responseChan, errChan
 }
 
+// invoke SetRule api with *SetRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func(response *SetRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetRule API
 func CreateSetRuleRequest() (request *SetRuleRequest) {
 	request = &SetRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetRuleRequest() (request *SetRuleRequest) {
 	return
 }
 
+// create a response to parse from SetRule response
 func CreateSetRuleResponse() (response *SetRuleResponse) {
 	response = &SetRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

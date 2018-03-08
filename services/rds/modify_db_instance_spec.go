@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceSpec api with *ModifyDBInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancespec.html
 func (client *Client) ModifyDBInstanceSpec(request *ModifyDBInstanceSpecRequest) (response *ModifyDBInstanceSpecResponse, err error) {
 	response = CreateModifyDBInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceSpec api with *ModifyDBInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSpecWithChan(request *ModifyDBInstanceSpecRequest) (<-chan *ModifyDBInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceSpecWithChan(request *ModifyDBInstanceSpec
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceSpec api with *ModifyDBInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSpecWithCallback(request *ModifyDBInstanceSpecRequest, callback func(response *ModifyDBInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ModifyDBInstanceSpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceSpec API
 func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) {
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) 
 	return
 }
 
+// create a response to parse from ModifyDBInstanceSpec response
 func CreateModifyDBInstanceSpecResponse() (response *ModifyDBInstanceSpecResponse) {
 	response = &ModifyDBInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

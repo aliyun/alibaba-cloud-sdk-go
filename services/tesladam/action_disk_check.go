@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ActionDiskCheck api with *ActionDiskCheckRequest synchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
 func (client *Client) ActionDiskCheck(request *ActionDiskCheckRequest) (response *ActionDiskCheckResponse, err error) {
 	response = CreateActionDiskCheckResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ActionDiskCheck api with *ActionDiskCheckRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskCheckWithChan(request *ActionDiskCheckRequest) (<-chan *ActionDiskCheckResponse, <-chan error) {
 	responseChan := make(chan *ActionDiskCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActionDiskCheckWithChan(request *ActionDiskCheckRequest) (
 	return responseChan, errChan
 }
 
+// invoke ActionDiskCheck api with *ActionDiskCheckRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckRequest, callback func(response *ActionDiskCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,8 +75,8 @@ func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckReques
 
 type ActionDiskCheckRequest struct {
 	*requests.RpcRequest
-	DiskMount string `position:"Query" name:"DiskMount"`
 	Ip        string `position:"Query" name:"Ip"`
+	DiskMount string `position:"Query" name:"DiskMount"`
 }
 
 type ActionDiskCheckResponse struct {
@@ -78,6 +86,7 @@ type ActionDiskCheckResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke ActionDiskCheck API
 func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
 	request = &ActionDiskCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
 	return
 }
 
+// create a response to parse from ActionDiskCheck response
 func CreateActionDiskCheckResponse() (response *ActionDiskCheckResponse) {
 	response = &ActionDiskCheckResponse{
 		BaseResponse: &responses.BaseResponse{},

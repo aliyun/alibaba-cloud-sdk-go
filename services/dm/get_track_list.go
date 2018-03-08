@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetTrackList api with *GetTrackListRequest synchronously
+// api document: https://help.aliyun.com/api/dm/gettracklist.html
 func (client *Client) GetTrackList(request *GetTrackListRequest) (response *GetTrackListResponse, err error) {
 	response = CreateGetTrackListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetTrackList api with *GetTrackListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/gettracklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrackListWithChan(request *GetTrackListRequest) (<-chan *GetTrackListResponse, <-chan error) {
 	responseChan := make(chan *GetTrackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetTrackListWithChan(request *GetTrackListRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke GetTrackList api with *GetTrackListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/gettracklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, callback func(response *GetTrackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type GetTrackListResponse struct {
 	Data                 DataInGetTrackList `json:"data" xml:"data"`
 }
 
+// create a request to invoke GetTrackList API
 func CreateGetTrackListRequest() (request *GetTrackListRequest) {
 	request = &GetTrackListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateGetTrackListRequest() (request *GetTrackListRequest) {
 	return
 }
 
+// create a response to parse from GetTrackList response
 func CreateGetTrackListResponse() (response *GetTrackListResponse) {
 	response = &GetTrackListResponse{
 		BaseResponse: &responses.BaseResponse{},

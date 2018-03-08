@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddCdnDomain api with *AddCdnDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addcdndomain.html
 func (client *Client) AddCdnDomain(request *AddCdnDomainRequest) (response *AddCdnDomainResponse, err error) {
 	response = CreateAddCdnDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddCdnDomain api with *AddCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addcdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCdnDomainWithChan(request *AddCdnDomainRequest) (<-chan *AddCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *AddCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddCdnDomainWithChan(request *AddCdnDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke AddCdnDomain api with *AddCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addcdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, callback func(response *AddCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type AddCdnDomainResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddCdnDomain API
 func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	return
 }
 
+// create a response to parse from AddCdnDomain response
 func CreateAddCdnDomainResponse() (response *AddCdnDomainResponse) {
 	response = &AddCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

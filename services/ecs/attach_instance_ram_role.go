@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
 func (client *Client) AttachInstanceRamRole(request *AttachInstanceRamRoleRequest) (response *AttachInstanceRamRoleResponse, err error) {
 	response = CreateAttachInstanceRamRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstanceRamRoleWithChan(request *AttachInstanceRamRoleRequest) (<-chan *AttachInstanceRamRoleResponse, <-chan error) {
 	responseChan := make(chan *AttachInstanceRamRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachInstanceRamRoleWithChan(request *AttachInstanceRamRo
 	return responseChan, errChan
 }
 
+// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceRamRoleRequest, callback func(response *AttachInstanceRamRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AttachInstanceRamRoleResponse struct {
 	AttachInstanceRamRoleResults AttachInstanceRamRoleResults `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
 }
 
+// create a request to invoke AttachInstanceRamRole API
 func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest) {
 	request = &AttachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest
 	return
 }
 
+// create a response to parse from AttachInstanceRamRole response
 func CreateAttachInstanceRamRoleResponse() (response *AttachInstanceRamRoleResponse) {
 	response = &AttachInstanceRamRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

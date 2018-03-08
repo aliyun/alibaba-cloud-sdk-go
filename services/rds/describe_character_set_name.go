@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
 func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetNameRequest) (response *DescribeCharacterSetNameResponse, err error) {
 	response = CreateDescribeCharacterSetNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacterSetNameRequest) (<-chan *DescribeCharacterSetNameResponse, <-chan error) {
 	responseChan := make(chan *DescribeCharacterSetNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacte
 	return responseChan, errChan
 }
 
+// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describecharactersetname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeCharacterSetNameRequest, callback func(response *DescribeCharacterSetNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeCharacterSetNameResponse struct {
 	CharacterSetNameItems CharacterSetNameItems `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
 }
 
+// create a request to invoke DescribeCharacterSetName API
 func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameRequest) {
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameR
 	return
 }
 
+// create a response to parse from DescribeCharacterSetName response
 func CreateDescribeCharacterSetNameResponse() (response *DescribeCharacterSetNameResponse) {
 	response = &DescribeCharacterSetNameResponse{
 		BaseResponse: &responses.BaseResponse{},

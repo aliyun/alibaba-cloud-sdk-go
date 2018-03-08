@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
 func (client *Client) DescribeDomainFlowData(request *DescribeDomainFlowDataRequest) (response *DescribeDomainFlowDataResponse, err error) {
 	response = CreateDescribeDomainFlowDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFlowDataWithChan(request *DescribeDomainFlowDataRequest) (<-chan *DescribeDomainFlowDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainFlowDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainFlowDataWithChan(request *DescribeDomainFlow
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomainFlowDataRequest, callback func(response *DescribeDomainFlowDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeDomainFlowDataResponse struct {
 	FlowDataPerInterval FlowDataPerInterval `json:"FlowDataPerInterval" xml:"FlowDataPerInterval"`
 }
 
+// create a request to invoke DescribeDomainFlowData API
 func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataRequest) {
 	request = &DescribeDomainFlowDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataReque
 	return
 }
 
+// create a response to parse from DescribeDomainFlowData response
 func CreateDescribeDomainFlowDataResponse() (response *DescribeDomainFlowDataResponse) {
 	response = &DescribeDomainFlowDataResponse{
 		BaseResponse: &responses.BaseResponse{},

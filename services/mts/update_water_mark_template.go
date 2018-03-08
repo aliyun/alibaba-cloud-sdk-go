@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
 func (client *Client) UpdateWaterMarkTemplate(request *UpdateWaterMarkTemplateRequest) (response *UpdateWaterMarkTemplateResponse, err error) {
 	response = CreateUpdateWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWaterMarkTemplateWithChan(request *UpdateWaterMarkTemplateRequest) (<-chan *UpdateWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *UpdateWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateWaterMarkTemplateWithChan(request *UpdateWaterMarkTe
 	return responseChan, errChan
 }
 
+// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMarkTemplateRequest, callback func(response *UpdateWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type UpdateWaterMarkTemplateResponse struct {
 	WaterMarkTemplate WaterMarkTemplate `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
 }
 
+// create a request to invoke UpdateWaterMarkTemplate API
 func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateRequest) {
 	request = &UpdateWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateReq
 	return
 }
 
+// create a response to parse from UpdateWaterMarkTemplate response
 func CreateUpdateWaterMarkTemplateResponse() (response *UpdateWaterMarkTemplateResponse) {
 	response = &UpdateWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

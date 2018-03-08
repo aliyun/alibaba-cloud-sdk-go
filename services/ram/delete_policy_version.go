@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
 func (client *Client) DeletePolicyVersion(request *DeletePolicyVersionRequest) (response *DeletePolicyVersionResponse, err error) {
 	response = CreateDeletePolicyVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRequest) (<-chan *DeletePolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *DeletePolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRe
 	return responseChan, errChan
 }
 
+// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithCallback(request *DeletePolicyVersionRequest, callback func(response *DeletePolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeletePolicyVersionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeletePolicyVersion API
 func CreateDeletePolicyVersionRequest() (request *DeletePolicyVersionRequest) {
 	request = &DeletePolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeletePolicyVersionRequest() (request *DeletePolicyVersionRequest) {
 	return
 }
 
+// create a response to parse from DeletePolicyVersion response
 func CreateDeletePolicyVersionResponse() (response *DeletePolicyVersionResponse) {
 	response = &DeletePolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

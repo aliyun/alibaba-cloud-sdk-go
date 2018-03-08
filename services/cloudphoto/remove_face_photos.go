@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
 func (client *Client) RemoveFacePhotos(request *RemoveFacePhotosRequest) (response *RemoveFacePhotosResponse, err error) {
 	response = CreateRemoveFacePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFacePhotosWithChan(request *RemoveFacePhotosRequest) (<-chan *RemoveFacePhotosResponse, <-chan error) {
 	responseChan := make(chan *RemoveFacePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveFacePhotosWithChan(request *RemoveFacePhotosRequest)
 	return responseChan, errChan
 }
 
+// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequest, callback func(response *RemoveFacePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type RemoveFacePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke RemoveFacePhotos API
 func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
 	request = &RemoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
 	return
 }
 
+// create a response to parse from RemoveFacePhotos response
 func CreateRemoveFacePhotosResponse() (response *RemoveFacePhotosResponse) {
 	response = &RemoveFacePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

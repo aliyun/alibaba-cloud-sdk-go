@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSslVpnServer api with *CreateSslVpnServerRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
 func (client *Client) CreateSslVpnServer(request *CreateSslVpnServerRequest) (response *CreateSslVpnServerResponse, err error) {
 	response = CreateCreateSslVpnServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSslVpnServer api with *CreateSslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSslVpnServerWithChan(request *CreateSslVpnServerRequest) (<-chan *CreateSslVpnServerResponse, <-chan error) {
 	responseChan := make(chan *CreateSslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSslVpnServerWithChan(request *CreateSslVpnServerRequ
 	return responseChan, errChan
 }
 
+// invoke CreateSslVpnServer api with *CreateSslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSslVpnServerWithCallback(request *CreateSslVpnServerRequest, callback func(response *CreateSslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type CreateSslVpnServerResponse struct {
 	Name           string `json:"Name" xml:"Name"`
 }
 
+// create a request to invoke CreateSslVpnServer API
 func CreateCreateSslVpnServerRequest() (request *CreateSslVpnServerRequest) {
 	request = &CreateSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateCreateSslVpnServerRequest() (request *CreateSslVpnServerRequest) {
 	return
 }
 
+// create a response to parse from CreateSslVpnServer response
 func CreateCreateSslVpnServerResponse() (response *CreateSslVpnServerResponse) {
 	response = &CreateSslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},

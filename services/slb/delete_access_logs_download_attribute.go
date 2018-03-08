@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
 func (client *Client) DeleteAccessLogsDownloadAttribute(request *DeleteAccessLogsDownloadAttributeRequest) (response *DeleteAccessLogsDownloadAttributeResponse, err error) {
 	response = CreateDeleteAccessLogsDownloadAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessLogsDownloadAttributeWithChan(request *DeleteAccessLogsDownloadAttributeRequest) (<-chan *DeleteAccessLogsDownloadAttributeResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccessLogsDownloadAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteAccessLogsDownloadAttributeWithChan(request *DeleteA
 	return responseChan, errChan
 }
 
+// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessLogsDownloadAttributeWithCallback(request *DeleteAccessLogsDownloadAttributeRequest, callback func(response *DeleteAccessLogsDownloadAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DeleteAccessLogsDownloadAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteAccessLogsDownloadAttribute API
 func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogsDownloadAttributeRequest) {
 	request = &DeleteAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogs
 	return
 }
 
+// create a response to parse from DeleteAccessLogsDownloadAttribute response
 func CreateDeleteAccessLogsDownloadAttributeResponse() (response *DeleteAccessLogsDownloadAttributeResponse) {
 	response = &DeleteAccessLogsDownloadAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

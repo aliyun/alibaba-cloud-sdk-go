@@ -16,5 +16,5 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Warnings struct {
-	Warning []string `json:"warning" xml:"warning"`
+	Warning []Warning `json:"Warning" xml:"Warning"`
 }

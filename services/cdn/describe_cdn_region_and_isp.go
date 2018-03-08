@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
 func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRequest) (response *DescribeCdnRegionAndIspResponse, err error) {
 	response = CreateDescribeCdnRegionAndIspResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegionAndIspRequest) (<-chan *DescribeCdnRegionAndIspResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnRegionAndIspResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegion
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRegionAndIspRequest, callback func(response *DescribeCdnRegionAndIspResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeCdnRegionAndIspResponse struct {
 	Isps      Isps    `json:"Isps" xml:"Isps"`
 }
 
+// create a request to invoke DescribeCdnRegionAndIsp API
 func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {
 	request = &DescribeCdnRegionAndIspRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspReq
 	return
 }
 
+// create a response to parse from DescribeCdnRegionAndIsp response
 func CreateDescribeCdnRegionAndIspResponse() (response *DescribeCdnRegionAndIspResponse) {
 	response = &DescribeCdnRegionAndIspResponse{
 		BaseResponse: &responses.BaseResponse{},

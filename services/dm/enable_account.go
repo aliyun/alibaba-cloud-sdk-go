@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EnableAccount api with *EnableAccountRequest synchronously
+// api document: https://help.aliyun.com/api/dm/enableaccount.html
 func (client *Client) EnableAccount(request *EnableAccountRequest) (response *EnableAccountResponse, err error) {
 	response = CreateEnableAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EnableAccount api with *EnableAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/enableaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAccountWithChan(request *EnableAccountRequest) (<-chan *EnableAccountResponse, <-chan error) {
 	responseChan := make(chan *EnableAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EnableAccountWithChan(request *EnableAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke EnableAccount api with *EnableAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/enableaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAccountWithCallback(request *EnableAccountRequest, callback func(response *EnableAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type EnableAccountResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke EnableAccount API
 func CreateEnableAccountRequest() (request *EnableAccountRequest) {
 	request = &EnableAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateEnableAccountRequest() (request *EnableAccountRequest) {
 	return
 }
 
+// create a response to parse from EnableAccount response
 func CreateEnableAccountResponse() (response *EnableAccountResponse) {
 	response = &EnableAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

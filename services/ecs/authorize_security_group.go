@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
 func (client *Client) AuthorizeSecurityGroup(request *AuthorizeSecurityGroupRequest) (response *AuthorizeSecurityGroupResponse, err error) {
 	response = CreateAuthorizeSecurityGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupWithChan(request *AuthorizeSecurityGroupRequest) (<-chan *AuthorizeSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *AuthorizeSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AuthorizeSecurityGroupWithChan(request *AuthorizeSecurityG
 	return responseChan, errChan
 }
 
+// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecurityGroupRequest, callback func(response *AuthorizeSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type AuthorizeSecurityGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AuthorizeSecurityGroup API
 func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupRequest) {
 	request = &AuthorizeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupReque
 	return
 }
 
+// create a response to parse from AuthorizeSecurityGroup response
 func CreateAuthorizeSecurityGroupResponse() (response *AuthorizeSecurityGroupResponse) {
 	response = &AuthorizeSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

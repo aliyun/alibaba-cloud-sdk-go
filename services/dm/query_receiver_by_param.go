@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
 func (client *Client) QueryReceiverByParam(request *QueryReceiverByParamRequest) (response *QueryReceiverByParamResponse, err error) {
 	response = CreateQueryReceiverByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverByParamWithChan(request *QueryReceiverByParamRequest) (<-chan *QueryReceiverByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryReceiverByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryReceiverByParamWithChan(request *QueryReceiverByParam
 	return responseChan, errChan
 }
 
+// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverByParamWithCallback(request *QueryReceiverByParamRequest, callback func(response *QueryReceiverByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type QueryReceiverByParamResponse struct {
 	Data       DataInQueryReceiverByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryReceiverByParam API
 func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) {
 	request = &QueryReceiverByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) 
 	return
 }
 
+// create a response to parse from QueryReceiverByParam response
 func CreateQueryReceiverByParamResponse() (response *QueryReceiverByParamResponse) {
 	response = &QueryReceiverByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

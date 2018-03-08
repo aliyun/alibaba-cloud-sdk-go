@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeMasterSlaveVServerGroups api with *DescribeMasterSlaveVServerGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describemasterslavevservergroups.html
 func (client *Client) DescribeMasterSlaveVServerGroups(request *DescribeMasterSlaveVServerGroupsRequest) (response *DescribeMasterSlaveVServerGroupsResponse, err error) {
 	response = CreateDescribeMasterSlaveVServerGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeMasterSlaveVServerGroups api with *DescribeMasterSlaveVServerGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describemasterslavevservergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMasterSlaveVServerGroupsWithChan(request *DescribeMasterSlaveVServerGroupsRequest) (<-chan *DescribeMasterSlaveVServerGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMasterSlaveVServerGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeMasterSlaveVServerGroupsWithChan(request *Describe
 	return responseChan, errChan
 }
 
+// invoke DescribeMasterSlaveVServerGroups api with *DescribeMasterSlaveVServerGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describemasterslavevservergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMasterSlaveVServerGroupsWithCallback(request *DescribeMasterSlaveVServerGroupsRequest, callback func(response *DescribeMasterSlaveVServerGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeMasterSlaveVServerGroupsResponse struct {
 	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeMasterSlaveVServerGroups `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
 }
 
+// create a request to invoke DescribeMasterSlaveVServerGroups API
 func CreateDescribeMasterSlaveVServerGroupsRequest() (request *DescribeMasterSlaveVServerGroupsRequest) {
 	request = &DescribeMasterSlaveVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeMasterSlaveVServerGroupsRequest() (request *DescribeMasterSla
 	return
 }
 
+// create a response to parse from DescribeMasterSlaveVServerGroups response
 func CreateDescribeMasterSlaveVServerGroupsResponse() (response *DescribeMasterSlaveVServerGroupsResponse) {
 	response = &DescribeMasterSlaveVServerGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

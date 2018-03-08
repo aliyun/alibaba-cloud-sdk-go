@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
 func (client *Client) ModifyDiskChargeType(request *ModifyDiskChargeTypeRequest) (response *ModifyDiskChargeTypeResponse, err error) {
 	response = CreateModifyDiskChargeTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeTypeRequest) (<-chan *ModifyDiskChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDiskChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeType
 	return responseChan, errChan
 }
 
+// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskChargeTypeRequest, callback func(response *ModifyDiskChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ModifyDiskChargeTypeResponse struct {
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyDiskChargeType API
 func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) {
 	request = &ModifyDiskChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) 
 	return
 }
 
+// create a response to parse from ModifyDiskChargeType response
 func CreateModifyDiskChargeTypeResponse() (response *ModifyDiskChargeTypeResponse) {
 	response = &ModifyDiskChargeTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

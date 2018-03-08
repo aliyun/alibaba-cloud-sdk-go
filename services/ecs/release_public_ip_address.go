@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
 func (client *Client) ReleasePublicIpAddress(request *ReleasePublicIpAddressRequest) (response *ReleasePublicIpAddressResponse, err error) {
 	response = CreateReleasePublicIpAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAddressRequest) (<-chan *ReleasePublicIpAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleasePublicIpAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAdd
 	return responseChan, errChan
 }
 
+// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithCallback(request *ReleasePublicIpAddressRequest, callback func(response *ReleasePublicIpAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ReleasePublicIpAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReleasePublicIpAddress API
 func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressRequest) {
 	request = &ReleasePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressReque
 	return
 }
 
+// create a response to parse from ReleasePublicIpAddress response
 func CreateReleasePublicIpAddressResponse() (response *ReleasePublicIpAddressResponse) {
 	response = &ReleasePublicIpAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

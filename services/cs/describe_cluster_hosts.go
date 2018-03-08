@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
 func (client *Client) DescribeClusterHosts(request *DescribeClusterHostsRequest) (response *DescribeClusterHostsResponse, err error) {
 	response = CreateDescribeClusterHostsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterHostsWithChan(request *DescribeClusterHostsRequest) (<-chan *DescribeClusterHostsResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterHostsWithChan(request *DescribeClusterHosts
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterHostsWithCallback(request *DescribeClusterHostsRequest, callback func(response *DescribeClusterHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterHostsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterHosts API
 func CreateDescribeClusterHostsRequest() (request *DescribeClusterHostsRequest) {
 	request = &DescribeClusterHostsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterHostsRequest() (request *DescribeClusterHostsRequest) 
 	return
 }
 
+// create a response to parse from DescribeClusterHosts response
 func CreateDescribeClusterHostsResponse() (response *DescribeClusterHostsResponse) {
 	response = &DescribeClusterHostsResponse{
 		BaseResponse: &responses.BaseResponse{},

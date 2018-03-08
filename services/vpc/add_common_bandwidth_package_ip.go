@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddCommonBandwidthPackageIp api with *AddCommonBandwidthPackageIpRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
 func (client *Client) AddCommonBandwidthPackageIp(request *AddCommonBandwidthPackageIpRequest) (response *AddCommonBandwidthPackageIpResponse, err error) {
 	response = CreateAddCommonBandwidthPackageIpResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddCommonBandwidthPackageIp api with *AddCommonBandwidthPackageIpRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCommonBandwidthPackageIpWithChan(request *AddCommonBandwidthPackageIpRequest) (<-chan *AddCommonBandwidthPackageIpResponse, <-chan error) {
 	responseChan := make(chan *AddCommonBandwidthPackageIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddCommonBandwidthPackageIpWithChan(request *AddCommonBand
 	return responseChan, errChan
 }
 
+// invoke AddCommonBandwidthPackageIp api with *AddCommonBandwidthPackageIpRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCommonBandwidthPackageIpWithCallback(request *AddCommonBandwidthPackageIpRequest, callback func(response *AddCommonBandwidthPackageIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type AddCommonBandwidthPackageIpResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddCommonBandwidthPackageIp API
 func CreateAddCommonBandwidthPackageIpRequest() (request *AddCommonBandwidthPackageIpRequest) {
 	request = &AddCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateAddCommonBandwidthPackageIpRequest() (request *AddCommonBandwidthPack
 	return
 }
 
+// create a response to parse from AddCommonBandwidthPackageIp response
 func CreateAddCommonBandwidthPackageIpResponse() (response *AddCommonBandwidthPackageIpResponse) {
 	response = &AddCommonBandwidthPackageIpResponse{
 		BaseResponse: &responses.BaseResponse{},

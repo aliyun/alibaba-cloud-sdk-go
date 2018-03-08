@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePolicy api with *DeletePolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicy.html
 func (client *Client) DeletePolicy(request *DeletePolicyRequest) (response *DeletePolicyResponse, err error) {
 	response = CreateDeletePolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePolicy api with *DeletePolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyWithChan(request *DeletePolicyRequest) (<-chan *DeletePolicyResponse, <-chan error) {
 	responseChan := make(chan *DeletePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePolicyWithChan(request *DeletePolicyRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DeletePolicy api with *DeletePolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletepolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyWithCallback(request *DeletePolicyRequest, callback func(response *DeletePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeletePolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeletePolicy API
 func CreateDeletePolicyRequest() (request *DeletePolicyRequest) {
 	request = &DeletePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeletePolicyRequest() (request *DeletePolicyRequest) {
 	return
 }
 
+// create a response to parse from DeletePolicy response
 func CreateDeletePolicyResponse() (response *DeletePolicyResponse) {
 	response = &DeletePolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

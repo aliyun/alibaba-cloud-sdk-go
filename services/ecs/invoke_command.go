@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke InvokeCommand api with *InvokeCommandRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/invokecommand.html
 func (client *Client) InvokeCommand(request *InvokeCommandRequest) (response *InvokeCommandResponse, err error) {
 	response = CreateInvokeCommandResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke InvokeCommand api with *InvokeCommandRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/invokecommand.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-chan *InvokeCommandResponse, <-chan error) {
 	responseChan := make(chan *InvokeCommandResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke InvokeCommand api with *InvokeCommandRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/invokecommand.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, callback func(response *InvokeCommandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type InvokeCommandResponse struct {
 	InvokeId  string `json:"InvokeId" xml:"InvokeId"`
 }
 
+// create a request to invoke InvokeCommand API
 func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	request = &InvokeCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	return
 }
 
+// create a response to parse from InvokeCommand response
 func CreateInvokeCommandResponse() (response *InvokeCommandResponse) {
 	response = &InvokeCommandResponse{
 		BaseResponse: &responses.BaseResponse{},

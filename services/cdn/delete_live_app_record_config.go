@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
 func (client *Client) DeleteLiveAppRecordConfig(request *DeleteLiveAppRecordConfigRequest) (response *DeleteLiveAppRecordConfigResponse, err error) {
 	response = CreateDeleteLiveAppRecordConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppRecordConfigWithChan(request *DeleteLiveAppRecordConfigRequest) (<-chan *DeleteLiveAppRecordConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveAppRecordConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLiveAppRecordConfigWithChan(request *DeleteLiveAppRe
 	return responseChan, errChan
 }
 
+// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppRecordConfigWithCallback(request *DeleteLiveAppRecordConfigRequest, callback func(response *DeleteLiveAppRecordConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteLiveAppRecordConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLiveAppRecordConfig API
 func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfigRequest) {
 	request = &DeleteLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfi
 	return
 }
 
+// create a response to parse from DeleteLiveAppRecordConfig response
 func CreateDeleteLiveAppRecordConfigResponse() (response *DeleteLiveAppRecordConfigResponse) {
 	response = &DeleteLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

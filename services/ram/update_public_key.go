@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdatePublicKey api with *UpdatePublicKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updatepublickey.html
 func (client *Client) UpdatePublicKey(request *UpdatePublicKeyRequest) (response *UpdatePublicKeyResponse, err error) {
 	response = CreateUpdatePublicKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdatePublicKey api with *UpdatePublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updatepublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (<-chan *UpdatePublicKeyResponse, <-chan error) {
 	responseChan := make(chan *UpdatePublicKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke UpdatePublicKey api with *UpdatePublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updatepublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyRequest, callback func(response *UpdatePublicKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type UpdatePublicKeyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdatePublicKey API
 func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
 	request = &UpdatePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
 	return
 }
 
+// create a response to parse from UpdatePublicKey response
 func CreateUpdatePublicKeyResponse() (response *UpdatePublicKeyResponse) {
 	response = &UpdatePublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

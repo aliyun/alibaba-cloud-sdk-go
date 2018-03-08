@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeErrorLogs api with *DescribeErrorLogsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
 func (client *Client) DescribeErrorLogs(request *DescribeErrorLogsRequest) (response *DescribeErrorLogsResponse, err error) {
 	response = CreateDescribeErrorLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeErrorLogs api with *DescribeErrorLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeErrorLogsWithChan(request *DescribeErrorLogsRequest) (<-chan *DescribeErrorLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeErrorLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeErrorLogsWithChan(request *DescribeErrorLogsReques
 	return responseChan, errChan
 }
 
+// invoke DescribeErrorLogs api with *DescribeErrorLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeerrorlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeErrorLogsWithCallback(request *DescribeErrorLogsRequest, callback func(response *DescribeErrorLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeErrorLogsResponse struct {
 	Items            ItemsInDescribeErrorLogs `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeErrorLogs API
 func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
 	request = &DescribeErrorLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeErrorLogsRequest() (request *DescribeErrorLogsRequest) {
 	return
 }
 
+// create a response to parse from DescribeErrorLogs response
 func CreateDescribeErrorLogsResponse() (response *DescribeErrorLogsResponse) {
 	response = &DescribeErrorLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

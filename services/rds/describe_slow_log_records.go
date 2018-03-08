@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 	return responseChan, errChan
 }
 
+// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeSlowLogRecordsResponse struct {
 	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeSlowLogRecords API
 func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsRequest) {
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	return
 }
 
+// create a response to parse from DescribeSlowLogRecords response
 func CreateDescribeSlowLogRecordsResponse() (response *DescribeSlowLogRecordsResponse) {
 	response = &DescribeSlowLogRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

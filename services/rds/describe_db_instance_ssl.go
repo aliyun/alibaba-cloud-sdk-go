@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLRequest) (response *DescribeDBInstanceSSLResponse, err error) {
 	response = CreateDescribeDBInstanceSSLResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceSSLRequest) (<-chan *DescribeDBInstanceSSLResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceS
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInstanceSSLRequest, callback func(response *DescribeDBInstanceSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeDBInstanceSSLResponse struct {
 	RequireUpdateReason string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
 }
 
+// create a request to invoke DescribeDBInstanceSSL API
 func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest) {
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest
 	return
 }
 
+// create a response to parse from DescribeDBInstanceSSL response
 func CreateDescribeDBInstanceSSLResponse() (response *DescribeDBInstanceSSLResponse) {
 	response = &DescribeDBInstanceSSLResponse{
 		BaseResponse: &responses.BaseResponse{},

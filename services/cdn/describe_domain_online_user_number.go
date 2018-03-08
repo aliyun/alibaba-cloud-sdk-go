@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainOnlineUserNumber api with *DescribeDomainOnlineUserNumberRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainonlineusernumber.html
 func (client *Client) DescribeDomainOnlineUserNumber(request *DescribeDomainOnlineUserNumberRequest) (response *DescribeDomainOnlineUserNumberResponse, err error) {
 	response = CreateDescribeDomainOnlineUserNumberResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainOnlineUserNumber api with *DescribeDomainOnlineUserNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainonlineusernumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainOnlineUserNumberWithChan(request *DescribeDomainOnlineUserNumberRequest) (<-chan *DescribeDomainOnlineUserNumberResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainOnlineUserNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainOnlineUserNumberWithChan(request *DescribeDo
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainOnlineUserNumber api with *DescribeDomainOnlineUserNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainonlineusernumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainOnlineUserNumberWithCallback(request *DescribeDomainOnlineUserNumberRequest, callback func(response *DescribeDomainOnlineUserNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeDomainOnlineUserNumberResponse struct {
 	LiveStreamOnlineUserNumInfos LiveStreamOnlineUserNumInfos `json:"LiveStreamOnlineUserNumInfos" xml:"LiveStreamOnlineUserNumInfos"`
 }
 
+// create a request to invoke DescribeDomainOnlineUserNumber API
 func CreateDescribeDomainOnlineUserNumberRequest() (request *DescribeDomainOnlineUserNumberRequest) {
 	request = &DescribeDomainOnlineUserNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeDomainOnlineUserNumberRequest() (request *DescribeDomainOnlin
 	return
 }
 
+// create a response to parse from DescribeDomainOnlineUserNumber response
 func CreateDescribeDomainOnlineUserNumberResponse() (response *DescribeDomainOnlineUserNumberResponse) {
 	response = &DescribeDomainOnlineUserNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

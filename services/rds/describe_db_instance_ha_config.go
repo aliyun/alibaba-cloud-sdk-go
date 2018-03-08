@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
 func (client *Client) DescribeDBInstanceHAConfig(request *DescribeDBInstanceHAConfigRequest) (response *DescribeDBInstanceHAConfigResponse, err error) {
 	response = CreateDescribeDBInstanceHAConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceHAConfigWithChan(request *DescribeDBInstanceHAConfigRequest) (<-chan *DescribeDBInstanceHAConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceHAConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceHAConfigWithChan(request *DescribeDBInst
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceHAConfigWithCallback(request *DescribeDBInstanceHAConfigRequest, callback func(response *DescribeDBInstanceHAConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeDBInstanceHAConfigResponse struct {
 	HostInstanceInfos HostInstanceInfos `json:"HostInstanceInfos" xml:"HostInstanceInfos"`
 }
 
+// create a request to invoke DescribeDBInstanceHAConfig API
 func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHAConfigRequest) {
 	request = &DescribeDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHACon
 	return
 }
 
+// create a response to parse from DescribeDBInstanceHAConfig response
 func CreateDescribeDBInstanceHAConfigResponse() (response *DescribeDBInstanceHAConfigResponse) {
 	response = &DescribeDBInstanceHAConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

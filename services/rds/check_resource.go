@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckResource api with *CheckResourceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/checkresource.html
 func (client *Client) CheckResource(request *CheckResourceRequest) (response *CheckResourceResponse, err error) {
 	response = CreateCheckResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckResource api with *CheckResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckResourceWithChan(request *CheckResourceRequest) (<-chan *CheckResourceResponse, <-chan error) {
 	responseChan := make(chan *CheckResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckResourceWithChan(request *CheckResourceRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke CheckResource api with *CheckResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckResourceWithCallback(request *CheckResourceRequest, callback func(response *CheckResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type CheckResourceResponse struct {
 	Resources    Resources `json:"Resources" xml:"Resources"`
 }
 
+// create a request to invoke CheckResource API
 func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	request = &CheckResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	return
 }
 
+// create a response to parse from CheckResource response
 func CreateCheckResourceResponse() (response *CheckResourceResponse) {
 	response = &CheckResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

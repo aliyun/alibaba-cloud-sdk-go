@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
 func (client *Client) ModifySecurityGroupAttribute(request *ModifySecurityGroupAttributeRequest) (response *ModifySecurityGroupAttributeResponse, err error) {
 	response = CreateModifySecurityGroupAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupAttributeWithChan(request *ModifySecurityGroupAttributeRequest) (<-chan *ModifySecurityGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySecurityGroupAttributeWithChan(request *ModifySecuri
 	return responseChan, errChan
 }
 
+// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySecurityGroupAttributeRequest, callback func(response *ModifySecurityGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifySecurityGroupAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySecurityGroupAttribute API
 func CreateModifySecurityGroupAttributeRequest() (request *ModifySecurityGroupAttributeRequest) {
 	request = &ModifySecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifySecurityGroupAttributeRequest() (request *ModifySecurityGroupAt
 	return
 }
 
+// create a response to parse from ModifySecurityGroupAttribute response
 func CreateModifySecurityGroupAttributeResponse() (response *ModifySecurityGroupAttributeResponse) {
 	response = &ModifySecurityGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

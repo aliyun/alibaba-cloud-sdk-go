@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
 func (client *Client) DescribeLiveStreamStreamStatus(request *DescribeLiveStreamStreamStatusRequest) (response *DescribeLiveStreamStreamStatusResponse, err error) {
 	response = CreateDescribeLiveStreamStreamStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamStreamStatusWithChan(request *DescribeLiveStreamStreamStatusRequest) (<-chan *DescribeLiveStreamStreamStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamStreamStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamStreamStatusWithChan(request *DescribeLi
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *DescribeLiveStreamStreamStatusRequest, callback func(response *DescribeLiveStreamStreamStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeLiveStreamStreamStatusResponse struct {
 	StreamStatus string `json:"StreamStatus" xml:"StreamStatus"`
 }
 
+// create a request to invoke DescribeLiveStreamStreamStatus API
 func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamStreamStatusRequest) {
 	request = &DescribeLiveStreamStreamStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamS
 	return
 }
 
+// create a response to parse from DescribeLiveStreamStreamStatus response
 func CreateDescribeLiveStreamStreamStatusResponse() (response *DescribeLiveStreamStreamStatusResponse) {
 	response = &DescribeLiveStreamStreamStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

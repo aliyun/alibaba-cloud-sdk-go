@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
 func (client *Client) ListCurrentClientVersion(request *ListCurrentClientVersionRequest) (response *ListCurrentClientVersionResponse, err error) {
 	response = CreateListCurrentClientVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClientVersionRequest) (<-chan *ListCurrentClientVersionResponse, <-chan error) {
 	responseChan := make(chan *ListCurrentClientVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClien
 	return responseChan, errChan
 }
 
+// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithCallback(request *ListCurrentClientVersionRequest, callback func(response *ListCurrentClientVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type ListCurrentClientVersionResponse struct {
 	ClientVersion string `json:"ClientVersion" xml:"ClientVersion"`
 }
 
+// create a request to invoke ListCurrentClientVersion API
 func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionRequest) {
 	request = &ListCurrentClientVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionR
 	return
 }
 
+// create a response to parse from ListCurrentClientVersion response
 func CreateListCurrentClientVersionResponse() (response *ListCurrentClientVersionResponse) {
 	response = &ListCurrentClientVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

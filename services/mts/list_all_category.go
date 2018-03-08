@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAllCategory api with *ListAllCategoryRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listallcategory.html
 func (client *Client) ListAllCategory(request *ListAllCategoryRequest) (response *ListAllCategoryResponse, err error) {
 	response = CreateListAllCategoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAllCategory api with *ListAllCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listallcategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (<-chan *ListAllCategoryResponse, <-chan error) {
 	responseChan := make(chan *ListAllCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListAllCategory api with *ListAllCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listallcategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithCallback(request *ListAllCategoryRequest, callback func(response *ListAllCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListAllCategoryResponse struct {
 	CategoryList CategoryList `json:"CategoryList" xml:"CategoryList"`
 }
 
+// create a request to invoke ListAllCategory API
 func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	return
 }
 
+// create a response to parse from ListAllCategory response
 func CreateListAllCategoryResponse() (response *ListAllCategoryResponse) {
 	response = &ListAllCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

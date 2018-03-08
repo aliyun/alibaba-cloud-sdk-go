@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
 func (client *Client) ReportFacerecogJobResult(request *ReportFacerecogJobResultRequest) (response *ReportFacerecogJobResultResponse, err error) {
 	response = CreateReportFacerecogJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJobResultRequest) (<-chan *ReportFacerecogJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportFacerecogJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJ
 	return responseChan, errChan
 }
 
+// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacerecogJobResultRequest, callback func(response *ReportFacerecogJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportFacerecogJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportFacerecogJobResult API
 func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultRequest) {
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultR
 	return
 }
 
+// create a response to parse from ReportFacerecogJobResult response
 func CreateReportFacerecogJobResultResponse() (response *ReportFacerecogJobResultResponse) {
 	response = &ReportFacerecogJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

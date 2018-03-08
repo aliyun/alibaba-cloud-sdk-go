@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyLoadBalancerInternetSpec api with *ModifyLoadBalancerInternetSpecRequest synchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinternetspec.html
 func (client *Client) ModifyLoadBalancerInternetSpec(request *ModifyLoadBalancerInternetSpecRequest) (response *ModifyLoadBalancerInternetSpecResponse, err error) {
 	response = CreateModifyLoadBalancerInternetSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyLoadBalancerInternetSpec api with *ModifyLoadBalancerInternetSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinternetspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerInternetSpecWithChan(request *ModifyLoadBalancerInternetSpecRequest) (<-chan *ModifyLoadBalancerInternetSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyLoadBalancerInternetSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyLoadBalancerInternetSpecWithChan(request *ModifyLoad
 	return responseChan, errChan
 }
 
+// invoke ModifyLoadBalancerInternetSpec api with *ModifyLoadBalancerInternetSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinternetspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerInternetSpecWithCallback(request *ModifyLoadBalancerInternetSpecRequest, callback func(response *ModifyLoadBalancerInternetSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyLoadBalancerInternetSpecResponse struct {
 	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyLoadBalancerInternetSpec API
 func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerInternetSpecRequest) {
 	request = &ModifyLoadBalancerInternetSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerI
 	return
 }
 
+// create a response to parse from ModifyLoadBalancerInternetSpec response
 func CreateModifyLoadBalancerInternetSpecResponse() (response *ModifyLoadBalancerInternetSpecResponse) {
 	response = &ModifyLoadBalancerInternetSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

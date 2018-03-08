@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteAccessKey api with *DeleteAccessKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
 func (client *Client) DeleteAccessKey(request *DeleteAccessKeyRequest) (response *DeleteAccessKeyResponse, err error) {
 	response = CreateDeleteAccessKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteAccessKey api with *DeleteAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (<-chan *DeleteAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeleteAccessKey api with *DeleteAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithCallback(request *DeleteAccessKeyRequest, callback func(response *DeleteAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeleteAccessKeyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteAccessKey API
 func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 	request = &DeleteAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 	return
 }
 
+// create a response to parse from DeleteAccessKey response
 func CreateDeleteAccessKeyResponse() (response *DeleteAccessKeyResponse) {
 	response = &DeleteAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

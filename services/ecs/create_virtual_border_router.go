@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
 func (client *Client) CreateVirtualBorderRouter(request *CreateVirtualBorderRouterRequest) (response *CreateVirtualBorderRouterResponse, err error) {
 	response = CreateCreateVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBorderRouterRequest) (<-chan *CreateVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *CreateVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBo
 	return responseChan, errChan
 }
 
+// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtualBorderRouterRequest, callback func(response *CreateVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type CreateVirtualBorderRouterResponse struct {
 	VbrId     string `json:"VbrId" xml:"VbrId"`
 }
 
+// create a request to invoke CreateVirtualBorderRouter API
 func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRouterRequest) {
 	request = &CreateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRoute
 	return
 }
 
+// create a response to parse from CreateVirtualBorderRouter response
 func CreateCreateVirtualBorderRouterResponse() (response *CreateVirtualBorderRouterResponse) {
 	response = &CreateVirtualBorderRouterResponse{
 		BaseResponse: &responses.BaseResponse{},

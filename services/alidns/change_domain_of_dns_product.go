@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
 func (client *Client) ChangeDomainOfDnsProduct(request *ChangeDomainOfDnsProductRequest) (response *ChangeDomainOfDnsProductResponse, err error) {
 	response = CreateChangeDomainOfDnsProductResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDnsProductRequest) (<-chan *ChangeDomainOfDnsProductResponse, <-chan error) {
 	responseChan := make(chan *ChangeDomainOfDnsProductResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDn
 	return responseChan, errChan
 }
 
+// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomainOfDnsProductRequest, callback func(response *ChangeDomainOfDnsProductResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ChangeDomainOfDnsProductResponse struct {
 	OriginalDomain string `json:"OriginalDomain" xml:"OriginalDomain"`
 }
 
+// create a request to invoke ChangeDomainOfDnsProduct API
 func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductRequest) {
 	request = &ChangeDomainOfDnsProductRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductR
 	return
 }
 
+// create a response to parse from ChangeDomainOfDnsProduct response
 func CreateChangeDomainOfDnsProductResponse() (response *ChangeDomainOfDnsProductResponse) {
 	response = &ChangeDomainOfDnsProductResponse{
 		BaseResponse: &responses.BaseResponse{},

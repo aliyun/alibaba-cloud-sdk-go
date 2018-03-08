@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetAccessLogsDownloadAttribute api with *SetAccessLogsDownloadAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setaccesslogsdownloadattribute.html
 func (client *Client) SetAccessLogsDownloadAttribute(request *SetAccessLogsDownloadAttributeRequest) (response *SetAccessLogsDownloadAttributeResponse, err error) {
 	response = CreateSetAccessLogsDownloadAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetAccessLogsDownloadAttribute api with *SetAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccessLogsDownloadAttributeWithChan(request *SetAccessLogsDownloadAttributeRequest) (<-chan *SetAccessLogsDownloadAttributeResponse, <-chan error) {
 	responseChan := make(chan *SetAccessLogsDownloadAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetAccessLogsDownloadAttributeWithChan(request *SetAccessL
 	return responseChan, errChan
 }
 
+// invoke SetAccessLogsDownloadAttribute api with *SetAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccessLogsDownloadAttributeWithCallback(request *SetAccessLogsDownloadAttributeRequest, callback func(response *SetAccessLogsDownloadAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetAccessLogsDownloadAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetAccessLogsDownloadAttribute API
 func CreateSetAccessLogsDownloadAttributeRequest() (request *SetAccessLogsDownloadAttributeRequest) {
 	request = &SetAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetAccessLogsDownloadAttributeRequest() (request *SetAccessLogsDownlo
 	return
 }
 
+// create a response to parse from SetAccessLogsDownloadAttribute response
 func CreateSetAccessLogsDownloadAttributeResponse() (response *SetAccessLogsDownloadAttributeResponse) {
 	response = &SetAccessLogsDownloadAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

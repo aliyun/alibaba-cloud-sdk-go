@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySnatEntry api with *ModifySnatEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
 func (client *Client) ModifySnatEntry(request *ModifySnatEntryRequest) (response *ModifySnatEntryResponse, err error) {
 	response = CreateModifySnatEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySnatEntry api with *ModifySnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (<-chan *ModifySnatEntryResponse, <-chan error) {
 	responseChan := make(chan *ModifySnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (
 	return responseChan, errChan
 }
 
+// invoke ModifySnatEntry api with *ModifySnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryRequest, callback func(response *ModifySnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifySnatEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySnatEntry API
 func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	request = &ModifySnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	return
 }
 
+// create a response to parse from ModifySnatEntry response
 func CreateModifySnatEntryResponse() (response *ModifySnatEntryResponse) {
 	response = &ModifySnatEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
 func (client *Client) SetPathForceTtlCodeConfig(request *SetPathForceTtlCodeConfigRequest) (response *SetPathForceTtlCodeConfigResponse, err error) {
 	response = CreateSetPathForceTtlCodeConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtlCodeConfigRequest) (<-chan *SetPathForceTtlCodeConfigResponse, <-chan error) {
 	responseChan := make(chan *SetPathForceTtlCodeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtl
 	return responseChan, errChan
 }
 
+// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathForceTtlCodeConfigWithCallback(request *SetPathForceTtlCodeConfigRequest, callback func(response *SetPathForceTtlCodeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type SetPathForceTtlCodeConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetPathForceTtlCodeConfig API
 func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfigRequest) {
 	request = &SetPathForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfi
 	return
 }
 
+// create a response to parse from SetPathForceTtlCodeConfig response
 func CreateSetPathForceTtlCodeConfigResponse() (response *SetPathForceTtlCodeConfigResponse) {
 	response = &SetPathForceTtlCodeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

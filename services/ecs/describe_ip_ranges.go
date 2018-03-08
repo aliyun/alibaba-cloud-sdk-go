@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeIpRanges api with *DescribeIpRangesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeipranges.html
 func (client *Client) DescribeIpRanges(request *DescribeIpRangesRequest) (response *DescribeIpRangesResponse, err error) {
 	response = CreateDescribeIpRangesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeIpRanges api with *DescribeIpRangesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeipranges.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpRangesWithChan(request *DescribeIpRangesRequest) (<-chan *DescribeIpRangesResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpRangesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeIpRangesWithChan(request *DescribeIpRangesRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeIpRanges api with *DescribeIpRangesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeipranges.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpRangesWithCallback(request *DescribeIpRangesRequest, callback func(response *DescribeIpRangesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeIpRangesResponse struct {
 	IpRanges   IpRanges `json:"IpRanges" xml:"IpRanges"`
 }
 
+// create a request to invoke DescribeIpRanges API
 func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 	request = &DescribeIpRangesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 	return
 }
 
+// create a response to parse from DescribeIpRanges response
 func CreateDescribeIpRangesResponse() (response *DescribeIpRangesResponse) {
 	response = &DescribeIpRangesResponse{
 		BaseResponse: &responses.BaseResponse{},

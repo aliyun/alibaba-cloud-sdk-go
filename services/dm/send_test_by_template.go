@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SendTestByTemplate api with *SendTestByTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
 func (client *Client) SendTestByTemplate(request *SendTestByTemplateRequest) (response *SendTestByTemplateResponse, err error) {
 	response = CreateSendTestByTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SendTestByTemplate api with *SendTestByTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTestByTemplateWithChan(request *SendTestByTemplateRequest) (<-chan *SendTestByTemplateResponse, <-chan error) {
 	responseChan := make(chan *SendTestByTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SendTestByTemplateWithChan(request *SendTestByTemplateRequ
 	return responseChan, errChan
 }
 
+// invoke SendTestByTemplate api with *SendTestByTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTestByTemplateWithCallback(request *SendTestByTemplateRequest, callback func(response *SendTestByTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SendTestByTemplateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SendTestByTemplate API
 func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
 	request = &SendTestByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
 	return
 }
 
+// create a response to parse from SendTestByTemplate response
 func CreateSendTestByTemplateResponse() (response *SendTestByTemplateResponse) {
 	response = &SendTestByTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

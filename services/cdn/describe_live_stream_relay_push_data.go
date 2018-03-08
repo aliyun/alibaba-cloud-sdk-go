@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
 func (client *Client) DescribeLiveStreamRelayPushData(request *DescribeLiveStreamRelayPushDataRequest) (response *DescribeLiveStreamRelayPushDataResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeLiveStreamRelayPushDataRequest) (<-chan *DescribeLiveStreamRelayPushDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRelayPushDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *DescribeLiveStreamRelayPushDataRequest, callback func(response *DescribeLiveStreamRelayPushDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeLiveStreamRelayPushDataResponse struct {
 	RelayPushDetailModelList RelayPushDetailModelList `json:"RelayPushDetailModelList" xml:"RelayPushDetailModelList"`
 }
 
+// create a request to invoke DescribeLiveStreamRelayPushData API
 func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStreamRelayPushDataRequest) {
 	request = &DescribeLiveStreamRelayPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStream
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRelayPushData response
 func CreateDescribeLiveStreamRelayPushDataResponse() (response *DescribeLiveStreamRelayPushDataResponse) {
 	response = &DescribeLiveStreamRelayPushDataResponse{
 		BaseResponse: &responses.BaseResponse{},

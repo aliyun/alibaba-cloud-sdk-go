@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyGlobalAccelerationInstanceAttributes api with *ModifyGlobalAccelerationInstanceAttributesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributes(request *ModifyGlobalAccelerationInstanceAttributesRequest) (response *ModifyGlobalAccelerationInstanceAttributesResponse, err error) {
 	response = CreateModifyGlobalAccelerationInstanceAttributesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyGlobalAccelerationInstanceAttributes api with *ModifyGlobalAccelerationInstanceAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithChan(request *ModifyGlobalAccelerationInstanceAttributesRequest) (<-chan *ModifyGlobalAccelerationInstanceAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyGlobalAccelerationInstanceAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithChan(request
 	return responseChan, errChan
 }
 
+// invoke ModifyGlobalAccelerationInstanceAttributes api with *ModifyGlobalAccelerationInstanceAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithCallback(request *ModifyGlobalAccelerationInstanceAttributesRequest, callback func(response *ModifyGlobalAccelerationInstanceAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyGlobalAccelerationInstanceAttributesResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyGlobalAccelerationInstanceAttributes API
 func CreateModifyGlobalAccelerationInstanceAttributesRequest() (request *ModifyGlobalAccelerationInstanceAttributesRequest) {
 	request = &ModifyGlobalAccelerationInstanceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyGlobalAccelerationInstanceAttributesRequest() (request *ModifyG
 	return
 }
 
+// create a response to parse from ModifyGlobalAccelerationInstanceAttributes response
 func CreateModifyGlobalAccelerationInstanceAttributesResponse() (response *ModifyGlobalAccelerationInstanceAttributesResponse) {
 	response = &ModifyGlobalAccelerationInstanceAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

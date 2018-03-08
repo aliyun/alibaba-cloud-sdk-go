@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describehealthstatus.html
 func (client *Client) DescribeHealthStatus(request *DescribeHealthStatusRequest) (response *DescribeHealthStatusResponse, err error) {
 	response = CreateDescribeHealthStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describehealthstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatusRequest) (<-chan *DescribeHealthStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeHealthStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatus
 	return responseChan, errChan
 }
 
+// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describehealthstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthStatusRequest, callback func(response *DescribeHealthStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeHealthStatusResponse struct {
 	BackendServers BackendServersInDescribeHealthStatus `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke DescribeHealthStatus API
 func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {
 	request = &DescribeHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) 
 	return
 }
 
+// create a response to parse from DescribeHealthStatus response
 func CreateDescribeHealthStatusResponse() (response *DescribeHealthStatusResponse) {
 	response = &DescribeHealthStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

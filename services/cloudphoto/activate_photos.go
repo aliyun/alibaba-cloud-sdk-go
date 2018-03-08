@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ActivatePhotos api with *ActivatePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
 func (client *Client) ActivatePhotos(request *ActivatePhotosRequest) (response *ActivatePhotosResponse, err error) {
 	response = CreateActivatePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ActivatePhotos api with *ActivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-chan *ActivatePhotosResponse, <-chan error) {
 	responseChan := make(chan *ActivatePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ActivatePhotos api with *ActivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest, callback func(response *ActivatePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ActivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ActivatePhotos API
 func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
 	request = &ActivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
 	return
 }
 
+// create a response to parse from ActivatePhotos response
 func CreateActivatePhotosResponse() (response *ActivatePhotosResponse) {
 	response = &ActivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

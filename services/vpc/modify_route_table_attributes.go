@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
 func (client *Client) ModifyRouteTableAttributes(request *ModifyRouteTableAttributesRequest) (response *ModifyRouteTableAttributesResponse, err error) {
 	response = CreateModifyRouteTableAttributesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteTableAttributesWithChan(request *ModifyRouteTableAttributesRequest) (<-chan *ModifyRouteTableAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouteTableAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyRouteTableAttributesWithChan(request *ModifyRouteTab
 	return responseChan, errChan
 }
 
+// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRouteTableAttributesRequest, callback func(response *ModifyRouteTableAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ModifyRouteTableAttributesResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
+// create a request to invoke ModifyRouteTableAttributes API
 func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttributesRequest) {
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttribu
 	return
 }
 
+// create a response to parse from ModifyRouteTableAttributes response
 func CreateModifyRouteTableAttributesResponse() (response *ModifyRouteTableAttributesResponse) {
 	response = &ModifyRouteTableAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteVpc api with *DeleteVpcRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletevpc.html
 func (client *Client) DeleteVpc(request *DeleteVpcRequest) (response *DeleteVpcResponse, err error) {
 	response = CreateDeleteVpcResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteVpc api with *DeleteVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletevpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpcWithChan(request *DeleteVpcRequest) (<-chan *DeleteVpcResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteVpcWithChan(request *DeleteVpcRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
+// invoke DeleteVpc api with *DeleteVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletevpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpcWithCallback(request *DeleteVpcRequest, callback func(response *DeleteVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteVpcResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteVpc API
 func CreateDeleteVpcRequest() (request *DeleteVpcRequest) {
 	request = &DeleteVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteVpcRequest() (request *DeleteVpcRequest) {
 	return
 }
 
+// create a response to parse from DeleteVpc response
 func CreateDeleteVpcResponse() (response *DeleteVpcResponse) {
 	response = &DeleteVpcResponse{
 		BaseResponse: &responses.BaseResponse{},

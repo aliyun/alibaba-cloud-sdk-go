@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddNodes api with *AddNodesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/addnodes.html
 func (client *Client) AddNodes(request *AddNodesRequest) (response *AddNodesResponse, err error) {
 	response = CreateAddNodesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddNodes api with *AddNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/addnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNodesResponse, <-chan error) {
 	responseChan := make(chan *AddNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNod
 	return responseChan, errChan
 }
 
+// invoke AddNodes api with *AddNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/addnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback func(response *AddNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AddNodesResponse struct {
 	InstanceIds InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
 }
 
+// create a request to invoke AddNodes API
 func CreateAddNodesRequest() (request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAddNodesRequest() (request *AddNodesRequest) {
 	return
 }
 
+// create a response to parse from AddNodes response
 func CreateAddNodesResponse() (response *AddNodesResponse) {
 	response = &AddNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

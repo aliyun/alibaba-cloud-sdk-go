@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
 func (client *Client) QueryVideoSplitJobList(request *QueryVideoSplitJobListRequest) (response *QueryVideoSplitJobListResponse, err error) {
 	response = CreateQueryVideoSplitJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJobListRequest) (<-chan *QueryVideoSplitJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryVideoSplitJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJob
 	return responseChan, errChan
 }
 
+// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSplitJobListRequest, callback func(response *QueryVideoSplitJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryVideoSplitJobListResponse struct {
 	JobList     JobListInQueryVideoSplitJobList     `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryVideoSplitJobList API
 func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListRequest) {
 	request = &QueryVideoSplitJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListReque
 	return
 }
 
+// create a response to parse from QueryVideoSplitJobList response
 func CreateQueryVideoSplitJobListResponse() (response *QueryVideoSplitJobListResponse) {
 	response = &QueryVideoSplitJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

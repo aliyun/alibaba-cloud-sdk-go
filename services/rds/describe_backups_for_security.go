@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBackupsForSecurity api with *DescribeBackupsForSecurityRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describebackupsforsecurity.html
 func (client *Client) DescribeBackupsForSecurity(request *DescribeBackupsForSecurityRequest) (response *DescribeBackupsForSecurityResponse, err error) {
 	response = CreateDescribeBackupsForSecurityResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBackupsForSecurity api with *DescribeBackupsForSecurityRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackupsforsecurity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsForSecurityWithChan(request *DescribeBackupsForSecurityRequest) (<-chan *DescribeBackupsForSecurityResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupsForSecurityResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBackupsForSecurityWithChan(request *DescribeBackup
 	return responseChan, errChan
 }
 
+// invoke DescribeBackupsForSecurity api with *DescribeBackupsForSecurityRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackupsforsecurity.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsForSecurityWithCallback(request *DescribeBackupsForSecurityRequest, callback func(response *DescribeBackupsForSecurityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type DescribeBackupsForSecurityResponse struct {
 	Items            ItemsInDescribeBackupsForSecurity `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeBackupsForSecurity API
 func CreateDescribeBackupsForSecurityRequest() (request *DescribeBackupsForSecurityRequest) {
 	request = &DescribeBackupsForSecurityRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateDescribeBackupsForSecurityRequest() (request *DescribeBackupsForSecur
 	return
 }
 
+// create a response to parse from DescribeBackupsForSecurity response
 func CreateDescribeBackupsForSecurityResponse() (response *DescribeBackupsForSecurityResponse) {
 	response = &DescribeBackupsForSecurityResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
 func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonitorDataRequest) (response *DescribeSnapshotMonitorDataResponse, err error) {
 	response = CreateDescribeSnapshotMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnapshotMonitorDataRequest) (<-chan *DescribeSnapshotMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnaps
 	return responseChan, errChan
 }
 
+// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeSnapshotMonitorDataRequest, callback func(response *DescribeSnapshotMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeSnapshotMonitorDataResponse struct {
 	MonitorData MonitorDataInDescribeSnapshotMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
+// create a request to invoke DescribeSnapshotMonitorData API
 func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonito
 	return
 }
 
+// create a response to parse from DescribeSnapshotMonitorData response
 func CreateDescribeSnapshotMonitorDataResponse() (response *DescribeSnapshotMonitorDataResponse) {
 	response = &DescribeSnapshotMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

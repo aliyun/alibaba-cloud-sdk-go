@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetMyGroups api with *GetMyGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/cms/getmygroups.html
 func (client *Client) GetMyGroups(request *GetMyGroupsRequest) (response *GetMyGroupsResponse, err error) {
 	response = CreateGetMyGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetMyGroups api with *GetMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/getmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMyGroupsWithChan(request *GetMyGroupsRequest) (<-chan *GetMyGroupsResponse, <-chan error) {
 	responseChan := make(chan *GetMyGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetMyGroupsWithChan(request *GetMyGroupsRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke GetMyGroups api with *GetMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/getmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMyGroupsWithCallback(request *GetMyGroupsRequest, callback func(response *GetMyGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type GetMyGroupsResponse struct {
 	Group        Group  `json:"Group" xml:"Group"`
 }
 
+// create a request to invoke GetMyGroups API
 func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 	request = &GetMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 	return
 }
 
+// create a response to parse from GetMyGroups response
 func CreateGetMyGroupsResponse() (response *GetMyGroupsResponse) {
 	response = &GetMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

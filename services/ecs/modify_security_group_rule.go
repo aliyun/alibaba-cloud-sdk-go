@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
 func (client *Client) ModifySecurityGroupRule(request *ModifySecurityGroupRuleRequest) (response *ModifySecurityGroupRuleResponse, err error) {
 	response = CreateModifySecurityGroupRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupRuleWithChan(request *ModifySecurityGroupRuleRequest) (<-chan *ModifySecurityGroupRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityGroupRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySecurityGroupRuleWithChan(request *ModifySecurityGro
 	return responseChan, errChan
 }
 
+// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupRuleWithCallback(request *ModifySecurityGroupRuleRequest, callback func(response *ModifySecurityGroupRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ModifySecurityGroupRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySecurityGroupRule API
 func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleRequest) {
 	request = &ModifySecurityGroupRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleReq
 	return
 }
 
+// create a response to parse from ModifySecurityGroupRule response
 func CreateModifySecurityGroupRuleResponse() (response *ModifySecurityGroupRuleResponse) {
 	response = &ModifySecurityGroupRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

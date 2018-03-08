@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListImages api with *ListImagesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listimages.html
 func (client *Client) ListImages(request *ListImagesRequest) (response *ListImagesResponse, err error) {
 	response = CreateListImagesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListImages api with *ListImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *ListImagesResponse, <-chan error) {
 	responseChan := make(chan *ListImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
+// invoke ListImages api with *ListImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callback func(response *ListImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type ListImagesResponse struct {
 	OsTags    OsTags `json:"OsTags" xml:"OsTags"`
 }
 
+// create a request to invoke ListImages API
 func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	return
 }
 
+// create a response to parse from ListImages response
 func CreateListImagesResponse() (response *ListImagesResponse) {
 	response = &ListImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

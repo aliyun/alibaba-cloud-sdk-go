@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeIpInfo api with *DescribeIpInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeipinfo.html
 func (client *Client) DescribeIpInfo(request *DescribeIpInfoRequest) (response *DescribeIpInfoResponse, err error) {
 	response = CreateDescribeIpInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeIpInfo api with *DescribeIpInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeipinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-chan *DescribeIpInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DescribeIpInfo api with *DescribeIpInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeipinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest, callback func(response *DescribeIpInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeIpInfoResponse struct {
 	RegionEname string `json:"RegionEname" xml:"RegionEname"`
 }
 
+// create a request to invoke DescribeIpInfo API
 func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 	request = &DescribeIpInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 	return
 }
 
+// create a response to parse from DescribeIpInfo response
 func CreateDescribeIpInfoResponse() (response *DescribeIpInfoResponse) {
 	response = &DescribeIpInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

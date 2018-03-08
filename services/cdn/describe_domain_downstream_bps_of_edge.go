@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainDownstreamBpsOfEdge api with *DescribeDomainDownstreamBpsOfEdgeRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaindownstreambpsofedge.html
 func (client *Client) DescribeDomainDownstreamBpsOfEdge(request *DescribeDomainDownstreamBpsOfEdgeRequest) (response *DescribeDomainDownstreamBpsOfEdgeResponse, err error) {
 	response = CreateDescribeDomainDownstreamBpsOfEdgeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainDownstreamBpsOfEdge api with *DescribeDomainDownstreamBpsOfEdgeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaindownstreambpsofedge.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainDownstreamBpsOfEdgeWithChan(request *DescribeDomainDownstreamBpsOfEdgeRequest) (<-chan *DescribeDomainDownstreamBpsOfEdgeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainDownstreamBpsOfEdgeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainDownstreamBpsOfEdgeWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainDownstreamBpsOfEdge api with *DescribeDomainDownstreamBpsOfEdgeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaindownstreambpsofedge.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainDownstreamBpsOfEdgeWithCallback(request *DescribeDomainDownstreamBpsOfEdgeRequest, callback func(response *DescribeDomainDownstreamBpsOfEdgeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeDomainDownstreamBpsOfEdgeResponse struct {
 	BpsDatas  BpsDatasInDescribeDomainDownstreamBpsOfEdge `json:"BpsDatas" xml:"BpsDatas"`
 }
 
+// create a request to invoke DescribeDomainDownstreamBpsOfEdge API
 func CreateDescribeDomainDownstreamBpsOfEdgeRequest() (request *DescribeDomainDownstreamBpsOfEdgeRequest) {
 	request = &DescribeDomainDownstreamBpsOfEdgeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeDomainDownstreamBpsOfEdgeRequest() (request *DescribeDomainDo
 	return
 }
 
+// create a response to parse from DescribeDomainDownstreamBpsOfEdge response
 func CreateDescribeDomainDownstreamBpsOfEdgeResponse() (response *DescribeDomainDownstreamBpsOfEdgeResponse) {
 	response = &DescribeDomainDownstreamBpsOfEdgeResponse{
 		BaseResponse: &responses.BaseResponse{},

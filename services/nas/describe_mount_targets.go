@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeMountTargets api with *DescribeMountTargetsRequest synchronously
+// api document: https://help.aliyun.com/api/nas/describemounttargets.html
 func (client *Client) DescribeMountTargets(request *DescribeMountTargetsRequest) (response *DescribeMountTargetsResponse, err error) {
 	response = CreateDescribeMountTargetsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeMountTargets api with *DescribeMountTargetsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describemounttargets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMountTargetsWithChan(request *DescribeMountTargetsRequest) (<-chan *DescribeMountTargetsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMountTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeMountTargetsWithChan(request *DescribeMountTargets
 	return responseChan, errChan
 }
 
+// invoke DescribeMountTargets api with *DescribeMountTargetsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describemounttargets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTargetsRequest, callback func(response *DescribeMountTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeMountTargetsResponse struct {
 	MountTargets MountTargetsInDescribeMountTargets `json:"MountTargets" xml:"MountTargets"`
 }
 
+// create a request to invoke DescribeMountTargets API
 func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) {
 	request = &DescribeMountTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) 
 	return
 }
 
+// create a response to parse from DescribeMountTargets response
 func CreateDescribeMountTargetsResponse() (response *DescribeMountTargetsResponse) {
 	response = &DescribeMountTargetsResponse{
 		BaseResponse: &responses.BaseResponse{},

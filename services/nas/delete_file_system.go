@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteFileSystem api with *DeleteFileSystemRequest synchronously
+// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
 func (client *Client) DeleteFileSystem(request *DeleteFileSystemRequest) (response *DeleteFileSystemResponse, err error) {
 	response = CreateDeleteFileSystemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteFileSystem api with *DeleteFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest) (<-chan *DeleteFileSystemResponse, <-chan error) {
 	responseChan := make(chan *DeleteFileSystemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteFileSystem api with *DeleteFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequest, callback func(response *DeleteFileSystemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteFileSystemResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteFileSystem API
 func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
 	request = &DeleteFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
 	return
 }
 
+// create a response to parse from DeleteFileSystem response
 func CreateDeleteFileSystemResponse() (response *DeleteFileSystemResponse) {
 	response = &DeleteFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

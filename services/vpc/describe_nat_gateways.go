@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeNatGateways api with *DescribeNatGatewaysRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
 func (client *Client) DescribeNatGateways(request *DescribeNatGatewaysRequest) (response *DescribeNatGatewaysResponse, err error) {
 	response = CreateDescribeNatGatewaysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeNatGateways api with *DescribeNatGatewaysRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRequest) (<-chan *DescribeNatGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeNatGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRe
 	return responseChan, errChan
 }
 
+// invoke DescribeNatGateways api with *DescribeNatGatewaysRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewaysRequest, callback func(response *DescribeNatGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeNatGatewaysResponse struct {
 	NatGateways NatGateways `json:"NatGateways" xml:"NatGateways"`
 }
 
+// create a request to invoke DescribeNatGateways API
 func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
 	request = &DescribeNatGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
 	return
 }
 
+// create a response to parse from DescribeNatGateways response
 func CreateDescribeNatGatewaysResponse() (response *DescribeNatGatewaysResponse) {
 	response = &DescribeNatGatewaysResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
 func (client *Client) DeleteSubDomainRecords(request *DeleteSubDomainRecordsRequest) (response *DeleteSubDomainRecordsResponse, err error) {
 	response = CreateDeleteSubDomainRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSubDomainRecordsWithChan(request *DeleteSubDomainRecordsRequest) (<-chan *DeleteSubDomainRecordsResponse, <-chan error) {
 	responseChan := make(chan *DeleteSubDomainRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSubDomainRecordsWithChan(request *DeleteSubDomainRec
 	return responseChan, errChan
 }
 
+// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSubDomainRecordsWithCallback(request *DeleteSubDomainRecordsRequest, callback func(response *DeleteSubDomainRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteSubDomainRecordsResponse struct {
 	TotalCount string `json:"TotalCount" xml:"TotalCount"`
 }
 
+// create a request to invoke DeleteSubDomainRecords API
 func CreateDeleteSubDomainRecordsRequest() (request *DeleteSubDomainRecordsRequest) {
 	request = &DeleteSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteSubDomainRecordsRequest() (request *DeleteSubDomainRecordsReque
 	return
 }
 
+// create a response to parse from DeleteSubDomainRecords response
 func CreateDeleteSubDomainRecordsResponse() (response *DeleteSubDomainRecordsResponse) {
 	response = &DeleteSubDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

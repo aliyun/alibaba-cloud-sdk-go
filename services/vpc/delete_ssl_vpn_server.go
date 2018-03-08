@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
 func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (response *DeleteSslVpnServerResponse, err error) {
 	response = CreateDeleteSslVpnServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequest) (<-chan *DeleteSslVpnServerResponse, <-chan error) {
 	responseChan := make(chan *DeleteSslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithCallback(request *DeleteSslVpnServerRequest, callback func(response *DeleteSslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteSslVpnServerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteSslVpnServer API
 func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
 	request = &DeleteSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
 	return
 }
 
+// create a response to parse from DeleteSslVpnServer response
 func CreateDeleteSslVpnServerResponse() (response *DeleteSslVpnServerResponse) {
 	response = &DeleteSslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},

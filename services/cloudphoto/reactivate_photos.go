@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReactivatePhotos api with *ReactivatePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
 func (client *Client) ReactivatePhotos(request *ReactivatePhotosRequest) (response *ReactivatePhotosResponse, err error) {
 	response = CreateReactivatePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReactivatePhotos api with *ReactivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivatePhotosWithChan(request *ReactivatePhotosRequest) (<-chan *ReactivatePhotosResponse, <-chan error) {
 	responseChan := make(chan *ReactivatePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReactivatePhotosWithChan(request *ReactivatePhotosRequest)
 	return responseChan, errChan
 }
 
+// invoke ReactivatePhotos api with *ReactivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivatePhotosWithCallback(request *ReactivatePhotosRequest, callback func(response *ReactivatePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ReactivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ReactivatePhotos API
 func CreateReactivatePhotosRequest() (request *ReactivatePhotosRequest) {
 	request = &ReactivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateReactivatePhotosRequest() (request *ReactivatePhotosRequest) {
 	return
 }
 
+// create a response to parse from ReactivatePhotos response
 func CreateReactivatePhotosResponse() (response *ReactivatePhotosResponse) {
 	response = &ReactivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

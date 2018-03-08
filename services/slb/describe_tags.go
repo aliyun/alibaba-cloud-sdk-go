@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTags api with *DescribeTagsRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describetags.html
 func (client *Client) DescribeTags(request *DescribeTagsRequest) (response *DescribeTagsResponse, err error) {
 	response = CreateDescribeTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTags api with *DescribeTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describetags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan *DescribeTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DescribeTags api with *DescribeTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describetags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeTagsResponse struct {
 	TagSets    TagSets `json:"TagSets" xml:"TagSets"`
 }
 
+// create a request to invoke DescribeTags API
 func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	return
 }
 
+// create a response to parse from DescribeTags response
 func CreateDescribeTagsResponse() (response *DescribeTagsResponse) {
 	response = &DescribeTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

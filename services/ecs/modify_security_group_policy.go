@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
 func (client *Client) ModifySecurityGroupPolicy(request *ModifySecurityGroupPolicyRequest) (response *ModifySecurityGroupPolicyResponse, err error) {
 	response = CreateModifySecurityGroupPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityGroupPolicyRequest) (<-chan *ModifySecurityGroupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityGroupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityG
 	return responseChan, errChan
 }
 
+// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecurityGroupPolicyRequest, callback func(response *ModifySecurityGroupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifySecurityGroupPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySecurityGroupPolicy API
 func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolicyRequest) {
 	request = &ModifySecurityGroupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolic
 	return
 }
 
+// create a response to parse from ModifySecurityGroupPolicy response
 func CreateModifySecurityGroupPolicyResponse() (response *ModifySecurityGroupPolicyResponse) {
 	response = &ModifySecurityGroupPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

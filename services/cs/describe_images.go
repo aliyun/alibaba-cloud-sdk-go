@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeImages api with *DescribeImagesRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeimages.html
 func (client *Client) DescribeImages(request *DescribeImagesRequest) (response *DescribeImagesResponse, err error) {
 	response = CreateDescribeImagesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeImages api with *DescribeImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagesWithChan(request *DescribeImagesRequest) (<-chan *DescribeImagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeImagesWithChan(request *DescribeImagesRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DescribeImages api with *DescribeImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest, callback func(response *DescribeImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,14 +75,15 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 
 type DescribeImagesRequest struct {
 	*requests.RoaRequest
-	ImageName     string `position:"Query" name:"ImageName"`
 	DockerVersion string `position:"Query" name:"DockerVersion"`
+	ImageName     string `position:"Query" name:"ImageName"`
 }
 
 type DescribeImagesResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeImages API
 func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	request = &DescribeImagesRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -84,6 +93,7 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	return
 }
 
+// create a response to parse from DescribeImages response
 func CreateDescribeImagesResponse() (response *DescribeImagesResponse) {
 	response = &DescribeImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

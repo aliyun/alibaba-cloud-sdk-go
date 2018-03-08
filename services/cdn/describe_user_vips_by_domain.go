@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
 func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomainRequest) (response *DescribeUserVipsByDomainResponse, err error) {
 	response = CreateDescribeUserVipsByDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVipsByDomainRequest) (<-chan *DescribeUserVipsByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserVipsByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVips
 	return responseChan, errChan
 }
 
+// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUserVipsByDomainRequest, callback func(response *DescribeUserVipsByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeUserVipsByDomainResponse struct {
 	Vips       VipsInDescribeUserVipsByDomain `json:"Vips" xml:"Vips"`
 }
 
+// create a request to invoke DescribeUserVipsByDomain API
 func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {
 	request = &DescribeUserVipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainR
 	return
 }
 
+// create a response to parse from DescribeUserVipsByDomain response
 func CreateDescribeUserVipsByDomainResponse() (response *DescribeUserVipsByDomainResponse) {
 	response = &DescribeUserVipsByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ApproveTemplate api with *ApproveTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/dm/approvetemplate.html
 func (client *Client) ApproveTemplate(request *ApproveTemplateRequest) (response *ApproveTemplateResponse, err error) {
 	response = CreateApproveTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ApproveTemplate api with *ApproveTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvetemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveTemplateWithChan(request *ApproveTemplateRequest) (<-chan *ApproveTemplateResponse, <-chan error) {
 	responseChan := make(chan *ApproveTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ApproveTemplateWithChan(request *ApproveTemplateRequest) (
 	return responseChan, errChan
 }
 
+// invoke ApproveTemplate api with *ApproveTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvetemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveTemplateWithCallback(request *ApproveTemplateRequest, callback func(response *ApproveTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ApproveTemplateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ApproveTemplate API
 func CreateApproveTemplateRequest() (request *ApproveTemplateRequest) {
 	request = &ApproveTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateApproveTemplateRequest() (request *ApproveTemplateRequest) {
 	return
 }
 
+// create a response to parse from ApproveTemplate response
 func CreateApproveTemplateResponse() (response *ApproveTemplateResponse) {
 	response = &ApproveTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

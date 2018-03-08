@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceUser api with *DescribeDBInstanceUserRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceuser.html
 func (client *Client) DescribeDBInstanceUser(request *DescribeDBInstanceUserRequest) (response *DescribeDBInstanceUserResponse, err error) {
 	response = CreateDescribeDBInstanceUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceUser api with *DescribeDBInstanceUserRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceUserWithChan(request *DescribeDBInstanceUserRequest) (<-chan *DescribeDBInstanceUserResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceUserWithChan(request *DescribeDBInstance
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceUser api with *DescribeDBInstanceUserRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceUserWithCallback(request *DescribeDBInstanceUserRequest, callback func(response *DescribeDBInstanceUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeDBInstanceUserResponse struct {
 	InternalDBFlag string `json:"InternalDBFlag" xml:"InternalDBFlag"`
 }
 
+// create a request to invoke DescribeDBInstanceUser API
 func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserRequest) {
 	request = &DescribeDBInstanceUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserReque
 	return
 }
 
+// create a response to parse from DescribeDBInstanceUser response
 func CreateDescribeDBInstanceUserResponse() (response *DescribeDBInstanceUserResponse) {
 	response = &DescribeDBInstanceUserResponse{
 		BaseResponse: &responses.BaseResponse{},

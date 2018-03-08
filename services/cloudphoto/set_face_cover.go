@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetFaceCover api with *SetFaceCoverRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
 func (client *Client) SetFaceCover(request *SetFaceCoverRequest) (response *SetFaceCoverResponse, err error) {
 	response = CreateSetFaceCoverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetFaceCover api with *SetFaceCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan *SetFaceCoverResponse, <-chan error) {
 	responseChan := make(chan *SetFaceCoverResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke SetFaceCover api with *SetFaceCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, callback func(response *SetFaceCoverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type SetFaceCoverResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke SetFaceCover API
 func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	request = &SetFaceCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	return
 }
 
+// create a response to parse from SetFaceCover response
 func CreateSetFaceCoverResponse() (response *SetFaceCoverResponse) {
 	response = &SetFaceCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

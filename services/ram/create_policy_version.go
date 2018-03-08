@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest synchronously
+// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
 func (client *Client) CreatePolicyVersion(request *CreatePolicyVersionRequest) (response *CreatePolicyVersionResponse, err error) {
 	response = CreateCreatePolicyVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRequest) (<-chan *CreatePolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *CreatePolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRe
 	return responseChan, errChan
 }
 
+// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersionRequest, callback func(response *CreatePolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreatePolicyVersionResponse struct {
 	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
+// create a request to invoke CreatePolicyVersion API
 func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
 	request = &CreatePolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
 	return
 }
 
+// create a response to parse from CreatePolicyVersion response
 func CreateCreatePolicyVersionResponse() (response *CreatePolicyVersionResponse) {
 	response = &CreatePolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

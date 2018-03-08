@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetDownloadUrls api with *GetDownloadUrlsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurls.html
 func (client *Client) GetDownloadUrls(request *GetDownloadUrlsRequest) (response *GetDownloadUrlsResponse, err error) {
 	response = CreateGetDownloadUrlsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetDownloadUrls api with *GetDownloadUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlsWithChan(request *GetDownloadUrlsRequest) (<-chan *GetDownloadUrlsResponse, <-chan error) {
 	responseChan := make(chan *GetDownloadUrlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetDownloadUrlsWithChan(request *GetDownloadUrlsRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetDownloadUrls api with *GetDownloadUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getdownloadurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlsWithCallback(request *GetDownloadUrlsRequest, callback func(response *GetDownloadUrlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetDownloadUrlsResponse struct {
 	Results   ResultsInGetDownloadUrls `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke GetDownloadUrls API
 func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {
 	request = &GetDownloadUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {
 	return
 }
 
+// create a response to parse from GetDownloadUrls response
 func CreateGetDownloadUrlsResponse() (response *GetDownloadUrlsResponse) {
 	response = &GetDownloadUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

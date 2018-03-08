@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRenewalPrice api with *DescribeRenewalPriceRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describerenewalprice.html
 func (client *Client) DescribeRenewalPrice(request *DescribeRenewalPriceRequest) (response *DescribeRenewalPriceResponse, err error) {
 	response = CreateDescribeRenewalPriceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRenewalPrice api with *DescribeRenewalPriceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerenewalprice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRenewalPriceWithChan(request *DescribeRenewalPriceRequest) (<-chan *DescribeRenewalPriceResponse, <-chan error) {
 	responseChan := make(chan *DescribeRenewalPriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRenewalPriceWithChan(request *DescribeRenewalPrice
 	return responseChan, errChan
 }
 
+// invoke DescribeRenewalPrice api with *DescribeRenewalPriceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerenewalprice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalPriceRequest, callback func(response *DescribeRenewalPriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeRenewalPriceResponse struct {
 	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
 }
 
+// create a request to invoke DescribeRenewalPrice API
 func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) 
 	return
 }
 
+// create a response to parse from DescribeRenewalPrice response
 func CreateDescribeRenewalPriceResponse() (response *DescribeRenewalPriceResponse) {
 	response = &DescribeRenewalPriceResponse{
 		BaseResponse: &responses.BaseResponse{},

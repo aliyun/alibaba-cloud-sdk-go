@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest synchronously
+// api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
 func (client *Client) ModifySenderAddressNotification(request *ModifySenderAddressNotificationRequest) (response *ModifySenderAddressNotificationResponse, err error) {
 	response = CreateModifySenderAddressNotificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySenderAddressNotificationWithChan(request *ModifySenderAddressNotificationRequest) (<-chan *ModifySenderAddressNotificationResponse, <-chan error) {
 	responseChan := make(chan *ModifySenderAddressNotificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySenderAddressNotificationWithChan(request *ModifySen
 	return responseChan, errChan
 }
 
+// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySenderAddressNotificationWithCallback(request *ModifySenderAddressNotificationRequest, callback func(response *ModifySenderAddressNotificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifySenderAddressNotificationResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySenderAddressNotification API
 func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddressNotificationRequest) {
 	request = &ModifySenderAddressNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddres
 	return
 }
 
+// create a response to parse from ModifySenderAddressNotification response
 func CreateModifySenderAddressNotificationResponse() (response *ModifySenderAddressNotificationResponse) {
 	response = &ModifySenderAddressNotificationResponse{
 		BaseResponse: &responses.BaseResponse{},

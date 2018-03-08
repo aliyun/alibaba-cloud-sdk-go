@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
 func (client *Client) DeleteInvalidAddress(request *DeleteInvalidAddressRequest) (response *DeleteInvalidAddressResponse, err error) {
 	response = CreateDeleteInvalidAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInvalidAddressWithChan(request *DeleteInvalidAddressRequest) (<-chan *DeleteInvalidAddressResponse, <-chan error) {
 	responseChan := make(chan *DeleteInvalidAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteInvalidAddressWithChan(request *DeleteInvalidAddress
 	return responseChan, errChan
 }
 
+// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInvalidAddressWithCallback(request *DeleteInvalidAddressRequest, callback func(response *DeleteInvalidAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteInvalidAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteInvalidAddress API
 func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) {
 	request = &DeleteInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) 
 	return
 }
 
+// create a response to parse from DeleteInvalidAddress response
 func CreateDeleteInvalidAddressResponse() (response *DeleteInvalidAddressResponse) {
 	response = &DeleteInvalidAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

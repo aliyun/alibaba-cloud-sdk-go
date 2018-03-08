@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOptimizeAdviceOnMissIndex api with *DescribeOptimizeAdviceOnMissIndexRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmissindex.html
 func (client *Client) DescribeOptimizeAdviceOnMissIndex(request *DescribeOptimizeAdviceOnMissIndexRequest) (response *DescribeOptimizeAdviceOnMissIndexResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnMissIndexResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOptimizeAdviceOnMissIndex api with *DescribeOptimizeAdviceOnMissIndexRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmissindex.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissIndexWithChan(request *DescribeOptimizeAdviceOnMissIndexRequest) (<-chan *DescribeOptimizeAdviceOnMissIndexResponse, <-chan error) {
 	responseChan := make(chan *DescribeOptimizeAdviceOnMissIndexResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOptimizeAdviceOnMissIndexWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeOptimizeAdviceOnMissIndex api with *DescribeOptimizeAdviceOnMissIndexRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmissindex.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissIndexWithCallback(request *DescribeOptimizeAdviceOnMissIndexRequest, callback func(response *DescribeOptimizeAdviceOnMissIndexResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeOptimizeAdviceOnMissIndexResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnMissIndex `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeOptimizeAdviceOnMissIndex API
 func CreateDescribeOptimizeAdviceOnMissIndexRequest() (request *DescribeOptimizeAdviceOnMissIndexRequest) {
 	request = &DescribeOptimizeAdviceOnMissIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeOptimizeAdviceOnMissIndexRequest() (request *DescribeOptimize
 	return
 }
 
+// create a response to parse from DescribeOptimizeAdviceOnMissIndex response
 func CreateDescribeOptimizeAdviceOnMissIndexResponse() (response *DescribeOptimizeAdviceOnMissIndexResponse) {
 	response = &DescribeOptimizeAdviceOnMissIndexResponse{
 		BaseResponse: &responses.BaseResponse{},

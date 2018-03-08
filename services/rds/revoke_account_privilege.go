@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RevokeAccountPrivilege api with *RevokeAccountPrivilegeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/revokeaccountprivilege.html
 func (client *Client) RevokeAccountPrivilege(request *RevokeAccountPrivilegeRequest) (response *RevokeAccountPrivilegeResponse, err error) {
 	response = CreateRevokeAccountPrivilegeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RevokeAccountPrivilege api with *RevokeAccountPrivilegeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/revokeaccountprivilege.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeAccountPrivilegeWithChan(request *RevokeAccountPrivilegeRequest) (<-chan *RevokeAccountPrivilegeResponse, <-chan error) {
 	responseChan := make(chan *RevokeAccountPrivilegeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RevokeAccountPrivilegeWithChan(request *RevokeAccountPrivi
 	return responseChan, errChan
 }
 
+// invoke RevokeAccountPrivilege api with *RevokeAccountPrivilegeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/revokeaccountprivilege.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeAccountPrivilegeWithCallback(request *RevokeAccountPrivilegeRequest, callback func(response *RevokeAccountPrivilegeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RevokeAccountPrivilegeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RevokeAccountPrivilege API
 func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeRequest) {
 	request = &RevokeAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeReque
 	return
 }
 
+// create a response to parse from RevokeAccountPrivilege response
 func CreateRevokeAccountPrivilegeResponse() (response *RevokeAccountPrivilegeResponse) {
 	response = &RevokeAccountPrivilegeResponse{
 		BaseResponse: &responses.BaseResponse{},

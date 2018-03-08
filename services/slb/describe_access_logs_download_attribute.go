@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
 func (client *Client) DescribeAccessLogsDownloadAttribute(request *DescribeAccessLogsDownloadAttributeRequest) (response *DescribeAccessLogsDownloadAttributeResponse, err error) {
 	response = CreateDescribeAccessLogsDownloadAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessLogsDownloadAttributeWithChan(request *DescribeAccessLogsDownloadAttributeRequest) (<-chan *DescribeAccessLogsDownloadAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccessLogsDownloadAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccessLogsDownloadAttributeWithChan(request *Descr
 	return responseChan, errChan
 }
 
+// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessLogsDownloadAttributeWithCallback(request *DescribeAccessLogsDownloadAttributeRequest, callback func(response *DescribeAccessLogsDownloadAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeAccessLogsDownloadAttributeResponse struct {
 	LogsDownloadAttributes LogsDownloadAttributes `json:"LogsDownloadAttributes" xml:"LogsDownloadAttributes"`
 }
 
+// create a request to invoke DescribeAccessLogsDownloadAttribute API
 func CreateDescribeAccessLogsDownloadAttributeRequest() (request *DescribeAccessLogsDownloadAttributeRequest) {
 	request = &DescribeAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeAccessLogsDownloadAttributeRequest() (request *DescribeAccess
 	return
 }
 
+// create a response to parse from DescribeAccessLogsDownloadAttribute response
 func CreateDescribeAccessLogsDownloadAttributeResponse() (response *DescribeAccessLogsDownloadAttributeResponse) {
 	response = &DescribeAccessLogsDownloadAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DisableActiceAlert api with *DisableActiceAlertRequest synchronously
+// api document: https://help.aliyun.com/api/cms/disableacticealert.html
 func (client *Client) DisableActiceAlert(request *DisableActiceAlertRequest) (response *DisableActiceAlertResponse, err error) {
 	response = CreateDisableActiceAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DisableActiceAlert api with *DisableActiceAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disableacticealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiceAlertWithChan(request *DisableActiceAlertRequest) (<-chan *DisableActiceAlertResponse, <-chan error) {
 	responseChan := make(chan *DisableActiceAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DisableActiceAlertWithChan(request *DisableActiceAlertRequ
 	return responseChan, errChan
 }
 
+// invoke DisableActiceAlert api with *DisableActiceAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disableacticealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiceAlertWithCallback(request *DisableActiceAlertRequest, callback func(response *DisableActiceAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DisableActiceAlertResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
+// create a request to invoke DisableActiceAlert API
 func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
 	request = &DisableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
 	return
 }
 
+// create a response to parse from DisableActiceAlert response
 func CreateDisableActiceAlertResponse() (response *DisableActiceAlertResponse) {
 	response = &DisableActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

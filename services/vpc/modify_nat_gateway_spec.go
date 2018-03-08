@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyNatGatewaySpec api with *ModifyNatGatewaySpecRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
 func (client *Client) ModifyNatGatewaySpec(request *ModifyNatGatewaySpecRequest) (response *ModifyNatGatewaySpecResponse, err error) {
 	response = CreateModifyNatGatewaySpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyNatGatewaySpec api with *ModifyNatGatewaySpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewaySpecWithChan(request *ModifyNatGatewaySpecRequest) (<-chan *ModifyNatGatewaySpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyNatGatewaySpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyNatGatewaySpecWithChan(request *ModifyNatGatewaySpec
 	return responseChan, errChan
 }
 
+// invoke ModifyNatGatewaySpec api with *ModifyNatGatewaySpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewaySpecWithCallback(request *ModifyNatGatewaySpecRequest, callback func(response *ModifyNatGatewaySpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyNatGatewaySpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyNatGatewaySpec API
 func CreateModifyNatGatewaySpecRequest() (request *ModifyNatGatewaySpecRequest) {
 	request = &ModifyNatGatewaySpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyNatGatewaySpecRequest() (request *ModifyNatGatewaySpecRequest) 
 	return
 }
 
+// create a response to parse from ModifyNatGatewaySpec response
 func CreateModifyNatGatewaySpecResponse() (response *ModifyNatGatewaySpecResponse) {
 	response = &ModifyNatGatewaySpecResponse{
 		BaseResponse: &responses.BaseResponse{},

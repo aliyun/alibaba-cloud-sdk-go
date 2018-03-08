@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SearchTemplate api with *SearchTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/searchtemplate.html
 func (client *Client) SearchTemplate(request *SearchTemplateRequest) (response *SearchTemplateResponse, err error) {
 	response = CreateSearchTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SearchTemplate api with *SearchTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTemplateWithChan(request *SearchTemplateRequest) (<-chan *SearchTemplateResponse, <-chan error) {
 	responseChan := make(chan *SearchTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SearchTemplateWithChan(request *SearchTemplateRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke SearchTemplate api with *SearchTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTemplateWithCallback(request *SearchTemplateRequest, callback func(response *SearchTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SearchTemplateResponse struct {
 	TemplateList TemplateListInSearchTemplate `json:"TemplateList" xml:"TemplateList"`
 }
 
+// create a request to invoke SearchTemplate API
 func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {
 	request = &SearchTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {
 	return
 }
 
+// create a response to parse from SearchTemplate response
 func CreateSearchTemplateResponse() (response *SearchTemplateResponse) {
 	response = &SearchTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

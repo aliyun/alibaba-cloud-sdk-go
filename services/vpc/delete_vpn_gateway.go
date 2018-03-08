@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
 func (client *Client) DeleteVpnGateway(request *DeleteVpnGatewayRequest) (response *DeleteVpnGatewayResponse, err error) {
 	response = CreateDeleteVpnGatewayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest) (<-chan *DeleteVpnGatewayResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpnGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithCallback(request *DeleteVpnGatewayRequest, callback func(response *DeleteVpnGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteVpnGatewayResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteVpnGateway API
 func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	request = &DeleteVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	return
 }
 
+// create a response to parse from DeleteVpnGateway response
 func CreateDeleteVpnGatewayResponse() (response *DeleteVpnGatewayResponse) {
 	response = &DeleteVpnGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

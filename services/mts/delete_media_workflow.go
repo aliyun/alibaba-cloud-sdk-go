@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest synchronously
+// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
 func (client *Client) DeleteMediaWorkflow(request *DeleteMediaWorkflowRequest) (response *DeleteMediaWorkflowResponse, err error) {
 	response = CreateDeleteMediaWorkflowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRequest) (<-chan *DeleteMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *DeleteMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRe
 	return responseChan, errChan
 }
 
+// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkflowRequest, callback func(response *DeleteMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteMediaWorkflowResponse struct {
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
+// create a request to invoke DeleteMediaWorkflow API
 func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 	request = &DeleteMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 	return
 }
 
+// create a response to parse from DeleteMediaWorkflow response
 func CreateDeleteMediaWorkflowResponse() (response *DeleteMediaWorkflowResponse) {
 	response = &DeleteMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

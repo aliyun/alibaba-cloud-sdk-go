@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RefreshToken api with *RefreshTokenRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
 func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *RefreshTokenResponse, err error) {
 	response = CreateRefreshTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RefreshToken api with *RefreshTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan *RefreshTokenResponse, <-chan error) {
 	responseChan := make(chan *RefreshTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke RefreshToken api with *RefreshTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, callback func(response *RefreshTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type RefreshTokenResponse struct {
 	Token          Token  `json:"Token" xml:"Token"`
 }
 
+// create a request to invoke RefreshToken API
 func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 	request = &RefreshTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 	return
 }
 
+// create a response to parse from RefreshToken response
 func CreateRefreshTokenResponse() (response *RefreshTokenResponse) {
 	response = &RefreshTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

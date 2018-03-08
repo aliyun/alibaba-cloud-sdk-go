@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMomentPhotos api with *ListMomentPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmomentphotos.html
 func (client *Client) ListMomentPhotos(request *ListMomentPhotosRequest) (response *ListMomentPhotosResponse, err error) {
 	response = CreateListMomentPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMomentPhotos api with *ListMomentPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmomentphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentPhotosWithChan(request *ListMomentPhotosRequest) (<-chan *ListMomentPhotosResponse, <-chan error) {
 	responseChan := make(chan *ListMomentPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMomentPhotosWithChan(request *ListMomentPhotosRequest)
 	return responseChan, errChan
 }
 
+// invoke ListMomentPhotos api with *ListMomentPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmomentphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentPhotosWithCallback(request *ListMomentPhotosRequest, callback func(response *ListMomentPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListMomentPhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ListMomentPhotos API
 func CreateListMomentPhotosRequest() (request *ListMomentPhotosRequest) {
 	request = &ListMomentPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListMomentPhotosRequest() (request *ListMomentPhotosRequest) {
 	return
 }
 
+// create a response to parse from ListMomentPhotos response
 func CreateListMomentPhotosResponse() (response *ListMomentPhotosResponse) {
 	response = &ListMomentPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainQps api with *DescribeDomainQpsRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainqps.html
 func (client *Client) DescribeDomainQps(request *DescribeDomainQpsRequest) (response *DescribeDomainQpsResponse, err error) {
 	response = CreateDescribeDomainQpsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainQps api with *DescribeDomainQpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainqps.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsWithChan(request *DescribeDomainQpsRequest) (<-chan *DescribeDomainQpsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainQpsWithChan(request *DescribeDomainQpsReques
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainQps api with *DescribeDomainQpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainqps.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsWithCallback(request *DescribeDomainQpsRequest, callback func(response *DescribeDomainQpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeDomainQpsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeDomainQps API
 func CreateDescribeDomainQpsRequest() (request *DescribeDomainQpsRequest) {
 	request = &DescribeDomainQpsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeDomainQpsRequest() (request *DescribeDomainQpsRequest) {
 	return
 }
 
+// create a response to parse from DescribeDomainQps response
 func CreateDescribeDomainQpsResponse() (response *DescribeDomainQpsResponse) {
 	response = &DescribeDomainQpsResponse{
 		BaseResponse: &responses.BaseResponse{},

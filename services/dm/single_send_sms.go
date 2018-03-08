@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SingleSendSms api with *SingleSendSmsRequest synchronously
+// api document: https://help.aliyun.com/api/dm/singlesendsms.html
 func (client *Client) SingleSendSms(request *SingleSendSmsRequest) (response *SingleSendSmsResponse, err error) {
 	response = CreateSingleSendSmsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SingleSendSms api with *SingleSendSmsRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/singlesendsms.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendSmsWithChan(request *SingleSendSmsRequest) (<-chan *SingleSendSmsResponse, <-chan error) {
 	responseChan := make(chan *SingleSendSmsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SingleSendSmsWithChan(request *SingleSendSmsRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke SingleSendSms api with *SingleSendSmsRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/singlesendsms.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendSmsWithCallback(request *SingleSendSmsRequest, callback func(response *SingleSendSmsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SingleSendSmsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SingleSendSms API
 func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
 	request = &SingleSendSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
 	return
 }
 
+// create a response to parse from SingleSendSms response
 func CreateSingleSendSmsResponse() (response *SingleSendSmsResponse) {
 	response = &SingleSendSmsResponse{
 		BaseResponse: &responses.BaseResponse{},

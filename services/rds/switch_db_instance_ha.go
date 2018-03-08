@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SwitchDBInstanceHA api with *SwitchDBInstanceHARequest synchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstanceha.html
 func (client *Client) SwitchDBInstanceHA(request *SwitchDBInstanceHARequest) (response *SwitchDBInstanceHAResponse, err error) {
 	response = CreateSwitchDBInstanceHAResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SwitchDBInstanceHA api with *SwitchDBInstanceHARequest asynchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstanceha.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceHAWithChan(request *SwitchDBInstanceHARequest) (<-chan *SwitchDBInstanceHAResponse, <-chan error) {
 	responseChan := make(chan *SwitchDBInstanceHAResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SwitchDBInstanceHAWithChan(request *SwitchDBInstanceHARequ
 	return responseChan, errChan
 }
 
+// invoke SwitchDBInstanceHA api with *SwitchDBInstanceHARequest asynchronously
+// api document: https://help.aliyun.com/api/rds/switchdbinstanceha.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHARequest, callback func(response *SwitchDBInstanceHAResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SwitchDBInstanceHAResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SwitchDBInstanceHA API
 func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
 	request = &SwitchDBInstanceHARequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
 	return
 }
 
+// create a response to parse from SwitchDBInstanceHA response
 func CreateSwitchDBInstanceHAResponse() (response *SwitchDBInstanceHAResponse) {
 	response = &SwitchDBInstanceHAResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RunInstances api with *RunInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/runinstances.html
 func (client *Client) RunInstances(request *RunInstancesRequest) (response *RunInstancesResponse, err error) {
 	response = CreateRunInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RunInstances api with *RunInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/runinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan *RunInstancesResponse, <-chan error) {
 	responseChan := make(chan *RunInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke RunInstances api with *RunInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/runinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, callback func(response *RunInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type RunInstancesResponse struct {
 	InstanceIdSets InstanceIdSets `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 
+// create a request to invoke RunInstances API
 func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	return
 }
 
+// create a response to parse from RunInstances response
 func CreateRunInstancesResponse() (response *RunInstancesResponse) {
 	response = &RunInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

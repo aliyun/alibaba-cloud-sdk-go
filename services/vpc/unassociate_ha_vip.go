@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnassociateHaVip api with *UnassociateHaVipRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
 func (client *Client) UnassociateHaVip(request *UnassociateHaVipRequest) (response *UnassociateHaVipResponse, err error) {
 	response = CreateUnassociateHaVipResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnassociateHaVip api with *UnassociateHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest) (<-chan *UnassociateHaVipResponse, <-chan error) {
 	responseChan := make(chan *UnassociateHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest)
 	return responseChan, errChan
 }
 
+// invoke UnassociateHaVip api with *UnassociateHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequest, callback func(response *UnassociateHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type UnassociateHaVipResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnassociateHaVip API
 func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	return
 }
 
+// create a response to parse from UnassociateHaVip response
 func CreateUnassociateHaVipResponse() (response *UnassociateHaVipResponse) {
 	response = &UnassociateHaVipResponse{
 		BaseResponse: &responses.BaseResponse{},

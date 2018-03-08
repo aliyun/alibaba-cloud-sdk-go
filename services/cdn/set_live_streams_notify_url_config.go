@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetLiveStreamsNotifyUrlConfig api with *SetLiveStreamsNotifyUrlConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
 func (client *Client) SetLiveStreamsNotifyUrlConfig(request *SetLiveStreamsNotifyUrlConfigRequest) (response *SetLiveStreamsNotifyUrlConfigResponse, err error) {
 	response = CreateSetLiveStreamsNotifyUrlConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetLiveStreamsNotifyUrlConfig api with *SetLiveStreamsNotifyUrlConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStreamsNotifyUrlConfigRequest) (<-chan *SetLiveStreamsNotifyUrlConfigResponse, <-chan error) {
 	responseChan := make(chan *SetLiveStreamsNotifyUrlConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStre
 	return responseChan, errChan
 }
 
+// invoke SetLiveStreamsNotifyUrlConfig api with *SetLiveStreamsNotifyUrlConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamsNotifyUrlConfigWithCallback(request *SetLiveStreamsNotifyUrlConfigRequest, callback func(response *SetLiveStreamsNotifyUrlConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetLiveStreamsNotifyUrlConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetLiveStreamsNotifyUrlConfig API
 func CreateSetLiveStreamsNotifyUrlConfigRequest() (request *SetLiveStreamsNotifyUrlConfigRequest) {
 	request = &SetLiveStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetLiveStreamsNotifyUrlConfigRequest() (request *SetLiveStreamsNotify
 	return
 }
 
+// create a response to parse from SetLiveStreamsNotifyUrlConfig response
 func CreateSetLiveStreamsNotifyUrlConfigResponse() (response *SetLiveStreamsNotifyUrlConfigResponse) {
 	response = &SetLiveStreamsNotifyUrlConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

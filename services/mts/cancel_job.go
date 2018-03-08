@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelJob api with *CancelJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/canceljob.html
 func (client *Client) CancelJob(request *CancelJobRequest) (response *CancelJobResponse, err error) {
 	response = CreateCancelJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelJob api with *CancelJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/canceljob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *CancelJobResponse, <-chan error) {
 	responseChan := make(chan *CancelJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *Canc
 	return responseChan, errChan
 }
 
+// invoke CancelJob api with *CancelJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/canceljob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback func(response *CancelJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CancelJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke CancelJob API
 func CreateCancelJobRequest() (request *CancelJobRequest) {
 	request = &CancelJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCancelJobRequest() (request *CancelJobRequest) {
 	return
 }
 
+// create a response to parse from CancelJob response
 func CreateCancelJobResponse() (response *CancelJobResponse) {
 	response = &CancelJobResponse{
 		BaseResponse: &responses.BaseResponse{},

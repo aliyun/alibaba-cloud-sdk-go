@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescDomain api with *DescDomainRequest synchronously
+// api document: https://help.aliyun.com/api/dm/descdomain.html
 func (client *Client) DescDomain(request *DescDomainRequest) (response *DescDomainResponse, err error) {
 	response = CreateDescDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescDomain api with *DescDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/descdomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *DescDomainResponse, <-chan error) {
 	responseChan := make(chan *DescDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DescDomain api with *DescDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/descdomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callback func(response *DescDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type DescDomainResponse struct {
 	TracefRecord       string `json:"TracefRecord" xml:"TracefRecord"`
 }
 
+// create a request to invoke DescDomain API
 func CreateDescDomainRequest() (request *DescDomainRequest) {
 	request = &DescDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateDescDomainRequest() (request *DescDomainRequest) {
 	return
 }
 
+// create a response to parse from DescDomain response
 func CreateDescDomainResponse() (response *DescDomainResponse) {
 	response = &DescDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

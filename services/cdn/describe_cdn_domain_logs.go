@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
 func (client *Client) DescribeCdnDomainLogs(request *DescribeCdnDomainLogsRequest) (response *DescribeCdnDomainLogsResponse, err error) {
 	response = CreateDescribeCdnDomainLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLogsRequest) (<-chan *DescribeCdnDomainLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnDomainLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLo
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDomainLogsRequest, callback func(response *DescribeCdnDomainLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeCdnDomainLogsResponse struct {
 	DomainLogModel DomainLogModel `json:"DomainLogModel" xml:"DomainLogModel"`
 }
 
+// create a request to invoke DescribeCdnDomainLogs API
 func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest) {
 	request = &DescribeCdnDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest
 	return
 }
 
+// create a response to parse from DescribeCdnDomainLogs response
 func CreateDescribeCdnDomainLogsResponse() (response *DescribeCdnDomainLogsResponse) {
 	response = &DescribeCdnDomainLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

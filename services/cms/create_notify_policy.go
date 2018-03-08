@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
 func (client *Client) CreateNotifyPolicy(request *CreateNotifyPolicyRequest) (response *CreateNotifyPolicyResponse, err error) {
 	response = CreateCreateNotifyPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNotifyPolicyWithChan(request *CreateNotifyPolicyRequest) (<-chan *CreateNotifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateNotifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateNotifyPolicyWithChan(request *CreateNotifyPolicyRequ
 	return responseChan, errChan
 }
 
+// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicyRequest, callback func(response *CreateNotifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateNotifyPolicyResponse struct {
 	Result  int    `json:"result" xml:"result"`
 }
 
+// create a request to invoke CreateNotifyPolicy API
 func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
 	request = &CreateNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
 	return
 }
 
+// create a response to parse from CreateNotifyPolicy response
 func CreateCreateNotifyPolicyResponse() (response *CreateNotifyPolicyResponse) {
 	response = &CreateNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

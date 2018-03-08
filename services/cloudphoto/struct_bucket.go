@@ -17,7 +17,7 @@ package cloudphoto
 
 type Bucket struct {
 	Name   string `json:"Name" xml:"Name"`
-	Region string `json:"Region" xml:"Region"`
 	State  string `json:"State" xml:"State"`
 	Acl    string `json:"Acl" xml:"Acl"`
+	Region string `json:"Region" xml:"Region"`
 }

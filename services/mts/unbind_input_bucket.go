@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindInputBucket api with *UnbindInputBucketRequest synchronously
+// api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
 func (client *Client) UnbindInputBucket(request *UnbindInputBucketRequest) (response *UnbindInputBucketResponse, err error) {
 	response = CreateUnbindInputBucketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindInputBucket api with *UnbindInputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindInputBucketWithChan(request *UnbindInputBucketRequest) (<-chan *UnbindInputBucketResponse, <-chan error) {
 	responseChan := make(chan *UnbindInputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindInputBucketWithChan(request *UnbindInputBucketReques
 	return responseChan, errChan
 }
 
+// invoke UnbindInputBucket api with *UnbindInputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRequest, callback func(response *UnbindInputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UnbindInputBucketResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindInputBucket API
 func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	request = &UnbindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	return
 }
 
+// create a response to parse from UnbindInputBucket response
 func CreateUnbindInputBucketResponse() (response *UnbindInputBucketResponse) {
 	response = &UnbindInputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

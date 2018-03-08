@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MergeFaces api with *MergeFacesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
 func (client *Client) MergeFaces(request *MergeFacesRequest) (response *MergeFacesResponse, err error) {
 	response = CreateMergeFacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MergeFaces api with *MergeFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MergeFacesWithChan(request *MergeFacesRequest) (<-chan *MergeFacesResponse, <-chan error) {
 	responseChan := make(chan *MergeFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MergeFacesWithChan(request *MergeFacesRequest) (<-chan *Me
 	return responseChan, errChan
 }
 
+// invoke MergeFaces api with *MergeFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callback func(response *MergeFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type MergeFacesResponse struct {
 	Results   ResultsInMergeFaces `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke MergeFaces API
 func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	return
 }
 
+// create a response to parse from MergeFaces response
 func CreateMergeFacesResponse() (response *MergeFacesResponse) {
 	response = &MergeFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

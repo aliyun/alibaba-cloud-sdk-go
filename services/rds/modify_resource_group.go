@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
 func (client *Client) ModifyResourceGroup(request *ModifyResourceGroupRequest) (response *ModifyResourceGroupResponse, err error) {
 	response = CreateModifyResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRequest) (<-chan *ModifyResourceGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRe
 	return responseChan, errChan
 }
 
+// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGroupRequest, callback func(response *ModifyResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyResourceGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyResourceGroup API
 func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	return
 }
 
+// create a response to parse from ModifyResourceGroup response
 func CreateModifyResourceGroupResponse() (response *ModifyResourceGroupResponse) {
 	response = &ModifyResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

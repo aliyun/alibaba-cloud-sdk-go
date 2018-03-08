@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAlbums api with *ListAlbumsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbums.html
 func (client *Client) ListAlbums(request *ListAlbumsRequest) (response *ListAlbumsResponse, err error) {
 	response = CreateListAlbumsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAlbums api with *ListAlbumsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbums.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumsWithChan(request *ListAlbumsRequest) (<-chan *ListAlbumsResponse, <-chan error) {
 	responseChan := make(chan *ListAlbumsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAlbumsWithChan(request *ListAlbumsRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
+// invoke ListAlbums api with *ListAlbumsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbums.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumsWithCallback(request *ListAlbumsRequest, callback func(response *ListAlbumsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ListAlbumsResponse struct {
 	Albums     []Album `json:"Albums" xml:"Albums"`
 }
 
+// create a request to invoke ListAlbums API
 func CreateListAlbumsRequest() (request *ListAlbumsRequest) {
 	request = &ListAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateListAlbumsRequest() (request *ListAlbumsRequest) {
 	return
 }
 
+// create a response to parse from ListAlbums response
 func CreateListAlbumsResponse() (response *ListAlbumsResponse) {
 	response = &ListAlbumsResponse{
 		BaseResponse: &responses.BaseResponse{},

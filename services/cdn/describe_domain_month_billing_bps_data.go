@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
 func (client *Client) DescribeDomainMonthBillingBpsData(request *DescribeDomainMonthBillingBpsDataRequest) (response *DescribeDomainMonthBillingBpsDataResponse, err error) {
 	response = CreateDescribeDomainMonthBillingBpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMonthBillingBpsDataWithChan(request *DescribeDomainMonthBillingBpsDataRequest) (<-chan *DescribeDomainMonthBillingBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainMonthBillingBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainMonthBillingBpsDataWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMonthBillingBpsDataWithCallback(request *DescribeDomainMonthBillingBpsDataRequest, callback func(response *DescribeDomainMonthBillingBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescribeDomainMonthBillingBpsDataResponse struct {
 	OverseasMonth4thBps    float64 `json:"OverseasMonth4thBps" xml:"OverseasMonth4thBps"`
 }
 
+// create a request to invoke DescribeDomainMonthBillingBpsData API
 func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMonthBillingBpsDataRequest) {
 	request = &DescribeDomainMonthBillingBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMo
 	return
 }
 
+// create a response to parse from DescribeDomainMonthBillingBpsData response
 func CreateDescribeDomainMonthBillingBpsDataResponse() (response *DescribeDomainMonthBillingBpsDataResponse) {
 	response = &DescribeDomainMonthBillingBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

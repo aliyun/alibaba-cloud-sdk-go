@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
 func (client *Client) SetIpAllowListConfig(request *SetIpAllowListConfigRequest) (response *SetIpAllowListConfigResponse, err error) {
 	response = CreateSetIpAllowListConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfigRequest) (<-chan *SetIpAllowListConfigResponse, <-chan error) {
 	responseChan := make(chan *SetIpAllowListConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfig
 	return responseChan, errChan
 }
 
+// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListConfigRequest, callback func(response *SetIpAllowListConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetIpAllowListConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetIpAllowListConfig API
 func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) {
 	request = &SetIpAllowListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) 
 	return
 }
 
+// create a response to parse from SetIpAllowListConfig response
 func CreateSetIpAllowListConfigResponse() (response *SetIpAllowListConfigResponse) {
 	response = &SetIpAllowListConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

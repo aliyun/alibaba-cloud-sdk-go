@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
 func (client *Client) QuerySnapshotJobList(request *QuerySnapshotJobListRequest) (response *QuerySnapshotJobListResponse, err error) {
 	response = CreateQuerySnapshotJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobListRequest) (<-chan *QuerySnapshotJobListResponse, <-chan error) {
 	responseChan := make(chan *QuerySnapshotJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobList
 	return responseChan, errChan
 }
 
+// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJobListRequest, callback func(response *QuerySnapshotJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QuerySnapshotJobListResponse struct {
 	SnapshotJobList        SnapshotJobList        `json:"SnapshotJobList" xml:"SnapshotJobList"`
 }
 
+// create a request to invoke QuerySnapshotJobList API
 func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) {
 	request = &QuerySnapshotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) 
 	return
 }
 
+// create a response to parse from QuerySnapshotJobList response
 func CreateQuerySnapshotJobListResponse() (response *QuerySnapshotJobListResponse) {
 	response = &QuerySnapshotJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
 func (client *Client) DescribeImportsForSQLServer(request *DescribeImportsForSQLServerRequest) (response *DescribeImportsForSQLServerResponse, err error) {
 	response = CreateDescribeImportsForSQLServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImportsForSQLServerRequest) (<-chan *DescribeImportsForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *DescribeImportsForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImpor
 	return responseChan, errChan
 }
 
+// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeImportsForSQLServerRequest, callback func(response *DescribeImportsForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeImportsForSQLServerResponse struct {
 	Items             ItemsInDescribeImportsForSQLServer `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeImportsForSQLServer API
 func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {
 	request = &DescribeImportsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLS
 	return
 }
 
+// create a response to parse from DescribeImportsForSQLServer response
 func CreateDescribeImportsForSQLServerResponse() (response *DescribeImportsForSQLServerResponse) {
 	response = &DescribeImportsForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

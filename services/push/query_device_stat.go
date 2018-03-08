@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDeviceStat api with *QueryDeviceStatRequest synchronously
+// api document: https://help.aliyun.com/api/push/querydevicestat.html
 func (client *Client) QueryDeviceStat(request *QueryDeviceStatRequest) (response *QueryDeviceStatResponse, err error) {
 	response = CreateQueryDeviceStatResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDeviceStat api with *QueryDeviceStatRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querydevicestat.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceStatWithChan(request *QueryDeviceStatRequest) (<-chan *QueryDeviceStatResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceStatResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDeviceStatWithChan(request *QueryDeviceStatRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryDeviceStat api with *QueryDeviceStatRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querydevicestat.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatRequest, callback func(response *QueryDeviceStatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type QueryDeviceStatResponse struct {
 	AppDeviceStats AppDeviceStatsInQueryDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
+// create a request to invoke QueryDeviceStat API
 func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {
 	request = &QueryDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {
 	return
 }
 
+// create a response to parse from QueryDeviceStat response
 func CreateQueryDeviceStatResponse() (response *QueryDeviceStatResponse) {
 	response = &QueryDeviceStatResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInvocationResults api with *DescribeInvocationResultsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocationresults.html
 func (client *Client) DescribeInvocationResults(request *DescribeInvocationResultsRequest) (response *DescribeInvocationResultsResponse, err error) {
 	response = CreateDescribeInvocationResultsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInvocationResults api with *DescribeInvocationResultsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocationresults.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationResultsWithChan(request *DescribeInvocationResultsRequest) (<-chan *DescribeInvocationResultsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInvocationResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInvocationResultsWithChan(request *DescribeInvocat
 	return responseChan, errChan
 }
 
+// invoke DescribeInvocationResults api with *DescribeInvocationResultsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocationresults.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationResultsWithCallback(request *DescribeInvocationResultsRequest, callback func(response *DescribeInvocationResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeInvocationResultsResponse struct {
 	Invocation Invocation `json:"Invocation" xml:"Invocation"`
 }
 
+// create a request to invoke DescribeInvocationResults API
 func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResultsRequest) {
 	request = &DescribeInvocationResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResult
 	return
 }
 
+// create a response to parse from DescribeInvocationResults response
 func CreateDescribeInvocationResultsResponse() (response *DescribeInvocationResultsResponse) {
 	response = &DescribeInvocationResultsResponse{
 		BaseResponse: &responses.BaseResponse{},

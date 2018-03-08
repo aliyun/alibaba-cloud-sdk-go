@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeL2VipsByDomain api with *DescribeL2VipsByDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describel2vipsbydomain.html
 func (client *Client) DescribeL2VipsByDomain(request *DescribeL2VipsByDomainRequest) (response *DescribeL2VipsByDomainResponse, err error) {
 	response = CreateDescribeL2VipsByDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeL2VipsByDomain api with *DescribeL2VipsByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describel2vipsbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeL2VipsByDomainWithChan(request *DescribeL2VipsByDomainRequest) (<-chan *DescribeL2VipsByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeL2VipsByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeL2VipsByDomainWithChan(request *DescribeL2VipsByDo
 	return responseChan, errChan
 }
 
+// invoke DescribeL2VipsByDomain api with *DescribeL2VipsByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describel2vipsbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeL2VipsByDomainWithCallback(request *DescribeL2VipsByDomainRequest, callback func(response *DescribeL2VipsByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DescribeL2VipsByDomainResponse struct {
 	Vips       VipsInDescribeL2VipsByDomain `json:"Vips" xml:"Vips"`
 }
 
+// create a request to invoke DescribeL2VipsByDomain API
 func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainRequest) {
 	request = &DescribeL2VipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainReque
 	return
 }
 
+// create a response to parse from DescribeL2VipsByDomain response
 func CreateDescribeL2VipsByDomainResponse() (response *DescribeL2VipsByDomainResponse) {
 	response = &DescribeL2VipsByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MigrateMarket api with *MigrateMarketRequest synchronously
+// api document: https://help.aliyun.com/api/dm/migratemarket.html
 func (client *Client) MigrateMarket(request *MigrateMarketRequest) (response *MigrateMarketResponse, err error) {
 	response = CreateMigrateMarketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MigrateMarket api with *MigrateMarketRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/migratemarket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-chan *MigrateMarketResponse, <-chan error) {
 	responseChan := make(chan *MigrateMarketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke MigrateMarket api with *MigrateMarketRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/migratemarket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateMarketWithCallback(request *MigrateMarketRequest, callback func(response *MigrateMarketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type MigrateMarketResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke MigrateMarket API
 func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
 	request = &MigrateMarketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
 	return
 }
 
+// create a response to parse from MigrateMarket response
 func CreateMigrateMarketResponse() (response *MigrateMarketResponse) {
 	response = &MigrateMarketResponse{
 		BaseResponse: &responses.BaseResponse{},

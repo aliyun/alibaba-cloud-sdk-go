@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
 func (client *Client) QueryCustomMetricList(request *QueryCustomMetricListRequest) (response *QueryCustomMetricListResponse, err error) {
 	response = CreateQueryCustomMetricListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomMetricListWithChan(request *QueryCustomMetricListRequest) (<-chan *QueryCustomMetricListResponse, <-chan error) {
 	responseChan := make(chan *QueryCustomMetricListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCustomMetricListWithChan(request *QueryCustomMetricLi
 	return responseChan, errChan
 }
 
+// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetricListRequest, callback func(response *QueryCustomMetricListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type QueryCustomMetricListResponse struct {
 	Result    string `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke QueryCustomMetricList API
 func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest) {
 	request = &QueryCustomMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest
 	return
 }
 
+// create a response to parse from QueryCustomMetricList response
 func CreateQueryCustomMetricListResponse() (response *QueryCustomMetricListResponse) {
 	response = &QueryCustomMetricListResponse{
 		BaseResponse: &responses.BaseResponse{},

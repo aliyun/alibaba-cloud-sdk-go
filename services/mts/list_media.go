@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMedia api with *ListMediaRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listmedia.html
 func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaResponse, err error) {
 	response = CreateListMediaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMedia api with *ListMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listmedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *ListMediaResponse, <-chan error) {
 	responseChan := make(chan *ListMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListMedia api with *ListMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listmedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback func(response *ListMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ListMediaResponse struct {
 	MediaList     MediaListInListMedia `json:"MediaList" xml:"MediaList"`
 }
 
+// create a request to invoke ListMedia API
 func CreateListMediaRequest() (request *ListMediaRequest) {
 	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateListMediaRequest() (request *ListMediaRequest) {
 	return
 }
 
+// create a response to parse from ListMedia response
 func CreateListMediaResponse() (response *ListMediaResponse) {
 	response = &ListMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

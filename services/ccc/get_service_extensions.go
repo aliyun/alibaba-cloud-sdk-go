@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetServiceExtensions api with *GetServiceExtensionsRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
 func (client *Client) GetServiceExtensions(request *GetServiceExtensionsRequest) (response *GetServiceExtensionsResponse, err error) {
 	response = CreateGetServiceExtensionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetServiceExtensions api with *GetServiceExtensionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensionsRequest) (<-chan *GetServiceExtensionsResponse, <-chan error) {
 	responseChan := make(chan *GetServiceExtensionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensions
 	return responseChan, errChan
 }
 
+// invoke GetServiceExtensions api with *GetServiceExtensionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtensionsRequest, callback func(response *GetServiceExtensionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetServiceExtensionsResponse struct {
 	ServiceExtensions ServiceExtensions `json:"ServiceExtensions" xml:"ServiceExtensions"`
 }
 
+// create a request to invoke GetServiceExtensions API
 func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) {
 	request = &GetServiceExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) 
 	return
 }
 
+// create a response to parse from GetServiceExtensions response
 func CreateGetServiceExtensionsResponse() (response *GetServiceExtensionsResponse) {
 	response = &GetServiceExtensionsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
 func (client *Client) CreateSecurityGroup(request *CreateSecurityGroupRequest) (response *CreateSecurityGroupResponse, err error) {
 	response = CreateCreateSecurityGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecurityGroupWithChan(request *CreateSecurityGroupRequest) (<-chan *CreateSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSecurityGroupWithChan(request *CreateSecurityGroupRe
 	return responseChan, errChan
 }
 
+// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGroupRequest, callback func(response *CreateSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type CreateSecurityGroupResponse struct {
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 }
 
+// create a request to invoke CreateSecurityGroup API
 func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	request = &CreateSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateSecurityGroup response
 func CreateCreateSecurityGroupResponse() (response *CreateSecurityGroupResponse) {
 	response = &CreateSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

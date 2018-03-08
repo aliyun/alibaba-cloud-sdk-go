@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForTransferProhibitionLock api with *SaveSingleTaskForTransferProhibitionLockRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskfortransferprohibitionlock.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLock(request *SaveSingleTaskForTransferProhibitionLockRequest) (response *SaveSingleTaskForTransferProhibitionLockResponse, err error) {
 	response = CreateSaveSingleTaskForTransferProhibitionLockResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForTransferProhibitionLock api with *SaveSingleTaskForTransferProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskfortransferprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLockWithChan(request *SaveSingleTaskForTransferProhibitionLockRequest) (<-chan *SaveSingleTaskForTransferProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForTransferProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForTransferProhibitionLockWithChan(request *
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForTransferProhibitionLock api with *SaveSingleTaskForTransferProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskfortransferprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForTransferProhibitionLockWithCallback(request *SaveSingleTaskForTransferProhibitionLockRequest, callback func(response *SaveSingleTaskForTransferProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SaveSingleTaskForTransferProhibitionLockResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForTransferProhibitionLock API
 func CreateSaveSingleTaskForTransferProhibitionLockRequest() (request *SaveSingleTaskForTransferProhibitionLockRequest) {
 	request = &SaveSingleTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSaveSingleTaskForTransferProhibitionLockRequest() (request *SaveSingl
 	return
 }
 
+// create a response to parse from SaveSingleTaskForTransferProhibitionLock response
 func CreateSaveSingleTaskForTransferProhibitionLockResponse() (response *SaveSingleTaskForTransferProhibitionLockResponse) {
 	response = &SaveSingleTaskForTransferProhibitionLockResponse{
 		BaseResponse: &responses.BaseResponse{},

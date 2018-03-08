@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
 func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequest) (response *AddLiveAppRecordConfigResponse, err error) {
 	response = CreateAddLiveAppRecordConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordConfigRequest) (<-chan *AddLiveAppRecordConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAppRecordConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordCo
 	return responseChan, errChan
 }
 
+// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppRecordConfigRequest, callback func(response *AddLiveAppRecordConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AddLiveAppRecordConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddLiveAppRecordConfig API
 func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigRequest) {
 	request = &AddLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigReque
 	return
 }
 
+// create a response to parse from AddLiveAppRecordConfig response
 func CreateAddLiveAppRecordConfigResponse() (response *AddLiveAppRecordConfigResponse) {
 	response = &AddLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

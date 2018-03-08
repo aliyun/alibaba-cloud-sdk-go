@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCACertificates api with *DescribeCACertificatesRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describecacertificates.html
 func (client *Client) DescribeCACertificates(request *DescribeCACertificatesRequest) (response *DescribeCACertificatesResponse, err error) {
 	response = CreateDescribeCACertificatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCACertificates api with *DescribeCACertificatesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describecacertificates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCACertificatesWithChan(request *DescribeCACertificatesRequest) (<-chan *DescribeCACertificatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCACertificatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCACertificatesWithChan(request *DescribeCACertific
 	return responseChan, errChan
 }
 
+// invoke DescribeCACertificates api with *DescribeCACertificatesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describecacertificates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACertificatesRequest, callback func(response *DescribeCACertificatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeCACertificatesResponse struct {
 	CACertificates CACertificates `json:"CACertificates" xml:"CACertificates"`
 }
 
+// create a request to invoke DescribeCACertificates API
 func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesRequest) {
 	request = &DescribeCACertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesReque
 	return
 }
 
+// create a response to parse from DescribeCACertificates response
 func CreateDescribeCACertificatesResponse() (response *DescribeCACertificatesResponse) {
 	response = &DescribeCACertificatesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
 func (client *Client) SetPathCacheExpiredConfig(request *SetPathCacheExpiredConfigRequest) (response *SetPathCacheExpiredConfigResponse, err error) {
 	response = CreateSetPathCacheExpiredConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExpiredConfigRequest) (<-chan *SetPathCacheExpiredConfigResponse, <-chan error) {
 	responseChan := make(chan *SetPathCacheExpiredConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExp
 	return responseChan, errChan
 }
 
+// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithCallback(request *SetPathCacheExpiredConfigRequest, callback func(response *SetPathCacheExpiredConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetPathCacheExpiredConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetPathCacheExpiredConfig API
 func CreateSetPathCacheExpiredConfigRequest() (request *SetPathCacheExpiredConfigRequest) {
 	request = &SetPathCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetPathCacheExpiredConfigRequest() (request *SetPathCacheExpiredConfi
 	return
 }
 
+// create a response to parse from SetPathCacheExpiredConfig response
 func CreateSetPathCacheExpiredConfigResponse() (response *SetPathCacheExpiredConfigResponse) {
 	response = &SetPathCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

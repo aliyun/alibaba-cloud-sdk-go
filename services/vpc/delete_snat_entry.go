@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSnatEntry api with *DeleteSnatEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletesnatentry.html
 func (client *Client) DeleteSnatEntry(request *DeleteSnatEntryRequest) (response *DeleteSnatEntryResponse, err error) {
 	response = CreateDeleteSnatEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSnatEntry api with *DeleteSnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnatEntryWithChan(request *DeleteSnatEntryRequest) (<-chan *DeleteSnatEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteSnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSnatEntryWithChan(request *DeleteSnatEntryRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeleteSnatEntry api with *DeleteSnatEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesnatentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnatEntryWithCallback(request *DeleteSnatEntryRequest, callback func(response *DeleteSnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteSnatEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteSnatEntry API
 func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
 	request = &DeleteSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
 	return
 }
 
+// create a response to parse from DeleteSnatEntry response
 func CreateDeleteSnatEntryResponse() (response *DeleteSnatEntryResponse) {
 	response = &DeleteSnatEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

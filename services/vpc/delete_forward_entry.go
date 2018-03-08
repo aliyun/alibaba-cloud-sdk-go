@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
 func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (response *DeleteForwardEntryResponse, err error) {
 	response = CreateDeleteForwardEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequest) (<-chan *DeleteForwardEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteForwardEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntryRequest, callback func(response *DeleteForwardEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteForwardEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteForwardEntry API
 func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
 	request = &DeleteForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
 	return
 }
 
+// create a response to parse from DeleteForwardEntry response
 func CreateDeleteForwardEntryResponse() (response *DeleteForwardEntryResponse) {
 	response = &DeleteForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

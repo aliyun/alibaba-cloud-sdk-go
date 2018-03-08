@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
 func (client *Client) DescribeLoadBalancersRelatedEcs(request *DescribeLoadBalancersRelatedEcsRequest) (response *DescribeLoadBalancersRelatedEcsResponse, err error) {
 	response = CreateDescribeLoadBalancersRelatedEcsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersRelatedEcsWithChan(request *DescribeLoadBalancersRelatedEcsRequest) (<-chan *DescribeLoadBalancersRelatedEcsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancersRelatedEcsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoadBalancersRelatedEcsWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersRelatedEcsWithCallback(request *DescribeLoadBalancersRelatedEcsRequest, callback func(response *DescribeLoadBalancersRelatedEcsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeLoadBalancersRelatedEcsResponse struct {
 	LoadBalancers LoadBalancersInDescribeLoadBalancersRelatedEcs `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
+// create a request to invoke DescribeLoadBalancersRelatedEcs API
 func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalancersRelatedEcsRequest) {
 	request = &DescribeLoadBalancersRelatedEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalanc
 	return
 }
 
+// create a response to parse from DescribeLoadBalancersRelatedEcs response
 func CreateDescribeLoadBalancersRelatedEcsResponse() (response *DescribeLoadBalancersRelatedEcsResponse) {
 	response = &DescribeLoadBalancersRelatedEcsResponse{
 		BaseResponse: &responses.BaseResponse{},

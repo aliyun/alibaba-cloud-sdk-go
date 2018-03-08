@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
 func (client *Client) DescribeLoadBalancers(request *DescribeLoadBalancersRequest) (response *DescribeLoadBalancersResponse, err error) {
 	response = CreateDescribeLoadBalancersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersWithChan(request *DescribeLoadBalancersRequest) (<-chan *DescribeLoadBalancersResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoadBalancersWithChan(request *DescribeLoadBalance
 	return responseChan, errChan
 }
 
+// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBalancersRequest, callback func(response *DescribeLoadBalancersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +108,7 @@ type DescribeLoadBalancersResponse struct {
 	LoadBalancers LoadBalancersInDescribeLoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
+// create a request to invoke DescribeLoadBalancers API
 func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest) {
 	request = &DescribeLoadBalancersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -108,6 +117,7 @@ func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest
 	return
 }
 
+// create a response to parse from DescribeLoadBalancers response
 func CreateDescribeLoadBalancersResponse() (response *DescribeLoadBalancersResponse) {
 	response = &DescribeLoadBalancersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeGlobalAccelerationInstances api with *DescribeGlobalAccelerationInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
 func (client *Client) DescribeGlobalAccelerationInstances(request *DescribeGlobalAccelerationInstancesRequest) (response *DescribeGlobalAccelerationInstancesResponse, err error) {
 	response = CreateDescribeGlobalAccelerationInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeGlobalAccelerationInstances api with *DescribeGlobalAccelerationInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalAccelerationInstancesWithChan(request *DescribeGlobalAccelerationInstancesRequest) (<-chan *DescribeGlobalAccelerationInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeGlobalAccelerationInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeGlobalAccelerationInstancesWithChan(request *Descr
 	return responseChan, errChan
 }
 
+// invoke DescribeGlobalAccelerationInstances api with *DescribeGlobalAccelerationInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalAccelerationInstancesWithCallback(request *DescribeGlobalAccelerationInstancesRequest, callback func(response *DescribeGlobalAccelerationInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type DescribeGlobalAccelerationInstancesResponse struct {
 	GlobalAccelerationInstances GlobalAccelerationInstancesInDescribeGlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
+// create a request to invoke DescribeGlobalAccelerationInstances API
 func CreateDescribeGlobalAccelerationInstancesRequest() (request *DescribeGlobalAccelerationInstancesRequest) {
 	request = &DescribeGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateDescribeGlobalAccelerationInstancesRequest() (request *DescribeGlobal
 	return
 }
 
+// create a response to parse from DescribeGlobalAccelerationInstances response
 func CreateDescribeGlobalAccelerationInstancesResponse() (response *DescribeGlobalAccelerationInstancesResponse) {
 	response = &DescribeGlobalAccelerationInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

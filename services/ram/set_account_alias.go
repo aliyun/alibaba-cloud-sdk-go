@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetAccountAlias api with *SetAccountAliasRequest synchronously
+// api document: https://help.aliyun.com/api/ram/setaccountalias.html
 func (client *Client) SetAccountAlias(request *SetAccountAliasRequest) (response *SetAccountAliasResponse, err error) {
 	response = CreateSetAccountAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetAccountAlias api with *SetAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (<-chan *SetAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *SetAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (
 	return responseChan, errChan
 }
 
+// invoke SetAccountAlias api with *SetAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithCallback(request *SetAccountAliasRequest, callback func(response *SetAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type SetAccountAliasResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetAccountAlias API
 func CreateSetAccountAliasRequest() (request *SetAccountAliasRequest) {
 	request = &SetAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateSetAccountAliasRequest() (request *SetAccountAliasRequest) {
 	return
 }
 
+// create a response to parse from SetAccountAlias response
 func CreateSetAccountAliasResponse() (response *SetAccountAliasResponse) {
 	response = &SetAccountAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

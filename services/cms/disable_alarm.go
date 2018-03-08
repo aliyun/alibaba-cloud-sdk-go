@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DisableAlarm api with *DisableAlarmRequest synchronously
+// api document: https://help.aliyun.com/api/cms/disablealarm.html
 func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *DisableAlarmResponse, err error) {
 	response = CreateDisableAlarmResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DisableAlarm api with *DisableAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disablealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan *DisableAlarmResponse, <-chan error) {
 	responseChan := make(chan *DisableAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DisableAlarm api with *DisableAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disablealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, callback func(response *DisableAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DisableAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DisableAlarm API
 func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 	request = &DisableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 	return
 }
 
+// create a response to parse from DisableAlarm response
 func CreateDisableAlarmResponse() (response *DisableAlarmResponse) {
 	response = &DisableAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

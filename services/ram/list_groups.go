@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListGroups api with *ListGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listgroups.html
 func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGroupsResponse, err error) {
 	response = CreateListGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListGroups api with *ListGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *ListGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
+// invoke ListGroups api with *ListGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListGroupsResponse struct {
 	Groups      GroupsInListGroups `json:"Groups" xml:"Groups"`
 }
 
+// create a request to invoke ListGroups API
 func CreateListGroupsRequest() (request *ListGroupsRequest) {
 	request = &ListGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListGroupsRequest() (request *ListGroupsRequest) {
 	return
 }
 
+// create a response to parse from ListGroups response
 func CreateListGroupsResponse() (response *ListGroupsResponse) {
 	response = &ListGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

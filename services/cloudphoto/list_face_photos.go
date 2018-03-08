@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListFacePhotos api with *ListFacePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfacephotos.html
 func (client *Client) ListFacePhotos(request *ListFacePhotosRequest) (response *ListFacePhotosResponse, err error) {
 	response = CreateListFacePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListFacePhotos api with *ListFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacePhotosWithChan(request *ListFacePhotosRequest) (<-chan *ListFacePhotosResponse, <-chan error) {
 	responseChan := make(chan *ListFacePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListFacePhotosWithChan(request *ListFacePhotosRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ListFacePhotos api with *ListFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacePhotosWithCallback(request *ListFacePhotosRequest, callback func(response *ListFacePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListFacePhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ListFacePhotos API
 func CreateListFacePhotosRequest() (request *ListFacePhotosRequest) {
 	request = &ListFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListFacePhotosRequest() (request *ListFacePhotosRequest) {
 	return
 }
 
+// create a response to parse from ListFacePhotos response
 func CreateListFacePhotosResponse() (response *ListFacePhotosResponse) {
 	response = &ListFacePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

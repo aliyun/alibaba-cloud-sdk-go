@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserDomains api with *DescribeUserDomainsRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserdomains.html
 func (client *Client) DescribeUserDomains(request *DescribeUserDomainsRequest) (response *DescribeUserDomainsResponse, err error) {
 	response = CreateDescribeUserDomainsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserDomains api with *DescribeUserDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDomainsWithChan(request *DescribeUserDomainsRequest) (<-chan *DescribeUserDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserDomainsWithChan(request *DescribeUserDomainsRe
 	return responseChan, errChan
 }
 
+// invoke DescribeUserDomains api with *DescribeUserDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomainsRequest, callback func(response *DescribeUserDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type DescribeUserDomainsResponse struct {
 	Domains    DomainsInDescribeUserDomains `json:"Domains" xml:"Domains"`
 }
 
+// create a request to invoke DescribeUserDomains API
 func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
 	request = &DescribeUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
 	return
 }
 
+// create a response to parse from DescribeUserDomains response
 func CreateDescribeUserDomainsResponse() (response *DescribeUserDomainsResponse) {
 	response = &DescribeUserDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

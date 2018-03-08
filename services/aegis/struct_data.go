@@ -16,21 +16,13 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Data struct {
-	CrackSuccess   int                   `json:"CrackSuccess" xml:"CrackSuccess"`
-	Name           string                `json:"Name" xml:"Name"`
-	EcsCount       int                   `json:"EcsCount" xml:"EcsCount"`
-	Account        int                   `json:"Account" xml:"Account"`
-	CycleDays      int                   `json:"CycleDays" xml:"CycleDays"`
-	Health         int                   `json:"Health" xml:"Health"`
-	Intercepted    int                   `json:"Intercepted" xml:"Intercepted"`
-	Patch          int                   `json:"Patch" xml:"Patch"`
-	RiskCount      int                   `json:"RiskCount" xml:"RiskCount"`
-	RemoteLogin    int                   `json:"RemoteLogin" xml:"RemoteLogin"`
-	CycleStartTime int                   `json:"CycleStartTime" xml:"CycleStartTime"`
-	Id             int                   `json:"Id" xml:"Id"`
-	Type           int                   `json:"Type" xml:"Type"`
-	Trojan         int                   `json:"Trojan" xml:"Trojan"`
-	PageInfo       PageInfo              `json:"PageInfo" xml:"PageInfo"`
-	List           ListInQueryCrackEvent `json:"List" xml:"List"`
-	ConfigTargets  ConfigTargets         `json:"ConfigTargets" xml:"ConfigTargets"`
+	Intercepted  int                   `json:"Intercepted" xml:"Intercepted"`
+	Patch        int                   `json:"Patch" xml:"Patch"`
+	RemoteLogin  int                   `json:"RemoteLogin" xml:"RemoteLogin"`
+	CrackSuccess int                   `json:"CrackSuccess" xml:"CrackSuccess"`
+	Account      int                   `json:"Account" xml:"Account"`
+	Health       int                   `json:"Health" xml:"Health"`
+	Trojan       int                   `json:"Trojan" xml:"Trojan"`
+	PageInfo     PageInfo              `json:"PageInfo" xml:"PageInfo"`
+	List         ListInQueryCrackEvent `json:"List" xml:"List"`
 }

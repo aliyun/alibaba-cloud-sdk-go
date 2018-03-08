@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
 func (client *Client) QueryVideoGifJobList(request *QueryVideoGifJobListRequest) (response *QueryVideoGifJobListResponse, err error) {
 	response = CreateQueryVideoGifJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoGifJobListWithChan(request *QueryVideoGifJobListRequest) (<-chan *QueryVideoGifJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryVideoGifJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryVideoGifJobListWithChan(request *QueryVideoGifJobList
 	return responseChan, errChan
 }
 
+// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoGifJobListWithCallback(request *QueryVideoGifJobListRequest, callback func(response *QueryVideoGifJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryVideoGifJobListResponse struct {
 	JobList     JobListInQueryVideoGifJobList     `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryVideoGifJobList API
 func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) {
 	request = &QueryVideoGifJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) 
 	return
 }
 
+// create a response to parse from QueryVideoGifJobList response
 func CreateQueryVideoGifJobListResponse() (response *QueryVideoGifJobListResponse) {
 	response = &QueryVideoGifJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

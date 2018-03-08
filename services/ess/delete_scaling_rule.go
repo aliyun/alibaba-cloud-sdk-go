@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteScalingRule api with *DeleteScalingRuleRequest synchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingrule.html
 func (client *Client) DeleteScalingRule(request *DeleteScalingRuleRequest) (response *DeleteScalingRuleResponse, err error) {
 	response = CreateDeleteScalingRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteScalingRule api with *DeleteScalingRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleRequest) (<-chan *DeleteScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleReques
 	return responseChan, errChan
 }
 
+// invoke DeleteScalingRule api with *DeleteScalingRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithCallback(request *DeleteScalingRuleRequest, callback func(response *DeleteScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteScalingRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteScalingRule API
 func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 	request = &DeleteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 	return
 }
 
+// create a response to parse from DeleteScalingRule response
 func CreateDeleteScalingRuleResponse() (response *DeleteScalingRuleResponse) {
 	response = &DeleteScalingRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

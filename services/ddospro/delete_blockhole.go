@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteBlockhole api with *DeleteBlockholeRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
 func (client *Client) DeleteBlockhole(request *DeleteBlockholeRequest) (response *DeleteBlockholeResponse, err error) {
 	response = CreateDeleteBlockholeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteBlockhole api with *DeleteBlockholeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlockholeWithChan(request *DeleteBlockholeRequest) (<-chan *DeleteBlockholeResponse, <-chan error) {
 	responseChan := make(chan *DeleteBlockholeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteBlockholeWithChan(request *DeleteBlockholeRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeleteBlockhole api with *DeleteBlockholeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlockholeWithCallback(request *DeleteBlockholeRequest, callback func(response *DeleteBlockholeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DeleteBlockholeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteBlockhole API
 func CreateDeleteBlockholeRequest() (request *DeleteBlockholeRequest) {
 	request = &DeleteBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDeleteBlockholeRequest() (request *DeleteBlockholeRequest) {
 	return
 }
 
+// create a response to parse from DeleteBlockhole response
 func CreateDeleteBlockholeResponse() (response *DeleteBlockholeResponse) {
 	response = &DeleteBlockholeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
 func (client *Client) ListNodesNoPaging(request *ListNodesNoPagingRequest) (response *ListNodesNoPagingResponse, err error) {
 	response = CreateListNodesNoPagingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingRequest) (<-chan *ListNodesNoPagingResponse, <-chan error) {
 	responseChan := make(chan *ListNodesNoPagingResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingReques
 	return responseChan, errChan
 }
 
+// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRequest, callback func(response *ListNodesNoPagingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ListNodesNoPagingResponse struct {
 	Nodes      NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
 }
 
+// create a request to invoke ListNodesNoPaging API
 func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	return
 }
 
+// create a response to parse from ListNodesNoPaging response
 func CreateListNodesNoPagingResponse() (response *ListNodesNoPagingResponse) {
 	response = &ListNodesNoPagingResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPolicyVersions api with *ListPolicyVersionsRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpolicyversions.html
 func (client *Client) ListPolicyVersions(request *ListPolicyVersionsRequest) (response *ListPolicyVersionsResponse, err error) {
 	response = CreateListPolicyVersionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPolicyVersions api with *ListPolicyVersionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpolicyversions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPolicyVersionsWithChan(request *ListPolicyVersionsRequest) (<-chan *ListPolicyVersionsResponse, <-chan error) {
 	responseChan := make(chan *ListPolicyVersionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPolicyVersionsWithChan(request *ListPolicyVersionsRequ
 	return responseChan, errChan
 }
 
+// invoke ListPolicyVersions api with *ListPolicyVersionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpolicyversions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPolicyVersionsWithCallback(request *ListPolicyVersionsRequest, callback func(response *ListPolicyVersionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ListPolicyVersionsResponse struct {
 	PolicyVersions PolicyVersions `json:"PolicyVersions" xml:"PolicyVersions"`
 }
 
+// create a request to invoke ListPolicyVersions API
 func CreateListPolicyVersionsRequest() (request *ListPolicyVersionsRequest) {
 	request = &ListPolicyVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateListPolicyVersionsRequest() (request *ListPolicyVersionsRequest) {
 	return
 }
 
+// create a response to parse from ListPolicyVersions response
 func CreateListPolicyVersionsResponse() (response *ListPolicyVersionsResponse) {
 	response = &ListPolicyVersionsResponse{
 		BaseResponse: &responses.BaseResponse{},

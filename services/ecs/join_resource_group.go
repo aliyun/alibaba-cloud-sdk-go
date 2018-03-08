@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke JoinResourceGroup api with *JoinResourceGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
 func (client *Client) JoinResourceGroup(request *JoinResourceGroupRequest) (response *JoinResourceGroupResponse, err error) {
 	response = CreateJoinResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke JoinResourceGroup api with *JoinResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinResourceGroupWithChan(request *JoinResourceGroupRequest) (<-chan *JoinResourceGroupResponse, <-chan error) {
 	responseChan := make(chan *JoinResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) JoinResourceGroupWithChan(request *JoinResourceGroupReques
 	return responseChan, errChan
 }
 
+// invoke JoinResourceGroup api with *JoinResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinResourceGroupWithCallback(request *JoinResourceGroupRequest, callback func(response *JoinResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type JoinResourceGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke JoinResourceGroup API
 func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 	request = &JoinResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 	return
 }
 
+// create a response to parse from JoinResourceGroup response
 func CreateJoinResourceGroupResponse() (response *JoinResourceGroupResponse) {
 	response = &JoinResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

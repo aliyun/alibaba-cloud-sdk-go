@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeScalingActivities api with *DescribeScalingActivitiesRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
 func (client *Client) DescribeScalingActivities(request *DescribeScalingActivitiesRequest) (response *DescribeScalingActivitiesResponse, err error) {
 	response = CreateDescribeScalingActivitiesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeScalingActivities api with *DescribeScalingActivitiesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivitiesWithChan(request *DescribeScalingActivitiesRequest) (<-chan *DescribeScalingActivitiesResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingActivitiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeScalingActivitiesWithChan(request *DescribeScaling
 	return responseChan, errChan
 }
 
+// invoke DescribeScalingActivities api with *DescribeScalingActivitiesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivitiesWithCallback(request *DescribeScalingActivitiesRequest, callback func(response *DescribeScalingActivitiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +114,7 @@ type DescribeScalingActivitiesResponse struct {
 	ScalingActivities ScalingActivities `json:"ScalingActivities" xml:"ScalingActivities"`
 }
 
+// create a request to invoke DescribeScalingActivities API
 func CreateDescribeScalingActivitiesRequest() (request *DescribeScalingActivitiesRequest) {
 	request = &DescribeScalingActivitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -114,6 +123,7 @@ func CreateDescribeScalingActivitiesRequest() (request *DescribeScalingActivitie
 	return
 }
 
+// create a response to parse from DescribeScalingActivities response
 func CreateDescribeScalingActivitiesResponse() (response *DescribeScalingActivitiesResponse) {
 	response = &DescribeScalingActivitiesResponse{
 		BaseResponse: &responses.BaseResponse{},

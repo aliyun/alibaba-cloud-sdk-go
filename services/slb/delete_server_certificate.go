@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteServerCertificate api with *DeleteServerCertificateRequest synchronously
+// api document: https://help.aliyun.com/api/slb/deleteservercertificate.html
 func (client *Client) DeleteServerCertificate(request *DeleteServerCertificateRequest) (response *DeleteServerCertificateResponse, err error) {
 	response = CreateDeleteServerCertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteServerCertificate api with *DeleteServerCertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteservercertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteServerCertificateWithChan(request *DeleteServerCertificateRequest) (<-chan *DeleteServerCertificateResponse, <-chan error) {
 	responseChan := make(chan *DeleteServerCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteServerCertificateWithChan(request *DeleteServerCerti
 	return responseChan, errChan
 }
 
+// invoke DeleteServerCertificate api with *DeleteServerCertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteservercertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteServerCertificateWithCallback(request *DeleteServerCertificateRequest, callback func(response *DeleteServerCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteServerCertificateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteServerCertificate API
 func CreateDeleteServerCertificateRequest() (request *DeleteServerCertificateRequest) {
 	request = &DeleteServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteServerCertificateRequest() (request *DeleteServerCertificateReq
 	return
 }
 
+// create a response to parse from DeleteServerCertificate response
 func CreateDeleteServerCertificateResponse() (response *DeleteServerCertificateResponse) {
 	response = &DeleteServerCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

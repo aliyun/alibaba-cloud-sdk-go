@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
 func (client *Client) DescribeLiveStreamDomainAppInfo(request *DescribeLiveStreamDomainAppInfoRequest) (response *DescribeLiveStreamDomainAppInfoResponse, err error) {
 	response = CreateDescribeLiveStreamDomainAppInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDomainAppInfoWithChan(request *DescribeLiveStreamDomainAppInfoRequest) (<-chan *DescribeLiveStreamDomainAppInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamDomainAppInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *DescribeLiveStreamDomainAppInfoRequest, callback func(response *DescribeLiveStreamDomainAppInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeLiveStreamDomainAppInfoResponse struct {
 	DomainAppList DomainAppList `json:"DomainAppList" xml:"DomainAppList"`
 }
 
+// create a request to invoke DescribeLiveStreamDomainAppInfo API
 func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStreamDomainAppInfoRequest) {
 	request = &DescribeLiveStreamDomainAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStream
 	return
 }
 
+// create a response to parse from DescribeLiveStreamDomainAppInfo response
 func CreateDescribeLiveStreamDomainAppInfoResponse() (response *DescribeLiveStreamDomainAppInfoResponse) {
 	response = &DescribeLiveStreamDomainAppInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

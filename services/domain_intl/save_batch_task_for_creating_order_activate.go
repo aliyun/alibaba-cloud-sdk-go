@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveBatchTaskForCreatingOrderActivate api with *SaveBatchTaskForCreatingOrderActivateRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderactivate.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivate(request *SaveBatchTaskForCreatingOrderActivateRequest) (response *SaveBatchTaskForCreatingOrderActivateResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderActivateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveBatchTaskForCreatingOrderActivate api with *SaveBatchTaskForCreatingOrderActivateRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderactivate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *SaveBatchTaskForCreatingOrderActivateRequest) (<-chan *SaveBatchTaskForCreatingOrderActivateResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForCreatingOrderActivateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithChan(request *Sav
 	return responseChan, errChan
 }
 
+// invoke SaveBatchTaskForCreatingOrderActivate api with *SaveBatchTaskForCreatingOrderActivateRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderactivate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request *SaveBatchTaskForCreatingOrderActivateRequest, callback func(response *SaveBatchTaskForCreatingOrderActivateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type SaveBatchTaskForCreatingOrderActivateResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveBatchTaskForCreatingOrderActivate API
 func CreateSaveBatchTaskForCreatingOrderActivateRequest() (request *SaveBatchTaskForCreatingOrderActivateRequest) {
 	request = &SaveBatchTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateSaveBatchTaskForCreatingOrderActivateRequest() (request *SaveBatchTas
 	return
 }
 
+// create a response to parse from SaveBatchTaskForCreatingOrderActivate response
 func CreateSaveBatchTaskForCreatingOrderActivateResponse() (response *SaveBatchTaskForCreatingOrderActivateResponse) {
 	response = &SaveBatchTaskForCreatingOrderActivateResponse{
 		BaseResponse: &responses.BaseResponse{},

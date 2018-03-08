@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTemplateList api with *QueryTemplateListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
 func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (response *QueryTemplateListResponse, err error) {
 	response = CreateQueryTemplateListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTemplateList api with *QueryTemplateListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListRequest) (<-chan *QueryTemplateListResponse, <-chan error) {
 	responseChan := make(chan *QueryTemplateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListReques
 	return responseChan, errChan
 }
 
+// invoke QueryTemplateList api with *QueryTemplateListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRequest, callback func(response *QueryTemplateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryTemplateListResponse struct {
 	TemplateList TemplateListInQueryTemplateList `json:"TemplateList" xml:"TemplateList"`
 }
 
+// create a request to invoke QueryTemplateList API
 func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 	request = &QueryTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 	return
 }
 
+// create a response to parse from QueryTemplateList response
 func CreateQueryTemplateListResponse() (response *QueryTemplateListResponse) {
 	response = &QueryTemplateListResponse{
 		BaseResponse: &responses.BaseResponse{},

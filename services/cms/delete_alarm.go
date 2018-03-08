@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteAlarm api with *DeleteAlarmRequest synchronously
+// api document: https://help.aliyun.com/api/cms/deletealarm.html
 func (client *Client) DeleteAlarm(request *DeleteAlarmRequest) (response *DeleteAlarmResponse, err error) {
 	response = CreateDeleteAlarmResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteAlarm api with *DeleteAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *DeleteAlarmResponse, <-chan error) {
 	responseChan := make(chan *DeleteAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteAlarm api with *DeleteAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callback func(response *DeleteAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteAlarm API
 func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	request = &DeleteAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	return
 }
 
+// create a response to parse from DeleteAlarm response
 func CreateDeleteAlarmResponse() (response *DeleteAlarmResponse) {
 	response = &DeleteAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest synchronously
+// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
 func (client *Client) PurgeDBInstanceLog(request *PurgeDBInstanceLogRequest) (response *PurgeDBInstanceLogResponse, err error) {
 	response = CreatePurgeDBInstanceLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequest) (<-chan *PurgeDBInstanceLogResponse, <-chan error) {
 	responseChan := make(chan *PurgeDBInstanceLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequ
 	return responseChan, errChan
 }
 
+// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithCallback(request *PurgeDBInstanceLogRequest, callback func(response *PurgeDBInstanceLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type PurgeDBInstanceLogResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke PurgeDBInstanceLog API
 func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	request = &PurgeDBInstanceLogRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	return
 }
 
+// create a response to parse from PurgeDBInstanceLog response
 func CreatePurgeDBInstanceLogResponse() (response *PurgeDBInstanceLogResponse) {
 	response = &PurgeDBInstanceLogResponse{
 		BaseResponse: &responses.BaseResponse{},

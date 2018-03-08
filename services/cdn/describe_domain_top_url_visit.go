@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
 func (client *Client) DescribeDomainTopUrlVisit(request *DescribeDomainTopUrlVisitRequest) (response *DescribeDomainTopUrlVisitResponse, err error) {
 	response = CreateDescribeDomainTopUrlVisitResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopUrlVisitWithChan(request *DescribeDomainTopUrlVisitRequest) (<-chan *DescribeDomainTopUrlVisitResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTopUrlVisitResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainTopUrlVisitWithChan(request *DescribeDomainT
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopUrlVisitWithCallback(request *DescribeDomainTopUrlVisitRequest, callback func(response *DescribeDomainTopUrlVisitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeDomainTopUrlVisitResponse struct {
 	Url500List Url500List `json:"Url500List" xml:"Url500List"`
 }
 
+// create a request to invoke DescribeDomainTopUrlVisit API
 func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisitRequest) {
 	request = &DescribeDomainTopUrlVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisi
 	return
 }
 
+// create a response to parse from DescribeDomainTopUrlVisit response
 func CreateDescribeDomainTopUrlVisitResponse() (response *DescribeDomainTopUrlVisitResponse) {
 	response = &DescribeDomainTopUrlVisitResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMailAddress api with *CreateMailAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/createmailaddress.html
 func (client *Client) CreateMailAddress(request *CreateMailAddressRequest) (response *CreateMailAddressResponse, err error) {
 	response = CreateCreateMailAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMailAddress api with *CreateMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createmailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMailAddressWithChan(request *CreateMailAddressRequest) (<-chan *CreateMailAddressResponse, <-chan error) {
 	responseChan := make(chan *CreateMailAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMailAddressWithChan(request *CreateMailAddressReques
 	return responseChan, errChan
 }
 
+// invoke CreateMailAddress api with *CreateMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createmailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMailAddressWithCallback(request *CreateMailAddressRequest, callback func(response *CreateMailAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CreateMailAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateMailAddress API
 func CreateCreateMailAddressRequest() (request *CreateMailAddressRequest) {
 	request = &CreateMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCreateMailAddressRequest() (request *CreateMailAddressRequest) {
 	return
 }
 
+// create a response to parse from CreateMailAddress response
 func CreateCreateMailAddressResponse() (response *CreateMailAddressResponse) {
 	response = &CreateMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSnapshot api with *CreateSnapshotRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
 func (client *Client) CreateSnapshot(request *CreateSnapshotRequest) (response *CreateSnapshotResponse, err error) {
 	response = CreateCreateSnapshotResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSnapshot api with *CreateSnapshotRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-chan *CreateSnapshotResponse, <-chan error) {
 	responseChan := make(chan *CreateSnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke CreateSnapshot api with *CreateSnapshotRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest, callback func(response *CreateSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type CreateSnapshotResponse struct {
 	SnapshotId string `json:"SnapshotId" xml:"SnapshotId"`
 }
 
+// create a request to invoke CreateSnapshot API
 func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	return
 }
 
+// create a response to parse from CreateSnapshot response
 func CreateCreateSnapshotResponse() (response *CreateSnapshotResponse) {
 	response = &CreateSnapshotResponse{
 		BaseResponse: &responses.BaseResponse{},

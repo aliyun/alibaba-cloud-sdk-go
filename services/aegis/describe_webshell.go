@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeWebshell api with *DescribeWebshellRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describewebshell.html
 func (client *Client) DescribeWebshell(request *DescribeWebshellRequest) (response *DescribeWebshellResponse, err error) {
 	response = CreateDescribeWebshellResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeWebshell api with *DescribeWebshellRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describewebshell.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebshellWithChan(request *DescribeWebshellRequest) (<-chan *DescribeWebshellResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebshellResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeWebshellWithChan(request *DescribeWebshellRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeWebshell api with *DescribeWebshellRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describewebshell.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebshellWithCallback(request *DescribeWebshellRequest, callback func(response *DescribeWebshellResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -71,16 +79,17 @@ type DescribeWebshellRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	GroupId         requests.Integer `position:"Query" name:"GroupId"`
 	Remark          string           `position:"Query" name:"Remark"`
+	Tag             requests.Integer `position:"Query" name:"Tag"`
+	Dealed          string           `position:"Query" name:"Dealed"`
 }
 
 type DescribeWebshellResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId    string             `json:"RequestId" xml:"RequestId"`
+	WebshellList []WebshellListItem `json:"WebshellList" xml:"WebshellList"`
 }
 
+// create a request to invoke DescribeWebshell API
 func CreateDescribeWebshellRequest() (request *DescribeWebshellRequest) {
 	request = &DescribeWebshellRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeWebshellRequest() (request *DescribeWebshellRequest) {
 	return
 }
 
+// create a response to parse from DescribeWebshell response
 func CreateDescribeWebshellResponse() (response *DescribeWebshellResponse) {
 	response = &DescribeWebshellResponse{
 		BaseResponse: &responses.BaseResponse{},

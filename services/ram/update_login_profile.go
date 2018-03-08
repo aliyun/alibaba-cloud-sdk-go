@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
 func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (response *UpdateLoginProfileResponse, err error) {
 	response = CreateUpdateLoginProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequest) (<-chan *UpdateLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *UpdateLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequ
 	return responseChan, errChan
 }
 
+// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfileRequest, callback func(response *UpdateLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UpdateLoginProfileResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateLoginProfile API
 func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 	request = &UpdateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 	return
 }
 
+// create a response to parse from UpdateLoginProfile response
 func CreateUpdateLoginProfileResponse() (response *UpdateLoginProfileResponse) {
 	response = &UpdateLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

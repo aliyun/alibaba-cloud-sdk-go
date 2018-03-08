@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckDomainRecord api with *CheckDomainRecordRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
 func (client *Client) CheckDomainRecord(request *CheckDomainRecordRequest) (response *CheckDomainRecordResponse, err error) {
 	response = CreateCheckDomainRecordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckDomainRecord api with *CheckDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainRecordWithChan(request *CheckDomainRecordRequest) (<-chan *CheckDomainRecordResponse, <-chan error) {
 	responseChan := make(chan *CheckDomainRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckDomainRecordWithChan(request *CheckDomainRecordReques
 	return responseChan, errChan
 }
 
+// invoke CheckDomainRecord api with *CheckDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRequest, callback func(response *CheckDomainRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CheckDomainRecordResponse struct {
 	IsExist   bool   `json:"IsExist" xml:"IsExist"`
 }
 
+// create a request to invoke CheckDomainRecord API
 func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
 	request = &CheckDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
 	return
 }
 
+// create a response to parse from CheckDomainRecord response
 func CreateCheckDomainRecordResponse() (response *CheckDomainRecordResponse) {
 	response = &CheckDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

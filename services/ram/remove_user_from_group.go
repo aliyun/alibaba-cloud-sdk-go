@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
 func (client *Client) RemoveUserFromGroup(request *RemoveUserFromGroupRequest) (response *RemoveUserFromGroupResponse, err error) {
 	response = CreateRemoveUserFromGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRequest) (<-chan *RemoveUserFromGroupResponse, <-chan error) {
 	responseChan := make(chan *RemoveUserFromGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRe
 	return responseChan, errChan
 }
 
+// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithCallback(request *RemoveUserFromGroupRequest, callback func(response *RemoveUserFromGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type RemoveUserFromGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RemoveUserFromGroup API
 func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
 	request = &RemoveUserFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
 	return
 }
 
+// create a response to parse from RemoveUserFromGroup response
 func CreateRemoveUserFromGroupResponse() (response *RemoveUserFromGroupResponse) {
 	response = &RemoveUserFromGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

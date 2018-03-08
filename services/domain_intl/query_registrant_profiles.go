@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
 func (client *Client) QueryRegistrantProfiles(request *QueryRegistrantProfilesRequest) (response *QueryRegistrantProfilesResponse, err error) {
 	response = CreateQueryRegistrantProfilesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantProfilesRequest) (<-chan *QueryRegistrantProfilesResponse, <-chan error) {
 	responseChan := make(chan *QueryRegistrantProfilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantPr
 	return responseChan, errChan
 }
 
+// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistrantProfilesRequest, callback func(response *QueryRegistrantProfilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type QueryRegistrantProfilesResponse struct {
 	RegistrantProfiles RegistrantProfiles `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
 }
 
+// create a request to invoke QueryRegistrantProfiles API
 func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesRequest) {
 	request = &QueryRegistrantProfilesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesReq
 	return
 }
 
+// create a response to parse from QueryRegistrantProfiles response
 func CreateQueryRegistrantProfilesResponse() (response *QueryRegistrantProfilesResponse) {
 	response = &QueryRegistrantProfilesResponse{
 		BaseResponse: &responses.BaseResponse{},

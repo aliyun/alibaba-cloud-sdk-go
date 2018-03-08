@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
 func (client *Client) DescribeInstanceStatus(request *DescribeInstanceStatusRequest) (response *DescribeInstanceStatusResponse, err error) {
 	response = CreateDescribeInstanceStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatusWithChan(request *DescribeInstanceStatusRequest) (<-chan *DescribeInstanceStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceStatusWithChan(request *DescribeInstanceSt
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatusWithCallback(request *DescribeInstanceStatusRequest, callback func(response *DescribeInstanceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeInstanceStatusResponse struct {
 	InstanceStatuses InstanceStatuses `json:"InstanceStatuses" xml:"InstanceStatuses"`
 }
 
+// create a request to invoke DescribeInstanceStatus API
 func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusRequest) {
 	request = &DescribeInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusReque
 	return
 }
 
+// create a response to parse from DescribeInstanceStatus response
 func CreateDescribeInstanceStatusResponse() (response *DescribeInstanceStatusResponse) {
 	response = &DescribeInstanceStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

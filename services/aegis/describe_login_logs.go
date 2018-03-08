@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
 func (client *Client) DescribeLoginLogs(request *DescribeLoginLogsRequest) (response *DescribeLoginLogsResponse, err error) {
 	response = CreateDescribeLoginLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoginLogsWithChan(request *DescribeLoginLogsRequest) (<-chan *DescribeLoginLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoginLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoginLogsWithChan(request *DescribeLoginLogsReques
 	return responseChan, errChan
 }
 
+// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRequest, callback func(response *DescribeLoginLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,22 +75,25 @@ func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRe
 
 type DescribeLoginLogsRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Statuses    string           `position:"Query" name:"Statuses"`
+	Types       string           `position:"Query" name:"Types"`
+	Tag         string           `position:"Query" name:"Tag"`
+	Remark      string           `position:"Query" name:"Remark"`
 }
 
 type DescribeLoginLogsResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	PageSize       int      `json:"PageSize" xml:"PageSize"`
-	CurrentPage    int      `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount     int      `json:"TotalCount" xml:"TotalCount"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	LoginLogs      []string `json:"LoginLogs" xml:"LoginLogs"`
+	RequestId   string        `json:"RequestId" xml:"RequestId"`
+	PageSize    int           `json:"PageSize" xml:"PageSize"`
+	CurrentPage int           `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int           `json:"TotalCount" xml:"TotalCount"`
+	LogList     []LogListItem `json:"LogList" xml:"LogList"`
 }
 
+// create a request to invoke DescribeLoginLogs API
 func CreateDescribeLoginLogsRequest() (request *DescribeLoginLogsRequest) {
 	request = &DescribeLoginLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +102,7 @@ func CreateDescribeLoginLogsRequest() (request *DescribeLoginLogsRequest) {
 	return
 }
 
+// create a response to parse from DescribeLoginLogs response
 func CreateDescribeLoginLogsResponse() (response *DescribeLoginLogsResponse) {
 	response = &DescribeLoginLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

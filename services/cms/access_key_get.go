@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AccessKeyGet api with *AccessKeyGetRequest synchronously
+// api document: https://help.aliyun.com/api/cms/accesskeyget.html
 func (client *Client) AccessKeyGet(request *AccessKeyGetRequest) (response *AccessKeyGetResponse, err error) {
 	response = CreateAccessKeyGetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AccessKeyGet api with *AccessKeyGetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/accesskeyget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccessKeyGetWithChan(request *AccessKeyGetRequest) (<-chan *AccessKeyGetResponse, <-chan error) {
 	responseChan := make(chan *AccessKeyGetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AccessKeyGetWithChan(request *AccessKeyGetRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke AccessKeyGet api with *AccessKeyGetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/accesskeyget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, callback func(response *AccessKeyGetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AccessKeyGetResponse struct {
 	SecretKey    string `json:"SecretKey" xml:"SecretKey"`
 }
 
+// create a request to invoke AccessKeyGet API
 func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
 	request = &AccessKeyGetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
 	return
 }
 
+// create a response to parse from AccessKeyGet response
 func CreateAccessKeyGetResponse() (response *AccessKeyGetResponse) {
 	response = &AccessKeyGetResponse{
 		BaseResponse: &responses.BaseResponse{},

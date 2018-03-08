@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetRefererConfig api with *SetRefererConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
 func (client *Client) SetRefererConfig(request *SetRefererConfigRequest) (response *SetRefererConfigResponse, err error) {
 	response = CreateSetRefererConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetRefererConfig api with *SetRefererConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest) (<-chan *SetRefererConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRefererConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest)
 	return responseChan, errChan
 }
 
+// invoke SetRefererConfig api with *SetRefererConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithCallback(request *SetRefererConfigRequest, callback func(response *SetRefererConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type SetRefererConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetRefererConfig API
 func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	request = &SetRefererConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	return
 }
 
+// create a response to parse from SetRefererConfig response
 func CreateSetRefererConfigResponse() (response *SetRefererConfigResponse) {
 	response = &SetRefererConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

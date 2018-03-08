@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccounts api with *DescribeAccountsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeaccounts.html
 func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
 	response = CreateDescribeAccountsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccounts api with *DescribeAccountsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeaccounts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeAccounts api with *DescribeAccountsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeaccounts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeAccountsResponse struct {
 	Accounts  AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }
 
+// create a request to invoke DescribeAccounts API
 func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	return
 }
 
+// create a response to parse from DescribeAccounts response
 func CreateDescribeAccountsResponse() (response *DescribeAccountsResponse) {
 	response = &DescribeAccountsResponse{
 		BaseResponse: &responses.BaseResponse{},

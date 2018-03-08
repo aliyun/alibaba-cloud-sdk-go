@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMyGroupInstances api with *DeleteMyGroupInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/cms/deletemygroupinstances.html
 func (client *Client) DeleteMyGroupInstances(request *DeleteMyGroupInstancesRequest) (response *DeleteMyGroupInstancesResponse, err error) {
 	response = CreateDeleteMyGroupInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMyGroupInstances api with *DeleteMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletemygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMyGroupInstancesWithChan(request *DeleteMyGroupInstancesRequest) (<-chan *DeleteMyGroupInstancesResponse, <-chan error) {
 	responseChan := make(chan *DeleteMyGroupInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMyGroupInstancesWithChan(request *DeleteMyGroupInsta
 	return responseChan, errChan
 }
 
+// invoke DeleteMyGroupInstances api with *DeleteMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/deletemygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMyGroupInstancesWithCallback(request *DeleteMyGroupInstancesRequest, callback func(response *DeleteMyGroupInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteMyGroupInstancesResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
+// create a request to invoke DeleteMyGroupInstances API
 func CreateDeleteMyGroupInstancesRequest() (request *DeleteMyGroupInstancesRequest) {
 	request = &DeleteMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteMyGroupInstancesRequest() (request *DeleteMyGroupInstancesReque
 	return
 }
 
+// create a response to parse from DeleteMyGroupInstances response
 func CreateDeleteMyGroupInstancesResponse() (response *DeleteMyGroupInstancesResponse) {
 	response = &DeleteMyGroupInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

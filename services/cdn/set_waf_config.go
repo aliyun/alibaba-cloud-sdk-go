@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetWafConfig api with *SetWafConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
 func (client *Client) SetWafConfig(request *SetWafConfigRequest) (response *SetWafConfigResponse, err error) {
 	response = CreateSetWafConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetWafConfig api with *SetWafConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan *SetWafConfigResponse, <-chan error) {
 	responseChan := make(chan *SetWafConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke SetWafConfig api with *SetWafConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWafConfigWithCallback(request *SetWafConfigRequest, callback func(response *SetWafConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetWafConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetWafConfig API
 func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
 	request = &SetWafConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
 	return
 }
 
+// create a response to parse from SetWafConfig response
 func CreateSetWafConfigResponse() (response *SetWafConfigResponse) {
 	response = &SetWafConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

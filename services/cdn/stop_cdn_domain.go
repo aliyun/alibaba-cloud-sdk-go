@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopCdnDomain api with *StopCdnDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
 func (client *Client) StopCdnDomain(request *StopCdnDomainRequest) (response *StopCdnDomainResponse, err error) {
 	response = CreateStopCdnDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopCdnDomain api with *StopCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-chan *StopCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *StopCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke StopCdnDomain api with *StopCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithCallback(request *StopCdnDomainRequest, callback func(response *StopCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type StopCdnDomainResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StopCdnDomain API
 func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
 	request = &StopCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
 	return
 }
 
+// create a response to parse from StopCdnDomain response
 func CreateStopCdnDomainResponse() (response *StopCdnDomainResponse) {
 	response = &StopCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

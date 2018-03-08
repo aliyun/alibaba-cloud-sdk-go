@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetProjectEvents api with *GetProjectEventsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/getprojectevents.html
 func (client *Client) GetProjectEvents(request *GetProjectEventsRequest) (response *GetProjectEventsResponse, err error) {
 	response = CreateGetProjectEventsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetProjectEvents api with *GetProjectEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/getprojectevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectEventsWithChan(request *GetProjectEventsRequest) (<-chan *GetProjectEventsResponse, <-chan error) {
 	responseChan := make(chan *GetProjectEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetProjectEventsWithChan(request *GetProjectEventsRequest)
 	return responseChan, errChan
 }
 
+// invoke GetProjectEvents api with *GetProjectEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/getprojectevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectEventsWithCallback(request *GetProjectEventsRequest, callback func(response *GetProjectEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type GetProjectEventsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke GetProjectEvents API
 func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
 	request = &GetProjectEventsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -84,6 +93,7 @@ func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
 	return
 }
 
+// create a response to parse from GetProjectEvents response
 func CreateGetProjectEventsResponse() (response *GetProjectEventsResponse) {
 	response = &GetProjectEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

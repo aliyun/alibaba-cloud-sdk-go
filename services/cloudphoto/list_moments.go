@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMoments api with *ListMomentsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
 func (client *Client) ListMoments(request *ListMomentsRequest) (response *ListMomentsResponse, err error) {
 	response = CreateListMomentsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMoments api with *ListMomentsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentsWithChan(request *ListMomentsRequest) (<-chan *ListMomentsResponse, <-chan error) {
 	responseChan := make(chan *ListMomentsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMomentsWithChan(request *ListMomentsRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke ListMoments api with *ListMomentsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callback func(response *ListMomentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ListMomentsResponse struct {
 	Moments    []Moment `json:"Moments" xml:"Moments"`
 }
 
+// create a request to invoke ListMoments API
 func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	request = &ListMomentsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	return
 }
 
+// create a response to parse from ListMoments response
 func CreateListMomentsResponse() (response *ListMomentsResponse) {
 	response = &ListMomentsResponse{
 		BaseResponse: &responses.BaseResponse{},

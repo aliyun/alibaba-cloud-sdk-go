@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateVpnConnection api with *CreateVpnConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
 func (client *Client) CreateVpnConnection(request *CreateVpnConnectionRequest) (response *CreateVpnConnectionResponse, err error) {
 	response = CreateCreateVpnConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateVpnConnection api with *CreateVpnConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRequest) (<-chan *CreateVpnConnectionResponse, <-chan error) {
 	responseChan := make(chan *CreateVpnConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRe
 	return responseChan, errChan
 }
 
+// invoke CreateVpnConnection api with *CreateVpnConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnectionRequest, callback func(response *CreateVpnConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type CreateVpnConnectionResponse struct {
 	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
 }
 
+// create a request to invoke CreateVpnConnection API
 func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	request = &CreateVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	return
 }
 
+// create a response to parse from CreateVpnConnection response
 func CreateCreateVpnConnectionResponse() (response *CreateVpnConnectionResponse) {
 	response = &CreateVpnConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

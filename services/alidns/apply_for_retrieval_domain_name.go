@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
 func (client *Client) ApplyForRetrievalDomainName(request *ApplyForRetrievalDomainNameRequest) (response *ApplyForRetrievalDomainNameResponse, err error) {
 	response = CreateApplyForRetrievalDomainNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyForRetrievalDomainNameWithChan(request *ApplyForRetrievalDomainNameRequest) (<-chan *ApplyForRetrievalDomainNameResponse, <-chan error) {
 	responseChan := make(chan *ApplyForRetrievalDomainNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ApplyForRetrievalDomainNameWithChan(request *ApplyForRetri
 	return responseChan, errChan
 }
 
+// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyForRetrievalDomainNameWithCallback(request *ApplyForRetrievalDomainNameRequest, callback func(response *ApplyForRetrievalDomainNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type ApplyForRetrievalDomainNameResponse struct {
 	DomainName string `json:"DomainName" xml:"DomainName"`
 }
 
+// create a request to invoke ApplyForRetrievalDomainName API
 func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomainNameRequest) {
 	request = &ApplyForRetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomai
 	return
 }
 
+// create a response to parse from ApplyForRetrievalDomainName response
 func CreateApplyForRetrievalDomainNameResponse() (response *ApplyForRetrievalDomainNameResponse) {
 	response = &ApplyForRetrievalDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

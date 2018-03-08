@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
 func (client *Client) DescribeDomainISPData(request *DescribeDomainISPDataRequest) (response *DescribeDomainISPDataResponse, err error) {
 	response = CreateDescribeDomainISPDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDataRequest) (<-chan *DescribeDomainISPDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainISPDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDa
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainISPDataRequest, callback func(response *DescribeDomainISPDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainISPDataResponse struct {
 	Value        ValueInDescribeDomainISPData `json:"Value" xml:"Value"`
 }
 
+// create a request to invoke DescribeDomainISPData API
 func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest) {
 	request = &DescribeDomainISPDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest
 	return
 }
 
+// create a response to parse from DescribeDomainISPData response
 func CreateDescribeDomainISPDataResponse() (response *DescribeDomainISPDataResponse) {
 	response = &DescribeDomainISPDataResponse{
 		BaseResponse: &responses.BaseResponse{},

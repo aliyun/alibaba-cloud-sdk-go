@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyVServerGroupBackendServers api with *ModifyVServerGroupBackendServersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/modifyvservergroupbackendservers.html
 func (client *Client) ModifyVServerGroupBackendServers(request *ModifyVServerGroupBackendServersRequest) (response *ModifyVServerGroupBackendServersResponse, err error) {
 	response = CreateModifyVServerGroupBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyVServerGroupBackendServers api with *ModifyVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyvservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVServerGroupBackendServersWithChan(request *ModifyVServerGroupBackendServersRequest) (<-chan *ModifyVServerGroupBackendServersResponse, <-chan error) {
 	responseChan := make(chan *ModifyVServerGroupBackendServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyVServerGroupBackendServersWithChan(request *ModifyVS
 	return responseChan, errChan
 }
 
+// invoke ModifyVServerGroupBackendServers api with *ModifyVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyvservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVServerGroupBackendServersWithCallback(request *ModifyVServerGroupBackendServersRequest, callback func(response *ModifyVServerGroupBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyVServerGroupBackendServersResponse struct {
 	BackendServers BackendServersInModifyVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke ModifyVServerGroupBackendServers API
 func CreateModifyVServerGroupBackendServersRequest() (request *ModifyVServerGroupBackendServersRequest) {
 	request = &ModifyVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyVServerGroupBackendServersRequest() (request *ModifyVServerGrou
 	return
 }
 
+// create a response to parse from ModifyVServerGroupBackendServers response
 func CreateModifyVServerGroupBackendServersResponse() (response *ModifyVServerGroupBackendServersResponse) {
 	response = &ModifyVServerGroupBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

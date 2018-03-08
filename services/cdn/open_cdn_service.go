@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke OpenCdnService api with *OpenCdnServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
 func (client *Client) OpenCdnService(request *OpenCdnServiceRequest) (response *OpenCdnServiceResponse, err error) {
 	response = CreateOpenCdnServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke OpenCdnService api with *OpenCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenCdnServiceWithChan(request *OpenCdnServiceRequest) (<-chan *OpenCdnServiceResponse, <-chan error) {
 	responseChan := make(chan *OpenCdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) OpenCdnServiceWithChan(request *OpenCdnServiceRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke OpenCdnService api with *OpenCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenCdnServiceWithCallback(request *OpenCdnServiceRequest, callback func(response *OpenCdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type OpenCdnServiceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke OpenCdnService API
 func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {
 	request = &OpenCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {
 	return
 }
 
+// create a response to parse from OpenCdnService response
 func CreateOpenCdnServiceResponse() (response *OpenCdnServiceResponse) {
 	response = &OpenCdnServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

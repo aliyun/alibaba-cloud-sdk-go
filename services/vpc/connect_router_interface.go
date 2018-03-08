@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/connectrouterinterface.html
 func (client *Client) ConnectRouterInterface(request *ConnectRouterInterfaceRequest) (response *ConnectRouterInterfaceResponse, err error) {
 	response = CreateConnectRouterInterfaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/connectrouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConnectRouterInterfaceWithChan(request *ConnectRouterInterfaceRequest) (<-chan *ConnectRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *ConnectRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ConnectRouterInterfaceWithChan(request *ConnectRouterInter
 	return responseChan, errChan
 }
 
+// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/connectrouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConnectRouterInterfaceWithCallback(request *ConnectRouterInterfaceRequest, callback func(response *ConnectRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type ConnectRouterInterfaceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ConnectRouterInterface API
 func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceRequest) {
 	request = &ConnectRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceReque
 	return
 }
 
+// create a response to parse from ConnectRouterInterface response
 func CreateConnectRouterInterfaceResponse() (response *ConnectRouterInterfaceResponse) {
 	response = &ConnectRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

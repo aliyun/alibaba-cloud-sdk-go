@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyCcMode api with *ModifyCcModeRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
 func (client *Client) ModifyCcMode(request *ModifyCcModeRequest) (response *ModifyCcModeResponse, err error) {
 	response = CreateModifyCcModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyCcMode api with *ModifyCcModeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCcModeWithChan(request *ModifyCcModeRequest) (<-chan *ModifyCcModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyCcModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyCcModeWithChan(request *ModifyCcModeRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ModifyCcMode api with *ModifyCcModeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCcModeWithCallback(request *ModifyCcModeRequest, callback func(response *ModifyCcModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ModifyCcModeResponse struct {
 	Data      string `json:"data" xml:"data"`
 }
 
+// create a request to invoke ModifyCcMode API
 func CreateModifyCcModeRequest() (request *ModifyCcModeRequest) {
 	request = &ModifyCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateModifyCcModeRequest() (request *ModifyCcModeRequest) {
 	return
 }
 
+// create a response to parse from ModifyCcMode response
 func CreateModifyCcModeResponse() (response *ModifyCcModeResponse) {
 	response = &ModifyCcModeResponse{
 		BaseResponse: &responses.BaseResponse{},

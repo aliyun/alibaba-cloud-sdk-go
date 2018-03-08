@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listallmediabucket.html
 func (client *Client) ListAllMediaBucket(request *ListAllMediaBucketRequest) (response *ListAllMediaBucketResponse, err error) {
 	response = CreateListAllMediaBucketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listallmediabucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllMediaBucketWithChan(request *ListAllMediaBucketRequest) (<-chan *ListAllMediaBucketResponse, <-chan error) {
 	responseChan := make(chan *ListAllMediaBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAllMediaBucketWithChan(request *ListAllMediaBucketRequ
 	return responseChan, errChan
 }
 
+// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listallmediabucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucketRequest, callback func(response *ListAllMediaBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListAllMediaBucketResponse struct {
 	MediaBucketList MediaBucketList `json:"MediaBucketList" xml:"MediaBucketList"`
 }
 
+// create a request to invoke ListAllMediaBucket API
 func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	request = &ListAllMediaBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	return
 }
 
+// create a response to parse from ListAllMediaBucket response
 func CreateListAllMediaBucketResponse() (response *ListAllMediaBucketResponse) {
 	response = &ListAllMediaBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

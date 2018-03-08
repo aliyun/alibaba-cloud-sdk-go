@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeem(request *SaveSingleTaskForCreatingOrderRedeemRequest) (response *SaveSingleTaskForCreatingOrderRedeemResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderRedeemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *SaveSingleTaskForCreatingOrderRedeemRequest) (<-chan *SaveSingleTaskForCreatingOrderRedeemResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForCreatingOrderRedeemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *Save
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *SaveSingleTaskForCreatingOrderRedeemRequest, callback func(response *SaveSingleTaskForCreatingOrderRedeemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SaveSingleTaskForCreatingOrderRedeemResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForCreatingOrderRedeem API
 func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTaskForCreatingOrderRedeemRequest) {
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTas
 	return
 }
 
+// create a response to parse from SaveSingleTaskForCreatingOrderRedeem response
 func CreateSaveSingleTaskForCreatingOrderRedeemResponse() (response *SaveSingleTaskForCreatingOrderRedeemResponse) {
 	response = &SaveSingleTaskForCreatingOrderRedeemResponse{
 		BaseResponse: &responses.BaseResponse{},

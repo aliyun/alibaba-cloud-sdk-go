@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest synchronously
+// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
 func (client *Client) CreateVirtualMFADevice(request *CreateVirtualMFADeviceRequest) (response *CreateVirtualMFADeviceResponse, err error) {
 	response = CreateCreateVirtualMFADeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADeviceRequest) (<-chan *CreateVirtualMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *CreateVirtualMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADe
 	return responseChan, errChan
 }
 
+// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithCallback(request *CreateVirtualMFADeviceRequest, callback func(response *CreateVirtualMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type CreateVirtualMFADeviceResponse struct {
 	VirtualMFADevice VirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
 }
 
+// create a request to invoke CreateVirtualMFADevice API
 func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceRequest) {
 	request = &CreateVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceReque
 	return
 }
 
+// create a response to parse from CreateVirtualMFADevice response
 func CreateCreateVirtualMFADeviceResponse() (response *CreateVirtualMFADeviceResponse) {
 	response = &CreateVirtualMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

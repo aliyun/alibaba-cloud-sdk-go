@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
 func (client *Client) DescribeDomainQpsData(request *DescribeDomainQpsDataRequest) (response *DescribeDomainQpsDataResponse, err error) {
 	response = CreateDescribeDomainQpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataWithChan(request *DescribeDomainQpsDataRequest) (<-chan *DescribeDomainQpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainQpsDataWithChan(request *DescribeDomainQpsDa
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataWithCallback(request *DescribeDomainQpsDataRequest, callback func(response *DescribeDomainQpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeDomainQpsDataResponse struct {
 	QpsDataInterval QpsDataInterval `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }
 
+// create a request to invoke DescribeDomainQpsData API
 func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest) {
 	request = &DescribeDomainQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest
 	return
 }
 
+// create a response to parse from DescribeDomainQpsData response
 func CreateDescribeDomainQpsDataResponse() (response *DescribeDomainQpsDataResponse) {
 	response = &DescribeDomainQpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

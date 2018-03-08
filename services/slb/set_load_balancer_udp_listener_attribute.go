@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetLoadBalancerUDPListenerAttribute api with *SetLoadBalancerUDPListenerAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerudplistenerattribute.html
 func (client *Client) SetLoadBalancerUDPListenerAttribute(request *SetLoadBalancerUDPListenerAttributeRequest) (response *SetLoadBalancerUDPListenerAttributeResponse, err error) {
 	response = CreateSetLoadBalancerUDPListenerAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetLoadBalancerUDPListenerAttribute api with *SetLoadBalancerUDPListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerudplistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerUDPListenerAttributeWithChan(request *SetLoadBalancerUDPListenerAttributeRequest) (<-chan *SetLoadBalancerUDPListenerAttributeResponse, <-chan error) {
 	responseChan := make(chan *SetLoadBalancerUDPListenerAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetLoadBalancerUDPListenerAttributeWithChan(request *SetLo
 	return responseChan, errChan
 }
 
+// invoke SetLoadBalancerUDPListenerAttribute api with *SetLoadBalancerUDPListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerudplistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerUDPListenerAttributeWithCallback(request *SetLoadBalancerUDPListenerAttributeRequest, callback func(response *SetLoadBalancerUDPListenerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +105,7 @@ type SetLoadBalancerUDPListenerAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetLoadBalancerUDPListenerAttribute API
 func CreateSetLoadBalancerUDPListenerAttributeRequest() (request *SetLoadBalancerUDPListenerAttributeRequest) {
 	request = &SetLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -105,6 +114,7 @@ func CreateSetLoadBalancerUDPListenerAttributeRequest() (request *SetLoadBalance
 	return
 }
 
+// create a response to parse from SetLoadBalancerUDPListenerAttribute response
 func CreateSetLoadBalancerUDPListenerAttributeResponse() (response *SetLoadBalancerUDPListenerAttributeResponse) {
 	response = &SetLoadBalancerUDPListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

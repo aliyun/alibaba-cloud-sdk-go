@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddGlobalAccelerationInstanceIp api with *AddGlobalAccelerationInstanceIpRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
 func (client *Client) AddGlobalAccelerationInstanceIp(request *AddGlobalAccelerationInstanceIpRequest) (response *AddGlobalAccelerationInstanceIpResponse, err error) {
 	response = CreateAddGlobalAccelerationInstanceIpResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddGlobalAccelerationInstanceIp api with *AddGlobalAccelerationInstanceIpRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGlobalAccelerationInstanceIpWithChan(request *AddGlobalAccelerationInstanceIpRequest) (<-chan *AddGlobalAccelerationInstanceIpResponse, <-chan error) {
 	responseChan := make(chan *AddGlobalAccelerationInstanceIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddGlobalAccelerationInstanceIpWithChan(request *AddGlobal
 	return responseChan, errChan
 }
 
+// invoke AddGlobalAccelerationInstanceIp api with *AddGlobalAccelerationInstanceIpRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGlobalAccelerationInstanceIpWithCallback(request *AddGlobalAccelerationInstanceIpRequest, callback func(response *AddGlobalAccelerationInstanceIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type AddGlobalAccelerationInstanceIpResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddGlobalAccelerationInstanceIp API
 func CreateAddGlobalAccelerationInstanceIpRequest() (request *AddGlobalAccelerationInstanceIpRequest) {
 	request = &AddGlobalAccelerationInstanceIpRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateAddGlobalAccelerationInstanceIpRequest() (request *AddGlobalAccelerat
 	return
 }
 
+// create a response to parse from AddGlobalAccelerationInstanceIp response
 func CreateAddGlobalAccelerationInstanceIpResponse() (response *AddGlobalAccelerationInstanceIpResponse) {
 	response = &AddGlobalAccelerationInstanceIpResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest synchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
 func (client *Client) QueryReceiverDetail(request *QueryReceiverDetailRequest) (response *QueryReceiverDetailResponse, err error) {
 	response = CreateQueryReceiverDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverDetailWithChan(request *QueryReceiverDetailRequest) (<-chan *QueryReceiverDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryReceiverDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryReceiverDetailWithChan(request *QueryReceiverDetailRe
 	return responseChan, errChan
 }
 
+// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDetailRequest, callback func(response *QueryReceiverDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type QueryReceiverDetailResponse struct {
 	Data       DataInQueryReceiverDetail `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryReceiverDetail API
 func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
 	request = &QueryReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
 	return
 }
 
+// create a response to parse from QueryReceiverDetail response
 func CreateQueryReceiverDetailResponse() (response *QueryReceiverDetailResponse) {
 	response = &QueryReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

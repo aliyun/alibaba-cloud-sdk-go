@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
 func (client *Client) DeleteHpcCluster(request *DeleteHpcClusterRequest) (response *DeleteHpcClusterResponse, err error) {
 	response = CreateDeleteHpcClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHpcClusterWithChan(request *DeleteHpcClusterRequest) (<-chan *DeleteHpcClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteHpcClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteHpcClusterWithChan(request *DeleteHpcClusterRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHpcClusterWithCallback(request *DeleteHpcClusterRequest, callback func(response *DeleteHpcClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DeleteHpcClusterResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteHpcCluster API
 func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	request = &DeleteHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	return
 }
 
+// create a response to parse from DeleteHpcCluster response
 func CreateDeleteHpcClusterResponse() (response *DeleteHpcClusterResponse) {
 	response = &DeleteHpcClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EmailVerified api with *EmailVerifiedRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/emailverified.html
 func (client *Client) EmailVerified(request *EmailVerifiedRequest) (response *EmailVerifiedResponse, err error) {
 	response = CreateEmailVerifiedResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EmailVerified api with *EmailVerifiedRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/emailverified.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmailVerifiedWithChan(request *EmailVerifiedRequest) (<-chan *EmailVerifiedResponse, <-chan error) {
 	responseChan := make(chan *EmailVerifiedResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EmailVerifiedWithChan(request *EmailVerifiedRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke EmailVerified api with *EmailVerifiedRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/emailverified.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmailVerifiedWithCallback(request *EmailVerifiedRequest, callback func(response *EmailVerifiedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type EmailVerifiedResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke EmailVerified API
 func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
 	request = &EmailVerifiedRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
 	return
 }
 
+// create a response to parse from EmailVerified response
 func CreateEmailVerifiedResponse() (response *EmailVerifiedResponse) {
 	response = &EmailVerifiedResponse{
 		BaseResponse: &responses.BaseResponse{},

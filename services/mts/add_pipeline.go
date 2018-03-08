@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddPipeline api with *AddPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addpipeline.html
 func (client *Client) AddPipeline(request *AddPipelineRequest) (response *AddPipelineResponse, err error) {
 	response = CreateAddPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddPipeline api with *AddPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *AddPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke AddPipeline api with *AddPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callback func(response *AddPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type AddPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddPipeline API
 func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	return
 }
 
+// create a response to parse from AddPipeline response
 func CreateAddPipelineResponse() (response *AddPipelineResponse) {
 	response = &AddPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

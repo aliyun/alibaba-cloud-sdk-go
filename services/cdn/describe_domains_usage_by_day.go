@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
 func (client *Client) DescribeDomainsUsageByDay(request *DescribeDomainsUsageByDayRequest) (response *DescribeDomainsUsageByDayResponse, err error) {
 	response = CreateDescribeDomainsUsageByDayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomainsUsageByDayRequest) (<-chan *DescribeDomainsUsageByDayResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsUsageByDayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomains
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithCallback(request *DescribeDomainsUsageByDayRequest, callback func(response *DescribeDomainsUsageByDayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeDomainsUsageByDayResponse struct {
 	UsageByDays  UsageByDays `json:"UsageByDays" xml:"UsageByDays"`
 }
 
+// create a request to invoke DescribeDomainsUsageByDay API
 func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDayRequest) {
 	request = &DescribeDomainsUsageByDayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDa
 	return
 }
 
+// create a response to parse from DescribeDomainsUsageByDay response
 func CreateDescribeDomainsUsageByDayResponse() (response *DescribeDomainsUsageByDayResponse) {
 	response = &DescribeDomainsUsageByDayResponse{
 		BaseResponse: &responses.BaseResponse{},

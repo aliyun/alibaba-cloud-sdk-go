@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteUser api with *DeleteUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deleteuser.html
 func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUserResponse, err error) {
 	response = CreateDeleteUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteUser api with *DeleteUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *DeleteUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DeleteUser api with *DeleteUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callback func(response *DeleteUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteUserResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteUser API
 func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	request = &DeleteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	return
 }
 
+// create a response to parse from DeleteUser response
 func CreateDeleteUserResponse() (response *DeleteUserResponse) {
 	response = &DeleteUserResponse{
 		BaseResponse: &responses.BaseResponse{},

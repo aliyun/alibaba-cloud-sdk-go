@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest synchronously
+// api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
 func (client *Client) DeactivateMediaWorkflow(request *DeactivateMediaWorkflowRequest) (response *DeactivateMediaWorkflowResponse, err error) {
 	response = CreateDeactivateMediaWorkflowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWorkflowRequest) (<-chan *DeactivateMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *DeactivateMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWo
 	return responseChan, errChan
 }
 
+// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMediaWorkflowRequest, callback func(response *DeactivateMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeactivateMediaWorkflowResponse struct {
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
+// create a request to invoke DeactivateMediaWorkflow API
 func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {
 	request = &DeactivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowReq
 	return
 }
 
+// create a response to parse from DeactivateMediaWorkflow response
 func CreateDeactivateMediaWorkflowResponse() (response *DeactivateMediaWorkflowResponse) {
 	response = &DeactivateMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

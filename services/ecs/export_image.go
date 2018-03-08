@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ExportImage api with *ExportImageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/exportimage.html
 func (client *Client) ExportImage(request *ExportImageRequest) (response *ExportImageResponse, err error) {
 	response = CreateExportImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ExportImage api with *ExportImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/exportimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *ExportImageResponse, <-chan error) {
 	responseChan := make(chan *ExportImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke ExportImage api with *ExportImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/exportimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callback func(response *ExportImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ExportImageResponse struct {
 	RegionId  string `json:"RegionId" xml:"RegionId"`
 }
 
+// create a request to invoke ExportImage API
 func CreateExportImageRequest() (request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateExportImageRequest() (request *ExportImageRequest) {
 	return
 }
 
+// create a response to parse from ExportImage response
 func CreateExportImageResponse() (response *ExportImageResponse) {
 	response = &ExportImageResponse{
 		BaseResponse: &responses.BaseResponse{},

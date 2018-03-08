@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryMetricLast api with *QueryMetricLastRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclast.html
 func (client *Client) QueryMetricLast(request *QueryMetricLastRequest) (response *QueryMetricLastResponse, err error) {
 	response = CreateQueryMetricLastResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryMetricLast api with *QueryMetricLastRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclast.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (<-chan *QueryMetricLastResponse, <-chan error) {
 	responseChan := make(chan *QueryMetricLastResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryMetricLast api with *QueryMetricLastRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclast.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricLastWithCallback(request *QueryMetricLastRequest, callback func(response *QueryMetricLastResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type QueryMetricLastResponse struct {
 	Period     string `json:"Period" xml:"Period"`
 }
 
+// create a request to invoke QueryMetricLast API
 func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
 	request = &QueryMetricLastRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
 	return
 }
 
+// create a response to parse from QueryMetricLast response
 func CreateQueryMetricLastResponse() (response *QueryMetricLastResponse) {
 	response = &QueryMetricLastResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindOutputBucket api with *BindOutputBucketRequest synchronously
+// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
 func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (response *BindOutputBucketResponse, err error) {
 	response = CreateBindOutputBucketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindOutputBucket api with *BindOutputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest) (<-chan *BindOutputBucketResponse, <-chan error) {
 	responseChan := make(chan *BindOutputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest)
 	return responseChan, errChan
 }
 
+// invoke BindOutputBucket api with *BindOutputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequest, callback func(response *BindOutputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type BindOutputBucketResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindOutputBucket API
 func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	request = &BindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	return
 }
 
+// create a response to parse from BindOutputBucket response
 func CreateBindOutputBucketResponse() (response *BindOutputBucketResponse) {
 	response = &BindOutputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

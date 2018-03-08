@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeFileSystems api with *DescribeFileSystemsRequest synchronously
+// api document: https://help.aliyun.com/api/nas/describefilesystems.html
 func (client *Client) DescribeFileSystems(request *DescribeFileSystemsRequest) (response *DescribeFileSystemsResponse, err error) {
 	response = CreateDescribeFileSystemsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeFileSystems api with *DescribeFileSystemsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describefilesystems.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFileSystemsWithChan(request *DescribeFileSystemsRequest) (<-chan *DescribeFileSystemsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFileSystemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeFileSystemsWithChan(request *DescribeFileSystemsRe
 	return responseChan, errChan
 }
 
+// invoke DescribeFileSystems api with *DescribeFileSystemsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describefilesystems.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSystemsRequest, callback func(response *DescribeFileSystemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeFileSystemsResponse struct {
 	FileSystems FileSystems `json:"FileSystems" xml:"FileSystems"`
 }
 
+// create a request to invoke DescribeFileSystems API
 func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	return
 }
 
+// create a response to parse from DescribeFileSystems response
 func CreateDescribeFileSystemsResponse() (response *DescribeFileSystemsResponse) {
 	response = &DescribeFileSystemsResponse{
 		BaseResponse: &responses.BaseResponse{},

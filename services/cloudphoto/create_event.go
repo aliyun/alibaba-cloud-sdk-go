@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateEvent api with *CreateEventRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createevent.html
 func (client *Client) CreateEvent(request *CreateEventRequest) (response *CreateEventResponse, err error) {
 	response = CreateCreateEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateEvent api with *CreateEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEventWithChan(request *CreateEventRequest) (<-chan *CreateEventResponse, <-chan error) {
 	responseChan := make(chan *CreateEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateEventWithChan(request *CreateEventRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateEvent api with *CreateEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEventWithCallback(request *CreateEventRequest, callback func(response *CreateEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type CreateEventResponse struct {
 	Event     Event  `json:"Event" xml:"Event"`
 }
 
+// create a request to invoke CreateEvent API
 func CreateCreateEventRequest() (request *CreateEventRequest) {
 	request = &CreateEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateCreateEventRequest() (request *CreateEventRequest) {
 	return
 }
 
+// create a response to parse from CreateEvent response
 func CreateCreateEventResponse() (response *CreateEventResponse) {
 	response = &CreateEventResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamOnlineUserNum api with *DescribeLiveStreamOnlineUserNumRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernum.html
 func (client *Client) DescribeLiveStreamOnlineUserNum(request *DescribeLiveStreamOnlineUserNumRequest) (response *DescribeLiveStreamOnlineUserNumResponse, err error) {
 	response = CreateDescribeLiveStreamOnlineUserNumResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamOnlineUserNum api with *DescribeLiveStreamOnlineUserNumRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumWithChan(request *DescribeLiveStreamOnlineUserNumRequest) (<-chan *DescribeLiveStreamOnlineUserNumResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamOnlineUserNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamOnlineUserNumWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamOnlineUserNum api with *DescribeLiveStreamOnlineUserNumRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *DescribeLiveStreamOnlineUserNumRequest, callback func(response *DescribeLiveStreamOnlineUserNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeLiveStreamOnlineUserNumResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNum `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
+// create a request to invoke DescribeLiveStreamOnlineUserNum API
 func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStreamOnlineUserNumRequest) {
 	request = &DescribeLiveStreamOnlineUserNumRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStream
 	return
 }
 
+// create a response to parse from DescribeLiveStreamOnlineUserNum response
 func CreateDescribeLiveStreamOnlineUserNumResponse() (response *DescribeLiveStreamOnlineUserNumResponse) {
 	response = &DescribeLiveStreamOnlineUserNumResponse{
 		BaseResponse: &responses.BaseResponse{},

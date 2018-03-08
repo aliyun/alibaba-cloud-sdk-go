@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
 func (client *Client) DeleteHttpHeaderConfig(request *DeleteHttpHeaderConfigRequest) (response *DeleteHttpHeaderConfigResponse, err error) {
 	response = CreateDeleteHttpHeaderConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderConfigRequest) (<-chan *DeleteHttpHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteHttpHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderCo
 	return responseChan, errChan
 }
 
+// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithCallback(request *DeleteHttpHeaderConfigRequest, callback func(response *DeleteHttpHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteHttpHeaderConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteHttpHeaderConfig API
 func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigRequest) {
 	request = &DeleteHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigReque
 	return
 }
 
+// create a response to parse from DeleteHttpHeaderConfig response
 func CreateDeleteHttpHeaderConfigResponse() (response *DeleteHttpHeaderConfigResponse) {
 	response = &DeleteHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

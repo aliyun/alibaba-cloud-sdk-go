@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
 func (client *Client) CreateTempDBInstance(request *CreateTempDBInstanceRequest) (response *CreateTempDBInstanceResponse, err error) {
 	response = CreateCreateTempDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTempDBInstanceWithChan(request *CreateTempDBInstanceRequest) (<-chan *CreateTempDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateTempDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateTempDBInstanceWithChan(request *CreateTempDBInstance
 	return responseChan, errChan
 }
 
+// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTempDBInstanceWithCallback(request *CreateTempDBInstanceRequest, callback func(response *CreateTempDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateTempDBInstanceResponse struct {
 	TempDBInstanceId string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 }
 
+// create a request to invoke CreateTempDBInstance API
 func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) {
 	request = &CreateTempDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) 
 	return
 }
 
+// create a response to parse from CreateTempDBInstance response
 func CreateCreateTempDBInstanceResponse() (response *CreateTempDBInstanceResponse) {
 	response = &CreateTempDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

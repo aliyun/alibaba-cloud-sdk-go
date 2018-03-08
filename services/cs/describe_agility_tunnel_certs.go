@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
 func (client *Client) DescribeAgilityTunnelCerts(request *DescribeAgilityTunnelCertsRequest) (response *DescribeAgilityTunnelCertsResponse, err error) {
 	response = CreateDescribeAgilityTunnelCertsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelCertsWithChan(request *DescribeAgilityTunnelCertsRequest) (<-chan *DescribeAgilityTunnelCertsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAgilityTunnelCertsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAgilityTunnelCertsWithChan(request *DescribeAgilit
 	return responseChan, errChan
 }
 
+// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelCertsWithCallback(request *DescribeAgilityTunnelCertsRequest, callback func(response *DescribeAgilityTunnelCertsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeAgilityTunnelCertsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeAgilityTunnelCerts API
 func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCertsRequest) {
 	request = &DescribeAgilityTunnelCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCe
 	return
 }
 
+// create a response to parse from DescribeAgilityTunnelCerts response
 func CreateDescribeAgilityTunnelCertsResponse() (response *DescribeAgilityTunnelCertsResponse) {
 	response = &DescribeAgilityTunnelCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

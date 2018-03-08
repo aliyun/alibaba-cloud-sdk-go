@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
 func (client *Client) DeleteDampPolicy(request *DeleteDampPolicyRequest) (response *DeleteDampPolicyResponse, err error) {
 	response = CreateDeleteDampPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDampPolicyWithChan(request *DeleteDampPolicyRequest) (<-chan *DeleteDampPolicyResponse, <-chan error) {
 	responseChan := make(chan *DeleteDampPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDampPolicyWithChan(request *DeleteDampPolicyRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDampPolicyWithCallback(request *DeleteDampPolicyRequest, callback func(response *DeleteDampPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteDampPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteDampPolicy API
 func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
 	request = &DeleteDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
 	return
 }
 
+// create a response to parse from DeleteDampPolicy response
 func CreateDeleteDampPolicyResponse() (response *DeleteDampPolicyResponse) {
 	response = &DeleteDampPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

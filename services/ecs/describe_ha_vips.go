@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeHaVips api with *DescribeHaVipsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describehavips.html
 func (client *Client) DescribeHaVips(request *DescribeHaVipsRequest) (response *DescribeHaVipsResponse, err error) {
 	response = CreateDescribeHaVipsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeHaVips api with *DescribeHaVipsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describehavips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHaVipsWithChan(request *DescribeHaVipsRequest) (<-chan *DescribeHaVipsResponse, <-chan error) {
 	responseChan := make(chan *DescribeHaVipsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeHaVipsWithChan(request *DescribeHaVipsRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DescribeHaVips api with *DescribeHaVipsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describehavips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest, callback func(response *DescribeHaVipsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeHaVipsResponse struct {
 	HaVips     HaVips `json:"HaVips" xml:"HaVips"`
 }
 
+// create a request to invoke DescribeHaVips API
 func CreateDescribeHaVipsRequest() (request *DescribeHaVipsRequest) {
 	request = &DescribeHaVipsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeHaVipsRequest() (request *DescribeHaVipsRequest) {
 	return
 }
 
+// create a response to parse from DescribeHaVips response
 func CreateDescribeHaVipsResponse() (response *DescribeHaVipsResponse) {
 	response = &DescribeHaVipsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke Action api with *ActionRequest synchronously
+// api document: https://help.aliyun.com/api/tesladam/action.html
 func (client *Client) Action(request *ActionRequest) (response *ActionResponse, err error) {
 	response = CreateActionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke Action api with *ActionRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/action.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionWithChan(request *ActionRequest) (<-chan *ActionResponse, <-chan error) {
 	responseChan := make(chan *ActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActionWithChan(request *ActionRequest) (<-chan *ActionResp
 	return responseChan, errChan
 }
 
+// invoke Action api with *ActionRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/action.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionWithCallback(request *ActionRequest, callback func(response *ActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type ActionResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke Action API
 func CreateActionRequest() (request *ActionRequest) {
 	request = &ActionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateActionRequest() (request *ActionRequest) {
 	return
 }
 
+// create a response to parse from Action response
 func CreateActionResponse() (response *ActionResponse) {
 	response = &ActionResponse{
 		BaseResponse: &responses.BaseResponse{},

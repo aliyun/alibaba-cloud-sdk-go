@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyVRouterAttribute api with *ModifyVRouterAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvrouterattribute.html
 func (client *Client) ModifyVRouterAttribute(request *ModifyVRouterAttributeRequest) (response *ModifyVRouterAttributeResponse, err error) {
 	response = CreateModifyVRouterAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyVRouterAttribute api with *ModifyVRouterAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvrouterattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVRouterAttributeWithChan(request *ModifyVRouterAttributeRequest) (<-chan *ModifyVRouterAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVRouterAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyVRouterAttributeWithChan(request *ModifyVRouterAttri
 	return responseChan, errChan
 }
 
+// invoke ModifyVRouterAttribute api with *ModifyVRouterAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvrouterattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVRouterAttributeWithCallback(request *ModifyVRouterAttributeRequest, callback func(response *ModifyVRouterAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyVRouterAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyVRouterAttribute API
 func CreateModifyVRouterAttributeRequest() (request *ModifyVRouterAttributeRequest) {
 	request = &ModifyVRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyVRouterAttributeRequest() (request *ModifyVRouterAttributeReque
 	return
 }
 
+// create a response to parse from ModifyVRouterAttribute response
 func CreateModifyVRouterAttributeResponse() (response *ModifyVRouterAttributeResponse) {
 	response = &ModifyVRouterAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

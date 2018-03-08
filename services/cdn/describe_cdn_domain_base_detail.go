@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnDomainBaseDetail api with *DescribeCdnDomainBaseDetailRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainbasedetail.html
 func (client *Client) DescribeCdnDomainBaseDetail(request *DescribeCdnDomainBaseDetailRequest) (response *DescribeCdnDomainBaseDetailResponse, err error) {
 	response = CreateDescribeCdnDomainBaseDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnDomainBaseDetail api with *DescribeCdnDomainBaseDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainbasedetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainBaseDetailWithChan(request *DescribeCdnDomainBaseDetailRequest) (<-chan *DescribeCdnDomainBaseDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnDomainBaseDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnDomainBaseDetailWithChan(request *DescribeCdnDo
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnDomainBaseDetail api with *DescribeCdnDomainBaseDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdndomainbasedetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainBaseDetailWithCallback(request *DescribeCdnDomainBaseDetailRequest, callback func(response *DescribeCdnDomainBaseDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeCdnDomainBaseDetailResponse struct {
 	DomainBaseDetailModel DomainBaseDetailModel `json:"DomainBaseDetailModel" xml:"DomainBaseDetailModel"`
 }
 
+// create a request to invoke DescribeCdnDomainBaseDetail API
 func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseDetailRequest) {
 	request = &DescribeCdnDomainBaseDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseD
 	return
 }
 
+// create a response to parse from DescribeCdnDomainBaseDetail response
 func CreateDescribeCdnDomainBaseDetailResponse() (response *DescribeCdnDomainBaseDetailResponse) {
 	response = &DescribeCdnDomainBaseDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

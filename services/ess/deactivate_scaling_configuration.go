@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest synchronously
+// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
 func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingConfigurationRequest) (response *DeactivateScalingConfigurationResponse, err error) {
 	response = CreateDeactivateScalingConfigurationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithChan(request *DeactivateScalingConfigurationRequest) (<-chan *DeactivateScalingConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DeactivateScalingConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeactivateScalingConfigurationWithChan(request *Deactivate
 	return responseChan, errChan
 }
 
+// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithCallback(request *DeactivateScalingConfigurationRequest, callback func(response *DeactivateScalingConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeactivateScalingConfigurationResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeactivateScalingConfiguration API
 func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingConfigurationRequest) {
 	request = &DeactivateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingCo
 	return
 }
 
+// create a response to parse from DeactivateScalingConfiguration response
 func CreateDeactivateScalingConfigurationResponse() (response *DeactivateScalingConfigurationResponse) {
 	response = &DeactivateScalingConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

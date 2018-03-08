@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateBlockhole api with *CreateBlockholeRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/createblockhole.html
 func (client *Client) CreateBlockhole(request *CreateBlockholeRequest) (response *CreateBlockholeResponse, err error) {
 	response = CreateCreateBlockholeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateBlockhole api with *CreateBlockholeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/createblockhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBlockholeWithChan(request *CreateBlockholeRequest) (<-chan *CreateBlockholeResponse, <-chan error) {
 	responseChan := make(chan *CreateBlockholeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateBlockholeWithChan(request *CreateBlockholeRequest) (
 	return responseChan, errChan
 }
 
+// invoke CreateBlockhole api with *CreateBlockholeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/createblockhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBlockholeWithCallback(request *CreateBlockholeRequest, callback func(response *CreateBlockholeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type CreateBlockholeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateBlockhole API
 func CreateCreateBlockholeRequest() (request *CreateBlockholeRequest) {
 	request = &CreateBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateCreateBlockholeRequest() (request *CreateBlockholeRequest) {
 	return
 }
 
+// create a response to parse from CreateBlockhole response
 func CreateCreateBlockholeResponse() (response *CreateBlockholeResponse) {
 	response = &CreateBlockholeResponse{
 		BaseResponse: &responses.BaseResponse{},

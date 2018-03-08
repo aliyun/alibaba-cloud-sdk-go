@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRules api with *DescribeRulesRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describerules.html
 func (client *Client) DescribeRules(request *DescribeRulesRequest) (response *DescribeRulesResponse, err error) {
 	response = CreateDescribeRulesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRules api with *DescribeRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describerules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-chan *DescribeRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DescribeRules api with *DescribeRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describerules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, callback func(response *DescribeRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeRulesResponse struct {
 	Rules     RulesInDescribeRules `json:"Rules" xml:"Rules"`
 }
 
+// create a request to invoke DescribeRules API
 func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	return
 }
 
+// create a response to parse from DescribeRules response
 func CreateDescribeRulesResponse() (response *DescribeRulesResponse) {
 	response = &DescribeRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

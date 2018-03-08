@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateBgpGroup api with *CreateBgpGroupRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
 func (client *Client) CreateBgpGroup(request *CreateBgpGroupRequest) (response *CreateBgpGroupResponse, err error) {
 	response = CreateCreateBgpGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateBgpGroup api with *CreateBgpGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpGroupWithChan(request *CreateBgpGroupRequest) (<-chan *CreateBgpGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateBgpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateBgpGroupWithChan(request *CreateBgpGroupRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke CreateBgpGroup api with *CreateBgpGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpGroupWithCallback(request *CreateBgpGroupRequest, callback func(response *CreateBgpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type CreateBgpGroupResponse struct {
 	BgpGroupId string `json:"BgpGroupId" xml:"BgpGroupId"`
 }
 
+// create a request to invoke CreateBgpGroup API
 func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
 	request = &CreateBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateBgpGroup response
 func CreateCreateBgpGroupResponse() (response *CreateBgpGroupResponse) {
 	response = &CreateBgpGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

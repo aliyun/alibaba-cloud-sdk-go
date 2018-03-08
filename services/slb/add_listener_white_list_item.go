@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest synchronously
+// api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
 func (client *Client) AddListenerWhiteListItem(request *AddListenerWhiteListItemRequest) (response *AddListenerWhiteListItemResponse, err error) {
 	response = CreateAddListenerWhiteListItemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddListenerWhiteListItemWithChan(request *AddListenerWhiteListItemRequest) (<-chan *AddListenerWhiteListItemResponse, <-chan error) {
 	responseChan := make(chan *AddListenerWhiteListItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddListenerWhiteListItemWithChan(request *AddListenerWhite
 	return responseChan, errChan
 }
 
+// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddListenerWhiteListItemWithCallback(request *AddListenerWhiteListItemRequest, callback func(response *AddListenerWhiteListItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AddListenerWhiteListItemResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddListenerWhiteListItem API
 func CreateAddListenerWhiteListItemRequest() (request *AddListenerWhiteListItemRequest) {
 	request = &AddListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAddListenerWhiteListItemRequest() (request *AddListenerWhiteListItemR
 	return
 }
 
+// create a response to parse from AddListenerWhiteListItem response
 func CreateAddListenerWhiteListItemResponse() (response *AddListenerWhiteListItemResponse) {
 	response = &AddListenerWhiteListItemResponse{
 		BaseResponse: &responses.BaseResponse{},

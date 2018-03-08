@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddPhoneNumber api with *AddPhoneNumberRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/addphonenumber.html
 func (client *Client) AddPhoneNumber(request *AddPhoneNumberRequest) (response *AddPhoneNumberResponse, err error) {
 	response = CreateAddPhoneNumberResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddPhoneNumber api with *AddPhoneNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/addphonenumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-chan *AddPhoneNumberResponse, <-chan error) {
 	responseChan := make(chan *AddPhoneNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke AddPhoneNumber api with *AddPhoneNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/addphonenumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest, callback func(response *AddPhoneNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AddPhoneNumberResponse struct {
 	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
+// create a request to invoke AddPhoneNumber API
 func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
 	request = &AddPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
 	return
 }
 
+// create a response to parse from AddPhoneNumber response
 func CreateAddPhoneNumberResponse() (response *AddPhoneNumberResponse) {
 	response = &AddPhoneNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

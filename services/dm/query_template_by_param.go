@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
 func (client *Client) QueryTemplateByParam(request *QueryTemplateByParamRequest) (response *QueryTemplateByParamResponse, err error) {
 	response = CreateQueryTemplateByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateByParamWithChan(request *QueryTemplateByParamRequest) (<-chan *QueryTemplateByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryTemplateByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTemplateByParamWithChan(request *QueryTemplateByParam
 	return responseChan, errChan
 }
 
+// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateByParamWithCallback(request *QueryTemplateByParamRequest, callback func(response *QueryTemplateByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type QueryTemplateByParamResponse struct {
 	Data       DataInQueryTemplateByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryTemplateByParam API
 func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) {
 	request = &QueryTemplateByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) 
 	return
 }
 
+// create a response to parse from QueryTemplateByParam response
 func CreateQueryTemplateByParamResponse() (response *QueryTemplateByParamResponse) {
 	response = &QueryTemplateByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

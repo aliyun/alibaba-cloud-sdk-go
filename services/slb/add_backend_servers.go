@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddBackendServers api with *AddBackendServersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/addbackendservers.html
 func (client *Client) AddBackendServers(request *AddBackendServersRequest) (response *AddBackendServersResponse, err error) {
 	response = CreateAddBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddBackendServers api with *AddBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBackendServersWithChan(request *AddBackendServersRequest) (<-chan *AddBackendServersResponse, <-chan error) {
 	responseChan := make(chan *AddBackendServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddBackendServersWithChan(request *AddBackendServersReques
 	return responseChan, errChan
 }
 
+// invoke AddBackendServers api with *AddBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBackendServersWithCallback(request *AddBackendServersRequest, callback func(response *AddBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type AddBackendServersResponse struct {
 	BackendServers BackendServersInAddBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke AddBackendServers API
 func CreateAddBackendServersRequest() (request *AddBackendServersRequest) {
 	request = &AddBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateAddBackendServersRequest() (request *AddBackendServersRequest) {
 	return
 }
 
+// create a response to parse from AddBackendServers response
 func CreateAddBackendServersResponse() (response *AddBackendServersResponse) {
 	response = &AddBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

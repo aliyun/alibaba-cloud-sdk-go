@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
 func (client *Client) QuerySystemEventHistogram(request *QuerySystemEventHistogramRequest) (response *QuerySystemEventHistogramResponse, err error) {
 	response = CreateQuerySystemEventHistogramResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventHistogramWithChan(request *QuerySystemEventHistogramRequest) (<-chan *QuerySystemEventHistogramResponse, <-chan error) {
 	responseChan := make(chan *QuerySystemEventHistogramResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySystemEventHistogramWithChan(request *QuerySystemEven
 	return responseChan, errChan
 }
 
+// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventHistogramWithCallback(request *QuerySystemEventHistogramRequest, callback func(response *QuerySystemEventHistogramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QuerySystemEventHistogramResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QuerySystemEventHistogram API
 func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogramRequest) {
 	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogra
 	return
 }
 
+// create a response to parse from QuerySystemEventHistogram response
 func CreateQuerySystemEventHistogramResponse() (response *QuerySystemEventHistogramResponse) {
 	response = &QuerySystemEventHistogramResponse{
 		BaseResponse: &responses.BaseResponse{},

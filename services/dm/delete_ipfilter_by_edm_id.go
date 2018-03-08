@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
 func (client *Client) DeleteIpfilterByEdmId(request *DeleteIpfilterByEdmIdRequest) (response *DeleteIpfilterByEdmIdResponse, err error) {
 	response = CreateDeleteIpfilterByEdmIdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpfilterByEdmIdWithChan(request *DeleteIpfilterByEdmIdRequest) (<-chan *DeleteIpfilterByEdmIdResponse, <-chan error) {
 	responseChan := make(chan *DeleteIpfilterByEdmIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteIpfilterByEdmIdWithChan(request *DeleteIpfilterByEdm
 	return responseChan, errChan
 }
 
+// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpfilterByEdmIdWithCallback(request *DeleteIpfilterByEdmIdRequest, callback func(response *DeleteIpfilterByEdmIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteIpfilterByEdmIdResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteIpfilterByEdmId API
 func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest) {
 	request = &DeleteIpfilterByEdmIdRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest
 	return
 }
 
+// create a response to parse from DeleteIpfilterByEdmId response
 func CreateDeleteIpfilterByEdmIdResponse() (response *DeleteIpfilterByEdmIdResponse) {
 	response = &DeleteIpfilterByEdmIdResponse{
 		BaseResponse: &responses.BaseResponse{},

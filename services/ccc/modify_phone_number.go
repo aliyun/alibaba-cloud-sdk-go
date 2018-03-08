@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
 func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (response *ModifyPhoneNumberResponse, err error) {
 	response = CreateModifyPhoneNumberResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberRequest) (<-chan *ModifyPhoneNumberResponse, <-chan error) {
 	responseChan := make(chan *ModifyPhoneNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberReques
 	return responseChan, errChan
 }
 
+// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRequest, callback func(response *ModifyPhoneNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ModifyPhoneNumberResponse struct {
 	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
+// create a request to invoke ModifyPhoneNumber API
 func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	request = &ModifyPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	return
 }
 
+// create a response to parse from ModifyPhoneNumber response
 func CreateModifyPhoneNumberResponse() (response *ModifyPhoneNumberResponse) {
 	response = &ModifyPhoneNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

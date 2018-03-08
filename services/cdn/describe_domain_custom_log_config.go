@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
 func (client *Client) DescribeDomainCustomLogConfig(request *DescribeDomainCustomLogConfigRequest) (response *DescribeDomainCustomLogConfigResponse, err error) {
 	response = CreateDescribeDomainCustomLogConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCustomLogConfigWithChan(request *DescribeDomainCustomLogConfigRequest) (<-chan *DescribeDomainCustomLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainCustomLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainCustomLogConfigWithChan(request *DescribeDom
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCustomLogConfigWithCallback(request *DescribeDomainCustomLogConfigRequest, callback func(response *DescribeDomainCustomLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeDomainCustomLogConfigResponse struct {
 	Tag       string `json:"Tag" xml:"Tag"`
 }
 
+// create a request to invoke DescribeDomainCustomLogConfig API
 func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustomLogConfigRequest) {
 	request = &DescribeDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustom
 	return
 }
 
+// create a response to parse from DescribeDomainCustomLogConfig response
 func CreateDescribeDomainCustomLogConfigResponse() (response *DescribeDomainCustomLogConfigResponse) {
 	response = &DescribeDomainCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

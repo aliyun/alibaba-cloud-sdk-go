@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListSummaryApps api with *ListSummaryAppsRequest synchronously
+// api document: https://help.aliyun.com/api/push/listsummaryapps.html
 func (client *Client) ListSummaryApps(request *ListSummaryAppsRequest) (response *ListSummaryAppsResponse, err error) {
 	response = CreateListSummaryAppsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListSummaryApps api with *ListSummaryAppsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/listsummaryapps.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (<-chan *ListSummaryAppsResponse, <-chan error) {
 	responseChan := make(chan *ListSummaryAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListSummaryApps api with *ListSummaryAppsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/listsummaryapps.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithCallback(request *ListSummaryAppsRequest, callback func(response *ListSummaryAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type ListSummaryAppsResponse struct {
 	SummaryAppInfos SummaryAppInfos `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
 }
 
+// create a request to invoke ListSummaryApps API
 func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
 	request = &ListSummaryAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
 	return
 }
 
+// create a response to parse from ListSummaryApps response
 func CreateListSummaryAppsResponse() (response *ListSummaryAppsResponse) {
 	response = &ListSummaryAppsResponse{
 		BaseResponse: &responses.BaseResponse{},

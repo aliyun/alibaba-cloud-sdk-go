@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateNqa api with *CreateNqaRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createnqa.html
 func (client *Client) CreateNqa(request *CreateNqaRequest) (response *CreateNqaResponse, err error) {
 	response = CreateCreateNqaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateNqa api with *CreateNqaRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createnqa.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNqaWithChan(request *CreateNqaRequest) (<-chan *CreateNqaResponse, <-chan error) {
 	responseChan := make(chan *CreateNqaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateNqaWithChan(request *CreateNqaRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
+// invoke CreateNqa api with *CreateNqaRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createnqa.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNqaWithCallback(request *CreateNqaRequest, callback func(response *CreateNqaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateNqaResponse struct {
 	NqaId     string `json:"NqaId" xml:"NqaId"`
 }
 
+// create a request to invoke CreateNqa API
 func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	request = &CreateNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	return
 }
 
+// create a response to parse from CreateNqa response
 func CreateCreateNqaResponse() (response *CreateNqaResponse) {
 	response = &CreateNqaResponse{
 		BaseResponse: &responses.BaseResponse{},

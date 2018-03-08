@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTaskByParam api with *QueryTaskByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
 func (client *Client) QueryTaskByParam(request *QueryTaskByParamRequest) (response *QueryTaskByParamResponse, err error) {
 	response = CreateQueryTaskByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTaskByParam api with *QueryTaskByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest) (<-chan *QueryTaskByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest)
 	return responseChan, errChan
 }
 
+// invoke QueryTaskByParam api with *QueryTaskByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequest, callback func(response *QueryTaskByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type QueryTaskByParamResponse struct {
 	Data       DataInQueryTaskByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryTaskByParam API
 func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
 	request = &QueryTaskByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
 	return
 }
 
+// create a response to parse from QueryTaskByParam response
 func CreateQueryTaskByParamResponse() (response *QueryTaskByParamResponse) {
 	response = &QueryTaskByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

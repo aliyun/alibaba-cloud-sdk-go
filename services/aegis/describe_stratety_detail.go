@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeStratetyDetail api with *DescribeStratetyDetailRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describestratetydetail.html
 func (client *Client) DescribeStratetyDetail(request *DescribeStratetyDetailRequest) (response *DescribeStratetyDetailResponse, err error) {
 	response = CreateDescribeStratetyDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeStratetyDetail api with *DescribeStratetyDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestratetydetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyDetailWithChan(request *DescribeStratetyDetailRequest) (<-chan *DescribeStratetyDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeStratetyDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeStratetyDetailWithChan(request *DescribeStratetyDe
 	return responseChan, errChan
 }
 
+// invoke DescribeStratetyDetail api with *DescribeStratetyDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestratetydetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyDetailWithCallback(request *DescribeStratetyDetailRequest, callback func(response *DescribeStratetyDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeStratetyDetailResponse struct {
 	Strategy  Strategy `json:"Strategy" xml:"Strategy"`
 }
 
+// create a request to invoke DescribeStratetyDetail API
 func CreateDescribeStratetyDetailRequest() (request *DescribeStratetyDetailRequest) {
 	request = &DescribeStratetyDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeStratetyDetailRequest() (request *DescribeStratetyDetailReque
 	return
 }
 
+// create a response to parse from DescribeStratetyDetail response
 func CreateDescribeStratetyDetailResponse() (response *DescribeStratetyDetailResponse) {
 	response = &DescribeStratetyDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

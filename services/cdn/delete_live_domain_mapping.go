@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
 func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRequest) (response *DeleteLiveDomainMappingResponse, err error) {
 	response = CreateDeleteLiveDomainMappingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainMappingRequest) (<-chan *DeleteLiveDomainMappingResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveDomainMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainM
 	return responseChan, errChan
 }
 
+// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDomainMappingRequest, callback func(response *DeleteLiveDomainMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteLiveDomainMappingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLiveDomainMapping API
 func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingRequest) {
 	request = &DeleteLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingReq
 	return
 }
 
+// create a response to parse from DeleteLiveDomainMapping response
 func CreateDeleteLiveDomainMappingResponse() (response *DeleteLiveDomainMappingResponse) {
 	response = &DeleteLiveDomainMappingResponse{
 		BaseResponse: &responses.BaseResponse{},

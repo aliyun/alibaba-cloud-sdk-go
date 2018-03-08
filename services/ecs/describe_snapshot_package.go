@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
 func (client *Client) DescribeSnapshotPackage(request *DescribeSnapshotPackageRequest) (response *DescribeSnapshotPackageResponse, err error) {
 	response = CreateDescribeSnapshotPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotPackageWithChan(request *DescribeSnapshotPackageRequest) (<-chan *DescribeSnapshotPackageResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSnapshotPackageWithChan(request *DescribeSnapshotP
 	return responseChan, errChan
 }
 
+// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotPackageWithCallback(request *DescribeSnapshotPackageRequest, callback func(response *DescribeSnapshotPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeSnapshotPackageResponse struct {
 	SnapshotPackages SnapshotPackages `json:"SnapshotPackages" xml:"SnapshotPackages"`
 }
 
+// create a request to invoke DescribeSnapshotPackage API
 func CreateDescribeSnapshotPackageRequest() (request *DescribeSnapshotPackageRequest) {
 	request = &DescribeSnapshotPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeSnapshotPackageRequest() (request *DescribeSnapshotPackageReq
 	return
 }
 
+// create a response to parse from DescribeSnapshotPackage response
 func CreateDescribeSnapshotPackageResponse() (response *DescribeSnapshotPackageResponse) {
 	response = &DescribeSnapshotPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

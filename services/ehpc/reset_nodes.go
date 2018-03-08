@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResetNodes api with *ResetNodesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
 func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNodesResponse, err error) {
 	response = CreateResetNodesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResetNodes api with *ResetNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *ResetNodesResponse, <-chan error) {
 	responseChan := make(chan *ResetNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
+// invoke ResetNodes api with *ResetNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callback func(response *ResetNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ResetNodesResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResetNodes API
 func CreateResetNodesRequest() (request *ResetNodesRequest) {
 	request = &ResetNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateResetNodesRequest() (request *ResetNodesRequest) {
 	return
 }
 
+// create a response to parse from ResetNodes response
 func CreateResetNodesResponse() (response *ResetNodesResponse) {
 	response = &ResetNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

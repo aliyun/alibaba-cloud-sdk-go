@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfo(request *SaveSingleTaskForUpdatingContactInfoRequest) (response *SaveSingleTaskForUpdatingContactInfoResponse, err error) {
 	response = CreateSaveSingleTaskForUpdatingContactInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *SaveSingleTaskForUpdatingContactInfoRequest) (<-chan *SaveSingleTaskForUpdatingContactInfoResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForUpdatingContactInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *Save
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *SaveSingleTaskForUpdatingContactInfoRequest, callback func(response *SaveSingleTaskForUpdatingContactInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SaveSingleTaskForUpdatingContactInfoResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForUpdatingContactInfo API
 func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTaskForUpdatingContactInfoRequest) {
 	request = &SaveSingleTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTas
 	return
 }
 
+// create a response to parse from SaveSingleTaskForUpdatingContactInfo response
 func CreateSaveSingleTaskForUpdatingContactInfoResponse() (response *SaveSingleTaskForUpdatingContactInfoResponse) {
 	response = &SaveSingleTaskForUpdatingContactInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

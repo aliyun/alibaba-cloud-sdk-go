@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
 func (client *Client) DescribeCdnMonitorData(request *DescribeCdnMonitorDataRequest) (response *DescribeCdnMonitorDataResponse, err error) {
 	response = CreateDescribeCdnMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnMonitorDataWithChan(request *DescribeCdnMonitorDataRequest) (<-chan *DescribeCdnMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnMonitorDataWithChan(request *DescribeCdnMonitor
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnMonitorDataWithCallback(request *DescribeCdnMonitorDataRequest, callback func(response *DescribeCdnMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeCdnMonitorDataResponse struct {
 	MonitorDatas    MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
+// create a request to invoke DescribeCdnMonitorData API
 func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataRequest) {
 	request = &DescribeCdnMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataReque
 	return
 }
 
+// create a response to parse from DescribeCdnMonitorData response
 func CreateDescribeCdnMonitorDataResponse() (response *DescribeCdnMonitorDataResponse) {
 	response = &DescribeCdnMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

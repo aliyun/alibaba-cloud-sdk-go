@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPolicy api with *GetPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getpolicy.html
 func (client *Client) GetPolicy(request *GetPolicyRequest) (response *GetPolicyResponse, err error) {
 	response = CreateGetPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPolicy api with *GetPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetPolicyResponse, <-chan error) {
 	responseChan := make(chan *GetPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetP
 	return responseChan, errChan
 }
 
+// invoke GetPolicy api with *GetPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithCallback(request *GetPolicyRequest, callback func(response *GetPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type GetPolicyResponse struct {
 	Policy    Policy `json:"Policy" xml:"Policy"`
 }
 
+// create a request to invoke GetPolicy API
 func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 	request = &GetPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 	return
 }
 
+// create a response to parse from GetPolicy response
 func CreateGetPolicyResponse() (response *GetPolicyResponse) {
 	response = &GetPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

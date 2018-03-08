@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetLoginProfile api with *GetLoginProfileRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getloginprofile.html
 func (client *Client) GetLoginProfile(request *GetLoginProfileRequest) (response *GetLoginProfileResponse, err error) {
 	response = CreateGetLoginProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetLoginProfile api with *GetLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (<-chan *GetLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *GetLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetLoginProfile api with *GetLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithCallback(request *GetLoginProfileRequest, callback func(response *GetLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type GetLoginProfileResponse struct {
 	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
+// create a request to invoke GetLoginProfile API
 func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
 	request = &GetLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
 	return
 }
 
+// create a response to parse from GetLoginProfile response
 func CreateGetLoginProfileResponse() (response *GetLoginProfileResponse) {
 	response = &GetLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

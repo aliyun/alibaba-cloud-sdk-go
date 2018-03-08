@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
 func (client *Client) SubmitAnnotationJob(request *SubmitAnnotationJobRequest) (response *SubmitAnnotationJobResponse, err error) {
 	response = CreateSubmitAnnotationJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRequest) (<-chan *SubmitAnnotationJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAnnotationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRe
 	return responseChan, errChan
 }
 
+// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithCallback(request *SubmitAnnotationJobRequest, callback func(response *SubmitAnnotationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitAnnotationJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitAnnotationJob API
 func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	request = &SubmitAnnotationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitAnnotationJob response
 func CreateSubmitAnnotationJobResponse() (response *SubmitAnnotationJobResponse) {
 	response = &SubmitAnnotationJobResponse{
 		BaseResponse: &responses.BaseResponse{},

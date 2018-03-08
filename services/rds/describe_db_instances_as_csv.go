@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
 func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsvRequest) (response *DescribeDBInstancesAsCsvResponse, err error) {
 	response = CreateDescribeDBInstancesAsCsvResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstancesAsCsvRequest) (<-chan *DescribeDBInstancesAsCsvResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancesAsCsvResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstan
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBInstancesAsCsvRequest, callback func(response *DescribeDBInstancesAsCsvResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DescribeDBInstancesAsCsvResponse struct {
 	Items     ItemsInDescribeDBInstancesAsCsv `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeDBInstancesAsCsv API
 func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvRequest) {
 	request = &DescribeDBInstancesAsCsvRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvR
 	return
 }
 
+// create a response to parse from DescribeDBInstancesAsCsv response
 func CreateDescribeDBInstancesAsCsvResponse() (response *DescribeDBInstancesAsCsvResponse) {
 	response = &DescribeDBInstancesAsCsvResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterDetail api with *DescribeClusterDetailRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
 func (client *Client) DescribeClusterDetail(request *DescribeClusterDetailRequest) (response *DescribeClusterDetailResponse, err error) {
 	response = CreateDescribeClusterDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterDetail api with *DescribeClusterDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDetailRequest) (<-chan *DescribeClusterDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDeta
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterDetail api with *DescribeClusterDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDetailWithCallback(request *DescribeClusterDetailRequest, callback func(response *DescribeClusterDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterDetailResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterDetail API
 func CreateDescribeClusterDetailRequest() (request *DescribeClusterDetailRequest) {
 	request = &DescribeClusterDetailRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterDetailRequest() (request *DescribeClusterDetailRequest
 	return
 }
 
+// create a response to parse from DescribeClusterDetail response
 func CreateDescribeClusterDetailResponse() (response *DescribeClusterDetailResponse) {
 	response = &DescribeClusterDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

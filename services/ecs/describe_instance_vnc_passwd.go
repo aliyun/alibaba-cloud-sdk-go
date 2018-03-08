@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
 func (client *Client) DescribeInstanceVncPasswd(request *DescribeInstanceVncPasswdRequest) (response *DescribeInstanceVncPasswdResponse, err error) {
 	response = CreateDescribeInstanceVncPasswdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncPasswdWithChan(request *DescribeInstanceVncPasswdRequest) (<-chan *DescribeInstanceVncPasswdResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceVncPasswdResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceVncPasswdWithChan(request *DescribeInstanc
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncPasswdWithCallback(request *DescribeInstanceVncPasswdRequest, callback func(response *DescribeInstanceVncPasswdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeInstanceVncPasswdResponse struct {
 	VncPasswd string `json:"VncPasswd" xml:"VncPasswd"`
 }
 
+// create a request to invoke DescribeInstanceVncPasswd API
 func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPasswdRequest) {
 	request = &DescribeInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPassw
 	return
 }
 
+// create a response to parse from DescribeInstanceVncPasswd response
 func CreateDescribeInstanceVncPasswdResponse() (response *DescribeInstanceVncPasswdResponse) {
 	response = &DescribeInstanceVncPasswdResponse{
 		BaseResponse: &responses.BaseResponse{},

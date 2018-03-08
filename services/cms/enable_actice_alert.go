@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EnableActiceAlert api with *EnableActiceAlertRequest synchronously
+// api document: https://help.aliyun.com/api/cms/enableacticealert.html
 func (client *Client) EnableActiceAlert(request *EnableActiceAlertRequest) (response *EnableActiceAlertResponse, err error) {
 	response = CreateEnableActiceAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EnableActiceAlert api with *EnableActiceAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/enableacticealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiceAlertWithChan(request *EnableActiceAlertRequest) (<-chan *EnableActiceAlertResponse, <-chan error) {
 	responseChan := make(chan *EnableActiceAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EnableActiceAlertWithChan(request *EnableActiceAlertReques
 	return responseChan, errChan
 }
 
+// invoke EnableActiceAlert api with *EnableActiceAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/enableacticealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiceAlertWithCallback(request *EnableActiceAlertRequest, callback func(response *EnableActiceAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type EnableActiceAlertResponse struct {
 	Message string `json:"Message" xml:"Message"`
 }
 
+// create a request to invoke EnableActiceAlert API
 func CreateEnableActiceAlertRequest() (request *EnableActiceAlertRequest) {
 	request = &EnableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateEnableActiceAlertRequest() (request *EnableActiceAlertRequest) {
 	return
 }
 
+// create a response to parse from EnableActiceAlert response
 func CreateEnableActiceAlertResponse() (response *EnableActiceAlertResponse) {
 	response = &EnableActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

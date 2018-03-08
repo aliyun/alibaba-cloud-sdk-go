@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke WhereInDimQuery api with *WhereInDimQueryRequest synchronously
+// api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
 func (client *Client) WhereInDimQuery(request *WhereInDimQueryRequest) (response *WhereInDimQueryResponse, err error) {
 	response = CreateWhereInDimQueryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke WhereInDimQuery api with *WhereInDimQueryRequest asynchronously
+// api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WhereInDimQueryWithChan(request *WhereInDimQueryRequest) (<-chan *WhereInDimQueryResponse, <-chan error) {
 	responseChan := make(chan *WhereInDimQueryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) WhereInDimQueryWithChan(request *WhereInDimQueryRequest) (
 	return responseChan, errChan
 }
 
+// invoke WhereInDimQuery api with *WhereInDimQueryRequest asynchronously
+// api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryRequest, callback func(response *WhereInDimQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type WhereInDimQueryResponse struct {
 	Data string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke WhereInDimQuery API
 func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	request = &WhereInDimQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	return
 }
 
+// create a response to parse from WhereInDimQuery response
 func CreateWhereInDimQueryResponse() (response *WhereInDimQueryResponse) {
 	response = &WhereInDimQueryResponse{
 		BaseResponse: &responses.BaseResponse{},

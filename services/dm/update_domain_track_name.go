@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest synchronously
+// api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
 func (client *Client) UpdateDomainTrackName(request *UpdateDomainTrackNameRequest) (response *UpdateDomainTrackNameResponse, err error) {
 	response = CreateUpdateDomainTrackNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainTrackNameWithChan(request *UpdateDomainTrackNameRequest) (<-chan *UpdateDomainTrackNameResponse, <-chan error) {
 	responseChan := make(chan *UpdateDomainTrackNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateDomainTrackNameWithChan(request *UpdateDomainTrackNa
 	return responseChan, errChan
 }
 
+// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainTrackNameWithCallback(request *UpdateDomainTrackNameRequest, callback func(response *UpdateDomainTrackNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type UpdateDomainTrackNameResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateDomainTrackName API
 func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest) {
 	request = &UpdateDomainTrackNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest
 	return
 }
 
+// create a response to parse from UpdateDomainTrackName response
 func CreateUpdateDomainTrackNameResponse() (response *UpdateDomainTrackNameResponse) {
 	response = &UpdateDomainTrackNameResponse{
 		BaseResponse: &responses.BaseResponse{},

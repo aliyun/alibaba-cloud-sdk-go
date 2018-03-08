@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CopyImage api with *CopyImageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/copyimage.html
 func (client *Client) CopyImage(request *CopyImageRequest) (response *CopyImageResponse, err error) {
 	response = CreateCopyImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CopyImage api with *CopyImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/copyimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyImageWithChan(request *CopyImageRequest) (<-chan *CopyImageResponse, <-chan error) {
 	responseChan := make(chan *CopyImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CopyImageWithChan(request *CopyImageRequest) (<-chan *Copy
 	return responseChan, errChan
 }
 
+// invoke CopyImage api with *CopyImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/copyimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback func(response *CopyImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type CopyImageResponse struct {
 	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
+// create a request to invoke CopyImage API
 func CreateCopyImageRequest() (request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateCopyImageRequest() (request *CopyImageRequest) {
 	return
 }
 
+// create a response to parse from CopyImage response
 func CreateCopyImageResponse() (response *CopyImageResponse) {
 	response = &CopyImageResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
 func (client *Client) DescribeDomainLogs(request *DescribeDomainLogsRequest) (response *DescribeDomainLogsResponse, err error) {
 	response = CreateDescribeDomainLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainLogsWithChan(request *DescribeDomainLogsRequest) (<-chan *DescribeDomainLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainLogsWithChan(request *DescribeDomainLogsRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogsRequest, callback func(response *DescribeDomainLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeDomainLogsResponse struct {
 	DomainLogs DomainLogs `json:"DomainLogs" xml:"DomainLogs"`
 }
 
+// create a request to invoke DescribeDomainLogs API
 func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {
 	request = &DescribeDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {
 	return
 }
 
+// create a response to parse from DescribeDomainLogs response
 func CreateDescribeDomainLogsResponse() (response *DescribeDomainLogsResponse) {
 	response = &DescribeDomainLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

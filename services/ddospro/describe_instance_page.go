@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstancePage api with *DescribeInstancePageRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
 func (client *Client) DescribeInstancePage(request *DescribeInstancePageRequest) (response *DescribeInstancePageResponse, err error) {
 	response = CreateDescribeInstancePageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstancePage api with *DescribeInstancePageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePageWithChan(request *DescribeInstancePageRequest) (<-chan *DescribeInstancePageResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancePageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstancePageWithChan(request *DescribeInstancePage
 	return responseChan, errChan
 }
 
+// invoke DescribeInstancePage api with *DescribeInstancePageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePageWithCallback(request *DescribeInstancePageRequest, callback func(response *DescribeInstancePageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeInstancePageResponse struct {
 	InstanceList []InstanceInfo `json:"InstanceList" xml:"InstanceList"`
 }
 
+// create a request to invoke DescribeInstancePage API
 func CreateDescribeInstancePageRequest() (request *DescribeInstancePageRequest) {
 	request = &DescribeInstancePageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeInstancePageRequest() (request *DescribeInstancePageRequest) 
 	return
 }
 
+// create a response to parse from DescribeInstancePage response
 func CreateDescribeInstancePageResponse() (response *DescribeInstancePageResponse) {
 	response = &DescribeInstancePageResponse{
 		BaseResponse: &responses.BaseResponse{},

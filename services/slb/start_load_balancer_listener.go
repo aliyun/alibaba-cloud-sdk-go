@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
 func (client *Client) StartLoadBalancerListener(request *StartLoadBalancerListenerRequest) (response *StartLoadBalancerListenerResponse, err error) {
 	response = CreateStartLoadBalancerListenerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoadBalancerListenerWithChan(request *StartLoadBalancerListenerRequest) (<-chan *StartLoadBalancerListenerResponse, <-chan error) {
 	responseChan := make(chan *StartLoadBalancerListenerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StartLoadBalancerListenerWithChan(request *StartLoadBalanc
 	return responseChan, errChan
 }
 
+// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBalancerListenerRequest, callback func(response *StartLoadBalancerListenerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type StartLoadBalancerListenerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StartLoadBalancerListener API
 func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListenerRequest) {
 	request = &StartLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListene
 	return
 }
 
+// create a response to parse from StartLoadBalancerListener response
 func CreateStartLoadBalancerListenerResponse() (response *StartLoadBalancerListenerResponse) {
 	response = &StartLoadBalancerListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

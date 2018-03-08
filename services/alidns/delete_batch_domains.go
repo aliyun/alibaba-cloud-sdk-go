@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
 func (client *Client) DeleteBatchDomains(request *DeleteBatchDomainsRequest) (response *DeleteBatchDomainsResponse, err error) {
 	response = CreateDeleteBatchDomainsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequest) (<-chan *DeleteBatchDomainsResponse, <-chan error) {
 	responseChan := make(chan *DeleteBatchDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomainsRequest, callback func(response *DeleteBatchDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteBatchDomainsResponse struct {
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
+// create a request to invoke DeleteBatchDomains API
 func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
 	request = &DeleteBatchDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
 	return
 }
 
+// create a response to parse from DeleteBatchDomains response
 func CreateDeleteBatchDomainsResponse() (response *DeleteBatchDomainsResponse) {
 	response = &DeleteBatchDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

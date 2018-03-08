@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateLoadBalancerUDPListener api with *CreateLoadBalancerUDPListenerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerudplistener.html
 func (client *Client) CreateLoadBalancerUDPListener(request *CreateLoadBalancerUDPListenerRequest) (response *CreateLoadBalancerUDPListenerResponse, err error) {
 	response = CreateCreateLoadBalancerUDPListenerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateLoadBalancerUDPListener api with *CreateLoadBalancerUDPListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerudplistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerUDPListenerWithChan(request *CreateLoadBalancerUDPListenerRequest) (<-chan *CreateLoadBalancerUDPListenerResponse, <-chan error) {
 	responseChan := make(chan *CreateLoadBalancerUDPListenerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateLoadBalancerUDPListenerWithChan(request *CreateLoadB
 	return responseChan, errChan
 }
 
+// invoke CreateLoadBalancerUDPListener api with *CreateLoadBalancerUDPListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerudplistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerUDPListenerWithCallback(request *CreateLoadBalancerUDPListenerRequest, callback func(response *CreateLoadBalancerUDPListenerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +104,7 @@ type CreateLoadBalancerUDPListenerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateLoadBalancerUDPListener API
 func CreateCreateLoadBalancerUDPListenerRequest() (request *CreateLoadBalancerUDPListenerRequest) {
 	request = &CreateLoadBalancerUDPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -104,6 +113,7 @@ func CreateCreateLoadBalancerUDPListenerRequest() (request *CreateLoadBalancerUD
 	return
 }
 
+// create a response to parse from CreateLoadBalancerUDPListener response
 func CreateCreateLoadBalancerUDPListenerResponse() (response *CreateLoadBalancerUDPListenerResponse) {
 	response = &CreateLoadBalancerUDPListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

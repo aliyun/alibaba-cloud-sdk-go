@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyBackupPolicy api with *ModifyBackupPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifybackuppolicy.html
 func (client *Client) ModifyBackupPolicy(request *ModifyBackupPolicyRequest) (response *ModifyBackupPolicyResponse, err error) {
 	response = CreateModifyBackupPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyBackupPolicy api with *ModifyBackupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifybackuppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequest) (<-chan *ModifyBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequ
 	return responseChan, errChan
 }
 
+// invoke ModifyBackupPolicy api with *ModifyBackupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifybackuppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicyRequest, callback func(response *ModifyBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ModifyBackupPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyBackupPolicy API
 func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	return
 }
 
+// create a response to parse from ModifyBackupPolicy response
 func CreateModifyBackupPolicyResponse() (response *ModifyBackupPolicyResponse) {
 	response = &ModifyBackupPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

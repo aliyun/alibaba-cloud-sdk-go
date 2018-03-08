@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
 func (client *Client) ModifyDomainTransmitRule(request *ModifyDomainTransmitRuleRequest) (response *ModifyDomainTransmitRuleResponse, err error) {
 	response = CreateModifyDomainTransmitRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainTransmitRuleWithChan(request *ModifyDomainTransmitRuleRequest) (<-chan *ModifyDomainTransmitRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyDomainTransmitRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDomainTransmitRuleWithChan(request *ModifyDomainTran
 	return responseChan, errChan
 }
 
+// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainTransmitRuleWithCallback(request *ModifyDomainTransmitRuleRequest, callback func(response *ModifyDomainTransmitRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ModifyDomainTransmitRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDomainTransmitRule API
 func CreateModifyDomainTransmitRuleRequest() (request *ModifyDomainTransmitRuleRequest) {
 	request = &ModifyDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateModifyDomainTransmitRuleRequest() (request *ModifyDomainTransmitRuleR
 	return
 }
 
+// create a response to parse from ModifyDomainTransmitRule response
 func CreateModifyDomainTransmitRuleResponse() (response *ModifyDomainTransmitRuleResponse) {
 	response = &ModifyDomainTransmitRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

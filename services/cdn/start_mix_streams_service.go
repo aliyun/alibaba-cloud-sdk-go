@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
 func (client *Client) StartMixStreamsService(request *StartMixStreamsServiceRequest) (response *StartMixStreamsServiceResponse, err error) {
 	response = CreateStartMixStreamsServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMixStreamsServiceWithChan(request *StartMixStreamsServiceRequest) (<-chan *StartMixStreamsServiceResponse, <-chan error) {
 	responseChan := make(chan *StartMixStreamsServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StartMixStreamsServiceWithChan(request *StartMixStreamsSer
 	return responseChan, errChan
 }
 
+// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMixStreamsServiceWithCallback(request *StartMixStreamsServiceRequest, callback func(response *StartMixStreamsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type StartMixStreamsServiceResponse struct {
 	MixStreamsInfoList MixStreamsInfoListInStartMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
+// create a request to invoke StartMixStreamsService API
 func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceRequest) {
 	request = &StartMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceReque
 	return
 }
 
+// create a response to parse from StartMixStreamsService response
 func CreateStartMixStreamsServiceResponse() (response *StartMixStreamsServiceResponse) {
 	response = &StartMixStreamsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

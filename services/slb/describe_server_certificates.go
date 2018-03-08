@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
 func (client *Client) DescribeServerCertificates(request *DescribeServerCertificatesRequest) (response *DescribeServerCertificatesResponse, err error) {
 	response = CreateDescribeServerCertificatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServerCertificatesRequest) (<-chan *DescribeServerCertificatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeServerCertificatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServer
 	return responseChan, errChan
 }
 
+// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithCallback(request *DescribeServerCertificatesRequest, callback func(response *DescribeServerCertificatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeServerCertificatesResponse struct {
 	ServerCertificates ServerCertificates `json:"ServerCertificates" xml:"ServerCertificates"`
 }
 
+// create a request to invoke DescribeServerCertificates API
 func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertificatesRequest) {
 	request = &DescribeServerCertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertifica
 	return
 }
 
+// create a response to parse from DescribeServerCertificates response
 func CreateDescribeServerCertificatesResponse() (response *DescribeServerCertificatesResponse) {
 	response = &DescribeServerCertificatesResponse{
 		BaseResponse: &responses.BaseResponse{},

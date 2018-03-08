@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
 func (client *Client) DescribeDomainWhoisInfo(request *DescribeDomainWhoisInfoRequest) (response *DescribeDomainWhoisInfoResponse, err error) {
 	response = CreateDescribeDomainWhoisInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWhoisInfoRequest) (<-chan *DescribeDomainWhoisInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainWhoisInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWho
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomainWhoisInfoRequest, callback func(response *DescribeDomainWhoisInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeDomainWhoisInfoResponse struct {
 	DnsServers       DnsServersInDescribeDomainWhoisInfo `json:"DnsServers" xml:"DnsServers"`
 }
 
+// create a request to invoke DescribeDomainWhoisInfo API
 func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {
 	request = &DescribeDomainWhoisInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoReq
 	return
 }
 
+// create a response to parse from DescribeDomainWhoisInfo response
 func CreateDescribeDomainWhoisInfoResponse() (response *DescribeDomainWhoisInfoResponse) {
 	response = &DescribeDomainWhoisInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

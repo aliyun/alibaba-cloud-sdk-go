@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
 func (client *Client) SetIgnoreQueryStringConfig(request *SetIgnoreQueryStringConfigRequest) (response *SetIgnoreQueryStringConfigResponse, err error) {
 	response = CreateSetIgnoreQueryStringConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQueryStringConfigRequest) (<-chan *SetIgnoreQueryStringConfigResponse, <-chan error) {
 	responseChan := make(chan *SetIgnoreQueryStringConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQuery
 	return responseChan, errChan
 }
 
+// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQueryStringConfigRequest, callback func(response *SetIgnoreQueryStringConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetIgnoreQueryStringConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetIgnoreQueryStringConfig API
 func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringConfigRequest) {
 	request = &SetIgnoreQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringCon
 	return
 }
 
+// create a response to parse from SetIgnoreQueryStringConfig response
 func CreateSetIgnoreQueryStringConfigResponse() (response *SetIgnoreQueryStringConfigResponse) {
 	response = &SetIgnoreQueryStringConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

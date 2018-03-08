@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceAutoRenewAttribute api with *ModifyInstanceAutoRenewAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
 func (client *Client) ModifyInstanceAutoRenewAttribute(request *ModifyInstanceAutoRenewAttributeRequest) (response *ModifyInstanceAutoRenewAttributeResponse, err error) {
 	response = CreateModifyInstanceAutoRenewAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceAutoRenewAttribute api with *ModifyInstanceAutoRenewAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyInstanceAutoRenewAttributeRequest) (<-chan *ModifyInstanceAutoRenewAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceAutoRenewAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyIn
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceAutoRenewAttribute api with *ModifyInstanceAutoRenewAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *ModifyInstanceAutoRenewAttributeRequest, callback func(response *ModifyInstanceAutoRenewAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ModifyInstanceAutoRenewAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyInstanceAutoRenewAttribute API
 func CreateModifyInstanceAutoRenewAttributeRequest() (request *ModifyInstanceAutoRenewAttributeRequest) {
 	request = &ModifyInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateModifyInstanceAutoRenewAttributeRequest() (request *ModifyInstanceAut
 	return
 }
 
+// create a response to parse from ModifyInstanceAutoRenewAttribute response
 func CreateModifyInstanceAutoRenewAttributeResponse() (response *ModifyInstanceAutoRenewAttributeResponse) {
 	response = &ModifyInstanceAutoRenewAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

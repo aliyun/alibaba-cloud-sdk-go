@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
 func (client *Client) ModifyDBInstanceMonitor(request *ModifyDBInstanceMonitorRequest) (response *ModifyDBInstanceMonitorResponse, err error) {
 	response = CreateModifyDBInstanceMonitorResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMonitorWithChan(request *ModifyDBInstanceMonitorRequest) (<-chan *ModifyDBInstanceMonitorResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceMonitorWithChan(request *ModifyDBInstanceM
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMonitorWithCallback(request *ModifyDBInstanceMonitorRequest, callback func(response *ModifyDBInstanceMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyDBInstanceMonitorResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceMonitor API
 func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorRequest) {
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorReq
 	return
 }
 
+// create a response to parse from ModifyDBInstanceMonitor response
 func CreateModifyDBInstanceMonitorResponse() (response *ModifyDBInstanceMonitorResponse) {
 	response = &ModifyDBInstanceMonitorResponse{
 		BaseResponse: &responses.BaseResponse{},

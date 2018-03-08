@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateBackup api with *CreateBackupRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createbackup.html
 func (client *Client) CreateBackup(request *CreateBackupRequest) (response *CreateBackupResponse, err error) {
 	response = CreateCreateBackupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateBackup api with *CreateBackupRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createbackup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan *CreateBackupResponse, <-chan error) {
 	responseChan := make(chan *CreateBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke CreateBackup api with *CreateBackupRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createbackup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, callback func(response *CreateBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateBackupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateBackup API
 func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	return
 }
 
+// create a response to parse from CreateBackup response
 func CreateCreateBackupResponse() (response *CreateBackupResponse) {
 	response = &CreateBackupResponse{
 		BaseResponse: &responses.BaseResponse{},

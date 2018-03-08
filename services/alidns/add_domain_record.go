@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddDomainRecord api with *AddDomainRecordRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
 func (client *Client) AddDomainRecord(request *AddDomainRecordRequest) (response *AddDomainRecordResponse, err error) {
 	response = CreateAddDomainRecordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddDomainRecord api with *AddDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainRecordWithChan(request *AddDomainRecordRequest) (<-chan *AddDomainRecordResponse, <-chan error) {
 	responseChan := make(chan *AddDomainRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddDomainRecordWithChan(request *AddDomainRecordRequest) (
 	return responseChan, errChan
 }
 
+// invoke AddDomainRecord api with *AddDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainRecordWithCallback(request *AddDomainRecordRequest, callback func(response *AddDomainRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type AddDomainRecordResponse struct {
 	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
+// create a request to invoke AddDomainRecord API
 func CreateAddDomainRecordRequest() (request *AddDomainRecordRequest) {
 	request = &AddDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateAddDomainRecordRequest() (request *AddDomainRecordRequest) {
 	return
 }
 
+// create a response to parse from AddDomainRecord response
 func CreateAddDomainRecordResponse() (response *AddDomainRecordResponse) {
 	response = &AddDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

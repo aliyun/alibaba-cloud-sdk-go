@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
 func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBandwidthPackagesRequest) (response *DescribeCommonBandwidthPackagesResponse, err error) {
 	response = CreateDescribeCommonBandwidthPackagesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeCommonBandwidthPackagesRequest) (<-chan *DescribeCommonBandwidthPackagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCommonBandwidthPackagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeC
 	return responseChan, errChan
 }
 
+// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *DescribeCommonBandwidthPackagesRequest, callback func(response *DescribeCommonBandwidthPackagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeCommonBandwidthPackagesResponse struct {
 	CommonBandwidthPackages CommonBandwidthPackages `json:"CommonBandwidthPackages" xml:"CommonBandwidthPackages"`
 }
 
+// create a request to invoke DescribeCommonBandwidthPackages API
 func CreateDescribeCommonBandwidthPackagesRequest() (request *DescribeCommonBandwidthPackagesRequest) {
 	request = &DescribeCommonBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeCommonBandwidthPackagesRequest() (request *DescribeCommonBand
 	return
 }
 
+// create a response to parse from DescribeCommonBandwidthPackages response
 func CreateDescribeCommonBandwidthPackagesResponse() (response *DescribeCommonBandwidthPackagesResponse) {
 	response = &DescribeCommonBandwidthPackagesResponse{
 		BaseResponse: &responses.BaseResponse{},

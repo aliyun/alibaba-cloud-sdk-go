@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeApiVersion api with *DescribeApiVersionRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeapiversion.html
 func (client *Client) DescribeApiVersion(request *DescribeApiVersionRequest) (response *DescribeApiVersionResponse, err error) {
 	response = CreateDescribeApiVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeApiVersion api with *DescribeApiVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeapiversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiVersionWithChan(request *DescribeApiVersionRequest) (<-chan *DescribeApiVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeApiVersionWithChan(request *DescribeApiVersionRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeApiVersion api with *DescribeApiVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeapiversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiVersionWithCallback(request *DescribeApiVersionRequest, callback func(response *DescribeApiVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type DescribeApiVersionResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeApiVersion API
 func CreateDescribeApiVersionRequest() (request *DescribeApiVersionRequest) {
 	request = &DescribeApiVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateDescribeApiVersionRequest() (request *DescribeApiVersionRequest) {
 	return
 }
 
+// create a response to parse from DescribeApiVersion response
 func CreateDescribeApiVersionResponse() (response *DescribeApiVersionResponse) {
 	response = &DescribeApiVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

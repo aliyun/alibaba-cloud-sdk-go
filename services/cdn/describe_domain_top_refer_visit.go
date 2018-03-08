@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
 func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopReferVisitRequest) (response *DescribeDomainTopReferVisitResponse, err error) {
 	response = CreateDescribeDomainTopReferVisitResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomainTopReferVisitRequest) (<-chan *DescribeDomainTopReferVisitResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTopReferVisitResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomai
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeDomainTopReferVisitRequest, callback func(response *DescribeDomainTopReferVisitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeDomainTopReferVisitResponse struct {
 	TopReferList TopReferList `json:"TopReferList" xml:"TopReferList"`
 }
 
+// create a request to invoke DescribeDomainTopReferVisit API
 func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopReferVisitRequest) {
 	request = &DescribeDomainTopReferVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopRefer
 	return
 }
 
+// create a response to parse from DescribeDomainTopReferVisit response
 func CreateDescribeDomainTopReferVisitResponse() (response *DescribeDomainTopReferVisitResponse) {
 	response = &DescribeDomainTopReferVisitResponse{
 		BaseResponse: &responses.BaseResponse{},

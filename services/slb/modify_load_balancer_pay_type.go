@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
 func (client *Client) ModifyLoadBalancerPayType(request *ModifyLoadBalancerPayTypeRequest) (response *ModifyLoadBalancerPayTypeResponse, err error) {
 	response = CreateModifyLoadBalancerPayTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerPayTypeWithChan(request *ModifyLoadBalancerPayTypeRequest) (<-chan *ModifyLoadBalancerPayTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyLoadBalancerPayTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyLoadBalancerPayTypeWithChan(request *ModifyLoadBalan
 	return responseChan, errChan
 }
 
+// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerPayTypeWithCallback(request *ModifyLoadBalancerPayTypeRequest, callback func(response *ModifyLoadBalancerPayTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ModifyLoadBalancerPayTypeResponse struct {
 	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyLoadBalancerPayType API
 func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTypeRequest) {
 	request = &ModifyLoadBalancerPayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTyp
 	return
 }
 
+// create a response to parse from ModifyLoadBalancerPayType response
 func CreateModifyLoadBalancerPayTypeResponse() (response *ModifyLoadBalancerPayTypeResponse) {
 	response = &ModifyLoadBalancerPayTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

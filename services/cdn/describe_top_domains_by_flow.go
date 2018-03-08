@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
 func (client *Client) DescribeTopDomainsByFlow(request *DescribeTopDomainsByFlowRequest) (response *DescribeTopDomainsByFlowResponse, err error) {
 	response = CreateDescribeTopDomainsByFlowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTopDomainsByFlowWithChan(request *DescribeTopDomainsByFlowRequest) (<-chan *DescribeTopDomainsByFlowResponse, <-chan error) {
 	responseChan := make(chan *DescribeTopDomainsByFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTopDomainsByFlowWithChan(request *DescribeTopDomai
 	return responseChan, errChan
 }
 
+// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopDomainsByFlowRequest, callback func(response *DescribeTopDomainsByFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeTopDomainsByFlowResponse struct {
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
+// create a request to invoke DescribeTopDomainsByFlow API
 func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowRequest) {
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	return
 }
 
+// create a response to parse from DescribeTopDomainsByFlow response
 func CreateDescribeTopDomainsByFlowResponse() (response *DescribeTopDomainsByFlowResponse) {
 	response = &DescribeTopDomainsByFlowResponse{
 		BaseResponse: &responses.BaseResponse{},

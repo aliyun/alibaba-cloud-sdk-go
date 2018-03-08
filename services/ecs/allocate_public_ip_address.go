@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
 func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRequest) (response *AllocatePublicIpAddressResponse, err error) {
 	response = CreateAllocatePublicIpAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpAddressRequest) (<-chan *AllocatePublicIpAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocatePublicIpAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpA
 	return responseChan, errChan
 }
 
+// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePublicIpAddressRequest, callback func(response *AllocatePublicIpAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AllocatePublicIpAddressResponse struct {
 	IpAddress string `json:"IpAddress" xml:"IpAddress"`
 }
 
+// create a request to invoke AllocatePublicIpAddress API
 func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressRequest) {
 	request = &AllocatePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressReq
 	return
 }
 
+// create a response to parse from AllocatePublicIpAddress response
 func CreateAllocatePublicIpAddressResponse() (response *AllocatePublicIpAddressResponse) {
 	response = &AllocatePublicIpAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

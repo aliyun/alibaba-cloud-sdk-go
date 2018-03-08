@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRegions api with *DescribeRegionsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRegions api with *DescribeRegionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeregions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeRegions api with *DescribeRegionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeregions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeRegionsResponse struct {
 	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
+// create a request to invoke DescribeRegions API
 func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	return
 }
 
+// create a response to parse from DescribeRegions response
 func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
 	response = &DescribeRegionsResponse{
 		BaseResponse: &responses.BaseResponse{},

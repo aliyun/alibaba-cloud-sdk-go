@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDatabaseLockDiagnosis api with *DescribeDatabaseLockDiagnosisRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedatabaselockdiagnosis.html
 func (client *Client) DescribeDatabaseLockDiagnosis(request *DescribeDatabaseLockDiagnosisRequest) (response *DescribeDatabaseLockDiagnosisResponse, err error) {
 	response = CreateDescribeDatabaseLockDiagnosisResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDatabaseLockDiagnosis api with *DescribeDatabaseLockDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedatabaselockdiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabaseLockDiagnosisWithChan(request *DescribeDatabaseLockDiagnosisRequest) (<-chan *DescribeDatabaseLockDiagnosisResponse, <-chan error) {
 	responseChan := make(chan *DescribeDatabaseLockDiagnosisResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDatabaseLockDiagnosisWithChan(request *DescribeDat
 	return responseChan, errChan
 }
 
+// invoke DescribeDatabaseLockDiagnosis api with *DescribeDatabaseLockDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedatabaselockdiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabaseLockDiagnosisWithCallback(request *DescribeDatabaseLockDiagnosisRequest, callback func(response *DescribeDatabaseLockDiagnosisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeDatabaseLockDiagnosisResponse struct {
 	DeadLockList DeadLockList `json:"DeadLockList" xml:"DeadLockList"`
 }
 
+// create a request to invoke DescribeDatabaseLockDiagnosis API
 func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLockDiagnosisRequest) {
 	request = &DescribeDatabaseLockDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLock
 	return
 }
 
+// create a response to parse from DescribeDatabaseLockDiagnosis response
 func CreateDescribeDatabaseLockDiagnosisResponse() (response *DescribeDatabaseLockDiagnosisResponse) {
 	response = &DescribeDatabaseLockDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

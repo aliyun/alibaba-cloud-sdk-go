@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclustercerts.html
 func (client *Client) DescribeClusterCerts(request *DescribeClusterCertsRequest) (response *DescribeClusterCertsResponse, err error) {
 	response = CreateDescribeClusterCertsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclustercerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterCertsWithChan(request *DescribeClusterCertsRequest) (<-chan *DescribeClusterCertsResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterCertsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterCertsWithChan(request *DescribeClusterCerts
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclustercerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterCertsWithCallback(request *DescribeClusterCertsRequest, callback func(response *DescribeClusterCertsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterCertsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterCerts API
 func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) {
 	request = &DescribeClusterCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) 
 	return
 }
 
+// create a response to parse from DescribeClusterCerts response
 func CreateDescribeClusterCertsResponse() (response *DescribeClusterCertsResponse) {
 	response = &DescribeClusterCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RevokeClusterToken api with *RevokeClusterTokenRequest synchronously
+// api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
 func (client *Client) RevokeClusterToken(request *RevokeClusterTokenRequest) (response *RevokeClusterTokenResponse, err error) {
 	response = CreateRevokeClusterTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RevokeClusterToken api with *RevokeClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequest) (<-chan *RevokeClusterTokenResponse, <-chan error) {
 	responseChan := make(chan *RevokeClusterTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequ
 	return responseChan, errChan
 }
 
+// invoke RevokeClusterToken api with *RevokeClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeClusterTokenWithCallback(request *RevokeClusterTokenRequest, callback func(response *RevokeClusterTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type RevokeClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke RevokeClusterToken API
 func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
 	request = &RevokeClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
 	return
 }
 
+// create a response to parse from RevokeClusterToken response
 func CreateRevokeClusterTokenResponse() (response *RevokeClusterTokenResponse) {
 	response = &RevokeClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpgradeInstance api with *UpgradeInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
 func (client *Client) UpgradeInstance(request *UpgradeInstanceRequest) (response *UpgradeInstanceResponse, err error) {
 	response = CreateUpgradeInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpgradeInstance api with *UpgradeInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (<-chan *UpgradeInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpgradeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (
 	return responseChan, errChan
 }
 
+// invoke UpgradeInstance api with *UpgradeInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceRequest, callback func(response *UpgradeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpgradeInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpgradeInstance API
 func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
 	request = &UpgradeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
 	return
 }
 
+// create a response to parse from UpgradeInstance response
 func CreateUpgradeInstanceResponse() (response *UpgradeInstanceResponse) {
 	response = &UpgradeInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

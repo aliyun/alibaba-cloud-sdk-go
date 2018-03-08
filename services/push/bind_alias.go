@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindAlias api with *BindAliasRequest synchronously
+// api document: https://help.aliyun.com/api/push/bindalias.html
 func (client *Client) BindAlias(request *BindAliasRequest) (response *BindAliasResponse, err error) {
 	response = CreateBindAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindAlias api with *BindAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAliasWithChan(request *BindAliasRequest) (<-chan *BindAliasResponse, <-chan error) {
 	responseChan := make(chan *BindAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindAliasWithChan(request *BindAliasRequest) (<-chan *Bind
 	return responseChan, errChan
 }
 
+// invoke BindAlias api with *BindAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAliasWithCallback(request *BindAliasRequest, callback func(response *BindAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type BindAliasResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindAlias API
 func CreateBindAliasRequest() (request *BindAliasRequest) {
 	request = &BindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateBindAliasRequest() (request *BindAliasRequest) {
 	return
 }
 
+// create a response to parse from BindAlias response
 func CreateBindAliasResponse() (response *BindAliasResponse) {
 	response = &BindAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

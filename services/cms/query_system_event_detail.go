@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
 func (client *Client) QuerySystemEventDetail(request *QuerySystemEventDetailRequest) (response *QuerySystemEventDetailResponse, err error) {
 	response = CreateQuerySystemEventDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventDetailWithChan(request *QuerySystemEventDetailRequest) (<-chan *QuerySystemEventDetailResponse, <-chan error) {
 	responseChan := make(chan *QuerySystemEventDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySystemEventDetailWithChan(request *QuerySystemEventDe
 	return responseChan, errChan
 }
 
+// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventDetailWithCallback(request *QuerySystemEventDetailRequest, callback func(response *QuerySystemEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QuerySystemEventDetailResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QuerySystemEventDetail API
 func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailRequest) {
 	request = &QuerySystemEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailReque
 	return
 }
 
+// create a response to parse from QuerySystemEventDetail response
 func CreateQuerySystemEventDetailResponse() (response *QuerySystemEventDetailResponse) {
 	response = &QuerySystemEventDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

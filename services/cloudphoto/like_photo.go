@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke LikePhoto api with *LikePhotoRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
 func (client *Client) LikePhoto(request *LikePhotoRequest) (response *LikePhotoResponse, err error) {
 	response = CreateLikePhotoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke LikePhoto api with *LikePhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *LikePhotoResponse, <-chan error) {
 	responseChan := make(chan *LikePhotoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *Like
 	return responseChan, errChan
 }
 
+// invoke LikePhoto api with *LikePhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback func(response *LikePhotoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type LikePhotoResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke LikePhoto API
 func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	request = &LikePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	return
 }
 
+// create a response to parse from LikePhoto response
 func CreateLikePhotoResponse() (response *LikePhotoResponse) {
 	response = &LikePhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

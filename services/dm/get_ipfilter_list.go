@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetIpfilterList api with *GetIpfilterListRequest synchronously
+// api document: https://help.aliyun.com/api/dm/getipfilterlist.html
 func (client *Client) GetIpfilterList(request *GetIpfilterListRequest) (response *GetIpfilterListResponse, err error) {
 	response = CreateGetIpfilterListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetIpfilterList api with *GetIpfilterListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getipfilterlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpfilterListWithChan(request *GetIpfilterListRequest) (<-chan *GetIpfilterListResponse, <-chan error) {
 	responseChan := make(chan *GetIpfilterListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetIpfilterListWithChan(request *GetIpfilterListRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetIpfilterList api with *GetIpfilterListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getipfilterlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpfilterListWithCallback(request *GetIpfilterListRequest, callback func(response *GetIpfilterListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetIpfilterListResponse struct {
 	Data       DataInGetIpfilterList `json:"data" xml:"data"`
 }
 
+// create a request to invoke GetIpfilterList API
 func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
 	request = &GetIpfilterListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
 	return
 }
 
+// create a response to parse from GetIpfilterList response
 func CreateGetIpfilterListResponse() (response *GetIpfilterListResponse) {
 	response = &GetIpfilterListResponse{
 		BaseResponse: &responses.BaseResponse{},

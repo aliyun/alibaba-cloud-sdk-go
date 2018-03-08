@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDampPoliciesByCid api with *DescribeDampPoliciesByCidRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedamppoliciesbycid.html
 func (client *Client) DescribeDampPoliciesByCid(request *DescribeDampPoliciesByCidRequest) (response *DescribeDampPoliciesByCidResponse, err error) {
 	response = CreateDescribeDampPoliciesByCidResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDampPoliciesByCid api with *DescribeDampPoliciesByCidRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedamppoliciesbycid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDampPoliciesByCidWithChan(request *DescribeDampPoliciesByCidRequest) (<-chan *DescribeDampPoliciesByCidResponse, <-chan error) {
 	responseChan := make(chan *DescribeDampPoliciesByCidResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDampPoliciesByCidWithChan(request *DescribeDampPol
 	return responseChan, errChan
 }
 
+// invoke DescribeDampPoliciesByCid api with *DescribeDampPoliciesByCidRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedamppoliciesbycid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDampPoliciesByCidWithCallback(request *DescribeDampPoliciesByCidRequest, callback func(response *DescribeDampPoliciesByCidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeDampPoliciesByCidResponse struct {
 	Policies  Policies `json:"Policies" xml:"Policies"`
 }
 
+// create a request to invoke DescribeDampPoliciesByCid API
 func CreateDescribeDampPoliciesByCidRequest() (request *DescribeDampPoliciesByCidRequest) {
 	request = &DescribeDampPoliciesByCidRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeDampPoliciesByCidRequest() (request *DescribeDampPoliciesByCi
 	return
 }
 
+// create a response to parse from DescribeDampPoliciesByCid response
 func CreateDescribeDampPoliciesByCidResponse() (response *DescribeDampPoliciesByCidResponse) {
 	response = &DescribeDampPoliciesByCidResponse{
 		BaseResponse: &responses.BaseResponse{},

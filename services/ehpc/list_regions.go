@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListRegions api with *ListRegionsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listregions.html
 func (client *Client) ListRegions(request *ListRegionsRequest) (response *ListRegionsResponse, err error) {
 	response = CreateListRegionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListRegions api with *ListRegionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listregions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *ListRegionsResponse, <-chan error) {
 	responseChan := make(chan *ListRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke ListRegions api with *ListRegionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listregions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithCallback(request *ListRegionsRequest, callback func(response *ListRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type ListRegionsResponse struct {
 	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
+// create a request to invoke ListRegions API
 func CreateListRegionsRequest() (request *ListRegionsRequest) {
 	request = &ListRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateListRegionsRequest() (request *ListRegionsRequest) {
 	return
 }
 
+// create a response to parse from ListRegions response
 func CreateListRegionsResponse() (response *ListRegionsResponse) {
 	response = &ListRegionsResponse{
 		BaseResponse: &responses.BaseResponse{},

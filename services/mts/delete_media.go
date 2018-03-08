@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMedia api with *DeleteMediaRequest synchronously
+// api document: https://help.aliyun.com/api/mts/deletemedia.html
 func (client *Client) DeleteMedia(request *DeleteMediaRequest) (response *DeleteMediaResponse, err error) {
 	response = CreateDeleteMediaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMedia api with *DeleteMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletemedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *DeleteMediaResponse, <-chan error) {
 	responseChan := make(chan *DeleteMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteMedia api with *DeleteMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletemedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callback func(response *DeleteMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteMediaResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteMedia API
 func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	request = &DeleteMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	return
 }
 
+// create a response to parse from DeleteMedia response
 func CreateDeleteMediaResponse() (response *DeleteMediaResponse) {
 	response = &DeleteMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainHttpsData api with *DescribeDomainHttpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpsdata.html
 func (client *Client) DescribeDomainHttpsData(request *DescribeDomainHttpsDataRequest) (response *DescribeDomainHttpsDataResponse, err error) {
 	response = CreateDescribeDomainHttpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainHttpsData api with *DescribeDomainHttpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpsDataWithChan(request *DescribeDomainHttpsDataRequest) (<-chan *DescribeDomainHttpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainHttpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainHttpsDataWithChan(request *DescribeDomainHtt
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainHttpsData api with *DescribeDomainHttpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpsDataWithCallback(request *DescribeDomainHttpsDataRequest, callback func(response *DescribeDomainHttpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeDomainHttpsDataResponse struct {
 	HttpsStatisticsInfos HttpsStatisticsInfos `json:"HttpsStatisticsInfos" xml:"HttpsStatisticsInfos"`
 }
 
+// create a request to invoke DescribeDomainHttpsData API
 func CreateDescribeDomainHttpsDataRequest() (request *DescribeDomainHttpsDataRequest) {
 	request = &DescribeDomainHttpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeDomainHttpsDataRequest() (request *DescribeDomainHttpsDataReq
 	return
 }
 
+// create a response to parse from DescribeDomainHttpsData response
 func CreateDescribeDomainHttpsDataResponse() (response *DescribeDomainHttpsDataResponse) {
 	response = &DescribeDomainHttpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

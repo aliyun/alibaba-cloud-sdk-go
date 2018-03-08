@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroups.html
 func (client *Client) DescribeVServerGroups(request *DescribeVServerGroupsRequest) (response *DescribeVServerGroupsResponse, err error) {
 	response = CreateDescribeVServerGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupsWithChan(request *DescribeVServerGroupsRequest) (<-chan *DescribeVServerGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVServerGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVServerGroupsWithChan(request *DescribeVServerGrou
 	return responseChan, errChan
 }
 
+// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupsWithCallback(request *DescribeVServerGroupsRequest, callback func(response *DescribeVServerGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeVServerGroupsResponse struct {
 	VServerGroups VServerGroupsInDescribeVServerGroups `json:"VServerGroups" xml:"VServerGroups"`
 }
 
+// create a request to invoke DescribeVServerGroups API
 func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest) {
 	request = &DescribeVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest
 	return
 }
 
+// create a response to parse from DescribeVServerGroups response
 func CreateDescribeVServerGroupsResponse() (response *DescribeVServerGroupsResponse) {
 	response = &DescribeVServerGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

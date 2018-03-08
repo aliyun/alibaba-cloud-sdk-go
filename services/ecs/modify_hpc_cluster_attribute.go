@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyHpcClusterAttribute api with *ModifyHpcClusterAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyhpcclusterattribute.html
 func (client *Client) ModifyHpcClusterAttribute(request *ModifyHpcClusterAttributeRequest) (response *ModifyHpcClusterAttributeResponse, err error) {
 	response = CreateModifyHpcClusterAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyHpcClusterAttribute api with *ModifyHpcClusterAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyhpcclusterattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHpcClusterAttributeWithChan(request *ModifyHpcClusterAttributeRequest) (<-chan *ModifyHpcClusterAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyHpcClusterAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyHpcClusterAttributeWithChan(request *ModifyHpcCluste
 	return responseChan, errChan
 }
 
+// invoke ModifyHpcClusterAttribute api with *ModifyHpcClusterAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyhpcclusterattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHpcClusterAttributeWithCallback(request *ModifyHpcClusterAttributeRequest, callback func(response *ModifyHpcClusterAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ModifyHpcClusterAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyHpcClusterAttribute API
 func CreateModifyHpcClusterAttributeRequest() (request *ModifyHpcClusterAttributeRequest) {
 	request = &ModifyHpcClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateModifyHpcClusterAttributeRequest() (request *ModifyHpcClusterAttribut
 	return
 }
 
+// create a response to parse from ModifyHpcClusterAttribute response
 func CreateModifyHpcClusterAttributeResponse() (response *ModifyHpcClusterAttributeResponse) {
 	response = &ModifyHpcClusterAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

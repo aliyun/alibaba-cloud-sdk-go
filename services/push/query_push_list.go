@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPushList api with *QueryPushListRequest synchronously
+// api document: https://help.aliyun.com/api/push/querypushlist.html
 func (client *Client) QueryPushList(request *QueryPushListRequest) (response *QueryPushListResponse, err error) {
 	response = CreateQueryPushListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPushList api with *QueryPushListRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushListWithChan(request *QueryPushListRequest) (<-chan *QueryPushListResponse, <-chan error) {
 	responseChan := make(chan *QueryPushListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPushListWithChan(request *QueryPushListRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke QueryPushList api with *QueryPushListRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushListWithCallback(request *QueryPushListRequest, callback func(response *QueryPushListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type QueryPushListResponse struct {
 	PushMessageInfos PushMessageInfosInQueryPushList `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
+// create a request to invoke QueryPushList API
 func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	request = &QueryPushListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	return
 }
 
+// create a response to parse from QueryPushList response
 func CreateQueryPushListResponse() (response *QueryPushListResponse) {
 	response = &QueryPushListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
 func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownloadsForSQLServerRequest) (response *DescribeOssDownloadsForSQLServerResponse, err error) {
 	response = CreateDescribeOssDownloadsForSQLServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *DescribeOssDownloadsForSQLServerRequest) (<-chan *DescribeOssDownloadsForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssDownloadsForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *Describe
 	return responseChan, errChan
 }
 
+// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *DescribeOssDownloadsForSQLServerRequest, callback func(response *DescribeOssDownloadsForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeOssDownloadsForSQLServerResponse struct {
 	Items          ItemsInDescribeOssDownloadsForSQLServer `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeOssDownloadsForSQLServer API
 func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {
 	request = &DescribeOssDownloadsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownlo
 	return
 }
 
+// create a response to parse from DescribeOssDownloadsForSQLServer response
 func CreateDescribeOssDownloadsForSQLServerResponse() (response *DescribeOssDownloadsForSQLServerResponse) {
 	response = &DescribeOssDownloadsForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

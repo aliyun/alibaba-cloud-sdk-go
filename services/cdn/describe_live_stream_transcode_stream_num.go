@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNum(request *DescribeLiveStreamTranscodeStreamNumRequest) (response *DescribeLiveStreamTranscodeStreamNumResponse, err error) {
 	response = CreateDescribeLiveStreamTranscodeStreamNumResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *DescribeLiveStreamTranscodeStreamNumRequest) (<-chan *DescribeLiveStreamTranscodeStreamNumResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamTranscodeStreamNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *Desc
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithCallback(request *DescribeLiveStreamTranscodeStreamNumRequest, callback func(response *DescribeLiveStreamTranscodeStreamNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	UntranscodeNumber int    `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
 }
 
+// create a request to invoke DescribeLiveStreamTranscodeStreamNum API
 func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveStreamTranscodeStreamNumRequest) {
 	request = &DescribeLiveStreamTranscodeStreamNumRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveS
 	return
 }
 
+// create a response to parse from DescribeLiveStreamTranscodeStreamNum response
 func CreateDescribeLiveStreamTranscodeStreamNumResponse() (response *DescribeLiveStreamTranscodeStreamNumResponse) {
 	response = &DescribeLiveStreamTranscodeStreamNumResponse{
 		BaseResponse: &responses.BaseResponse{},

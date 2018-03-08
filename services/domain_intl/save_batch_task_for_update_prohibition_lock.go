@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLock(request *SaveBatchTaskForUpdateProhibitionLockRequest) (response *SaveBatchTaskForUpdateProhibitionLockResponse, err error) {
 	response = CreateSaveBatchTaskForUpdateProhibitionLockResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *SaveBatchTaskForUpdateProhibitionLockRequest) (<-chan *SaveBatchTaskForUpdateProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForUpdateProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *Sav
 	return responseChan, errChan
 }
 
+// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request *SaveBatchTaskForUpdateProhibitionLockRequest, callback func(response *SaveBatchTaskForUpdateProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SaveBatchTaskForUpdateProhibitionLockResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveBatchTaskForUpdateProhibitionLock API
 func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTaskForUpdateProhibitionLockRequest) {
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTas
 	return
 }
 
+// create a response to parse from SaveBatchTaskForUpdateProhibitionLock response
 func CreateSaveBatchTaskForUpdateProhibitionLockResponse() (response *SaveBatchTaskForUpdateProhibitionLockResponse) {
 	response = &SaveBatchTaskForUpdateProhibitionLockResponse{
 		BaseResponse: &responses.BaseResponse{},

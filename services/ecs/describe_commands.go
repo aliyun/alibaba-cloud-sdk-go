@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCommands api with *DescribeCommandsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describecommands.html
 func (client *Client) DescribeCommands(request *DescribeCommandsRequest) (response *DescribeCommandsResponse, err error) {
 	response = CreateDescribeCommandsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCommands api with *DescribeCommandsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describecommands.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommandsWithChan(request *DescribeCommandsRequest) (<-chan *DescribeCommandsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCommandsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCommandsWithChan(request *DescribeCommandsRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeCommands api with *DescribeCommandsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describecommands.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequest, callback func(response *DescribeCommandsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeCommandsResponse struct {
 	Commands   Commands `json:"Commands" xml:"Commands"`
 }
 
+// create a request to invoke DescribeCommands API
 func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	return
 }
 
+// create a response to parse from DescribeCommands response
 func CreateDescribeCommandsResponse() (response *DescribeCommandsResponse) {
 	response = &DescribeCommandsResponse{
 		BaseResponse: &responses.BaseResponse{},

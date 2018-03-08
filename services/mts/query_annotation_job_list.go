@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
 func (client *Client) QueryAnnotationJobList(request *QueryAnnotationJobListRequest) (response *QueryAnnotationJobListResponse, err error) {
 	response = CreateQueryAnnotationJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJobListRequest) (<-chan *QueryAnnotationJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryAnnotationJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJob
 	return responseChan, errChan
 }
 
+// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotationJobListRequest, callback func(response *QueryAnnotationJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryAnnotationJobListResponse struct {
 	AnnotationJobList AnnotationJobList                   `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
+// create a request to invoke QueryAnnotationJobList API
 func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {
 	request = &QueryAnnotationJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListReque
 	return
 }
 
+// create a response to parse from QueryAnnotationJobList response
 func CreateQueryAnnotationJobListResponse() (response *QueryAnnotationJobListResponse) {
 	response = &QueryAnnotationJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetMainDomainName api with *GetMainDomainNameRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
 func (client *Client) GetMainDomainName(request *GetMainDomainNameRequest) (response *GetMainDomainNameResponse, err error) {
 	response = CreateGetMainDomainNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetMainDomainName api with *GetMainDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameRequest) (<-chan *GetMainDomainNameResponse, <-chan error) {
 	responseChan := make(chan *GetMainDomainNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameReques
 	return responseChan, errChan
 }
 
+// invoke GetMainDomainName api with *GetMainDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRequest, callback func(response *GetMainDomainNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetMainDomainNameResponse struct {
 	DomainLevel int    `json:"DomainLevel" xml:"DomainLevel"`
 }
 
+// create a request to invoke GetMainDomainName API
 func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	request = &GetMainDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	return
 }
 
+// create a response to parse from GetMainDomainName response
 func CreateGetMainDomainNameResponse() (response *GetMainDomainNameResponse) {
 	response = &GetMainDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAsrPipeline api with *ListAsrPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listasrpipeline.html
 func (client *Client) ListAsrPipeline(request *ListAsrPipelineRequest) (response *ListAsrPipelineResponse, err error) {
 	response = CreateListAsrPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAsrPipeline api with *ListAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAsrPipelineWithChan(request *ListAsrPipelineRequest) (<-chan *ListAsrPipelineResponse, <-chan error) {
 	responseChan := make(chan *ListAsrPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAsrPipelineWithChan(request *ListAsrPipelineRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListAsrPipeline api with *ListAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAsrPipelineWithCallback(request *ListAsrPipelineRequest, callback func(response *ListAsrPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ListAsrPipelineResponse struct {
 	PipelineList PipelineListInListAsrPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke ListAsrPipeline API
 func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
 	request = &ListAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
 	return
 }
 
+// create a response to parse from ListAsrPipeline response
 func CreateListAsrPipelineResponse() (response *ListAsrPipelineResponse) {
 	response = &ListAsrPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

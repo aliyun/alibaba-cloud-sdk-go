@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceMaintainTime api with *ModifyDBInstanceMaintainTimeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemaintaintime.html
 func (client *Client) ModifyDBInstanceMaintainTime(request *ModifyDBInstanceMaintainTimeRequest) (response *ModifyDBInstanceMaintainTimeResponse, err error) {
 	response = CreateModifyDBInstanceMaintainTimeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceMaintainTime api with *ModifyDBInstanceMaintainTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemaintaintime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMaintainTimeWithChan(request *ModifyDBInstanceMaintainTimeRequest) (<-chan *ModifyDBInstanceMaintainTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceMaintainTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithChan(request *ModifyDBInst
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceMaintainTime api with *ModifyDBInstanceMaintainTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancemaintaintime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMaintainTimeWithCallback(request *ModifyDBInstanceMaintainTimeRequest, callback func(response *ModifyDBInstanceMaintainTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyDBInstanceMaintainTimeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceMaintainTime API
 func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaintainTimeRequest) {
 	request = &ModifyDBInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaint
 	return
 }
 
+// create a response to parse from ModifyDBInstanceMaintainTime response
 func CreateModifyDBInstanceMaintainTimeResponse() (response *ModifyDBInstanceMaintainTimeResponse) {
 	response = &ModifyDBInstanceMaintainTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

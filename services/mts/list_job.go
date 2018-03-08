@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListJob api with *ListJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listjob.html
 func (client *Client) ListJob(request *ListJobRequest) (response *ListJobResponse, err error) {
 	response = CreateListJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListJob api with *ListJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobWithChan(request *ListJobRequest) (<-chan *ListJobResponse, <-chan error) {
 	responseChan := make(chan *ListJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListJobWithChan(request *ListJobRequest) (<-chan *ListJobR
 	return responseChan, errChan
 }
 
+// invoke ListJob api with *ListJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func(response *ListJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ListJobResponse struct {
 	JobList       JobListInListJob `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke ListJob API
 func CreateListJobRequest() (request *ListJobRequest) {
 	request = &ListJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateListJobRequest() (request *ListJobRequest) {
 	return
 }
 
+// create a response to parse from ListJob response
 func CreateListJobResponse() (response *ListJobResponse) {
 	response = &ListJobResponse{
 		BaseResponse: &responses.BaseResponse{},

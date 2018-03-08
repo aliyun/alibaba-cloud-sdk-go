@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
 func (client *Client) ModifyNetworkInterfaceAttribute(request *ModifyNetworkInterfaceAttributeRequest) (response *ModifyNetworkInterfaceAttributeResponse, err error) {
 	response = CreateModifyNetworkInterfaceAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkInterfaceAttributeWithChan(request *ModifyNetworkInterfaceAttributeRequest) (<-chan *ModifyNetworkInterfaceAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyNetworkInterfaceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyNetworkInterfaceAttributeWithChan(request *ModifyNet
 	return responseChan, errChan
 }
 
+// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkInterfaceAttributeWithCallback(request *ModifyNetworkInterfaceAttributeRequest, callback func(response *ModifyNetworkInterfaceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ModifyNetworkInterfaceAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyNetworkInterfaceAttribute API
 func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInterfaceAttributeRequest) {
 	request = &ModifyNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInter
 	return
 }
 
+// create a response to parse from ModifyNetworkInterfaceAttribute response
 func CreateModifyNetworkInterfaceAttributeResponse() (response *ModifyNetworkInterfaceAttributeResponse) {
 	response = &ModifyNetworkInterfaceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

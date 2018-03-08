@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteHaVip api with *DeleteHaVipRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletehavip.html
 func (client *Client) DeleteHaVip(request *DeleteHaVipRequest) (response *DeleteHaVipResponse, err error) {
 	response = CreateDeleteHaVipResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteHaVip api with *DeleteHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletehavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHaVipWithChan(request *DeleteHaVipRequest) (<-chan *DeleteHaVipResponse, <-chan error) {
 	responseChan := make(chan *DeleteHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteHaVipWithChan(request *DeleteHaVipRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteHaVip api with *DeleteHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletehavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHaVipWithCallback(request *DeleteHaVipRequest, callback func(response *DeleteHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteHaVipResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteHaVip API
 func CreateDeleteHaVipRequest() (request *DeleteHaVipRequest) {
 	request = &DeleteHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteHaVipRequest() (request *DeleteHaVipRequest) {
 	return
 }
 
+// create a response to parse from DeleteHaVip response
 func CreateDeleteHaVipResponse() (response *DeleteHaVipResponse) {
 	response = &DeleteHaVipResponse{
 		BaseResponse: &responses.BaseResponse{},

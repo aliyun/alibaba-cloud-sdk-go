@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describealertconfig.html
 func (client *Client) DescribeAlertConfig(request *DescribeAlertConfigRequest) (response *DescribeAlertConfigResponse, err error) {
 	response = CreateDescribeAlertConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describealertconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertConfigWithChan(request *DescribeAlertConfigRequest) (<-chan *DescribeAlertConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlertConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAlertConfigWithChan(request *DescribeAlertConfigRe
 	return responseChan, errChan
 }
 
+// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describealertconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConfigRequest, callback func(response *DescribeAlertConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeAlertConfigResponse struct {
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DescribeAlertConfig API
 func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	request = &DescribeAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	return
 }
 
+// create a response to parse from DescribeAlertConfig response
 func CreateDescribeAlertConfigResponse() (response *DescribeAlertConfigResponse) {
 	response = &DescribeAlertConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

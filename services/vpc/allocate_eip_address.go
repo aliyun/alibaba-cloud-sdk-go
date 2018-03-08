@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AllocateEipAddress api with *AllocateEipAddressRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/allocateeipaddress.html
 func (client *Client) AllocateEipAddress(request *AllocateEipAddressRequest) (response *AllocateEipAddressResponse, err error) {
 	response = CreateAllocateEipAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AllocateEipAddress api with *AllocateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/allocateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequest) (<-chan *AllocateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequ
 	return responseChan, errChan
 }
 
+// invoke AllocateEipAddress api with *AllocateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/allocateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddressRequest, callback func(response *AllocateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type AllocateEipAddressResponse struct {
 	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
+// create a request to invoke AllocateEipAddress API
 func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	request = &AllocateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	return
 }
 
+// create a response to parse from AllocateEipAddress response
 func CreateAllocateEipAddressResponse() (response *AllocateEipAddressResponse) {
 	response = &AllocateEipAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

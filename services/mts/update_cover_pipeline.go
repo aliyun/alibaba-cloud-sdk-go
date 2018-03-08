@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
 func (client *Client) UpdateCoverPipeline(request *UpdateCoverPipelineRequest) (response *UpdateCoverPipelineResponse, err error) {
 	response = CreateUpdateCoverPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCoverPipelineWithChan(request *UpdateCoverPipelineRequest) (<-chan *UpdateCoverPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateCoverPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateCoverPipelineWithChan(request *UpdateCoverPipelineRe
 	return responseChan, errChan
 }
 
+// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCoverPipelineWithCallback(request *UpdateCoverPipelineRequest, callback func(response *UpdateCoverPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type UpdateCoverPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke UpdateCoverPipeline API
 func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
 	request = &UpdateCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
 	return
 }
 
+// create a response to parse from UpdateCoverPipeline response
 func CreateUpdateCoverPipelineResponse() (response *UpdateCoverPipelineResponse) {
 	response = &UpdateCoverPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

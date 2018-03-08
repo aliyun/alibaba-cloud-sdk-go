@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describereplicausage.html
 func (client *Client) DescribeReplicaUsage(request *DescribeReplicaUsageRequest) (response *DescribeReplicaUsageResponse, err error) {
 	response = CreateDescribeReplicaUsageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicausage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaUsageWithChan(request *DescribeReplicaUsageRequest) (<-chan *DescribeReplicaUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicaUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeReplicaUsageWithChan(request *DescribeReplicaUsage
 	return responseChan, errChan
 }
 
+// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicausage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaUsageWithCallback(request *DescribeReplicaUsageRequest, callback func(response *DescribeReplicaUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeReplicaUsageResponse struct {
 	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
+// create a request to invoke DescribeReplicaUsage API
 func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) {
 	request = &DescribeReplicaUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) 
 	return
 }
 
+// create a response to parse from DescribeReplicaUsage response
 func CreateDescribeReplicaUsageResponse() (response *DescribeReplicaUsageResponse) {
 	response = &DescribeReplicaUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

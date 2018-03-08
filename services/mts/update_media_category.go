@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
 func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (response *UpdateMediaCategoryResponse, err error) {
 	response = CreateUpdateMediaCategoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRequest) (<-chan *UpdateMediaCategoryResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRe
 	return responseChan, errChan
 }
 
+// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCategoryRequest, callback func(response *UpdateMediaCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpdateMediaCategoryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateMediaCategory API
 func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	request = &UpdateMediaCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	return
 }
 
+// create a response to parse from UpdateMediaCategory response
 func CreateUpdateMediaCategoryResponse() (response *UpdateMediaCategoryResponse) {
 	response = &UpdateMediaCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

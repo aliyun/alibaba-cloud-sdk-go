@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest synchronously
+// api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 func (client *Client) GenerateSessionAccessKey(request *GenerateSessionAccessKeyRequest) (response *GenerateSessionAccessKeyResponse, err error) {
 	response = CreateGenerateSessionAccessKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionAccessKeyRequest) (<-chan *GenerateSessionAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *GenerateSessionAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionA
 	return responseChan, errChan
 }
 
+// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSessionAccessKeyRequest, callback func(response *GenerateSessionAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type GenerateSessionAccessKeyResponse struct {
 	SessionAccessKey SessionAccessKey `json:"SessionAccessKey" xml:"SessionAccessKey"`
 }
 
+// create a request to invoke GenerateSessionAccessKey API
 func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyRequest) {
 	request = &GenerateSessionAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyR
 	return
 }
 
+// create a response to parse from GenerateSessionAccessKey response
 func CreateGenerateSessionAccessKeyResponse() (response *GenerateSessionAccessKeyResponse) {
 	response = &GenerateSessionAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

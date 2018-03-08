@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePhotoStore api with *DeletePhotoStoreRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
 func (client *Client) DeletePhotoStore(request *DeletePhotoStoreRequest) (response *DeletePhotoStoreResponse, err error) {
 	response = CreateDeletePhotoStoreResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePhotoStore api with *DeletePhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotoStoreWithChan(request *DeletePhotoStoreRequest) (<-chan *DeletePhotoStoreResponse, <-chan error) {
 	responseChan := make(chan *DeletePhotoStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePhotoStoreWithChan(request *DeletePhotoStoreRequest)
 	return responseChan, errChan
 }
 
+// invoke DeletePhotoStore api with *DeletePhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotoStoreWithCallback(request *DeletePhotoStoreRequest, callback func(response *DeletePhotoStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeletePhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke DeletePhotoStore API
 func CreateDeletePhotoStoreRequest() (request *DeletePhotoStoreRequest) {
 	request = &DeletePhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeletePhotoStoreRequest() (request *DeletePhotoStoreRequest) {
 	return
 }
 
+// create a response to parse from DeletePhotoStore response
 func CreateDeletePhotoStoreResponse() (response *DeletePhotoStoreResponse) {
 	response = &DeletePhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

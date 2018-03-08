@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResendEmailVerification api with *ResendEmailVerificationRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
 func (client *Client) ResendEmailVerification(request *ResendEmailVerificationRequest) (response *ResendEmailVerificationResponse, err error) {
 	response = CreateResendEmailVerificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResendEmailVerification api with *ResendEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResendEmailVerificationWithChan(request *ResendEmailVerificationRequest) (<-chan *ResendEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *ResendEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResendEmailVerificationWithChan(request *ResendEmailVerifi
 	return responseChan, errChan
 }
 
+// invoke ResendEmailVerification api with *ResendEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResendEmailVerificationWithCallback(request *ResendEmailVerificationRequest, callback func(response *ResendEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ResendEmailVerificationResponse struct {
 	FailList    []SendResult `json:"FailList" xml:"FailList"`
 }
 
+// create a request to invoke ResendEmailVerification API
 func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationRequest) {
 	request = &ResendEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationReq
 	return
 }
 
+// create a response to parse from ResendEmailVerification response
 func CreateResendEmailVerificationResponse() (response *ResendEmailVerificationResponse) {
 	response = &ResendEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

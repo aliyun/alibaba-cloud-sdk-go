@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpgradeDBInstanceNetWorkInfo api with *UpgradeDBInstanceNetWorkInfoRequest synchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetworkinfo.html
 func (client *Client) UpgradeDBInstanceNetWorkInfo(request *UpgradeDBInstanceNetWorkInfoRequest) (response *UpgradeDBInstanceNetWorkInfoResponse, err error) {
 	response = CreateUpgradeDBInstanceNetWorkInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpgradeDBInstanceNetWorkInfo api with *UpgradeDBInstanceNetWorkInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetworkinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceNetWorkInfoWithChan(request *UpgradeDBInstanceNetWorkInfoRequest) (<-chan *UpgradeDBInstanceNetWorkInfoResponse, <-chan error) {
 	responseChan := make(chan *UpgradeDBInstanceNetWorkInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpgradeDBInstanceNetWorkInfoWithChan(request *UpgradeDBIns
 	return responseChan, errChan
 }
 
+// invoke UpgradeDBInstanceNetWorkInfo api with *UpgradeDBInstanceNetWorkInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetworkinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceNetWorkInfoWithCallback(request *UpgradeDBInstanceNetWorkInfoRequest, callback func(response *UpgradeDBInstanceNetWorkInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type UpgradeDBInstanceNetWorkInfoResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpgradeDBInstanceNetWorkInfo API
 func CreateUpgradeDBInstanceNetWorkInfoRequest() (request *UpgradeDBInstanceNetWorkInfoRequest) {
 	request = &UpgradeDBInstanceNetWorkInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateUpgradeDBInstanceNetWorkInfoRequest() (request *UpgradeDBInstanceNetW
 	return
 }
 
+// create a response to parse from UpgradeDBInstanceNetWorkInfo response
 func CreateUpgradeDBInstanceNetWorkInfoResponse() (response *UpgradeDBInstanceNetWorkInfoResponse) {
 	response = &UpgradeDBInstanceNetWorkInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

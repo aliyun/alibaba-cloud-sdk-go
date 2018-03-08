@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReleaseInstance api with *ReleaseInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/releaseinstance.html
 func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response *ReleaseInstanceResponse, err error) {
 	response = CreateReleaseInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReleaseInstance api with *ReleaseInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/releaseinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (<-chan *ReleaseInstanceResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (
 	return responseChan, errChan
 }
 
+// invoke ReleaseInstance api with *ReleaseInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/releaseinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceRequest, callback func(response *ReleaseInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ReleaseInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReleaseInstance API
 func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	return
 }
 
+// create a response to parse from ReleaseInstance response
 func CreateReleaseInstanceResponse() (response *ReleaseInstanceResponse) {
 	response = &ReleaseInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

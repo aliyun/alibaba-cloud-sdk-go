@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
 func (client *Client) QueryTaskDetailHistory(request *QueryTaskDetailHistoryRequest) (response *QueryTaskDetailHistoryResponse, err error) {
 	response = CreateQueryTaskDetailHistoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHistoryRequest) (<-chan *QueryTaskDetailHistoryResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskDetailHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHis
 	return responseChan, errChan
 }
 
+// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetailHistoryRequest, callback func(response *QueryTaskDetailHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type QueryTaskDetailHistoryResponse struct {
 	Objects           []TaskDetailHistory `json:"Objects" xml:"Objects"`
 }
 
+// create a request to invoke QueryTaskDetailHistory API
 func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryRequest) {
 	request = &QueryTaskDetailHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryReque
 	return
 }
 
+// create a response to parse from QueryTaskDetailHistory response
 func CreateQueryTaskDetailHistoryResponse() (response *QueryTaskDetailHistoryResponse) {
 	response = &QueryTaskDetailHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

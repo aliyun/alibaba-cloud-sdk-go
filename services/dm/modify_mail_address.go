@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyMailAddress api with *ModifyMailAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/modifymailaddress.html
 func (client *Client) ModifyMailAddress(request *ModifyMailAddressRequest) (response *ModifyMailAddressResponse, err error) {
 	response = CreateModifyMailAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyMailAddress api with *ModifyMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifymailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMailAddressWithChan(request *ModifyMailAddressRequest) (<-chan *ModifyMailAddressResponse, <-chan error) {
 	responseChan := make(chan *ModifyMailAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyMailAddressWithChan(request *ModifyMailAddressReques
 	return responseChan, errChan
 }
 
+// invoke ModifyMailAddress api with *ModifyMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/modifymailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMailAddressWithCallback(request *ModifyMailAddressRequest, callback func(response *ModifyMailAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyMailAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyMailAddress API
 func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
 	request = &ModifyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
 	return
 }
 
+// create a response to parse from ModifyMailAddress response
 func CreateModifyMailAddressResponse() (response *ModifyMailAddressResponse) {
 	response = &ModifyMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

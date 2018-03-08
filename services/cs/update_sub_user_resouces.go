@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest synchronously
+// api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
 func (client *Client) UpdateSubUserResouces(request *UpdateSubUserResoucesRequest) (response *UpdateSubUserResoucesResponse, err error) {
 	response = CreateUpdateSubUserResoucesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubUserResoucesWithChan(request *UpdateSubUserResoucesRequest) (<-chan *UpdateSubUserResoucesResponse, <-chan error) {
 	responseChan := make(chan *UpdateSubUserResoucesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateSubUserResoucesWithChan(request *UpdateSubUserResouc
 	return responseChan, errChan
 }
 
+// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubUserResoucesWithCallback(request *UpdateSubUserResoucesRequest, callback func(response *UpdateSubUserResoucesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type UpdateSubUserResoucesResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke UpdateSubUserResouces API
 func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest) {
 	request = &UpdateSubUserResoucesRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest
 	return
 }
 
+// create a response to parse from UpdateSubUserResouces response
 func CreateUpdateSubUserResoucesResponse() (response *UpdateSubUserResoucesResponse) {
 	response = &UpdateSubUserResoucesResponse{
 		BaseResponse: &responses.BaseResponse{},

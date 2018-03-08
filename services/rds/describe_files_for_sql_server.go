@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeFilesForSQLServer api with *DescribeFilesForSQLServerRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describefilesforsqlserver.html
 func (client *Client) DescribeFilesForSQLServer(request *DescribeFilesForSQLServerRequest) (response *DescribeFilesForSQLServerResponse, err error) {
 	response = CreateDescribeFilesForSQLServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeFilesForSQLServer api with *DescribeFilesForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describefilesforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFilesForSQLServerWithChan(request *DescribeFilesForSQLServerRequest) (<-chan *DescribeFilesForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *DescribeFilesForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeFilesForSQLServerWithChan(request *DescribeFilesFo
 	return responseChan, errChan
 }
 
+// invoke DescribeFilesForSQLServer api with *DescribeFilesForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describefilesforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFilesForSQLServerWithCallback(request *DescribeFilesForSQLServerRequest, callback func(response *DescribeFilesForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeFilesForSQLServerResponse struct {
 	Items            ItemsInDescribeFilesForSQLServer `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeFilesForSQLServer API
 func CreateDescribeFilesForSQLServerRequest() (request *DescribeFilesForSQLServerRequest) {
 	request = &DescribeFilesForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeFilesForSQLServerRequest() (request *DescribeFilesForSQLServe
 	return
 }
 
+// create a response to parse from DescribeFilesForSQLServer response
 func CreateDescribeFilesForSQLServerResponse() (response *DescribeFilesForSQLServerResponse) {
 	response = &DescribeFilesForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

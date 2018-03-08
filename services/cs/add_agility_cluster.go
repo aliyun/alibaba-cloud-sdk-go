@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddAgilityCluster api with *AddAgilityClusterRequest synchronously
+// api document: https://help.aliyun.com/api/cs/addagilitycluster.html
 func (client *Client) AddAgilityCluster(request *AddAgilityClusterRequest) (response *AddAgilityClusterResponse, err error) {
 	response = CreateAddAgilityClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddAgilityCluster api with *AddAgilityClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/addagilitycluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgilityClusterWithChan(request *AddAgilityClusterRequest) (<-chan *AddAgilityClusterResponse, <-chan error) {
 	responseChan := make(chan *AddAgilityClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddAgilityClusterWithChan(request *AddAgilityClusterReques
 	return responseChan, errChan
 }
 
+// invoke AddAgilityCluster api with *AddAgilityClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/addagilitycluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgilityClusterWithCallback(request *AddAgilityClusterRequest, callback func(response *AddAgilityClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type AddAgilityClusterResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke AddAgilityCluster API
 func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
 	request = &AddAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
 	return
 }
 
+// create a response to parse from AddAgilityCluster response
 func CreateAddAgilityClusterResponse() (response *AddAgilityClusterResponse) {
 	response = &AddAgilityClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

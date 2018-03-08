@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
 func (client *Client) GetStatisticsByUuid(request *GetStatisticsByUuidRequest) (response *GetStatisticsByUuidResponse, err error) {
 	response = CreateGetStatisticsByUuidResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsByUuidWithChan(request *GetStatisticsByUuidRequest) (<-chan *GetStatisticsByUuidResponse, <-chan error) {
 	responseChan := make(chan *GetStatisticsByUuidResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetStatisticsByUuidWithChan(request *GetStatisticsByUuidRe
 	return responseChan, errChan
 }
 
+// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsByUuidWithCallback(request *GetStatisticsByUuidRequest, callback func(response *GetStatisticsByUuidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type GetStatisticsByUuidResponse struct {
 	Data      DataInGetStatisticsByUuid `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke GetStatisticsByUuid API
 func CreateGetStatisticsByUuidRequest() (request *GetStatisticsByUuidRequest) {
 	request = &GetStatisticsByUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateGetStatisticsByUuidRequest() (request *GetStatisticsByUuidRequest) {
 	return
 }
 
+// create a response to parse from GetStatisticsByUuid response
 func CreateGetStatisticsByUuidResponse() (response *GetStatisticsByUuidResponse) {
 	response = &GetStatisticsByUuidResponse{
 		BaseResponse: &responses.BaseResponse{},

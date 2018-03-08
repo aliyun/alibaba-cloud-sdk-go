@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindTag api with *UnbindTagRequest synchronously
+// api document: https://help.aliyun.com/api/push/unbindtag.html
 func (client *Client) UnbindTag(request *UnbindTagRequest) (response *UnbindTagResponse, err error) {
 	response = CreateUnbindTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindTag api with *UnbindTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindtag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *UnbindTagResponse, <-chan error) {
 	responseChan := make(chan *UnbindTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *Unbi
 	return responseChan, errChan
 }
 
+// invoke UnbindTag api with *UnbindTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindtag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback func(response *UnbindTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UnbindTagResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindTag API
 func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 	request = &UnbindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 	return
 }
 
+// create a response to parse from UnbindTag response
 func CreateUnbindTagResponse() (response *UnbindTagResponse) {
 	response = &UnbindTagResponse{
 		BaseResponse: &responses.BaseResponse{},

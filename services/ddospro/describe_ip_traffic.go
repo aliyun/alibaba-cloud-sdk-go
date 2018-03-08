@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
 func (client *Client) DescribeIpTraffic(request *DescribeIpTrafficRequest) (response *DescribeIpTrafficResponse, err error) {
 	response = CreateDescribeIpTrafficResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpTrafficWithChan(request *DescribeIpTrafficRequest) (<-chan *DescribeIpTrafficResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpTrafficResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeIpTrafficWithChan(request *DescribeIpTrafficReques
 	return responseChan, errChan
 }
 
+// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpTrafficWithCallback(request *DescribeIpTrafficRequest, callback func(response *DescribeIpTrafficResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeIpTrafficResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeIpTraffic API
 func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {
 	request = &DescribeIpTrafficRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {
 	return
 }
 
+// create a response to parse from DescribeIpTraffic response
 func CreateDescribeIpTrafficResponse() (response *DescribeIpTrafficResponse) {
 	response = &DescribeIpTrafficResponse{
 		BaseResponse: &responses.BaseResponse{},

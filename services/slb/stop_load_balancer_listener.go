@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
 func (client *Client) StopLoadBalancerListener(request *StopLoadBalancerListenerRequest) (response *StopLoadBalancerListenerResponse, err error) {
 	response = CreateStopLoadBalancerListenerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoadBalancerListenerWithChan(request *StopLoadBalancerListenerRequest) (<-chan *StopLoadBalancerListenerResponse, <-chan error) {
 	responseChan := make(chan *StopLoadBalancerListenerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopLoadBalancerListenerWithChan(request *StopLoadBalancer
 	return responseChan, errChan
 }
 
+// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoadBalancerListenerWithCallback(request *StopLoadBalancerListenerRequest, callback func(response *StopLoadBalancerListenerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type StopLoadBalancerListenerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StopLoadBalancerListener API
 func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerRequest) {
 	request = &StopLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerR
 	return
 }
 
+// create a response to parse from StopLoadBalancerListener response
 func CreateStopLoadBalancerListenerResponse() (response *StopLoadBalancerListenerResponse) {
 	response = &StopLoadBalancerListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

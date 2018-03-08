@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
 func (client *Client) SetForwardSchemeConfig(request *SetForwardSchemeConfigRequest) (response *SetForwardSchemeConfigResponse, err error) {
 	response = CreateSetForwardSchemeConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeConfigRequest) (<-chan *SetForwardSchemeConfigResponse, <-chan error) {
 	responseChan := make(chan *SetForwardSchemeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeCo
 	return responseChan, errChan
 }
 
+// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithCallback(request *SetForwardSchemeConfigRequest, callback func(response *SetForwardSchemeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetForwardSchemeConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetForwardSchemeConfig API
 func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigRequest) {
 	request = &SetForwardSchemeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigReque
 	return
 }
 
+// create a response to parse from SetForwardSchemeConfig response
 func CreateSetForwardSchemeConfigResponse() (response *SetForwardSchemeConfigResponse) {
 	response = &SetForwardSchemeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

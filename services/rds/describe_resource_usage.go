@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeresourceusage.html
 func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageRequest) (response *DescribeResourceUsageResponse, err error) {
 	response = CreateDescribeResourceUsageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeresourceusage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsageRequest) (<-chan *DescribeResourceUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourceUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsa
 	return responseChan, errChan
 }
 
+// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeresourceusage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourceUsageRequest, callback func(response *DescribeResourceUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeResourceUsageResponse struct {
 	ColdBackupSize int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
+// create a request to invoke DescribeResourceUsage API
 func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {
 	request = &DescribeResourceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 	return
 }
 
+// create a response to parse from DescribeResourceUsage response
 func CreateDescribeResourceUsageResponse() (response *DescribeResourceUsageResponse) {
 	response = &DescribeResourceUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

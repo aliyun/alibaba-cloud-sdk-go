@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
 func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidthPackageRequest) (response *DeleteCommonBandwidthPackageResponse, err error) {
 	response = CreateDeleteCommonBandwidthPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommonBandwidthPackageRequest) (<-chan *DeleteCommonBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *DeleteCommonBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommon
 	return responseChan, errChan
 }
 
+// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCommonBandwidthPackageRequest, callback func(response *DeleteCommonBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteCommonBandwidthPackageResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCommonBandwidthPackage API
 func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidthPackageRequest) {
 	request = &DeleteCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidth
 	return
 }
 
+// create a response to parse from DeleteCommonBandwidthPackage response
 func CreateDeleteCommonBandwidthPackageResponse() (response *DeleteCommonBandwidthPackageResponse) {
 	response = &DeleteCommonBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

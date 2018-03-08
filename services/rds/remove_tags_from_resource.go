@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveTagsFromResource api with *RemoveTagsFromResourceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
 func (client *Client) RemoveTagsFromResource(request *RemoveTagsFromResourceRequest) (response *RemoveTagsFromResourceResponse, err error) {
 	response = CreateRemoveTagsFromResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveTagsFromResource api with *RemoveTagsFromResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsFromResourceWithChan(request *RemoveTagsFromResourceRequest) (<-chan *RemoveTagsFromResourceResponse, <-chan error) {
 	responseChan := make(chan *RemoveTagsFromResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveTagsFromResourceWithChan(request *RemoveTagsFromReso
 	return responseChan, errChan
 }
 
+// invoke RemoveTagsFromResource api with *RemoveTagsFromResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/removetagsfromresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsFromResourceWithCallback(request *RemoveTagsFromResourceRequest, callback func(response *RemoveTagsFromResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type RemoveTagsFromResourceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RemoveTagsFromResource API
 func CreateRemoveTagsFromResourceRequest() (request *RemoveTagsFromResourceRequest) {
 	request = &RemoveTagsFromResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateRemoveTagsFromResourceRequest() (request *RemoveTagsFromResourceReque
 	return
 }
 
+// create a response to parse from RemoveTagsFromResource response
 func CreateRemoveTagsFromResourceResponse() (response *RemoveTagsFromResourceResponse) {
 	response = &RemoveTagsFromResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

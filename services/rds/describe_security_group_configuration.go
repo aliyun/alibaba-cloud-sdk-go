@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
 func (client *Client) DescribeSecurityGroupConfiguration(request *DescribeSecurityGroupConfigurationRequest) (response *DescribeSecurityGroupConfigurationResponse, err error) {
 	response = CreateDescribeSecurityGroupConfigurationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *DescribeSecurityGroupConfigurationRequest) (<-chan *DescribeSecurityGroupConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *Descri
 	return responseChan, errChan
 }
 
+// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithCallback(request *DescribeSecurityGroupConfigurationRequest, callback func(response *DescribeSecurityGroupConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeSecurityGroupConfigurationResponse struct {
 	Items          ItemsInDescribeSecurityGroupConfiguration `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeSecurityGroupConfiguration API
 func CreateDescribeSecurityGroupConfigurationRequest() (request *DescribeSecurityGroupConfigurationRequest) {
 	request = &DescribeSecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeSecurityGroupConfigurationRequest() (request *DescribeSecurit
 	return
 }
 
+// create a response to parse from DescribeSecurityGroupConfiguration response
 func CreateDescribeSecurityGroupConfigurationResponse() (response *DescribeSecurityGroupConfigurationResponse) {
 	response = &DescribeSecurityGroupConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

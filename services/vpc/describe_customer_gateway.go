@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCustomerGateway api with *DescribeCustomerGatewayRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describecustomergateway.html
 func (client *Client) DescribeCustomerGateway(request *DescribeCustomerGatewayRequest) (response *DescribeCustomerGatewayResponse, err error) {
 	response = CreateDescribeCustomerGatewayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCustomerGateway api with *DescribeCustomerGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describecustomergateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewayWithChan(request *DescribeCustomerGatewayRequest) (<-chan *DescribeCustomerGatewayResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomerGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCustomerGatewayWithChan(request *DescribeCustomerG
 	return responseChan, errChan
 }
 
+// invoke DescribeCustomerGateway api with *DescribeCustomerGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describecustomergateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewayWithCallback(request *DescribeCustomerGatewayRequest, callback func(response *DescribeCustomerGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeCustomerGatewayResponse struct {
 	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
 }
 
+// create a request to invoke DescribeCustomerGateway API
 func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayRequest) {
 	request = &DescribeCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayReq
 	return
 }
 
+// create a response to parse from DescribeCustomerGateway response
 func CreateDescribeCustomerGatewayResponse() (response *DescribeCustomerGatewayResponse) {
 	response = &DescribeCustomerGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

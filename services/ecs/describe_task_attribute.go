@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
 func (client *Client) DescribeTaskAttribute(request *DescribeTaskAttributeRequest) (response *DescribeTaskAttributeResponse, err error) {
 	response = CreateDescribeTaskAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskAttributeWithChan(request *DescribeTaskAttributeRequest) (<-chan *DescribeTaskAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeTaskAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTaskAttributeWithChan(request *DescribeTaskAttribu
 	return responseChan, errChan
 }
 
+// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAttributeRequest, callback func(response *DescribeTaskAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeTaskAttributeResponse struct {
 	OperationProgressSet OperationProgressSet `json:"OperationProgressSet" xml:"OperationProgressSet"`
 }
 
+// create a request to invoke DescribeTaskAttribute API
 func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest) {
 	request = &DescribeTaskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest
 	return
 }
 
+// create a response to parse from DescribeTaskAttribute response
 func CreateDescribeTaskAttributeResponse() (response *DescribeTaskAttributeResponse) {
 	response = &DescribeTaskAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

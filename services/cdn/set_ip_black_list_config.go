@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
 func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest) (response *SetIpBlackListConfigResponse, err error) {
 	response = CreateSetIpBlackListConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfigRequest) (<-chan *SetIpBlackListConfigResponse, <-chan error) {
 	responseChan := make(chan *SetIpBlackListConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfig
 	return responseChan, errChan
 }
 
+// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListConfigRequest, callback func(response *SetIpBlackListConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetIpBlackListConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetIpBlackListConfig API
 func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) {
 	request = &SetIpBlackListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) 
 	return
 }
 
+// create a response to parse from SetIpBlackListConfig response
 func CreateSetIpBlackListConfigResponse() (response *SetIpBlackListConfigResponse) {
 	response = &SetIpBlackListConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomain(request *DescribeLiveStreamOnlineUserNumByDomainRequest) (response *DescribeLiveStreamOnlineUserNumByDomainResponse, err error) {
 	response = CreateDescribeLiveStreamOnlineUserNumByDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithChan(request *DescribeLiveStreamOnlineUserNumByDomainRequest) (<-chan *DescribeLiveStreamOnlineUserNumByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamOnlineUserNumByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithChan(request *D
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithCallback(request *DescribeLiveStreamOnlineUserNumByDomainRequest, callback func(response *DescribeLiveStreamOnlineUserNumByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeLiveStreamOnlineUserNumByDomainResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
+// create a request to invoke DescribeLiveStreamOnlineUserNumByDomain API
 func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLiveStreamOnlineUserNumByDomainRequest) {
 	request = &DescribeLiveStreamOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLi
 	return
 }
 
+// create a response to parse from DescribeLiveStreamOnlineUserNumByDomain response
 func CreateDescribeLiveStreamOnlineUserNumByDomainResponse() (response *DescribeLiveStreamOnlineUserNumByDomainResponse) {
 	response = &DescribeLiveStreamOnlineUserNumByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

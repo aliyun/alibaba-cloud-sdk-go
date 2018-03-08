@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveBackendServers api with *RemoveBackendServersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/removebackendservers.html
 func (client *Client) RemoveBackendServers(request *RemoveBackendServersRequest) (response *RemoveBackendServersResponse, err error) {
 	response = CreateRemoveBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveBackendServers api with *RemoveBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removebackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackendServersWithChan(request *RemoveBackendServersRequest) (<-chan *RemoveBackendServersResponse, <-chan error) {
 	responseChan := make(chan *RemoveBackendServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveBackendServersWithChan(request *RemoveBackendServers
 	return responseChan, errChan
 }
 
+// invoke RemoveBackendServers api with *RemoveBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removebackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackendServersWithCallback(request *RemoveBackendServersRequest, callback func(response *RemoveBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type RemoveBackendServersResponse struct {
 	BackendServers BackendServersInRemoveBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke RemoveBackendServers API
 func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) {
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) 
 	return
 }
 
+// create a response to parse from RemoveBackendServers response
 func CreateRemoveBackendServersResponse() (response *RemoveBackendServersResponse) {
 	response = &RemoveBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

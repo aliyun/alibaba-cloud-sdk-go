@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoadBalancerHTTPSListenerAttribute api with *DescribeLoadBalancerHTTPSListenerAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttpslistenerattribute.html
 func (client *Client) DescribeLoadBalancerHTTPSListenerAttribute(request *DescribeLoadBalancerHTTPSListenerAttributeRequest) (response *DescribeLoadBalancerHTTPSListenerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerHTTPSListenerAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoadBalancerHTTPSListenerAttribute api with *DescribeLoadBalancerHTTPSListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttpslistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerHTTPSListenerAttributeWithChan(request *DescribeLoadBalancerHTTPSListenerAttributeRequest) (<-chan *DescribeLoadBalancerHTTPSListenerAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancerHTTPSListenerAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoadBalancerHTTPSListenerAttributeWithChan(request
 	return responseChan, errChan
 }
 
+// invoke DescribeLoadBalancerHTTPSListenerAttribute api with *DescribeLoadBalancerHTTPSListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttpslistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerHTTPSListenerAttributeWithCallback(request *DescribeLoadBalancerHTTPSListenerAttributeRequest, callback func(response *DescribeLoadBalancerHTTPSListenerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,6 +118,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	XForwardedForProto     string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
 }
 
+// create a request to invoke DescribeLoadBalancerHTTPSListenerAttribute API
 func CreateDescribeLoadBalancerHTTPSListenerAttributeRequest() (request *DescribeLoadBalancerHTTPSListenerAttributeRequest) {
 	request = &DescribeLoadBalancerHTTPSListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -118,6 +127,7 @@ func CreateDescribeLoadBalancerHTTPSListenerAttributeRequest() (request *Describ
 	return
 }
 
+// create a response to parse from DescribeLoadBalancerHTTPSListenerAttribute response
 func CreateDescribeLoadBalancerHTTPSListenerAttributeResponse() (response *DescribeLoadBalancerHTTPSListenerAttributeResponse) {
 	response = &DescribeLoadBalancerHTTPSListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

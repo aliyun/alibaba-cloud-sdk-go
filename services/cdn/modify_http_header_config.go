@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
 func (client *Client) ModifyHttpHeaderConfig(request *ModifyHttpHeaderConfigRequest) (response *ModifyHttpHeaderConfigResponse, err error) {
 	response = CreateModifyHttpHeaderConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttpHeaderConfigWithChan(request *ModifyHttpHeaderConfigRequest) (<-chan *ModifyHttpHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyHttpHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyHttpHeaderConfigWithChan(request *ModifyHttpHeaderCo
 	return responseChan, errChan
 }
 
+// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHeaderConfigRequest, callback func(response *ModifyHttpHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyHttpHeaderConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyHttpHeaderConfig API
 func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigRequest) {
 	request = &ModifyHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigReque
 	return
 }
 
+// create a response to parse from ModifyHttpHeaderConfig response
 func CreateModifyHttpHeaderConfigResponse() (response *ModifyHttpHeaderConfigResponse) {
 	response = &ModifyHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

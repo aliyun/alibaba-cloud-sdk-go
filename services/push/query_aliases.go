@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAliases api with *QueryAliasesRequest synchronously
+// api document: https://help.aliyun.com/api/push/queryaliases.html
 func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *QueryAliasesResponse, err error) {
 	response = CreateQueryAliasesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAliases api with *QueryAliasesRequest asynchronously
+// api document: https://help.aliyun.com/api/push/queryaliases.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan *QueryAliasesResponse, <-chan error) {
 	responseChan := make(chan *QueryAliasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke QueryAliases api with *QueryAliasesRequest asynchronously
+// api document: https://help.aliyun.com/api/push/queryaliases.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, callback func(response *QueryAliasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryAliasesResponse struct {
 	AliasInfos AliasInfos `json:"AliasInfos" xml:"AliasInfos"`
 }
 
+// create a request to invoke QueryAliases API
 func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 	request = &QueryAliasesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 	return
 }
 
+// create a response to parse from QueryAliases response
 func CreateQueryAliasesResponse() (response *QueryAliasesResponse) {
 	response = &QueryAliasesResponse{
 		BaseResponse: &responses.BaseResponse{},

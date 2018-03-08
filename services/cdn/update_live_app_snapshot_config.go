@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
 func (client *Client) UpdateLiveAppSnapshotConfig(request *UpdateLiveAppSnapshotConfigRequest) (response *UpdateLiveAppSnapshotConfigResponse, err error) {
 	response = CreateUpdateLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveAppSnapshotConfigRequest) (<-chan *UpdateLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveApp
 	return responseChan, errChan
 }
 
+// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithCallback(request *UpdateLiveAppSnapshotConfigRequest, callback func(response *UpdateLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type UpdateLiveAppSnapshotConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateLiveAppSnapshotConfig API
 func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotConfigRequest) {
 	request = &UpdateLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotC
 	return
 }
 
+// create a response to parse from UpdateLiveAppSnapshotConfig response
 func CreateUpdateLiveAppSnapshotConfigResponse() (response *UpdateLiveAppSnapshotConfigResponse) {
 	response = &UpdateLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
 func (client *Client) CreateDeploymentSet(request *CreateDeploymentSetRequest) (response *CreateDeploymentSetResponse, err error) {
 	response = CreateCreateDeploymentSetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeploymentSetWithChan(request *CreateDeploymentSetRequest) (<-chan *CreateDeploymentSetResponse, <-chan error) {
 	responseChan := make(chan *CreateDeploymentSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateDeploymentSetWithChan(request *CreateDeploymentSetRe
 	return responseChan, errChan
 }
 
+// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentSetRequest, callback func(response *CreateDeploymentSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type CreateDeploymentSetResponse struct {
 	DeploymentSetId string `json:"DeploymentSetId" xml:"DeploymentSetId"`
 }
 
+// create a request to invoke CreateDeploymentSet API
 func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	request = &CreateDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	return
 }
 
+// create a response to parse from CreateDeploymentSet response
 func CreateCreateDeploymentSetResponse() (response *CreateDeploymentSetResponse) {
 	response = &CreateDeploymentSetResponse{
 		BaseResponse: &responses.BaseResponse{},

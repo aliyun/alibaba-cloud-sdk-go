@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deactivaterouterinterface.html
 func (client *Client) DeactivateRouterInterface(request *DeactivateRouterInterfaceRequest) (response *DeactivateRouterInterfaceResponse, err error) {
 	response = CreateDeactivateRouterInterfaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deactivaterouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRouterInterfaceRequest) (<-chan *DeactivateRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *DeactivateRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRoute
 	return responseChan, errChan
 }
 
+// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deactivaterouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateRouterInterfaceRequest, callback func(response *DeactivateRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeactivateRouterInterfaceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeactivateRouterInterface API
 func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfaceRequest) {
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	return
 }
 
+// create a response to parse from DeactivateRouterInterface response
 func CreateDeactivateRouterInterfaceResponse() (response *DeactivateRouterInterfaceResponse) {
 	response = &DeactivateRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

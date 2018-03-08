@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
 func (client *Client) DescribeLiveStreamRelayPushErrors(request *DescribeLiveStreamRelayPushErrorsRequest) (response *DescribeLiveStreamRelayPushErrorsResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushErrorsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushErrorsWithChan(request *DescribeLiveStreamRelayPushErrorsRequest) (<-chan *DescribeLiveStreamRelayPushErrorsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRelayPushErrorsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRelayPushErrorsWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushErrorsWithCallback(request *DescribeLiveStreamRelayPushErrorsRequest, callback func(response *DescribeLiveStreamRelayPushErrorsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeLiveStreamRelayPushErrorsResponse struct {
 	RelayPushErrorsModelList RelayPushErrorsModelList `json:"RelayPushErrorsModelList" xml:"RelayPushErrorsModelList"`
 }
 
+// create a request to invoke DescribeLiveStreamRelayPushErrors API
 func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStreamRelayPushErrorsRequest) {
 	request = &DescribeLiveStreamRelayPushErrorsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStre
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRelayPushErrors response
 func CreateDescribeLiveStreamRelayPushErrorsResponse() (response *DescribeLiveStreamRelayPushErrorsResponse) {
 	response = &DescribeLiveStreamRelayPushErrorsResponse{
 		BaseResponse: &responses.BaseResponse{},

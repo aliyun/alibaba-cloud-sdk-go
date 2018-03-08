@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSession api with *CreateSessionRequest synchronously
+// api document: https://help.aliyun.com/api/mts/createsession.html
 func (client *Client) CreateSession(request *CreateSessionRequest) (response *CreateSessionResponse, err error) {
 	response = CreateCreateSessionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSession api with *CreateSessionRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/createsession.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSessionWithChan(request *CreateSessionRequest) (<-chan *CreateSessionResponse, <-chan error) {
 	responseChan := make(chan *CreateSessionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSessionWithChan(request *CreateSessionRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke CreateSession api with *CreateSessionRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/createsession.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, callback func(response *CreateSessionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateSessionResponse struct {
 	Ticket    string `json:"Ticket" xml:"Ticket"`
 }
 
+// create a request to invoke CreateSession API
 func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	request = &CreateSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	return
 }
 
+// create a response to parse from CreateSession response
 func CreateCreateSessionResponse() (response *CreateSessionResponse) {
 	response = &CreateSessionResponse{
 		BaseResponse: &responses.BaseResponse{},

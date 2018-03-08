@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RecoverVirtualBorderRouter api with *RecoverVirtualBorderRouterRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/recovervirtualborderrouter.html
 func (client *Client) RecoverVirtualBorderRouter(request *RecoverVirtualBorderRouterRequest) (response *RecoverVirtualBorderRouterResponse, err error) {
 	response = CreateRecoverVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RecoverVirtualBorderRouter api with *RecoverVirtualBorderRouterRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/recovervirtualborderrouter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtualBorderRouterRequest) (<-chan *RecoverVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *RecoverVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtual
 	return responseChan, errChan
 }
 
+// invoke RecoverVirtualBorderRouter api with *RecoverVirtualBorderRouterRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/recovervirtualborderrouter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVirtualBorderRouterRequest, callback func(response *RecoverVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type RecoverVirtualBorderRouterResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RecoverVirtualBorderRouter API
 func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRouterRequest) {
 	request = &RecoverVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRou
 	return
 }
 
+// create a response to parse from RecoverVirtualBorderRouter response
 func CreateRecoverVirtualBorderRouterResponse() (response *RecoverVirtualBorderRouterResponse) {
 	response = &RecoverVirtualBorderRouterResponse{
 		BaseResponse: &responses.BaseResponse{},

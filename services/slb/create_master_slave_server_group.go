@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMasterSlaveServerGroup api with *CreateMasterSlaveServerGroupRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslaveservergroup.html
 func (client *Client) CreateMasterSlaveServerGroup(request *CreateMasterSlaveServerGroupRequest) (response *CreateMasterSlaveServerGroupResponse, err error) {
 	response = CreateCreateMasterSlaveServerGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMasterSlaveServerGroup api with *CreateMasterSlaveServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslaveservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMasterSlaveServerGroupWithChan(request *CreateMasterSlaveServerGroupRequest) (<-chan *CreateMasterSlaveServerGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateMasterSlaveServerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMasterSlaveServerGroupWithChan(request *CreateMaster
 	return responseChan, errChan
 }
 
+// invoke CreateMasterSlaveServerGroup api with *CreateMasterSlaveServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslaveservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMasterSlaveServerGroupWithCallback(request *CreateMasterSlaveServerGroupRequest, callback func(response *CreateMasterSlaveServerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateMasterSlaveServerGroupResponse struct {
 	MasterSlaveBackendServers MasterSlaveBackendServersInCreateMasterSlaveServerGroup `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
+// create a request to invoke CreateMasterSlaveServerGroup API
 func CreateCreateMasterSlaveServerGroupRequest() (request *CreateMasterSlaveServerGroupRequest) {
 	request = &CreateMasterSlaveServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateMasterSlaveServerGroupRequest() (request *CreateMasterSlaveServ
 	return
 }
 
+// create a response to parse from CreateMasterSlaveServerGroup response
 func CreateCreateMasterSlaveServerGroupResponse() (response *CreateMasterSlaveServerGroupResponse) {
 	response = &CreateMasterSlaveServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

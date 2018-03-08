@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
 func (client *Client) ApproveMailTemplate(request *ApproveMailTemplateRequest) (response *ApproveMailTemplateResponse, err error) {
 	response = CreateApproveMailTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveMailTemplateWithChan(request *ApproveMailTemplateRequest) (<-chan *ApproveMailTemplateResponse, <-chan error) {
 	responseChan := make(chan *ApproveMailTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ApproveMailTemplateWithChan(request *ApproveMailTemplateRe
 	return responseChan, errChan
 }
 
+// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveMailTemplateWithCallback(request *ApproveMailTemplateRequest, callback func(response *ApproveMailTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ApproveMailTemplateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ApproveMailTemplate API
 func CreateApproveMailTemplateRequest() (request *ApproveMailTemplateRequest) {
 	request = &ApproveMailTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateApproveMailTemplateRequest() (request *ApproveMailTemplateRequest) {
 	return
 }
 
+// create a response to parse from ApproveMailTemplate response
 func CreateApproveMailTemplateResponse() (response *ApproveMailTemplateResponse) {
 	response = &ApproveMailTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UploadCACertificate api with *UploadCACertificateRequest synchronously
+// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
 func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (response *UploadCACertificateResponse, err error) {
 	response = CreateUploadCACertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UploadCACertificate api with *UploadCACertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRequest) (<-chan *UploadCACertificateResponse, <-chan error) {
 	responseChan := make(chan *UploadCACertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRe
 	return responseChan, errChan
 }
 
+// invoke UploadCACertificate api with *UploadCACertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithCallback(request *UploadCACertificateRequest, callback func(response *UploadCACertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type UploadCACertificateResponse struct {
 	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
+// create a request to invoke UploadCACertificate API
 func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	request = &UploadCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	return
 }
 
+// create a response to parse from UploadCACertificate response
 func CreateUploadCACertificateResponse() (response *UploadCACertificateResponse) {
 	response = &UploadCACertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

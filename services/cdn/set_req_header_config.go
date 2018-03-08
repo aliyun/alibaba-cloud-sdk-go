@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
 func (client *Client) SetReqHeaderConfig(request *SetReqHeaderConfigRequest) (response *SetReqHeaderConfigResponse, err error) {
 	response = CreateSetReqHeaderConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequest) (<-chan *SetReqHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *SetReqHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequ
 	return responseChan, errChan
 }
 
+// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithCallback(request *SetReqHeaderConfigRequest, callback func(response *SetReqHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetReqHeaderConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetReqHeaderConfig API
 func CreateSetReqHeaderConfigRequest() (request *SetReqHeaderConfigRequest) {
 	request = &SetReqHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetReqHeaderConfigRequest() (request *SetReqHeaderConfigRequest) {
 	return
 }
 
+// create a response to parse from SetReqHeaderConfig response
 func CreateSetReqHeaderConfigResponse() (response *SetReqHeaderConfigResponse) {
 	response = &SetReqHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

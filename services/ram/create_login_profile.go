@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateLoginProfile api with *CreateLoginProfileRequest synchronously
+// api document: https://help.aliyun.com/api/ram/createloginprofile.html
 func (client *Client) CreateLoginProfile(request *CreateLoginProfileRequest) (response *CreateLoginProfileResponse, err error) {
 	response = CreateCreateLoginProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateLoginProfile api with *CreateLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequest) (<-chan *CreateLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *CreateLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequ
 	return responseChan, errChan
 }
 
+// invoke CreateLoginProfile api with *CreateLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfileRequest, callback func(response *CreateLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type CreateLoginProfileResponse struct {
 	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
+// create a request to invoke CreateLoginProfile API
 func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 	request = &CreateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 	return
 }
 
+// create a response to parse from CreateLoginProfile response
 func CreateCreateLoginProfileResponse() (response *CreateLoginProfileResponse) {
 	response = &CreateLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

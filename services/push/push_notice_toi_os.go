@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest synchronously
+// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
 func (client *Client) PushNoticeToiOS(request *PushNoticeToiOSRequest) (response *PushNoticeToiOSResponse, err error) {
 	response = CreatePushNoticeToiOSResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest asynchronously
+// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (<-chan *PushNoticeToiOSResponse, <-chan error) {
 	responseChan := make(chan *PushNoticeToiOSResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (
 	return responseChan, errChan
 }
 
+// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest asynchronously
+// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithCallback(request *PushNoticeToiOSRequest, callback func(response *PushNoticeToiOSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type PushNoticeToiOSResponse struct {
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
+// create a request to invoke PushNoticeToiOS API
 func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	request = &PushNoticeToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	return
 }
 
+// create a response to parse from PushNoticeToiOS response
 func CreatePushNoticeToiOSResponse() (response *PushNoticeToiOSResponse) {
 	response = &PushNoticeToiOSResponse{
 		BaseResponse: &responses.BaseResponse{},

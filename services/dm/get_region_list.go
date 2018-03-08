@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetRegionList api with *GetRegionListRequest synchronously
+// api document: https://help.aliyun.com/api/dm/getregionlist.html
 func (client *Client) GetRegionList(request *GetRegionListRequest) (response *GetRegionListResponse, err error) {
 	response = CreateGetRegionListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetRegionList api with *GetRegionListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getregionlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-chan *GetRegionListResponse, <-chan error) {
 	responseChan := make(chan *GetRegionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke GetRegionList api with *GetRegionListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getregionlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, callback func(response *GetRegionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type GetRegionListResponse struct {
 	Data      DataInGetRegionList `json:"data" xml:"data"`
 }
 
+// create a request to invoke GetRegionList API
 func CreateGetRegionListRequest() (request *GetRegionListRequest) {
 	request = &GetRegionListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateGetRegionListRequest() (request *GetRegionListRequest) {
 	return
 }
 
+// create a response to parse from GetRegionList response
 func CreateGetRegionListResponse() (response *GetRegionListResponse) {
 	response = &GetRegionListResponse{
 		BaseResponse: &responses.BaseResponse{},

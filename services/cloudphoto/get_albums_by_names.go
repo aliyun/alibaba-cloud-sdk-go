@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
 func (client *Client) GetAlbumsByNames(request *GetAlbumsByNamesRequest) (response *GetAlbumsByNamesResponse, err error) {
 	response = CreateGetAlbumsByNamesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlbumsByNamesWithChan(request *GetAlbumsByNamesRequest) (<-chan *GetAlbumsByNamesResponse, <-chan error) {
 	responseChan := make(chan *GetAlbumsByNamesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetAlbumsByNamesWithChan(request *GetAlbumsByNamesRequest)
 	return responseChan, errChan
 }
 
+// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlbumsByNamesWithCallback(request *GetAlbumsByNamesRequest, callback func(response *GetAlbumsByNamesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetAlbumsByNamesResponse struct {
 	Albums    []Album `json:"Albums" xml:"Albums"`
 }
 
+// create a request to invoke GetAlbumsByNames API
 func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
 	request = &GetAlbumsByNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
 	return
 }
 
+// create a response to parse from GetAlbumsByNames response
 func CreateGetAlbumsByNamesResponse() (response *GetAlbumsByNamesResponse) {
 	response = &GetAlbumsByNamesResponse{
 		BaseResponse: &responses.BaseResponse{},

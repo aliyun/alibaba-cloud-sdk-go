@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest synchronously
+// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
 func (client *Client) CheckAccountNameAvailable(request *CheckAccountNameAvailableRequest) (response *CheckAccountNameAvailableResponse, err error) {
 	response = CreateCheckAccountNameAvailableResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNameAvailableRequest) (<-chan *CheckAccountNameAvailableResponse, <-chan error) {
 	responseChan := make(chan *CheckAccountNameAvailableResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNam
 	return responseChan, errChan
 }
 
+// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithCallback(request *CheckAccountNameAvailableRequest, callback func(response *CheckAccountNameAvailableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CheckAccountNameAvailableResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CheckAccountNameAvailable API
 func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailableRequest) {
 	request = &CheckAccountNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailabl
 	return
 }
 
+// create a response to parse from CheckAccountNameAvailable response
 func CreateCheckAccountNameAvailableResponse() (response *CheckAccountNameAvailableResponse) {
 	response = &CheckAccountNameAvailableResponse{
 		BaseResponse: &responses.BaseResponse{},

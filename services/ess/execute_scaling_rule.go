@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest synchronously
+// api document: https://help.aliyun.com/api/ess/executescalingrule.html
 func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (response *ExecuteScalingRuleResponse, err error) {
 	response = CreateExecuteScalingRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/executescalingrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequest) (<-chan *ExecuteScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *ExecuteScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequ
 	return responseChan, errChan
 }
 
+// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/executescalingrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRuleRequest, callback func(response *ExecuteScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ExecuteScalingRuleResponse struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ExecuteScalingRule API
 func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	return
 }
 
+// create a response to parse from ExecuteScalingRule response
 func CreateExecuteScalingRuleResponse() (response *ExecuteScalingRuleResponse) {
 	response = &ExecuteScalingRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

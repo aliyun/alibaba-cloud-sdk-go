@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MoveFacePhotos api with *MoveFacePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
 func (client *Client) MoveFacePhotos(request *MoveFacePhotosRequest) (response *MoveFacePhotosResponse, err error) {
 	response = CreateMoveFacePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MoveFacePhotos api with *MoveFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-chan *MoveFacePhotosResponse, <-chan error) {
 	responseChan := make(chan *MoveFacePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke MoveFacePhotos api with *MoveFacePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest, callback func(response *MoveFacePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type MoveFacePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke MoveFacePhotos API
 func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	return
 }
 
+// create a response to parse from MoveFacePhotos response
 func CreateMoveFacePhotosResponse() (response *MoveFacePhotosResponse) {
 	response = &MoveFacePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

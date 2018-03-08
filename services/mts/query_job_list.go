@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryJobList api with *QueryJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryjoblist.html
 func (client *Client) QueryJobList(request *QueryJobListRequest) (response *QueryJobListResponse, err error) {
 	response = CreateQueryJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryJobList api with *QueryJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryJobListWithChan(request *QueryJobListRequest) (<-chan *QueryJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryJobListWithChan(request *QueryJobListRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke QueryJobList api with *QueryJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryJobListWithCallback(request *QueryJobListRequest, callback func(response *QueryJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryJobListResponse struct {
 	JobList        JobListInQueryJobList        `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryJobList API
 func CreateQueryJobListRequest() (request *QueryJobListRequest) {
 	request = &QueryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryJobListRequest() (request *QueryJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryJobList response
 func CreateQueryJobListResponse() (response *QueryJobListResponse) {
 	response = &QueryJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

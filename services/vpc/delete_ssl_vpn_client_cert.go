@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSslVpnClientCert api with *DeleteSslVpnClientCertRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
 func (client *Client) DeleteSslVpnClientCert(request *DeleteSslVpnClientCertRequest) (response *DeleteSslVpnClientCertResponse, err error) {
 	response = CreateDeleteSslVpnClientCertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSslVpnClientCert api with *DeleteSslVpnClientCertRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnClientCertWithChan(request *DeleteSslVpnClientCertRequest) (<-chan *DeleteSslVpnClientCertResponse, <-chan error) {
 	responseChan := make(chan *DeleteSslVpnClientCertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSslVpnClientCertWithChan(request *DeleteSslVpnClient
 	return responseChan, errChan
 }
 
+// invoke DeleteSslVpnClientCert api with *DeleteSslVpnClientCertRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnClientCertWithCallback(request *DeleteSslVpnClientCertRequest, callback func(response *DeleteSslVpnClientCertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteSslVpnClientCertResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteSslVpnClientCert API
 func CreateDeleteSslVpnClientCertRequest() (request *DeleteSslVpnClientCertRequest) {
 	request = &DeleteSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteSslVpnClientCertRequest() (request *DeleteSslVpnClientCertReque
 	return
 }
 
+// create a response to parse from DeleteSslVpnClientCert response
 func CreateDeleteSslVpnClientCertResponse() (response *DeleteSslVpnClientCertResponse) {
 	response = &DeleteSslVpnClientCertResponse{
 		BaseResponse: &responses.BaseResponse{},

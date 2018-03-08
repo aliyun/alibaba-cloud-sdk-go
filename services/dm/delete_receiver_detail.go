@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
 func (client *Client) DeleteReceiverDetail(request *DeleteReceiverDetailRequest) (response *DeleteReceiverDetailResponse, err error) {
 	response = CreateDeleteReceiverDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetailRequest) (<-chan *DeleteReceiverDetailResponse, <-chan error) {
 	responseChan := make(chan *DeleteReceiverDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetail
 	return responseChan, errChan
 }
 
+// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDetailRequest, callback func(response *DeleteReceiverDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteReceiverDetailResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteReceiverDetail API
 func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) {
 	request = &DeleteReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) 
 	return
 }
 
+// create a response to parse from DeleteReceiverDetail response
 func CreateDeleteReceiverDetailResponse() (response *DeleteReceiverDetailResponse) {
 	response = &DeleteReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

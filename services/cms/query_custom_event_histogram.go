@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
 func (client *Client) QueryCustomEventHistogram(request *QueryCustomEventHistogramRequest) (response *QueryCustomEventHistogramResponse, err error) {
 	response = CreateQueryCustomEventHistogramResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventHistogramWithChan(request *QueryCustomEventHistogramRequest) (<-chan *QueryCustomEventHistogramResponse, <-chan error) {
 	responseChan := make(chan *QueryCustomEventHistogramResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCustomEventHistogramWithChan(request *QueryCustomEven
 	return responseChan, errChan
 }
 
+// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventHistogramWithCallback(request *QueryCustomEventHistogramRequest, callback func(response *QueryCustomEventHistogramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryCustomEventHistogramResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryCustomEventHistogram API
 func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogramRequest) {
 	request = &QueryCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogra
 	return
 }
 
+// create a response to parse from QueryCustomEventHistogram response
 func CreateQueryCustomEventHistogramResponse() (response *QueryCustomEventHistogramResponse) {
 	response = &QueryCustomEventHistogramResponse{
 		BaseResponse: &responses.BaseResponse{},

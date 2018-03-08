@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateNatGateway api with *CreateNatGatewayRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createnatgateway.html
 func (client *Client) CreateNatGateway(request *CreateNatGatewayRequest) (response *CreateNatGatewayResponse, err error) {
 	response = CreateCreateNatGatewayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateNatGateway api with *CreateNatGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createnatgateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest) (<-chan *CreateNatGatewayResponse, <-chan error) {
 	responseChan := make(chan *CreateNatGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateNatGateway api with *CreateNatGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createnatgateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequest, callback func(response *CreateNatGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +104,7 @@ type CreateNatGatewayResponse struct {
 	BandwidthPackageIds BandwidthPackageIdsInCreateNatGateway `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`
 }
 
+// create a request to invoke CreateNatGateway API
 func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 	request = &CreateNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -104,6 +113,7 @@ func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 	return
 }
 
+// create a response to parse from CreateNatGateway response
 func CreateCreateNatGatewayResponse() (response *CreateNatGatewayResponse) {
 	response = &CreateNatGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

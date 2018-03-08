@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
 func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDERequest) (response *DescribeDBInstanceTDEResponse, err error) {
 	response = CreateDescribeDBInstanceTDEResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceTDERequest) (<-chan *DescribeDBInstanceTDEResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceTDEResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceT
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInstanceTDERequest, callback func(response *DescribeDBInstanceTDEResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeDBInstanceTDEResponse struct {
 	Databases DatabasesInDescribeDBInstanceTDE `json:"Databases" xml:"Databases"`
 }
 
+// create a request to invoke DescribeDBInstanceTDE API
 func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest
 	return
 }
 
+// create a response to parse from DescribeDBInstanceTDE response
 func CreateDescribeDBInstanceTDEResponse() (response *DescribeDBInstanceTDEResponse) {
 	response = &DescribeDBInstanceTDEResponse{
 		BaseResponse: &responses.BaseResponse{},

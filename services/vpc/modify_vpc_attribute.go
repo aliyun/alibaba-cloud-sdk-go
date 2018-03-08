@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyVpcAttribute api with *ModifyVpcAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpcattribute.html
 func (client *Client) ModifyVpcAttribute(request *ModifyVpcAttributeRequest) (response *ModifyVpcAttributeResponse, err error) {
 	response = CreateModifyVpcAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyVpcAttribute api with *ModifyVpcAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpcattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpcAttributeWithChan(request *ModifyVpcAttributeRequest) (<-chan *ModifyVpcAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVpcAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyVpcAttributeWithChan(request *ModifyVpcAttributeRequ
 	return responseChan, errChan
 }
 
+// invoke ModifyVpcAttribute api with *ModifyVpcAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpcattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpcAttributeWithCallback(request *ModifyVpcAttributeRequest, callback func(response *ModifyVpcAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,7 +82,6 @@ type ModifyVpcAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 	VpcName              string           `position:"Query" name:"VpcName"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
 type ModifyVpcAttributeResponse struct {
@@ -82,6 +89,7 @@ type ModifyVpcAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyVpcAttribute API
 func CreateModifyVpcAttributeRequest() (request *ModifyVpcAttributeRequest) {
 	request = &ModifyVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +98,7 @@ func CreateModifyVpcAttributeRequest() (request *ModifyVpcAttributeRequest) {
 	return
 }
 
+// create a response to parse from ModifyVpcAttribute response
 func CreateModifyVpcAttributeResponse() (response *ModifyVpcAttributeResponse) {
 	response = &ModifyVpcAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

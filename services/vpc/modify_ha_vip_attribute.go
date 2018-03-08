@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyhavipattribute.html
 func (client *Client) ModifyHaVipAttribute(request *ModifyHaVipAttributeRequest) (response *ModifyHaVipAttributeResponse, err error) {
 	response = CreateModifyHaVipAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyhavipattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttributeRequest) (<-chan *ModifyHaVipAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyHaVipAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttribute
 	return responseChan, errChan
 }
 
+// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyhavipattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttributeRequest, callback func(response *ModifyHaVipAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyHaVipAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyHaVipAttribute API
 func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) {
 	request = &ModifyHaVipAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) 
 	return
 }
 
+// create a response to parse from ModifyHaVipAttribute response
 func CreateModifyHaVipAttributeResponse() (response *ModifyHaVipAttributeResponse) {
 	response = &ModifyHaVipAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMediaCover api with *UpdateMediaCoverRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacover.html
 func (client *Client) UpdateMediaCover(request *UpdateMediaCoverRequest) (response *UpdateMediaCoverResponse, err error) {
 	response = CreateUpdateMediaCoverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMediaCover api with *UpdateMediaCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCoverWithChan(request *UpdateMediaCoverRequest) (<-chan *UpdateMediaCoverResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaCoverResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMediaCoverWithChan(request *UpdateMediaCoverRequest)
 	return responseChan, errChan
 }
 
+// invoke UpdateMediaCover api with *UpdateMediaCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediacover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequest, callback func(response *UpdateMediaCoverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpdateMediaCoverResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateMediaCover API
 func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	request = &UpdateMediaCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	return
 }
 
+// create a response to parse from UpdateMediaCover response
 func CreateUpdateMediaCoverResponse() (response *UpdateMediaCoverResponse) {
 	response = &UpdateMediaCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EditPhotos api with *EditPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
 func (client *Client) EditPhotos(request *EditPhotosRequest) (response *EditPhotosResponse, err error) {
 	response = CreateEditPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EditPhotos api with *EditPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotosWithChan(request *EditPhotosRequest) (<-chan *EditPhotosResponse, <-chan error) {
 	responseChan := make(chan *EditPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EditPhotosWithChan(request *EditPhotosRequest) (<-chan *Ed
 	return responseChan, errChan
 }
 
+// invoke EditPhotos api with *EditPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callback func(response *EditPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type EditPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke EditPhotos API
 func CreateEditPhotosRequest() (request *EditPhotosRequest) {
 	request = &EditPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateEditPhotosRequest() (request *EditPhotosRequest) {
 	return
 }
 
+// create a response to parse from EditPhotos response
 func CreateEditPhotosResponse() (response *EditPhotosResponse) {
 	response = &EditPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

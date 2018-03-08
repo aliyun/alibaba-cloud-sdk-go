@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateImage api with *CreateImageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createimage.html
 func (client *Client) CreateImage(request *CreateImageRequest) (response *CreateImageResponse, err error) {
 	response = CreateCreateImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateImage api with *CreateImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageWithChan(request *CreateImageRequest) (<-chan *CreateImageResponse, <-chan error) {
 	responseChan := make(chan *CreateImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateImageWithChan(request *CreateImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateImage api with *CreateImageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createimage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callback func(response *CreateImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,6 +113,7 @@ type CreateImageResponse struct {
 	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
+// create a request to invoke CreateImage API
 func CreateCreateImageRequest() (request *CreateImageRequest) {
 	request = &CreateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -113,6 +122,7 @@ func CreateCreateImageRequest() (request *CreateImageRequest) {
 	return
 }
 
+// create a response to parse from CreateImage response
 func CreateCreateImageResponse() (response *CreateImageResponse) {
 	response = &CreateImageResponse{
 		BaseResponse: &responses.BaseResponse{},

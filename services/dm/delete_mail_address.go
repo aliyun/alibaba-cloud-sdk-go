@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMailAddress api with *DeleteMailAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/deletemailaddress.html
 func (client *Client) DeleteMailAddress(request *DeleteMailAddressRequest) (response *DeleteMailAddressResponse, err error) {
 	response = CreateDeleteMailAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMailAddress api with *DeleteMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletemailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressRequest) (<-chan *DeleteMailAddressResponse, <-chan error) {
 	responseChan := make(chan *DeleteMailAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressReques
 	return responseChan, errChan
 }
 
+// invoke DeleteMailAddress api with *DeleteMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/deletemailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRequest, callback func(response *DeleteMailAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteMailAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteMailAddress API
 func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
 	request = &DeleteMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
 	return
 }
 
+// create a response to parse from DeleteMailAddress response
 func CreateDeleteMailAddressResponse() (response *DeleteMailAddressResponse) {
 	response = &DeleteMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

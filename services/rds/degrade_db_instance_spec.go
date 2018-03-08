@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DegradeDBInstanceSpec api with *DegradeDBInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/rds/degradedbinstancespec.html
 func (client *Client) DegradeDBInstanceSpec(request *DegradeDBInstanceSpecRequest) (response *DegradeDBInstanceSpecResponse, err error) {
 	response = CreateDegradeDBInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DegradeDBInstanceSpec api with *DegradeDBInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/degradedbinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DegradeDBInstanceSpecWithChan(request *DegradeDBInstanceSpecRequest) (<-chan *DegradeDBInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *DegradeDBInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DegradeDBInstanceSpecWithChan(request *DegradeDBInstanceSp
 	return responseChan, errChan
 }
 
+// invoke DegradeDBInstanceSpec api with *DegradeDBInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/degradedbinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DegradeDBInstanceSpecWithCallback(request *DegradeDBInstanceSpecRequest, callback func(response *DegradeDBInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DegradeDBInstanceSpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DegradeDBInstanceSpec API
 func CreateDegradeDBInstanceSpecRequest() (request *DegradeDBInstanceSpecRequest) {
 	request = &DegradeDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDegradeDBInstanceSpecRequest() (request *DegradeDBInstanceSpecRequest
 	return
 }
 
+// create a response to parse from DegradeDBInstanceSpec response
 func CreateDegradeDBInstanceSpecResponse() (response *DegradeDBInstanceSpecResponse) {
 	response = &DegradeDBInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

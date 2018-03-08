@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
 func (client *Client) ModifyUserPasswords(request *ModifyUserPasswordsRequest) (response *ModifyUserPasswordsResponse, err error) {
 	response = CreateModifyUserPasswordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRequest) (<-chan *ModifyUserPasswordsResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserPasswordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRe
 	return responseChan, errChan
 }
 
+// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithCallback(request *ModifyUserPasswordsRequest, callback func(response *ModifyUserPasswordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyUserPasswordsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyUserPasswords API
 func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
 	request = &ModifyUserPasswordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
 	return
 }
 
+// create a response to parse from ModifyUserPasswords response
 func CreateModifyUserPasswordsResponse() (response *ModifyUserPasswordsResponse) {
 	response = &ModifyUserPasswordsResponse{
 		BaseResponse: &responses.BaseResponse{},

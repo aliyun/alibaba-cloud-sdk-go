@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteAccessRule api with *DeleteAccessRuleRequest synchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
 func (client *Client) DeleteAccessRule(request *DeleteAccessRuleRequest) (response *DeleteAccessRuleResponse, err error) {
 	response = CreateDeleteAccessRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteAccessRule api with *DeleteAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest) (<-chan *DeleteAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteAccessRule api with *DeleteAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessRuleWithCallback(request *DeleteAccessRuleRequest, callback func(response *DeleteAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeleteAccessRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteAccessRule API
 func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
 	request = &DeleteAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
 	return
 }
 
+// create a response to parse from DeleteAccessRule response
 func CreateDeleteAccessRuleResponse() (response *DeleteAccessRuleResponse) {
 	response = &DeleteAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

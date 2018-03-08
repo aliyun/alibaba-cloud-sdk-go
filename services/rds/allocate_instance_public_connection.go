@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
 func (client *Client) AllocateInstancePublicConnection(request *AllocateInstancePublicConnectionRequest) (response *AllocateInstancePublicConnectionResponse, err error) {
 	response = CreateAllocateInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithChan(request *AllocateInstancePublicConnectionRequest) (<-chan *AllocateInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *AllocateInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AllocateInstancePublicConnectionWithChan(request *Allocate
 	return responseChan, errChan
 }
 
+// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithCallback(request *AllocateInstancePublicConnectionRequest, callback func(response *AllocateInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AllocateInstancePublicConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AllocateInstancePublicConnection API
 func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstancePublicConnectionRequest) {
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	return
 }
 
+// create a response to parse from AllocateInstancePublicConnection response
 func CreateAllocateInstancePublicConnectionResponse() (response *AllocateInstancePublicConnectionResponse) {
 	response = &AllocateInstancePublicConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

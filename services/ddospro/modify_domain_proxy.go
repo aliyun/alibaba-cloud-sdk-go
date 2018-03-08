@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
 func (client *Client) ModifyDomainProxy(request *ModifyDomainProxyRequest) (response *ModifyDomainProxyResponse, err error) {
 	response = CreateModifyDomainProxyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainProxyWithChan(request *ModifyDomainProxyRequest) (<-chan *ModifyDomainProxyResponse, <-chan error) {
 	responseChan := make(chan *ModifyDomainProxyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDomainProxyWithChan(request *ModifyDomainProxyReques
 	return responseChan, errChan
 }
 
+// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainProxyWithCallback(request *ModifyDomainProxyRequest, callback func(response *ModifyDomainProxyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ModifyDomainProxyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDomainProxy API
 func CreateModifyDomainProxyRequest() (request *ModifyDomainProxyRequest) {
 	request = &ModifyDomainProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateModifyDomainProxyRequest() (request *ModifyDomainProxyRequest) {
 	return
 }
 
+// create a response to parse from ModifyDomainProxy response
 func CreateModifyDomainProxyResponse() (response *ModifyDomainProxyResponse) {
 	response = &ModifyDomainProxyResponse{
 		BaseResponse: &responses.BaseResponse{},

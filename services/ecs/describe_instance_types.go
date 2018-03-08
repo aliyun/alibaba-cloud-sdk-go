@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
 func (client *Client) DescribeInstanceTypes(request *DescribeInstanceTypesRequest) (response *DescribeInstanceTypesResponse, err error) {
 	response = CreateDescribeInstanceTypesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTypesRequest) (<-chan *DescribeInstanceTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTyp
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanceTypesRequest, callback func(response *DescribeInstanceTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeInstanceTypesResponse struct {
 	InstanceTypes InstanceTypesInDescribeInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
+// create a request to invoke DescribeInstanceTypes API
 func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest) {
 	request = &DescribeInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest
 	return
 }
 
+// create a response to parse from DescribeInstanceTypes response
 func CreateDescribeInstanceTypesResponse() (response *DescribeInstanceTypesResponse) {
 	response = &DescribeInstanceTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

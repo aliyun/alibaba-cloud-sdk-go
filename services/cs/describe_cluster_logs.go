@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
 func (client *Client) DescribeClusterLogs(request *DescribeClusterLogsRequest) (response *DescribeClusterLogsResponse, err error) {
 	response = CreateDescribeClusterLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRequest) (<-chan *DescribeClusterLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRe
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithCallback(request *DescribeClusterLogsRequest, callback func(response *DescribeClusterLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterLogsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterLogs API
 func CreateDescribeClusterLogsRequest() (request *DescribeClusterLogsRequest) {
 	request = &DescribeClusterLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterLogsRequest() (request *DescribeClusterLogsRequest) {
 	return
 }
 
+// create a response to parse from DescribeClusterLogs response
 func CreateDescribeClusterLogsResponse() (response *DescribeClusterLogsResponse) {
 	response = &DescribeClusterLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -16,8 +16,8 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type RiskTypeWhiteListQueryResult struct {
-	TypeName string   `json:"TypeName" xml:"TypeName"`
-	Alias    string   `json:"Alias" xml:"Alias"`
-	On       bool     `json:"On" xml:"On"`
-	SubTypes []SubTyp `json:"SubTypes" xml:"SubTypes"`
+	TypeName string    `json:"TypeName" xml:"TypeName"`
+	Alias    string    `json:"Alias" xml:"Alias"`
+	On       bool      `json:"On" xml:"On"`
+	SubTypes []SubType `json:"SubTypes" xml:"SubTypes"`
 }

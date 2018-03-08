@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVRouters api with *DescribeVRoutersRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describevrouters.html
 func (client *Client) DescribeVRouters(request *DescribeVRoutersRequest) (response *DescribeVRoutersResponse, err error) {
 	response = CreateDescribeVRoutersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVRouters api with *DescribeVRoutersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevrouters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVRoutersWithChan(request *DescribeVRoutersRequest) (<-chan *DescribeVRoutersResponse, <-chan error) {
 	responseChan := make(chan *DescribeVRoutersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVRoutersWithChan(request *DescribeVRoutersRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeVRouters api with *DescribeVRoutersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevrouters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVRoutersWithCallback(request *DescribeVRoutersRequest, callback func(response *DescribeVRoutersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeVRoutersResponse struct {
 	VRouters   VRouters `json:"VRouters" xml:"VRouters"`
 }
 
+// create a request to invoke DescribeVRouters API
 func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	request = &DescribeVRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	return
 }
 
+// create a response to parse from DescribeVRouters response
 func CreateDescribeVRoutersResponse() (response *DescribeVRoutersResponse) {
 	response = &DescribeVRoutersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest synchronously
+// api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
 func (client *Client) OrderSucceededCallback(request *OrderSucceededCallbackRequest) (response *OrderSucceededCallbackResponse, err error) {
 	response = CreateOrderSucceededCallbackResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest asynchronously
+// api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrderSucceededCallbackWithChan(request *OrderSucceededCallbackRequest) (<-chan *OrderSucceededCallbackResponse, <-chan error) {
 	responseChan := make(chan *OrderSucceededCallbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) OrderSucceededCallbackWithChan(request *OrderSucceededCall
 	return responseChan, errChan
 }
 
+// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest asynchronously
+// api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrderSucceededCallbackWithCallback(request *OrderSucceededCallbackRequest, callback func(response *OrderSucceededCallbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type OrderSucceededCallbackResponse struct {
 	Synchro   bool   `json:"synchro" xml:"synchro"`
 }
 
+// create a request to invoke OrderSucceededCallback API
 func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackRequest) {
 	request = &OrderSucceededCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackReque
 	return
 }
 
+// create a response to parse from OrderSucceededCallback response
 func CreateOrderSucceededCallbackResponse() (response *OrderSucceededCallbackResponse) {
 	response = &OrderSucceededCallbackResponse{
 		BaseResponse: &responses.BaseResponse{},

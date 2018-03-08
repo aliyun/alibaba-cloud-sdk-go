@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
 func (client *Client) ReportVideoSplitJobResult(request *ReportVideoSplitJobResultRequest) (response *ReportVideoSplitJobResultResponse, err error) {
 	response = CreateReportVideoSplitJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportVideoSplitJobResultWithChan(request *ReportVideoSplitJobResultRequest) (<-chan *ReportVideoSplitJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportVideoSplitJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportVideoSplitJobResultWithChan(request *ReportVideoSpli
 	return responseChan, errChan
 }
 
+// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideoSplitJobResultRequest, callback func(response *ReportVideoSplitJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportVideoSplitJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportVideoSplitJobResult API
 func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResultRequest) {
 	request = &ReportVideoSplitJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResul
 	return
 }
 
+// create a response to parse from ReportVideoSplitJobResult response
 func CreateReportVideoSplitJobResultResponse() (response *ReportVideoSplitJobResultResponse) {
 	response = &ReportVideoSplitJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

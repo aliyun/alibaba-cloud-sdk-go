@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateForwardEntry api with *CreateForwardEntryRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createforwardentry.html
 func (client *Client) CreateForwardEntry(request *CreateForwardEntryRequest) (response *CreateForwardEntryResponse, err error) {
 	response = CreateCreateForwardEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateForwardEntry api with *CreateForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateForwardEntryWithChan(request *CreateForwardEntryRequest) (<-chan *CreateForwardEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateForwardEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateForwardEntryWithChan(request *CreateForwardEntryRequ
 	return responseChan, errChan
 }
 
+// invoke CreateForwardEntry api with *CreateForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntryRequest, callback func(response *CreateForwardEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateForwardEntryResponse struct {
 	ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
 }
 
+// create a request to invoke CreateForwardEntry API
 func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	return
 }
 
+// create a response to parse from CreateForwardEntry response
 func CreateCreateForwardEntryResponse() (response *CreateForwardEntryResponse) {
 	response = &CreateForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

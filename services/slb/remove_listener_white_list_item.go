@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest synchronously
+// api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
 func (client *Client) RemoveListenerWhiteListItem(request *RemoveListenerWhiteListItemRequest) (response *RemoveListenerWhiteListItemResponse, err error) {
 	response = CreateRemoveListenerWhiteListItemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListenerWhiteListItemRequest) (<-chan *RemoveListenerWhiteListItemResponse, <-chan error) {
 	responseChan := make(chan *RemoveListenerWhiteListItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListene
 	return responseChan, errChan
 }
 
+// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveListenerWhiteListItemWithCallback(request *RemoveListenerWhiteListItemRequest, callback func(response *RemoveListenerWhiteListItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type RemoveListenerWhiteListItemResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RemoveListenerWhiteListItem API
 func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteListItemRequest) {
 	request = &RemoveListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteLis
 	return
 }
 
+// create a response to parse from RemoveListenerWhiteListItem response
 func CreateRemoveListenerWhiteListItemResponse() (response *RemoveListenerWhiteListItemResponse) {
 	response = &RemoveListenerWhiteListItemResponse{
 		BaseResponse: &responses.BaseResponse{},

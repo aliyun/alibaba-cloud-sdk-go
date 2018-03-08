@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveUsers api with *RemoveUsersRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/removeusers.html
 func (client *Client) RemoveUsers(request *RemoveUsersRequest) (response *RemoveUsersResponse, err error) {
 	response = CreateRemoveUsersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveUsers api with *RemoveUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/removeusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *RemoveUsersResponse, <-chan error) {
 	responseChan := make(chan *RemoveUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke RemoveUsers api with *RemoveUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/removeusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callback func(response *RemoveUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type RemoveUsersResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke RemoveUsers API
 func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	request = &RemoveUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	return
 }
 
+// create a response to parse from RemoveUsers response
 func CreateRemoveUsersResponse() (response *RemoveUsersResponse) {
 	response = &RemoveUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

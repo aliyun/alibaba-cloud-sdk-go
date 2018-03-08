@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest synchronously
+// api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
 func (client *Client) ImportDataFromDatabase(request *ImportDataFromDatabaseRequest) (response *ImportDataFromDatabaseResponse, err error) {
 	response = CreateImportDataFromDatabaseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataFromDatabaseWithChan(request *ImportDataFromDatabaseRequest) (<-chan *ImportDataFromDatabaseResponse, <-chan error) {
 	responseChan := make(chan *ImportDataFromDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ImportDataFromDatabaseWithChan(request *ImportDataFromData
 	return responseChan, errChan
 }
 
+// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFromDatabaseRequest, callback func(response *ImportDataFromDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ImportDataFromDatabaseResponse struct {
 	ImportId  int    `json:"ImportId" xml:"ImportId"`
 }
 
+// create a request to invoke ImportDataFromDatabase API
 func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseRequest) {
 	request = &ImportDataFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseReque
 	return
 }
 
+// create a response to parse from ImportDataFromDatabase response
 func CreateImportDataFromDatabaseResponse() (response *ImportDataFromDatabaseResponse) {
 	response = &ImportDataFromDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

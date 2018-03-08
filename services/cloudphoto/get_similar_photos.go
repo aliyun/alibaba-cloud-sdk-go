@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
 func (client *Client) GetSimilarPhotos(request *GetSimilarPhotosRequest) (response *GetSimilarPhotosResponse, err error) {
 	response = CreateGetSimilarPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest) (<-chan *GetSimilarPhotosResponse, <-chan error) {
 	responseChan := make(chan *GetSimilarPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest)
 	return responseChan, errChan
 }
 
+// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequest, callback func(response *GetSimilarPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetSimilarPhotosResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke GetSimilarPhotos API
 func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 	request = &GetSimilarPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 	return
 }
 
+// create a response to parse from GetSimilarPhotos response
 func CreateGetSimilarPhotosResponse() (response *GetSimilarPhotosResponse) {
 	response = &GetSimilarPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

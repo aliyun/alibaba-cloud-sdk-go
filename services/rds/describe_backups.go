@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBackups api with *DescribeBackupsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describebackups.html
 func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response *DescribeBackupsResponse, err error) {
 	response = CreateDescribeBackupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBackups api with *DescribeBackupsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (<-chan *DescribeBackupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeBackups api with *DescribeBackupsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsRequest, callback func(response *DescribeBackupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescribeBackupsResponse struct {
 	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeBackups API
 func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	return
 }
 
+// create a response to parse from DescribeBackups response
 func CreateDescribeBackupsResponse() (response *DescribeBackupsResponse) {
 	response = &DescribeBackupsResponse{
 		BaseResponse: &responses.BaseResponse{},

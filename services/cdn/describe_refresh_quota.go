@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRefreshQuota api with *DescribeRefreshQuotaRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
 func (client *Client) DescribeRefreshQuota(request *DescribeRefreshQuotaRequest) (response *DescribeRefreshQuotaResponse, err error) {
 	response = CreateDescribeRefreshQuotaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRefreshQuota api with *DescribeRefreshQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuotaRequest) (<-chan *DescribeRefreshQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeRefreshQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuota
 	return responseChan, errChan
 }
 
+// invoke DescribeRefreshQuota api with *DescribeRefreshQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQuotaRequest, callback func(response *DescribeRefreshQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeRefreshQuotaResponse struct {
 	BlockRemain   string `json:"blockRemain" xml:"blockRemain"`
 }
 
+// create a request to invoke DescribeRefreshQuota API
 func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) {
 	request = &DescribeRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) 
 	return
 }
 
+// create a response to parse from DescribeRefreshQuota response
 func CreateDescribeRefreshQuotaResponse() (response *DescribeRefreshQuotaResponse) {
 	response = &DescribeRefreshQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},

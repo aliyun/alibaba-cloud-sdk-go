@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
 func (client *Client) DescribeDdosStatus(request *DescribeDdosStatusRequest) (response *DescribeDdosStatusResponse, err error) {
 	response = CreateDescribeDdosStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDdosStatusWithChan(request *DescribeDdosStatusRequest) (<-chan *DescribeDdosStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeDdosStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDdosStatusWithChan(request *DescribeDdosStatusRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDdosStatusWithCallback(request *DescribeDdosStatusRequest, callback func(response *DescribeDdosStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeDdosStatusResponse struct {
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeDdosStatus API
 func CreateDescribeDdosStatusRequest() (request *DescribeDdosStatusRequest) {
 	request = &DescribeDdosStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeDdosStatusRequest() (request *DescribeDdosStatusRequest) {
 	return
 }
 
+// create a response to parse from DescribeDdosStatus response
 func CreateDescribeDdosStatusResponse() (response *DescribeDdosStatusResponse) {
 	response = &DescribeDdosStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

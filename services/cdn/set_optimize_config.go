@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
 func (client *Client) SetOptimizeConfig(request *SetOptimizeConfigRequest) (response *SetOptimizeConfigResponse, err error) {
 	response = CreateSetOptimizeConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigRequest) (<-chan *SetOptimizeConfigResponse, <-chan error) {
 	responseChan := make(chan *SetOptimizeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigReques
 	return responseChan, errChan
 }
 
+// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRequest, callback func(response *SetOptimizeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetOptimizeConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetOptimizeConfig API
 func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 	request = &SetOptimizeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 	return
 }
 
+// create a response to parse from SetOptimizeConfig response
 func CreateSetOptimizeConfigResponse() (response *SetOptimizeConfigResponse) {
 	response = &SetOptimizeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

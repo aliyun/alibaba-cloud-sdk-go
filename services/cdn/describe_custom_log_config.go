@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
 func (client *Client) DescribeCustomLogConfig(request *DescribeCustomLogConfigRequest) (response *DescribeCustomLogConfigResponse, err error) {
 	response = CreateDescribeCustomLogConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomLogConfigWithChan(request *DescribeCustomLogConfigRequest) (<-chan *DescribeCustomLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCustomLogConfigWithChan(request *DescribeCustomLog
 	return responseChan, errChan
 }
 
+// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomLogConfigWithCallback(request *DescribeCustomLogConfigRequest, callback func(response *DescribeCustomLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeCustomLogConfigResponse struct {
 	Tag       string `json:"Tag" xml:"Tag"`
 }
 
+// create a request to invoke DescribeCustomLogConfig API
 func CreateDescribeCustomLogConfigRequest() (request *DescribeCustomLogConfigRequest) {
 	request = &DescribeCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeCustomLogConfigRequest() (request *DescribeCustomLogConfigReq
 	return
 }
 
+// create a response to parse from DescribeCustomLogConfig response
 func CreateDescribeCustomLogConfigResponse() (response *DescribeCustomLogConfigResponse) {
 	response = &DescribeCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

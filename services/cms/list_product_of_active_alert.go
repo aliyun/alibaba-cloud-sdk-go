@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
 func (client *Client) ListProductOfActiveAlert(request *ListProductOfActiveAlertRequest) (response *ListProductOfActiveAlertResponse, err error) {
 	response = CreateListProductOfActiveAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiveAlertWithChan(request *ListProductOfActiveAlertRequest) (<-chan *ListProductOfActiveAlertResponse, <-chan error) {
 	responseChan := make(chan *ListProductOfActiveAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListProductOfActiveAlertWithChan(request *ListProductOfAct
 	return responseChan, errChan
 }
 
+// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiveAlertWithCallback(request *ListProductOfActiveAlertRequest, callback func(response *ListProductOfActiveAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListProductOfActiveAlertResponse struct {
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 }
 
+// create a request to invoke ListProductOfActiveAlert API
 func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertRequest) {
 	request = &ListProductOfActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertR
 	return
 }
 
+// create a response to parse from ListProductOfActiveAlert response
 func CreateListProductOfActiveAlertResponse() (response *ListProductOfActiveAlertResponse) {
 	response = &ListProductOfActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

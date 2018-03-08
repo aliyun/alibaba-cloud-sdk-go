@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ScaleCluster api with *ScaleClusterRequest synchronously
+// api document: https://help.aliyun.com/api/cs/scalecluster.html
 func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *ScaleClusterResponse, err error) {
 	response = CreateScaleClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ScaleCluster api with *ScaleClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/scalecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan *ScaleClusterResponse, <-chan error) {
 	responseChan := make(chan *ScaleClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ScaleCluster api with *ScaleClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/scalecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, callback func(response *ScaleClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ScaleClusterResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke ScaleCluster API
 func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
 	request = &ScaleClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
 	return
 }
 
+// create a response to parse from ScaleCluster response
 func CreateScaleClusterResponse() (response *ScaleClusterResponse) {
 	response = &ScaleClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

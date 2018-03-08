@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeResourceDiagnosis api with *DescribeResourceDiagnosisRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeresourcediagnosis.html
 func (client *Client) DescribeResourceDiagnosis(request *DescribeResourceDiagnosisRequest) (response *DescribeResourceDiagnosisResponse, err error) {
 	response = CreateDescribeResourceDiagnosisResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeResourceDiagnosis api with *DescribeResourceDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeresourcediagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceDiagnosisWithChan(request *DescribeResourceDiagnosisRequest) (<-chan *DescribeResourceDiagnosisResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourceDiagnosisResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeResourceDiagnosisWithChan(request *DescribeResourc
 	return responseChan, errChan
 }
 
+// invoke DescribeResourceDiagnosis api with *DescribeResourceDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeresourcediagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceDiagnosisWithCallback(request *DescribeResourceDiagnosisRequest, callback func(response *DescribeResourceDiagnosisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeResourceDiagnosisResponse struct {
 	Connection []string `json:"Connection" xml:"Connection"`
 }
 
+// create a request to invoke DescribeResourceDiagnosis API
 func CreateDescribeResourceDiagnosisRequest() (request *DescribeResourceDiagnosisRequest) {
 	request = &DescribeResourceDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeResourceDiagnosisRequest() (request *DescribeResourceDiagnosi
 	return
 }
 
+// create a response to parse from DescribeResourceDiagnosis response
 func CreateDescribeResourceDiagnosisResponse() (response *DescribeResourceDiagnosisResponse) {
 	response = &DescribeResourceDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

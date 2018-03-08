@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
 func (client *Client) ModifyRouterInterfaceSpec(request *ModifyRouterInterfaceSpecRequest) (response *ModifyRouterInterfaceSpecResponse, err error) {
 	response = CreateModifyRouterInterfaceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInterfaceSpecRequest) (<-chan *ModifyRouterInterfaceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouterInterfaceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInt
 	return responseChan, errChan
 }
 
+// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRouterInterfaceSpecRequest, callback func(response *ModifyRouterInterfaceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ModifyRouterInterfaceSpecResponse struct {
 	Spec      string `json:"Spec" xml:"Spec"`
 }
 
+// create a request to invoke ModifyRouterInterfaceSpec API
 func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpecRequest) {
 	request = &ModifyRouterInterfaceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpe
 	return
 }
 
+// create a response to parse from ModifyRouterInterfaceSpec response
 func CreateModifyRouterInterfaceSpecResponse() (response *ModifyRouterInterfaceSpecResponse) {
 	response = &ModifyRouterInterfaceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

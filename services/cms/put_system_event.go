@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PutSystemEvent api with *PutSystemEventRequest synchronously
+// api document: https://help.aliyun.com/api/cms/putsystemevent.html
 func (client *Client) PutSystemEvent(request *PutSystemEventRequest) (response *PutSystemEventResponse, err error) {
 	response = CreatePutSystemEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PutSystemEvent api with *PutSystemEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putsystemevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-chan *PutSystemEventResponse, <-chan error) {
 	responseChan := make(chan *PutSystemEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke PutSystemEvent api with *PutSystemEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putsystemevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest, callback func(response *PutSystemEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type PutSystemEventResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke PutSystemEvent API
 func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
 	request = &PutSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
 	return
 }
 
+// create a response to parse from PutSystemEvent response
 func CreatePutSystemEventResponse() (response *PutSystemEventResponse) {
 	response = &PutSystemEventResponse{
 		BaseResponse: &responses.BaseResponse{},

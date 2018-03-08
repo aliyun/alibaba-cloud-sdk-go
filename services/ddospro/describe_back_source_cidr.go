@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
 func (client *Client) DescribeBackSourceCidr(request *DescribeBackSourceCidrRequest) (response *DescribeBackSourceCidrResponse, err error) {
 	response = CreateDescribeBackSourceCidrResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSourceCidrRequest) (<-chan *DescribeBackSourceCidrResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackSourceCidrResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSource
 	return responseChan, errChan
 }
 
+// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSourceCidrRequest, callback func(response *DescribeBackSourceCidrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeBackSourceCidrResponse struct {
 	CidrList  CidrList `json:"CidrList" xml:"CidrList"`
 }
 
+// create a request to invoke DescribeBackSourceCidr API
 func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrRequest) {
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrReque
 	return
 }
 
+// create a response to parse from DescribeBackSourceCidr response
 func CreateDescribeBackSourceCidrResponse() (response *DescribeBackSourceCidrResponse) {
 	response = &DescribeBackSourceCidrResponse{
 		BaseResponse: &responses.BaseResponse{},

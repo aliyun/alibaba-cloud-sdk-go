@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachInstances api with *AttachInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ess/attachinstances.html
 func (client *Client) AttachInstances(request *AttachInstancesRequest) (response *AttachInstancesResponse, err error) {
 	response = CreateAttachInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachInstances api with *AttachInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/attachinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (<-chan *AttachInstancesResponse, <-chan error) {
 	responseChan := make(chan *AttachInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (
 	return responseChan, errChan
 }
 
+// invoke AttachInstances api with *AttachInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/attachinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithCallback(request *AttachInstancesRequest, callback func(response *AttachInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -120,6 +128,7 @@ type AttachInstancesResponse struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AttachInstances API
 func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	request = &AttachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -128,6 +137,7 @@ func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	return
 }
 
+// create a response to parse from AttachInstances response
 func CreateAttachInstancesResponse() (response *AttachInstancesResponse) {
 	response = &AttachInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

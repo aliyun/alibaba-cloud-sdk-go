@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAsrJobList api with *QueryAsrJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
 func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response *QueryAsrJobListResponse, err error) {
 	response = CreateQueryAsrJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAsrJobList api with *QueryAsrJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (<-chan *QueryAsrJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryAsrJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryAsrJobList api with *QueryAsrJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListRequest, callback func(response *QueryAsrJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryAsrJobListResponse struct {
 	JobList     JobListInQueryAsrJobList     `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryAsrJobList API
 func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	request = &QueryAsrJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryAsrJobList response
 func CreateQueryAsrJobListResponse() (response *QueryAsrJobListResponse) {
 	response = &QueryAsrJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

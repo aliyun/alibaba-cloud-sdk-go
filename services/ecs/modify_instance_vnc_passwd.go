@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
 func (client *Client) ModifyInstanceVncPasswd(request *ModifyInstanceVncPasswdRequest) (response *ModifyInstanceVncPasswdResponse, err error) {
 	response = CreateModifyInstanceVncPasswdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVncPasswdWithChan(request *ModifyInstanceVncPasswdRequest) (<-chan *ModifyInstanceVncPasswdResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceVncPasswdResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceVncPasswdWithChan(request *ModifyInstanceVnc
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVncPasswdWithCallback(request *ModifyInstanceVncPasswdRequest, callback func(response *ModifyInstanceVncPasswdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyInstanceVncPasswdResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyInstanceVncPasswd API
 func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdRequest) {
 	request = &ModifyInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdReq
 	return
 }
 
+// create a response to parse from ModifyInstanceVncPasswd response
 func CreateModifyInstanceVncPasswdResponse() (response *ModifyInstanceVncPasswdResponse) {
 	response = &ModifyInstanceVncPasswdResponse{
 		BaseResponse: &responses.BaseResponse{},

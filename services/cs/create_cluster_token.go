@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateClusterToken api with *CreateClusterTokenRequest synchronously
+// api document: https://help.aliyun.com/api/cs/createclustertoken.html
 func (client *Client) CreateClusterToken(request *CreateClusterTokenRequest) (response *CreateClusterTokenResponse, err error) {
 	response = CreateCreateClusterTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateClusterToken api with *CreateClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequest) (<-chan *CreateClusterTokenResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequ
 	return responseChan, errChan
 }
 
+// invoke CreateClusterToken api with *CreateClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterTokenWithCallback(request *CreateClusterTokenRequest, callback func(response *CreateClusterTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type CreateClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke CreateClusterToken API
 func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
 	request = &CreateClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
 	return
 }
 
+// create a response to parse from CreateClusterToken response
 func CreateCreateClusterTokenResponse() (response *CreateClusterTokenResponse) {
 	response = &CreateClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

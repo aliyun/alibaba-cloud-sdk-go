@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancer.html
 func (client *Client) CreateLoadBalancer(request *CreateLoadBalancerRequest) (response *CreateLoadBalancerResponse, err error) {
 	response = CreateCreateLoadBalancerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequest) (<-chan *CreateLoadBalancerResponse, <-chan error) {
 	responseChan := make(chan *CreateLoadBalancerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequ
 	return responseChan, errChan
 }
 
+// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancerRequest, callback func(response *CreateLoadBalancerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +112,7 @@ type CreateLoadBalancerResponse struct {
 	OrderId          int    `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke CreateLoadBalancer API
 func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	request = &CreateLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -112,6 +121,7 @@ func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	return
 }
 
+// create a response to parse from CreateLoadBalancer response
 func CreateCreateLoadBalancerResponse() (response *CreateLoadBalancerResponse) {
 	response = &CreateLoadBalancerResponse{
 		BaseResponse: &responses.BaseResponse{},

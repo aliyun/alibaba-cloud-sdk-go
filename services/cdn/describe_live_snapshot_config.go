@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
 func (client *Client) DescribeLiveSnapshotConfig(request *DescribeLiveSnapshotConfigRequest) (response *DescribeLiveSnapshotConfigResponse, err error) {
 	response = CreateDescribeLiveSnapshotConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSnapshotConfigRequest) (<-chan *DescribeLiveSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSn
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLiveSnapshotConfigRequest, callback func(response *DescribeLiveSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeLiveSnapshotConfigResponse struct {
 	LiveStreamSnapshotConfigList LiveStreamSnapshotConfigList `json:"LiveStreamSnapshotConfigList" xml:"LiveStreamSnapshotConfigList"`
 }
 
+// create a request to invoke DescribeLiveSnapshotConfig API
 func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotConfigRequest) {
 	request = &DescribeLiveSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotCon
 	return
 }
 
+// create a response to parse from DescribeLiveSnapshotConfig response
 func CreateDescribeLiveSnapshotConfigResponse() (response *DescribeLiveSnapshotConfigResponse) {
 	response = &DescribeLiveSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

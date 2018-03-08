@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
 func (client *Client) ReportMediaDetailJobResult(request *ReportMediaDetailJobResultRequest) (response *ReportMediaDetailJobResultResponse, err error) {
 	response = CreateReportMediaDetailJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportMediaDetailJobResultWithChan(request *ReportMediaDetailJobResultRequest) (<-chan *ReportMediaDetailJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportMediaDetailJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportMediaDetailJobResultWithChan(request *ReportMediaDet
 	return responseChan, errChan
 }
 
+// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMediaDetailJobResultRequest, callback func(response *ReportMediaDetailJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportMediaDetailJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportMediaDetailJobResult API
 func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobResultRequest) {
 	request = &ReportMediaDetailJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobRes
 	return
 }
 
+// create a response to parse from ReportMediaDetailJobResult response
 func CreateReportMediaDetailJobResultResponse() (response *ReportMediaDetailJobResultResponse) {
 	response = &ReportMediaDetailJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

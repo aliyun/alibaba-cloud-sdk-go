@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
 func (client *Client) ModifyClusterAttributes(request *ModifyClusterAttributesRequest) (response *ModifyClusterAttributesResponse, err error) {
 	response = CreateModifyClusterAttributesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterAttributesWithChan(request *ModifyClusterAttributesRequest) (<-chan *ModifyClusterAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyClusterAttributesWithChan(request *ModifyClusterAttr
 	return responseChan, errChan
 }
 
+// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyClusterAttributesRequest, callback func(response *ModifyClusterAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ModifyClusterAttributesResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyClusterAttributes API
 func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesRequest) {
 	request = &ModifyClusterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesReq
 	return
 }
 
+// create a response to parse from ModifyClusterAttributes response
 func CreateModifyClusterAttributesResponse() (response *ModifyClusterAttributesResponse) {
 	response = &ModifyClusterAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

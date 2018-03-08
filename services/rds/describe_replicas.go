@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeReplicas api with *DescribeReplicasRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describereplicas.html
 func (client *Client) DescribeReplicas(request *DescribeReplicasRequest) (response *DescribeReplicasResponse, err error) {
 	response = CreateDescribeReplicasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeReplicas api with *DescribeReplicasRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicas.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicasWithChan(request *DescribeReplicasRequest) (<-chan *DescribeReplicasResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeReplicasWithChan(request *DescribeReplicasRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeReplicas api with *DescribeReplicasRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicas.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicasWithCallback(request *DescribeReplicasRequest, callback func(response *DescribeReplicasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeReplicasResponse struct {
 	Replicas         []Items `json:"Replicas" xml:"Replicas"`
 }
 
+// create a request to invoke DescribeReplicas API
 func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	return
 }
 
+// create a response to parse from DescribeReplicas response
 func CreateDescribeReplicasResponse() (response *DescribeReplicasResponse) {
 	response = &DescribeReplicasResponse{
 		BaseResponse: &responses.BaseResponse{},

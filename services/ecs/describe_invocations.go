@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInvocations api with *DescribeInvocationsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocations.html
 func (client *Client) DescribeInvocations(request *DescribeInvocationsRequest) (response *DescribeInvocationsResponse, err error) {
 	response = CreateDescribeInvocationsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInvocations api with *DescribeInvocationsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocations.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationsWithChan(request *DescribeInvocationsRequest) (<-chan *DescribeInvocationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInvocationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInvocationsWithChan(request *DescribeInvocationsRe
 	return responseChan, errChan
 }
 
+// invoke DescribeInvocations api with *DescribeInvocationsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinvocations.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocationsRequest, callback func(response *DescribeInvocationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeInvocationsResponse struct {
 	Invocations Invocations `json:"Invocations" xml:"Invocations"`
 }
 
+// create a request to invoke DescribeInvocations API
 func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
 	request = &DescribeInvocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
 	return
 }
 
+// create a response to parse from DescribeInvocations response
 func CreateDescribeInvocationsResponse() (response *DescribeInvocationsResponse) {
 	response = &DescribeInvocationsResponse{
 		BaseResponse: &responses.BaseResponse{},

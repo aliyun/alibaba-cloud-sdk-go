@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReleaseInstancePublicConnection api with *ReleaseInstancePublicConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/releaseinstancepublicconnection.html
 func (client *Client) ReleaseInstancePublicConnection(request *ReleaseInstancePublicConnectionRequest) (response *ReleaseInstancePublicConnectionResponse, err error) {
 	response = CreateReleaseInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReleaseInstancePublicConnection api with *ReleaseInstancePublicConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/releaseinstancepublicconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseInstancePublicConnectionRequest) (<-chan *ReleaseInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseIn
 	return responseChan, errChan
 }
 
+// invoke ReleaseInstancePublicConnection api with *ReleaseInstancePublicConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/releaseinstancepublicconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *ReleaseInstancePublicConnectionRequest, callback func(response *ReleaseInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ReleaseInstancePublicConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReleaseInstancePublicConnection API
 func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePublicConnectionRequest) {
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 	return
 }
 
+// create a response to parse from ReleaseInstancePublicConnection response
 func CreateReleaseInstancePublicConnectionResponse() (response *ReleaseInstancePublicConnectionResponse) {
 	response = &ReleaseInstancePublicConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

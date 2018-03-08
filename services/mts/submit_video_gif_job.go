@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
 func (client *Client) SubmitVideoGifJob(request *SubmitVideoGifJobRequest) (response *SubmitVideoGifJobResponse, err error) {
 	response = CreateSubmitVideoGifJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoGifJobWithChan(request *SubmitVideoGifJobRequest) (<-chan *SubmitVideoGifJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoGifJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitVideoGifJobWithChan(request *SubmitVideoGifJobReques
 	return responseChan, errChan
 }
 
+// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRequest, callback func(response *SubmitVideoGifJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitVideoGifJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitVideoGifJob API
 func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitVideoGifJob response
 func CreateSubmitVideoGifJobResponse() (response *SubmitVideoGifJobResponse) {
 	response = &SubmitVideoGifJobResponse{
 		BaseResponse: &responses.BaseResponse{},

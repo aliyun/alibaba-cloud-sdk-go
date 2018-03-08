@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachKeyPair api with *DetachKeyPairRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
 func (client *Client) DetachKeyPair(request *DetachKeyPairRequest) (response *DetachKeyPairResponse, err error) {
 	response = CreateDetachKeyPairResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachKeyPair api with *DetachKeyPairRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-chan *DetachKeyPairResponse, <-chan error) {
 	responseChan := make(chan *DetachKeyPairResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DetachKeyPair api with *DetachKeyPairRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, callback func(response *DetachKeyPairResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DetachKeyPairResponse struct {
 	Results     ResultsInDetachKeyPair `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke DetachKeyPair API
 func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	return
 }
 
+// create a response to parse from DetachKeyPair response
 func CreateDetachKeyPairResponse() (response *DetachKeyPairResponse) {
 	response = &DetachKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

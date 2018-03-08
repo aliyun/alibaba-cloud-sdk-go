@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMyGroups api with *ListMyGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listmygroups.html
 func (client *Client) ListMyGroups(request *ListMyGroupsRequest) (response *ListMyGroupsResponse, err error) {
 	response = CreateListMyGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMyGroups api with *ListMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupsWithChan(request *ListMyGroupsRequest) (<-chan *ListMyGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListMyGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMyGroupsWithChan(request *ListMyGroupsRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ListMyGroups api with *ListMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupsWithCallback(request *ListMyGroupsRequest, callback func(response *ListMyGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,11 +75,11 @@ func (client *Client) ListMyGroupsWithCallback(request *ListMyGroupsRequest, cal
 
 type ListMyGroupsRequest struct {
 	*requests.RpcRequest
+	Type                string           `position:"Query" name:"Type"`
+	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	Keyword             string           `position:"Query" name:"Keyword"`
-	Type                string           `position:"Query" name:"Type"`
-	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	BindUrls            string           `position:"Query" name:"BindUrls"`
 	GroupName           string           `position:"Query" name:"GroupName"`
@@ -89,6 +97,7 @@ type ListMyGroupsResponse struct {
 	Resources    ResourcesInListMyGroups `json:"Resources" xml:"Resources"`
 }
 
+// create a request to invoke ListMyGroups API
 func CreateListMyGroupsRequest() (request *ListMyGroupsRequest) {
 	request = &ListMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateListMyGroupsRequest() (request *ListMyGroupsRequest) {
 	return
 }
 
+// create a response to parse from ListMyGroups response
 func CreateListMyGroupsResponse() (response *ListMyGroupsResponse) {
 	response = &ListMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

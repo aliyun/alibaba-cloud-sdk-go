@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
 func (client *Client) ListPreferredEcsTypes(request *ListPreferredEcsTypesRequest) (response *ListPreferredEcsTypesResponse, err error) {
 	response = CreateListPreferredEcsTypesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTypesRequest) (<-chan *ListPreferredEcsTypesResponse, <-chan error) {
 	responseChan := make(chan *ListPreferredEcsTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTyp
 	return responseChan, errChan
 }
 
+// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEcsTypesRequest, callback func(response *ListPreferredEcsTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,15 +75,18 @@ func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEc
 
 type ListPreferredEcsTypesRequest struct {
 	*requests.RpcRequest
-	ZoneId string `position:"Query" name:"ZoneId"`
+	ZoneId       string `position:"Query" name:"ZoneId"`
+	SpotStrategy string `position:"Query" name:"SpotStrategy"`
 }
 
 type ListPreferredEcsTypesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Series    Series `json:"Series" xml:"Series"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	SupportSpotInstance bool   `json:"SupportSpotInstance" xml:"SupportSpotInstance"`
+	Series              Series `json:"Series" xml:"Series"`
 }
 
+// create a request to invoke ListPreferredEcsTypes API
 func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest) {
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +95,7 @@ func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest
 	return
 }
 
+// create a response to parse from ListPreferredEcsTypes response
 func CreateListPreferredEcsTypesResponse() (response *ListPreferredEcsTypesResponse) {
 	response = &ListPreferredEcsTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

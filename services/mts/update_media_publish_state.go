@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
 func (client *Client) UpdateMediaPublishState(request *UpdateMediaPublishStateRequest) (response *UpdateMediaPublishStateResponse, err error) {
 	response = CreateUpdateMediaPublishStateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaPublishStateWithChan(request *UpdateMediaPublishStateRequest) (<-chan *UpdateMediaPublishStateResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaPublishStateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMediaPublishStateWithChan(request *UpdateMediaPublis
 	return responseChan, errChan
 }
 
+// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaPublishStateWithCallback(request *UpdateMediaPublishStateRequest, callback func(response *UpdateMediaPublishStateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpdateMediaPublishStateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateMediaPublishState API
 func CreateUpdateMediaPublishStateRequest() (request *UpdateMediaPublishStateRequest) {
 	request = &UpdateMediaPublishStateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpdateMediaPublishStateRequest() (request *UpdateMediaPublishStateReq
 	return
 }
 
+// create a response to parse from UpdateMediaPublishState response
 func CreateUpdateMediaPublishStateResponse() (response *UpdateMediaPublishStateResponse) {
 	response = &UpdateMediaPublishStateResponse{
 		BaseResponse: &responses.BaseResponse{},

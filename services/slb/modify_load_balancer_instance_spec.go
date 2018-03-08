@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyLoadBalancerInstanceSpec api with *ModifyLoadBalancerInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinstancespec.html
 func (client *Client) ModifyLoadBalancerInstanceSpec(request *ModifyLoadBalancerInstanceSpecRequest) (response *ModifyLoadBalancerInstanceSpecResponse, err error) {
 	response = CreateModifyLoadBalancerInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyLoadBalancerInstanceSpec api with *ModifyLoadBalancerInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerInstanceSpecWithChan(request *ModifyLoadBalancerInstanceSpecRequest) (<-chan *ModifyLoadBalancerInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyLoadBalancerInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyLoadBalancerInstanceSpecWithChan(request *ModifyLoad
 	return responseChan, errChan
 }
 
+// invoke ModifyLoadBalancerInstanceSpec api with *ModifyLoadBalancerInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/modifyloadbalancerinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerInstanceSpecWithCallback(request *ModifyLoadBalancerInstanceSpecRequest, callback func(response *ModifyLoadBalancerInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ModifyLoadBalancerInstanceSpecResponse struct {
 	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyLoadBalancerInstanceSpec API
 func CreateModifyLoadBalancerInstanceSpecRequest() (request *ModifyLoadBalancerInstanceSpecRequest) {
 	request = &ModifyLoadBalancerInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateModifyLoadBalancerInstanceSpecRequest() (request *ModifyLoadBalancerI
 	return
 }
 
+// create a response to parse from ModifyLoadBalancerInstanceSpec response
 func CreateModifyLoadBalancerInstanceSpecResponse() (response *ModifyLoadBalancerInstanceSpecResponse) {
 	response = &ModifyLoadBalancerInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

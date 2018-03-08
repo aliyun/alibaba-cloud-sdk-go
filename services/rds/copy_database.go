@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CopyDatabase api with *CopyDatabaseRequest synchronously
+// api document: https://help.aliyun.com/api/rds/copydatabase.html
 func (client *Client) CopyDatabase(request *CopyDatabaseRequest) (response *CopyDatabaseResponse, err error) {
 	response = CreateCopyDatabaseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CopyDatabase api with *CopyDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/copydatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan *CopyDatabaseResponse, <-chan error) {
 	responseChan := make(chan *CopyDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke CopyDatabase api with *CopyDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/copydatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithCallback(request *CopyDatabaseRequest, callback func(response *CopyDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type CopyDatabaseResponse struct {
 	TaskId   string `json:"TaskId" xml:"TaskId"`
 }
 
+// create a request to invoke CopyDatabase API
 func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	request = &CopyDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	return
 }
 
+// create a response to parse from CopyDatabase response
 func CreateCopyDatabaseResponse() (response *CopyDatabaseResponse) {
 	response = &CopyDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

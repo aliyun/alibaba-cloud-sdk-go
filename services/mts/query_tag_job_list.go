@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTagJobList api with *QueryTagJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
 func (client *Client) QueryTagJobList(request *QueryTagJobListRequest) (response *QueryTagJobListResponse, err error) {
 	response = CreateQueryTagJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTagJobList api with *QueryTagJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (<-chan *QueryTagJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryTagJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryTagJobList api with *QueryTagJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListRequest, callback func(response *QueryTagJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryTagJobListResponse struct {
 	TagJobList  TagJobList                   `json:"TagJobList" xml:"TagJobList"`
 }
 
+// create a request to invoke QueryTagJobList API
 func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryTagJobList response
 func CreateQueryTagJobListResponse() (response *QueryTagJobListResponse) {
 	response = &QueryTagJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

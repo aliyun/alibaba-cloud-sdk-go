@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
 func (client *Client) SetDNSSLBStatus(request *SetDNSSLBStatusRequest) (response *SetDNSSLBStatusResponse, err error) {
 	response = CreateSetDNSSLBStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (<-chan *SetDNSSLBStatusResponse, <-chan error) {
 	responseChan := make(chan *SetDNSSLBStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (
 	return responseChan, errChan
 }
 
+// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusRequest, callback func(response *SetDNSSLBStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetDNSSLBStatusResponse struct {
 	Open        bool   `json:"Open" xml:"Open"`
 }
 
+// create a request to invoke SetDNSSLBStatus API
 func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 	request = &SetDNSSLBStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 	return
 }
 
+// create a response to parse from SetDNSSLBStatus response
 func CreateSetDNSSLBStatusResponse() (response *SetDNSSLBStatusResponse) {
 	response = &SetDNSSLBStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

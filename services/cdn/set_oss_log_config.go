@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetOssLogConfig api with *SetOssLogConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
 func (client *Client) SetOssLogConfig(request *SetOssLogConfigRequest) (response *SetOssLogConfigResponse, err error) {
 	response = CreateSetOssLogConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetOssLogConfig api with *SetOssLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (<-chan *SetOssLogConfigResponse, <-chan error) {
 	responseChan := make(chan *SetOssLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (
 	return responseChan, errChan
 }
 
+// invoke SetOssLogConfig api with *SetOssLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigRequest, callback func(response *SetOssLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetOssLogConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetOssLogConfig API
 func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
 	request = &SetOssLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
 	return
 }
 
+// create a response to parse from SetOssLogConfig response
 func CreateSetOssLogConfigResponse() (response *SetOssLogConfigResponse) {
 	response = &SetOssLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

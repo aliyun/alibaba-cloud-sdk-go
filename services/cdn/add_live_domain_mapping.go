@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
 func (client *Client) AddLiveDomainMapping(request *AddLiveDomainMappingRequest) (response *AddLiveDomainMappingResponse, err error) {
 	response = CreateAddLiveDomainMappingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMappingRequest) (<-chan *AddLiveDomainMappingResponse, <-chan error) {
 	responseChan := make(chan *AddLiveDomainMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMapping
 	return responseChan, errChan
 }
 
+// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithCallback(request *AddLiveDomainMappingRequest, callback func(response *AddLiveDomainMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type AddLiveDomainMappingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddLiveDomainMapping API
 func CreateAddLiveDomainMappingRequest() (request *AddLiveDomainMappingRequest) {
 	request = &AddLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateAddLiveDomainMappingRequest() (request *AddLiveDomainMappingRequest) 
 	return
 }
 
+// create a response to parse from AddLiveDomainMapping response
 func CreateAddLiveDomainMappingResponse() (response *AddLiveDomainMappingResponse) {
 	response = &AddLiveDomainMappingResponse{
 		BaseResponse: &responses.BaseResponse{},

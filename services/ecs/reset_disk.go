@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResetDisk api with *ResetDiskRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/resetdisk.html
 func (client *Client) ResetDisk(request *ResetDiskRequest) (response *ResetDiskResponse, err error) {
 	response = CreateResetDiskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResetDisk api with *ResetDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/resetdisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDiskWithChan(request *ResetDiskRequest) (<-chan *ResetDiskResponse, <-chan error) {
 	responseChan := make(chan *ResetDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResetDiskWithChan(request *ResetDiskRequest) (<-chan *Rese
 	return responseChan, errChan
 }
 
+// invoke ResetDisk api with *ResetDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/resetdisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDiskWithCallback(request *ResetDiskRequest, callback func(response *ResetDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ResetDiskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResetDisk API
 func CreateResetDiskRequest() (request *ResetDiskRequest) {
 	request = &ResetDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateResetDiskRequest() (request *ResetDiskRequest) {
 	return
 }
 
+// create a response to parse from ResetDisk response
 func CreateResetDiskResponse() (response *ResetDiskResponse) {
 	response = &ResetDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

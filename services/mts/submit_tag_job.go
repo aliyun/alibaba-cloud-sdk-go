@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitTagJob api with *SubmitTagJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submittagjob.html
 func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *SubmitTagJobResponse, err error) {
 	response = CreateSubmitTagJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitTagJob api with *SubmitTagJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submittagjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan *SubmitTagJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitTagJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke SubmitTagJob api with *SubmitTagJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submittagjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, callback func(response *SubmitTagJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitTagJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitTagJob API
 func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	request = &SubmitTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitTagJob response
 func CreateSubmitTagJobResponse() (response *SubmitTagJobResponse) {
 	response = &SubmitTagJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -16,5 +16,5 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type VulRecords struct {
-	VulRecord []string `json:"vulRecord" xml:"vulRecord"`
+	VulRecordsItem []VulRecordsItem `json:"VulRecordsItem" xml:"VulRecordsItem"`
 }

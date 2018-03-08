@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeList api with *NodeListRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodelist.html
 func (client *Client) NodeList(request *NodeListRequest) (response *NodeListResponse, err error) {
 	response = CreateNodeListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeList api with *NodeListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeListResponse, <-chan error) {
 	responseChan := make(chan *NodeListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeLi
 	return responseChan, errChan
 }
 
+// invoke NodeList api with *NodeListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeListWithCallback(request *NodeListRequest, callback func(response *NodeListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type NodeListResponse struct {
 	Nodes        Nodes  `json:"Nodes" xml:"Nodes"`
 }
 
+// create a request to invoke NodeList API
 func CreateNodeListRequest() (request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateNodeListRequest() (request *NodeListRequest) {
 	return
 }
 
+// create a response to parse from NodeList response
 func CreateNodeListResponse() (response *NodeListResponse) {
 	response = &NodeListResponse{
 		BaseResponse: &responses.BaseResponse{},

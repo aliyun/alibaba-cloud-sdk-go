@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
 func (client *Client) QueryTerrorismJobList(request *QueryTerrorismJobListRequest) (response *QueryTerrorismJobListResponse, err error) {
 	response = CreateQueryTerrorismJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobListRequest) (<-chan *QueryTerrorismJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryTerrorismJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobLi
 	return responseChan, errChan
 }
 
+// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithCallback(request *QueryTerrorismJobListRequest, callback func(response *QueryTerrorismJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryTerrorismJobListResponse struct {
 	TerrorismJobList TerrorismJobList                   `json:"TerrorismJobList" xml:"TerrorismJobList"`
 }
 
+// create a request to invoke QueryTerrorismJobList API
 func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest) {
 	request = &QueryTerrorismJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest
 	return
 }
 
+// create a response to parse from QueryTerrorismJobList response
 func CreateQueryTerrorismJobListResponse() (response *QueryTerrorismJobListResponse) {
 	response = &QueryTerrorismJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

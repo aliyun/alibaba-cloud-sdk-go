@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteBlackHole api with *DeleteBlackHoleRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
 func (client *Client) DeleteBlackHole(request *DeleteBlackHoleRequest) (response *DeleteBlackHoleResponse, err error) {
 	response = CreateDeleteBlackHoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteBlackHole api with *DeleteBlackHoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackHoleWithChan(request *DeleteBlackHoleRequest) (<-chan *DeleteBlackHoleResponse, <-chan error) {
 	responseChan := make(chan *DeleteBlackHoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteBlackHoleWithChan(request *DeleteBlackHoleRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeleteBlackHole api with *DeleteBlackHoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackHoleWithCallback(request *DeleteBlackHoleRequest, callback func(response *DeleteBlackHoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteBlackHoleResponse struct {
 	Data      string `json:"data" xml:"data"`
 }
 
+// create a request to invoke DeleteBlackHole API
 func CreateDeleteBlackHoleRequest() (request *DeleteBlackHoleRequest) {
 	request = &DeleteBlackHoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteBlackHoleRequest() (request *DeleteBlackHoleRequest) {
 	return
 }
 
+// create a response to parse from DeleteBlackHole response
 func CreateDeleteBlackHoleResponse() (response *DeleteBlackHoleResponse) {
 	response = &DeleteBlackHoleResponse{
 		BaseResponse: &responses.BaseResponse{},

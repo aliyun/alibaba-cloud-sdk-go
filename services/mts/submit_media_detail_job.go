@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
 func (client *Client) SubmitMediaDetailJob(request *SubmitMediaDetailJobRequest) (response *SubmitMediaDetailJobResponse, err error) {
 	response = CreateSubmitMediaDetailJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDetailJobWithChan(request *SubmitMediaDetailJobRequest) (<-chan *SubmitMediaDetailJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMediaDetailJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitMediaDetailJobWithChan(request *SubmitMediaDetailJob
 	return responseChan, errChan
 }
 
+// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDetailJobWithCallback(request *SubmitMediaDetailJobRequest, callback func(response *SubmitMediaDetailJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitMediaDetailJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitMediaDetailJob API
 func CreateSubmitMediaDetailJobRequest() (request *SubmitMediaDetailJobRequest) {
 	request = &SubmitMediaDetailJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitMediaDetailJobRequest() (request *SubmitMediaDetailJobRequest) 
 	return
 }
 
+// create a response to parse from SubmitMediaDetailJob response
 func CreateSubmitMediaDetailJobResponse() (response *SubmitMediaDetailJobResponse) {
 	response = &SubmitMediaDetailJobResponse{
 		BaseResponse: &responses.BaseResponse{},

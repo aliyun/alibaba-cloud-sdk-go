@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLogicDBInstanceTopology api with *DescribeLogicDBInstanceTopologyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describelogicdbinstancetopology.html
 func (client *Client) DescribeLogicDBInstanceTopology(request *DescribeLogicDBInstanceTopologyRequest) (response *DescribeLogicDBInstanceTopologyResponse, err error) {
 	response = CreateDescribeLogicDBInstanceTopologyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLogicDBInstanceTopology api with *DescribeLogicDBInstanceTopologyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describelogicdbinstancetopology.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogicDBInstanceTopologyWithChan(request *DescribeLogicDBInstanceTopologyRequest) (<-chan *DescribeLogicDBInstanceTopologyResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogicDBInstanceTopologyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLogicDBInstanceTopologyWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLogicDBInstanceTopology api with *DescribeLogicDBInstanceTopologyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describelogicdbinstancetopology.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogicDBInstanceTopologyWithCallback(request *DescribeLogicDBInstanceTopologyRequest, callback func(response *DescribeLogicDBInstanceTopologyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeLogicDBInstanceTopologyResponse struct {
 	Items                 ItemsInDescribeLogicDBInstanceTopology `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeLogicDBInstanceTopology API
 func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBInstanceTopologyRequest) {
 	request = &DescribeLogicDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBIns
 	return
 }
 
+// create a response to parse from DescribeLogicDBInstanceTopology response
 func CreateDescribeLogicDBInstanceTopologyResponse() (response *DescribeLogicDBInstanceTopologyResponse) {
 	response = &DescribeLogicDBInstanceTopologyResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
 func (client *Client) DescribeCapacityHistory(request *DescribeCapacityHistoryRequest) (response *DescribeCapacityHistoryResponse, err error) {
 	response = CreateDescribeCapacityHistoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCapacityHistoryWithChan(request *DescribeCapacityHistoryRequest) (<-chan *DescribeCapacityHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeCapacityHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCapacityHistoryWithChan(request *DescribeCapacityH
 	return responseChan, errChan
 }
 
+// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapacityHistoryRequest, callback func(response *DescribeCapacityHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeCapacityHistoryResponse struct {
 	CapacityHistoryItems CapacityHistoryItems `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
 }
 
+// create a request to invoke DescribeCapacityHistory API
 func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryRequest) {
 	request = &DescribeCapacityHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryReq
 	return
 }
 
+// create a response to parse from DescribeCapacityHistory response
 func CreateDescribeCapacityHistoryResponse() (response *DescribeCapacityHistoryResponse) {
 	response = &DescribeCapacityHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

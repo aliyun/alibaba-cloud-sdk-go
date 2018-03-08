@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SingleSendMail api with *SingleSendMailRequest synchronously
+// api document: https://help.aliyun.com/api/dm/singlesendmail.html
 func (client *Client) SingleSendMail(request *SingleSendMailRequest) (response *SingleSendMailResponse, err error) {
 	response = CreateSingleSendMailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SingleSendMail api with *SingleSendMailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/singlesendmail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-chan *SingleSendMailResponse, <-chan error) {
 	responseChan := make(chan *SingleSendMailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke SingleSendMail api with *SingleSendMailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/singlesendmail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest, callback func(response *SingleSendMailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type SingleSendMailResponse struct {
 	EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
+// create a request to invoke SingleSendMail API
 func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
 	request = &SingleSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
 	return
 }
 
+// create a response to parse from SingleSendMail response
 func CreateSingleSendMailResponse() (response *SingleSendMailResponse) {
 	response = &SingleSendMailResponse{
 		BaseResponse: &responses.BaseResponse{},

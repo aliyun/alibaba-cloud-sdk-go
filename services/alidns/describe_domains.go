@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomains api with *DescribeDomainsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describedomains.html
 func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response *DescribeDomainsResponse, err error) {
 	response = CreateDescribeDomainsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomains api with *DescribeDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (<-chan *DescribeDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeDomains api with *DescribeDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsRequest, callback func(response *DescribeDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainsResponse struct {
 	Domains    Domains `json:"Domains" xml:"Domains"`
 }
 
+// create a request to invoke DescribeDomains API
 func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	request = &DescribeDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	return
 }
 
+// create a response to parse from DescribeDomains response
 func CreateDescribeDomainsResponse() (response *DescribeDomainsResponse) {
 	response = &DescribeDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

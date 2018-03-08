@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateLiveStreamRecordIndexFiles api with *CreateLiveStreamRecordIndexFilesRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/createlivestreamrecordindexfiles.html
 func (client *Client) CreateLiveStreamRecordIndexFiles(request *CreateLiveStreamRecordIndexFilesRequest) (response *CreateLiveStreamRecordIndexFilesResponse, err error) {
 	response = CreateCreateLiveStreamRecordIndexFilesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateLiveStreamRecordIndexFiles api with *CreateLiveStreamRecordIndexFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/createlivestreamrecordindexfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLiveStreamRecordIndexFilesWithChan(request *CreateLiveStreamRecordIndexFilesRequest) (<-chan *CreateLiveStreamRecordIndexFilesResponse, <-chan error) {
 	responseChan := make(chan *CreateLiveStreamRecordIndexFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateLiveStreamRecordIndexFilesWithChan(request *CreateLi
 	return responseChan, errChan
 }
 
+// invoke CreateLiveStreamRecordIndexFiles api with *CreateLiveStreamRecordIndexFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/createlivestreamrecordindexfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLiveStreamRecordIndexFilesWithCallback(request *CreateLiveStreamRecordIndexFilesRequest, callback func(response *CreateLiveStreamRecordIndexFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateLiveStreamRecordIndexFilesResponse struct {
 	RecordInfo RecordInfo `json:"RecordInfo" xml:"RecordInfo"`
 }
 
+// create a request to invoke CreateLiveStreamRecordIndexFiles API
 func CreateCreateLiveStreamRecordIndexFilesRequest() (request *CreateLiveStreamRecordIndexFilesRequest) {
 	request = &CreateLiveStreamRecordIndexFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateLiveStreamRecordIndexFilesRequest() (request *CreateLiveStreamR
 	return
 }
 
+// create a response to parse from CreateLiveStreamRecordIndexFiles response
 func CreateCreateLiveStreamRecordIndexFilesResponse() (response *CreateLiveStreamRecordIndexFilesResponse) {
 	response = &CreateLiveStreamRecordIndexFilesResponse{
 		BaseResponse: &responses.BaseResponse{},

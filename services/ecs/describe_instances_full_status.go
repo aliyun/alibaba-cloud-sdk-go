@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
 func (client *Client) DescribeInstancesFullStatus(request *DescribeInstancesFullStatusRequest) (response *DescribeInstancesFullStatusResponse, err error) {
 	response = CreateDescribeInstancesFullStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesFullStatusWithChan(request *DescribeInstancesFullStatusRequest) (<-chan *DescribeInstancesFullStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancesFullStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstancesFullStatusWithChan(request *DescribeInsta
 	return responseChan, errChan
 }
 
+// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeInstancesFullStatusRequest, callback func(response *DescribeInstancesFullStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeInstancesFullStatusResponse struct {
 	InstanceFullStatusSet InstanceFullStatusSet `json:"InstanceFullStatusSet" xml:"InstanceFullStatusSet"`
 }
 
+// create a request to invoke DescribeInstancesFullStatus API
 func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullStatusRequest) {
 	request = &DescribeInstancesFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullS
 	return
 }
 
+// create a response to parse from DescribeInstancesFullStatus response
 func CreateDescribeInstancesFullStatusResponse() (response *DescribeInstancesFullStatusResponse) {
 	response = &DescribeInstancesFullStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

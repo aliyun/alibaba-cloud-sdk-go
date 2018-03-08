@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AssumeRole api with *AssumeRoleRequest synchronously
+// api document: https://help.aliyun.com/api/sts/assumerole.html
 func (client *Client) AssumeRole(request *AssumeRoleRequest) (response *AssumeRoleResponse, err error) {
 	response = CreateAssumeRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AssumeRole api with *AssumeRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/sts/assumerole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *AssumeRoleResponse, <-chan error) {
 	responseChan := make(chan *AssumeRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *As
 	return responseChan, errChan
 }
 
+// invoke AssumeRole api with *AssumeRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/sts/assumerole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callback func(response *AssumeRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type AssumeRoleResponse struct {
 	AssumedRoleUser AssumedRoleUser `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
 }
 
+// create a request to invoke AssumeRole API
 func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
 	request = &AssumeRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
 	return
 }
 
+// create a response to parse from AssumeRole response
 func CreateAssumeRoleResponse() (response *AssumeRoleResponse) {
 	response = &AssumeRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSQLReports api with *DescribeSQLReportsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describesqlreports.html
 func (client *Client) DescribeSQLReports(request *DescribeSQLReportsRequest) (response *DescribeSQLReportsResponse, err error) {
 	response = CreateDescribeSQLReportsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSQLReports api with *DescribeSQLReportsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqlreports.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLReportsWithChan(request *DescribeSQLReportsRequest) (<-chan *DescribeSQLReportsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLReportsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSQLReportsWithChan(request *DescribeSQLReportsRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeSQLReports api with *DescribeSQLReportsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqlreports.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLReportsWithCallback(request *DescribeSQLReportsRequest, callback func(response *DescribeSQLReportsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeSQLReportsResponse struct {
 	Items            ItemsInDescribeSQLReports `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeSQLReports API
 func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {
 	request = &DescribeSQLReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {
 	return
 }
 
+// create a response to parse from DescribeSQLReports response
 func CreateDescribeSQLReportsResponse() (response *DescribeSQLReportsResponse) {
 	response = &DescribeSQLReportsResponse{
 		BaseResponse: &responses.BaseResponse{},

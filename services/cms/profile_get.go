@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ProfileGet api with *ProfileGetRequest synchronously
+// api document: https://help.aliyun.com/api/cms/profileget.html
 func (client *Client) ProfileGet(request *ProfileGetRequest) (response *ProfileGetResponse, err error) {
 	response = CreateProfileGetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ProfileGet api with *ProfileGetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/profileget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileGetWithChan(request *ProfileGetRequest) (<-chan *ProfileGetResponse, <-chan error) {
 	responseChan := make(chan *ProfileGetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ProfileGetWithChan(request *ProfileGetRequest) (<-chan *Pr
 	return responseChan, errChan
 }
 
+// invoke ProfileGet api with *ProfileGetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/profileget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callback func(response *ProfileGetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ProfileGetResponse struct {
 	EnableActiveAlert        string `json:"EnableActiveAlert" xml:"EnableActiveAlert"`
 }
 
+// create a request to invoke ProfileGet API
 func CreateProfileGetRequest() (request *ProfileGetRequest) {
 	request = &ProfileGetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateProfileGetRequest() (request *ProfileGetRequest) {
 	return
 }
 
+// create a response to parse from ProfileGet response
 func CreateProfileGetResponse() (response *ProfileGetResponse) {
 	response = &ProfileGetResponse{
 		BaseResponse: &responses.BaseResponse{},

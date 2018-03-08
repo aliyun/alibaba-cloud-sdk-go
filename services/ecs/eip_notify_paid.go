@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EipNotifyPaid api with *EipNotifyPaidRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
 func (client *Client) EipNotifyPaid(request *EipNotifyPaidRequest) (response *EipNotifyPaidResponse, err error) {
 	response = CreateEipNotifyPaidResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EipNotifyPaid api with *EipNotifyPaidRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipNotifyPaidWithChan(request *EipNotifyPaidRequest) (<-chan *EipNotifyPaidResponse, <-chan error) {
 	responseChan := make(chan *EipNotifyPaidResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EipNotifyPaidWithChan(request *EipNotifyPaidRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke EipNotifyPaid api with *EipNotifyPaidRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, callback func(response *EipNotifyPaidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type EipNotifyPaidResponse struct {
 	Success   bool   `json:"success" xml:"success"`
 }
 
+// create a request to invoke EipNotifyPaid API
 func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 	request = &EipNotifyPaidRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 	return
 }
 
+// create a response to parse from EipNotifyPaid response
 func CreateEipNotifyPaidResponse() (response *EipNotifyPaidResponse) {
 	response = &EipNotifyPaidResponse{
 		BaseResponse: &responses.BaseResponse{},

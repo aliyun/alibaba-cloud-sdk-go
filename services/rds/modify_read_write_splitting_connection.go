@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
 func (client *Client) ModifyReadWriteSplittingConnection(request *ModifyReadWriteSplittingConnectionRequest) (response *ModifyReadWriteSplittingConnectionResponse, err error) {
 	response = CreateModifyReadWriteSplittingConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadWriteSplittingConnectionWithChan(request *ModifyReadWriteSplittingConnectionRequest) (<-chan *ModifyReadWriteSplittingConnectionResponse, <-chan error) {
 	responseChan := make(chan *ModifyReadWriteSplittingConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyReadWriteSplittingConnectionWithChan(request *Modify
 	return responseChan, errChan
 }
 
+// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadWriteSplittingConnectionWithCallback(request *ModifyReadWriteSplittingConnectionRequest, callback func(response *ModifyReadWriteSplittingConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ModifyReadWriteSplittingConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyReadWriteSplittingConnection API
 func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWriteSplittingConnectionRequest) {
 	request = &ModifyReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWrite
 	return
 }
 
+// create a response to parse from ModifyReadWriteSplittingConnection response
 func CreateModifyReadWriteSplittingConnectionResponse() (response *ModifyReadWriteSplittingConnectionResponse) {
 	response = &ModifyReadWriteSplittingConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

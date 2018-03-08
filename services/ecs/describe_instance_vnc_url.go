@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
 func (client *Client) DescribeInstanceVncUrl(request *DescribeInstanceVncUrlRequest) (response *DescribeInstanceVncUrlResponse, err error) {
 	response = CreateDescribeInstanceVncUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncUrlWithChan(request *DescribeInstanceVncUrlRequest) (<-chan *DescribeInstanceVncUrlResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceVncUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceVncUrlWithChan(request *DescribeInstanceVn
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncUrlWithCallback(request *DescribeInstanceVncUrlRequest, callback func(response *DescribeInstanceVncUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeInstanceVncUrlResponse struct {
 	VncUrl    string `json:"VncUrl" xml:"VncUrl"`
 }
 
+// create a request to invoke DescribeInstanceVncUrl API
 func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlRequest) {
 	request = &DescribeInstanceVncUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlReque
 	return
 }
 
+// create a response to parse from DescribeInstanceVncUrl response
 func CreateDescribeInstanceVncUrlResponse() (response *DescribeInstanceVncUrlResponse) {
 	response = &DescribeInstanceVncUrlResponse{
 		BaseResponse: &responses.BaseResponse{},

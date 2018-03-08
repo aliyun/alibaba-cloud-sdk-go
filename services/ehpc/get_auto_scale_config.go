@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
 func (client *Client) GetAutoScaleConfig(request *GetAutoScaleConfigRequest) (response *GetAutoScaleConfigResponse, err error) {
 	response = CreateGetAutoScaleConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequest) (<-chan *GetAutoScaleConfigResponse, <-chan error) {
 	responseChan := make(chan *GetAutoScaleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequ
 	return responseChan, errChan
 }
 
+// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithCallback(request *GetAutoScaleConfigRequest, callback func(response *GetAutoScaleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type GetAutoScaleConfigResponse struct {
 	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
 }
 
+// create a request to invoke GetAutoScaleConfig API
 func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
 	request = &GetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
 	return
 }
 
+// create a response to parse from GetAutoScaleConfig response
 func CreateGetAutoScaleConfigResponse() (response *GetAutoScaleConfigResponse) {
 	response = &GetAutoScaleConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -26,6 +26,7 @@ type JobInfo struct {
 	LastModifyTime string    `json:"LastModifyTime" xml:"LastModifyTime"`
 	Stdout         string    `json:"Stdout" xml:"Stdout"`
 	Stderr         string    `json:"Stderr" xml:"Stderr"`
+	ShellPath      string    `json:"ShellPath" xml:"ShellPath"`
 	Comment        string    `json:"Comment" xml:"Comment"`
 	ArrayRequest   string    `json:"ArrayRequest" xml:"ArrayRequest"`
 	Resources      Resources `json:"Resources" xml:"Resources"`

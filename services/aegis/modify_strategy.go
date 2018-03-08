@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyStrategy api with *ModifyStrategyRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategy.html
 func (client *Client) ModifyStrategy(request *ModifyStrategyRequest) (response *ModifyStrategyResponse, err error) {
 	response = CreateModifyStrategyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyStrategy api with *ModifyStrategyRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyWithChan(request *ModifyStrategyRequest) (<-chan *ModifyStrategyResponse, <-chan error) {
 	responseChan := make(chan *ModifyStrategyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyStrategyWithChan(request *ModifyStrategyRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ModifyStrategy api with *ModifyStrategyRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyWithCallback(request *ModifyStrategyRequest, callback func(response *ModifyStrategyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyStrategyResponse struct {
 	Result         Result `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke ModifyStrategy API
 func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
 	request = &ModifyStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
 	return
 }
 
+// create a response to parse from ModifyStrategy response
 func CreateModifyStrategyResponse() (response *ModifyStrategyResponse) {
 	response = &ModifyStrategyResponse{
 		BaseResponse: &responses.BaseResponse{},

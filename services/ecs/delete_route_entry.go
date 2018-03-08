@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteRouteEntry api with *DeleteRouteEntryRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
 func (client *Client) DeleteRouteEntry(request *DeleteRouteEntryRequest) (response *DeleteRouteEntryResponse, err error) {
 	response = CreateDeleteRouteEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteRouteEntry api with *DeleteRouteEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest) (<-chan *DeleteRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteRouteEntry api with *DeleteRouteEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteEntryWithCallback(request *DeleteRouteEntryRequest, callback func(response *DeleteRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DeleteRouteEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteRouteEntry API
 func CreateDeleteRouteEntryRequest() (request *DeleteRouteEntryRequest) {
 	request = &DeleteRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDeleteRouteEntryRequest() (request *DeleteRouteEntryRequest) {
 	return
 }
 
+// create a response to parse from DeleteRouteEntry response
 func CreateDeleteRouteEntryResponse() (response *DeleteRouteEntryResponse) {
 	response = &DeleteRouteEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

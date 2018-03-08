@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
 func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultRequest) (response *ReportFpShotJobResultResponse, err error) {
 	response = CreateReportFpShotJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResultRequest) (<-chan *ReportFpShotJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportFpShotJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResu
 	return responseChan, errChan
 }
 
+// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJobResultRequest, callback func(response *ReportFpShotJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportFpShotJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportFpShotJobResult API
 func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest) {
 	request = &ReportFpShotJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest
 	return
 }
 
+// create a response to parse from ReportFpShotJobResult response
 func CreateReportFpShotJobResultResponse() (response *ReportFpShotJobResultResponse) {
 	response = &ReportFpShotJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

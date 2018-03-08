@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeruleattribute.html
 func (client *Client) DescribeRuleAttribute(request *DescribeRuleAttributeRequest) (response *DescribeRuleAttributeResponse, err error) {
 	response = CreateDescribeRuleAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeruleattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttributeRequest) (<-chan *DescribeRuleAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeRuleAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttribu
 	return responseChan, errChan
 }
 
+// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeruleattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAttributeRequest, callback func(response *DescribeRuleAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeRuleAttributeResponse struct {
 	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
 }
 
+// create a request to invoke DescribeRuleAttribute API
 func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest) {
 	request = &DescribeRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest
 	return
 }
 
+// create a response to parse from DescribeRuleAttribute response
 func CreateDescribeRuleAttributeResponse() (response *DescribeRuleAttributeResponse) {
 	response = &DescribeRuleAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

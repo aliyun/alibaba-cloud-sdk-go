@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
 func (client *Client) DescribeAccessPoints(request *DescribeAccessPointsRequest) (response *DescribeAccessPointsResponse, err error) {
 	response = CreateDescribeAccessPointsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPointsRequest) (<-chan *DescribeAccessPointsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccessPointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPoints
 	return responseChan, errChan
 }
 
+// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPointsRequest, callback func(response *DescribeAccessPointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescribeAccessPointsResponse struct {
 	AccessPointSet AccessPointSet `json:"AccessPointSet" xml:"AccessPointSet"`
 }
 
+// create a request to invoke DescribeAccessPoints API
 func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) {
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) 
 	return
 }
 
+// create a response to parse from DescribeAccessPoints response
 func CreateDescribeAccessPointsResponse() (response *DescribeAccessPointsResponse) {
 	response = &DescribeAccessPointsResponse{
 		BaseResponse: &responses.BaseResponse{},

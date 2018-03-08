@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
 func (client *Client) SetHttpHeaderConfig(request *SetHttpHeaderConfigRequest) (response *SetHttpHeaderConfigResponse, err error) {
 	response = CreateSetHttpHeaderConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpHeaderConfigWithChan(request *SetHttpHeaderConfigRequest) (<-chan *SetHttpHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *SetHttpHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetHttpHeaderConfigWithChan(request *SetHttpHeaderConfigRe
 	return responseChan, errChan
 }
 
+// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpHeaderConfigWithCallback(request *SetHttpHeaderConfigRequest, callback func(response *SetHttpHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetHttpHeaderConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetHttpHeaderConfig API
 func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {
 	request = &SetHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {
 	return
 }
 
+// create a response to parse from SetHttpHeaderConfig response
 func CreateSetHttpHeaderConfigResponse() (response *SetHttpHeaderConfigResponse) {
 	response = &SetHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

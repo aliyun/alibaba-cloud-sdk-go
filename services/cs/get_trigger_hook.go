@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetTriggerHook api with *GetTriggerHookRequest synchronously
+// api document: https://help.aliyun.com/api/cs/gettriggerhook.html
 func (client *Client) GetTriggerHook(request *GetTriggerHookRequest) (response *GetTriggerHookResponse, err error) {
 	response = CreateGetTriggerHookResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetTriggerHook api with *GetTriggerHookRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/gettriggerhook.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTriggerHookWithChan(request *GetTriggerHookRequest) (<-chan *GetTriggerHookResponse, <-chan error) {
 	responseChan := make(chan *GetTriggerHookResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetTriggerHookWithChan(request *GetTriggerHookRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke GetTriggerHook api with *GetTriggerHookRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/gettriggerhook.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTriggerHookWithCallback(request *GetTriggerHookRequest, callback func(response *GetTriggerHookResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type GetTriggerHookResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke GetTriggerHook API
 func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
 	request = &GetTriggerHookRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -84,6 +93,7 @@ func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
 	return
 }
 
+// create a response to parse from GetTriggerHook response
 func CreateGetTriggerHookResponse() (response *GetTriggerHookResponse) {
 	response = &GetTriggerHookResponse{
 		BaseResponse: &responses.BaseResponse{},

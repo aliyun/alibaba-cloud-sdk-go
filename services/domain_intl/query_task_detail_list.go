@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTaskDetailList api with *QueryTaskDetailListRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetaillist.html
 func (client *Client) QueryTaskDetailList(request *QueryTaskDetailListRequest) (response *QueryTaskDetailListResponse, err error) {
 	response = CreateQueryTaskDetailListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTaskDetailList api with *QueryTaskDetailListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetaillist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRequest) (<-chan *QueryTaskDetailListResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskDetailListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTaskDetailListWithChan(request *QueryTaskDetailListRe
 	return responseChan, errChan
 }
 
+// invoke QueryTaskDetailList api with *QueryTaskDetailListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytaskdetaillist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailListRequest, callback func(response *QueryTaskDetailListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type QueryTaskDetailListResponse struct {
 	Data           DataInQueryTaskDetailList `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryTaskDetailList API
 func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	request = &QueryTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	return
 }
 
+// create a response to parse from QueryTaskDetailList response
 func CreateQueryTaskDetailListResponse() (response *QueryTaskDetailListResponse) {
 	response = &QueryTaskDetailListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
 func (client *Client) DescribeBandwidthLimitation(request *DescribeBandwidthLimitationRequest) (response *DescribeBandwidthLimitationResponse, err error) {
 	response = CreateDescribeBandwidthLimitationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthLimitationWithChan(request *DescribeBandwidthLimitationRequest) (<-chan *DescribeBandwidthLimitationResponse, <-chan error) {
 	responseChan := make(chan *DescribeBandwidthLimitationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBandwidthLimitationWithChan(request *DescribeBandw
 	return responseChan, errChan
 }
 
+// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthLimitationWithCallback(request *DescribeBandwidthLimitationRequest, callback func(response *DescribeBandwidthLimitationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeBandwidthLimitationResponse struct {
 	Bandwidths Bandwidths `json:"Bandwidths" xml:"Bandwidths"`
 }
 
+// create a request to invoke DescribeBandwidthLimitation API
 func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimitationRequest) {
 	request = &DescribeBandwidthLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimit
 	return
 }
 
+// create a response to parse from DescribeBandwidthLimitation response
 func CreateDescribeBandwidthLimitationResponse() (response *DescribeBandwidthLimitationResponse) {
 	response = &DescribeBandwidthLimitationResponse{
 		BaseResponse: &responses.BaseResponse{},

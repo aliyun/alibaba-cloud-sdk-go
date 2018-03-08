@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
 func (client *Client) DescribeDiskMonitorData(request *DescribeDiskMonitorDataRequest) (response *DescribeDiskMonitorDataResponse, err error) {
 	response = CreateDescribeDiskMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonitorDataRequest) (<-chan *DescribeDiskMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDiskMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonit
 	return responseChan, errChan
 }
 
+// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskMonitorDataRequest, callback func(response *DescribeDiskMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDiskMonitorDataResponse struct {
 	MonitorData MonitorDataInDescribeDiskMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
+// create a request to invoke DescribeDiskMonitorData API
 func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {
 	request = &DescribeDiskMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataReq
 	return
 }
 
+// create a response to parse from DescribeDiskMonitorData response
 func CreateDescribeDiskMonitorDataResponse() (response *DescribeDiskMonitorDataResponse) {
 	response = &DescribeDiskMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

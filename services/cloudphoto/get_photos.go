@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPhotos api with *GetPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
 func (client *Client) GetPhotos(request *GetPhotosRequest) (response *GetPhotosResponse, err error) {
 	response = CreateGetPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPhotos api with *GetPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosWithChan(request *GetPhotosRequest) (<-chan *GetPhotosResponse, <-chan error) {
 	responseChan := make(chan *GetPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPhotosWithChan(request *GetPhotosRequest) (<-chan *GetP
 	return responseChan, errChan
 }
 
+// invoke GetPhotos api with *GetPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosWithCallback(request *GetPhotosRequest, callback func(response *GetPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type GetPhotosResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke GetPhotos API
 func CreateGetPhotosRequest() (request *GetPhotosRequest) {
 	request = &GetPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateGetPhotosRequest() (request *GetPhotosRequest) {
 	return
 }
 
+// create a response to parse from GetPhotos response
 func CreateGetPhotosResponse() (response *GetPhotosResponse) {
 	response = &GetPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
 func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRequest) (response *SearchWaterMarkTemplateResponse, err error) {
 	response = CreateSearchWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTemplateRequest) (<-chan *SearchWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *SearchWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTe
 	return responseChan, errChan
 }
 
+// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMarkTemplateRequest, callback func(response *SearchWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SearchWaterMarkTemplateResponse struct {
 	WaterMarkTemplateList WaterMarkTemplateListInSearchWaterMarkTemplate `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
+// create a request to invoke SearchWaterMarkTemplate API
 func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {
 	request = &SearchWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateReq
 	return
 }
 
+// create a response to parse from SearchWaterMarkTemplate response
 func CreateSearchWaterMarkTemplateResponse() (response *SearchWaterMarkTemplateResponse) {
 	response = &SearchWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

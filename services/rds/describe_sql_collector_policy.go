@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSQLCollectorPolicy api with *DescribeSQLCollectorPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describesqlcollectorpolicy.html
 func (client *Client) DescribeSQLCollectorPolicy(request *DescribeSQLCollectorPolicyRequest) (response *DescribeSQLCollectorPolicyResponse, err error) {
 	response = CreateDescribeSQLCollectorPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSQLCollectorPolicy api with *DescribeSQLCollectorPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqlcollectorpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCollectorPolicyRequest) (<-chan *DescribeSQLCollectorPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLCollectorPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSQLCollectorPolicyWithChan(request *DescribeSQLCol
 	return responseChan, errChan
 }
 
+// invoke DescribeSQLCollectorPolicy api with *DescribeSQLCollectorPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqlcollectorpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLCollectorPolicyWithCallback(request *DescribeSQLCollectorPolicyRequest, callback func(response *DescribeSQLCollectorPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeSQLCollectorPolicyResponse struct {
 	StoragePeriod      int    `json:"StoragePeriod" xml:"StoragePeriod"`
 }
 
+// create a request to invoke DescribeSQLCollectorPolicy API
 func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPolicyRequest) {
 	request = &DescribeSQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPol
 	return
 }
 
+// create a response to parse from DescribeSQLCollectorPolicy response
 func CreateDescribeSQLCollectorPolicyResponse() (response *DescribeSQLCollectorPolicyResponse) {
 	response = &DescribeSQLCollectorPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

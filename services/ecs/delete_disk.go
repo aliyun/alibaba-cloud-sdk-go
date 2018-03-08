@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDisk api with *DeleteDiskRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletedisk.html
 func (client *Client) DeleteDisk(request *DeleteDiskRequest) (response *DeleteDiskResponse, err error) {
 	response = CreateDeleteDiskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDisk api with *DeleteDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletedisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDiskWithChan(request *DeleteDiskRequest) (<-chan *DeleteDiskResponse, <-chan error) {
 	responseChan := make(chan *DeleteDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDiskWithChan(request *DeleteDiskRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DeleteDisk api with *DeleteDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletedisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDiskWithCallback(request *DeleteDiskRequest, callback func(response *DeleteDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteDiskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteDisk API
 func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	request = &DeleteDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	return
 }
 
+// create a response to parse from DeleteDisk response
 func CreateDeleteDiskResponse() (response *DeleteDiskResponse) {
 	response = &DeleteDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

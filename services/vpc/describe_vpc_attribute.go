@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
 func (client *Client) DescribeVpcAttribute(request *DescribeVpcAttributeRequest) (response *DescribeVpcAttributeResponse, err error) {
 	response = CreateDescribeVpcAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttributeRequest) (<-chan *DescribeVpcAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpcAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttribute
 	return responseChan, errChan
 }
 
+// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttributeRequest, callback func(response *DescribeVpcAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +103,7 @@ type DescribeVpcAttributeResponse struct {
 	CloudResources     CloudResourcesInDescribeVpcAttribute `json:"CloudResources" xml:"CloudResources"`
 }
 
+// create a request to invoke DescribeVpcAttribute API
 func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) {
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -103,6 +112,7 @@ func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) 
 	return
 }
 
+// create a response to parse from DescribeVpcAttribute response
 func CreateDescribeVpcAttributeResponse() (response *DescribeVpcAttributeResponse) {
 	response = &DescribeVpcAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

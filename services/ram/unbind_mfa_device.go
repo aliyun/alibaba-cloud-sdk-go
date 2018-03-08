@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindMFADevice api with *UnbindMFADeviceRequest synchronously
+// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
 func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response *UnbindMFADeviceResponse, err error) {
 	response = CreateUnbindMFADeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindMFADevice api with *UnbindMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (<-chan *UnbindMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *UnbindMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (
 	return responseChan, errChan
 }
 
+// invoke UnbindMFADevice api with *UnbindMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceRequest, callback func(response *UnbindMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type UnbindMFADeviceResponse struct {
 	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
+// create a request to invoke UnbindMFADevice API
 func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 	request = &UnbindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 	return
 }
 
+// create a response to parse from UnbindMFADevice response
 func CreateUnbindMFADeviceResponse() (response *UnbindMFADeviceResponse) {
 	response = &UnbindMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

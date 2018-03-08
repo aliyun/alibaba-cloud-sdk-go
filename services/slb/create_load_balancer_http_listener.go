@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateLoadBalancerHTTPListener api with *CreateLoadBalancerHTTPListenerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerhttplistener.html
 func (client *Client) CreateLoadBalancerHTTPListener(request *CreateLoadBalancerHTTPListenerRequest) (response *CreateLoadBalancerHTTPListenerResponse, err error) {
 	response = CreateCreateLoadBalancerHTTPListenerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateLoadBalancerHTTPListener api with *CreateLoadBalancerHTTPListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerhttplistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPListenerWithChan(request *CreateLoadBalancerHTTPListenerRequest) (<-chan *CreateLoadBalancerHTTPListenerResponse, <-chan error) {
 	responseChan := make(chan *CreateLoadBalancerHTTPListenerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateLoadBalancerHTTPListenerWithChan(request *CreateLoad
 	return responseChan, errChan
 }
 
+// invoke CreateLoadBalancerHTTPListener api with *CreateLoadBalancerHTTPListenerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createloadbalancerhttplistener.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPListenerWithCallback(request *CreateLoadBalancerHTTPListenerRequest, callback func(response *CreateLoadBalancerHTTPListenerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,6 +113,7 @@ type CreateLoadBalancerHTTPListenerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateLoadBalancerHTTPListener API
 func CreateCreateLoadBalancerHTTPListenerRequest() (request *CreateLoadBalancerHTTPListenerRequest) {
 	request = &CreateLoadBalancerHTTPListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -113,6 +122,7 @@ func CreateCreateLoadBalancerHTTPListenerRequest() (request *CreateLoadBalancerH
 	return
 }
 
+// create a response to parse from CreateLoadBalancerHTTPListener response
 func CreateCreateLoadBalancerHTTPListenerResponse() (response *CreateLoadBalancerHTTPListenerResponse) {
 	response = &CreateLoadBalancerHTTPListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

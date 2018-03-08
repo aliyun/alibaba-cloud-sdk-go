@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
 func (client *Client) DescribeSuspiciousEvents(request *DescribeSuspiciousEventsRequest) (response *DescribeSuspiciousEventsResponse, err error) {
 	response = CreateDescribeSuspiciousEventsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousEventsWithChan(request *DescribeSuspiciousEventsRequest) (<-chan *DescribeSuspiciousEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSuspiciousEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSuspiciousEventsWithChan(request *DescribeSuspicio
 	return responseChan, errChan
 }
 
+// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousEventsWithCallback(request *DescribeSuspiciousEventsRequest, callback func(response *DescribeSuspiciousEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -69,18 +77,25 @@ type DescribeSuspiciousEventsRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	Uuid            string           `position:"Query" name:"Uuid"`
+	Dealed          string           `position:"Query" name:"Dealed"`
+	Remark          string           `position:"Query" name:"Remark"`
+	Level           string           `position:"Query" name:"Level"`
+	EventType       string           `position:"Query" name:"EventType"`
 }
 
 type DescribeSuspiciousEventsResponse struct {
 	*responses.BaseResponse
-	RequestId        string   `json:"RequestId" xml:"RequestId"`
-	PageSize         int      `json:"PageSize" xml:"PageSize"`
-	TotalCount       int      `json:"TotalCount" xml:"TotalCount"`
-	CurrentPage      int      `json:"CurrentPage" xml:"CurrentPage"`
-	HttpStatusCode   int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SuspiciousEvents []string `json:"SuspiciousEvents" xml:"SuspiciousEvents"`
+	RequestId   string        `json:"RequestId" xml:"RequestId"`
+	PageSize    int           `json:"PageSize" xml:"PageSize"`
+	TotalCount  int           `json:"TotalCount" xml:"TotalCount"`
+	CurrentPage int           `json:"CurrentPage" xml:"CurrentPage"`
+	LogList     []LogListItem `json:"LogList" xml:"LogList"`
 }
 
+// create a request to invoke DescribeSuspiciousEvents API
 func CreateDescribeSuspiciousEventsRequest() (request *DescribeSuspiciousEventsRequest) {
 	request = &DescribeSuspiciousEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +104,7 @@ func CreateDescribeSuspiciousEventsRequest() (request *DescribeSuspiciousEventsR
 	return
 }
 
+// create a response to parse from DescribeSuspiciousEvents response
 func CreateDescribeSuspiciousEventsResponse() (response *DescribeSuspiciousEventsResponse) {
 	response = &DescribeSuspiciousEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

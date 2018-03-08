@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelTask api with *CancelTaskRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/canceltask.html
 func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTaskResponse, err error) {
 	response = CreateCancelTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelTask api with *CancelTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/canceltask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *CancelTaskResponse, <-chan error) {
 	responseChan := make(chan *CancelTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *Ca
 	return responseChan, errChan
 }
 
+// invoke CancelTask api with *CancelTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/canceltask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CancelTaskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CancelTask API
 func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	return
 }
 
+// create a response to parse from CancelTask response
 func CreateCancelTaskResponse() (response *CancelTaskResponse) {
 	response = &CancelTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

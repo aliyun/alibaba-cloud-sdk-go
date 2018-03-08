@@ -16,12 +16,12 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Quota struct {
-	TotalTrashQuota int `json:"TotalTrashQuota" xml:"TotalTrashQuota"`
-	ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
-	UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
 	InactiveSize    int `json:"InactiveSize" xml:"InactiveSize"`
+	TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
+	ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
+	VideosCount     int `json:"VideosCount" xml:"VideosCount"`
+	TotalTrashQuota int `json:"TotalTrashQuota" xml:"TotalTrashQuota"`
 	PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
 	FacesCount      int `json:"FacesCount" xml:"FacesCount"`
-	VideosCount     int `json:"VideosCount" xml:"VideosCount"`
-	TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
+	UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
 }

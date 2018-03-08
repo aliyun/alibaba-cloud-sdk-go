@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
 func (client *Client) ModifyIntranetBandwidthKb(request *ModifyIntranetBandwidthKbRequest) (response *ModifyIntranetBandwidthKbResponse, err error) {
 	response = CreateModifyIntranetBandwidthKbResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetBandwidthKbWithChan(request *ModifyIntranetBandwidthKbRequest) (<-chan *ModifyIntranetBandwidthKbResponse, <-chan error) {
 	responseChan := make(chan *ModifyIntranetBandwidthKbResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyIntranetBandwidthKbWithChan(request *ModifyIntranetB
 	return responseChan, errChan
 }
 
+// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetBandwidthKbWithCallback(request *ModifyIntranetBandwidthKbRequest, callback func(response *ModifyIntranetBandwidthKbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyIntranetBandwidthKbResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyIntranetBandwidthKb API
 func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthKbRequest) {
 	request = &ModifyIntranetBandwidthKbRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthK
 	return
 }
 
+// create a response to parse from ModifyIntranetBandwidthKb response
 func CreateModifyIntranetBandwidthKbResponse() (response *ModifyIntranetBandwidthKbResponse) {
 	response = &ModifyIntranetBandwidthKbResponse{
 		BaseResponse: &responses.BaseResponse{},

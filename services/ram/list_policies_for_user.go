@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
 func (client *Client) ListPoliciesForUser(request *ListPoliciesForUserRequest) (response *ListPoliciesForUserResponse, err error) {
 	response = CreateListPoliciesForUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForUserWithChan(request *ListPoliciesForUserRequest) (<-chan *ListPoliciesForUserResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesForUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPoliciesForUserWithChan(request *ListPoliciesForUserRe
 	return responseChan, errChan
 }
 
+// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForUserWithCallback(request *ListPoliciesForUserRequest, callback func(response *ListPoliciesForUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListPoliciesForUserResponse struct {
 	Policies  PoliciesInListPoliciesForUser `json:"Policies" xml:"Policies"`
 }
 
+// create a request to invoke ListPoliciesForUser API
 func CreateListPoliciesForUserRequest() (request *ListPoliciesForUserRequest) {
 	request = &ListPoliciesForUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListPoliciesForUserRequest() (request *ListPoliciesForUserRequest) {
 	return
 }
 
+// create a response to parse from ListPoliciesForUser response
 func CreateListPoliciesForUserResponse() (response *ListPoliciesForUserResponse) {
 	response = &ListPoliciesForUserResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SearchPipeline api with *SearchPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/searchpipeline.html
 func (client *Client) SearchPipeline(request *SearchPipelineRequest) (response *SearchPipelineResponse, err error) {
 	response = CreateSearchPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SearchPipeline api with *SearchPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-chan *SearchPipelineResponse, <-chan error) {
 	responseChan := make(chan *SearchPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke SearchPipeline api with *SearchPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithCallback(request *SearchPipelineRequest, callback func(response *SearchPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SearchPipelineResponse struct {
 	PipelineList PipelineListInSearchPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke SearchPipeline API
 func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	request = &SearchPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	return
 }
 
+// create a response to parse from SearchPipeline response
 func CreateSearchPipelineResponse() (response *SearchPipelineResponse) {
 	response = &SearchPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

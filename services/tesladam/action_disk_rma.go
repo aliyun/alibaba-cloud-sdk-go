@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ActionDiskRma api with *ActionDiskRmaRequest synchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
 func (client *Client) ActionDiskRma(request *ActionDiskRmaRequest) (response *ActionDiskRmaResponse, err error) {
 	response = CreateActionDiskRmaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ActionDiskRma api with *ActionDiskRmaRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskRmaWithChan(request *ActionDiskRmaRequest) (<-chan *ActionDiskRmaResponse, <-chan error) {
 	responseChan := make(chan *ActionDiskRmaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActionDiskRmaWithChan(request *ActionDiskRmaRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ActionDiskRma api with *ActionDiskRmaRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, callback func(response *ActionDiskRmaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,13 +75,13 @@ func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, c
 
 type ActionDiskRmaRequest struct {
 	*requests.RpcRequest
-	DiskName    string `position:"Query" name:"DiskName"`
-	ExecutionId string `position:"Query" name:"ExecutionId"`
-	DiskSlot    string `position:"Query" name:"DiskSlot"`
 	Hostname    string `position:"Query" name:"Hostname"`
 	DiskMount   string `position:"Query" name:"DiskMount"`
-	DiskReason  string `position:"Query" name:"DiskReason"`
+	ExecutionId string `position:"Query" name:"ExecutionId"`
+	DiskSlot    string `position:"Query" name:"DiskSlot"`
+	DiskName    string `position:"Query" name:"DiskName"`
 	DiskSn      string `position:"Query" name:"DiskSn"`
+	DiskReason  string `position:"Query" name:"DiskReason"`
 }
 
 type ActionDiskRmaResponse struct {
@@ -83,6 +91,7 @@ type ActionDiskRmaResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke ActionDiskRma API
 func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
 	request = &ActionDiskRmaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
 	return
 }
 
+// create a response to parse from ActionDiskRma response
 func CreateActionDiskRmaResponse() (response *ActionDiskRmaResponse) {
 	response = &ActionDiskRmaResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateIpProtection api with *UpdateIpProtectionRequest synchronously
+// api document: https://help.aliyun.com/api/dm/updateipprotection.html
 func (client *Client) UpdateIpProtection(request *UpdateIpProtectionRequest) (response *UpdateIpProtectionResponse, err error) {
 	response = CreateUpdateIpProtectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateIpProtection api with *UpdateIpProtectionRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/updateipprotection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateIpProtectionWithChan(request *UpdateIpProtectionRequest) (<-chan *UpdateIpProtectionResponse, <-chan error) {
 	responseChan := make(chan *UpdateIpProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateIpProtectionWithChan(request *UpdateIpProtectionRequ
 	return responseChan, errChan
 }
 
+// invoke UpdateIpProtection api with *UpdateIpProtectionRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/updateipprotection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateIpProtectionWithCallback(request *UpdateIpProtectionRequest, callback func(response *UpdateIpProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UpdateIpProtectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateIpProtection API
 func CreateUpdateIpProtectionRequest() (request *UpdateIpProtectionRequest) {
 	request = &UpdateIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUpdateIpProtectionRequest() (request *UpdateIpProtectionRequest) {
 	return
 }
 
+// create a response to parse from UpdateIpProtection response
 func CreateUpdateIpProtectionResponse() (response *UpdateIpProtectionResponse) {
 	response = &UpdateIpProtectionResponse{
 		BaseResponse: &responses.BaseResponse{},

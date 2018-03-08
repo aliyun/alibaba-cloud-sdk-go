@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceSSL api with *ModifyDBInstanceSSLRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancessl.html
 func (client *Client) ModifyDBInstanceSSL(request *ModifyDBInstanceSSLRequest) (response *ModifyDBInstanceSSLResponse, err error) {
 	response = CreateModifyDBInstanceSSLResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceSSL api with *ModifyDBInstanceSSLRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancessl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRequest) (<-chan *ModifyDBInstanceSSLResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRe
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceSSL api with *ModifyDBInstanceSSLRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancessl.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSSLWithCallback(request *ModifyDBInstanceSSLRequest, callback func(response *ModifyDBInstanceSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyDBInstanceSSLResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceSSL API
 func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	request = &ModifyDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	return
 }
 
+// create a response to parse from ModifyDBInstanceSSL response
 func CreateModifyDBInstanceSSLResponse() (response *ModifyDBInstanceSSLResponse) {
 	response = &ModifyDBInstanceSSLResponse{
 		BaseResponse: &responses.BaseResponse{},

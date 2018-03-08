@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
 func (client *Client) DescribeInstanceTypeFamilies(request *DescribeInstanceTypeFamiliesRequest) (response *DescribeInstanceTypeFamiliesResponse, err error) {
 	response = CreateDescribeInstanceTypeFamiliesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeFamiliesWithChan(request *DescribeInstanceTypeFamiliesRequest) (<-chan *DescribeInstanceTypeFamiliesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceTypeFamiliesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceTypeFamiliesWithChan(request *DescribeInst
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *DescribeInstanceTypeFamiliesRequest, callback func(response *DescribeInstanceTypeFamiliesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeInstanceTypeFamiliesResponse struct {
 	InstanceTypeFamilies InstanceTypeFamiliesInDescribeInstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 
+// create a request to invoke DescribeInstanceTypeFamilies API
 func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeFamiliesRequest) {
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeF
 	return
 }
 
+// create a response to parse from DescribeInstanceTypeFamilies response
 func CreateDescribeInstanceTypeFamiliesResponse() (response *DescribeInstanceTypeFamiliesResponse) {
 	response = &DescribeInstanceTypeFamiliesResponse{
 		BaseResponse: &responses.BaseResponse{},

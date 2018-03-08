@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteBgpGroup api with *DeleteBgpGroupRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
 func (client *Client) DeleteBgpGroup(request *DeleteBgpGroupRequest) (response *DeleteBgpGroupResponse, err error) {
 	response = CreateDeleteBgpGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteBgpGroup api with *DeleteBgpGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpGroupWithChan(request *DeleteBgpGroupRequest) (<-chan *DeleteBgpGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteBgpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteBgpGroupWithChan(request *DeleteBgpGroupRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DeleteBgpGroup api with *DeleteBgpGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpGroupWithCallback(request *DeleteBgpGroupRequest, callback func(response *DeleteBgpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteBgpGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteBgpGroup API
 func CreateDeleteBgpGroupRequest() (request *DeleteBgpGroupRequest) {
 	request = &DeleteBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteBgpGroupRequest() (request *DeleteBgpGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteBgpGroup response
 func CreateDeleteBgpGroupResponse() (response *DeleteBgpGroupResponse) {
 	response = &DeleteBgpGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

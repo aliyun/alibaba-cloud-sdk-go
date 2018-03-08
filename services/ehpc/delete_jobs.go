@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteJobs api with *DeleteJobsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
 func (client *Client) DeleteJobs(request *DeleteJobsRequest) (response *DeleteJobsResponse, err error) {
 	response = CreateDeleteJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteJobs api with *DeleteJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *DeleteJobsResponse, <-chan error) {
 	responseChan := make(chan *DeleteJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DeleteJobs api with *DeleteJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/deletejobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callback func(response *DeleteJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeleteJobsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteJobs API
 func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	request = &DeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	return
 }
 
+// create a response to parse from DeleteJobs response
 func CreateDeleteJobsResponse() (response *DeleteJobsResponse) {
 	response = &DeleteJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

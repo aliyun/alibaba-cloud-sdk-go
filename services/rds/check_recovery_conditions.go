@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
 func (client *Client) CheckRecoveryConditions(request *CheckRecoveryConditionsRequest) (response *CheckRecoveryConditionsResponse, err error) {
 	response = CreateCheckRecoveryConditionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryConditionsRequest) (<-chan *CheckRecoveryConditionsResponse, <-chan error) {
 	responseChan := make(chan *CheckRecoveryConditionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryCond
 	return responseChan, errChan
 }
 
+// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithCallback(request *CheckRecoveryConditionsRequest, callback func(response *CheckRecoveryConditionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type CheckRecoveryConditionsResponse struct {
 	RecoveryStatus string `json:"RecoveryStatus" xml:"RecoveryStatus"`
 }
 
+// create a request to invoke CheckRecoveryConditions API
 func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsRequest) {
 	request = &CheckRecoveryConditionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsReq
 	return
 }
 
+// create a response to parse from CheckRecoveryConditions response
 func CreateCheckRecoveryConditionsResponse() (response *CheckRecoveryConditionsResponse) {
 	response = &CheckRecoveryConditionsResponse{
 		BaseResponse: &responses.BaseResponse{},

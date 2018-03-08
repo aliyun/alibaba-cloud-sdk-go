@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
 func (client *Client) ListNotifyPolicy(request *ListNotifyPolicyRequest) (response *ListNotifyPolicyResponse, err error) {
 	response = CreateListNotifyPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotifyPolicyWithChan(request *ListNotifyPolicyRequest) (<-chan *ListNotifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *ListNotifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListNotifyPolicyWithChan(request *ListNotifyPolicyRequest)
 	return responseChan, errChan
 }
 
+// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequest, callback func(response *ListNotifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ListNotifyPolicyResponse struct {
 	NotifyPolicyList NotifyPolicyList `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
 }
 
+// create a request to invoke ListNotifyPolicy API
 func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
 	request = &ListNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
 	return
 }
 
+// create a response to parse from ListNotifyPolicy response
 func CreateListNotifyPolicyResponse() (response *ListNotifyPolicyResponse) {
 	response = &ListNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
 func (client *Client) DescribeUnBlackholeCount(request *DescribeUnBlackholeCountRequest) (response *DescribeUnBlackholeCountResponse, err error) {
 	response = CreateDescribeUnBlackholeCountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackholeCountRequest) (<-chan *DescribeUnBlackholeCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeUnBlackholeCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackh
 	return responseChan, errChan
 }
 
+// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithCallback(request *DescribeUnBlackholeCountRequest, callback func(response *DescribeUnBlackholeCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeUnBlackholeCountResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeUnBlackholeCount API
 func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountRequest) {
 	request = &DescribeUnBlackholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountR
 	return
 }
 
+// create a response to parse from DescribeUnBlackholeCount response
 func CreateDescribeUnBlackholeCountResponse() (response *DescribeUnBlackholeCountResponse) {
 	response = &DescribeUnBlackholeCountResponse{
 		BaseResponse: &responses.BaseResponse{},

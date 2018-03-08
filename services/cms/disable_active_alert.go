@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DisableActiveAlert api with *DisableActiveAlertRequest synchronously
+// api document: https://help.aliyun.com/api/cms/disableactivealert.html
 func (client *Client) DisableActiveAlert(request *DisableActiveAlertRequest) (response *DisableActiveAlertResponse, err error) {
 	response = CreateDisableActiveAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DisableActiveAlert api with *DisableActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disableactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveAlertWithChan(request *DisableActiveAlertRequest) (<-chan *DisableActiveAlertResponse, <-chan error) {
 	responseChan := make(chan *DisableActiveAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DisableActiveAlertWithChan(request *DisableActiveAlertRequ
 	return responseChan, errChan
 }
 
+// invoke DisableActiveAlert api with *DisableActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/disableactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveAlertWithCallback(request *DisableActiveAlertRequest, callback func(response *DisableActiveAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DisableActiveAlertResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
+// create a request to invoke DisableActiveAlert API
 func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
 	request = &DisableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
 	return
 }
 
+// create a response to parse from DisableActiveAlert response
 func CreateDisableActiveAlertResponse() (response *DisableActiveAlertResponse) {
 	response = &DisableActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

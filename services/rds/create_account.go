@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAccount api with *CreateAccountRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createaccount.html
 func (client *Client) CreateAccount(request *CreateAccountRequest) (response *CreateAccountResponse, err error) {
 	response = CreateCreateAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAccount api with *CreateAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-chan *CreateAccountResponse, <-chan error) {
 	responseChan := make(chan *CreateAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke CreateAccount api with *CreateAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, callback func(response *CreateAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateAccountResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateAccount API
 func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	return
 }
 
+// create a response to parse from CreateAccount response
 func CreateCreateAccountResponse() (response *CreateAccountResponse) {
 	response = &CreateAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

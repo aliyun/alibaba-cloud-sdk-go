@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeNewProjectEipMonitorData api with *DescribeNewProjectEipMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describenewprojecteipmonitordata.html
 func (client *Client) DescribeNewProjectEipMonitorData(request *DescribeNewProjectEipMonitorDataRequest) (response *DescribeNewProjectEipMonitorDataResponse, err error) {
 	response = CreateDescribeNewProjectEipMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeNewProjectEipMonitorData api with *DescribeNewProjectEipMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describenewprojecteipmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNewProjectEipMonitorDataWithChan(request *DescribeNewProjectEipMonitorDataRequest) (<-chan *DescribeNewProjectEipMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeNewProjectEipMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeNewProjectEipMonitorDataWithChan(request *Describe
 	return responseChan, errChan
 }
 
+// invoke DescribeNewProjectEipMonitorData api with *DescribeNewProjectEipMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describenewprojecteipmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNewProjectEipMonitorDataWithCallback(request *DescribeNewProjectEipMonitorDataRequest, callback func(response *DescribeNewProjectEipMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeNewProjectEipMonitorDataResponse struct {
 	EipMonitorDatas EipMonitorDatasInDescribeNewProjectEipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
+// create a request to invoke DescribeNewProjectEipMonitorData API
 func CreateDescribeNewProjectEipMonitorDataRequest() (request *DescribeNewProjectEipMonitorDataRequest) {
 	request = &DescribeNewProjectEipMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeNewProjectEipMonitorDataRequest() (request *DescribeNewProjec
 	return
 }
 
+// create a response to parse from DescribeNewProjectEipMonitorData response
 func CreateDescribeNewProjectEipMonitorDataResponse() (response *DescribeNewProjectEipMonitorDataResponse) {
 	response = &DescribeNewProjectEipMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

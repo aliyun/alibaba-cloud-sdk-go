@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
 func (client *Client) ConvertNatPublicIpToEip(request *ConvertNatPublicIpToEipRequest) (response *ConvertNatPublicIpToEipResponse, err error) {
 	response = CreateConvertNatPublicIpToEipResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertNatPublicIpToEipWithChan(request *ConvertNatPublicIpToEipRequest) (<-chan *ConvertNatPublicIpToEipResponse, <-chan error) {
 	responseChan := make(chan *ConvertNatPublicIpToEipResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ConvertNatPublicIpToEipWithChan(request *ConvertNatPublicI
 	return responseChan, errChan
 }
 
+// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPublicIpToEipRequest, callback func(response *ConvertNatPublicIpToEipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ConvertNatPublicIpToEipResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ConvertNatPublicIpToEip API
 func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipRequest) {
 	request = &ConvertNatPublicIpToEipRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipReq
 	return
 }
 
+// create a response to parse from ConvertNatPublicIpToEip response
 func CreateConvertNatPublicIpToEipResponse() (response *ConvertNatPublicIpToEipResponse) {
 	response = &ConvertNatPublicIpToEipResponse{
 		BaseResponse: &responses.BaseResponse{},

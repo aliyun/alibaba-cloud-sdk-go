@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RegisterTag api with *RegisterTagRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registertag.html
 func (client *Client) RegisterTag(request *RegisterTagRequest) (response *RegisterTagResponse, err error) {
 	response = CreateRegisterTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RegisterTag api with *RegisterTagRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registertag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterTagWithChan(request *RegisterTagRequest) (<-chan *RegisterTagResponse, <-chan error) {
 	responseChan := make(chan *RegisterTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RegisterTagWithChan(request *RegisterTagRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke RegisterTag api with *RegisterTagRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/registertag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callback func(response *RegisterTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RegisterTagResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke RegisterTag API
 func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	request = &RegisterTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	return
 }
 
+// create a response to parse from RegisterTag response
 func CreateRegisterTagResponse() (response *RegisterTagResponse) {
 	response = &RegisterTagResponse{
 		BaseResponse: &responses.BaseResponse{},

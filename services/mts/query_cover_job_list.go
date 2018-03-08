@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCoverJobList api with *QueryCoverJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
 func (client *Client) QueryCoverJobList(request *QueryCoverJobListRequest) (response *QueryCoverJobListResponse, err error) {
 	response = CreateQueryCoverJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCoverJobList api with *QueryCoverJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverJobListWithChan(request *QueryCoverJobListRequest) (<-chan *QueryCoverJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryCoverJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCoverJobListWithChan(request *QueryCoverJobListReques
 	return responseChan, errChan
 }
 
+// invoke QueryCoverJobList api with *QueryCoverJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRequest, callback func(response *QueryCoverJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryCoverJobListResponse struct {
 	CoverJobList CoverJobList                   `json:"CoverJobList" xml:"CoverJobList"`
 }
 
+// create a request to invoke QueryCoverJobList API
 func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
 	request = &QueryCoverJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryCoverJobList response
 func CreateQueryCoverJobListResponse() (response *QueryCoverJobListResponse) {
 	response = &QueryCoverJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

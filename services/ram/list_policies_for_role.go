@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
 func (client *Client) ListPoliciesForRole(request *ListPoliciesForRoleRequest) (response *ListPoliciesForRoleResponse, err error) {
 	response = CreateListPoliciesForRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRequest) (<-chan *ListPoliciesForRoleResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesForRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRe
 	return responseChan, errChan
 }
 
+// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithCallback(request *ListPoliciesForRoleRequest, callback func(response *ListPoliciesForRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListPoliciesForRoleResponse struct {
 	Policies  PoliciesInListPoliciesForRole `json:"Policies" xml:"Policies"`
 }
 
+// create a request to invoke ListPoliciesForRole API
 func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 	request = &ListPoliciesForRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 	return
 }
 
+// create a response to parse from ListPoliciesForRole response
 func CreateListPoliciesForRoleResponse() (response *ListPoliciesForRoleResponse) {
 	response = &ListPoliciesForRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

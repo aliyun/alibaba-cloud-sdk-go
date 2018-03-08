@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RequestLoginInfo api with *RequestLoginInfoRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
 func (client *Client) RequestLoginInfo(request *RequestLoginInfoRequest) (response *RequestLoginInfoResponse, err error) {
 	response = CreateRequestLoginInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RequestLoginInfo api with *RequestLoginInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest) (<-chan *RequestLoginInfoResponse, <-chan error) {
 	responseChan := make(chan *RequestLoginInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest)
 	return responseChan, errChan
 }
 
+// invoke RequestLoginInfo api with *RequestLoginInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequest, callback func(response *RequestLoginInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type RequestLoginInfoResponse struct {
 	LoginInfo      LoginInfo `json:"LoginInfo" xml:"LoginInfo"`
 }
 
+// create a request to invoke RequestLoginInfo API
 func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 	request = &RequestLoginInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 	return
 }
 
+// create a response to parse from RequestLoginInfo response
 func CreateRequestLoginInfoResponse() (response *RequestLoginInfoResponse) {
 	response = &RequestLoginInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

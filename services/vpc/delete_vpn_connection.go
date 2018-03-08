@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
 func (client *Client) DeleteVpnConnection(request *DeleteVpnConnectionRequest) (response *DeleteVpnConnectionResponse, err error) {
 	response = CreateDeleteVpnConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRequest) (<-chan *DeleteVpnConnectionResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpnConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRe
 	return responseChan, errChan
 }
 
+// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithCallback(request *DeleteVpnConnectionRequest, callback func(response *DeleteVpnConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteVpnConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteVpnConnection API
 func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
 	request = &DeleteVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
 	return
 }
 
+// create a response to parse from DeleteVpnConnection response
 func CreateDeleteVpnConnectionResponse() (response *DeleteVpnConnectionResponse) {
 	response = &DeleteVpnConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

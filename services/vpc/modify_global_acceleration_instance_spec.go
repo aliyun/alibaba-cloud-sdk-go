@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpec(request *ModifyGlobalAccelerationInstanceSpecRequest) (response *ModifyGlobalAccelerationInstanceSpecResponse, err error) {
 	response = CreateModifyGlobalAccelerationInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpecWithChan(request *ModifyGlobalAccelerationInstanceSpecRequest) (<-chan *ModifyGlobalAccelerationInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyGlobalAccelerationInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithChan(request *Modi
 	return responseChan, errChan
 }
 
+// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpecWithCallback(request *ModifyGlobalAccelerationInstanceSpecRequest, callback func(response *ModifyGlobalAccelerationInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyGlobalAccelerationInstanceSpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyGlobalAccelerationInstanceSpec API
 func CreateModifyGlobalAccelerationInstanceSpecRequest() (request *ModifyGlobalAccelerationInstanceSpecRequest) {
 	request = &ModifyGlobalAccelerationInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyGlobalAccelerationInstanceSpecRequest() (request *ModifyGlobalA
 	return
 }
 
+// create a response to parse from ModifyGlobalAccelerationInstanceSpec response
 func CreateModifyGlobalAccelerationInstanceSpecResponse() (response *ModifyGlobalAccelerationInstanceSpecResponse) {
 	response = &ModifyGlobalAccelerationInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest synchronously
+// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
 func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response *QueryDeviceInfoResponse, err error) {
 	response = CreateQueryDeviceInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (<-chan *QueryDeviceInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoRequest, callback func(response *QueryDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryDeviceInfoResponse struct {
 	DeviceInfo DeviceInfo `json:"DeviceInfo" xml:"DeviceInfo"`
 }
 
+// create a request to invoke QueryDeviceInfo API
 func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
 	request = &QueryDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
 	return
 }
 
+// create a response to parse from QueryDeviceInfo response
 func CreateQueryDeviceInfoResponse() (response *QueryDeviceInfoResponse) {
 	response = &QueryDeviceInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

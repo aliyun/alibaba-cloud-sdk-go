@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelAgreement api with *CancelAgreementRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/cancelagreement.html
 func (client *Client) CancelAgreement(request *CancelAgreementRequest) (response *CancelAgreementResponse, err error) {
 	response = CreateCancelAgreementResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelAgreement api with *CancelAgreementRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/cancelagreement.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAgreementWithChan(request *CancelAgreementRequest) (<-chan *CancelAgreementResponse, <-chan error) {
 	responseChan := make(chan *CancelAgreementResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelAgreementWithChan(request *CancelAgreementRequest) (
 	return responseChan, errChan
 }
 
+// invoke CancelAgreement api with *CancelAgreementRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/cancelagreement.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAgreementWithCallback(request *CancelAgreementRequest, callback func(response *CancelAgreementResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type CancelAgreementResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CancelAgreement API
 func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 	request = &CancelAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 	return
 }
 
+// create a response to parse from CancelAgreement response
 func CreateCancelAgreementResponse() (response *CancelAgreementResponse) {
 	response = &CancelAgreementResponse{
 		BaseResponse: &responses.BaseResponse{},

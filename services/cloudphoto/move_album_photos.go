@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
 func (client *Client) MoveAlbumPhotos(request *MoveAlbumPhotosRequest) (response *MoveAlbumPhotosResponse, err error) {
 	response = CreateMoveAlbumPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (<-chan *MoveAlbumPhotosResponse, <-chan error) {
 	responseChan := make(chan *MoveAlbumPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (
 	return responseChan, errChan
 }
 
+// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosRequest, callback func(response *MoveAlbumPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type MoveAlbumPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke MoveAlbumPhotos API
 func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	request = &MoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	return
 }
 
+// create a response to parse from MoveAlbumPhotos response
 func CreateMoveAlbumPhotosResponse() (response *MoveAlbumPhotosResponse) {
 	response = &MoveAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

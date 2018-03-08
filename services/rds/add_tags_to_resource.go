@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddTagsToResource api with *AddTagsToResourceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/addtagstoresource.html
 func (client *Client) AddTagsToResource(request *AddTagsToResourceRequest) (response *AddTagsToResourceResponse, err error) {
 	response = CreateAddTagsToResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddTagsToResource api with *AddTagsToResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/addtagstoresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsToResourceWithChan(request *AddTagsToResourceRequest) (<-chan *AddTagsToResourceResponse, <-chan error) {
 	responseChan := make(chan *AddTagsToResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddTagsToResourceWithChan(request *AddTagsToResourceReques
 	return responseChan, errChan
 }
 
+// invoke AddTagsToResource api with *AddTagsToResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/addtagstoresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsToResourceWithCallback(request *AddTagsToResourceRequest, callback func(response *AddTagsToResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type AddTagsToResourceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddTagsToResource API
 func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
 	request = &AddTagsToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
 	return
 }
 
+// create a response to parse from AddTagsToResource response
 func CreateAddTagsToResourceResponse() (response *AddTagsToResourceResponse) {
 	response = &AddTagsToResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

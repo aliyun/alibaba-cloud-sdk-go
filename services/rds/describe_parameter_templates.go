@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
 func (client *Client) DescribeParameterTemplates(request *DescribeParameterTemplatesRequest) (response *DescribeParameterTemplatesResponse, err error) {
 	response = CreateDescribeParameterTemplatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterTemplatesWithChan(request *DescribeParameterTemplatesRequest) (<-chan *DescribeParameterTemplatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeParameterTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeParameterTemplatesWithChan(request *DescribeParame
 	return responseChan, errChan
 }
 
+// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribeParameterTemplatesRequest, callback func(response *DescribeParameterTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeParameterTemplatesResponse struct {
 	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
 }
 
+// create a request to invoke DescribeParameterTemplates API
 func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTemplatesRequest) {
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	return
 }
 
+// create a response to parse from DescribeParameterTemplates response
 func CreateDescribeParameterTemplatesResponse() (response *DescribeParameterTemplatesResponse) {
 	response = &DescribeParameterTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

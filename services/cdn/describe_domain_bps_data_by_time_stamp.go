@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
 func (client *Client) DescribeDomainBpsDataByTimeStamp(request *DescribeDomainBpsDataByTimeStampRequest) (response *DescribeDomainBpsDataByTimeStampResponse, err error) {
 	response = CreateDescribeDomainBpsDataByTimeStampResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataByTimeStampWithChan(request *DescribeDomainBpsDataByTimeStampRequest) (<-chan *DescribeDomainBpsDataByTimeStampResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainBpsDataByTimeStampResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainBpsDataByTimeStampWithChan(request *Describe
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataByTimeStampWithCallback(request *DescribeDomainBpsDataByTimeStampRequest, callback func(response *DescribeDomainBpsDataByTimeStampResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeDomainBpsDataByTimeStampResponse struct {
 	BpsDataList BpsDataList `json:"BpsDataList" xml:"BpsDataList"`
 }
 
+// create a request to invoke DescribeDomainBpsDataByTimeStamp API
 func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBpsDataByTimeStampRequest) {
 	request = &DescribeDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBps
 	return
 }
 
+// create a response to parse from DescribeDomainBpsDataByTimeStamp response
 func CreateDescribeDomainBpsDataByTimeStampResponse() (response *DescribeDomainBpsDataByTimeStampResponse) {
 	response = &DescribeDomainBpsDataByTimeStampResponse{
 		BaseResponse: &responses.BaseResponse{},

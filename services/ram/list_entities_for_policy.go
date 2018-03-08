@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
 func (client *Client) ListEntitiesForPolicy(request *ListEntitiesForPolicyRequest) (response *ListEntitiesForPolicyResponse, err error) {
 	response = CreateListEntitiesForPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPolicyRequest) (<-chan *ListEntitiesForPolicyResponse, <-chan error) {
 	responseChan := make(chan *ListEntitiesForPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPoli
 	return responseChan, errChan
 }
 
+// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithCallback(request *ListEntitiesForPolicyRequest, callback func(response *ListEntitiesForPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListEntitiesForPolicyResponse struct {
 	Roles     RolesInListEntitiesForPolicy  `json:"Roles" xml:"Roles"`
 }
 
+// create a request to invoke ListEntitiesForPolicy API
 func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest) {
 	request = &ListEntitiesForPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest
 	return
 }
 
+// create a response to parse from ListEntitiesForPolicy response
 func CreateListEntitiesForPolicyResponse() (response *ListEntitiesForPolicyResponse) {
 	response = &ListEntitiesForPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

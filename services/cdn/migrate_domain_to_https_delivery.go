@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MigrateDomainToHttpsDelivery api with *MigrateDomainToHttpsDeliveryRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/migratedomaintohttpsdelivery.html
 func (client *Client) MigrateDomainToHttpsDelivery(request *MigrateDomainToHttpsDeliveryRequest) (response *MigrateDomainToHttpsDeliveryResponse, err error) {
 	response = CreateMigrateDomainToHttpsDeliveryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MigrateDomainToHttpsDelivery api with *MigrateDomainToHttpsDeliveryRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/migratedomaintohttpsdelivery.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateDomainToHttpsDeliveryWithChan(request *MigrateDomainToHttpsDeliveryRequest) (<-chan *MigrateDomainToHttpsDeliveryResponse, <-chan error) {
 	responseChan := make(chan *MigrateDomainToHttpsDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MigrateDomainToHttpsDeliveryWithChan(request *MigrateDomai
 	return responseChan, errChan
 }
 
+// invoke MigrateDomainToHttpsDelivery api with *MigrateDomainToHttpsDeliveryRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/migratedomaintohttpsdelivery.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateDomainToHttpsDeliveryWithCallback(request *MigrateDomainToHttpsDeliveryRequest, callback func(response *MigrateDomainToHttpsDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type MigrateDomainToHttpsDeliveryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke MigrateDomainToHttpsDelivery API
 func CreateMigrateDomainToHttpsDeliveryRequest() (request *MigrateDomainToHttpsDeliveryRequest) {
 	request = &MigrateDomainToHttpsDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateMigrateDomainToHttpsDeliveryRequest() (request *MigrateDomainToHttpsD
 	return
 }
 
+// create a response to parse from MigrateDomainToHttpsDelivery response
 func CreateMigrateDomainToHttpsDeliveryResponse() (response *MigrateDomainToHttpsDeliveryResponse) {
 	response = &MigrateDomainToHttpsDeliveryResponse{
 		BaseResponse: &responses.BaseResponse{},

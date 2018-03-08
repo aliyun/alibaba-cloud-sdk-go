@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddMyGroupInstances api with *AddMyGroupInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/cms/addmygroupinstances.html
 func (client *Client) AddMyGroupInstances(request *AddMyGroupInstancesRequest) (response *AddMyGroupInstancesResponse, err error) {
 	response = CreateAddMyGroupInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddMyGroupInstances api with *AddMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/addmygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMyGroupInstancesWithChan(request *AddMyGroupInstancesRequest) (<-chan *AddMyGroupInstancesResponse, <-chan error) {
 	responseChan := make(chan *AddMyGroupInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddMyGroupInstancesWithChan(request *AddMyGroupInstancesRe
 	return responseChan, errChan
 }
 
+// invoke AddMyGroupInstances api with *AddMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/addmygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMyGroupInstancesWithCallback(request *AddMyGroupInstancesRequest, callback func(response *AddMyGroupInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type AddMyGroupInstancesResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
+// create a request to invoke AddMyGroupInstances API
 func CreateAddMyGroupInstancesRequest() (request *AddMyGroupInstancesRequest) {
 	request = &AddMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateAddMyGroupInstancesRequest() (request *AddMyGroupInstancesRequest) {
 	return
 }
 
+// create a response to parse from AddMyGroupInstances response
 func CreateAddMyGroupInstancesResponse() (response *AddMyGroupInstancesResponse) {
 	response = &AddMyGroupInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

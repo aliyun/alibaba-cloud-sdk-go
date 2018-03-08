@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
 func (client *Client) DescribeDomainHttpCodeData(request *DescribeDomainHttpCodeDataRequest) (response *DescribeDomainHttpCodeDataResponse, err error) {
 	response = CreateDescribeDomainHttpCodeDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataWithChan(request *DescribeDomainHttpCodeDataRequest) (<-chan *DescribeDomainHttpCodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainHttpCodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainHttpCodeDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataWithCallback(request *DescribeDomainHttpCodeDataRequest, callback func(response *DescribeDomainHttpCodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeDomainHttpCodeDataResponse struct {
 	HttpCodeData HttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
 }
 
+// create a request to invoke DescribeDomainHttpCodeData API
 func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeDataRequest) {
 	request = &DescribeDomainHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeD
 	return
 }
 
+// create a response to parse from DescribeDomainHttpCodeData response
 func CreateDescribeDomainHttpCodeDataResponse() (response *DescribeDomainHttpCodeDataResponse) {
 	response = &DescribeDomainHttpCodeDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddVServerGroupBackendServers api with *AddVServerGroupBackendServersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/addvservergroupbackendservers.html
 func (client *Client) AddVServerGroupBackendServers(request *AddVServerGroupBackendServersRequest) (response *AddVServerGroupBackendServersResponse, err error) {
 	response = CreateAddVServerGroupBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddVServerGroupBackendServers api with *AddVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addvservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddVServerGroupBackendServersWithChan(request *AddVServerGroupBackendServersRequest) (<-chan *AddVServerGroupBackendServersResponse, <-chan error) {
 	responseChan := make(chan *AddVServerGroupBackendServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddVServerGroupBackendServersWithChan(request *AddVServerG
 	return responseChan, errChan
 }
 
+// invoke AddVServerGroupBackendServers api with *AddVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/addvservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddVServerGroupBackendServersWithCallback(request *AddVServerGroupBackendServersRequest, callback func(response *AddVServerGroupBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type AddVServerGroupBackendServersResponse struct {
 	BackendServers BackendServersInAddVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke AddVServerGroupBackendServers API
 func CreateAddVServerGroupBackendServersRequest() (request *AddVServerGroupBackendServersRequest) {
 	request = &AddVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateAddVServerGroupBackendServersRequest() (request *AddVServerGroupBacke
 	return
 }
 
+// create a response to parse from AddVServerGroupBackendServers response
 func CreateAddVServerGroupBackendServersResponse() (response *AddVServerGroupBackendServersResponse) {
 	response = &AddVServerGroupBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

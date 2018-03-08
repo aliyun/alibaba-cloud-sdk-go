@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
 func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreamsOnlineListRequest) (response *DescribeLiveStreamsOnlineListResponse, err error) {
 	response = CreateDescribeLiveStreamsOnlineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiveStreamsOnlineListRequest) (<-chan *DescribeLiveStreamsOnlineListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsOnlineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiv
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *DescribeLiveStreamsOnlineListRequest, callback func(response *DescribeLiveStreamsOnlineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DescribeLiveStreamsOnlineListResponse struct {
 	OnlineInfo OnlineInfo `json:"OnlineInfo" xml:"OnlineInfo"`
 }
 
+// create a request to invoke DescribeLiveStreamsOnlineList API
 func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {
 	request = &DescribeLiveStreamsOnlineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsO
 	return
 }
 
+// create a response to parse from DescribeLiveStreamsOnlineList response
 func CreateDescribeLiveStreamsOnlineListResponse() (response *DescribeLiveStreamsOnlineListResponse) {
 	response = &DescribeLiveStreamsOnlineListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest synchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
 func (client *Client) SenderStatisticsByTagNameAndBatchID(request *SenderStatisticsByTagNameAndBatchIDRequest) (response *SenderStatisticsByTagNameAndBatchIDResponse, err error) {
 	response = CreateSenderStatisticsByTagNameAndBatchIDResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *SenderStatisticsByTagNameAndBatchIDRequest) (<-chan *SenderStatisticsByTagNameAndBatchIDResponse, <-chan error) {
 	responseChan := make(chan *SenderStatisticsByTagNameAndBatchIDResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *Sende
 	return responseChan, errChan
 }
 
+// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *SenderStatisticsByTagNameAndBatchIDRequest, callback func(response *SenderStatisticsByTagNameAndBatchIDResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SenderStatisticsByTagNameAndBatchIDResponse struct {
 	Data       DataInSenderStatisticsByTagNameAndBatchID `json:"data" xml:"data"`
 }
 
+// create a request to invoke SenderStatisticsByTagNameAndBatchID API
 func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {
 	request = &SenderStatisticsByTagNameAndBatchIDRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisti
 	return
 }
 
+// create a response to parse from SenderStatisticsByTagNameAndBatchID response
 func CreateSenderStatisticsByTagNameAndBatchIDResponse() (response *SenderStatisticsByTagNameAndBatchIDResponse) {
 	response = &SenderStatisticsByTagNameAndBatchIDResponse{
 		BaseResponse: &responses.BaseResponse{},

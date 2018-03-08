@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListFaces api with *ListFacesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
 func (client *Client) ListFaces(request *ListFacesRequest) (response *ListFacesResponse, err error) {
 	response = CreateListFacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListFaces api with *ListFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacesWithChan(request *ListFacesRequest) (<-chan *ListFacesResponse, <-chan error) {
 	responseChan := make(chan *ListFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListFacesWithChan(request *ListFacesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListFaces api with *ListFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback func(response *ListFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListFacesResponse struct {
 	Faces      []Face `json:"Faces" xml:"Faces"`
 }
 
+// create a request to invoke ListFaces API
 func CreateListFacesRequest() (request *ListFacesRequest) {
 	request = &ListFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListFacesRequest() (request *ListFacesRequest) {
 	return
 }
 
+// create a response to parse from ListFaces response
 func CreateListFacesResponse() (response *ListFacesResponse) {
 	response = &ListFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

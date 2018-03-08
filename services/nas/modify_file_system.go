@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyFileSystem api with *ModifyFileSystemRequest synchronously
+// api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
 func (client *Client) ModifyFileSystem(request *ModifyFileSystemRequest) (response *ModifyFileSystemResponse, err error) {
 	response = CreateModifyFileSystemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyFileSystem api with *ModifyFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileSystemWithChan(request *ModifyFileSystemRequest) (<-chan *ModifyFileSystemResponse, <-chan error) {
 	responseChan := make(chan *ModifyFileSystemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyFileSystemWithChan(request *ModifyFileSystemRequest)
 	return responseChan, errChan
 }
 
+// invoke ModifyFileSystem api with *ModifyFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequest, callback func(response *ModifyFileSystemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ModifyFileSystemResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyFileSystem API
 func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	request = &ModifyFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	return
 }
 
+// create a response to parse from ModifyFileSystem response
 func CreateModifyFileSystemResponse() (response *ModifyFileSystemResponse) {
 	response = &ModifyFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

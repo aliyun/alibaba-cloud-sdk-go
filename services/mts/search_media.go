@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SearchMedia api with *SearchMediaRequest synchronously
+// api document: https://help.aliyun.com/api/mts/searchmedia.html
 func (client *Client) SearchMedia(request *SearchMediaRequest) (response *SearchMediaResponse, err error) {
 	response = CreateSearchMediaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SearchMedia api with *SearchMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchmedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *SearchMediaResponse, <-chan error) {
 	responseChan := make(chan *SearchMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke SearchMedia api with *SearchMediaRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/searchmedia.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callback func(response *SearchMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type SearchMediaResponse struct {
 	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 
+// create a request to invoke SearchMedia API
 func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	return
 }
 
+// create a response to parse from SearchMedia response
 func CreateSearchMediaResponse() (response *SearchMediaResponse) {
 	response = &SearchMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

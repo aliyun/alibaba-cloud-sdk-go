@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
 func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response *SubmitFpShotJobResponse, err error) {
 	response = CreateSubmitFpShotJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (<-chan *SubmitFpShotJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFpShotJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (
 	return responseChan, errChan
 }
 
+// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobRequest, callback func(response *SubmitFpShotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitFpShotJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitFpShotJob API
 func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 	request = &SubmitFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitFpShotJob response
 func CreateSubmitFpShotJobResponse() (response *SubmitFpShotJobResponse) {
 	response = &SubmitFpShotJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeParameters api with *DescribeParametersRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeparameters.html
 func (client *Client) DescribeParameters(request *DescribeParametersRequest) (response *DescribeParametersResponse, err error) {
 	response = CreateDescribeParametersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeParameters api with *DescribeParametersRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeparameters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequest) (<-chan *DescribeParametersResponse, <-chan error) {
 	responseChan := make(chan *DescribeParametersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeParameters api with *DescribeParametersRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeparameters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeParametersResponse struct {
 	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 }
 
+// create a request to invoke DescribeParameters API
 func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	return
 }
 
+// create a response to parse from DescribeParameters response
 func CreateDescribeParametersResponse() (response *DescribeParametersResponse) {
 	response = &DescribeParametersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest synchronously
+// api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
 func (client *Client) SetMaxQuotaLevel(request *SetMaxQuotaLevelRequest) (response *SetMaxQuotaLevelResponse, err error) {
 	response = CreateSetMaxQuotaLevelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMaxQuotaLevelWithChan(request *SetMaxQuotaLevelRequest) (<-chan *SetMaxQuotaLevelResponse, <-chan error) {
 	responseChan := make(chan *SetMaxQuotaLevelResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetMaxQuotaLevelWithChan(request *SetMaxQuotaLevelRequest)
 	return responseChan, errChan
 }
 
+// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMaxQuotaLevelWithCallback(request *SetMaxQuotaLevelRequest, callback func(response *SetMaxQuotaLevelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetMaxQuotaLevelResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetMaxQuotaLevel API
 func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 	request = &SetMaxQuotaLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 	return
 }
 
+// create a response to parse from SetMaxQuotaLevel response
 func CreateSetMaxQuotaLevelResponse() (response *SetMaxQuotaLevelResponse) {
 	response = &SetMaxQuotaLevelResponse{
 		BaseResponse: &responses.BaseResponse{},

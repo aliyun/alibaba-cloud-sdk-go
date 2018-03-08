@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EditJobTemplate api with *EditJobTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
 func (client *Client) EditJobTemplate(request *EditJobTemplateRequest) (response *EditJobTemplateResponse, err error) {
 	response = CreateEditJobTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EditJobTemplate api with *EditJobTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditJobTemplateWithChan(request *EditJobTemplateRequest) (<-chan *EditJobTemplateResponse, <-chan error) {
 	responseChan := make(chan *EditJobTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EditJobTemplateWithChan(request *EditJobTemplateRequest) (
 	return responseChan, errChan
 }
 
+// invoke EditJobTemplate api with *EditJobTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditJobTemplateWithCallback(request *EditJobTemplateRequest, callback func(response *EditJobTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,7 +83,7 @@ type EditJobTemplateRequest struct {
 	PackagePath        string           `position:"Query" name:"PackagePath"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
-	ReRunnable         requests.Boolean `position:"Query" name:"ReRunnable"`
+	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
 	Variables          string           `position:"Query" name:"Variables"`
 }
@@ -86,6 +94,7 @@ type EditJobTemplateResponse struct {
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
+// create a request to invoke EditJobTemplate API
 func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	request = &EditJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	return
 }
 
+// create a response to parse from EditJobTemplate response
 func CreateEditJobTemplateResponse() (response *EditJobTemplateResponse) {
 	response = &EditJobTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},
